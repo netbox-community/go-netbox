@@ -15,7 +15,11 @@
 package netbox
 
 import (
+	"encoding/json"
+	"fmt"
 	"math"
+	"net/http"
+	"net/http/httptest"
 	"testing"
 )
 
@@ -46,4 +50,48 @@ func TestFamilyValid(t *testing.T) {
 				tt.f, want, got)
 		}
 	}
+}
+
+// ExampleNewClient demonstrates usage of the Client type.
+func ExampleNewClient() {
+	// Sets up a minimal, mocked NetBox server
+	addr, done := exampleServer()
+	defer done()
+
+	// Creates a client configured to use the test server
+	c, err := NewClient(addr, nil)
+	if err != nil {
+		panic(fmt.Sprintf("failed to create netbox.Client: %v", err))
+	}
+
+	// Retrieve an IPAddress with ID 1
+	ip, err := c.IPAM.GetIPAddress(1)
+	if err != nil {
+		panic(fmt.Sprintf("failed to retrieve IP address: %v", err))
+	}
+
+	fmt.Printf("IP #%03d: %s (%s)\n", ip.ID, ip.Address.String(), ip.Family)
+
+	// Output:
+	// IP #001: 192.168.1.1/32 (IPv4)
+}
+
+// exampleServer creates a test HTTP server which returns its address and
+// can be closed using the returned closure.
+func exampleServer() (string, func()) {
+	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		ip := struct {
+			ID      int    `json:"id"`
+			Family  Family `json:"family"`
+			Address string `json:"address"`
+		}{
+			ID:      1,
+			Family:  FamilyIPv4,
+			Address: "192.168.1.1/32",
+		}
+
+		_ = json.NewEncoder(w).Encode(ip)
+	}))
+
+	return s.URL, func() { s.Close() }
 }
