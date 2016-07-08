@@ -18,6 +18,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/url"
+	"path"
 )
 
 // A Client is a NetBox client.  It can be used to retrieve network and
@@ -69,6 +70,16 @@ func (c *Client) newRequest(method string, endpoint string, options valuer) (*ht
 	if err != nil {
 		return nil, err
 	}
+
+	// Allow specifying a base path for API requests, so if a NetBox server
+	// resides at a path like http://example.com/netbox/, API requests will
+	// be sent to http://example.com/netbox/api/...
+	//
+	// Enables support of: https://github.com/digitalocean/netbox/issues/212.
+	if c.u.Path != "" {
+		rel.Path = path.Join(c.u.Path, rel.Path)
+	}
+
 	u := c.u.ResolveReference(rel)
 
 	// If no valuer specified, create a request with no query parameters
