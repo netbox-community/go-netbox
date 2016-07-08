@@ -80,6 +80,28 @@ func TestClientQueryParameters(t *testing.T) {
 	}
 }
 
+func TestClientPrependBaseURLPath(t *testing.T) {
+	u, err := url.Parse("http://example.com/netbox/")
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+
+	c := &Client{
+		u:      u,
+		client: &http.Client{},
+	}
+
+	req, err := c.newRequest(http.MethodGet, "/api/ipam/vlans", nil)
+	if err != nil {
+		t.Fatal("expected an error, but no error returned")
+	}
+
+	if want, got := "/netbox/api/ipam/vlans", req.URL.Path; want != got {
+		t.Fatalf("unexpected URL path:\n- want: %q\n-  got: %q",
+			want, got)
+	}
+}
+
 type testValuer struct {
 	Foo string
 	Bar int
