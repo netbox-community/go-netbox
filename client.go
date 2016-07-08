@@ -23,6 +23,9 @@ import (
 // A Client is a NetBox client.  It can be used to retrieve network and
 // datacenter infrastructure information from a NetBox server.
 type Client struct {
+	// DCIM provides access to methods in NetBox's DCIM API.
+	DCIM *DCIMService
+
 	// IPAM provides access to methods in NetBox's IPAM API.
 	IPAM *IPAMService
 
@@ -50,6 +53,7 @@ func NewClient(addr string, client *http.Client) (*Client, error) {
 		client: client,
 	}
 
+	c.DCIM = &DCIMService{c: c}
 	c.IPAM = &IPAMService{c: c}
 
 	return c, nil

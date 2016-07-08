@@ -266,6 +266,24 @@ func testRoleIdentifier(n int) *RoleIdentifier {
 	}
 }
 
+func testSite(n int) *Site {
+	return &Site{
+		ID:              n,
+		Name:            fmt.Sprintf("Site %d", n),
+		Slug:            fmt.Sprintf("site%d", n),
+		Facility:        fmt.Sprintf("Facility %d", n),
+		ASN:             ASN(n),
+		PhysicalAddress: fmt.Sprintf("%d Facility Street, City, State 12345", n),
+		ShippingAddress: fmt.Sprintf("%d Facility Street, ATTN: Shipping & Receiving, City, State 12345", n),
+		Comments:        fmt.Sprintf("comment %d", n),
+		CountPrefixes:   n,
+		CountVLANs:      n,
+		CountRacks:      n,
+		CountDevices:    n,
+		CountCircuits:   n,
+	}
+}
+
 func testSiteIdentifier(n int) *SiteIdentifier {
 	return &SiteIdentifier{
 		ID:   n,

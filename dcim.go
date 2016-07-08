@@ -14,13 +14,16 @@
 
 package netbox
 
-// TODO(mdlayher): implement DCIM API and types.
+// A DCIMService is used in a Client to access NetBox's DCIM API methods.
+type DCIMService struct {
+	c *Client
+}
 
 // An InterfaceIdentifier is a reduced version of an Interface, returned as a
 // nested object in some top-level objects.  It contains information which can
 // be used in subsequent API calls to identify and retrieve a full Interface.
 //
-// At this time, the Interface type and DCIM API calls are not implemented.
+// At this time, the Interface type is not implemented.
 type InterfaceIdentifier struct {
 	ID     int               `json:"id"`
 	Device *DeviceIdentifier `json:"device"`
@@ -31,19 +34,8 @@ type InterfaceIdentifier struct {
 // object in some top-level objects.  It contains information which can
 // be used in subsequent API calls to identify and retrieve a full Device.
 //
-// At this time, the Device type and DCIM API calls are not implemented.
+// At this time, the Device type is not implemented.
 type DeviceIdentifier struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
-}
-
-// A SiteIdentifier is a reduced version of a Site, returned as a nested
-// object in some top-level objects.  It contains information which can
-// be used in subsequent API calls to identify and retrieve a full Site.
-//
-// At this time, the Site type and DCIM API calls are not implemented.
-type SiteIdentifier struct {
-	ID   int    `json:"id"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
 }
