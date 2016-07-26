@@ -179,6 +179,15 @@ func testDeviceIdentifier(n int) *DeviceIdentifier {
 	}
 }
 
+func testDeviceTypeIdentifier(n int) *DeviceTypeIdentifier {
+	return &DeviceTypeIdentifier{
+		ID:           n,
+		Manufacturer: testSimpleIdentifier(n),
+		Model:        fmt.Sprintf("device model %d", n),
+		Slug:         fmt.Sprintf("devicetype%d", n),
+	}
+}
+
 func testInterfaceIdentifier(n int) *InterfaceIdentifier {
 	return &InterfaceIdentifier{
 		ID:     n,
@@ -255,6 +264,65 @@ func testPrefix(family Family, n int) *Prefix {
 	}
 }
 
+func testRackIdentifier(n int) *RackIdentifier {
+	return &RackIdentifier{
+		ID:          n,
+		Name:        fmt.Sprintf("rack %d", n),
+		FacilityID:  fmt.Sprintf("facility%d", n),
+		DisplayName: fmt.Sprintf("Rack %d", n),
+	}
+}
+
+func testRCConsolePortIdentifier(n int) *RCConsolePortIdentifier {
+	return &RCConsolePortIdentifier{
+		ConsoleServer: fmt.Sprintf("console server %d", n),
+		Name:          fmt.Sprintf("rc console port %d", n),
+		Port:          fmt.Sprintf("port %d", n),
+	}
+}
+
+func testRCInterfaceIdentifier(n int) *RCInterfaceIdentifier {
+	return &RCInterfaceIdentifier{
+		Device:    fmt.Sprintf("device %d", n),
+		Interface: fmt.Sprintf("interface %d", n),
+		Name:      fmt.Sprintf("rc interface %d", n),
+	}
+}
+
+func testRCPowerPortIdentifier(n int) *RCPowerPortIdentifier {
+	return &RCPowerPortIdentifier{
+		PDU:    fmt.Sprintf("pdu %d", n),
+		Name:   fmt.Sprintf("rc power port %d", n),
+		Outlet: fmt.Sprintf("outlet %d", n),
+	}
+}
+
+func testRelatedConnection(n int) *RelatedConnection {
+	return &RelatedConnection{
+		Device: &Device{
+			ID:           n,
+			Name:         fmt.Sprintf("device %d", n),
+			DisplayName:  fmt.Sprintf("Device %d", n),
+			DeviceType:   testDeviceTypeIdentifier(n),
+			DeviceRole:   testSimpleIdentifier(n),
+			Platform:     testSimpleIdentifier(n),
+			Serial:       fmt.Sprintf("relatedconnection%d", n),
+			Rack:         testRackIdentifier(n),
+			Position:     n,
+			Face:         n,
+			ParentDevice: testDeviceIdentifier(n),
+			Status:       true,
+			PrimaryIP:    testIPAddressIdentifier(FamilyIPv4, n),
+			PrimaryIP4:   testIPAddressIdentifier(FamilyIPv4, n),
+			PrimaryIP6:   testIPAddressIdentifier(FamilyIPv6, n),
+			Comments:     "",
+		},
+		ConsolePorts: []*RCConsolePortIdentifier{testRCConsolePortIdentifier(n)},
+		Interfaces:   []*RCInterfaceIdentifier{testRCInterfaceIdentifier(n)},
+		PowerPorts:   []*RCPowerPortIdentifier{testRCPowerPortIdentifier(n)},
+	}
+}
+
 func testRIR(n int) *RIR {
 	return &RIR{
 		ID:   n,
@@ -285,6 +353,14 @@ func testRoleIdentifier(n int) *RoleIdentifier {
 		ID:   n,
 		Name: fmt.Sprintf("RoleIdentifier %d", n),
 		Slug: fmt.Sprintf("roleidentifier%d", n),
+	}
+}
+
+func testSimpleIdentifier(n int) *SimpleIdentifier {
+	return &SimpleIdentifier{
+		ID:   n,
+		Name: fmt.Sprintf("simple %d", n),
+		Slug: fmt.Sprintf("simple%d", n),
 	}
 }
 
