@@ -39,3 +39,11 @@ type DeviceIdentifier struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
 }
+
+// SimpleIdentifier represents a simple object that consists of only an ID,
+// name, and slug.
+type SimpleIdentifier struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+	Slug string `json:"slug"`
+}
