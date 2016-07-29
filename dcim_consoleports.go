@@ -14,15 +14,18 @@
 
 package netbox
 
-// A DCIMService is used in a Client to access NetBox's DCIM API methods.
-type DCIMService struct {
-	c *Client
+// ConsolePort represents a console port object.
+type ConsolePort struct {
+	ID               int                `json:"id"`
+	Device           *DeviceIdentifier  `json:"device"`
+	Name             string             `json:"name"`
+	CSPort           *ConsoleServerPort `json:"cs_port"`
+	ConnectionStatus bool               `json:"connection_status"`
 }
 
-// SimpleIdentifier represents a simple object that consists of only an ID,
-// name, and slug.
-type SimpleIdentifier struct {
-	ID   int    `json:"id"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
+// ConsoleServerPort represents a console server port object.
+type ConsoleServerPort struct {
+	ID     int               `json:"id"`
+	Device *DeviceIdentifier `json:"device"`
+	Name   string            `json:"name"`
 }

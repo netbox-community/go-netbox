@@ -172,6 +172,53 @@ func testAggregate(family Family, n int) *Aggregate {
 	}
 }
 
+func testConsolePort(n int) *ConsolePort {
+	return &ConsolePort{
+		ID:               n,
+		Device:           testDeviceIdentifier(n),
+		Name:             fmt.Sprintf("deviceport %d", n),
+		CSPort:           testConsoleServerPort(n),
+		ConnectionStatus: true,
+	}
+}
+
+func testConsolePortIdentifier(n int) *ConsolePortIdentifier {
+	return &ConsolePortIdentifier{
+		Device: fmt.Sprintf("device %d", n),
+		Name:   fmt.Sprintf("rc console port %d", n),
+		Port:   fmt.Sprintf("port %d", n),
+	}
+}
+
+func testConsoleServerPort(n int) *ConsoleServerPort {
+	return &ConsoleServerPort{
+		ID:     n,
+		Device: testDeviceIdentifier(n),
+		Name:   fmt.Sprintf("consoleserverport %d", n),
+	}
+}
+
+func testDevice(n int) *Device {
+	return &Device{
+		ID:           n,
+		Name:         fmt.Sprintf("device %d", n),
+		DisplayName:  fmt.Sprintf("Device %d", n),
+		DeviceType:   testDeviceTypeIdentifier(n),
+		DeviceRole:   testSimpleIdentifier(n),
+		Platform:     testSimpleIdentifier(n),
+		Serial:       fmt.Sprintf("relatedconnection%d", n),
+		Rack:         testRackIdentifier(n),
+		Position:     n,
+		Face:         n,
+		ParentDevice: testDeviceIdentifier(n),
+		Status:       true,
+		PrimaryIP:    testIPAddressIdentifier(FamilyIPv4, n),
+		PrimaryIP4:   testIPAddressIdentifier(FamilyIPv4, n),
+		PrimaryIP6:   testIPAddressIdentifier(FamilyIPv6, n),
+		Comments:     "",
+	}
+}
+
 func testDeviceIdentifier(n int) *DeviceIdentifier {
 	return &DeviceIdentifier{
 		ID:   n,
@@ -185,6 +232,32 @@ func testDeviceTypeIdentifier(n int) *DeviceTypeIdentifier {
 		Manufacturer: testSimpleIdentifier(n),
 		Model:        fmt.Sprintf("device model %d", n),
 		Slug:         fmt.Sprintf("devicetype%d", n),
+	}
+}
+
+func testInterface(n int) *Interface {
+	return &Interface{
+		ID:                 n,
+		Name:               fmt.Sprintf("interface %d", n),
+		FormFactor:         fmt.Sprintf("form factor %d", n),
+		MacAddress:         fmt.Sprintf("f4:9d:82:9e:34:c%d", n),
+		MgmtOnly:           true,
+		Description:        fmt.Sprintf("Description %d", n),
+		IsConnected:        true,
+		ConnectedInterface: testInterfaceDetail(n),
+	}
+}
+
+func testInterfaceDetail(n int) *InterfaceDetail {
+	return &InterfaceDetail{
+		ID:          n,
+		Device:      testDeviceIdentifier(n),
+		Name:        fmt.Sprintf("interfacedetail %d", n),
+		FormFactor:  fmt.Sprintf("form factor %d", n),
+		MacAddress:  fmt.Sprintf("f4:9d:82:9e:34:c%d", n),
+		MgmtOnly:    true,
+		Description: fmt.Sprintf("Description %d", n),
+		IsConnected: true,
 	}
 }
 
@@ -273,25 +346,26 @@ func testRackIdentifier(n int) *RackIdentifier {
 	}
 }
 
-func testRCConsolePortIdentifier(n int) *RCConsolePortIdentifier {
-	return &RCConsolePortIdentifier{
-		ConsoleServer: fmt.Sprintf("console server %d", n),
-		Name:          fmt.Sprintf("rc console port %d", n),
-		Port:          fmt.Sprintf("port %d", n),
+func testPowerOutlet(n int) *PowerOutletIdentifier {
+	return &PowerOutletIdentifier{
+		ID:     n,
+		Device: testDeviceIdentifier(n),
+		Name:   fmt.Sprintf("poweroutlet %d", n),
 	}
 }
 
-func testRCInterfaceIdentifier(n int) *RCInterfaceIdentifier {
-	return &RCInterfaceIdentifier{
-		Device:    fmt.Sprintf("device %d", n),
-		Interface: fmt.Sprintf("interface %d", n),
-		Name:      fmt.Sprintf("rc interface %d", n),
+func testPowerPort(n int) *PowerPort {
+	return &PowerPort{
+		ID:               n,
+		Name:             fmt.Sprintf("powerport %d", n),
+		PowerOutlet:      testPowerOutlet(n),
+		ConnectionStatus: true,
 	}
 }
 
-func testRCPowerPortIdentifier(n int) *RCPowerPortIdentifier {
-	return &RCPowerPortIdentifier{
-		PDU:    fmt.Sprintf("pdu %d", n),
+func testPowerPortIdentifier(n int) *PowerPortIdentifier {
+	return &PowerPortIdentifier{
+		Device: fmt.Sprintf("device %d", n),
 		Name:   fmt.Sprintf("rc power port %d", n),
 		Outlet: fmt.Sprintf("outlet %d", n),
 	}
@@ -299,27 +373,10 @@ func testRCPowerPortIdentifier(n int) *RCPowerPortIdentifier {
 
 func testRelatedConnection(n int) *RelatedConnection {
 	return &RelatedConnection{
-		Device: &Device{
-			ID:           n,
-			Name:         fmt.Sprintf("device %d", n),
-			DisplayName:  fmt.Sprintf("Device %d", n),
-			DeviceType:   testDeviceTypeIdentifier(n),
-			DeviceRole:   testSimpleIdentifier(n),
-			Platform:     testSimpleIdentifier(n),
-			Serial:       fmt.Sprintf("relatedconnection%d", n),
-			Rack:         testRackIdentifier(n),
-			Position:     n,
-			Face:         n,
-			ParentDevice: testDeviceIdentifier(n),
-			Status:       true,
-			PrimaryIP:    testIPAddressIdentifier(FamilyIPv4, n),
-			PrimaryIP4:   testIPAddressIdentifier(FamilyIPv4, n),
-			PrimaryIP6:   testIPAddressIdentifier(FamilyIPv6, n),
-			Comments:     "",
-		},
-		ConsolePorts: []*RCConsolePortIdentifier{testRCConsolePortIdentifier(n)},
-		Interfaces:   []*RCInterfaceIdentifier{testRCInterfaceIdentifier(n)},
-		PowerPorts:   []*RCPowerPortIdentifier{testRCPowerPortIdentifier(n)},
+		Device:       testDevice(n),
+		ConsolePorts: []*ConsolePort{testConsolePort(n)},
+		Interfaces:   []*Interface{testInterface(n)},
+		PowerPorts:   []*PowerPort{testPowerPort(n)},
 	}
 }
 

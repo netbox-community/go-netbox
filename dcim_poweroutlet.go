@@ -14,15 +14,9 @@
 
 package netbox
 
-// A DCIMService is used in a Client to access NetBox's DCIM API methods.
-type DCIMService struct {
-	c *Client
-}
-
-// SimpleIdentifier represents a simple object that consists of only an ID,
-// name, and slug.
-type SimpleIdentifier struct {
-	ID   int    `json:"id"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
+// PowerOutletIdentifier represents a reduced version of a power outlet object.
+type PowerOutletIdentifier struct {
+	ID     int               `json:"id"`
+	Device *DeviceIdentifier `json:"device"`
+	Name   string            `json:"name"`
 }
