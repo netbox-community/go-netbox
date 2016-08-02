@@ -34,6 +34,14 @@ type Device struct {
 	Comments     string                `json:"comments"`
 }
 
+// A DeviceIdentifier is a reduced version of a Device, returned as a nested
+// object in some top-level objects.  It contains information which can
+// be used in subsequent API calls to identify and retrieve a full Device.
+type DeviceIdentifier struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+}
+
 // A DeviceTypeIdentifier indicates the device type of a network device.
 type DeviceTypeIdentifier struct {
 	ID           int               `json:"id"`

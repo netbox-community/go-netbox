@@ -23,29 +23,22 @@ import (
 // RelatedConnection represents components that have a related peer-device and
 // peer-interface.
 type RelatedConnection struct {
-	Device       *Device                    `json:"device"`
-	ConsolePorts []*RCConsolePortIdentifier `json:"console-ports"`
-	Interfaces   []*RCInterfaceIdentifier   `json:"interfaces"`
-	PowerPorts   []*RCPowerPortIdentifier   `json:"power-ports"`
+	Device       *Device        `json:"device"`
+	ConsolePorts []*ConsolePort `json:"console-ports"`
+	Interfaces   []*Interface   `json:"interfaces"`
+	PowerPorts   []*PowerPort   `json:"power-ports"`
 }
 
-// RCConsolePortIdentifier represents a reduced version of a console port.
-type RCConsolePortIdentifier struct {
-	ConsoleServer string `json:"console-server"`
-	Name          string `json:"name"`
-	Port          string `json:"port"`
+// ConsolePortIdentifier represents a reduced version of a console port.
+type ConsolePortIdentifier struct {
+	Device string `json:"device"`
+	Name   string `json:"name"`
+	Port   string `json:"port"`
 }
 
-// RCInterfaceIdentifier represents a reduced version of a device interface.
-type RCInterfaceIdentifier struct {
-	Device    string `json:"device"`
-	Interface string `json:"interface"`
-	Name      string `json:"name"`
-}
-
-// RCPowerPortIdentifier represents a reduced version of a single power port.
-type RCPowerPortIdentifier struct {
-	PDU    string `json:"pdu"`
+// PowerPortIdentifier represents a reduced version of a single power port.
+type PowerPortIdentifier struct {
+	Device string `json:"device"`
 	Name   string `json:"name"`
 	Outlet string `json:"outlet"`
 }
