@@ -39,7 +39,7 @@ type RIRIdentifier struct {
 
 // GetRIR retrieves an RIR object from NetBox by its ID.
 func (s *IPAMService) GetRIR(id int) (*RIR, error) {
-	req, err := s.c.newRequest(
+	req, err := s.c.NewRequest(
 		http.MethodGet,
 		fmt.Sprintf("/api/ipam/rirs/%d", id),
 		nil,
@@ -49,18 +49,18 @@ func (s *IPAMService) GetRIR(id int) (*RIR, error) {
 	}
 
 	r := new(RIR)
-	err = s.c.do(req, r)
+	err = s.c.Do(req, r)
 	return r, err
 }
 
 // ListRIRs retrives a list of RIR objects from NetBox.
 func (s *IPAMService) ListRIRs() ([]*RIR, error) {
-	req, err := s.c.newRequest(http.MethodGet, "/api/ipam/rirs/", nil)
+	req, err := s.c.NewRequest(http.MethodGet, "/api/ipam/rirs/", nil)
 	if err != nil {
 		return nil, err
 	}
 
 	var rs []*RIR
-	err = s.c.do(req, &rs)
+	err = s.c.Do(req, &rs)
 	return rs, err
 }

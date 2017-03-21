@@ -47,7 +47,7 @@ type PowerPortIdentifier struct {
 func (s *DCIMService) GetRelatedConnections(
 	peerDevice, peerInterface string,
 ) (*RelatedConnection, error) {
-	req, err := s.c.newRequest(
+	req, err := s.c.NewRequest(
 		http.MethodGet,
 		"/api/dcim/related-connections/",
 		&relatedConnectionsOptions{
@@ -60,7 +60,7 @@ func (s *DCIMService) GetRelatedConnections(
 	}
 
 	rc := new(RelatedConnection)
-	err = s.c.do(req, rc)
+	err = s.c.Do(req, rc)
 	if err != nil {
 		return nil, err
 	}

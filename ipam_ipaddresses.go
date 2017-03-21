@@ -46,7 +46,7 @@ type IPAddressIdentifier struct {
 
 // GetIPAddress retrieves an IPAddress object from NetBox by its ID.
 func (s *IPAMService) GetIPAddress(id int) (*IPAddress, error) {
-	req, err := s.c.newRequest(
+	req, err := s.c.NewRequest(
 		http.MethodGet,
 		fmt.Sprintf("/api/ipam/ip-addresses/%d", id),
 		nil,
@@ -56,7 +56,7 @@ func (s *IPAMService) GetIPAddress(id int) (*IPAddress, error) {
 	}
 
 	ip := new(IPAddress)
-	err = s.c.do(req, ip)
+	err = s.c.Do(req, ip)
 	return ip, err
 }
 
@@ -65,13 +65,13 @@ func (s *IPAMService) GetIPAddress(id int) (*IPAddress, error) {
 //
 // If options is nil, all IPAddresses will be retrieved.
 func (s *IPAMService) ListIPAddresses(options *ListIPAddressesOptions) ([]*IPAddress, error) {
-	req, err := s.c.newRequest(http.MethodGet, "/api/ipam/ip-addresses/", options)
+	req, err := s.c.NewRequest(http.MethodGet, "/api/ipam/ip-addresses/", options)
 	if err != nil {
 		return nil, err
 	}
 
 	var ips []*IPAddress
-	err = s.c.do(req, &ips)
+	err = s.c.Do(req, &ips)
 	return ips, err
 }
 

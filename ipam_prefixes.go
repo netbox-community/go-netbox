@@ -38,7 +38,7 @@ type Prefix struct {
 
 // GetPrefix retrieves a Prefix object from NetBox by its ID.
 func (s *IPAMService) GetPrefix(id int) (*Prefix, error) {
-	req, err := s.c.newRequest(
+	req, err := s.c.NewRequest(
 		http.MethodGet,
 		fmt.Sprintf("/api/ipam/prefixes/%d", id),
 		nil,
@@ -48,7 +48,7 @@ func (s *IPAMService) GetPrefix(id int) (*Prefix, error) {
 	}
 
 	p := new(Prefix)
-	err = s.c.do(req, p)
+	err = s.c.Do(req, p)
 	return p, err
 }
 
@@ -57,13 +57,13 @@ func (s *IPAMService) GetPrefix(id int) (*Prefix, error) {
 //
 // If options is nil, all Prefixes will be retrieved.
 func (s *IPAMService) ListPrefixes(options *ListPrefixesOptions) ([]*Prefix, error) {
-	req, err := s.c.newRequest(http.MethodGet, "/api/ipam/prefixes/", options)
+	req, err := s.c.NewRequest(http.MethodGet, "/api/ipam/prefixes/", options)
 	if err != nil {
 		return nil, err
 	}
 
 	var ps []*Prefix
-	err = s.c.do(req, &ps)
+	err = s.c.Do(req, &ps)
 	return ps, err
 }
 
