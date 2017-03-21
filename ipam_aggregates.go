@@ -36,7 +36,7 @@ type Aggregate struct {
 
 // GetAggregate retrieves an Aggregate object from NetBox by its ID.
 func (s *IPAMService) GetAggregate(id int) (*Aggregate, error) {
-	req, err := s.c.newRequest(
+	req, err := s.c.NewRequest(
 		http.MethodGet,
 		fmt.Sprintf("/api/ipam/aggregates/%d", id),
 		nil,
@@ -46,7 +46,7 @@ func (s *IPAMService) GetAggregate(id int) (*Aggregate, error) {
 	}
 
 	a := new(Aggregate)
-	err = s.c.do(req, a)
+	err = s.c.Do(req, a)
 	return a, err
 }
 
@@ -55,13 +55,13 @@ func (s *IPAMService) GetAggregate(id int) (*Aggregate, error) {
 //
 // If options is nil, all Aggregates will be retrieved.
 func (s *IPAMService) ListAggregates(options *ListAggregatesOptions) ([]*Aggregate, error) {
-	req, err := s.c.newRequest(http.MethodGet, "/api/ipam/aggregates/", options)
+	req, err := s.c.NewRequest(http.MethodGet, "/api/ipam/aggregates/", options)
 	if err != nil {
 		return nil, err
 	}
 
 	var as []*Aggregate
-	err = s.c.do(req, &as)
+	err = s.c.Do(req, &as)
 	return as, err
 }
 

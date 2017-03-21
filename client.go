@@ -60,12 +60,12 @@ func NewClient(addr string, client *http.Client) (*Client, error) {
 	return c, nil
 }
 
-// newRequest creates a HTTP request using the input HTTP method, URL
-// endpoint, and a valuer which creates URL parameters for the request.
+// NewRequest creates a HTTP request using the input HTTP method, URL
+// endpoint, and a Valuer which creates URL parameters for the request.
 //
-// If a nil valuer is specified, no query parameters will be sent with the
+// If a nil Valuer is specified, no query parameters will be sent with the
 // request.
-func (c *Client) newRequest(method string, endpoint string, options valuer) (*http.Request, error) {
+func (c *Client) NewRequest(method string, endpoint string, options Valuer) (*http.Request, error) {
 	rel, err := url.Parse(endpoint)
 	if err != nil {
 		return nil, err
@@ -96,8 +96,9 @@ func (c *Client) newRequest(method string, endpoint string, options valuer) (*ht
 	return http.NewRequest(method, u.String(), nil)
 }
 
-// do executes an HTTP request and unmarshals result JSON onto v.
-func (c *Client) do(req *http.Request, v interface{}) error {
+// Do executes an HTTP request and if v is not nil, Do unmarshals result
+// JSON onto v.
+func (c *Client) Do(req *http.Request, v interface{}) error {
 	res, err := c.client.Do(req)
 	if err != nil {
 		return err

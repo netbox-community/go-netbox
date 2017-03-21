@@ -40,7 +40,7 @@ type RoleIdentifier struct {
 
 // GetRole retrieves a Role object from NetBox by its ID.
 func (s *IPAMService) GetRole(id int) (*Role, error) {
-	req, err := s.c.newRequest(
+	req, err := s.c.NewRequest(
 		http.MethodGet,
 		fmt.Sprintf("/api/ipam/roles/%d", id),
 		nil,
@@ -50,18 +50,18 @@ func (s *IPAMService) GetRole(id int) (*Role, error) {
 	}
 
 	r := new(Role)
-	err = s.c.do(req, r)
+	err = s.c.Do(req, r)
 	return r, err
 }
 
 // ListRoles retrieves a list of Role objects from NetBox.
 func (s *IPAMService) ListRoles() ([]*Role, error) {
-	req, err := s.c.newRequest(http.MethodGet, "/api/ipam/roles/", nil)
+	req, err := s.c.NewRequest(http.MethodGet, "/api/ipam/roles/", nil)
 	if err != nil {
 		return nil, err
 	}
 
 	var rs []*Role
-	err = s.c.do(req, &rs)
+	err = s.c.Do(req, &rs)
 	return rs, err
 }

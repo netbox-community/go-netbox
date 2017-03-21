@@ -32,7 +32,7 @@ func TestClientBadJSON(t *testing.T) {
 	})
 	defer done()
 
-	req, err := c.newRequest(http.MethodGet, "/", nil)
+	req, err := c.NewRequest(http.MethodGet, "/", nil)
 	if err != nil {
 		t.Fatal("expected an error, but no error returned")
 	}
@@ -40,7 +40,7 @@ func TestClientBadJSON(t *testing.T) {
 	// Pass empty struct to trigger JSON unmarshaling path
 	var v struct{}
 
-	err = c.do(req, &v)
+	err = c.Do(req, &v)
 	if _, ok := err.(*json.SyntaxError); !ok {
 		t.Fatalf("unexpected error type: %T", err)
 	}
@@ -57,7 +57,7 @@ func TestClientQueryParameters(t *testing.T) {
 		wantBar = 1
 	)
 
-	req, err := c.newRequest(http.MethodGet, "/", testValuer{
+	req, err := c.NewRequest(http.MethodGet, "/", testValuer{
 		Foo: wantFoo,
 		Bar: wantBar,
 	})
@@ -91,7 +91,7 @@ func TestClientPrependBaseURLPath(t *testing.T) {
 		client: &http.Client{},
 	}
 
-	req, err := c.newRequest(http.MethodGet, "/api/ipam/vlans", nil)
+	req, err := c.NewRequest(http.MethodGet, "/api/ipam/vlans", nil)
 	if err != nil {
 		t.Fatal("expected an error, but no error returned")
 	}

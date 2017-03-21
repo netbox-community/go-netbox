@@ -38,7 +38,7 @@ type VRFIdentifier struct {
 
 // GetVRF retrieves a VRF object from NetBox by its ID.
 func (s *IPAMService) GetVRF(id int) (*VRF, error) {
-	req, err := s.c.newRequest(
+	req, err := s.c.NewRequest(
 		http.MethodGet,
 		fmt.Sprintf("/api/ipam/vrfs/%d", id),
 		nil,
@@ -48,18 +48,18 @@ func (s *IPAMService) GetVRF(id int) (*VRF, error) {
 	}
 
 	v := new(VRF)
-	err = s.c.do(req, v)
+	err = s.c.Do(req, v)
 	return v, err
 }
 
 // ListVRFs retrives a list of VRF objects from NetBox.
 func (s *IPAMService) ListVRFs() ([]*VRF, error) {
-	req, err := s.c.newRequest(http.MethodGet, "/api/ipam/vrfs/", nil)
+	req, err := s.c.NewRequest(http.MethodGet, "/api/ipam/vrfs/", nil)
 	if err != nil {
 		return nil, err
 	}
 
 	var vs []*VRF
-	err = s.c.do(req, &vs)
+	err = s.c.Do(req, &vs)
 	return vs, err
 }

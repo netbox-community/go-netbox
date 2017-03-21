@@ -18,10 +18,10 @@ package netbox
 
 import "net/url"
 
-// A valuer is an object which can generate a url.Values map from itself.
-// valuer implementations are used to generate request URL parameters
+// A Valuer is an object which can generate a url.Values map from itself.
+// Valuer implementations are used to generate request URL parameters
 // that NetBox can use to filter data.
-type valuer interface {
+type Valuer interface {
 	values() (url.Values, error)
 }
 

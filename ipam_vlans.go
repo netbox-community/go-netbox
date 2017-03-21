@@ -54,7 +54,7 @@ type VLANIdentifier struct {
 
 // GetVLAN retrieves a VLAN object from NetBox by its ID.
 func (s *IPAMService) GetVLAN(id int) (*VLAN, error) {
-	req, err := s.c.newRequest(
+	req, err := s.c.NewRequest(
 		http.MethodGet,
 		fmt.Sprintf("/api/ipam/vlans/%d", id),
 		nil,
@@ -64,7 +64,7 @@ func (s *IPAMService) GetVLAN(id int) (*VLAN, error) {
 	}
 
 	vlan := new(VLAN)
-	err = s.c.do(req, vlan)
+	err = s.c.Do(req, vlan)
 	return vlan, err
 }
 
@@ -73,13 +73,13 @@ func (s *IPAMService) GetVLAN(id int) (*VLAN, error) {
 //
 // If options is nil, all VLANs will be retrieved.
 func (s *IPAMService) ListVLANs(options *ListVLANsOptions) ([]*VLAN, error) {
-	req, err := s.c.newRequest(http.MethodGet, "/api/ipam/vlans/", options)
+	req, err := s.c.NewRequest(http.MethodGet, "/api/ipam/vlans/", options)
 	if err != nil {
 		return nil, err
 	}
 
 	var vlans []*VLAN
-	err = s.c.do(req, &vlans)
+	err = s.c.Do(req, &vlans)
 	return vlans, err
 }
 

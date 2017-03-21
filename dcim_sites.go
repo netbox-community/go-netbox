@@ -47,7 +47,7 @@ type SiteIdentifier struct {
 
 // GetSite retrieves a Site object from NetBox by its ID.
 func (s *DCIMService) GetSite(id int) (*Site, error) {
-	req, err := s.c.newRequest(
+	req, err := s.c.NewRequest(
 		http.MethodGet,
 		fmt.Sprintf("/api/dcim/sites/%d", id),
 		nil,
@@ -57,18 +57,18 @@ func (s *DCIMService) GetSite(id int) (*Site, error) {
 	}
 
 	st := new(Site)
-	err = s.c.do(req, st)
+	err = s.c.Do(req, st)
 	return st, err
 }
 
 // ListSites retrives a list of Site objects from NetBox.
 func (s *DCIMService) ListSites() ([]*Site, error) {
-	req, err := s.c.newRequest(http.MethodGet, "/api/dcim/sites/", nil)
+	req, err := s.c.NewRequest(http.MethodGet, "/api/dcim/sites/", nil)
 	if err != nil {
 		return nil, err
 	}
 
 	var sts []*Site
-	err = s.c.do(req, &sts)
+	err = s.c.Do(req, &sts)
 	return sts, err
 }
