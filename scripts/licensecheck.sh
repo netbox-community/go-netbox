@@ -3,7 +3,7 @@
 # Verify that the correct license block is present in all Go source
 # files.
 read -r -d '' EXPECTED <<EndOfLicense
-// Copyright 2016 The go-netbox Authors.
+// Copyright 2017 The go-netbox Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
