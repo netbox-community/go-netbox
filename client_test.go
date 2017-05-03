@@ -107,7 +107,7 @@ type testValuer struct {
 	Bar int
 }
 
-func (q testValuer) values() (url.Values, error) {
+func (q testValuer) Values() (url.Values, error) {
 	v := url.Values{}
 
 	if q.Foo != "" {

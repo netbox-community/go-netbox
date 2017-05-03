@@ -180,8 +180,8 @@ type ListIPAddressesOptions struct {
 	Query string
 }
 
-// values generates a url.Values map from the data in ListIPAddressesOptions.
-func (o *ListIPAddressesOptions) values() (url.Values, error) {
+// Values generates a url.Values map from the data in ListIPAddressesOptions.
+func (o *ListIPAddressesOptions) Values() (url.Values, error) {
 	if o == nil {
 		return nil, nil
 	}

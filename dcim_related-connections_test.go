@@ -87,7 +87,7 @@ func TestGetRelatedConnectionWithOptions(t *testing.T) {
 	for i, test := range happyPathTests {
 		t.Logf("[%02d] happy path test %q", i, test.desc)
 
-		got, err := test.o.values()
+		got, err := test.o.Values()
 		if err != nil {
 			t.Fatalf("unexpected Values error: %v", err)
 		}
@@ -125,7 +125,7 @@ func TestGetRelatedConnectionWithOptions(t *testing.T) {
 	for i, test := range negativeTests {
 		t.Logf("[%02d] negative path test %q", i, test.desc)
 
-		if _, err := test.o.values(); err == nil {
+		if _, err := test.o.Values(); err == nil {
 			t.Fatal("expected Error but got nil")
 		}
 	}

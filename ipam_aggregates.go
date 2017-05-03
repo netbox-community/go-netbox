@@ -75,8 +75,8 @@ type ListAggregatesOptions struct {
 	DateAdded time.Time
 }
 
-// values generates a url.Values map from the data in ListAggregatesOptions.
-func (o *ListAggregatesOptions) values() (url.Values, error) {
+// Values generates a url.Values map from the data in ListAggregatesOptions.
+func (o *ListAggregatesOptions) Values() (url.Values, error) {
 	if o == nil {
 		return nil, nil
 	}

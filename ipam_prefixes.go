@@ -89,8 +89,8 @@ type ListPrefixesOptions struct {
 	Query string
 }
 
-// values generates a url.Values map from the data in ListPrefixesOptions.
-func (o *ListPrefixesOptions) values() (url.Values, error) {
+// Values generates a url.Values map from the data in ListPrefixesOptions.
+func (o *ListPrefixesOptions) Values() (url.Values, error) {
 	if o == nil {
 		return nil, nil
 	}

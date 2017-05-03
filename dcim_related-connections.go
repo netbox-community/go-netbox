@@ -74,7 +74,7 @@ type relatedConnectionsOptions struct {
 	PeerInterface string
 }
 
-func (o *relatedConnectionsOptions) values() (url.Values, error) {
+func (o *relatedConnectionsOptions) Values() (url.Values, error) {
 	err := errors.New(
 		"must provide non-zero values for both peer-device and peer-interface",
 	)

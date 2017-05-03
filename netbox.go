@@ -22,7 +22,7 @@ import "net/url"
 // Valuer implementations are used to generate request URL parameters
 // that NetBox can use to filter data.
 type Valuer interface {
-	values() (url.Values, error)
+	Values() (url.Values, error)
 }
 
 // A Family is an IP address family, used by NetBox to filter either IPv4

@@ -302,7 +302,7 @@ func TestListPrefixesOptionsValues(t *testing.T) {
 	for i, tt := range tests {
 		t.Logf("[%02d] test %q", i, tt.desc)
 
-		v, err := tt.o.values()
+		v, err := tt.o.Values()
 		if err != nil {
 			t.Fatalf("unexpected Values error: %v", err)
 		}

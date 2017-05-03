@@ -97,8 +97,8 @@ type ListVLANsOptions struct {
 	VID      VLANID
 }
 
-// values generates a url.Values map from the data in ListVLANsOptions.
-func (o *ListVLANsOptions) values() (url.Values, error) {
+// Values generates a url.Values map from the data in ListVLANsOptions.
+func (o *ListVLANsOptions) Values() (url.Values, error) {
 	if o == nil {
 		return nil, nil
 	}
