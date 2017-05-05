@@ -44,7 +44,7 @@ func TestPageValues(t *testing.T) {
 			desc: "nil page",
 			page: nil,
 			want: nil,
-			err:  errors.New("Page not defined."),
+			err:  errors.New("page not defined"),
 		},
 		{
 			desc: "options nil",
@@ -181,14 +181,14 @@ func TestSetNextURL(t *testing.T) {
 			url:        "http://example.com",
 			wantOffset: 0,
 			wantLimit:  50,
-			err:        errors.New("No such query parameter limit."),
+			err:        errors.New("no such query parameter limit"),
 		},
 		{
 			desc:       "No Offset returned",
 			url:        "http://example.com?limit=20",
 			wantOffset: 0,
 			wantLimit:  50,
-			err:        errors.New("No such query parameter offset."),
+			err:        errors.New("no such query parameter offset"),
 		},
 		{
 			desc:       "Limit not an int",
@@ -230,7 +230,7 @@ func TestSetNextURL(t *testing.T) {
 		if want, got := tt.wantLimit, p.limit; want != got {
 			t.Fatalf("[%d] %s - unexpected limit:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
 		}
-		if want, got := tt.err, p.Err(); !reflect.DeepEqual(want, got) {
+		if want, got := tt.err, p.Err(); reflect.TypeOf(want) != reflect.TypeOf(got) {
 			t.Fatalf("[%d] %s - unexpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
 		}
 	}

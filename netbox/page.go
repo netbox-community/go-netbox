@@ -35,7 +35,7 @@ type Page struct {
 	err      error
 }
 
-// Returns a new Page
+// NewPage Returns a new Page to walk over List calls
 func NewPage(client *Client, endpoint string, options Valuer) *Page {
 	return &Page{limit: 50, // netbox server default
 		offset:   0,
@@ -60,7 +60,7 @@ type pageData struct {
 // get the appropriate next page.
 func (p *Page) values() (url.Values, error) {
 	if p == nil {
-		return nil, errors.New("Page not defined.")
+		return nil, errors.New("page not defined")
 	}
 	var v url.Values
 	if p.options == nil {
@@ -132,14 +132,14 @@ func (p *Page) SetNext(limit int, offset int) {
 // Under the hood, it uses SetNext to finally set those parameters.
 // This is exported, to enable custom Pages
 func (p *Page) SetNextURL(urlStr string) {
-	nextUrl, err := url.Parse(urlStr)
+	nextURL, err := url.Parse(urlStr)
 	if err != nil {
 		// We dont want to cancel this run, since there is data,
 		// but do not want to run into Next
 		p.SetErr(err)
 	}
 
-	query, err := url.ParseQuery(nextUrl.RawQuery)
+	query, err := url.ParseQuery(nextURL.RawQuery)
 	if err != nil {
 		// Same like above
 		p.SetErr(err)
@@ -149,11 +149,11 @@ func (p *Page) SetNextURL(urlStr string) {
 	limits := query["limit"]
 	offsets := query["offset"]
 	if len(limits) == 0 {
-		p.SetErr(errors.New("No such query parameter limit."))
+		p.SetErr(errors.New("no such query parameter limit"))
 		return
 	}
 	if len(offsets) == 0 {
-		p.SetErr(errors.New("No such query parameter offset."))
+		p.SetErr(errors.New("no such query parameter offset"))
 		return
 	}
 
