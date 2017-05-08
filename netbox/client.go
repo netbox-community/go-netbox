@@ -15,12 +15,15 @@
 package netbox
 
 import (
+	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"path"
+	"strings"
 )
 
 // A Client is a NetBox client.  It can be used to retrieve network and
@@ -46,6 +49,13 @@ func NewClient(addr string, client *http.Client) (*Client, error) {
 		client = &http.Client{}
 	}
 
+	// Append trailing slash there is none. This is necessary
+	// to be able to concat url parts in a correct manner.
+	// See NewRequest
+	if !strings.HasSuffix(addr, "/") {
+		addr = addr + "/"
+	}
+
 	u, err := url.Parse(addr)
 	if err != nil {
 		return nil, err
@@ -68,25 +78,40 @@ func NewClient(addr string, client *http.Client) (*Client, error) {
 // If a nil Valuer is specified, no query parameters will be sent with the
 // request.
 func (c *Client) NewRequest(method string, endpoint string, options Valuer) (*http.Request, error) {
-	rel, err := url.Parse(endpoint)
-	if err != nil {
-		return nil, err
-	}
+	return c.NewDataRequest(method, endpoint, options, nil)
+}
 
+// NewDataRequest creates a HTTP request using the input HTTP method, URL
+// endpoint, a Valuer which creates URL parameters for the request, and
+// a io.Reader as the body of the request.
+//
+// If a nil Valuer is specified, no query parameters will be sent with the
+// request.
+// If a nil io.Reader, no body will be sent with the request.
+func (c *Client) NewDataRequest(method string, endpoint string, options Valuer, body io.Reader) (*http.Request, error) {
 	// Allow specifying a base path for API requests, so if a NetBox server
 	// resides at a path like http://example.com/netbox/, API requests will
 	// be sent to http://example.com/netbox/api/...
 	//
 	// Enables support of: https://github.com/digitalocean/netbox/issues/212.
-	if c.u.Path != "" {
-		rel.Path = path.Join(c.u.Path, rel.Path)
+	//
+	// Remove leading slash if there is one. This is necessary to be able to
+	// concat url parts in a correct manner. We can not use path.Join here,
+	// because this always trims the trailing slash, which causes the
+	// Do function to always run into 301 and then retrying the correct
+	// Location. With GET, it does work with one useless request, but it breaks
+	// each other http method.
+	// Doing this, because out-of-tree extensions are more robust.
+	rel, err := url.Parse(strings.TrimLeft(endpoint, "/"))
+	if err != nil {
+		return nil, err
 	}
 
 	u := c.u.ResolveReference(rel)
 
 	// If no valuer specified, create a request with no query parameters
 	if options == nil {
-		return http.NewRequest(method, u.String(), nil)
+		return http.NewRequest(method, u.String(), body)
 	}
 
 	values, err := options.Values()
@@ -95,7 +120,38 @@ func (c *Client) NewRequest(method string, endpoint string, options Valuer) (*ht
 	}
 	u.RawQuery = values.Encode()
 
-	return http.NewRequest(method, u.String(), nil)
+	return http.NewRequest(method, u.String(), body)
+}
+
+// NewJSONRequest creates a HTTP request using the input HTTP method, URL
+// endpoint, a Valuer which creates URL parameters for the request, and
+// a io.Reader as the body of the request. For body, expecting some
+// json.Marshal-able struct. nil body is not allowed.
+// NewJSONRequest also sets HTTP Header
+// "Content-Type: application/json; utf-8"
+//
+// If a nil Valuer is specified, no query parameters will be sent with the
+// request.
+func (c *Client) NewJSONRequest(method string, endpoint string, options Valuer, body interface{}) (*http.Request, error) {
+	if body == nil {
+		return nil, errors.New("expected body to be not nil")
+	}
+	b := new(bytes.Buffer)
+	err := json.NewEncoder(b).Encode(body)
+	if err != nil {
+		return nil, err
+	}
+	req, err := c.NewDataRequest(
+		method,
+		endpoint,
+		options,
+		b,
+	)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("Content-Type", "application/json; charset=utf-8")
+	return req, nil
 }
 
 // Do executes an HTTP request and if v is not nil, Do unmarshals result
