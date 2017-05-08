@@ -16,6 +16,7 @@ package netbox
 
 import (
 	"errors"
+	"fmt"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -68,13 +69,15 @@ func TestPageValues(t *testing.T) {
 	}
 
 	for i, tt := range tests {
-		res, err := tt.page.Values()
-		if want, got := tt.err, err; !reflect.DeepEqual(want, got) {
-			t.Fatalf("[%d] %s - unecpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
-		}
-		if want, got := tt.want, res; !reflect.DeepEqual(want, got) {
-			t.Fatalf("[%d] %s - unexpected values:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
-		}
+		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
+			res, err := tt.page.Values()
+			if want, got := tt.err, err; !reflect.DeepEqual(want, got) {
+				t.Fatalf("[%d] %s - unecpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
+			}
+			if want, got := tt.want, res; !reflect.DeepEqual(want, got) {
+				t.Fatalf("[%d] %s - unexpected values:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
+			}
+		})
 	}
 }
 
@@ -148,11 +151,13 @@ func TestErr(t *testing.T) {
 		},
 	}
 	for i, tt := range tests {
-		p := NewPage(nil, "/", nil)
-		p.setErr(tt.set)
-		if want, got := tt.want, p.Err(); !reflect.DeepEqual(want, got) {
-			t.Fatalf("[%d] %s - unexpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
-		}
+		t.Run(fmt.Sprintf("[%d] %s"), func(t *testing.T) {
+			p := NewPage(nil, "/", nil)
+			p.setErr(tt.set)
+			if want, got := tt.want, p.Err(); !reflect.DeepEqual(want, got) {
+				t.Fatalf("[%d] %s - unexpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
+			}
+		})
 	}
 }
 
@@ -222,16 +227,18 @@ func TestSetNextURL(t *testing.T) {
 	}
 
 	for i, tt := range tests {
-		p := NewPage(nil, "/", nil)
-		p.setNextURL(tt.url)
-		if want, got := tt.wantOffset, p.offset; want != got {
-			t.Fatalf("[%d] %s - unexpected offset:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
-		}
-		if want, got := tt.wantLimit, p.limit; want != got {
-			t.Fatalf("[%d] %s - unexpected limit:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
-		}
-		if want, got := tt.err, p.Err(); reflect.TypeOf(want) != reflect.TypeOf(got) {
-			t.Fatalf("[%d] %s - unexpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
-		}
+		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
+			p := NewPage(nil, "/", nil)
+			p.setNextURL(tt.url)
+			if want, got := tt.wantOffset, p.offset; want != got {
+				t.Fatalf("unexpected offset:\n- want: %v\n-  got: %v", want, got)
+			}
+			if want, got := tt.wantLimit, p.limit; want != got {
+				t.Fatalf("unexpected limit:\n- want: %v\n-  got: %v", want, got)
+			}
+			if want, got := tt.err, p.Err(); reflect.TypeOf(want) != reflect.TypeOf(got) {
+				t.Fatalf("unexpected error:\n- want: %v\n-  got: %v", want, got)
+			}
+		})
 	}
 }

@@ -25,30 +25,37 @@ import (
 
 func TestFamilyValid(t *testing.T) {
 	var tests = []struct {
-		f  Family
-		ok bool
+		desc string
+		f    Family
+		ok   bool
 	}{
 		{
-			f: math.MinInt64,
+			desc: "Test math.MinInt64",
+			f:    math.MinInt64,
 		},
 		{
-			f: math.MaxInt64,
+			desc: "Test math.MaxInt64",
+			f:    math.MaxInt64,
 		},
 		{
-			f:  FamilyIPv4,
-			ok: true,
+			desc: "Test FamilyIPv4",
+			f:    FamilyIPv4,
+			ok:   true,
 		},
 		{
-			f:  FamilyIPv6,
-			ok: true,
+			desc: "Test FamilyIPv6",
+			f:    FamilyIPv6,
+			ok:   true,
 		},
 	}
 
-	for _, tt := range tests {
-		if want, got := tt.ok, tt.f.Valid(); want != got {
-			t.Fatalf("unexpected Family(%d).Valid():\n- want: %v\n-  got: %v",
-				tt.f, want, got)
-		}
+	for i, tt := range tests {
+		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
+			if want, got := tt.ok, tt.f.Valid(); want != got {
+				t.Fatalf("unexpected Family(%d).Valid():\n- want: %v\n-  got: %v",
+					tt.f, want, got)
+			}
+		})
 	}
 }
 

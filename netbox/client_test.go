@@ -17,6 +17,7 @@ package netbox
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -72,8 +73,8 @@ func TestClientBadStatusCode(t *testing.T) {
 		},
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.desc, func(t *testing.T) {
+	for i, tt := range tests {
+		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
 			c, done := testClient(t, func(w http.ResponseWriter, r *http.Request) {
 				w.WriteHeader(tt.statusCode)
 				w.Write(tt.data)
