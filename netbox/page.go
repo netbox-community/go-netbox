@@ -53,7 +53,7 @@ type pageData struct {
 	Results     json.RawMessage `json:"results"`
 }
 
-// values implements the Valuer interface. One could pass options
+// Values implements the Valuer interface. One could pass options
 // to a List call. These must be extended by limit and offset to
 // get the appropriate next page.
 func (p *Page) Values() (url.Values, error) {

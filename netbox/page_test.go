@@ -151,7 +151,7 @@ func TestErr(t *testing.T) {
 		},
 	}
 	for i, tt := range tests {
-		t.Run(fmt.Sprintf("[%d] %s"), func(t *testing.T) {
+		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
 			p := NewPage(nil, "/", nil)
 			p.setErr(tt.set)
 			if want, got := tt.want, p.Err(); !reflect.DeepEqual(want, got) {
