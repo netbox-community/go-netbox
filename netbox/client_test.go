@@ -69,7 +69,7 @@ func TestClientBadStatusCode(t *testing.T) {
 			desc:       "500, but correct json",
 			data:       []byte(`{"detail": "some error occurred"}`),
 			statusCode: http.StatusInternalServerError,
-			want:       errors.New("some error occurred"),
+			want:       errors.New("500 - some error occurred"),
 		},
 	}
 

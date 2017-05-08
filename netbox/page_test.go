@@ -72,10 +72,10 @@ func TestPageValues(t *testing.T) {
 		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
 			res, err := tt.page.Values()
 			if want, got := tt.err, err; !reflect.DeepEqual(want, got) {
-				t.Fatalf("[%d] %s - unecpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
+				t.Fatalf("unecpected error:\n- want: %v\n-  got: %v", want, got)
 			}
 			if want, got := tt.want, res; !reflect.DeepEqual(want, got) {
-				t.Fatalf("[%d] %s - unexpected values:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
+				t.Fatalf("unexpected values:\n- want: %v\n-  got: %v", want, got)
 			}
 		})
 	}
@@ -155,7 +155,7 @@ func TestErr(t *testing.T) {
 			p := NewPage(nil, "/", nil)
 			p.setErr(tt.set)
 			if want, got := tt.want, p.Err(); !reflect.DeepEqual(want, got) {
-				t.Fatalf("[%d] %s - unexpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
+				t.Fatalf("unexpected error:\n- want: %v\n-  got: %v", want, got)
 			}
 		})
 	}

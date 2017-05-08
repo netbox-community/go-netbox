@@ -22,7 +22,7 @@ import (
 	"strconv"
 )
 
-// A Page contains all necessary information about a the current position
+// A Page contains all necessary information about the current position
 // in a paged result. It is used to walk over all pages from List calls.
 type Page struct {
 	limit    int

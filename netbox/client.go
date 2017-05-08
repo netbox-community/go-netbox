@@ -36,17 +36,6 @@ type Client struct {
 	client *http.Client
 }
 
-// A API contains the Version of the netbox api (extracted from response
-// header) and a map[string]string of Endpoints
-type API struct {
-	Version   string
-	Endpoints map[string]string
-}
-
-type jsonErrorDetail struct {
-	Detail string `json:"detail"`
-}
-
 // NewClient returns a new instance of a NetBox client.  addr specifies the address
 // of the NetBox server, and client specifies an optional HTTP client to use
 // for requests.
@@ -135,18 +124,20 @@ func (c *Client) Do(req *http.Request, v interface{}) error {
 }
 
 // httpStatusOK tests if the StatusCode of res is smaller than 300. Tries to
-// Unmarshal the response into jsonErrorDetail, and returns only the detail
+// Unmarshal the response into json, and returns only the detail
 // if this exists. Otherwise returns the status code with the raw Body data.
 func httpStatusOK(res *http.Response) error {
 	if res.StatusCode >= http.StatusMultipleChoices {
-		errDetail := jsonErrorDetail{}
+		errDetail := struct {
+			Detail string `json:"detail"`
+		}{}
 		bodyData, err := ioutil.ReadAll(res.Body)
 		if err != nil {
 			return fmt.Errorf("%d - %v", res.StatusCode, err)
 		}
 		err = json.Unmarshal(bodyData, &errDetail)
 		if err == nil && errDetail.Detail != "" {
-			return fmt.Errorf("%s", errDetail.Detail)
+			return fmt.Errorf("%d - %s", res.StatusCode, errDetail.Detail)
 		}
 
 		return fmt.Errorf("%d - %s", res.StatusCode, bodyData)
