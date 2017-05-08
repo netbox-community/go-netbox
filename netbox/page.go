@@ -35,19 +35,17 @@ type Page struct {
 	err      error
 }
 
-// NewPage Returns a new Page to walk over List calls
+// NewPage Returns a new Page to walk over List calls.
 func NewPage(client *Client, endpoint string, options Valuer) *Page {
-	return &Page{limit: 50, // netbox server default
-		offset:   0,
+	return &Page{
+		limit:    50, // netbox server default
 		c:        client,
-		done:     false,
-		data:     pageData{},
 		endpoint: endpoint,
 		options:  options,
-		err:      nil}
+	}
 }
 
-// Internal representation of a page
+// pageData is the internal representation of a page.
 type pageData struct {
 	Count       int             `json:"count"`
 	NextURL     string          `json:"next"`
@@ -58,21 +56,18 @@ type pageData struct {
 // values implements the Valuer interface. One could pass options
 // to a List call. These must be extended by limit and offset to
 // get the appropriate next page.
-func (p *Page) values() (url.Values, error) {
+func (p *Page) Values() (url.Values, error) {
 	if p == nil {
 		return nil, errors.New("page not defined")
 	}
-	var v url.Values
-	if p.options == nil {
-		v = url.Values{}
-	} else {
-		var err error
-		v, err = p.options.values()
+	v := url.Values{}
+	if p.options != nil {
+		opts, err := p.options.Values()
 		if err != nil {
 			return nil, err
 		}
-		if v == nil {
-			v = url.Values{}
+		if opts != nil {
+			v = opts
 		}
 	}
 	v.Set("limit", strconv.Itoa(p.limit))
@@ -81,9 +76,8 @@ func (p *Page) values() (url.Values, error) {
 	return v, nil
 }
 
-// Next is what you call in a for loop, to iterate over all pages
-// for myPage.Next() { ... }
-// Next performs the real query and sets the next page
+// Next advances to the next page of API results.  When Next returns false,
+// no more results are available.
 func (p *Page) Next() bool {
 	if p == nil {
 		return false
@@ -115,60 +109,59 @@ func (p *Page) Next() bool {
 		// p.done to true, so the next "Next()" returns false.
 		p.done = true
 	} else {
-		p.SetNextURL(p.data.NextURL)
+		p.setNextURL(p.data.NextURL)
 	}
 	return true
 
 }
 
-// SetNext sets limit and offset parameter for the next page.
-// This is exported, to enable custom Pages
-func (p *Page) SetNext(limit int, offset int) {
+// setNext sets limit and offset parameter for the next page.
+func (p *Page) setNext(limit int, offset int) {
 	p.limit = limit
 	p.offset = offset
 }
 
-// SetNextURL extracts limit and offset from the nextURL, obtained from the result.
-// Under the hood, it uses SetNext to finally set those parameters.
-// This is exported, to enable custom Pages
-func (p *Page) SetNextURL(urlStr string) {
+// setNextURL extracts limit and offset from the nextURL, obtained from the result.
+// Under the hood, it uses setNext to finally set those parameters.
+func (p *Page) setNextURL(urlStr string) {
 	nextURL, err := url.Parse(urlStr)
 	if err != nil {
 		// We dont want to cancel this run, since there is data,
 		// but do not want to run into Next
-		p.SetErr(err)
+		p.setErr(err)
+		return
 	}
 
 	query, err := url.ParseQuery(nextURL.RawQuery)
 	if err != nil {
 		// Same like above
-		p.SetErr(err)
+		p.setErr(err)
 		return
 	}
 
 	limits := query["limit"]
 	offsets := query["offset"]
 	if len(limits) == 0 {
-		p.SetErr(errors.New("no such query parameter limit"))
+		p.setErr(errors.New("no such query parameter limit"))
 		return
 	}
 	if len(offsets) == 0 {
-		p.SetErr(errors.New("no such query parameter offset"))
+		p.setErr(errors.New("no such query parameter offset"))
 		return
 	}
 
 	limit, err := strconv.Atoi(limits[0])
 	if err != nil {
-		p.SetErr(err)
+		p.setErr(err)
 		return
 	}
 
 	offset, err := strconv.Atoi(offsets[0])
 	if err != nil {
-		p.SetErr(err)
+		p.setErr(err)
 		return
 	}
-	p.SetNext(limit, offset)
+	p.setNext(limit, offset)
 }
 
 // Err returns the internal err field. This should be called right after
@@ -177,9 +170,8 @@ func (p *Page) Err() error {
 	return p.err
 }
 
-// SetErr sets an internal err field.
-// This is exported, to enable custom Pages
-func (p *Page) SetErr(err error) {
+// setErr sets an internal err field.
+func (p *Page) setErr(err error) {
 	if p.err == nil {
 		p.err = err
 	}

@@ -100,7 +100,7 @@ func (c *Client) NewRequest(method string, endpoint string, options Valuer) (*ht
 		return http.NewRequest(method, u.String(), nil)
 	}
 
-	values, err := options.values()
+	values, err := options.Values()
 	if err != nil {
 		return nil, err
 	}

@@ -25,7 +25,7 @@ import (
 
 type testOptions struct{}
 
-func (t *testOptions) values() (url.Values, error) {
+func (t *testOptions) Values() (url.Values, error) {
 	return url.Values{
 		"Hello": []string{"World"},
 		"limit": []string{"30"},
@@ -68,7 +68,7 @@ func TestPageValues(t *testing.T) {
 	}
 
 	for i, tt := range tests {
-		res, err := tt.page.values()
+		res, err := tt.page.Values()
 		if want, got := tt.err, err; !reflect.DeepEqual(want, got) {
 			t.Fatalf("[%d] %s - unecpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
 		}
@@ -149,7 +149,7 @@ func TestErr(t *testing.T) {
 	}
 	for i, tt := range tests {
 		p := NewPage(nil, "/", nil)
-		p.SetErr(tt.set)
+		p.setErr(tt.set)
 		if want, got := tt.want, p.Err(); !reflect.DeepEqual(want, got) {
 			t.Fatalf("[%d] %s - unexpected error:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
 		}
@@ -158,7 +158,7 @@ func TestErr(t *testing.T) {
 
 func TestSetNext(t *testing.T) {
 	p := NewPage(nil, "/", nil)
-	p.SetNext(99, 88)
+	p.setNext(99, 88)
 
 	if want, got := 99, p.limit; want != got {
 		t.Fatalf("unexpected limit:\n- want: %v\n-  got: %v", want, got)
@@ -223,7 +223,7 @@ func TestSetNextURL(t *testing.T) {
 
 	for i, tt := range tests {
 		p := NewPage(nil, "/", nil)
-		p.SetNextURL(tt.url)
+		p.setNextURL(tt.url)
 		if want, got := tt.wantOffset, p.offset; want != got {
 			t.Fatalf("[%d] %s - unexpected offset:\n- want: %v\n-  got: %v", i, tt.desc, want, got)
 		}
