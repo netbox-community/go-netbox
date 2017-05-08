@@ -153,32 +153,3 @@ func httpStatusOK(res *http.Response) error {
 	}
 	return nil
 }
-
-// Ping sends a get request to /api/. It Returns an API struct, containing the
-// API-Version (extracted from the response header) and the list of endpoints
-// as a map[string]string
-func (c *Client) Ping() (*API, error) {
-	req, err := c.NewRequest(http.MethodGet, fmt.Sprintf("/api/"), nil)
-	if err != nil {
-		return nil, err
-	}
-	res, err := c.client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	defer func() {
-		_ = res.Body.Close()
-	}()
-	err = httpStatusOK(res)
-	if err != nil {
-		return nil, err
-	}
-
-	api := new(API)
-	err = json.NewDecoder(res.Body).Decode(&api.Endpoints)
-	if err != nil {
-		return nil, err
-	}
-	api.Version = res.Header.Get("API-Version")
-	return api, err
-}

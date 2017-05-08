@@ -92,11 +92,7 @@ func (p *Page) Next() bool {
 		return false
 	}
 
-	// Clear NextURL, because it will not be overriden if it is empty in the
-	// resultset. I(cglaubitz) do not want to allocate a new PageData on each call
-	// to Next() to reduce the need for garbage collection. No idea if this still
-	// works when I have to "empty" NextURL here.
-	p.data.NextURL = ""
+	p.data = pageData{}
 	err = p.c.Do(req, &p.data)
 	if err != nil {
 		p.err = err

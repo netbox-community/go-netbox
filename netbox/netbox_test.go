@@ -59,7 +59,12 @@ func TestFamilyValid(t *testing.T) {
 	}
 }
 
-// TODO(cglaubitz) implement ping, test this piece of code
+type testSimple struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+	Slug string `json:"slug"`
+}
+
 // ExampleNewClient demonstrates usage of the Client type.
 func ExampleNewClient() {
 	// Sets up a minimal, mocked NetBox server
@@ -72,40 +77,31 @@ func ExampleNewClient() {
 		panic(fmt.Sprintf("failed to create netbox.Client: %v", err))
 	}
 
-	// Retrieve API Information
-	api, err := c.Ping()
+	res := testSimple{}
+	req, err := c.NewRequest(http.MethodGet, "/", nil)
 	if err != nil {
-		panic(fmt.Sprintf("failed to Ping API: %v", err))
+		panic(err)
 	}
 
-	fmt.Printf("API Version   %s\n", api.Version)
-	fmt.Printf("API Endpoints %v\n", api.Endpoints)
+	err = c.Do(req, &res)
+	if err != nil {
+		panic(err)
+	}
 
+	fmt.Printf("%v\n", res)
 }
 
 // exampleServer creates a test HTTP server which returns its address and
 // can be closed using the returned closure.
 func exampleServer() (string, func()) {
 	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		ip := struct {
-			Dcim     string `json:"dcim"`
-			Circuits string `json:"circuits"`
-			Ipam     string `json:"ipam"`
-			Secrets  string `json:"secrets"`
-			Tenancy  string `json:"tenancy"`
-			Extras   string `json:"extras"`
-		}{
-			Dcim:     "https://netbox.example.com/api/dcim/",
-			Circuits: "https://netbox.example.com/api/circuits/",
-			Ipam:     "https://netbox.example.com/api/ipam/",
-			Secrets:  "https://netbox.example.com/api/secrets/",
-			Tenancy:  "https://netbox.example.com/api/tenancy/",
-			Extras:   "https://netbox.example.com/api/extras/",
+		simple := testSimple{
+			ID:   1,
+			Name: "Test 1",
+			Slug: "test-1",
 		}
 
-		w.Header().Set("API-Version", "2.0")
-
-		_ = json.NewEncoder(w).Encode(ip)
+		_ = json.NewEncoder(w).Encode(simple)
 	}))
 
 	return s.URL, func() { s.Close() }
