@@ -46,21 +46,51 @@ func TestClientBadJSON(t *testing.T) {
 }
 
 func TestClientBadStatusCode(t *testing.T) {
-	c, done := testClient(t, func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusForbidden)
-		w.Write([]byte("foo"))
-	})
-	defer done()
-
-	req, err := c.NewRequest(http.MethodGet, "/", nil)
-	if err != nil {
-		t.Fatal("expected no error, but an error returned")
+	var tests = []struct {
+		desc       string
+		data       []byte
+		statusCode int
+		want       error
+	}{
+		{
+			desc:       "403, but no json result",
+			data:       []byte("foo"),
+			statusCode: http.StatusForbidden,
+			want:       errors.New("403 - foo"),
+		},
+		{
+			desc:       "403, with json, but without detail",
+			data:       []byte(`{"error_msg": "some error occurred"}`),
+			statusCode: http.StatusForbidden,
+			want:       errors.New(`403 - {"error_msg": "some error occurred"}`),
+		},
+		{
+			desc:       "500, but correct json",
+			data:       []byte(`{"detail": "some error occurred"}`),
+			statusCode: http.StatusInternalServerError,
+			want:       errors.New("some error occurred"),
+		},
 	}
 
-	var v struct{}
-	err = c.Do(req, &v)
-	if want, got := errors.New("403 - foo"), err; !reflect.DeepEqual(want, got) {
-		t.Fatalf("expected error:\n- want: %v\n-  got: %v", want, got)
+	for _, tt := range tests {
+		t.Run(tt.desc, func(t *testing.T) {
+			c, done := testClient(t, func(w http.ResponseWriter, r *http.Request) {
+				w.WriteHeader(tt.statusCode)
+				w.Write(tt.data)
+			})
+			defer done()
+
+			req, err := c.NewRequest(http.MethodGet, "/", nil)
+			if err != nil {
+				t.Fatal("expected no error, but an error returned")
+			}
+
+			var v struct{}
+			err = c.Do(req, &v)
+			if want, got := tt.want, err; !reflect.DeepEqual(want, got) {
+				t.Fatalf("expected error:\n- want: %v\n-  got: %v", want, got)
+			}
+		})
 	}
 }
 
@@ -125,7 +155,7 @@ func TestPingUnauthorized(t *testing.T) {
 	defer done()
 
 	res, err := c.Ping()
-	if want, got := errors.New("403 - {\"detail\":\"Invalid token\"}"), err; !reflect.DeepEqual(want, got) {
+	if want, got := errors.New("Invalid token"), err; !reflect.DeepEqual(want, got) {
 		t.Fatalf("expected error:\n- want: %v\n-  got: %v", want, got)
 	}
 	if res != nil {
