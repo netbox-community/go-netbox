@@ -87,7 +87,8 @@ func (c *Client) NewRequest(method string, endpoint string, options Valuer) (*ht
 //
 // If a nil Valuer is specified, no query parameters will be sent with the
 // request.
-// If a nil io.Reader, no body will be sent with the request.
+//
+// If a nil io.Reader is specified, no body will be sent with the request.
 func (c *Client) NewDataRequest(method string, endpoint string, options Valuer, body io.Reader) (*http.Request, error) {
 	// Allow specifying a base path for API requests, so if a NetBox server
 	// resides at a path like http://example.com/netbox/, API requests will
@@ -98,10 +99,12 @@ func (c *Client) NewDataRequest(method string, endpoint string, options Valuer, 
 	// Remove leading slash if there is one. This is necessary to be able to
 	// concat url parts in a correct manner. We can not use path.Join here,
 	// because this always trims the trailing slash, which causes the
-	// Do function to always run into 301 and then retrying the correct
+	// Do function to always run into 301 and then retry the correct
 	// Location. With GET, it does work with one useless request, but it breaks
 	// each other http method.
-	// Doing this, because out-of-tree extensions are more robust.
+	// Doing this, because out-of-tree extensions are more robust. If someone
+	// implements an own API-call, we do not override parts of c.u, even if
+	// the caller uses "/api/...".
 	rel, err := url.Parse(strings.TrimLeft(endpoint, "/"))
 	if err != nil {
 		return nil, err
@@ -125,22 +128,24 @@ func (c *Client) NewDataRequest(method string, endpoint string, options Valuer, 
 
 // NewJSONRequest creates a HTTP request using the input HTTP method, URL
 // endpoint, a Valuer which creates URL parameters for the request, and
-// a io.Reader as the body of the request. For body, expecting some
-// json.Marshal-able struct. nil body is not allowed.
-// NewJSONRequest also sets HTTP Header
-// "Content-Type: application/json; utf-8"
+// an io.Reader as the body of the request.
 //
 // If a nil Valuer is specified, no query parameters will be sent with the
 // request.
+//
+// The body parameter is marshaled to JSON and sent as a HTTP request body.
+// Body must not be nil.
 func (c *Client) NewJSONRequest(method string, endpoint string, options Valuer, body interface{}) (*http.Request, error) {
 	if body == nil {
 		return nil, errors.New("expected body to be not nil")
 	}
+
 	b := new(bytes.Buffer)
 	err := json.NewEncoder(b).Encode(body)
 	if err != nil {
 		return nil, err
 	}
+
 	req, err := c.NewDataRequest(
 		method,
 		endpoint,
@@ -150,6 +155,7 @@ func (c *Client) NewJSONRequest(method string, endpoint string, options Valuer, 
 	if err != nil {
 		return nil, err
 	}
+
 	req.Header.Set("Content-Type", "application/json; charset=utf-8")
 	return req, nil
 }
