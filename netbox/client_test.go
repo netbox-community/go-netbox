@@ -18,6 +18,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -92,6 +93,46 @@ func TestClientBadStatusCode(t *testing.T) {
 				t.Fatalf("expected error:\n- want: %v\n-  got: %v", want, got)
 			}
 		})
+	}
+}
+
+func TestNewJSONRequest(t *testing.T) {
+	c, done := testClient(t, func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("foo"))
+	})
+	defer done()
+	wantBody := "{\"id\":1,\"name\":\"Test 1\"}\n"
+	wantHeader := "application/json; charset=utf-8"
+
+	req, err := c.NewJSONRequest(http.MethodPost, "/", nil, &struct {
+		ID   int    `json:"id"`
+		Name string `json:"name"`
+	}{
+		ID:   1,
+		Name: "Test 1",
+	})
+	if err != nil {
+		t.Fatal("expected no error, but an error returned")
+	}
+
+	res, err := ioutil.ReadAll(req.Body)
+	if err != nil {
+		t.Fatal("expected no error, but an error returned")
+	}
+	if want, got := wantBody, string(res); got != want {
+		t.Fatalf("unexpected body:\n- want: %v\n-  got: %v", want, got)
+	}
+
+	if want, got := wantHeader, req.Header.Get("Content-Type"); got != want {
+		t.Fatalf("unexpected body:\n- want: %v\n-  got: %v", want, got)
+	}
+
+	req, err = c.NewJSONRequest(http.MethodPost, "/", nil, nil)
+	if err == nil {
+		t.Fatal("expected an error, but there was none")
+	}
+	if req != nil {
+		t.Fatalf("expected a nil request, but got %v", req)
 	}
 }
 
