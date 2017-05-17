@@ -306,3 +306,43 @@ func testTenantWithGroup(n int, t *TenantGroup) *Tenant {
 		Group:       t,
 	}
 }
+
+func testTenantIdentifier(n int) *Tenant {
+	return &Tenant{
+		ID:   n,
+		Name: fmt.Sprintf("Tenant %d", n),
+		Slug: fmt.Sprintf("tenant-%d", n),
+	}
+}
+
+func testVRF(n int) *VRF {
+	return &VRF{
+		ID:            n,
+		Name:          fmt.Sprintf("VRF %d", n),
+		RD:            fmt.Sprintf("vrf-%d", n),
+		EnforceUnique: true,
+		Description:   fmt.Sprintf("VRF %d Description", n),
+		Tenant:        testTenantWithGroup(n, nil),
+	}
+}
+
+func testVRFCreate(n int) *VRF {
+	return &VRF{
+		Name:          fmt.Sprintf("VRF %d", n),
+		RD:            fmt.Sprintf("vrf-%d", n),
+		EnforceUnique: true,
+		Description:   fmt.Sprintf("VRF %d Description", n),
+		Tenant:        testTenantWithGroup(n, nil),
+	}
+}
+
+func testVRFWithTenant(n int, tenant *Tenant) *VRF {
+	return &VRF{
+		ID:            n,
+		Name:          fmt.Sprintf("VRF %d", n),
+		RD:            fmt.Sprintf("vrf-%d", n),
+		EnforceUnique: true,
+		Description:   fmt.Sprintf("VRF %d Description", n),
+		Tenant:        tenant,
+	}
+}
