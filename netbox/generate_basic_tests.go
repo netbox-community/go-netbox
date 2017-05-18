@@ -223,7 +223,7 @@ func TestBasicCreate{{ .TypeName }}(t *testing.T) {
 	var tests = []struct {
 		desc       string
 		data       *{{ .TypeName }}
-		want       *{{ .TypeName }}
+		want       int
 		serverData interface{}
 		status     int
 		errstr     string
@@ -231,7 +231,7 @@ func TestBasicCreate{{ .TypeName }}(t *testing.T) {
 		{
 			desc:       "Create with ID 0",
 			data:       test{{ .TypeName }}Create(1),
-			want:       test{{ .TypeName }}(1),
+			want:       1,
 			status:     0,
 			errstr:     "",
 			serverData: test{{ .TypeName }}(1),
@@ -239,7 +239,7 @@ func TestBasicCreate{{ .TypeName }}(t *testing.T) {
 		{
 			desc:   "Create duplicate",
 			data:   test{{ .TypeName }}Create(1),
-			want:   nil,
+			want:   0,
 			status: http.StatusBadRequest,
 			errstr: "400 - {\"name\":[\"{{ .ServiceName }} with this name already exists.\"]}\n",
 			serverData: &struct {
@@ -275,15 +275,15 @@ func TestBasicUpdate{{ .TypeName }}(t *testing.T) {
 	var tests = []struct {
 		desc       string
 		data       *{{ .TypeName }}
-		want       *{{ .TypeName }}
+		want       int
 		serverData interface{}
 		status     int
 		errstr     string
 	}{
 		{
-			desc:       "Create with ID 1",
+			desc:       "Update with ID 1",
 			data:       test{{ .TypeName }}(1),
-			want:       test{{ .TypeName }}(1),
+			want:       1,
 			serverData: test{{ .TypeName }}(1),
 			status:     0,
 			errstr:     "",
@@ -291,7 +291,7 @@ func TestBasicUpdate{{ .TypeName }}(t *testing.T) {
 		{
 			desc: "Update not found",
 			data: test{{ .TypeName }}(1),
-			want: nil,
+			want: 0,
 			serverData: &struct {
 				Detail string
 			}{
@@ -301,9 +301,9 @@ func TestBasicUpdate{{ .TypeName }}(t *testing.T) {
 			errstr: "404 - Not found.",
 		},
 		{
-			desc: "Create duplicate",
+			desc: "Update to duplicate",
 			data: test{{ .TypeName }}(1),
-			want: nil,
+			want: 0,
 			serverData: &struct {
 				Name []string {{ call .JSONTag "name" }}
 			}{

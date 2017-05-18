@@ -149,31 +149,30 @@ func (s *{{ .ServiceName }}) Extract(page *Page) ([]*{{ .TypeName }}, error) {
 	return groups, nil
 }
 
-// Create creates a new {{ .TypeName }} object in NetBox and returns the new object.
-func (s *{{ .ServiceName }}) Create(data *{{ .TypeName }}) (*{{ .TypeName }}, error) {
+// Create creates a new {{ .TypeName }} object in NetBox and returns the ID of the new object.
+func (s *{{ .ServiceName }}) Create(data *{{ .TypeName }}) (int, error) {
 	req, err := s.c.NewJSONRequest(http.MethodPost, "api/{{ .Endpoint }}/{{ .Service }}/", nil, data)
 	if err != nil {
-		return nil, err
+		return 0, err
 	}
 
 	g := new({{ .UpdateTypeName }})
 	err = s.c.Do(req, g)
 	if err != nil {
-		return nil, err
+		return 0, err
 	}
-	data.ID = g.ID
-	return data, nil
+	return g.ID, nil
 }
 
-// Update changes an existing {{ .TypeName }} object in NetBox, and returns the new object.
-func (s *{{ .ServiceName }}) Update(data *{{ .TypeName }}) (*{{ .TypeName }}, error) {
+// Update changes an existing {{ .TypeName }} object in NetBox, and returns the ID of the new object.
+func (s *{{ .ServiceName }}) Update(data *{{ .TypeName }}) (int, error) {
 	req, err := s.c.NewJSONRequest(
 		http.MethodPatch,
 		fmt.Sprintf("api/{{ .Endpoint }}/{{ .Service }}/%d/", data.ID),
 		nil,
 		data)
 	if err != nil {
-		return nil, err
+		return 0, err
 	}
 
 	// g is just used to verify correct api result.
@@ -183,9 +182,9 @@ func (s *{{ .ServiceName }}) Update(data *{{ .TypeName }}) (*{{ .TypeName }}, er
 	g := new({{ .UpdateTypeName }})
 	err = s.c.Do(req, g)
 	if err != nil {
-		return nil, err
+		return 0, err
 	}
-	return data, nil
+	return g.ID, nil
 }
 
 // Delete deletes an existing {{ .TypeName }} object from NetBox.
