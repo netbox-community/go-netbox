@@ -35,6 +35,9 @@ type Client struct {
 	// IPAM provides access to methods in NetBox's IPAM API.
 	IPAM *IPAMService
 
+	// Tenancy provides access to methods in NetBox's Tenancy API.
+	Tenancy *TenancyService
+
 	u      *url.URL
 	client *http.Client
 }
@@ -68,6 +71,7 @@ func NewClient(addr string, client *http.Client) (*Client, error) {
 
 	c.DCIM = &DCIMService{c: c}
 	c.IPAM = &IPAMService{c: c}
+	c.Tenancy = NewTenancyService(c)
 
 	return c, nil
 }

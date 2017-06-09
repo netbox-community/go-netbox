@@ -223,6 +223,10 @@ func testClient(t *testing.T, fn func(w http.ResponseWriter, r *http.Request)) (
 }
 
 func testHandler(t *testing.T, method string, path string, v interface{}) http.HandlerFunc {
+	return testStatusHandler(t, method, path, v, 0)
+}
+
+func testStatusHandler(t *testing.T, method string, path string, v interface{}, statusCode int) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if want, got := method, r.Method; want != got {
 			t.Fatalf("unexpected HTTP method:\n- want: %v\n-  got: %v", want, got)
@@ -232,8 +236,56 @@ func testHandler(t *testing.T, method string, path string, v interface{}) http.H
 			t.Fatalf("unexpected URL path:\n- want: %v\n-  got: %v", want, got)
 		}
 
+		if statusCode > 0 {
+			w.WriteHeader(statusCode)
+		}
+
 		if err := json.NewEncoder(w).Encode(v); err != nil {
 			t.Fatalf("error while encoding JSON: %v", err)
 		}
+	}
+}
+
+func testTenantGroupCreate(n int) *TenantGroup {
+	return &TenantGroup{
+		Name: fmt.Sprintf("Tenant Group %d", n),
+		Slug: fmt.Sprintf("tenant-group-%d", n),
+	}
+}
+
+func testTenantGroup(n int) *TenantGroup {
+	return &TenantGroup{
+		ID:   n,
+		Name: fmt.Sprintf("Tenant Group %d", n),
+		Slug: fmt.Sprintf("tenant-group-%d", n),
+	}
+}
+
+func testTenant(n int) *Tenant {
+	return testTenantWithGroup(n, testTenantGroup(n))
+}
+
+func testTenantCreate(n int) *Tenant {
+	return testTenantWithGroupCreate(n, testTenantGroup(n))
+}
+
+func testTenantWithGroupCreate(n int, t *TenantGroup) *Tenant {
+	return &Tenant{
+		Name:        fmt.Sprintf("Tenant %d", n),
+		Slug:        fmt.Sprintf("tenant-%d", n),
+		Description: fmt.Sprintf("Tenant %d Description", n),
+		Comments:    fmt.Sprintf("Tenant %d Comments", n),
+		Group:       t,
+	}
+}
+
+func testTenantWithGroup(n int, t *TenantGroup) *Tenant {
+	return &Tenant{
+		ID:          n,
+		Name:        fmt.Sprintf("Tenant %d", n),
+		Slug:        fmt.Sprintf("tenant-%d", n),
+		Description: fmt.Sprintf("Tenant %d Description", n),
+		Comments:    fmt.Sprintf("Tenant %d Comments", n),
+		Group:       t,
 	}
 }
