@@ -21,7 +21,7 @@ type TenancyService struct {
 	Tenants      *TenantsService
 }
 
-// NewTenancyService returns a TenancyService initialized with all sub-service.
+// NewTenancyService returns a TenancyService initialized with all sub-services.
 func NewTenancyService(client *Client) *TenancyService {
 	return &TenancyService{
 		c: client,
