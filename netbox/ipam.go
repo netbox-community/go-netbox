@@ -1,4 +1,4 @@
-// Copyright 2016 The go-netbox Authors.
+// Copyright 2017 The go-netbox Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,9 +14,7 @@
 
 package netbox
 
-// PowerOutletIdentifier represents a reduced version of a power outlet object.
-type PowerOutletIdentifier struct {
-	ID     int               `json:"id"`
-	Device *DeviceIdentifier `json:"device"`
-	Name   string            `json:"name"`
+// An IPAMService is used in a Client to access NetBox's IPAM API methods.
+type IPAMService struct {
+	c *Client
 }

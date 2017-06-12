@@ -1,4 +1,4 @@
-// Copyright 2016 The go-netbox Authors.
+// Copyright 2017 The go-netbox Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,10 +14,15 @@
 
 package netbox
 
-// PowerPort represents a power port object.
-type PowerPort struct {
-	ID               int                    `json:"id"`
-	Name             string                 `json:"name"`
-	PowerOutlet      *PowerOutletIdentifier `json:"power_outlet"`
-	ConnectionStatus bool                   `json:"connection_status"`
+// A DCIMService is used in a Client to access NetBox's DCIM API methods.
+type DCIMService struct {
+	c *Client
+}
+
+// SimpleIdentifier represents a simple object that consists of only an ID,
+// name, and slug.
+type SimpleIdentifier struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+	Slug string `json:"slug"`
 }

@@ -1,4 +1,4 @@
-// Copyright 2016 The go-netbox Authors.
+// Copyright 2017 The go-netbox Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,7 +14,22 @@
 
 package netbox
 
-// An IPAMService is used in a Client to access NetBox's IPAM API methods.
-type IPAMService struct {
-	c *Client
+// A TenancyService is udes in a Client to access NetBox's Tenancy API methods.
+type TenancyService struct {
+	c            *Client
+	TenantGroups *TenantGroupsService
+	Tenants      *TenantsService
+}
+
+// NewTenancyService returns a TenancyService initialized with all sub-services.
+func NewTenancyService(client *Client) *TenancyService {
+	return &TenancyService{
+		c: client,
+		TenantGroups: &TenantGroupsService{
+			c: client,
+		},
+		Tenants: &TenantsService{
+			c: client,
+		},
+	}
 }
