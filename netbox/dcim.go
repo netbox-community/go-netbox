@@ -16,7 +16,18 @@ package netbox
 
 // A DCIMService is used in a Client to access NetBox's DCIM API methods.
 type DCIMService struct {
-	c *Client
+	c              *Client
+	InventoryItems *InventoryItemsService
+}
+
+// NewDCIMService returns a DCIMService initialized with all sub-services.
+func NewDCIMService(client *Client) *DCIMService {
+	return &DCIMService{
+		c: client,
+		InventoryItems: &InventoryItemsService{
+			c: client,
+		},
+	}
 }
 
 // SimpleIdentifier represents a simple object that consists of only an ID,
