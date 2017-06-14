@@ -57,7 +57,7 @@ func (t *Tenant) MarshalJSON() ([]byte, error) {
 	})
 }
 
-// ListTenantOptions is used as an argument for Client.Tenancy.Tenant.List.
+// ListTenantOptions is used as an argument for Client.Tenancy.Tenants.List.
 // Integer fields with an *ID suffix are preferred over their string
 // counterparts, and if both are set, only the *ID field will be used.
 type ListTenantOptions struct {
