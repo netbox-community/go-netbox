@@ -26,51 +26,51 @@ import (
 )
 
 // Using this to override MarshalJSON
-// In all cases when posting data to netbox-API, the TenantGroup.MarshalJSON is what you want,
+// In all cases when posting data to netbox-API, the InventoryItem.MarshalJSON is what you want,
 // but not here as a return in testHandler
-type serverDataTenantGroup TenantGroup
+type serverDataInventoryItem InventoryItem
 
-func convertToServerDataTenantGroup(data []*TenantGroup) []*serverDataTenantGroup {
-	dataWant := make([]*serverDataTenantGroup, len(data))
+func convertToServerDataInventoryItem(data []*InventoryItem) []*serverDataInventoryItem {
+	dataWant := make([]*serverDataInventoryItem, len(data))
 	for i := range data {
-		tmp := serverDataTenantGroup(*data[i])
+		tmp := serverDataInventoryItem(*data[i])
 		dataWant[i] = &tmp
 	}
 	return dataWant
 }
 
-func TestBasicTenantGroupGet(t *testing.T) {
+func TestBasicInventoryItemGet(t *testing.T) {
 	var tests = []struct {
 		desc string
-		want *TenantGroup
+		want *InventoryItem
 	}{
 		{
-			desc: "Simple TenantGroup",
-			want: testTenantGroup(1),
+			desc: "Simple InventoryItem",
+			want: testInventoryItem(1),
 		},
 	}
 
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
-			serverData := serverDataTenantGroup(*tt.want)
+			serverData := serverDataInventoryItem(*tt.want)
 
-			c, done := testClient(t, testHandler(t, http.MethodGet, "/api/tenancy/tenant-groups/1/", &serverData))
+			c, done := testClient(t, testHandler(t, http.MethodGet, "/api/dcim/inventory-items/1/", &serverData))
 			defer done()
 
-			res, err := c.Tenancy.TenantGroups.Get(1)
+			res, err := c.DCIM.InventoryItems.Get(1)
 			if err != nil {
-				t.Fatalf("unexpected error from Client.Tenancy.TenantGroups.Get: %v", err)
+				t.Fatalf("unexpected error from Client.DCIM.InventoryItems.Get: %v", err)
 			}
 
 			if want, got := tt.want, res; !reflect.DeepEqual(want, got) {
-				t.Fatalf("unexpected TenantGroup:\n- want: %v\n-  got: %v", want, got)
+				t.Fatalf("unexpected InventoryItem:\n- want: %v\n-  got: %v", want, got)
 			}
 		})
 	}
 }
 
-func TestBasicTenantGroupGet404(t *testing.T) {
-	c, done := testClient(t, testStatusHandler(t, http.MethodGet, "/api/tenancy/tenant-groups/1/", &struct {
+func TestBasicInventoryItemGet404(t *testing.T) {
+	c, done := testClient(t, testStatusHandler(t, http.MethodGet, "/api/dcim/inventory-items/1/", &struct {
 		Detail string `json:"detail"`
 	}{
 		Detail: "Not found.",
@@ -78,10 +78,10 @@ func TestBasicTenantGroupGet404(t *testing.T) {
 		http.StatusNotFound))
 	defer done()
 
-	res, err := c.Tenancy.TenantGroups.Get(1)
+	res, err := c.DCIM.InventoryItems.Get(1)
 	errstr := "404 - Not found."
 	if want, got := errors.New(errstr), err; !reflect.DeepEqual(want, got) {
-		t.Fatalf("unexpected error from Client.Tenancy.TenantGroups.Get:\n- want: %v\n-  got: %v", want, got)
+		t.Fatalf("unexpected error from Client.DCIM.InventoryItems.Get:\n- want: %v\n-  got: %v", want, got)
 	}
 
 	if res != nil {
@@ -89,14 +89,14 @@ func TestBasicTenantGroupGet404(t *testing.T) {
 	}
 }
 
-func TestBasicListExtractTenantGroup(t *testing.T) {
-	want := []*TenantGroup{
-		testTenantGroup(1),
-		testTenantGroup(2),
+func TestBasicListExtractInventoryItem(t *testing.T) {
+	want := []*InventoryItem{
+		testInventoryItem(1),
+		testInventoryItem(2),
 	}
-	serverWant := convertToServerDataTenantGroup(want)
+	serverWant := convertToServerDataInventoryItem(want)
 	serverData, _ := json.Marshal(serverWant)
-	c, done := testClient(t, testHandler(t, http.MethodGet, "/api/tenancy/tenant-groups/", &pageData{
+	c, done := testClient(t, testHandler(t, http.MethodGet, "/api/dcim/inventory-items/", &pageData{
 		Count:       2,
 		NextURL:     "",
 		PreviousURL: "",
@@ -104,19 +104,19 @@ func TestBasicListExtractTenantGroup(t *testing.T) {
 	}))
 	defer done()
 
-	page := c.Tenancy.TenantGroups.List()
+	page := c.DCIM.InventoryItems.List(nil)
 
 	if page == nil {
-		t.Fatalf("unexpexted result from c.Tenancy.TenantGroups.List.")
+		t.Fatalf("unexpexted result from c.DCIM.InventoryItems.List.")
 	}
 
-	got := []*TenantGroup{}
+	got := []*InventoryItem{}
 	counter := 0
 	for page.Next() {
 		var err error
-		got, err = c.Tenancy.TenantGroups.Extract(page)
+		got, err = c.DCIM.InventoryItems.Extract(page)
 		if err != nil {
-			t.Fatalf("unexpected error from c.Tenancy.TenantGroups.Extract: %v", err)
+			t.Fatalf("unexpected error from c.DCIM.InventoryItems.Extract: %v", err)
 		}
 		counter = counter + 1
 		if counter > 2 { // Safe guard
@@ -136,10 +136,10 @@ func TestBasicListExtractTenantGroup(t *testing.T) {
 	}
 }
 
-func TestBasicCreateTenantGroup(t *testing.T) {
+func TestBasicCreateInventoryItem(t *testing.T) {
 	var tests = []struct {
 		desc       string
-		data       *TenantGroup
+		data       *InventoryItem
 		want       int
 		serverData interface{}
 		status     int
@@ -147,29 +147,29 @@ func TestBasicCreateTenantGroup(t *testing.T) {
 	}{
 		{
 			desc:       "Create with ID 0",
-			data:       testTenantGroupCreate(1),
+			data:       testInventoryItemCreate(1),
 			want:       1,
 			status:     0,
 			errstr:     "",
-			serverData: testTenantGroup(1),
+			serverData: testInventoryItem(1),
 		},
 		{
 			desc:   "Create duplicate",
-			data:   testTenantGroupCreate(1),
+			data:   testInventoryItemCreate(1),
 			want:   0,
 			status: http.StatusBadRequest,
-			errstr: "400 - {\"name\":[\"TenantGroupsService with this name already exists.\"]}\n",
+			errstr: "400 - {\"name\":[\"InventoryItemsService with this name already exists.\"]}\n",
 			serverData: &struct {
 				Name []string `json:"name"`
 			}{
-				Name: []string{"TenantGroupsService with this name already exists."},
+				Name: []string{"InventoryItemsService with this name already exists."},
 			},
 		},
 	}
 
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
-			c, done := testClient(t, testStatusHandler(t, http.MethodPost, "/api/tenancy/tenant-groups/", tt.serverData, tt.status))
+			c, done := testClient(t, testStatusHandler(t, http.MethodPost, "/api/dcim/inventory-items/", tt.serverData, tt.status))
 			defer done()
 
 			var terr error
@@ -177,21 +177,21 @@ func TestBasicCreateTenantGroup(t *testing.T) {
 				terr = errors.New(tt.errstr) // Using errstr and initialize real err here, to satisfy golint
 			}
 
-			res, err := c.Tenancy.TenantGroups.Create(tt.data)
+			res, err := c.DCIM.InventoryItems.Create(tt.data)
 			if want, got := terr, err; !reflect.DeepEqual(want, got) {
 				t.Fatalf("unexpected error:\n- want: %v\n-  got: %v", want, got)
 			}
 			if want, got := tt.want, res; !reflect.DeepEqual(want, got) {
-				t.Fatalf("unexpected TenantGroup:\n- want: %v\n-  got: %v", want, got)
+				t.Fatalf("unexpected InventoryItem:\n- want: %v\n-  got: %v", want, got)
 			}
 		})
 	}
 }
 
-func TestBasicUpdateTenantGroup(t *testing.T) {
+func TestBasicUpdateInventoryItem(t *testing.T) {
 	var tests = []struct {
 		desc       string
-		data       *TenantGroup
+		data       *InventoryItem
 		want       int
 		serverData interface{}
 		status     int
@@ -199,15 +199,15 @@ func TestBasicUpdateTenantGroup(t *testing.T) {
 	}{
 		{
 			desc:       "Update with ID 1",
-			data:       testTenantGroup(1),
+			data:       testInventoryItem(1),
 			want:       1,
-			serverData: testTenantGroup(1),
+			serverData: testInventoryItem(1),
 			status:     0,
 			errstr:     "",
 		},
 		{
 			desc: "Update not found",
-			data: testTenantGroup(1),
+			data: testInventoryItem(1),
 			want: 0,
 			serverData: &struct {
 				Detail string
@@ -219,21 +219,21 @@ func TestBasicUpdateTenantGroup(t *testing.T) {
 		},
 		{
 			desc: "Update to duplicate",
-			data: testTenantGroup(1),
+			data: testInventoryItem(1),
 			want: 0,
 			serverData: &struct {
 				Name []string `json:"name"`
 			}{
-				Name: []string{"TenantGroupsService with this name already exists."},
+				Name: []string{"InventoryItemsService with this name already exists."},
 			},
 			status: http.StatusBadRequest,
-			errstr: "400 - {\"name\":[\"TenantGroupsService with this name already exists.\"]}\n",
+			errstr: "400 - {\"name\":[\"InventoryItemsService with this name already exists.\"]}\n",
 		},
 	}
 
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
-			c, done := testClient(t, testStatusHandler(t, http.MethodPatch, "/api/tenancy/tenant-groups/1/", tt.serverData, tt.status))
+			c, done := testClient(t, testStatusHandler(t, http.MethodPatch, "/api/dcim/inventory-items/1/", tt.serverData, tt.status))
 			defer done()
 
 			var terr error
@@ -241,35 +241,35 @@ func TestBasicUpdateTenantGroup(t *testing.T) {
 				terr = errors.New(tt.errstr) // Using errstr and initialize real err here, to satisfy golint
 			}
 
-			res, err := c.Tenancy.TenantGroups.Update(tt.data)
+			res, err := c.DCIM.InventoryItems.Update(tt.data)
 			if want, got := terr, err; !reflect.DeepEqual(want, got) {
 				t.Fatalf("unexpected error:\n- want: %v\n-  got: %v", want, got)
 			}
 			if want, got := tt.want, res; !reflect.DeepEqual(want, got) {
-				t.Fatalf("unexpected TenantGroup:\n- want: %v\n-  got: %v", want, got)
+				t.Fatalf("unexpected InventoryItem:\n- want: %v\n-  got: %v", want, got)
 			}
 		})
 	}
 }
 
-func TestBasicDeleteTenantGroup(t *testing.T) {
+func TestBasicDeleteInventoryItem(t *testing.T) {
 	var tests = []struct {
 		desc       string
-		data       *TenantGroup
+		data       *InventoryItem
 		serverData interface{}
 		status     int
 		errstr     string
 	}{
 		{
 			desc:       "Delete ID 1",
-			data:       testTenantGroup(1),
-			serverData: testTenantGroup(1),
+			data:       testInventoryItem(1),
+			serverData: testInventoryItem(1),
 			status:     0,
 			errstr:     "",
 		},
 		{
 			desc: "Delete not Found",
-			data: testTenantGroup(1),
+			data: testInventoryItem(1),
 			serverData: &struct {
 				Detail string `json:"detail"`
 			}{
@@ -282,7 +282,7 @@ func TestBasicDeleteTenantGroup(t *testing.T) {
 
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
-			c, done := testClient(t, testStatusHandler(t, http.MethodDelete, "/api/tenancy/tenant-groups/1/", tt.serverData, tt.status))
+			c, done := testClient(t, testStatusHandler(t, http.MethodDelete, "/api/dcim/inventory-items/1/", tt.serverData, tt.status))
 			defer done()
 
 			var terr error
@@ -290,7 +290,7 @@ func TestBasicDeleteTenantGroup(t *testing.T) {
 				terr = errors.New(tt.errstr) // Using errstr and initialize real err here, to satisfy golint
 			}
 
-			err := c.Tenancy.TenantGroups.Delete(tt.data)
+			err := c.DCIM.InventoryItems.Delete(tt.data)
 			if want, got := terr, err; !reflect.DeepEqual(want, got) {
 				t.Fatalf("unexpected error:\n- want: %v\n-  got: %v", want, got)
 			}

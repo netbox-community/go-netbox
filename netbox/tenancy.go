@@ -14,7 +14,7 @@
 
 package netbox
 
-// A TenancyService is udes in a Client to access NetBox's Tenancy API methods.
+// A TenancyService is used in a Client to access NetBox's Tenancy API methods.
 type TenancyService struct {
 	c            *Client
 	TenantGroups *TenantGroupsService

@@ -26,19 +26,16 @@ import (
 
 func TestTenantGet(t *testing.T) {
 	var tests = []struct {
-		desc      string
-		want      *Tenant
-		wantGroup *TenantGroup
+		desc string
+		want *Tenant
 	}{
 		{
-			desc:      "Without TenantGroup",
-			want:      testTenantWithGroup(1, nil),
-			wantGroup: nil,
+			desc: "Without TenantGroup",
+			want: testTenantWithGroup(1, nil),
 		},
 		{
-			desc:      "With TenantGroup",
-			want:      testTenantWithGroup(1, testTenantGroup(1)),
-			wantGroup: testTenantGroup(1),
+			desc: "With TenantGroup",
+			want: testTenantWithGroup(1, testTenantGroup(1)),
 		},
 	}
 
@@ -56,9 +53,6 @@ func TestTenantGet(t *testing.T) {
 
 			if want, got := tt.want, res; !reflect.DeepEqual(want, got) {
 				t.Fatalf("unexpected Tenant:\n- want: %v\n-  got: %v", want, got)
-			}
-			if want, got := tt.wantGroup, res.Group; !reflect.DeepEqual(want, got) {
-				t.Fatalf("unexpected TenantGroup:\n- want: %v\n-  got: %v", want, got)
 			}
 		})
 	}
