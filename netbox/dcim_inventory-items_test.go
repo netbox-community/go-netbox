@@ -132,12 +132,12 @@ func TestInventoryItemMarshalJSON(t *testing.T) {
 		{
 			desc: "Inventory item without manufacturer",
 			data: testInventoryItem(1),
-			want: []byte(`{"id":1,"device":10001,"name":"Inventory Item 1","part_id":"Part ID 1","serial":"Serial 1","discovered":true}`),
+			want: []byte(`{"id":1,"device":10001,"parent":null,"name":"Inventory Item 1","part_id":"Part ID 1","serial":"Serial 1","discovered":true}`),
 		},
 		{
 			desc: "Inventory item with manufacturer",
 			data: testInventoryItemWithManufacturer(2),
-			want: []byte(`{"device":10002,"name":"Inventory Item 2","manufacturer":20002,"part_id":"Part ID 2","serial":"Serial 2","discovered":true}`),
+			want: []byte(`{"device":10002,"parent":null,"name":"Inventory Item 2","manufacturer":20002,"part_id":"Part ID 2","serial":"Serial 2","discovered":true}`),
 		},
 	}
 

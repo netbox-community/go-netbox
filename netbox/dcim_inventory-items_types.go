@@ -47,7 +47,7 @@ type NestedDevice struct {
 type InventoryItem struct {
 	ID           int                 `json:"id,omitempty"`
 	Device       NestedDevice        `json:"device"`
-	Parent       *int                `json:"parent,omitempty"`
+	Parent       *int                `json:"parent"`
 	Name         string              `json:"name"`
 	Manufacturer *NestedManufacturer `json:"manufacturer,omitempty"`
 	PartID       string              `json:"part_id,omitempty"`
@@ -61,7 +61,7 @@ type InventoryItem struct {
 type writableInventoryItem struct {
 	ID           int    `json:"id,omitempty"`
 	Device       int    `json:"device"`
-	Parent       *int   `json:"parent,omitempty"`
+	Parent       *int   `json:"parent"`
 	Name         string `json:"name"`
 	Manufacturer *int   `json:"manufacturer,omitempty"`
 	PartID       string `json:"part_id,omitempty"`
