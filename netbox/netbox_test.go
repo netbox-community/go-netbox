@@ -72,7 +72,7 @@ func ExampleNewClient() {
 	defer done()
 
 	// Creates a client configured to use the test server
-	c, err := NewClient(addr, nil)
+	c, err := NewClient(addr, "", nil)
 	if err != nil {
 		panic(fmt.Sprintf("failed to create netbox.Client: %v", err))
 	}

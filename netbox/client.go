@@ -38,16 +38,20 @@ type Client struct {
 	// Tenancy provides access to methods in NetBox's Tenancy API.
 	Tenancy *TenancyService
 
+	token  string
 	u      *url.URL
 	client *http.Client
 }
 
 // NewClient returns a new instance of a NetBox client.  addr specifies the address
-// of the NetBox server, and client specifies an optional HTTP client to use
-// for requests.
+// of the NetBox server, token specifies the api key to use,
+// and client specifies an optional HTTP client to use for requests.
+//
+// If token is the empty string, no Authentication will be included in requests,
+// providing anonymous read-only access depending on your NetBox config.
 //
 // If client is nil, a default HTTP client will be used.
-func NewClient(addr string, client *http.Client) (*Client, error) {
+func NewClient(addr string, token string, client *http.Client) (*Client, error) {
 	if client == nil {
 		client = &http.Client{}
 	}
@@ -65,6 +69,7 @@ func NewClient(addr string, client *http.Client) (*Client, error) {
 	}
 
 	c := &Client{
+		token:  token,
 		u:      u,
 		client: client,
 	}
@@ -116,18 +121,23 @@ func (c *Client) NewDataRequest(method string, endpoint string, options Valuer, 
 
 	u := c.u.ResolveReference(rel)
 
-	// If no valuer specified, create a request with no query parameters
-	if options == nil {
-		return http.NewRequest(method, u.String(), body)
+	// If a valuer is specified, add the values as the query string
+	if options != nil {
+		values, err := options.Values()
+		if err != nil {
+			return nil, err
+		}
+		u.RawQuery = values.Encode()
 	}
 
-	values, err := options.Values()
+	req, err := http.NewRequest(method, u.String(), body)
 	if err != nil {
 		return nil, err
 	}
-	u.RawQuery = values.Encode()
-
-	return http.NewRequest(method, u.String(), body)
+	if c.token != "" {
+		req.Header.Set("Authorization", fmt.Sprintf("Token %s", c.token))
+	}
+	return req, nil
 }
 
 // NewJSONRequest creates a HTTP request using the input HTTP method, URL
