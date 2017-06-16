@@ -152,7 +152,7 @@ func TestClientQueryParameters(t *testing.T) {
 		Bar: wantBar,
 	})
 	if err != nil {
-		t.Fatal("expected an error, but no error returned")
+		t.Fatalf("unexpected error: %v", err)
 	}
 
 	q := req.URL.Query()
@@ -183,11 +183,29 @@ func TestClientPrependBaseURLPath(t *testing.T) {
 
 	req, err := c.NewRequest(http.MethodGet, "/api/ipam/vlans", nil)
 	if err != nil {
-		t.Fatal("expected an error, but no error returned")
+		t.Fatalf("unexpected error: %v", err)
 	}
 
 	if want, got := "/netbox/api/ipam/vlans", req.URL.Path; want != got {
 		t.Fatalf("unexpected URL path:\n- want: %q\n-  got: %q",
+			want, got)
+	}
+}
+
+func TestAuthenticatingClientAddsHeader(t *testing.T) {
+	token := "auth-token"
+	c, err := NewClient("localhost", &token, nil)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+
+	req, err := c.NewRequest(http.MethodGet, "/api/ipam/vlans", nil)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+
+	if want, got := "Token auth-token", req.Header.Get("Authorization"); want != got {
+		t.Fatalf("unexpected Authorization header:\n- want: %q\n-  got: %q",
 			want, got)
 	}
 }
@@ -214,7 +232,7 @@ func (q testValuer) Values() (url.Values, error) {
 func testClient(t *testing.T, fn func(w http.ResponseWriter, r *http.Request)) (*Client, func()) {
 	s := httptest.NewServer(http.HandlerFunc(fn))
 
-	c, err := NewClient(s.URL, nil)
+	c, err := NewClient(s.URL, nil, nil)
 	if err != nil {
 		t.Fatalf("error creating Client: %v", err)
 	}
