@@ -18,6 +18,7 @@ package netbox
 type DCIMService struct {
 	c              *Client
 	InventoryItems *InventoryItemsService
+	Devices        *DevicesService
 }
 
 // NewDCIMService returns a DCIMService initialized with all sub-services.
@@ -25,6 +26,9 @@ func NewDCIMService(client *Client) *DCIMService {
 	return &DCIMService{
 		c: client,
 		InventoryItems: &InventoryItemsService{
+			c: client,
+		},
+		Devices: &DevicesService{
 			c: client,
 		},
 	}
