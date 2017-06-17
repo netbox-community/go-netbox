@@ -20,7 +20,7 @@ import (
 	"strconv"
 )
 
-type nestedBased struct {
+type nestedBase struct {
 	ID   int    `json:"id"`
 	URL  string `json:"url"`
 	Name string `json:"name"`
@@ -32,28 +32,31 @@ type simpleValueLabel struct {
 	Label string `json:"label"`
 }
 
+// FaceType represent the face of a Device in a Rack (Front/Rear)
 type FaceType simpleValueLabel
+
+// StatusType represent status of a Device in Netbox API.
 type StatusType simpleValueLabel
 
 // A NestedDeviceRole corresponds to the Netbox API's
 // nested serializer, when a DeviceRole appears as a
 // parent of another object
-type NestedDeviceRole nestedBased
+type NestedDeviceRole nestedBase
 
 // A NestedPlatform corresponds to the Netbox API's
 // nested serializer, when a Platform appears as a
 // parent of another object
-type NestedPlatform nestedBased
+type NestedPlatform nestedBase
 
 // A NestedTenant corresponds to the Netbox API's
 // nested serializer, when a Tenant appears as a
 // parent of another object
-type NestedTenant nestedBased
+type NestedTenant nestedBase
 
 // A NestedSite corresponds to the Netbox API's
 // nested serializer, when a Site appears as a
 // parent of another object
-type NestedSite nestedBased
+type NestedSite nestedBase
 
 // A NestedDeviceType corresponds to the Netbox API's
 // nested serializer, when a DeviceType appears as a
@@ -98,11 +101,11 @@ type Device struct {
 	Serial      string            `json:"serial,omitempty"`
 	AssetTag    string            `json:"asset_tag,omitempty"`
 	Site        *NestedSite       `json:"site"`
-	Rack        *NestedRack       `json:"rack"`
+	Rack        *NestedRack       `json:"rack,omitempty"`
 	Position    int               `json:"position,omitempty"`
 	Face        *FaceType         `json:"face,omitempty"`
 	//	ParentDevice *int              `json:"parent_device,omitempty"`
-	Status      *StatusType `json:"status,omitempty"`
+	Status      *StatusType `json:"status"`
 	PrimaryIP   *NestedIP   `json:"primary_ip,omitempty"`
 	PrimaryIPv4 *NestedIP   `json:"primary_ip4,omitempty"`
 	PrimaryIPv6 *NestedIP   `json:"primary_ip6,omitempty"`
