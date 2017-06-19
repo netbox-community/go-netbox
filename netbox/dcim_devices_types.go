@@ -32,6 +32,19 @@ type simpleValueLabel struct {
 	Label string `json:"label"`
 }
 
+// DeviceBay represent a Device Bay of a Netbox's API Device
+type DeviceBay struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+}
+
+// ParentDevice represent parent of a Netbox's API Device
+type ParentDevice struct {
+	*DeviceBay `json:"device_bay"`
+	ID         int    `json:"id"`
+	Name       string `json:"name"`
+}
+
 // FaceType represent the face of a Device in a Rack (Front/Rear)
 type FaceType simpleValueLabel
 
@@ -96,7 +109,7 @@ type Device struct {
 	DisplayName string            `json:"display_name"`
 	DeviceType  *NestedDeviceType `json:"device_type"`
 	DeviceRole  *NestedDeviceRole `json:"device_role"`
-	Tenant      *NestedTenant     `json:"tenant"`
+	Tenant      *NestedTenant     `json:"tenant,omitempty"`
 	Platform    *NestedPlatform   `json:"platform,omitempty"`
 	Serial      string            `json:"serial,omitempty"`
 	AssetTag    string            `json:"asset_tag,omitempty"`
@@ -104,12 +117,12 @@ type Device struct {
 	Rack        *NestedRack       `json:"rack,omitempty"`
 	Position    int               `json:"position,omitempty"`
 	Face        *FaceType         `json:"face,omitempty"`
-	//	ParentDevice *int              `json:"parent_device,omitempty"`
-	Status      *StatusType `json:"status"`
-	PrimaryIP   *NestedIP   `json:"primary_ip,omitempty"`
-	PrimaryIPv4 *NestedIP   `json:"primary_ip4,omitempty"`
-	PrimaryIPv6 *NestedIP   `json:"primary_ip6,omitempty"`
-	Comments    string      `json:"comments,omitempty"`
+	Parent      *ParentDevice     `json:"parent_device,omitempty"`
+	Status      *StatusType       `json:"status"`
+	PrimaryIP   *NestedIP         `json:"primary_ip,omitempty"`
+	PrimaryIPv4 *NestedIP         `json:"primary_ip4,omitempty"`
+	PrimaryIPv6 *NestedIP         `json:"primary_ip6,omitempty"`
+	Comments    string            `json:"comments,omitempty"`
 }
 
 // A writableDevice corresponds to the Netbox API's
@@ -121,14 +134,15 @@ type writableDevice struct {
 	DisplayName string `json:"display_name"`
 	DeviceType  int    `json:"device_type"`
 	DeviceRole  int    `json:"device_role"`
-	Tenant      int    `json:"tenant"`
+	Tenant      int    `json:"tenant,omitempty"`
 	Platform    int    `json:"platform,omitempty"`
 	Serial      string `json:"serial,omitempty"`
 	AssetTag    string `json:"asset_tag,omitempty"`
 	Site        int    `json:"site"`
-	Rack        int    `json:"rack"`
+	Rack        int    `json:"rack,omitempty"`
 	Position    int    `json:"position,omitempty"`
 	Face        string `json:"face,omitempty"`
+	Parent      int    `json:"parent_device,omitempty"`
 	Status      string `json:"status,omitempty"`
 	PrimaryIP   int    `json:"primary_ip,omitempty"`
 	PrimaryIPv4 int    `json:"primary_ip4,omitempty"`
@@ -139,7 +153,7 @@ type writableDevice struct {
 // MarshalJSON marshals a Device into JSON bytes,
 // and is used by the standard json package.
 func (d *Device) MarshalJSON() ([]byte, error) {
-	var typeID, roleID, tenantID, platformID, siteID, rackID, primaryIPID, primaryIPv4ID, primaryIPv6ID int
+	var typeID, roleID, tenantID, platformID, siteID, rackID, parentID, primaryIPID, primaryIPv4ID, primaryIPv6ID int
 	var status, face string
 
 	if d.DeviceType != nil {
@@ -182,6 +196,10 @@ func (d *Device) MarshalJSON() ([]byte, error) {
 		face = d.Face.Label
 	}
 
+	if d.Parent != nil {
+		parentID = d.Parent.ID
+	}
+
 	if d.Status != nil {
 		status = d.Status.Label
 	}
@@ -200,6 +218,7 @@ func (d *Device) MarshalJSON() ([]byte, error) {
 		Rack:        rackID,
 		Position:    d.Position,
 		Face:        face,
+		Parent:      parentID,
 		Status:      status,
 		PrimaryIP:   primaryIPID,
 		PrimaryIPv4: primaryIPv4ID,
