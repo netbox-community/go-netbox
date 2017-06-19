@@ -32,17 +32,21 @@ type simpleValueLabel struct {
 	Label string `json:"label"`
 }
 
-// DeviceBay represent a Device Bay of a Netbox's API Device
-type DeviceBay struct {
+// ShortDeviceBay represent the short form of a Device Bay
+// when a Device Bay appears in a parent device of
+// another object.
+type ShortDeviceBay struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
 }
 
-// ParentDevice represent parent of a Netbox's API Device
-type ParentDevice struct {
-	*DeviceBay `json:"device_bay"`
-	ID         int    `json:"id"`
-	Name       string `json:"name"`
+// ShortDevice corresponds to the simple form of
+// a Device, when a Device appears as a
+// parent device of another object
+type ShortDevice struct {
+	DeviceBay *ShortDeviceBay `json:"device_bay"`
+	ID        int             `json:"id"`
+	Name      string          `json:"name"`
 }
 
 // FaceType represent the face of a Device in a Rack (Front/Rear)
@@ -117,7 +121,7 @@ type Device struct {
 	Rack        *NestedRack       `json:"rack,omitempty"`
 	Position    int               `json:"position,omitempty"`
 	Face        *FaceType         `json:"face,omitempty"`
-	Parent      *ParentDevice     `json:"parent_device,omitempty"`
+	Parent      *ShortDevice      `json:"parent_device,omitempty"`
 	Status      *StatusType       `json:"status"`
 	PrimaryIP   *NestedIP         `json:"primary_ip,omitempty"`
 	PrimaryIPv4 *NestedIP         `json:"primary_ip4,omitempty"`
