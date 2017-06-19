@@ -15,7 +15,7 @@
 package netbox
 
 import (
-	_ "bytes"
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -60,6 +60,41 @@ func TestDeviceUnmarshalJSON(t *testing.T) {
 		data []byte
 		want *Device
 	}{
+		{
+			desc: "Minimum device",
+			data: []byte(`{"id": 1, "name": "Device 1", "display_name": "Device 1", "device_type": { "id": 11, "url": "http://localhost/api/dcim/device-types/11/", "manufacturer": { "id": 21, "url": "http://localhost/api/dcim/manufacturers/21/", "name": "Manufacturer Name", "slug": "mfg-name"}, "model": "Device Type Model", "slug": "device-type-model"}, "device_role": { "id": 31, "url": "http://localhost/api/dcim/device-roles/31/", "name": "Device Role Name", "slug": "device-role-name"}, "site": { "id": 61, "url": "http://localhost/api/dcim/sites/61/", "name": "Site Name", "slug": "site-name" }, "status": { "value": 1, "label": "Active" } }`),
+			want: &Device{
+				ID:          1,
+				Name:        "Device 1",
+				DisplayName: "Device 1",
+				DeviceType: &NestedDeviceType{ID: 11,
+					URL: "http://localhost/api/dcim/device-types/11/",
+					Manufacturer: &NestedManufacturer{
+						ID: 21, URL: "http://localhost/api/dcim/manufacturers/21/",
+						Name: "Manufacturer Name",
+						Slug: "mfg-name",
+					},
+					Model: "Device Type Model",
+					Slug:  "device-type-model",
+				},
+				DeviceRole: &NestedDeviceRole{
+					ID:   31,
+					URL:  "http://localhost/api/dcim/device-roles/31/",
+					Name: "Device Role Name",
+					Slug: "device-role-name",
+				},
+				Site: &NestedSite{
+					ID:   61,
+					URL:  "http://localhost/api/dcim/sites/61/",
+					Name: "Site Name",
+					Slug: "site-name",
+				},
+				Status: &StatusType{
+					Value: 1,
+					Label: "Active",
+				},
+			},
+		},
 		{
 			desc: "Maximum device",
 			data: []byte(`{"id": 1, "name": "Device 1", "display_name": "Device 1", "device_type": { "id": 11, "url": "http://localhost/api/dcim/device-types/11/", "manufacturer": { "id": 21, "url": "http://localhost/api/dcim/manufacturers/21/", "name": "Manufacturer Name", "slug": "mfg-name"}, "model": "Device Type Model", "slug": "device-type-model"}, "device_role": { "id": 31, "url": "http://localhost/api/dcim/device-roles/31/", "name": "Device Role Name", "slug": "device-role-name"}, "tenant": { "id": 41, "url": "http://localhost/api/tenancy/tenants/41/", "name": "Tenant Name", "slug": "tenant-name" }, "platform": { "id": 51, "url": "http://localhost/api/dcim/platforms/51", "name": "Platform Name", "slug": "platform-name" }, "serial": "Serial", "asset_tag": "Tag", "site": { "id": 61, "url": "http://localhost/api/dcim/sites/61/", "name": "Site Name", "slug": "site-name" }, "rack": { "id": 71, "url": "http://localhost/api/dcim/racks/71/", "name": "Rack Name", "display_name": "Rack Name" }, "position": 81, "face": { "value": 0, "label": "Front" }, "status": { "value": 1, "label": "Active" } }`),
@@ -134,6 +169,32 @@ func TestDeviceUnmarshalJSON(t *testing.T) {
 
 			if want, got := tt.want, result; !reflect.DeepEqual(want, got) {
 				t.Fatalf("unexpected Device:\n- want: %v\n- got: %v", want, got)
+			}
+		})
+	}
+}
+
+func TestDeviceMarshalJSON(t *testing.T) {
+	var tests = []struct {
+		desc string
+		data *Device
+		want []byte
+	}{
+		{
+			desc: "Sample Device",
+			data: testDevice(1),
+			want: []byte(`{"id":1,"name":"Device 1","display_name":"Device 1","device_type":2001,"device_role":1001,"tenant":3001,"platform":4001,"site":5001,"rack":6001}`),
+		},
+	}
+
+	for idx, tt := range tests {
+		t.Run(fmt.Sprintf("[%d] %s", idx, tt.desc), func(t *testing.T) {
+			result, err := json.Marshal(tt.data)
+			if err != nil {
+				t.Fatalf("unexpected error from writableDevice.MarshalJSON: %v", err)
+			}
+			if want, got := tt.want, result; bytes.Compare(want, got) != 0 {
+				t.Fatalf("unexpected JSON:\n- want: %v\n- got: %v", string(want), string(got))
 			}
 		})
 	}
