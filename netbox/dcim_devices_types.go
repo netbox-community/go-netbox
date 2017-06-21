@@ -145,9 +145,9 @@ type writableDevice struct {
 	Site        int    `json:"site"`
 	Rack        int    `json:"rack,omitempty"`
 	Position    int    `json:"position,omitempty"`
-	Face        string `json:"face,omitempty"`
+	Face        int    `json:"face"`
 	Parent      int    `json:"parent_device,omitempty"`
-	Status      string `json:"status,omitempty"`
+	Status      int    `json:"status"`
 	PrimaryIP   int    `json:"primary_ip,omitempty"`
 	PrimaryIPv4 int    `json:"primary_ip4,omitempty"`
 	PrimaryIPv6 int    `json:"primary_ip6,omitempty"`
@@ -157,8 +157,7 @@ type writableDevice struct {
 // MarshalJSON marshals a Device into JSON bytes,
 // and is used by the standard json package.
 func (d *Device) MarshalJSON() ([]byte, error) {
-	var typeID, roleID, tenantID, platformID, siteID, rackID, parentID, primaryIPID, primaryIPv4ID, primaryIPv6ID int
-	var status, face string
+	var typeID, roleID, tenantID, platformID, siteID, rackID, parentID, primaryIPID, primaryIPv4ID, primaryIPv6ID, status, face int
 
 	if d.DeviceType != nil {
 		typeID = d.DeviceType.ID
@@ -197,7 +196,7 @@ func (d *Device) MarshalJSON() ([]byte, error) {
 	}
 
 	if d.Face != nil {
-		face = d.Face.Label
+		face = d.Face.Value
 	}
 
 	if d.Parent != nil {
@@ -205,7 +204,7 @@ func (d *Device) MarshalJSON() ([]byte, error) {
 	}
 
 	if d.Status != nil {
-		status = d.Status.Label
+		status = d.Status.Value
 	}
 
 	return json.Marshal(writableDevice{

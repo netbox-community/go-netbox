@@ -183,7 +183,7 @@ func TestDeviceMarshalJSON(t *testing.T) {
 		{
 			desc: "Sample Device",
 			data: testDevice(1),
-			want: []byte(`{"id":1,"name":"Device 1","display_name":"Device 1","device_type":2001,"device_role":1001,"tenant":3001,"platform":4001,"site":5001,"rack":6001}`),
+			want: []byte(`{"id":1,"name":"Device 1","display_name":"Device 1","device_type":2001,"device_role":1001,"tenant":3001,"platform":4001,"site":5001,"rack":6001,"face":0,"status":0}`),
 		},
 	}
 
