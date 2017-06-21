@@ -19,6 +19,7 @@ type DCIMService struct {
 	c              *Client
 	InventoryItems *InventoryItemsService
 	Devices        *DevicesService
+	Interfaces     *InterfacesService
 }
 
 // NewDCIMService returns a DCIMService initialized with all sub-services.
@@ -29,6 +30,9 @@ func NewDCIMService(client *Client) *DCIMService {
 			c: client,
 		},
 		Devices: &DevicesService{
+			c: client,
+		},
+		Interfaces: &InterfacesService{
 			c: client,
 		},
 	}
