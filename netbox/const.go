@@ -14,14 +14,14 @@
 
 package netbox
 
-// Describe Interface Status
+// Describe Device's Status
 const (
-	InterfaceStatusOffline   = 0
-	InterfaceStatusActive    = 1
-	InterfaceStatusPlanned   = 2
-	InterfaceStatusStaged    = 3
-	InterfaceStatusFailed    = 4
-	InterfaceStatusInventory = 5
+	DeviceStatusOffline   = 0
+	DeviceStatusActive    = 1
+	DeviceStatusPlanned   = 2
+	DeviceStatusStaged    = 3
+	DeviceStatusFailed    = 4
+	DeviceStatusInventory = 5
 )
 
 // Describe the face of a device in the rack
