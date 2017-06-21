@@ -29,3 +29,37 @@ const (
 	RackFaceFront = 0
 	RackFaceRear  = 1
 )
+
+// Describe Interface's Form Factor
+const (
+	InterfaceFormFactorVirtual       = 0
+	InterfaceFormFactorLAG           = 200
+	InterfaceFormFactor100MEFixed    = 800
+	InterfaceFormFactor1GEFixed      = 1000
+	InterfaceFormFactor1GEGBIC       = 1050
+	InterfaceFormFactor1GESFP        = 1100
+	InterfaceFormFactor10GEFixed     = 1150
+	InterfaceFormFactor10GESFPPlus   = 1200
+	InterfaceFormFactor10GEXFP       = 1300
+	InterfaceFormFactor10GEXENPAK    = 1310
+	InterfaceFormFactor10GEX2        = 1320
+	InterfaceFormFactor25GESFP28     = 1350
+	InterfaceFormFactor40GEQSFPPlus  = 1400
+	InterfaceFormFactor100GECFP      = 1500
+	InterfaceFormFactor100GEQSFP28   = 1600
+	InterfaceFormFactor1GFCSFP       = 3010
+	InterfaceFormFactor2GFCSFP       = 3020
+	InterfaceFormFactor4GFCSFP       = 3040
+	InterfaceFormFactor8GFCSFPPlus   = 3080
+	InterfaceFormFactor16GFCSFPPlus  = 3160
+	InterfaceFormFactorT1            = 4000
+	InterfaceFormFactorE1            = 4010
+	InterfaceFormFactorT3            = 4040
+	InterfaceFormFactorE3            = 4050
+	InterfaceFormFactorStackWise     = 5000
+	InterfaceFormFactorStackWisePlus = 5050
+	InterfaceFormFactorFlexStack     = 5100
+	InterfaceFormFactorFlexStackPlus = 5150
+	InterfaceFormFactorJuniperVCP    = 5200
+	InterfaceFormFactorOther         = 32767
+)
