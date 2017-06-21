@@ -254,7 +254,7 @@ type ListDeviceOptions struct {
 	DeviceModel     string
 	PlatformID      int
 	Platform        string
-	Status          string
+	Status          *int
 	IsConsoleServer *bool
 	IsPDU           *bool
 	IsNetworkDevice *bool
@@ -270,15 +270,6 @@ func (o *ListDeviceOptions) Values() (url.Values, error) {
 	}
 
 	v := url.Values{}
-
-	status := map[string]int{
-		"Offline":   0,
-		"Active":    1,
-		"Planned":   2,
-		"Staged":    3,
-		"Failed":    4,
-		"Inventory": 5,
-	}
 
 	switch {
 	case o.SiteID != 0:
@@ -351,8 +342,8 @@ func (o *ListDeviceOptions) Values() (url.Values, error) {
 		v.Set("model", o.DeviceModel)
 	}
 
-	if o.Status != "" {
-		v.Set("status", strconv.Itoa(status[o.Status]))
+	if o.Status != nil {
+		v.Set("status", strconv.Itoa(*o.Status))
 	}
 
 	if o.IsConsoleServer != nil {
