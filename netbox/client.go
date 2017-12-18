@@ -75,7 +75,7 @@ func NewClient(addr string, token string, client *http.Client) (*Client, error) 
 	}
 
 	c.DCIM = NewDCIMService(c)
-	c.IPAM = &IPAMService{c: c}
+	c.IPAM = NewIPAMService(c)
 	c.Tenancy = NewTenancyService(c)
 
 	return c, nil
