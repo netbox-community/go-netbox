@@ -23,6 +23,10 @@ type IPAddress struct {
 	// Required: true
 	Address *string `json:"address"`
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -41,6 +45,10 @@ type IPAddress struct {
 	// interface
 	// Required: true
 	Interface *IPAddressInterface `json:"interface"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// nat inside
 	// Required: true

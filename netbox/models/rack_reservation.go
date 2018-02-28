@@ -36,13 +36,17 @@ type RackReservation struct {
 	// Required: true
 	Rack *NestedRack `json:"rack"`
 
+	// tenant
+	// Required: true
+	Tenant *NestedTenant `json:"tenant"`
+
 	// units
 	// Required: true
 	Units []*int64 `json:"units"`
 
-	// User
+	// user
 	// Required: true
-	User *int64 `json:"user"`
+	User *NestedUser `json:"user"`
 }
 
 // Validate validates this rack reservation
@@ -55,6 +59,11 @@ func (m *RackReservation) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateRack(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTenant(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -107,6 +116,25 @@ func (m *RackReservation) validateRack(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *RackReservation) validateTenant(formats strfmt.Registry) error {
+
+	if err := validate.Required("tenant", "body", m.Tenant); err != nil {
+		return err
+	}
+
+	if m.Tenant != nil {
+
+		if err := m.Tenant.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *RackReservation) validateUnits(formats strfmt.Registry) error {
 
 	if err := validate.Required("units", "body", m.Units); err != nil {
@@ -136,6 +164,16 @@ func (m *RackReservation) validateUser(formats strfmt.Registry) error {
 
 	if err := validate.Required("user", "body", m.User); err != nil {
 		return err
+	}
+
+	if m.User != nil {
+
+		if err := m.User.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("user")
+			}
+			return err
+		}
 	}
 
 	return nil

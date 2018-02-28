@@ -92,6 +92,10 @@ type DcimRackReservationsListParams struct {
 	Site *string
 	/*SiteID*/
 	SiteID *string
+	/*Tenant*/
+	Tenant *string
+	/*TenantID*/
+	TenantID *string
 	/*User*/
 	User *string
 	/*UserID*/
@@ -243,6 +247,28 @@ func (o *DcimRackReservationsListParams) WithSiteID(siteID *string) *DcimRackRes
 // SetSiteID adds the siteId to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) SetSiteID(siteID *string) {
 	o.SiteID = siteID
+}
+
+// WithTenant adds the tenant to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithTenant(tenant *string) *DcimRackReservationsListParams {
+	o.SetTenant(tenant)
+	return o
+}
+
+// SetTenant adds the tenant to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetTenant(tenant *string) {
+	o.Tenant = tenant
+}
+
+// WithTenantID adds the tenantID to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithTenantID(tenantID *string) *DcimRackReservationsListParams {
+	o.SetTenantID(tenantID)
+	return o
+}
+
+// SetTenantID adds the tenantId to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetTenantID(tenantID *string) {
+	o.TenantID = tenantID
 }
 
 // WithUser adds the user to the dcim rack reservations list params
@@ -429,6 +455,38 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		qSiteID := qrSiteID
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tenant != nil {
+
+		// query param tenant
+		var qrTenant string
+		if o.Tenant != nil {
+			qrTenant = *o.Tenant
+		}
+		qTenant := qrTenant
+		if qTenant != "" {
+			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantID != nil {
+
+		// query param tenant_id
+		var qrTenantID string
+		if o.TenantID != nil {
+			qrTenantID = *o.TenantID
+		}
+		qTenantID := qrTenantID
+		if qTenantID != "" {
+			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
 			}
 		}

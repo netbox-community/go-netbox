@@ -25,6 +25,10 @@ type WritableIPAddress struct {
 	// Required: true
 	Address *string `json:"address"`
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -38,6 +42,10 @@ type WritableIPAddress struct {
 
 	// Interface
 	Interface int64 `json:"interface,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// NAT (Inside)
 	//

@@ -57,8 +57,16 @@ type Site struct {
 	// Read Only: true
 	CountVlans string `json:"count_vlans,omitempty"`
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 100
+	Description string `json:"description,omitempty"`
 
 	// Facility
 	// Max Length: 50
@@ -67,6 +75,10 @@ type Site struct {
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -91,9 +103,16 @@ type Site struct {
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 
+	// status
+	// Required: true
+	Status *SiteStatus `json:"status"`
+
 	// tenant
 	// Required: true
 	Tenant *NestedTenant `json:"tenant"`
+
+	// Time zone
+	TimeZone string `json:"time_zone,omitempty"`
 }
 
 // Validate validates this site
@@ -116,6 +135,11 @@ func (m *Site) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateContactPhone(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateDescription(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -146,6 +170,11 @@ func (m *Site) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSlug(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -215,6 +244,19 @@ func (m *Site) validateContactPhone(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("contact_phone", "body", string(m.ContactPhone), 20); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Site) validateDescription(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
 		return err
 	}
 
@@ -304,6 +346,25 @@ func (m *Site) validateSlug(formats strfmt.Registry) error {
 
 	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Site) validateStatus(formats strfmt.Registry) error {
+
+	if err := validate.Required("status", "body", m.Status); err != nil {
+		return err
+	}
+
+	if m.Status != nil {
+
+		if err := m.Status.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			}
+			return err
+		}
 	}
 
 	return nil

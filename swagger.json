@@ -10,7 +10,7 @@
     "license": {
       "name": "Apache v2 License"
     },
-    "version": "2.2"
+    "version": "2.3"
   },
   "host": "localhost:8000",
   "schemes": [
@@ -554,6 +554,13 @@
           },
           {
             "name": "type",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "status",
             "in": "query",
             "description": "",
             "required": false,
@@ -2973,6 +2980,13 @@
             "type": "string"
           },
           {
+            "name": "virtual_chassis_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "limit",
             "in": "query",
             "description": "Number of results to return per page.",
@@ -4295,6 +4309,20 @@
             "type": "string"
           },
           {
+            "name": "manufacturer_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "manufacturer",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "limit",
             "in": "query",
             "description": "Number of results to return per page.",
@@ -4355,7 +4383,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Platform"
+              "$ref": "#/definitions/WritablePlatform"
             }
           }
         ],
@@ -4363,7 +4391,7 @@
           "201": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/Platform"
+              "$ref": "#/definitions/WritablePlatform"
             }
           }
         },
@@ -4399,7 +4427,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Platform"
+              "$ref": "#/definitions/WritablePlatform"
             }
           }
         ],
@@ -4407,7 +4435,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/Platform"
+              "$ref": "#/definitions/WritablePlatform"
             }
           }
         },
@@ -4424,7 +4452,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Platform"
+              "$ref": "#/definitions/WritablePlatform"
             }
           }
         ],
@@ -4432,7 +4460,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/Platform"
+              "$ref": "#/definitions/WritablePlatform"
             }
           }
         },
@@ -5580,6 +5608,20 @@
             "type": "string"
           },
           {
+            "name": "tenant_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tenant",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "user_id",
             "in": "query",
             "description": "",
@@ -6555,6 +6597,13 @@
             "type": "number"
           },
           {
+            "name": "status",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "region_id",
             "in": "query",
             "description": "",
@@ -6773,6 +6822,180 @@
           "name": "id",
           "in": "path",
           "description": "A unique integer value identifying this site.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/dcim/virtual-chassis/": {
+      "get": {
+        "operationId": "dcim_virtual-chassis_list",
+        "description": "",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial index from which to return the results.",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "required": [
+                "count",
+                "results"
+              ],
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "next": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "previous": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/VirtualChassis"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "dcim"
+        ]
+      },
+      "post": {
+        "operationId": "dcim_virtual-chassis_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableVirtualChassis"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/WritableVirtualChassis"
+            }
+          }
+        },
+        "tags": [
+          "dcim"
+        ]
+      },
+      "parameters": []
+    },
+    "/dcim/virtual-chassis/{id}/": {
+      "get": {
+        "operationId": "dcim_virtual-chassis_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/VirtualChassis"
+            }
+          }
+        },
+        "tags": [
+          "dcim"
+        ]
+      },
+      "put": {
+        "operationId": "dcim_virtual-chassis_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableVirtualChassis"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/WritableVirtualChassis"
+            }
+          }
+        },
+        "tags": [
+          "dcim"
+        ]
+      },
+      "patch": {
+        "operationId": "dcim_virtual-chassis_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableVirtualChassis"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/WritableVirtualChassis"
+            }
+          }
+        },
+        "tags": [
+          "dcim"
+        ]
+      },
+      "delete": {
+        "operationId": "dcim_virtual-chassis_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "dcim"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this virtual chassis.",
           "required": true,
           "type": "integer"
         }
@@ -8020,18 +8243,18 @@
             "type": "string"
           },
           {
-            "name": "device_id",
+            "name": "device",
             "in": "query",
             "description": "",
             "required": false,
             "type": "string"
           },
           {
-            "name": "device",
+            "name": "device_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "number"
           },
           {
             "name": "virtual_machine_id",
@@ -8265,13 +8488,6 @@
           },
           {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "parent",
             "in": "query",
             "description": "",
             "required": false,
@@ -8571,6 +8787,58 @@
       "post": {
         "operationId": "ipam_prefixes_available-ips_create",
         "description": "A convenience method for returning available IP addresses within a prefix. By default, the number of IPs\nreturned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be passed,\nhowever results will not be paginated.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Prefix"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Prefix"
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this prefix.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/ipam/prefixes/{id}/available-prefixes/": {
+      "get": {
+        "operationId": "ipam_prefixes_available-prefixes_read",
+        "description": "A convenience method for returning available child prefixes within a parent.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Prefix"
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "post": {
+        "operationId": "ipam_prefixes_available-prefixes_create",
+        "description": "A convenience method for returning available child prefixes within a parent.",
         "parameters": [
           {
             "name": "data",
@@ -12151,6 +12419,43 @@
         }
       }
     },
+    "InterfaceVLAN": {
+      "title": "Untagged vlan",
+      "required": [
+        "vid",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "vid": {
+          "title": "ID",
+          "type": "integer",
+          "maximum": 4094,
+          "minimum": 1
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 64
+        },
+        "display_name": {
+          "title": "Display name",
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
     "Interface": {
       "title": "Interface",
       "required": [
@@ -12158,7 +12463,10 @@
         "name",
         "form_factor",
         "lag",
-        "circuit_termination"
+        "circuit_termination",
+        "mode",
+        "untagged_vlan",
+        "tagged_vlans"
       ],
       "type": "object",
       "properties": {
@@ -12230,6 +12538,31 @@
         },
         "circuit_termination": {
           "$ref": "#/definitions/InterfaceCircuitTermination"
+        },
+        "mode": {
+          "title": "Mode",
+          "required": [
+            "label",
+            "value"
+          ],
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "integer"
+            }
+          }
+        },
+        "untagged_vlan": {
+          "$ref": "#/definitions/InterfaceVLAN"
+        },
+        "tagged_vlans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InterfaceVLAN"
+          }
         }
       }
     },
@@ -12479,6 +12812,7 @@
         "cid",
         "provider",
         "type",
+        "status",
         "tenant"
       ],
       "type": "object",
@@ -12498,6 +12832,22 @@
         },
         "type": {
           "$ref": "#/definitions/NestedCircuitType"
+        },
+        "status": {
+          "title": "Status",
+          "required": [
+            "label",
+            "value"
+          ],
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "integer"
+            }
+          }
         },
         "tenant": {
           "$ref": "#/definitions/NestedTenant"
@@ -12525,6 +12875,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -12554,6 +12916,18 @@
           "title": "Type",
           "type": "integer"
         },
+        "status": {
+          "title": "Status",
+          "type": "integer",
+          "enum": [
+            2,
+            3,
+            1,
+            4,
+            0,
+            5
+          ]
+        },
         "tenant": {
           "title": "Tenant",
           "type": "integer"
@@ -12581,6 +12955,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -12640,6 +13026,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -12699,6 +13097,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -12756,7 +13166,11 @@
         },
         "connection_status": {
           "title": "Connection status",
-          "type": "boolean"
+          "type": "boolean",
+          "enum": [
+            false,
+            true
+          ]
         }
       }
     },
@@ -12902,7 +13316,11 @@
         },
         "connection_status": {
           "title": "Connection status",
-          "type": "boolean"
+          "type": "boolean",
+          "enum": [
+            false,
+            true
+          ]
         }
       }
     },
@@ -13461,6 +13879,29 @@
         }
       }
     },
+    "DeviceVirtualChassis": {
+      "title": "Virtual chassis",
+      "required": [
+        "master"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "master": {
+          "$ref": "#/definitions/NestedDevice"
+        }
+      }
+    },
     "Device": {
       "required": [
         "device_type",
@@ -13475,7 +13916,9 @@
         "primary_ip",
         "primary_ip4",
         "primary_ip6",
-        "cluster"
+        "cluster",
+        "virtual_chassis",
+        "vc_position"
       ],
       "type": "object",
       "properties": {
@@ -13580,6 +14023,21 @@
         "cluster": {
           "$ref": "#/definitions/NestedCluster"
         },
+        "virtual_chassis": {
+          "$ref": "#/definitions/DeviceVirtualChassis"
+        },
+        "vc_position": {
+          "title": "Vc position",
+          "type": "integer",
+          "maximum": 255,
+          "minimum": 0
+        },
+        "vc_priority": {
+          "title": "Vc priority",
+          "type": "integer",
+          "maximum": 255,
+          "minimum": 0
+        },
         "comments": {
           "title": "Comments",
           "type": "string"
@@ -13587,6 +14045,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -13682,6 +14152,22 @@
           "title": "Cluster",
           "type": "integer"
         },
+        "virtual_chassis": {
+          "title": "Virtual chassis",
+          "type": "integer"
+        },
+        "vc_position": {
+          "title": "Vc position",
+          "type": "integer",
+          "maximum": 255,
+          "minimum": 0
+        },
+        "vc_priority": {
+          "title": "Vc priority",
+          "type": "integer",
+          "maximum": 255,
+          "minimum": 0
+        },
         "comments": {
           "title": "Comments",
           "type": "string"
@@ -13689,6 +14175,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -13826,7 +14324,11 @@
         },
         "connection_status": {
           "title": "Status",
-          "type": "boolean"
+          "type": "boolean",
+          "enum": [
+            false,
+            true
+          ]
         }
       }
     },
@@ -14038,6 +14540,27 @@
           "title": "Description",
           "type": "string",
           "maxLength": 100
+        },
+        "mode": {
+          "title": "Mode",
+          "type": "integer",
+          "enum": [
+            100,
+            200,
+            300
+          ]
+        },
+        "untagged_vlan": {
+          "title": "Untagged VLAN",
+          "type": "integer"
+        },
+        "tagged_vlans": {
+          "type": "array",
+          "items": {
+            "title": "Tagged VLANs",
+            "type": "integer"
+          },
+          "uniqueItems": true
         }
       }
     },
@@ -14182,6 +14705,51 @@
     "Platform": {
       "required": [
         "name",
+        "slug",
+        "manufacturer"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 50
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string",
+          "format": "slug",
+          "pattern": "^[-a-zA-Z0-9_]+$",
+          "maxLength": 50
+        },
+        "manufacturer": {
+          "$ref": "#/definitions/NestedManufacturer"
+        },
+        "napalm_driver": {
+          "title": "NAPALM driver",
+          "description": "The name of the NAPALM driver to use when interacting with devices",
+          "type": "string",
+          "maxLength": 50
+        },
+        "rpc_client": {
+          "title": "Legacy RPC client",
+          "type": "string",
+          "enum": [
+            "juniper-junos",
+            "cisco-ios",
+            "opengear"
+          ]
+        }
+      }
+    },
+    "WritablePlatform": {
+      "required": [
+        "name",
         "slug"
       ],
       "type": "object",
@@ -14203,9 +14771,14 @@
           "pattern": "^[-a-zA-Z0-9_]+$",
           "maxLength": 50
         },
+        "manufacturer": {
+          "title": "Manufacturer",
+          "description": "Optionally limit this platform to devices of a certain manufacturer",
+          "type": "integer"
+        },
         "napalm_driver": {
           "title": "NAPALM driver",
-          "description": "The name of the NAPALM driver to use when interacting with devices.",
+          "description": "The name of the NAPALM driver to use when interacting with devices",
           "type": "string",
           "maxLength": 50
         },
@@ -14274,7 +14847,11 @@
         },
         "connection_status": {
           "title": "Connection status",
-          "type": "boolean"
+          "type": "boolean",
+          "enum": [
+            false,
+            true
+          ]
         }
       }
     },
@@ -14418,7 +14995,11 @@
         },
         "connection_status": {
           "title": "Connection status",
-          "type": "boolean"
+          "type": "boolean",
+          "enum": [
+            false,
+            true
+          ]
         }
       }
     },
@@ -14483,11 +15064,33 @@
         }
       }
     },
+    "NestedUser": {
+      "title": "User",
+      "required": [
+        "username"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "username": {
+          "title": "Username",
+          "description": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",
+          "type": "string",
+          "pattern": "^[\\w.@+-]+$",
+          "maxLength": 150
+        }
+      }
+    },
     "RackReservation": {
       "required": [
         "rack",
         "units",
         "user",
+        "tenant",
         "description"
       ],
       "type": "object",
@@ -14516,8 +15119,10 @@
           "readOnly": true
         },
         "user": {
-          "title": "User",
-          "type": "integer"
+          "$ref": "#/definitions/NestedUser"
+        },
+        "tenant": {
+          "$ref": "#/definitions/NestedTenant"
         },
         "description": {
           "title": "Description",
@@ -14763,6 +15368,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -14847,6 +15464,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -14947,6 +15576,7 @@
       "required": [
         "name",
         "slug",
+        "status",
         "region",
         "tenant"
       ],
@@ -14969,6 +15599,22 @@
           "pattern": "^[-a-zA-Z0-9_]+$",
           "maxLength": 50
         },
+        "status": {
+          "title": "Status",
+          "required": [
+            "label",
+            "value"
+          ],
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "integer"
+            }
+          }
+        },
         "region": {
           "$ref": "#/definitions/NestedRegion"
         },
@@ -14985,6 +15631,15 @@
           "type": "integer",
           "maximum": 4294967295,
           "minimum": 1
+        },
+        "time_zone": {
+          "title": "Time zone",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 100
         },
         "physical_address": {
           "title": "Physical address",
@@ -15019,6 +15674,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         },
         "count_prefixes": {
           "title": "Count prefixes",
@@ -15071,6 +15738,15 @@
           "pattern": "^[-a-zA-Z0-9_]+$",
           "maxLength": 50
         },
+        "status": {
+          "title": "Status",
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            4
+          ]
+        },
         "region": {
           "title": "Region",
           "type": "integer"
@@ -15089,6 +15765,15 @@
           "type": "integer",
           "maximum": 4294967295,
           "minimum": 1
+        },
+        "time_zone": {
+          "title": "Time zone",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 100
         },
         "physical_address": {
           "title": "Physical address",
@@ -15123,6 +15808,61 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        }
+      }
+    },
+    "VirtualChassis": {
+      "required": [
+        "master"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "master": {
+          "$ref": "#/definitions/NestedDevice"
+        },
+        "domain": {
+          "title": "Domain",
+          "type": "string",
+          "maxLength": 30
+        }
+      }
+    },
+    "WritableVirtualChassis": {
+      "required": [
+        "master"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "master": {
+          "title": "Master",
+          "type": "integer"
+        },
+        "domain": {
+          "title": "Domain",
+          "type": "string",
+          "maxLength": 30
         }
       }
     },
@@ -15353,27 +16093,6 @@
         }
       }
     },
-    "NestedUser": {
-      "title": "User",
-      "required": [
-        "username"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "username": {
-          "title": "Username",
-          "description": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",
-          "type": "string",
-          "pattern": "^[\\w.@+-]+$",
-          "maxLength": 150
-        }
-      }
-    },
     "UserAction": {
       "required": [
         "user",
@@ -15573,6 +16292,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -15609,6 +16340,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -15673,16 +16416,18 @@
       "required": [
         "device",
         "virtual_machine",
-        "name",
-        "form_factor",
-        "lag",
-        "circuit_termination"
+        "name"
       ],
       "type": "object",
       "properties": {
         "id": {
           "title": "ID",
           "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
           "readOnly": true
         },
         "device": {
@@ -15695,62 +16440,6 @@
           "title": "Name",
           "type": "string",
           "maxLength": 64
-        },
-        "form_factor": {
-          "title": "Form factor",
-          "required": [
-            "label",
-            "value"
-          ],
-          "type": "object",
-          "properties": {
-            "label": {
-              "type": "string"
-            },
-            "value": {
-              "type": "integer"
-            }
-          }
-        },
-        "enabled": {
-          "title": "Enabled",
-          "type": "boolean"
-        },
-        "lag": {
-          "$ref": "#/definitions/NestedInterface"
-        },
-        "mtu": {
-          "title": "MTU",
-          "type": "integer",
-          "maximum": 32767,
-          "minimum": 0
-        },
-        "mac_address": {
-          "title": "MAC Address",
-          "type": "string"
-        },
-        "mgmt_only": {
-          "title": "OOB Management",
-          "description": "This interface is used only for out-of-band management",
-          "type": "boolean"
-        },
-        "description": {
-          "title": "Description",
-          "type": "string",
-          "maxLength": 100
-        },
-        "is_connected": {
-          "title": "Is connected",
-          "type": "string",
-          "readOnly": true
-        },
-        "interface_connection": {
-          "title": "Interface connection",
-          "type": "string",
-          "readOnly": true
-        },
-        "circuit_termination": {
-          "$ref": "#/definitions/InterfaceCircuitTermination"
         }
       }
     },
@@ -15867,6 +16556,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -15937,6 +16638,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16081,6 +16794,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16145,6 +16870,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16270,6 +17007,18 @@
           "title": "Description",
           "type": "string",
           "maxLength": 100
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16325,6 +17074,18 @@
           "title": "Description",
           "type": "string",
           "maxLength": 100
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16490,6 +17251,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16549,6 +17322,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16596,6 +17381,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16638,6 +17435,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16777,6 +17586,23 @@
         "plaintext": {
           "title": "Plaintext",
           "type": "string"
+        },
+        "hash": {
+          "title": "Hash",
+          "type": "string",
+          "readOnly": true
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16880,6 +17706,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -16924,6 +17762,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -17080,6 +17930,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -17119,6 +17981,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -17238,6 +18112,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     },
@@ -17316,6 +18202,18 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
         }
       }
     }

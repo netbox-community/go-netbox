@@ -19,6 +19,10 @@ import (
 // swagger:model WritableService
 type WritableService struct {
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Description
 	// Max Length: 100
 	Description string `json:"description,omitempty"`
@@ -33,6 +37,10 @@ type WritableService struct {
 	// ipaddresses
 	// Unique: true
 	Ipaddresses []int64 `json:"ipaddresses"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true

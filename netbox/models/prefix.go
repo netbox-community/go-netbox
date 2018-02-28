@@ -17,6 +17,10 @@ import (
 // swagger:model Prefix
 type Prefix struct {
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -36,6 +40,10 @@ type Prefix struct {
 	//
 	// All IP addresses within this prefix are considered usable
 	IsPool bool `json:"is_pool,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Prefix
 	//

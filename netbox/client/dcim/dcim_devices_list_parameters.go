@@ -132,6 +132,8 @@ type DcimDevicesListParams struct {
 	Tenant *string
 	/*TenantID*/
 	TenantID *string
+	/*VirtualChassisID*/
+	VirtualChassisID *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -499,6 +501,17 @@ func (o *DcimDevicesListParams) WithTenantID(tenantID *string) *DcimDevicesListP
 // SetTenantID adds the tenantId to the dcim devices list params
 func (o *DcimDevicesListParams) SetTenantID(tenantID *string) {
 	o.TenantID = tenantID
+}
+
+// WithVirtualChassisID adds the virtualChassisID to the dcim devices list params
+func (o *DcimDevicesListParams) WithVirtualChassisID(virtualChassisID *string) *DcimDevicesListParams {
+	o.SetVirtualChassisID(virtualChassisID)
+	return o
+}
+
+// SetVirtualChassisID adds the virtualChassisId to the dcim devices list params
+func (o *DcimDevicesListParams) SetVirtualChassisID(virtualChassisID *string) {
+	o.VirtualChassisID = virtualChassisID
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -983,6 +996,22 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		qTenantID := qrTenantID
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VirtualChassisID != nil {
+
+		// query param virtual_chassis_id
+		var qrVirtualChassisID string
+		if o.VirtualChassisID != nil {
+			qrVirtualChassisID = *o.VirtualChassisID
+		}
+		qVirtualChassisID := qrVirtualChassisID
+		if qVirtualChassisID != "" {
+			if err := r.SetQueryParam("virtual_chassis_id", qVirtualChassisID); err != nil {
 				return err
 			}
 		}

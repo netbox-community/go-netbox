@@ -60,6 +60,10 @@ type Interface struct {
 	// This interface is used only for out-of-band management
 	MgmtOnly bool `json:"mgmt_only,omitempty"`
 
+	// mode
+	// Required: true
+	Mode *InterfaceMode `json:"mode"`
+
 	// MTU
 	// Maximum: 32767
 	// Minimum: 0
@@ -69,6 +73,14 @@ type Interface struct {
 	// Required: true
 	// Max Length: 64
 	Name *string `json:"name"`
+
+	// tagged vlans
+	// Required: true
+	TaggedVlans InterfaceTaggedVlans `json:"tagged_vlans"`
+
+	// untagged vlan
+	// Required: true
+	UntaggedVlan *InterfaceVLAN `json:"untagged_vlan"`
 }
 
 // Validate validates this interface
@@ -100,12 +112,27 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateMode(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateMtu(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTaggedVlans(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateUntaggedVlan(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -205,6 +232,25 @@ func (m *Interface) validateLag(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Interface) validateMode(formats strfmt.Registry) error {
+
+	if err := validate.Required("mode", "body", m.Mode); err != nil {
+		return err
+	}
+
+	if m.Mode != nil {
+
+		if err := m.Mode.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("mode")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Interface) validateMtu(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Mtu) { // not required
@@ -230,6 +276,41 @@ func (m *Interface) validateName(formats strfmt.Registry) error {
 
 	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) validateTaggedVlans(formats strfmt.Registry) error {
+
+	if err := validate.Required("tagged_vlans", "body", m.TaggedVlans); err != nil {
+		return err
+	}
+
+	if err := m.TaggedVlans.Validate(formats); err != nil {
+		if ve, ok := err.(*errors.Validation); ok {
+			return ve.ValidateName("tagged_vlans")
+		}
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) validateUntaggedVlan(formats strfmt.Registry) error {
+
+	if err := validate.Required("untagged_vlan", "body", m.UntaggedVlan); err != nil {
+		return err
+	}
+
+	if m.UntaggedVlan != nil {
+
+		if err := m.UntaggedVlan.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("untagged_vlan")
+			}
+			return err
+		}
 	}
 
 	return nil

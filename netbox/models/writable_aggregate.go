@@ -17,6 +17,10 @@ import (
 // swagger:model WritableAggregate
 type WritableAggregate struct {
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -30,6 +34,10 @@ type WritableAggregate struct {
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Prefix
 	// Required: true

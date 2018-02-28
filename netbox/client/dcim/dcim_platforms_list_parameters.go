@@ -68,6 +68,10 @@ type DcimPlatformsListParams struct {
 
 	*/
 	Limit *int64
+	/*Manufacturer*/
+	Manufacturer *string
+	/*ManufacturerID*/
+	ManufacturerID *string
 	/*Name*/
 	Name *string
 	/*Offset
@@ -127,6 +131,28 @@ func (o *DcimPlatformsListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithManufacturer adds the manufacturer to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithManufacturer(manufacturer *string) *DcimPlatformsListParams {
+	o.SetManufacturer(manufacturer)
+	return o
+}
+
+// SetManufacturer adds the manufacturer to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetManufacturer(manufacturer *string) {
+	o.Manufacturer = manufacturer
+}
+
+// WithManufacturerID adds the manufacturerID to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithManufacturerID(manufacturerID *string) *DcimPlatformsListParams {
+	o.SetManufacturerID(manufacturerID)
+	return o
+}
+
+// SetManufacturerID adds the manufacturerId to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetManufacturerID(manufacturerID *string) {
+	o.ManufacturerID = manufacturerID
+}
+
 // WithName adds the name to the dcim platforms list params
 func (o *DcimPlatformsListParams) WithName(name *string) *DcimPlatformsListParams {
 	o.SetName(name)
@@ -178,6 +204,38 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Manufacturer != nil {
+
+		// query param manufacturer
+		var qrManufacturer string
+		if o.Manufacturer != nil {
+			qrManufacturer = *o.Manufacturer
+		}
+		qManufacturer := qrManufacturer
+		if qManufacturer != "" {
+			if err := r.SetQueryParam("manufacturer", qManufacturer); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ManufacturerID != nil {
+
+		// query param manufacturer_id
+		var qrManufacturerID string
+		if o.ManufacturerID != nil {
+			qrManufacturerID = *o.ManufacturerID
+		}
+		qManufacturerID := qrManufacturerID
+		if qManufacturerID != "" {
+			if err := r.SetQueryParam("manufacturer_id", qManufacturerID); err != nil {
 				return err
 			}
 		}

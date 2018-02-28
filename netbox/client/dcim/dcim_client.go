@@ -4640,6 +4640,180 @@ func (a *Client) DcimSitesUpdate(params *DcimSitesUpdateParams, authInfo runtime
 
 }
 
+/*
+DcimVirtualChassisCreate dcim virtual chassis create API
+*/
+func (a *Client) DcimVirtualChassisCreate(params *DcimVirtualChassisCreateParams, authInfo runtime.ClientAuthInfoWriter) (*DcimVirtualChassisCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualChassisCreateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "dcim_virtual-chassis_create",
+		Method:             "POST",
+		PathPattern:        "/dcim/virtual-chassis/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualChassisCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DcimVirtualChassisCreateCreated), nil
+
+}
+
+/*
+DcimVirtualChassisDelete dcim virtual chassis delete API
+*/
+func (a *Client) DcimVirtualChassisDelete(params *DcimVirtualChassisDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*DcimVirtualChassisDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualChassisDeleteParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "dcim_virtual-chassis_delete",
+		Method:             "DELETE",
+		PathPattern:        "/dcim/virtual-chassis/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualChassisDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DcimVirtualChassisDeleteNoContent), nil
+
+}
+
+/*
+DcimVirtualChassisList dcim virtual chassis list API
+*/
+func (a *Client) DcimVirtualChassisList(params *DcimVirtualChassisListParams, authInfo runtime.ClientAuthInfoWriter) (*DcimVirtualChassisListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualChassisListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "dcim_virtual-chassis_list",
+		Method:             "GET",
+		PathPattern:        "/dcim/virtual-chassis/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualChassisListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DcimVirtualChassisListOK), nil
+
+}
+
+/*
+DcimVirtualChassisPartialUpdate dcim virtual chassis partial update API
+*/
+func (a *Client) DcimVirtualChassisPartialUpdate(params *DcimVirtualChassisPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*DcimVirtualChassisPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualChassisPartialUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "dcim_virtual-chassis_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/dcim/virtual-chassis/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualChassisPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DcimVirtualChassisPartialUpdateOK), nil
+
+}
+
+/*
+DcimVirtualChassisRead dcim virtual chassis read API
+*/
+func (a *Client) DcimVirtualChassisRead(params *DcimVirtualChassisReadParams, authInfo runtime.ClientAuthInfoWriter) (*DcimVirtualChassisReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualChassisReadParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "dcim_virtual-chassis_read",
+		Method:             "GET",
+		PathPattern:        "/dcim/virtual-chassis/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualChassisReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DcimVirtualChassisReadOK), nil
+
+}
+
+/*
+DcimVirtualChassisUpdate dcim virtual chassis update API
+*/
+func (a *Client) DcimVirtualChassisUpdate(params *DcimVirtualChassisUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*DcimVirtualChassisUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualChassisUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "dcim_virtual-chassis_update",
+		Method:             "PUT",
+		PathPattern:        "/dcim/virtual-chassis/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualChassisUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*DcimVirtualChassisUpdateOK), nil
+
+}
+
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
 	a.transport = transport

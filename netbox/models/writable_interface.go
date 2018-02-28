@@ -48,6 +48,9 @@ type WritableInterface struct {
 	// This interface is used only for out-of-band management
 	MgmtOnly bool `json:"mgmt_only,omitempty"`
 
+	// Mode
+	Mode int64 `json:"mode,omitempty"`
+
 	// MTU
 	// Maximum: 32767
 	// Minimum: 0
@@ -57,6 +60,13 @@ type WritableInterface struct {
 	// Required: true
 	// Max Length: 64
 	Name *string `json:"name"`
+
+	// tagged vlans
+	// Unique: true
+	TaggedVlans []int64 `json:"tagged_vlans"`
+
+	// Untagged VLAN
+	UntaggedVlan int64 `json:"untagged_vlan,omitempty"`
 }
 
 // Validate validates this writable interface
@@ -78,12 +88,22 @@ func (m *WritableInterface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateMode(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateMtu(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTaggedVlans(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -150,6 +170,40 @@ func (m *WritableInterface) validateFormFactor(formats strfmt.Registry) error {
 	return nil
 }
 
+var writableInterfaceTypeModePropEnum []interface{}
+
+func init() {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[100,200,300]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableInterfaceTypeModePropEnum = append(writableInterfaceTypeModePropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *WritableInterface) validateModeEnum(path, location string, value int64) error {
+	if err := validate.Enum(path, location, value, writableInterfaceTypeModePropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableInterface) validateMode(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Mode) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateModeEnum("mode", "body", m.Mode); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableInterface) validateMtu(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Mtu) { // not required
@@ -174,6 +228,19 @@ func (m *WritableInterface) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableInterface) validateTaggedVlans(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.TaggedVlans) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("tagged_vlans", "body", m.TaggedVlans); err != nil {
 		return err
 	}
 

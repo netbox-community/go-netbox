@@ -66,7 +66,7 @@ type IPAMIPAddressesListParams struct {
 	/*Device*/
 	Device *string
 	/*DeviceID*/
-	DeviceID *string
+	DeviceID *float64
 	/*Family*/
 	Family *string
 	/*IDIn
@@ -159,13 +159,13 @@ func (o *IPAMIPAddressesListParams) SetDevice(device *string) {
 }
 
 // WithDeviceID adds the deviceID to the ipam ip addresses list params
-func (o *IPAMIPAddressesListParams) WithDeviceID(deviceID *string) *IPAMIPAddressesListParams {
+func (o *IPAMIPAddressesListParams) WithDeviceID(deviceID *float64) *IPAMIPAddressesListParams {
 	o.SetDeviceID(deviceID)
 	return o
 }
 
 // SetDeviceID adds the deviceId to the ipam ip addresses list params
-func (o *IPAMIPAddressesListParams) SetDeviceID(deviceID *string) {
+func (o *IPAMIPAddressesListParams) SetDeviceID(deviceID *float64) {
 	o.DeviceID = deviceID
 }
 
@@ -372,11 +372,11 @@ func (o *IPAMIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 	if o.DeviceID != nil {
 
 		// query param device_id
-		var qrDeviceID string
+		var qrDeviceID float64
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
-		qDeviceID := qrDeviceID
+		qDeviceID := swag.FormatFloat64(qrDeviceID)
 		if qDeviceID != "" {
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err

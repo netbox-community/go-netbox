@@ -23,6 +23,10 @@ type Platform struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// manufacturer
+	// Required: true
+	Manufacturer *NestedManufacturer `json:"manufacturer"`
+
 	// Name
 	// Required: true
 	// Max Length: 50
@@ -30,7 +34,7 @@ type Platform struct {
 
 	// NAPALM driver
 	//
-	// The name of the NAPALM driver to use when interacting with devices.
+	// The name of the NAPALM driver to use when interacting with devices
 	// Max Length: 50
 	NapalmDriver string `json:"napalm_driver,omitempty"`
 
@@ -47,6 +51,11 @@ type Platform struct {
 // Validate validates this platform
 func (m *Platform) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateManufacturer(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
 
 	if err := m.validateName(formats); err != nil {
 		// prop
@@ -71,6 +80,25 @@ func (m *Platform) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Platform) validateManufacturer(formats strfmt.Registry) error {
+
+	if err := validate.Required("manufacturer", "body", m.Manufacturer); err != nil {
+		return err
+	}
+
+	if m.Manufacturer != nil {
+
+		if err := m.Manufacturer.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("manufacturer")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -42,6 +44,11 @@ type PowerPort struct {
 func (m *PowerPort) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateConnectionStatus(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateDevice(formats); err != nil {
 		// prop
 		res = append(res, err)
@@ -60,6 +67,40 @@ func (m *PowerPort) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+var powerPortTypeConnectionStatusPropEnum []interface{}
+
+func init() {
+	var res []bool
+	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		powerPortTypeConnectionStatusPropEnum = append(powerPortTypeConnectionStatusPropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *PowerPort) validateConnectionStatusEnum(path, location string, value bool) error {
+	if err := validate.Enum(path, location, value, powerPortTypeConnectionStatusPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *PowerPort) validateConnectionStatus(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ConnectionStatus) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateConnectionStatusEnum("connection_status", "body", m.ConnectionStatus); err != nil {
+		return err
+	}
+
 	return nil
 }
 

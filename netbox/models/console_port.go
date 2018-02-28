@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -42,6 +44,11 @@ type ConsolePort struct {
 func (m *ConsolePort) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateConnectionStatus(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateCsPort(formats); err != nil {
 		// prop
 		res = append(res, err)
@@ -60,6 +67,40 @@ func (m *ConsolePort) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+var consolePortTypeConnectionStatusPropEnum []interface{}
+
+func init() {
+	var res []bool
+	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		consolePortTypeConnectionStatusPropEnum = append(consolePortTypeConnectionStatusPropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *ConsolePort) validateConnectionStatusEnum(path, location string, value bool) error {
+	if err := validate.Enum(path, location, value, consolePortTypeConnectionStatusPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ConsolePort) validateConnectionStatus(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ConnectionStatus) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateConnectionStatusEnum("connection_status", "body", m.ConnectionStatus); err != nil {
+		return err
+	}
+
 	return nil
 }
 

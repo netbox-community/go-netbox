@@ -94,6 +94,8 @@ type CircuitsCircuitsListParams struct {
 	Site *string
 	/*SiteID*/
 	SiteID *string
+	/*Status*/
+	Status *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
@@ -260,6 +262,17 @@ func (o *CircuitsCircuitsListParams) WithSiteID(siteID *string) *CircuitsCircuit
 // SetSiteID adds the siteId to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) SetSiteID(siteID *string) {
 	o.SiteID = siteID
+}
+
+// WithStatus adds the status to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithStatus(status *string) *CircuitsCircuitsListParams {
+	o.SetStatus(status)
+	return o
+}
+
+// SetStatus adds the status to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetStatus(status *string) {
+	o.Status = status
 }
 
 // WithTenant adds the tenant to the circuits circuits list params
@@ -484,6 +497,22 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		qSiteID := qrSiteID
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Status != nil {
+
+		// query param status
+		var qrStatus string
+		if o.Status != nil {
+			qrStatus = *o.Status
+		}
+		qStatus := qrStatus
+		if qStatus != "" {
+			if err := r.SetQueryParam("status", qStatus); err != nil {
 				return err
 			}
 		}

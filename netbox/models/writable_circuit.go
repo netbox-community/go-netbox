@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -30,6 +32,10 @@ type WritableCircuit struct {
 	// Minimum: 0
 	CommitRate *int64 `json:"commit_rate,omitempty"`
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -44,9 +50,16 @@ type WritableCircuit struct {
 	// Date installed
 	InstallDate strfmt.Date `json:"install_date,omitempty"`
 
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
 	// Provider
 	// Required: true
 	Provider *int64 `json:"provider"`
+
+	// Status
+	Status int64 `json:"status,omitempty"`
 
 	// Tenant
 	Tenant int64 `json:"tenant,omitempty"`
@@ -76,6 +89,11 @@ func (m *WritableCircuit) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateProvider(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -137,6 +155,40 @@ func (m *WritableCircuit) validateDescription(formats strfmt.Registry) error {
 func (m *WritableCircuit) validateProvider(formats strfmt.Registry) error {
 
 	if err := validate.Required("provider", "body", m.Provider); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var writableCircuitTypeStatusPropEnum []interface{}
+
+func init() {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[2,3,1,4,0,5]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableCircuitTypeStatusPropEnum = append(writableCircuitTypeStatusPropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *WritableCircuit) validateStatusEnum(path, location string, value int64) error {
+	if err := validate.Enum(path, location, value, writableCircuitTypeStatusPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableCircuit) validateStatus(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
 	}
 

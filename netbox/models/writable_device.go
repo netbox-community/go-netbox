@@ -31,6 +31,10 @@ type WritableDevice struct {
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -48,6 +52,10 @@ type WritableDevice struct {
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Max Length: 64
@@ -85,6 +93,19 @@ type WritableDevice struct {
 
 	// Tenant
 	Tenant int64 `json:"tenant,omitempty"`
+
+	// Vc position
+	// Maximum: 255
+	// Minimum: 0
+	VcPosition *int64 `json:"vc_position,omitempty"`
+
+	// Vc priority
+	// Maximum: 255
+	// Minimum: 0
+	VcPriority *int64 `json:"vc_priority,omitempty"`
+
+	// Virtual chassis
+	VirtualChassis int64 `json:"virtual_chassis,omitempty"`
 }
 
 // Validate validates this writable device
@@ -132,6 +153,16 @@ func (m *WritableDevice) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateStatus(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateVcPosition(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateVcPriority(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -287,6 +318,40 @@ func (m *WritableDevice) validateStatus(formats strfmt.Registry) error {
 
 	// value enum
 	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDevice) validateVcPosition(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.VcPosition) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("vc_position", "body", int64(*m.VcPosition), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("vc_position", "body", int64(*m.VcPosition), 255, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDevice) validateVcPriority(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.VcPriority) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("vc_priority", "body", int64(*m.VcPriority), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("vc_priority", "body", int64(*m.VcPriority), 255, false); err != nil {
 		return err
 	}
 

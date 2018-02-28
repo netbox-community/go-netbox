@@ -493,6 +493,64 @@ func (a *Client) IPAMPrefixesAvailableIpsRead(params *IPAMPrefixesAvailableIpsRe
 }
 
 /*
+IPAMPrefixesAvailablePrefixesCreate A convenience method for returning available child prefixes within a parent.
+*/
+func (a *Client) IPAMPrefixesAvailablePrefixesCreate(params *IPAMPrefixesAvailablePrefixesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IPAMPrefixesAvailablePrefixesCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIPAMPrefixesAvailablePrefixesCreateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "ipam_prefixes_available-prefixes_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/prefixes/{id}/available-prefixes/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IPAMPrefixesAvailablePrefixesCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*IPAMPrefixesAvailablePrefixesCreateCreated), nil
+
+}
+
+/*
+IPAMPrefixesAvailablePrefixesRead A convenience method for returning available child prefixes within a parent.
+*/
+func (a *Client) IPAMPrefixesAvailablePrefixesRead(params *IPAMPrefixesAvailablePrefixesReadParams, authInfo runtime.ClientAuthInfoWriter) (*IPAMPrefixesAvailablePrefixesReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIPAMPrefixesAvailablePrefixesReadParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "ipam_prefixes_available-prefixes_read",
+		Method:             "GET",
+		PathPattern:        "/ipam/prefixes/{id}/available-prefixes/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IPAMPrefixesAvailablePrefixesReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*IPAMPrefixesAvailablePrefixesReadOK), nil
+
+}
+
+/*
 IPAMPrefixesCreate ipam prefixes create API
 */
 func (a *Client) IPAMPrefixesCreate(params *IPAMPrefixesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IPAMPrefixesCreateCreated, error) {

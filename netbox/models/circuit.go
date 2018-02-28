@@ -30,6 +30,10 @@ type Circuit struct {
 	// Minimum: 0
 	CommitRate *int64 `json:"commit_rate,omitempty"`
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -44,9 +48,17 @@ type Circuit struct {
 	// Date installed
 	InstallDate strfmt.Date `json:"install_date,omitempty"`
 
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
 	// provider
 	// Required: true
 	Provider *NestedProvider `json:"provider"`
+
+	// status
+	// Required: true
+	Status *CircuitStatus `json:"status"`
 
 	// tenant
 	// Required: true
@@ -77,6 +89,11 @@ func (m *Circuit) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateProvider(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -151,6 +168,25 @@ func (m *Circuit) validateProvider(formats strfmt.Registry) error {
 		if err := m.Provider.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Circuit) validateStatus(formats strfmt.Registry) error {
+
+	if err := validate.Required("status", "body", m.Status); err != nil {
+		return err
+	}
+
+	if m.Status != nil {
+
+		if err := m.Status.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
 			}
 			return err
 		}

@@ -86,8 +86,6 @@ type IPAMPrefixesListParams struct {
 
 	*/
 	Offset *int64
-	/*Parent*/
-	Parent *string
 	/*Q*/
 	Q *string
 	/*Role*/
@@ -230,17 +228,6 @@ func (o *IPAMPrefixesListParams) WithOffset(offset *int64) *IPAMPrefixesListPara
 // SetOffset adds the offset to the ipam prefixes list params
 func (o *IPAMPrefixesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithParent adds the parent to the ipam prefixes list params
-func (o *IPAMPrefixesListParams) WithParent(parent *string) *IPAMPrefixesListParams {
-	o.SetParent(parent)
-	return o
-}
-
-// SetParent adds the parent to the ipam prefixes list params
-func (o *IPAMPrefixesListParams) SetParent(parent *string) {
-	o.Parent = parent
 }
 
 // WithQ adds the q to the ipam prefixes list params
@@ -511,22 +498,6 @@ func (o *IPAMPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.Parent != nil {
-
-		// query param parent
-		var qrParent string
-		if o.Parent != nil {
-			qrParent = *o.Parent
-		}
-		qParent := qrParent
-		if qParent != "" {
-			if err := r.SetQueryParam("parent", qParent); err != nil {
 				return err
 			}
 		}

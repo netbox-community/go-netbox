@@ -17,6 +17,10 @@ import (
 // swagger:model Service
 type Service struct {
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Description
 	// Max Length: 100
 	Description string `json:"description,omitempty"`
@@ -32,6 +36,10 @@ type Service struct {
 	// ipaddresses
 	// Required: true
 	Ipaddresses ServiceIpaddresses `json:"ipaddresses"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true

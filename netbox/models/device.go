@@ -30,6 +30,10 @@ type Device struct {
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -52,6 +56,10 @@ type Device struct {
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Max Length: 64
@@ -104,6 +112,21 @@ type Device struct {
 	// tenant
 	// Required: true
 	Tenant *NestedTenant `json:"tenant"`
+
+	// Vc position
+	// Required: true
+	// Maximum: 255
+	// Minimum: 0
+	VcPosition *int64 `json:"vc_position"`
+
+	// Vc priority
+	// Maximum: 255
+	// Minimum: 0
+	VcPriority *int64 `json:"vc_priority,omitempty"`
+
+	// virtual chassis
+	// Required: true
+	VirtualChassis *DeviceVirtualChassis `json:"virtual_chassis"`
 }
 
 // Validate validates this device
@@ -186,6 +209,21 @@ func (m *Device) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTenant(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateVcPosition(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateVcPriority(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateVirtualChassis(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -472,6 +510,59 @@ func (m *Device) validateTenant(formats strfmt.Registry) error {
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) validateVcPosition(formats strfmt.Registry) error {
+
+	if err := validate.Required("vc_position", "body", m.VcPosition); err != nil {
+		return err
+	}
+
+	if err := validate.MinimumInt("vc_position", "body", int64(*m.VcPosition), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("vc_position", "body", int64(*m.VcPosition), 255, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Device) validateVcPriority(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.VcPriority) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("vc_priority", "body", int64(*m.VcPriority), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("vc_priority", "body", int64(*m.VcPriority), 255, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Device) validateVirtualChassis(formats strfmt.Registry) error {
+
+	if err := validate.Required("virtual_chassis", "body", m.VirtualChassis); err != nil {
+		return err
+	}
+
+	if m.VirtualChassis != nil {
+
+		if err := m.VirtualChassis.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("virtual_chassis")
 			}
 			return err
 		}

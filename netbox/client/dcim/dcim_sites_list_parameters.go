@@ -98,6 +98,8 @@ type DcimSitesListParams struct {
 	RegionID *string
 	/*Slug*/
 	Slug *string
+	/*Status*/
+	Status *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
@@ -282,6 +284,17 @@ func (o *DcimSitesListParams) WithSlug(slug *string) *DcimSitesListParams {
 // SetSlug adds the slug to the dcim sites list params
 func (o *DcimSitesListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithStatus adds the status to the dcim sites list params
+func (o *DcimSitesListParams) WithStatus(status *string) *DcimSitesListParams {
+	o.SetStatus(status)
+	return o
+}
+
+// SetStatus adds the status to the dcim sites list params
+func (o *DcimSitesListParams) SetStatus(status *string) {
+	o.Status = status
 }
 
 // WithTenant adds the tenant to the dcim sites list params
@@ -516,6 +529,22 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qSlug := qrSlug
 		if qSlug != "" {
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Status != nil {
+
+		// query param status
+		var qrStatus string
+		if o.Status != nil {
+			qrStatus = *o.Status
+		}
+		qStatus := qrStatus
+		if qStatus != "" {
+			if err := r.SetQueryParam("status", qStatus); err != nil {
 				return err
 			}
 		}

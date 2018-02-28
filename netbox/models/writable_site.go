@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -37,8 +39,16 @@ type WritableSite struct {
 	// Max Length: 20
 	ContactPhone string `json:"contact_phone,omitempty"`
 
+	// Created
+	// Read Only: true
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 100
+	Description string `json:"description,omitempty"`
 
 	// Facility
 	// Max Length: 50
@@ -47,6 +57,10 @@ type WritableSite struct {
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -70,8 +84,14 @@ type WritableSite struct {
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 
+	// Status
+	Status int64 `json:"status,omitempty"`
+
 	// Tenant
 	Tenant int64 `json:"tenant,omitempty"`
+
+	// Time zone
+	TimeZone string `json:"time_zone,omitempty"`
 }
 
 // Validate validates this writable site
@@ -98,6 +118,11 @@ func (m *WritableSite) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateDescription(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateFacility(formats); err != nil {
 		// prop
 		res = append(res, err)
@@ -119,6 +144,11 @@ func (m *WritableSite) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSlug(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -189,6 +219,19 @@ func (m *WritableSite) validateContactPhone(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableSite) validateDescription(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableSite) validateFacility(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Facility) { // not required
@@ -252,6 +295,40 @@ func (m *WritableSite) validateSlug(formats strfmt.Registry) error {
 	}
 
 	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var writableSiteTypeStatusPropEnum []interface{}
+
+func init() {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[1,2,4]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableSiteTypeStatusPropEnum = append(writableSiteTypeStatusPropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *WritableSite) validateStatusEnum(path, location string, value int64) error {
+	if err := validate.Enum(path, location, value, writableSiteTypeStatusPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableSite) validateStatus(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
 	}
 

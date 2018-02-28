@@ -47,7 +47,7 @@ func NewDcimPlatformsCreateCreated() *DcimPlatformsCreateCreated {
 DcimPlatformsCreateCreated dcim platforms create created
 */
 type DcimPlatformsCreateCreated struct {
-	Payload *models.Platform
+	Payload *models.WritablePlatform
 }
 
 func (o *DcimPlatformsCreateCreated) Error() string {
@@ -56,7 +56,7 @@ func (o *DcimPlatformsCreateCreated) Error() string {
 
 func (o *DcimPlatformsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.Platform)
+	o.Payload = new(models.WritablePlatform)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

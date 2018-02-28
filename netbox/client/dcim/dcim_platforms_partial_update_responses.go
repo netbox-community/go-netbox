@@ -47,7 +47,7 @@ func NewDcimPlatformsPartialUpdateOK() *DcimPlatformsPartialUpdateOK {
 DcimPlatformsPartialUpdateOK dcim platforms partial update o k
 */
 type DcimPlatformsPartialUpdateOK struct {
-	Payload *models.Platform
+	Payload *models.WritablePlatform
 }
 
 func (o *DcimPlatformsPartialUpdateOK) Error() string {
@@ -56,7 +56,7 @@ func (o *DcimPlatformsPartialUpdateOK) Error() string {
 
 func (o *DcimPlatformsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.Platform)
+	o.Payload = new(models.WritablePlatform)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
