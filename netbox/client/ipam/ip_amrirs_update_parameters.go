@@ -18,7 +18,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/davcamer/go-netbox/netbox/models"
+	"github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // NewIPAMRirsUpdateParams creates a new IPAMRirsUpdateParams object
