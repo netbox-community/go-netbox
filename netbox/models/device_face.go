@@ -37,7 +37,7 @@ type DeviceFace struct {
 
 	// value
 	// Required: true
-	Value *bool `json:"value"`
+	Value *int64 `json:"value"`
 }
 
 // Validate validates this device face

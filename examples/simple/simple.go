@@ -22,8 +22,7 @@ import (
 )
 
 func main() {
-	// Passing nil to this method results in all default values
-	c := client.NewHTTPClient(nil)
+	c := defaultClient()
 
 	rs, err := c.Dcim.DcimRacksList(nil, nil)
 	if err != nil {
@@ -32,4 +31,11 @@ func main() {
 	}
 
 	fmt.Printf("%v\n", *(rs.Payload.Count))
+}
+
+func defaultClient() *client.NetBox {
+	// Passing nil to this method results in all default configuration for the client.
+	// That is, a client that connects to http://localhost:8000, and using default
+	// field formats. (e.g. remove '-' from json field names)
+	return client.NewHTTPClient(nil)
 }
