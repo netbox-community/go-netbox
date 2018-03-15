@@ -14,16 +14,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package netbox
 
 import (
 	"testing"
-	"fmt"
 
 	"github.com/digitalocean/go-netbox/netbox/client/dcim"
 	"github.com/digitalocean/go-netbox/netbox/models"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/runtime"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -33,7 +31,7 @@ import (
 //    python3 netbox/manage.py runserver 0.0.0.0:8000 --insecure
 
 func TestRetrieveDeviceList(t *testing.T) {
-	c := defaultClient()
+	c := NewNetboxAt("localhost:8000")
 
 	list, err := c.Dcim.DcimDevicesList(nil, nil)
 
@@ -42,7 +40,7 @@ func TestRetrieveDeviceList(t *testing.T) {
 }
 
 func TestSubdeviceRole(t *testing.T) {
-	c := defaultClient()
+	c := NewNetboxWithAPIKey("localhost:8000", "7b4e1ceaaf93528a41e64d048090f7fe13ed16f4")
 
 	role := true
 	manufacturerID := int64(1)
@@ -59,7 +57,7 @@ func TestSubdeviceRole(t *testing.T) {
 	assert.NoError(t, err)
 
 	createRequest := dcim.NewDcimDeviceTypesCreateParams().WithData(newDeviceType)
-	createResponse, err := c.Dcim.DcimDeviceTypesCreate(createRequest, runtime.ClientAuthInfoWriterFunc(SetAuthenticationHeader))
+	createResponse, err := c.Dcim.DcimDeviceTypesCreate(createRequest, nil)
 	assert.NoError(t, err)
 
 	newID := float64(createResponse.Payload.ID)
@@ -71,13 +69,6 @@ func TestSubdeviceRole(t *testing.T) {
 	assert.EqualValues(t, "Test device type", retrieveResponse.Payload.Results[0].Comments)
 
 	deleteRequest := dcim.NewDcimDeviceTypesDeleteParams().WithID(int64(newID))
-	_, err = c.Dcim.DcimDeviceTypesDelete(deleteRequest, runtime.ClientAuthInfoWriterFunc(SetAuthenticationHeader))
+	_, err = c.Dcim.DcimDeviceTypesDelete(deleteRequest, nil)
 	assert.NoError(t, err)
-}
-
-const apiToken = "7b4e1ceaaf93528a41e64d048090f7fe13ed16f4"
-const authHeaderFormat = "Token %v"
-func SetAuthenticationHeader(req runtime.ClientRequest, _ strfmt.Registry) error {
-	req.SetHeaderParam("Authorization", fmt.Sprintf(authHeaderFormat, apiToken))
-	return nil
 }

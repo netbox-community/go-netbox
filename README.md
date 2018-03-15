@@ -9,43 +9,36 @@ This package assumes you are using NetBox 2.0, as the NetBox 1.0 API no longer e
 Using the client
 ================
 
-The `github.com/go-netbox/netbox/client` package is the entry point for using the client. By default, the client will
-connect to an api at `http://localhost:8000/api`. The simplest possible usage looks like:
-```golang
-    // Passing nil to this method results in all default values
-	c := client.NewHTTPClient(nil)
-
-	... work with the returned client ...
-```
-
-A more likely scenario is to connect to a remote netbox:
-```golang
-	t := client.DefaultTransportConfig().WithHost("your.netbox.host")
-	c := client.NewHTTPClientWithConfig(nil, t)
-```
-
-The client is generated using [go-swagger](https://github.com/go-swagger/go-swagger). This means the generated client
-makes use of [github.com/go-openapi/runtime/client](https://godoc.org/github.com/go-openapi/runtime/client). The [godocs
-for that module](https://godoc.org/github.com/go-openapi/runtime/client) explain the client options in detail, including
-different authentication and debugging options.
-
-Setting the debug flag will print all requests and responses on standard out, which is great for debugging unexpected
-results. It does require creating the client in the lower level `go-openapi` libraries:
+The `github.com/go-netbox/netbox` package has some convenience functions for creating clients with the most common
+configurations you are likely to need while connecting to NetBox. `NewNetboxAt` allows you to specify a hostname
+(including port, if you need it), and `NewNetboxWithAPIKey` allows you to specify both a hostname:port and API token.
 ```golang
 import (
-	"github.com/digitalocean/go-netbox/netbox/client"
-	"github.com/go-openapi/strfmt"
-	runtimeclient "github.com/go-openapi/runtime/client"
+    "github.com/digitalocean/go-netbox/netbox"
 )
-
-func main() {
-	t := runtimeclient.New(client.DefaultHost, client.DefaultBasePath, client.DefaultSchemes)
-	t.SetDebug(true)
-	c := client.New(t, strfmt.Default)
-
-	... work with c ...
-)
+...
+    c := netbox.NewNetboxAt("your.netbox.host:8000")
+    // OR
+    c := netbox.NewNetboxWithAPIKey("your.netbox.host:8000", "your_netbox_token")
 ```
+
+If you specify the API key, you do not need to pass an additional `authInfo` to operations that need authentication, and
+can pass `nil`:
+```golang
+    c.Dcim.DcimDeviceTypesCreate(createRequest, nil)
+```
+
+More complex client configuration
+=================================
+
+The client is generated using [go-swagger](https://github.com/go-swagger/go-swagger). This means the generated client
+makes use of [github.com/go-openapi/runtime/client](https://godoc.org/github.com/go-openapi/runtime/client). If you need
+a more complex configuration, it is probably possible with a combination of this generated client and the runtime
+options.
+
+The [godocs for the go-openapi/runtime/client module](https://godoc.org/github.com/go-openapi/runtime/client) explain
+the client options in detail, including different authentication and debugging options. One thing I want to flag because
+it is so useful: setting the `DEBUG` environment variable will dump all requests to standard out.
 
 Regenerating the client
 =======================
