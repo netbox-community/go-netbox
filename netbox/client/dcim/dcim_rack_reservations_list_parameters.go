@@ -87,7 +87,7 @@ type DcimRackReservationsListParams struct {
 	  Multiple values may be separated by commas.
 
 	*/
-	IDIn *float64
+	IDIn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -187,13 +187,13 @@ func (o *DcimRackReservationsListParams) SetGroupID(groupID *string) {
 }
 
 // WithIDIn adds the iDIn to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithIDIn(iDIn *float64) *DcimRackReservationsListParams {
+func (o *DcimRackReservationsListParams) WithIDIn(iDIn *string) *DcimRackReservationsListParams {
 	o.SetIDIn(iDIn)
 	return o
 }
 
 // SetIDIn adds the idIn to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetIDIn(iDIn *float64) {
+func (o *DcimRackReservationsListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
@@ -366,11 +366,11 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 	if o.IDIn != nil {
 
 		// query param id__in
-		var qrIDIn float64
+		var qrIDIn string
 		if o.IDIn != nil {
 			qrIDIn = *o.IDIn
 		}
-		qIDIn := swag.FormatFloat64(qrIDIn)
+		qIDIn := qrIDIn
 		if qIDIn != "" {
 			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
 				return err

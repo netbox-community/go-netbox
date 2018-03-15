@@ -85,7 +85,7 @@ type IPAMPrefixesListParams struct {
 	  Multiple values may be separated by commas.
 
 	*/
-	IDIn *float64
+	IDIn *string
 	/*IsPool*/
 	IsPool *string
 	/*Limit
@@ -190,13 +190,13 @@ func (o *IPAMPrefixesListParams) SetFamily(family *string) {
 }
 
 // WithIDIn adds the iDIn to the ipam prefixes list params
-func (o *IPAMPrefixesListParams) WithIDIn(iDIn *float64) *IPAMPrefixesListParams {
+func (o *IPAMPrefixesListParams) WithIDIn(iDIn *string) *IPAMPrefixesListParams {
 	o.SetIDIn(iDIn)
 	return o
 }
 
 // SetIDIn adds the idIn to the ipam prefixes list params
-func (o *IPAMPrefixesListParams) SetIDIn(iDIn *float64) {
+func (o *IPAMPrefixesListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
@@ -441,11 +441,11 @@ func (o *IPAMPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 	if o.IDIn != nil {
 
 		// query param id__in
-		var qrIDIn float64
+		var qrIDIn string
 		if o.IDIn != nil {
 			qrIDIn = *o.IDIn
 		}
-		qIDIn := swag.FormatFloat64(qrIDIn)
+		qIDIn := qrIDIn
 		if qIDIn != "" {
 			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
 				return err

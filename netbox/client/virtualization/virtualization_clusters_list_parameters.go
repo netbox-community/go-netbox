@@ -85,7 +85,7 @@ type VirtualizationClustersListParams struct {
 	  Multiple values may be separated by commas.
 
 	*/
-	IDIn *float64
+	IDIn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -170,13 +170,13 @@ func (o *VirtualizationClustersListParams) SetGroupID(groupID *string) {
 }
 
 // WithIDIn adds the iDIn to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) WithIDIn(iDIn *float64) *VirtualizationClustersListParams {
+func (o *VirtualizationClustersListParams) WithIDIn(iDIn *string) *VirtualizationClustersListParams {
 	o.SetIDIn(iDIn)
 	return o
 }
 
 // SetIDIn adds the idIn to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) SetIDIn(iDIn *float64) {
+func (o *VirtualizationClustersListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
@@ -311,11 +311,11 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 	if o.IDIn != nil {
 
 		// query param id__in
-		var qrIDIn float64
+		var qrIDIn string
 		if o.IDIn != nil {
 			qrIDIn = *o.IDIn
 		}
-		qIDIn := swag.FormatFloat64(qrIDIn)
+		qIDIn := qrIDIn
 		if qIDIn != "" {
 			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
 				return err

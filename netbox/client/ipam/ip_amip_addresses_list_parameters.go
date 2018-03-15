@@ -87,7 +87,7 @@ type IPAMIPAddressesListParams struct {
 	  Multiple values may be separated by commas.
 
 	*/
-	IDIn *float64
+	IDIn *string
 	/*InterfaceID*/
 	InterfaceID *string
 	/*Limit
@@ -195,13 +195,13 @@ func (o *IPAMIPAddressesListParams) SetFamily(family *string) {
 }
 
 // WithIDIn adds the iDIn to the ipam ip addresses list params
-func (o *IPAMIPAddressesListParams) WithIDIn(iDIn *float64) *IPAMIPAddressesListParams {
+func (o *IPAMIPAddressesListParams) WithIDIn(iDIn *string) *IPAMIPAddressesListParams {
 	o.SetIDIn(iDIn)
 	return o
 }
 
 // SetIDIn adds the idIn to the ipam ip addresses list params
-func (o *IPAMIPAddressesListParams) SetIDIn(iDIn *float64) {
+func (o *IPAMIPAddressesListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
@@ -418,11 +418,11 @@ func (o *IPAMIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 	if o.IDIn != nil {
 
 		// query param id__in
-		var qrIDIn float64
+		var qrIDIn string
 		if o.IDIn != nil {
 			qrIDIn = *o.IDIn
 		}
-		qIDIn := swag.FormatFloat64(qrIDIn)
+		qIDIn := qrIDIn
 		if qIDIn != "" {
 			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
 				return err

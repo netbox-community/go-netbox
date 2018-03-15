@@ -91,7 +91,7 @@ type DcimSitesListParams struct {
 	  Multiple values may be separated by commas.
 
 	*/
-	IDIn *float64
+	IDIn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -213,13 +213,13 @@ func (o *DcimSitesListParams) SetFacility(facility *string) {
 }
 
 // WithIDIn adds the iDIn to the dcim sites list params
-func (o *DcimSitesListParams) WithIDIn(iDIn *float64) *DcimSitesListParams {
+func (o *DcimSitesListParams) WithIDIn(iDIn *string) *DcimSitesListParams {
 	o.SetIDIn(iDIn)
 	return o
 }
 
 // SetIDIn adds the idIn to the dcim sites list params
-func (o *DcimSitesListParams) SetIDIn(iDIn *float64) {
+func (o *DcimSitesListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
@@ -424,11 +424,11 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.IDIn != nil {
 
 		// query param id__in
-		var qrIDIn float64
+		var qrIDIn string
 		if o.IDIn != nil {
 			qrIDIn = *o.IDIn
 		}
-		qIDIn := swag.FormatFloat64(qrIDIn)
+		qIDIn := qrIDIn
 		if qIDIn != "" {
 			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
 				return err

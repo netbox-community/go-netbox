@@ -93,7 +93,7 @@ type VirtualizationVirtualMachinesListParams struct {
 	  Multiple values may be separated by commas.
 
 	*/
-	IDIn *float64
+	IDIn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -232,13 +232,13 @@ func (o *VirtualizationVirtualMachinesListParams) SetClusterTypeID(clusterTypeID
 }
 
 // WithIDIn adds the iDIn to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithIDIn(iDIn *float64) *VirtualizationVirtualMachinesListParams {
+func (o *VirtualizationVirtualMachinesListParams) WithIDIn(iDIn *string) *VirtualizationVirtualMachinesListParams {
 	o.SetIDIn(iDIn)
 	return o
 }
 
 // SetIDIn adds the idIn to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetIDIn(iDIn *float64) {
+func (o *VirtualizationVirtualMachinesListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
@@ -492,11 +492,11 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 	if o.IDIn != nil {
 
 		// query param id__in
-		var qrIDIn float64
+		var qrIDIn string
 		if o.IDIn != nil {
 			qrIDIn = *o.IDIn
 		}
-		qIDIn := swag.FormatFloat64(qrIDIn)
+		qIDIn := qrIDIn
 		if qIDIn != "" {
 			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
 				return err

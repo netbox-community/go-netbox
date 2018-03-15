@@ -85,7 +85,7 @@ type CircuitsCircuitsListParams struct {
 	  Multiple values may be separated by commas.
 
 	*/
-	IDIn *float64
+	IDIn *string
 	/*InstallDate*/
 	InstallDate *string
 	/*Limit
@@ -180,13 +180,13 @@ func (o *CircuitsCircuitsListParams) SetCommitRate(commitRate *float64) {
 }
 
 // WithIDIn adds the iDIn to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) WithIDIn(iDIn *float64) *CircuitsCircuitsListParams {
+func (o *CircuitsCircuitsListParams) WithIDIn(iDIn *string) *CircuitsCircuitsListParams {
 	o.SetIDIn(iDIn)
 	return o
 }
 
 // SetIDIn adds the idIn to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) SetIDIn(iDIn *float64) {
+func (o *CircuitsCircuitsListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
@@ -376,11 +376,11 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 	if o.IDIn != nil {
 
 		// query param id__in
-		var qrIDIn float64
+		var qrIDIn string
 		if o.IDIn != nil {
 			qrIDIn = *o.IDIn
 		}
-		qIDIn := swag.FormatFloat64(qrIDIn)
+		qIDIn := qrIDIn
 		if qIDIn != "" {
 			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
 				return err

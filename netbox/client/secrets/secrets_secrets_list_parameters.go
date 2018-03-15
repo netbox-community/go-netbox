@@ -85,7 +85,7 @@ type SecretsSecretsListParams struct {
 	  Multiple values may be separated by commas.
 
 	*/
-	IDIn *float64
+	IDIn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -166,13 +166,13 @@ func (o *SecretsSecretsListParams) SetDeviceID(deviceID *string) {
 }
 
 // WithIDIn adds the iDIn to the secrets secrets list params
-func (o *SecretsSecretsListParams) WithIDIn(iDIn *float64) *SecretsSecretsListParams {
+func (o *SecretsSecretsListParams) WithIDIn(iDIn *string) *SecretsSecretsListParams {
 	o.SetIDIn(iDIn)
 	return o
 }
 
 // SetIDIn adds the idIn to the secrets secrets list params
-func (o *SecretsSecretsListParams) SetIDIn(iDIn *float64) {
+func (o *SecretsSecretsListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
@@ -285,11 +285,11 @@ func (o *SecretsSecretsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.IDIn != nil {
 
 		// query param id__in
-		var qrIDIn float64
+		var qrIDIn string
 		if o.IDIn != nil {
 			qrIDIn = *o.IDIn
 		}
-		qIDIn := swag.FormatFloat64(qrIDIn)
+		qIDIn := qrIDIn
 		if qIDIn != "" {
 			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
 				return err

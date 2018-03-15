@@ -522,7 +522,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -801,7 +801,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -2586,7 +2586,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -2802,7 +2802,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -5563,7 +5563,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -6051,7 +6051,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -6594,7 +6594,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "status",
@@ -7982,7 +7982,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -8191,7 +8191,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -8484,7 +8484,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -8902,7 +8902,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "limit",
@@ -9710,7 +9710,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -9982,7 +9982,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -10450,7 +10450,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -10900,7 +10900,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -11496,7 +11496,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",
@@ -11956,7 +11956,7 @@
             "in": "query",
             "description": "Multiple values may be separated by commas.",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "q",

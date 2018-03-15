@@ -81,7 +81,7 @@ type IPAMRirsListParams struct {
 	  Multiple values may be separated by commas.
 
 	*/
-	IDIn *float64
+	IDIn *string
 	/*IsPrivate*/
 	IsPrivate *string
 	/*Limit
@@ -138,13 +138,13 @@ func (o *IPAMRirsListParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithIDIn adds the iDIn to the ipam rirs list params
-func (o *IPAMRirsListParams) WithIDIn(iDIn *float64) *IPAMRirsListParams {
+func (o *IPAMRirsListParams) WithIDIn(iDIn *string) *IPAMRirsListParams {
 	o.SetIDIn(iDIn)
 	return o
 }
 
 // SetIDIn adds the idIn to the ipam rirs list params
-func (o *IPAMRirsListParams) SetIDIn(iDIn *float64) {
+func (o *IPAMRirsListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
@@ -214,11 +214,11 @@ func (o *IPAMRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 	if o.IDIn != nil {
 
 		// query param id__in
-		var qrIDIn float64
+		var qrIDIn string
 		if o.IDIn != nil {
 			qrIDIn = *o.IDIn
 		}
-		qIDIn := swag.FormatFloat64(qrIDIn)
+		qIDIn := qrIDIn
 		if qIDIn != "" {
 			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
 				return err
