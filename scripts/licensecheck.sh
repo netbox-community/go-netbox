@@ -3,7 +3,7 @@
 # Verify that the correct license block is present in all Go source
 # files.
 IFS=$'\n' read -r -d '' -a EXPECTED <<EndOfLicense
-// Copyright 2017 The go-netbox Authors.
+// Copyright 2018 The go-netbox Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,16 +24,18 @@ EXIT=0
 GOFILES=$(find . -name "*.go")
 
 for FILE in $GOFILES; do
-	IFS=$'\n' read -r -d '' -a BLOCK < <(head -n 14 $FILE)
+	IFS=$'\n' read -r -d '' -a BLOCK < <(tail -n +3 $FILE | head -n 14)
+	IFS=$'\n' read -r -d '' -a BLOCK2 < <(head -n 14 $FILE)
 
 	tmp_block=${BLOCK[@]:1}
+	tmp_block2=${BLOCK2[@]:1}
 	tmp_expected=${EXPECTED[@]:1}
-	if [[ $tmp_block != $tmp_expected ]]; then
+	if [[ $tmp_block != $tmp_expected && $tmp_block2 != $tmp_expected ]]; then
 		echo "file missing license: $FILE"
 		EXIT=1
 	fi
-	if ! [[ "${BLOCK[0]}" =~ $AUTHOR_REGEX ]]; then
-		echo "file missing license: $FILE"
+	if ! [[ "${BLOCK[0]}" =~ $AUTHOR_REGEX || "${BLOCK2[0]}" =~ $AUTHOR_REGEX ]]; then
+		echo "file missing author line: $FILE"
 		EXIT=1
 	fi
 done

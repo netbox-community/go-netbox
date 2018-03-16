@@ -1,4 +1,6 @@
-// Copyright 2017 The go-netbox Authors.
+// +build integration
+
+// Copyright 2018 The go-netbox Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,94 +17,58 @@
 package netbox
 
 import (
-	"encoding/json"
-	"fmt"
-	"math"
-	"net/http"
-	"net/http/httptest"
 	"testing"
+
+	"github.com/digitalocean/go-netbox/netbox/client/dcim"
+	"github.com/digitalocean/go-netbox/netbox/models"
+	"github.com/go-openapi/strfmt"
+	"github.com/stretchr/testify/assert"
 )
 
-func TestFamilyValid(t *testing.T) {
-	var tests = []struct {
-		desc string
-		f    Family
-		ok   bool
-	}{
-		{
-			desc: "Test math.MinInt64",
-			f:    math.MinInt64,
-		},
-		{
-			desc: "Test math.MaxInt64",
-			f:    math.MaxInt64,
-		},
-		{
-			desc: "Test FamilyIPv4",
-			f:    FamilyIPv4,
-			ok:   true,
-		},
-		{
-			desc: "Test FamilyIPv6",
-			f:    FamilyIPv6,
-			ok:   true,
-		},
-	}
+// These tests assume a netbox running locally, with the netbox test fixtures loaded.
+// This is achievable with the following netbox management commands, after install:
+//    python3 netbox/manage.py loaddata dcim extras ipam
+//    python3 netbox/manage.py runserver 0.0.0.0:8000 --insecure
 
-	for i, tt := range tests {
-		t.Run(fmt.Sprintf("[%d] %s", i, tt.desc), func(t *testing.T) {
-			if want, got := tt.ok, tt.f.Valid(); want != got {
-				t.Fatalf("unexpected Family(%d).Valid():\n- want: %v\n-  got: %v",
-					tt.f, want, got)
-			}
-		})
-	}
+func TestRetrieveDeviceList(t *testing.T) {
+	c := NewNetboxAt("localhost:8000")
+
+	list, err := c.Dcim.DcimDevicesList(nil, nil)
+
+	assert.NoError(t, err)
+	assert.EqualValues(t, 11, *list.Payload.Count)
 }
 
-type testSimple struct {
-	ID   int    `json:"id"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-}
+func TestSubdeviceRole(t *testing.T) {
+	c := NewNetboxWithAPIKey("localhost:8000", "7b4e1ceaaf93528a41e64d048090f7fe13ed16f4")
 
-// ExampleNewClient demonstrates usage of the Client type.
-func ExampleNewClient() {
-	// Sets up a minimal, mocked NetBox server
-	addr, done := exampleServer()
-	defer done()
-
-	// Creates a client configured to use the test server
-	c, err := NewClient(addr, "", nil)
-	if err != nil {
-		panic(fmt.Sprintf("failed to create netbox.Client: %v", err))
+	role := true
+	manufacturerID := int64(1)
+	model := "Test model"
+	slug := "test-slug"
+	newDeviceType := &models.WritableDeviceType{
+		SubdeviceRole: &role,
+		Comments: "Test device type",
+		Manufacturer: &manufacturerID,
+		Model: &model,
+		Slug: &slug,
 	}
+	err := newDeviceType.Validate(strfmt.Default)
+	assert.NoError(t, err)
 
-	res := testSimple{}
-	req, err := c.NewRequest(http.MethodGet, "/", nil)
-	if err != nil {
-		panic(err)
-	}
+	createRequest := dcim.NewDcimDeviceTypesCreateParams().WithData(newDeviceType)
+	createResponse, err := c.Dcim.DcimDeviceTypesCreate(createRequest, nil)
+	assert.NoError(t, err)
 
-	err = c.Do(req, &res)
-	if err != nil {
-		panic(err)
-	}
+	newID := float64(createResponse.Payload.ID)
+	assert.NotEqual(t, 0, newID)
 
-	fmt.Printf("%v\n", res)
-}
+	retrieveResponse, err := c.Dcim.DcimDeviceTypesList(dcim.NewDcimDeviceTypesListParams().WithIDIn(&newID), nil)
+	assert.NoError(t, err)
+	assert.EqualValues(t, 1, *retrieveResponse.Payload.Count)
+	assert.EqualValues(t, "Test device type", retrieveResponse.Payload.Results[0].Comments)
 
-// exampleServer creates a test HTTP server which returns its address and
-// can be closed using the returned closure.
-func exampleServer() (string, func()) {
-	s := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		simple := testSimple{
-			ID:   1,
-			Name: "Test 1",
-			Slug: "test-1",
-		}
-
-		_ = json.NewEncoder(w).Encode(simple)
-	}))
-
-	return s.URL, func() { s.Close() }
+	deleteRequest := dcim.NewDcimDeviceTypesDeleteParams().WithID(int64(newID))
+	_, err = c.Dcim.DcimDeviceTypesDelete(deleteRequest, nil)
+	assert.NoError(t, err)
 }

@@ -1,4 +1,4 @@
-// Copyright 2017 The go-netbox Authors.
+// Copyright 2018 The go-netbox Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,76 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Package netbox provides an API client for DigitalOcean's NetBox IPAM and
-// DCIM service.
 package netbox
 
-import "net/url"
+import (
+	"fmt"
 
-// A Valuer is an object which can generate a url.Values map from itself.
-// Valuer implementations are used to generate request URL parameters
-// that NetBox can use to filter data.
-type Valuer interface {
-	Values() (url.Values, error)
-}
+	"github.com/go-openapi/strfmt"
+	runtimeclient "github.com/go-openapi/runtime/client"
 
-// A Family is an IP address family, used by NetBox to filter either IPv4
-// or IPv6 addresses.  Use its Valid method or compare against the predefined
-// Family constants to determine if the contained value is a valid Family.
-type Family int
-
-// Family constants which can be used with NetBox.
-const (
-	FamilyIPv4 Family = 4
-	FamilyIPv6 Family = 6
+	"github.com/digitalocean/go-netbox/netbox/client"
 )
 
-// String returns the string representation of a Family.
-func (f Family) String() string {
-	switch f {
-	case FamilyIPv4:
-		return "IPv4"
-	case FamilyIPv6:
-		return "IPv6"
-	default:
-		return "Unknown"
-	}
+// NewNetboxAt returns a client which will connect to the given
+// hostname, which can optionally include a port, e.g. localhost:8000
+func NewNetboxAt(host string) *client.NetBox {
+	t := client.DefaultTransportConfig().WithHost(host)
+	return client.NewHTTPClientWithConfig(strfmt.Default, t)
 }
 
-// Valid determines if a Family is valid.
-func (f Family) Valid() bool {
-	return f == FamilyIPv4 || f == FamilyIPv6
-}
+const authHeaderName = "Authorization"
+const authHeaderFormat = "Token %v"
 
-// A Status is an operational status of an object.
-type Status int
-
-const (
-	// StatusContainer indicates an object is a summary of child prefixes.
-	StatusContainer Status = 0
-
-	// StatusActive indicates an object is active and in use.
-	StatusActive Status = 1
-
-	// StatusReserved indicates an object is reserved for future use.
-	StatusReserved Status = 2
-
-	// StatusDeprecated indicates an object is no longer in use.
-	StatusDeprecated Status = 3
-)
-
-// String returns the string representation of a Status.
-func (s Status) String() string {
-	switch s {
-	case StatusContainer:
-		return "Container"
-	case StatusActive:
-		return "Active"
-	case StatusReserved:
-		return "Reserved"
-	case StatusDeprecated:
-		return "Deprecated"
-	default:
-		return "Unknown"
-	}
+// NewNetboxWithAPIKey returna client which will connect to the given
+// hostname (and optionally port), and will set the expected Authorization
+// header on each request
+func NewNetboxWithAPIKey(host string, apiToken string) *client.NetBox {
+	t := runtimeclient.New(host, client.DefaultBasePath, client.DefaultSchemes)
+	t.DefaultAuthentication = runtimeclient.APIKeyAuth(authHeaderName, "header", fmt.Sprintf(authHeaderFormat, apiToken))
+	return client.New(t, strfmt.Default)
 }
