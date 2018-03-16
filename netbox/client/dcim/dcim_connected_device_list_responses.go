@@ -21,10 +21,13 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	"github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimConnectedDeviceListReader is a Reader for the DcimConnectedDeviceList structure.
@@ -58,13 +61,21 @@ func NewDcimConnectedDeviceListOK() *DcimConnectedDeviceListOK {
 DcimConnectedDeviceListOK dcim connected device list o k
 */
 type DcimConnectedDeviceListOK struct {
+	Payload *models.Device
 }
 
 func (o *DcimConnectedDeviceListOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcimConnectedDeviceListOK ", 200)
+	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcimConnectedDeviceListOK  %+v", 200, o.Payload)
 }
 
 func (o *DcimConnectedDeviceListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.Device)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

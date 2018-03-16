@@ -1063,10 +1063,28 @@
       "get": {
         "operationId": "dcim_connected-device_list",
         "description": "This endpoint allows a user to determine what device (if any) is connected to a given peer device and peer\ninterface. This is useful in a situation where a device boots with no configuration, but can detect its neighbors\nvia a protocol such as LLDP. Two query parameters must be included in the request:\n\n* `peer-device`: The name of the peer device\n* `peer-interface`: The name of the peer interface",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "peer-device",
+            "in": "query",
+            "description": "The name of the peer device",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "peer-interface",
+            "in": "query",
+            "description": "The name of the peer interface",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Device"
+            }
           }
         },
         "tags": [
@@ -11137,6 +11155,20 @@
         "description": "",
         "parameters": [
           {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "limit",
             "in": "query",
             "description": "Number of results to return per page.",
@@ -11310,6 +11342,20 @@
         "operationId": "virtualization_cluster-types_list",
         "description": "",
         "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
           {
             "name": "limit",
             "in": "query",
@@ -13112,68 +13158,6 @@
         }
       }
     },
-    "ConsoleServerPort": {
-      "title": "Cs port",
-      "required": [
-        "device",
-        "name"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "device": {
-          "$ref": "#/definitions/NestedDevice"
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 50
-        },
-        "connected_console": {
-          "title": "Connected console",
-          "type": "string",
-          "readOnly": true
-        }
-      }
-    },
-    "ConsolePort": {
-      "required": [
-        "device",
-        "name",
-        "cs_port"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "device": {
-          "$ref": "#/definitions/NestedDevice"
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 50
-        },
-        "cs_port": {
-          "$ref": "#/definitions/ConsoleServerPort"
-        },
-        "connection_status": {
-          "title": "Connection status",
-          "type": "boolean",
-          "enum": [
-            false,
-            true
-          ]
-        }
-      }
-    },
     "NestedManufacturer": {
       "title": "Manufacturer",
       "required": [
@@ -13241,6 +13225,400 @@
           "format": "slug",
           "pattern": "^[-a-zA-Z0-9_]+$",
           "maxLength": 50
+        }
+      }
+    },
+    "NestedDeviceRole": {
+      "title": "Device role",
+      "required": [
+        "name",
+        "slug"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 50
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string",
+          "format": "slug",
+          "pattern": "^[-a-zA-Z0-9_]+$",
+          "maxLength": 50
+        }
+      }
+    },
+    "NestedPlatform": {
+      "title": "Platform",
+      "required": [
+        "name",
+        "slug"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 50
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string",
+          "format": "slug",
+          "pattern": "^[-a-zA-Z0-9_]+$",
+          "maxLength": 50
+        }
+      }
+    },
+    "NestedRack": {
+      "title": "Rack",
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 50
+        },
+        "display_name": {
+          "title": "Display name",
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "DeviceIPAddress": {
+      "title": "Primary ip",
+      "required": [
+        "address"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "family": {
+          "title": "Family",
+          "type": "integer",
+          "readOnly": true
+        },
+        "address": {
+          "title": "Address",
+          "description": "IPv4 or IPv6 address (with mask)",
+          "type": "string"
+        }
+      }
+    },
+    "NestedCluster": {
+      "title": "Cluster",
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 100
+        }
+      }
+    },
+    "DeviceVirtualChassis": {
+      "title": "Virtual chassis",
+      "required": [
+        "master"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "master": {
+          "$ref": "#/definitions/NestedDevice"
+        }
+      }
+    },
+    "Device": {
+      "required": [
+        "device_type",
+        "device_role",
+        "tenant",
+        "platform",
+        "site",
+        "rack",
+        "position",
+        "face",
+        "status",
+        "primary_ip",
+        "primary_ip4",
+        "primary_ip6",
+        "cluster",
+        "virtual_chassis",
+        "vc_position"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 64
+        },
+        "display_name": {
+          "title": "Display name",
+          "type": "string",
+          "readOnly": true
+        },
+        "device_type": {
+          "$ref": "#/definitions/NestedDeviceType"
+        },
+        "device_role": {
+          "$ref": "#/definitions/NestedDeviceRole"
+        },
+        "tenant": {
+          "$ref": "#/definitions/NestedTenant"
+        },
+        "platform": {
+          "$ref": "#/definitions/NestedPlatform"
+        },
+        "serial": {
+          "title": "Serial number",
+          "type": "string",
+          "maxLength": 50
+        },
+        "asset_tag": {
+          "title": "Asset tag",
+          "description": "A unique tag used to identify this device",
+          "type": "string",
+          "maxLength": 50
+        },
+        "site": {
+          "$ref": "#/definitions/NestedSite"
+        },
+        "rack": {
+          "$ref": "#/definitions/NestedRack"
+        },
+        "position": {
+          "title": "Position (U)",
+          "description": "The lowest-numbered unit occupied by the device",
+          "type": "integer",
+          "maximum": 32767,
+          "minimum": 1
+        },
+        "face": {
+          "title": "Face",
+          "required": [
+            "label",
+            "value"
+          ],
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "integer",
+              "x-nullable": true
+            }
+          }
+        },
+        "parent_device": {
+          "title": "Parent device",
+          "type": "string",
+          "readOnly": true
+        },
+        "status": {
+          "title": "Status",
+          "required": [
+            "label",
+            "value"
+          ],
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "integer"
+            }
+          }
+        },
+        "primary_ip": {
+          "$ref": "#/definitions/DeviceIPAddress"
+        },
+        "primary_ip4": {
+          "$ref": "#/definitions/DeviceIPAddress"
+        },
+        "primary_ip6": {
+          "$ref": "#/definitions/DeviceIPAddress"
+        },
+        "cluster": {
+          "$ref": "#/definitions/NestedCluster"
+        },
+        "virtual_chassis": {
+          "$ref": "#/definitions/DeviceVirtualChassis"
+        },
+        "vc_position": {
+          "title": "Vc position",
+          "type": "integer",
+          "maximum": 255,
+          "minimum": 0
+        },
+        "vc_priority": {
+          "title": "Vc priority",
+          "type": "integer",
+          "maximum": 255,
+          "minimum": 0
+        },
+        "comments": {
+          "title": "Comments",
+          "type": "string"
+        },
+        "custom_fields": {
+          "title": "Custom fields",
+          "type": "object"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        }
+      }
+    },
+    "ConsoleServerPort": {
+      "title": "Cs port",
+      "required": [
+        "device",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "device": {
+          "$ref": "#/definitions/NestedDevice"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 50
+        },
+        "connected_console": {
+          "title": "Connected console",
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "ConsolePort": {
+      "required": [
+        "device",
+        "name",
+        "cs_port"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "device": {
+          "$ref": "#/definitions/NestedDevice"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 50
+        },
+        "cs_port": {
+          "$ref": "#/definitions/ConsoleServerPort"
+        },
+        "connection_status": {
+          "title": "Connection status",
+          "type": "boolean",
+          "enum": [
+            false,
+            true
+          ]
         }
       }
     },
@@ -13725,338 +14103,6 @@
         "custom_fields": {
           "title": "Custom fields",
           "type": "object"
-        }
-      }
-    },
-    "NestedDeviceRole": {
-      "title": "Device role",
-      "required": [
-        "name",
-        "slug"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 50
-        },
-        "slug": {
-          "title": "Slug",
-          "type": "string",
-          "format": "slug",
-          "pattern": "^[-a-zA-Z0-9_]+$",
-          "maxLength": 50
-        }
-      }
-    },
-    "NestedPlatform": {
-      "title": "Platform",
-      "required": [
-        "name",
-        "slug"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 50
-        },
-        "slug": {
-          "title": "Slug",
-          "type": "string",
-          "format": "slug",
-          "pattern": "^[-a-zA-Z0-9_]+$",
-          "maxLength": 50
-        }
-      }
-    },
-    "NestedRack": {
-      "title": "Rack",
-      "required": [
-        "name"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 50
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
-        }
-      }
-    },
-    "DeviceIPAddress": {
-      "title": "Primary ip",
-      "required": [
-        "address"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "family": {
-          "title": "Family",
-          "type": "integer",
-          "readOnly": true
-        },
-        "address": {
-          "title": "Address",
-          "description": "IPv4 or IPv6 address (with mask)",
-          "type": "string"
-        }
-      }
-    },
-    "NestedCluster": {
-      "title": "Cluster",
-      "required": [
-        "name"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 100
-        }
-      }
-    },
-    "DeviceVirtualChassis": {
-      "title": "Virtual chassis",
-      "required": [
-        "master"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "master": {
-          "$ref": "#/definitions/NestedDevice"
-        }
-      }
-    },
-    "Device": {
-      "required": [
-        "device_type",
-        "device_role",
-        "tenant",
-        "platform",
-        "site",
-        "rack",
-        "position",
-        "face",
-        "status",
-        "primary_ip",
-        "primary_ip4",
-        "primary_ip6",
-        "cluster",
-        "virtual_chassis",
-        "vc_position"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 64
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
-        },
-        "device_type": {
-          "$ref": "#/definitions/NestedDeviceType"
-        },
-        "device_role": {
-          "$ref": "#/definitions/NestedDeviceRole"
-        },
-        "tenant": {
-          "$ref": "#/definitions/NestedTenant"
-        },
-        "platform": {
-          "$ref": "#/definitions/NestedPlatform"
-        },
-        "serial": {
-          "title": "Serial number",
-          "type": "string",
-          "maxLength": 50
-        },
-        "asset_tag": {
-          "title": "Asset tag",
-          "description": "A unique tag used to identify this device",
-          "type": "string",
-          "maxLength": 50
-        },
-        "site": {
-          "$ref": "#/definitions/NestedSite"
-        },
-        "rack": {
-          "$ref": "#/definitions/NestedRack"
-        },
-        "position": {
-          "title": "Position (U)",
-          "description": "The lowest-numbered unit occupied by the device",
-          "type": "integer",
-          "maximum": 32767,
-          "minimum": 1
-        },
-        "face": {
-          "title": "Face",
-          "required": [
-            "label",
-            "value"
-          ],
-          "type": "object",
-          "properties": {
-            "label": {
-              "type": "string"
-            },
-            "value": {
-              "type": "integer",
-              "x-nullable": true
-            }
-          }
-        },
-        "parent_device": {
-          "title": "Parent device",
-          "type": "string",
-          "readOnly": true
-        },
-        "status": {
-          "title": "Status",
-          "required": [
-            "label",
-            "value"
-          ],
-          "type": "object",
-          "properties": {
-            "label": {
-              "type": "string"
-            },
-            "value": {
-              "type": "integer"
-            }
-          }
-        },
-        "primary_ip": {
-          "$ref": "#/definitions/DeviceIPAddress"
-        },
-        "primary_ip4": {
-          "$ref": "#/definitions/DeviceIPAddress"
-        },
-        "primary_ip6": {
-          "$ref": "#/definitions/DeviceIPAddress"
-        },
-        "cluster": {
-          "$ref": "#/definitions/NestedCluster"
-        },
-        "virtual_chassis": {
-          "$ref": "#/definitions/DeviceVirtualChassis"
-        },
-        "vc_position": {
-          "title": "Vc position",
-          "type": "integer",
-          "maximum": 255,
-          "minimum": 0
-        },
-        "vc_priority": {
-          "title": "Vc priority",
-          "type": "integer",
-          "maximum": 255,
-          "minimum": 0
-        },
-        "comments": {
-          "title": "Comments",
-          "type": "string"
-        },
-        "custom_fields": {
-          "title": "Custom fields",
-          "type": "object"
-        },
-        "created": {
-          "title": "Created",
-          "type": "string",
-          "format": "date",
-          "readOnly": true
-        },
-        "last_updated": {
-          "title": "Last updated",
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
         }
       }
     },

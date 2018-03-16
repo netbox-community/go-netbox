@@ -82,11 +82,15 @@ type VirtualizationClusterTypesListParams struct {
 
 	*/
 	Limit *int64
+	/*Name*/
+	Name *string
 	/*Offset
 	  The initial index from which to return the results.
 
 	*/
 	Offset *int64
+	/*Slug*/
+	Slug *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -137,6 +141,17 @@ func (o *VirtualizationClusterTypesListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithName adds the name to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithName(name *string) *VirtualizationClusterTypesListParams {
+	o.SetName(name)
+	return o
+}
+
+// SetName adds the name to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetName(name *string) {
+	o.Name = name
+}
+
 // WithOffset adds the offset to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) WithOffset(offset *int64) *VirtualizationClusterTypesListParams {
 	o.SetOffset(offset)
@@ -146,6 +161,17 @@ func (o *VirtualizationClusterTypesListParams) WithOffset(offset *int64) *Virtua
 // SetOffset adds the offset to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithSlug adds the slug to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithSlug(slug *string) *VirtualizationClusterTypesListParams {
+	o.SetSlug(slug)
+	return o
+}
+
+// SetSlug adds the slug to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetSlug(slug *string) {
+	o.Slug = slug
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -172,6 +198,22 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 
 	}
 
+	if o.Name != nil {
+
+		// query param name
+		var qrName string
+		if o.Name != nil {
+			qrName = *o.Name
+		}
+		qName := qrName
+		if qName != "" {
+			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -182,6 +224,22 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Slug != nil {
+
+		// query param slug
+		var qrSlug string
+		if o.Slug != nil {
+			qrSlug = *o.Slug
+		}
+		qSlug := qrSlug
+		if qSlug != "" {
+			if err := r.SetQueryParam("slug", qSlug); err != nil {
 				return err
 			}
 		}

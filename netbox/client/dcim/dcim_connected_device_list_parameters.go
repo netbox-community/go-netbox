@@ -35,7 +35,7 @@ import (
 // NewDcimConnectedDeviceListParams creates a new DcimConnectedDeviceListParams object
 // with the default values initialized.
 func NewDcimConnectedDeviceListParams() *DcimConnectedDeviceListParams {
-
+	var ()
 	return &DcimConnectedDeviceListParams{
 
 		timeout: cr.DefaultTimeout,
@@ -45,7 +45,7 @@ func NewDcimConnectedDeviceListParams() *DcimConnectedDeviceListParams {
 // NewDcimConnectedDeviceListParamsWithTimeout creates a new DcimConnectedDeviceListParams object
 // with the default values initialized, and the ability to set a timeout on a request
 func NewDcimConnectedDeviceListParamsWithTimeout(timeout time.Duration) *DcimConnectedDeviceListParams {
-
+	var ()
 	return &DcimConnectedDeviceListParams{
 
 		timeout: timeout,
@@ -55,7 +55,7 @@ func NewDcimConnectedDeviceListParamsWithTimeout(timeout time.Duration) *DcimCon
 // NewDcimConnectedDeviceListParamsWithContext creates a new DcimConnectedDeviceListParams object
 // with the default values initialized, and the ability to set a context for a request
 func NewDcimConnectedDeviceListParamsWithContext(ctx context.Context) *DcimConnectedDeviceListParams {
-
+	var ()
 	return &DcimConnectedDeviceListParams{
 
 		Context: ctx,
@@ -65,7 +65,7 @@ func NewDcimConnectedDeviceListParamsWithContext(ctx context.Context) *DcimConne
 // NewDcimConnectedDeviceListParamsWithHTTPClient creates a new DcimConnectedDeviceListParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewDcimConnectedDeviceListParamsWithHTTPClient(client *http.Client) *DcimConnectedDeviceListParams {
-
+	var ()
 	return &DcimConnectedDeviceListParams{
 		HTTPClient: client,
 	}
@@ -75,6 +75,18 @@ func NewDcimConnectedDeviceListParamsWithHTTPClient(client *http.Client) *DcimCo
 for the dcim connected device list operation typically these are written to a http.Request
 */
 type DcimConnectedDeviceListParams struct {
+
+	/*PeerDevice
+	  The name of the peer device
+
+	*/
+	PeerDevice string
+	/*PeerInterface
+	  The name of the peer interface
+
+	*/
+	PeerInterface string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -113,6 +125,28 @@ func (o *DcimConnectedDeviceListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithPeerDevice adds the peerDevice to the dcim connected device list params
+func (o *DcimConnectedDeviceListParams) WithPeerDevice(peerDevice string) *DcimConnectedDeviceListParams {
+	o.SetPeerDevice(peerDevice)
+	return o
+}
+
+// SetPeerDevice adds the peerDevice to the dcim connected device list params
+func (o *DcimConnectedDeviceListParams) SetPeerDevice(peerDevice string) {
+	o.PeerDevice = peerDevice
+}
+
+// WithPeerInterface adds the peerInterface to the dcim connected device list params
+func (o *DcimConnectedDeviceListParams) WithPeerInterface(peerInterface string) *DcimConnectedDeviceListParams {
+	o.SetPeerInterface(peerInterface)
+	return o
+}
+
+// SetPeerInterface adds the peerInterface to the dcim connected device list params
+func (o *DcimConnectedDeviceListParams) SetPeerInterface(peerInterface string) {
+	o.PeerInterface = peerInterface
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimConnectedDeviceListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -120,6 +154,24 @@ func (o *DcimConnectedDeviceListParams) WriteToRequest(r runtime.ClientRequest, 
 		return err
 	}
 	var res []error
+
+	// query param peer-device
+	qrPeerDevice := o.PeerDevice
+	qPeerDevice := qrPeerDevice
+	if qPeerDevice != "" {
+		if err := r.SetQueryParam("peer-device", qPeerDevice); err != nil {
+			return err
+		}
+	}
+
+	// query param peer-interface
+	qrPeerInterface := o.PeerInterface
+	qPeerInterface := qrPeerInterface
+	if qPeerInterface != "" {
+		if err := r.SetQueryParam("peer-interface", qPeerInterface); err != nil {
+			return err
+		}
+	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
