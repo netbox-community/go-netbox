@@ -164,6 +164,7 @@ func (m *InventoryItem) validateDevice(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -183,6 +184,7 @@ func (m *InventoryItem) validateManufacturer(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

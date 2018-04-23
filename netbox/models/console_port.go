@@ -132,6 +132,7 @@ func (m *ConsolePort) validateCsPort(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -151,6 +152,7 @@ func (m *ConsolePort) validateDevice(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

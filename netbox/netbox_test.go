@@ -48,10 +48,10 @@ func TestSubdeviceRole(t *testing.T) {
 	slug := "test-slug"
 	newDeviceType := &models.WritableDeviceType{
 		SubdeviceRole: &role,
-		Comments: "Test device type",
-		Manufacturer: &manufacturerID,
-		Model: &model,
-		Slug: &slug,
+		Comments:      "Test device type",
+		Manufacturer:  &manufacturerID,
+		Model:         &model,
+		Slug:          &slug,
 	}
 	err := newDeviceType.Validate(strfmt.Default)
 	assert.NoError(t, err)

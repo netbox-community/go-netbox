@@ -72,12 +72,27 @@ type Aggregate struct {
 func (m *Aggregate) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateDateAdded(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateFamily(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -95,6 +110,32 @@ func (m *Aggregate) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Aggregate) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Aggregate) validateDateAdded(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.DateAdded) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("date_added", "body", "date", m.DateAdded.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -145,6 +186,19 @@ func (m *Aggregate) validateFamily(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Aggregate) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Aggregate) validatePrefix(formats strfmt.Registry) error {
 
 	if err := validate.Required("prefix", "body", m.Prefix); err != nil {
@@ -168,6 +222,7 @@ func (m *Aggregate) validateRir(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

@@ -180,8 +180,10 @@ func init() {
 }
 
 const (
+
 	// WritableCircuitTerminationTermSideA captures enum value "A"
 	WritableCircuitTerminationTermSideA string = "A"
+
 	// WritableCircuitTerminationTermSideZ captures enum value "Z"
 	WritableCircuitTerminationTermSideZ string = "Z"
 )

@@ -132,10 +132,13 @@ func init() {
 }
 
 const (
+
 	// WritablePlatformRPCClientJuniperJunos captures enum value "juniper-junos"
 	WritablePlatformRPCClientJuniperJunos string = "juniper-junos"
+
 	// WritablePlatformRPCClientCiscoIos captures enum value "cisco-ios"
 	WritablePlatformRPCClientCiscoIos string = "cisco-ios"
+
 	// WritablePlatformRPCClientOpengear captures enum value "opengear"
 	WritablePlatformRPCClientOpengear string = "opengear"
 )

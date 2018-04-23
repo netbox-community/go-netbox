@@ -67,6 +67,11 @@ type RackReservation struct {
 func (m *RackReservation) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		// prop
 		res = append(res, err)
@@ -98,6 +103,19 @@ func (m *RackReservation) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *RackReservation) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *RackReservation) validateDescription(formats strfmt.Registry) error {
 
 	if err := validate.Required("description", "body", m.Description); err != nil {
@@ -125,6 +143,7 @@ func (m *RackReservation) validateRack(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -144,6 +163,7 @@ func (m *RackReservation) validateTenant(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -188,6 +208,7 @@ func (m *RackReservation) validateUser(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

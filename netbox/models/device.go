@@ -79,9 +79,8 @@ type Device struct {
 	// Max Length: 64
 	Name string `json:"name,omitempty"`
 
-	// Parent device
-	// Read Only: true
-	ParentDevice string `json:"parent_device,omitempty"`
+	// parent device
+	ParentDevice *NestedParentDevice `json:"parent_device,omitempty"`
 
 	// platform
 	// Required: true
@@ -157,6 +156,11 @@ func (m *Device) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateDeviceRole(formats); err != nil {
 		// prop
 		res = append(res, err)
@@ -172,7 +176,17 @@ func (m *Device) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLastUpdated(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateParentDevice(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -275,6 +289,20 @@ func (m *Device) validateCluster(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
+	}
+
+	return nil
+}
+
+func (m *Device) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -294,6 +322,7 @@ func (m *Device) validateDeviceRole(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -313,6 +342,7 @@ func (m *Device) validateDeviceType(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -332,6 +362,20 @@ func (m *Device) validateFace(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
+	}
+
+	return nil
+}
+
+func (m *Device) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -345,6 +389,26 @@ func (m *Device) validateName(formats strfmt.Registry) error {
 
 	if err := validate.MaxLength("name", "body", string(m.Name), 64); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Device) validateParentDevice(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ParentDevice) { // not required
+		return nil
+	}
+
+	if m.ParentDevice != nil {
+
+		if err := m.ParentDevice.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("parent_device")
+			}
+			return err
+		}
+
 	}
 
 	return nil
@@ -364,6 +428,7 @@ func (m *Device) validatePlatform(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -400,6 +465,7 @@ func (m *Device) validatePrimaryIP(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -419,6 +485,7 @@ func (m *Device) validatePrimaryIp4(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -438,6 +505,7 @@ func (m *Device) validatePrimaryIp6(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -457,6 +525,7 @@ func (m *Device) validateRack(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -489,6 +558,7 @@ func (m *Device) validateSite(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -508,6 +578,7 @@ func (m *Device) validateStatus(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -527,6 +598,7 @@ func (m *Device) validateTenant(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -580,6 +652,7 @@ func (m *Device) validateVirtualChassis(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

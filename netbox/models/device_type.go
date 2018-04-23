@@ -159,6 +159,7 @@ func (m *DeviceType) validateInterfaceOrdering(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -178,6 +179,7 @@ func (m *DeviceType) validateManufacturer(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -240,6 +242,7 @@ func (m *DeviceType) validateSubdeviceRole(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

@@ -12390,6 +12390,37 @@
         }
       }
     },
+    "NestedParentDevice": {
+      "title": "Parent Device",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 64
+        },
+        "display_name": {
+          "title": "Display name",
+          "type": "string",
+          "readOnly": true
+        },
+        "device_bay": {
+          "title": "Device Bay",
+          "$ref": "#/definitions/NestedDevice"
+        }
+      }
+    },
     "InterfaceNestedCircuit": {
       "title": "Circuit",
       "required": [
@@ -13491,9 +13522,7 @@
           }
         },
         "parent_device": {
-          "title": "Parent device",
-          "type": "string",
-          "readOnly": true
+          "$ref": "#/definitions/NestedParentDevice"
         },
         "status": {
           "title": "Status",

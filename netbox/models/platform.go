@@ -111,6 +111,7 @@ func (m *Platform) validateManufacturer(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -155,10 +156,13 @@ func init() {
 }
 
 const (
+
 	// PlatformRPCClientJuniperJunos captures enum value "juniper-junos"
 	PlatformRPCClientJuniperJunos string = "juniper-junos"
+
 	// PlatformRPCClientCiscoIos captures enum value "cisco-ios"
 	PlatformRPCClientCiscoIos string = "cisco-ios"
+
 	// PlatformRPCClientOpengear captures enum value "opengear"
 	PlatformRPCClientOpengear string = "opengear"
 )

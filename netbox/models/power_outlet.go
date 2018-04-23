@@ -83,6 +83,7 @@ func (m *PowerOutlet) validateDevice(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
