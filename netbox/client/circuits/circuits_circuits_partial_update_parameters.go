@@ -32,7 +32,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // NewCircuitsCircuitsPartialUpdateParams creates a new CircuitsCircuitsPartialUpdateParams object

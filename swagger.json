@@ -11870,7 +11870,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/WritableInterface"
+              "$ref": "#/definitions/WritableVirtualizationInterface"
             }
           }
         ],
@@ -11878,7 +11878,7 @@
           "201": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/WritableInterface"
+              "$ref": "#/definitions/WritableVirtualizationInterface"
             }
           }
         },
@@ -11914,7 +11914,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/WritableInterface"
+              "$ref": "#/definitions/WritableVirtualizationInterface"
             }
           }
         ],
@@ -11922,7 +11922,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/WritableInterface"
+              "$ref": "#/definitions/WritableVirtualizationInterface"
             }
           }
         },
@@ -11939,7 +11939,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/WritableInterface"
+              "$ref": "#/definitions/WritableVirtualizationInterface"
             }
           }
         ],
@@ -11947,7 +11947,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/WritableInterface"
+              "$ref": "#/definitions/WritableVirtualizationInterface"
             }
           }
         },
@@ -14581,6 +14581,69 @@
           "title": "OOB Management",
           "description": "This interface is used only for out-of-band management",
           "type": "boolean"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 100
+        },
+        "mode": {
+          "title": "Mode",
+          "type": "integer",
+          "enum": [
+            100,
+            200,
+            300
+          ]
+        },
+        "untagged_vlan": {
+          "title": "Untagged VLAN",
+          "type": "integer"
+        },
+        "tagged_vlans": {
+          "type": "array",
+          "items": {
+            "title": "Tagged VLANs",
+            "type": "integer"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "WritableVirtualizationInterface": {
+      "required": [
+        "virtual_machine",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "virtual_machine": {
+          "title": "VirtualMachine",
+          "type": "integer"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 64
+        },
+        "enabled": {
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "mtu": {
+          "title": "MTU",
+          "type": "integer",
+          "maximum": 32767,
+          "minimum": 0
+        },
+        "mac_address": {
+          "title": "MAC Address",
+          "type": "string"
         },
         "description": {
           "title": "Description",

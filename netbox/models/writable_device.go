@@ -131,6 +131,11 @@ func (m *WritableDevice) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateDeviceRole(formats); err != nil {
 		// prop
 		res = append(res, err)
@@ -142,6 +147,11 @@ func (m *WritableDevice) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateFace(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -200,6 +210,19 @@ func (m *WritableDevice) validateAssetTag(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableDevice) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableDevice) validateDeviceRole(formats strfmt.Registry) error {
 
 	if err := validate.Required("device_role", "body", m.DeviceRole); err != nil {
@@ -246,6 +269,19 @@ func (m *WritableDevice) validateFace(formats strfmt.Registry) error {
 
 	// value enum
 	if err := m.validateFaceEnum("face", "body", m.Face); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDevice) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 

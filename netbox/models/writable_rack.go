@@ -100,7 +100,17 @@ type WritableRack struct {
 func (m *WritableRack) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateFacilityID(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -141,6 +151,19 @@ func (m *WritableRack) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableRack) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableRack) validateFacilityID(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.FacilityID) { // not required
@@ -148,6 +171,19 @@ func (m *WritableRack) validateFacilityID(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("facility_id", "body", string(m.FacilityID), 50); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableRack) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 

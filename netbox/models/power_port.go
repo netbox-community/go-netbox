@@ -132,6 +132,7 @@ func (m *PowerPort) validateDevice(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -164,6 +165,7 @@ func (m *PowerPort) validatePowerOutlet(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

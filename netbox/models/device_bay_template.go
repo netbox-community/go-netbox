@@ -79,6 +79,7 @@ func (m *DeviceBayTemplate) validateDeviceType(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

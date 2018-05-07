@@ -87,6 +87,7 @@ func (m *InterfaceConnection) validateConnectionStatus(formats strfmt.Registry) 
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -106,6 +107,7 @@ func (m *InterfaceConnection) validateInterfaceA(formats strfmt.Registry) error 
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -125,6 +127,7 @@ func (m *InterfaceConnection) validateInterfaceB(formats strfmt.Registry) error 
 			}
 			return err
 		}
+
 	}
 
 	return nil

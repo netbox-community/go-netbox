@@ -88,6 +88,7 @@ func (m *DeviceBay) validateDevice(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -107,6 +108,7 @@ func (m *DeviceBay) validateInstalledDevice(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

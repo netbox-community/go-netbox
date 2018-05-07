@@ -103,6 +103,7 @@ func (m *RackGroup) validateSite(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

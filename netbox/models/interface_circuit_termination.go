@@ -121,6 +121,7 @@ func (m *InterfaceCircuitTermination) validateCircuit(formats strfmt.Registry) e
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -169,8 +170,10 @@ func init() {
 }
 
 const (
+
 	// InterfaceCircuitTerminationTermSideA captures enum value "A"
 	InterfaceCircuitTerminationTermSideA string = "A"
+
 	// InterfaceCircuitTerminationTermSideZ captures enum value "Z"
 	InterfaceCircuitTerminationTermSideZ string = "Z"
 )

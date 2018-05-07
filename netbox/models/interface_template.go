@@ -91,6 +91,7 @@ func (m *InterfaceTemplate) validateDeviceType(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -110,6 +111,7 @@ func (m *InterfaceTemplate) validateFormFactor(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

@@ -145,6 +145,7 @@ func (m *TopologyMap) validateSite(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
