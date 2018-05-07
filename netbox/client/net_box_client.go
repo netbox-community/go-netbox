@@ -58,9 +58,6 @@ func NewHTTPClient(formats strfmt.Registry) *NetBox {
 // using a customizable transport config.
 func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *NetBox {
 	// ensure nullable parameters have default
-	if formats == nil {
-		formats = strfmt.Default
-	}
 	if cfg == nil {
 		cfg = DefaultTransportConfig()
 	}
@@ -72,6 +69,11 @@ func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *Net
 
 // New creates a new net box client
 func New(transport runtime.ClientTransport, formats strfmt.Registry) *NetBox {
+	// ensure nullable parameters have default
+	if formats == nil {
+		formats = strfmt.Default
+	}
+
 	cli := new(NetBox)
 	cli.Transport = transport
 

@@ -78,7 +78,7 @@ for the circuits circuit terminations list operation typically these are written
 type CircuitsCircuitTerminationsListParams struct {
 
 	/*CircuitID*/
-	CircuitID *string
+	CircuitID *int64
 	/*Limit
 	  Number of results to return per page.
 
@@ -96,13 +96,13 @@ type CircuitsCircuitTerminationsListParams struct {
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*TermSide*/
 	TermSide *string
 	/*UpstreamSpeed*/
 	UpstreamSpeed *float64
 	/*XconnectID*/
-	XconnectID *string
+	XconnectID *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -143,13 +143,13 @@ func (o *CircuitsCircuitTerminationsListParams) SetHTTPClient(client *http.Clien
 }
 
 // WithCircuitID adds the circuitID to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) WithCircuitID(circuitID *string) *CircuitsCircuitTerminationsListParams {
+func (o *CircuitsCircuitTerminationsListParams) WithCircuitID(circuitID *int64) *CircuitsCircuitTerminationsListParams {
 	o.SetCircuitID(circuitID)
 	return o
 }
 
 // SetCircuitID adds the circuitId to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) SetCircuitID(circuitID *string) {
+func (o *CircuitsCircuitTerminationsListParams) SetCircuitID(circuitID *int64) {
 	o.CircuitID = circuitID
 }
 
@@ -209,13 +209,13 @@ func (o *CircuitsCircuitTerminationsListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) WithSiteID(siteID *string) *CircuitsCircuitTerminationsListParams {
+func (o *CircuitsCircuitTerminationsListParams) WithSiteID(siteID *int64) *CircuitsCircuitTerminationsListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) SetSiteID(siteID *string) {
+func (o *CircuitsCircuitTerminationsListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -242,13 +242,13 @@ func (o *CircuitsCircuitTerminationsListParams) SetUpstreamSpeed(upstreamSpeed *
 }
 
 // WithXconnectID adds the xconnectID to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) WithXconnectID(xconnectID *string) *CircuitsCircuitTerminationsListParams {
+func (o *CircuitsCircuitTerminationsListParams) WithXconnectID(xconnectID *int64) *CircuitsCircuitTerminationsListParams {
 	o.SetXconnectID(xconnectID)
 	return o
 }
 
 // SetXconnectID adds the xconnectId to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) SetXconnectID(xconnectID *string) {
+func (o *CircuitsCircuitTerminationsListParams) SetXconnectID(xconnectID *int64) {
 	o.XconnectID = xconnectID
 }
 
@@ -263,11 +263,11 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 	if o.CircuitID != nil {
 
 		// query param circuit_id
-		var qrCircuitID string
+		var qrCircuitID int64
 		if o.CircuitID != nil {
 			qrCircuitID = *o.CircuitID
 		}
-		qCircuitID := qrCircuitID
+		qCircuitID := swag.FormatInt64(qrCircuitID)
 		if qCircuitID != "" {
 			if err := r.SetQueryParam("circuit_id", qCircuitID); err != nil {
 				return err
@@ -359,11 +359,11 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
@@ -407,11 +407,11 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 	if o.XconnectID != nil {
 
 		// query param xconnect_id
-		var qrXconnectID string
+		var qrXconnectID int64
 		if o.XconnectID != nil {
 			qrXconnectID = *o.XconnectID
 		}
-		qXconnectID := qrXconnectID
+		qXconnectID := swag.FormatInt64(qrXconnectID)
 		if qXconnectID != "" {
 			if err := r.SetQueryParam("xconnect_id", qXconnectID); err != nil {
 				return err

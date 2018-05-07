@@ -80,7 +80,7 @@ type DcimPowerOutletsListParams struct {
 	/*Device*/
 	Device *string
 	/*DeviceID*/
-	DeviceID *string
+	DeviceID *int64
 	/*Limit
 	  Number of results to return per page.
 
@@ -144,13 +144,13 @@ func (o *DcimPowerOutletsListParams) SetDevice(device *string) {
 }
 
 // WithDeviceID adds the deviceID to the dcim power outlets list params
-func (o *DcimPowerOutletsListParams) WithDeviceID(deviceID *string) *DcimPowerOutletsListParams {
+func (o *DcimPowerOutletsListParams) WithDeviceID(deviceID *int64) *DcimPowerOutletsListParams {
 	o.SetDeviceID(deviceID)
 	return o
 }
 
 // SetDeviceID adds the deviceId to the dcim power outlets list params
-func (o *DcimPowerOutletsListParams) SetDeviceID(deviceID *string) {
+func (o *DcimPowerOutletsListParams) SetDeviceID(deviceID *int64) {
 	o.DeviceID = deviceID
 }
 
@@ -214,11 +214,11 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 	if o.DeviceID != nil {
 
 		// query param device_id
-		var qrDeviceID string
+		var qrDeviceID int64
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
-		qDeviceID := qrDeviceID
+		qDeviceID := swag.FormatInt64(qrDeviceID)
 		if qDeviceID != "" {
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err

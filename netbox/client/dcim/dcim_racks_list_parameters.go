@@ -80,11 +80,11 @@ type DcimRacksListParams struct {
 	/*DescUnits*/
 	DescUnits *string
 	/*FacilityID*/
-	FacilityID *string
+	FacilityID *int64
 	/*Group*/
 	Group *string
 	/*GroupID*/
-	GroupID *string
+	GroupID *int64
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -107,21 +107,21 @@ type DcimRacksListParams struct {
 	/*Role*/
 	Role *string
 	/*RoleID*/
-	RoleID *string
+	RoleID *int64
 	/*Serial*/
 	Serial *string
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
-	TenantID *string
+	TenantID *int64
 	/*Type*/
 	Type *string
 	/*UHeight*/
-	UHeight *float64
+	UHeight *int64
 	/*Width*/
 	Width *string
 
@@ -175,13 +175,13 @@ func (o *DcimRacksListParams) SetDescUnits(descUnits *string) {
 }
 
 // WithFacilityID adds the facilityID to the dcim racks list params
-func (o *DcimRacksListParams) WithFacilityID(facilityID *string) *DcimRacksListParams {
+func (o *DcimRacksListParams) WithFacilityID(facilityID *int64) *DcimRacksListParams {
 	o.SetFacilityID(facilityID)
 	return o
 }
 
 // SetFacilityID adds the facilityId to the dcim racks list params
-func (o *DcimRacksListParams) SetFacilityID(facilityID *string) {
+func (o *DcimRacksListParams) SetFacilityID(facilityID *int64) {
 	o.FacilityID = facilityID
 }
 
@@ -197,13 +197,13 @@ func (o *DcimRacksListParams) SetGroup(group *string) {
 }
 
 // WithGroupID adds the groupID to the dcim racks list params
-func (o *DcimRacksListParams) WithGroupID(groupID *string) *DcimRacksListParams {
+func (o *DcimRacksListParams) WithGroupID(groupID *int64) *DcimRacksListParams {
 	o.SetGroupID(groupID)
 	return o
 }
 
 // SetGroupID adds the groupId to the dcim racks list params
-func (o *DcimRacksListParams) SetGroupID(groupID *string) {
+func (o *DcimRacksListParams) SetGroupID(groupID *int64) {
 	o.GroupID = groupID
 }
 
@@ -274,13 +274,13 @@ func (o *DcimRacksListParams) SetRole(role *string) {
 }
 
 // WithRoleID adds the roleID to the dcim racks list params
-func (o *DcimRacksListParams) WithRoleID(roleID *string) *DcimRacksListParams {
+func (o *DcimRacksListParams) WithRoleID(roleID *int64) *DcimRacksListParams {
 	o.SetRoleID(roleID)
 	return o
 }
 
 // SetRoleID adds the roleId to the dcim racks list params
-func (o *DcimRacksListParams) SetRoleID(roleID *string) {
+func (o *DcimRacksListParams) SetRoleID(roleID *int64) {
 	o.RoleID = roleID
 }
 
@@ -307,13 +307,13 @@ func (o *DcimRacksListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the dcim racks list params
-func (o *DcimRacksListParams) WithSiteID(siteID *string) *DcimRacksListParams {
+func (o *DcimRacksListParams) WithSiteID(siteID *int64) *DcimRacksListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the dcim racks list params
-func (o *DcimRacksListParams) SetSiteID(siteID *string) {
+func (o *DcimRacksListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -329,13 +329,13 @@ func (o *DcimRacksListParams) SetTenant(tenant *string) {
 }
 
 // WithTenantID adds the tenantID to the dcim racks list params
-func (o *DcimRacksListParams) WithTenantID(tenantID *string) *DcimRacksListParams {
+func (o *DcimRacksListParams) WithTenantID(tenantID *int64) *DcimRacksListParams {
 	o.SetTenantID(tenantID)
 	return o
 }
 
 // SetTenantID adds the tenantId to the dcim racks list params
-func (o *DcimRacksListParams) SetTenantID(tenantID *string) {
+func (o *DcimRacksListParams) SetTenantID(tenantID *int64) {
 	o.TenantID = tenantID
 }
 
@@ -351,13 +351,13 @@ func (o *DcimRacksListParams) SetType(typeVar *string) {
 }
 
 // WithUHeight adds the uHeight to the dcim racks list params
-func (o *DcimRacksListParams) WithUHeight(uHeight *float64) *DcimRacksListParams {
+func (o *DcimRacksListParams) WithUHeight(uHeight *int64) *DcimRacksListParams {
 	o.SetUHeight(uHeight)
 	return o
 }
 
 // SetUHeight adds the uHeight to the dcim racks list params
-func (o *DcimRacksListParams) SetUHeight(uHeight *float64) {
+func (o *DcimRacksListParams) SetUHeight(uHeight *int64) {
 	o.UHeight = uHeight
 }
 
@@ -399,11 +399,11 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.FacilityID != nil {
 
 		// query param facility_id
-		var qrFacilityID string
+		var qrFacilityID int64
 		if o.FacilityID != nil {
 			qrFacilityID = *o.FacilityID
 		}
-		qFacilityID := qrFacilityID
+		qFacilityID := swag.FormatInt64(qrFacilityID)
 		if qFacilityID != "" {
 			if err := r.SetQueryParam("facility_id", qFacilityID); err != nil {
 				return err
@@ -431,11 +431,11 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.GroupID != nil {
 
 		// query param group_id
-		var qrGroupID string
+		var qrGroupID int64
 		if o.GroupID != nil {
 			qrGroupID = *o.GroupID
 		}
-		qGroupID := qrGroupID
+		qGroupID := swag.FormatInt64(qrGroupID)
 		if qGroupID != "" {
 			if err := r.SetQueryParam("group_id", qGroupID); err != nil {
 				return err
@@ -543,11 +543,11 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.RoleID != nil {
 
 		// query param role_id
-		var qrRoleID string
+		var qrRoleID int64
 		if o.RoleID != nil {
 			qrRoleID = *o.RoleID
 		}
-		qRoleID := qrRoleID
+		qRoleID := swag.FormatInt64(qrRoleID)
 		if qRoleID != "" {
 			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
 				return err
@@ -591,11 +591,11 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
@@ -623,11 +623,11 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.TenantID != nil {
 
 		// query param tenant_id
-		var qrTenantID string
+		var qrTenantID int64
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
-		qTenantID := qrTenantID
+		qTenantID := swag.FormatInt64(qrTenantID)
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
@@ -655,11 +655,11 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.UHeight != nil {
 
 		// query param u_height
-		var qrUHeight float64
+		var qrUHeight int64
 		if o.UHeight != nil {
 			qrUHeight = *o.UHeight
 		}
-		qUHeight := swag.FormatFloat64(qrUHeight)
+		qUHeight := swag.FormatInt64(qrUHeight)
 		if qUHeight != "" {
 			if err := r.SetQueryParam("u_height", qUHeight); err != nil {
 				return err

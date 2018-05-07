@@ -85,7 +85,7 @@ type DcimPlatformsListParams struct {
 	/*Manufacturer*/
 	Manufacturer *string
 	/*ManufacturerID*/
-	ManufacturerID *string
+	ManufacturerID *int64
 	/*Name*/
 	Name *string
 	/*Offset
@@ -157,13 +157,13 @@ func (o *DcimPlatformsListParams) SetManufacturer(manufacturer *string) {
 }
 
 // WithManufacturerID adds the manufacturerID to the dcim platforms list params
-func (o *DcimPlatformsListParams) WithManufacturerID(manufacturerID *string) *DcimPlatformsListParams {
+func (o *DcimPlatformsListParams) WithManufacturerID(manufacturerID *int64) *DcimPlatformsListParams {
 	o.SetManufacturerID(manufacturerID)
 	return o
 }
 
 // SetManufacturerID adds the manufacturerId to the dcim platforms list params
-func (o *DcimPlatformsListParams) SetManufacturerID(manufacturerID *string) {
+func (o *DcimPlatformsListParams) SetManufacturerID(manufacturerID *int64) {
 	o.ManufacturerID = manufacturerID
 }
 
@@ -243,11 +243,11 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 	if o.ManufacturerID != nil {
 
 		// query param manufacturer_id
-		var qrManufacturerID string
+		var qrManufacturerID int64
 		if o.ManufacturerID != nil {
 			qrManufacturerID = *o.ManufacturerID
 		}
-		qManufacturerID := qrManufacturerID
+		qManufacturerID := swag.FormatInt64(qrManufacturerID)
 		if qManufacturerID != "" {
 			if err := r.SetQueryParam("manufacturer_id", qManufacturerID); err != nil {
 				return err

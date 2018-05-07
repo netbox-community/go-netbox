@@ -92,6 +92,7 @@ func (m *IPAddressInterface) validateDevice(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -124,6 +125,7 @@ func (m *IPAddressInterface) validateVirtualMachine(formats strfmt.Registry) err
 			}
 			return err
 		}
+
 	}
 
 	return nil

@@ -91,6 +91,7 @@ func (m *VirtualChassis) validateMaster(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

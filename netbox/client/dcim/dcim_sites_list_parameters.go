@@ -78,7 +78,7 @@ for the dcim sites list operation typically these are written to a http.Request
 type DcimSitesListParams struct {
 
 	/*Asn*/
-	Asn *float64
+	Asn *int64
 	/*ContactEmail*/
 	ContactEmail *string
 	/*ContactName*/
@@ -109,7 +109,7 @@ type DcimSitesListParams struct {
 	/*Region*/
 	Region *string
 	/*RegionID*/
-	RegionID *string
+	RegionID *int64
 	/*Slug*/
 	Slug *string
 	/*Status*/
@@ -117,7 +117,7 @@ type DcimSitesListParams struct {
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
-	TenantID *string
+	TenantID *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -158,13 +158,13 @@ func (o *DcimSitesListParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithAsn adds the asn to the dcim sites list params
-func (o *DcimSitesListParams) WithAsn(asn *float64) *DcimSitesListParams {
+func (o *DcimSitesListParams) WithAsn(asn *int64) *DcimSitesListParams {
 	o.SetAsn(asn)
 	return o
 }
 
 // SetAsn adds the asn to the dcim sites list params
-func (o *DcimSitesListParams) SetAsn(asn *float64) {
+func (o *DcimSitesListParams) SetAsn(asn *int64) {
 	o.Asn = asn
 }
 
@@ -279,13 +279,13 @@ func (o *DcimSitesListParams) SetRegion(region *string) {
 }
 
 // WithRegionID adds the regionID to the dcim sites list params
-func (o *DcimSitesListParams) WithRegionID(regionID *string) *DcimSitesListParams {
+func (o *DcimSitesListParams) WithRegionID(regionID *int64) *DcimSitesListParams {
 	o.SetRegionID(regionID)
 	return o
 }
 
 // SetRegionID adds the regionId to the dcim sites list params
-func (o *DcimSitesListParams) SetRegionID(regionID *string) {
+func (o *DcimSitesListParams) SetRegionID(regionID *int64) {
 	o.RegionID = regionID
 }
 
@@ -323,13 +323,13 @@ func (o *DcimSitesListParams) SetTenant(tenant *string) {
 }
 
 // WithTenantID adds the tenantID to the dcim sites list params
-func (o *DcimSitesListParams) WithTenantID(tenantID *string) *DcimSitesListParams {
+func (o *DcimSitesListParams) WithTenantID(tenantID *int64) *DcimSitesListParams {
 	o.SetTenantID(tenantID)
 	return o
 }
 
 // SetTenantID adds the tenantId to the dcim sites list params
-func (o *DcimSitesListParams) SetTenantID(tenantID *string) {
+func (o *DcimSitesListParams) SetTenantID(tenantID *int64) {
 	o.TenantID = tenantID
 }
 
@@ -344,11 +344,11 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.Asn != nil {
 
 		// query param asn
-		var qrAsn float64
+		var qrAsn int64
 		if o.Asn != nil {
 			qrAsn = *o.Asn
 		}
-		qAsn := swag.FormatFloat64(qrAsn)
+		qAsn := swag.FormatInt64(qrAsn)
 		if qAsn != "" {
 			if err := r.SetQueryParam("asn", qAsn); err != nil {
 				return err
@@ -520,11 +520,11 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.RegionID != nil {
 
 		// query param region_id
-		var qrRegionID string
+		var qrRegionID int64
 		if o.RegionID != nil {
 			qrRegionID = *o.RegionID
 		}
-		qRegionID := qrRegionID
+		qRegionID := swag.FormatInt64(qrRegionID)
 		if qRegionID != "" {
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
 				return err
@@ -584,11 +584,11 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.TenantID != nil {
 
 		// query param tenant_id
-		var qrTenantID string
+		var qrTenantID int64
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
-		qTenantID := qrTenantID
+		qTenantID := swag.FormatInt64(qrTenantID)
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err

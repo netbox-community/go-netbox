@@ -64,7 +64,7 @@ type InterfaceCircuitTermination struct {
 
 	// Cross-connect ID
 	// Max Length: 50
-	XconnectID string `json:"xconnect_id,omitempty"`
+	XconnectID int64 `json:"xconnect_id,omitempty"`
 }
 
 // Validate validates this interface circuit termination
@@ -121,6 +121,7 @@ func (m *InterfaceCircuitTermination) validateCircuit(formats strfmt.Registry) e
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -169,8 +170,10 @@ func init() {
 }
 
 const (
+
 	// InterfaceCircuitTerminationTermSideA captures enum value "A"
 	InterfaceCircuitTerminationTermSideA string = "A"
+
 	// InterfaceCircuitTerminationTermSideZ captures enum value "Z"
 	InterfaceCircuitTerminationTermSideZ string = "Z"
 )

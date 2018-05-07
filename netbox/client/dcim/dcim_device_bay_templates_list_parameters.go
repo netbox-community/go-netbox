@@ -78,7 +78,7 @@ for the dcim device bay templates list operation typically these are written to 
 type DcimDeviceBayTemplatesListParams struct {
 
 	/*DevicetypeID*/
-	DevicetypeID *string
+	DevicetypeID *int64
 	/*Limit
 	  Number of results to return per page.
 
@@ -131,13 +131,13 @@ func (o *DcimDeviceBayTemplatesListParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDevicetypeID adds the devicetypeID to the dcim device bay templates list params
-func (o *DcimDeviceBayTemplatesListParams) WithDevicetypeID(devicetypeID *string) *DcimDeviceBayTemplatesListParams {
+func (o *DcimDeviceBayTemplatesListParams) WithDevicetypeID(devicetypeID *int64) *DcimDeviceBayTemplatesListParams {
 	o.SetDevicetypeID(devicetypeID)
 	return o
 }
 
 // SetDevicetypeID adds the devicetypeId to the dcim device bay templates list params
-func (o *DcimDeviceBayTemplatesListParams) SetDevicetypeID(devicetypeID *string) {
+func (o *DcimDeviceBayTemplatesListParams) SetDevicetypeID(devicetypeID *int64) {
 	o.DevicetypeID = devicetypeID
 }
 
@@ -185,11 +185,11 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 	if o.DevicetypeID != nil {
 
 		// query param devicetype_id
-		var qrDevicetypeID string
+		var qrDevicetypeID int64
 		if o.DevicetypeID != nil {
 			qrDevicetypeID = *o.DevicetypeID
 		}
-		qDevicetypeID := qrDevicetypeID
+		qDevicetypeID := swag.FormatInt64(qrDevicetypeID)
 		if qDevicetypeID != "" {
 			if err := r.SetQueryParam("devicetype_id", qDevicetypeID); err != nil {
 				return err

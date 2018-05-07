@@ -153,12 +153,22 @@ func (m *Site) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateFacility(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -264,6 +274,19 @@ func (m *Site) validateContactPhone(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Site) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Site) validateDescription(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Description) { // not required
@@ -284,6 +307,19 @@ func (m *Site) validateFacility(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("facility", "body", string(m.Facility), 50); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Site) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -330,6 +366,7 @@ func (m *Site) validateRegion(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -379,6 +416,7 @@ func (m *Site) validateStatus(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -398,6 +436,7 @@ func (m *Site) validateTenant(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

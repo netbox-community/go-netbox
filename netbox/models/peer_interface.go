@@ -111,6 +111,11 @@ func (m *PeerInterface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateURL(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -144,6 +149,7 @@ func (m *PeerInterface) validateDevice(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -163,6 +169,7 @@ func (m *PeerInterface) validateFormFactor(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -182,6 +189,7 @@ func (m *PeerInterface) validateLag(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -211,6 +219,19 @@ func (m *PeerInterface) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PeerInterface) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

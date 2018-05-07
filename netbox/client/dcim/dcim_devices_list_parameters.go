@@ -80,9 +80,9 @@ type DcimDevicesListParams struct {
 	/*AssetTag*/
 	AssetTag *string
 	/*ClusterID*/
-	ClusterID *string
+	ClusterID *int64
 	/*DeviceTypeID*/
-	DeviceTypeID *string
+	DeviceTypeID *int64
 	/*HasPrimaryIP*/
 	HasPrimaryIP *string
 	/*IDIn
@@ -108,7 +108,7 @@ type DcimDevicesListParams struct {
 	/*Manufacturer*/
 	Manufacturer *string
 	/*ManufacturerID*/
-	ManufacturerID *string
+	ManufacturerID *int64
 	/*Model*/
 	Model *string
 	/*Name*/
@@ -121,33 +121,33 @@ type DcimDevicesListParams struct {
 	/*Platform*/
 	Platform *string
 	/*PlatformID*/
-	PlatformID *string
+	PlatformID *int64
 	/*Position*/
 	Position *float64
 	/*Q*/
 	Q *string
 	/*RackGroupID*/
-	RackGroupID *string
+	RackGroupID *int64
 	/*RackID*/
-	RackID *string
+	RackID *int64
 	/*Role*/
 	Role *string
 	/*RoleID*/
-	RoleID *string
+	RoleID *int64
 	/*Serial*/
 	Serial *string
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*Status*/
 	Status *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
-	TenantID *string
+	TenantID *int64
 	/*VirtualChassisID*/
-	VirtualChassisID *string
+	VirtualChassisID *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -199,24 +199,24 @@ func (o *DcimDevicesListParams) SetAssetTag(assetTag *string) {
 }
 
 // WithClusterID adds the clusterID to the dcim devices list params
-func (o *DcimDevicesListParams) WithClusterID(clusterID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithClusterID(clusterID *int64) *DcimDevicesListParams {
 	o.SetClusterID(clusterID)
 	return o
 }
 
 // SetClusterID adds the clusterId to the dcim devices list params
-func (o *DcimDevicesListParams) SetClusterID(clusterID *string) {
+func (o *DcimDevicesListParams) SetClusterID(clusterID *int64) {
 	o.ClusterID = clusterID
 }
 
 // WithDeviceTypeID adds the deviceTypeID to the dcim devices list params
-func (o *DcimDevicesListParams) WithDeviceTypeID(deviceTypeID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithDeviceTypeID(deviceTypeID *int64) *DcimDevicesListParams {
 	o.SetDeviceTypeID(deviceTypeID)
 	return o
 }
 
 // SetDeviceTypeID adds the deviceTypeId to the dcim devices list params
-func (o *DcimDevicesListParams) SetDeviceTypeID(deviceTypeID *string) {
+func (o *DcimDevicesListParams) SetDeviceTypeID(deviceTypeID *int64) {
 	o.DeviceTypeID = deviceTypeID
 }
 
@@ -320,13 +320,13 @@ func (o *DcimDevicesListParams) SetManufacturer(manufacturer *string) {
 }
 
 // WithManufacturerID adds the manufacturerID to the dcim devices list params
-func (o *DcimDevicesListParams) WithManufacturerID(manufacturerID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithManufacturerID(manufacturerID *int64) *DcimDevicesListParams {
 	o.SetManufacturerID(manufacturerID)
 	return o
 }
 
 // SetManufacturerID adds the manufacturerId to the dcim devices list params
-func (o *DcimDevicesListParams) SetManufacturerID(manufacturerID *string) {
+func (o *DcimDevicesListParams) SetManufacturerID(manufacturerID *int64) {
 	o.ManufacturerID = manufacturerID
 }
 
@@ -375,13 +375,13 @@ func (o *DcimDevicesListParams) SetPlatform(platform *string) {
 }
 
 // WithPlatformID adds the platformID to the dcim devices list params
-func (o *DcimDevicesListParams) WithPlatformID(platformID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithPlatformID(platformID *int64) *DcimDevicesListParams {
 	o.SetPlatformID(platformID)
 	return o
 }
 
 // SetPlatformID adds the platformId to the dcim devices list params
-func (o *DcimDevicesListParams) SetPlatformID(platformID *string) {
+func (o *DcimDevicesListParams) SetPlatformID(platformID *int64) {
 	o.PlatformID = platformID
 }
 
@@ -408,24 +408,24 @@ func (o *DcimDevicesListParams) SetQ(q *string) {
 }
 
 // WithRackGroupID adds the rackGroupID to the dcim devices list params
-func (o *DcimDevicesListParams) WithRackGroupID(rackGroupID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithRackGroupID(rackGroupID *int64) *DcimDevicesListParams {
 	o.SetRackGroupID(rackGroupID)
 	return o
 }
 
 // SetRackGroupID adds the rackGroupId to the dcim devices list params
-func (o *DcimDevicesListParams) SetRackGroupID(rackGroupID *string) {
+func (o *DcimDevicesListParams) SetRackGroupID(rackGroupID *int64) {
 	o.RackGroupID = rackGroupID
 }
 
 // WithRackID adds the rackID to the dcim devices list params
-func (o *DcimDevicesListParams) WithRackID(rackID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithRackID(rackID *int64) *DcimDevicesListParams {
 	o.SetRackID(rackID)
 	return o
 }
 
 // SetRackID adds the rackId to the dcim devices list params
-func (o *DcimDevicesListParams) SetRackID(rackID *string) {
+func (o *DcimDevicesListParams) SetRackID(rackID *int64) {
 	o.RackID = rackID
 }
 
@@ -441,13 +441,13 @@ func (o *DcimDevicesListParams) SetRole(role *string) {
 }
 
 // WithRoleID adds the roleID to the dcim devices list params
-func (o *DcimDevicesListParams) WithRoleID(roleID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithRoleID(roleID *int64) *DcimDevicesListParams {
 	o.SetRoleID(roleID)
 	return o
 }
 
 // SetRoleID adds the roleId to the dcim devices list params
-func (o *DcimDevicesListParams) SetRoleID(roleID *string) {
+func (o *DcimDevicesListParams) SetRoleID(roleID *int64) {
 	o.RoleID = roleID
 }
 
@@ -474,13 +474,13 @@ func (o *DcimDevicesListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the dcim devices list params
-func (o *DcimDevicesListParams) WithSiteID(siteID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithSiteID(siteID *int64) *DcimDevicesListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the dcim devices list params
-func (o *DcimDevicesListParams) SetSiteID(siteID *string) {
+func (o *DcimDevicesListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -507,24 +507,24 @@ func (o *DcimDevicesListParams) SetTenant(tenant *string) {
 }
 
 // WithTenantID adds the tenantID to the dcim devices list params
-func (o *DcimDevicesListParams) WithTenantID(tenantID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithTenantID(tenantID *int64) *DcimDevicesListParams {
 	o.SetTenantID(tenantID)
 	return o
 }
 
 // SetTenantID adds the tenantId to the dcim devices list params
-func (o *DcimDevicesListParams) SetTenantID(tenantID *string) {
+func (o *DcimDevicesListParams) SetTenantID(tenantID *int64) {
 	o.TenantID = tenantID
 }
 
 // WithVirtualChassisID adds the virtualChassisID to the dcim devices list params
-func (o *DcimDevicesListParams) WithVirtualChassisID(virtualChassisID *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithVirtualChassisID(virtualChassisID *int64) *DcimDevicesListParams {
 	o.SetVirtualChassisID(virtualChassisID)
 	return o
 }
 
 // SetVirtualChassisID adds the virtualChassisId to the dcim devices list params
-func (o *DcimDevicesListParams) SetVirtualChassisID(virtualChassisID *string) {
+func (o *DcimDevicesListParams) SetVirtualChassisID(virtualChassisID *int64) {
 	o.VirtualChassisID = virtualChassisID
 }
 
@@ -555,11 +555,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.ClusterID != nil {
 
 		// query param cluster_id
-		var qrClusterID string
+		var qrClusterID int64
 		if o.ClusterID != nil {
 			qrClusterID = *o.ClusterID
 		}
-		qClusterID := qrClusterID
+		qClusterID := swag.FormatInt64(qrClusterID)
 		if qClusterID != "" {
 			if err := r.SetQueryParam("cluster_id", qClusterID); err != nil {
 				return err
@@ -571,11 +571,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.DeviceTypeID != nil {
 
 		// query param device_type_id
-		var qrDeviceTypeID string
+		var qrDeviceTypeID int64
 		if o.DeviceTypeID != nil {
 			qrDeviceTypeID = *o.DeviceTypeID
 		}
-		qDeviceTypeID := qrDeviceTypeID
+		qDeviceTypeID := swag.FormatInt64(qrDeviceTypeID)
 		if qDeviceTypeID != "" {
 			if err := r.SetQueryParam("device_type_id", qDeviceTypeID); err != nil {
 				return err
@@ -731,11 +731,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.ManufacturerID != nil {
 
 		// query param manufacturer_id
-		var qrManufacturerID string
+		var qrManufacturerID int64
 		if o.ManufacturerID != nil {
 			qrManufacturerID = *o.ManufacturerID
 		}
-		qManufacturerID := qrManufacturerID
+		qManufacturerID := swag.FormatInt64(qrManufacturerID)
 		if qManufacturerID != "" {
 			if err := r.SetQueryParam("manufacturer_id", qManufacturerID); err != nil {
 				return err
@@ -811,11 +811,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.PlatformID != nil {
 
 		// query param platform_id
-		var qrPlatformID string
+		var qrPlatformID int64
 		if o.PlatformID != nil {
 			qrPlatformID = *o.PlatformID
 		}
-		qPlatformID := qrPlatformID
+		qPlatformID := swag.FormatInt64(qrPlatformID)
 		if qPlatformID != "" {
 			if err := r.SetQueryParam("platform_id", qPlatformID); err != nil {
 				return err
@@ -859,11 +859,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.RackGroupID != nil {
 
 		// query param rack_group_id
-		var qrRackGroupID string
+		var qrRackGroupID int64
 		if o.RackGroupID != nil {
 			qrRackGroupID = *o.RackGroupID
 		}
-		qRackGroupID := qrRackGroupID
+		qRackGroupID := swag.FormatInt64(qrRackGroupID)
 		if qRackGroupID != "" {
 			if err := r.SetQueryParam("rack_group_id", qRackGroupID); err != nil {
 				return err
@@ -875,11 +875,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.RackID != nil {
 
 		// query param rack_id
-		var qrRackID string
+		var qrRackID int64
 		if o.RackID != nil {
 			qrRackID = *o.RackID
 		}
-		qRackID := qrRackID
+		qRackID := swag.FormatInt64(qrRackID)
 		if qRackID != "" {
 			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
 				return err
@@ -907,11 +907,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.RoleID != nil {
 
 		// query param role_id
-		var qrRoleID string
+		var qrRoleID int64
 		if o.RoleID != nil {
 			qrRoleID = *o.RoleID
 		}
-		qRoleID := qrRoleID
+		qRoleID := swag.FormatInt64(qrRoleID)
 		if qRoleID != "" {
 			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
 				return err
@@ -955,11 +955,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
@@ -1003,11 +1003,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.TenantID != nil {
 
 		// query param tenant_id
-		var qrTenantID string
+		var qrTenantID int64
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
-		qTenantID := qrTenantID
+		qTenantID := swag.FormatInt64(qrTenantID)
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
@@ -1019,11 +1019,11 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.VirtualChassisID != nil {
 
 		// query param virtual_chassis_id
-		var qrVirtualChassisID string
+		var qrVirtualChassisID int64
 		if o.VirtualChassisID != nil {
 			qrVirtualChassisID = *o.VirtualChassisID
 		}
-		qVirtualChassisID := qrVirtualChassisID
+		qVirtualChassisID := swag.FormatInt64(qrVirtualChassisID)
 		if qVirtualChassisID != "" {
 			if err := r.SetQueryParam("virtual_chassis_id", qVirtualChassisID); err != nil {
 				return err

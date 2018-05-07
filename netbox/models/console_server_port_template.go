@@ -79,6 +79,7 @@ func (m *ConsoleServerPortTemplate) validateDeviceType(formats strfmt.Registry) 
 			}
 			return err
 		}
+
 	}
 
 	return nil

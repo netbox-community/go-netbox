@@ -92,7 +92,7 @@ type DcimRegionsListParams struct {
 	/*Parent*/
 	Parent *string
 	/*ParentID*/
-	ParentID *string
+	ParentID *int64
 	/*Q*/
 	Q *string
 	/*Slug*/
@@ -181,13 +181,13 @@ func (o *DcimRegionsListParams) SetParent(parent *string) {
 }
 
 // WithParentID adds the parentID to the dcim regions list params
-func (o *DcimRegionsListParams) WithParentID(parentID *string) *DcimRegionsListParams {
+func (o *DcimRegionsListParams) WithParentID(parentID *int64) *DcimRegionsListParams {
 	o.SetParentID(parentID)
 	return o
 }
 
 // SetParentID adds the parentId to the dcim regions list params
-func (o *DcimRegionsListParams) SetParentID(parentID *string) {
+func (o *DcimRegionsListParams) SetParentID(parentID *int64) {
 	o.ParentID = parentID
 }
 
@@ -288,11 +288,11 @@ func (o *DcimRegionsListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.ParentID != nil {
 
 		// query param parent_id
-		var qrParentID string
+		var qrParentID int64
 		if o.ParentID != nil {
 			qrParentID = *o.ParentID
 		}
-		qParentID := qrParentID
+		qParentID := swag.FormatInt64(qrParentID)
 		if qParentID != "" {
 			if err := r.SetQueryParam("parent_id", qParentID); err != nil {
 				return err

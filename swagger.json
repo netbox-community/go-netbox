@@ -104,7 +104,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "q",
@@ -118,14 +118,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -536,7 +536,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "provider",
@@ -550,7 +550,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "type",
@@ -571,7 +571,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -585,7 +585,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -787,7 +787,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "account",
@@ -815,7 +815,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -1197,7 +1197,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "limit",
@@ -1385,7 +1385,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "device",
@@ -1580,7 +1580,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "limit",
@@ -1768,7 +1768,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "device",
@@ -1963,7 +1963,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "limit",
@@ -2151,7 +2151,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "device",
@@ -2562,7 +2562,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "is_full_depth",
@@ -2618,7 +2618,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "manufacturer",
@@ -2834,7 +2834,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "manufacturer",
@@ -2848,14 +2848,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role",
@@ -2869,7 +2869,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -2883,7 +2883,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "platform",
@@ -2911,7 +2911,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -2925,21 +2925,21 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "rack_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "cluster_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "model",
@@ -3002,7 +3002,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "limit",
@@ -3426,7 +3426,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "limit",
@@ -3628,7 +3628,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "mgmt_only",
@@ -3649,7 +3649,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "type",
@@ -3663,7 +3663,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "mac_address",
@@ -3913,7 +3913,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "device",
@@ -3934,14 +3934,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "manufacturer_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "manufacturer",
@@ -4331,7 +4331,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "manufacturer",
@@ -4613,7 +4613,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "limit",
@@ -4801,7 +4801,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "device",
@@ -4996,7 +4996,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "limit",
@@ -5184,7 +5184,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "device",
@@ -5372,7 +5372,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -5595,14 +5595,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -5616,7 +5616,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "group",
@@ -5630,7 +5630,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -5644,7 +5644,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "user",
@@ -6055,7 +6055,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "desc_units",
@@ -6083,14 +6083,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -6104,7 +6104,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "group",
@@ -6118,7 +6118,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -6132,7 +6132,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role",
@@ -6368,7 +6368,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "parent",
@@ -6584,7 +6584,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "contact_name",
@@ -6626,7 +6626,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "region",
@@ -6640,7 +6640,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -7732,7 +7732,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -8014,7 +8014,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "rir",
@@ -8230,14 +8230,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "vrf_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "vrf",
@@ -8251,7 +8251,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -8272,14 +8272,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "virtual_machine_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "virtual_machine",
@@ -8293,7 +8293,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "status",
@@ -8537,14 +8537,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "vrf_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "vrf",
@@ -8558,7 +8558,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -8572,7 +8572,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -8586,21 +8586,21 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "vlan_vid",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "role_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role",
@@ -9303,14 +9303,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "device_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "device",
@@ -9324,7 +9324,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "virtual_machine",
@@ -9526,7 +9526,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -9714,7 +9714,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -9742,7 +9742,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -9756,7 +9756,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "group",
@@ -9770,7 +9770,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -9784,7 +9784,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role",
@@ -10014,7 +10014,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -10482,7 +10482,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role",
@@ -10496,7 +10496,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "device",
@@ -10932,7 +10932,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "group",
@@ -11556,7 +11556,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "group",
@@ -11570,7 +11570,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "type",
@@ -11584,7 +11584,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -11786,14 +11786,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "integer"
           },
           {
             "name": "virtual_machine_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "virtual_machine",
@@ -12023,7 +12023,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "cluster_group",
@@ -12037,7 +12037,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "cluster_type",
@@ -12051,14 +12051,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -12072,7 +12072,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role",
@@ -12086,7 +12086,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -12100,7 +12100,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "platform",
@@ -12455,7 +12455,7 @@
         },
         "xconnect_id": {
           "title": "Cross-connect ID",
-          "type": "string",
+          "type": "integer",
           "maxLength": 50
         },
         "pp_info": {
@@ -12659,7 +12659,7 @@
         },
         "xconnect_id": {
           "title": "Cross-connect ID",
-          "type": "string",
+          "type": "integer",
           "maxLength": 50
         },
         "pp_info": {
@@ -12718,7 +12718,7 @@
         },
         "xconnect_id": {
           "title": "Cross-connect ID",
-          "type": "string",
+          "type": "integer",
           "maxLength": 50
         },
         "pp_info": {
@@ -15339,7 +15339,7 @@
         },
         "facility_id": {
           "title": "Facility ID",
-          "type": "string",
+          "type": "integer",
           "maxLength": 50
         },
         "display_name": {
@@ -15448,7 +15448,7 @@
         },
         "facility_id": {
           "title": "Facility ID",
-          "type": "string",
+          "type": "integer",
           "maxLength": 50
         },
         "site": {

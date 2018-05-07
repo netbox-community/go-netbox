@@ -79,6 +79,7 @@ func (m *PowerPortTemplate) validateDeviceType(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

@@ -98,7 +98,7 @@ type DcimDeviceTypesListParams struct {
 	/*Manufacturer*/
 	Manufacturer *string
 	/*ManufacturerID*/
-	ManufacturerID *string
+	ManufacturerID *int64
 	/*Model*/
 	Model *string
 	/*Offset
@@ -115,7 +115,7 @@ type DcimDeviceTypesListParams struct {
 	/*SubdeviceRole*/
 	SubdeviceRole *string
 	/*UHeight*/
-	UHeight *float64
+	UHeight *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -233,13 +233,13 @@ func (o *DcimDeviceTypesListParams) SetManufacturer(manufacturer *string) {
 }
 
 // WithManufacturerID adds the manufacturerID to the dcim device types list params
-func (o *DcimDeviceTypesListParams) WithManufacturerID(manufacturerID *string) *DcimDeviceTypesListParams {
+func (o *DcimDeviceTypesListParams) WithManufacturerID(manufacturerID *int64) *DcimDeviceTypesListParams {
 	o.SetManufacturerID(manufacturerID)
 	return o
 }
 
 // SetManufacturerID adds the manufacturerId to the dcim device types list params
-func (o *DcimDeviceTypesListParams) SetManufacturerID(manufacturerID *string) {
+func (o *DcimDeviceTypesListParams) SetManufacturerID(manufacturerID *int64) {
 	o.ManufacturerID = manufacturerID
 }
 
@@ -310,13 +310,13 @@ func (o *DcimDeviceTypesListParams) SetSubdeviceRole(subdeviceRole *string) {
 }
 
 // WithUHeight adds the uHeight to the dcim device types list params
-func (o *DcimDeviceTypesListParams) WithUHeight(uHeight *float64) *DcimDeviceTypesListParams {
+func (o *DcimDeviceTypesListParams) WithUHeight(uHeight *int64) *DcimDeviceTypesListParams {
 	o.SetUHeight(uHeight)
 	return o
 }
 
 // SetUHeight adds the uHeight to the dcim device types list params
-func (o *DcimDeviceTypesListParams) SetUHeight(uHeight *float64) {
+func (o *DcimDeviceTypesListParams) SetUHeight(uHeight *int64) {
 	o.UHeight = uHeight
 }
 
@@ -443,11 +443,11 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 	if o.ManufacturerID != nil {
 
 		// query param manufacturer_id
-		var qrManufacturerID string
+		var qrManufacturerID int64
 		if o.ManufacturerID != nil {
 			qrManufacturerID = *o.ManufacturerID
 		}
-		qManufacturerID := qrManufacturerID
+		qManufacturerID := swag.FormatInt64(qrManufacturerID)
 		if qManufacturerID != "" {
 			if err := r.SetQueryParam("manufacturer_id", qManufacturerID); err != nil {
 				return err
@@ -555,11 +555,11 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 	if o.UHeight != nil {
 
 		// query param u_height
-		var qrUHeight float64
+		var qrUHeight int64
 		if o.UHeight != nil {
 			qrUHeight = *o.UHeight
 		}
-		qUHeight := swag.FormatFloat64(qrUHeight)
+		qUHeight := swag.FormatInt64(qrUHeight)
 		if qUHeight != "" {
 			if err := r.SetQueryParam("u_height", qUHeight); err != nil {
 				return err

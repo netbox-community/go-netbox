@@ -87,7 +87,7 @@ type VirtualizationInterfacesListParams struct {
 	/*MacAddress*/
 	MacAddress *string
 	/*Mtu*/
-	Mtu *float64
+	Mtu *int64
 	/*Name*/
 	Name *string
 	/*Offset
@@ -98,7 +98,7 @@ type VirtualizationInterfacesListParams struct {
 	/*VirtualMachine*/
 	VirtualMachine *string
 	/*VirtualMachineID*/
-	VirtualMachineID *string
+	VirtualMachineID *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -172,13 +172,13 @@ func (o *VirtualizationInterfacesListParams) SetMacAddress(macAddress *string) {
 }
 
 // WithMtu adds the mtu to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) WithMtu(mtu *float64) *VirtualizationInterfacesListParams {
+func (o *VirtualizationInterfacesListParams) WithMtu(mtu *int64) *VirtualizationInterfacesListParams {
 	o.SetMtu(mtu)
 	return o
 }
 
 // SetMtu adds the mtu to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) SetMtu(mtu *float64) {
+func (o *VirtualizationInterfacesListParams) SetMtu(mtu *int64) {
 	o.Mtu = mtu
 }
 
@@ -216,13 +216,13 @@ func (o *VirtualizationInterfacesListParams) SetVirtualMachine(virtualMachine *s
 }
 
 // WithVirtualMachineID adds the virtualMachineID to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) WithVirtualMachineID(virtualMachineID *string) *VirtualizationInterfacesListParams {
+func (o *VirtualizationInterfacesListParams) WithVirtualMachineID(virtualMachineID *int64) *VirtualizationInterfacesListParams {
 	o.SetVirtualMachineID(virtualMachineID)
 	return o
 }
 
 // SetVirtualMachineID adds the virtualMachineId to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) SetVirtualMachineID(virtualMachineID *string) {
+func (o *VirtualizationInterfacesListParams) SetVirtualMachineID(virtualMachineID *int64) {
 	o.VirtualMachineID = virtualMachineID
 }
 
@@ -285,11 +285,11 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 	if o.Mtu != nil {
 
 		// query param mtu
-		var qrMtu float64
+		var qrMtu int64
 		if o.Mtu != nil {
 			qrMtu = *o.Mtu
 		}
-		qMtu := swag.FormatFloat64(qrMtu)
+		qMtu := swag.FormatInt64(qrMtu)
 		if qMtu != "" {
 			if err := r.SetQueryParam("mtu", qMtu); err != nil {
 				return err
@@ -349,11 +349,11 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 	if o.VirtualMachineID != nil {
 
 		// query param virtual_machine_id
-		var qrVirtualMachineID string
+		var qrVirtualMachineID int64
 		if o.VirtualMachineID != nil {
 			qrVirtualMachineID = *o.VirtualMachineID
 		}
-		qVirtualMachineID := qrVirtualMachineID
+		qVirtualMachineID := swag.FormatInt64(qrVirtualMachineID)
 		if qVirtualMachineID != "" {
 			if err := r.SetQueryParam("virtual_machine_id", qVirtualMachineID); err != nil {
 				return err

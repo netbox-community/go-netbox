@@ -82,7 +82,7 @@ type DcimInventoryItemsListParams struct {
 	/*Device*/
 	Device *string
 	/*DeviceID*/
-	DeviceID *string
+	DeviceID *int64
 	/*Discovered*/
 	Discovered *string
 	/*Limit
@@ -93,7 +93,7 @@ type DcimInventoryItemsListParams struct {
 	/*Manufacturer*/
 	Manufacturer *string
 	/*ManufacturerID*/
-	ManufacturerID *string
+	ManufacturerID *int64
 	/*Name*/
 	Name *string
 	/*Offset
@@ -102,7 +102,7 @@ type DcimInventoryItemsListParams struct {
 	*/
 	Offset *int64
 	/*ParentID*/
-	ParentID *string
+	ParentID *int64
 	/*PartID*/
 	PartID *string
 	/*Q*/
@@ -171,13 +171,13 @@ func (o *DcimInventoryItemsListParams) SetDevice(device *string) {
 }
 
 // WithDeviceID adds the deviceID to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithDeviceID(deviceID *string) *DcimInventoryItemsListParams {
+func (o *DcimInventoryItemsListParams) WithDeviceID(deviceID *int64) *DcimInventoryItemsListParams {
 	o.SetDeviceID(deviceID)
 	return o
 }
 
 // SetDeviceID adds the deviceId to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetDeviceID(deviceID *string) {
+func (o *DcimInventoryItemsListParams) SetDeviceID(deviceID *int64) {
 	o.DeviceID = deviceID
 }
 
@@ -215,13 +215,13 @@ func (o *DcimInventoryItemsListParams) SetManufacturer(manufacturer *string) {
 }
 
 // WithManufacturerID adds the manufacturerID to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithManufacturerID(manufacturerID *string) *DcimInventoryItemsListParams {
+func (o *DcimInventoryItemsListParams) WithManufacturerID(manufacturerID *int64) *DcimInventoryItemsListParams {
 	o.SetManufacturerID(manufacturerID)
 	return o
 }
 
 // SetManufacturerID adds the manufacturerId to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetManufacturerID(manufacturerID *string) {
+func (o *DcimInventoryItemsListParams) SetManufacturerID(manufacturerID *int64) {
 	o.ManufacturerID = manufacturerID
 }
 
@@ -248,13 +248,13 @@ func (o *DcimInventoryItemsListParams) SetOffset(offset *int64) {
 }
 
 // WithParentID adds the parentID to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithParentID(parentID *string) *DcimInventoryItemsListParams {
+func (o *DcimInventoryItemsListParams) WithParentID(parentID *int64) *DcimInventoryItemsListParams {
 	o.SetParentID(parentID)
 	return o
 }
 
 // SetParentID adds the parentId to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetParentID(parentID *string) {
+func (o *DcimInventoryItemsListParams) SetParentID(parentID *int64) {
 	o.ParentID = parentID
 }
 
@@ -334,11 +334,11 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 	if o.DeviceID != nil {
 
 		// query param device_id
-		var qrDeviceID string
+		var qrDeviceID int64
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
-		qDeviceID := qrDeviceID
+		qDeviceID := swag.FormatInt64(qrDeviceID)
 		if qDeviceID != "" {
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
@@ -398,11 +398,11 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 	if o.ManufacturerID != nil {
 
 		// query param manufacturer_id
-		var qrManufacturerID string
+		var qrManufacturerID int64
 		if o.ManufacturerID != nil {
 			qrManufacturerID = *o.ManufacturerID
 		}
-		qManufacturerID := qrManufacturerID
+		qManufacturerID := swag.FormatInt64(qrManufacturerID)
 		if qManufacturerID != "" {
 			if err := r.SetQueryParam("manufacturer_id", qManufacturerID); err != nil {
 				return err
@@ -446,11 +446,11 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 	if o.ParentID != nil {
 
 		// query param parent_id
-		var qrParentID string
+		var qrParentID int64
 		if o.ParentID != nil {
 			qrParentID = *o.ParentID
 		}
-		qParentID := qrParentID
+		qParentID := swag.FormatInt64(qrParentID)
 		if qParentID != "" {
 			if err := r.SetQueryParam("parent_id", qParentID); err != nil {
 				return err

@@ -111,7 +111,17 @@ func (m *VirtualMachine) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateDisk(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -186,6 +196,20 @@ func (m *VirtualMachine) validateCluster(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
+	}
+
+	return nil
+}
+
+func (m *VirtualMachine) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -202,6 +226,19 @@ func (m *VirtualMachine) validateDisk(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaximumInt("disk", "body", int64(*m.Disk), 2.147483647e+09, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualMachine) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -252,6 +289,7 @@ func (m *VirtualMachine) validatePlatform(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -271,6 +309,7 @@ func (m *VirtualMachine) validatePrimaryIP(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -290,6 +329,7 @@ func (m *VirtualMachine) validatePrimaryIp4(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -309,6 +349,7 @@ func (m *VirtualMachine) validatePrimaryIp6(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -328,6 +369,7 @@ func (m *VirtualMachine) validateRole(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -347,6 +389,7 @@ func (m *VirtualMachine) validateStatus(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -366,6 +409,7 @@ func (m *VirtualMachine) validateTenant(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

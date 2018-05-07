@@ -82,7 +82,7 @@ type DcimRackReservationsListParams struct {
 	/*Group*/
 	Group *string
 	/*GroupID*/
-	GroupID *string
+	GroupID *int64
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -101,19 +101,19 @@ type DcimRackReservationsListParams struct {
 	/*Q*/
 	Q *string
 	/*RackID*/
-	RackID *string
+	RackID *int64
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
-	TenantID *string
+	TenantID *int64
 	/*User*/
 	User *string
 	/*UserID*/
-	UserID *string
+	UserID *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -176,13 +176,13 @@ func (o *DcimRackReservationsListParams) SetGroup(group *string) {
 }
 
 // WithGroupID adds the groupID to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithGroupID(groupID *string) *DcimRackReservationsListParams {
+func (o *DcimRackReservationsListParams) WithGroupID(groupID *int64) *DcimRackReservationsListParams {
 	o.SetGroupID(groupID)
 	return o
 }
 
 // SetGroupID adds the groupId to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetGroupID(groupID *string) {
+func (o *DcimRackReservationsListParams) SetGroupID(groupID *int64) {
 	o.GroupID = groupID
 }
 
@@ -231,13 +231,13 @@ func (o *DcimRackReservationsListParams) SetQ(q *string) {
 }
 
 // WithRackID adds the rackID to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithRackID(rackID *string) *DcimRackReservationsListParams {
+func (o *DcimRackReservationsListParams) WithRackID(rackID *int64) *DcimRackReservationsListParams {
 	o.SetRackID(rackID)
 	return o
 }
 
 // SetRackID adds the rackId to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetRackID(rackID *string) {
+func (o *DcimRackReservationsListParams) SetRackID(rackID *int64) {
 	o.RackID = rackID
 }
 
@@ -253,13 +253,13 @@ func (o *DcimRackReservationsListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithSiteID(siteID *string) *DcimRackReservationsListParams {
+func (o *DcimRackReservationsListParams) WithSiteID(siteID *int64) *DcimRackReservationsListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetSiteID(siteID *string) {
+func (o *DcimRackReservationsListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -275,13 +275,13 @@ func (o *DcimRackReservationsListParams) SetTenant(tenant *string) {
 }
 
 // WithTenantID adds the tenantID to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithTenantID(tenantID *string) *DcimRackReservationsListParams {
+func (o *DcimRackReservationsListParams) WithTenantID(tenantID *int64) *DcimRackReservationsListParams {
 	o.SetTenantID(tenantID)
 	return o
 }
 
 // SetTenantID adds the tenantId to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetTenantID(tenantID *string) {
+func (o *DcimRackReservationsListParams) SetTenantID(tenantID *int64) {
 	o.TenantID = tenantID
 }
 
@@ -297,13 +297,13 @@ func (o *DcimRackReservationsListParams) SetUser(user *string) {
 }
 
 // WithUserID adds the userID to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithUserID(userID *string) *DcimRackReservationsListParams {
+func (o *DcimRackReservationsListParams) WithUserID(userID *int64) *DcimRackReservationsListParams {
 	o.SetUserID(userID)
 	return o
 }
 
 // SetUserID adds the userId to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetUserID(userID *string) {
+func (o *DcimRackReservationsListParams) SetUserID(userID *int64) {
 	o.UserID = userID
 }
 
@@ -350,11 +350,11 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 	if o.GroupID != nil {
 
 		// query param group_id
-		var qrGroupID string
+		var qrGroupID int64
 		if o.GroupID != nil {
 			qrGroupID = *o.GroupID
 		}
-		qGroupID := qrGroupID
+		qGroupID := swag.FormatInt64(qrGroupID)
 		if qGroupID != "" {
 			if err := r.SetQueryParam("group_id", qGroupID); err != nil {
 				return err
@@ -430,11 +430,11 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 	if o.RackID != nil {
 
 		// query param rack_id
-		var qrRackID string
+		var qrRackID int64
 		if o.RackID != nil {
 			qrRackID = *o.RackID
 		}
-		qRackID := qrRackID
+		qRackID := swag.FormatInt64(qrRackID)
 		if qRackID != "" {
 			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
 				return err
@@ -462,11 +462,11 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
@@ -494,11 +494,11 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 	if o.TenantID != nil {
 
 		// query param tenant_id
-		var qrTenantID string
+		var qrTenantID int64
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
-		qTenantID := qrTenantID
+		qTenantID := swag.FormatInt64(qrTenantID)
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
@@ -526,11 +526,11 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 	if o.UserID != nil {
 
 		// query param user_id
-		var qrUserID string
+		var qrUserID int64
 		if o.UserID != nil {
 			qrUserID = *o.UserID
 		}
-		qUserID := qrUserID
+		qUserID := swag.FormatInt64(qrUserID)
 		if qUserID != "" {
 			if err := r.SetQueryParam("user_id", qUserID); err != nil {
 				return err

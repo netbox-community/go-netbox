@@ -101,23 +101,23 @@ type CircuitsCircuitsListParams struct {
 	/*Provider*/
 	Provider *string
 	/*ProviderID*/
-	ProviderID *string
+	ProviderID *int64
 	/*Q*/
 	Q *string
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*Status*/
 	Status *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
-	TenantID *string
+	TenantID *int64
 	/*Type*/
 	Type *string
 	/*TypeID*/
-	TypeID *string
+	TypeID *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -235,13 +235,13 @@ func (o *CircuitsCircuitsListParams) SetProvider(provider *string) {
 }
 
 // WithProviderID adds the providerID to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) WithProviderID(providerID *string) *CircuitsCircuitsListParams {
+func (o *CircuitsCircuitsListParams) WithProviderID(providerID *int64) *CircuitsCircuitsListParams {
 	o.SetProviderID(providerID)
 	return o
 }
 
 // SetProviderID adds the providerId to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) SetProviderID(providerID *string) {
+func (o *CircuitsCircuitsListParams) SetProviderID(providerID *int64) {
 	o.ProviderID = providerID
 }
 
@@ -268,13 +268,13 @@ func (o *CircuitsCircuitsListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) WithSiteID(siteID *string) *CircuitsCircuitsListParams {
+func (o *CircuitsCircuitsListParams) WithSiteID(siteID *int64) *CircuitsCircuitsListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) SetSiteID(siteID *string) {
+func (o *CircuitsCircuitsListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -301,13 +301,13 @@ func (o *CircuitsCircuitsListParams) SetTenant(tenant *string) {
 }
 
 // WithTenantID adds the tenantID to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) WithTenantID(tenantID *string) *CircuitsCircuitsListParams {
+func (o *CircuitsCircuitsListParams) WithTenantID(tenantID *int64) *CircuitsCircuitsListParams {
 	o.SetTenantID(tenantID)
 	return o
 }
 
 // SetTenantID adds the tenantId to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) SetTenantID(tenantID *string) {
+func (o *CircuitsCircuitsListParams) SetTenantID(tenantID *int64) {
 	o.TenantID = tenantID
 }
 
@@ -323,13 +323,13 @@ func (o *CircuitsCircuitsListParams) SetType(typeVar *string) {
 }
 
 // WithTypeID adds the typeID to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) WithTypeID(typeID *string) *CircuitsCircuitsListParams {
+func (o *CircuitsCircuitsListParams) WithTypeID(typeID *int64) *CircuitsCircuitsListParams {
 	o.SetTypeID(typeID)
 	return o
 }
 
 // SetTypeID adds the typeId to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) SetTypeID(typeID *string) {
+func (o *CircuitsCircuitsListParams) SetTypeID(typeID *int64) {
 	o.TypeID = typeID
 }
 
@@ -456,11 +456,11 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 	if o.ProviderID != nil {
 
 		// query param provider_id
-		var qrProviderID string
+		var qrProviderID int64
 		if o.ProviderID != nil {
 			qrProviderID = *o.ProviderID
 		}
-		qProviderID := qrProviderID
+		qProviderID := swag.FormatInt64(qrProviderID)
 		if qProviderID != "" {
 			if err := r.SetQueryParam("provider_id", qProviderID); err != nil {
 				return err
@@ -504,11 +504,11 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
@@ -552,11 +552,11 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 	if o.TenantID != nil {
 
 		// query param tenant_id
-		var qrTenantID string
+		var qrTenantID int64
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
-		qTenantID := qrTenantID
+		qTenantID := swag.FormatInt64(qrTenantID)
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
@@ -584,11 +584,11 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 	if o.TypeID != nil {
 
 		// query param type_id
-		var qrTypeID string
+		var qrTypeID int64
 		if o.TypeID != nil {
 			qrTypeID = *o.TypeID
 		}
-		qTypeID := qrTypeID
+		qTypeID := swag.FormatInt64(qrTypeID)
 		if qTypeID != "" {
 			if err := r.SetQueryParam("type_id", qTypeID); err != nil {
 				return err

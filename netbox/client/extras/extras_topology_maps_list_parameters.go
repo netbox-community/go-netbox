@@ -92,7 +92,7 @@ type ExtrasTopologyMapsListParams struct {
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*Slug*/
 	Slug *string
 
@@ -179,13 +179,13 @@ func (o *ExtrasTopologyMapsListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the extras topology maps list params
-func (o *ExtrasTopologyMapsListParams) WithSiteID(siteID *string) *ExtrasTopologyMapsListParams {
+func (o *ExtrasTopologyMapsListParams) WithSiteID(siteID *int64) *ExtrasTopologyMapsListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the extras topology maps list params
-func (o *ExtrasTopologyMapsListParams) SetSiteID(siteID *string) {
+func (o *ExtrasTopologyMapsListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -275,11 +275,11 @@ func (o *ExtrasTopologyMapsListParams) WriteToRequest(r runtime.ClientRequest, r
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err

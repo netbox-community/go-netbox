@@ -78,7 +78,7 @@ for the dcim console port templates list operation typically these are written t
 type DcimConsolePortTemplatesListParams struct {
 
 	/*DevicetypeID*/
-	DevicetypeID *string
+	DevicetypeID *int64
 	/*Limit
 	  Number of results to return per page.
 
@@ -131,13 +131,13 @@ func (o *DcimConsolePortTemplatesListParams) SetHTTPClient(client *http.Client) 
 }
 
 // WithDevicetypeID adds the devicetypeID to the dcim console port templates list params
-func (o *DcimConsolePortTemplatesListParams) WithDevicetypeID(devicetypeID *string) *DcimConsolePortTemplatesListParams {
+func (o *DcimConsolePortTemplatesListParams) WithDevicetypeID(devicetypeID *int64) *DcimConsolePortTemplatesListParams {
 	o.SetDevicetypeID(devicetypeID)
 	return o
 }
 
 // SetDevicetypeID adds the devicetypeId to the dcim console port templates list params
-func (o *DcimConsolePortTemplatesListParams) SetDevicetypeID(devicetypeID *string) {
+func (o *DcimConsolePortTemplatesListParams) SetDevicetypeID(devicetypeID *int64) {
 	o.DevicetypeID = devicetypeID
 }
 
@@ -185,11 +185,11 @@ func (o *DcimConsolePortTemplatesListParams) WriteToRequest(r runtime.ClientRequ
 	if o.DevicetypeID != nil {
 
 		// query param devicetype_id
-		var qrDevicetypeID string
+		var qrDevicetypeID int64
 		if o.DevicetypeID != nil {
 			qrDevicetypeID = *o.DevicetypeID
 		}
-		qDevicetypeID := qrDevicetypeID
+		qDevicetypeID := swag.FormatInt64(qrDevicetypeID)
 		if qDevicetypeID != "" {
 			if err := r.SetQueryParam("devicetype_id", qDevicetypeID); err != nil {
 				return err

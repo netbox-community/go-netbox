@@ -92,7 +92,7 @@ type DcimRackGroupsListParams struct {
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*Slug*/
 	Slug *string
 
@@ -179,13 +179,13 @@ func (o *DcimRackGroupsListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the dcim rack groups list params
-func (o *DcimRackGroupsListParams) WithSiteID(siteID *string) *DcimRackGroupsListParams {
+func (o *DcimRackGroupsListParams) WithSiteID(siteID *int64) *DcimRackGroupsListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the dcim rack groups list params
-func (o *DcimRackGroupsListParams) SetSiteID(siteID *string) {
+func (o *DcimRackGroupsListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -275,11 +275,11 @@ func (o *DcimRackGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err

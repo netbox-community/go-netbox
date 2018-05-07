@@ -80,13 +80,13 @@ type DcimInterfacesListParams struct {
 	/*Device*/
 	Device *string
 	/*DeviceID*/
-	DeviceID *float64
+	DeviceID *int64
 	/*Enabled*/
 	Enabled *string
 	/*FormFactor*/
 	FormFactor *string
 	/*LagID*/
-	LagID *string
+	LagID *int64
 	/*Limit
 	  Number of results to return per page.
 
@@ -97,7 +97,7 @@ type DcimInterfacesListParams struct {
 	/*MgmtOnly*/
 	MgmtOnly *string
 	/*Mtu*/
-	Mtu *float64
+	Mtu *int64
 	/*Name*/
 	Name *string
 	/*Offset
@@ -158,13 +158,13 @@ func (o *DcimInterfacesListParams) SetDevice(device *string) {
 }
 
 // WithDeviceID adds the deviceID to the dcim interfaces list params
-func (o *DcimInterfacesListParams) WithDeviceID(deviceID *float64) *DcimInterfacesListParams {
+func (o *DcimInterfacesListParams) WithDeviceID(deviceID *int64) *DcimInterfacesListParams {
 	o.SetDeviceID(deviceID)
 	return o
 }
 
 // SetDeviceID adds the deviceId to the dcim interfaces list params
-func (o *DcimInterfacesListParams) SetDeviceID(deviceID *float64) {
+func (o *DcimInterfacesListParams) SetDeviceID(deviceID *int64) {
 	o.DeviceID = deviceID
 }
 
@@ -191,13 +191,13 @@ func (o *DcimInterfacesListParams) SetFormFactor(formFactor *string) {
 }
 
 // WithLagID adds the lagID to the dcim interfaces list params
-func (o *DcimInterfacesListParams) WithLagID(lagID *string) *DcimInterfacesListParams {
+func (o *DcimInterfacesListParams) WithLagID(lagID *int64) *DcimInterfacesListParams {
 	o.SetLagID(lagID)
 	return o
 }
 
 // SetLagID adds the lagId to the dcim interfaces list params
-func (o *DcimInterfacesListParams) SetLagID(lagID *string) {
+func (o *DcimInterfacesListParams) SetLagID(lagID *int64) {
 	o.LagID = lagID
 }
 
@@ -235,13 +235,13 @@ func (o *DcimInterfacesListParams) SetMgmtOnly(mgmtOnly *string) {
 }
 
 // WithMtu adds the mtu to the dcim interfaces list params
-func (o *DcimInterfacesListParams) WithMtu(mtu *float64) *DcimInterfacesListParams {
+func (o *DcimInterfacesListParams) WithMtu(mtu *int64) *DcimInterfacesListParams {
 	o.SetMtu(mtu)
 	return o
 }
 
 // SetMtu adds the mtu to the dcim interfaces list params
-func (o *DcimInterfacesListParams) SetMtu(mtu *float64) {
+func (o *DcimInterfacesListParams) SetMtu(mtu *int64) {
 	o.Mtu = mtu
 }
 
@@ -305,11 +305,11 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.DeviceID != nil {
 
 		// query param device_id
-		var qrDeviceID float64
+		var qrDeviceID int64
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
-		qDeviceID := swag.FormatFloat64(qrDeviceID)
+		qDeviceID := swag.FormatInt64(qrDeviceID)
 		if qDeviceID != "" {
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
@@ -353,11 +353,11 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.LagID != nil {
 
 		// query param lag_id
-		var qrLagID string
+		var qrLagID int64
 		if o.LagID != nil {
 			qrLagID = *o.LagID
 		}
-		qLagID := qrLagID
+		qLagID := swag.FormatInt64(qrLagID)
 		if qLagID != "" {
 			if err := r.SetQueryParam("lag_id", qLagID); err != nil {
 				return err
@@ -417,11 +417,11 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.Mtu != nil {
 
 		// query param mtu
-		var qrMtu float64
+		var qrMtu int64
 		if o.Mtu != nil {
 			qrMtu = *o.Mtu
 		}
-		qMtu := swag.FormatFloat64(qrMtu)
+		qMtu := swag.FormatInt64(qrMtu)
 		if qMtu != "" {
 			if err := r.SetQueryParam("mtu", qMtu); err != nil {
 				return err

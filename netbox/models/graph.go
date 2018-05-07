@@ -151,6 +151,7 @@ func (m *Graph) validateType(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

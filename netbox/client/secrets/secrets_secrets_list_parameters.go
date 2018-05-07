@@ -80,7 +80,7 @@ type SecretsSecretsListParams struct {
 	/*Device*/
 	Device *string
 	/*DeviceID*/
-	DeviceID *string
+	DeviceID *int64
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -103,7 +103,7 @@ type SecretsSecretsListParams struct {
 	/*Role*/
 	Role *string
 	/*RoleID*/
-	RoleID *string
+	RoleID *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -155,13 +155,13 @@ func (o *SecretsSecretsListParams) SetDevice(device *string) {
 }
 
 // WithDeviceID adds the deviceID to the secrets secrets list params
-func (o *SecretsSecretsListParams) WithDeviceID(deviceID *string) *SecretsSecretsListParams {
+func (o *SecretsSecretsListParams) WithDeviceID(deviceID *int64) *SecretsSecretsListParams {
 	o.SetDeviceID(deviceID)
 	return o
 }
 
 // SetDeviceID adds the deviceId to the secrets secrets list params
-func (o *SecretsSecretsListParams) SetDeviceID(deviceID *string) {
+func (o *SecretsSecretsListParams) SetDeviceID(deviceID *int64) {
 	o.DeviceID = deviceID
 }
 
@@ -232,13 +232,13 @@ func (o *SecretsSecretsListParams) SetRole(role *string) {
 }
 
 // WithRoleID adds the roleID to the secrets secrets list params
-func (o *SecretsSecretsListParams) WithRoleID(roleID *string) *SecretsSecretsListParams {
+func (o *SecretsSecretsListParams) WithRoleID(roleID *int64) *SecretsSecretsListParams {
 	o.SetRoleID(roleID)
 	return o
 }
 
 // SetRoleID adds the roleId to the secrets secrets list params
-func (o *SecretsSecretsListParams) SetRoleID(roleID *string) {
+func (o *SecretsSecretsListParams) SetRoleID(roleID *int64) {
 	o.RoleID = roleID
 }
 
@@ -269,11 +269,11 @@ func (o *SecretsSecretsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.DeviceID != nil {
 
 		// query param device_id
-		var qrDeviceID string
+		var qrDeviceID int64
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
-		qDeviceID := qrDeviceID
+		qDeviceID := swag.FormatInt64(qrDeviceID)
 		if qDeviceID != "" {
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
@@ -381,11 +381,11 @@ func (o *SecretsSecretsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.RoleID != nil {
 
 		// query param role_id
-		var qrRoleID string
+		var qrRoleID int64
 		if o.RoleID != nil {
 			qrRoleID = *o.RoleID
 		}
-		qRoleID := qrRoleID
+		qRoleID := swag.FormatInt64(qrRoleID)
 		if qRoleID != "" {
 			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
 				return err

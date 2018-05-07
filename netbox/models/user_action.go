@@ -60,6 +60,11 @@ func (m *UserAction) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateTime(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateUser(formats); err != nil {
 		// prop
 		res = append(res, err)
@@ -85,6 +90,20 @@ func (m *UserAction) validateAction(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
+	}
+
+	return nil
+}
+
+func (m *UserAction) validateTime(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Time) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("time", "body", "date-time", m.Time.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -104,6 +123,7 @@ func (m *UserAction) validateUser(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

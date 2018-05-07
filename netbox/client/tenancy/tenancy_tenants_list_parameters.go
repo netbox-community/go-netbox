@@ -80,7 +80,7 @@ type TenancyTenantsListParams struct {
 	/*Group*/
 	Group *string
 	/*GroupID*/
-	GroupID *string
+	GroupID *int64
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -151,13 +151,13 @@ func (o *TenancyTenantsListParams) SetGroup(group *string) {
 }
 
 // WithGroupID adds the groupID to the tenancy tenants list params
-func (o *TenancyTenantsListParams) WithGroupID(groupID *string) *TenancyTenantsListParams {
+func (o *TenancyTenantsListParams) WithGroupID(groupID *int64) *TenancyTenantsListParams {
 	o.SetGroupID(groupID)
 	return o
 }
 
 // SetGroupID adds the groupId to the tenancy tenants list params
-func (o *TenancyTenantsListParams) SetGroupID(groupID *string) {
+func (o *TenancyTenantsListParams) SetGroupID(groupID *int64) {
 	o.GroupID = groupID
 }
 
@@ -243,11 +243,11 @@ func (o *TenancyTenantsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.GroupID != nil {
 
 		// query param group_id
-		var qrGroupID string
+		var qrGroupID int64
 		if o.GroupID != nil {
 			qrGroupID = *o.GroupID
 		}
-		qGroupID := qrGroupID
+		qGroupID := swag.FormatInt64(qrGroupID)
 		if qGroupID != "" {
 			if err := r.SetQueryParam("group_id", qGroupID); err != nil {
 				return err

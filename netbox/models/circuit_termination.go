@@ -72,7 +72,7 @@ type CircuitTermination struct {
 
 	// Cross-connect ID
 	// Max Length: 50
-	XconnectID string `json:"xconnect_id,omitempty"`
+	XconnectID int64 `json:"xconnect_id,omitempty"`
 }
 
 // Validate validates this circuit termination
@@ -139,6 +139,7 @@ func (m *CircuitTermination) validateCircuit(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -158,6 +159,7 @@ func (m *CircuitTermination) validateInterface(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -207,6 +209,7 @@ func (m *CircuitTermination) validateSite(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -225,8 +228,10 @@ func init() {
 }
 
 const (
+
 	// CircuitTerminationTermSideA captures enum value "A"
 	CircuitTerminationTermSideA string = "A"
+
 	// CircuitTerminationTermSideZ captures enum value "Z"
 	CircuitTerminationTermSideZ string = "Z"
 )

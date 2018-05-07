@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -49,7 +51,7 @@ type Service struct {
 
 	// ipaddresses
 	// Required: true
-	Ipaddresses ServiceIpaddresses `json:"ipaddresses"`
+	Ipaddresses []*NestedIPAddress `json:"ipaddresses"`
 
 	// Last updated
 	// Read Only: true
@@ -79,6 +81,11 @@ type Service struct {
 func (m *Service) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		// prop
 		res = append(res, err)
@@ -90,6 +97,11 @@ func (m *Service) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateIpaddresses(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -120,6 +132,19 @@ func (m *Service) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Service) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Service) validateDescription(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Description) { // not required
@@ -147,6 +172,7 @@ func (m *Service) validateDevice(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -158,10 +184,35 @@ func (m *Service) validateIpaddresses(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := m.Ipaddresses.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
-			return ve.ValidateName("ipaddresses")
+	for i := 0; i < len(m.Ipaddresses); i++ {
+
+		if swag.IsZero(m.Ipaddresses[i]) { // not required
+			continue
 		}
+
+		if m.Ipaddresses[i] != nil {
+
+			if err := m.Ipaddresses[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ipaddresses" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Service) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -212,6 +263,7 @@ func (m *Service) validateProtocol(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil
@@ -231,6 +283,7 @@ func (m *Service) validateVirtualMachine(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

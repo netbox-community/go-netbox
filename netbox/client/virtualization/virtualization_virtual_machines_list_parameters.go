@@ -82,13 +82,13 @@ type VirtualizationVirtualMachinesListParams struct {
 	/*ClusterGroup*/
 	ClusterGroup *string
 	/*ClusterGroupID*/
-	ClusterGroupID *string
+	ClusterGroupID *int64
 	/*ClusterID*/
-	ClusterID *string
+	ClusterID *int64
 	/*ClusterType*/
 	ClusterType *string
 	/*ClusterTypeID*/
-	ClusterTypeID *string
+	ClusterTypeID *int64
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -109,23 +109,23 @@ type VirtualizationVirtualMachinesListParams struct {
 	/*Platform*/
 	Platform *string
 	/*PlatformID*/
-	PlatformID *string
+	PlatformID *int64
 	/*Q*/
 	Q *string
 	/*Role*/
 	Role *string
 	/*RoleID*/
-	RoleID *string
+	RoleID *int64
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*Status*/
 	Status *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
-	TenantID *string
+	TenantID *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -188,24 +188,24 @@ func (o *VirtualizationVirtualMachinesListParams) SetClusterGroup(clusterGroup *
 }
 
 // WithClusterGroupID adds the clusterGroupID to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithClusterGroupID(clusterGroupID *string) *VirtualizationVirtualMachinesListParams {
+func (o *VirtualizationVirtualMachinesListParams) WithClusterGroupID(clusterGroupID *int64) *VirtualizationVirtualMachinesListParams {
 	o.SetClusterGroupID(clusterGroupID)
 	return o
 }
 
 // SetClusterGroupID adds the clusterGroupId to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetClusterGroupID(clusterGroupID *string) {
+func (o *VirtualizationVirtualMachinesListParams) SetClusterGroupID(clusterGroupID *int64) {
 	o.ClusterGroupID = clusterGroupID
 }
 
 // WithClusterID adds the clusterID to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithClusterID(clusterID *string) *VirtualizationVirtualMachinesListParams {
+func (o *VirtualizationVirtualMachinesListParams) WithClusterID(clusterID *int64) *VirtualizationVirtualMachinesListParams {
 	o.SetClusterID(clusterID)
 	return o
 }
 
 // SetClusterID adds the clusterId to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetClusterID(clusterID *string) {
+func (o *VirtualizationVirtualMachinesListParams) SetClusterID(clusterID *int64) {
 	o.ClusterID = clusterID
 }
 
@@ -221,13 +221,13 @@ func (o *VirtualizationVirtualMachinesListParams) SetClusterType(clusterType *st
 }
 
 // WithClusterTypeID adds the clusterTypeID to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithClusterTypeID(clusterTypeID *string) *VirtualizationVirtualMachinesListParams {
+func (o *VirtualizationVirtualMachinesListParams) WithClusterTypeID(clusterTypeID *int64) *VirtualizationVirtualMachinesListParams {
 	o.SetClusterTypeID(clusterTypeID)
 	return o
 }
 
 // SetClusterTypeID adds the clusterTypeId to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetClusterTypeID(clusterTypeID *string) {
+func (o *VirtualizationVirtualMachinesListParams) SetClusterTypeID(clusterTypeID *int64) {
 	o.ClusterTypeID = clusterTypeID
 }
 
@@ -287,13 +287,13 @@ func (o *VirtualizationVirtualMachinesListParams) SetPlatform(platform *string) 
 }
 
 // WithPlatformID adds the platformID to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithPlatformID(platformID *string) *VirtualizationVirtualMachinesListParams {
+func (o *VirtualizationVirtualMachinesListParams) WithPlatformID(platformID *int64) *VirtualizationVirtualMachinesListParams {
 	o.SetPlatformID(platformID)
 	return o
 }
 
 // SetPlatformID adds the platformId to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetPlatformID(platformID *string) {
+func (o *VirtualizationVirtualMachinesListParams) SetPlatformID(platformID *int64) {
 	o.PlatformID = platformID
 }
 
@@ -320,13 +320,13 @@ func (o *VirtualizationVirtualMachinesListParams) SetRole(role *string) {
 }
 
 // WithRoleID adds the roleID to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithRoleID(roleID *string) *VirtualizationVirtualMachinesListParams {
+func (o *VirtualizationVirtualMachinesListParams) WithRoleID(roleID *int64) *VirtualizationVirtualMachinesListParams {
 	o.SetRoleID(roleID)
 	return o
 }
 
 // SetRoleID adds the roleId to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetRoleID(roleID *string) {
+func (o *VirtualizationVirtualMachinesListParams) SetRoleID(roleID *int64) {
 	o.RoleID = roleID
 }
 
@@ -342,13 +342,13 @@ func (o *VirtualizationVirtualMachinesListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithSiteID(siteID *string) *VirtualizationVirtualMachinesListParams {
+func (o *VirtualizationVirtualMachinesListParams) WithSiteID(siteID *int64) *VirtualizationVirtualMachinesListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetSiteID(siteID *string) {
+func (o *VirtualizationVirtualMachinesListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -375,13 +375,13 @@ func (o *VirtualizationVirtualMachinesListParams) SetTenant(tenant *string) {
 }
 
 // WithTenantID adds the tenantID to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithTenantID(tenantID *string) *VirtualizationVirtualMachinesListParams {
+func (o *VirtualizationVirtualMachinesListParams) WithTenantID(tenantID *int64) *VirtualizationVirtualMachinesListParams {
 	o.SetTenantID(tenantID)
 	return o
 }
 
 // SetTenantID adds the tenantId to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetTenantID(tenantID *string) {
+func (o *VirtualizationVirtualMachinesListParams) SetTenantID(tenantID *int64) {
 	o.TenantID = tenantID
 }
 
@@ -428,11 +428,11 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 	if o.ClusterGroupID != nil {
 
 		// query param cluster_group_id
-		var qrClusterGroupID string
+		var qrClusterGroupID int64
 		if o.ClusterGroupID != nil {
 			qrClusterGroupID = *o.ClusterGroupID
 		}
-		qClusterGroupID := qrClusterGroupID
+		qClusterGroupID := swag.FormatInt64(qrClusterGroupID)
 		if qClusterGroupID != "" {
 			if err := r.SetQueryParam("cluster_group_id", qClusterGroupID); err != nil {
 				return err
@@ -444,11 +444,11 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 	if o.ClusterID != nil {
 
 		// query param cluster_id
-		var qrClusterID string
+		var qrClusterID int64
 		if o.ClusterID != nil {
 			qrClusterID = *o.ClusterID
 		}
-		qClusterID := qrClusterID
+		qClusterID := swag.FormatInt64(qrClusterID)
 		if qClusterID != "" {
 			if err := r.SetQueryParam("cluster_id", qClusterID); err != nil {
 				return err
@@ -476,11 +476,11 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 	if o.ClusterTypeID != nil {
 
 		// query param cluster_type_id
-		var qrClusterTypeID string
+		var qrClusterTypeID int64
 		if o.ClusterTypeID != nil {
 			qrClusterTypeID = *o.ClusterTypeID
 		}
-		qClusterTypeID := qrClusterTypeID
+		qClusterTypeID := swag.FormatInt64(qrClusterTypeID)
 		if qClusterTypeID != "" {
 			if err := r.SetQueryParam("cluster_type_id", qClusterTypeID); err != nil {
 				return err
@@ -572,11 +572,11 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 	if o.PlatformID != nil {
 
 		// query param platform_id
-		var qrPlatformID string
+		var qrPlatformID int64
 		if o.PlatformID != nil {
 			qrPlatformID = *o.PlatformID
 		}
-		qPlatformID := qrPlatformID
+		qPlatformID := swag.FormatInt64(qrPlatformID)
 		if qPlatformID != "" {
 			if err := r.SetQueryParam("platform_id", qPlatformID); err != nil {
 				return err
@@ -620,11 +620,11 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 	if o.RoleID != nil {
 
 		// query param role_id
-		var qrRoleID string
+		var qrRoleID int64
 		if o.RoleID != nil {
 			qrRoleID = *o.RoleID
 		}
-		qRoleID := qrRoleID
+		qRoleID := swag.FormatInt64(qrRoleID)
 		if qRoleID != "" {
 			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
 				return err
@@ -652,11 +652,11 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
@@ -700,11 +700,11 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 	if o.TenantID != nil {
 
 		// query param tenant_id
-		var qrTenantID string
+		var qrTenantID int64
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
-		qTenantID := qrTenantID
+		qTenantID := swag.FormatInt64(qrTenantID)
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err

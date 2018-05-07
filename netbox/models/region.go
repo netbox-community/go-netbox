@@ -103,6 +103,7 @@ func (m *Region) validateParent(formats strfmt.Registry) error {
 			}
 			return err
 		}
+
 	}
 
 	return nil

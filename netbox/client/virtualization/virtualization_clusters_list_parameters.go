@@ -80,7 +80,7 @@ type VirtualizationClustersListParams struct {
 	/*Group*/
 	Group *string
 	/*GroupID*/
-	GroupID *string
+	GroupID *int64
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -103,11 +103,11 @@ type VirtualizationClustersListParams struct {
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*Type*/
 	Type *string
 	/*TypeID*/
-	TypeID *string
+	TypeID *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -159,13 +159,13 @@ func (o *VirtualizationClustersListParams) SetGroup(group *string) {
 }
 
 // WithGroupID adds the groupID to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) WithGroupID(groupID *string) *VirtualizationClustersListParams {
+func (o *VirtualizationClustersListParams) WithGroupID(groupID *int64) *VirtualizationClustersListParams {
 	o.SetGroupID(groupID)
 	return o
 }
 
 // SetGroupID adds the groupId to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) SetGroupID(groupID *string) {
+func (o *VirtualizationClustersListParams) SetGroupID(groupID *int64) {
 	o.GroupID = groupID
 }
 
@@ -236,13 +236,13 @@ func (o *VirtualizationClustersListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) WithSiteID(siteID *string) *VirtualizationClustersListParams {
+func (o *VirtualizationClustersListParams) WithSiteID(siteID *int64) *VirtualizationClustersListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) SetSiteID(siteID *string) {
+func (o *VirtualizationClustersListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -258,13 +258,13 @@ func (o *VirtualizationClustersListParams) SetType(typeVar *string) {
 }
 
 // WithTypeID adds the typeID to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) WithTypeID(typeID *string) *VirtualizationClustersListParams {
+func (o *VirtualizationClustersListParams) WithTypeID(typeID *int64) *VirtualizationClustersListParams {
 	o.SetTypeID(typeID)
 	return o
 }
 
 // SetTypeID adds the typeId to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) SetTypeID(typeID *string) {
+func (o *VirtualizationClustersListParams) SetTypeID(typeID *int64) {
 	o.TypeID = typeID
 }
 
@@ -295,11 +295,11 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 	if o.GroupID != nil {
 
 		// query param group_id
-		var qrGroupID string
+		var qrGroupID int64
 		if o.GroupID != nil {
 			qrGroupID = *o.GroupID
 		}
-		qGroupID := qrGroupID
+		qGroupID := swag.FormatInt64(qrGroupID)
 		if qGroupID != "" {
 			if err := r.SetQueryParam("group_id", qGroupID); err != nil {
 				return err
@@ -407,11 +407,11 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
@@ -439,11 +439,11 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 	if o.TypeID != nil {
 
 		// query param type_id
-		var qrTypeID string
+		var qrTypeID int64
 		if o.TypeID != nil {
 			qrTypeID = *o.TypeID
 		}
-		qTypeID := qrTypeID
+		qTypeID := swag.FormatInt64(qrTypeID)
 		if qTypeID != "" {
 			if err := r.SetQueryParam("type_id", qTypeID); err != nil {
 				return err

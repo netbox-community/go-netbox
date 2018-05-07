@@ -71,7 +71,7 @@ type WritableCircuitTermination struct {
 
 	// Cross-connect ID
 	// Max Length: 50
-	XconnectID string `json:"xconnect_id,omitempty"`
+	XconnectID int64 `json:"xconnect_id,omitempty"`
 }
 
 // Validate validates this writable circuit termination
@@ -180,8 +180,10 @@ func init() {
 }
 
 const (
+
 	// WritableCircuitTerminationTermSideA captures enum value "A"
 	WritableCircuitTerminationTermSideA string = "A"
+
 	// WritableCircuitTerminationTermSideZ captures enum value "Z"
 	WritableCircuitTerminationTermSideZ string = "Z"
 )

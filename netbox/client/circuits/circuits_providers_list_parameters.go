@@ -80,7 +80,7 @@ type CircuitsProvidersListParams struct {
 	/*Account*/
 	Account *string
 	/*Asn*/
-	Asn *float64
+	Asn *int64
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -103,7 +103,7 @@ type CircuitsProvidersListParams struct {
 	/*Site*/
 	Site *string
 	/*SiteID*/
-	SiteID *string
+	SiteID *int64
 	/*Slug*/
 	Slug *string
 
@@ -157,13 +157,13 @@ func (o *CircuitsProvidersListParams) SetAccount(account *string) {
 }
 
 // WithAsn adds the asn to the circuits providers list params
-func (o *CircuitsProvidersListParams) WithAsn(asn *float64) *CircuitsProvidersListParams {
+func (o *CircuitsProvidersListParams) WithAsn(asn *int64) *CircuitsProvidersListParams {
 	o.SetAsn(asn)
 	return o
 }
 
 // SetAsn adds the asn to the circuits providers list params
-func (o *CircuitsProvidersListParams) SetAsn(asn *float64) {
+func (o *CircuitsProvidersListParams) SetAsn(asn *int64) {
 	o.Asn = asn
 }
 
@@ -234,13 +234,13 @@ func (o *CircuitsProvidersListParams) SetSite(site *string) {
 }
 
 // WithSiteID adds the siteID to the circuits providers list params
-func (o *CircuitsProvidersListParams) WithSiteID(siteID *string) *CircuitsProvidersListParams {
+func (o *CircuitsProvidersListParams) WithSiteID(siteID *int64) *CircuitsProvidersListParams {
 	o.SetSiteID(siteID)
 	return o
 }
 
 // SetSiteID adds the siteId to the circuits providers list params
-func (o *CircuitsProvidersListParams) SetSiteID(siteID *string) {
+func (o *CircuitsProvidersListParams) SetSiteID(siteID *int64) {
 	o.SiteID = siteID
 }
 
@@ -282,11 +282,11 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 	if o.Asn != nil {
 
 		// query param asn
-		var qrAsn float64
+		var qrAsn int64
 		if o.Asn != nil {
 			qrAsn = *o.Asn
 		}
-		qAsn := swag.FormatFloat64(qrAsn)
+		qAsn := swag.FormatInt64(qrAsn)
 		if qAsn != "" {
 			if err := r.SetQueryParam("asn", qAsn); err != nil {
 				return err
@@ -394,11 +394,11 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 	if o.SiteID != nil {
 
 		// query param site_id
-		var qrSiteID string
+		var qrSiteID int64
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
-		qSiteID := qrSiteID
+		qSiteID := swag.FormatInt64(qrSiteID)
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err

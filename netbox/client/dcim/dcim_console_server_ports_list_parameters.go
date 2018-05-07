@@ -80,7 +80,7 @@ type DcimConsoleServerPortsListParams struct {
 	/*Device*/
 	Device *string
 	/*DeviceID*/
-	DeviceID *string
+	DeviceID *int64
 	/*Limit
 	  Number of results to return per page.
 
@@ -144,13 +144,13 @@ func (o *DcimConsoleServerPortsListParams) SetDevice(device *string) {
 }
 
 // WithDeviceID adds the deviceID to the dcim console server ports list params
-func (o *DcimConsoleServerPortsListParams) WithDeviceID(deviceID *string) *DcimConsoleServerPortsListParams {
+func (o *DcimConsoleServerPortsListParams) WithDeviceID(deviceID *int64) *DcimConsoleServerPortsListParams {
 	o.SetDeviceID(deviceID)
 	return o
 }
 
 // SetDeviceID adds the deviceId to the dcim console server ports list params
-func (o *DcimConsoleServerPortsListParams) SetDeviceID(deviceID *string) {
+func (o *DcimConsoleServerPortsListParams) SetDeviceID(deviceID *int64) {
 	o.DeviceID = deviceID
 }
 
@@ -214,11 +214,11 @@ func (o *DcimConsoleServerPortsListParams) WriteToRequest(r runtime.ClientReques
 	if o.DeviceID != nil {
 
 		// query param device_id
-		var qrDeviceID string
+		var qrDeviceID int64
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
-		qDeviceID := qrDeviceID
+		qDeviceID := swag.FormatInt64(qrDeviceID)
 		if qDeviceID != "" {
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
