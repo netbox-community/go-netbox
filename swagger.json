@@ -15735,27 +15735,27 @@
         },
         "count_prefixes": {
           "title": "Count prefixes",
-          "type": "string",
+          "type": "integer",
           "readOnly": true
         },
         "count_vlans": {
           "title": "Count vlans",
-          "type": "string",
+          "type": "integer",
           "readOnly": true
         },
         "count_racks": {
           "title": "Count racks",
-          "type": "string",
+          "type": "integer",
           "readOnly": true
         },
         "count_devices": {
           "title": "Count devices",
-          "type": "string",
+          "type": "integer",
           "readOnly": true
         },
         "count_circuits": {
           "title": "Count circuits",
-          "type": "string",
+          "type": "integer",
           "readOnly": true
         }
       }
