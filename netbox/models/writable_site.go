@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
 
@@ -36,13 +37,14 @@ type WritableSite struct {
 	// ASN
 	// Maximum: 4.294967295e+09
 	// Minimum: 1
-	Asn int64 `json:"asn,omitempty"`
+	Asn *int64 `json:"asn,omitempty"`
 
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
 	// Contact E-mail
 	// Max Length: 254
+	// Format: email
 	ContactEmail strfmt.Email `json:"contact_email,omitempty"`
 
 	// Contact name
@@ -53,8 +55,29 @@ type WritableSite struct {
 	// Max Length: 20
 	ContactPhone string `json:"contact_phone,omitempty"`
 
+	// Count circuits
+	// Read Only: true
+	CountCircuits int64 `json:"count_circuits,omitempty"`
+
+	// Count devices
+	// Read Only: true
+	CountDevices int64 `json:"count_devices,omitempty"`
+
+	// Count prefixes
+	// Read Only: true
+	CountPrefixes int64 `json:"count_prefixes,omitempty"`
+
+	// Count racks
+	// Read Only: true
+	CountRacks int64 `json:"count_racks,omitempty"`
+
+	// Count vlans
+	// Read Only: true
+	CountVlans int64 `json:"count_vlans,omitempty"`
+
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -74,11 +97,19 @@ type WritableSite struct {
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Latitude
+	Latitude *string `json:"latitude,omitempty"`
+
+	// Longitude
+	Longitude *string `json:"longitude,omitempty"`
 
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// Physical address
@@ -86,7 +117,7 @@ type WritableSite struct {
 	PhysicalAddress string `json:"physical_address,omitempty"`
 
 	// Region
-	Region int64 `json:"region,omitempty"`
+	Region *int64 `json:"region,omitempty"`
 
 	// Shipping address
 	// Max Length: 200
@@ -95,14 +126,19 @@ type WritableSite struct {
 	// Slug
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 
 	// Status
+	// Enum: [1 2 4]
 	Status int64 `json:"status,omitempty"`
 
+	// tags
+	Tags []string `json:"tags"`
+
 	// Tenant
-	Tenant int64 `json:"tenant,omitempty"`
+	Tenant *int64 `json:"tenant,omitempty"`
 
 	// Time zone
 	TimeZone string `json:"time_zone,omitempty"`
@@ -113,57 +149,58 @@ func (m *WritableSite) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAsn(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateContactEmail(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateContactName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateContactPhone(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateDescription(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateFacility(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePhysicalAddress(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateShippingAddress(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSlug(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -179,11 +216,11 @@ func (m *WritableSite) validateAsn(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MinimumInt("asn", "body", int64(m.Asn), 1, false); err != nil {
+	if err := validate.MinimumInt("asn", "body", int64(*m.Asn), 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("asn", "body", int64(m.Asn), 4.294967295e+09, false); err != nil {
+	if err := validate.MaximumInt("asn", "body", int64(*m.Asn), 4.294967295e+09, false); err != nil {
 		return err
 	}
 
@@ -233,6 +270,19 @@ func (m *WritableSite) validateContactPhone(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableSite) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableSite) validateDescription(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Description) { // not required
@@ -259,9 +309,26 @@ func (m *WritableSite) validateFacility(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableSite) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableSite) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 
@@ -301,6 +368,10 @@ func (m *WritableSite) validateShippingAddress(formats strfmt.Registry) error {
 func (m *WritableSite) validateSlug(formats strfmt.Registry) error {
 
 	if err := validate.Required("slug", "body", m.Slug); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
 		return err
 	}
 
@@ -344,6 +415,23 @@ func (m *WritableSite) validateStatus(formats strfmt.Registry) error {
 	// value enum
 	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

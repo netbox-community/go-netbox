@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -77,19 +76,19 @@ for the dcim device types list operation typically these are written to a http.R
 */
 type DcimDeviceTypesListParams struct {
 
+	/*ConsolePorts*/
+	ConsolePorts *string
+	/*ConsoleServerPorts*/
+	ConsoleServerPorts *string
 	/*IDIn
 	  Multiple values may be separated by commas.
 
 	*/
 	IDIn *string
-	/*IsConsoleServer*/
-	IsConsoleServer *string
+	/*Interfaces*/
+	Interfaces *string
 	/*IsFullDepth*/
 	IsFullDepth *string
-	/*IsNetworkDevice*/
-	IsNetworkDevice *string
-	/*IsPdu*/
-	IsPdu *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -108,12 +107,20 @@ type DcimDeviceTypesListParams struct {
 	Offset *int64
 	/*PartNumber*/
 	PartNumber *string
+	/*PassThroughPorts*/
+	PassThroughPorts *string
+	/*PowerOutlets*/
+	PowerOutlets *string
+	/*PowerPorts*/
+	PowerPorts *string
 	/*Q*/
 	Q *string
 	/*Slug*/
 	Slug *string
 	/*SubdeviceRole*/
 	SubdeviceRole *string
+	/*Tag*/
+	Tag *string
 	/*UHeight*/
 	UHeight *float64
 
@@ -155,6 +162,28 @@ func (o *DcimDeviceTypesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithConsolePorts adds the consolePorts to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithConsolePorts(consolePorts *string) *DcimDeviceTypesListParams {
+	o.SetConsolePorts(consolePorts)
+	return o
+}
+
+// SetConsolePorts adds the consolePorts to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetConsolePorts(consolePorts *string) {
+	o.ConsolePorts = consolePorts
+}
+
+// WithConsoleServerPorts adds the consoleServerPorts to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithConsoleServerPorts(consoleServerPorts *string) *DcimDeviceTypesListParams {
+	o.SetConsoleServerPorts(consoleServerPorts)
+	return o
+}
+
+// SetConsoleServerPorts adds the consoleServerPorts to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetConsoleServerPorts(consoleServerPorts *string) {
+	o.ConsoleServerPorts = consoleServerPorts
+}
+
 // WithIDIn adds the iDIn to the dcim device types list params
 func (o *DcimDeviceTypesListParams) WithIDIn(iDIn *string) *DcimDeviceTypesListParams {
 	o.SetIDIn(iDIn)
@@ -166,15 +195,15 @@ func (o *DcimDeviceTypesListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
-// WithIsConsoleServer adds the isConsoleServer to the dcim device types list params
-func (o *DcimDeviceTypesListParams) WithIsConsoleServer(isConsoleServer *string) *DcimDeviceTypesListParams {
-	o.SetIsConsoleServer(isConsoleServer)
+// WithInterfaces adds the interfaces to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithInterfaces(interfaces *string) *DcimDeviceTypesListParams {
+	o.SetInterfaces(interfaces)
 	return o
 }
 
-// SetIsConsoleServer adds the isConsoleServer to the dcim device types list params
-func (o *DcimDeviceTypesListParams) SetIsConsoleServer(isConsoleServer *string) {
-	o.IsConsoleServer = isConsoleServer
+// SetInterfaces adds the interfaces to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetInterfaces(interfaces *string) {
+	o.Interfaces = interfaces
 }
 
 // WithIsFullDepth adds the isFullDepth to the dcim device types list params
@@ -186,28 +215,6 @@ func (o *DcimDeviceTypesListParams) WithIsFullDepth(isFullDepth *string) *DcimDe
 // SetIsFullDepth adds the isFullDepth to the dcim device types list params
 func (o *DcimDeviceTypesListParams) SetIsFullDepth(isFullDepth *string) {
 	o.IsFullDepth = isFullDepth
-}
-
-// WithIsNetworkDevice adds the isNetworkDevice to the dcim device types list params
-func (o *DcimDeviceTypesListParams) WithIsNetworkDevice(isNetworkDevice *string) *DcimDeviceTypesListParams {
-	o.SetIsNetworkDevice(isNetworkDevice)
-	return o
-}
-
-// SetIsNetworkDevice adds the isNetworkDevice to the dcim device types list params
-func (o *DcimDeviceTypesListParams) SetIsNetworkDevice(isNetworkDevice *string) {
-	o.IsNetworkDevice = isNetworkDevice
-}
-
-// WithIsPdu adds the isPdu to the dcim device types list params
-func (o *DcimDeviceTypesListParams) WithIsPdu(isPdu *string) *DcimDeviceTypesListParams {
-	o.SetIsPdu(isPdu)
-	return o
-}
-
-// SetIsPdu adds the isPdu to the dcim device types list params
-func (o *DcimDeviceTypesListParams) SetIsPdu(isPdu *string) {
-	o.IsPdu = isPdu
 }
 
 // WithLimit adds the limit to the dcim device types list params
@@ -276,6 +283,39 @@ func (o *DcimDeviceTypesListParams) SetPartNumber(partNumber *string) {
 	o.PartNumber = partNumber
 }
 
+// WithPassThroughPorts adds the passThroughPorts to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithPassThroughPorts(passThroughPorts *string) *DcimDeviceTypesListParams {
+	o.SetPassThroughPorts(passThroughPorts)
+	return o
+}
+
+// SetPassThroughPorts adds the passThroughPorts to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetPassThroughPorts(passThroughPorts *string) {
+	o.PassThroughPorts = passThroughPorts
+}
+
+// WithPowerOutlets adds the powerOutlets to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithPowerOutlets(powerOutlets *string) *DcimDeviceTypesListParams {
+	o.SetPowerOutlets(powerOutlets)
+	return o
+}
+
+// SetPowerOutlets adds the powerOutlets to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetPowerOutlets(powerOutlets *string) {
+	o.PowerOutlets = powerOutlets
+}
+
+// WithPowerPorts adds the powerPorts to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithPowerPorts(powerPorts *string) *DcimDeviceTypesListParams {
+	o.SetPowerPorts(powerPorts)
+	return o
+}
+
+// SetPowerPorts adds the powerPorts to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetPowerPorts(powerPorts *string) {
+	o.PowerPorts = powerPorts
+}
+
 // WithQ adds the q to the dcim device types list params
 func (o *DcimDeviceTypesListParams) WithQ(q *string) *DcimDeviceTypesListParams {
 	o.SetQ(q)
@@ -309,6 +349,17 @@ func (o *DcimDeviceTypesListParams) SetSubdeviceRole(subdeviceRole *string) {
 	o.SubdeviceRole = subdeviceRole
 }
 
+// WithTag adds the tag to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithTag(tag *string) *DcimDeviceTypesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WithUHeight adds the uHeight to the dcim device types list params
 func (o *DcimDeviceTypesListParams) WithUHeight(uHeight *float64) *DcimDeviceTypesListParams {
 	o.SetUHeight(uHeight)
@@ -328,6 +379,38 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 	}
 	var res []error
 
+	if o.ConsolePorts != nil {
+
+		// query param console_ports
+		var qrConsolePorts string
+		if o.ConsolePorts != nil {
+			qrConsolePorts = *o.ConsolePorts
+		}
+		qConsolePorts := qrConsolePorts
+		if qConsolePorts != "" {
+			if err := r.SetQueryParam("console_ports", qConsolePorts); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ConsoleServerPorts != nil {
+
+		// query param console_server_ports
+		var qrConsoleServerPorts string
+		if o.ConsoleServerPorts != nil {
+			qrConsoleServerPorts = *o.ConsoleServerPorts
+		}
+		qConsoleServerPorts := qrConsoleServerPorts
+		if qConsoleServerPorts != "" {
+			if err := r.SetQueryParam("console_server_ports", qConsoleServerPorts); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.IDIn != nil {
 
 		// query param id__in
@@ -344,16 +427,16 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
-	if o.IsConsoleServer != nil {
+	if o.Interfaces != nil {
 
-		// query param is_console_server
-		var qrIsConsoleServer string
-		if o.IsConsoleServer != nil {
-			qrIsConsoleServer = *o.IsConsoleServer
+		// query param interfaces
+		var qrInterfaces string
+		if o.Interfaces != nil {
+			qrInterfaces = *o.Interfaces
 		}
-		qIsConsoleServer := qrIsConsoleServer
-		if qIsConsoleServer != "" {
-			if err := r.SetQueryParam("is_console_server", qIsConsoleServer); err != nil {
+		qInterfaces := qrInterfaces
+		if qInterfaces != "" {
+			if err := r.SetQueryParam("interfaces", qInterfaces); err != nil {
 				return err
 			}
 		}
@@ -370,38 +453,6 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qIsFullDepth := qrIsFullDepth
 		if qIsFullDepth != "" {
 			if err := r.SetQueryParam("is_full_depth", qIsFullDepth); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.IsNetworkDevice != nil {
-
-		// query param is_network_device
-		var qrIsNetworkDevice string
-		if o.IsNetworkDevice != nil {
-			qrIsNetworkDevice = *o.IsNetworkDevice
-		}
-		qIsNetworkDevice := qrIsNetworkDevice
-		if qIsNetworkDevice != "" {
-			if err := r.SetQueryParam("is_network_device", qIsNetworkDevice); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.IsPdu != nil {
-
-		// query param is_pdu
-		var qrIsPdu string
-		if o.IsPdu != nil {
-			qrIsPdu = *o.IsPdu
-		}
-		qIsPdu := qrIsPdu
-		if qIsPdu != "" {
-			if err := r.SetQueryParam("is_pdu", qIsPdu); err != nil {
 				return err
 			}
 		}
@@ -504,6 +555,54 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
+	if o.PassThroughPorts != nil {
+
+		// query param pass_through_ports
+		var qrPassThroughPorts string
+		if o.PassThroughPorts != nil {
+			qrPassThroughPorts = *o.PassThroughPorts
+		}
+		qPassThroughPorts := qrPassThroughPorts
+		if qPassThroughPorts != "" {
+			if err := r.SetQueryParam("pass_through_ports", qPassThroughPorts); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PowerOutlets != nil {
+
+		// query param power_outlets
+		var qrPowerOutlets string
+		if o.PowerOutlets != nil {
+			qrPowerOutlets = *o.PowerOutlets
+		}
+		qPowerOutlets := qrPowerOutlets
+		if qPowerOutlets != "" {
+			if err := r.SetQueryParam("power_outlets", qPowerOutlets); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PowerPorts != nil {
+
+		// query param power_ports
+		var qrPowerPorts string
+		if o.PowerPorts != nil {
+			qrPowerPorts = *o.PowerPorts
+		}
+		qPowerPorts := qrPowerPorts
+		if qPowerPorts != "" {
+			if err := r.SetQueryParam("power_ports", qPowerPorts); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Q != nil {
 
 		// query param q
@@ -546,6 +645,22 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qSubdeviceRole := qrSubdeviceRole
 		if qSubdeviceRole != "" {
 			if err := r.SetQueryParam("subdevice_role", qSubdeviceRole); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}

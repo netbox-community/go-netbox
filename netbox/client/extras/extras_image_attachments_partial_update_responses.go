@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // ExtrasImageAttachmentsPartialUpdateReader is a Reader for the ExtrasImageAttachmentsPartialUpdate structure.
@@ -61,7 +61,7 @@ func NewExtrasImageAttachmentsPartialUpdateOK() *ExtrasImageAttachmentsPartialUp
 ExtrasImageAttachmentsPartialUpdateOK extras image attachments partial update o k
 */
 type ExtrasImageAttachmentsPartialUpdateOK struct {
-	Payload *models.WritableImageAttachment
+	Payload *models.ImageAttachment
 }
 
 func (o *ExtrasImageAttachmentsPartialUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *ExtrasImageAttachmentsPartialUpdateOK) Error() string {
 
 func (o *ExtrasImageAttachmentsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableImageAttachment)
+	o.Payload = new(models.ImageAttachment)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

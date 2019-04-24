@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -93,6 +92,10 @@ type DcimDeviceBaysListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
+	/*Tag*/
+	Tag *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -187,6 +190,28 @@ func (o *DcimDeviceBaysListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithQ(q *string) *DcimDeviceBaysListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetQ(q *string) {
+	o.Q = q
+}
+
+// WithTag adds the tag to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithTag(tag *string) *DcimDeviceBaysListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -269,6 +294,38 @@ func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}

@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // SecretsSecretsPartialUpdateReader is a Reader for the SecretsSecretsPartialUpdate structure.
@@ -61,7 +61,7 @@ func NewSecretsSecretsPartialUpdateOK() *SecretsSecretsPartialUpdateOK {
 SecretsSecretsPartialUpdateOK secrets secrets partial update o k
 */
 type SecretsSecretsPartialUpdateOK struct {
-	Payload *models.WritableSecret
+	Payload *models.Secret
 }
 
 func (o *SecretsSecretsPartialUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *SecretsSecretsPartialUpdateOK) Error() string {
 
 func (o *SecretsSecretsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableSecret)
+	o.Payload = new(models.Secret)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

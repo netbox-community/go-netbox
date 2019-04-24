@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // SecretsSecretsCreateReader is a Reader for the SecretsSecretsCreate structure.
@@ -61,7 +61,7 @@ func NewSecretsSecretsCreateCreated() *SecretsSecretsCreateCreated {
 SecretsSecretsCreateCreated secrets secrets create created
 */
 type SecretsSecretsCreateCreated struct {
-	Payload *models.WritableSecret
+	Payload *models.Secret
 }
 
 func (o *SecretsSecretsCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *SecretsSecretsCreateCreated) Error() string {
 
 func (o *SecretsSecretsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableSecret)
+	o.Payload = new(models.Secret)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

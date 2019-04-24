@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
 
@@ -42,6 +43,7 @@ type WritableVirtualMachine struct {
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -58,7 +60,11 @@ type WritableVirtualMachine struct {
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Local context data
+	LocalContextData *string `json:"local_context_data,omitempty"`
 
 	// Memory (MB)
 	// Maximum: 2.147483647e+09
@@ -68,25 +74,38 @@ type WritableVirtualMachine struct {
 	// Name
 	// Required: true
 	// Max Length: 64
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// Platform
-	Platform int64 `json:"platform,omitempty"`
+	Platform *int64 `json:"platform,omitempty"`
+
+	// Primary ip
+	// Read Only: true
+	PrimaryIP string `json:"primary_ip,omitempty"`
 
 	// Primary IPv4
-	PrimaryIp4 int64 `json:"primary_ip4,omitempty"`
+	PrimaryIp4 *int64 `json:"primary_ip4,omitempty"`
 
 	// Primary IPv6
-	PrimaryIp6 int64 `json:"primary_ip6,omitempty"`
+	PrimaryIp6 *int64 `json:"primary_ip6,omitempty"`
 
 	// Role
-	Role int64 `json:"role,omitempty"`
+	Role *int64 `json:"role,omitempty"`
+
+	// Site
+	// Read Only: true
+	Site string `json:"site,omitempty"`
 
 	// Status
+	// Enum: [1 0 3]
 	Status int64 `json:"status,omitempty"`
 
+	// tags
+	Tags []string `json:"tags"`
+
 	// Tenant
-	Tenant int64 `json:"tenant,omitempty"`
+	Tenant *int64 `json:"tenant,omitempty"`
 
 	// VCPUs
 	// Maximum: 32767
@@ -99,32 +118,38 @@ func (m *WritableVirtualMachine) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCluster(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateDisk(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateMemory(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateVcpus(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -143,6 +168,19 @@ func (m *WritableVirtualMachine) validateCluster(formats strfmt.Registry) error 
 	return nil
 }
 
+func (m *WritableVirtualMachine) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableVirtualMachine) validateDisk(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Disk) { // not required
@@ -154,6 +192,19 @@ func (m *WritableVirtualMachine) validateDisk(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaximumInt("disk", "body", int64(*m.Disk), 2.147483647e+09, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVirtualMachine) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -180,6 +231,10 @@ func (m *WritableVirtualMachine) validateMemory(formats strfmt.Registry) error {
 func (m *WritableVirtualMachine) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 
@@ -219,6 +274,23 @@ func (m *WritableVirtualMachine) validateStatus(formats strfmt.Registry) error {
 	// value enum
 	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVirtualMachine) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // ExtrasGraphsPartialUpdateReader is a Reader for the ExtrasGraphsPartialUpdate structure.
@@ -61,7 +61,7 @@ func NewExtrasGraphsPartialUpdateOK() *ExtrasGraphsPartialUpdateOK {
 ExtrasGraphsPartialUpdateOK extras graphs partial update o k
 */
 type ExtrasGraphsPartialUpdateOK struct {
-	Payload *models.WritableGraph
+	Payload *models.Graph
 }
 
 func (o *ExtrasGraphsPartialUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *ExtrasGraphsPartialUpdateOK) Error() string {
 
 func (o *ExtrasGraphsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableGraph)
+	o.Payload = new(models.Graph)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

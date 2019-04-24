@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimPowerOutletsCreateReader is a Reader for the DcimPowerOutletsCreate structure.
@@ -61,7 +61,7 @@ func NewDcimPowerOutletsCreateCreated() *DcimPowerOutletsCreateCreated {
 DcimPowerOutletsCreateCreated dcim power outlets create created
 */
 type DcimPowerOutletsCreateCreated struct {
-	Payload *models.WritablePowerOutlet
+	Payload *models.PowerOutlet
 }
 
 func (o *DcimPowerOutletsCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimPowerOutletsCreateCreated) Error() string {
 
 func (o *DcimPowerOutletsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritablePowerOutlet)
+	o.Payload = new(models.PowerOutlet)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

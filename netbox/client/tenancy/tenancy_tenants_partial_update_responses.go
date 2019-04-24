@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // TenancyTenantsPartialUpdateReader is a Reader for the TenancyTenantsPartialUpdate structure.
@@ -61,7 +61,7 @@ func NewTenancyTenantsPartialUpdateOK() *TenancyTenantsPartialUpdateOK {
 TenancyTenantsPartialUpdateOK tenancy tenants partial update o k
 */
 type TenancyTenantsPartialUpdateOK struct {
-	Payload *models.WritableTenant
+	Payload *models.Tenant
 }
 
 func (o *TenancyTenantsPartialUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *TenancyTenantsPartialUpdateOK) Error() string {
 
 func (o *TenancyTenantsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableTenant)
+	o.Payload = new(models.Tenant)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

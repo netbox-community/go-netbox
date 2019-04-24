@@ -20,10 +20,9 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -112,6 +111,10 @@ type VirtualizationVirtualMachinesListParams struct {
 	PlatformID *string
 	/*Q*/
 	Q *string
+	/*Region*/
+	Region *string
+	/*RegionID*/
+	RegionID *string
 	/*Role*/
 	Role *string
 	/*RoleID*/
@@ -122,6 +125,8 @@ type VirtualizationVirtualMachinesListParams struct {
 	SiteID *string
 	/*Status*/
 	Status *string
+	/*Tag*/
+	Tag *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
@@ -308,6 +313,28 @@ func (o *VirtualizationVirtualMachinesListParams) SetQ(q *string) {
 	o.Q = q
 }
 
+// WithRegion adds the region to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithRegion(region *string) *VirtualizationVirtualMachinesListParams {
+	o.SetRegion(region)
+	return o
+}
+
+// SetRegion adds the region to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetRegion(region *string) {
+	o.Region = region
+}
+
+// WithRegionID adds the regionID to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithRegionID(regionID *string) *VirtualizationVirtualMachinesListParams {
+	o.SetRegionID(regionID)
+	return o
+}
+
+// SetRegionID adds the regionId to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetRegionID(regionID *string) {
+	o.RegionID = regionID
+}
+
 // WithRole adds the role to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithRole(role *string) *VirtualizationVirtualMachinesListParams {
 	o.SetRole(role)
@@ -361,6 +388,17 @@ func (o *VirtualizationVirtualMachinesListParams) WithStatus(status *string) *Vi
 // SetStatus adds the status to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) SetStatus(status *string) {
 	o.Status = status
+}
+
+// WithTag adds the tag to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithTag(tag *string) *VirtualizationVirtualMachinesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetTag(tag *string) {
+	o.Tag = tag
 }
 
 // WithTenant adds the tenant to the virtualization virtual machines list params
@@ -601,6 +639,38 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 
 	}
 
+	if o.Region != nil {
+
+		// query param region
+		var qrRegion string
+		if o.Region != nil {
+			qrRegion = *o.Region
+		}
+		qRegion := qrRegion
+		if qRegion != "" {
+			if err := r.SetQueryParam("region", qRegion); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.RegionID != nil {
+
+		// query param region_id
+		var qrRegionID string
+		if o.RegionID != nil {
+			qrRegionID = *o.RegionID
+		}
+		qRegionID := qrRegionID
+		if qRegionID != "" {
+			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Role != nil {
 
 		// query param role
@@ -675,6 +745,22 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		qStatus := qrStatus
 		if qStatus != "" {
 			if err := r.SetQueryParam("status", qStatus); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}

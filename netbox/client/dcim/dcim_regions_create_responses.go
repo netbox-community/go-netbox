@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimRegionsCreateReader is a Reader for the DcimRegionsCreate structure.
@@ -61,7 +61,7 @@ func NewDcimRegionsCreateCreated() *DcimRegionsCreateCreated {
 DcimRegionsCreateCreated dcim regions create created
 */
 type DcimRegionsCreateCreated struct {
-	Payload *models.WritableRegion
+	Payload *models.Region
 }
 
 func (o *DcimRegionsCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimRegionsCreateCreated) Error() string {
 
 func (o *DcimRegionsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableRegion)
+	o.Payload = new(models.Region)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

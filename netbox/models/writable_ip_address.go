@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
 
@@ -41,6 +42,7 @@ type WritableIPAddress struct {
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -50,37 +52,51 @@ type WritableIPAddress struct {
 	// Max Length: 100
 	Description string `json:"description,omitempty"`
 
+	// Family
+	// Read Only: true
+	Family int64 `json:"family,omitempty"`
+
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Interface
-	Interface int64 `json:"interface,omitempty"`
+	Interface *int64 `json:"interface,omitempty"`
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// NAT (Inside)
 	//
 	// The IP for which this address is the "outside" IP
-	NatInside int64 `json:"nat_inside,omitempty"`
+	NatInside *int64 `json:"nat_inside,omitempty"`
+
+	// Nat outside
+	// Required: true
+	NatOutside *int64 `json:"nat_outside"`
 
 	// Role
 	//
 	// The functional role of this IP
-	Role int64 `json:"role,omitempty"`
+	// Enum: [10 20 30 40 41 42 43 44]
+	Role *int64 `json:"role,omitempty"`
 
 	// Status
 	//
 	// The operational status of this IP
+	// Enum: [1 2 3 5]
 	Status int64 `json:"status,omitempty"`
 
+	// tags
+	Tags []string `json:"tags"`
+
 	// Tenant
-	Tenant int64 `json:"tenant,omitempty"`
+	Tenant *int64 `json:"tenant,omitempty"`
 
 	// VRF
-	Vrf int64 `json:"vrf,omitempty"`
+	Vrf *int64 `json:"vrf,omitempty"`
 }
 
 // Validate validates this writable IP address
@@ -88,22 +104,34 @@ func (m *WritableIPAddress) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAddress(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateDescription(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateNatOutside(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateRole(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -122,6 +150,19 @@ func (m *WritableIPAddress) validateAddress(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableIPAddress) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableIPAddress) validateDescription(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Description) { // not required
@@ -129,6 +170,28 @@ func (m *WritableIPAddress) validateDescription(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableIPAddress) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableIPAddress) validateNatOutside(formats strfmt.Registry) error {
+
+	if err := validate.Required("nat_outside", "body", m.NatOutside); err != nil {
 		return err
 	}
 
@@ -162,7 +225,7 @@ func (m *WritableIPAddress) validateRole(formats strfmt.Registry) error {
 	}
 
 	// value enum
-	if err := m.validateRoleEnum("role", "body", m.Role); err != nil {
+	if err := m.validateRoleEnum("role", "body", *m.Role); err != nil {
 		return err
 	}
 
@@ -198,6 +261,23 @@ func (m *WritableIPAddress) validateStatus(formats strfmt.Registry) error {
 	// value enum
 	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableIPAddress) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -91,6 +90,8 @@ type DcimDeviceBayTemplatesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -174,6 +175,17 @@ func (o *DcimDeviceBayTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithQ(q *string) *DcimDeviceBayTemplatesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -240,6 +252,22 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

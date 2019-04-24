@@ -20,10 +20,9 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -32,7 +31,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // NewExtrasImageAttachmentsUpdateParams creates a new ExtrasImageAttachmentsUpdateParams object
@@ -80,7 +79,7 @@ for the extras image attachments update operation typically these are written to
 type ExtrasImageAttachmentsUpdateParams struct {
 
 	/*Data*/
-	Data *models.WritableImageAttachment
+	Data *models.ImageAttachment
 	/*ID
 	  A unique integer value identifying this image attachment.
 
@@ -126,13 +125,13 @@ func (o *ExtrasImageAttachmentsUpdateParams) SetHTTPClient(client *http.Client) 
 }
 
 // WithData adds the data to the extras image attachments update params
-func (o *ExtrasImageAttachmentsUpdateParams) WithData(data *models.WritableImageAttachment) *ExtrasImageAttachmentsUpdateParams {
+func (o *ExtrasImageAttachmentsUpdateParams) WithData(data *models.ImageAttachment) *ExtrasImageAttachmentsUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the extras image attachments update params
-func (o *ExtrasImageAttachmentsUpdateParams) SetData(data *models.WritableImageAttachment) {
+func (o *ExtrasImageAttachmentsUpdateParams) SetData(data *models.ImageAttachment) {
 	o.Data = data
 }
 

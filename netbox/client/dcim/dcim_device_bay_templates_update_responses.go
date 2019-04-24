@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimDeviceBayTemplatesUpdateReader is a Reader for the DcimDeviceBayTemplatesUpdate structure.
@@ -61,7 +61,7 @@ func NewDcimDeviceBayTemplatesUpdateOK() *DcimDeviceBayTemplatesUpdateOK {
 DcimDeviceBayTemplatesUpdateOK dcim device bay templates update o k
 */
 type DcimDeviceBayTemplatesUpdateOK struct {
-	Payload *models.WritableDeviceBayTemplate
+	Payload *models.DeviceBayTemplate
 }
 
 func (o *DcimDeviceBayTemplatesUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimDeviceBayTemplatesUpdateOK) Error() string {
 
 func (o *DcimDeviceBayTemplatesUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableDeviceBayTemplate)
+	o.Payload = new(models.DeviceBayTemplate)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

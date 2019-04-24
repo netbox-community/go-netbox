@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // VirtualizationClustersPartialUpdateReader is a Reader for the VirtualizationClustersPartialUpdate structure.
@@ -61,7 +61,7 @@ func NewVirtualizationClustersPartialUpdateOK() *VirtualizationClustersPartialUp
 VirtualizationClustersPartialUpdateOK virtualization clusters partial update o k
 */
 type VirtualizationClustersPartialUpdateOK struct {
-	Payload *models.WritableCluster
+	Payload *models.Cluster
 }
 
 func (o *VirtualizationClustersPartialUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *VirtualizationClustersPartialUpdateOK) Error() string {
 
 func (o *VirtualizationClustersPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableCluster)
+	o.Payload = new(models.Cluster)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

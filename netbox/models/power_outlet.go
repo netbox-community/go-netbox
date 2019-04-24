@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -27,13 +29,23 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PowerOutlet Power outlet
+// PowerOutlet power outlet
 // swagger:model PowerOutlet
 type PowerOutlet struct {
 
-	// Connected port
+	// cable
+	Cable *NestedCable `json:"cable,omitempty"`
+
+	// Connected endpoint
 	// Read Only: true
-	ConnectedPort string `json:"connected_port,omitempty"`
+	ConnectedEndpoint string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint type
+	// Read Only: true
+	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
+
+	// connection status
+	ConnectionStatus *PowerOutletConnectionStatus `json:"connection_status,omitempty"`
 
 	// device
 	// Required: true
@@ -46,26 +58,76 @@ type PowerOutlet struct {
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
+
+	// tags
+	Tags []string `json:"tags"`
 }
 
 // Validate validates this power outlet
 func (m *PowerOutlet) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCable(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateConnectionStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDevice(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PowerOutlet) validateCable(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Cable) { // not required
+		return nil
+	}
+
+	if m.Cable != nil {
+		if err := m.Cable.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *PowerOutlet) validateConnectionStatus(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ConnectionStatus) { // not required
+		return nil
+	}
+
+	if m.ConnectionStatus != nil {
+		if err := m.ConnectionStatus.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("connection_status")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -76,7 +138,6 @@ func (m *PowerOutlet) validateDevice(formats strfmt.Registry) error {
 	}
 
 	if m.Device != nil {
-
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -94,8 +155,29 @@ func (m *PowerOutlet) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *PowerOutlet) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil
@@ -112,6 +194,73 @@ func (m *PowerOutlet) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *PowerOutlet) UnmarshalBinary(b []byte) error {
 	var res PowerOutlet
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// PowerOutletConnectionStatus Connection status
+// swagger:model PowerOutletConnectionStatus
+type PowerOutletConnectionStatus struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *bool `json:"value"`
+}
+
+// Validate validates this power outlet connection status
+func (m *PowerOutletConnectionStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PowerOutletConnectionStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PowerOutletConnectionStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *PowerOutletConnectionStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *PowerOutletConnectionStatus) UnmarshalBinary(b []byte) error {
+	var res PowerOutletConnectionStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

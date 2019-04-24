@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimPlatformsPartialUpdateReader is a Reader for the DcimPlatformsPartialUpdate structure.
@@ -61,7 +61,7 @@ func NewDcimPlatformsPartialUpdateOK() *DcimPlatformsPartialUpdateOK {
 DcimPlatformsPartialUpdateOK dcim platforms partial update o k
 */
 type DcimPlatformsPartialUpdateOK struct {
-	Payload *models.WritablePlatform
+	Payload *models.Platform
 }
 
 func (o *DcimPlatformsPartialUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimPlatformsPartialUpdateOK) Error() string {
 
 func (o *DcimPlatformsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritablePlatform)
+	o.Payload = new(models.Platform)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

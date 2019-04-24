@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // ExtrasTopologyMapsCreateReader is a Reader for the ExtrasTopologyMapsCreate structure.
@@ -61,7 +61,7 @@ func NewExtrasTopologyMapsCreateCreated() *ExtrasTopologyMapsCreateCreated {
 ExtrasTopologyMapsCreateCreated extras topology maps create created
 */
 type ExtrasTopologyMapsCreateCreated struct {
-	Payload *models.WritableTopologyMap
+	Payload *models.TopologyMap
 }
 
 func (o *ExtrasTopologyMapsCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *ExtrasTopologyMapsCreateCreated) Error() string {
 
 func (o *ExtrasTopologyMapsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableTopologyMap)
+	o.Payload = new(models.TopologyMap)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

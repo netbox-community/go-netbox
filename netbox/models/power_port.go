@@ -20,7 +20,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
+	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
 
@@ -33,8 +33,19 @@ import (
 // swagger:model PowerPort
 type PowerPort struct {
 
-	// Connection status
-	ConnectionStatus bool `json:"connection_status,omitempty"`
+	// cable
+	Cable *NestedCable `json:"cable,omitempty"`
+
+	// Connected endpoint
+	// Read Only: true
+	ConnectedEndpoint string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint type
+	// Read Only: true
+	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
+
+	// connection status
+	ConnectionStatus *PowerPortConnectionStatus `json:"connection_status,omitempty"`
 
 	// device
 	// Required: true
@@ -47,34 +58,34 @@ type PowerPort struct {
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
 
-	// power outlet
-	// Required: true
-	PowerOutlet *PowerOutlet `json:"power_outlet"`
+	// tags
+	Tags []string `json:"tags"`
 }
 
 // Validate validates this power port
 func (m *PowerPort) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCable(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateConnectionStatus(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDevice(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
-	if err := m.validatePowerOutlet(formats); err != nil {
-		// prop
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -84,23 +95,21 @@ func (m *PowerPort) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var powerPortTypeConnectionStatusPropEnum []interface{}
+func (m *PowerPort) validateCable(formats strfmt.Registry) error {
 
-func init() {
-	var res []bool
-	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
-		panic(err)
+	if swag.IsZero(m.Cable) { // not required
+		return nil
 	}
-	for _, v := range res {
-		powerPortTypeConnectionStatusPropEnum = append(powerPortTypeConnectionStatusPropEnum, v)
-	}
-}
 
-// prop value enum
-func (m *PowerPort) validateConnectionStatusEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, powerPortTypeConnectionStatusPropEnum); err != nil {
-		return err
+	if m.Cable != nil {
+		if err := m.Cable.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
 	}
+
 	return nil
 }
 
@@ -110,9 +119,13 @@ func (m *PowerPort) validateConnectionStatus(formats strfmt.Registry) error {
 		return nil
 	}
 
-	// value enum
-	if err := m.validateConnectionStatusEnum("connection_status", "body", m.ConnectionStatus); err != nil {
-		return err
+	if m.ConnectionStatus != nil {
+		if err := m.ConnectionStatus.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("connection_status")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -125,7 +138,6 @@ func (m *PowerPort) validateDevice(formats strfmt.Registry) error {
 	}
 
 	if m.Device != nil {
-
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -143,6 +155,10 @@ func (m *PowerPort) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
 		return err
 	}
@@ -150,20 +166,18 @@ func (m *PowerPort) validateName(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *PowerPort) validatePowerOutlet(formats strfmt.Registry) error {
+func (m *PowerPort) validateTags(formats strfmt.Registry) error {
 
-	if err := validate.Required("power_outlet", "body", m.PowerOutlet); err != nil {
-		return err
+	if swag.IsZero(m.Tags) { // not required
+		return nil
 	}
 
-	if m.PowerOutlet != nil {
+	for i := 0; i < len(m.Tags); i++ {
 
-		if err := m.PowerOutlet.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("power_outlet")
-			}
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
 			return err
 		}
+
 	}
 
 	return nil
@@ -180,6 +194,73 @@ func (m *PowerPort) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *PowerPort) UnmarshalBinary(b []byte) error {
 	var res PowerPort
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// PowerPortConnectionStatus Connection status
+// swagger:model PowerPortConnectionStatus
+type PowerPortConnectionStatus struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *bool `json:"value"`
+}
+
+// Validate validates this power port connection status
+func (m *PowerPortConnectionStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PowerPortConnectionStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PowerPortConnectionStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *PowerPortConnectionStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *PowerPortConnectionStatus) UnmarshalBinary(b []byte) error {
+	var res PowerPortConnectionStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

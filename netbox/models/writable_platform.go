@@ -20,8 +20,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -40,12 +38,18 @@ type WritablePlatform struct {
 	// Manufacturer
 	//
 	// Optionally limit this platform to devices of a certain manufacturer
-	Manufacturer int64 `json:"manufacturer,omitempty"`
+	Manufacturer *int64 `json:"manufacturer,omitempty"`
 
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
+
+	// NAPALM arguments
+	//
+	// Additional arguments to pass when initiating the NAPALM driver (JSON format)
+	NapalmArgs *string `json:"napalm_args,omitempty"`
 
 	// NAPALM driver
 	//
@@ -53,12 +57,10 @@ type WritablePlatform struct {
 	// Max Length: 50
 	NapalmDriver string `json:"napalm_driver,omitempty"`
 
-	// Legacy RPC client
-	RPCClient string `json:"rpc_client,omitempty"`
-
 	// Slug
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 }
@@ -68,22 +70,14 @@ func (m *WritablePlatform) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateNapalmDriver(formats); err != nil {
-		// prop
-		res = append(res, err)
-	}
-
-	if err := m.validateRPCClient(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSlug(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -96,6 +90,10 @@ func (m *WritablePlatform) Validate(formats strfmt.Registry) error {
 func (m *WritablePlatform) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 
@@ -119,52 +117,13 @@ func (m *WritablePlatform) validateNapalmDriver(formats strfmt.Registry) error {
 	return nil
 }
 
-var writablePlatformTypeRPCClientPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["juniper-junos","cisco-ios","opengear"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		writablePlatformTypeRPCClientPropEnum = append(writablePlatformTypeRPCClientPropEnum, v)
-	}
-}
-
-const (
-	// WritablePlatformRPCClientJuniperJunos captures enum value "juniper-junos"
-	WritablePlatformRPCClientJuniperJunos string = "juniper-junos"
-	// WritablePlatformRPCClientCiscoIos captures enum value "cisco-ios"
-	WritablePlatformRPCClientCiscoIos string = "cisco-ios"
-	// WritablePlatformRPCClientOpengear captures enum value "opengear"
-	WritablePlatformRPCClientOpengear string = "opengear"
-)
-
-// prop value enum
-func (m *WritablePlatform) validateRPCClientEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePlatformTypeRPCClientPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *WritablePlatform) validateRPCClient(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.RPCClient) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateRPCClientEnum("rpc_client", "body", m.RPCClient); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritablePlatform) validateSlug(formats strfmt.Registry) error {
 
 	if err := validate.Required("slug", "body", m.Slug); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
 		return err
 	}
 

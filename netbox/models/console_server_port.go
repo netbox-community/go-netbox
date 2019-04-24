@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -27,13 +29,23 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ConsoleServerPort Cs port
+// ConsoleServerPort console server port
 // swagger:model ConsoleServerPort
 type ConsoleServerPort struct {
 
-	// Connected console
+	// cable
+	Cable *NestedCable `json:"cable,omitempty"`
+
+	// Connected endpoint
 	// Read Only: true
-	ConnectedConsole string `json:"connected_console,omitempty"`
+	ConnectedEndpoint string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint type
+	// Read Only: true
+	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
+
+	// connection status
+	ConnectionStatus *ConsoleServerPortConnectionStatus `json:"connection_status,omitempty"`
 
 	// device
 	// Required: true
@@ -46,26 +58,76 @@ type ConsoleServerPort struct {
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
+
+	// tags
+	Tags []string `json:"tags"`
 }
 
 // Validate validates this console server port
 func (m *ConsoleServerPort) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCable(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateConnectionStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDevice(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ConsoleServerPort) validateCable(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Cable) { // not required
+		return nil
+	}
+
+	if m.Cable != nil {
+		if err := m.Cable.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) validateConnectionStatus(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ConnectionStatus) { // not required
+		return nil
+	}
+
+	if m.ConnectionStatus != nil {
+		if err := m.ConnectionStatus.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("connection_status")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -76,7 +138,6 @@ func (m *ConsoleServerPort) validateDevice(formats strfmt.Registry) error {
 	}
 
 	if m.Device != nil {
-
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -94,8 +155,29 @@ func (m *ConsoleServerPort) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil
@@ -112,6 +194,73 @@ func (m *ConsoleServerPort) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *ConsoleServerPort) UnmarshalBinary(b []byte) error {
 	var res ConsoleServerPort
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// ConsoleServerPortConnectionStatus Connection status
+// swagger:model ConsoleServerPortConnectionStatus
+type ConsoleServerPortConnectionStatus struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *bool `json:"value"`
+}
+
+// Validate validates this console server port connection status
+func (m *ConsoleServerPortConnectionStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *ConsoleServerPortConnectionStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortConnectionStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *ConsoleServerPortConnectionStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *ConsoleServerPortConnectionStatus) UnmarshalBinary(b []byte) error {
+	var res ConsoleServerPortConnectionStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -39,20 +39,24 @@ type WritableGraph struct {
 
 	// Link URL
 	// Max Length: 200
+	// Format: uri
 	Link strfmt.URI `json:"link,omitempty"`
 
 	// Name
 	// Required: true
 	// Max Length: 100
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// Source URL
 	// Required: true
 	// Max Length: 500
+	// Min Length: 1
 	Source *string `json:"source"`
 
 	// Type
 	// Required: true
+	// Enum: [100 200 300]
 	Type *int64 `json:"type"`
 
 	// Weight
@@ -66,27 +70,22 @@ func (m *WritableGraph) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateLink(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSource(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateType(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateWeight(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -119,6 +118,10 @@ func (m *WritableGraph) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
 		return err
 	}
@@ -129,6 +132,10 @@ func (m *WritableGraph) validateName(formats strfmt.Registry) error {
 func (m *WritableGraph) validateSource(formats strfmt.Registry) error {
 
 	if err := validate.Required("source", "body", m.Source); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("source", "body", string(*m.Source), 1); err != nil {
 		return err
 	}
 

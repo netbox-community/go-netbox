@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
 
@@ -36,6 +37,7 @@ type WritableCircuit struct {
 	// Circuit ID
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Cid *string `json:"cid"`
 
 	// Comments
@@ -48,6 +50,7 @@ type WritableCircuit struct {
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -62,10 +65,12 @@ type WritableCircuit struct {
 	ID int64 `json:"id,omitempty"`
 
 	// Date installed
-	InstallDate strfmt.Date `json:"install_date,omitempty"`
+	// Format: date
+	InstallDate *strfmt.Date `json:"install_date,omitempty"`
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Provider
@@ -73,10 +78,14 @@ type WritableCircuit struct {
 	Provider *int64 `json:"provider"`
 
 	// Status
+	// Enum: [2 3 1 4 0 5]
 	Status int64 `json:"status,omitempty"`
 
+	// tags
+	Tags []string `json:"tags"`
+
 	// Tenant
-	Tenant int64 `json:"tenant,omitempty"`
+	Tenant *int64 `json:"tenant,omitempty"`
 
 	// Type
 	// Required: true
@@ -88,32 +97,42 @@ func (m *WritableCircuit) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCid(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateCommitRate(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateDescription(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateInstallDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateProvider(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateType(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -126,6 +145,10 @@ func (m *WritableCircuit) Validate(formats strfmt.Registry) error {
 func (m *WritableCircuit) validateCid(formats strfmt.Registry) error {
 
 	if err := validate.Required("cid", "body", m.Cid); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("cid", "body", string(*m.Cid), 1); err != nil {
 		return err
 	}
 
@@ -153,6 +176,19 @@ func (m *WritableCircuit) validateCommitRate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableCircuit) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableCircuit) validateDescription(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Description) { // not required
@@ -160,6 +196,32 @@ func (m *WritableCircuit) validateDescription(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuit) validateInstallDate(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.InstallDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("install_date", "body", "date", m.InstallDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuit) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -204,6 +266,23 @@ func (m *WritableCircuit) validateStatus(formats strfmt.Registry) error {
 	// value enum
 	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuit) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

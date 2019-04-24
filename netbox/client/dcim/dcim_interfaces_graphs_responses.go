@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimInterfacesGraphsReader is a Reader for the DcimInterfacesGraphs structure.
@@ -61,7 +61,7 @@ func NewDcimInterfacesGraphsOK() *DcimInterfacesGraphsOK {
 DcimInterfacesGraphsOK dcim interfaces graphs o k
 */
 type DcimInterfacesGraphsOK struct {
-	Payload *models.Interface
+	Payload *models.DeviceInterface
 }
 
 func (o *DcimInterfacesGraphsOK) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimInterfacesGraphsOK) Error() string {
 
 func (o *DcimInterfacesGraphsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.Interface)
+	o.Payload = new(models.DeviceInterface)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

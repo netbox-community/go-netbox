@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // VirtualizationInterfacesReadReader is a Reader for the VirtualizationInterfacesRead structure.
@@ -61,7 +61,7 @@ func NewVirtualizationInterfacesReadOK() *VirtualizationInterfacesReadOK {
 VirtualizationInterfacesReadOK virtualization interfaces read o k
 */
 type VirtualizationInterfacesReadOK struct {
-	Payload *models.Interface
+	Payload *models.VirtualMachineInterface
 }
 
 func (o *VirtualizationInterfacesReadOK) Error() string {
@@ -70,7 +70,7 @@ func (o *VirtualizationInterfacesReadOK) Error() string {
 
 func (o *VirtualizationInterfacesReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.Interface)
+	o.Payload = new(models.VirtualMachineInterface)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

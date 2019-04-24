@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // CircuitsProvidersPartialUpdateReader is a Reader for the CircuitsProvidersPartialUpdate structure.
@@ -61,7 +61,7 @@ func NewCircuitsProvidersPartialUpdateOK() *CircuitsProvidersPartialUpdateOK {
 CircuitsProvidersPartialUpdateOK circuits providers partial update o k
 */
 type CircuitsProvidersPartialUpdateOK struct {
-	Payload *models.WritableProvider
+	Payload *models.Provider
 }
 
 func (o *CircuitsProvidersPartialUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *CircuitsProvidersPartialUpdateOK) Error() string {
 
 func (o *CircuitsProvidersPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableProvider)
+	o.Payload = new(models.Provider)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

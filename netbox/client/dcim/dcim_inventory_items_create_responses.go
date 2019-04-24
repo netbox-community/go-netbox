@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimInventoryItemsCreateReader is a Reader for the DcimInventoryItemsCreate structure.
@@ -61,7 +61,7 @@ func NewDcimInventoryItemsCreateCreated() *DcimInventoryItemsCreateCreated {
 DcimInventoryItemsCreateCreated dcim inventory items create created
 */
 type DcimInventoryItemsCreateCreated struct {
-	Payload *models.WritableInventoryItem
+	Payload *models.InventoryItem
 }
 
 func (o *DcimInventoryItemsCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimInventoryItemsCreateCreated) Error() string {
 
 func (o *DcimInventoryItemsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableInventoryItem)
+	o.Payload = new(models.InventoryItem)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

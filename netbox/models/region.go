@@ -38,15 +38,16 @@ type Region struct {
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// parent
-	// Required: true
-	Parent *NestedRegion `json:"parent"`
+	Parent *NestedRegion `json:"parent,omitempty"`
 
 	// Slug
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 }
@@ -56,17 +57,14 @@ func (m *Region) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateParent(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSlug(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -82,6 +80,10 @@ func (m *Region) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
 		return err
 	}
@@ -91,12 +93,11 @@ func (m *Region) validateName(formats strfmt.Registry) error {
 
 func (m *Region) validateParent(formats strfmt.Registry) error {
 
-	if err := validate.Required("parent", "body", m.Parent); err != nil {
-		return err
+	if swag.IsZero(m.Parent) { // not required
+		return nil
 	}
 
 	if m.Parent != nil {
-
 		if err := m.Parent.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
@@ -111,6 +112,10 @@ func (m *Region) validateParent(formats strfmt.Registry) error {
 func (m *Region) validateSlug(formats strfmt.Registry) error {
 
 	if err := validate.Required("slug", "body", m.Slug); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
 		return err
 	}
 

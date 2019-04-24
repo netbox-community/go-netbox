@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
 
@@ -33,11 +34,20 @@ import (
 // swagger:model WritableConsolePort
 type WritableConsolePort struct {
 
-	// Connection status
-	ConnectionStatus bool `json:"connection_status,omitempty"`
+	// cable
+	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Console server port
-	CsPort int64 `json:"cs_port,omitempty"`
+	// Connected endpoint
+	// Read Only: true
+	ConnectedEndpoint string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint type
+	// Read Only: true
+	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
+
+	// Connection status
+	// Enum: [false true]
+	ConnectionStatus bool `json:"connection_status,omitempty"`
 
 	// Device
 	// Required: true
@@ -50,31 +60,58 @@ type WritableConsolePort struct {
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
+
+	// tags
+	Tags []string `json:"tags"`
 }
 
 // Validate validates this writable console port
 func (m *WritableConsolePort) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCable(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateConnectionStatus(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDevice(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableConsolePort) validateCable(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Cable) { // not required
+		return nil
+	}
+
+	if m.Cable != nil {
+		if err := m.Cable.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -127,8 +164,29 @@ func (m *WritableConsolePort) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsolePort) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

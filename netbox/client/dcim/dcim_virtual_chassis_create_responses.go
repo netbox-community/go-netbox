@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimVirtualChassisCreateReader is a Reader for the DcimVirtualChassisCreate structure.
@@ -61,7 +61,7 @@ func NewDcimVirtualChassisCreateCreated() *DcimVirtualChassisCreateCreated {
 DcimVirtualChassisCreateCreated dcim virtual chassis create created
 */
 type DcimVirtualChassisCreateCreated struct {
-	Payload *models.WritableVirtualChassis
+	Payload *models.VirtualChassis
 }
 
 func (o *DcimVirtualChassisCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimVirtualChassisCreateCreated) Error() string {
 
 func (o *DcimVirtualChassisCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableVirtualChassis)
+	o.Payload = new(models.VirtualChassis)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

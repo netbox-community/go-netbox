@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -40,6 +42,7 @@ type VirtualMachine struct {
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -56,7 +59,11 @@ type VirtualMachine struct {
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Local context data
+	LocalContextData *string `json:"local_context_data,omitempty"`
 
 	// Memory (MB)
 	// Maximum: 2.147483647e+09
@@ -66,35 +73,35 @@ type VirtualMachine struct {
 	// Name
 	// Required: true
 	// Max Length: 64
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// platform
-	// Required: true
-	Platform *NestedPlatform `json:"platform"`
+	Platform *NestedPlatform `json:"platform,omitempty"`
 
 	// primary ip
-	// Required: true
-	PrimaryIP *VirtualMachineIPAddress `json:"primary_ip"`
+	PrimaryIP *NestedIPAddress `json:"primary_ip,omitempty"`
 
 	// primary ip4
-	// Required: true
-	PrimaryIp4 *VirtualMachineIPAddress `json:"primary_ip4"`
+	PrimaryIp4 *NestedIPAddress `json:"primary_ip4,omitempty"`
 
 	// primary ip6
-	// Required: true
-	PrimaryIp6 *VirtualMachineIPAddress `json:"primary_ip6"`
+	PrimaryIp6 *NestedIPAddress `json:"primary_ip6,omitempty"`
 
 	// role
-	// Required: true
-	Role *NestedDeviceRole `json:"role"`
+	Role *NestedDeviceRole `json:"role,omitempty"`
+
+	// site
+	Site *NestedSite `json:"site,omitempty"`
 
 	// status
-	// Required: true
-	Status *VirtualMachineStatus `json:"status"`
+	Status *VirtualMachineStatus `json:"status,omitempty"`
+
+	// tags
+	Tags []string `json:"tags"`
 
 	// tenant
-	// Required: true
-	Tenant *NestedTenant `json:"tenant"`
+	Tenant *NestedTenant `json:"tenant,omitempty"`
 
 	// VCPUs
 	// Maximum: 32767
@@ -107,62 +114,66 @@ func (m *VirtualMachine) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCluster(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateDisk(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateMemory(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePlatform(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePrimaryIP(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePrimaryIp4(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePrimaryIp6(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateRole(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateSite(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateTenant(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateVcpus(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -179,13 +190,25 @@ func (m *VirtualMachine) validateCluster(formats strfmt.Registry) error {
 	}
 
 	if m.Cluster != nil {
-
 		if err := m.Cluster.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cluster")
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachine) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -202,6 +225,19 @@ func (m *VirtualMachine) validateDisk(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaximumInt("disk", "body", int64(*m.Disk), 2.147483647e+09, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualMachine) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -231,6 +267,10 @@ func (m *VirtualMachine) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
 		return err
 	}
@@ -240,12 +280,11 @@ func (m *VirtualMachine) validateName(formats strfmt.Registry) error {
 
 func (m *VirtualMachine) validatePlatform(formats strfmt.Registry) error {
 
-	if err := validate.Required("platform", "body", m.Platform); err != nil {
-		return err
+	if swag.IsZero(m.Platform) { // not required
+		return nil
 	}
 
 	if m.Platform != nil {
-
 		if err := m.Platform.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("platform")
@@ -259,12 +298,11 @@ func (m *VirtualMachine) validatePlatform(formats strfmt.Registry) error {
 
 func (m *VirtualMachine) validatePrimaryIP(formats strfmt.Registry) error {
 
-	if err := validate.Required("primary_ip", "body", m.PrimaryIP); err != nil {
-		return err
+	if swag.IsZero(m.PrimaryIP) { // not required
+		return nil
 	}
 
 	if m.PrimaryIP != nil {
-
 		if err := m.PrimaryIP.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip")
@@ -278,12 +316,11 @@ func (m *VirtualMachine) validatePrimaryIP(formats strfmt.Registry) error {
 
 func (m *VirtualMachine) validatePrimaryIp4(formats strfmt.Registry) error {
 
-	if err := validate.Required("primary_ip4", "body", m.PrimaryIp4); err != nil {
-		return err
+	if swag.IsZero(m.PrimaryIp4) { // not required
+		return nil
 	}
 
 	if m.PrimaryIp4 != nil {
-
 		if err := m.PrimaryIp4.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip4")
@@ -297,12 +334,11 @@ func (m *VirtualMachine) validatePrimaryIp4(formats strfmt.Registry) error {
 
 func (m *VirtualMachine) validatePrimaryIp6(formats strfmt.Registry) error {
 
-	if err := validate.Required("primary_ip6", "body", m.PrimaryIp6); err != nil {
-		return err
+	if swag.IsZero(m.PrimaryIp6) { // not required
+		return nil
 	}
 
 	if m.PrimaryIp6 != nil {
-
 		if err := m.PrimaryIp6.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip6")
@@ -316,12 +352,11 @@ func (m *VirtualMachine) validatePrimaryIp6(formats strfmt.Registry) error {
 
 func (m *VirtualMachine) validateRole(formats strfmt.Registry) error {
 
-	if err := validate.Required("role", "body", m.Role); err != nil {
-		return err
+	if swag.IsZero(m.Role) { // not required
+		return nil
 	}
 
 	if m.Role != nil {
-
 		if err := m.Role.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
@@ -333,14 +368,31 @@ func (m *VirtualMachine) validateRole(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *VirtualMachine) validateSite(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Site) { // not required
+		return nil
+	}
+
+	if m.Site != nil {
+		if err := m.Site.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("site")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *VirtualMachine) validateStatus(formats strfmt.Registry) error {
 
-	if err := validate.Required("status", "body", m.Status); err != nil {
-		return err
+	if swag.IsZero(m.Status) { // not required
+		return nil
 	}
 
 	if m.Status != nil {
-
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -352,14 +404,30 @@ func (m *VirtualMachine) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *VirtualMachine) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
+	}
+
+	return nil
+}
+
 func (m *VirtualMachine) validateTenant(formats strfmt.Registry) error {
 
-	if err := validate.Required("tenant", "body", m.Tenant); err != nil {
-		return err
+	if swag.IsZero(m.Tenant) { // not required
+		return nil
 	}
 
 	if m.Tenant != nil {
-
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
@@ -399,6 +467,73 @@ func (m *VirtualMachine) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *VirtualMachine) UnmarshalBinary(b []byte) error {
 	var res VirtualMachine
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// VirtualMachineStatus Status
+// swagger:model VirtualMachineStatus
+type VirtualMachineStatus struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *int64 `json:"value"`
+}
+
+// Validate validates this virtual machine status
+func (m *VirtualMachineStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *VirtualMachineStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *VirtualMachineStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *VirtualMachineStatus) UnmarshalBinary(b []byte) error {
+	var res VirtualMachineStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -31,27 +31,33 @@ import (
 // swagger:model NestedDeviceType
 type NestedDeviceType struct {
 
+	// Display name
+	// Read Only: true
+	DisplayName string `json:"display_name,omitempty"`
+
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// manufacturer
-	// Required: true
-	Manufacturer *NestedManufacturer `json:"manufacturer"`
+	Manufacturer *NestedManufacturer `json:"manufacturer,omitempty"`
 
 	// Model
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Model *string `json:"model"`
 
 	// Slug
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 
 	// Url
 	// Read Only: true
+	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
 }
 
@@ -60,17 +66,18 @@ func (m *NestedDeviceType) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateManufacturer(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateModel(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSlug(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -82,12 +89,11 @@ func (m *NestedDeviceType) Validate(formats strfmt.Registry) error {
 
 func (m *NestedDeviceType) validateManufacturer(formats strfmt.Registry) error {
 
-	if err := validate.Required("manufacturer", "body", m.Manufacturer); err != nil {
-		return err
+	if swag.IsZero(m.Manufacturer) { // not required
+		return nil
 	}
 
 	if m.Manufacturer != nil {
-
 		if err := m.Manufacturer.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
@@ -105,6 +111,10 @@ func (m *NestedDeviceType) validateModel(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("model", "body", string(*m.Model), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("model", "body", string(*m.Model), 50); err != nil {
 		return err
 	}
@@ -118,11 +128,28 @@ func (m *NestedDeviceType) validateSlug(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("slug", "body", string(*m.Slug), 50); err != nil {
 		return err
 	}
 
 	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *NestedDeviceType) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

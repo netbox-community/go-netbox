@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -42,6 +44,9 @@ type WritableVirtualChassis struct {
 	// Master
 	// Required: true
 	Master *int64 `json:"master"`
+
+	// tags
+	Tags []string `json:"tags"`
 }
 
 // Validate validates this writable virtual chassis
@@ -49,12 +54,14 @@ func (m *WritableVirtualChassis) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateDomain(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateMaster(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -81,6 +88,23 @@ func (m *WritableVirtualChassis) validateMaster(formats strfmt.Registry) error {
 
 	if err := validate.Required("master", "body", m.Master); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVirtualChassis) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

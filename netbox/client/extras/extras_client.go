@@ -97,6 +97,180 @@ func (a *Client) ExtrasChoicesRead(params *ExtrasChoicesReadParams, authInfo run
 }
 
 /*
+ExtrasConfigContextsCreate extras config contexts create API
+*/
+func (a *Client) ExtrasConfigContextsCreate(params *ExtrasConfigContextsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasConfigContextsCreateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_config-contexts_create",
+		Method:             "POST",
+		PathPattern:        "/extras/config-contexts/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasConfigContextsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasConfigContextsCreateCreated), nil
+
+}
+
+/*
+ExtrasConfigContextsDelete extras config contexts delete API
+*/
+func (a *Client) ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasConfigContextsDeleteParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_config-contexts_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/config-contexts/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasConfigContextsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasConfigContextsDeleteNoContent), nil
+
+}
+
+/*
+ExtrasConfigContextsList extras config contexts list API
+*/
+func (a *Client) ExtrasConfigContextsList(params *ExtrasConfigContextsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasConfigContextsListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_config-contexts_list",
+		Method:             "GET",
+		PathPattern:        "/extras/config-contexts/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasConfigContextsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasConfigContextsListOK), nil
+
+}
+
+/*
+ExtrasConfigContextsPartialUpdate extras config contexts partial update API
+*/
+func (a *Client) ExtrasConfigContextsPartialUpdate(params *ExtrasConfigContextsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasConfigContextsPartialUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_config-contexts_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/config-contexts/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasConfigContextsPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasConfigContextsPartialUpdateOK), nil
+
+}
+
+/*
+ExtrasConfigContextsRead extras config contexts read API
+*/
+func (a *Client) ExtrasConfigContextsRead(params *ExtrasConfigContextsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasConfigContextsReadParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_config-contexts_read",
+		Method:             "GET",
+		PathPattern:        "/extras/config-contexts/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasConfigContextsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasConfigContextsReadOK), nil
+
+}
+
+/*
+ExtrasConfigContextsUpdate extras config contexts update API
+*/
+func (a *Client) ExtrasConfigContextsUpdate(params *ExtrasConfigContextsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasConfigContextsUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_config-contexts_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/config-contexts/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasConfigContextsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasConfigContextsUpdateOK), nil
+
+}
+
+/*
 ExtrasExportTemplatesCreate extras export templates create API
 */
 func (a *Client) ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesCreateCreated, error) {
@@ -619,23 +793,23 @@ func (a *Client) ExtrasImageAttachmentsUpdate(params *ExtrasImageAttachmentsUpda
 }
 
 /*
-ExtrasRecentActivityList List all UserActions to provide a log of recent activity.
+ExtrasObjectChangesList Retrieve a list of recent changes.
 */
-func (a *Client) ExtrasRecentActivityList(params *ExtrasRecentActivityListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasRecentActivityListOK, error) {
+func (a *Client) ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasObjectChangesListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewExtrasRecentActivityListParams()
+		params = NewExtrasObjectChangesListParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "extras_recent-activity_list",
+		ID:                 "extras_object-changes_list",
 		Method:             "GET",
-		PathPattern:        "/extras/recent-activity/",
+		PathPattern:        "/extras/object-changes/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"http"},
 		Params:             params,
-		Reader:             &ExtrasRecentActivityListReader{formats: a.formats},
+		Reader:             &ExtrasObjectChangesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -643,28 +817,28 @@ func (a *Client) ExtrasRecentActivityList(params *ExtrasRecentActivityListParams
 	if err != nil {
 		return nil, err
 	}
-	return result.(*ExtrasRecentActivityListOK), nil
+	return result.(*ExtrasObjectChangesListOK), nil
 
 }
 
 /*
-ExtrasRecentActivityRead List all UserActions to provide a log of recent activity.
+ExtrasObjectChangesRead Retrieve a list of recent changes.
 */
-func (a *Client) ExtrasRecentActivityRead(params *ExtrasRecentActivityReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasRecentActivityReadOK, error) {
+func (a *Client) ExtrasObjectChangesRead(params *ExtrasObjectChangesReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasObjectChangesReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewExtrasRecentActivityReadParams()
+		params = NewExtrasObjectChangesReadParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "extras_recent-activity_read",
+		ID:                 "extras_object-changes_read",
 		Method:             "GET",
-		PathPattern:        "/extras/recent-activity/{id}/",
+		PathPattern:        "/extras/object-changes/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"http"},
 		Params:             params,
-		Reader:             &ExtrasRecentActivityReadReader{formats: a.formats},
+		Reader:             &ExtrasObjectChangesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -672,7 +846,268 @@ func (a *Client) ExtrasRecentActivityRead(params *ExtrasRecentActivityReadParams
 	if err != nil {
 		return nil, err
 	}
-	return result.(*ExtrasRecentActivityReadOK), nil
+	return result.(*ExtrasObjectChangesReadOK), nil
+
+}
+
+/*
+ExtrasReportsList Compile all reports and their related results (if any). Result data is deferred in the list view.
+*/
+func (a *Client) ExtrasReportsList(params *ExtrasReportsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasReportsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasReportsListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_reports_list",
+		Method:             "GET",
+		PathPattern:        "/extras/reports/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasReportsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasReportsListOK), nil
+
+}
+
+/*
+ExtrasReportsRead Retrieve a single Report identified as "<module>.<report>".
+*/
+func (a *Client) ExtrasReportsRead(params *ExtrasReportsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasReportsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasReportsReadParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_reports_read",
+		Method:             "GET",
+		PathPattern:        "/extras/reports/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasReportsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasReportsReadOK), nil
+
+}
+
+/*
+ExtrasReportsRun Run a Report and create a new ReportResult, overwriting any previous result for the Report.
+*/
+func (a *Client) ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasReportsRunCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasReportsRunParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_reports_run",
+		Method:             "POST",
+		PathPattern:        "/extras/reports/{id}/run/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasReportsRunReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasReportsRunCreated), nil
+
+}
+
+/*
+ExtrasTagsCreate extras tags create API
+*/
+func (a *Client) ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasTagsCreateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_tags_create",
+		Method:             "POST",
+		PathPattern:        "/extras/tags/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasTagsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasTagsCreateCreated), nil
+
+}
+
+/*
+ExtrasTagsDelete extras tags delete API
+*/
+func (a *Client) ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasTagsDeleteParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_tags_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/tags/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasTagsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasTagsDeleteNoContent), nil
+
+}
+
+/*
+ExtrasTagsList extras tags list API
+*/
+func (a *Client) ExtrasTagsList(params *ExtrasTagsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasTagsListParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_tags_list",
+		Method:             "GET",
+		PathPattern:        "/extras/tags/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasTagsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasTagsListOK), nil
+
+}
+
+/*
+ExtrasTagsPartialUpdate extras tags partial update API
+*/
+func (a *Client) ExtrasTagsPartialUpdate(params *ExtrasTagsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasTagsPartialUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_tags_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/tags/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasTagsPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasTagsPartialUpdateOK), nil
+
+}
+
+/*
+ExtrasTagsRead extras tags read API
+*/
+func (a *Client) ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasTagsReadParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_tags_read",
+		Method:             "GET",
+		PathPattern:        "/extras/tags/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasTagsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasTagsReadOK), nil
+
+}
+
+/*
+ExtrasTagsUpdate extras tags update API
+*/
+func (a *Client) ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasTagsUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "extras_tags_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/tags/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasTagsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return result.(*ExtrasTagsUpdateOK), nil
 
 }
 

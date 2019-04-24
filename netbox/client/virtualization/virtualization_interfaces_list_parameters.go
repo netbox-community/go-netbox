@@ -20,10 +20,9 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -95,6 +94,8 @@ type VirtualizationInterfacesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 	/*VirtualMachine*/
 	VirtualMachine *string
 	/*VirtualMachineID*/
@@ -202,6 +203,17 @@ func (o *VirtualizationInterfacesListParams) WithOffset(offset *int64) *Virtuali
 // SetOffset adds the offset to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithQ adds the q to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithQ(q *string) *VirtualizationInterfacesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetQ(q *string) {
+	o.Q = q
 }
 
 // WithVirtualMachine adds the virtualMachine to the virtualization interfaces list params
@@ -324,6 +336,22 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

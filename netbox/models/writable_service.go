@@ -35,14 +35,18 @@ type WritableService struct {
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
 	// Max Length: 100
 	Description string `json:"description,omitempty"`
 
 	// Device
-	Device int64 `json:"device,omitempty"`
+	Device *int64 `json:"device,omitempty"`
 
 	// ID
 	// Read Only: true
@@ -54,11 +58,13 @@ type WritableService struct {
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
 	// Max Length: 30
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// Port number
@@ -69,44 +75,61 @@ type WritableService struct {
 
 	// Protocol
 	// Required: true
+	// Enum: [6 17]
 	Protocol *int64 `json:"protocol"`
 
 	// Virtual machine
-	VirtualMachine int64 `json:"virtual_machine,omitempty"`
+	VirtualMachine *int64 `json:"virtual_machine,omitempty"`
 }
 
 // Validate validates this writable service
 func (m *WritableService) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateIpaddresses(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePort(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateProtocol(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableService) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -136,9 +159,26 @@ func (m *WritableService) validateIpaddresses(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableService) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableService) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 

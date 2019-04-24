@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // TenancyTenantsCreateReader is a Reader for the TenancyTenantsCreate structure.
@@ -61,7 +61,7 @@ func NewTenancyTenantsCreateCreated() *TenancyTenantsCreateCreated {
 TenancyTenantsCreateCreated tenancy tenants create created
 */
 type TenancyTenantsCreateCreated struct {
-	Payload *models.WritableTenant
+	Payload *models.Tenant
 }
 
 func (o *TenancyTenantsCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *TenancyTenantsCreateCreated) Error() string {
 
 func (o *TenancyTenantsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableTenant)
+	o.Payload = new(models.Tenant)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

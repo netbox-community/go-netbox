@@ -20,10 +20,9 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -110,6 +109,8 @@ type CircuitsCircuitsListParams struct {
 	SiteID *string
 	/*Status*/
 	Status *string
+	/*Tag*/
+	Tag *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
@@ -287,6 +288,17 @@ func (o *CircuitsCircuitsListParams) WithStatus(status *string) *CircuitsCircuit
 // SetStatus adds the status to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) SetStatus(status *string) {
 	o.Status = status
+}
+
+// WithTag adds the tag to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithTag(tag *string) *CircuitsCircuitsListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetTag(tag *string) {
+	o.Tag = tag
 }
 
 // WithTenant adds the tenant to the circuits circuits list params
@@ -527,6 +539,22 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		qStatus := qrStatus
 		if qStatus != "" {
 			if err := r.SetQueryParam("status", qStatus); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}

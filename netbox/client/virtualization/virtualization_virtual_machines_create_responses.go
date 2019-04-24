@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // VirtualizationVirtualMachinesCreateReader is a Reader for the VirtualizationVirtualMachinesCreate structure.
@@ -61,7 +61,7 @@ func NewVirtualizationVirtualMachinesCreateCreated() *VirtualizationVirtualMachi
 VirtualizationVirtualMachinesCreateCreated virtualization virtual machines create created
 */
 type VirtualizationVirtualMachinesCreateCreated struct {
-	Payload *models.WritableVirtualMachine
+	Payload *models.VirtualMachine
 }
 
 func (o *VirtualizationVirtualMachinesCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *VirtualizationVirtualMachinesCreateCreated) Error() string {
 
 func (o *VirtualizationVirtualMachinesCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableVirtualMachine)
+	o.Payload = new(models.VirtualMachine)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

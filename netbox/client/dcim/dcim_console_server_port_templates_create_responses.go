@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimConsoleServerPortTemplatesCreateReader is a Reader for the DcimConsoleServerPortTemplatesCreate structure.
@@ -61,7 +61,7 @@ func NewDcimConsoleServerPortTemplatesCreateCreated() *DcimConsoleServerPortTemp
 DcimConsoleServerPortTemplatesCreateCreated dcim console server port templates create created
 */
 type DcimConsoleServerPortTemplatesCreateCreated struct {
-	Payload *models.WritableConsoleServerPortTemplate
+	Payload *models.ConsoleServerPortTemplate
 }
 
 func (o *DcimConsoleServerPortTemplatesCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimConsoleServerPortTemplatesCreateCreated) Error() string {
 
 func (o *DcimConsoleServerPortTemplatesCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableConsoleServerPortTemplate)
+	o.Payload = new(models.ConsoleServerPortTemplate)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

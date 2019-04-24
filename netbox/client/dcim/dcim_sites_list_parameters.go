@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -114,6 +113,8 @@ type DcimSitesListParams struct {
 	Slug *string
 	/*Status*/
 	Status *string
+	/*Tag*/
+	Tag *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
@@ -309,6 +310,17 @@ func (o *DcimSitesListParams) WithStatus(status *string) *DcimSitesListParams {
 // SetStatus adds the status to the dcim sites list params
 func (o *DcimSitesListParams) SetStatus(status *string) {
 	o.Status = status
+}
+
+// WithTag adds the tag to the dcim sites list params
+func (o *DcimSitesListParams) WithTag(tag *string) *DcimSitesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim sites list params
+func (o *DcimSitesListParams) SetTag(tag *string) {
+	o.Tag = tag
 }
 
 // WithTenant adds the tenant to the dcim sites list params
@@ -559,6 +571,22 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qStatus := qrStatus
 		if qStatus != "" {
 			if err := r.SetQueryParam("status", qStatus); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}

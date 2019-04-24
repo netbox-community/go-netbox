@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -77,6 +76,10 @@ for the dcim interfaces list operation typically these are written to a http.Req
 */
 type DcimInterfacesListParams struct {
 
+	/*Cabled*/
+	Cabled *string
+	/*ConnectionStatus*/
+	ConnectionStatus *string
 	/*Device*/
 	Device *string
 	/*DeviceID*/
@@ -105,8 +108,16 @@ type DcimInterfacesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
+	/*Tag*/
+	Tag *string
 	/*Type*/
 	Type *string
+	/*Vlan*/
+	Vlan *string
+	/*VlanID*/
+	VlanID *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -144,6 +155,28 @@ func (o *DcimInterfacesListParams) WithHTTPClient(client *http.Client) *DcimInte
 // SetHTTPClient adds the HTTPClient to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithCabled adds the cabled to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithCabled(cabled *string) *DcimInterfacesListParams {
+	o.SetCabled(cabled)
+	return o
+}
+
+// SetCabled adds the cabled to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetCabled(cabled *string) {
+	o.Cabled = cabled
+}
+
+// WithConnectionStatus adds the connectionStatus to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithConnectionStatus(connectionStatus *string) *DcimInterfacesListParams {
+	o.SetConnectionStatus(connectionStatus)
+	return o
+}
+
+// SetConnectionStatus adds the connectionStatus to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetConnectionStatus(connectionStatus *string) {
+	o.ConnectionStatus = connectionStatus
 }
 
 // WithDevice adds the device to the dcim interfaces list params
@@ -267,6 +300,28 @@ func (o *DcimInterfacesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithQ(q *string) *DcimInterfacesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
+// WithTag adds the tag to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithTag(tag *string) *DcimInterfacesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WithType adds the typeVar to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithType(typeVar *string) *DcimInterfacesListParams {
 	o.SetType(typeVar)
@@ -278,6 +333,28 @@ func (o *DcimInterfacesListParams) SetType(typeVar *string) {
 	o.Type = typeVar
 }
 
+// WithVlan adds the vlan to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVlan(vlan *string) *DcimInterfacesListParams {
+	o.SetVlan(vlan)
+	return o
+}
+
+// SetVlan adds the vlan to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVlan(vlan *string) {
+	o.Vlan = vlan
+}
+
+// WithVlanID adds the vlanID to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVlanID(vlanID *string) *DcimInterfacesListParams {
+	o.SetVlanID(vlanID)
+	return o
+}
+
+// SetVlanID adds the vlanId to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVlanID(vlanID *string) {
+	o.VlanID = vlanID
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -285,6 +362,38 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		return err
 	}
 	var res []error
+
+	if o.Cabled != nil {
+
+		// query param cabled
+		var qrCabled string
+		if o.Cabled != nil {
+			qrCabled = *o.Cabled
+		}
+		qCabled := qrCabled
+		if qCabled != "" {
+			if err := r.SetQueryParam("cabled", qCabled); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ConnectionStatus != nil {
+
+		// query param connection_status
+		var qrConnectionStatus string
+		if o.ConnectionStatus != nil {
+			qrConnectionStatus = *o.ConnectionStatus
+		}
+		qConnectionStatus := qrConnectionStatus
+		if qConnectionStatus != "" {
+			if err := r.SetQueryParam("connection_status", qConnectionStatus); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.Device != nil {
 
@@ -462,6 +571,38 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Type != nil {
 
 		// query param type
@@ -472,6 +613,38 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qType := qrType
 		if qType != "" {
 			if err := r.SetQueryParam("type", qType); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Vlan != nil {
+
+		// query param vlan
+		var qrVlan string
+		if o.Vlan != nil {
+			qrVlan = *o.Vlan
+		}
+		qVlan := qrVlan
+		if qVlan != "" {
+			if err := r.SetQueryParam("vlan", qVlan); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VlanID != nil {
+
+		// query param vlan_id
+		var qrVlanID string
+		if o.VlanID != nil {
+			qrVlanID = *o.VlanID
+		}
+		qVlanID := qrVlanID
+		if qVlanID != "" {
+			if err := r.SetQueryParam("vlan_id", qVlanID); err != nil {
 				return err
 			}
 		}

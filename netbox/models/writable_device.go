@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
 
@@ -37,16 +38,17 @@ type WritableDevice struct {
 	//
 	// A unique tag used to identify this device
 	// Max Length: 50
-	AssetTag string `json:"asset_tag,omitempty"`
+	AssetTag *string `json:"asset_tag,omitempty"`
 
 	// Cluster
-	Cluster int64 `json:"cluster,omitempty"`
+	Cluster *int64 `json:"cluster,omitempty"`
 
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -60,8 +62,13 @@ type WritableDevice struct {
 	// Required: true
 	DeviceType *int64 `json:"device_type"`
 
+	// Display name
+	// Read Only: true
+	DisplayName string `json:"display_name,omitempty"`
+
 	// Rack face
-	Face int64 `json:"face,omitempty"`
+	// Enum: [0 1]
+	Face *int64 `json:"face,omitempty"`
 
 	// ID
 	// Read Only: true
@@ -69,30 +76,42 @@ type WritableDevice struct {
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Local context data
+	LocalContextData *string `json:"local_context_data,omitempty"`
 
 	// Name
 	// Max Length: 64
-	Name string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty"`
+
+	// Parent device
+	// Read Only: true
+	ParentDevice string `json:"parent_device,omitempty"`
 
 	// Platform
-	Platform int64 `json:"platform,omitempty"`
+	Platform *int64 `json:"platform,omitempty"`
 
 	// Position (U)
 	//
 	// The lowest-numbered unit occupied by the device
 	// Maximum: 32767
 	// Minimum: 1
-	Position int64 `json:"position,omitempty"`
+	Position *int64 `json:"position,omitempty"`
+
+	// Primary ip
+	// Read Only: true
+	PrimaryIP string `json:"primary_ip,omitempty"`
 
 	// Primary IPv4
-	PrimaryIp4 int64 `json:"primary_ip4,omitempty"`
+	PrimaryIp4 *int64 `json:"primary_ip4,omitempty"`
 
 	// Primary IPv6
-	PrimaryIp6 int64 `json:"primary_ip6,omitempty"`
+	PrimaryIp6 *int64 `json:"primary_ip6,omitempty"`
 
 	// Rack
-	Rack int64 `json:"rack,omitempty"`
+	Rack *int64 `json:"rack,omitempty"`
 
 	// Serial number
 	// Max Length: 50
@@ -103,10 +122,14 @@ type WritableDevice struct {
 	Site *int64 `json:"site"`
 
 	// Status
+	// Enum: [1 0 2 3 4 5]
 	Status int64 `json:"status,omitempty"`
 
+	// tags
+	Tags []string `json:"tags"`
+
 	// Tenant
-	Tenant int64 `json:"tenant,omitempty"`
+	Tenant *int64 `json:"tenant,omitempty"`
 
 	// Vc position
 	// Maximum: 255
@@ -119,7 +142,7 @@ type WritableDevice struct {
 	VcPriority *int64 `json:"vc_priority,omitempty"`
 
 	// Virtual chassis
-	VirtualChassis int64 `json:"virtual_chassis,omitempty"`
+	VirtualChassis *int64 `json:"virtual_chassis,omitempty"`
 }
 
 // Validate validates this writable device
@@ -127,57 +150,58 @@ func (m *WritableDevice) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAssetTag(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateDeviceRole(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDeviceType(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateFace(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePosition(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSerial(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSite(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateVcPosition(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateVcPriority(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -193,7 +217,20 @@ func (m *WritableDevice) validateAssetTag(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("asset_tag", "body", string(m.AssetTag), 50); err != nil {
+	if err := validate.MaxLength("asset_tag", "body", string(*m.AssetTag), 50); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDevice) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -245,7 +282,20 @@ func (m *WritableDevice) validateFace(formats strfmt.Registry) error {
 	}
 
 	// value enum
-	if err := m.validateFaceEnum("face", "body", m.Face); err != nil {
+	if err := m.validateFaceEnum("face", "body", *m.Face); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDevice) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -258,7 +308,7 @@ func (m *WritableDevice) validateName(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("name", "body", string(m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
 		return err
 	}
 
@@ -271,11 +321,11 @@ func (m *WritableDevice) validatePosition(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MinimumInt("position", "body", int64(m.Position), 1, false); err != nil {
+	if err := validate.MinimumInt("position", "body", int64(*m.Position), 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("position", "body", int64(m.Position), 32767, false); err != nil {
+	if err := validate.MaximumInt("position", "body", int64(*m.Position), 32767, false); err != nil {
 		return err
 	}
 
@@ -333,6 +383,23 @@ func (m *WritableDevice) validateStatus(formats strfmt.Registry) error {
 	// value enum
 	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDevice) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

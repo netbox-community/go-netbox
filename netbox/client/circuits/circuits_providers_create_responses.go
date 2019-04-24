@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // CircuitsProvidersCreateReader is a Reader for the CircuitsProvidersCreate structure.
@@ -61,7 +61,7 @@ func NewCircuitsProvidersCreateCreated() *CircuitsProvidersCreateCreated {
 CircuitsProvidersCreateCreated circuits providers create created
 */
 type CircuitsProvidersCreateCreated struct {
-	Payload *models.WritableProvider
+	Payload *models.Provider
 }
 
 func (o *CircuitsProvidersCreateCreated) Error() string {
@@ -70,7 +70,7 @@ func (o *CircuitsProvidersCreateCreated) Error() string {
 
 func (o *CircuitsProvidersCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableProvider)
+	o.Payload = new(models.Provider)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

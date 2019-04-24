@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // ExtrasTopologyMapsUpdateReader is a Reader for the ExtrasTopologyMapsUpdate structure.
@@ -61,7 +61,7 @@ func NewExtrasTopologyMapsUpdateOK() *ExtrasTopologyMapsUpdateOK {
 ExtrasTopologyMapsUpdateOK extras topology maps update o k
 */
 type ExtrasTopologyMapsUpdateOK struct {
-	Payload *models.WritableTopologyMap
+	Payload *models.TopologyMap
 }
 
 func (o *ExtrasTopologyMapsUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *ExtrasTopologyMapsUpdateOK) Error() string {
 
 func (o *ExtrasTopologyMapsUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableTopologyMap)
+	o.Payload = new(models.TopologyMap)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

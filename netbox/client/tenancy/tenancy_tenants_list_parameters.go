@@ -20,10 +20,9 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -100,6 +99,10 @@ type TenancyTenantsListParams struct {
 	Offset *int64
 	/*Q*/
 	Q *string
+	/*Slug*/
+	Slug *string
+	/*Tag*/
+	Tag *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -216,6 +219,28 @@ func (o *TenancyTenantsListParams) SetQ(q *string) {
 	o.Q = q
 }
 
+// WithSlug adds the slug to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithSlug(slug *string) *TenancyTenantsListParams {
+	o.SetSlug(slug)
+	return o
+}
+
+// SetSlug adds the slug to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetSlug(slug *string) {
+	o.Slug = slug
+}
+
+// WithTag adds the tag to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithTag(tag *string) *TenancyTenantsListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *TenancyTenantsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -330,6 +355,38 @@ func (o *TenancyTenantsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qQ := qrQ
 		if qQ != "" {
 			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Slug != nil {
+
+		// query param slug
+		var qrSlug string
+		if o.Slug != nil {
+			qrSlug = *o.Slug
+		}
+		qSlug := qrSlug
+		if qSlug != "" {
+			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}

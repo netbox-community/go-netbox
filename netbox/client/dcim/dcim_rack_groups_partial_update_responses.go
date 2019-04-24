@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimRackGroupsPartialUpdateReader is a Reader for the DcimRackGroupsPartialUpdate structure.
@@ -61,7 +61,7 @@ func NewDcimRackGroupsPartialUpdateOK() *DcimRackGroupsPartialUpdateOK {
 DcimRackGroupsPartialUpdateOK dcim rack groups partial update o k
 */
 type DcimRackGroupsPartialUpdateOK struct {
-	Payload *models.WritableRackGroup
+	Payload *models.RackGroup
 }
 
 func (o *DcimRackGroupsPartialUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimRackGroupsPartialUpdateOK) Error() string {
 
 func (o *DcimRackGroupsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableRackGroup)
+	o.Payload = new(models.RackGroup)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimRacksUpdateReader is a Reader for the DcimRacksUpdate structure.
@@ -61,7 +61,7 @@ func NewDcimRacksUpdateOK() *DcimRacksUpdateOK {
 DcimRacksUpdateOK dcim racks update o k
 */
 type DcimRacksUpdateOK struct {
-	Payload *models.WritableRack
+	Payload *models.Rack
 }
 
 func (o *DcimRacksUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimRacksUpdateOK) Error() string {
 
 func (o *DcimRacksUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableRack)
+	o.Payload = new(models.Rack)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

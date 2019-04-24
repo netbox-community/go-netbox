@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/digitalocean/go-netbox/netbox/models"
 )
 
 // DcimConsoleServerPortsPartialUpdateReader is a Reader for the DcimConsoleServerPortsPartialUpdate structure.
@@ -61,7 +61,7 @@ func NewDcimConsoleServerPortsPartialUpdateOK() *DcimConsoleServerPortsPartialUp
 DcimConsoleServerPortsPartialUpdateOK dcim console server ports partial update o k
 */
 type DcimConsoleServerPortsPartialUpdateOK struct {
-	Payload *models.WritableConsoleServerPort
+	Payload *models.ConsoleServerPort
 }
 
 func (o *DcimConsoleServerPortsPartialUpdateOK) Error() string {
@@ -70,7 +70,7 @@ func (o *DcimConsoleServerPortsPartialUpdateOK) Error() string {
 
 func (o *DcimConsoleServerPortsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableConsoleServerPort)
+	o.Payload = new(models.ConsoleServerPort)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
