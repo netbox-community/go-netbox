@@ -2,7 +2,7 @@ language: go
 go:
   - 1.x
 before_install:
-  - go get github.com/golang/lint/golint github.com/stretchr/testify/assert
+  - go get golang.org/x/lint/golint github.com/stretchr/testify/assert
 before_script:
   - go get -d ./...
 script:

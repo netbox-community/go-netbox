@@ -17,6 +17,7 @@
 package netbox
 
 import (
+	"strconv"
 	"testing"
 
 	"github.com/digitalocean/go-netbox/netbox/client/dcim"
@@ -47,11 +48,11 @@ func TestSubdeviceRole(t *testing.T) {
 	model := "Test model"
 	slug := "test-slug"
 	newDeviceType := &models.WritableDeviceType{
-		SubdeviceRole: &role,
-		Comments: "Test device type",
-		Manufacturer: &manufacturerID,
-		Model: &model,
-		Slug: &slug,
+		SubdeviceRole: role,
+		Comments:      "Test device type",
+		Manufacturer:  &manufacturerID,
+		Model:         &model,
+		Slug:          &slug,
 	}
 	err := newDeviceType.Validate(strfmt.Default)
 	assert.NoError(t, err)
@@ -60,7 +61,7 @@ func TestSubdeviceRole(t *testing.T) {
 	createResponse, err := c.Dcim.DcimDeviceTypesCreate(createRequest, nil)
 	assert.NoError(t, err)
 
-	newID := float64(createResponse.Payload.ID)
+	newID := strconv.Itoa(int(createResponse.Payload.ID))
 	assert.NotEqual(t, 0, newID)
 
 	retrieveResponse, err := c.Dcim.DcimDeviceTypesList(dcim.NewDcimDeviceTypesListParams().WithIDIn(&newID), nil)
@@ -68,7 +69,7 @@ func TestSubdeviceRole(t *testing.T) {
 	assert.EqualValues(t, 1, *retrieveResponse.Payload.Count)
 	assert.EqualValues(t, "Test device type", retrieveResponse.Payload.Results[0].Comments)
 
-	deleteRequest := dcim.NewDcimDeviceTypesDeleteParams().WithID(int64(newID))
+	deleteRequest := dcim.NewDcimDeviceTypesDeleteParams().WithID(createResponse.Payload.ID)
 	_, err = c.Dcim.DcimDeviceTypesDelete(deleteRequest, nil)
 	assert.NoError(t, err)
 }
