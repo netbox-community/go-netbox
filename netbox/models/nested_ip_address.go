@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedIPAddress Nat inside
+// NestedIPAddress Primary ip
 // swagger:model NestedIPAddress
 type NestedIPAddress struct {
 
@@ -47,6 +47,7 @@ type NestedIPAddress struct {
 
 	// Url
 	// Read Only: true
+	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
 }
 
@@ -55,7 +56,10 @@ func (m *NestedIPAddress) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAddress(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -68,6 +72,19 @@ func (m *NestedIPAddress) Validate(formats strfmt.Registry) error {
 func (m *NestedIPAddress) validateAddress(formats strfmt.Registry) error {
 
 	if err := validate.Required("address", "body", m.Address); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *NestedIPAddress) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

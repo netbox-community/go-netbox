@@ -33,9 +33,15 @@ import (
 // swagger:model WritableRackReservation
 type WritableRackReservation struct {
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Description
 	// Required: true
 	// Max Length: 100
+	// Min Length: 1
 	Description *string `json:"description"`
 
 	// ID
@@ -45,6 +51,9 @@ type WritableRackReservation struct {
 	// Rack
 	// Required: true
 	Rack *int64 `json:"rack"`
+
+	// Tenant
+	Tenant *int64 `json:"tenant,omitempty"`
 
 	// units
 	// Required: true
@@ -59,23 +68,23 @@ type WritableRackReservation struct {
 func (m *WritableRackReservation) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateRack(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateUnits(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateUser(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -85,9 +94,26 @@ func (m *WritableRackReservation) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableRackReservation) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableRackReservation) validateDescription(formats strfmt.Registry) error {
 
 	if err := validate.Required("description", "body", m.Description); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("description", "body", string(*m.Description), 1); err != nil {
 		return err
 	}
 
@@ -114,7 +140,6 @@ func (m *WritableRackReservation) validateUnits(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Units); i++ {
-
 		if swag.IsZero(m.Units[i]) { // not required
 			continue
 		}

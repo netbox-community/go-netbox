@@ -32,20 +32,14 @@ import (
 type InterfaceConnection struct {
 
 	// connection status
-	// Required: true
-	ConnectionStatus *InterfaceConnectionConnectionStatus `json:"connection_status"`
-
-	// ID
-	// Read Only: true
-	ID int64 `json:"id,omitempty"`
+	ConnectionStatus *InterfaceConnectionConnectionStatus `json:"connection_status,omitempty"`
 
 	// interface a
-	// Required: true
-	InterfaceA *PeerInterface `json:"interface_a"`
+	InterfaceA *NestedInterface `json:"interface_a,omitempty"`
 
 	// interface b
 	// Required: true
-	InterfaceB *PeerInterface `json:"interface_b"`
+	InterfaceB *NestedInterface `json:"interface_b"`
 }
 
 // Validate validates this interface connection
@@ -53,17 +47,14 @@ func (m *InterfaceConnection) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateConnectionStatus(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateInterfaceA(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateInterfaceB(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -75,12 +66,11 @@ func (m *InterfaceConnection) Validate(formats strfmt.Registry) error {
 
 func (m *InterfaceConnection) validateConnectionStatus(formats strfmt.Registry) error {
 
-	if err := validate.Required("connection_status", "body", m.ConnectionStatus); err != nil {
-		return err
+	if swag.IsZero(m.ConnectionStatus) { // not required
+		return nil
 	}
 
 	if m.ConnectionStatus != nil {
-
 		if err := m.ConnectionStatus.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("connection_status")
@@ -94,12 +84,11 @@ func (m *InterfaceConnection) validateConnectionStatus(formats strfmt.Registry) 
 
 func (m *InterfaceConnection) validateInterfaceA(formats strfmt.Registry) error {
 
-	if err := validate.Required("interface_a", "body", m.InterfaceA); err != nil {
-		return err
+	if swag.IsZero(m.InterfaceA) { // not required
+		return nil
 	}
 
 	if m.InterfaceA != nil {
-
 		if err := m.InterfaceA.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("interface_a")
@@ -118,7 +107,6 @@ func (m *InterfaceConnection) validateInterfaceB(formats strfmt.Registry) error 
 	}
 
 	if m.InterfaceB != nil {
-
 		if err := m.InterfaceB.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("interface_b")
@@ -141,6 +129,73 @@ func (m *InterfaceConnection) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *InterfaceConnection) UnmarshalBinary(b []byte) error {
 	var res InterfaceConnection
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// InterfaceConnectionConnectionStatus Connection status
+// swagger:model InterfaceConnectionConnectionStatus
+type InterfaceConnectionConnectionStatus struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *bool `json:"value"`
+}
+
+// Validate validates this interface connection connection status
+func (m *InterfaceConnectionConnectionStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *InterfaceConnectionConnectionStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *InterfaceConnectionConnectionStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *InterfaceConnectionConnectionStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *InterfaceConnectionConnectionStatus) UnmarshalBinary(b []byte) error {
+	var res InterfaceConnectionConnectionStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

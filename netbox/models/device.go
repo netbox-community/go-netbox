@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -35,17 +37,17 @@ type Device struct {
 	//
 	// A unique tag used to identify this device
 	// Max Length: 50
-	AssetTag string `json:"asset_tag,omitempty"`
+	AssetTag *string `json:"asset_tag,omitempty"`
 
 	// cluster
-	// Required: true
-	Cluster *NestedCluster `json:"cluster"`
+	Cluster *NestedCluster `json:"cluster,omitempty"`
 
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -64,8 +66,7 @@ type Device struct {
 	DisplayName string `json:"display_name,omitempty"`
 
 	// face
-	// Required: true
-	Face *DeviceFace `json:"face"`
+	Face *DeviceFace `json:"face,omitempty"`
 
 	// ID
 	// Read Only: true
@@ -73,43 +74,40 @@ type Device struct {
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Local context data
+	LocalContextData *string `json:"local_context_data,omitempty"`
 
 	// Name
 	// Max Length: 64
-	Name string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty"`
 
-	// Parent device
-	// Read Only: true
-	ParentDevice string `json:"parent_device,omitempty"`
+	// parent device
+	ParentDevice *NestedDevice `json:"parent_device,omitempty"`
 
 	// platform
-	// Required: true
-	Platform *NestedPlatform `json:"platform"`
+	Platform *NestedPlatform `json:"platform,omitempty"`
 
 	// Position (U)
 	//
 	// The lowest-numbered unit occupied by the device
-	// Required: true
 	// Maximum: 32767
 	// Minimum: 1
-	Position *int64 `json:"position"`
+	Position *int64 `json:"position,omitempty"`
 
 	// primary ip
-	// Required: true
-	PrimaryIP *DeviceIPAddress `json:"primary_ip"`
+	PrimaryIP *NestedIPAddress `json:"primary_ip,omitempty"`
 
 	// primary ip4
-	// Required: true
-	PrimaryIp4 *DeviceIPAddress `json:"primary_ip4"`
+	PrimaryIp4 *NestedIPAddress `json:"primary_ip4,omitempty"`
 
 	// primary ip6
-	// Required: true
-	PrimaryIp6 *DeviceIPAddress `json:"primary_ip6"`
+	PrimaryIp6 *NestedIPAddress `json:"primary_ip6,omitempty"`
 
 	// rack
-	// Required: true
-	Rack *NestedRack `json:"rack"`
+	Rack *NestedRack `json:"rack,omitempty"`
 
 	// Serial number
 	// Max Length: 50
@@ -120,18 +118,18 @@ type Device struct {
 	Site *NestedSite `json:"site"`
 
 	// status
-	// Required: true
-	Status *DeviceStatus `json:"status"`
+	Status *DeviceStatus `json:"status,omitempty"`
+
+	// tags
+	Tags []string `json:"tags"`
 
 	// tenant
-	// Required: true
-	Tenant *NestedTenant `json:"tenant"`
+	Tenant *NestedTenant `json:"tenant,omitempty"`
 
 	// Vc position
-	// Required: true
 	// Maximum: 255
 	// Minimum: 0
-	VcPosition *int64 `json:"vc_position"`
+	VcPosition *int64 `json:"vc_position,omitempty"`
 
 	// Vc priority
 	// Maximum: 255
@@ -139,8 +137,7 @@ type Device struct {
 	VcPriority *int64 `json:"vc_priority,omitempty"`
 
 	// virtual chassis
-	// Required: true
-	VirtualChassis *DeviceVirtualChassis `json:"virtual_chassis"`
+	VirtualChassis *NestedVirtualChassis `json:"virtual_chassis,omitempty"`
 }
 
 // Validate validates this device
@@ -148,97 +145,94 @@ func (m *Device) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAssetTag(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateCluster(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateDeviceRole(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDeviceType(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateFace(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateParentDevice(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validatePlatform(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePosition(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePrimaryIP(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePrimaryIp4(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePrimaryIp6(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateRack(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSerial(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSite(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateTenant(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateVcPosition(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateVcPriority(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateVirtualChassis(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -254,7 +248,7 @@ func (m *Device) validateAssetTag(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("asset_tag", "body", string(m.AssetTag), 50); err != nil {
+	if err := validate.MaxLength("asset_tag", "body", string(*m.AssetTag), 50); err != nil {
 		return err
 	}
 
@@ -263,18 +257,30 @@ func (m *Device) validateAssetTag(formats strfmt.Registry) error {
 
 func (m *Device) validateCluster(formats strfmt.Registry) error {
 
-	if err := validate.Required("cluster", "body", m.Cluster); err != nil {
-		return err
+	if swag.IsZero(m.Cluster) { // not required
+		return nil
 	}
 
 	if m.Cluster != nil {
-
 		if err := m.Cluster.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cluster")
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Device) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -287,7 +293,6 @@ func (m *Device) validateDeviceRole(formats strfmt.Registry) error {
 	}
 
 	if m.DeviceRole != nil {
-
 		if err := m.DeviceRole.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_role")
@@ -306,7 +311,6 @@ func (m *Device) validateDeviceType(formats strfmt.Registry) error {
 	}
 
 	if m.DeviceType != nil {
-
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
@@ -320,12 +324,11 @@ func (m *Device) validateDeviceType(formats strfmt.Registry) error {
 
 func (m *Device) validateFace(formats strfmt.Registry) error {
 
-	if err := validate.Required("face", "body", m.Face); err != nil {
-		return err
+	if swag.IsZero(m.Face) { // not required
+		return nil
 	}
 
 	if m.Face != nil {
-
 		if err := m.Face.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("face")
@@ -337,14 +340,45 @@ func (m *Device) validateFace(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Device) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Device) validateName(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Name) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("name", "body", string(m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Device) validateParentDevice(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ParentDevice) { // not required
+		return nil
+	}
+
+	if m.ParentDevice != nil {
+		if err := m.ParentDevice.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("parent_device")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -352,12 +386,11 @@ func (m *Device) validateName(formats strfmt.Registry) error {
 
 func (m *Device) validatePlatform(formats strfmt.Registry) error {
 
-	if err := validate.Required("platform", "body", m.Platform); err != nil {
-		return err
+	if swag.IsZero(m.Platform) { // not required
+		return nil
 	}
 
 	if m.Platform != nil {
-
 		if err := m.Platform.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("platform")
@@ -371,8 +404,8 @@ func (m *Device) validatePlatform(formats strfmt.Registry) error {
 
 func (m *Device) validatePosition(formats strfmt.Registry) error {
 
-	if err := validate.Required("position", "body", m.Position); err != nil {
-		return err
+	if swag.IsZero(m.Position) { // not required
+		return nil
 	}
 
 	if err := validate.MinimumInt("position", "body", int64(*m.Position), 1, false); err != nil {
@@ -388,12 +421,11 @@ func (m *Device) validatePosition(formats strfmt.Registry) error {
 
 func (m *Device) validatePrimaryIP(formats strfmt.Registry) error {
 
-	if err := validate.Required("primary_ip", "body", m.PrimaryIP); err != nil {
-		return err
+	if swag.IsZero(m.PrimaryIP) { // not required
+		return nil
 	}
 
 	if m.PrimaryIP != nil {
-
 		if err := m.PrimaryIP.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip")
@@ -407,12 +439,11 @@ func (m *Device) validatePrimaryIP(formats strfmt.Registry) error {
 
 func (m *Device) validatePrimaryIp4(formats strfmt.Registry) error {
 
-	if err := validate.Required("primary_ip4", "body", m.PrimaryIp4); err != nil {
-		return err
+	if swag.IsZero(m.PrimaryIp4) { // not required
+		return nil
 	}
 
 	if m.PrimaryIp4 != nil {
-
 		if err := m.PrimaryIp4.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip4")
@@ -426,12 +457,11 @@ func (m *Device) validatePrimaryIp4(formats strfmt.Registry) error {
 
 func (m *Device) validatePrimaryIp6(formats strfmt.Registry) error {
 
-	if err := validate.Required("primary_ip6", "body", m.PrimaryIp6); err != nil {
-		return err
+	if swag.IsZero(m.PrimaryIp6) { // not required
+		return nil
 	}
 
 	if m.PrimaryIp6 != nil {
-
 		if err := m.PrimaryIp6.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip6")
@@ -445,12 +475,11 @@ func (m *Device) validatePrimaryIp6(formats strfmt.Registry) error {
 
 func (m *Device) validateRack(formats strfmt.Registry) error {
 
-	if err := validate.Required("rack", "body", m.Rack); err != nil {
-		return err
+	if swag.IsZero(m.Rack) { // not required
+		return nil
 	}
 
 	if m.Rack != nil {
-
 		if err := m.Rack.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
@@ -482,7 +511,6 @@ func (m *Device) validateSite(formats strfmt.Registry) error {
 	}
 
 	if m.Site != nil {
-
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
@@ -496,12 +524,11 @@ func (m *Device) validateSite(formats strfmt.Registry) error {
 
 func (m *Device) validateStatus(formats strfmt.Registry) error {
 
-	if err := validate.Required("status", "body", m.Status); err != nil {
-		return err
+	if swag.IsZero(m.Status) { // not required
+		return nil
 	}
 
 	if m.Status != nil {
-
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -513,14 +540,30 @@ func (m *Device) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Device) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
+	}
+
+	return nil
+}
+
 func (m *Device) validateTenant(formats strfmt.Registry) error {
 
-	if err := validate.Required("tenant", "body", m.Tenant); err != nil {
-		return err
+	if swag.IsZero(m.Tenant) { // not required
+		return nil
 	}
 
 	if m.Tenant != nil {
-
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
@@ -534,8 +577,8 @@ func (m *Device) validateTenant(formats strfmt.Registry) error {
 
 func (m *Device) validateVcPosition(formats strfmt.Registry) error {
 
-	if err := validate.Required("vc_position", "body", m.VcPosition); err != nil {
-		return err
+	if swag.IsZero(m.VcPosition) { // not required
+		return nil
 	}
 
 	if err := validate.MinimumInt("vc_position", "body", int64(*m.VcPosition), 0, false); err != nil {
@@ -568,12 +611,11 @@ func (m *Device) validateVcPriority(formats strfmt.Registry) error {
 
 func (m *Device) validateVirtualChassis(formats strfmt.Registry) error {
 
-	if err := validate.Required("virtual_chassis", "body", m.VirtualChassis); err != nil {
-		return err
+	if swag.IsZero(m.VirtualChassis) { // not required
+		return nil
 	}
 
 	if m.VirtualChassis != nil {
-
 		if err := m.VirtualChassis.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_chassis")
@@ -596,6 +638,140 @@ func (m *Device) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Device) UnmarshalBinary(b []byte) error {
 	var res Device
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// DeviceFace Face
+// swagger:model DeviceFace
+type DeviceFace struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *int64 `json:"value"`
+}
+
+// Validate validates this device face
+func (m *DeviceFace) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *DeviceFace) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("face"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceFace) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("face"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *DeviceFace) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *DeviceFace) UnmarshalBinary(b []byte) error {
+	var res DeviceFace
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// DeviceStatus Status
+// swagger:model DeviceStatus
+type DeviceStatus struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *int64 `json:"value"`
+}
+
+// Validate validates this device status
+func (m *DeviceStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *DeviceStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *DeviceStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *DeviceStatus) UnmarshalBinary(b []byte) error {
+	var res DeviceStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

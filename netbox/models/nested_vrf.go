@@ -38,15 +38,20 @@ type NestedVRF struct {
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
 
+	// Prefix count
+	// Read Only: true
+	PrefixCount int64 `json:"prefix_count,omitempty"`
+
 	// Route distinguisher
-	// Required: true
 	// Max Length: 21
-	Rd *string `json:"rd"`
+	Rd *string `json:"rd,omitempty"`
 
 	// Url
 	// Read Only: true
+	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
 }
 
@@ -55,12 +60,14 @@ func (m *NestedVRF) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateRd(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -76,6 +83,10 @@ func (m *NestedVRF) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
 		return err
 	}
@@ -85,11 +96,24 @@ func (m *NestedVRF) validateName(formats strfmt.Registry) error {
 
 func (m *NestedVRF) validateRd(formats strfmt.Registry) error {
 
-	if err := validate.Required("rd", "body", m.Rd); err != nil {
-		return err
+	if swag.IsZero(m.Rd) { // not required
+		return nil
 	}
 
 	if err := validate.MaxLength("rd", "body", string(*m.Rd), 21); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *NestedVRF) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

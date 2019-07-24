@@ -33,17 +33,35 @@ import (
 // swagger:model CircuitTermination
 type CircuitTermination struct {
 
+	// cable
+	Cable *NestedCable `json:"cable,omitempty"`
+
 	// circuit
 	// Required: true
 	Circuit *NestedCircuit `json:"circuit"`
 
+	// Connected endpoint
+	//
+	//
+	//         Return the appropriate serializer for the type of connected object.
+	//
+	// Read Only: true
+	ConnectedEndpoint *ConnectedEndpoint `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint type
+	// Read Only: true
+	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
+
+	// connection status
+	ConnectionStatus *CircuitTerminationConnectionStatus `json:"connection_status,omitempty"`
+
+	// Description
+	// Max Length: 100
+	Description string `json:"description,omitempty"`
+
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
-
-	// interface
-	// Required: true
-	Interface *Interface `json:"interface"`
 
 	// Port speed (Kbps)
 	// Required: true
@@ -61,6 +79,7 @@ type CircuitTermination struct {
 
 	// Termination
 	// Required: true
+	// Enum: [A Z]
 	TermSide *string `json:"term_side"`
 
 	// Upstream speed (Kbps)
@@ -79,49 +98,67 @@ type CircuitTermination struct {
 func (m *CircuitTermination) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateCircuit(formats); err != nil {
-		// prop
+	if err := m.validateCable(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateInterface(formats); err != nil {
-		// prop
+	if err := m.validateCircuit(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateConnectionStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validatePortSpeed(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePpInfo(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSite(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateTermSide(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateUpstreamSpeed(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateXconnectID(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *CircuitTermination) validateCable(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Cable) { // not required
+		return nil
+	}
+
+	if m.Cable != nil {
+		if err := m.Cable.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -132,7 +169,6 @@ func (m *CircuitTermination) validateCircuit(formats strfmt.Registry) error {
 	}
 
 	if m.Circuit != nil {
-
 		if err := m.Circuit.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("circuit")
@@ -144,20 +180,32 @@ func (m *CircuitTermination) validateCircuit(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *CircuitTermination) validateInterface(formats strfmt.Registry) error {
+func (m *CircuitTermination) validateConnectionStatus(formats strfmt.Registry) error {
 
-	if err := validate.Required("interface", "body", m.Interface); err != nil {
-		return err
+	if swag.IsZero(m.ConnectionStatus) { // not required
+		return nil
 	}
 
-	if m.Interface != nil {
-
-		if err := m.Interface.Validate(formats); err != nil {
+	if m.ConnectionStatus != nil {
+		if err := m.ConnectionStatus.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("interface")
+				return ve.ValidateName("connection_status")
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *CircuitTermination) validateDescription(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+		return err
 	}
 
 	return nil
@@ -200,7 +248,6 @@ func (m *CircuitTermination) validateSite(formats strfmt.Registry) error {
 	}
 
 	if m.Site != nil {
-
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
@@ -225,8 +272,10 @@ func init() {
 }
 
 const (
+
 	// CircuitTerminationTermSideA captures enum value "A"
 	CircuitTerminationTermSideA string = "A"
+
 	// CircuitTerminationTermSideZ captures enum value "Z"
 	CircuitTerminationTermSideZ string = "Z"
 )
@@ -294,6 +343,73 @@ func (m *CircuitTermination) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *CircuitTermination) UnmarshalBinary(b []byte) error {
 	var res CircuitTermination
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// CircuitTerminationConnectionStatus Connection status
+// swagger:model CircuitTerminationConnectionStatus
+type CircuitTerminationConnectionStatus struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *bool `json:"value"`
+}
+
+// Validate validates this circuit termination connection status
+func (m *CircuitTerminationConnectionStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *CircuitTerminationConnectionStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CircuitTerminationConnectionStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *CircuitTerminationConnectionStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *CircuitTerminationConnectionStatus) UnmarshalBinary(b []byte) error {
+	var res CircuitTerminationConnectionStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

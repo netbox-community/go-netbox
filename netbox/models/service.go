@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -33,31 +35,36 @@ type Service struct {
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
 	// Max Length: 100
 	Description string `json:"description,omitempty"`
 
 	// device
-	// Required: true
-	Device *NestedDevice `json:"device"`
+	Device *NestedDevice `json:"device,omitempty"`
 
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// ipaddresses
-	// Required: true
-	Ipaddresses ServiceIpaddresses `json:"ipaddresses"`
+	// Unique: true
+	Ipaddresses []*NestedIPAddress `json:"ipaddresses"`
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
 	// Max Length: 30
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// Port number
@@ -71,52 +78,65 @@ type Service struct {
 	Protocol *ServiceProtocol `json:"protocol"`
 
 	// virtual machine
-	// Required: true
-	VirtualMachine *NestedVirtualMachine `json:"virtual_machine"`
+	VirtualMachine *NestedVirtualMachine `json:"virtual_machine,omitempty"`
 }
 
 // Validate validates this service
 func (m *Service) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDevice(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateIpaddresses(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePort(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateProtocol(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateVirtualMachine(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Service) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -135,12 +155,11 @@ func (m *Service) validateDescription(formats strfmt.Registry) error {
 
 func (m *Service) validateDevice(formats strfmt.Registry) error {
 
-	if err := validate.Required("device", "body", m.Device); err != nil {
-		return err
+	if swag.IsZero(m.Device) { // not required
+		return nil
 	}
 
 	if m.Device != nil {
-
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -154,14 +173,40 @@ func (m *Service) validateDevice(formats strfmt.Registry) error {
 
 func (m *Service) validateIpaddresses(formats strfmt.Registry) error {
 
-	if err := validate.Required("ipaddresses", "body", m.Ipaddresses); err != nil {
+	if swag.IsZero(m.Ipaddresses) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("ipaddresses", "body", m.Ipaddresses); err != nil {
 		return err
 	}
 
-	if err := m.Ipaddresses.Validate(formats); err != nil {
-		if ve, ok := err.(*errors.Validation); ok {
-			return ve.ValidateName("ipaddresses")
+	for i := 0; i < len(m.Ipaddresses); i++ {
+		if swag.IsZero(m.Ipaddresses[i]) { // not required
+			continue
 		}
+
+		if m.Ipaddresses[i] != nil {
+			if err := m.Ipaddresses[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ipaddresses" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Service) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -171,6 +216,10 @@ func (m *Service) validateIpaddresses(formats strfmt.Registry) error {
 func (m *Service) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 
@@ -205,7 +254,6 @@ func (m *Service) validateProtocol(formats strfmt.Registry) error {
 	}
 
 	if m.Protocol != nil {
-
 		if err := m.Protocol.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("protocol")
@@ -219,12 +267,11 @@ func (m *Service) validateProtocol(formats strfmt.Registry) error {
 
 func (m *Service) validateVirtualMachine(formats strfmt.Registry) error {
 
-	if err := validate.Required("virtual_machine", "body", m.VirtualMachine); err != nil {
-		return err
+	if swag.IsZero(m.VirtualMachine) { // not required
+		return nil
 	}
 
 	if m.VirtualMachine != nil {
-
 		if err := m.VirtualMachine.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")
@@ -247,6 +294,73 @@ func (m *Service) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Service) UnmarshalBinary(b []byte) error {
 	var res Service
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// ServiceProtocol Protocol
+// swagger:model ServiceProtocol
+type ServiceProtocol struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *int64 `json:"value"`
+}
+
+// Validate validates this service protocol
+func (m *ServiceProtocol) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *ServiceProtocol) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("protocol"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceProtocol) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("protocol"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *ServiceProtocol) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *ServiceProtocol) UnmarshalBinary(b []byte) error {
+	var res ServiceProtocol
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

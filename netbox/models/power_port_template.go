@@ -27,9 +27,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PowerPortTemplate power port template
+// PowerPortTemplate Power port
 // swagger:model PowerPortTemplate
 type PowerPortTemplate struct {
+
+	// Allocated draw
+	//
+	// Allocated current draw (watts)
+	// Maximum: 32767
+	// Minimum: 1
+	AllocatedDraw *int64 `json:"allocated_draw,omitempty"`
 
 	// device type
 	// Required: true
@@ -39,9 +46,17 @@ type PowerPortTemplate struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// Maximum draw
+	//
+	// Maximum current draw (watts)
+	// Maximum: 32767
+	// Minimum: 1
+	MaximumDraw *int64 `json:"maximum_draw,omitempty"`
+
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
 }
 
@@ -49,19 +64,42 @@ type PowerPortTemplate struct {
 func (m *PowerPortTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateAllocatedDraw(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDeviceType(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateMaximumDraw(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PowerPortTemplate) validateAllocatedDraw(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.AllocatedDraw) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("allocated_draw", "body", int64(*m.AllocatedDraw), 1, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("allocated_draw", "body", int64(*m.AllocatedDraw), 32767, false); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -72,7 +110,6 @@ func (m *PowerPortTemplate) validateDeviceType(formats strfmt.Registry) error {
 	}
 
 	if m.DeviceType != nil {
-
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
@@ -84,9 +121,30 @@ func (m *PowerPortTemplate) validateDeviceType(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *PowerPortTemplate) validateMaximumDraw(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.MaximumDraw) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("maximum_draw", "body", int64(*m.MaximumDraw), 1, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("maximum_draw", "body", int64(*m.MaximumDraw), 32767, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PowerPortTemplate) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 

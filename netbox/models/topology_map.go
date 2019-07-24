@@ -39,6 +39,7 @@ type TopologyMap struct {
 	//
 	// Identify devices to include in the diagram using regular expressions, one per line. Each line will result in a new tier of the drawing. Separate multiple regexes within a line using semicolons. Devices will be rendered in the order they are defined.
 	// Required: true
+	// Min Length: 1
 	DevicePatterns *string `json:"device_patterns"`
 
 	// ID
@@ -48,6 +49,7 @@ type TopologyMap struct {
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// site
@@ -57,6 +59,7 @@ type TopologyMap struct {
 	// Slug
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 }
@@ -66,27 +69,22 @@ func (m *TopologyMap) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateDescription(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDevicePatterns(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSite(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSlug(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -115,12 +113,20 @@ func (m *TopologyMap) validateDevicePatterns(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("device_patterns", "body", string(*m.DevicePatterns), 1); err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (m *TopologyMap) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 
@@ -138,7 +144,6 @@ func (m *TopologyMap) validateSite(formats strfmt.Registry) error {
 	}
 
 	if m.Site != nil {
-
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
@@ -153,6 +158,10 @@ func (m *TopologyMap) validateSite(formats strfmt.Registry) error {
 func (m *TopologyMap) validateSlug(formats strfmt.Registry) error {
 
 	if err := validate.Required("slug", "body", m.Slug); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
 		return err
 	}
 
