@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -77,10 +76,14 @@ for the dcim device bays list operation typically these are written to a http.Re
 */
 type DcimDeviceBaysListParams struct {
 
+	/*Description*/
+	Description *string
 	/*Device*/
 	Device *string
 	/*DeviceID*/
 	DeviceID *string
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -93,6 +96,10 @@ type DcimDeviceBaysListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
+	/*Tag*/
+	Tag *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -132,6 +139,17 @@ func (o *DcimDeviceBaysListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithDescription adds the description to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithDescription(description *string) *DcimDeviceBaysListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
 // WithDevice adds the device to the dcim device bays list params
 func (o *DcimDeviceBaysListParams) WithDevice(device *string) *DcimDeviceBaysListParams {
 	o.SetDevice(device)
@@ -152,6 +170,17 @@ func (o *DcimDeviceBaysListParams) WithDeviceID(deviceID *string) *DcimDeviceBay
 // SetDeviceID adds the deviceId to the dcim device bays list params
 func (o *DcimDeviceBaysListParams) SetDeviceID(deviceID *string) {
 	o.DeviceID = deviceID
+}
+
+// WithID adds the id to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithID(id *string) *DcimDeviceBaysListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetID(id *string) {
+	o.ID = id
 }
 
 // WithLimit adds the limit to the dcim device bays list params
@@ -187,6 +216,28 @@ func (o *DcimDeviceBaysListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithQ(q *string) *DcimDeviceBaysListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetQ(q *string) {
+	o.Q = q
+}
+
+// WithTag adds the tag to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithTag(tag *string) *DcimDeviceBaysListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -194,6 +245,22 @@ func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		return err
 	}
 	var res []error
+
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.Device != nil {
 
@@ -221,6 +288,22 @@ func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qDeviceID := qrDeviceID
 		if qDeviceID != "" {
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
@@ -269,6 +352,38 @@ func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}

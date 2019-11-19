@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // ExtrasExportTemplatesUpdateReader is a Reader for the ExtrasExportTemplatesUpdate structure.
@@ -38,7 +38,6 @@ type ExtrasExportTemplatesUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *ExtrasExportTemplatesUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewExtrasExportTemplatesUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type ExtrasExportTemplatesUpdateOK struct {
 
 func (o *ExtrasExportTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/export-templates/{id}/][%d] extrasExportTemplatesUpdateOK  %+v", 200, o.Payload)
+}
+
+func (o *ExtrasExportTemplatesUpdateOK) GetPayload() *models.ExportTemplate {
+	return o.Payload
 }
 
 func (o *ExtrasExportTemplatesUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

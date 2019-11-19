@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // SecretsSecretRolesReadReader is a Reader for the SecretsSecretRolesRead structure.
@@ -38,7 +38,6 @@ type SecretsSecretRolesReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *SecretsSecretRolesReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewSecretsSecretRolesReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type SecretsSecretRolesReadOK struct {
 
 func (o *SecretsSecretRolesReadOK) Error() string {
 	return fmt.Sprintf("[GET /secrets/secret-roles/{id}/][%d] secretsSecretRolesReadOK  %+v", 200, o.Payload)
+}
+
+func (o *SecretsSecretRolesReadOK) GetPayload() *models.SecretRole {
+	return o.Payload
 }
 
 func (o *SecretsSecretRolesReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

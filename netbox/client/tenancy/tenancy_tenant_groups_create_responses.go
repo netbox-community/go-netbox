@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // TenancyTenantGroupsCreateReader is a Reader for the TenancyTenantGroupsCreate structure.
@@ -38,7 +38,6 @@ type TenancyTenantGroupsCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *TenancyTenantGroupsCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewTenancyTenantGroupsCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type TenancyTenantGroupsCreateCreated struct {
 
 func (o *TenancyTenantGroupsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /tenancy/tenant-groups/][%d] tenancyTenantGroupsCreateCreated  %+v", 201, o.Payload)
+}
+
+func (o *TenancyTenantGroupsCreateCreated) GetPayload() *models.TenantGroup {
+	return o.Payload
 }
 
 func (o *TenancyTenantGroupsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

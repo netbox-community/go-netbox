@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // SecretsSecretsCreateReader is a Reader for the SecretsSecretsCreate structure.
@@ -38,7 +38,6 @@ type SecretsSecretsCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *SecretsSecretsCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewSecretsSecretsCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewSecretsSecretsCreateCreated() *SecretsSecretsCreateCreated {
 SecretsSecretsCreateCreated secrets secrets create created
 */
 type SecretsSecretsCreateCreated struct {
-	Payload *models.WritableSecret
+	Payload *models.Secret
 }
 
 func (o *SecretsSecretsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /secrets/secrets/][%d] secretsSecretsCreateCreated  %+v", 201, o.Payload)
 }
 
+func (o *SecretsSecretsCreateCreated) GetPayload() *models.Secret {
+	return o.Payload
+}
+
 func (o *SecretsSecretsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableSecret)
+	o.Payload = new(models.Secret)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

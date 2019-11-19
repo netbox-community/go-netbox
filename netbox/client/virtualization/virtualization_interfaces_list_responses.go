@@ -22,12 +22,16 @@ package virtualization
 import (
 	"fmt"
 	"io"
+	"strconv"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
+	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // VirtualizationInterfacesListReader is a Reader for the VirtualizationInterfacesList structure.
@@ -38,7 +42,6 @@ type VirtualizationInterfacesListReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *VirtualizationInterfacesListReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewVirtualizationInterfacesListOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,21 +64,151 @@ func NewVirtualizationInterfacesListOK() *VirtualizationInterfacesListOK {
 VirtualizationInterfacesListOK virtualization interfaces list o k
 */
 type VirtualizationInterfacesListOK struct {
-	Payload *models.VirtualizationInterfacesListOKBody
+	Payload *VirtualizationInterfacesListOKBody
 }
 
 func (o *VirtualizationInterfacesListOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualizationInterfacesListOK  %+v", 200, o.Payload)
 }
 
+func (o *VirtualizationInterfacesListOK) GetPayload() *VirtualizationInterfacesListOKBody {
+	return o.Payload
+}
+
 func (o *VirtualizationInterfacesListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.VirtualizationInterfacesListOKBody)
+	o.Payload = new(VirtualizationInterfacesListOKBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 
+	return nil
+}
+
+/*VirtualizationInterfacesListOKBody virtualization interfaces list o k body
+swagger:model VirtualizationInterfacesListOKBody
+*/
+type VirtualizationInterfacesListOKBody struct {
+
+	// count
+	// Required: true
+	Count *int64 `json:"count"`
+
+	// next
+	// Format: uri
+	Next *strfmt.URI `json:"next,omitempty"`
+
+	// previous
+	// Format: uri
+	Previous *strfmt.URI `json:"previous,omitempty"`
+
+	// results
+	// Required: true
+	Results []*models.VirtualMachineInterface `json:"results"`
+}
+
+// Validate validates this virtualization interfaces list o k body
+func (o *VirtualizationInterfacesListOKBody) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.validateCount(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := o.validateNext(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := o.validatePrevious(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := o.validateResults(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *VirtualizationInterfacesListOKBody) validateCount(formats strfmt.Registry) error {
+
+	if err := validate.Required("virtualizationInterfacesListOK"+"."+"count", "body", o.Count); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (o *VirtualizationInterfacesListOKBody) validateNext(formats strfmt.Registry) error {
+
+	if swag.IsZero(o.Next) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("virtualizationInterfacesListOK"+"."+"next", "body", "uri", o.Next.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (o *VirtualizationInterfacesListOKBody) validatePrevious(formats strfmt.Registry) error {
+
+	if swag.IsZero(o.Previous) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("virtualizationInterfacesListOK"+"."+"previous", "body", "uri", o.Previous.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (o *VirtualizationInterfacesListOKBody) validateResults(formats strfmt.Registry) error {
+
+	if err := validate.Required("virtualizationInterfacesListOK"+"."+"results", "body", o.Results); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(o.Results); i++ {
+		if swag.IsZero(o.Results[i]) { // not required
+			continue
+		}
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("virtualizationInterfacesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (o *VirtualizationInterfacesListOKBody) MarshalBinary() ([]byte, error) {
+	if o == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(o)
+}
+
+// UnmarshalBinary interface implementation
+func (o *VirtualizationInterfacesListOKBody) UnmarshalBinary(b []byte) error {
+	var res VirtualizationInterfacesListOKBody
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*o = res
 	return nil
 }

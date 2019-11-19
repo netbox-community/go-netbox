@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -35,7 +37,7 @@ type WritableInventoryItem struct {
 	//
 	// A unique tag used to identify this item
 	// Max Length: 50
-	AssetTag string `json:"asset_tag,omitempty"`
+	AssetTag *string `json:"asset_tag,omitempty"`
 
 	// Description
 	// Max Length: 100
@@ -53,15 +55,16 @@ type WritableInventoryItem struct {
 	ID int64 `json:"id,omitempty"`
 
 	// Manufacturer
-	Manufacturer int64 `json:"manufacturer,omitempty"`
+	Manufacturer *int64 `json:"manufacturer,omitempty"`
 
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// Parent
-	Parent int64 `json:"parent,omitempty"`
+	Parent *int64 `json:"parent,omitempty"`
 
 	// Part ID
 	// Max Length: 50
@@ -70,6 +73,9 @@ type WritableInventoryItem struct {
 	// Serial number
 	// Max Length: 50
 	Serial string `json:"serial,omitempty"`
+
+	// tags
+	Tags []string `json:"tags"`
 }
 
 // Validate validates this writable inventory item
@@ -77,32 +83,30 @@ func (m *WritableInventoryItem) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAssetTag(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDescription(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDevice(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePartID(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSerial(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -118,7 +122,7 @@ func (m *WritableInventoryItem) validateAssetTag(formats strfmt.Registry) error 
 		return nil
 	}
 
-	if err := validate.MaxLength("asset_tag", "body", string(m.AssetTag), 50); err != nil {
+	if err := validate.MaxLength("asset_tag", "body", string(*m.AssetTag), 50); err != nil {
 		return err
 	}
 
@@ -153,6 +157,10 @@ func (m *WritableInventoryItem) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
 		return err
 	}
@@ -181,6 +189,23 @@ func (m *WritableInventoryItem) validateSerial(formats strfmt.Registry) error {
 
 	if err := validate.MaxLength("serial", "body", string(m.Serial), 50); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableInventoryItem) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

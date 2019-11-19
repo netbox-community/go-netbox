@@ -35,7 +35,6 @@ type DcimPlatformsDeleteReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimPlatformsDeleteReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 204:
 		result := NewDcimPlatformsDeleteNoContent()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {

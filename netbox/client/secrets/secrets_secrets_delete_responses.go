@@ -35,7 +35,6 @@ type SecretsSecretsDeleteReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *SecretsSecretsDeleteReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 204:
 		result := NewSecretsSecretsDeleteNoContent()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {

@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimVirtualChassisCreateReader is a Reader for the DcimVirtualChassisCreate structure.
@@ -38,7 +38,6 @@ type DcimVirtualChassisCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimVirtualChassisCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewDcimVirtualChassisCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimVirtualChassisCreateCreated() *DcimVirtualChassisCreateCreated {
 DcimVirtualChassisCreateCreated dcim virtual chassis create created
 */
 type DcimVirtualChassisCreateCreated struct {
-	Payload *models.WritableVirtualChassis
+	Payload *models.VirtualChassis
 }
 
 func (o *DcimVirtualChassisCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/virtual-chassis/][%d] dcimVirtualChassisCreateCreated  %+v", 201, o.Payload)
 }
 
+func (o *DcimVirtualChassisCreateCreated) GetPayload() *models.VirtualChassis {
+	return o.Payload
+}
+
 func (o *DcimVirtualChassisCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableVirtualChassis)
+	o.Payload = new(models.VirtualChassis)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // TenancyTenantsCreateReader is a Reader for the TenancyTenantsCreate structure.
@@ -38,7 +38,6 @@ type TenancyTenantsCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *TenancyTenantsCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewTenancyTenantsCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewTenancyTenantsCreateCreated() *TenancyTenantsCreateCreated {
 TenancyTenantsCreateCreated tenancy tenants create created
 */
 type TenancyTenantsCreateCreated struct {
-	Payload *models.WritableTenant
+	Payload *models.Tenant
 }
 
 func (o *TenancyTenantsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /tenancy/tenants/][%d] tenancyTenantsCreateCreated  %+v", 201, o.Payload)
 }
 
+func (o *TenancyTenantsCreateCreated) GetPayload() *models.Tenant {
+	return o.Payload
+}
+
 func (o *TenancyTenantsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableTenant)
+	o.Payload = new(models.Tenant)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

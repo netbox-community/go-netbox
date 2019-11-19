@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // TenancyTenantsPartialUpdateReader is a Reader for the TenancyTenantsPartialUpdate structure.
@@ -38,7 +38,6 @@ type TenancyTenantsPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *TenancyTenantsPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewTenancyTenantsPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewTenancyTenantsPartialUpdateOK() *TenancyTenantsPartialUpdateOK {
 TenancyTenantsPartialUpdateOK tenancy tenants partial update o k
 */
 type TenancyTenantsPartialUpdateOK struct {
-	Payload *models.WritableTenant
+	Payload *models.Tenant
 }
 
 func (o *TenancyTenantsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/tenants/{id}/][%d] tenancyTenantsPartialUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *TenancyTenantsPartialUpdateOK) GetPayload() *models.Tenant {
+	return o.Payload
+}
+
 func (o *TenancyTenantsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableTenant)
+	o.Payload = new(models.Tenant)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

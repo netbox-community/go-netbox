@@ -20,10 +20,9 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -77,6 +76,8 @@ for the virtualization cluster groups list operation typically these are written
 */
 type VirtualizationClusterGroupsListParams struct {
 
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -89,6 +90,8 @@ type VirtualizationClusterGroupsListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 	/*Slug*/
 	Slug *string
 
@@ -130,6 +133,17 @@ func (o *VirtualizationClusterGroupsListParams) SetHTTPClient(client *http.Clien
 	o.HTTPClient = client
 }
 
+// WithID adds the id to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) WithID(id *string) *VirtualizationClusterGroupsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithLimit adds the limit to the virtualization cluster groups list params
 func (o *VirtualizationClusterGroupsListParams) WithLimit(limit *int64) *VirtualizationClusterGroupsListParams {
 	o.SetLimit(limit)
@@ -163,6 +177,17 @@ func (o *VirtualizationClusterGroupsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) WithQ(q *string) *VirtualizationClusterGroupsListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) SetQ(q *string) {
+	o.Q = q
+}
+
 // WithSlug adds the slug to the virtualization cluster groups list params
 func (o *VirtualizationClusterGroupsListParams) WithSlug(slug *string) *VirtualizationClusterGroupsListParams {
 	o.SetSlug(slug)
@@ -181,6 +206,22 @@ func (o *VirtualizationClusterGroupsListParams) WriteToRequest(r runtime.ClientR
 		return err
 	}
 	var res []error
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.Limit != nil {
 
@@ -224,6 +265,22 @@ func (o *VirtualizationClusterGroupsListParams) WriteToRequest(r runtime.ClientR
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

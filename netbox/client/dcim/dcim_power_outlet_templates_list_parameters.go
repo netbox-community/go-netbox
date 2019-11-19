@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -79,6 +78,10 @@ type DcimPowerOutletTemplatesListParams struct {
 
 	/*DevicetypeID*/
 	DevicetypeID *string
+	/*FeedLeg*/
+	FeedLeg *string
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -91,6 +94,8 @@ type DcimPowerOutletTemplatesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -141,6 +146,28 @@ func (o *DcimPowerOutletTemplatesListParams) SetDevicetypeID(devicetypeID *strin
 	o.DevicetypeID = devicetypeID
 }
 
+// WithFeedLeg adds the feedLeg to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) WithFeedLeg(feedLeg *string) *DcimPowerOutletTemplatesListParams {
+	o.SetFeedLeg(feedLeg)
+	return o
+}
+
+// SetFeedLeg adds the feedLeg to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) SetFeedLeg(feedLeg *string) {
+	o.FeedLeg = feedLeg
+}
+
+// WithID adds the id to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) WithID(id *string) *DcimPowerOutletTemplatesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithLimit adds the limit to the dcim power outlet templates list params
 func (o *DcimPowerOutletTemplatesListParams) WithLimit(limit *int64) *DcimPowerOutletTemplatesListParams {
 	o.SetLimit(limit)
@@ -174,6 +201,17 @@ func (o *DcimPowerOutletTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) WithQ(q *string) *DcimPowerOutletTemplatesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimPowerOutletTemplatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -192,6 +230,38 @@ func (o *DcimPowerOutletTemplatesListParams) WriteToRequest(r runtime.ClientRequ
 		qDevicetypeID := qrDevicetypeID
 		if qDevicetypeID != "" {
 			if err := r.SetQueryParam("devicetype_id", qDevicetypeID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.FeedLeg != nil {
+
+		// query param feed_leg
+		var qrFeedLeg string
+		if o.FeedLeg != nil {
+			qrFeedLeg = *o.FeedLeg
+		}
+		qFeedLeg := qrFeedLeg
+		if qFeedLeg != "" {
+			if err := r.SetQueryParam("feed_leg", qFeedLeg); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
@@ -240,6 +310,22 @@ func (o *DcimPowerOutletTemplatesListParams) WriteToRequest(r runtime.ClientRequ
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

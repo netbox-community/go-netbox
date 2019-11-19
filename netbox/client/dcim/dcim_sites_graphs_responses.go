@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimSitesGraphsReader is a Reader for the DcimSitesGraphs structure.
@@ -38,7 +38,6 @@ type DcimSitesGraphsReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimSitesGraphsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimSitesGraphsOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type DcimSitesGraphsOK struct {
 
 func (o *DcimSitesGraphsOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/sites/{id}/graphs/][%d] dcimSitesGraphsOK  %+v", 200, o.Payload)
+}
+
+func (o *DcimSitesGraphsOK) GetPayload() *models.Site {
+	return o.Payload
 }
 
 func (o *DcimSitesGraphsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

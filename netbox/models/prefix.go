@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -33,6 +35,7 @@ type Prefix struct {
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -42,9 +45,8 @@ type Prefix struct {
 	// Max Length: 100
 	Description string `json:"description,omitempty"`
 
-	// Family
-	// Read Only: true
-	Family int64 `json:"family,omitempty"`
+	// family
+	Family *PrefixFamily `json:"family,omitempty"`
 
 	// ID
 	// Read Only: true
@@ -57,6 +59,7 @@ type Prefix struct {
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Prefix
@@ -66,77 +69,95 @@ type Prefix struct {
 	Prefix *string `json:"prefix"`
 
 	// role
-	// Required: true
-	Role *NestedRole `json:"role"`
+	Role *NestedRole `json:"role,omitempty"`
 
 	// site
-	// Required: true
-	Site *NestedSite `json:"site"`
+	Site *NestedSite `json:"site,omitempty"`
 
 	// status
-	// Required: true
-	Status *PrefixStatus `json:"status"`
+	Status *PrefixStatus `json:"status,omitempty"`
+
+	// tags
+	Tags []string `json:"tags"`
 
 	// tenant
-	// Required: true
-	Tenant *NestedTenant `json:"tenant"`
+	Tenant *NestedTenant `json:"tenant,omitempty"`
 
 	// vlan
-	// Required: true
-	Vlan *NestedVLAN `json:"vlan"`
+	Vlan *NestedVLAN `json:"vlan,omitempty"`
 
 	// vrf
-	// Required: true
-	Vrf *NestedVRF `json:"vrf"`
+	Vrf *NestedVRF `json:"vrf,omitempty"`
 }
 
 // Validate validates this prefix
 func (m *Prefix) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateFamily(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validatePrefix(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateRole(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSite(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateTenant(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateVlan(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateVrf(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Prefix) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -147,6 +168,37 @@ func (m *Prefix) validateDescription(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) validateFamily(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Family) { // not required
+		return nil
+	}
+
+	if m.Family != nil {
+		if err := m.Family.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("family")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Prefix) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -164,12 +216,11 @@ func (m *Prefix) validatePrefix(formats strfmt.Registry) error {
 
 func (m *Prefix) validateRole(formats strfmt.Registry) error {
 
-	if err := validate.Required("role", "body", m.Role); err != nil {
-		return err
+	if swag.IsZero(m.Role) { // not required
+		return nil
 	}
 
 	if m.Role != nil {
-
 		if err := m.Role.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
@@ -183,12 +234,11 @@ func (m *Prefix) validateRole(formats strfmt.Registry) error {
 
 func (m *Prefix) validateSite(formats strfmt.Registry) error {
 
-	if err := validate.Required("site", "body", m.Site); err != nil {
-		return err
+	if swag.IsZero(m.Site) { // not required
+		return nil
 	}
 
 	if m.Site != nil {
-
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
@@ -202,12 +252,11 @@ func (m *Prefix) validateSite(formats strfmt.Registry) error {
 
 func (m *Prefix) validateStatus(formats strfmt.Registry) error {
 
-	if err := validate.Required("status", "body", m.Status); err != nil {
-		return err
+	if swag.IsZero(m.Status) { // not required
+		return nil
 	}
 
 	if m.Status != nil {
-
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -219,14 +268,30 @@ func (m *Prefix) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Prefix) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
+	}
+
+	return nil
+}
+
 func (m *Prefix) validateTenant(formats strfmt.Registry) error {
 
-	if err := validate.Required("tenant", "body", m.Tenant); err != nil {
-		return err
+	if swag.IsZero(m.Tenant) { // not required
+		return nil
 	}
 
 	if m.Tenant != nil {
-
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
@@ -240,12 +305,11 @@ func (m *Prefix) validateTenant(formats strfmt.Registry) error {
 
 func (m *Prefix) validateVlan(formats strfmt.Registry) error {
 
-	if err := validate.Required("vlan", "body", m.Vlan); err != nil {
-		return err
+	if swag.IsZero(m.Vlan) { // not required
+		return nil
 	}
 
 	if m.Vlan != nil {
-
 		if err := m.Vlan.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vlan")
@@ -259,12 +323,11 @@ func (m *Prefix) validateVlan(formats strfmt.Registry) error {
 
 func (m *Prefix) validateVrf(formats strfmt.Registry) error {
 
-	if err := validate.Required("vrf", "body", m.Vrf); err != nil {
-		return err
+	if swag.IsZero(m.Vrf) { // not required
+		return nil
 	}
 
 	if m.Vrf != nil {
-
 		if err := m.Vrf.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
@@ -287,6 +350,140 @@ func (m *Prefix) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Prefix) UnmarshalBinary(b []byte) error {
 	var res Prefix
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// PrefixFamily Family
+// swagger:model PrefixFamily
+type PrefixFamily struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *int64 `json:"value"`
+}
+
+// Validate validates this prefix family
+func (m *PrefixFamily) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PrefixFamily) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("family"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PrefixFamily) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("family"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *PrefixFamily) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *PrefixFamily) UnmarshalBinary(b []byte) error {
+	var res PrefixFamily
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// PrefixStatus Status
+// swagger:model PrefixStatus
+type PrefixStatus struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *int64 `json:"value"`
+}
+
+// Validate validates this prefix status
+func (m *PrefixStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PrefixStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PrefixStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *PrefixStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *PrefixStatus) UnmarshalBinary(b []byte) error {
+	var res PrefixStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -20,6 +20,8 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"fmt"
+
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -63,8 +65,14 @@ func (a *Client) CircuitsChoicesList(params *CircuitsChoicesListParams, authInfo
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsChoicesListOK), nil
-
+	success, ok := result.(*CircuitsChoicesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits__choices_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -92,8 +100,14 @@ func (a *Client) CircuitsChoicesRead(params *CircuitsChoicesReadParams, authInfo
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsChoicesReadOK), nil
-
+	success, ok := result.(*CircuitsChoicesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits__choices_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -121,8 +135,14 @@ func (a *Client) CircuitsCircuitTerminationsCreate(params *CircuitsCircuitTermin
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTerminationsCreateCreated), nil
-
+	success, ok := result.(*CircuitsCircuitTerminationsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-terminations_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -150,12 +170,18 @@ func (a *Client) CircuitsCircuitTerminationsDelete(params *CircuitsCircuitTermin
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTerminationsDeleteNoContent), nil
-
+	success, ok := result.(*CircuitsCircuitTerminationsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-terminations_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-CircuitsCircuitTerminationsList circuits circuit terminations list API
+CircuitsCircuitTerminationsList Call to super to allow for caching
 */
 func (a *Client) CircuitsCircuitTerminationsList(params *CircuitsCircuitTerminationsListParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsListOK, error) {
 	// TODO: Validate the params before sending
@@ -179,8 +205,14 @@ func (a *Client) CircuitsCircuitTerminationsList(params *CircuitsCircuitTerminat
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTerminationsListOK), nil
-
+	success, ok := result.(*CircuitsCircuitTerminationsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-terminations_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -208,12 +240,18 @@ func (a *Client) CircuitsCircuitTerminationsPartialUpdate(params *CircuitsCircui
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTerminationsPartialUpdateOK), nil
-
+	success, ok := result.(*CircuitsCircuitTerminationsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-terminations_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-CircuitsCircuitTerminationsRead circuits circuit terminations read API
+CircuitsCircuitTerminationsRead Call to super to allow for caching
 */
 func (a *Client) CircuitsCircuitTerminationsRead(params *CircuitsCircuitTerminationsReadParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsReadOK, error) {
 	// TODO: Validate the params before sending
@@ -237,8 +275,14 @@ func (a *Client) CircuitsCircuitTerminationsRead(params *CircuitsCircuitTerminat
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTerminationsReadOK), nil
-
+	success, ok := result.(*CircuitsCircuitTerminationsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-terminations_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -266,8 +310,14 @@ func (a *Client) CircuitsCircuitTerminationsUpdate(params *CircuitsCircuitTermin
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTerminationsUpdateOK), nil
-
+	success, ok := result.(*CircuitsCircuitTerminationsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-terminations_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -295,8 +345,14 @@ func (a *Client) CircuitsCircuitTypesCreate(params *CircuitsCircuitTypesCreatePa
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTypesCreateCreated), nil
-
+	success, ok := result.(*CircuitsCircuitTypesCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-types_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -324,12 +380,18 @@ func (a *Client) CircuitsCircuitTypesDelete(params *CircuitsCircuitTypesDeletePa
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTypesDeleteNoContent), nil
-
+	success, ok := result.(*CircuitsCircuitTypesDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-types_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-CircuitsCircuitTypesList circuits circuit types list API
+CircuitsCircuitTypesList Call to super to allow for caching
 */
 func (a *Client) CircuitsCircuitTypesList(params *CircuitsCircuitTypesListParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesListOK, error) {
 	// TODO: Validate the params before sending
@@ -353,8 +415,14 @@ func (a *Client) CircuitsCircuitTypesList(params *CircuitsCircuitTypesListParams
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTypesListOK), nil
-
+	success, ok := result.(*CircuitsCircuitTypesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-types_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -382,12 +450,18 @@ func (a *Client) CircuitsCircuitTypesPartialUpdate(params *CircuitsCircuitTypesP
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTypesPartialUpdateOK), nil
-
+	success, ok := result.(*CircuitsCircuitTypesPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-types_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-CircuitsCircuitTypesRead circuits circuit types read API
+CircuitsCircuitTypesRead Call to super to allow for caching
 */
 func (a *Client) CircuitsCircuitTypesRead(params *CircuitsCircuitTypesReadParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesReadOK, error) {
 	// TODO: Validate the params before sending
@@ -411,8 +485,14 @@ func (a *Client) CircuitsCircuitTypesRead(params *CircuitsCircuitTypesReadParams
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTypesReadOK), nil
-
+	success, ok := result.(*CircuitsCircuitTypesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-types_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -440,8 +520,14 @@ func (a *Client) CircuitsCircuitTypesUpdate(params *CircuitsCircuitTypesUpdatePa
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitTypesUpdateOK), nil
-
+	success, ok := result.(*CircuitsCircuitTypesUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuit-types_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -469,8 +555,14 @@ func (a *Client) CircuitsCircuitsCreate(params *CircuitsCircuitsCreateParams, au
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitsCreateCreated), nil
-
+	success, ok := result.(*CircuitsCircuitsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuits_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -498,12 +590,18 @@ func (a *Client) CircuitsCircuitsDelete(params *CircuitsCircuitsDeleteParams, au
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitsDeleteNoContent), nil
-
+	success, ok := result.(*CircuitsCircuitsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuits_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-CircuitsCircuitsList circuits circuits list API
+CircuitsCircuitsList Call to super to allow for caching
 */
 func (a *Client) CircuitsCircuitsList(params *CircuitsCircuitsListParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsListOK, error) {
 	// TODO: Validate the params before sending
@@ -527,8 +625,14 @@ func (a *Client) CircuitsCircuitsList(params *CircuitsCircuitsListParams, authIn
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitsListOK), nil
-
+	success, ok := result.(*CircuitsCircuitsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuits_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -556,12 +660,18 @@ func (a *Client) CircuitsCircuitsPartialUpdate(params *CircuitsCircuitsPartialUp
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitsPartialUpdateOK), nil
-
+	success, ok := result.(*CircuitsCircuitsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuits_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-CircuitsCircuitsRead circuits circuits read API
+CircuitsCircuitsRead Call to super to allow for caching
 */
 func (a *Client) CircuitsCircuitsRead(params *CircuitsCircuitsReadParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsReadOK, error) {
 	// TODO: Validate the params before sending
@@ -585,8 +695,14 @@ func (a *Client) CircuitsCircuitsRead(params *CircuitsCircuitsReadParams, authIn
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitsReadOK), nil
-
+	success, ok := result.(*CircuitsCircuitsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuits_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -614,8 +730,14 @@ func (a *Client) CircuitsCircuitsUpdate(params *CircuitsCircuitsUpdateParams, au
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsCircuitsUpdateOK), nil
-
+	success, ok := result.(*CircuitsCircuitsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_circuits_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -643,8 +765,14 @@ func (a *Client) CircuitsProvidersCreate(params *CircuitsProvidersCreateParams, 
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsProvidersCreateCreated), nil
-
+	success, ok := result.(*CircuitsProvidersCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_providers_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -672,8 +800,14 @@ func (a *Client) CircuitsProvidersDelete(params *CircuitsProvidersDeleteParams, 
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsProvidersDeleteNoContent), nil
-
+	success, ok := result.(*CircuitsProvidersDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_providers_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -701,12 +835,18 @@ func (a *Client) CircuitsProvidersGraphs(params *CircuitsProvidersGraphsParams, 
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsProvidersGraphsOK), nil
-
+	success, ok := result.(*CircuitsProvidersGraphsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_providers_graphs: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-CircuitsProvidersList circuits providers list API
+CircuitsProvidersList Call to super to allow for caching
 */
 func (a *Client) CircuitsProvidersList(params *CircuitsProvidersListParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersListOK, error) {
 	// TODO: Validate the params before sending
@@ -730,8 +870,14 @@ func (a *Client) CircuitsProvidersList(params *CircuitsProvidersListParams, auth
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsProvidersListOK), nil
-
+	success, ok := result.(*CircuitsProvidersListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_providers_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -759,12 +905,18 @@ func (a *Client) CircuitsProvidersPartialUpdate(params *CircuitsProvidersPartial
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsProvidersPartialUpdateOK), nil
-
+	success, ok := result.(*CircuitsProvidersPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_providers_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-CircuitsProvidersRead circuits providers read API
+CircuitsProvidersRead Call to super to allow for caching
 */
 func (a *Client) CircuitsProvidersRead(params *CircuitsProvidersReadParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersReadOK, error) {
 	// TODO: Validate the params before sending
@@ -788,8 +940,14 @@ func (a *Client) CircuitsProvidersRead(params *CircuitsProvidersReadParams, auth
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsProvidersReadOK), nil
-
+	success, ok := result.(*CircuitsProvidersReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_providers_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -817,8 +975,14 @@ func (a *Client) CircuitsProvidersUpdate(params *CircuitsProvidersUpdateParams, 
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CircuitsProvidersUpdateOK), nil
-
+	success, ok := result.(*CircuitsProvidersUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for circuits_providers_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 // SetTransport changes the transport on the client

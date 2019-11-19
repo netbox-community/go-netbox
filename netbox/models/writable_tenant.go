@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -31,11 +33,16 @@ import (
 // swagger:model WritableTenant
 type WritableTenant struct {
 
+	// Circuit count
+	// Read Only: true
+	CircuitCount int64 `json:"circuit_count,omitempty"`
+
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -47,51 +54,111 @@ type WritableTenant struct {
 	// Max Length: 100
 	Description string `json:"description,omitempty"`
 
+	// Device count
+	// Read Only: true
+	DeviceCount int64 `json:"device_count,omitempty"`
+
 	// Group
-	Group int64 `json:"group,omitempty"`
+	Group *int64 `json:"group,omitempty"`
 
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// Ipaddress count
+	// Read Only: true
+	IpaddressCount int64 `json:"ipaddress_count,omitempty"`
+
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
 	// Max Length: 30
+	// Min Length: 1
 	Name *string `json:"name"`
+
+	// Prefix count
+	// Read Only: true
+	PrefixCount int64 `json:"prefix_count,omitempty"`
+
+	// Rack count
+	// Read Only: true
+	RackCount int64 `json:"rack_count,omitempty"`
+
+	// Site count
+	// Read Only: true
+	SiteCount int64 `json:"site_count,omitempty"`
 
 	// Slug
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
+
+	// tags
+	Tags []string `json:"tags"`
+
+	// Virtualmachine count
+	// Read Only: true
+	VirtualmachineCount int64 `json:"virtualmachine_count,omitempty"`
+
+	// Vlan count
+	// Read Only: true
+	VlanCount int64 `json:"vlan_count,omitempty"`
+
+	// Vrf count
+	// Read Only: true
+	VrfCount int64 `json:"vrf_count,omitempty"`
 }
 
 // Validate validates this writable tenant
 func (m *WritableTenant) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSlug(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableTenant) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -108,9 +175,26 @@ func (m *WritableTenant) validateDescription(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableTenant) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableTenant) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 
@@ -127,12 +211,33 @@ func (m *WritableTenant) validateSlug(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("slug", "body", string(*m.Slug), 50); err != nil {
 		return err
 	}
 
 	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableTenant) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

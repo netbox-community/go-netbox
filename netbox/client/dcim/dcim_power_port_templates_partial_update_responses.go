@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimPowerPortTemplatesPartialUpdateReader is a Reader for the DcimPowerPortTemplatesPartialUpdate structure.
@@ -38,7 +38,6 @@ type DcimPowerPortTemplatesPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimPowerPortTemplatesPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimPowerPortTemplatesPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimPowerPortTemplatesPartialUpdateOK() *DcimPowerPortTemplatesPartialUp
 DcimPowerPortTemplatesPartialUpdateOK dcim power port templates partial update o k
 */
 type DcimPowerPortTemplatesPartialUpdateOK struct {
-	Payload *models.WritablePowerPortTemplate
+	Payload *models.PowerPortTemplate
 }
 
 func (o *DcimPowerPortTemplatesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *DcimPowerPortTemplatesPartialUpdateOK) GetPayload() *models.PowerPortTemplate {
+	return o.Payload
+}
+
 func (o *DcimPowerPortTemplatesPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritablePowerPortTemplate)
+	o.Payload = new(models.PowerPortTemplate)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

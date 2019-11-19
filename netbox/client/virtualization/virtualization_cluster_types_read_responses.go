@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // VirtualizationClusterTypesReadReader is a Reader for the VirtualizationClusterTypesRead structure.
@@ -38,7 +38,6 @@ type VirtualizationClusterTypesReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *VirtualizationClusterTypesReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewVirtualizationClusterTypesReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type VirtualizationClusterTypesReadOK struct {
 
 func (o *VirtualizationClusterTypesReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesReadOK  %+v", 200, o.Payload)
+}
+
+func (o *VirtualizationClusterTypesReadOK) GetPayload() *models.ClusterType {
+	return o.Payload
 }
 
 func (o *VirtualizationClusterTypesReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

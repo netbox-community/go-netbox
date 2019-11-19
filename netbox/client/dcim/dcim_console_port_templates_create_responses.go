@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimConsolePortTemplatesCreateReader is a Reader for the DcimConsolePortTemplatesCreate structure.
@@ -38,7 +38,6 @@ type DcimConsolePortTemplatesCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimConsolePortTemplatesCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewDcimConsolePortTemplatesCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimConsolePortTemplatesCreateCreated() *DcimConsolePortTemplatesCreateC
 DcimConsolePortTemplatesCreateCreated dcim console port templates create created
 */
 type DcimConsolePortTemplatesCreateCreated struct {
-	Payload *models.WritableConsolePortTemplate
+	Payload *models.ConsolePortTemplate
 }
 
 func (o *DcimConsolePortTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcimConsolePortTemplatesCreateCreated  %+v", 201, o.Payload)
 }
 
+func (o *DcimConsolePortTemplatesCreateCreated) GetPayload() *models.ConsolePortTemplate {
+	return o.Payload
+}
+
 func (o *DcimConsolePortTemplatesCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableConsolePortTemplate)
+	o.Payload = new(models.ConsolePortTemplate)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

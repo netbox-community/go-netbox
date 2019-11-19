@@ -20,10 +20,9 @@ package secrets
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -77,6 +76,8 @@ for the secrets secret roles list operation typically these are written to a htt
 */
 type SecretsSecretRolesListParams struct {
 
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -89,6 +90,8 @@ type SecretsSecretRolesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 	/*Slug*/
 	Slug *string
 
@@ -130,6 +133,17 @@ func (o *SecretsSecretRolesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithID adds the id to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithID(id *string) *SecretsSecretRolesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithLimit adds the limit to the secrets secret roles list params
 func (o *SecretsSecretRolesListParams) WithLimit(limit *int64) *SecretsSecretRolesListParams {
 	o.SetLimit(limit)
@@ -163,6 +177,17 @@ func (o *SecretsSecretRolesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithQ(q *string) *SecretsSecretRolesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
 // WithSlug adds the slug to the secrets secret roles list params
 func (o *SecretsSecretRolesListParams) WithSlug(slug *string) *SecretsSecretRolesListParams {
 	o.SetSlug(slug)
@@ -181,6 +206,22 @@ func (o *SecretsSecretRolesListParams) WriteToRequest(r runtime.ClientRequest, r
 		return err
 	}
 	var res []error
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.Limit != nil {
 
@@ -224,6 +265,22 @@ func (o *SecretsSecretRolesListParams) WriteToRequest(r runtime.ClientRequest, r
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

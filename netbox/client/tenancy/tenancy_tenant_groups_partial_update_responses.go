@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // TenancyTenantGroupsPartialUpdateReader is a Reader for the TenancyTenantGroupsPartialUpdate structure.
@@ -38,7 +38,6 @@ type TenancyTenantGroupsPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *TenancyTenantGroupsPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewTenancyTenantGroupsPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type TenancyTenantGroupsPartialUpdateOK struct {
 
 func (o *TenancyTenantGroupsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
+func (o *TenancyTenantGroupsPartialUpdateOK) GetPayload() *models.TenantGroup {
+	return o.Payload
 }
 
 func (o *TenancyTenantGroupsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

@@ -20,10 +20,9 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -90,7 +89,7 @@ type CircuitsCircuitTerminationsListParams struct {
 	*/
 	Offset *int64
 	/*PortSpeed*/
-	PortSpeed *float64
+	PortSpeed *string
 	/*Q*/
 	Q *string
 	/*Site*/
@@ -100,7 +99,7 @@ type CircuitsCircuitTerminationsListParams struct {
 	/*TermSide*/
 	TermSide *string
 	/*UpstreamSpeed*/
-	UpstreamSpeed *float64
+	UpstreamSpeed *string
 	/*XconnectID*/
 	XconnectID *string
 
@@ -176,13 +175,13 @@ func (o *CircuitsCircuitTerminationsListParams) SetOffset(offset *int64) {
 }
 
 // WithPortSpeed adds the portSpeed to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) WithPortSpeed(portSpeed *float64) *CircuitsCircuitTerminationsListParams {
+func (o *CircuitsCircuitTerminationsListParams) WithPortSpeed(portSpeed *string) *CircuitsCircuitTerminationsListParams {
 	o.SetPortSpeed(portSpeed)
 	return o
 }
 
 // SetPortSpeed adds the portSpeed to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) SetPortSpeed(portSpeed *float64) {
+func (o *CircuitsCircuitTerminationsListParams) SetPortSpeed(portSpeed *string) {
 	o.PortSpeed = portSpeed
 }
 
@@ -231,13 +230,13 @@ func (o *CircuitsCircuitTerminationsListParams) SetTermSide(termSide *string) {
 }
 
 // WithUpstreamSpeed adds the upstreamSpeed to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) WithUpstreamSpeed(upstreamSpeed *float64) *CircuitsCircuitTerminationsListParams {
+func (o *CircuitsCircuitTerminationsListParams) WithUpstreamSpeed(upstreamSpeed *string) *CircuitsCircuitTerminationsListParams {
 	o.SetUpstreamSpeed(upstreamSpeed)
 	return o
 }
 
 // SetUpstreamSpeed adds the upstreamSpeed to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) SetUpstreamSpeed(upstreamSpeed *float64) {
+func (o *CircuitsCircuitTerminationsListParams) SetUpstreamSpeed(upstreamSpeed *string) {
 	o.UpstreamSpeed = upstreamSpeed
 }
 
@@ -311,11 +310,11 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 	if o.PortSpeed != nil {
 
 		// query param port_speed
-		var qrPortSpeed float64
+		var qrPortSpeed string
 		if o.PortSpeed != nil {
 			qrPortSpeed = *o.PortSpeed
 		}
-		qPortSpeed := swag.FormatFloat64(qrPortSpeed)
+		qPortSpeed := qrPortSpeed
 		if qPortSpeed != "" {
 			if err := r.SetQueryParam("port_speed", qPortSpeed); err != nil {
 				return err
@@ -391,11 +390,11 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 	if o.UpstreamSpeed != nil {
 
 		// query param upstream_speed
-		var qrUpstreamSpeed float64
+		var qrUpstreamSpeed string
 		if o.UpstreamSpeed != nil {
 			qrUpstreamSpeed = *o.UpstreamSpeed
 		}
-		qUpstreamSpeed := swag.FormatFloat64(qrUpstreamSpeed)
+		qUpstreamSpeed := qrUpstreamSpeed
 		if qUpstreamSpeed != "" {
 			if err := r.SetQueryParam("upstream_speed", qUpstreamSpeed); err != nil {
 				return err

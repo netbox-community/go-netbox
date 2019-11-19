@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // ExtrasGraphsReadReader is a Reader for the ExtrasGraphsRead structure.
@@ -38,7 +38,6 @@ type ExtrasGraphsReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *ExtrasGraphsReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewExtrasGraphsReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type ExtrasGraphsReadOK struct {
 
 func (o *ExtrasGraphsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/graphs/{id}/][%d] extrasGraphsReadOK  %+v", 200, o.Payload)
+}
+
+func (o *ExtrasGraphsReadOK) GetPayload() *models.Graph {
+	return o.Payload
 }
 
 func (o *ExtrasGraphsReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

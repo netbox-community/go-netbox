@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimInterfaceTemplatesCreateReader is a Reader for the DcimInterfaceTemplatesCreate structure.
@@ -38,7 +38,6 @@ type DcimInterfaceTemplatesCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimInterfaceTemplatesCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewDcimInterfaceTemplatesCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimInterfaceTemplatesCreateCreated() *DcimInterfaceTemplatesCreateCreat
 DcimInterfaceTemplatesCreateCreated dcim interface templates create created
 */
 type DcimInterfaceTemplatesCreateCreated struct {
-	Payload *models.WritableInterfaceTemplate
+	Payload *models.InterfaceTemplate
 }
 
 func (o *DcimInterfaceTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/interface-templates/][%d] dcimInterfaceTemplatesCreateCreated  %+v", 201, o.Payload)
 }
 
+func (o *DcimInterfaceTemplatesCreateCreated) GetPayload() *models.InterfaceTemplate {
+	return o.Payload
+}
+
 func (o *DcimInterfaceTemplatesCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableInterfaceTemplate)
+	o.Payload = new(models.InterfaceTemplate)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

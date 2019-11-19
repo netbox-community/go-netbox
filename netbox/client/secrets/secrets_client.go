@@ -20,6 +20,8 @@ package secrets
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"fmt"
+
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -63,8 +65,14 @@ func (a *Client) SecretsChoicesList(params *SecretsChoicesListParams, authInfo r
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsChoicesListOK), nil
-
+	success, ok := result.(*SecretsChoicesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets__choices_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -92,14 +100,20 @@ func (a *Client) SecretsChoicesRead(params *SecretsChoicesReadParams, authInfo r
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsChoicesReadOK), nil
-
+	success, ok := result.(*SecretsChoicesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets__choices_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-SecretsGenerateRsaKeyPairList This endpoint can be used to generate a new RSA key pair. The keys are returned in PEM format.
+SecretsGenerateRsaKeyPairList this endpoint can be used to generate a new r s a key pair the keys are returned in p e m format
 
-    {
+{
         "public_key": "<public key>",
         "private_key": "<private key>"
     }
@@ -126,8 +140,14 @@ func (a *Client) SecretsGenerateRsaKeyPairList(params *SecretsGenerateRsaKeyPair
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsGenerateRsaKeyPairListOK), nil
-
+	success, ok := result.(*SecretsGenerateRsaKeyPairListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_generate-rsa-key-pair_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -168,8 +188,14 @@ func (a *Client) SecretsGetSessionKeyCreate(params *SecretsGetSessionKeyCreatePa
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsGetSessionKeyCreateCreated), nil
-
+	success, ok := result.(*SecretsGetSessionKeyCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_get-session-key_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -197,8 +223,14 @@ func (a *Client) SecretsSecretRolesCreate(params *SecretsSecretRolesCreateParams
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretRolesCreateCreated), nil
-
+	success, ok := result.(*SecretsSecretRolesCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secret-roles_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -226,12 +258,18 @@ func (a *Client) SecretsSecretRolesDelete(params *SecretsSecretRolesDeleteParams
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretRolesDeleteNoContent), nil
-
+	success, ok := result.(*SecretsSecretRolesDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secret-roles_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-SecretsSecretRolesList secrets secret roles list API
+SecretsSecretRolesList Call to super to allow for caching
 */
 func (a *Client) SecretsSecretRolesList(params *SecretsSecretRolesListParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesListOK, error) {
 	// TODO: Validate the params before sending
@@ -255,8 +293,14 @@ func (a *Client) SecretsSecretRolesList(params *SecretsSecretRolesListParams, au
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretRolesListOK), nil
-
+	success, ok := result.(*SecretsSecretRolesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secret-roles_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -284,12 +328,18 @@ func (a *Client) SecretsSecretRolesPartialUpdate(params *SecretsSecretRolesParti
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretRolesPartialUpdateOK), nil
-
+	success, ok := result.(*SecretsSecretRolesPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secret-roles_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-SecretsSecretRolesRead secrets secret roles read API
+SecretsSecretRolesRead Call to super to allow for caching
 */
 func (a *Client) SecretsSecretRolesRead(params *SecretsSecretRolesReadParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesReadOK, error) {
 	// TODO: Validate the params before sending
@@ -313,8 +363,14 @@ func (a *Client) SecretsSecretRolesRead(params *SecretsSecretRolesReadParams, au
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretRolesReadOK), nil
-
+	success, ok := result.(*SecretsSecretRolesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secret-roles_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -342,8 +398,14 @@ func (a *Client) SecretsSecretRolesUpdate(params *SecretsSecretRolesUpdateParams
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretRolesUpdateOK), nil
-
+	success, ok := result.(*SecretsSecretRolesUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secret-roles_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -371,8 +433,14 @@ func (a *Client) SecretsSecretsCreate(params *SecretsSecretsCreateParams, authIn
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretsCreateCreated), nil
-
+	success, ok := result.(*SecretsSecretsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secrets_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -400,8 +468,14 @@ func (a *Client) SecretsSecretsDelete(params *SecretsSecretsDeleteParams, authIn
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretsDeleteNoContent), nil
-
+	success, ok := result.(*SecretsSecretsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secrets_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -429,8 +503,14 @@ func (a *Client) SecretsSecretsList(params *SecretsSecretsListParams, authInfo r
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretsListOK), nil
-
+	success, ok := result.(*SecretsSecretsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secrets_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -458,8 +538,14 @@ func (a *Client) SecretsSecretsPartialUpdate(params *SecretsSecretsPartialUpdate
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretsPartialUpdateOK), nil
-
+	success, ok := result.(*SecretsSecretsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secrets_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -487,8 +573,14 @@ func (a *Client) SecretsSecretsRead(params *SecretsSecretsReadParams, authInfo r
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretsReadOK), nil
-
+	success, ok := result.(*SecretsSecretsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secrets_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -516,8 +608,14 @@ func (a *Client) SecretsSecretsUpdate(params *SecretsSecretsUpdateParams, authIn
 	if err != nil {
 		return nil, err
 	}
-	return result.(*SecretsSecretsUpdateOK), nil
-
+	success, ok := result.(*SecretsSecretsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for secrets_secrets_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 // SetTransport changes the transport on the client

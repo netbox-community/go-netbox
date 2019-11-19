@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimManufacturersCreateReader is a Reader for the DcimManufacturersCreate structure.
@@ -38,7 +38,6 @@ type DcimManufacturersCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimManufacturersCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewDcimManufacturersCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type DcimManufacturersCreateCreated struct {
 
 func (o *DcimManufacturersCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/manufacturers/][%d] dcimManufacturersCreateCreated  %+v", 201, o.Payload)
+}
+
+func (o *DcimManufacturersCreateCreated) GetPayload() *models.Manufacturer {
+	return o.Payload
 }
 
 func (o *DcimManufacturersCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

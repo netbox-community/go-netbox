@@ -20,10 +20,9 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -32,7 +31,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // NewExtrasExportTemplatesPartialUpdateParams creates a new ExtrasExportTemplatesPartialUpdateParams object
@@ -80,7 +79,7 @@ for the extras export templates partial update operation typically these are wri
 type ExtrasExportTemplatesPartialUpdateParams struct {
 
 	/*Data*/
-	Data *models.ExportTemplate
+	Data *models.WritableExportTemplate
 	/*ID
 	  A unique integer value identifying this export template.
 
@@ -126,13 +125,13 @@ func (o *ExtrasExportTemplatesPartialUpdateParams) SetHTTPClient(client *http.Cl
 }
 
 // WithData adds the data to the extras export templates partial update params
-func (o *ExtrasExportTemplatesPartialUpdateParams) WithData(data *models.ExportTemplate) *ExtrasExportTemplatesPartialUpdateParams {
+func (o *ExtrasExportTemplatesPartialUpdateParams) WithData(data *models.WritableExportTemplate) *ExtrasExportTemplatesPartialUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the extras export templates partial update params
-func (o *ExtrasExportTemplatesPartialUpdateParams) SetData(data *models.ExportTemplate) {
+func (o *ExtrasExportTemplatesPartialUpdateParams) SetData(data *models.WritableExportTemplate) {
 	o.Data = data
 }
 

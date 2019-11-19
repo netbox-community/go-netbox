@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimVirtualChassisReadReader is a Reader for the DcimVirtualChassisRead structure.
@@ -38,7 +38,6 @@ type DcimVirtualChassisReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimVirtualChassisReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimVirtualChassisReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type DcimVirtualChassisReadOK struct {
 
 func (o *DcimVirtualChassisReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisReadOK  %+v", 200, o.Payload)
+}
+
+func (o *DcimVirtualChassisReadOK) GetPayload() *models.VirtualChassis {
+	return o.Payload
 }
 
 func (o *DcimVirtualChassisReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

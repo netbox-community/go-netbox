@@ -25,13 +25,13 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/client/circuits"
-	"github.com/digitalocean/go-netbox/netbox/client/dcim"
-	"github.com/digitalocean/go-netbox/netbox/client/extras"
-	"github.com/digitalocean/go-netbox/netbox/client/ipam"
-	"github.com/digitalocean/go-netbox/netbox/client/secrets"
-	"github.com/digitalocean/go-netbox/netbox/client/tenancy"
-	"github.com/digitalocean/go-netbox/netbox/client/virtualization"
+	"github.com/smutel/go-netbox/netbox/client/circuits"
+	"github.com/smutel/go-netbox/netbox/client/dcim"
+	"github.com/smutel/go-netbox/netbox/client/extras"
+	"github.com/smutel/go-netbox/netbox/client/ipam"
+	"github.com/smutel/go-netbox/netbox/client/secrets"
+	"github.com/smutel/go-netbox/netbox/client/tenancy"
+	"github.com/smutel/go-netbox/netbox/client/virtualization"
 )
 
 // Default net box HTTP client.
@@ -40,7 +40,7 @@ var Default = NewHTTPClient(nil)
 const (
 	// DefaultHost is the default Host
 	// found in Meta (info) section of spec file
-	DefaultHost string = "localhost:8000"
+	DefaultHost string = "netbox.localhost"
 	// DefaultBasePath is the default BasePath
 	// found in Meta (info) section of spec file
 	DefaultBasePath string = "/api"
@@ -58,9 +58,6 @@ func NewHTTPClient(formats strfmt.Registry) *NetBox {
 // using a customizable transport config.
 func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *NetBox {
 	// ensure nullable parameters have default
-	if formats == nil {
-		formats = strfmt.Default
-	}
 	if cfg == nil {
 		cfg = DefaultTransportConfig()
 	}
@@ -72,6 +69,11 @@ func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *Net
 
 // New creates a new net box client
 func New(transport runtime.ClientTransport, formats strfmt.Registry) *NetBox {
+	// ensure nullable parameters have default
+	if formats == nil {
+		formats = strfmt.Default
+	}
+
 	cli := new(NetBox)
 	cli.Transport = transport
 
@@ -81,7 +83,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *NetBox {
 
 	cli.Extras = extras.New(transport, formats)
 
-	cli.IPAM = ipam.New(transport, formats)
+	cli.Ipam = ipam.New(transport, formats)
 
 	cli.Secrets = secrets.New(transport, formats)
 
@@ -139,7 +141,7 @@ type NetBox struct {
 
 	Extras *extras.Client
 
-	IPAM *ipam.Client
+	Ipam *ipam.Client
 
 	Secrets *secrets.Client
 
@@ -160,7 +162,7 @@ func (c *NetBox) SetTransport(transport runtime.ClientTransport) {
 
 	c.Extras.SetTransport(transport)
 
-	c.IPAM.SetTransport(transport)
+	c.Ipam.SetTransport(transport)
 
 	c.Secrets.SetTransport(transport)
 

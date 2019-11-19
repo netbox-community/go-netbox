@@ -42,6 +42,7 @@ type WritableDeviceBayTemplate struct {
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
 }
 
@@ -50,12 +51,10 @@ func (m *WritableDeviceBayTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateDeviceType(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -77,6 +76,10 @@ func (m *WritableDeviceBayTemplate) validateDeviceType(formats strfmt.Registry) 
 func (m *WritableDeviceBayTemplate) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 

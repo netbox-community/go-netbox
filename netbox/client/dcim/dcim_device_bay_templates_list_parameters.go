@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -79,6 +78,8 @@ type DcimDeviceBayTemplatesListParams struct {
 
 	/*DevicetypeID*/
 	DevicetypeID *string
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -91,6 +92,8 @@ type DcimDeviceBayTemplatesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -141,6 +144,17 @@ func (o *DcimDeviceBayTemplatesListParams) SetDevicetypeID(devicetypeID *string)
 	o.DevicetypeID = devicetypeID
 }
 
+// WithID adds the id to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithID(id *string) *DcimDeviceBayTemplatesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithLimit adds the limit to the dcim device bay templates list params
 func (o *DcimDeviceBayTemplatesListParams) WithLimit(limit *int64) *DcimDeviceBayTemplatesListParams {
 	o.SetLimit(limit)
@@ -174,6 +188,17 @@ func (o *DcimDeviceBayTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithQ(q *string) *DcimDeviceBayTemplatesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -192,6 +217,22 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		qDevicetypeID := qrDevicetypeID
 		if qDevicetypeID != "" {
 			if err := r.SetQueryParam("devicetype_id", qDevicetypeID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
@@ -240,6 +281,22 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

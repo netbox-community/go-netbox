@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // SecretsSecretRolesPartialUpdateReader is a Reader for the SecretsSecretRolesPartialUpdate structure.
@@ -38,7 +38,6 @@ type SecretsSecretRolesPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *SecretsSecretRolesPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewSecretsSecretRolesPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type SecretsSecretRolesPartialUpdateOK struct {
 
 func (o *SecretsSecretRolesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /secrets/secret-roles/{id}/][%d] secretsSecretRolesPartialUpdateOK  %+v", 200, o.Payload)
+}
+
+func (o *SecretsSecretRolesPartialUpdateOK) GetPayload() *models.SecretRole {
+	return o.Payload
 }
 
 func (o *SecretsSecretRolesPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

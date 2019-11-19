@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimDeviceTypesCreateReader is a Reader for the DcimDeviceTypesCreate structure.
@@ -38,7 +38,6 @@ type DcimDeviceTypesCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimDeviceTypesCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewDcimDeviceTypesCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimDeviceTypesCreateCreated() *DcimDeviceTypesCreateCreated {
 DcimDeviceTypesCreateCreated dcim device types create created
 */
 type DcimDeviceTypesCreateCreated struct {
-	Payload *models.WritableDeviceType
+	Payload *models.DeviceType
 }
 
 func (o *DcimDeviceTypesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-types/][%d] dcimDeviceTypesCreateCreated  %+v", 201, o.Payload)
 }
 
+func (o *DcimDeviceTypesCreateCreated) GetPayload() *models.DeviceType {
+	return o.Payload
+}
+
 func (o *DcimDeviceTypesCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableDeviceType)
+	o.Payload = new(models.DeviceType)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

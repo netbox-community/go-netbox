@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // ExtrasTopologyMapsPartialUpdateReader is a Reader for the ExtrasTopologyMapsPartialUpdate structure.
@@ -38,7 +38,6 @@ type ExtrasTopologyMapsPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *ExtrasTopologyMapsPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewExtrasTopologyMapsPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewExtrasTopologyMapsPartialUpdateOK() *ExtrasTopologyMapsPartialUpdateOK {
 ExtrasTopologyMapsPartialUpdateOK extras topology maps partial update o k
 */
 type ExtrasTopologyMapsPartialUpdateOK struct {
-	Payload *models.WritableTopologyMap
+	Payload *models.TopologyMap
 }
 
 func (o *ExtrasTopologyMapsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/topology-maps/{id}/][%d] extrasTopologyMapsPartialUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *ExtrasTopologyMapsPartialUpdateOK) GetPayload() *models.TopologyMap {
+	return o.Payload
+}
+
 func (o *ExtrasTopologyMapsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableTopologyMap)
+	o.Payload = new(models.TopologyMap)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

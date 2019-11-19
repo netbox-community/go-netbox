@@ -20,10 +20,9 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -91,6 +90,8 @@ type ExtrasExportTemplatesListParams struct {
 
 	*/
 	Offset *int64
+	/*TemplateLanguage*/
+	TemplateLanguage *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -174,6 +175,17 @@ func (o *ExtrasExportTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithTemplateLanguage adds the templateLanguage to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithTemplateLanguage(templateLanguage *string) *ExtrasExportTemplatesListParams {
+	o.SetTemplateLanguage(templateLanguage)
+	return o
+}
+
+// SetTemplateLanguage adds the templateLanguage to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetTemplateLanguage(templateLanguage *string) {
+	o.TemplateLanguage = templateLanguage
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -240,6 +252,22 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TemplateLanguage != nil {
+
+		// query param template_language
+		var qrTemplateLanguage string
+		if o.TemplateLanguage != nil {
+			qrTemplateLanguage = *o.TemplateLanguage
+		}
+		qTemplateLanguage := qrTemplateLanguage
+		if qTemplateLanguage != "" {
+			if err := r.SetQueryParam("template_language", qTemplateLanguage); err != nil {
 				return err
 			}
 		}

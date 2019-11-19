@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // ExtrasTopologyMapsReadReader is a Reader for the ExtrasTopologyMapsRead structure.
@@ -38,7 +38,6 @@ type ExtrasTopologyMapsReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *ExtrasTopologyMapsReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewExtrasTopologyMapsReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type ExtrasTopologyMapsReadOK struct {
 
 func (o *ExtrasTopologyMapsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/topology-maps/{id}/][%d] extrasTopologyMapsReadOK  %+v", 200, o.Payload)
+}
+
+func (o *ExtrasTopologyMapsReadOK) GetPayload() *models.TopologyMap {
+	return o.Payload
 }
 
 func (o *ExtrasTopologyMapsReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

@@ -20,10 +20,9 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -79,6 +78,8 @@ type VirtualizationInterfacesListParams struct {
 
 	/*Enabled*/
 	Enabled *string
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -87,7 +88,7 @@ type VirtualizationInterfacesListParams struct {
 	/*MacAddress*/
 	MacAddress *string
 	/*Mtu*/
-	Mtu *float64
+	Mtu *string
 	/*Name*/
 	Name *string
 	/*Offset
@@ -95,6 +96,8 @@ type VirtualizationInterfacesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 	/*VirtualMachine*/
 	VirtualMachine *string
 	/*VirtualMachineID*/
@@ -149,6 +152,17 @@ func (o *VirtualizationInterfacesListParams) SetEnabled(enabled *string) {
 	o.Enabled = enabled
 }
 
+// WithID adds the id to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithID(id *string) *VirtualizationInterfacesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithLimit adds the limit to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) WithLimit(limit *int64) *VirtualizationInterfacesListParams {
 	o.SetLimit(limit)
@@ -172,13 +186,13 @@ func (o *VirtualizationInterfacesListParams) SetMacAddress(macAddress *string) {
 }
 
 // WithMtu adds the mtu to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) WithMtu(mtu *float64) *VirtualizationInterfacesListParams {
+func (o *VirtualizationInterfacesListParams) WithMtu(mtu *string) *VirtualizationInterfacesListParams {
 	o.SetMtu(mtu)
 	return o
 }
 
 // SetMtu adds the mtu to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) SetMtu(mtu *float64) {
+func (o *VirtualizationInterfacesListParams) SetMtu(mtu *string) {
 	o.Mtu = mtu
 }
 
@@ -202,6 +216,17 @@ func (o *VirtualizationInterfacesListParams) WithOffset(offset *int64) *Virtuali
 // SetOffset adds the offset to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithQ adds the q to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithQ(q *string) *VirtualizationInterfacesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetQ(q *string) {
+	o.Q = q
 }
 
 // WithVirtualMachine adds the virtualMachine to the virtualization interfaces list params
@@ -250,6 +275,22 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 
 	}
 
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -285,11 +326,11 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 	if o.Mtu != nil {
 
 		// query param mtu
-		var qrMtu float64
+		var qrMtu string
 		if o.Mtu != nil {
 			qrMtu = *o.Mtu
 		}
-		qMtu := swag.FormatFloat64(qrMtu)
+		qMtu := qrMtu
 		if qMtu != "" {
 			if err := r.SetQueryParam("mtu", qMtu); err != nil {
 				return err
@@ -324,6 +365,22 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

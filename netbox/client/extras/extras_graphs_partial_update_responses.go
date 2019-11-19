@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // ExtrasGraphsPartialUpdateReader is a Reader for the ExtrasGraphsPartialUpdate structure.
@@ -38,7 +38,6 @@ type ExtrasGraphsPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *ExtrasGraphsPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewExtrasGraphsPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewExtrasGraphsPartialUpdateOK() *ExtrasGraphsPartialUpdateOK {
 ExtrasGraphsPartialUpdateOK extras graphs partial update o k
 */
 type ExtrasGraphsPartialUpdateOK struct {
-	Payload *models.WritableGraph
+	Payload *models.Graph
 }
 
 func (o *ExtrasGraphsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/graphs/{id}/][%d] extrasGraphsPartialUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *ExtrasGraphsPartialUpdateOK) GetPayload() *models.Graph {
+	return o.Payload
+}
+
 func (o *ExtrasGraphsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableGraph)
+	o.Payload = new(models.Graph)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

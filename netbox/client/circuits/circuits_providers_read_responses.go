@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // CircuitsProvidersReadReader is a Reader for the CircuitsProvidersRead structure.
@@ -38,7 +38,6 @@ type CircuitsProvidersReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *CircuitsProvidersReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewCircuitsProvidersReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type CircuitsProvidersReadOK struct {
 
 func (o *CircuitsProvidersReadOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuitsProvidersReadOK  %+v", 200, o.Payload)
+}
+
+func (o *CircuitsProvidersReadOK) GetPayload() *models.Provider {
+	return o.Payload
 }
 
 func (o *CircuitsProvidersReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

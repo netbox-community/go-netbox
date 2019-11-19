@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -79,6 +78,8 @@ type DcimConsoleServerPortTemplatesListParams struct {
 
 	/*DevicetypeID*/
 	DevicetypeID *string
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -91,6 +92,8 @@ type DcimConsoleServerPortTemplatesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -141,6 +144,17 @@ func (o *DcimConsoleServerPortTemplatesListParams) SetDevicetypeID(devicetypeID 
 	o.DevicetypeID = devicetypeID
 }
 
+// WithID adds the id to the dcim console server port templates list params
+func (o *DcimConsoleServerPortTemplatesListParams) WithID(id *string) *DcimConsoleServerPortTemplatesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim console server port templates list params
+func (o *DcimConsoleServerPortTemplatesListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithLimit adds the limit to the dcim console server port templates list params
 func (o *DcimConsoleServerPortTemplatesListParams) WithLimit(limit *int64) *DcimConsoleServerPortTemplatesListParams {
 	o.SetLimit(limit)
@@ -174,6 +188,17 @@ func (o *DcimConsoleServerPortTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim console server port templates list params
+func (o *DcimConsoleServerPortTemplatesListParams) WithQ(q *string) *DcimConsoleServerPortTemplatesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim console server port templates list params
+func (o *DcimConsoleServerPortTemplatesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -192,6 +217,22 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		qDevicetypeID := qrDevicetypeID
 		if qDevicetypeID != "" {
 			if err := r.SetQueryParam("devicetype_id", qDevicetypeID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
@@ -240,6 +281,22 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

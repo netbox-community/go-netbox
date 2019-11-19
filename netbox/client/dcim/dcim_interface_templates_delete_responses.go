@@ -35,7 +35,6 @@ type DcimInterfaceTemplatesDeleteReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimInterfaceTemplatesDeleteReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 204:
 		result := NewDcimInterfaceTemplatesDeleteNoContent()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {

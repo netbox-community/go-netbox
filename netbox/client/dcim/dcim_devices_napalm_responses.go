@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimDevicesNapalmReader is a Reader for the DcimDevicesNapalm structure.
@@ -38,7 +38,6 @@ type DcimDevicesNapalmReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimDevicesNapalmReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimDevicesNapalmOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimDevicesNapalmOK() *DcimDevicesNapalmOK {
 DcimDevicesNapalmOK dcim devices napalm o k
 */
 type DcimDevicesNapalmOK struct {
-	Payload *models.Device
+	Payload *models.DeviceWithConfigContext
 }
 
 func (o *DcimDevicesNapalmOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcimDevicesNapalmOK  %+v", 200, o.Payload)
 }
 
+func (o *DcimDevicesNapalmOK) GetPayload() *models.DeviceWithConfigContext {
+	return o.Payload
+}
+
 func (o *DcimDevicesNapalmOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.Device)
+	o.Payload = new(models.DeviceWithConfigContext)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

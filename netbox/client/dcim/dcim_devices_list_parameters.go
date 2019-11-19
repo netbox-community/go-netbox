@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -81,28 +80,34 @@ type DcimDevicesListParams struct {
 	AssetTag *string
 	/*ClusterID*/
 	ClusterID *string
+	/*ConsolePorts*/
+	ConsolePorts *string
+	/*ConsoleServerPorts*/
+	ConsoleServerPorts *string
 	/*DeviceTypeID*/
 	DeviceTypeID *string
+	/*Face*/
+	Face *string
 	/*HasPrimaryIP*/
 	HasPrimaryIP *string
+	/*ID*/
+	ID *string
 	/*IDIn
 	  Multiple values may be separated by commas.
 
 	*/
 	IDIn *string
-	/*IsConsoleServer*/
-	IsConsoleServer *string
+	/*Interfaces*/
+	Interfaces *string
 	/*IsFullDepth*/
 	IsFullDepth *string
-	/*IsNetworkDevice*/
-	IsNetworkDevice *string
-	/*IsPdu*/
-	IsPdu *string
 	/*Limit
 	  Number of results to return per page.
 
 	*/
 	Limit *int64
+	/*LocalContextData*/
+	LocalContextData *string
 	/*MacAddress*/
 	MacAddress *string
 	/*Manufacturer*/
@@ -118,18 +123,28 @@ type DcimDevicesListParams struct {
 
 	*/
 	Offset *int64
+	/*PassThroughPorts*/
+	PassThroughPorts *string
 	/*Platform*/
 	Platform *string
 	/*PlatformID*/
 	PlatformID *string
 	/*Position*/
-	Position *float64
+	Position *string
+	/*PowerOutlets*/
+	PowerOutlets *string
+	/*PowerPorts*/
+	PowerPorts *string
 	/*Q*/
 	Q *string
 	/*RackGroupID*/
 	RackGroupID *string
 	/*RackID*/
 	RackID *string
+	/*Region*/
+	Region *string
+	/*RegionID*/
+	RegionID *string
 	/*Role*/
 	Role *string
 	/*RoleID*/
@@ -142,12 +157,24 @@ type DcimDevicesListParams struct {
 	SiteID *string
 	/*Status*/
 	Status *string
+	/*Tag*/
+	Tag *string
 	/*Tenant*/
 	Tenant *string
+	/*TenantGroup*/
+	TenantGroup *string
+	/*TenantGroupID*/
+	TenantGroupID *string
 	/*TenantID*/
 	TenantID *string
+	/*VcPosition*/
+	VcPosition *string
+	/*VcPriority*/
+	VcPriority *string
 	/*VirtualChassisID*/
 	VirtualChassisID *string
+	/*VirtualChassisMember*/
+	VirtualChassisMember *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -209,6 +236,28 @@ func (o *DcimDevicesListParams) SetClusterID(clusterID *string) {
 	o.ClusterID = clusterID
 }
 
+// WithConsolePorts adds the consolePorts to the dcim devices list params
+func (o *DcimDevicesListParams) WithConsolePorts(consolePorts *string) *DcimDevicesListParams {
+	o.SetConsolePorts(consolePorts)
+	return o
+}
+
+// SetConsolePorts adds the consolePorts to the dcim devices list params
+func (o *DcimDevicesListParams) SetConsolePorts(consolePorts *string) {
+	o.ConsolePorts = consolePorts
+}
+
+// WithConsoleServerPorts adds the consoleServerPorts to the dcim devices list params
+func (o *DcimDevicesListParams) WithConsoleServerPorts(consoleServerPorts *string) *DcimDevicesListParams {
+	o.SetConsoleServerPorts(consoleServerPorts)
+	return o
+}
+
+// SetConsoleServerPorts adds the consoleServerPorts to the dcim devices list params
+func (o *DcimDevicesListParams) SetConsoleServerPorts(consoleServerPorts *string) {
+	o.ConsoleServerPorts = consoleServerPorts
+}
+
 // WithDeviceTypeID adds the deviceTypeID to the dcim devices list params
 func (o *DcimDevicesListParams) WithDeviceTypeID(deviceTypeID *string) *DcimDevicesListParams {
 	o.SetDeviceTypeID(deviceTypeID)
@@ -218,6 +267,17 @@ func (o *DcimDevicesListParams) WithDeviceTypeID(deviceTypeID *string) *DcimDevi
 // SetDeviceTypeID adds the deviceTypeId to the dcim devices list params
 func (o *DcimDevicesListParams) SetDeviceTypeID(deviceTypeID *string) {
 	o.DeviceTypeID = deviceTypeID
+}
+
+// WithFace adds the face to the dcim devices list params
+func (o *DcimDevicesListParams) WithFace(face *string) *DcimDevicesListParams {
+	o.SetFace(face)
+	return o
+}
+
+// SetFace adds the face to the dcim devices list params
+func (o *DcimDevicesListParams) SetFace(face *string) {
+	o.Face = face
 }
 
 // WithHasPrimaryIP adds the hasPrimaryIP to the dcim devices list params
@@ -231,6 +291,17 @@ func (o *DcimDevicesListParams) SetHasPrimaryIP(hasPrimaryIP *string) {
 	o.HasPrimaryIP = hasPrimaryIP
 }
 
+// WithID adds the id to the dcim devices list params
+func (o *DcimDevicesListParams) WithID(id *string) *DcimDevicesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim devices list params
+func (o *DcimDevicesListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithIDIn adds the iDIn to the dcim devices list params
 func (o *DcimDevicesListParams) WithIDIn(iDIn *string) *DcimDevicesListParams {
 	o.SetIDIn(iDIn)
@@ -242,15 +313,15 @@ func (o *DcimDevicesListParams) SetIDIn(iDIn *string) {
 	o.IDIn = iDIn
 }
 
-// WithIsConsoleServer adds the isConsoleServer to the dcim devices list params
-func (o *DcimDevicesListParams) WithIsConsoleServer(isConsoleServer *string) *DcimDevicesListParams {
-	o.SetIsConsoleServer(isConsoleServer)
+// WithInterfaces adds the interfaces to the dcim devices list params
+func (o *DcimDevicesListParams) WithInterfaces(interfaces *string) *DcimDevicesListParams {
+	o.SetInterfaces(interfaces)
 	return o
 }
 
-// SetIsConsoleServer adds the isConsoleServer to the dcim devices list params
-func (o *DcimDevicesListParams) SetIsConsoleServer(isConsoleServer *string) {
-	o.IsConsoleServer = isConsoleServer
+// SetInterfaces adds the interfaces to the dcim devices list params
+func (o *DcimDevicesListParams) SetInterfaces(interfaces *string) {
+	o.Interfaces = interfaces
 }
 
 // WithIsFullDepth adds the isFullDepth to the dcim devices list params
@@ -264,28 +335,6 @@ func (o *DcimDevicesListParams) SetIsFullDepth(isFullDepth *string) {
 	o.IsFullDepth = isFullDepth
 }
 
-// WithIsNetworkDevice adds the isNetworkDevice to the dcim devices list params
-func (o *DcimDevicesListParams) WithIsNetworkDevice(isNetworkDevice *string) *DcimDevicesListParams {
-	o.SetIsNetworkDevice(isNetworkDevice)
-	return o
-}
-
-// SetIsNetworkDevice adds the isNetworkDevice to the dcim devices list params
-func (o *DcimDevicesListParams) SetIsNetworkDevice(isNetworkDevice *string) {
-	o.IsNetworkDevice = isNetworkDevice
-}
-
-// WithIsPdu adds the isPdu to the dcim devices list params
-func (o *DcimDevicesListParams) WithIsPdu(isPdu *string) *DcimDevicesListParams {
-	o.SetIsPdu(isPdu)
-	return o
-}
-
-// SetIsPdu adds the isPdu to the dcim devices list params
-func (o *DcimDevicesListParams) SetIsPdu(isPdu *string) {
-	o.IsPdu = isPdu
-}
-
 // WithLimit adds the limit to the dcim devices list params
 func (o *DcimDevicesListParams) WithLimit(limit *int64) *DcimDevicesListParams {
 	o.SetLimit(limit)
@@ -295,6 +344,17 @@ func (o *DcimDevicesListParams) WithLimit(limit *int64) *DcimDevicesListParams {
 // SetLimit adds the limit to the dcim devices list params
 func (o *DcimDevicesListParams) SetLimit(limit *int64) {
 	o.Limit = limit
+}
+
+// WithLocalContextData adds the localContextData to the dcim devices list params
+func (o *DcimDevicesListParams) WithLocalContextData(localContextData *string) *DcimDevicesListParams {
+	o.SetLocalContextData(localContextData)
+	return o
+}
+
+// SetLocalContextData adds the localContextData to the dcim devices list params
+func (o *DcimDevicesListParams) SetLocalContextData(localContextData *string) {
+	o.LocalContextData = localContextData
 }
 
 // WithMacAddress adds the macAddress to the dcim devices list params
@@ -363,6 +423,17 @@ func (o *DcimDevicesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithPassThroughPorts adds the passThroughPorts to the dcim devices list params
+func (o *DcimDevicesListParams) WithPassThroughPorts(passThroughPorts *string) *DcimDevicesListParams {
+	o.SetPassThroughPorts(passThroughPorts)
+	return o
+}
+
+// SetPassThroughPorts adds the passThroughPorts to the dcim devices list params
+func (o *DcimDevicesListParams) SetPassThroughPorts(passThroughPorts *string) {
+	o.PassThroughPorts = passThroughPorts
+}
+
 // WithPlatform adds the platform to the dcim devices list params
 func (o *DcimDevicesListParams) WithPlatform(platform *string) *DcimDevicesListParams {
 	o.SetPlatform(platform)
@@ -386,14 +457,36 @@ func (o *DcimDevicesListParams) SetPlatformID(platformID *string) {
 }
 
 // WithPosition adds the position to the dcim devices list params
-func (o *DcimDevicesListParams) WithPosition(position *float64) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithPosition(position *string) *DcimDevicesListParams {
 	o.SetPosition(position)
 	return o
 }
 
 // SetPosition adds the position to the dcim devices list params
-func (o *DcimDevicesListParams) SetPosition(position *float64) {
+func (o *DcimDevicesListParams) SetPosition(position *string) {
 	o.Position = position
+}
+
+// WithPowerOutlets adds the powerOutlets to the dcim devices list params
+func (o *DcimDevicesListParams) WithPowerOutlets(powerOutlets *string) *DcimDevicesListParams {
+	o.SetPowerOutlets(powerOutlets)
+	return o
+}
+
+// SetPowerOutlets adds the powerOutlets to the dcim devices list params
+func (o *DcimDevicesListParams) SetPowerOutlets(powerOutlets *string) {
+	o.PowerOutlets = powerOutlets
+}
+
+// WithPowerPorts adds the powerPorts to the dcim devices list params
+func (o *DcimDevicesListParams) WithPowerPorts(powerPorts *string) *DcimDevicesListParams {
+	o.SetPowerPorts(powerPorts)
+	return o
+}
+
+// SetPowerPorts adds the powerPorts to the dcim devices list params
+func (o *DcimDevicesListParams) SetPowerPorts(powerPorts *string) {
+	o.PowerPorts = powerPorts
 }
 
 // WithQ adds the q to the dcim devices list params
@@ -427,6 +520,28 @@ func (o *DcimDevicesListParams) WithRackID(rackID *string) *DcimDevicesListParam
 // SetRackID adds the rackId to the dcim devices list params
 func (o *DcimDevicesListParams) SetRackID(rackID *string) {
 	o.RackID = rackID
+}
+
+// WithRegion adds the region to the dcim devices list params
+func (o *DcimDevicesListParams) WithRegion(region *string) *DcimDevicesListParams {
+	o.SetRegion(region)
+	return o
+}
+
+// SetRegion adds the region to the dcim devices list params
+func (o *DcimDevicesListParams) SetRegion(region *string) {
+	o.Region = region
+}
+
+// WithRegionID adds the regionID to the dcim devices list params
+func (o *DcimDevicesListParams) WithRegionID(regionID *string) *DcimDevicesListParams {
+	o.SetRegionID(regionID)
+	return o
+}
+
+// SetRegionID adds the regionId to the dcim devices list params
+func (o *DcimDevicesListParams) SetRegionID(regionID *string) {
+	o.RegionID = regionID
 }
 
 // WithRole adds the role to the dcim devices list params
@@ -495,6 +610,17 @@ func (o *DcimDevicesListParams) SetStatus(status *string) {
 	o.Status = status
 }
 
+// WithTag adds the tag to the dcim devices list params
+func (o *DcimDevicesListParams) WithTag(tag *string) *DcimDevicesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim devices list params
+func (o *DcimDevicesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WithTenant adds the tenant to the dcim devices list params
 func (o *DcimDevicesListParams) WithTenant(tenant *string) *DcimDevicesListParams {
 	o.SetTenant(tenant)
@@ -504,6 +630,28 @@ func (o *DcimDevicesListParams) WithTenant(tenant *string) *DcimDevicesListParam
 // SetTenant adds the tenant to the dcim devices list params
 func (o *DcimDevicesListParams) SetTenant(tenant *string) {
 	o.Tenant = tenant
+}
+
+// WithTenantGroup adds the tenantGroup to the dcim devices list params
+func (o *DcimDevicesListParams) WithTenantGroup(tenantGroup *string) *DcimDevicesListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the dcim devices list params
+func (o *DcimDevicesListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupID adds the tenantGroupID to the dcim devices list params
+func (o *DcimDevicesListParams) WithTenantGroupID(tenantGroupID *string) *DcimDevicesListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the dcim devices list params
+func (o *DcimDevicesListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
 }
 
 // WithTenantID adds the tenantID to the dcim devices list params
@@ -517,6 +665,28 @@ func (o *DcimDevicesListParams) SetTenantID(tenantID *string) {
 	o.TenantID = tenantID
 }
 
+// WithVcPosition adds the vcPosition to the dcim devices list params
+func (o *DcimDevicesListParams) WithVcPosition(vcPosition *string) *DcimDevicesListParams {
+	o.SetVcPosition(vcPosition)
+	return o
+}
+
+// SetVcPosition adds the vcPosition to the dcim devices list params
+func (o *DcimDevicesListParams) SetVcPosition(vcPosition *string) {
+	o.VcPosition = vcPosition
+}
+
+// WithVcPriority adds the vcPriority to the dcim devices list params
+func (o *DcimDevicesListParams) WithVcPriority(vcPriority *string) *DcimDevicesListParams {
+	o.SetVcPriority(vcPriority)
+	return o
+}
+
+// SetVcPriority adds the vcPriority to the dcim devices list params
+func (o *DcimDevicesListParams) SetVcPriority(vcPriority *string) {
+	o.VcPriority = vcPriority
+}
+
 // WithVirtualChassisID adds the virtualChassisID to the dcim devices list params
 func (o *DcimDevicesListParams) WithVirtualChassisID(virtualChassisID *string) *DcimDevicesListParams {
 	o.SetVirtualChassisID(virtualChassisID)
@@ -526,6 +696,17 @@ func (o *DcimDevicesListParams) WithVirtualChassisID(virtualChassisID *string) *
 // SetVirtualChassisID adds the virtualChassisId to the dcim devices list params
 func (o *DcimDevicesListParams) SetVirtualChassisID(virtualChassisID *string) {
 	o.VirtualChassisID = virtualChassisID
+}
+
+// WithVirtualChassisMember adds the virtualChassisMember to the dcim devices list params
+func (o *DcimDevicesListParams) WithVirtualChassisMember(virtualChassisMember *string) *DcimDevicesListParams {
+	o.SetVirtualChassisMember(virtualChassisMember)
+	return o
+}
+
+// SetVirtualChassisMember adds the virtualChassisMember to the dcim devices list params
+func (o *DcimDevicesListParams) SetVirtualChassisMember(virtualChassisMember *string) {
+	o.VirtualChassisMember = virtualChassisMember
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -568,6 +749,38 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 	}
 
+	if o.ConsolePorts != nil {
+
+		// query param console_ports
+		var qrConsolePorts string
+		if o.ConsolePorts != nil {
+			qrConsolePorts = *o.ConsolePorts
+		}
+		qConsolePorts := qrConsolePorts
+		if qConsolePorts != "" {
+			if err := r.SetQueryParam("console_ports", qConsolePorts); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ConsoleServerPorts != nil {
+
+		// query param console_server_ports
+		var qrConsoleServerPorts string
+		if o.ConsoleServerPorts != nil {
+			qrConsoleServerPorts = *o.ConsoleServerPorts
+		}
+		qConsoleServerPorts := qrConsoleServerPorts
+		if qConsoleServerPorts != "" {
+			if err := r.SetQueryParam("console_server_ports", qConsoleServerPorts); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.DeviceTypeID != nil {
 
 		// query param device_type_id
@@ -578,6 +791,22 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		qDeviceTypeID := qrDeviceTypeID
 		if qDeviceTypeID != "" {
 			if err := r.SetQueryParam("device_type_id", qDeviceTypeID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Face != nil {
+
+		// query param face
+		var qrFace string
+		if o.Face != nil {
+			qrFace = *o.Face
+		}
+		qFace := qrFace
+		if qFace != "" {
+			if err := r.SetQueryParam("face", qFace); err != nil {
 				return err
 			}
 		}
@@ -600,6 +829,22 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 	}
 
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.IDIn != nil {
 
 		// query param id__in
@@ -616,16 +861,16 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 	}
 
-	if o.IsConsoleServer != nil {
+	if o.Interfaces != nil {
 
-		// query param is_console_server
-		var qrIsConsoleServer string
-		if o.IsConsoleServer != nil {
-			qrIsConsoleServer = *o.IsConsoleServer
+		// query param interfaces
+		var qrInterfaces string
+		if o.Interfaces != nil {
+			qrInterfaces = *o.Interfaces
 		}
-		qIsConsoleServer := qrIsConsoleServer
-		if qIsConsoleServer != "" {
-			if err := r.SetQueryParam("is_console_server", qIsConsoleServer); err != nil {
+		qInterfaces := qrInterfaces
+		if qInterfaces != "" {
+			if err := r.SetQueryParam("interfaces", qInterfaces); err != nil {
 				return err
 			}
 		}
@@ -648,38 +893,6 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 	}
 
-	if o.IsNetworkDevice != nil {
-
-		// query param is_network_device
-		var qrIsNetworkDevice string
-		if o.IsNetworkDevice != nil {
-			qrIsNetworkDevice = *o.IsNetworkDevice
-		}
-		qIsNetworkDevice := qrIsNetworkDevice
-		if qIsNetworkDevice != "" {
-			if err := r.SetQueryParam("is_network_device", qIsNetworkDevice); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.IsPdu != nil {
-
-		// query param is_pdu
-		var qrIsPdu string
-		if o.IsPdu != nil {
-			qrIsPdu = *o.IsPdu
-		}
-		qIsPdu := qrIsPdu
-		if qIsPdu != "" {
-			if err := r.SetQueryParam("is_pdu", qIsPdu); err != nil {
-				return err
-			}
-		}
-
-	}
-
 	if o.Limit != nil {
 
 		// query param limit
@@ -690,6 +903,22 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LocalContextData != nil {
+
+		// query param local_context_data
+		var qrLocalContextData string
+		if o.LocalContextData != nil {
+			qrLocalContextData = *o.LocalContextData
+		}
+		qLocalContextData := qrLocalContextData
+		if qLocalContextData != "" {
+			if err := r.SetQueryParam("local_context_data", qLocalContextData); err != nil {
 				return err
 			}
 		}
@@ -792,6 +1021,22 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 	}
 
+	if o.PassThroughPorts != nil {
+
+		// query param pass_through_ports
+		var qrPassThroughPorts string
+		if o.PassThroughPorts != nil {
+			qrPassThroughPorts = *o.PassThroughPorts
+		}
+		qPassThroughPorts := qrPassThroughPorts
+		if qPassThroughPorts != "" {
+			if err := r.SetQueryParam("pass_through_ports", qPassThroughPorts); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Platform != nil {
 
 		// query param platform
@@ -827,13 +1072,45 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.Position != nil {
 
 		// query param position
-		var qrPosition float64
+		var qrPosition string
 		if o.Position != nil {
 			qrPosition = *o.Position
 		}
-		qPosition := swag.FormatFloat64(qrPosition)
+		qPosition := qrPosition
 		if qPosition != "" {
 			if err := r.SetQueryParam("position", qPosition); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PowerOutlets != nil {
+
+		// query param power_outlets
+		var qrPowerOutlets string
+		if o.PowerOutlets != nil {
+			qrPowerOutlets = *o.PowerOutlets
+		}
+		qPowerOutlets := qrPowerOutlets
+		if qPowerOutlets != "" {
+			if err := r.SetQueryParam("power_outlets", qPowerOutlets); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PowerPorts != nil {
+
+		// query param power_ports
+		var qrPowerPorts string
+		if o.PowerPorts != nil {
+			qrPowerPorts = *o.PowerPorts
+		}
+		qPowerPorts := qrPowerPorts
+		if qPowerPorts != "" {
+			if err := r.SetQueryParam("power_ports", qPowerPorts); err != nil {
 				return err
 			}
 		}
@@ -882,6 +1159,38 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		qRackID := qrRackID
 		if qRackID != "" {
 			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Region != nil {
+
+		// query param region
+		var qrRegion string
+		if o.Region != nil {
+			qrRegion = *o.Region
+		}
+		qRegion := qrRegion
+		if qRegion != "" {
+			if err := r.SetQueryParam("region", qRegion); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.RegionID != nil {
+
+		// query param region_id
+		var qrRegionID string
+		if o.RegionID != nil {
+			qrRegionID = *o.RegionID
+		}
+		qRegionID := qrRegionID
+		if qRegionID != "" {
+			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
 				return err
 			}
 		}
@@ -984,6 +1293,22 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 	}
 
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tenant != nil {
 
 		// query param tenant
@@ -994,6 +1319,38 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		qTenant := qrTenant
 		if qTenant != "" {
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
 				return err
 			}
 		}
@@ -1016,6 +1373,38 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 	}
 
+	if o.VcPosition != nil {
+
+		// query param vc_position
+		var qrVcPosition string
+		if o.VcPosition != nil {
+			qrVcPosition = *o.VcPosition
+		}
+		qVcPosition := qrVcPosition
+		if qVcPosition != "" {
+			if err := r.SetQueryParam("vc_position", qVcPosition); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VcPriority != nil {
+
+		// query param vc_priority
+		var qrVcPriority string
+		if o.VcPriority != nil {
+			qrVcPriority = *o.VcPriority
+		}
+		qVcPriority := qrVcPriority
+		if qVcPriority != "" {
+			if err := r.SetQueryParam("vc_priority", qVcPriority); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.VirtualChassisID != nil {
 
 		// query param virtual_chassis_id
@@ -1026,6 +1415,22 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		qVirtualChassisID := qrVirtualChassisID
 		if qVirtualChassisID != "" {
 			if err := r.SetQueryParam("virtual_chassis_id", qVirtualChassisID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VirtualChassisMember != nil {
+
+		// query param virtual_chassis_member
+		var qrVirtualChassisMember string
+		if o.VirtualChassisMember != nil {
+			qrVirtualChassisMember = *o.VirtualChassisMember
+		}
+		qVirtualChassisMember := qrVirtualChassisMember
+		if qVirtualChassisMember != "" {
+			if err := r.SetQueryParam("virtual_chassis_member", qVirtualChassisMember); err != nil {
 				return err
 			}
 		}

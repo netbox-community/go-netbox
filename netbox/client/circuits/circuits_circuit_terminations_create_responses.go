@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // CircuitsCircuitTerminationsCreateReader is a Reader for the CircuitsCircuitTerminationsCreate structure.
@@ -38,7 +38,6 @@ type CircuitsCircuitTerminationsCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *CircuitsCircuitTerminationsCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewCircuitsCircuitTerminationsCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewCircuitsCircuitTerminationsCreateCreated() *CircuitsCircuitTerminationsC
 CircuitsCircuitTerminationsCreateCreated circuits circuit terminations create created
 */
 type CircuitsCircuitTerminationsCreateCreated struct {
-	Payload *models.WritableCircuitTermination
+	Payload *models.CircuitTermination
 }
 
 func (o *CircuitsCircuitTerminationsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsCreateCreated  %+v", 201, o.Payload)
 }
 
+func (o *CircuitsCircuitTerminationsCreateCreated) GetPayload() *models.CircuitTermination {
+	return o.Payload
+}
+
 func (o *CircuitsCircuitTerminationsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableCircuitTermination)
+	o.Payload = new(models.CircuitTermination)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

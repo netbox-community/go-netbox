@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -77,10 +76,18 @@ for the dcim console ports list operation typically these are written to a http.
 */
 type DcimConsolePortsListParams struct {
 
+	/*Cabled*/
+	Cabled *string
+	/*ConnectionStatus*/
+	ConnectionStatus *string
+	/*Description*/
+	Description *string
 	/*Device*/
 	Device *string
 	/*DeviceID*/
 	DeviceID *string
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -93,6 +100,10 @@ type DcimConsolePortsListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
+	/*Tag*/
+	Tag *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -132,6 +143,39 @@ func (o *DcimConsolePortsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCabled adds the cabled to the dcim console ports list params
+func (o *DcimConsolePortsListParams) WithCabled(cabled *string) *DcimConsolePortsListParams {
+	o.SetCabled(cabled)
+	return o
+}
+
+// SetCabled adds the cabled to the dcim console ports list params
+func (o *DcimConsolePortsListParams) SetCabled(cabled *string) {
+	o.Cabled = cabled
+}
+
+// WithConnectionStatus adds the connectionStatus to the dcim console ports list params
+func (o *DcimConsolePortsListParams) WithConnectionStatus(connectionStatus *string) *DcimConsolePortsListParams {
+	o.SetConnectionStatus(connectionStatus)
+	return o
+}
+
+// SetConnectionStatus adds the connectionStatus to the dcim console ports list params
+func (o *DcimConsolePortsListParams) SetConnectionStatus(connectionStatus *string) {
+	o.ConnectionStatus = connectionStatus
+}
+
+// WithDescription adds the description to the dcim console ports list params
+func (o *DcimConsolePortsListParams) WithDescription(description *string) *DcimConsolePortsListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the dcim console ports list params
+func (o *DcimConsolePortsListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
 // WithDevice adds the device to the dcim console ports list params
 func (o *DcimConsolePortsListParams) WithDevice(device *string) *DcimConsolePortsListParams {
 	o.SetDevice(device)
@@ -152,6 +196,17 @@ func (o *DcimConsolePortsListParams) WithDeviceID(deviceID *string) *DcimConsole
 // SetDeviceID adds the deviceId to the dcim console ports list params
 func (o *DcimConsolePortsListParams) SetDeviceID(deviceID *string) {
 	o.DeviceID = deviceID
+}
+
+// WithID adds the id to the dcim console ports list params
+func (o *DcimConsolePortsListParams) WithID(id *string) *DcimConsolePortsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim console ports list params
+func (o *DcimConsolePortsListParams) SetID(id *string) {
+	o.ID = id
 }
 
 // WithLimit adds the limit to the dcim console ports list params
@@ -187,6 +242,28 @@ func (o *DcimConsolePortsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim console ports list params
+func (o *DcimConsolePortsListParams) WithQ(q *string) *DcimConsolePortsListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim console ports list params
+func (o *DcimConsolePortsListParams) SetQ(q *string) {
+	o.Q = q
+}
+
+// WithTag adds the tag to the dcim console ports list params
+func (o *DcimConsolePortsListParams) WithTag(tag *string) *DcimConsolePortsListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim console ports list params
+func (o *DcimConsolePortsListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -194,6 +271,54 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
+
+	if o.Cabled != nil {
+
+		// query param cabled
+		var qrCabled string
+		if o.Cabled != nil {
+			qrCabled = *o.Cabled
+		}
+		qCabled := qrCabled
+		if qCabled != "" {
+			if err := r.SetQueryParam("cabled", qCabled); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ConnectionStatus != nil {
+
+		// query param connection_status
+		var qrConnectionStatus string
+		if o.ConnectionStatus != nil {
+			qrConnectionStatus = *o.ConnectionStatus
+		}
+		qConnectionStatus := qrConnectionStatus
+		if qConnectionStatus != "" {
+			if err := r.SetQueryParam("connection_status", qConnectionStatus); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.Device != nil {
 
@@ -221,6 +346,22 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		qDeviceID := qrDeviceID
 		if qDeviceID != "" {
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
@@ -269,6 +410,38 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}

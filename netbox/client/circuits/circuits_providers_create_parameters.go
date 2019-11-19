@@ -20,10 +20,9 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -31,7 +30,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // NewCircuitsProvidersCreateParams creates a new CircuitsProvidersCreateParams object
@@ -79,7 +78,7 @@ for the circuits providers create operation typically these are written to a htt
 type CircuitsProvidersCreateParams struct {
 
 	/*Data*/
-	Data *models.WritableProvider
+	Data *models.Provider
 
 	timeout    time.Duration
 	Context    context.Context
@@ -120,13 +119,13 @@ func (o *CircuitsProvidersCreateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the circuits providers create params
-func (o *CircuitsProvidersCreateParams) WithData(data *models.WritableProvider) *CircuitsProvidersCreateParams {
+func (o *CircuitsProvidersCreateParams) WithData(data *models.Provider) *CircuitsProvidersCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the circuits providers create params
-func (o *CircuitsProvidersCreateParams) SetData(data *models.WritableProvider) {
+func (o *CircuitsProvidersCreateParams) SetData(data *models.Provider) {
 	o.Data = data
 }
 

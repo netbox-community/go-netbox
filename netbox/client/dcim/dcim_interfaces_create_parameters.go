@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -31,7 +30,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // NewDcimInterfacesCreateParams creates a new DcimInterfacesCreateParams object
@@ -79,7 +78,7 @@ for the dcim interfaces create operation typically these are written to a http.R
 type DcimInterfacesCreateParams struct {
 
 	/*Data*/
-	Data *models.WritableInterface
+	Data *models.WritableDeviceInterface
 
 	timeout    time.Duration
 	Context    context.Context
@@ -120,13 +119,13 @@ func (o *DcimInterfacesCreateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the dcim interfaces create params
-func (o *DcimInterfacesCreateParams) WithData(data *models.WritableInterface) *DcimInterfacesCreateParams {
+func (o *DcimInterfacesCreateParams) WithData(data *models.WritableDeviceInterface) *DcimInterfacesCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the dcim interfaces create params
-func (o *DcimInterfacesCreateParams) SetData(data *models.WritableInterface) {
+func (o *DcimInterfacesCreateParams) SetData(data *models.WritableDeviceInterface) {
 	o.Data = data
 }
 

@@ -20,6 +20,8 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"fmt"
+
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -63,8 +65,14 @@ func (a *Client) TenancyChoicesList(params *TenancyChoicesListParams, authInfo r
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyChoicesListOK), nil
-
+	success, ok := result.(*TenancyChoicesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy__choices_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -92,8 +100,14 @@ func (a *Client) TenancyChoicesRead(params *TenancyChoicesReadParams, authInfo r
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyChoicesReadOK), nil
-
+	success, ok := result.(*TenancyChoicesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy__choices_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -121,8 +135,14 @@ func (a *Client) TenancyTenantGroupsCreate(params *TenancyTenantGroupsCreatePara
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantGroupsCreateCreated), nil
-
+	success, ok := result.(*TenancyTenantGroupsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -150,12 +170,18 @@ func (a *Client) TenancyTenantGroupsDelete(params *TenancyTenantGroupsDeletePara
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantGroupsDeleteNoContent), nil
-
+	success, ok := result.(*TenancyTenantGroupsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-TenancyTenantGroupsList tenancy tenant groups list API
+TenancyTenantGroupsList Call to super to allow for caching
 */
 func (a *Client) TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -179,8 +205,14 @@ func (a *Client) TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, 
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantGroupsListOK), nil
-
+	success, ok := result.(*TenancyTenantGroupsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -208,12 +240,18 @@ func (a *Client) TenancyTenantGroupsPartialUpdate(params *TenancyTenantGroupsPar
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantGroupsPartialUpdateOK), nil
-
+	success, ok := result.(*TenancyTenantGroupsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-TenancyTenantGroupsRead tenancy tenant groups read API
+TenancyTenantGroupsRead Call to super to allow for caching
 */
 func (a *Client) TenancyTenantGroupsRead(params *TenancyTenantGroupsReadParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsReadOK, error) {
 	// TODO: Validate the params before sending
@@ -237,8 +275,14 @@ func (a *Client) TenancyTenantGroupsRead(params *TenancyTenantGroupsReadParams, 
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantGroupsReadOK), nil
-
+	success, ok := result.(*TenancyTenantGroupsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -266,8 +310,14 @@ func (a *Client) TenancyTenantGroupsUpdate(params *TenancyTenantGroupsUpdatePara
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantGroupsUpdateOK), nil
-
+	success, ok := result.(*TenancyTenantGroupsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -295,8 +345,14 @@ func (a *Client) TenancyTenantsCreate(params *TenancyTenantsCreateParams, authIn
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantsCreateCreated), nil
-
+	success, ok := result.(*TenancyTenantsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -324,12 +380,18 @@ func (a *Client) TenancyTenantsDelete(params *TenancyTenantsDeleteParams, authIn
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantsDeleteNoContent), nil
-
+	success, ok := result.(*TenancyTenantsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-TenancyTenantsList tenancy tenants list API
+TenancyTenantsList Call to super to allow for caching
 */
 func (a *Client) TenancyTenantsList(params *TenancyTenantsListParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsListOK, error) {
 	// TODO: Validate the params before sending
@@ -353,8 +415,14 @@ func (a *Client) TenancyTenantsList(params *TenancyTenantsListParams, authInfo r
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantsListOK), nil
-
+	success, ok := result.(*TenancyTenantsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -382,12 +450,18 @@ func (a *Client) TenancyTenantsPartialUpdate(params *TenancyTenantsPartialUpdate
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantsPartialUpdateOK), nil
-
+	success, ok := result.(*TenancyTenantsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
-TenancyTenantsRead tenancy tenants read API
+TenancyTenantsRead Call to super to allow for caching
 */
 func (a *Client) TenancyTenantsRead(params *TenancyTenantsReadParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsReadOK, error) {
 	// TODO: Validate the params before sending
@@ -411,8 +485,14 @@ func (a *Client) TenancyTenantsRead(params *TenancyTenantsReadParams, authInfo r
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantsReadOK), nil
-
+	success, ok := result.(*TenancyTenantsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
@@ -440,8 +520,14 @@ func (a *Client) TenancyTenantsUpdate(params *TenancyTenantsUpdateParams, authIn
 	if err != nil {
 		return nil, err
 	}
-	return result.(*TenancyTenantsUpdateOK), nil
-
+	success, ok := result.(*TenancyTenantsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 // SetTransport changes the transport on the client

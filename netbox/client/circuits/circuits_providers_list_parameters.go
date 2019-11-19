@@ -20,10 +20,9 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -80,7 +79,7 @@ type CircuitsProvidersListParams struct {
 	/*Account*/
 	Account *string
 	/*Asn*/
-	Asn *float64
+	Asn *string
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -106,6 +105,8 @@ type CircuitsProvidersListParams struct {
 	SiteID *string
 	/*Slug*/
 	Slug *string
+	/*Tag*/
+	Tag *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -157,13 +158,13 @@ func (o *CircuitsProvidersListParams) SetAccount(account *string) {
 }
 
 // WithAsn adds the asn to the circuits providers list params
-func (o *CircuitsProvidersListParams) WithAsn(asn *float64) *CircuitsProvidersListParams {
+func (o *CircuitsProvidersListParams) WithAsn(asn *string) *CircuitsProvidersListParams {
 	o.SetAsn(asn)
 	return o
 }
 
 // SetAsn adds the asn to the circuits providers list params
-func (o *CircuitsProvidersListParams) SetAsn(asn *float64) {
+func (o *CircuitsProvidersListParams) SetAsn(asn *string) {
 	o.Asn = asn
 }
 
@@ -255,6 +256,17 @@ func (o *CircuitsProvidersListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithTag adds the tag to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithTag(tag *string) *CircuitsProvidersListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -282,11 +294,11 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 	if o.Asn != nil {
 
 		// query param asn
-		var qrAsn float64
+		var qrAsn string
 		if o.Asn != nil {
 			qrAsn = *o.Asn
 		}
-		qAsn := swag.FormatFloat64(qrAsn)
+		qAsn := qrAsn
 		if qAsn != "" {
 			if err := r.SetQueryParam("asn", qAsn); err != nil {
 				return err
@@ -417,6 +429,22 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		qSlug := qrSlug
 		if qSlug != "" {
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}

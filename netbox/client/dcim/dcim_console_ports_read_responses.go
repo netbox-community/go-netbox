@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimConsolePortsReadReader is a Reader for the DcimConsolePortsRead structure.
@@ -38,7 +38,6 @@ type DcimConsolePortsReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimConsolePortsReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimConsolePortsReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type DcimConsolePortsReadOK struct {
 
 func (o *DcimConsolePortsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-ports/{id}/][%d] dcimConsolePortsReadOK  %+v", 200, o.Payload)
+}
+
+func (o *DcimConsolePortsReadOK) GetPayload() *models.ConsolePort {
+	return o.Payload
 }
 
 func (o *DcimConsolePortsReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

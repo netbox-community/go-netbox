@@ -35,7 +35,6 @@ type DcimRackGroupsDeleteReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimRackGroupsDeleteReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 204:
 		result := NewDcimRackGroupsDeleteNoContent()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {

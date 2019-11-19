@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -77,6 +76,8 @@ for the dcim racks list operation typically these are written to a http.Request
 */
 type DcimRacksListParams struct {
 
+	/*AssetTag*/
+	AssetTag *string
 	/*DescUnits*/
 	DescUnits *string
 	/*FacilityID*/
@@ -85,6 +86,8 @@ type DcimRacksListParams struct {
 	Group *string
 	/*GroupID*/
 	GroupID *string
+	/*ID*/
+	ID *string
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -102,6 +105,12 @@ type DcimRacksListParams struct {
 
 	*/
 	Offset *int64
+	/*OuterDepth*/
+	OuterDepth *string
+	/*OuterUnit*/
+	OuterUnit *string
+	/*OuterWidth*/
+	OuterWidth *string
 	/*Q*/
 	Q *string
 	/*Role*/
@@ -114,14 +123,22 @@ type DcimRacksListParams struct {
 	Site *string
 	/*SiteID*/
 	SiteID *string
+	/*Status*/
+	Status *string
+	/*Tag*/
+	Tag *string
 	/*Tenant*/
 	Tenant *string
+	/*TenantGroup*/
+	TenantGroup *string
+	/*TenantGroupID*/
+	TenantGroupID *string
 	/*TenantID*/
 	TenantID *string
 	/*Type*/
 	Type *string
 	/*UHeight*/
-	UHeight *float64
+	UHeight *string
 	/*Width*/
 	Width *string
 
@@ -161,6 +178,17 @@ func (o *DcimRacksListParams) WithHTTPClient(client *http.Client) *DcimRacksList
 // SetHTTPClient adds the HTTPClient to the dcim racks list params
 func (o *DcimRacksListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithAssetTag adds the assetTag to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTag(assetTag *string) *DcimRacksListParams {
+	o.SetAssetTag(assetTag)
+	return o
+}
+
+// SetAssetTag adds the assetTag to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTag(assetTag *string) {
+	o.AssetTag = assetTag
 }
 
 // WithDescUnits adds the descUnits to the dcim racks list params
@@ -207,6 +235,17 @@ func (o *DcimRacksListParams) SetGroupID(groupID *string) {
 	o.GroupID = groupID
 }
 
+// WithID adds the id to the dcim racks list params
+func (o *DcimRacksListParams) WithID(id *string) *DcimRacksListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim racks list params
+func (o *DcimRacksListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithIDIn adds the iDIn to the dcim racks list params
 func (o *DcimRacksListParams) WithIDIn(iDIn *string) *DcimRacksListParams {
 	o.SetIDIn(iDIn)
@@ -249,6 +288,39 @@ func (o *DcimRacksListParams) WithOffset(offset *int64) *DcimRacksListParams {
 // SetOffset adds the offset to the dcim racks list params
 func (o *DcimRacksListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOuterDepth adds the outerDepth to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterDepth(outerDepth *string) *DcimRacksListParams {
+	o.SetOuterDepth(outerDepth)
+	return o
+}
+
+// SetOuterDepth adds the outerDepth to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterDepth(outerDepth *string) {
+	o.OuterDepth = outerDepth
+}
+
+// WithOuterUnit adds the outerUnit to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterUnit(outerUnit *string) *DcimRacksListParams {
+	o.SetOuterUnit(outerUnit)
+	return o
+}
+
+// SetOuterUnit adds the outerUnit to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterUnit(outerUnit *string) {
+	o.OuterUnit = outerUnit
+}
+
+// WithOuterWidth adds the outerWidth to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterWidth(outerWidth *string) *DcimRacksListParams {
+	o.SetOuterWidth(outerWidth)
+	return o
+}
+
+// SetOuterWidth adds the outerWidth to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterWidth(outerWidth *string) {
+	o.OuterWidth = outerWidth
 }
 
 // WithQ adds the q to the dcim racks list params
@@ -317,6 +389,28 @@ func (o *DcimRacksListParams) SetSiteID(siteID *string) {
 	o.SiteID = siteID
 }
 
+// WithStatus adds the status to the dcim racks list params
+func (o *DcimRacksListParams) WithStatus(status *string) *DcimRacksListParams {
+	o.SetStatus(status)
+	return o
+}
+
+// SetStatus adds the status to the dcim racks list params
+func (o *DcimRacksListParams) SetStatus(status *string) {
+	o.Status = status
+}
+
+// WithTag adds the tag to the dcim racks list params
+func (o *DcimRacksListParams) WithTag(tag *string) *DcimRacksListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim racks list params
+func (o *DcimRacksListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WithTenant adds the tenant to the dcim racks list params
 func (o *DcimRacksListParams) WithTenant(tenant *string) *DcimRacksListParams {
 	o.SetTenant(tenant)
@@ -326,6 +420,28 @@ func (o *DcimRacksListParams) WithTenant(tenant *string) *DcimRacksListParams {
 // SetTenant adds the tenant to the dcim racks list params
 func (o *DcimRacksListParams) SetTenant(tenant *string) {
 	o.Tenant = tenant
+}
+
+// WithTenantGroup adds the tenantGroup to the dcim racks list params
+func (o *DcimRacksListParams) WithTenantGroup(tenantGroup *string) *DcimRacksListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the dcim racks list params
+func (o *DcimRacksListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupID adds the tenantGroupID to the dcim racks list params
+func (o *DcimRacksListParams) WithTenantGroupID(tenantGroupID *string) *DcimRacksListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the dcim racks list params
+func (o *DcimRacksListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
 }
 
 // WithTenantID adds the tenantID to the dcim racks list params
@@ -351,13 +467,13 @@ func (o *DcimRacksListParams) SetType(typeVar *string) {
 }
 
 // WithUHeight adds the uHeight to the dcim racks list params
-func (o *DcimRacksListParams) WithUHeight(uHeight *float64) *DcimRacksListParams {
+func (o *DcimRacksListParams) WithUHeight(uHeight *string) *DcimRacksListParams {
 	o.SetUHeight(uHeight)
 	return o
 }
 
 // SetUHeight adds the uHeight to the dcim racks list params
-func (o *DcimRacksListParams) SetUHeight(uHeight *float64) {
+func (o *DcimRacksListParams) SetUHeight(uHeight *string) {
 	o.UHeight = uHeight
 }
 
@@ -379,6 +495,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		return err
 	}
 	var res []error
+
+	if o.AssetTag != nil {
+
+		// query param asset_tag
+		var qrAssetTag string
+		if o.AssetTag != nil {
+			qrAssetTag = *o.AssetTag
+		}
+		qAssetTag := qrAssetTag
+		if qAssetTag != "" {
+			if err := r.SetQueryParam("asset_tag", qAssetTag); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.DescUnits != nil {
 
@@ -444,6 +576,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.IDIn != nil {
 
 		// query param id__in
@@ -502,6 +650,54 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterDepth != nil {
+
+		// query param outer_depth
+		var qrOuterDepth string
+		if o.OuterDepth != nil {
+			qrOuterDepth = *o.OuterDepth
+		}
+		qOuterDepth := qrOuterDepth
+		if qOuterDepth != "" {
+			if err := r.SetQueryParam("outer_depth", qOuterDepth); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterUnit != nil {
+
+		// query param outer_unit
+		var qrOuterUnit string
+		if o.OuterUnit != nil {
+			qrOuterUnit = *o.OuterUnit
+		}
+		qOuterUnit := qrOuterUnit
+		if qOuterUnit != "" {
+			if err := r.SetQueryParam("outer_unit", qOuterUnit); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterWidth != nil {
+
+		// query param outer_width
+		var qrOuterWidth string
+		if o.OuterWidth != nil {
+			qrOuterWidth = *o.OuterWidth
+		}
+		qOuterWidth := qrOuterWidth
+		if qOuterWidth != "" {
+			if err := r.SetQueryParam("outer_width", qOuterWidth); err != nil {
 				return err
 			}
 		}
@@ -604,6 +800,38 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.Status != nil {
+
+		// query param status
+		var qrStatus string
+		if o.Status != nil {
+			qrStatus = *o.Status
+		}
+		qStatus := qrStatus
+		if qStatus != "" {
+			if err := r.SetQueryParam("status", qStatus); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tenant != nil {
 
 		// query param tenant
@@ -614,6 +842,38 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qTenant := qrTenant
 		if qTenant != "" {
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
 				return err
 			}
 		}
@@ -655,11 +915,11 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.UHeight != nil {
 
 		// query param u_height
-		var qrUHeight float64
+		var qrUHeight string
 		if o.UHeight != nil {
 			qrUHeight = *o.UHeight
 		}
-		qUHeight := swag.FormatFloat64(qrUHeight)
+		qUHeight := qrUHeight
 		if qUHeight != "" {
 			if err := r.SetQueryParam("u_height", qUHeight); err != nil {
 				return err

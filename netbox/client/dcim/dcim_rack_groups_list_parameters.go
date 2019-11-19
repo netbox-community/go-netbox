@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -77,6 +76,8 @@ for the dcim rack groups list operation typically these are written to a http.Re
 */
 type DcimRackGroupsListParams struct {
 
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -89,6 +90,8 @@ type DcimRackGroupsListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 	/*Site*/
 	Site *string
 	/*SiteID*/
@@ -134,6 +137,17 @@ func (o *DcimRackGroupsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithID adds the id to the dcim rack groups list params
+func (o *DcimRackGroupsListParams) WithID(id *string) *DcimRackGroupsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim rack groups list params
+func (o *DcimRackGroupsListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithLimit adds the limit to the dcim rack groups list params
 func (o *DcimRackGroupsListParams) WithLimit(limit *int64) *DcimRackGroupsListParams {
 	o.SetLimit(limit)
@@ -165,6 +179,17 @@ func (o *DcimRackGroupsListParams) WithOffset(offset *int64) *DcimRackGroupsList
 // SetOffset adds the offset to the dcim rack groups list params
 func (o *DcimRackGroupsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithQ adds the q to the dcim rack groups list params
+func (o *DcimRackGroupsListParams) WithQ(q *string) *DcimRackGroupsListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim rack groups list params
+func (o *DcimRackGroupsListParams) SetQ(q *string) {
+	o.Q = q
 }
 
 // WithSite adds the site to the dcim rack groups list params
@@ -208,6 +233,22 @@ func (o *DcimRackGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	}
 	var res []error
 
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -250,6 +291,22 @@ func (o *DcimRackGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

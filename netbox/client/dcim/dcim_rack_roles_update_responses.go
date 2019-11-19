@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimRackRolesUpdateReader is a Reader for the DcimRackRolesUpdate structure.
@@ -38,7 +38,6 @@ type DcimRackRolesUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimRackRolesUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimRackRolesUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type DcimRackRolesUpdateOK struct {
 
 func (o *DcimRackRolesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-roles/{id}/][%d] dcimRackRolesUpdateOK  %+v", 200, o.Payload)
+}
+
+func (o *DcimRackRolesUpdateOK) GetPayload() *models.RackRole {
+	return o.Payload
 }
 
 func (o *DcimRackRolesUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

@@ -20,10 +20,9 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -89,6 +88,10 @@ type VirtualizationVirtualMachinesListParams struct {
 	ClusterType *string
 	/*ClusterTypeID*/
 	ClusterTypeID *string
+	/*Disk*/
+	Disk *string
+	/*ID*/
+	ID *string
 	/*IDIn
 	  Multiple values may be separated by commas.
 
@@ -99,6 +102,10 @@ type VirtualizationVirtualMachinesListParams struct {
 
 	*/
 	Limit *int64
+	/*MacAddress*/
+	MacAddress *string
+	/*Memory*/
+	Memory *string
 	/*Name*/
 	Name *string
 	/*Offset
@@ -112,6 +119,10 @@ type VirtualizationVirtualMachinesListParams struct {
 	PlatformID *string
 	/*Q*/
 	Q *string
+	/*Region*/
+	Region *string
+	/*RegionID*/
+	RegionID *string
 	/*Role*/
 	Role *string
 	/*RoleID*/
@@ -122,10 +133,18 @@ type VirtualizationVirtualMachinesListParams struct {
 	SiteID *string
 	/*Status*/
 	Status *string
+	/*Tag*/
+	Tag *string
 	/*Tenant*/
 	Tenant *string
+	/*TenantGroup*/
+	TenantGroup *string
+	/*TenantGroupID*/
+	TenantGroupID *string
 	/*TenantID*/
 	TenantID *string
+	/*Vcpus*/
+	Vcpus *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -231,6 +250,28 @@ func (o *VirtualizationVirtualMachinesListParams) SetClusterTypeID(clusterTypeID
 	o.ClusterTypeID = clusterTypeID
 }
 
+// WithDisk adds the disk to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithDisk(disk *string) *VirtualizationVirtualMachinesListParams {
+	o.SetDisk(disk)
+	return o
+}
+
+// SetDisk adds the disk to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetDisk(disk *string) {
+	o.Disk = disk
+}
+
+// WithID adds the id to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithID(id *string) *VirtualizationVirtualMachinesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithIDIn adds the iDIn to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithIDIn(iDIn *string) *VirtualizationVirtualMachinesListParams {
 	o.SetIDIn(iDIn)
@@ -251,6 +292,28 @@ func (o *VirtualizationVirtualMachinesListParams) WithLimit(limit *int64) *Virtu
 // SetLimit adds the limit to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) SetLimit(limit *int64) {
 	o.Limit = limit
+}
+
+// WithMacAddress adds the macAddress to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithMacAddress(macAddress *string) *VirtualizationVirtualMachinesListParams {
+	o.SetMacAddress(macAddress)
+	return o
+}
+
+// SetMacAddress adds the macAddress to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetMacAddress(macAddress *string) {
+	o.MacAddress = macAddress
+}
+
+// WithMemory adds the memory to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithMemory(memory *string) *VirtualizationVirtualMachinesListParams {
+	o.SetMemory(memory)
+	return o
+}
+
+// SetMemory adds the memory to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetMemory(memory *string) {
+	o.Memory = memory
 }
 
 // WithName adds the name to the virtualization virtual machines list params
@@ -308,6 +371,28 @@ func (o *VirtualizationVirtualMachinesListParams) SetQ(q *string) {
 	o.Q = q
 }
 
+// WithRegion adds the region to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithRegion(region *string) *VirtualizationVirtualMachinesListParams {
+	o.SetRegion(region)
+	return o
+}
+
+// SetRegion adds the region to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetRegion(region *string) {
+	o.Region = region
+}
+
+// WithRegionID adds the regionID to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithRegionID(regionID *string) *VirtualizationVirtualMachinesListParams {
+	o.SetRegionID(regionID)
+	return o
+}
+
+// SetRegionID adds the regionId to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetRegionID(regionID *string) {
+	o.RegionID = regionID
+}
+
 // WithRole adds the role to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithRole(role *string) *VirtualizationVirtualMachinesListParams {
 	o.SetRole(role)
@@ -363,6 +448,17 @@ func (o *VirtualizationVirtualMachinesListParams) SetStatus(status *string) {
 	o.Status = status
 }
 
+// WithTag adds the tag to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithTag(tag *string) *VirtualizationVirtualMachinesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
 // WithTenant adds the tenant to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithTenant(tenant *string) *VirtualizationVirtualMachinesListParams {
 	o.SetTenant(tenant)
@@ -374,6 +470,28 @@ func (o *VirtualizationVirtualMachinesListParams) SetTenant(tenant *string) {
 	o.Tenant = tenant
 }
 
+// WithTenantGroup adds the tenantGroup to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithTenantGroup(tenantGroup *string) *VirtualizationVirtualMachinesListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupID adds the tenantGroupID to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithTenantGroupID(tenantGroupID *string) *VirtualizationVirtualMachinesListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
+}
+
 // WithTenantID adds the tenantID to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithTenantID(tenantID *string) *VirtualizationVirtualMachinesListParams {
 	o.SetTenantID(tenantID)
@@ -383,6 +501,17 @@ func (o *VirtualizationVirtualMachinesListParams) WithTenantID(tenantID *string)
 // SetTenantID adds the tenantId to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) SetTenantID(tenantID *string) {
 	o.TenantID = tenantID
+}
+
+// WithVcpus adds the vcpus to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithVcpus(vcpus *string) *VirtualizationVirtualMachinesListParams {
+	o.SetVcpus(vcpus)
+	return o
+}
+
+// SetVcpus adds the vcpus to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetVcpus(vcpus *string) {
+	o.Vcpus = vcpus
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -489,6 +618,38 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 
 	}
 
+	if o.Disk != nil {
+
+		// query param disk
+		var qrDisk string
+		if o.Disk != nil {
+			qrDisk = *o.Disk
+		}
+		qDisk := qrDisk
+		if qDisk != "" {
+			if err := r.SetQueryParam("disk", qDisk); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.IDIn != nil {
 
 		// query param id__in
@@ -515,6 +676,38 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.MacAddress != nil {
+
+		// query param mac_address
+		var qrMacAddress string
+		if o.MacAddress != nil {
+			qrMacAddress = *o.MacAddress
+		}
+		qMacAddress := qrMacAddress
+		if qMacAddress != "" {
+			if err := r.SetQueryParam("mac_address", qMacAddress); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Memory != nil {
+
+		// query param memory
+		var qrMemory string
+		if o.Memory != nil {
+			qrMemory = *o.Memory
+		}
+		qMemory := qrMemory
+		if qMemory != "" {
+			if err := r.SetQueryParam("memory", qMemory); err != nil {
 				return err
 			}
 		}
@@ -601,6 +794,38 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 
 	}
 
+	if o.Region != nil {
+
+		// query param region
+		var qrRegion string
+		if o.Region != nil {
+			qrRegion = *o.Region
+		}
+		qRegion := qrRegion
+		if qRegion != "" {
+			if err := r.SetQueryParam("region", qRegion); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.RegionID != nil {
+
+		// query param region_id
+		var qrRegionID string
+		if o.RegionID != nil {
+			qrRegionID = *o.RegionID
+		}
+		qRegionID := qrRegionID
+		if qRegionID != "" {
+			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Role != nil {
 
 		// query param role
@@ -681,6 +906,22 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 
 	}
 
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tenant != nil {
 
 		// query param tenant
@@ -697,6 +938,38 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 
 	}
 
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.TenantID != nil {
 
 		// query param tenant_id
@@ -707,6 +980,22 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		qTenantID := qrTenantID
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Vcpus != nil {
+
+		// query param vcpus
+		var qrVcpus string
+		if o.Vcpus != nil {
+			qrVcpus = *o.Vcpus
+		}
+		qVcpus := qrVcpus
+		if qVcpus != "" {
+			if err := r.SetQueryParam("vcpus", qVcpus); err != nil {
 				return err
 			}
 		}

@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimPlatformsReadReader is a Reader for the DcimPlatformsRead structure.
@@ -38,7 +38,6 @@ type DcimPlatformsReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimPlatformsReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimPlatformsReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type DcimPlatformsReadOK struct {
 
 func (o *DcimPlatformsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/platforms/{id}/][%d] dcimPlatformsReadOK  %+v", 200, o.Payload)
+}
+
+func (o *DcimPlatformsReadOK) GetPayload() *models.Platform {
+	return o.Payload
 }
 
 func (o *DcimPlatformsReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

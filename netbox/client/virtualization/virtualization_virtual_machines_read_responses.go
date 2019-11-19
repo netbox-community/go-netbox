@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // VirtualizationVirtualMachinesReadReader is a Reader for the VirtualizationVirtualMachinesRead structure.
@@ -38,7 +38,6 @@ type VirtualizationVirtualMachinesReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *VirtualizationVirtualMachinesReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewVirtualizationVirtualMachinesReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewVirtualizationVirtualMachinesReadOK() *VirtualizationVirtualMachinesRead
 VirtualizationVirtualMachinesReadOK virtualization virtual machines read o k
 */
 type VirtualizationVirtualMachinesReadOK struct {
-	Payload *models.VirtualMachine
+	Payload *models.VirtualMachineWithConfigContext
 }
 
 func (o *VirtualizationVirtualMachinesReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesReadOK  %+v", 200, o.Payload)
 }
 
+func (o *VirtualizationVirtualMachinesReadOK) GetPayload() *models.VirtualMachineWithConfigContext {
+	return o.Payload
+}
+
 func (o *VirtualizationVirtualMachinesReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.VirtualMachine)
+	o.Payload = new(models.VirtualMachineWithConfigContext)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -79,8 +78,8 @@ type DcimInterfaceTemplatesListParams struct {
 
 	/*DevicetypeID*/
 	DevicetypeID *string
-	/*FormFactor*/
-	FormFactor *string
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -95,6 +94,10 @@ type DcimInterfaceTemplatesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
+	/*Type*/
+	Type *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -145,15 +148,15 @@ func (o *DcimInterfaceTemplatesListParams) SetDevicetypeID(devicetypeID *string)
 	o.DevicetypeID = devicetypeID
 }
 
-// WithFormFactor adds the formFactor to the dcim interface templates list params
-func (o *DcimInterfaceTemplatesListParams) WithFormFactor(formFactor *string) *DcimInterfaceTemplatesListParams {
-	o.SetFormFactor(formFactor)
+// WithID adds the id to the dcim interface templates list params
+func (o *DcimInterfaceTemplatesListParams) WithID(id *string) *DcimInterfaceTemplatesListParams {
+	o.SetID(id)
 	return o
 }
 
-// SetFormFactor adds the formFactor to the dcim interface templates list params
-func (o *DcimInterfaceTemplatesListParams) SetFormFactor(formFactor *string) {
-	o.FormFactor = formFactor
+// SetID adds the id to the dcim interface templates list params
+func (o *DcimInterfaceTemplatesListParams) SetID(id *string) {
+	o.ID = id
 }
 
 // WithLimit adds the limit to the dcim interface templates list params
@@ -200,6 +203,28 @@ func (o *DcimInterfaceTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim interface templates list params
+func (o *DcimInterfaceTemplatesListParams) WithQ(q *string) *DcimInterfaceTemplatesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim interface templates list params
+func (o *DcimInterfaceTemplatesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
+// WithType adds the typeVar to the dcim interface templates list params
+func (o *DcimInterfaceTemplatesListParams) WithType(typeVar *string) *DcimInterfaceTemplatesListParams {
+	o.SetType(typeVar)
+	return o
+}
+
+// SetType adds the type to the dcim interface templates list params
+func (o *DcimInterfaceTemplatesListParams) SetType(typeVar *string) {
+	o.Type = typeVar
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimInterfaceTemplatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -224,16 +249,16 @@ func (o *DcimInterfaceTemplatesListParams) WriteToRequest(r runtime.ClientReques
 
 	}
 
-	if o.FormFactor != nil {
+	if o.ID != nil {
 
-		// query param form_factor
-		var qrFormFactor string
-		if o.FormFactor != nil {
-			qrFormFactor = *o.FormFactor
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
 		}
-		qFormFactor := qrFormFactor
-		if qFormFactor != "" {
-			if err := r.SetQueryParam("form_factor", qFormFactor); err != nil {
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
@@ -298,6 +323,38 @@ func (o *DcimInterfaceTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Type != nil {
+
+		// query param type
+		var qrType string
+		if o.Type != nil {
+			qrType = *o.Type
+		}
+		qType := qrType
+		if qType != "" {
+			if err := r.SetQueryParam("type", qType); err != nil {
 				return err
 			}
 		}

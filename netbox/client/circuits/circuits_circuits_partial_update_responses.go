@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // CircuitsCircuitsPartialUpdateReader is a Reader for the CircuitsCircuitsPartialUpdate structure.
@@ -38,7 +38,6 @@ type CircuitsCircuitsPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *CircuitsCircuitsPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewCircuitsCircuitsPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewCircuitsCircuitsPartialUpdateOK() *CircuitsCircuitsPartialUpdateOK {
 CircuitsCircuitsPartialUpdateOK circuits circuits partial update o k
 */
 type CircuitsCircuitsPartialUpdateOK struct {
-	Payload *models.WritableCircuit
+	Payload *models.Circuit
 }
 
 func (o *CircuitsCircuitsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/circuits/{id}/][%d] circuitsCircuitsPartialUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *CircuitsCircuitsPartialUpdateOK) GetPayload() *models.Circuit {
+	return o.Payload
+}
+
 func (o *CircuitsCircuitsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableCircuit)
+	o.Payload = new(models.Circuit)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimInventoryItemsPartialUpdateReader is a Reader for the DcimInventoryItemsPartialUpdate structure.
@@ -38,7 +38,6 @@ type DcimInventoryItemsPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimInventoryItemsPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimInventoryItemsPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimInventoryItemsPartialUpdateOK() *DcimInventoryItemsPartialUpdateOK {
 DcimInventoryItemsPartialUpdateOK dcim inventory items partial update o k
 */
 type DcimInventoryItemsPartialUpdateOK struct {
-	Payload *models.WritableInventoryItem
+	Payload *models.InventoryItem
 }
 
 func (o *DcimInventoryItemsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcimInventoryItemsPartialUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *DcimInventoryItemsPartialUpdateOK) GetPayload() *models.InventoryItem {
+	return o.Payload
+}
+
 func (o *DcimInventoryItemsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableInventoryItem)
+	o.Payload = new(models.InventoryItem)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

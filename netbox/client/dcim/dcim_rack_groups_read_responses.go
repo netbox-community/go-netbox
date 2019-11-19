@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimRackGroupsReadReader is a Reader for the DcimRackGroupsRead structure.
@@ -38,7 +38,6 @@ type DcimRackGroupsReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimRackGroupsReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimRackGroupsReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type DcimRackGroupsReadOK struct {
 
 func (o *DcimRackGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-groups/{id}/][%d] dcimRackGroupsReadOK  %+v", 200, o.Payload)
+}
+
+func (o *DcimRackGroupsReadOK) GetPayload() *models.RackGroup {
+	return o.Payload
 }
 
 func (o *DcimRackGroupsReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

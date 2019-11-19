@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimInterfacesReadReader is a Reader for the DcimInterfacesRead structure.
@@ -38,7 +38,6 @@ type DcimInterfacesReadReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimInterfacesReadReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimInterfacesReadOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimInterfacesReadOK() *DcimInterfacesReadOK {
 DcimInterfacesReadOK dcim interfaces read o k
 */
 type DcimInterfacesReadOK struct {
-	Payload *models.Interface
+	Payload *models.DeviceInterface
 }
 
 func (o *DcimInterfacesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/interfaces/{id}/][%d] dcimInterfacesReadOK  %+v", 200, o.Payload)
 }
 
+func (o *DcimInterfacesReadOK) GetPayload() *models.DeviceInterface {
+	return o.Payload
+}
+
 func (o *DcimInterfacesReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.Interface)
+	o.Payload = new(models.DeviceInterface)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimRegionsCreateReader is a Reader for the DcimRegionsCreate structure.
@@ -38,7 +38,6 @@ type DcimRegionsCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimRegionsCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 201:
 		result := NewDcimRegionsCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimRegionsCreateCreated() *DcimRegionsCreateCreated {
 DcimRegionsCreateCreated dcim regions create created
 */
 type DcimRegionsCreateCreated struct {
-	Payload *models.WritableRegion
+	Payload *models.Region
 }
 
 func (o *DcimRegionsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/regions/][%d] dcimRegionsCreateCreated  %+v", 201, o.Payload)
 }
 
+func (o *DcimRegionsCreateCreated) GetPayload() *models.Region {
+	return o.Payload
+}
+
 func (o *DcimRegionsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableRegion)
+	o.Payload = new(models.Region)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

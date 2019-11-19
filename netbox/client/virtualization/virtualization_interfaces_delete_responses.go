@@ -35,7 +35,6 @@ type VirtualizationInterfacesDeleteReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *VirtualizationInterfacesDeleteReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 204:
 		result := NewVirtualizationInterfacesDeleteNoContent()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {

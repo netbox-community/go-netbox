@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -108,6 +107,10 @@ type DcimRackReservationsListParams struct {
 	SiteID *string
 	/*Tenant*/
 	Tenant *string
+	/*TenantGroup*/
+	TenantGroup *string
+	/*TenantGroupID*/
+	TenantGroupID *string
 	/*TenantID*/
 	TenantID *string
 	/*User*/
@@ -272,6 +275,28 @@ func (o *DcimRackReservationsListParams) WithTenant(tenant *string) *DcimRackRes
 // SetTenant adds the tenant to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) SetTenant(tenant *string) {
 	o.Tenant = tenant
+}
+
+// WithTenantGroup adds the tenantGroup to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithTenantGroup(tenantGroup *string) *DcimRackReservationsListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupID adds the tenantGroupID to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithTenantGroupID(tenantGroupID *string) *DcimRackReservationsListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
 }
 
 // WithTenantID adds the tenantID to the dcim rack reservations list params
@@ -485,6 +510,38 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		qTenant := qrTenant
 		if qTenant != "" {
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
 				return err
 			}
 		}

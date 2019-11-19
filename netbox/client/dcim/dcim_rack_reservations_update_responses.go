@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimRackReservationsUpdateReader is a Reader for the DcimRackReservationsUpdate structure.
@@ -38,7 +38,6 @@ type DcimRackReservationsUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimRackReservationsUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimRackReservationsUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimRackReservationsUpdateOK() *DcimRackReservationsUpdateOK {
 DcimRackReservationsUpdateOK dcim rack reservations update o k
 */
 type DcimRackReservationsUpdateOK struct {
-	Payload *models.WritableRackReservation
+	Payload *models.RackReservation
 }
 
 func (o *DcimRackReservationsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-reservations/{id}/][%d] dcimRackReservationsUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *DcimRackReservationsUpdateOK) GetPayload() *models.RackReservation {
+	return o.Payload
+}
+
 func (o *DcimRackReservationsUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableRackReservation)
+	o.Payload = new(models.RackReservation)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

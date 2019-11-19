@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -77,6 +76,8 @@ for the dcim platforms list operation typically these are written to a http.Requ
 */
 type DcimPlatformsListParams struct {
 
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -88,11 +89,15 @@ type DcimPlatformsListParams struct {
 	ManufacturerID *string
 	/*Name*/
 	Name *string
+	/*NapalmDriver*/
+	NapalmDriver *string
 	/*Offset
 	  The initial index from which to return the results.
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 	/*Slug*/
 	Slug *string
 
@@ -132,6 +137,17 @@ func (o *DcimPlatformsListParams) WithHTTPClient(client *http.Client) *DcimPlatf
 // SetHTTPClient adds the HTTPClient to the dcim platforms list params
 func (o *DcimPlatformsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithID adds the id to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithID(id *string) *DcimPlatformsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetID(id *string) {
+	o.ID = id
 }
 
 // WithLimit adds the limit to the dcim platforms list params
@@ -178,6 +194,17 @@ func (o *DcimPlatformsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNapalmDriver adds the napalmDriver to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithNapalmDriver(napalmDriver *string) *DcimPlatformsListParams {
+	o.SetNapalmDriver(napalmDriver)
+	return o
+}
+
+// SetNapalmDriver adds the napalmDriver to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetNapalmDriver(napalmDriver *string) {
+	o.NapalmDriver = napalmDriver
+}
+
 // WithOffset adds the offset to the dcim platforms list params
 func (o *DcimPlatformsListParams) WithOffset(offset *int64) *DcimPlatformsListParams {
 	o.SetOffset(offset)
@@ -187,6 +214,17 @@ func (o *DcimPlatformsListParams) WithOffset(offset *int64) *DcimPlatformsListPa
 // SetOffset adds the offset to the dcim platforms list params
 func (o *DcimPlatformsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithQ adds the q to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithQ(q *string) *DcimPlatformsListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetQ(q *string) {
+	o.Q = q
 }
 
 // WithSlug adds the slug to the dcim platforms list params
@@ -207,6 +245,22 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		return err
 	}
 	var res []error
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.Limit != nil {
 
@@ -272,6 +326,22 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 
 	}
 
+	if o.NapalmDriver != nil {
+
+		// query param napalm_driver
+		var qrNapalmDriver string
+		if o.NapalmDriver != nil {
+			qrNapalmDriver = *o.NapalmDriver
+		}
+		qNapalmDriver := qrNapalmDriver
+		if qNapalmDriver != "" {
+			if err := r.SetQueryParam("napalm_driver", qNapalmDriver); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -282,6 +352,22 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

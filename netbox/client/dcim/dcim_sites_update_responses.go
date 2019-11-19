@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimSitesUpdateReader is a Reader for the DcimSitesUpdate structure.
@@ -38,7 +38,6 @@ type DcimSitesUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimSitesUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimSitesUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimSitesUpdateOK() *DcimSitesUpdateOK {
 DcimSitesUpdateOK dcim sites update o k
 */
 type DcimSitesUpdateOK struct {
-	Payload *models.WritableSite
+	Payload *models.Site
 }
 
 func (o *DcimSitesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/sites/{id}/][%d] dcimSitesUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *DcimSitesUpdateOK) GetPayload() *models.Site {
+	return o.Payload
+}
+
 func (o *DcimSitesUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableSite)
+	o.Payload = new(models.Site)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

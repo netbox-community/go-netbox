@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // ExtrasImageAttachmentsPartialUpdateReader is a Reader for the ExtrasImageAttachmentsPartialUpdate structure.
@@ -38,7 +38,6 @@ type ExtrasImageAttachmentsPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *ExtrasImageAttachmentsPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewExtrasImageAttachmentsPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewExtrasImageAttachmentsPartialUpdateOK() *ExtrasImageAttachmentsPartialUp
 ExtrasImageAttachmentsPartialUpdateOK extras image attachments partial update o k
 */
 type ExtrasImageAttachmentsPartialUpdateOK struct {
-	Payload *models.WritableImageAttachment
+	Payload *models.ImageAttachment
 }
 
 func (o *ExtrasImageAttachmentsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extrasImageAttachmentsPartialUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *ExtrasImageAttachmentsPartialUpdateOK) GetPayload() *models.ImageAttachment {
+	return o.Payload
+}
+
 func (o *ExtrasImageAttachmentsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableImageAttachment)
+	o.Payload = new(models.ImageAttachment)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

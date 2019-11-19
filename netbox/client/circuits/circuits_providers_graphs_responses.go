@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // CircuitsProvidersGraphsReader is a Reader for the CircuitsProvidersGraphs structure.
@@ -38,7 +38,6 @@ type CircuitsProvidersGraphsReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *CircuitsProvidersGraphsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewCircuitsProvidersGraphsOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -66,6 +65,10 @@ type CircuitsProvidersGraphsOK struct {
 
 func (o *CircuitsProvidersGraphsOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/providers/{id}/graphs/][%d] circuitsProvidersGraphsOK  %+v", 200, o.Payload)
+}
+
+func (o *CircuitsProvidersGraphsOK) GetPayload() *models.Provider {
+	return o.Payload
 }
 
 func (o *CircuitsProvidersGraphsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

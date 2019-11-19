@@ -20,10 +20,9 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"net/http"
 	"time"
-
-	"golang.org/x/net/context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
@@ -79,6 +78,8 @@ type DcimRackRolesListParams struct {
 
 	/*Color*/
 	Color *string
+	/*ID*/
+	ID *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -91,6 +92,8 @@ type DcimRackRolesListParams struct {
 
 	*/
 	Offset *int64
+	/*Q*/
+	Q *string
 	/*Slug*/
 	Slug *string
 
@@ -143,6 +146,17 @@ func (o *DcimRackRolesListParams) SetColor(color *string) {
 	o.Color = color
 }
 
+// WithID adds the id to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithID(id *string) *DcimRackRolesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetID(id *string) {
+	o.ID = id
+}
+
 // WithLimit adds the limit to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithLimit(limit *int64) *DcimRackRolesListParams {
 	o.SetLimit(limit)
@@ -176,6 +190,17 @@ func (o *DcimRackRolesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithQ(q *string) *DcimRackRolesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
 // WithSlug adds the slug to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithSlug(slug *string) *DcimRackRolesListParams {
 	o.SetSlug(slug)
@@ -205,6 +230,22 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		qColor := qrColor
 		if qColor != "" {
 			if err := r.SetQueryParam("color", qColor); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
@@ -253,6 +294,22 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

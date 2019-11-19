@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // SecretsSecretsUpdateReader is a Reader for the SecretsSecretsUpdate structure.
@@ -38,7 +38,6 @@ type SecretsSecretsUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *SecretsSecretsUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewSecretsSecretsUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewSecretsSecretsUpdateOK() *SecretsSecretsUpdateOK {
 SecretsSecretsUpdateOK secrets secrets update o k
 */
 type SecretsSecretsUpdateOK struct {
-	Payload *models.WritableSecret
+	Payload *models.Secret
 }
 
 func (o *SecretsSecretsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /secrets/secrets/{id}/][%d] secretsSecretsUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *SecretsSecretsUpdateOK) GetPayload() *models.Secret {
+	return o.Payload
+}
+
 func (o *SecretsSecretsUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableSecret)
+	o.Payload = new(models.Secret)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

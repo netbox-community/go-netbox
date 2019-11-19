@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/smutel/go-netbox/netbox/models"
 )
 
 // DcimRegionsPartialUpdateReader is a Reader for the DcimRegionsPartialUpdate structure.
@@ -38,7 +38,6 @@ type DcimRegionsPartialUpdateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *DcimRegionsPartialUpdateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-
 	case 200:
 		result := NewDcimRegionsPartialUpdateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -61,16 +60,20 @@ func NewDcimRegionsPartialUpdateOK() *DcimRegionsPartialUpdateOK {
 DcimRegionsPartialUpdateOK dcim regions partial update o k
 */
 type DcimRegionsPartialUpdateOK struct {
-	Payload *models.WritableRegion
+	Payload *models.Region
 }
 
 func (o *DcimRegionsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/regions/{id}/][%d] dcimRegionsPartialUpdateOK  %+v", 200, o.Payload)
 }
 
+func (o *DcimRegionsPartialUpdateOK) GetPayload() *models.Region {
+	return o.Payload
+}
+
 func (o *DcimRegionsPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.WritableRegion)
+	o.Payload = new(models.Region)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
