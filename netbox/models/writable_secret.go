@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -33,7 +35,11 @@ type WritableSecret struct {
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Device
 	// Required: true
@@ -41,6 +47,7 @@ type WritableSecret struct {
 
 	// Hash
 	// Read Only: true
+	// Min Length: 1
 	Hash string `json:"hash,omitempty"`
 
 	// ID
@@ -49,6 +56,7 @@ type WritableSecret struct {
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
@@ -57,34 +65,50 @@ type WritableSecret struct {
 
 	// Plaintext
 	// Required: true
+	// Min Length: 1
 	Plaintext *string `json:"plaintext"`
 
 	// Role
 	// Required: true
 	Role *int64 `json:"role"`
+
+	// tags
+	Tags []string `json:"tags"`
 }
 
 // Validate validates this writable secret
 func (m *WritableSecret) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDevice(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateHash(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePlaintext(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateRole(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -94,9 +118,48 @@ func (m *WritableSecret) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableSecret) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableSecret) validateDevice(formats strfmt.Registry) error {
 
 	if err := validate.Required("device", "body", m.Device); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSecret) validateHash(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Hash) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("hash", "body", string(m.Hash), 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSecret) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -122,6 +185,10 @@ func (m *WritableSecret) validatePlaintext(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("plaintext", "body", string(*m.Plaintext), 1); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -129,6 +196,23 @@ func (m *WritableSecret) validateRole(formats strfmt.Registry) error {
 
 	if err := validate.Required("role", "body", m.Role); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSecret) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

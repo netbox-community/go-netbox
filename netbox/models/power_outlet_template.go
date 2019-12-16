@@ -35,6 +35,9 @@ type PowerOutletTemplate struct {
 	// Required: true
 	DeviceType *NestedDeviceType `json:"device_type"`
 
+	// feed leg
+	FeedLeg *PowerOutletTemplateFeedLeg `json:"feed_leg,omitempty"`
+
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
@@ -42,7 +45,11 @@ type PowerOutletTemplate struct {
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
+
+	// power port
+	PowerPort *PowerPortTemplate `json:"power_port,omitempty"`
 }
 
 // Validate validates this power outlet template
@@ -50,12 +57,18 @@ func (m *PowerOutletTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateDeviceType(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateFeedLeg(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validatePowerPort(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -72,10 +85,27 @@ func (m *PowerOutletTemplate) validateDeviceType(formats strfmt.Registry) error 
 	}
 
 	if m.DeviceType != nil {
-
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *PowerOutletTemplate) validateFeedLeg(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.FeedLeg) { // not required
+		return nil
+	}
+
+	if m.FeedLeg != nil {
+		if err := m.FeedLeg.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("feed_leg")
 			}
 			return err
 		}
@@ -90,8 +120,30 @@ func (m *PowerOutletTemplate) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *PowerOutletTemplate) validatePowerPort(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.PowerPort) { // not required
+		return nil
+	}
+
+	if m.PowerPort != nil {
+		if err := m.PowerPort.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("power_port")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -108,6 +160,73 @@ func (m *PowerOutletTemplate) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *PowerOutletTemplate) UnmarshalBinary(b []byte) error {
 	var res PowerOutletTemplate
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// PowerOutletTemplateFeedLeg Feed leg
+// swagger:model PowerOutletTemplateFeedLeg
+type PowerOutletTemplateFeedLeg struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *int64 `json:"value"`
+}
+
+// Validate validates this power outlet template feed leg
+func (m *PowerOutletTemplateFeedLeg) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PowerOutletTemplateFeedLeg) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("feed_leg"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PowerOutletTemplateFeedLeg) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("feed_leg"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *PowerOutletTemplateFeedLeg) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *PowerOutletTemplateFeedLeg) UnmarshalBinary(b []byte) error {
+	var res PowerOutletTemplateFeedLeg
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

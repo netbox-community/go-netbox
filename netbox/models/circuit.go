@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -34,6 +36,7 @@ type Circuit struct {
 	// Circuit ID
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Cid *string `json:"cid"`
 
 	// Comments
@@ -46,6 +49,7 @@ type Circuit struct {
 
 	// Created
 	// Read Only: true
+	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
@@ -60,10 +64,12 @@ type Circuit struct {
 	ID int64 `json:"id,omitempty"`
 
 	// Date installed
-	InstallDate strfmt.Date `json:"install_date,omitempty"`
+	// Format: date
+	InstallDate *strfmt.Date `json:"install_date,omitempty"`
 
 	// Last updated
 	// Read Only: true
+	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// provider
@@ -71,12 +77,13 @@ type Circuit struct {
 	Provider *NestedProvider `json:"provider"`
 
 	// status
-	// Required: true
-	Status *CircuitStatus `json:"status"`
+	Status *CircuitStatus `json:"status,omitempty"`
+
+	// tags
+	Tags []string `json:"tags"`
 
 	// tenant
-	// Required: true
-	Tenant *NestedTenant `json:"tenant"`
+	Tenant *NestedTenant `json:"tenant,omitempty"`
 
 	// type
 	// Required: true
@@ -88,37 +95,46 @@ func (m *Circuit) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCid(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateCommitRate(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateDescription(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateInstallDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateProvider(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateStatus(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateTenant(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateType(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -131,6 +147,10 @@ func (m *Circuit) Validate(formats strfmt.Registry) error {
 func (m *Circuit) validateCid(formats strfmt.Registry) error {
 
 	if err := validate.Required("cid", "body", m.Cid); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("cid", "body", string(*m.Cid), 1); err != nil {
 		return err
 	}
 
@@ -158,6 +178,19 @@ func (m *Circuit) validateCommitRate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Circuit) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Circuit) validateDescription(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Description) { // not required
@@ -171,6 +204,32 @@ func (m *Circuit) validateDescription(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Circuit) validateInstallDate(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.InstallDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("install_date", "body", "date", m.InstallDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Circuit) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Circuit) validateProvider(formats strfmt.Registry) error {
 
 	if err := validate.Required("provider", "body", m.Provider); err != nil {
@@ -178,7 +237,6 @@ func (m *Circuit) validateProvider(formats strfmt.Registry) error {
 	}
 
 	if m.Provider != nil {
-
 		if err := m.Provider.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider")
@@ -192,12 +250,11 @@ func (m *Circuit) validateProvider(formats strfmt.Registry) error {
 
 func (m *Circuit) validateStatus(formats strfmt.Registry) error {
 
-	if err := validate.Required("status", "body", m.Status); err != nil {
-		return err
+	if swag.IsZero(m.Status) { // not required
+		return nil
 	}
 
 	if m.Status != nil {
-
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
@@ -209,14 +266,30 @@ func (m *Circuit) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Circuit) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
+	}
+
+	return nil
+}
+
 func (m *Circuit) validateTenant(formats strfmt.Registry) error {
 
-	if err := validate.Required("tenant", "body", m.Tenant); err != nil {
-		return err
+	if swag.IsZero(m.Tenant) { // not required
+		return nil
 	}
 
 	if m.Tenant != nil {
-
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
@@ -235,7 +308,6 @@ func (m *Circuit) validateType(formats strfmt.Registry) error {
 	}
 
 	if m.Type != nil {
-
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
@@ -258,6 +330,73 @@ func (m *Circuit) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Circuit) UnmarshalBinary(b []byte) error {
 	var res Circuit
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// CircuitStatus Status
+// swagger:model CircuitStatus
+type CircuitStatus struct {
+
+	// label
+	// Required: true
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	Value *int64 `json:"value"`
+}
+
+// Validate validates this circuit status
+func (m *CircuitStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *CircuitStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CircuitStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *CircuitStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *CircuitStatus) UnmarshalBinary(b []byte) error {
+	var res CircuitStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

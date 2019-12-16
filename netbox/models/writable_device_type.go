@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
 
@@ -36,35 +37,35 @@ type WritableDeviceType struct {
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Device count
+	// Read Only: true
+	DeviceCount int64 `json:"device_count,omitempty"`
+
+	// Display name
+	// Read Only: true
+	DisplayName string `json:"display_name,omitempty"`
 
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
-
-	// Interface ordering
-	InterfaceOrdering int64 `json:"interface_ordering,omitempty"`
-
-	// Is a console server
-	//
-	// This type of device has console server ports
-	IsConsoleServer bool `json:"is_console_server,omitempty"`
 
 	// Is full depth
 	//
 	// Device consumes both front and rear rack faces
 	IsFullDepth bool `json:"is_full_depth,omitempty"`
 
-	// Is a network device
-	//
-	// This type of device has network interfaces
-	IsNetworkDevice bool `json:"is_network_device,omitempty"`
-
-	// Is a PDU
-	//
-	// This type of device has power outlets
-	IsPdu bool `json:"is_pdu,omitempty"`
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Manufacturer
 	// Required: true
@@ -73,6 +74,7 @@ type WritableDeviceType struct {
 	// Model
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Model *string `json:"model"`
 
 	// Part number
@@ -84,13 +86,18 @@ type WritableDeviceType struct {
 	// Slug
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 
 	// Parent/child status
 	//
 	// Parent devices house child devices in device bays. Select "None" if this device type is neither a parent nor a child.
-	SubdeviceRole *bool `json:"subdevice_role,omitempty"`
+	// Enum: [<nil> true false]
+	SubdeviceRole bool `json:"subdevice_role,omitempty"`
+
+	// tags
+	Tags []string `json:"tags"`
 
 	// Height (U)
 	// Maximum: 32767
@@ -102,38 +109,39 @@ type WritableDeviceType struct {
 func (m *WritableDeviceType) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateInterfaceOrdering(formats); err != nil {
-		// prop
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateManufacturer(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateModel(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePartNumber(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSlug(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSubdeviceRole(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateUHeight(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -143,34 +151,26 @@ func (m *WritableDeviceType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var writableDeviceTypeTypeInterfaceOrderingPropEnum []interface{}
+func (m *WritableDeviceType) validateCreated(formats strfmt.Registry) error {
 
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		writableDeviceTypeTypeInterfaceOrderingPropEnum = append(writableDeviceTypeTypeInterfaceOrderingPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *WritableDeviceType) validateInterfaceOrderingEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, writableDeviceTypeTypeInterfaceOrderingPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *WritableDeviceType) validateInterfaceOrdering(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.InterfaceOrdering) { // not required
+	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	// value enum
-	if err := m.validateInterfaceOrderingEnum("interface_ordering", "body", m.InterfaceOrdering); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceType) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -189,6 +189,10 @@ func (m *WritableDeviceType) validateManufacturer(formats strfmt.Registry) error
 func (m *WritableDeviceType) validateModel(formats strfmt.Registry) error {
 
 	if err := validate.Required("model", "body", m.Model); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("model", "body", string(*m.Model), 1); err != nil {
 		return err
 	}
 
@@ -215,6 +219,10 @@ func (m *WritableDeviceType) validatePartNumber(formats strfmt.Registry) error {
 func (m *WritableDeviceType) validateSlug(formats strfmt.Registry) error {
 
 	if err := validate.Required("slug", "body", m.Slug); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
 		return err
 	}
 
@@ -256,8 +264,25 @@ func (m *WritableDeviceType) validateSubdeviceRole(formats strfmt.Registry) erro
 	}
 
 	// value enum
-	if err := m.validateSubdeviceRoleEnum("subdevice_role", "body", *m.SubdeviceRole); err != nil {
+	if err := m.validateSubdeviceRoleEnum("subdevice_role", "body", m.SubdeviceRole); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceType) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

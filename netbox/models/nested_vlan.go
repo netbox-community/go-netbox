@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedVLAN Vlan
+// NestedVLAN Untagged vlan
 // swagger:model NestedVLAN
 type NestedVLAN struct {
 
@@ -42,10 +42,12 @@ type NestedVLAN struct {
 	// Name
 	// Required: true
 	// Max Length: 64
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// Url
 	// Read Only: true
+	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
 
 	// ID
@@ -60,12 +62,14 @@ func (m *NestedVLAN) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateVid(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
@@ -81,7 +85,24 @@ func (m *NestedVLAN) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *NestedVLAN) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

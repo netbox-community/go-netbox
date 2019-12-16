@@ -34,6 +34,7 @@ type NestedCircuit struct {
 	// Circuit ID
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Cid *string `json:"cid"`
 
 	// ID
@@ -42,6 +43,7 @@ type NestedCircuit struct {
 
 	// Url
 	// Read Only: true
+	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
 }
 
@@ -50,7 +52,10 @@ func (m *NestedCircuit) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCid(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -66,7 +71,24 @@ func (m *NestedCircuit) validateCid(formats strfmt.Registry) error {
 		return err
 	}
 
+	if err := validate.MinLength("cid", "body", string(*m.Cid), 1); err != nil {
+		return err
+	}
+
 	if err := validate.MaxLength("cid", "body", string(*m.Cid), 50); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *NestedCircuit) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

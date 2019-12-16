@@ -20,6 +20,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -35,7 +37,7 @@ type InventoryItem struct {
 	//
 	// A unique tag used to identify this item
 	// Max Length: 50
-	AssetTag string `json:"asset_tag,omitempty"`
+	AssetTag *string `json:"asset_tag,omitempty"`
 
 	// Description
 	// Max Length: 100
@@ -53,17 +55,16 @@ type InventoryItem struct {
 	ID int64 `json:"id,omitempty"`
 
 	// manufacturer
-	// Required: true
-	Manufacturer *NestedManufacturer `json:"manufacturer"`
+	Manufacturer *NestedManufacturer `json:"manufacturer,omitempty"`
 
 	// Name
 	// Required: true
 	// Max Length: 50
+	// Min Length: 1
 	Name *string `json:"name"`
 
 	// Parent
-	// Required: true
-	Parent *int64 `json:"parent"`
+	Parent *int64 `json:"parent,omitempty"`
 
 	// Part ID
 	// Max Length: 50
@@ -72,6 +73,9 @@ type InventoryItem struct {
 	// Serial number
 	// Max Length: 50
 	Serial string `json:"serial,omitempty"`
+
+	// tags
+	Tags []string `json:"tags"`
 }
 
 // Validate validates this inventory item
@@ -79,42 +83,34 @@ func (m *InventoryItem) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAssetTag(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDescription(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateDevice(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateManufacturer(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		// prop
-		res = append(res, err)
-	}
-
-	if err := m.validateParent(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validatePartID(formats); err != nil {
-		// prop
 		res = append(res, err)
 	}
 
 	if err := m.validateSerial(formats); err != nil {
-		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -130,7 +126,7 @@ func (m *InventoryItem) validateAssetTag(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("asset_tag", "body", string(m.AssetTag), 50); err != nil {
+	if err := validate.MaxLength("asset_tag", "body", string(*m.AssetTag), 50); err != nil {
 		return err
 	}
 
@@ -157,7 +153,6 @@ func (m *InventoryItem) validateDevice(formats strfmt.Registry) error {
 	}
 
 	if m.Device != nil {
-
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
@@ -171,12 +166,11 @@ func (m *InventoryItem) validateDevice(formats strfmt.Registry) error {
 
 func (m *InventoryItem) validateManufacturer(formats strfmt.Registry) error {
 
-	if err := validate.Required("manufacturer", "body", m.Manufacturer); err != nil {
-		return err
+	if swag.IsZero(m.Manufacturer) { // not required
+		return nil
 	}
 
 	if m.Manufacturer != nil {
-
 		if err := m.Manufacturer.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
@@ -194,16 +188,11 @@ func (m *InventoryItem) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
 		return err
 	}
 
-	return nil
-}
-
-func (m *InventoryItem) validateParent(formats strfmt.Registry) error {
-
-	if err := validate.Required("parent", "body", m.Parent); err != nil {
+	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
 		return err
 	}
 
@@ -231,6 +220,23 @@ func (m *InventoryItem) validateSerial(formats strfmt.Registry) error {
 
 	if err := validate.MaxLength("serial", "body", string(m.Serial), 50); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *InventoryItem) validateTags(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
+			return err
+		}
+
 	}
 
 	return nil
