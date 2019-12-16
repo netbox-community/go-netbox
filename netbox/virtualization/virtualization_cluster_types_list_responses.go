@@ -31,7 +31,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/netbox-community/go-netbox/netbox/models"
 )
 
 // VirtualizationClusterTypesListReader is a Reader for the VirtualizationClusterTypesList structure.

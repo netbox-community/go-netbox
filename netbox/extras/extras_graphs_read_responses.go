@@ -27,7 +27,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/digitalocean/go-netbox/netbox/models"
+	models "github.com/netbox-community/go-netbox/netbox/models"
 )
 
 // ExtrasGraphsReadReader is a Reader for the ExtrasGraphsRead structure.
