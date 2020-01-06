@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"reflect"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -146,6 +147,11 @@ type WritableDeviceWithConfigContext struct {
 
 	// Virtual chassis
 	VirtualChassis *int64 `json:"virtual_chassis,omitempty"`
+}
+
+// IsEmpty check struct is empty
+func (m *WritableDeviceWithConfigContext) IsEmpty() bool {
+	return reflect.DeepEqual(*m, WritableDeviceWithConfigContext{})
 }
 
 // Validate validates this writable device with config context

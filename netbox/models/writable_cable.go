@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"reflect"
 
 	strfmt "github.com/go-openapi/strfmt"
 
@@ -90,6 +91,11 @@ type WritableCable struct {
 	// Type
 	// Enum: [1300 1500 1510 1600 1610 1700 1800 1810 3000 3010 3020 3030 3040 3500 3510 3520 3800 5000]
 	Type *int64 `json:"type,omitempty"`
+}
+
+// IsEmpty check struct is empty
+func (m *WritableCable) IsEmpty() bool {
+	return reflect.DeepEqual(*m, WritableCable{})
 }
 
 // Validate validates this writable cable

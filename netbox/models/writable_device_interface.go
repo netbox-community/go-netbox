@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"reflect"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -115,6 +116,11 @@ type WritableDeviceInterface struct {
 
 	// Untagged VLAN
 	UntaggedVlan *int64 `json:"untagged_vlan,omitempty"`
+}
+
+// IsEmpty check struct is empty
+func (m *WritableDeviceInterface) IsEmpty() bool {
+	return reflect.DeepEqual(*m, WritableDeviceInterface{})
 }
 
 // Validate validates this writable device interface

@@ -21,6 +21,7 @@ package models
 
 import (
 	"encoding/json"
+	"reflect"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -104,6 +105,11 @@ type WritableIPAddress struct {
 
 	// VRF
 	Vrf *int64 `json:"vrf,omitempty"`
+}
+
+// IsEmpty check struct is empty
+func (m *WritableIPAddress) IsEmpty() bool {
+	return reflect.DeepEqual(*m, WritableIPAddress{})
 }
 
 // Validate validates this writable IP address
