@@ -21,8 +21,10 @@ package secrets
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
+	models "github.com/netbox-community/go-netbox/netbox/models"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -58,6 +60,7 @@ func NewSecretsChoicesListOK() *SecretsChoicesListOK {
 SecretsChoicesListOK secrets choices list o k
 */
 type SecretsChoicesListOK struct {
+	Payload *map[string][]models.CommonChoice
 }
 
 func (o *SecretsChoicesListOK) Error() string {
@@ -65,6 +68,13 @@ func (o *SecretsChoicesListOK) Error() string {
 }
 
 func (o *SecretsChoicesListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	p := make(map[string][]models.CommonChoice)
+	o.Payload = &p
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

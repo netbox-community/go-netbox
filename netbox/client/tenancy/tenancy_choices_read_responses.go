@@ -21,10 +21,12 @@ package tenancy
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+	models "github.com/netbox-community/go-netbox/netbox/models"
 )
 
 // TenancyChoicesReadReader is a Reader for the TenancyChoicesRead structure.
@@ -58,6 +60,7 @@ func NewTenancyChoicesReadOK() *TenancyChoicesReadOK {
 TenancyChoicesReadOK tenancy choices read o k
 */
 type TenancyChoicesReadOK struct {
+	Payload *[]models.CommonChoice
 }
 
 func (o *TenancyChoicesReadOK) Error() string {
@@ -65,6 +68,13 @@ func (o *TenancyChoicesReadOK) Error() string {
 }
 
 func (o *TenancyChoicesReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	var p []models.CommonChoice
+	o.Payload = &p
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

@@ -21,10 +21,12 @@ package extras
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+	models "github.com/netbox-community/go-netbox/netbox/models"
 )
 
 // ExtrasChoicesReadReader is a Reader for the ExtrasChoicesRead structure.
@@ -58,6 +60,7 @@ func NewExtrasChoicesReadOK() *ExtrasChoicesReadOK {
 ExtrasChoicesReadOK extras choices read o k
 */
 type ExtrasChoicesReadOK struct {
+	Payload *[]*models.CommonChoice
 }
 
 func (o *ExtrasChoicesReadOK) Error() string {
@@ -65,6 +68,13 @@ func (o *ExtrasChoicesReadOK) Error() string {
 }
 
 func (o *ExtrasChoicesReadOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	var p []*models.CommonChoice
+	o.Payload = &p
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

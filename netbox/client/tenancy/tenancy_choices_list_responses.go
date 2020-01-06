@@ -21,8 +21,10 @@ package tenancy
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
+	models "github.com/netbox-community/go-netbox/netbox/models"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -58,6 +60,7 @@ func NewTenancyChoicesListOK() *TenancyChoicesListOK {
 TenancyChoicesListOK tenancy choices list o k
 */
 type TenancyChoicesListOK struct {
+	Payload *map[string][]models.CommonChoice
 }
 
 func (o *TenancyChoicesListOK) Error() string {
@@ -65,6 +68,13 @@ func (o *TenancyChoicesListOK) Error() string {
 }
 
 func (o *TenancyChoicesListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	p := make(map[string][]models.CommonChoice)
+	o.Payload = &p
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

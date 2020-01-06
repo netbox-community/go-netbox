@@ -21,10 +21,12 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 
 	strfmt "github.com/go-openapi/strfmt"
+	models "github.com/netbox-community/go-netbox/netbox/models"
 )
 
 // DcimChoicesListReader is a Reader for the DcimChoicesList structure.
@@ -58,6 +60,7 @@ func NewDcimChoicesListOK() *DcimChoicesListOK {
 DcimChoicesListOK dcim choices list o k
 */
 type DcimChoicesListOK struct {
+	Payload *map[string][]models.CommonChoice
 }
 
 func (o *DcimChoicesListOK) Error() string {
@@ -65,6 +68,13 @@ func (o *DcimChoicesListOK) Error() string {
 }
 
 func (o *DcimChoicesListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+	p := make(map[string][]models.CommonChoice)
+	o.Payload = &p
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

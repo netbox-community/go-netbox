@@ -85,7 +85,7 @@ type DcimInterfacesListParams struct {
 	/*Device*/
 	Device *string
 	/*DeviceID*/
-	DeviceID *float64
+	DeviceID *int64
 	/*Enabled*/
 	Enabled *string
 	/*ID*/
@@ -208,13 +208,13 @@ func (o *DcimInterfacesListParams) SetDevice(device *string) {
 }
 
 // WithDeviceID adds the deviceID to the dcim interfaces list params
-func (o *DcimInterfacesListParams) WithDeviceID(deviceID *float64) *DcimInterfacesListParams {
+func (o *DcimInterfacesListParams) WithDeviceID(deviceID *int64) *DcimInterfacesListParams {
 	o.SetDeviceID(deviceID)
 	return o
 }
 
 // SetDeviceID adds the deviceId to the dcim interfaces list params
-func (o *DcimInterfacesListParams) SetDeviceID(deviceID *float64) {
+func (o *DcimInterfacesListParams) SetDeviceID(deviceID *int64) {
 	o.DeviceID = deviceID
 }
 
@@ -469,11 +469,11 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.DeviceID != nil {
 
 		// query param device_id
-		var qrDeviceID float64
+		var qrDeviceID int64
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
-		qDeviceID := swag.FormatFloat64(qrDeviceID)
+		qDeviceID := swag.FormatInt64(qrDeviceID)
 		if qDeviceID != "" {
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
