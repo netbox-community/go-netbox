@@ -1,4 +1,6 @@
-netbox [![GoDoc](http://godoc.org/github.com/netbox-community/go-netbox?status.svg)](http://godoc.org/github.com/netbox-community/go-netbox) [![Build Status](https://travis-ci.org/netbox-community/go-netbox.svg?branch=master)](https://travis-ci.org/netbox-community/go-netbox) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
+netbox 
+
+[![GoDoc](http://godoc.org/github.com/netbox-community/go-netbox?status.svg)](http://godoc.org/github.com/netbox-community/go-netbox) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
 ======
 
 Package `netbox` provides an API 2.0 client for [netbox-community's NetBox](https://github.com/netbox-community/netbox)
