@@ -24514,7 +24514,7 @@
               "type": "string"
             },
             "value": {
-              "type": "string"
+              "type": "integer"
             }
           },
           "readOnly": true
