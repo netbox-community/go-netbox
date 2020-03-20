@@ -28,7 +28,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	models "github.com/netbox-community/go-netbox/netbox/models"
 )
 
 // DcimSitesCreateReader is a Reader for the DcimSitesCreate structure.

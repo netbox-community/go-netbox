@@ -21,10 +21,10 @@ package client
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"
 
-	"github.com/go-openapi/runtime"
-	"github.com/go-openapi/strfmt"
+	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/netbox-community/go-netbox/netbox/client/circuits"
 	"github.com/netbox-community/go-netbox/netbox/client/dcim"
@@ -77,13 +77,21 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *NetBox {
 
 	cli := new(NetBox)
 	cli.Transport = transport
+
 	cli.Circuits = circuits.New(transport, formats)
+
 	cli.Dcim = dcim.New(transport, formats)
+
 	cli.Extras = extras.New(transport, formats)
+
 	cli.Ipam = ipam.New(transport, formats)
+
 	cli.Secrets = secrets.New(transport, formats)
+
 	cli.Tenancy = tenancy.New(transport, formats)
+
 	cli.Virtualization = virtualization.New(transport, formats)
+
 	return cli
 }
 
@@ -128,19 +136,19 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // NetBox is a client for net box
 type NetBox struct {
-	Circuits circuits.ClientService
+	Circuits *circuits.Client
 
-	Dcim dcim.ClientService
+	Dcim *dcim.Client
 
-	Extras extras.ClientService
+	Extras *extras.Client
 
-	Ipam ipam.ClientService
+	Ipam *ipam.Client
 
-	Secrets secrets.ClientService
+	Secrets *secrets.Client
 
-	Tenancy tenancy.ClientService
+	Tenancy *tenancy.Client
 
-	Virtualization virtualization.ClientService
+	Virtualization *virtualization.Client
 
 	Transport runtime.ClientTransport
 }
@@ -148,11 +156,19 @@ type NetBox struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *NetBox) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
+
 	c.Circuits.SetTransport(transport)
+
 	c.Dcim.SetTransport(transport)
+
 	c.Extras.SetTransport(transport)
+
 	c.Ipam.SetTransport(transport)
+
 	c.Secrets.SetTransport(transport)
+
 	c.Tenancy.SetTransport(transport)
+
 	c.Virtualization.SetTransport(transport)
+
 }

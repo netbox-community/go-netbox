@@ -30,6 +30,14 @@ can pass `nil`:
     c.Dcim.DcimDeviceTypesCreate(createRequest, nil)
 ```
 
+Go Module support
+================
+
+Go 1.13+
+
+`go get github.com/netbox-community/go-netbox`
+
+
 More complex client configuration
 =================================
 

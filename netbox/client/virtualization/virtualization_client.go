@@ -24,11 +24,12 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-	"github.com/go-openapi/strfmt"
+
+	strfmt "github.com/go-openapi/strfmt"
 )
 
 // New creates a new virtualization API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -40,77 +41,8 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-// ClientService is the interface for Client methods
-type ClientService interface {
-	VirtualizationChoicesList(params *VirtualizationChoicesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationChoicesListOK, error)
-
-	VirtualizationChoicesRead(params *VirtualizationChoicesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationChoicesReadOK, error)
-
-	VirtualizationClusterGroupsCreate(params *VirtualizationClusterGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsCreateCreated, error)
-
-	VirtualizationClusterGroupsDelete(params *VirtualizationClusterGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsDeleteNoContent, error)
-
-	VirtualizationClusterGroupsList(params *VirtualizationClusterGroupsListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsListOK, error)
-
-	VirtualizationClusterGroupsPartialUpdate(params *VirtualizationClusterGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsPartialUpdateOK, error)
-
-	VirtualizationClusterGroupsRead(params *VirtualizationClusterGroupsReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsReadOK, error)
-
-	VirtualizationClusterGroupsUpdate(params *VirtualizationClusterGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsUpdateOK, error)
-
-	VirtualizationClusterTypesCreate(params *VirtualizationClusterTypesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesCreateCreated, error)
-
-	VirtualizationClusterTypesDelete(params *VirtualizationClusterTypesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesDeleteNoContent, error)
-
-	VirtualizationClusterTypesList(params *VirtualizationClusterTypesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesListOK, error)
-
-	VirtualizationClusterTypesPartialUpdate(params *VirtualizationClusterTypesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesPartialUpdateOK, error)
-
-	VirtualizationClusterTypesRead(params *VirtualizationClusterTypesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesReadOK, error)
-
-	VirtualizationClusterTypesUpdate(params *VirtualizationClusterTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesUpdateOK, error)
-
-	VirtualizationClustersCreate(params *VirtualizationClustersCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersCreateCreated, error)
-
-	VirtualizationClustersDelete(params *VirtualizationClustersDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersDeleteNoContent, error)
-
-	VirtualizationClustersList(params *VirtualizationClustersListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersListOK, error)
-
-	VirtualizationClustersPartialUpdate(params *VirtualizationClustersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersPartialUpdateOK, error)
-
-	VirtualizationClustersRead(params *VirtualizationClustersReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersReadOK, error)
-
-	VirtualizationClustersUpdate(params *VirtualizationClustersUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersUpdateOK, error)
-
-	VirtualizationInterfacesCreate(params *VirtualizationInterfacesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesCreateCreated, error)
-
-	VirtualizationInterfacesDelete(params *VirtualizationInterfacesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesDeleteNoContent, error)
-
-	VirtualizationInterfacesList(params *VirtualizationInterfacesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesListOK, error)
-
-	VirtualizationInterfacesPartialUpdate(params *VirtualizationInterfacesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesPartialUpdateOK, error)
-
-	VirtualizationInterfacesRead(params *VirtualizationInterfacesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesReadOK, error)
-
-	VirtualizationInterfacesUpdate(params *VirtualizationInterfacesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesUpdateOK, error)
-
-	VirtualizationVirtualMachinesCreate(params *VirtualizationVirtualMachinesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesCreateCreated, error)
-
-	VirtualizationVirtualMachinesDelete(params *VirtualizationVirtualMachinesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesDeleteNoContent, error)
-
-	VirtualizationVirtualMachinesList(params *VirtualizationVirtualMachinesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesListOK, error)
-
-	VirtualizationVirtualMachinesPartialUpdate(params *VirtualizationVirtualMachinesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesPartialUpdateOK, error)
-
-	VirtualizationVirtualMachinesRead(params *VirtualizationVirtualMachinesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesReadOK, error)
-
-	VirtualizationVirtualMachinesUpdate(params *VirtualizationVirtualMachinesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesUpdateOK, error)
-
-	SetTransport(transport runtime.ClientTransport)
-}
-
 /*
-  VirtualizationChoicesList virtualization choices list API
+VirtualizationChoicesList virtualization choices list API
 */
 func (a *Client) VirtualizationChoicesList(params *VirtualizationChoicesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationChoicesListOK, error) {
 	// TODO: Validate the params before sending
@@ -145,7 +77,7 @@ func (a *Client) VirtualizationChoicesList(params *VirtualizationChoicesListPara
 }
 
 /*
-  VirtualizationChoicesRead virtualization choices read API
+VirtualizationChoicesRead virtualization choices read API
 */
 func (a *Client) VirtualizationChoicesRead(params *VirtualizationChoicesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationChoicesReadOK, error) {
 	// TODO: Validate the params before sending
@@ -180,7 +112,7 @@ func (a *Client) VirtualizationChoicesRead(params *VirtualizationChoicesReadPara
 }
 
 /*
-  VirtualizationClusterGroupsCreate virtualization cluster groups create API
+VirtualizationClusterGroupsCreate virtualization cluster groups create API
 */
 func (a *Client) VirtualizationClusterGroupsCreate(params *VirtualizationClusterGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -215,7 +147,7 @@ func (a *Client) VirtualizationClusterGroupsCreate(params *VirtualizationCluster
 }
 
 /*
-  VirtualizationClusterGroupsDelete virtualization cluster groups delete API
+VirtualizationClusterGroupsDelete virtualization cluster groups delete API
 */
 func (a *Client) VirtualizationClusterGroupsDelete(params *VirtualizationClusterGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -250,7 +182,7 @@ func (a *Client) VirtualizationClusterGroupsDelete(params *VirtualizationCluster
 }
 
 /*
-  VirtualizationClusterGroupsList Call to super to allow for caching
+VirtualizationClusterGroupsList Call to super to allow for caching
 */
 func (a *Client) VirtualizationClusterGroupsList(params *VirtualizationClusterGroupsListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -285,7 +217,7 @@ func (a *Client) VirtualizationClusterGroupsList(params *VirtualizationClusterGr
 }
 
 /*
-  VirtualizationClusterGroupsPartialUpdate virtualization cluster groups partial update API
+VirtualizationClusterGroupsPartialUpdate virtualization cluster groups partial update API
 */
 func (a *Client) VirtualizationClusterGroupsPartialUpdate(params *VirtualizationClusterGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -320,7 +252,7 @@ func (a *Client) VirtualizationClusterGroupsPartialUpdate(params *Virtualization
 }
 
 /*
-  VirtualizationClusterGroupsRead Call to super to allow for caching
+VirtualizationClusterGroupsRead Call to super to allow for caching
 */
 func (a *Client) VirtualizationClusterGroupsRead(params *VirtualizationClusterGroupsReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsReadOK, error) {
 	// TODO: Validate the params before sending
@@ -355,7 +287,7 @@ func (a *Client) VirtualizationClusterGroupsRead(params *VirtualizationClusterGr
 }
 
 /*
-  VirtualizationClusterGroupsUpdate virtualization cluster groups update API
+VirtualizationClusterGroupsUpdate virtualization cluster groups update API
 */
 func (a *Client) VirtualizationClusterGroupsUpdate(params *VirtualizationClusterGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -390,7 +322,7 @@ func (a *Client) VirtualizationClusterGroupsUpdate(params *VirtualizationCluster
 }
 
 /*
-  VirtualizationClusterTypesCreate virtualization cluster types create API
+VirtualizationClusterTypesCreate virtualization cluster types create API
 */
 func (a *Client) VirtualizationClusterTypesCreate(params *VirtualizationClusterTypesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -425,7 +357,7 @@ func (a *Client) VirtualizationClusterTypesCreate(params *VirtualizationClusterT
 }
 
 /*
-  VirtualizationClusterTypesDelete virtualization cluster types delete API
+VirtualizationClusterTypesDelete virtualization cluster types delete API
 */
 func (a *Client) VirtualizationClusterTypesDelete(params *VirtualizationClusterTypesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -460,7 +392,7 @@ func (a *Client) VirtualizationClusterTypesDelete(params *VirtualizationClusterT
 }
 
 /*
-  VirtualizationClusterTypesList Call to super to allow for caching
+VirtualizationClusterTypesList Call to super to allow for caching
 */
 func (a *Client) VirtualizationClusterTypesList(params *VirtualizationClusterTypesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesListOK, error) {
 	// TODO: Validate the params before sending
@@ -495,7 +427,7 @@ func (a *Client) VirtualizationClusterTypesList(params *VirtualizationClusterTyp
 }
 
 /*
-  VirtualizationClusterTypesPartialUpdate virtualization cluster types partial update API
+VirtualizationClusterTypesPartialUpdate virtualization cluster types partial update API
 */
 func (a *Client) VirtualizationClusterTypesPartialUpdate(params *VirtualizationClusterTypesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -530,7 +462,7 @@ func (a *Client) VirtualizationClusterTypesPartialUpdate(params *VirtualizationC
 }
 
 /*
-  VirtualizationClusterTypesRead Call to super to allow for caching
+VirtualizationClusterTypesRead Call to super to allow for caching
 */
 func (a *Client) VirtualizationClusterTypesRead(params *VirtualizationClusterTypesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesReadOK, error) {
 	// TODO: Validate the params before sending
@@ -565,7 +497,7 @@ func (a *Client) VirtualizationClusterTypesRead(params *VirtualizationClusterTyp
 }
 
 /*
-  VirtualizationClusterTypesUpdate virtualization cluster types update API
+VirtualizationClusterTypesUpdate virtualization cluster types update API
 */
 func (a *Client) VirtualizationClusterTypesUpdate(params *VirtualizationClusterTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -600,7 +532,7 @@ func (a *Client) VirtualizationClusterTypesUpdate(params *VirtualizationClusterT
 }
 
 /*
-  VirtualizationClustersCreate virtualization clusters create API
+VirtualizationClustersCreate virtualization clusters create API
 */
 func (a *Client) VirtualizationClustersCreate(params *VirtualizationClustersCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -635,7 +567,7 @@ func (a *Client) VirtualizationClustersCreate(params *VirtualizationClustersCrea
 }
 
 /*
-  VirtualizationClustersDelete virtualization clusters delete API
+VirtualizationClustersDelete virtualization clusters delete API
 */
 func (a *Client) VirtualizationClustersDelete(params *VirtualizationClustersDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -670,7 +602,7 @@ func (a *Client) VirtualizationClustersDelete(params *VirtualizationClustersDele
 }
 
 /*
-  VirtualizationClustersList Call to super to allow for caching
+VirtualizationClustersList Call to super to allow for caching
 */
 func (a *Client) VirtualizationClustersList(params *VirtualizationClustersListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersListOK, error) {
 	// TODO: Validate the params before sending
@@ -705,7 +637,7 @@ func (a *Client) VirtualizationClustersList(params *VirtualizationClustersListPa
 }
 
 /*
-  VirtualizationClustersPartialUpdate virtualization clusters partial update API
+VirtualizationClustersPartialUpdate virtualization clusters partial update API
 */
 func (a *Client) VirtualizationClustersPartialUpdate(params *VirtualizationClustersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -740,7 +672,7 @@ func (a *Client) VirtualizationClustersPartialUpdate(params *VirtualizationClust
 }
 
 /*
-  VirtualizationClustersRead Call to super to allow for caching
+VirtualizationClustersRead Call to super to allow for caching
 */
 func (a *Client) VirtualizationClustersRead(params *VirtualizationClustersReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersReadOK, error) {
 	// TODO: Validate the params before sending
@@ -775,7 +707,7 @@ func (a *Client) VirtualizationClustersRead(params *VirtualizationClustersReadPa
 }
 
 /*
-  VirtualizationClustersUpdate virtualization clusters update API
+VirtualizationClustersUpdate virtualization clusters update API
 */
 func (a *Client) VirtualizationClustersUpdate(params *VirtualizationClustersUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -810,7 +742,7 @@ func (a *Client) VirtualizationClustersUpdate(params *VirtualizationClustersUpda
 }
 
 /*
-  VirtualizationInterfacesCreate virtualization interfaces create API
+VirtualizationInterfacesCreate virtualization interfaces create API
 */
 func (a *Client) VirtualizationInterfacesCreate(params *VirtualizationInterfacesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -845,7 +777,7 @@ func (a *Client) VirtualizationInterfacesCreate(params *VirtualizationInterfaces
 }
 
 /*
-  VirtualizationInterfacesDelete virtualization interfaces delete API
+VirtualizationInterfacesDelete virtualization interfaces delete API
 */
 func (a *Client) VirtualizationInterfacesDelete(params *VirtualizationInterfacesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -880,7 +812,7 @@ func (a *Client) VirtualizationInterfacesDelete(params *VirtualizationInterfaces
 }
 
 /*
-  VirtualizationInterfacesList Call to super to allow for caching
+VirtualizationInterfacesList Call to super to allow for caching
 */
 func (a *Client) VirtualizationInterfacesList(params *VirtualizationInterfacesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesListOK, error) {
 	// TODO: Validate the params before sending
@@ -915,7 +847,7 @@ func (a *Client) VirtualizationInterfacesList(params *VirtualizationInterfacesLi
 }
 
 /*
-  VirtualizationInterfacesPartialUpdate virtualization interfaces partial update API
+VirtualizationInterfacesPartialUpdate virtualization interfaces partial update API
 */
 func (a *Client) VirtualizationInterfacesPartialUpdate(params *VirtualizationInterfacesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -950,7 +882,7 @@ func (a *Client) VirtualizationInterfacesPartialUpdate(params *VirtualizationInt
 }
 
 /*
-  VirtualizationInterfacesRead Call to super to allow for caching
+VirtualizationInterfacesRead Call to super to allow for caching
 */
 func (a *Client) VirtualizationInterfacesRead(params *VirtualizationInterfacesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesReadOK, error) {
 	// TODO: Validate the params before sending
@@ -985,7 +917,7 @@ func (a *Client) VirtualizationInterfacesRead(params *VirtualizationInterfacesRe
 }
 
 /*
-  VirtualizationInterfacesUpdate virtualization interfaces update API
+VirtualizationInterfacesUpdate virtualization interfaces update API
 */
 func (a *Client) VirtualizationInterfacesUpdate(params *VirtualizationInterfacesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -1020,7 +952,7 @@ func (a *Client) VirtualizationInterfacesUpdate(params *VirtualizationInterfaces
 }
 
 /*
-  VirtualizationVirtualMachinesCreate virtualization virtual machines create API
+VirtualizationVirtualMachinesCreate virtualization virtual machines create API
 */
 func (a *Client) VirtualizationVirtualMachinesCreate(params *VirtualizationVirtualMachinesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -1055,7 +987,7 @@ func (a *Client) VirtualizationVirtualMachinesCreate(params *VirtualizationVirtu
 }
 
 /*
-  VirtualizationVirtualMachinesDelete virtualization virtual machines delete API
+VirtualizationVirtualMachinesDelete virtualization virtual machines delete API
 */
 func (a *Client) VirtualizationVirtualMachinesDelete(params *VirtualizationVirtualMachinesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -1090,7 +1022,7 @@ func (a *Client) VirtualizationVirtualMachinesDelete(params *VirtualizationVirtu
 }
 
 /*
-  VirtualizationVirtualMachinesList Call to super to allow for caching
+VirtualizationVirtualMachinesList Call to super to allow for caching
 */
 func (a *Client) VirtualizationVirtualMachinesList(params *VirtualizationVirtualMachinesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesListOK, error) {
 	// TODO: Validate the params before sending
@@ -1125,7 +1057,7 @@ func (a *Client) VirtualizationVirtualMachinesList(params *VirtualizationVirtual
 }
 
 /*
-  VirtualizationVirtualMachinesPartialUpdate virtualization virtual machines partial update API
+VirtualizationVirtualMachinesPartialUpdate virtualization virtual machines partial update API
 */
 func (a *Client) VirtualizationVirtualMachinesPartialUpdate(params *VirtualizationVirtualMachinesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -1160,7 +1092,7 @@ func (a *Client) VirtualizationVirtualMachinesPartialUpdate(params *Virtualizati
 }
 
 /*
-  VirtualizationVirtualMachinesRead Call to super to allow for caching
+VirtualizationVirtualMachinesRead Call to super to allow for caching
 */
 func (a *Client) VirtualizationVirtualMachinesRead(params *VirtualizationVirtualMachinesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesReadOK, error) {
 	// TODO: Validate the params before sending
@@ -1195,7 +1127,7 @@ func (a *Client) VirtualizationVirtualMachinesRead(params *VirtualizationVirtual
 }
 
 /*
-  VirtualizationVirtualMachinesUpdate virtualization virtual machines update API
+VirtualizationVirtualMachinesUpdate virtualization virtual machines update API
 */
 func (a *Client) VirtualizationVirtualMachinesUpdate(params *VirtualizationVirtualMachinesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesUpdateOK, error) {
 	// TODO: Validate the params before sending
