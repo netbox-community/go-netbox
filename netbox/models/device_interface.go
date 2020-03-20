@@ -23,8 +23,9 @@ package models
 import (
 	"strconv"
 
-	"github.com/go-openapi/errors"
 	strfmt "github.com/go-openapi/strfmt"
+
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -53,7 +54,7 @@ type DeviceInterface struct {
 
 	// Count ipaddresses
 	// Read Only: true
-	CountIpaddresses string `json:"count_ipaddresses,omitempty"`
+	CountIpaddresses int64 `json:"count_ipaddresses,omitempty"`
 
 	// Description
 	// Max Length: 100

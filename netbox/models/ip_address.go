@@ -23,8 +23,9 @@ package models
 import (
 	"strconv"
 
-	"github.com/go-openapi/errors"
 	strfmt "github.com/go-openapi/strfmt"
+
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -415,7 +416,7 @@ type IPAddressFamily struct {
 
 	// value
 	// Required: true
-	Value *string `json:"value"`
+	Value *int64 `json:"value"`
 }
 
 // Validate validates this IP address family

@@ -27,11 +27,9 @@
       "in": "header"
     }
   },
-  "security": [
-    {
-      "Bearer": []
-    }
-  ],
+  "security": [{
+    "Bearer": []
+  }],
   "paths": {
     "/circuits/_choices/": {
       "get": {
@@ -63,21 +61,18 @@
           "circuits"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/circuits/circuit-terminations/": {
       "get": {
         "operationId": "circuits_circuit-terminations_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "term_side",
             "in": "query",
             "description": "",
@@ -188,16 +183,14 @@
       "post": {
         "operationId": "circuits_circuit-terminations_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCircuitTermination"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCircuitTermination"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -232,16 +225,14 @@
       "put": {
         "operationId": "circuits_circuit-terminations_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCircuitTermination"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCircuitTermination"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -257,16 +248,14 @@
       "patch": {
         "operationId": "circuits_circuit-terminations_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCircuitTermination"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCircuitTermination"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -292,22 +281,19 @@
           "circuits"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this circuit termination.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this circuit termination.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/circuits/circuit-types/": {
       "get": {
         "operationId": "circuits_circuit-types_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -390,16 +376,14 @@
       "post": {
         "operationId": "circuits_circuit-types_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/CircuitType"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/CircuitType"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -434,16 +418,14 @@
       "put": {
         "operationId": "circuits_circuit-types_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/CircuitType"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/CircuitType"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -459,16 +441,14 @@
       "patch": {
         "operationId": "circuits_circuit-types_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/CircuitType"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/CircuitType"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -494,22 +474,19 @@
           "circuits"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this circuit type.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this circuit type.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/circuits/circuits/": {
       "get": {
         "operationId": "circuits_circuits_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "cid",
             "in": "query",
             "description": "",
@@ -739,16 +716,14 @@
       "post": {
         "operationId": "circuits_circuits_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCircuit"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCircuit"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -783,16 +758,14 @@
       "put": {
         "operationId": "circuits_circuits_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCircuit"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCircuit"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -808,16 +781,14 @@
       "patch": {
         "operationId": "circuits_circuits_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCircuit"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCircuit"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -843,22 +814,19 @@
           "circuits"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this circuit.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this circuit.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/circuits/providers/": {
       "get": {
         "operationId": "circuits_providers_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -1032,16 +1000,14 @@
       "post": {
         "operationId": "circuits_providers_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Provider"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Provider"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -1076,16 +1042,14 @@
       "put": {
         "operationId": "circuits_providers_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Provider"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Provider"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -1101,16 +1065,14 @@
       "patch": {
         "operationId": "circuits_providers_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Provider"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Provider"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -1136,15 +1098,13 @@
           "circuits"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this provider.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this provider.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/circuits/providers/{id}/graphs/": {
       "get": {
@@ -1163,15 +1123,13 @@
           "circuits"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this provider.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this provider.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/_choices/": {
       "get": {
@@ -1203,21 +1161,18 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/dcim/cables/": {
       "get": {
         "operationId": "dcim_cables_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -1384,16 +1339,14 @@
       "post": {
         "operationId": "dcim_cables_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCable"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCable"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -1428,16 +1381,14 @@
       "put": {
         "operationId": "dcim_cables_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCable"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCable"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -1453,16 +1404,14 @@
       "patch": {
         "operationId": "dcim_cables_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCable"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCable"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -1488,22 +1437,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this cable.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this cable.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/connected-device/": {
       "get": {
         "operationId": "dcim_connected-device_list",
         "description": "This endpoint allows a user to determine what device (if any) is connected to a given peer device and peer\ninterface. This is useful in a situation where a device boots with no configuration, but can detect its neighbors\nvia a protocol such as LLDP. Two query parameters must be included in the request:\n\n* `peer_device`: The name of the peer device\n* `peer_interface`: The name of the peer interface",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "peer_device",
             "in": "query",
             "description": "The name of the peer device",
@@ -1536,8 +1482,7 @@
       "get": {
         "operationId": "dcim_console-connections_list",
         "description": "",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -1630,8 +1575,7 @@
       "get": {
         "operationId": "dcim_console-port-templates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -1721,16 +1665,14 @@
       "post": {
         "operationId": "dcim_console-port-templates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsolePortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsolePortTemplate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -1765,16 +1707,14 @@
       "put": {
         "operationId": "dcim_console-port-templates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsolePortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsolePortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -1790,16 +1730,14 @@
       "patch": {
         "operationId": "dcim_console-port-templates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsolePortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsolePortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -1825,22 +1763,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this console port template.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this console port template.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/console-ports/": {
       "get": {
         "operationId": "dcim_console-ports_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -1993,16 +1928,14 @@
       "post": {
         "operationId": "dcim_console-ports_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsolePort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsolePort"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -2037,16 +1970,14 @@
       "put": {
         "operationId": "dcim_console-ports_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsolePort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsolePort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -2062,16 +1993,14 @@
       "patch": {
         "operationId": "dcim_console-ports_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsolePort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsolePort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -2097,15 +2026,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this console port.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this console port.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/console-ports/{id}/trace/": {
       "get": {
@@ -2124,22 +2051,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this console port.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this console port.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/console-server-port-templates/": {
       "get": {
         "operationId": "dcim_console-server-port-templates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -2229,16 +2153,14 @@
       "post": {
         "operationId": "dcim_console-server-port-templates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsoleServerPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsoleServerPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -2273,16 +2195,14 @@
       "put": {
         "operationId": "dcim_console-server-port-templates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsoleServerPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsoleServerPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -2298,16 +2218,14 @@
       "patch": {
         "operationId": "dcim_console-server-port-templates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsoleServerPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsoleServerPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -2333,22 +2251,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this console server port template.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this console server port template.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/console-server-ports/": {
       "get": {
         "operationId": "dcim_console-server-ports_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -2501,16 +2416,14 @@
       "post": {
         "operationId": "dcim_console-server-ports_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsoleServerPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsoleServerPort"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -2545,16 +2458,14 @@
       "put": {
         "operationId": "dcim_console-server-ports_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsoleServerPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsoleServerPort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -2570,16 +2481,14 @@
       "patch": {
         "operationId": "dcim_console-server-ports_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConsoleServerPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConsoleServerPort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -2605,15 +2514,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this console server port.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this console server port.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/console-server-ports/{id}/trace/": {
       "get": {
@@ -2632,22 +2539,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this console server port.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this console server port.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/device-bay-templates/": {
       "get": {
         "operationId": "dcim_device-bay-templates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -2730,16 +2634,14 @@
       "post": {
         "operationId": "dcim_device-bay-templates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceBayTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceBayTemplate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -2774,16 +2676,14 @@
       "put": {
         "operationId": "dcim_device-bay-templates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceBayTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceBayTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -2799,16 +2699,14 @@
       "patch": {
         "operationId": "dcim_device-bay-templates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceBayTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceBayTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -2834,22 +2732,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this device bay template.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this device bay template.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/device-bays/": {
       "get": {
         "operationId": "dcim_device-bays_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -2981,16 +2876,14 @@
       "post": {
         "operationId": "dcim_device-bays_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceBay"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceBay"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -3025,16 +2918,14 @@
       "put": {
         "operationId": "dcim_device-bays_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceBay"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceBay"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -3050,16 +2941,14 @@
       "patch": {
         "operationId": "dcim_device-bays_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceBay"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceBay"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -3085,22 +2974,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this device bay.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this device bay.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/device-roles/": {
       "get": {
         "operationId": "dcim_device-roles_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -3197,16 +3083,14 @@
       "post": {
         "operationId": "dcim_device-roles_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/DeviceRole"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/DeviceRole"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -3241,16 +3125,14 @@
       "put": {
         "operationId": "dcim_device-roles_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/DeviceRole"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/DeviceRole"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -3266,16 +3148,14 @@
       "patch": {
         "operationId": "dcim_device-roles_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/DeviceRole"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/DeviceRole"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -3301,22 +3181,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this device role.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this device role.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/device-types/": {
       "get": {
         "operationId": "dcim_device-types_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "model",
             "in": "query",
             "description": "",
@@ -3539,16 +3416,14 @@
       "post": {
         "operationId": "dcim_device-types_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceType"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceType"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -3583,16 +3458,14 @@
       "put": {
         "operationId": "dcim_device-types_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceType"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceType"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -3608,16 +3481,14 @@
       "patch": {
         "operationId": "dcim_device-types_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceType"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceType"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -3643,22 +3514,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this device type.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this device type.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/devices/": {
       "get": {
         "operationId": "dcim_devices_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -4063,16 +3931,14 @@
       "post": {
         "operationId": "dcim_devices_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceWithConfigContext"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceWithConfigContext"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -4107,16 +3973,14 @@
       "put": {
         "operationId": "dcim_devices_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceWithConfigContext"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceWithConfigContext"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -4132,16 +3996,14 @@
       "patch": {
         "operationId": "dcim_devices_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceWithConfigContext"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceWithConfigContext"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -4167,15 +4029,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this device.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this device.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/devices/{id}/graphs/": {
       "get": {
@@ -4194,28 +4054,24 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this device.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this device.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/devices/{id}/napalm/": {
       "get": {
         "operationId": "dcim_devices_napalm",
         "description": "Execute a NAPALM method on a Device",
-        "parameters": [
-          {
-            "name": "method",
-            "in": "query",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "name": "method",
+          "in": "query",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -4228,22 +4084,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this device.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this device.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/front-port-templates/": {
       "get": {
         "operationId": "dcim_front-port-templates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -4333,16 +4186,14 @@
       "post": {
         "operationId": "dcim_front-port-templates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableFrontPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableFrontPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -4377,16 +4228,14 @@
       "put": {
         "operationId": "dcim_front-port-templates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableFrontPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableFrontPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -4402,16 +4251,14 @@
       "patch": {
         "operationId": "dcim_front-port-templates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableFrontPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableFrontPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -4437,22 +4284,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this front port template.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this front port template.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/front-ports/": {
       "get": {
         "operationId": "dcim_front-ports_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -4598,16 +4442,14 @@
       "post": {
         "operationId": "dcim_front-ports_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableFrontPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableFrontPort"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -4642,16 +4484,14 @@
       "put": {
         "operationId": "dcim_front-ports_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableFrontPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableFrontPort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -4667,16 +4507,14 @@
       "patch": {
         "operationId": "dcim_front-ports_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableFrontPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableFrontPort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -4702,22 +4540,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this front port.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this front port.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/interface-connections/": {
       "get": {
         "operationId": "dcim_interface-connections_list",
         "description": "",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "connection_status",
             "in": "query",
             "description": "",
@@ -4803,8 +4638,7 @@
       "get": {
         "operationId": "dcim_interface-templates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -4901,16 +4735,14 @@
       "post": {
         "operationId": "dcim_interface-templates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableInterfaceTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableInterfaceTemplate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -4945,16 +4777,14 @@
       "put": {
         "operationId": "dcim_interface-templates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableInterfaceTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableInterfaceTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -4970,16 +4800,14 @@
       "patch": {
         "operationId": "dcim_interface-templates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableInterfaceTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableInterfaceTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -5005,22 +4833,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this interface template.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this interface template.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/interfaces/": {
       "get": {
         "operationId": "dcim_interfaces_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -5236,16 +5061,14 @@
       "post": {
         "operationId": "dcim_interfaces_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceInterface"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceInterface"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -5280,16 +5103,14 @@
       "put": {
         "operationId": "dcim_interfaces_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceInterface"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceInterface"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -5305,16 +5126,14 @@
       "patch": {
         "operationId": "dcim_interfaces_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableDeviceInterface"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableDeviceInterface"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -5340,15 +5159,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this interface.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this interface.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/interfaces/{id}/graphs/": {
       "get": {
@@ -5367,15 +5184,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this interface.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this interface.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/interfaces/{id}/trace/": {
       "get": {
@@ -5394,22 +5209,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this interface.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this interface.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/inventory-items/": {
       "get": {
         "operationId": "dcim_inventory-items_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -5583,16 +5395,14 @@
       "post": {
         "operationId": "dcim_inventory-items_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableInventoryItem"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableInventoryItem"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -5627,16 +5437,14 @@
       "put": {
         "operationId": "dcim_inventory-items_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableInventoryItem"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableInventoryItem"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -5652,16 +5460,14 @@
       "patch": {
         "operationId": "dcim_inventory-items_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableInventoryItem"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableInventoryItem"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -5687,22 +5493,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this inventory item.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this inventory item.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/manufacturers/": {
       "get": {
         "operationId": "dcim_manufacturers_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -5785,16 +5588,14 @@
       "post": {
         "operationId": "dcim_manufacturers_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Manufacturer"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Manufacturer"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -5829,16 +5630,14 @@
       "put": {
         "operationId": "dcim_manufacturers_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Manufacturer"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Manufacturer"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -5854,16 +5653,14 @@
       "patch": {
         "operationId": "dcim_manufacturers_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Manufacturer"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Manufacturer"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -5889,22 +5686,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this manufacturer.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this manufacturer.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/platforms/": {
       "get": {
         "operationId": "dcim_platforms_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -6008,16 +5802,14 @@
       "post": {
         "operationId": "dcim_platforms_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePlatform"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePlatform"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -6052,16 +5844,14 @@
       "put": {
         "operationId": "dcim_platforms_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePlatform"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePlatform"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -6077,16 +5867,14 @@
       "patch": {
         "operationId": "dcim_platforms_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePlatform"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePlatform"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -6112,22 +5900,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this platform.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this platform.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/power-connections/": {
       "get": {
         "operationId": "dcim_power-connections_list",
         "description": "",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -6220,8 +6005,7 @@
       "get": {
         "operationId": "dcim_power-feeds_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -6437,16 +6221,14 @@
       "post": {
         "operationId": "dcim_power-feeds_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerFeed"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerFeed"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -6481,16 +6263,14 @@
       "put": {
         "operationId": "dcim_power-feeds_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerFeed"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerFeed"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -6506,16 +6286,14 @@
       "patch": {
         "operationId": "dcim_power-feeds_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerFeed"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerFeed"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -6541,22 +6319,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this power feed.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this power feed.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/power-outlet-templates/": {
       "get": {
         "operationId": "dcim_power-outlet-templates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -6653,16 +6428,14 @@
       "post": {
         "operationId": "dcim_power-outlet-templates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerOutletTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerOutletTemplate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -6697,16 +6470,14 @@
       "put": {
         "operationId": "dcim_power-outlet-templates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerOutletTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerOutletTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -6722,16 +6493,14 @@
       "patch": {
         "operationId": "dcim_power-outlet-templates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerOutletTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerOutletTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -6757,22 +6526,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this power outlet template.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this power outlet template.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/power-outlets/": {
       "get": {
         "operationId": "dcim_power-outlets_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -6932,16 +6698,14 @@
       "post": {
         "operationId": "dcim_power-outlets_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerOutlet"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerOutlet"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -6976,16 +6740,14 @@
       "put": {
         "operationId": "dcim_power-outlets_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerOutlet"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerOutlet"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -7001,16 +6763,14 @@
       "patch": {
         "operationId": "dcim_power-outlets_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerOutlet"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerOutlet"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -7036,15 +6796,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this power outlet.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this power outlet.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/power-outlets/{id}/trace/": {
       "get": {
@@ -7063,22 +6821,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this power outlet.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this power outlet.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/power-panels/": {
       "get": {
         "operationId": "dcim_power-panels_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -7189,16 +6944,14 @@
       "post": {
         "operationId": "dcim_power-panels_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerPanel"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerPanel"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -7233,16 +6986,14 @@
       "put": {
         "operationId": "dcim_power-panels_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerPanel"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerPanel"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -7258,16 +7009,14 @@
       "patch": {
         "operationId": "dcim_power-panels_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerPanel"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerPanel"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -7293,22 +7042,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this power panel.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this power panel.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/power-port-templates/": {
       "get": {
         "operationId": "dcim_power-port-templates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -7412,16 +7158,14 @@
       "post": {
         "operationId": "dcim_power-port-templates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -7456,16 +7200,14 @@
       "put": {
         "operationId": "dcim_power-port-templates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -7481,16 +7223,14 @@
       "patch": {
         "operationId": "dcim_power-port-templates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -7516,22 +7256,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this power port template.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this power port template.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/power-ports/": {
       "get": {
         "operationId": "dcim_power-ports_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -7698,16 +7435,14 @@
       "post": {
         "operationId": "dcim_power-ports_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerPort"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -7742,16 +7477,14 @@
       "put": {
         "operationId": "dcim_power-ports_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerPort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -7767,16 +7500,14 @@
       "patch": {
         "operationId": "dcim_power-ports_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePowerPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePowerPort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -7802,15 +7533,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this power port.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this power port.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/power-ports/{id}/trace/": {
       "get": {
@@ -7829,22 +7558,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this power port.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this power port.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/rack-groups/": {
       "get": {
         "operationId": "dcim_rack-groups_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -7955,16 +7681,14 @@
       "post": {
         "operationId": "dcim_rack-groups_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRackGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRackGroup"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -7999,16 +7723,14 @@
       "put": {
         "operationId": "dcim_rack-groups_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRackGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRackGroup"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -8024,16 +7746,14 @@
       "patch": {
         "operationId": "dcim_rack-groups_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRackGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRackGroup"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -8059,22 +7779,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this rack group.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this rack group.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/rack-reservations/": {
       "get": {
         "operationId": "dcim_rack-reservations_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "created",
             "in": "query",
             "description": "",
@@ -8227,16 +7944,14 @@
       "post": {
         "operationId": "dcim_rack-reservations_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRackReservation"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRackReservation"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -8271,16 +7986,14 @@
       "put": {
         "operationId": "dcim_rack-reservations_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRackReservation"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRackReservation"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -8296,16 +8009,14 @@
       "patch": {
         "operationId": "dcim_rack-reservations_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRackReservation"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRackReservation"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -8331,22 +8042,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this rack reservation.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this rack reservation.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/rack-roles/": {
       "get": {
         "operationId": "dcim_rack-roles_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -8436,16 +8144,14 @@
       "post": {
         "operationId": "dcim_rack-roles_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/RackRole"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/RackRole"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -8480,16 +8186,14 @@
       "put": {
         "operationId": "dcim_rack-roles_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/RackRole"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/RackRole"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -8505,16 +8209,14 @@
       "patch": {
         "operationId": "dcim_rack-roles_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/RackRole"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/RackRole"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -8540,22 +8242,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this rack role.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this rack role.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/racks/": {
       "get": {
         "operationId": "dcim_racks_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -8848,16 +8547,14 @@
       "post": {
         "operationId": "dcim_racks_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRack"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRack"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -8892,16 +8589,14 @@
       "put": {
         "operationId": "dcim_racks_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRack"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRack"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -8917,16 +8612,14 @@
       "patch": {
         "operationId": "dcim_racks_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRack"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRack"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -8952,22 +8645,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this rack.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this rack.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/racks/{id}/elevation/": {
       "get": {
         "operationId": "dcim_racks_elevation",
         "description": "Rack elevation representing the list of rack units. Also supports rendering the elevation as an SVG.",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "q",
             "in": "query",
             "required": false,
@@ -9053,15 +8743,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this rack.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this rack.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/racks/{id}/units/": {
       "get": {
@@ -9081,22 +8769,19 @@
         ],
         "deprecated": true
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this rack.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this rack.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/rear-port-templates/": {
       "get": {
         "operationId": "dcim_rear-port-templates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -9193,16 +8878,14 @@
       "post": {
         "operationId": "dcim_rear-port-templates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRearPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRearPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -9237,16 +8920,14 @@
       "put": {
         "operationId": "dcim_rear-port-templates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRearPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRearPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -9262,16 +8943,14 @@
       "patch": {
         "operationId": "dcim_rear-port-templates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRearPortTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRearPortTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -9297,22 +8976,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this rear port template.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this rear port template.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/rear-ports/": {
       "get": {
         "operationId": "dcim_rear-ports_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -9465,16 +9141,14 @@
       "post": {
         "operationId": "dcim_rear-ports_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRearPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRearPort"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -9509,16 +9183,14 @@
       "put": {
         "operationId": "dcim_rear-ports_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRearPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRearPort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -9534,16 +9206,14 @@
       "patch": {
         "operationId": "dcim_rear-ports_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRearPort"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRearPort"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -9569,22 +9239,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this rear port.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this rear port.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/regions/": {
       "get": {
         "operationId": "dcim_regions_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -9681,16 +9348,14 @@
       "post": {
         "operationId": "dcim_regions_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRegion"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRegion"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -9725,16 +9390,14 @@
       "put": {
         "operationId": "dcim_regions_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRegion"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRegion"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -9750,16 +9413,14 @@
       "patch": {
         "operationId": "dcim_regions_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableRegion"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableRegion"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -9785,22 +9446,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this region.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this region.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/sites/": {
       "get": {
         "operationId": "dcim_sites_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -10037,16 +9695,14 @@
       "post": {
         "operationId": "dcim_sites_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSite"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableSite"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -10081,16 +9737,14 @@
       "put": {
         "operationId": "dcim_sites_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSite"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableSite"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -10106,16 +9760,14 @@
       "patch": {
         "operationId": "dcim_sites_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSite"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableSite"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -10141,15 +9793,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this site.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this site.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/sites/{id}/graphs/": {
       "get": {
@@ -10168,22 +9818,19 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this site.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this site.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/dcim/virtual-chassis/": {
       "get": {
         "operationId": "dcim_virtual-chassis_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -10308,16 +9955,14 @@
       "post": {
         "operationId": "dcim_virtual-chassis_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVirtualChassis"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVirtualChassis"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -10352,16 +9997,14 @@
       "put": {
         "operationId": "dcim_virtual-chassis_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVirtualChassis"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVirtualChassis"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -10377,16 +10020,14 @@
       "patch": {
         "operationId": "dcim_virtual-chassis_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVirtualChassis"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVirtualChassis"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -10412,15 +10053,13 @@
           "dcim"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this virtual chassis.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this virtual chassis.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/extras/_choices/": {
       "get": {
@@ -10452,14 +10091,12 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/extras/_custom_field_choices/": {
       "get": {
@@ -10491,21 +10128,18 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/extras/config-contexts/": {
       "get": {
         "operationId": "extras_config-contexts_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -10693,16 +10327,14 @@
       "post": {
         "operationId": "extras_config-contexts_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConfigContext"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConfigContext"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -10737,16 +10369,14 @@
       "put": {
         "operationId": "extras_config-contexts_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConfigContext"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConfigContext"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -10762,16 +10392,14 @@
       "patch": {
         "operationId": "extras_config-contexts_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableConfigContext"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableConfigContext"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -10797,22 +10425,19 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this config context.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this config context.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/extras/export-templates/": {
       "get": {
         "operationId": "extras_export-templates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "content_type",
             "in": "query",
             "description": "",
@@ -10888,16 +10513,14 @@
       "post": {
         "operationId": "extras_export-templates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableExportTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableExportTemplate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -10932,16 +10555,14 @@
       "put": {
         "operationId": "extras_export-templates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableExportTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableExportTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -10957,16 +10578,14 @@
       "patch": {
         "operationId": "extras_export-templates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableExportTemplate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableExportTemplate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -10992,22 +10611,19 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this export template.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this export template.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/extras/graphs/": {
       "get": {
         "operationId": "extras_graphs_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "type",
             "in": "query",
             "description": "",
@@ -11083,16 +10699,14 @@
       "post": {
         "operationId": "extras_graphs_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Graph"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Graph"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -11127,16 +10741,14 @@
       "put": {
         "operationId": "extras_graphs_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Graph"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Graph"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -11152,16 +10764,14 @@
       "patch": {
         "operationId": "extras_graphs_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Graph"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Graph"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -11187,22 +10797,19 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this graph.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this graph.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/extras/image-attachments/": {
       "get": {
         "operationId": "extras_image-attachments_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "limit",
             "in": "query",
             "description": "Number of results to return per page.",
@@ -11257,16 +10864,14 @@
       "post": {
         "operationId": "extras_image-attachments_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ImageAttachment"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ImageAttachment"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -11301,16 +10906,14 @@
       "put": {
         "operationId": "extras_image-attachments_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ImageAttachment"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ImageAttachment"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -11326,16 +10929,14 @@
       "patch": {
         "operationId": "extras_image-attachments_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ImageAttachment"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ImageAttachment"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -11361,22 +10962,19 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this image attachment.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this image attachment.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/extras/object-changes/": {
       "get": {
         "operationId": "extras_object-changes_list",
         "description": "Retrieve a list of recent changes.",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "user",
             "in": "query",
             "description": "",
@@ -11510,15 +11108,13 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this object change.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this object change.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/extras/reports/": {
       "get": {
@@ -11550,14 +11146,12 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/extras/reports/{id}/run/": {
       "post": {
@@ -11573,14 +11167,12 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/extras/scripts/": {
       "get": {
@@ -11612,21 +11204,18 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/extras/tags/": {
       "get": {
         "operationId": "extras_tags_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -11702,16 +11291,14 @@
       "post": {
         "operationId": "extras_tags_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Tag"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Tag"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -11746,16 +11333,14 @@
       "put": {
         "operationId": "extras_tags_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Tag"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Tag"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -11771,16 +11356,14 @@
       "patch": {
         "operationId": "extras_tags_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Tag"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Tag"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -11806,15 +11389,13 @@
           "extras"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this tag.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this tag.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/_choices/": {
       "get": {
@@ -11846,21 +11427,18 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/ipam/aggregates/": {
       "get": {
         "operationId": "ipam_aggregates_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "family",
             "in": "query",
             "description": "",
@@ -12013,16 +11591,14 @@
       "post": {
         "operationId": "ipam_aggregates_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableAggregate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableAggregate"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -12057,16 +11633,14 @@
       "put": {
         "operationId": "ipam_aggregates_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableAggregate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableAggregate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -12082,16 +11656,14 @@
       "patch": {
         "operationId": "ipam_aggregates_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableAggregate"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableAggregate"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -12117,22 +11689,19 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this aggregate.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this aggregate.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/ip-addresses/": {
       "get": {
         "operationId": "ipam_ip-addresses_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "family",
             "in": "query",
             "description": "",
@@ -12390,16 +11959,14 @@
       "post": {
         "operationId": "ipam_ip-addresses_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableIPAddress"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableIPAddress"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -12434,16 +12001,14 @@
       "put": {
         "operationId": "ipam_ip-addresses_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableIPAddress"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableIPAddress"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -12459,16 +12024,14 @@
       "patch": {
         "operationId": "ipam_ip-addresses_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableIPAddress"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableIPAddress"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -12494,22 +12057,19 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this IP address.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this IP address.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/prefixes/": {
       "get": {
         "operationId": "ipam_prefixes_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "family",
             "in": "query",
             "description": "",
@@ -12781,16 +12341,14 @@
       "post": {
         "operationId": "ipam_prefixes_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePrefix"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePrefix"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -12825,16 +12383,14 @@
       "put": {
         "operationId": "ipam_prefixes_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePrefix"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePrefix"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -12850,16 +12406,14 @@
       "patch": {
         "operationId": "ipam_prefixes_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePrefix"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePrefix"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -12885,15 +12439,13 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this prefix.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this prefix.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/prefixes/{id}/available-ips/": {
       "get": {
@@ -12915,16 +12467,14 @@
       "post": {
         "operationId": "ipam_prefixes_available-ips_create",
         "description": "A convenience method for returning available IP addresses within a prefix. By default, the number of IPs\nreturned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be passed,\nhowever results will not be paginated.\n\nThe advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being\ninvoked in parallel, which results in a race condition where multiple insertions can occur.",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePrefix"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePrefix"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -12937,15 +12487,13 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this prefix.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this prefix.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/prefixes/{id}/available-prefixes/": {
       "get": {
@@ -12969,16 +12517,14 @@
         "operationId": "ipam_prefixes_available-prefixes_create",
         "summary": "A convenience method for returning available child prefixes within a parent.",
         "description": "The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being\ninvoked in parallel, which results in a race condition where multiple insertions can occur.",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritablePrefix"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritablePrefix"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -12991,22 +12537,19 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this prefix.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this prefix.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/rirs/": {
       "get": {
         "operationId": "ipam_rirs_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -13096,16 +12639,14 @@
       "post": {
         "operationId": "ipam_rirs_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/RIR"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/RIR"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -13140,16 +12681,14 @@
       "put": {
         "operationId": "ipam_rirs_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/RIR"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/RIR"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -13165,16 +12704,14 @@
       "patch": {
         "operationId": "ipam_rirs_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/RIR"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/RIR"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -13200,22 +12737,19 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this RIR.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this RIR.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/roles/": {
       "get": {
         "operationId": "ipam_roles_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -13298,16 +12832,14 @@
       "post": {
         "operationId": "ipam_roles_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Role"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Role"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -13342,16 +12874,14 @@
       "put": {
         "operationId": "ipam_roles_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Role"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Role"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -13367,16 +12897,14 @@
       "patch": {
         "operationId": "ipam_roles_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Role"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Role"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -13402,22 +12930,19 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this role.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this role.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/services/": {
       "get": {
         "operationId": "ipam_services_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -13584,16 +13109,14 @@
       "post": {
         "operationId": "ipam_services_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableService"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableService"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -13628,16 +13151,14 @@
       "put": {
         "operationId": "ipam_services_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableService"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableService"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -13653,16 +13174,14 @@
       "patch": {
         "operationId": "ipam_services_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableService"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableService"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -13688,22 +13207,19 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this service.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this service.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/vlan-groups/": {
       "get": {
         "operationId": "ipam_vlan-groups_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -13814,16 +13330,14 @@
       "post": {
         "operationId": "ipam_vlan-groups_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVLANGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVLANGroup"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -13858,16 +13372,14 @@
       "put": {
         "operationId": "ipam_vlan-groups_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVLANGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVLANGroup"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -13883,16 +13395,14 @@
       "patch": {
         "operationId": "ipam_vlan-groups_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVLANGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVLANGroup"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -13918,22 +13428,19 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this VLAN group.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this VLAN group.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/vlans/": {
       "get": {
         "operationId": "ipam_vlans_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "vid",
             "in": "query",
             "description": "",
@@ -14156,16 +13663,14 @@
       "post": {
         "operationId": "ipam_vlans_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVLAN"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVLAN"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -14200,16 +13705,14 @@
       "put": {
         "operationId": "ipam_vlans_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVLAN"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVLAN"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -14225,16 +13728,14 @@
       "patch": {
         "operationId": "ipam_vlans_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVLAN"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVLAN"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -14260,22 +13761,19 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this VLAN.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this VLAN.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/ipam/vrfs/": {
       "get": {
         "operationId": "ipam_vrfs_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -14442,16 +13940,14 @@
       "post": {
         "operationId": "ipam_vrfs_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVRF"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVRF"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -14486,16 +13982,14 @@
       "put": {
         "operationId": "ipam_vrfs_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVRF"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVRF"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -14511,16 +14005,14 @@
       "patch": {
         "operationId": "ipam_vrfs_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVRF"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVRF"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -14546,15 +14038,13 @@
           "ipam"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this VRF.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this VRF.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/secrets/_choices/": {
       "get": {
@@ -14586,14 +14076,12 @@
           "secrets"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/secrets/generate-rsa-key-pair/": {
       "get": {
@@ -14632,8 +14120,7 @@
       "get": {
         "operationId": "secrets_secret-roles_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -14716,16 +14203,14 @@
       "post": {
         "operationId": "secrets_secret-roles_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/SecretRole"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -14760,16 +14245,14 @@
       "put": {
         "operationId": "secrets_secret-roles_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/SecretRole"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -14785,16 +14268,14 @@
       "patch": {
         "operationId": "secrets_secret-roles_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/SecretRole"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -14820,22 +14301,19 @@
           "secrets"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this secret role.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this secret role.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/secrets/secrets/": {
       "get": {
         "operationId": "secrets_secrets_list",
         "description": "",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -14988,16 +14466,14 @@
       "post": {
         "operationId": "secrets_secrets_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSecret"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableSecret"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -15032,16 +14508,14 @@
       "put": {
         "operationId": "secrets_secrets_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSecret"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableSecret"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -15057,16 +14531,14 @@
       "patch": {
         "operationId": "secrets_secrets_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSecret"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableSecret"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -15092,15 +14564,13 @@
           "secrets"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this secret.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this secret.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/tenancy/_choices/": {
       "get": {
@@ -15132,21 +14602,18 @@
           "tenancy"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/tenancy/tenant-groups/": {
       "get": {
         "operationId": "tenancy_tenant-groups_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -15229,16 +14696,14 @@
       "post": {
         "operationId": "tenancy_tenant-groups_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TenantGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/TenantGroup"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -15273,16 +14738,14 @@
       "put": {
         "operationId": "tenancy_tenant-groups_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TenantGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/TenantGroup"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -15298,16 +14761,14 @@
       "patch": {
         "operationId": "tenancy_tenant-groups_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TenantGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/TenantGroup"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -15333,22 +14794,19 @@
           "tenancy"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this tenant group.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this tenant group.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/tenancy/tenants/": {
       "get": {
         "operationId": "tenancy_tenants_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -15494,16 +14952,14 @@
       "post": {
         "operationId": "tenancy_tenants_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableTenant"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableTenant"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -15538,16 +14994,14 @@
       "put": {
         "operationId": "tenancy_tenants_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableTenant"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableTenant"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -15563,16 +15017,14 @@
       "patch": {
         "operationId": "tenancy_tenants_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableTenant"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableTenant"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -15598,15 +15050,13 @@
           "tenancy"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this tenant.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this tenant.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/virtualization/_choices/": {
       "get": {
@@ -15638,21 +15088,18 @@
           "virtualization"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string"
+      }]
     },
     "/virtualization/cluster-groups/": {
       "get": {
         "operationId": "virtualization_cluster-groups_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -15735,16 +15182,14 @@
       "post": {
         "operationId": "virtualization_cluster-groups_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ClusterGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ClusterGroup"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -15779,16 +15224,14 @@
       "put": {
         "operationId": "virtualization_cluster-groups_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ClusterGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ClusterGroup"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -15804,16 +15247,14 @@
       "patch": {
         "operationId": "virtualization_cluster-groups_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ClusterGroup"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ClusterGroup"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -15839,22 +15280,19 @@
           "virtualization"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this cluster group.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this cluster group.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/virtualization/cluster-types/": {
       "get": {
         "operationId": "virtualization_cluster-types_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -15937,16 +15375,14 @@
       "post": {
         "operationId": "virtualization_cluster-types_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ClusterType"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ClusterType"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -15981,16 +15417,14 @@
       "put": {
         "operationId": "virtualization_cluster-types_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ClusterType"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ClusterType"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -16006,16 +15440,14 @@
       "patch": {
         "operationId": "virtualization_cluster-types_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ClusterType"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ClusterType"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -16041,22 +15473,19 @@
           "virtualization"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this cluster type.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this cluster type.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/virtualization/clusters/": {
       "get": {
         "operationId": "virtualization_clusters_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "name",
             "in": "query",
             "description": "",
@@ -16244,16 +15673,14 @@
       "post": {
         "operationId": "virtualization_clusters_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCluster"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCluster"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -16288,16 +15715,14 @@
       "put": {
         "operationId": "virtualization_clusters_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCluster"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCluster"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -16313,16 +15738,14 @@
       "patch": {
         "operationId": "virtualization_clusters_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableCluster"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableCluster"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -16348,22 +15771,19 @@
           "virtualization"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this cluster.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this cluster.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/virtualization/interfaces/": {
       "get": {
         "operationId": "virtualization_interfaces_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -16474,16 +15894,14 @@
       "post": {
         "operationId": "virtualization_interfaces_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVirtualMachineInterface"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVirtualMachineInterface"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -16518,16 +15936,14 @@
       "put": {
         "operationId": "virtualization_interfaces_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVirtualMachineInterface"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVirtualMachineInterface"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -16543,16 +15959,14 @@
       "patch": {
         "operationId": "virtualization_interfaces_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVirtualMachineInterface"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVirtualMachineInterface"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -16578,22 +15992,19 @@
           "virtualization"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this interface.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this interface.",
+        "required": true,
+        "type": "integer"
+      }]
     },
     "/virtualization/virtual-machines/": {
       "get": {
         "operationId": "virtualization_virtual-machines_list",
         "description": "Call to super to allow for caching",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "id",
             "in": "query",
             "description": "",
@@ -16893,16 +16304,14 @@
       "post": {
         "operationId": "virtualization_virtual-machines_create",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVirtualMachineWithConfigContext"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVirtualMachineWithConfigContext"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "",
@@ -16937,16 +16346,14 @@
       "put": {
         "operationId": "virtualization_virtual-machines_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVirtualMachineWithConfigContext"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVirtualMachineWithConfigContext"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -16962,16 +16369,14 @@
       "patch": {
         "operationId": "virtualization_virtual-machines_partial_update",
         "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableVirtualMachineWithConfigContext"
-            }
+        "parameters": [{
+          "name": "data",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/WritableVirtualMachineWithConfigContext"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "",
@@ -16997,15 +16402,13 @@
           "virtualization"
         ]
       },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this virtual machine.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "A unique integer value identifying this virtual machine.",
+        "required": true,
+        "type": "integer"
+      }]
     }
   },
   "definitions": {
@@ -20450,7 +19853,7 @@
         },
         "count_ipaddresses": {
           "title": "Count ipaddresses",
-          "type": "string",
+          "type": "integer",
           "readOnly": true
         }
       }
@@ -20643,7 +20046,7 @@
         },
         "count_ipaddresses": {
           "title": "Count ipaddresses",
-          "type": "string",
+          "type": "integer",
           "readOnly": true
         }
       }
