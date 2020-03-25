@@ -32,7 +32,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	models "github.com/netbox-community/go-netbox/netbox/models"
 )
 
 // NewIpamVlanGroupsUpdateParams creates a new IpamVlanGroupsUpdateParams object
