@@ -12904,7 +12904,10 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/Prefix"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/NestedIPAddress"
+              }
             }
           }
         },
