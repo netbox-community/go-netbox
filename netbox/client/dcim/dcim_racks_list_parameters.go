@@ -157,7 +157,7 @@ type DcimRacksListParams struct {
 	/*UHeight*/
 	UHeight *string
 	/*Width*/
-	Width *string
+	Width *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -583,13 +583,13 @@ func (o *DcimRacksListParams) SetUHeight(uHeight *string) {
 }
 
 // WithWidth adds the width to the dcim racks list params
-func (o *DcimRacksListParams) WithWidth(width *string) *DcimRacksListParams {
+func (o *DcimRacksListParams) WithWidth(width *int64) *DcimRacksListParams {
 	o.SetWidth(width)
 	return o
 }
 
 // SetWidth adds the width to the dcim racks list params
-func (o *DcimRacksListParams) SetWidth(width *string) {
+func (o *DcimRacksListParams) SetWidth(width *int64) {
 	o.Width = width
 }
 
@@ -1164,11 +1164,11 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.Width != nil {
 
 		// query param width
-		var qrWidth string
+		var qrWidth int64
 		if o.Width != nil {
 			qrWidth = *o.Width
 		}
-		qWidth := qrWidth
+		qWidth := swag.FormatInt64(qrWidth)
 		if qWidth != "" {
 			if err := r.SetQueryParam("width", qWidth); err != nil {
 				return err

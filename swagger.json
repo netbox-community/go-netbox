@@ -8595,7 +8595,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "u_height",
@@ -22560,7 +22560,7 @@
               "type": "string"
             },
             "value": {
-              "type": "string"
+              "type": "integer"
             }
           }
         },
