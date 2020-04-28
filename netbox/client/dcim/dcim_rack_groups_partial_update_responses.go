@@ -28,7 +28,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/netbox-community/go-netbox/netbox/models"
+	models "github.com/gorjan87/go-netbox/netbox/models"
 )
 
 // DcimRackGroupsPartialUpdateReader is a Reader for the DcimRackGroupsPartialUpdate structure.

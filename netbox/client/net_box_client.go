@@ -26,13 +26,13 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/client/circuits"
-	"github.com/netbox-community/go-netbox/netbox/client/dcim"
-	"github.com/netbox-community/go-netbox/netbox/client/extras"
-	"github.com/netbox-community/go-netbox/netbox/client/ipam"
-	"github.com/netbox-community/go-netbox/netbox/client/secrets"
-	"github.com/netbox-community/go-netbox/netbox/client/tenancy"
-	"github.com/netbox-community/go-netbox/netbox/client/virtualization"
+	"github.com/gorjan87/go-netbox/netbox/client/circuits"
+	"github.com/gorjan87/go-netbox/netbox/client/dcim"
+	"github.com/gorjan87/go-netbox/netbox/client/extras"
+	"github.com/gorjan87/go-netbox/netbox/client/ipam"
+	"github.com/gorjan87/go-netbox/netbox/client/secrets"
+	"github.com/gorjan87/go-netbox/netbox/client/tenancy"
+	"github.com/gorjan87/go-netbox/netbox/client/virtualization"
 )
 
 // Default net box HTTP client.
