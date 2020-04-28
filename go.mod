@@ -1,4 +1,4 @@
-module github.com/netbox-community/go-netbox
+module github.com/gorjan87/go-netbox
 
 go 1.13
 
