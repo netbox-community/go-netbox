@@ -368,7 +368,7 @@ type PrefixFamily struct {
 
 	// value
 	// Required: true
-	Value *string `json:"value"`
+	Value *int64 `json:"value"`
 }
 
 // Validate validates this prefix family
