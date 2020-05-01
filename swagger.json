@@ -5067,7 +5067,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "boolean"
           },
           {
             "name": "mode",
