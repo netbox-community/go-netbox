@@ -19589,9 +19589,6 @@
         "config_context": {
           "title": "Config context",
           "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
           "readOnly": true
         },
         "created": {
