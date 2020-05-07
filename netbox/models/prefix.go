@@ -23,14 +23,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // Prefix prefix
+//
 // swagger:model Prefix
 type Prefix struct {
 
@@ -359,6 +359,7 @@ func (m *Prefix) UnmarshalBinary(b []byte) error {
 }
 
 // PrefixFamily Family
+//
 // swagger:model PrefixFamily
 type PrefixFamily struct {
 
@@ -368,7 +369,7 @@ type PrefixFamily struct {
 
 	// value
 	// Required: true
-	Value *string `json:"value"`
+	Value *int64 `json:"value"`
 }
 
 // Validate validates this prefix family
@@ -426,6 +427,7 @@ func (m *PrefixFamily) UnmarshalBinary(b []byte) error {
 }
 
 // PrefixStatus Status
+//
 // swagger:model PrefixStatus
 type PrefixStatus struct {
 
