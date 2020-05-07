@@ -21,16 +21,17 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // Aggregate aggregate
+//
 // swagger:model Aggregate
 type Aggregate struct {
 
@@ -47,7 +48,7 @@ type Aggregate struct {
 	DateAdded *strfmt.Date `json:"date_added,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// family
@@ -148,7 +149,7 @@ func (m *Aggregate) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 
@@ -249,16 +250,19 @@ func (m *Aggregate) UnmarshalBinary(b []byte) error {
 }
 
 // AggregateFamily Family
+//
 // swagger:model AggregateFamily
 type AggregateFamily struct {
 
 	// label
 	// Required: true
+	// Enum: [IPv4 IPv6]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	Value *string `json:"value"`
+	// Enum: [4 6]
+	Value *int64 `json:"value"`
 }
 
 // Validate validates this aggregate family
@@ -279,18 +283,77 @@ func (m *AggregateFamily) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var aggregateFamilyTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["IPv4","IPv6"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		aggregateFamilyTypeLabelPropEnum = append(aggregateFamilyTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// AggregateFamilyLabelIPV4 captures enum value "IPv4"
+	AggregateFamilyLabelIPV4 string = "IPv4"
+
+	// AggregateFamilyLabelIPV6 captures enum value "IPv6"
+	AggregateFamilyLabelIPV6 string = "IPv6"
+)
+
+// prop value enum
+func (m *AggregateFamily) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, aggregateFamilyTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *AggregateFamily) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("family"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("family"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var aggregateFamilyTypeValuePropEnum []interface{}
+
+func init() {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[4,6]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		aggregateFamilyTypeValuePropEnum = append(aggregateFamilyTypeValuePropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *AggregateFamily) validateValueEnum(path, location string, value int64) error {
+	if err := validate.Enum(path, location, value, aggregateFamilyTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *AggregateFamily) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("family"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("family"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

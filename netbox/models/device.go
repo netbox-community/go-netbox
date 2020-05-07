@@ -21,16 +21,17 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // Device device
+//
 // swagger:model Device
 type Device struct {
 
@@ -647,15 +648,18 @@ func (m *Device) UnmarshalBinary(b []byte) error {
 }
 
 // DeviceFace Face
+//
 // swagger:model DeviceFace
 type DeviceFace struct {
 
 	// label
 	// Required: true
+	// Enum: [Front Rear]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [front rear]
 	Value *string `json:"value"`
 }
 
@@ -677,18 +681,86 @@ func (m *DeviceFace) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var deviceFaceTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Front","Rear"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceFaceTypeLabelPropEnum = append(deviceFaceTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceFaceLabelFront captures enum value "Front"
+	DeviceFaceLabelFront string = "Front"
+
+	// DeviceFaceLabelRear captures enum value "Rear"
+	DeviceFaceLabelRear string = "Rear"
+)
+
+// prop value enum
+func (m *DeviceFace) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, deviceFaceTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *DeviceFace) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("face"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("face"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var deviceFaceTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["front","rear"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceFaceTypeValuePropEnum = append(deviceFaceTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceFaceValueFront captures enum value "front"
+	DeviceFaceValueFront string = "front"
+
+	// DeviceFaceValueRear captures enum value "rear"
+	DeviceFaceValueRear string = "rear"
+)
+
+// prop value enum
+func (m *DeviceFace) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, deviceFaceTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *DeviceFace) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("face"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("face"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 
@@ -714,15 +786,18 @@ func (m *DeviceFace) UnmarshalBinary(b []byte) error {
 }
 
 // DeviceStatus Status
+//
 // swagger:model DeviceStatus
 type DeviceStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Offline Active Planned Staged Failed Inventory Decommissioning]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [offline active planned staged failed inventory decommissioning]
 	Value *string `json:"value"`
 }
 
@@ -744,18 +819,116 @@ func (m *DeviceStatus) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var deviceStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Offline","Active","Planned","Staged","Failed","Inventory","Decommissioning"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceStatusTypeLabelPropEnum = append(deviceStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceStatusLabelOffline captures enum value "Offline"
+	DeviceStatusLabelOffline string = "Offline"
+
+	// DeviceStatusLabelActive captures enum value "Active"
+	DeviceStatusLabelActive string = "Active"
+
+	// DeviceStatusLabelPlanned captures enum value "Planned"
+	DeviceStatusLabelPlanned string = "Planned"
+
+	// DeviceStatusLabelStaged captures enum value "Staged"
+	DeviceStatusLabelStaged string = "Staged"
+
+	// DeviceStatusLabelFailed captures enum value "Failed"
+	DeviceStatusLabelFailed string = "Failed"
+
+	// DeviceStatusLabelInventory captures enum value "Inventory"
+	DeviceStatusLabelInventory string = "Inventory"
+
+	// DeviceStatusLabelDecommissioning captures enum value "Decommissioning"
+	DeviceStatusLabelDecommissioning string = "Decommissioning"
+)
+
+// prop value enum
+func (m *DeviceStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, deviceStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *DeviceStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var deviceStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["offline","active","planned","staged","failed","inventory","decommissioning"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceStatusTypeValuePropEnum = append(deviceStatusTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceStatusValueOffline captures enum value "offline"
+	DeviceStatusValueOffline string = "offline"
+
+	// DeviceStatusValueActive captures enum value "active"
+	DeviceStatusValueActive string = "active"
+
+	// DeviceStatusValuePlanned captures enum value "planned"
+	DeviceStatusValuePlanned string = "planned"
+
+	// DeviceStatusValueStaged captures enum value "staged"
+	DeviceStatusValueStaged string = "staged"
+
+	// DeviceStatusValueFailed captures enum value "failed"
+	DeviceStatusValueFailed string = "failed"
+
+	// DeviceStatusValueInventory captures enum value "inventory"
+	DeviceStatusValueInventory string = "inventory"
+
+	// DeviceStatusValueDecommissioning captures enum value "decommissioning"
+	DeviceStatusValueDecommissioning string = "decommissioning"
+)
+
+// prop value enum
+func (m *DeviceStatus) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, deviceStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *DeviceStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

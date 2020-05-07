@@ -23,14 +23,14 @@ package models
 import (
 	"encoding/json"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableRearPortTemplate writable rear port template
+//
 // swagger:model WritableRearPortTemplate
 type WritableRearPortTemplate struct {
 
@@ -55,7 +55,7 @@ type WritableRearPortTemplate struct {
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 110-punch bnc fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
+	// Enum: [8p8c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
 	Type *string `json:"type"`
 }
 
@@ -132,7 +132,7 @@ var writableRearPortTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","110-punch","bnc","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -150,6 +150,9 @@ const (
 
 	// WritableRearPortTemplateTypeBnc captures enum value "bnc"
 	WritableRearPortTemplateTypeBnc string = "bnc"
+
+	// WritableRearPortTemplateTypeMrj21 captures enum value "mrj21"
+	WritableRearPortTemplateTypeMrj21 string = "mrj21"
 
 	// WritableRearPortTemplateTypeFc captures enum value "fc"
 	WritableRearPortTemplateTypeFc string = "fc"

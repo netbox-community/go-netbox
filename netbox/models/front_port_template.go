@@ -21,14 +21,16 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
+	"encoding/json"
 
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // FrontPortTemplate front port template
+//
 // swagger:model FrontPortTemplate
 type FrontPortTemplate struct {
 
@@ -197,15 +199,18 @@ func (m *FrontPortTemplate) UnmarshalBinary(b []byte) error {
 }
 
 // FrontPortTemplateType Type
+//
 // swagger:model FrontPortTemplateType
 type FrontPortTemplateType struct {
 
 	// label
 	// Required: true
+	// Enum: [8P8C 110 Punch BNC MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [8p8c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
 	Value *string `json:"value"`
 }
 
@@ -227,18 +232,158 @@ func (m *FrontPortTemplateType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var frontPortTemplateTypeTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["8P8C","110 Punch","BNC","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		frontPortTemplateTypeTypeLabelPropEnum = append(frontPortTemplateTypeTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// FrontPortTemplateTypeLabelNr8P8C captures enum value "8P8C"
+	FrontPortTemplateTypeLabelNr8P8C string = "8P8C"
+
+	// FrontPortTemplateTypeLabelNr110Punch captures enum value "110 Punch"
+	FrontPortTemplateTypeLabelNr110Punch string = "110 Punch"
+
+	// FrontPortTemplateTypeLabelBNC captures enum value "BNC"
+	FrontPortTemplateTypeLabelBNC string = "BNC"
+
+	// FrontPortTemplateTypeLabelMRJ21 captures enum value "MRJ21"
+	FrontPortTemplateTypeLabelMRJ21 string = "MRJ21"
+
+	// FrontPortTemplateTypeLabelFC captures enum value "FC"
+	FrontPortTemplateTypeLabelFC string = "FC"
+
+	// FrontPortTemplateTypeLabelLC captures enum value "LC"
+	FrontPortTemplateTypeLabelLC string = "LC"
+
+	// FrontPortTemplateTypeLabelLCAPC captures enum value "LC/APC"
+	FrontPortTemplateTypeLabelLCAPC string = "LC/APC"
+
+	// FrontPortTemplateTypeLabelLSH captures enum value "LSH"
+	FrontPortTemplateTypeLabelLSH string = "LSH"
+
+	// FrontPortTemplateTypeLabelLSHAPC captures enum value "LSH/APC"
+	FrontPortTemplateTypeLabelLSHAPC string = "LSH/APC"
+
+	// FrontPortTemplateTypeLabelMPO captures enum value "MPO"
+	FrontPortTemplateTypeLabelMPO string = "MPO"
+
+	// FrontPortTemplateTypeLabelMTRJ captures enum value "MTRJ"
+	FrontPortTemplateTypeLabelMTRJ string = "MTRJ"
+
+	// FrontPortTemplateTypeLabelSC captures enum value "SC"
+	FrontPortTemplateTypeLabelSC string = "SC"
+
+	// FrontPortTemplateTypeLabelSCAPC captures enum value "SC/APC"
+	FrontPortTemplateTypeLabelSCAPC string = "SC/APC"
+
+	// FrontPortTemplateTypeLabelST captures enum value "ST"
+	FrontPortTemplateTypeLabelST string = "ST"
+)
+
+// prop value enum
+func (m *FrontPortTemplateType) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, frontPortTemplateTypeTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *FrontPortTemplateType) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("type"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var frontPortTemplateTypeTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["8p8c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		frontPortTemplateTypeTypeValuePropEnum = append(frontPortTemplateTypeTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// FrontPortTemplateTypeValueNr8p8c captures enum value "8p8c"
+	FrontPortTemplateTypeValueNr8p8c string = "8p8c"
+
+	// FrontPortTemplateTypeValueNr110Punch captures enum value "110-punch"
+	FrontPortTemplateTypeValueNr110Punch string = "110-punch"
+
+	// FrontPortTemplateTypeValueBnc captures enum value "bnc"
+	FrontPortTemplateTypeValueBnc string = "bnc"
+
+	// FrontPortTemplateTypeValueMrj21 captures enum value "mrj21"
+	FrontPortTemplateTypeValueMrj21 string = "mrj21"
+
+	// FrontPortTemplateTypeValueFc captures enum value "fc"
+	FrontPortTemplateTypeValueFc string = "fc"
+
+	// FrontPortTemplateTypeValueLc captures enum value "lc"
+	FrontPortTemplateTypeValueLc string = "lc"
+
+	// FrontPortTemplateTypeValueLcApc captures enum value "lc-apc"
+	FrontPortTemplateTypeValueLcApc string = "lc-apc"
+
+	// FrontPortTemplateTypeValueLsh captures enum value "lsh"
+	FrontPortTemplateTypeValueLsh string = "lsh"
+
+	// FrontPortTemplateTypeValueLshApc captures enum value "lsh-apc"
+	FrontPortTemplateTypeValueLshApc string = "lsh-apc"
+
+	// FrontPortTemplateTypeValueMpo captures enum value "mpo"
+	FrontPortTemplateTypeValueMpo string = "mpo"
+
+	// FrontPortTemplateTypeValueMtrj captures enum value "mtrj"
+	FrontPortTemplateTypeValueMtrj string = "mtrj"
+
+	// FrontPortTemplateTypeValueSc captures enum value "sc"
+	FrontPortTemplateTypeValueSc string = "sc"
+
+	// FrontPortTemplateTypeValueScApc captures enum value "sc-apc"
+	FrontPortTemplateTypeValueScApc string = "sc-apc"
+
+	// FrontPortTemplateTypeValueSt captures enum value "st"
+	FrontPortTemplateTypeValueSt string = "st"
+)
+
+// prop value enum
+func (m *FrontPortTemplateType) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, frontPortTemplateTypeTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *FrontPortTemplateType) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("type"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

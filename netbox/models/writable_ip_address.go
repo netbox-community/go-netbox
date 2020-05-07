@@ -24,14 +24,14 @@ import (
 	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableIPAddress writable IP address
+//
 // swagger:model WritableIPAddress
 type WritableIPAddress struct {
 
@@ -50,7 +50,7 @@ type WritableIPAddress struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// DNS Name
@@ -62,7 +62,7 @@ type WritableIPAddress struct {
 
 	// Family
 	// Read Only: true
-	Family int64 `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// ID
 	// Read Only: true
@@ -181,7 +181,7 @@ func (m *WritableIPAddress) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

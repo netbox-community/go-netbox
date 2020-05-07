@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewIpamServicesListParams creates a new IpamServicesListParams object
@@ -85,10 +84,24 @@ type IpamServicesListParams struct {
 	CreatedLte *string
 	/*Device*/
 	Device *string
+	/*Devicen*/
+	Devicen *string
 	/*DeviceID*/
 	DeviceID *string
+	/*DeviceIDn*/
+	DeviceIDn *string
 	/*ID*/
 	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -102,6 +115,24 @@ type IpamServicesListParams struct {
 	Limit *int64
 	/*Name*/
 	Name *string
+	/*NameIc*/
+	NameIc *string
+	/*NameIe*/
+	NameIe *string
+	/*NameIew*/
+	NameIew *string
+	/*NameIsw*/
+	NameIsw *string
+	/*Namen*/
+	Namen *string
+	/*NameNic*/
+	NameNic *string
+	/*NameNie*/
+	NameNie *string
+	/*NameNiew*/
+	NameNiew *string
+	/*NameNisw*/
+	NameNisw *string
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -109,16 +140,34 @@ type IpamServicesListParams struct {
 	Offset *int64
 	/*Port*/
 	Port *string
+	/*PortGt*/
+	PortGt *string
+	/*PortGte*/
+	PortGte *string
+	/*PortLt*/
+	PortLt *string
+	/*PortLte*/
+	PortLte *string
+	/*Portn*/
+	Portn *string
 	/*Protocol*/
 	Protocol *string
+	/*Protocoln*/
+	Protocoln *string
 	/*Q*/
 	Q *string
 	/*Tag*/
 	Tag *string
+	/*Tagn*/
+	Tagn *string
 	/*VirtualMachine*/
 	VirtualMachine *string
+	/*VirtualMachinen*/
+	VirtualMachinen *string
 	/*VirtualMachineID*/
 	VirtualMachineID *string
+	/*VirtualMachineIDn*/
+	VirtualMachineIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -202,6 +251,17 @@ func (o *IpamServicesListParams) SetDevice(device *string) {
 	o.Device = device
 }
 
+// WithDevicen adds the devicen to the ipam services list params
+func (o *IpamServicesListParams) WithDevicen(devicen *string) *IpamServicesListParams {
+	o.SetDevicen(devicen)
+	return o
+}
+
+// SetDevicen adds the deviceN to the ipam services list params
+func (o *IpamServicesListParams) SetDevicen(devicen *string) {
+	o.Devicen = devicen
+}
+
 // WithDeviceID adds the deviceID to the ipam services list params
 func (o *IpamServicesListParams) WithDeviceID(deviceID *string) *IpamServicesListParams {
 	o.SetDeviceID(deviceID)
@@ -213,6 +273,17 @@ func (o *IpamServicesListParams) SetDeviceID(deviceID *string) {
 	o.DeviceID = deviceID
 }
 
+// WithDeviceIDn adds the deviceIDn to the ipam services list params
+func (o *IpamServicesListParams) WithDeviceIDn(deviceIDn *string) *IpamServicesListParams {
+	o.SetDeviceIDn(deviceIDn)
+	return o
+}
+
+// SetDeviceIDn adds the deviceIdN to the ipam services list params
+func (o *IpamServicesListParams) SetDeviceIDn(deviceIDn *string) {
+	o.DeviceIDn = deviceIDn
+}
+
 // WithID adds the id to the ipam services list params
 func (o *IpamServicesListParams) WithID(id *string) *IpamServicesListParams {
 	o.SetID(id)
@@ -222,6 +293,61 @@ func (o *IpamServicesListParams) WithID(id *string) *IpamServicesListParams {
 // SetID adds the id to the ipam services list params
 func (o *IpamServicesListParams) SetID(id *string) {
 	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the ipam services list params
+func (o *IpamServicesListParams) WithIDGt(iDGt *string) *IpamServicesListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the ipam services list params
+func (o *IpamServicesListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the ipam services list params
+func (o *IpamServicesListParams) WithIDGte(iDGte *string) *IpamServicesListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the ipam services list params
+func (o *IpamServicesListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the ipam services list params
+func (o *IpamServicesListParams) WithIDLt(iDLt *string) *IpamServicesListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the ipam services list params
+func (o *IpamServicesListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the ipam services list params
+func (o *IpamServicesListParams) WithIDLte(iDLte *string) *IpamServicesListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the ipam services list params
+func (o *IpamServicesListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the ipam services list params
+func (o *IpamServicesListParams) WithIDn(iDn *string) *IpamServicesListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the ipam services list params
+func (o *IpamServicesListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLastUpdated adds the lastUpdated to the ipam services list params
@@ -279,6 +405,105 @@ func (o *IpamServicesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameIc adds the nameIc to the ipam services list params
+func (o *IpamServicesListParams) WithNameIc(nameIc *string) *IpamServicesListParams {
+	o.SetNameIc(nameIc)
+	return o
+}
+
+// SetNameIc adds the nameIc to the ipam services list params
+func (o *IpamServicesListParams) SetNameIc(nameIc *string) {
+	o.NameIc = nameIc
+}
+
+// WithNameIe adds the nameIe to the ipam services list params
+func (o *IpamServicesListParams) WithNameIe(nameIe *string) *IpamServicesListParams {
+	o.SetNameIe(nameIe)
+	return o
+}
+
+// SetNameIe adds the nameIe to the ipam services list params
+func (o *IpamServicesListParams) SetNameIe(nameIe *string) {
+	o.NameIe = nameIe
+}
+
+// WithNameIew adds the nameIew to the ipam services list params
+func (o *IpamServicesListParams) WithNameIew(nameIew *string) *IpamServicesListParams {
+	o.SetNameIew(nameIew)
+	return o
+}
+
+// SetNameIew adds the nameIew to the ipam services list params
+func (o *IpamServicesListParams) SetNameIew(nameIew *string) {
+	o.NameIew = nameIew
+}
+
+// WithNameIsw adds the nameIsw to the ipam services list params
+func (o *IpamServicesListParams) WithNameIsw(nameIsw *string) *IpamServicesListParams {
+	o.SetNameIsw(nameIsw)
+	return o
+}
+
+// SetNameIsw adds the nameIsw to the ipam services list params
+func (o *IpamServicesListParams) SetNameIsw(nameIsw *string) {
+	o.NameIsw = nameIsw
+}
+
+// WithNamen adds the namen to the ipam services list params
+func (o *IpamServicesListParams) WithNamen(namen *string) *IpamServicesListParams {
+	o.SetNamen(namen)
+	return o
+}
+
+// SetNamen adds the nameN to the ipam services list params
+func (o *IpamServicesListParams) SetNamen(namen *string) {
+	o.Namen = namen
+}
+
+// WithNameNic adds the nameNic to the ipam services list params
+func (o *IpamServicesListParams) WithNameNic(nameNic *string) *IpamServicesListParams {
+	o.SetNameNic(nameNic)
+	return o
+}
+
+// SetNameNic adds the nameNic to the ipam services list params
+func (o *IpamServicesListParams) SetNameNic(nameNic *string) {
+	o.NameNic = nameNic
+}
+
+// WithNameNie adds the nameNie to the ipam services list params
+func (o *IpamServicesListParams) WithNameNie(nameNie *string) *IpamServicesListParams {
+	o.SetNameNie(nameNie)
+	return o
+}
+
+// SetNameNie adds the nameNie to the ipam services list params
+func (o *IpamServicesListParams) SetNameNie(nameNie *string) {
+	o.NameNie = nameNie
+}
+
+// WithNameNiew adds the nameNiew to the ipam services list params
+func (o *IpamServicesListParams) WithNameNiew(nameNiew *string) *IpamServicesListParams {
+	o.SetNameNiew(nameNiew)
+	return o
+}
+
+// SetNameNiew adds the nameNiew to the ipam services list params
+func (o *IpamServicesListParams) SetNameNiew(nameNiew *string) {
+	o.NameNiew = nameNiew
+}
+
+// WithNameNisw adds the nameNisw to the ipam services list params
+func (o *IpamServicesListParams) WithNameNisw(nameNisw *string) *IpamServicesListParams {
+	o.SetNameNisw(nameNisw)
+	return o
+}
+
+// SetNameNisw adds the nameNisw to the ipam services list params
+func (o *IpamServicesListParams) SetNameNisw(nameNisw *string) {
+	o.NameNisw = nameNisw
+}
+
 // WithOffset adds the offset to the ipam services list params
 func (o *IpamServicesListParams) WithOffset(offset *int64) *IpamServicesListParams {
 	o.SetOffset(offset)
@@ -301,6 +526,61 @@ func (o *IpamServicesListParams) SetPort(port *string) {
 	o.Port = port
 }
 
+// WithPortGt adds the portGt to the ipam services list params
+func (o *IpamServicesListParams) WithPortGt(portGt *string) *IpamServicesListParams {
+	o.SetPortGt(portGt)
+	return o
+}
+
+// SetPortGt adds the portGt to the ipam services list params
+func (o *IpamServicesListParams) SetPortGt(portGt *string) {
+	o.PortGt = portGt
+}
+
+// WithPortGte adds the portGte to the ipam services list params
+func (o *IpamServicesListParams) WithPortGte(portGte *string) *IpamServicesListParams {
+	o.SetPortGte(portGte)
+	return o
+}
+
+// SetPortGte adds the portGte to the ipam services list params
+func (o *IpamServicesListParams) SetPortGte(portGte *string) {
+	o.PortGte = portGte
+}
+
+// WithPortLt adds the portLt to the ipam services list params
+func (o *IpamServicesListParams) WithPortLt(portLt *string) *IpamServicesListParams {
+	o.SetPortLt(portLt)
+	return o
+}
+
+// SetPortLt adds the portLt to the ipam services list params
+func (o *IpamServicesListParams) SetPortLt(portLt *string) {
+	o.PortLt = portLt
+}
+
+// WithPortLte adds the portLte to the ipam services list params
+func (o *IpamServicesListParams) WithPortLte(portLte *string) *IpamServicesListParams {
+	o.SetPortLte(portLte)
+	return o
+}
+
+// SetPortLte adds the portLte to the ipam services list params
+func (o *IpamServicesListParams) SetPortLte(portLte *string) {
+	o.PortLte = portLte
+}
+
+// WithPortn adds the portn to the ipam services list params
+func (o *IpamServicesListParams) WithPortn(portn *string) *IpamServicesListParams {
+	o.SetPortn(portn)
+	return o
+}
+
+// SetPortn adds the portN to the ipam services list params
+func (o *IpamServicesListParams) SetPortn(portn *string) {
+	o.Portn = portn
+}
+
 // WithProtocol adds the protocol to the ipam services list params
 func (o *IpamServicesListParams) WithProtocol(protocol *string) *IpamServicesListParams {
 	o.SetProtocol(protocol)
@@ -310,6 +590,17 @@ func (o *IpamServicesListParams) WithProtocol(protocol *string) *IpamServicesLis
 // SetProtocol adds the protocol to the ipam services list params
 func (o *IpamServicesListParams) SetProtocol(protocol *string) {
 	o.Protocol = protocol
+}
+
+// WithProtocoln adds the protocoln to the ipam services list params
+func (o *IpamServicesListParams) WithProtocoln(protocoln *string) *IpamServicesListParams {
+	o.SetProtocoln(protocoln)
+	return o
+}
+
+// SetProtocoln adds the protocolN to the ipam services list params
+func (o *IpamServicesListParams) SetProtocoln(protocoln *string) {
+	o.Protocoln = protocoln
 }
 
 // WithQ adds the q to the ipam services list params
@@ -334,6 +625,17 @@ func (o *IpamServicesListParams) SetTag(tag *string) {
 	o.Tag = tag
 }
 
+// WithTagn adds the tagn to the ipam services list params
+func (o *IpamServicesListParams) WithTagn(tagn *string) *IpamServicesListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the ipam services list params
+func (o *IpamServicesListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WithVirtualMachine adds the virtualMachine to the ipam services list params
 func (o *IpamServicesListParams) WithVirtualMachine(virtualMachine *string) *IpamServicesListParams {
 	o.SetVirtualMachine(virtualMachine)
@@ -345,6 +647,17 @@ func (o *IpamServicesListParams) SetVirtualMachine(virtualMachine *string) {
 	o.VirtualMachine = virtualMachine
 }
 
+// WithVirtualMachinen adds the virtualMachinen to the ipam services list params
+func (o *IpamServicesListParams) WithVirtualMachinen(virtualMachinen *string) *IpamServicesListParams {
+	o.SetVirtualMachinen(virtualMachinen)
+	return o
+}
+
+// SetVirtualMachinen adds the virtualMachineN to the ipam services list params
+func (o *IpamServicesListParams) SetVirtualMachinen(virtualMachinen *string) {
+	o.VirtualMachinen = virtualMachinen
+}
+
 // WithVirtualMachineID adds the virtualMachineID to the ipam services list params
 func (o *IpamServicesListParams) WithVirtualMachineID(virtualMachineID *string) *IpamServicesListParams {
 	o.SetVirtualMachineID(virtualMachineID)
@@ -354,6 +667,17 @@ func (o *IpamServicesListParams) WithVirtualMachineID(virtualMachineID *string) 
 // SetVirtualMachineID adds the virtualMachineId to the ipam services list params
 func (o *IpamServicesListParams) SetVirtualMachineID(virtualMachineID *string) {
 	o.VirtualMachineID = virtualMachineID
+}
+
+// WithVirtualMachineIDn adds the virtualMachineIDn to the ipam services list params
+func (o *IpamServicesListParams) WithVirtualMachineIDn(virtualMachineIDn *string) *IpamServicesListParams {
+	o.SetVirtualMachineIDn(virtualMachineIDn)
+	return o
+}
+
+// SetVirtualMachineIDn adds the virtualMachineIdN to the ipam services list params
+func (o *IpamServicesListParams) SetVirtualMachineIDn(virtualMachineIDn *string) {
+	o.VirtualMachineIDn = virtualMachineIDn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -428,6 +752,22 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 	}
 
+	if o.Devicen != nil {
+
+		// query param device__n
+		var qrDevicen string
+		if o.Devicen != nil {
+			qrDevicen = *o.Devicen
+		}
+		qDevicen := qrDevicen
+		if qDevicen != "" {
+			if err := r.SetQueryParam("device__n", qDevicen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.DeviceID != nil {
 
 		// query param device_id
@@ -444,6 +784,22 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 	}
 
+	if o.DeviceIDn != nil {
+
+		// query param device_id__n
+		var qrDeviceIDn string
+		if o.DeviceIDn != nil {
+			qrDeviceIDn = *o.DeviceIDn
+		}
+		qDeviceIDn := qrDeviceIDn
+		if qDeviceIDn != "" {
+			if err := r.SetQueryParam("device_id__n", qDeviceIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -454,6 +810,86 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		qID := qrID
 		if qID != "" {
 			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
@@ -540,6 +976,150 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 	}
 
+	if o.NameIc != nil {
+
+		// query param name__ic
+		var qrNameIc string
+		if o.NameIc != nil {
+			qrNameIc = *o.NameIc
+		}
+		qNameIc := qrNameIc
+		if qNameIc != "" {
+			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIe != nil {
+
+		// query param name__ie
+		var qrNameIe string
+		if o.NameIe != nil {
+			qrNameIe = *o.NameIe
+		}
+		qNameIe := qrNameIe
+		if qNameIe != "" {
+			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIew != nil {
+
+		// query param name__iew
+		var qrNameIew string
+		if o.NameIew != nil {
+			qrNameIew = *o.NameIew
+		}
+		qNameIew := qrNameIew
+		if qNameIew != "" {
+			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIsw != nil {
+
+		// query param name__isw
+		var qrNameIsw string
+		if o.NameIsw != nil {
+			qrNameIsw = *o.NameIsw
+		}
+		qNameIsw := qrNameIsw
+		if qNameIsw != "" {
+			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Namen != nil {
+
+		// query param name__n
+		var qrNamen string
+		if o.Namen != nil {
+			qrNamen = *o.Namen
+		}
+		qNamen := qrNamen
+		if qNamen != "" {
+			if err := r.SetQueryParam("name__n", qNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNic != nil {
+
+		// query param name__nic
+		var qrNameNic string
+		if o.NameNic != nil {
+			qrNameNic = *o.NameNic
+		}
+		qNameNic := qrNameNic
+		if qNameNic != "" {
+			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNie != nil {
+
+		// query param name__nie
+		var qrNameNie string
+		if o.NameNie != nil {
+			qrNameNie = *o.NameNie
+		}
+		qNameNie := qrNameNie
+		if qNameNie != "" {
+			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNiew != nil {
+
+		// query param name__niew
+		var qrNameNiew string
+		if o.NameNiew != nil {
+			qrNameNiew = *o.NameNiew
+		}
+		qNameNiew := qrNameNiew
+		if qNameNiew != "" {
+			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNisw != nil {
+
+		// query param name__nisw
+		var qrNameNisw string
+		if o.NameNisw != nil {
+			qrNameNisw = *o.NameNisw
+		}
+		qNameNisw := qrNameNisw
+		if qNameNisw != "" {
+			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -572,6 +1152,86 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 	}
 
+	if o.PortGt != nil {
+
+		// query param port__gt
+		var qrPortGt string
+		if o.PortGt != nil {
+			qrPortGt = *o.PortGt
+		}
+		qPortGt := qrPortGt
+		if qPortGt != "" {
+			if err := r.SetQueryParam("port__gt", qPortGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PortGte != nil {
+
+		// query param port__gte
+		var qrPortGte string
+		if o.PortGte != nil {
+			qrPortGte = *o.PortGte
+		}
+		qPortGte := qrPortGte
+		if qPortGte != "" {
+			if err := r.SetQueryParam("port__gte", qPortGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PortLt != nil {
+
+		// query param port__lt
+		var qrPortLt string
+		if o.PortLt != nil {
+			qrPortLt = *o.PortLt
+		}
+		qPortLt := qrPortLt
+		if qPortLt != "" {
+			if err := r.SetQueryParam("port__lt", qPortLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PortLte != nil {
+
+		// query param port__lte
+		var qrPortLte string
+		if o.PortLte != nil {
+			qrPortLte = *o.PortLte
+		}
+		qPortLte := qrPortLte
+		if qPortLte != "" {
+			if err := r.SetQueryParam("port__lte", qPortLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Portn != nil {
+
+		// query param port__n
+		var qrPortn string
+		if o.Portn != nil {
+			qrPortn = *o.Portn
+		}
+		qPortn := qrPortn
+		if qPortn != "" {
+			if err := r.SetQueryParam("port__n", qPortn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Protocol != nil {
 
 		// query param protocol
@@ -582,6 +1242,22 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		qProtocol := qrProtocol
 		if qProtocol != "" {
 			if err := r.SetQueryParam("protocol", qProtocol); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Protocoln != nil {
+
+		// query param protocol__n
+		var qrProtocoln string
+		if o.Protocoln != nil {
+			qrProtocoln = *o.Protocoln
+		}
+		qProtocoln := qrProtocoln
+		if qProtocoln != "" {
+			if err := r.SetQueryParam("protocol__n", qProtocoln); err != nil {
 				return err
 			}
 		}
@@ -620,6 +1296,22 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 	}
 
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.VirtualMachine != nil {
 
 		// query param virtual_machine
@@ -636,6 +1328,22 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 	}
 
+	if o.VirtualMachinen != nil {
+
+		// query param virtual_machine__n
+		var qrVirtualMachinen string
+		if o.VirtualMachinen != nil {
+			qrVirtualMachinen = *o.VirtualMachinen
+		}
+		qVirtualMachinen := qrVirtualMachinen
+		if qVirtualMachinen != "" {
+			if err := r.SetQueryParam("virtual_machine__n", qVirtualMachinen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.VirtualMachineID != nil {
 
 		// query param virtual_machine_id
@@ -646,6 +1354,22 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		qVirtualMachineID := qrVirtualMachineID
 		if qVirtualMachineID != "" {
 			if err := r.SetQueryParam("virtual_machine_id", qVirtualMachineID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VirtualMachineIDn != nil {
+
+		// query param virtual_machine_id__n
+		var qrVirtualMachineIDn string
+		if o.VirtualMachineIDn != nil {
+			qrVirtualMachineIDn = *o.VirtualMachineIDn
+		}
+		qVirtualMachineIDn := qrVirtualMachineIDn
+		if qVirtualMachineIDn != "" {
+			if err := r.SetQueryParam("virtual_machine_id__n", qVirtualMachineIDn); err != nil {
 				return err
 			}
 		}

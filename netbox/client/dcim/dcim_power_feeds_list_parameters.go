@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewDcimPowerFeedsListParams creates a new DcimPowerFeedsListParams object
@@ -79,17 +78,34 @@ type DcimPowerFeedsListParams struct {
 
 	/*Amperage*/
 	Amperage *string
+	/*AmperageGt*/
+	AmperageGt *string
+	/*AmperageGte*/
+	AmperageGte *string
+	/*AmperageLt*/
+	AmperageLt *string
+	/*AmperageLte*/
+	AmperageLte *string
+	/*Amperagen*/
+	Amperagen *string
 	/*Created*/
 	Created *string
 	/*CreatedGte*/
 	CreatedGte *string
 	/*CreatedLte*/
 	CreatedLte *string
-	/*IDIn
-	  Multiple values may be separated by commas.
-
-	*/
-	IDIn *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -103,8 +119,36 @@ type DcimPowerFeedsListParams struct {
 	Limit *int64
 	/*MaxUtilization*/
 	MaxUtilization *string
+	/*MaxUtilizationGt*/
+	MaxUtilizationGt *string
+	/*MaxUtilizationGte*/
+	MaxUtilizationGte *string
+	/*MaxUtilizationLt*/
+	MaxUtilizationLt *string
+	/*MaxUtilizationLte*/
+	MaxUtilizationLte *string
+	/*MaxUtilizationn*/
+	MaxUtilizationn *string
 	/*Name*/
 	Name *string
+	/*NameIc*/
+	NameIc *string
+	/*NameIe*/
+	NameIe *string
+	/*NameIew*/
+	NameIew *string
+	/*NameIsw*/
+	NameIsw *string
+	/*Namen*/
+	Namen *string
+	/*NameNic*/
+	NameNic *string
+	/*NameNie*/
+	NameNie *string
+	/*NameNiew*/
+	NameNiew *string
+	/*NameNisw*/
+	NameNisw *string
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -112,30 +156,62 @@ type DcimPowerFeedsListParams struct {
 	Offset *int64
 	/*Phase*/
 	Phase *string
+	/*Phasen*/
+	Phasen *string
 	/*PowerPanelID*/
 	PowerPanelID *string
+	/*PowerPanelIDn*/
+	PowerPanelIDn *string
 	/*Q*/
 	Q *string
 	/*RackID*/
 	RackID *string
+	/*RackIDn*/
+	RackIDn *string
 	/*Region*/
 	Region *string
+	/*Regionn*/
+	Regionn *string
 	/*RegionID*/
 	RegionID *string
+	/*RegionIDn*/
+	RegionIDn *string
 	/*Site*/
 	Site *string
+	/*Siten*/
+	Siten *string
 	/*SiteID*/
 	SiteID *string
+	/*SiteIDn*/
+	SiteIDn *string
 	/*Status*/
 	Status *string
+	/*Statusn*/
+	Statusn *string
 	/*Supply*/
 	Supply *string
+	/*Supplyn*/
+	Supplyn *string
 	/*Tag*/
 	Tag *string
+	/*Tagn*/
+	Tagn *string
 	/*Type*/
 	Type *string
+	/*Typen*/
+	Typen *string
 	/*Voltage*/
 	Voltage *string
+	/*VoltageGt*/
+	VoltageGt *string
+	/*VoltageGte*/
+	VoltageGte *string
+	/*VoltageLt*/
+	VoltageLt *string
+	/*VoltageLte*/
+	VoltageLte *string
+	/*Voltagen*/
+	Voltagen *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -186,6 +262,61 @@ func (o *DcimPowerFeedsListParams) SetAmperage(amperage *string) {
 	o.Amperage = amperage
 }
 
+// WithAmperageGt adds the amperageGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithAmperageGt(amperageGt *string) *DcimPowerFeedsListParams {
+	o.SetAmperageGt(amperageGt)
+	return o
+}
+
+// SetAmperageGt adds the amperageGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetAmperageGt(amperageGt *string) {
+	o.AmperageGt = amperageGt
+}
+
+// WithAmperageGte adds the amperageGte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithAmperageGte(amperageGte *string) *DcimPowerFeedsListParams {
+	o.SetAmperageGte(amperageGte)
+	return o
+}
+
+// SetAmperageGte adds the amperageGte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetAmperageGte(amperageGte *string) {
+	o.AmperageGte = amperageGte
+}
+
+// WithAmperageLt adds the amperageLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithAmperageLt(amperageLt *string) *DcimPowerFeedsListParams {
+	o.SetAmperageLt(amperageLt)
+	return o
+}
+
+// SetAmperageLt adds the amperageLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetAmperageLt(amperageLt *string) {
+	o.AmperageLt = amperageLt
+}
+
+// WithAmperageLte adds the amperageLte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithAmperageLte(amperageLte *string) *DcimPowerFeedsListParams {
+	o.SetAmperageLte(amperageLte)
+	return o
+}
+
+// SetAmperageLte adds the amperageLte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetAmperageLte(amperageLte *string) {
+	o.AmperageLte = amperageLte
+}
+
+// WithAmperagen adds the amperagen to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithAmperagen(amperagen *string) *DcimPowerFeedsListParams {
+	o.SetAmperagen(amperagen)
+	return o
+}
+
+// SetAmperagen adds the amperageN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetAmperagen(amperagen *string) {
+	o.Amperagen = amperagen
+}
+
 // WithCreated adds the created to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithCreated(created *string) *DcimPowerFeedsListParams {
 	o.SetCreated(created)
@@ -219,15 +350,70 @@ func (o *DcimPowerFeedsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
 }
 
-// WithIDIn adds the iDIn to the dcim power feeds list params
-func (o *DcimPowerFeedsListParams) WithIDIn(iDIn *string) *DcimPowerFeedsListParams {
-	o.SetIDIn(iDIn)
+// WithID adds the id to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithID(id *string) *DcimPowerFeedsListParams {
+	o.SetID(id)
 	return o
 }
 
-// SetIDIn adds the idIn to the dcim power feeds list params
-func (o *DcimPowerFeedsListParams) SetIDIn(iDIn *string) {
-	o.IDIn = iDIn
+// SetID adds the id to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithIDGt(iDGt *string) *DcimPowerFeedsListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithIDGte(iDGte *string) *DcimPowerFeedsListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithIDLt(iDLt *string) *DcimPowerFeedsListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithIDLte(iDLte *string) *DcimPowerFeedsListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithIDn(iDn *string) *DcimPowerFeedsListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLastUpdated adds the lastUpdated to the dcim power feeds list params
@@ -285,6 +471,61 @@ func (o *DcimPowerFeedsListParams) SetMaxUtilization(maxUtilization *string) {
 	o.MaxUtilization = maxUtilization
 }
 
+// WithMaxUtilizationGt adds the maxUtilizationGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithMaxUtilizationGt(maxUtilizationGt *string) *DcimPowerFeedsListParams {
+	o.SetMaxUtilizationGt(maxUtilizationGt)
+	return o
+}
+
+// SetMaxUtilizationGt adds the maxUtilizationGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetMaxUtilizationGt(maxUtilizationGt *string) {
+	o.MaxUtilizationGt = maxUtilizationGt
+}
+
+// WithMaxUtilizationGte adds the maxUtilizationGte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithMaxUtilizationGte(maxUtilizationGte *string) *DcimPowerFeedsListParams {
+	o.SetMaxUtilizationGte(maxUtilizationGte)
+	return o
+}
+
+// SetMaxUtilizationGte adds the maxUtilizationGte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetMaxUtilizationGte(maxUtilizationGte *string) {
+	o.MaxUtilizationGte = maxUtilizationGte
+}
+
+// WithMaxUtilizationLt adds the maxUtilizationLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithMaxUtilizationLt(maxUtilizationLt *string) *DcimPowerFeedsListParams {
+	o.SetMaxUtilizationLt(maxUtilizationLt)
+	return o
+}
+
+// SetMaxUtilizationLt adds the maxUtilizationLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetMaxUtilizationLt(maxUtilizationLt *string) {
+	o.MaxUtilizationLt = maxUtilizationLt
+}
+
+// WithMaxUtilizationLte adds the maxUtilizationLte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithMaxUtilizationLte(maxUtilizationLte *string) *DcimPowerFeedsListParams {
+	o.SetMaxUtilizationLte(maxUtilizationLte)
+	return o
+}
+
+// SetMaxUtilizationLte adds the maxUtilizationLte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetMaxUtilizationLte(maxUtilizationLte *string) {
+	o.MaxUtilizationLte = maxUtilizationLte
+}
+
+// WithMaxUtilizationn adds the maxUtilizationn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithMaxUtilizationn(maxUtilizationn *string) *DcimPowerFeedsListParams {
+	o.SetMaxUtilizationn(maxUtilizationn)
+	return o
+}
+
+// SetMaxUtilizationn adds the maxUtilizationN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetMaxUtilizationn(maxUtilizationn *string) {
+	o.MaxUtilizationn = maxUtilizationn
+}
+
 // WithName adds the name to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithName(name *string) *DcimPowerFeedsListParams {
 	o.SetName(name)
@@ -294,6 +535,105 @@ func (o *DcimPowerFeedsListParams) WithName(name *string) *DcimPowerFeedsListPar
 // SetName adds the name to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameIc adds the nameIc to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameIc(nameIc *string) *DcimPowerFeedsListParams {
+	o.SetNameIc(nameIc)
+	return o
+}
+
+// SetNameIc adds the nameIc to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameIc(nameIc *string) {
+	o.NameIc = nameIc
+}
+
+// WithNameIe adds the nameIe to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameIe(nameIe *string) *DcimPowerFeedsListParams {
+	o.SetNameIe(nameIe)
+	return o
+}
+
+// SetNameIe adds the nameIe to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameIe(nameIe *string) {
+	o.NameIe = nameIe
+}
+
+// WithNameIew adds the nameIew to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameIew(nameIew *string) *DcimPowerFeedsListParams {
+	o.SetNameIew(nameIew)
+	return o
+}
+
+// SetNameIew adds the nameIew to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameIew(nameIew *string) {
+	o.NameIew = nameIew
+}
+
+// WithNameIsw adds the nameIsw to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameIsw(nameIsw *string) *DcimPowerFeedsListParams {
+	o.SetNameIsw(nameIsw)
+	return o
+}
+
+// SetNameIsw adds the nameIsw to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameIsw(nameIsw *string) {
+	o.NameIsw = nameIsw
+}
+
+// WithNamen adds the namen to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNamen(namen *string) *DcimPowerFeedsListParams {
+	o.SetNamen(namen)
+	return o
+}
+
+// SetNamen adds the nameN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNamen(namen *string) {
+	o.Namen = namen
+}
+
+// WithNameNic adds the nameNic to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameNic(nameNic *string) *DcimPowerFeedsListParams {
+	o.SetNameNic(nameNic)
+	return o
+}
+
+// SetNameNic adds the nameNic to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameNic(nameNic *string) {
+	o.NameNic = nameNic
+}
+
+// WithNameNie adds the nameNie to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameNie(nameNie *string) *DcimPowerFeedsListParams {
+	o.SetNameNie(nameNie)
+	return o
+}
+
+// SetNameNie adds the nameNie to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameNie(nameNie *string) {
+	o.NameNie = nameNie
+}
+
+// WithNameNiew adds the nameNiew to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameNiew(nameNiew *string) *DcimPowerFeedsListParams {
+	o.SetNameNiew(nameNiew)
+	return o
+}
+
+// SetNameNiew adds the nameNiew to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameNiew(nameNiew *string) {
+	o.NameNiew = nameNiew
+}
+
+// WithNameNisw adds the nameNisw to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameNisw(nameNisw *string) *DcimPowerFeedsListParams {
+	o.SetNameNisw(nameNisw)
+	return o
+}
+
+// SetNameNisw adds the nameNisw to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameNisw(nameNisw *string) {
+	o.NameNisw = nameNisw
 }
 
 // WithOffset adds the offset to the dcim power feeds list params
@@ -318,6 +658,17 @@ func (o *DcimPowerFeedsListParams) SetPhase(phase *string) {
 	o.Phase = phase
 }
 
+// WithPhasen adds the phasen to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithPhasen(phasen *string) *DcimPowerFeedsListParams {
+	o.SetPhasen(phasen)
+	return o
+}
+
+// SetPhasen adds the phaseN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetPhasen(phasen *string) {
+	o.Phasen = phasen
+}
+
 // WithPowerPanelID adds the powerPanelID to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithPowerPanelID(powerPanelID *string) *DcimPowerFeedsListParams {
 	o.SetPowerPanelID(powerPanelID)
@@ -327,6 +678,17 @@ func (o *DcimPowerFeedsListParams) WithPowerPanelID(powerPanelID *string) *DcimP
 // SetPowerPanelID adds the powerPanelId to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetPowerPanelID(powerPanelID *string) {
 	o.PowerPanelID = powerPanelID
+}
+
+// WithPowerPanelIDn adds the powerPanelIDn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithPowerPanelIDn(powerPanelIDn *string) *DcimPowerFeedsListParams {
+	o.SetPowerPanelIDn(powerPanelIDn)
+	return o
+}
+
+// SetPowerPanelIDn adds the powerPanelIdN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetPowerPanelIDn(powerPanelIDn *string) {
+	o.PowerPanelIDn = powerPanelIDn
 }
 
 // WithQ adds the q to the dcim power feeds list params
@@ -351,6 +713,17 @@ func (o *DcimPowerFeedsListParams) SetRackID(rackID *string) {
 	o.RackID = rackID
 }
 
+// WithRackIDn adds the rackIDn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithRackIDn(rackIDn *string) *DcimPowerFeedsListParams {
+	o.SetRackIDn(rackIDn)
+	return o
+}
+
+// SetRackIDn adds the rackIdN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetRackIDn(rackIDn *string) {
+	o.RackIDn = rackIDn
+}
+
 // WithRegion adds the region to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithRegion(region *string) *DcimPowerFeedsListParams {
 	o.SetRegion(region)
@@ -360,6 +733,17 @@ func (o *DcimPowerFeedsListParams) WithRegion(region *string) *DcimPowerFeedsLis
 // SetRegion adds the region to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetRegion(region *string) {
 	o.Region = region
+}
+
+// WithRegionn adds the regionn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithRegionn(regionn *string) *DcimPowerFeedsListParams {
+	o.SetRegionn(regionn)
+	return o
+}
+
+// SetRegionn adds the regionN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetRegionn(regionn *string) {
+	o.Regionn = regionn
 }
 
 // WithRegionID adds the regionID to the dcim power feeds list params
@@ -373,6 +757,17 @@ func (o *DcimPowerFeedsListParams) SetRegionID(regionID *string) {
 	o.RegionID = regionID
 }
 
+// WithRegionIDn adds the regionIDn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithRegionIDn(regionIDn *string) *DcimPowerFeedsListParams {
+	o.SetRegionIDn(regionIDn)
+	return o
+}
+
+// SetRegionIDn adds the regionIdN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetRegionIDn(regionIDn *string) {
+	o.RegionIDn = regionIDn
+}
+
 // WithSite adds the site to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithSite(site *string) *DcimPowerFeedsListParams {
 	o.SetSite(site)
@@ -382,6 +777,17 @@ func (o *DcimPowerFeedsListParams) WithSite(site *string) *DcimPowerFeedsListPar
 // SetSite adds the site to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetSite(site *string) {
 	o.Site = site
+}
+
+// WithSiten adds the siten to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithSiten(siten *string) *DcimPowerFeedsListParams {
+	o.SetSiten(siten)
+	return o
+}
+
+// SetSiten adds the siteN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetSiten(siten *string) {
+	o.Siten = siten
 }
 
 // WithSiteID adds the siteID to the dcim power feeds list params
@@ -395,6 +801,17 @@ func (o *DcimPowerFeedsListParams) SetSiteID(siteID *string) {
 	o.SiteID = siteID
 }
 
+// WithSiteIDn adds the siteIDn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithSiteIDn(siteIDn *string) *DcimPowerFeedsListParams {
+	o.SetSiteIDn(siteIDn)
+	return o
+}
+
+// SetSiteIDn adds the siteIdN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetSiteIDn(siteIDn *string) {
+	o.SiteIDn = siteIDn
+}
+
 // WithStatus adds the status to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithStatus(status *string) *DcimPowerFeedsListParams {
 	o.SetStatus(status)
@@ -404,6 +821,17 @@ func (o *DcimPowerFeedsListParams) WithStatus(status *string) *DcimPowerFeedsLis
 // SetStatus adds the status to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetStatus(status *string) {
 	o.Status = status
+}
+
+// WithStatusn adds the statusn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithStatusn(statusn *string) *DcimPowerFeedsListParams {
+	o.SetStatusn(statusn)
+	return o
+}
+
+// SetStatusn adds the statusN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetStatusn(statusn *string) {
+	o.Statusn = statusn
 }
 
 // WithSupply adds the supply to the dcim power feeds list params
@@ -417,6 +845,17 @@ func (o *DcimPowerFeedsListParams) SetSupply(supply *string) {
 	o.Supply = supply
 }
 
+// WithSupplyn adds the supplyn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithSupplyn(supplyn *string) *DcimPowerFeedsListParams {
+	o.SetSupplyn(supplyn)
+	return o
+}
+
+// SetSupplyn adds the supplyN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetSupplyn(supplyn *string) {
+	o.Supplyn = supplyn
+}
+
 // WithTag adds the tag to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithTag(tag *string) *DcimPowerFeedsListParams {
 	o.SetTag(tag)
@@ -426,6 +865,17 @@ func (o *DcimPowerFeedsListParams) WithTag(tag *string) *DcimPowerFeedsListParam
 // SetTag adds the tag to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetTag(tag *string) {
 	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithTagn(tagn *string) *DcimPowerFeedsListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
 }
 
 // WithType adds the typeVar to the dcim power feeds list params
@@ -439,6 +889,17 @@ func (o *DcimPowerFeedsListParams) SetType(typeVar *string) {
 	o.Type = typeVar
 }
 
+// WithTypen adds the typen to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithTypen(typen *string) *DcimPowerFeedsListParams {
+	o.SetTypen(typen)
+	return o
+}
+
+// SetTypen adds the typeN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetTypen(typen *string) {
+	o.Typen = typen
+}
+
 // WithVoltage adds the voltage to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithVoltage(voltage *string) *DcimPowerFeedsListParams {
 	o.SetVoltage(voltage)
@@ -448,6 +909,61 @@ func (o *DcimPowerFeedsListParams) WithVoltage(voltage *string) *DcimPowerFeedsL
 // SetVoltage adds the voltage to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetVoltage(voltage *string) {
 	o.Voltage = voltage
+}
+
+// WithVoltageGt adds the voltageGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithVoltageGt(voltageGt *string) *DcimPowerFeedsListParams {
+	o.SetVoltageGt(voltageGt)
+	return o
+}
+
+// SetVoltageGt adds the voltageGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetVoltageGt(voltageGt *string) {
+	o.VoltageGt = voltageGt
+}
+
+// WithVoltageGte adds the voltageGte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithVoltageGte(voltageGte *string) *DcimPowerFeedsListParams {
+	o.SetVoltageGte(voltageGte)
+	return o
+}
+
+// SetVoltageGte adds the voltageGte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetVoltageGte(voltageGte *string) {
+	o.VoltageGte = voltageGte
+}
+
+// WithVoltageLt adds the voltageLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithVoltageLt(voltageLt *string) *DcimPowerFeedsListParams {
+	o.SetVoltageLt(voltageLt)
+	return o
+}
+
+// SetVoltageLt adds the voltageLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetVoltageLt(voltageLt *string) {
+	o.VoltageLt = voltageLt
+}
+
+// WithVoltageLte adds the voltageLte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithVoltageLte(voltageLte *string) *DcimPowerFeedsListParams {
+	o.SetVoltageLte(voltageLte)
+	return o
+}
+
+// SetVoltageLte adds the voltageLte to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetVoltageLte(voltageLte *string) {
+	o.VoltageLte = voltageLte
+}
+
+// WithVoltagen adds the voltagen to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithVoltagen(voltagen *string) *DcimPowerFeedsListParams {
+	o.SetVoltagen(voltagen)
+	return o
+}
+
+// SetVoltagen adds the voltageN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetVoltagen(voltagen *string) {
+	o.Voltagen = voltagen
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -468,6 +984,86 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qAmperage := qrAmperage
 		if qAmperage != "" {
 			if err := r.SetQueryParam("amperage", qAmperage); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AmperageGt != nil {
+
+		// query param amperage__gt
+		var qrAmperageGt string
+		if o.AmperageGt != nil {
+			qrAmperageGt = *o.AmperageGt
+		}
+		qAmperageGt := qrAmperageGt
+		if qAmperageGt != "" {
+			if err := r.SetQueryParam("amperage__gt", qAmperageGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AmperageGte != nil {
+
+		// query param amperage__gte
+		var qrAmperageGte string
+		if o.AmperageGte != nil {
+			qrAmperageGte = *o.AmperageGte
+		}
+		qAmperageGte := qrAmperageGte
+		if qAmperageGte != "" {
+			if err := r.SetQueryParam("amperage__gte", qAmperageGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AmperageLt != nil {
+
+		// query param amperage__lt
+		var qrAmperageLt string
+		if o.AmperageLt != nil {
+			qrAmperageLt = *o.AmperageLt
+		}
+		qAmperageLt := qrAmperageLt
+		if qAmperageLt != "" {
+			if err := r.SetQueryParam("amperage__lt", qAmperageLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AmperageLte != nil {
+
+		// query param amperage__lte
+		var qrAmperageLte string
+		if o.AmperageLte != nil {
+			qrAmperageLte = *o.AmperageLte
+		}
+		qAmperageLte := qrAmperageLte
+		if qAmperageLte != "" {
+			if err := r.SetQueryParam("amperage__lte", qAmperageLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Amperagen != nil {
+
+		// query param amperage__n
+		var qrAmperagen string
+		if o.Amperagen != nil {
+			qrAmperagen = *o.Amperagen
+		}
+		qAmperagen := qrAmperagen
+		if qAmperagen != "" {
+			if err := r.SetQueryParam("amperage__n", qAmperagen); err != nil {
 				return err
 			}
 		}
@@ -522,16 +1118,96 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
-	if o.IDIn != nil {
+	if o.ID != nil {
 
-		// query param id__in
-		var qrIDIn string
-		if o.IDIn != nil {
-			qrIDIn = *o.IDIn
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
 		}
-		qIDIn := qrIDIn
-		if qIDIn != "" {
-			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
@@ -618,6 +1294,86 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.MaxUtilizationGt != nil {
+
+		// query param max_utilization__gt
+		var qrMaxUtilizationGt string
+		if o.MaxUtilizationGt != nil {
+			qrMaxUtilizationGt = *o.MaxUtilizationGt
+		}
+		qMaxUtilizationGt := qrMaxUtilizationGt
+		if qMaxUtilizationGt != "" {
+			if err := r.SetQueryParam("max_utilization__gt", qMaxUtilizationGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.MaxUtilizationGte != nil {
+
+		// query param max_utilization__gte
+		var qrMaxUtilizationGte string
+		if o.MaxUtilizationGte != nil {
+			qrMaxUtilizationGte = *o.MaxUtilizationGte
+		}
+		qMaxUtilizationGte := qrMaxUtilizationGte
+		if qMaxUtilizationGte != "" {
+			if err := r.SetQueryParam("max_utilization__gte", qMaxUtilizationGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.MaxUtilizationLt != nil {
+
+		// query param max_utilization__lt
+		var qrMaxUtilizationLt string
+		if o.MaxUtilizationLt != nil {
+			qrMaxUtilizationLt = *o.MaxUtilizationLt
+		}
+		qMaxUtilizationLt := qrMaxUtilizationLt
+		if qMaxUtilizationLt != "" {
+			if err := r.SetQueryParam("max_utilization__lt", qMaxUtilizationLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.MaxUtilizationLte != nil {
+
+		// query param max_utilization__lte
+		var qrMaxUtilizationLte string
+		if o.MaxUtilizationLte != nil {
+			qrMaxUtilizationLte = *o.MaxUtilizationLte
+		}
+		qMaxUtilizationLte := qrMaxUtilizationLte
+		if qMaxUtilizationLte != "" {
+			if err := r.SetQueryParam("max_utilization__lte", qMaxUtilizationLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.MaxUtilizationn != nil {
+
+		// query param max_utilization__n
+		var qrMaxUtilizationn string
+		if o.MaxUtilizationn != nil {
+			qrMaxUtilizationn = *o.MaxUtilizationn
+		}
+		qMaxUtilizationn := qrMaxUtilizationn
+		if qMaxUtilizationn != "" {
+			if err := r.SetQueryParam("max_utilization__n", qMaxUtilizationn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Name != nil {
 
 		// query param name
@@ -628,6 +1384,150 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qName := qrName
 		if qName != "" {
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIc != nil {
+
+		// query param name__ic
+		var qrNameIc string
+		if o.NameIc != nil {
+			qrNameIc = *o.NameIc
+		}
+		qNameIc := qrNameIc
+		if qNameIc != "" {
+			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIe != nil {
+
+		// query param name__ie
+		var qrNameIe string
+		if o.NameIe != nil {
+			qrNameIe = *o.NameIe
+		}
+		qNameIe := qrNameIe
+		if qNameIe != "" {
+			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIew != nil {
+
+		// query param name__iew
+		var qrNameIew string
+		if o.NameIew != nil {
+			qrNameIew = *o.NameIew
+		}
+		qNameIew := qrNameIew
+		if qNameIew != "" {
+			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIsw != nil {
+
+		// query param name__isw
+		var qrNameIsw string
+		if o.NameIsw != nil {
+			qrNameIsw = *o.NameIsw
+		}
+		qNameIsw := qrNameIsw
+		if qNameIsw != "" {
+			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Namen != nil {
+
+		// query param name__n
+		var qrNamen string
+		if o.Namen != nil {
+			qrNamen = *o.Namen
+		}
+		qNamen := qrNamen
+		if qNamen != "" {
+			if err := r.SetQueryParam("name__n", qNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNic != nil {
+
+		// query param name__nic
+		var qrNameNic string
+		if o.NameNic != nil {
+			qrNameNic = *o.NameNic
+		}
+		qNameNic := qrNameNic
+		if qNameNic != "" {
+			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNie != nil {
+
+		// query param name__nie
+		var qrNameNie string
+		if o.NameNie != nil {
+			qrNameNie = *o.NameNie
+		}
+		qNameNie := qrNameNie
+		if qNameNie != "" {
+			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNiew != nil {
+
+		// query param name__niew
+		var qrNameNiew string
+		if o.NameNiew != nil {
+			qrNameNiew = *o.NameNiew
+		}
+		qNameNiew := qrNameNiew
+		if qNameNiew != "" {
+			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNisw != nil {
+
+		// query param name__nisw
+		var qrNameNisw string
+		if o.NameNisw != nil {
+			qrNameNisw = *o.NameNisw
+		}
+		qNameNisw := qrNameNisw
+		if qNameNisw != "" {
+			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
@@ -666,6 +1566,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.Phasen != nil {
+
+		// query param phase__n
+		var qrPhasen string
+		if o.Phasen != nil {
+			qrPhasen = *o.Phasen
+		}
+		qPhasen := qrPhasen
+		if qPhasen != "" {
+			if err := r.SetQueryParam("phase__n", qPhasen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.PowerPanelID != nil {
 
 		// query param power_panel_id
@@ -676,6 +1592,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qPowerPanelID := qrPowerPanelID
 		if qPowerPanelID != "" {
 			if err := r.SetQueryParam("power_panel_id", qPowerPanelID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PowerPanelIDn != nil {
+
+		// query param power_panel_id__n
+		var qrPowerPanelIDn string
+		if o.PowerPanelIDn != nil {
+			qrPowerPanelIDn = *o.PowerPanelIDn
+		}
+		qPowerPanelIDn := qrPowerPanelIDn
+		if qPowerPanelIDn != "" {
+			if err := r.SetQueryParam("power_panel_id__n", qPowerPanelIDn); err != nil {
 				return err
 			}
 		}
@@ -714,6 +1646,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.RackIDn != nil {
+
+		// query param rack_id__n
+		var qrRackIDn string
+		if o.RackIDn != nil {
+			qrRackIDn = *o.RackIDn
+		}
+		qRackIDn := qrRackIDn
+		if qRackIDn != "" {
+			if err := r.SetQueryParam("rack_id__n", qRackIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Region != nil {
 
 		// query param region
@@ -724,6 +1672,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qRegion := qrRegion
 		if qRegion != "" {
 			if err := r.SetQueryParam("region", qRegion); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Regionn != nil {
+
+		// query param region__n
+		var qrRegionn string
+		if o.Regionn != nil {
+			qrRegionn = *o.Regionn
+		}
+		qRegionn := qrRegionn
+		if qRegionn != "" {
+			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
 				return err
 			}
 		}
@@ -746,6 +1710,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.RegionIDn != nil {
+
+		// query param region_id__n
+		var qrRegionIDn string
+		if o.RegionIDn != nil {
+			qrRegionIDn = *o.RegionIDn
+		}
+		qRegionIDn := qrRegionIDn
+		if qRegionIDn != "" {
+			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Site != nil {
 
 		// query param site
@@ -756,6 +1736,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qSite := qrSite
 		if qSite != "" {
 			if err := r.SetQueryParam("site", qSite); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Siten != nil {
+
+		// query param site__n
+		var qrSiten string
+		if o.Siten != nil {
+			qrSiten = *o.Siten
+		}
+		qSiten := qrSiten
+		if qSiten != "" {
+			if err := r.SetQueryParam("site__n", qSiten); err != nil {
 				return err
 			}
 		}
@@ -778,6 +1774,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.SiteIDn != nil {
+
+		// query param site_id__n
+		var qrSiteIDn string
+		if o.SiteIDn != nil {
+			qrSiteIDn = *o.SiteIDn
+		}
+		qSiteIDn := qrSiteIDn
+		if qSiteIDn != "" {
+			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Status != nil {
 
 		// query param status
@@ -788,6 +1800,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qStatus := qrStatus
 		if qStatus != "" {
 			if err := r.SetQueryParam("status", qStatus); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Statusn != nil {
+
+		// query param status__n
+		var qrStatusn string
+		if o.Statusn != nil {
+			qrStatusn = *o.Statusn
+		}
+		qStatusn := qrStatusn
+		if qStatusn != "" {
+			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
 				return err
 			}
 		}
@@ -810,6 +1838,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.Supplyn != nil {
+
+		// query param supply__n
+		var qrSupplyn string
+		if o.Supplyn != nil {
+			qrSupplyn = *o.Supplyn
+		}
+		qSupplyn := qrSupplyn
+		if qSupplyn != "" {
+			if err := r.SetQueryParam("supply__n", qSupplyn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tag != nil {
 
 		// query param tag
@@ -820,6 +1864,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qTag := qrTag
 		if qTag != "" {
 			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
@@ -842,6 +1902,22 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.Typen != nil {
+
+		// query param type__n
+		var qrTypen string
+		if o.Typen != nil {
+			qrTypen = *o.Typen
+		}
+		qTypen := qrTypen
+		if qTypen != "" {
+			if err := r.SetQueryParam("type__n", qTypen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Voltage != nil {
 
 		// query param voltage
@@ -852,6 +1928,86 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qVoltage := qrVoltage
 		if qVoltage != "" {
 			if err := r.SetQueryParam("voltage", qVoltage); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VoltageGt != nil {
+
+		// query param voltage__gt
+		var qrVoltageGt string
+		if o.VoltageGt != nil {
+			qrVoltageGt = *o.VoltageGt
+		}
+		qVoltageGt := qrVoltageGt
+		if qVoltageGt != "" {
+			if err := r.SetQueryParam("voltage__gt", qVoltageGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VoltageGte != nil {
+
+		// query param voltage__gte
+		var qrVoltageGte string
+		if o.VoltageGte != nil {
+			qrVoltageGte = *o.VoltageGte
+		}
+		qVoltageGte := qrVoltageGte
+		if qVoltageGte != "" {
+			if err := r.SetQueryParam("voltage__gte", qVoltageGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VoltageLt != nil {
+
+		// query param voltage__lt
+		var qrVoltageLt string
+		if o.VoltageLt != nil {
+			qrVoltageLt = *o.VoltageLt
+		}
+		qVoltageLt := qrVoltageLt
+		if qVoltageLt != "" {
+			if err := r.SetQueryParam("voltage__lt", qVoltageLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VoltageLte != nil {
+
+		// query param voltage__lte
+		var qrVoltageLte string
+		if o.VoltageLte != nil {
+			qrVoltageLte = *o.VoltageLte
+		}
+		qVoltageLte := qrVoltageLte
+		if qVoltageLte != "" {
+			if err := r.SetQueryParam("voltage__lte", qVoltageLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Voltagen != nil {
+
+		// query param voltage__n
+		var qrVoltagen string
+		if o.Voltagen != nil {
+			qrVoltagen = *o.Voltagen
+		}
+		qVoltagen := qrVoltagen
+		if qVoltagen != "" {
+			if err := r.SetQueryParam("voltage__n", qVoltagen); err != nil {
 				return err
 			}
 		}

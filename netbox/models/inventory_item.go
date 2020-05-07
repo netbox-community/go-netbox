@@ -23,14 +23,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // InventoryItem inventory item
+//
 // swagger:model InventoryItem
 type InventoryItem struct {
 
@@ -41,7 +41,7 @@ type InventoryItem struct {
 	AssetTag *string `json:"asset_tag,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// device
@@ -49,6 +49,8 @@ type InventoryItem struct {
 	Device *NestedDevice `json:"device"`
 
 	// Discovered
+	//
+	// This item was automatically discovered
 	Discovered bool `json:"discovered,omitempty"`
 
 	// ID
@@ -68,6 +70,8 @@ type InventoryItem struct {
 	Parent *int64 `json:"parent,omitempty"`
 
 	// Part ID
+	//
+	// Manufacturer-assigned part identifier
 	// Max Length: 50
 	PartID string `json:"part_id,omitempty"`
 
@@ -140,7 +144,7 @@ func (m *InventoryItem) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

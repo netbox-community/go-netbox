@@ -24,14 +24,14 @@ import (
 	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritablePrefix writable prefix
+//
 // swagger:model WritablePrefix
 type WritablePrefix struct {
 
@@ -44,12 +44,12 @@ type WritablePrefix struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Family
 	// Read Only: true
-	Family int64 `json:"family,omitempty"`
+	Family string `json:"family,omitempty"`
 
 	// ID
 	// Read Only: true
@@ -151,7 +151,7 @@ func (m *WritablePrefix) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

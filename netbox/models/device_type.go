@@ -21,16 +21,17 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // DeviceType device type
+//
 // swagger:model DeviceType
 type DeviceType struct {
 
@@ -358,15 +359,18 @@ func (m *DeviceType) UnmarshalBinary(b []byte) error {
 }
 
 // DeviceTypeSubdeviceRole Subdevice role
+//
 // swagger:model DeviceTypeSubdeviceRole
 type DeviceTypeSubdeviceRole struct {
 
 	// label
 	// Required: true
+	// Enum: [Parent Child]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [parent child]
 	Value *string `json:"value"`
 }
 
@@ -388,18 +392,86 @@ func (m *DeviceTypeSubdeviceRole) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var deviceTypeSubdeviceRoleTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Parent","Child"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceTypeSubdeviceRoleTypeLabelPropEnum = append(deviceTypeSubdeviceRoleTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceTypeSubdeviceRoleLabelParent captures enum value "Parent"
+	DeviceTypeSubdeviceRoleLabelParent string = "Parent"
+
+	// DeviceTypeSubdeviceRoleLabelChild captures enum value "Child"
+	DeviceTypeSubdeviceRoleLabelChild string = "Child"
+)
+
+// prop value enum
+func (m *DeviceTypeSubdeviceRole) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, deviceTypeSubdeviceRoleTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *DeviceTypeSubdeviceRole) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("subdevice_role"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("subdevice_role"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var deviceTypeSubdeviceRoleTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["parent","child"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceTypeSubdeviceRoleTypeValuePropEnum = append(deviceTypeSubdeviceRoleTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceTypeSubdeviceRoleValueParent captures enum value "parent"
+	DeviceTypeSubdeviceRoleValueParent string = "parent"
+
+	// DeviceTypeSubdeviceRoleValueChild captures enum value "child"
+	DeviceTypeSubdeviceRoleValueChild string = "child"
+)
+
+// prop value enum
+func (m *DeviceTypeSubdeviceRole) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, deviceTypeSubdeviceRoleTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *DeviceTypeSubdeviceRole) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("subdevice_role"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("subdevice_role"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

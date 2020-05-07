@@ -21,16 +21,17 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // VirtualMachineWithConfigContext virtual machine with config context
+//
 // swagger:model VirtualMachineWithConfigContext
 type VirtualMachineWithConfigContext struct {
 
@@ -480,15 +481,18 @@ func (m *VirtualMachineWithConfigContext) UnmarshalBinary(b []byte) error {
 }
 
 // VirtualMachineWithConfigContextStatus Status
+//
 // swagger:model VirtualMachineWithConfigContextStatus
 type VirtualMachineWithConfigContextStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Offline Active Planned Staged Failed Decommissioning]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [offline active planned staged failed decommissioning]
 	Value *string `json:"value"`
 }
 
@@ -510,18 +514,110 @@ func (m *VirtualMachineWithConfigContextStatus) Validate(formats strfmt.Registry
 	return nil
 }
 
+var virtualMachineWithConfigContextStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Offline","Active","Planned","Staged","Failed","Decommissioning"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		virtualMachineWithConfigContextStatusTypeLabelPropEnum = append(virtualMachineWithConfigContextStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// VirtualMachineWithConfigContextStatusLabelOffline captures enum value "Offline"
+	VirtualMachineWithConfigContextStatusLabelOffline string = "Offline"
+
+	// VirtualMachineWithConfigContextStatusLabelActive captures enum value "Active"
+	VirtualMachineWithConfigContextStatusLabelActive string = "Active"
+
+	// VirtualMachineWithConfigContextStatusLabelPlanned captures enum value "Planned"
+	VirtualMachineWithConfigContextStatusLabelPlanned string = "Planned"
+
+	// VirtualMachineWithConfigContextStatusLabelStaged captures enum value "Staged"
+	VirtualMachineWithConfigContextStatusLabelStaged string = "Staged"
+
+	// VirtualMachineWithConfigContextStatusLabelFailed captures enum value "Failed"
+	VirtualMachineWithConfigContextStatusLabelFailed string = "Failed"
+
+	// VirtualMachineWithConfigContextStatusLabelDecommissioning captures enum value "Decommissioning"
+	VirtualMachineWithConfigContextStatusLabelDecommissioning string = "Decommissioning"
+)
+
+// prop value enum
+func (m *VirtualMachineWithConfigContextStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, virtualMachineWithConfigContextStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *VirtualMachineWithConfigContextStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var virtualMachineWithConfigContextStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["offline","active","planned","staged","failed","decommissioning"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		virtualMachineWithConfigContextStatusTypeValuePropEnum = append(virtualMachineWithConfigContextStatusTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// VirtualMachineWithConfigContextStatusValueOffline captures enum value "offline"
+	VirtualMachineWithConfigContextStatusValueOffline string = "offline"
+
+	// VirtualMachineWithConfigContextStatusValueActive captures enum value "active"
+	VirtualMachineWithConfigContextStatusValueActive string = "active"
+
+	// VirtualMachineWithConfigContextStatusValuePlanned captures enum value "planned"
+	VirtualMachineWithConfigContextStatusValuePlanned string = "planned"
+
+	// VirtualMachineWithConfigContextStatusValueStaged captures enum value "staged"
+	VirtualMachineWithConfigContextStatusValueStaged string = "staged"
+
+	// VirtualMachineWithConfigContextStatusValueFailed captures enum value "failed"
+	VirtualMachineWithConfigContextStatusValueFailed string = "failed"
+
+	// VirtualMachineWithConfigContextStatusValueDecommissioning captures enum value "decommissioning"
+	VirtualMachineWithConfigContextStatusValueDecommissioning string = "decommissioning"
+)
+
+// prop value enum
+func (m *VirtualMachineWithConfigContextStatus) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, virtualMachineWithConfigContextStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *VirtualMachineWithConfigContextStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

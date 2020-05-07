@@ -23,14 +23,14 @@ package models
 import (
 	"encoding/json"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ExportTemplate export template
+//
 // swagger:model ExportTemplate
 type ExportTemplate struct {
 
@@ -228,15 +228,18 @@ func (m *ExportTemplate) UnmarshalBinary(b []byte) error {
 }
 
 // ExportTemplateTemplateLanguage Template language
+//
 // swagger:model ExportTemplateTemplateLanguage
 type ExportTemplateTemplateLanguage struct {
 
 	// label
 	// Required: true
+	// Enum: [Django Jinja2]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [django jinja2]
 	Value *string `json:"value"`
 }
 
@@ -271,18 +274,86 @@ func (m *ExportTemplateTemplateLanguage) Validate(formats strfmt.Registry) error
 	return nil
 }
 
+var exportTemplateTemplateLanguageTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Django","Jinja2"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		exportTemplateTemplateLanguageTypeLabelPropEnum = append(exportTemplateTemplateLanguageTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// ExportTemplateTemplateLanguageLabelDjango captures enum value "Django"
+	ExportTemplateTemplateLanguageLabelDjango string = "Django"
+
+	// ExportTemplateTemplateLanguageLabelJinja2 captures enum value "Jinja2"
+	ExportTemplateTemplateLanguageLabelJinja2 string = "Jinja2"
+)
+
+// prop value enum
+func (m *ExportTemplateTemplateLanguage) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, exportTemplateTemplateLanguageTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *ExportTemplateTemplateLanguage) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("template_language"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("template_language"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var exportTemplateTemplateLanguageTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["django","jinja2"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		exportTemplateTemplateLanguageTypeValuePropEnum = append(exportTemplateTemplateLanguageTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// ExportTemplateTemplateLanguageValueDjango captures enum value "django"
+	ExportTemplateTemplateLanguageValueDjango string = "django"
+
+	// ExportTemplateTemplateLanguageValueJinja2 captures enum value "jinja2"
+	ExportTemplateTemplateLanguageValueJinja2 string = "jinja2"
+)
+
+// prop value enum
+func (m *ExportTemplateTemplateLanguage) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, exportTemplateTemplateLanguageTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *ExportTemplateTemplateLanguage) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("template_language"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("template_language"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

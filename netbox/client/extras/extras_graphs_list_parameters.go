@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewExtrasGraphsListParams creates a new ExtrasGraphsListParams object
@@ -77,6 +76,18 @@ for the extras graphs list operation typically these are written to a http.Reque
 */
 type ExtrasGraphsListParams struct {
 
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -84,6 +95,24 @@ type ExtrasGraphsListParams struct {
 	Limit *int64
 	/*Name*/
 	Name *string
+	/*NameIc*/
+	NameIc *string
+	/*NameIe*/
+	NameIe *string
+	/*NameIew*/
+	NameIew *string
+	/*NameIsw*/
+	NameIsw *string
+	/*Namen*/
+	Namen *string
+	/*NameNic*/
+	NameNic *string
+	/*NameNie*/
+	NameNie *string
+	/*NameNiew*/
+	NameNiew *string
+	/*NameNisw*/
+	NameNisw *string
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -91,8 +120,12 @@ type ExtrasGraphsListParams struct {
 	Offset *int64
 	/*TemplateLanguage*/
 	TemplateLanguage *string
+	/*TemplateLanguagen*/
+	TemplateLanguagen *string
 	/*Type*/
 	Type *string
+	/*Typen*/
+	Typen *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -132,6 +165,72 @@ func (o *ExtrasGraphsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithID adds the id to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithID(id *string) *ExtrasGraphsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithIDGt(iDGt *string) *ExtrasGraphsListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithIDGte(iDGte *string) *ExtrasGraphsListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithIDLt(iDLt *string) *ExtrasGraphsListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithIDLte(iDLte *string) *ExtrasGraphsListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithIDn(iDn *string) *ExtrasGraphsListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
+}
+
 // WithLimit adds the limit to the extras graphs list params
 func (o *ExtrasGraphsListParams) WithLimit(limit *int64) *ExtrasGraphsListParams {
 	o.SetLimit(limit)
@@ -152,6 +251,105 @@ func (o *ExtrasGraphsListParams) WithName(name *string) *ExtrasGraphsListParams 
 // SetName adds the name to the extras graphs list params
 func (o *ExtrasGraphsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameIc adds the nameIc to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithNameIc(nameIc *string) *ExtrasGraphsListParams {
+	o.SetNameIc(nameIc)
+	return o
+}
+
+// SetNameIc adds the nameIc to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetNameIc(nameIc *string) {
+	o.NameIc = nameIc
+}
+
+// WithNameIe adds the nameIe to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithNameIe(nameIe *string) *ExtrasGraphsListParams {
+	o.SetNameIe(nameIe)
+	return o
+}
+
+// SetNameIe adds the nameIe to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetNameIe(nameIe *string) {
+	o.NameIe = nameIe
+}
+
+// WithNameIew adds the nameIew to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithNameIew(nameIew *string) *ExtrasGraphsListParams {
+	o.SetNameIew(nameIew)
+	return o
+}
+
+// SetNameIew adds the nameIew to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetNameIew(nameIew *string) {
+	o.NameIew = nameIew
+}
+
+// WithNameIsw adds the nameIsw to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithNameIsw(nameIsw *string) *ExtrasGraphsListParams {
+	o.SetNameIsw(nameIsw)
+	return o
+}
+
+// SetNameIsw adds the nameIsw to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetNameIsw(nameIsw *string) {
+	o.NameIsw = nameIsw
+}
+
+// WithNamen adds the namen to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithNamen(namen *string) *ExtrasGraphsListParams {
+	o.SetNamen(namen)
+	return o
+}
+
+// SetNamen adds the nameN to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetNamen(namen *string) {
+	o.Namen = namen
+}
+
+// WithNameNic adds the nameNic to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithNameNic(nameNic *string) *ExtrasGraphsListParams {
+	o.SetNameNic(nameNic)
+	return o
+}
+
+// SetNameNic adds the nameNic to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetNameNic(nameNic *string) {
+	o.NameNic = nameNic
+}
+
+// WithNameNie adds the nameNie to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithNameNie(nameNie *string) *ExtrasGraphsListParams {
+	o.SetNameNie(nameNie)
+	return o
+}
+
+// SetNameNie adds the nameNie to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetNameNie(nameNie *string) {
+	o.NameNie = nameNie
+}
+
+// WithNameNiew adds the nameNiew to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithNameNiew(nameNiew *string) *ExtrasGraphsListParams {
+	o.SetNameNiew(nameNiew)
+	return o
+}
+
+// SetNameNiew adds the nameNiew to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetNameNiew(nameNiew *string) {
+	o.NameNiew = nameNiew
+}
+
+// WithNameNisw adds the nameNisw to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithNameNisw(nameNisw *string) *ExtrasGraphsListParams {
+	o.SetNameNisw(nameNisw)
+	return o
+}
+
+// SetNameNisw adds the nameNisw to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetNameNisw(nameNisw *string) {
+	o.NameNisw = nameNisw
 }
 
 // WithOffset adds the offset to the extras graphs list params
@@ -176,6 +374,17 @@ func (o *ExtrasGraphsListParams) SetTemplateLanguage(templateLanguage *string) {
 	o.TemplateLanguage = templateLanguage
 }
 
+// WithTemplateLanguagen adds the templateLanguagen to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithTemplateLanguagen(templateLanguagen *string) *ExtrasGraphsListParams {
+	o.SetTemplateLanguagen(templateLanguagen)
+	return o
+}
+
+// SetTemplateLanguagen adds the templateLanguageN to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetTemplateLanguagen(templateLanguagen *string) {
+	o.TemplateLanguagen = templateLanguagen
+}
+
 // WithType adds the typeVar to the extras graphs list params
 func (o *ExtrasGraphsListParams) WithType(typeVar *string) *ExtrasGraphsListParams {
 	o.SetType(typeVar)
@@ -187,6 +396,17 @@ func (o *ExtrasGraphsListParams) SetType(typeVar *string) {
 	o.Type = typeVar
 }
 
+// WithTypen adds the typen to the extras graphs list params
+func (o *ExtrasGraphsListParams) WithTypen(typen *string) *ExtrasGraphsListParams {
+	o.SetTypen(typen)
+	return o
+}
+
+// SetTypen adds the typeN to the extras graphs list params
+func (o *ExtrasGraphsListParams) SetTypen(typen *string) {
+	o.Typen = typen
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *ExtrasGraphsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -194,6 +414,102 @@ func (o *ExtrasGraphsListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		return err
 	}
 	var res []error
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.Limit != nil {
 
@@ -221,6 +537,150 @@ func (o *ExtrasGraphsListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		qName := qrName
 		if qName != "" {
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIc != nil {
+
+		// query param name__ic
+		var qrNameIc string
+		if o.NameIc != nil {
+			qrNameIc = *o.NameIc
+		}
+		qNameIc := qrNameIc
+		if qNameIc != "" {
+			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIe != nil {
+
+		// query param name__ie
+		var qrNameIe string
+		if o.NameIe != nil {
+			qrNameIe = *o.NameIe
+		}
+		qNameIe := qrNameIe
+		if qNameIe != "" {
+			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIew != nil {
+
+		// query param name__iew
+		var qrNameIew string
+		if o.NameIew != nil {
+			qrNameIew = *o.NameIew
+		}
+		qNameIew := qrNameIew
+		if qNameIew != "" {
+			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIsw != nil {
+
+		// query param name__isw
+		var qrNameIsw string
+		if o.NameIsw != nil {
+			qrNameIsw = *o.NameIsw
+		}
+		qNameIsw := qrNameIsw
+		if qNameIsw != "" {
+			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Namen != nil {
+
+		// query param name__n
+		var qrNamen string
+		if o.Namen != nil {
+			qrNamen = *o.Namen
+		}
+		qNamen := qrNamen
+		if qNamen != "" {
+			if err := r.SetQueryParam("name__n", qNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNic != nil {
+
+		// query param name__nic
+		var qrNameNic string
+		if o.NameNic != nil {
+			qrNameNic = *o.NameNic
+		}
+		qNameNic := qrNameNic
+		if qNameNic != "" {
+			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNie != nil {
+
+		// query param name__nie
+		var qrNameNie string
+		if o.NameNie != nil {
+			qrNameNie = *o.NameNie
+		}
+		qNameNie := qrNameNie
+		if qNameNie != "" {
+			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNiew != nil {
+
+		// query param name__niew
+		var qrNameNiew string
+		if o.NameNiew != nil {
+			qrNameNiew = *o.NameNiew
+		}
+		qNameNiew := qrNameNiew
+		if qNameNiew != "" {
+			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNisw != nil {
+
+		// query param name__nisw
+		var qrNameNisw string
+		if o.NameNisw != nil {
+			qrNameNisw = *o.NameNisw
+		}
+		qNameNisw := qrNameNisw
+		if qNameNisw != "" {
+			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
@@ -259,6 +719,22 @@ func (o *ExtrasGraphsListParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 	}
 
+	if o.TemplateLanguagen != nil {
+
+		// query param template_language__n
+		var qrTemplateLanguagen string
+		if o.TemplateLanguagen != nil {
+			qrTemplateLanguagen = *o.TemplateLanguagen
+		}
+		qTemplateLanguagen := qrTemplateLanguagen
+		if qTemplateLanguagen != "" {
+			if err := r.SetQueryParam("template_language__n", qTemplateLanguagen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Type != nil {
 
 		// query param type
@@ -269,6 +745,22 @@ func (o *ExtrasGraphsListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		qType := qrType
 		if qType != "" {
 			if err := r.SetQueryParam("type", qType); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Typen != nil {
+
+		// query param type__n
+		var qrTypen string
+		if o.Typen != nil {
+			qrTypen = *o.Typen
+		}
+		qTypen := qrTypen
+		if qTypen != "" {
+			if err := r.SetQueryParam("type__n", qTypen); err != nil {
 				return err
 			}
 		}

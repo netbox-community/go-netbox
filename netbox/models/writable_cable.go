@@ -23,14 +23,14 @@ package models
 import (
 	"encoding/json"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableCable writable cable
+//
 // swagger:model WritableCable
 type WritableCable struct {
 
@@ -89,7 +89,7 @@ type WritableCable struct {
 	TerminationbType *string `json:"termination_b_type"`
 
 	// Type
-	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 dac-active dac-passive coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 smf smf-os1 smf-os2 aoc power]
+	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 smf smf-os1 smf-os2 aoc power]
 	Type string `json:"type,omitempty"`
 }
 
@@ -341,7 +341,7 @@ var writableCableTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["cat3","cat5","cat5e","cat6","cat6a","cat7","dac-active","dac-passive","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","smf","smf-os1","smf-os2","aoc","power"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["cat3","cat5","cat5e","cat6","cat6a","cat7","dac-active","dac-passive","mrj21-trunk","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","smf","smf-os1","smf-os2","aoc","power"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -374,6 +374,9 @@ const (
 
 	// WritableCableTypeDacPassive captures enum value "dac-passive"
 	WritableCableTypeDacPassive string = "dac-passive"
+
+	// WritableCableTypeMrj21Trunk captures enum value "mrj21-trunk"
+	WritableCableTypeMrj21Trunk string = "mrj21-trunk"
 
 	// WritableCableTypeCoaxial captures enum value "coaxial"
 	WritableCableTypeCoaxial string = "coaxial"

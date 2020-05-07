@@ -28,11 +28,10 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	strfmt "github.com/go-openapi/strfmt"
-
-	models "github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
 // NewTenancyTenantGroupsUpdateParams creates a new TenancyTenantGroupsUpdateParams object
@@ -80,7 +79,7 @@ for the tenancy tenant groups update operation typically these are written to a 
 type TenancyTenantGroupsUpdateParams struct {
 
 	/*Data*/
-	Data *models.TenantGroup
+	Data *models.WritableTenantGroup
 	/*ID
 	  A unique integer value identifying this tenant group.
 
@@ -126,13 +125,13 @@ func (o *TenancyTenantGroupsUpdateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the tenancy tenant groups update params
-func (o *TenancyTenantGroupsUpdateParams) WithData(data *models.TenantGroup) *TenancyTenantGroupsUpdateParams {
+func (o *TenancyTenantGroupsUpdateParams) WithData(data *models.WritableTenantGroup) *TenancyTenantGroupsUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the tenancy tenant groups update params
-func (o *TenancyTenantGroupsUpdateParams) SetData(data *models.TenantGroup) {
+func (o *TenancyTenantGroupsUpdateParams) SetData(data *models.WritableTenantGroup) {
 	o.Data = data
 }
 

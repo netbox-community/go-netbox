@@ -25,10 +25,9 @@ import (
 	"io"
 
 	"github.com/go-openapi/runtime"
+	"github.com/go-openapi/strfmt"
 
-	strfmt "github.com/go-openapi/strfmt"
-
-	models "github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
 // IpamPrefixesAvailableIpsCreateReader is a Reader for the IpamPrefixesAvailableIpsCreate structure.
@@ -39,8 +38,8 @@ type IpamPrefixesAvailableIpsCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *IpamPrefixesAvailableIpsCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-	case 201:
-		result := NewIpamPrefixesAvailableIpsCreateCreated()
+	case 200:
+		result := NewIpamPrefixesAvailableIpsCreateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -51,33 +50,31 @@ func (o *IpamPrefixesAvailableIpsCreateReader) ReadResponse(response runtime.Cli
 	}
 }
 
-// NewIpamPrefixesAvailableIpsCreateCreated creates a IpamPrefixesAvailableIpsCreateCreated with default headers values
-func NewIpamPrefixesAvailableIpsCreateCreated() *IpamPrefixesAvailableIpsCreateCreated {
-	return &IpamPrefixesAvailableIpsCreateCreated{}
+// NewIpamPrefixesAvailableIpsCreateOK creates a IpamPrefixesAvailableIpsCreateOK with default headers values
+func NewIpamPrefixesAvailableIpsCreateOK() *IpamPrefixesAvailableIpsCreateOK {
+	return &IpamPrefixesAvailableIpsCreateOK{}
 }
 
-/*IpamPrefixesAvailableIpsCreateCreated handles this case with default header values.
+/*IpamPrefixesAvailableIpsCreateOK handles this case with default header values.
 
-IpamPrefixesAvailableIpsCreateCreated ipam prefixes available ips create created
+IpamPrefixesAvailableIpsCreateOK ipam prefixes available ips create o k
 */
-type IpamPrefixesAvailableIpsCreateCreated struct {
-	Payload *models.Prefix
+type IpamPrefixesAvailableIpsCreateOK struct {
+	Payload []*models.AvailableIP
 }
 
-func (o *IpamPrefixesAvailableIpsCreateCreated) Error() string {
-	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsCreateCreated  %+v", 201, o.Payload)
+func (o *IpamPrefixesAvailableIpsCreateOK) Error() string {
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsCreateOK  %+v", 200, o.Payload)
 }
 
-func (o *IpamPrefixesAvailableIpsCreateCreated) GetPayload() *models.Prefix {
+func (o *IpamPrefixesAvailableIpsCreateOK) GetPayload() []*models.AvailableIP {
 	return o.Payload
 }
 
-func (o *IpamPrefixesAvailableIpsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	o.Payload = new(models.Prefix)
+func (o *IpamPrefixesAvailableIpsCreateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

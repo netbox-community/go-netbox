@@ -21,14 +21,16 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
+	"encoding/json"
 
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // RackUnit rack unit
+//
 // swagger:model RackUnit
 type RackUnit struct {
 
@@ -138,15 +140,18 @@ func (m *RackUnit) UnmarshalBinary(b []byte) error {
 }
 
 // RackUnitFace Face
+//
 // swagger:model RackUnitFace
 type RackUnitFace struct {
 
 	// label
 	// Required: true
+	// Enum: [Front Rear]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [front rear]
 	Value *string `json:"value"`
 }
 
@@ -168,18 +173,86 @@ func (m *RackUnitFace) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var rackUnitFaceTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Front","Rear"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		rackUnitFaceTypeLabelPropEnum = append(rackUnitFaceTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// RackUnitFaceLabelFront captures enum value "Front"
+	RackUnitFaceLabelFront string = "Front"
+
+	// RackUnitFaceLabelRear captures enum value "Rear"
+	RackUnitFaceLabelRear string = "Rear"
+)
+
+// prop value enum
+func (m *RackUnitFace) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, rackUnitFaceTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *RackUnitFace) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("face"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("face"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var rackUnitFaceTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["front","rear"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		rackUnitFaceTypeValuePropEnum = append(rackUnitFaceTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// RackUnitFaceValueFront captures enum value "front"
+	RackUnitFaceValueFront string = "front"
+
+	// RackUnitFaceValueRear captures enum value "rear"
+	RackUnitFaceValueRear string = "rear"
+)
+
+// prop value enum
+func (m *RackUnitFace) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, rackUnitFaceTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *RackUnitFace) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("face"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("face"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

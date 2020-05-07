@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewCircuitsProvidersListParams creates a new CircuitsProvidersListParams object
@@ -79,19 +78,54 @@ type CircuitsProvidersListParams struct {
 
 	/*Account*/
 	Account *string
+	/*AccountIc*/
+	AccountIc *string
+	/*AccountIe*/
+	AccountIe *string
+	/*AccountIew*/
+	AccountIew *string
+	/*AccountIsw*/
+	AccountIsw *string
+	/*Accountn*/
+	Accountn *string
+	/*AccountNic*/
+	AccountNic *string
+	/*AccountNie*/
+	AccountNie *string
+	/*AccountNiew*/
+	AccountNiew *string
+	/*AccountNisw*/
+	AccountNisw *string
 	/*Asn*/
 	Asn *string
+	/*AsnGt*/
+	AsnGt *string
+	/*AsnGte*/
+	AsnGte *string
+	/*AsnLt*/
+	AsnLt *string
+	/*AsnLte*/
+	AsnLte *string
+	/*Asnn*/
+	Asnn *string
 	/*Created*/
 	Created *string
 	/*CreatedGte*/
 	CreatedGte *string
 	/*CreatedLte*/
 	CreatedLte *string
-	/*IDIn
-	  Multiple values may be separated by commas.
-
-	*/
-	IDIn *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -105,6 +139,24 @@ type CircuitsProvidersListParams struct {
 	Limit *int64
 	/*Name*/
 	Name *string
+	/*NameIc*/
+	NameIc *string
+	/*NameIe*/
+	NameIe *string
+	/*NameIew*/
+	NameIew *string
+	/*NameIsw*/
+	NameIsw *string
+	/*Namen*/
+	Namen *string
+	/*NameNic*/
+	NameNic *string
+	/*NameNie*/
+	NameNie *string
+	/*NameNiew*/
+	NameNiew *string
+	/*NameNisw*/
+	NameNisw *string
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -114,16 +166,44 @@ type CircuitsProvidersListParams struct {
 	Q *string
 	/*Region*/
 	Region *string
+	/*Regionn*/
+	Regionn *string
 	/*RegionID*/
 	RegionID *string
+	/*RegionIDn*/
+	RegionIDn *string
 	/*Site*/
 	Site *string
+	/*Siten*/
+	Siten *string
 	/*SiteID*/
 	SiteID *string
+	/*SiteIDn*/
+	SiteIDn *string
 	/*Slug*/
 	Slug *string
+	/*SlugIc*/
+	SlugIc *string
+	/*SlugIe*/
+	SlugIe *string
+	/*SlugIew*/
+	SlugIew *string
+	/*SlugIsw*/
+	SlugIsw *string
+	/*Slugn*/
+	Slugn *string
+	/*SlugNic*/
+	SlugNic *string
+	/*SlugNie*/
+	SlugNie *string
+	/*SlugNiew*/
+	SlugNiew *string
+	/*SlugNisw*/
+	SlugNisw *string
 	/*Tag*/
 	Tag *string
+	/*Tagn*/
+	Tagn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -174,6 +254,105 @@ func (o *CircuitsProvidersListParams) SetAccount(account *string) {
 	o.Account = account
 }
 
+// WithAccountIc adds the accountIc to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountIc(accountIc *string) *CircuitsProvidersListParams {
+	o.SetAccountIc(accountIc)
+	return o
+}
+
+// SetAccountIc adds the accountIc to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountIc(accountIc *string) {
+	o.AccountIc = accountIc
+}
+
+// WithAccountIe adds the accountIe to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountIe(accountIe *string) *CircuitsProvidersListParams {
+	o.SetAccountIe(accountIe)
+	return o
+}
+
+// SetAccountIe adds the accountIe to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountIe(accountIe *string) {
+	o.AccountIe = accountIe
+}
+
+// WithAccountIew adds the accountIew to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountIew(accountIew *string) *CircuitsProvidersListParams {
+	o.SetAccountIew(accountIew)
+	return o
+}
+
+// SetAccountIew adds the accountIew to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountIew(accountIew *string) {
+	o.AccountIew = accountIew
+}
+
+// WithAccountIsw adds the accountIsw to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountIsw(accountIsw *string) *CircuitsProvidersListParams {
+	o.SetAccountIsw(accountIsw)
+	return o
+}
+
+// SetAccountIsw adds the accountIsw to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountIsw(accountIsw *string) {
+	o.AccountIsw = accountIsw
+}
+
+// WithAccountn adds the accountn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountn(accountn *string) *CircuitsProvidersListParams {
+	o.SetAccountn(accountn)
+	return o
+}
+
+// SetAccountn adds the accountN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountn(accountn *string) {
+	o.Accountn = accountn
+}
+
+// WithAccountNic adds the accountNic to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountNic(accountNic *string) *CircuitsProvidersListParams {
+	o.SetAccountNic(accountNic)
+	return o
+}
+
+// SetAccountNic adds the accountNic to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountNic(accountNic *string) {
+	o.AccountNic = accountNic
+}
+
+// WithAccountNie adds the accountNie to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountNie(accountNie *string) *CircuitsProvidersListParams {
+	o.SetAccountNie(accountNie)
+	return o
+}
+
+// SetAccountNie adds the accountNie to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountNie(accountNie *string) {
+	o.AccountNie = accountNie
+}
+
+// WithAccountNiew adds the accountNiew to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountNiew(accountNiew *string) *CircuitsProvidersListParams {
+	o.SetAccountNiew(accountNiew)
+	return o
+}
+
+// SetAccountNiew adds the accountNiew to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountNiew(accountNiew *string) {
+	o.AccountNiew = accountNiew
+}
+
+// WithAccountNisw adds the accountNisw to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountNisw(accountNisw *string) *CircuitsProvidersListParams {
+	o.SetAccountNisw(accountNisw)
+	return o
+}
+
+// SetAccountNisw adds the accountNisw to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountNisw(accountNisw *string) {
+	o.AccountNisw = accountNisw
+}
+
 // WithAsn adds the asn to the circuits providers list params
 func (o *CircuitsProvidersListParams) WithAsn(asn *string) *CircuitsProvidersListParams {
 	o.SetAsn(asn)
@@ -183,6 +362,61 @@ func (o *CircuitsProvidersListParams) WithAsn(asn *string) *CircuitsProvidersLis
 // SetAsn adds the asn to the circuits providers list params
 func (o *CircuitsProvidersListParams) SetAsn(asn *string) {
 	o.Asn = asn
+}
+
+// WithAsnGt adds the asnGt to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAsnGt(asnGt *string) *CircuitsProvidersListParams {
+	o.SetAsnGt(asnGt)
+	return o
+}
+
+// SetAsnGt adds the asnGt to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAsnGt(asnGt *string) {
+	o.AsnGt = asnGt
+}
+
+// WithAsnGte adds the asnGte to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAsnGte(asnGte *string) *CircuitsProvidersListParams {
+	o.SetAsnGte(asnGte)
+	return o
+}
+
+// SetAsnGte adds the asnGte to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAsnGte(asnGte *string) {
+	o.AsnGte = asnGte
+}
+
+// WithAsnLt adds the asnLt to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAsnLt(asnLt *string) *CircuitsProvidersListParams {
+	o.SetAsnLt(asnLt)
+	return o
+}
+
+// SetAsnLt adds the asnLt to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAsnLt(asnLt *string) {
+	o.AsnLt = asnLt
+}
+
+// WithAsnLte adds the asnLte to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAsnLte(asnLte *string) *CircuitsProvidersListParams {
+	o.SetAsnLte(asnLte)
+	return o
+}
+
+// SetAsnLte adds the asnLte to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAsnLte(asnLte *string) {
+	o.AsnLte = asnLte
+}
+
+// WithAsnn adds the asnn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAsnn(asnn *string) *CircuitsProvidersListParams {
+	o.SetAsnn(asnn)
+	return o
+}
+
+// SetAsnn adds the asnN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAsnn(asnn *string) {
+	o.Asnn = asnn
 }
 
 // WithCreated adds the created to the circuits providers list params
@@ -218,15 +452,70 @@ func (o *CircuitsProvidersListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
 }
 
-// WithIDIn adds the iDIn to the circuits providers list params
-func (o *CircuitsProvidersListParams) WithIDIn(iDIn *string) *CircuitsProvidersListParams {
-	o.SetIDIn(iDIn)
+// WithID adds the id to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithID(id *string) *CircuitsProvidersListParams {
+	o.SetID(id)
 	return o
 }
 
-// SetIDIn adds the idIn to the circuits providers list params
-func (o *CircuitsProvidersListParams) SetIDIn(iDIn *string) {
-	o.IDIn = iDIn
+// SetID adds the id to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDGt(iDGt *string) *CircuitsProvidersListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDGte(iDGte *string) *CircuitsProvidersListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDLt(iDLt *string) *CircuitsProvidersListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDLte(iDLte *string) *CircuitsProvidersListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDn(iDn *string) *CircuitsProvidersListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLastUpdated adds the lastUpdated to the circuits providers list params
@@ -284,6 +573,105 @@ func (o *CircuitsProvidersListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameIc adds the nameIc to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNameIc(nameIc *string) *CircuitsProvidersListParams {
+	o.SetNameIc(nameIc)
+	return o
+}
+
+// SetNameIc adds the nameIc to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNameIc(nameIc *string) {
+	o.NameIc = nameIc
+}
+
+// WithNameIe adds the nameIe to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNameIe(nameIe *string) *CircuitsProvidersListParams {
+	o.SetNameIe(nameIe)
+	return o
+}
+
+// SetNameIe adds the nameIe to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNameIe(nameIe *string) {
+	o.NameIe = nameIe
+}
+
+// WithNameIew adds the nameIew to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNameIew(nameIew *string) *CircuitsProvidersListParams {
+	o.SetNameIew(nameIew)
+	return o
+}
+
+// SetNameIew adds the nameIew to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNameIew(nameIew *string) {
+	o.NameIew = nameIew
+}
+
+// WithNameIsw adds the nameIsw to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNameIsw(nameIsw *string) *CircuitsProvidersListParams {
+	o.SetNameIsw(nameIsw)
+	return o
+}
+
+// SetNameIsw adds the nameIsw to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNameIsw(nameIsw *string) {
+	o.NameIsw = nameIsw
+}
+
+// WithNamen adds the namen to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNamen(namen *string) *CircuitsProvidersListParams {
+	o.SetNamen(namen)
+	return o
+}
+
+// SetNamen adds the nameN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNamen(namen *string) {
+	o.Namen = namen
+}
+
+// WithNameNic adds the nameNic to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNameNic(nameNic *string) *CircuitsProvidersListParams {
+	o.SetNameNic(nameNic)
+	return o
+}
+
+// SetNameNic adds the nameNic to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNameNic(nameNic *string) {
+	o.NameNic = nameNic
+}
+
+// WithNameNie adds the nameNie to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNameNie(nameNie *string) *CircuitsProvidersListParams {
+	o.SetNameNie(nameNie)
+	return o
+}
+
+// SetNameNie adds the nameNie to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNameNie(nameNie *string) {
+	o.NameNie = nameNie
+}
+
+// WithNameNiew adds the nameNiew to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNameNiew(nameNiew *string) *CircuitsProvidersListParams {
+	o.SetNameNiew(nameNiew)
+	return o
+}
+
+// SetNameNiew adds the nameNiew to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNameNiew(nameNiew *string) {
+	o.NameNiew = nameNiew
+}
+
+// WithNameNisw adds the nameNisw to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNameNisw(nameNisw *string) *CircuitsProvidersListParams {
+	o.SetNameNisw(nameNisw)
+	return o
+}
+
+// SetNameNisw adds the nameNisw to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNameNisw(nameNisw *string) {
+	o.NameNisw = nameNisw
+}
+
 // WithOffset adds the offset to the circuits providers list params
 func (o *CircuitsProvidersListParams) WithOffset(offset *int64) *CircuitsProvidersListParams {
 	o.SetOffset(offset)
@@ -317,6 +705,17 @@ func (o *CircuitsProvidersListParams) SetRegion(region *string) {
 	o.Region = region
 }
 
+// WithRegionn adds the regionn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithRegionn(regionn *string) *CircuitsProvidersListParams {
+	o.SetRegionn(regionn)
+	return o
+}
+
+// SetRegionn adds the regionN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetRegionn(regionn *string) {
+	o.Regionn = regionn
+}
+
 // WithRegionID adds the regionID to the circuits providers list params
 func (o *CircuitsProvidersListParams) WithRegionID(regionID *string) *CircuitsProvidersListParams {
 	o.SetRegionID(regionID)
@@ -326,6 +725,17 @@ func (o *CircuitsProvidersListParams) WithRegionID(regionID *string) *CircuitsPr
 // SetRegionID adds the regionId to the circuits providers list params
 func (o *CircuitsProvidersListParams) SetRegionID(regionID *string) {
 	o.RegionID = regionID
+}
+
+// WithRegionIDn adds the regionIDn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithRegionIDn(regionIDn *string) *CircuitsProvidersListParams {
+	o.SetRegionIDn(regionIDn)
+	return o
+}
+
+// SetRegionIDn adds the regionIdN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetRegionIDn(regionIDn *string) {
+	o.RegionIDn = regionIDn
 }
 
 // WithSite adds the site to the circuits providers list params
@@ -339,6 +749,17 @@ func (o *CircuitsProvidersListParams) SetSite(site *string) {
 	o.Site = site
 }
 
+// WithSiten adds the siten to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSiten(siten *string) *CircuitsProvidersListParams {
+	o.SetSiten(siten)
+	return o
+}
+
+// SetSiten adds the siteN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSiten(siten *string) {
+	o.Siten = siten
+}
+
 // WithSiteID adds the siteID to the circuits providers list params
 func (o *CircuitsProvidersListParams) WithSiteID(siteID *string) *CircuitsProvidersListParams {
 	o.SetSiteID(siteID)
@@ -348,6 +769,17 @@ func (o *CircuitsProvidersListParams) WithSiteID(siteID *string) *CircuitsProvid
 // SetSiteID adds the siteId to the circuits providers list params
 func (o *CircuitsProvidersListParams) SetSiteID(siteID *string) {
 	o.SiteID = siteID
+}
+
+// WithSiteIDn adds the siteIDn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSiteIDn(siteIDn *string) *CircuitsProvidersListParams {
+	o.SetSiteIDn(siteIDn)
+	return o
+}
+
+// SetSiteIDn adds the siteIdN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSiteIDn(siteIDn *string) {
+	o.SiteIDn = siteIDn
 }
 
 // WithSlug adds the slug to the circuits providers list params
@@ -361,6 +793,105 @@ func (o *CircuitsProvidersListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithSlugIc adds the slugIc to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugIc(slugIc *string) *CircuitsProvidersListParams {
+	o.SetSlugIc(slugIc)
+	return o
+}
+
+// SetSlugIc adds the slugIc to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugIc(slugIc *string) {
+	o.SlugIc = slugIc
+}
+
+// WithSlugIe adds the slugIe to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugIe(slugIe *string) *CircuitsProvidersListParams {
+	o.SetSlugIe(slugIe)
+	return o
+}
+
+// SetSlugIe adds the slugIe to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugIe(slugIe *string) {
+	o.SlugIe = slugIe
+}
+
+// WithSlugIew adds the slugIew to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugIew(slugIew *string) *CircuitsProvidersListParams {
+	o.SetSlugIew(slugIew)
+	return o
+}
+
+// SetSlugIew adds the slugIew to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugIew(slugIew *string) {
+	o.SlugIew = slugIew
+}
+
+// WithSlugIsw adds the slugIsw to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugIsw(slugIsw *string) *CircuitsProvidersListParams {
+	o.SetSlugIsw(slugIsw)
+	return o
+}
+
+// SetSlugIsw adds the slugIsw to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugIsw(slugIsw *string) {
+	o.SlugIsw = slugIsw
+}
+
+// WithSlugn adds the slugn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugn(slugn *string) *CircuitsProvidersListParams {
+	o.SetSlugn(slugn)
+	return o
+}
+
+// SetSlugn adds the slugN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugn(slugn *string) {
+	o.Slugn = slugn
+}
+
+// WithSlugNic adds the slugNic to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugNic(slugNic *string) *CircuitsProvidersListParams {
+	o.SetSlugNic(slugNic)
+	return o
+}
+
+// SetSlugNic adds the slugNic to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugNic(slugNic *string) {
+	o.SlugNic = slugNic
+}
+
+// WithSlugNie adds the slugNie to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugNie(slugNie *string) *CircuitsProvidersListParams {
+	o.SetSlugNie(slugNie)
+	return o
+}
+
+// SetSlugNie adds the slugNie to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugNie(slugNie *string) {
+	o.SlugNie = slugNie
+}
+
+// WithSlugNiew adds the slugNiew to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugNiew(slugNiew *string) *CircuitsProvidersListParams {
+	o.SetSlugNiew(slugNiew)
+	return o
+}
+
+// SetSlugNiew adds the slugNiew to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugNiew(slugNiew *string) {
+	o.SlugNiew = slugNiew
+}
+
+// WithSlugNisw adds the slugNisw to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugNisw(slugNisw *string) *CircuitsProvidersListParams {
+	o.SetSlugNisw(slugNisw)
+	return o
+}
+
+// SetSlugNisw adds the slugNisw to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugNisw(slugNisw *string) {
+	o.SlugNisw = slugNisw
+}
+
 // WithTag adds the tag to the circuits providers list params
 func (o *CircuitsProvidersListParams) WithTag(tag *string) *CircuitsProvidersListParams {
 	o.SetTag(tag)
@@ -370,6 +901,17 @@ func (o *CircuitsProvidersListParams) WithTag(tag *string) *CircuitsProvidersLis
 // SetTag adds the tag to the circuits providers list params
 func (o *CircuitsProvidersListParams) SetTag(tag *string) {
 	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithTagn(tagn *string) *CircuitsProvidersListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -396,6 +938,150 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 
 	}
 
+	if o.AccountIc != nil {
+
+		// query param account__ic
+		var qrAccountIc string
+		if o.AccountIc != nil {
+			qrAccountIc = *o.AccountIc
+		}
+		qAccountIc := qrAccountIc
+		if qAccountIc != "" {
+			if err := r.SetQueryParam("account__ic", qAccountIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AccountIe != nil {
+
+		// query param account__ie
+		var qrAccountIe string
+		if o.AccountIe != nil {
+			qrAccountIe = *o.AccountIe
+		}
+		qAccountIe := qrAccountIe
+		if qAccountIe != "" {
+			if err := r.SetQueryParam("account__ie", qAccountIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AccountIew != nil {
+
+		// query param account__iew
+		var qrAccountIew string
+		if o.AccountIew != nil {
+			qrAccountIew = *o.AccountIew
+		}
+		qAccountIew := qrAccountIew
+		if qAccountIew != "" {
+			if err := r.SetQueryParam("account__iew", qAccountIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AccountIsw != nil {
+
+		// query param account__isw
+		var qrAccountIsw string
+		if o.AccountIsw != nil {
+			qrAccountIsw = *o.AccountIsw
+		}
+		qAccountIsw := qrAccountIsw
+		if qAccountIsw != "" {
+			if err := r.SetQueryParam("account__isw", qAccountIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Accountn != nil {
+
+		// query param account__n
+		var qrAccountn string
+		if o.Accountn != nil {
+			qrAccountn = *o.Accountn
+		}
+		qAccountn := qrAccountn
+		if qAccountn != "" {
+			if err := r.SetQueryParam("account__n", qAccountn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AccountNic != nil {
+
+		// query param account__nic
+		var qrAccountNic string
+		if o.AccountNic != nil {
+			qrAccountNic = *o.AccountNic
+		}
+		qAccountNic := qrAccountNic
+		if qAccountNic != "" {
+			if err := r.SetQueryParam("account__nic", qAccountNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AccountNie != nil {
+
+		// query param account__nie
+		var qrAccountNie string
+		if o.AccountNie != nil {
+			qrAccountNie = *o.AccountNie
+		}
+		qAccountNie := qrAccountNie
+		if qAccountNie != "" {
+			if err := r.SetQueryParam("account__nie", qAccountNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AccountNiew != nil {
+
+		// query param account__niew
+		var qrAccountNiew string
+		if o.AccountNiew != nil {
+			qrAccountNiew = *o.AccountNiew
+		}
+		qAccountNiew := qrAccountNiew
+		if qAccountNiew != "" {
+			if err := r.SetQueryParam("account__niew", qAccountNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AccountNisw != nil {
+
+		// query param account__nisw
+		var qrAccountNisw string
+		if o.AccountNisw != nil {
+			qrAccountNisw = *o.AccountNisw
+		}
+		qAccountNisw := qrAccountNisw
+		if qAccountNisw != "" {
+			if err := r.SetQueryParam("account__nisw", qAccountNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Asn != nil {
 
 		// query param asn
@@ -406,6 +1092,86 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		qAsn := qrAsn
 		if qAsn != "" {
 			if err := r.SetQueryParam("asn", qAsn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AsnGt != nil {
+
+		// query param asn__gt
+		var qrAsnGt string
+		if o.AsnGt != nil {
+			qrAsnGt = *o.AsnGt
+		}
+		qAsnGt := qrAsnGt
+		if qAsnGt != "" {
+			if err := r.SetQueryParam("asn__gt", qAsnGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AsnGte != nil {
+
+		// query param asn__gte
+		var qrAsnGte string
+		if o.AsnGte != nil {
+			qrAsnGte = *o.AsnGte
+		}
+		qAsnGte := qrAsnGte
+		if qAsnGte != "" {
+			if err := r.SetQueryParam("asn__gte", qAsnGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AsnLt != nil {
+
+		// query param asn__lt
+		var qrAsnLt string
+		if o.AsnLt != nil {
+			qrAsnLt = *o.AsnLt
+		}
+		qAsnLt := qrAsnLt
+		if qAsnLt != "" {
+			if err := r.SetQueryParam("asn__lt", qAsnLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AsnLte != nil {
+
+		// query param asn__lte
+		var qrAsnLte string
+		if o.AsnLte != nil {
+			qrAsnLte = *o.AsnLte
+		}
+		qAsnLte := qrAsnLte
+		if qAsnLte != "" {
+			if err := r.SetQueryParam("asn__lte", qAsnLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Asnn != nil {
+
+		// query param asn__n
+		var qrAsnn string
+		if o.Asnn != nil {
+			qrAsnn = *o.Asnn
+		}
+		qAsnn := qrAsnn
+		if qAsnn != "" {
+			if err := r.SetQueryParam("asn__n", qAsnn); err != nil {
 				return err
 			}
 		}
@@ -460,16 +1226,96 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 
 	}
 
-	if o.IDIn != nil {
+	if o.ID != nil {
 
-		// query param id__in
-		var qrIDIn string
-		if o.IDIn != nil {
-			qrIDIn = *o.IDIn
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
 		}
-		qIDIn := qrIDIn
-		if qIDIn != "" {
-			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
@@ -556,6 +1402,150 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 
 	}
 
+	if o.NameIc != nil {
+
+		// query param name__ic
+		var qrNameIc string
+		if o.NameIc != nil {
+			qrNameIc = *o.NameIc
+		}
+		qNameIc := qrNameIc
+		if qNameIc != "" {
+			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIe != nil {
+
+		// query param name__ie
+		var qrNameIe string
+		if o.NameIe != nil {
+			qrNameIe = *o.NameIe
+		}
+		qNameIe := qrNameIe
+		if qNameIe != "" {
+			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIew != nil {
+
+		// query param name__iew
+		var qrNameIew string
+		if o.NameIew != nil {
+			qrNameIew = *o.NameIew
+		}
+		qNameIew := qrNameIew
+		if qNameIew != "" {
+			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIsw != nil {
+
+		// query param name__isw
+		var qrNameIsw string
+		if o.NameIsw != nil {
+			qrNameIsw = *o.NameIsw
+		}
+		qNameIsw := qrNameIsw
+		if qNameIsw != "" {
+			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Namen != nil {
+
+		// query param name__n
+		var qrNamen string
+		if o.Namen != nil {
+			qrNamen = *o.Namen
+		}
+		qNamen := qrNamen
+		if qNamen != "" {
+			if err := r.SetQueryParam("name__n", qNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNic != nil {
+
+		// query param name__nic
+		var qrNameNic string
+		if o.NameNic != nil {
+			qrNameNic = *o.NameNic
+		}
+		qNameNic := qrNameNic
+		if qNameNic != "" {
+			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNie != nil {
+
+		// query param name__nie
+		var qrNameNie string
+		if o.NameNie != nil {
+			qrNameNie = *o.NameNie
+		}
+		qNameNie := qrNameNie
+		if qNameNie != "" {
+			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNiew != nil {
+
+		// query param name__niew
+		var qrNameNiew string
+		if o.NameNiew != nil {
+			qrNameNiew = *o.NameNiew
+		}
+		qNameNiew := qrNameNiew
+		if qNameNiew != "" {
+			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNisw != nil {
+
+		// query param name__nisw
+		var qrNameNisw string
+		if o.NameNisw != nil {
+			qrNameNisw = *o.NameNisw
+		}
+		qNameNisw := qrNameNisw
+		if qNameNisw != "" {
+			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -604,6 +1594,22 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 
 	}
 
+	if o.Regionn != nil {
+
+		// query param region__n
+		var qrRegionn string
+		if o.Regionn != nil {
+			qrRegionn = *o.Regionn
+		}
+		qRegionn := qrRegionn
+		if qRegionn != "" {
+			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.RegionID != nil {
 
 		// query param region_id
@@ -614,6 +1620,22 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		qRegionID := qrRegionID
 		if qRegionID != "" {
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.RegionIDn != nil {
+
+		// query param region_id__n
+		var qrRegionIDn string
+		if o.RegionIDn != nil {
+			qrRegionIDn = *o.RegionIDn
+		}
+		qRegionIDn := qrRegionIDn
+		if qRegionIDn != "" {
+			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
 				return err
 			}
 		}
@@ -636,6 +1658,22 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 
 	}
 
+	if o.Siten != nil {
+
+		// query param site__n
+		var qrSiten string
+		if o.Siten != nil {
+			qrSiten = *o.Siten
+		}
+		qSiten := qrSiten
+		if qSiten != "" {
+			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.SiteID != nil {
 
 		// query param site_id
@@ -646,6 +1684,22 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		qSiteID := qrSiteID
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SiteIDn != nil {
+
+		// query param site_id__n
+		var qrSiteIDn string
+		if o.SiteIDn != nil {
+			qrSiteIDn = *o.SiteIDn
+		}
+		qSiteIDn := qrSiteIDn
+		if qSiteIDn != "" {
+			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
@@ -668,6 +1722,150 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 
 	}
 
+	if o.SlugIc != nil {
+
+		// query param slug__ic
+		var qrSlugIc string
+		if o.SlugIc != nil {
+			qrSlugIc = *o.SlugIc
+		}
+		qSlugIc := qrSlugIc
+		if qSlugIc != "" {
+			if err := r.SetQueryParam("slug__ic", qSlugIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SlugIe != nil {
+
+		// query param slug__ie
+		var qrSlugIe string
+		if o.SlugIe != nil {
+			qrSlugIe = *o.SlugIe
+		}
+		qSlugIe := qrSlugIe
+		if qSlugIe != "" {
+			if err := r.SetQueryParam("slug__ie", qSlugIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SlugIew != nil {
+
+		// query param slug__iew
+		var qrSlugIew string
+		if o.SlugIew != nil {
+			qrSlugIew = *o.SlugIew
+		}
+		qSlugIew := qrSlugIew
+		if qSlugIew != "" {
+			if err := r.SetQueryParam("slug__iew", qSlugIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SlugIsw != nil {
+
+		// query param slug__isw
+		var qrSlugIsw string
+		if o.SlugIsw != nil {
+			qrSlugIsw = *o.SlugIsw
+		}
+		qSlugIsw := qrSlugIsw
+		if qSlugIsw != "" {
+			if err := r.SetQueryParam("slug__isw", qSlugIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Slugn != nil {
+
+		// query param slug__n
+		var qrSlugn string
+		if o.Slugn != nil {
+			qrSlugn = *o.Slugn
+		}
+		qSlugn := qrSlugn
+		if qSlugn != "" {
+			if err := r.SetQueryParam("slug__n", qSlugn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SlugNic != nil {
+
+		// query param slug__nic
+		var qrSlugNic string
+		if o.SlugNic != nil {
+			qrSlugNic = *o.SlugNic
+		}
+		qSlugNic := qrSlugNic
+		if qSlugNic != "" {
+			if err := r.SetQueryParam("slug__nic", qSlugNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SlugNie != nil {
+
+		// query param slug__nie
+		var qrSlugNie string
+		if o.SlugNie != nil {
+			qrSlugNie = *o.SlugNie
+		}
+		qSlugNie := qrSlugNie
+		if qSlugNie != "" {
+			if err := r.SetQueryParam("slug__nie", qSlugNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SlugNiew != nil {
+
+		// query param slug__niew
+		var qrSlugNiew string
+		if o.SlugNiew != nil {
+			qrSlugNiew = *o.SlugNiew
+		}
+		qSlugNiew := qrSlugNiew
+		if qSlugNiew != "" {
+			if err := r.SetQueryParam("slug__niew", qSlugNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SlugNisw != nil {
+
+		// query param slug__nisw
+		var qrSlugNisw string
+		if o.SlugNisw != nil {
+			qrSlugNisw = *o.SlugNisw
+		}
+		qSlugNisw := qrSlugNisw
+		if qSlugNisw != "" {
+			if err := r.SetQueryParam("slug__nisw", qSlugNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tag != nil {
 
 		// query param tag
@@ -678,6 +1876,22 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		qTag := qrTag
 		if qTag != "" {
 			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
