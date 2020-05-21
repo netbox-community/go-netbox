@@ -34,7 +34,7 @@ func NewNetboxAt(host string) *client.NetBox {
 const authHeaderName = "Authorization"
 const authHeaderFormat = "Token %v"
 
-// NewNetboxWithAPIKey returna client which will connect to the given
+// NewNetboxWithAPIKey returns a client which will connect to the given
 // hostname (and optionally port), and will set the expected Authorization
 // header on each request
 func NewNetboxWithAPIKey(host string, apiToken string) *client.NetBox {
