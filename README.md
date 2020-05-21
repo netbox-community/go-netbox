@@ -30,6 +30,45 @@ can pass `nil`:
     c.Dcim.DcimDeviceTypesCreate(createRequest, nil)
 ```
 
+If you connect to netbox via HTTPS you have to create an HTTPS configured transport:
+```
+package main
+
+import (
+	"os"
+
+	httptransport "github.com/go-openapi/runtime/client"
+	"github.com/netbox-community/go-netbox/netbox/client"
+	"github.com/netbox-community/go-netbox/netbox/client/dcim"
+
+	log "github.com/sirupsen/logrus"
+)
+
+func main() {
+	token := os.Getenv("NETBOX_TOKEN")
+	if token == "" {
+		log.Fatalf("Please provide netbox API token via env var NETBOX_TOKEN")
+	}
+
+	netboxHost := os.Getenv("NETBOX_HOST")
+	if netboxHost == "" {
+		log.Fatalf("Please provide netbox host via env var NETBOX_HOST")
+	}
+
+	transport := httptransport.New(netboxHost, client.DefaultBasePath, []string{"https"})
+	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "Token "+token)
+
+	c := client.New(transport, nil)
+
+	req := dcim.NewDcimSitesListParams()
+	res, err := c.Dcim.DcimSitesList(req, nil)
+	if err != nil {
+		log.Fatalf("Cannot get sites list: %v", err)
+	}
+	log.Infof("res: %v", res)
+}
+```
+
 Go Module support
 ================
 
