@@ -23,14 +23,14 @@ package models
 import (
 	"encoding/json"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableInterfaceTemplate writable interface template
+//
 // swagger:model WritableInterfaceTemplate
 type WritableInterfaceTemplate struct {
 
@@ -53,7 +53,7 @@ type WritableInterfaceTemplate struct {
 
 	// Type
 	// Required: true
-	// Enum: [virtual lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 128gfc-sfp28 inifiband-sdr inifiband-ddr inifiband-qdr inifiband-fdr10 inifiband-fdr inifiband-edr inifiband-hdr inifiband-ndr inifiband-xdr t1 e1 t3 e3 cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
+	// Enum: [virtual lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 128gfc-sfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
 	Type *string `json:"type"`
 }
 
@@ -109,7 +109,7 @@ var writableInterfaceTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["virtual","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","128gfc-sfp28","inifiband-sdr","inifiband-ddr","inifiband-qdr","inifiband-fdr10","inifiband-fdr","inifiband-edr","inifiband-hdr","inifiband-ndr","inifiband-xdr","t1","e1","t3","e3","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["virtual","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","128gfc-sfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -266,32 +266,32 @@ const (
 	// WritableInterfaceTemplateTypeNr128gfcSfp28 captures enum value "128gfc-sfp28"
 	WritableInterfaceTemplateTypeNr128gfcSfp28 string = "128gfc-sfp28"
 
-	// WritableInterfaceTemplateTypeInifibandSdr captures enum value "inifiband-sdr"
-	WritableInterfaceTemplateTypeInifibandSdr string = "inifiband-sdr"
+	// WritableInterfaceTemplateTypeInfinibandSdr captures enum value "infiniband-sdr"
+	WritableInterfaceTemplateTypeInfinibandSdr string = "infiniband-sdr"
 
-	// WritableInterfaceTemplateTypeInifibandDdr captures enum value "inifiband-ddr"
-	WritableInterfaceTemplateTypeInifibandDdr string = "inifiband-ddr"
+	// WritableInterfaceTemplateTypeInfinibandDdr captures enum value "infiniband-ddr"
+	WritableInterfaceTemplateTypeInfinibandDdr string = "infiniband-ddr"
 
-	// WritableInterfaceTemplateTypeInifibandQdr captures enum value "inifiband-qdr"
-	WritableInterfaceTemplateTypeInifibandQdr string = "inifiband-qdr"
+	// WritableInterfaceTemplateTypeInfinibandQdr captures enum value "infiniband-qdr"
+	WritableInterfaceTemplateTypeInfinibandQdr string = "infiniband-qdr"
 
-	// WritableInterfaceTemplateTypeInifibandFdr10 captures enum value "inifiband-fdr10"
-	WritableInterfaceTemplateTypeInifibandFdr10 string = "inifiband-fdr10"
+	// WritableInterfaceTemplateTypeInfinibandFdr10 captures enum value "infiniband-fdr10"
+	WritableInterfaceTemplateTypeInfinibandFdr10 string = "infiniband-fdr10"
 
-	// WritableInterfaceTemplateTypeInifibandFdr captures enum value "inifiband-fdr"
-	WritableInterfaceTemplateTypeInifibandFdr string = "inifiband-fdr"
+	// WritableInterfaceTemplateTypeInfinibandFdr captures enum value "infiniband-fdr"
+	WritableInterfaceTemplateTypeInfinibandFdr string = "infiniband-fdr"
 
-	// WritableInterfaceTemplateTypeInifibandEdr captures enum value "inifiband-edr"
-	WritableInterfaceTemplateTypeInifibandEdr string = "inifiband-edr"
+	// WritableInterfaceTemplateTypeInfinibandEdr captures enum value "infiniband-edr"
+	WritableInterfaceTemplateTypeInfinibandEdr string = "infiniband-edr"
 
-	// WritableInterfaceTemplateTypeInifibandHdr captures enum value "inifiband-hdr"
-	WritableInterfaceTemplateTypeInifibandHdr string = "inifiband-hdr"
+	// WritableInterfaceTemplateTypeInfinibandHdr captures enum value "infiniband-hdr"
+	WritableInterfaceTemplateTypeInfinibandHdr string = "infiniband-hdr"
 
-	// WritableInterfaceTemplateTypeInifibandNdr captures enum value "inifiband-ndr"
-	WritableInterfaceTemplateTypeInifibandNdr string = "inifiband-ndr"
+	// WritableInterfaceTemplateTypeInfinibandNdr captures enum value "infiniband-ndr"
+	WritableInterfaceTemplateTypeInfinibandNdr string = "infiniband-ndr"
 
-	// WritableInterfaceTemplateTypeInifibandXdr captures enum value "inifiband-xdr"
-	WritableInterfaceTemplateTypeInifibandXdr string = "inifiband-xdr"
+	// WritableInterfaceTemplateTypeInfinibandXdr captures enum value "infiniband-xdr"
+	WritableInterfaceTemplateTypeInfinibandXdr string = "infiniband-xdr"
 
 	// WritableInterfaceTemplateTypeT1 captures enum value "t1"
 	WritableInterfaceTemplateTypeT1 string = "t1"

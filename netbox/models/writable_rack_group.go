@@ -21,16 +21,20 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableRackGroup writable rack group
+//
 // swagger:model WritableRackGroup
 type WritableRackGroup struct {
+
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
 
 	// ID
 	// Read Only: true
@@ -41,6 +45,9 @@ type WritableRackGroup struct {
 	// Max Length: 50
 	// Min Length: 1
 	Name *string `json:"name"`
+
+	// Parent
+	Parent *int64 `json:"parent,omitempty"`
 
 	// Rack count
 	// Read Only: true
@@ -62,6 +69,10 @@ type WritableRackGroup struct {
 func (m *WritableRackGroup) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -77,6 +88,19 @@ func (m *WritableRackGroup) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableRackGroup) validateDescription(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+		return err
+	}
+
 	return nil
 }
 

@@ -23,14 +23,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableRackReservation writable rack reservation
+//
 // swagger:model WritableRackReservation
 type WritableRackReservation struct {
 
@@ -41,7 +41,7 @@ type WritableRackReservation struct {
 
 	// Description
 	// Required: true
-	// Max Length: 100
+	// Max Length: 200
 	// Min Length: 1
 	Description *string `json:"description"`
 
@@ -118,7 +118,7 @@ func (m *WritableRackReservation) validateDescription(formats strfmt.Registry) e
 		return err
 	}
 
-	if err := validate.MaxLength("description", "body", string(*m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(*m.Description), 200); err != nil {
 		return err
 	}
 

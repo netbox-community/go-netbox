@@ -24,14 +24,14 @@ import (
 	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // PowerFeed power feed
+//
 // swagger:model PowerFeed
 type PowerFeed struct {
 
@@ -97,8 +97,8 @@ type PowerFeed struct {
 
 	// Voltage
 	// Maximum: 32767
-	// Minimum: 1
-	Voltage int64 `json:"voltage,omitempty"`
+	// Minimum: -32768
+	Voltage *int64 `json:"voltage,omitempty"`
 }
 
 // Validate validates this power feed
@@ -371,11 +371,11 @@ func (m *PowerFeed) validateVoltage(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MinimumInt("voltage", "body", int64(m.Voltage), 1, false); err != nil {
+	if err := validate.MinimumInt("voltage", "body", int64(*m.Voltage), -32768, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("voltage", "body", int64(m.Voltage), 32767, false); err != nil {
+	if err := validate.MaximumInt("voltage", "body", int64(*m.Voltage), 32767, false); err != nil {
 		return err
 	}
 
@@ -401,15 +401,18 @@ func (m *PowerFeed) UnmarshalBinary(b []byte) error {
 }
 
 // PowerFeedPhase Phase
+//
 // swagger:model PowerFeedPhase
 type PowerFeedPhase struct {
 
 	// label
 	// Required: true
+	// Enum: [Single phase Three-phase]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [single-phase three-phase]
 	Value *string `json:"value"`
 }
 
@@ -444,18 +447,86 @@ func (m *PowerFeedPhase) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var powerFeedPhaseTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Single phase","Three-phase"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		powerFeedPhaseTypeLabelPropEnum = append(powerFeedPhaseTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// PowerFeedPhaseLabelSinglePhase captures enum value "Single phase"
+	PowerFeedPhaseLabelSinglePhase string = "Single phase"
+
+	// PowerFeedPhaseLabelThreePhase captures enum value "Three-phase"
+	PowerFeedPhaseLabelThreePhase string = "Three-phase"
+)
+
+// prop value enum
+func (m *PowerFeedPhase) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, powerFeedPhaseTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *PowerFeedPhase) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("phase"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("phase"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var powerFeedPhaseTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["single-phase","three-phase"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		powerFeedPhaseTypeValuePropEnum = append(powerFeedPhaseTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// PowerFeedPhaseValueSinglePhase captures enum value "single-phase"
+	PowerFeedPhaseValueSinglePhase string = "single-phase"
+
+	// PowerFeedPhaseValueThreePhase captures enum value "three-phase"
+	PowerFeedPhaseValueThreePhase string = "three-phase"
+)
+
+// prop value enum
+func (m *PowerFeedPhase) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, powerFeedPhaseTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *PowerFeedPhase) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("phase"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("phase"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 
@@ -481,15 +552,18 @@ func (m *PowerFeedPhase) UnmarshalBinary(b []byte) error {
 }
 
 // PowerFeedStatus Status
+//
 // swagger:model PowerFeedStatus
 type PowerFeedStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Offline Active Planned Failed]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [offline active planned failed]
 	Value *string `json:"value"`
 }
 
@@ -524,18 +598,98 @@ func (m *PowerFeedStatus) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var powerFeedStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Offline","Active","Planned","Failed"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		powerFeedStatusTypeLabelPropEnum = append(powerFeedStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// PowerFeedStatusLabelOffline captures enum value "Offline"
+	PowerFeedStatusLabelOffline string = "Offline"
+
+	// PowerFeedStatusLabelActive captures enum value "Active"
+	PowerFeedStatusLabelActive string = "Active"
+
+	// PowerFeedStatusLabelPlanned captures enum value "Planned"
+	PowerFeedStatusLabelPlanned string = "Planned"
+
+	// PowerFeedStatusLabelFailed captures enum value "Failed"
+	PowerFeedStatusLabelFailed string = "Failed"
+)
+
+// prop value enum
+func (m *PowerFeedStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, powerFeedStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *PowerFeedStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var powerFeedStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["offline","active","planned","failed"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		powerFeedStatusTypeValuePropEnum = append(powerFeedStatusTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// PowerFeedStatusValueOffline captures enum value "offline"
+	PowerFeedStatusValueOffline string = "offline"
+
+	// PowerFeedStatusValueActive captures enum value "active"
+	PowerFeedStatusValueActive string = "active"
+
+	// PowerFeedStatusValuePlanned captures enum value "planned"
+	PowerFeedStatusValuePlanned string = "planned"
+
+	// PowerFeedStatusValueFailed captures enum value "failed"
+	PowerFeedStatusValueFailed string = "failed"
+)
+
+// prop value enum
+func (m *PowerFeedStatus) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, powerFeedStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *PowerFeedStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 
@@ -561,15 +715,18 @@ func (m *PowerFeedStatus) UnmarshalBinary(b []byte) error {
 }
 
 // PowerFeedSupply Supply
+//
 // swagger:model PowerFeedSupply
 type PowerFeedSupply struct {
 
 	// label
 	// Required: true
+	// Enum: [AC DC]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [ac dc]
 	Value *string `json:"value"`
 }
 
@@ -604,18 +761,86 @@ func (m *PowerFeedSupply) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var powerFeedSupplyTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["AC","DC"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		powerFeedSupplyTypeLabelPropEnum = append(powerFeedSupplyTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// PowerFeedSupplyLabelAC captures enum value "AC"
+	PowerFeedSupplyLabelAC string = "AC"
+
+	// PowerFeedSupplyLabelDC captures enum value "DC"
+	PowerFeedSupplyLabelDC string = "DC"
+)
+
+// prop value enum
+func (m *PowerFeedSupply) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, powerFeedSupplyTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *PowerFeedSupply) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("supply"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("supply"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var powerFeedSupplyTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["ac","dc"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		powerFeedSupplyTypeValuePropEnum = append(powerFeedSupplyTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// PowerFeedSupplyValueAc captures enum value "ac"
+	PowerFeedSupplyValueAc string = "ac"
+
+	// PowerFeedSupplyValueDc captures enum value "dc"
+	PowerFeedSupplyValueDc string = "dc"
+)
+
+// prop value enum
+func (m *PowerFeedSupply) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, powerFeedSupplyTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *PowerFeedSupply) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("supply"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("supply"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 
@@ -641,15 +866,18 @@ func (m *PowerFeedSupply) UnmarshalBinary(b []byte) error {
 }
 
 // PowerFeedType Type
+//
 // swagger:model PowerFeedType
 type PowerFeedType struct {
 
 	// label
 	// Required: true
+	// Enum: [Primary Redundant]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [primary redundant]
 	Value *string `json:"value"`
 }
 
@@ -684,18 +912,86 @@ func (m *PowerFeedType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var powerFeedTypeTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Primary","Redundant"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		powerFeedTypeTypeLabelPropEnum = append(powerFeedTypeTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// PowerFeedTypeLabelPrimary captures enum value "Primary"
+	PowerFeedTypeLabelPrimary string = "Primary"
+
+	// PowerFeedTypeLabelRedundant captures enum value "Redundant"
+	PowerFeedTypeLabelRedundant string = "Redundant"
+)
+
+// prop value enum
+func (m *PowerFeedType) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, powerFeedTypeTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *PowerFeedType) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("type"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var powerFeedTypeTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["primary","redundant"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		powerFeedTypeTypeValuePropEnum = append(powerFeedTypeTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// PowerFeedTypeValuePrimary captures enum value "primary"
+	PowerFeedTypeValuePrimary string = "primary"
+
+	// PowerFeedTypeValueRedundant captures enum value "redundant"
+	PowerFeedTypeValueRedundant string = "redundant"
+)
+
+// prop value enum
+func (m *PowerFeedType) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, powerFeedTypeTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *PowerFeedType) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("type"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

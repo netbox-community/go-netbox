@@ -23,14 +23,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // VRF v r f
+//
 // swagger:model VRF
 type VRF struct {
 
@@ -43,7 +43,7 @@ type VRF struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Display name
@@ -79,6 +79,8 @@ type VRF struct {
 	PrefixCount int64 `json:"prefix_count,omitempty"`
 
 	// Route distinguisher
+	//
+	// Unique route distinguisher (as defined in RFC 4364)
 	// Max Length: 21
 	Rd *string `json:"rd,omitempty"`
 
@@ -146,7 +148,7 @@ func (m *VRF) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

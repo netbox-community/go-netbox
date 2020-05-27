@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewDcimInterfaceConnectionsListParams creates a new DcimInterfaceConnectionsListParams object
@@ -79,6 +78,8 @@ type DcimInterfaceConnectionsListParams struct {
 
 	/*ConnectionStatus*/
 	ConnectionStatus *string
+	/*ConnectionStatusn*/
+	ConnectionStatusn *string
 	/*Device*/
 	Device *string
 	/*DeviceID*/
@@ -143,6 +144,17 @@ func (o *DcimInterfaceConnectionsListParams) WithConnectionStatus(connectionStat
 // SetConnectionStatus adds the connectionStatus to the dcim interface connections list params
 func (o *DcimInterfaceConnectionsListParams) SetConnectionStatus(connectionStatus *string) {
 	o.ConnectionStatus = connectionStatus
+}
+
+// WithConnectionStatusn adds the connectionStatusn to the dcim interface connections list params
+func (o *DcimInterfaceConnectionsListParams) WithConnectionStatusn(connectionStatusn *string) *DcimInterfaceConnectionsListParams {
+	o.SetConnectionStatusn(connectionStatusn)
+	return o
+}
+
+// SetConnectionStatusn adds the connectionStatusN to the dcim interface connections list params
+func (o *DcimInterfaceConnectionsListParams) SetConnectionStatusn(connectionStatusn *string) {
+	o.ConnectionStatusn = connectionStatusn
 }
 
 // WithDevice adds the device to the dcim interface connections list params
@@ -218,6 +230,22 @@ func (o *DcimInterfaceConnectionsListParams) WriteToRequest(r runtime.ClientRequ
 		qConnectionStatus := qrConnectionStatus
 		if qConnectionStatus != "" {
 			if err := r.SetQueryParam("connection_status", qConnectionStatus); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ConnectionStatusn != nil {
+
+		// query param connection_status__n
+		var qrConnectionStatusn string
+		if o.ConnectionStatusn != nil {
+			qrConnectionStatusn = *o.ConnectionStatusn
+		}
+		qConnectionStatusn := qrConnectionStatusn
+		if qConnectionStatusn != "" {
+			if err := r.SetQueryParam("connection_status__n", qConnectionStatusn); err != nil {
 				return err
 			}
 		}

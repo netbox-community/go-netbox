@@ -24,14 +24,14 @@ import (
 	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritablePowerPort writable power port
+//
 // swagger:model WritablePowerPort
 type WritablePowerPort struct {
 
@@ -48,7 +48,7 @@ type WritablePowerPort struct {
 	// Connected endpoint
 	//
 	//
-	//         Return the appropriate serializer for the type of connected object.
+	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
 	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
@@ -62,7 +62,7 @@ type WritablePowerPort struct {
 	ConnectionStatus bool `json:"connection_status,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device
@@ -90,6 +90,8 @@ type WritablePowerPort struct {
 	Tags []string `json:"tags"`
 
 	// Type
+	//
+	// Physical port type
 	// Enum: [iec-60320-c6 iec-60320-c8 iec-60320-c14 iec-60320-c16 iec-60320-c20 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-5-15p nema-5-20p nema-5-30p nema-5-50p nema-6-15p nema-6-20p nema-6-30p nema-6-50p nema-l5-15p nema-l5-20p nema-l5-30p nema-l5-50p nema-l6-20p nema-l6-30p nema-l6-50p cs6361c cs6365c cs8165c cs8265c cs8365c cs8465c ita-e ita-f ita-ef ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o]
 	Type string `json:"type,omitempty"`
 }
@@ -215,7 +217,7 @@ func (m *WritablePowerPort) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

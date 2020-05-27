@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -43,7 +44,7 @@ type Prefix struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// family
@@ -168,7 +169,7 @@ func (m *Prefix) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 
@@ -365,10 +366,12 @@ type PrefixFamily struct {
 
 	// label
 	// Required: true
+	// Enum: [IPv4 IPv6]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [4 6]
 	Value *int64 `json:"value"`
 }
 
@@ -390,18 +393,77 @@ func (m *PrefixFamily) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var prefixFamilyTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["IPv4","IPv6"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		prefixFamilyTypeLabelPropEnum = append(prefixFamilyTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// PrefixFamilyLabelIPV4 captures enum value "IPv4"
+	PrefixFamilyLabelIPV4 string = "IPv4"
+
+	// PrefixFamilyLabelIPV6 captures enum value "IPv6"
+	PrefixFamilyLabelIPV6 string = "IPv6"
+)
+
+// prop value enum
+func (m *PrefixFamily) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, prefixFamilyTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *PrefixFamily) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("family"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("family"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var prefixFamilyTypeValuePropEnum []interface{}
+
+func init() {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[4,6]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		prefixFamilyTypeValuePropEnum = append(prefixFamilyTypeValuePropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *PrefixFamily) validateValueEnum(path, location string, value int64) error {
+	if err := validate.Enum(path, location, value, prefixFamilyTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *PrefixFamily) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("family"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("family"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 
@@ -433,10 +495,12 @@ type PrefixStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Container Active Reserved Deprecated]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [container active reserved deprecated]
 	Value *string `json:"value"`
 }
 
@@ -458,18 +522,98 @@ func (m *PrefixStatus) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var prefixStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Container","Active","Reserved","Deprecated"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		prefixStatusTypeLabelPropEnum = append(prefixStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// PrefixStatusLabelContainer captures enum value "Container"
+	PrefixStatusLabelContainer string = "Container"
+
+	// PrefixStatusLabelActive captures enum value "Active"
+	PrefixStatusLabelActive string = "Active"
+
+	// PrefixStatusLabelReserved captures enum value "Reserved"
+	PrefixStatusLabelReserved string = "Reserved"
+
+	// PrefixStatusLabelDeprecated captures enum value "Deprecated"
+	PrefixStatusLabelDeprecated string = "Deprecated"
+)
+
+// prop value enum
+func (m *PrefixStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, prefixStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *PrefixStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var prefixStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["container","active","reserved","deprecated"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		prefixStatusTypeValuePropEnum = append(prefixStatusTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// PrefixStatusValueContainer captures enum value "container"
+	PrefixStatusValueContainer string = "container"
+
+	// PrefixStatusValueActive captures enum value "active"
+	PrefixStatusValueActive string = "active"
+
+	// PrefixStatusValueReserved captures enum value "reserved"
+	PrefixStatusValueReserved string = "reserved"
+
+	// PrefixStatusValueDeprecated captures enum value "deprecated"
+	PrefixStatusValueDeprecated string = "deprecated"
+)
+
+// prop value enum
+func (m *PrefixStatus) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, prefixStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *PrefixStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

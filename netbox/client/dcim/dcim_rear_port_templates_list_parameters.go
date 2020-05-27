@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewDcimRearPortTemplatesListParams creates a new DcimRearPortTemplatesListParams object
@@ -79,8 +78,20 @@ type DcimRearPortTemplatesListParams struct {
 
 	/*DevicetypeID*/
 	DevicetypeID *string
+	/*DevicetypeIDn*/
+	DevicetypeIDn *string
 	/*ID*/
 	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -88,6 +99,24 @@ type DcimRearPortTemplatesListParams struct {
 	Limit *int64
 	/*Name*/
 	Name *string
+	/*NameIc*/
+	NameIc *string
+	/*NameIe*/
+	NameIe *string
+	/*NameIew*/
+	NameIew *string
+	/*NameIsw*/
+	NameIsw *string
+	/*Namen*/
+	Namen *string
+	/*NameNic*/
+	NameNic *string
+	/*NameNie*/
+	NameNie *string
+	/*NameNiew*/
+	NameNiew *string
+	/*NameNisw*/
+	NameNisw *string
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -95,10 +124,22 @@ type DcimRearPortTemplatesListParams struct {
 	Offset *int64
 	/*Positions*/
 	Positions *string
+	/*PositionsGt*/
+	PositionsGt *string
+	/*PositionsGte*/
+	PositionsGte *string
+	/*PositionsLt*/
+	PositionsLt *string
+	/*PositionsLte*/
+	PositionsLte *string
+	/*Positionsn*/
+	Positionsn *string
 	/*Q*/
 	Q *string
 	/*Type*/
 	Type *string
+	/*Typen*/
+	Typen *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -149,6 +190,17 @@ func (o *DcimRearPortTemplatesListParams) SetDevicetypeID(devicetypeID *string) 
 	o.DevicetypeID = devicetypeID
 }
 
+// WithDevicetypeIDn adds the devicetypeIDn to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithDevicetypeIDn(devicetypeIDn *string) *DcimRearPortTemplatesListParams {
+	o.SetDevicetypeIDn(devicetypeIDn)
+	return o
+}
+
+// SetDevicetypeIDn adds the devicetypeIdN to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetDevicetypeIDn(devicetypeIDn *string) {
+	o.DevicetypeIDn = devicetypeIDn
+}
+
 // WithID adds the id to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) WithID(id *string) *DcimRearPortTemplatesListParams {
 	o.SetID(id)
@@ -158,6 +210,61 @@ func (o *DcimRearPortTemplatesListParams) WithID(id *string) *DcimRearPortTempla
 // SetID adds the id to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) SetID(id *string) {
 	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithIDGt(iDGt *string) *DcimRearPortTemplatesListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithIDGte(iDGte *string) *DcimRearPortTemplatesListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithIDLt(iDLt *string) *DcimRearPortTemplatesListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithIDLte(iDLte *string) *DcimRearPortTemplatesListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithIDn(iDn *string) *DcimRearPortTemplatesListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLimit adds the limit to the dcim rear port templates list params
@@ -182,6 +289,105 @@ func (o *DcimRearPortTemplatesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameIc adds the nameIc to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithNameIc(nameIc *string) *DcimRearPortTemplatesListParams {
+	o.SetNameIc(nameIc)
+	return o
+}
+
+// SetNameIc adds the nameIc to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetNameIc(nameIc *string) {
+	o.NameIc = nameIc
+}
+
+// WithNameIe adds the nameIe to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithNameIe(nameIe *string) *DcimRearPortTemplatesListParams {
+	o.SetNameIe(nameIe)
+	return o
+}
+
+// SetNameIe adds the nameIe to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetNameIe(nameIe *string) {
+	o.NameIe = nameIe
+}
+
+// WithNameIew adds the nameIew to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithNameIew(nameIew *string) *DcimRearPortTemplatesListParams {
+	o.SetNameIew(nameIew)
+	return o
+}
+
+// SetNameIew adds the nameIew to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetNameIew(nameIew *string) {
+	o.NameIew = nameIew
+}
+
+// WithNameIsw adds the nameIsw to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithNameIsw(nameIsw *string) *DcimRearPortTemplatesListParams {
+	o.SetNameIsw(nameIsw)
+	return o
+}
+
+// SetNameIsw adds the nameIsw to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetNameIsw(nameIsw *string) {
+	o.NameIsw = nameIsw
+}
+
+// WithNamen adds the namen to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithNamen(namen *string) *DcimRearPortTemplatesListParams {
+	o.SetNamen(namen)
+	return o
+}
+
+// SetNamen adds the nameN to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetNamen(namen *string) {
+	o.Namen = namen
+}
+
+// WithNameNic adds the nameNic to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithNameNic(nameNic *string) *DcimRearPortTemplatesListParams {
+	o.SetNameNic(nameNic)
+	return o
+}
+
+// SetNameNic adds the nameNic to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetNameNic(nameNic *string) {
+	o.NameNic = nameNic
+}
+
+// WithNameNie adds the nameNie to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithNameNie(nameNie *string) *DcimRearPortTemplatesListParams {
+	o.SetNameNie(nameNie)
+	return o
+}
+
+// SetNameNie adds the nameNie to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetNameNie(nameNie *string) {
+	o.NameNie = nameNie
+}
+
+// WithNameNiew adds the nameNiew to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithNameNiew(nameNiew *string) *DcimRearPortTemplatesListParams {
+	o.SetNameNiew(nameNiew)
+	return o
+}
+
+// SetNameNiew adds the nameNiew to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetNameNiew(nameNiew *string) {
+	o.NameNiew = nameNiew
+}
+
+// WithNameNisw adds the nameNisw to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithNameNisw(nameNisw *string) *DcimRearPortTemplatesListParams {
+	o.SetNameNisw(nameNisw)
+	return o
+}
+
+// SetNameNisw adds the nameNisw to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetNameNisw(nameNisw *string) {
+	o.NameNisw = nameNisw
+}
+
 // WithOffset adds the offset to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) WithOffset(offset *int64) *DcimRearPortTemplatesListParams {
 	o.SetOffset(offset)
@@ -204,6 +410,61 @@ func (o *DcimRearPortTemplatesListParams) SetPositions(positions *string) {
 	o.Positions = positions
 }
 
+// WithPositionsGt adds the positionsGt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithPositionsGt(positionsGt *string) *DcimRearPortTemplatesListParams {
+	o.SetPositionsGt(positionsGt)
+	return o
+}
+
+// SetPositionsGt adds the positionsGt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetPositionsGt(positionsGt *string) {
+	o.PositionsGt = positionsGt
+}
+
+// WithPositionsGte adds the positionsGte to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithPositionsGte(positionsGte *string) *DcimRearPortTemplatesListParams {
+	o.SetPositionsGte(positionsGte)
+	return o
+}
+
+// SetPositionsGte adds the positionsGte to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetPositionsGte(positionsGte *string) {
+	o.PositionsGte = positionsGte
+}
+
+// WithPositionsLt adds the positionsLt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithPositionsLt(positionsLt *string) *DcimRearPortTemplatesListParams {
+	o.SetPositionsLt(positionsLt)
+	return o
+}
+
+// SetPositionsLt adds the positionsLt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetPositionsLt(positionsLt *string) {
+	o.PositionsLt = positionsLt
+}
+
+// WithPositionsLte adds the positionsLte to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithPositionsLte(positionsLte *string) *DcimRearPortTemplatesListParams {
+	o.SetPositionsLte(positionsLte)
+	return o
+}
+
+// SetPositionsLte adds the positionsLte to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetPositionsLte(positionsLte *string) {
+	o.PositionsLte = positionsLte
+}
+
+// WithPositionsn adds the positionsn to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithPositionsn(positionsn *string) *DcimRearPortTemplatesListParams {
+	o.SetPositionsn(positionsn)
+	return o
+}
+
+// SetPositionsn adds the positionsN to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetPositionsn(positionsn *string) {
+	o.Positionsn = positionsn
+}
+
 // WithQ adds the q to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) WithQ(q *string) *DcimRearPortTemplatesListParams {
 	o.SetQ(q)
@@ -224,6 +485,17 @@ func (o *DcimRearPortTemplatesListParams) WithType(typeVar *string) *DcimRearPor
 // SetType adds the type to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) SetType(typeVar *string) {
 	o.Type = typeVar
+}
+
+// WithTypen adds the typen to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithTypen(typen *string) *DcimRearPortTemplatesListParams {
+	o.SetTypen(typen)
+	return o
+}
+
+// SetTypen adds the typeN to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetTypen(typen *string) {
+	o.Typen = typen
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -250,6 +522,22 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 
 	}
 
+	if o.DevicetypeIDn != nil {
+
+		// query param devicetype_id__n
+		var qrDevicetypeIDn string
+		if o.DevicetypeIDn != nil {
+			qrDevicetypeIDn = *o.DevicetypeIDn
+		}
+		qDevicetypeIDn := qrDevicetypeIDn
+		if qDevicetypeIDn != "" {
+			if err := r.SetQueryParam("devicetype_id__n", qDevicetypeIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -260,6 +548,86 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		qID := qrID
 		if qID != "" {
 			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
@@ -298,6 +666,150 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 
 	}
 
+	if o.NameIc != nil {
+
+		// query param name__ic
+		var qrNameIc string
+		if o.NameIc != nil {
+			qrNameIc = *o.NameIc
+		}
+		qNameIc := qrNameIc
+		if qNameIc != "" {
+			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIe != nil {
+
+		// query param name__ie
+		var qrNameIe string
+		if o.NameIe != nil {
+			qrNameIe = *o.NameIe
+		}
+		qNameIe := qrNameIe
+		if qNameIe != "" {
+			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIew != nil {
+
+		// query param name__iew
+		var qrNameIew string
+		if o.NameIew != nil {
+			qrNameIew = *o.NameIew
+		}
+		qNameIew := qrNameIew
+		if qNameIew != "" {
+			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIsw != nil {
+
+		// query param name__isw
+		var qrNameIsw string
+		if o.NameIsw != nil {
+			qrNameIsw = *o.NameIsw
+		}
+		qNameIsw := qrNameIsw
+		if qNameIsw != "" {
+			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Namen != nil {
+
+		// query param name__n
+		var qrNamen string
+		if o.Namen != nil {
+			qrNamen = *o.Namen
+		}
+		qNamen := qrNamen
+		if qNamen != "" {
+			if err := r.SetQueryParam("name__n", qNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNic != nil {
+
+		// query param name__nic
+		var qrNameNic string
+		if o.NameNic != nil {
+			qrNameNic = *o.NameNic
+		}
+		qNameNic := qrNameNic
+		if qNameNic != "" {
+			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNie != nil {
+
+		// query param name__nie
+		var qrNameNie string
+		if o.NameNie != nil {
+			qrNameNie = *o.NameNie
+		}
+		qNameNie := qrNameNie
+		if qNameNie != "" {
+			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNiew != nil {
+
+		// query param name__niew
+		var qrNameNiew string
+		if o.NameNiew != nil {
+			qrNameNiew = *o.NameNiew
+		}
+		qNameNiew := qrNameNiew
+		if qNameNiew != "" {
+			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNisw != nil {
+
+		// query param name__nisw
+		var qrNameNisw string
+		if o.NameNisw != nil {
+			qrNameNisw = *o.NameNisw
+		}
+		qNameNisw := qrNameNisw
+		if qNameNisw != "" {
+			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -330,6 +842,86 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 
 	}
 
+	if o.PositionsGt != nil {
+
+		// query param positions__gt
+		var qrPositionsGt string
+		if o.PositionsGt != nil {
+			qrPositionsGt = *o.PositionsGt
+		}
+		qPositionsGt := qrPositionsGt
+		if qPositionsGt != "" {
+			if err := r.SetQueryParam("positions__gt", qPositionsGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PositionsGte != nil {
+
+		// query param positions__gte
+		var qrPositionsGte string
+		if o.PositionsGte != nil {
+			qrPositionsGte = *o.PositionsGte
+		}
+		qPositionsGte := qrPositionsGte
+		if qPositionsGte != "" {
+			if err := r.SetQueryParam("positions__gte", qPositionsGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PositionsLt != nil {
+
+		// query param positions__lt
+		var qrPositionsLt string
+		if o.PositionsLt != nil {
+			qrPositionsLt = *o.PositionsLt
+		}
+		qPositionsLt := qrPositionsLt
+		if qPositionsLt != "" {
+			if err := r.SetQueryParam("positions__lt", qPositionsLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PositionsLte != nil {
+
+		// query param positions__lte
+		var qrPositionsLte string
+		if o.PositionsLte != nil {
+			qrPositionsLte = *o.PositionsLte
+		}
+		qPositionsLte := qrPositionsLte
+		if qPositionsLte != "" {
+			if err := r.SetQueryParam("positions__lte", qPositionsLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Positionsn != nil {
+
+		// query param positions__n
+		var qrPositionsn string
+		if o.Positionsn != nil {
+			qrPositionsn = *o.Positionsn
+		}
+		qPositionsn := qrPositionsn
+		if qPositionsn != "" {
+			if err := r.SetQueryParam("positions__n", qPositionsn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Q != nil {
 
 		// query param q
@@ -356,6 +948,22 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		qType := qrType
 		if qType != "" {
 			if err := r.SetQueryParam("type", qType); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Typen != nil {
+
+		// query param type__n
+		var qrTypen string
+		if o.Typen != nil {
+			qrTypen = *o.Typen
+		}
+		qTypen := qrTypen
+		if qTypen != "" {
+			if err := r.SetQueryParam("type__n", qTypen); err != nil {
 				return err
 			}
 		}

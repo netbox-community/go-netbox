@@ -24,14 +24,14 @@ import (
 	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableRearPort writable rear port
+//
 // swagger:model WritableRearPort
 type WritableRearPort struct {
 
@@ -39,7 +39,7 @@ type WritableRearPort struct {
 	Cable *NestedCable `json:"cable,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device
@@ -66,7 +66,7 @@ type WritableRearPort struct {
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 110-punch bnc fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
+	// Enum: [8p8c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
 	Type *string `json:"type"`
 }
 
@@ -132,7 +132,7 @@ func (m *WritableRearPort) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 
@@ -203,7 +203,7 @@ var writableRearPortTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","110-punch","bnc","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -221,6 +221,9 @@ const (
 
 	// WritableRearPortTypeBnc captures enum value "bnc"
 	WritableRearPortTypeBnc string = "bnc"
+
+	// WritableRearPortTypeMrj21 captures enum value "mrj21"
+	WritableRearPortTypeMrj21 string = "mrj21"
 
 	// WritableRearPortTypeFc captures enum value "fc"
 	WritableRearPortTypeFc string = "fc"

@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewDcimVirtualChassisListParams creates a new DcimVirtualChassisListParams object
@@ -79,8 +78,36 @@ type DcimVirtualChassisListParams struct {
 
 	/*Domain*/
 	Domain *string
+	/*DomainIc*/
+	DomainIc *string
+	/*DomainIe*/
+	DomainIe *string
+	/*DomainIew*/
+	DomainIew *string
+	/*DomainIsw*/
+	DomainIsw *string
+	/*Domainn*/
+	Domainn *string
+	/*DomainNic*/
+	DomainNic *string
+	/*DomainNie*/
+	DomainNie *string
+	/*DomainNiew*/
+	DomainNiew *string
+	/*DomainNisw*/
+	DomainNisw *string
 	/*ID*/
 	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -95,18 +122,32 @@ type DcimVirtualChassisListParams struct {
 	Q *string
 	/*Region*/
 	Region *string
+	/*Regionn*/
+	Regionn *string
 	/*RegionID*/
 	RegionID *string
+	/*RegionIDn*/
+	RegionIDn *string
 	/*Site*/
 	Site *string
+	/*Siten*/
+	Siten *string
 	/*SiteID*/
 	SiteID *string
+	/*SiteIDn*/
+	SiteIDn *string
 	/*Tag*/
 	Tag *string
+	/*Tagn*/
+	Tagn *string
 	/*Tenant*/
 	Tenant *string
+	/*Tenantn*/
+	Tenantn *string
 	/*TenantID*/
 	TenantID *string
+	/*TenantIDn*/
+	TenantIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -157,6 +198,105 @@ func (o *DcimVirtualChassisListParams) SetDomain(domain *string) {
 	o.Domain = domain
 }
 
+// WithDomainIc adds the domainIc to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainIc(domainIc *string) *DcimVirtualChassisListParams {
+	o.SetDomainIc(domainIc)
+	return o
+}
+
+// SetDomainIc adds the domainIc to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainIc(domainIc *string) {
+	o.DomainIc = domainIc
+}
+
+// WithDomainIe adds the domainIe to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainIe(domainIe *string) *DcimVirtualChassisListParams {
+	o.SetDomainIe(domainIe)
+	return o
+}
+
+// SetDomainIe adds the domainIe to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainIe(domainIe *string) {
+	o.DomainIe = domainIe
+}
+
+// WithDomainIew adds the domainIew to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainIew(domainIew *string) *DcimVirtualChassisListParams {
+	o.SetDomainIew(domainIew)
+	return o
+}
+
+// SetDomainIew adds the domainIew to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainIew(domainIew *string) {
+	o.DomainIew = domainIew
+}
+
+// WithDomainIsw adds the domainIsw to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainIsw(domainIsw *string) *DcimVirtualChassisListParams {
+	o.SetDomainIsw(domainIsw)
+	return o
+}
+
+// SetDomainIsw adds the domainIsw to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainIsw(domainIsw *string) {
+	o.DomainIsw = domainIsw
+}
+
+// WithDomainn adds the domainn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainn(domainn *string) *DcimVirtualChassisListParams {
+	o.SetDomainn(domainn)
+	return o
+}
+
+// SetDomainn adds the domainN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainn(domainn *string) {
+	o.Domainn = domainn
+}
+
+// WithDomainNic adds the domainNic to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainNic(domainNic *string) *DcimVirtualChassisListParams {
+	o.SetDomainNic(domainNic)
+	return o
+}
+
+// SetDomainNic adds the domainNic to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainNic(domainNic *string) {
+	o.DomainNic = domainNic
+}
+
+// WithDomainNie adds the domainNie to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainNie(domainNie *string) *DcimVirtualChassisListParams {
+	o.SetDomainNie(domainNie)
+	return o
+}
+
+// SetDomainNie adds the domainNie to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainNie(domainNie *string) {
+	o.DomainNie = domainNie
+}
+
+// WithDomainNiew adds the domainNiew to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainNiew(domainNiew *string) *DcimVirtualChassisListParams {
+	o.SetDomainNiew(domainNiew)
+	return o
+}
+
+// SetDomainNiew adds the domainNiew to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainNiew(domainNiew *string) {
+	o.DomainNiew = domainNiew
+}
+
+// WithDomainNisw adds the domainNisw to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainNisw(domainNisw *string) *DcimVirtualChassisListParams {
+	o.SetDomainNisw(domainNisw)
+	return o
+}
+
+// SetDomainNisw adds the domainNisw to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainNisw(domainNisw *string) {
+	o.DomainNisw = domainNisw
+}
+
 // WithID adds the id to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) WithID(id *string) *DcimVirtualChassisListParams {
 	o.SetID(id)
@@ -166,6 +306,61 @@ func (o *DcimVirtualChassisListParams) WithID(id *string) *DcimVirtualChassisLis
 // SetID adds the id to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) SetID(id *string) {
 	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithIDGt(iDGt *string) *DcimVirtualChassisListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithIDGte(iDGte *string) *DcimVirtualChassisListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithIDLt(iDLt *string) *DcimVirtualChassisListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithIDLte(iDLte *string) *DcimVirtualChassisListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithIDn(iDn *string) *DcimVirtualChassisListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLimit adds the limit to the dcim virtual chassis list params
@@ -212,6 +407,17 @@ func (o *DcimVirtualChassisListParams) SetRegion(region *string) {
 	o.Region = region
 }
 
+// WithRegionn adds the regionn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithRegionn(regionn *string) *DcimVirtualChassisListParams {
+	o.SetRegionn(regionn)
+	return o
+}
+
+// SetRegionn adds the regionN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetRegionn(regionn *string) {
+	o.Regionn = regionn
+}
+
 // WithRegionID adds the regionID to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) WithRegionID(regionID *string) *DcimVirtualChassisListParams {
 	o.SetRegionID(regionID)
@@ -221,6 +427,17 @@ func (o *DcimVirtualChassisListParams) WithRegionID(regionID *string) *DcimVirtu
 // SetRegionID adds the regionId to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) SetRegionID(regionID *string) {
 	o.RegionID = regionID
+}
+
+// WithRegionIDn adds the regionIDn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithRegionIDn(regionIDn *string) *DcimVirtualChassisListParams {
+	o.SetRegionIDn(regionIDn)
+	return o
+}
+
+// SetRegionIDn adds the regionIdN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetRegionIDn(regionIDn *string) {
+	o.RegionIDn = regionIDn
 }
 
 // WithSite adds the site to the dcim virtual chassis list params
@@ -234,6 +451,17 @@ func (o *DcimVirtualChassisListParams) SetSite(site *string) {
 	o.Site = site
 }
 
+// WithSiten adds the siten to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithSiten(siten *string) *DcimVirtualChassisListParams {
+	o.SetSiten(siten)
+	return o
+}
+
+// SetSiten adds the siteN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetSiten(siten *string) {
+	o.Siten = siten
+}
+
 // WithSiteID adds the siteID to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) WithSiteID(siteID *string) *DcimVirtualChassisListParams {
 	o.SetSiteID(siteID)
@@ -243,6 +471,17 @@ func (o *DcimVirtualChassisListParams) WithSiteID(siteID *string) *DcimVirtualCh
 // SetSiteID adds the siteId to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) SetSiteID(siteID *string) {
 	o.SiteID = siteID
+}
+
+// WithSiteIDn adds the siteIDn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithSiteIDn(siteIDn *string) *DcimVirtualChassisListParams {
+	o.SetSiteIDn(siteIDn)
+	return o
+}
+
+// SetSiteIDn adds the siteIdN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetSiteIDn(siteIDn *string) {
+	o.SiteIDn = siteIDn
 }
 
 // WithTag adds the tag to the dcim virtual chassis list params
@@ -256,6 +495,17 @@ func (o *DcimVirtualChassisListParams) SetTag(tag *string) {
 	o.Tag = tag
 }
 
+// WithTagn adds the tagn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithTagn(tagn *string) *DcimVirtualChassisListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WithTenant adds the tenant to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) WithTenant(tenant *string) *DcimVirtualChassisListParams {
 	o.SetTenant(tenant)
@@ -267,6 +517,17 @@ func (o *DcimVirtualChassisListParams) SetTenant(tenant *string) {
 	o.Tenant = tenant
 }
 
+// WithTenantn adds the tenantn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithTenantn(tenantn *string) *DcimVirtualChassisListParams {
+	o.SetTenantn(tenantn)
+	return o
+}
+
+// SetTenantn adds the tenantN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetTenantn(tenantn *string) {
+	o.Tenantn = tenantn
+}
+
 // WithTenantID adds the tenantID to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) WithTenantID(tenantID *string) *DcimVirtualChassisListParams {
 	o.SetTenantID(tenantID)
@@ -276,6 +537,17 @@ func (o *DcimVirtualChassisListParams) WithTenantID(tenantID *string) *DcimVirtu
 // SetTenantID adds the tenantId to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) SetTenantID(tenantID *string) {
 	o.TenantID = tenantID
+}
+
+// WithTenantIDn adds the tenantIDn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithTenantIDn(tenantIDn *string) *DcimVirtualChassisListParams {
+	o.SetTenantIDn(tenantIDn)
+	return o
+}
+
+// SetTenantIDn adds the tenantIdN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetTenantIDn(tenantIDn *string) {
+	o.TenantIDn = tenantIDn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -302,6 +574,150 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 
 	}
 
+	if o.DomainIc != nil {
+
+		// query param domain__ic
+		var qrDomainIc string
+		if o.DomainIc != nil {
+			qrDomainIc = *o.DomainIc
+		}
+		qDomainIc := qrDomainIc
+		if qDomainIc != "" {
+			if err := r.SetQueryParam("domain__ic", qDomainIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DomainIe != nil {
+
+		// query param domain__ie
+		var qrDomainIe string
+		if o.DomainIe != nil {
+			qrDomainIe = *o.DomainIe
+		}
+		qDomainIe := qrDomainIe
+		if qDomainIe != "" {
+			if err := r.SetQueryParam("domain__ie", qDomainIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DomainIew != nil {
+
+		// query param domain__iew
+		var qrDomainIew string
+		if o.DomainIew != nil {
+			qrDomainIew = *o.DomainIew
+		}
+		qDomainIew := qrDomainIew
+		if qDomainIew != "" {
+			if err := r.SetQueryParam("domain__iew", qDomainIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DomainIsw != nil {
+
+		// query param domain__isw
+		var qrDomainIsw string
+		if o.DomainIsw != nil {
+			qrDomainIsw = *o.DomainIsw
+		}
+		qDomainIsw := qrDomainIsw
+		if qDomainIsw != "" {
+			if err := r.SetQueryParam("domain__isw", qDomainIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Domainn != nil {
+
+		// query param domain__n
+		var qrDomainn string
+		if o.Domainn != nil {
+			qrDomainn = *o.Domainn
+		}
+		qDomainn := qrDomainn
+		if qDomainn != "" {
+			if err := r.SetQueryParam("domain__n", qDomainn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DomainNic != nil {
+
+		// query param domain__nic
+		var qrDomainNic string
+		if o.DomainNic != nil {
+			qrDomainNic = *o.DomainNic
+		}
+		qDomainNic := qrDomainNic
+		if qDomainNic != "" {
+			if err := r.SetQueryParam("domain__nic", qDomainNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DomainNie != nil {
+
+		// query param domain__nie
+		var qrDomainNie string
+		if o.DomainNie != nil {
+			qrDomainNie = *o.DomainNie
+		}
+		qDomainNie := qrDomainNie
+		if qDomainNie != "" {
+			if err := r.SetQueryParam("domain__nie", qDomainNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DomainNiew != nil {
+
+		// query param domain__niew
+		var qrDomainNiew string
+		if o.DomainNiew != nil {
+			qrDomainNiew = *o.DomainNiew
+		}
+		qDomainNiew := qrDomainNiew
+		if qDomainNiew != "" {
+			if err := r.SetQueryParam("domain__niew", qDomainNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DomainNisw != nil {
+
+		// query param domain__nisw
+		var qrDomainNisw string
+		if o.DomainNisw != nil {
+			qrDomainNisw = *o.DomainNisw
+		}
+		qDomainNisw := qrDomainNisw
+		if qDomainNisw != "" {
+			if err := r.SetQueryParam("domain__nisw", qDomainNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -312,6 +728,86 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 		qID := qrID
 		if qID != "" {
 			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
@@ -382,6 +878,22 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 
 	}
 
+	if o.Regionn != nil {
+
+		// query param region__n
+		var qrRegionn string
+		if o.Regionn != nil {
+			qrRegionn = *o.Regionn
+		}
+		qRegionn := qrRegionn
+		if qRegionn != "" {
+			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.RegionID != nil {
 
 		// query param region_id
@@ -392,6 +904,22 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 		qRegionID := qrRegionID
 		if qRegionID != "" {
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.RegionIDn != nil {
+
+		// query param region_id__n
+		var qrRegionIDn string
+		if o.RegionIDn != nil {
+			qrRegionIDn = *o.RegionIDn
+		}
+		qRegionIDn := qrRegionIDn
+		if qRegionIDn != "" {
+			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
 				return err
 			}
 		}
@@ -414,6 +942,22 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 
 	}
 
+	if o.Siten != nil {
+
+		// query param site__n
+		var qrSiten string
+		if o.Siten != nil {
+			qrSiten = *o.Siten
+		}
+		qSiten := qrSiten
+		if qSiten != "" {
+			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.SiteID != nil {
 
 		// query param site_id
@@ -424,6 +968,22 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 		qSiteID := qrSiteID
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SiteIDn != nil {
+
+		// query param site_id__n
+		var qrSiteIDn string
+		if o.SiteIDn != nil {
+			qrSiteIDn = *o.SiteIDn
+		}
+		qSiteIDn := qrSiteIDn
+		if qSiteIDn != "" {
+			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
@@ -446,6 +1006,22 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 
 	}
 
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tenant != nil {
 
 		// query param tenant
@@ -462,6 +1038,22 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 
 	}
 
+	if o.Tenantn != nil {
+
+		// query param tenant__n
+		var qrTenantn string
+		if o.Tenantn != nil {
+			qrTenantn = *o.Tenantn
+		}
+		qTenantn := qrTenantn
+		if qTenantn != "" {
+			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.TenantID != nil {
 
 		// query param tenant_id
@@ -472,6 +1064,22 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 		qTenantID := qrTenantID
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantIDn != nil {
+
+		// query param tenant_id__n
+		var qrTenantIDn string
+		if o.TenantIDn != nil {
+			qrTenantIDn = *o.TenantIDn
+		}
+		qTenantIDn := qrTenantIDn
+		if qTenantIDn != "" {
+			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}

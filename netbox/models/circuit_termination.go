@@ -23,14 +23,14 @@ package models
 import (
 	"encoding/json"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // CircuitTermination circuit termination
+//
 // swagger:model CircuitTermination
 type CircuitTermination struct {
 
@@ -44,7 +44,7 @@ type CircuitTermination struct {
 	// Connected endpoint
 	//
 	//
-	//         Return the appropriate serializer for the type of connected object.
+	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
 	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
@@ -57,7 +57,7 @@ type CircuitTermination struct {
 	ConnectionStatus *CircuitTerminationConnectionStatus `json:"connection_status,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// ID
@@ -205,7 +205,7 @@ func (m *CircuitTermination) validateDescription(formats strfmt.Registry) error 
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 
@@ -352,15 +352,18 @@ func (m *CircuitTermination) UnmarshalBinary(b []byte) error {
 }
 
 // CircuitTerminationConnectionStatus Connection status
+//
 // swagger:model CircuitTerminationConnectionStatus
 type CircuitTerminationConnectionStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Not Connected Connected]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [false true]
 	Value *bool `json:"value"`
 }
 
@@ -382,18 +385,77 @@ func (m *CircuitTerminationConnectionStatus) Validate(formats strfmt.Registry) e
 	return nil
 }
 
+var circuitTerminationConnectionStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Not Connected","Connected"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		circuitTerminationConnectionStatusTypeLabelPropEnum = append(circuitTerminationConnectionStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// CircuitTerminationConnectionStatusLabelNotConnected captures enum value "Not Connected"
+	CircuitTerminationConnectionStatusLabelNotConnected string = "Not Connected"
+
+	// CircuitTerminationConnectionStatusLabelConnected captures enum value "Connected"
+	CircuitTerminationConnectionStatusLabelConnected string = "Connected"
+)
+
+// prop value enum
+func (m *CircuitTerminationConnectionStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, circuitTerminationConnectionStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *CircuitTerminationConnectionStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("connection_status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var circuitTerminationConnectionStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []bool
+	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		circuitTerminationConnectionStatusTypeValuePropEnum = append(circuitTerminationConnectionStatusTypeValuePropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *CircuitTerminationConnectionStatus) validateValueEnum(path, location string, value bool) error {
+	if err := validate.Enum(path, location, value, circuitTerminationConnectionStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *CircuitTerminationConnectionStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("connection_status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

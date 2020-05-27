@@ -21,16 +21,17 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ConsolePort console port
+//
 // swagger:model ConsolePort
 type ConsolePort struct {
 
@@ -40,7 +41,7 @@ type ConsolePort struct {
 	// Connected endpoint
 	//
 	//
-	//         Return the appropriate serializer for the type of connected object.
+	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
 	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
@@ -53,7 +54,7 @@ type ConsolePort struct {
 	ConnectionStatus *ConsolePortConnectionStatus `json:"connection_status,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// device
@@ -157,7 +158,7 @@ func (m *ConsolePort) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 
@@ -253,15 +254,18 @@ func (m *ConsolePort) UnmarshalBinary(b []byte) error {
 }
 
 // ConsolePortConnectionStatus Connection status
+//
 // swagger:model ConsolePortConnectionStatus
 type ConsolePortConnectionStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Not Connected Connected]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [false true]
 	Value *bool `json:"value"`
 }
 
@@ -283,18 +287,77 @@ func (m *ConsolePortConnectionStatus) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var consolePortConnectionStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Not Connected","Connected"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		consolePortConnectionStatusTypeLabelPropEnum = append(consolePortConnectionStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// ConsolePortConnectionStatusLabelNotConnected captures enum value "Not Connected"
+	ConsolePortConnectionStatusLabelNotConnected string = "Not Connected"
+
+	// ConsolePortConnectionStatusLabelConnected captures enum value "Connected"
+	ConsolePortConnectionStatusLabelConnected string = "Connected"
+)
+
+// prop value enum
+func (m *ConsolePortConnectionStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, consolePortConnectionStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *ConsolePortConnectionStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("connection_status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var consolePortConnectionStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []bool
+	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		consolePortConnectionStatusTypeValuePropEnum = append(consolePortConnectionStatusTypeValuePropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *ConsolePortConnectionStatus) validateValueEnum(path, location string, value bool) error {
+	if err := validate.Enum(path, location, value, consolePortConnectionStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *ConsolePortConnectionStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("connection_status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 
@@ -320,15 +383,18 @@ func (m *ConsolePortConnectionStatus) UnmarshalBinary(b []byte) error {
 }
 
 // ConsolePortType Type
+//
 // swagger:model ConsolePortType
 type ConsolePortType struct {
 
 	// label
 	// Required: true
+	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b other]
 	Value *string `json:"value"`
 }
 
@@ -350,18 +416,152 @@ func (m *ConsolePortType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var consolePortTypeTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","Other"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		consolePortTypeTypeLabelPropEnum = append(consolePortTypeTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// ConsolePortTypeLabelDE9 captures enum value "DE-9"
+	ConsolePortTypeLabelDE9 string = "DE-9"
+
+	// ConsolePortTypeLabelDB25 captures enum value "DB-25"
+	ConsolePortTypeLabelDB25 string = "DB-25"
+
+	// ConsolePortTypeLabelRJ11 captures enum value "RJ-11"
+	ConsolePortTypeLabelRJ11 string = "RJ-11"
+
+	// ConsolePortTypeLabelRJ12 captures enum value "RJ-12"
+	ConsolePortTypeLabelRJ12 string = "RJ-12"
+
+	// ConsolePortTypeLabelRJ45 captures enum value "RJ-45"
+	ConsolePortTypeLabelRJ45 string = "RJ-45"
+
+	// ConsolePortTypeLabelUSBTypeA captures enum value "USB Type A"
+	ConsolePortTypeLabelUSBTypeA string = "USB Type A"
+
+	// ConsolePortTypeLabelUSBTypeB captures enum value "USB Type B"
+	ConsolePortTypeLabelUSBTypeB string = "USB Type B"
+
+	// ConsolePortTypeLabelUSBTypeC captures enum value "USB Type C"
+	ConsolePortTypeLabelUSBTypeC string = "USB Type C"
+
+	// ConsolePortTypeLabelUSBMiniA captures enum value "USB Mini A"
+	ConsolePortTypeLabelUSBMiniA string = "USB Mini A"
+
+	// ConsolePortTypeLabelUSBMiniB captures enum value "USB Mini B"
+	ConsolePortTypeLabelUSBMiniB string = "USB Mini B"
+
+	// ConsolePortTypeLabelUSBMicroA captures enum value "USB Micro A"
+	ConsolePortTypeLabelUSBMicroA string = "USB Micro A"
+
+	// ConsolePortTypeLabelUSBMicroB captures enum value "USB Micro B"
+	ConsolePortTypeLabelUSBMicroB string = "USB Micro B"
+
+	// ConsolePortTypeLabelOther captures enum value "Other"
+	ConsolePortTypeLabelOther string = "Other"
+)
+
+// prop value enum
+func (m *ConsolePortType) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, consolePortTypeTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *ConsolePortType) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("type"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var consolePortTypeTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","other"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		consolePortTypeTypeValuePropEnum = append(consolePortTypeTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// ConsolePortTypeValueDe9 captures enum value "de-9"
+	ConsolePortTypeValueDe9 string = "de-9"
+
+	// ConsolePortTypeValueDb25 captures enum value "db-25"
+	ConsolePortTypeValueDb25 string = "db-25"
+
+	// ConsolePortTypeValueRj11 captures enum value "rj-11"
+	ConsolePortTypeValueRj11 string = "rj-11"
+
+	// ConsolePortTypeValueRj12 captures enum value "rj-12"
+	ConsolePortTypeValueRj12 string = "rj-12"
+
+	// ConsolePortTypeValueRj45 captures enum value "rj-45"
+	ConsolePortTypeValueRj45 string = "rj-45"
+
+	// ConsolePortTypeValueUsba captures enum value "usb-a"
+	ConsolePortTypeValueUsba string = "usb-a"
+
+	// ConsolePortTypeValueUsbb captures enum value "usb-b"
+	ConsolePortTypeValueUsbb string = "usb-b"
+
+	// ConsolePortTypeValueUsbc captures enum value "usb-c"
+	ConsolePortTypeValueUsbc string = "usb-c"
+
+	// ConsolePortTypeValueUsbMinia captures enum value "usb-mini-a"
+	ConsolePortTypeValueUsbMinia string = "usb-mini-a"
+
+	// ConsolePortTypeValueUsbMinib captures enum value "usb-mini-b"
+	ConsolePortTypeValueUsbMinib string = "usb-mini-b"
+
+	// ConsolePortTypeValueUsbMicroa captures enum value "usb-micro-a"
+	ConsolePortTypeValueUsbMicroa string = "usb-micro-a"
+
+	// ConsolePortTypeValueUsbMicrob captures enum value "usb-micro-b"
+	ConsolePortTypeValueUsbMicrob string = "usb-micro-b"
+
+	// ConsolePortTypeValueOther captures enum value "other"
+	ConsolePortTypeValueOther string = "other"
+)
+
+// prop value enum
+func (m *ConsolePortType) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, consolePortTypeTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *ConsolePortType) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("type"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

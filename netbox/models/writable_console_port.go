@@ -24,14 +24,14 @@ import (
 	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableConsolePort writable console port
+//
 // swagger:model WritableConsolePort
 type WritableConsolePort struct {
 
@@ -41,7 +41,7 @@ type WritableConsolePort struct {
 	// Connected endpoint
 	//
 	//
-	//         Return the appropriate serializer for the type of connected object.
+	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
 	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
@@ -55,7 +55,7 @@ type WritableConsolePort struct {
 	ConnectionStatus bool `json:"connection_status,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device
@@ -76,6 +76,8 @@ type WritableConsolePort struct {
 	Tags []string `json:"tags"`
 
 	// Type
+	//
+	// Physical port type
 	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b other]
 	Type string `json:"type,omitempty"`
 }
@@ -176,7 +178,7 @@ func (m *WritableConsolePort) validateDescription(formats strfmt.Registry) error
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

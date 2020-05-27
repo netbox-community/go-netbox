@@ -21,14 +21,16 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
+	"encoding/json"
 
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // RearPortTemplate rear port template
+//
 // swagger:model RearPortTemplate
 type RearPortTemplate struct {
 
@@ -171,15 +173,18 @@ func (m *RearPortTemplate) UnmarshalBinary(b []byte) error {
 }
 
 // RearPortTemplateType Type
+//
 // swagger:model RearPortTemplateType
 type RearPortTemplateType struct {
 
 	// label
 	// Required: true
+	// Enum: [8P8C 110 Punch BNC MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [8p8c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
 	Value *string `json:"value"`
 }
 
@@ -201,18 +206,158 @@ func (m *RearPortTemplateType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var rearPortTemplateTypeTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["8P8C","110 Punch","BNC","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		rearPortTemplateTypeTypeLabelPropEnum = append(rearPortTemplateTypeTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// RearPortTemplateTypeLabelNr8P8C captures enum value "8P8C"
+	RearPortTemplateTypeLabelNr8P8C string = "8P8C"
+
+	// RearPortTemplateTypeLabelNr110Punch captures enum value "110 Punch"
+	RearPortTemplateTypeLabelNr110Punch string = "110 Punch"
+
+	// RearPortTemplateTypeLabelBNC captures enum value "BNC"
+	RearPortTemplateTypeLabelBNC string = "BNC"
+
+	// RearPortTemplateTypeLabelMRJ21 captures enum value "MRJ21"
+	RearPortTemplateTypeLabelMRJ21 string = "MRJ21"
+
+	// RearPortTemplateTypeLabelFC captures enum value "FC"
+	RearPortTemplateTypeLabelFC string = "FC"
+
+	// RearPortTemplateTypeLabelLC captures enum value "LC"
+	RearPortTemplateTypeLabelLC string = "LC"
+
+	// RearPortTemplateTypeLabelLCAPC captures enum value "LC/APC"
+	RearPortTemplateTypeLabelLCAPC string = "LC/APC"
+
+	// RearPortTemplateTypeLabelLSH captures enum value "LSH"
+	RearPortTemplateTypeLabelLSH string = "LSH"
+
+	// RearPortTemplateTypeLabelLSHAPC captures enum value "LSH/APC"
+	RearPortTemplateTypeLabelLSHAPC string = "LSH/APC"
+
+	// RearPortTemplateTypeLabelMPO captures enum value "MPO"
+	RearPortTemplateTypeLabelMPO string = "MPO"
+
+	// RearPortTemplateTypeLabelMTRJ captures enum value "MTRJ"
+	RearPortTemplateTypeLabelMTRJ string = "MTRJ"
+
+	// RearPortTemplateTypeLabelSC captures enum value "SC"
+	RearPortTemplateTypeLabelSC string = "SC"
+
+	// RearPortTemplateTypeLabelSCAPC captures enum value "SC/APC"
+	RearPortTemplateTypeLabelSCAPC string = "SC/APC"
+
+	// RearPortTemplateTypeLabelST captures enum value "ST"
+	RearPortTemplateTypeLabelST string = "ST"
+)
+
+// prop value enum
+func (m *RearPortTemplateType) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, rearPortTemplateTypeTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *RearPortTemplateType) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("type"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var rearPortTemplateTypeTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["8p8c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		rearPortTemplateTypeTypeValuePropEnum = append(rearPortTemplateTypeTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// RearPortTemplateTypeValueNr8p8c captures enum value "8p8c"
+	RearPortTemplateTypeValueNr8p8c string = "8p8c"
+
+	// RearPortTemplateTypeValueNr110Punch captures enum value "110-punch"
+	RearPortTemplateTypeValueNr110Punch string = "110-punch"
+
+	// RearPortTemplateTypeValueBnc captures enum value "bnc"
+	RearPortTemplateTypeValueBnc string = "bnc"
+
+	// RearPortTemplateTypeValueMrj21 captures enum value "mrj21"
+	RearPortTemplateTypeValueMrj21 string = "mrj21"
+
+	// RearPortTemplateTypeValueFc captures enum value "fc"
+	RearPortTemplateTypeValueFc string = "fc"
+
+	// RearPortTemplateTypeValueLc captures enum value "lc"
+	RearPortTemplateTypeValueLc string = "lc"
+
+	// RearPortTemplateTypeValueLcApc captures enum value "lc-apc"
+	RearPortTemplateTypeValueLcApc string = "lc-apc"
+
+	// RearPortTemplateTypeValueLsh captures enum value "lsh"
+	RearPortTemplateTypeValueLsh string = "lsh"
+
+	// RearPortTemplateTypeValueLshApc captures enum value "lsh-apc"
+	RearPortTemplateTypeValueLshApc string = "lsh-apc"
+
+	// RearPortTemplateTypeValueMpo captures enum value "mpo"
+	RearPortTemplateTypeValueMpo string = "mpo"
+
+	// RearPortTemplateTypeValueMtrj captures enum value "mtrj"
+	RearPortTemplateTypeValueMtrj string = "mtrj"
+
+	// RearPortTemplateTypeValueSc captures enum value "sc"
+	RearPortTemplateTypeValueSc string = "sc"
+
+	// RearPortTemplateTypeValueScApc captures enum value "sc-apc"
+	RearPortTemplateTypeValueScApc string = "sc-apc"
+
+	// RearPortTemplateTypeValueSt captures enum value "st"
+	RearPortTemplateTypeValueSt string = "st"
+)
+
+// prop value enum
+func (m *RearPortTemplateType) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, rearPortTemplateTypeTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *RearPortTemplateType) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("type"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

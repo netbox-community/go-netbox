@@ -24,18 +24,20 @@ import (
 	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableSite writable site
+//
 // swagger:model WritableSite
 type WritableSite struct {
 
 	// ASN
+	//
+	// 32-bit autonomous system number
 	// Maximum: 4.294967295e+09
 	// Minimum: 1
 	Asn *int64 `json:"asn,omitempty"`
@@ -69,7 +71,7 @@ type WritableSite struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device count
@@ -77,6 +79,8 @@ type WritableSite struct {
 	DeviceCount int64 `json:"device_count,omitempty"`
 
 	// Facility
+	//
+	// Local facility ID or description
 	// Max Length: 50
 	Facility string `json:"facility,omitempty"`
 
@@ -90,9 +94,13 @@ type WritableSite struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Latitude
+	//
+	// GPS coordinate (latitude)
 	Latitude *string `json:"latitude,omitempty"`
 
 	// Longitude
+	//
+	// GPS coordinate (longitude)
 	Longitude *string `json:"longitude,omitempty"`
 
 	// Name
@@ -294,7 +302,7 @@ func (m *WritableSite) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

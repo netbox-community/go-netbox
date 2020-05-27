@@ -21,16 +21,17 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // Service service
+//
 // swagger:model Service
 type Service struct {
 
@@ -43,7 +44,7 @@ type Service struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// device
@@ -153,7 +154,7 @@ func (m *Service) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 
@@ -326,15 +327,18 @@ func (m *Service) UnmarshalBinary(b []byte) error {
 }
 
 // ServiceProtocol Protocol
+//
 // swagger:model ServiceProtocol
 type ServiceProtocol struct {
 
 	// label
 	// Required: true
+	// Enum: [TCP UDP]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [tcp udp]
 	Value *string `json:"value"`
 }
 
@@ -356,18 +360,86 @@ func (m *ServiceProtocol) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var serviceProtocolTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["TCP","UDP"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		serviceProtocolTypeLabelPropEnum = append(serviceProtocolTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// ServiceProtocolLabelTCP captures enum value "TCP"
+	ServiceProtocolLabelTCP string = "TCP"
+
+	// ServiceProtocolLabelUDP captures enum value "UDP"
+	ServiceProtocolLabelUDP string = "UDP"
+)
+
+// prop value enum
+func (m *ServiceProtocol) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, serviceProtocolTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *ServiceProtocol) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("protocol"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("protocol"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var serviceProtocolTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["tcp","udp"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		serviceProtocolTypeValuePropEnum = append(serviceProtocolTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// ServiceProtocolValueTCP captures enum value "tcp"
+	ServiceProtocolValueTCP string = "tcp"
+
+	// ServiceProtocolValueUDP captures enum value "udp"
+	ServiceProtocolValueUDP string = "udp"
+)
+
+// prop value enum
+func (m *ServiceProtocol) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, serviceProtocolTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *ServiceProtocol) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("protocol"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("protocol"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

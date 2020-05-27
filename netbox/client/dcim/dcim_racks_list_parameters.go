@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewDcimRacksListParams creates a new DcimRacksListParams object
@@ -79,6 +78,24 @@ type DcimRacksListParams struct {
 
 	/*AssetTag*/
 	AssetTag *string
+	/*AssetTagIc*/
+	AssetTagIc *string
+	/*AssetTagIe*/
+	AssetTagIe *string
+	/*AssetTagIew*/
+	AssetTagIew *string
+	/*AssetTagIsw*/
+	AssetTagIsw *string
+	/*AssetTagn*/
+	AssetTagn *string
+	/*AssetTagNic*/
+	AssetTagNic *string
+	/*AssetTagNie*/
+	AssetTagNie *string
+	/*AssetTagNiew*/
+	AssetTagNiew *string
+	/*AssetTagNisw*/
+	AssetTagNisw *string
 	/*Created*/
 	Created *string
 	/*CreatedGte*/
@@ -89,17 +106,44 @@ type DcimRacksListParams struct {
 	DescUnits *string
 	/*FacilityID*/
 	FacilityID *string
+	/*FacilityIDIc*/
+	FacilityIDIc *string
+	/*FacilityIDIe*/
+	FacilityIDIe *string
+	/*FacilityIDIew*/
+	FacilityIDIew *string
+	/*FacilityIDIsw*/
+	FacilityIDIsw *string
+	/*FacilityIDn*/
+	FacilityIDn *string
+	/*FacilityIDNic*/
+	FacilityIDNic *string
+	/*FacilityIDNie*/
+	FacilityIDNie *string
+	/*FacilityIDNiew*/
+	FacilityIDNiew *string
+	/*FacilityIDNisw*/
+	FacilityIDNisw *string
 	/*Group*/
 	Group *string
+	/*Groupn*/
+	Groupn *string
 	/*GroupID*/
 	GroupID *string
+	/*GroupIDn*/
+	GroupIDn *string
 	/*ID*/
 	ID *string
-	/*IDIn
-	  Multiple values may be separated by commas.
-
-	*/
-	IDIn *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -113,6 +157,24 @@ type DcimRacksListParams struct {
 	Limit *int64
 	/*Name*/
 	Name *string
+	/*NameIc*/
+	NameIc *string
+	/*NameIe*/
+	NameIe *string
+	/*NameIew*/
+	NameIew *string
+	/*NameIsw*/
+	NameIsw *string
+	/*Namen*/
+	Namen *string
+	/*NameNic*/
+	NameNic *string
+	/*NameNie*/
+	NameNie *string
+	/*NameNiew*/
+	NameNiew *string
+	/*NameNisw*/
+	NameNisw *string
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -120,44 +182,104 @@ type DcimRacksListParams struct {
 	Offset *int64
 	/*OuterDepth*/
 	OuterDepth *string
+	/*OuterDepthGt*/
+	OuterDepthGt *string
+	/*OuterDepthGte*/
+	OuterDepthGte *string
+	/*OuterDepthLt*/
+	OuterDepthLt *string
+	/*OuterDepthLte*/
+	OuterDepthLte *string
+	/*OuterDepthn*/
+	OuterDepthn *string
 	/*OuterUnit*/
 	OuterUnit *string
+	/*OuterUnitn*/
+	OuterUnitn *string
 	/*OuterWidth*/
 	OuterWidth *string
+	/*OuterWidthGt*/
+	OuterWidthGt *string
+	/*OuterWidthGte*/
+	OuterWidthGte *string
+	/*OuterWidthLt*/
+	OuterWidthLt *string
+	/*OuterWidthLte*/
+	OuterWidthLte *string
+	/*OuterWidthn*/
+	OuterWidthn *string
 	/*Q*/
 	Q *string
 	/*Region*/
 	Region *string
+	/*Regionn*/
+	Regionn *string
 	/*RegionID*/
 	RegionID *string
+	/*RegionIDn*/
+	RegionIDn *string
 	/*Role*/
 	Role *string
+	/*Rolen*/
+	Rolen *string
 	/*RoleID*/
 	RoleID *string
+	/*RoleIDn*/
+	RoleIDn *string
 	/*Serial*/
 	Serial *string
 	/*Site*/
 	Site *string
+	/*Siten*/
+	Siten *string
 	/*SiteID*/
 	SiteID *string
+	/*SiteIDn*/
+	SiteIDn *string
 	/*Status*/
 	Status *string
+	/*Statusn*/
+	Statusn *string
 	/*Tag*/
 	Tag *string
+	/*Tagn*/
+	Tagn *string
 	/*Tenant*/
 	Tenant *string
+	/*Tenantn*/
+	Tenantn *string
 	/*TenantGroup*/
 	TenantGroup *string
+	/*TenantGroupn*/
+	TenantGroupn *string
 	/*TenantGroupID*/
 	TenantGroupID *string
+	/*TenantGroupIDn*/
+	TenantGroupIDn *string
 	/*TenantID*/
 	TenantID *string
+	/*TenantIDn*/
+	TenantIDn *string
 	/*Type*/
 	Type *string
+	/*Typen*/
+	Typen *string
 	/*UHeight*/
 	UHeight *string
+	/*UHeightGt*/
+	UHeightGt *string
+	/*UHeightGte*/
+	UHeightGte *string
+	/*UHeightLt*/
+	UHeightLt *string
+	/*UHeightLte*/
+	UHeightLte *string
+	/*UHeightn*/
+	UHeightn *string
 	/*Width*/
 	Width *string
+	/*Widthn*/
+	Widthn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -206,6 +328,105 @@ func (o *DcimRacksListParams) WithAssetTag(assetTag *string) *DcimRacksListParam
 // SetAssetTag adds the assetTag to the dcim racks list params
 func (o *DcimRacksListParams) SetAssetTag(assetTag *string) {
 	o.AssetTag = assetTag
+}
+
+// WithAssetTagIc adds the assetTagIc to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagIc(assetTagIc *string) *DcimRacksListParams {
+	o.SetAssetTagIc(assetTagIc)
+	return o
+}
+
+// SetAssetTagIc adds the assetTagIc to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagIc(assetTagIc *string) {
+	o.AssetTagIc = assetTagIc
+}
+
+// WithAssetTagIe adds the assetTagIe to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagIe(assetTagIe *string) *DcimRacksListParams {
+	o.SetAssetTagIe(assetTagIe)
+	return o
+}
+
+// SetAssetTagIe adds the assetTagIe to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagIe(assetTagIe *string) {
+	o.AssetTagIe = assetTagIe
+}
+
+// WithAssetTagIew adds the assetTagIew to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagIew(assetTagIew *string) *DcimRacksListParams {
+	o.SetAssetTagIew(assetTagIew)
+	return o
+}
+
+// SetAssetTagIew adds the assetTagIew to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagIew(assetTagIew *string) {
+	o.AssetTagIew = assetTagIew
+}
+
+// WithAssetTagIsw adds the assetTagIsw to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagIsw(assetTagIsw *string) *DcimRacksListParams {
+	o.SetAssetTagIsw(assetTagIsw)
+	return o
+}
+
+// SetAssetTagIsw adds the assetTagIsw to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagIsw(assetTagIsw *string) {
+	o.AssetTagIsw = assetTagIsw
+}
+
+// WithAssetTagn adds the assetTagn to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagn(assetTagn *string) *DcimRacksListParams {
+	o.SetAssetTagn(assetTagn)
+	return o
+}
+
+// SetAssetTagn adds the assetTagN to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagn(assetTagn *string) {
+	o.AssetTagn = assetTagn
+}
+
+// WithAssetTagNic adds the assetTagNic to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagNic(assetTagNic *string) *DcimRacksListParams {
+	o.SetAssetTagNic(assetTagNic)
+	return o
+}
+
+// SetAssetTagNic adds the assetTagNic to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagNic(assetTagNic *string) {
+	o.AssetTagNic = assetTagNic
+}
+
+// WithAssetTagNie adds the assetTagNie to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagNie(assetTagNie *string) *DcimRacksListParams {
+	o.SetAssetTagNie(assetTagNie)
+	return o
+}
+
+// SetAssetTagNie adds the assetTagNie to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagNie(assetTagNie *string) {
+	o.AssetTagNie = assetTagNie
+}
+
+// WithAssetTagNiew adds the assetTagNiew to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagNiew(assetTagNiew *string) *DcimRacksListParams {
+	o.SetAssetTagNiew(assetTagNiew)
+	return o
+}
+
+// SetAssetTagNiew adds the assetTagNiew to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagNiew(assetTagNiew *string) {
+	o.AssetTagNiew = assetTagNiew
+}
+
+// WithAssetTagNisw adds the assetTagNisw to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagNisw(assetTagNisw *string) *DcimRacksListParams {
+	o.SetAssetTagNisw(assetTagNisw)
+	return o
+}
+
+// SetAssetTagNisw adds the assetTagNisw to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagNisw(assetTagNisw *string) {
+	o.AssetTagNisw = assetTagNisw
 }
 
 // WithCreated adds the created to the dcim racks list params
@@ -263,6 +484,105 @@ func (o *DcimRacksListParams) SetFacilityID(facilityID *string) {
 	o.FacilityID = facilityID
 }
 
+// WithFacilityIDIc adds the facilityIDIc to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDIc(facilityIDIc *string) *DcimRacksListParams {
+	o.SetFacilityIDIc(facilityIDIc)
+	return o
+}
+
+// SetFacilityIDIc adds the facilityIdIc to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDIc(facilityIDIc *string) {
+	o.FacilityIDIc = facilityIDIc
+}
+
+// WithFacilityIDIe adds the facilityIDIe to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDIe(facilityIDIe *string) *DcimRacksListParams {
+	o.SetFacilityIDIe(facilityIDIe)
+	return o
+}
+
+// SetFacilityIDIe adds the facilityIdIe to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDIe(facilityIDIe *string) {
+	o.FacilityIDIe = facilityIDIe
+}
+
+// WithFacilityIDIew adds the facilityIDIew to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDIew(facilityIDIew *string) *DcimRacksListParams {
+	o.SetFacilityIDIew(facilityIDIew)
+	return o
+}
+
+// SetFacilityIDIew adds the facilityIdIew to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDIew(facilityIDIew *string) {
+	o.FacilityIDIew = facilityIDIew
+}
+
+// WithFacilityIDIsw adds the facilityIDIsw to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDIsw(facilityIDIsw *string) *DcimRacksListParams {
+	o.SetFacilityIDIsw(facilityIDIsw)
+	return o
+}
+
+// SetFacilityIDIsw adds the facilityIdIsw to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDIsw(facilityIDIsw *string) {
+	o.FacilityIDIsw = facilityIDIsw
+}
+
+// WithFacilityIDn adds the facilityIDn to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDn(facilityIDn *string) *DcimRacksListParams {
+	o.SetFacilityIDn(facilityIDn)
+	return o
+}
+
+// SetFacilityIDn adds the facilityIdN to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDn(facilityIDn *string) {
+	o.FacilityIDn = facilityIDn
+}
+
+// WithFacilityIDNic adds the facilityIDNic to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDNic(facilityIDNic *string) *DcimRacksListParams {
+	o.SetFacilityIDNic(facilityIDNic)
+	return o
+}
+
+// SetFacilityIDNic adds the facilityIdNic to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDNic(facilityIDNic *string) {
+	o.FacilityIDNic = facilityIDNic
+}
+
+// WithFacilityIDNie adds the facilityIDNie to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDNie(facilityIDNie *string) *DcimRacksListParams {
+	o.SetFacilityIDNie(facilityIDNie)
+	return o
+}
+
+// SetFacilityIDNie adds the facilityIdNie to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDNie(facilityIDNie *string) {
+	o.FacilityIDNie = facilityIDNie
+}
+
+// WithFacilityIDNiew adds the facilityIDNiew to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDNiew(facilityIDNiew *string) *DcimRacksListParams {
+	o.SetFacilityIDNiew(facilityIDNiew)
+	return o
+}
+
+// SetFacilityIDNiew adds the facilityIdNiew to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDNiew(facilityIDNiew *string) {
+	o.FacilityIDNiew = facilityIDNiew
+}
+
+// WithFacilityIDNisw adds the facilityIDNisw to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDNisw(facilityIDNisw *string) *DcimRacksListParams {
+	o.SetFacilityIDNisw(facilityIDNisw)
+	return o
+}
+
+// SetFacilityIDNisw adds the facilityIdNisw to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDNisw(facilityIDNisw *string) {
+	o.FacilityIDNisw = facilityIDNisw
+}
+
 // WithGroup adds the group to the dcim racks list params
 func (o *DcimRacksListParams) WithGroup(group *string) *DcimRacksListParams {
 	o.SetGroup(group)
@@ -272,6 +592,17 @@ func (o *DcimRacksListParams) WithGroup(group *string) *DcimRacksListParams {
 // SetGroup adds the group to the dcim racks list params
 func (o *DcimRacksListParams) SetGroup(group *string) {
 	o.Group = group
+}
+
+// WithGroupn adds the groupn to the dcim racks list params
+func (o *DcimRacksListParams) WithGroupn(groupn *string) *DcimRacksListParams {
+	o.SetGroupn(groupn)
+	return o
+}
+
+// SetGroupn adds the groupN to the dcim racks list params
+func (o *DcimRacksListParams) SetGroupn(groupn *string) {
+	o.Groupn = groupn
 }
 
 // WithGroupID adds the groupID to the dcim racks list params
@@ -285,6 +616,17 @@ func (o *DcimRacksListParams) SetGroupID(groupID *string) {
 	o.GroupID = groupID
 }
 
+// WithGroupIDn adds the groupIDn to the dcim racks list params
+func (o *DcimRacksListParams) WithGroupIDn(groupIDn *string) *DcimRacksListParams {
+	o.SetGroupIDn(groupIDn)
+	return o
+}
+
+// SetGroupIDn adds the groupIdN to the dcim racks list params
+func (o *DcimRacksListParams) SetGroupIDn(groupIDn *string) {
+	o.GroupIDn = groupIDn
+}
+
 // WithID adds the id to the dcim racks list params
 func (o *DcimRacksListParams) WithID(id *string) *DcimRacksListParams {
 	o.SetID(id)
@@ -296,15 +638,59 @@ func (o *DcimRacksListParams) SetID(id *string) {
 	o.ID = id
 }
 
-// WithIDIn adds the iDIn to the dcim racks list params
-func (o *DcimRacksListParams) WithIDIn(iDIn *string) *DcimRacksListParams {
-	o.SetIDIn(iDIn)
+// WithIDGt adds the iDGt to the dcim racks list params
+func (o *DcimRacksListParams) WithIDGt(iDGt *string) *DcimRacksListParams {
+	o.SetIDGt(iDGt)
 	return o
 }
 
-// SetIDIn adds the idIn to the dcim racks list params
-func (o *DcimRacksListParams) SetIDIn(iDIn *string) {
-	o.IDIn = iDIn
+// SetIDGt adds the idGt to the dcim racks list params
+func (o *DcimRacksListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the dcim racks list params
+func (o *DcimRacksListParams) WithIDGte(iDGte *string) *DcimRacksListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the dcim racks list params
+func (o *DcimRacksListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the dcim racks list params
+func (o *DcimRacksListParams) WithIDLt(iDLt *string) *DcimRacksListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the dcim racks list params
+func (o *DcimRacksListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the dcim racks list params
+func (o *DcimRacksListParams) WithIDLte(iDLte *string) *DcimRacksListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the dcim racks list params
+func (o *DcimRacksListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the dcim racks list params
+func (o *DcimRacksListParams) WithIDn(iDn *string) *DcimRacksListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the dcim racks list params
+func (o *DcimRacksListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLastUpdated adds the lastUpdated to the dcim racks list params
@@ -362,6 +748,105 @@ func (o *DcimRacksListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameIc adds the nameIc to the dcim racks list params
+func (o *DcimRacksListParams) WithNameIc(nameIc *string) *DcimRacksListParams {
+	o.SetNameIc(nameIc)
+	return o
+}
+
+// SetNameIc adds the nameIc to the dcim racks list params
+func (o *DcimRacksListParams) SetNameIc(nameIc *string) {
+	o.NameIc = nameIc
+}
+
+// WithNameIe adds the nameIe to the dcim racks list params
+func (o *DcimRacksListParams) WithNameIe(nameIe *string) *DcimRacksListParams {
+	o.SetNameIe(nameIe)
+	return o
+}
+
+// SetNameIe adds the nameIe to the dcim racks list params
+func (o *DcimRacksListParams) SetNameIe(nameIe *string) {
+	o.NameIe = nameIe
+}
+
+// WithNameIew adds the nameIew to the dcim racks list params
+func (o *DcimRacksListParams) WithNameIew(nameIew *string) *DcimRacksListParams {
+	o.SetNameIew(nameIew)
+	return o
+}
+
+// SetNameIew adds the nameIew to the dcim racks list params
+func (o *DcimRacksListParams) SetNameIew(nameIew *string) {
+	o.NameIew = nameIew
+}
+
+// WithNameIsw adds the nameIsw to the dcim racks list params
+func (o *DcimRacksListParams) WithNameIsw(nameIsw *string) *DcimRacksListParams {
+	o.SetNameIsw(nameIsw)
+	return o
+}
+
+// SetNameIsw adds the nameIsw to the dcim racks list params
+func (o *DcimRacksListParams) SetNameIsw(nameIsw *string) {
+	o.NameIsw = nameIsw
+}
+
+// WithNamen adds the namen to the dcim racks list params
+func (o *DcimRacksListParams) WithNamen(namen *string) *DcimRacksListParams {
+	o.SetNamen(namen)
+	return o
+}
+
+// SetNamen adds the nameN to the dcim racks list params
+func (o *DcimRacksListParams) SetNamen(namen *string) {
+	o.Namen = namen
+}
+
+// WithNameNic adds the nameNic to the dcim racks list params
+func (o *DcimRacksListParams) WithNameNic(nameNic *string) *DcimRacksListParams {
+	o.SetNameNic(nameNic)
+	return o
+}
+
+// SetNameNic adds the nameNic to the dcim racks list params
+func (o *DcimRacksListParams) SetNameNic(nameNic *string) {
+	o.NameNic = nameNic
+}
+
+// WithNameNie adds the nameNie to the dcim racks list params
+func (o *DcimRacksListParams) WithNameNie(nameNie *string) *DcimRacksListParams {
+	o.SetNameNie(nameNie)
+	return o
+}
+
+// SetNameNie adds the nameNie to the dcim racks list params
+func (o *DcimRacksListParams) SetNameNie(nameNie *string) {
+	o.NameNie = nameNie
+}
+
+// WithNameNiew adds the nameNiew to the dcim racks list params
+func (o *DcimRacksListParams) WithNameNiew(nameNiew *string) *DcimRacksListParams {
+	o.SetNameNiew(nameNiew)
+	return o
+}
+
+// SetNameNiew adds the nameNiew to the dcim racks list params
+func (o *DcimRacksListParams) SetNameNiew(nameNiew *string) {
+	o.NameNiew = nameNiew
+}
+
+// WithNameNisw adds the nameNisw to the dcim racks list params
+func (o *DcimRacksListParams) WithNameNisw(nameNisw *string) *DcimRacksListParams {
+	o.SetNameNisw(nameNisw)
+	return o
+}
+
+// SetNameNisw adds the nameNisw to the dcim racks list params
+func (o *DcimRacksListParams) SetNameNisw(nameNisw *string) {
+	o.NameNisw = nameNisw
+}
+
 // WithOffset adds the offset to the dcim racks list params
 func (o *DcimRacksListParams) WithOffset(offset *int64) *DcimRacksListParams {
 	o.SetOffset(offset)
@@ -384,6 +869,61 @@ func (o *DcimRacksListParams) SetOuterDepth(outerDepth *string) {
 	o.OuterDepth = outerDepth
 }
 
+// WithOuterDepthGt adds the outerDepthGt to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterDepthGt(outerDepthGt *string) *DcimRacksListParams {
+	o.SetOuterDepthGt(outerDepthGt)
+	return o
+}
+
+// SetOuterDepthGt adds the outerDepthGt to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterDepthGt(outerDepthGt *string) {
+	o.OuterDepthGt = outerDepthGt
+}
+
+// WithOuterDepthGte adds the outerDepthGte to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterDepthGte(outerDepthGte *string) *DcimRacksListParams {
+	o.SetOuterDepthGte(outerDepthGte)
+	return o
+}
+
+// SetOuterDepthGte adds the outerDepthGte to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterDepthGte(outerDepthGte *string) {
+	o.OuterDepthGte = outerDepthGte
+}
+
+// WithOuterDepthLt adds the outerDepthLt to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterDepthLt(outerDepthLt *string) *DcimRacksListParams {
+	o.SetOuterDepthLt(outerDepthLt)
+	return o
+}
+
+// SetOuterDepthLt adds the outerDepthLt to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterDepthLt(outerDepthLt *string) {
+	o.OuterDepthLt = outerDepthLt
+}
+
+// WithOuterDepthLte adds the outerDepthLte to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterDepthLte(outerDepthLte *string) *DcimRacksListParams {
+	o.SetOuterDepthLte(outerDepthLte)
+	return o
+}
+
+// SetOuterDepthLte adds the outerDepthLte to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterDepthLte(outerDepthLte *string) {
+	o.OuterDepthLte = outerDepthLte
+}
+
+// WithOuterDepthn adds the outerDepthn to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterDepthn(outerDepthn *string) *DcimRacksListParams {
+	o.SetOuterDepthn(outerDepthn)
+	return o
+}
+
+// SetOuterDepthn adds the outerDepthN to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterDepthn(outerDepthn *string) {
+	o.OuterDepthn = outerDepthn
+}
+
 // WithOuterUnit adds the outerUnit to the dcim racks list params
 func (o *DcimRacksListParams) WithOuterUnit(outerUnit *string) *DcimRacksListParams {
 	o.SetOuterUnit(outerUnit)
@@ -395,6 +935,17 @@ func (o *DcimRacksListParams) SetOuterUnit(outerUnit *string) {
 	o.OuterUnit = outerUnit
 }
 
+// WithOuterUnitn adds the outerUnitn to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterUnitn(outerUnitn *string) *DcimRacksListParams {
+	o.SetOuterUnitn(outerUnitn)
+	return o
+}
+
+// SetOuterUnitn adds the outerUnitN to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterUnitn(outerUnitn *string) {
+	o.OuterUnitn = outerUnitn
+}
+
 // WithOuterWidth adds the outerWidth to the dcim racks list params
 func (o *DcimRacksListParams) WithOuterWidth(outerWidth *string) *DcimRacksListParams {
 	o.SetOuterWidth(outerWidth)
@@ -404,6 +955,61 @@ func (o *DcimRacksListParams) WithOuterWidth(outerWidth *string) *DcimRacksListP
 // SetOuterWidth adds the outerWidth to the dcim racks list params
 func (o *DcimRacksListParams) SetOuterWidth(outerWidth *string) {
 	o.OuterWidth = outerWidth
+}
+
+// WithOuterWidthGt adds the outerWidthGt to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterWidthGt(outerWidthGt *string) *DcimRacksListParams {
+	o.SetOuterWidthGt(outerWidthGt)
+	return o
+}
+
+// SetOuterWidthGt adds the outerWidthGt to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterWidthGt(outerWidthGt *string) {
+	o.OuterWidthGt = outerWidthGt
+}
+
+// WithOuterWidthGte adds the outerWidthGte to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterWidthGte(outerWidthGte *string) *DcimRacksListParams {
+	o.SetOuterWidthGte(outerWidthGte)
+	return o
+}
+
+// SetOuterWidthGte adds the outerWidthGte to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterWidthGte(outerWidthGte *string) {
+	o.OuterWidthGte = outerWidthGte
+}
+
+// WithOuterWidthLt adds the outerWidthLt to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterWidthLt(outerWidthLt *string) *DcimRacksListParams {
+	o.SetOuterWidthLt(outerWidthLt)
+	return o
+}
+
+// SetOuterWidthLt adds the outerWidthLt to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterWidthLt(outerWidthLt *string) {
+	o.OuterWidthLt = outerWidthLt
+}
+
+// WithOuterWidthLte adds the outerWidthLte to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterWidthLte(outerWidthLte *string) *DcimRacksListParams {
+	o.SetOuterWidthLte(outerWidthLte)
+	return o
+}
+
+// SetOuterWidthLte adds the outerWidthLte to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterWidthLte(outerWidthLte *string) {
+	o.OuterWidthLte = outerWidthLte
+}
+
+// WithOuterWidthn adds the outerWidthn to the dcim racks list params
+func (o *DcimRacksListParams) WithOuterWidthn(outerWidthn *string) *DcimRacksListParams {
+	o.SetOuterWidthn(outerWidthn)
+	return o
+}
+
+// SetOuterWidthn adds the outerWidthN to the dcim racks list params
+func (o *DcimRacksListParams) SetOuterWidthn(outerWidthn *string) {
+	o.OuterWidthn = outerWidthn
 }
 
 // WithQ adds the q to the dcim racks list params
@@ -428,6 +1034,17 @@ func (o *DcimRacksListParams) SetRegion(region *string) {
 	o.Region = region
 }
 
+// WithRegionn adds the regionn to the dcim racks list params
+func (o *DcimRacksListParams) WithRegionn(regionn *string) *DcimRacksListParams {
+	o.SetRegionn(regionn)
+	return o
+}
+
+// SetRegionn adds the regionN to the dcim racks list params
+func (o *DcimRacksListParams) SetRegionn(regionn *string) {
+	o.Regionn = regionn
+}
+
 // WithRegionID adds the regionID to the dcim racks list params
 func (o *DcimRacksListParams) WithRegionID(regionID *string) *DcimRacksListParams {
 	o.SetRegionID(regionID)
@@ -437,6 +1054,17 @@ func (o *DcimRacksListParams) WithRegionID(regionID *string) *DcimRacksListParam
 // SetRegionID adds the regionId to the dcim racks list params
 func (o *DcimRacksListParams) SetRegionID(regionID *string) {
 	o.RegionID = regionID
+}
+
+// WithRegionIDn adds the regionIDn to the dcim racks list params
+func (o *DcimRacksListParams) WithRegionIDn(regionIDn *string) *DcimRacksListParams {
+	o.SetRegionIDn(regionIDn)
+	return o
+}
+
+// SetRegionIDn adds the regionIdN to the dcim racks list params
+func (o *DcimRacksListParams) SetRegionIDn(regionIDn *string) {
+	o.RegionIDn = regionIDn
 }
 
 // WithRole adds the role to the dcim racks list params
@@ -450,6 +1078,17 @@ func (o *DcimRacksListParams) SetRole(role *string) {
 	o.Role = role
 }
 
+// WithRolen adds the rolen to the dcim racks list params
+func (o *DcimRacksListParams) WithRolen(rolen *string) *DcimRacksListParams {
+	o.SetRolen(rolen)
+	return o
+}
+
+// SetRolen adds the roleN to the dcim racks list params
+func (o *DcimRacksListParams) SetRolen(rolen *string) {
+	o.Rolen = rolen
+}
+
 // WithRoleID adds the roleID to the dcim racks list params
 func (o *DcimRacksListParams) WithRoleID(roleID *string) *DcimRacksListParams {
 	o.SetRoleID(roleID)
@@ -459,6 +1098,17 @@ func (o *DcimRacksListParams) WithRoleID(roleID *string) *DcimRacksListParams {
 // SetRoleID adds the roleId to the dcim racks list params
 func (o *DcimRacksListParams) SetRoleID(roleID *string) {
 	o.RoleID = roleID
+}
+
+// WithRoleIDn adds the roleIDn to the dcim racks list params
+func (o *DcimRacksListParams) WithRoleIDn(roleIDn *string) *DcimRacksListParams {
+	o.SetRoleIDn(roleIDn)
+	return o
+}
+
+// SetRoleIDn adds the roleIdN to the dcim racks list params
+func (o *DcimRacksListParams) SetRoleIDn(roleIDn *string) {
+	o.RoleIDn = roleIDn
 }
 
 // WithSerial adds the serial to the dcim racks list params
@@ -483,6 +1133,17 @@ func (o *DcimRacksListParams) SetSite(site *string) {
 	o.Site = site
 }
 
+// WithSiten adds the siten to the dcim racks list params
+func (o *DcimRacksListParams) WithSiten(siten *string) *DcimRacksListParams {
+	o.SetSiten(siten)
+	return o
+}
+
+// SetSiten adds the siteN to the dcim racks list params
+func (o *DcimRacksListParams) SetSiten(siten *string) {
+	o.Siten = siten
+}
+
 // WithSiteID adds the siteID to the dcim racks list params
 func (o *DcimRacksListParams) WithSiteID(siteID *string) *DcimRacksListParams {
 	o.SetSiteID(siteID)
@@ -492,6 +1153,17 @@ func (o *DcimRacksListParams) WithSiteID(siteID *string) *DcimRacksListParams {
 // SetSiteID adds the siteId to the dcim racks list params
 func (o *DcimRacksListParams) SetSiteID(siteID *string) {
 	o.SiteID = siteID
+}
+
+// WithSiteIDn adds the siteIDn to the dcim racks list params
+func (o *DcimRacksListParams) WithSiteIDn(siteIDn *string) *DcimRacksListParams {
+	o.SetSiteIDn(siteIDn)
+	return o
+}
+
+// SetSiteIDn adds the siteIdN to the dcim racks list params
+func (o *DcimRacksListParams) SetSiteIDn(siteIDn *string) {
+	o.SiteIDn = siteIDn
 }
 
 // WithStatus adds the status to the dcim racks list params
@@ -505,6 +1177,17 @@ func (o *DcimRacksListParams) SetStatus(status *string) {
 	o.Status = status
 }
 
+// WithStatusn adds the statusn to the dcim racks list params
+func (o *DcimRacksListParams) WithStatusn(statusn *string) *DcimRacksListParams {
+	o.SetStatusn(statusn)
+	return o
+}
+
+// SetStatusn adds the statusN to the dcim racks list params
+func (o *DcimRacksListParams) SetStatusn(statusn *string) {
+	o.Statusn = statusn
+}
+
 // WithTag adds the tag to the dcim racks list params
 func (o *DcimRacksListParams) WithTag(tag *string) *DcimRacksListParams {
 	o.SetTag(tag)
@@ -514,6 +1197,17 @@ func (o *DcimRacksListParams) WithTag(tag *string) *DcimRacksListParams {
 // SetTag adds the tag to the dcim racks list params
 func (o *DcimRacksListParams) SetTag(tag *string) {
 	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the dcim racks list params
+func (o *DcimRacksListParams) WithTagn(tagn *string) *DcimRacksListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the dcim racks list params
+func (o *DcimRacksListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
 }
 
 // WithTenant adds the tenant to the dcim racks list params
@@ -527,6 +1221,17 @@ func (o *DcimRacksListParams) SetTenant(tenant *string) {
 	o.Tenant = tenant
 }
 
+// WithTenantn adds the tenantn to the dcim racks list params
+func (o *DcimRacksListParams) WithTenantn(tenantn *string) *DcimRacksListParams {
+	o.SetTenantn(tenantn)
+	return o
+}
+
+// SetTenantn adds the tenantN to the dcim racks list params
+func (o *DcimRacksListParams) SetTenantn(tenantn *string) {
+	o.Tenantn = tenantn
+}
+
 // WithTenantGroup adds the tenantGroup to the dcim racks list params
 func (o *DcimRacksListParams) WithTenantGroup(tenantGroup *string) *DcimRacksListParams {
 	o.SetTenantGroup(tenantGroup)
@@ -536,6 +1241,17 @@ func (o *DcimRacksListParams) WithTenantGroup(tenantGroup *string) *DcimRacksLis
 // SetTenantGroup adds the tenantGroup to the dcim racks list params
 func (o *DcimRacksListParams) SetTenantGroup(tenantGroup *string) {
 	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupn adds the tenantGroupn to the dcim racks list params
+func (o *DcimRacksListParams) WithTenantGroupn(tenantGroupn *string) *DcimRacksListParams {
+	o.SetTenantGroupn(tenantGroupn)
+	return o
+}
+
+// SetTenantGroupn adds the tenantGroupN to the dcim racks list params
+func (o *DcimRacksListParams) SetTenantGroupn(tenantGroupn *string) {
+	o.TenantGroupn = tenantGroupn
 }
 
 // WithTenantGroupID adds the tenantGroupID to the dcim racks list params
@@ -549,6 +1265,17 @@ func (o *DcimRacksListParams) SetTenantGroupID(tenantGroupID *string) {
 	o.TenantGroupID = tenantGroupID
 }
 
+// WithTenantGroupIDn adds the tenantGroupIDn to the dcim racks list params
+func (o *DcimRacksListParams) WithTenantGroupIDn(tenantGroupIDn *string) *DcimRacksListParams {
+	o.SetTenantGroupIDn(tenantGroupIDn)
+	return o
+}
+
+// SetTenantGroupIDn adds the tenantGroupIdN to the dcim racks list params
+func (o *DcimRacksListParams) SetTenantGroupIDn(tenantGroupIDn *string) {
+	o.TenantGroupIDn = tenantGroupIDn
+}
+
 // WithTenantID adds the tenantID to the dcim racks list params
 func (o *DcimRacksListParams) WithTenantID(tenantID *string) *DcimRacksListParams {
 	o.SetTenantID(tenantID)
@@ -558,6 +1285,17 @@ func (o *DcimRacksListParams) WithTenantID(tenantID *string) *DcimRacksListParam
 // SetTenantID adds the tenantId to the dcim racks list params
 func (o *DcimRacksListParams) SetTenantID(tenantID *string) {
 	o.TenantID = tenantID
+}
+
+// WithTenantIDn adds the tenantIDn to the dcim racks list params
+func (o *DcimRacksListParams) WithTenantIDn(tenantIDn *string) *DcimRacksListParams {
+	o.SetTenantIDn(tenantIDn)
+	return o
+}
+
+// SetTenantIDn adds the tenantIdN to the dcim racks list params
+func (o *DcimRacksListParams) SetTenantIDn(tenantIDn *string) {
+	o.TenantIDn = tenantIDn
 }
 
 // WithType adds the typeVar to the dcim racks list params
@@ -571,6 +1309,17 @@ func (o *DcimRacksListParams) SetType(typeVar *string) {
 	o.Type = typeVar
 }
 
+// WithTypen adds the typen to the dcim racks list params
+func (o *DcimRacksListParams) WithTypen(typen *string) *DcimRacksListParams {
+	o.SetTypen(typen)
+	return o
+}
+
+// SetTypen adds the typeN to the dcim racks list params
+func (o *DcimRacksListParams) SetTypen(typen *string) {
+	o.Typen = typen
+}
+
 // WithUHeight adds the uHeight to the dcim racks list params
 func (o *DcimRacksListParams) WithUHeight(uHeight *string) *DcimRacksListParams {
 	o.SetUHeight(uHeight)
@@ -582,6 +1331,61 @@ func (o *DcimRacksListParams) SetUHeight(uHeight *string) {
 	o.UHeight = uHeight
 }
 
+// WithUHeightGt adds the uHeightGt to the dcim racks list params
+func (o *DcimRacksListParams) WithUHeightGt(uHeightGt *string) *DcimRacksListParams {
+	o.SetUHeightGt(uHeightGt)
+	return o
+}
+
+// SetUHeightGt adds the uHeightGt to the dcim racks list params
+func (o *DcimRacksListParams) SetUHeightGt(uHeightGt *string) {
+	o.UHeightGt = uHeightGt
+}
+
+// WithUHeightGte adds the uHeightGte to the dcim racks list params
+func (o *DcimRacksListParams) WithUHeightGte(uHeightGte *string) *DcimRacksListParams {
+	o.SetUHeightGte(uHeightGte)
+	return o
+}
+
+// SetUHeightGte adds the uHeightGte to the dcim racks list params
+func (o *DcimRacksListParams) SetUHeightGte(uHeightGte *string) {
+	o.UHeightGte = uHeightGte
+}
+
+// WithUHeightLt adds the uHeightLt to the dcim racks list params
+func (o *DcimRacksListParams) WithUHeightLt(uHeightLt *string) *DcimRacksListParams {
+	o.SetUHeightLt(uHeightLt)
+	return o
+}
+
+// SetUHeightLt adds the uHeightLt to the dcim racks list params
+func (o *DcimRacksListParams) SetUHeightLt(uHeightLt *string) {
+	o.UHeightLt = uHeightLt
+}
+
+// WithUHeightLte adds the uHeightLte to the dcim racks list params
+func (o *DcimRacksListParams) WithUHeightLte(uHeightLte *string) *DcimRacksListParams {
+	o.SetUHeightLte(uHeightLte)
+	return o
+}
+
+// SetUHeightLte adds the uHeightLte to the dcim racks list params
+func (o *DcimRacksListParams) SetUHeightLte(uHeightLte *string) {
+	o.UHeightLte = uHeightLte
+}
+
+// WithUHeightn adds the uHeightn to the dcim racks list params
+func (o *DcimRacksListParams) WithUHeightn(uHeightn *string) *DcimRacksListParams {
+	o.SetUHeightn(uHeightn)
+	return o
+}
+
+// SetUHeightn adds the uHeightN to the dcim racks list params
+func (o *DcimRacksListParams) SetUHeightn(uHeightn *string) {
+	o.UHeightn = uHeightn
+}
+
 // WithWidth adds the width to the dcim racks list params
 func (o *DcimRacksListParams) WithWidth(width *string) *DcimRacksListParams {
 	o.SetWidth(width)
@@ -591,6 +1395,17 @@ func (o *DcimRacksListParams) WithWidth(width *string) *DcimRacksListParams {
 // SetWidth adds the width to the dcim racks list params
 func (o *DcimRacksListParams) SetWidth(width *string) {
 	o.Width = width
+}
+
+// WithWidthn adds the widthn to the dcim racks list params
+func (o *DcimRacksListParams) WithWidthn(widthn *string) *DcimRacksListParams {
+	o.SetWidthn(widthn)
+	return o
+}
+
+// SetWidthn adds the widthN to the dcim racks list params
+func (o *DcimRacksListParams) SetWidthn(widthn *string) {
+	o.Widthn = widthn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -611,6 +1426,150 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qAssetTag := qrAssetTag
 		if qAssetTag != "" {
 			if err := r.SetQueryParam("asset_tag", qAssetTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AssetTagIc != nil {
+
+		// query param asset_tag__ic
+		var qrAssetTagIc string
+		if o.AssetTagIc != nil {
+			qrAssetTagIc = *o.AssetTagIc
+		}
+		qAssetTagIc := qrAssetTagIc
+		if qAssetTagIc != "" {
+			if err := r.SetQueryParam("asset_tag__ic", qAssetTagIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AssetTagIe != nil {
+
+		// query param asset_tag__ie
+		var qrAssetTagIe string
+		if o.AssetTagIe != nil {
+			qrAssetTagIe = *o.AssetTagIe
+		}
+		qAssetTagIe := qrAssetTagIe
+		if qAssetTagIe != "" {
+			if err := r.SetQueryParam("asset_tag__ie", qAssetTagIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AssetTagIew != nil {
+
+		// query param asset_tag__iew
+		var qrAssetTagIew string
+		if o.AssetTagIew != nil {
+			qrAssetTagIew = *o.AssetTagIew
+		}
+		qAssetTagIew := qrAssetTagIew
+		if qAssetTagIew != "" {
+			if err := r.SetQueryParam("asset_tag__iew", qAssetTagIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AssetTagIsw != nil {
+
+		// query param asset_tag__isw
+		var qrAssetTagIsw string
+		if o.AssetTagIsw != nil {
+			qrAssetTagIsw = *o.AssetTagIsw
+		}
+		qAssetTagIsw := qrAssetTagIsw
+		if qAssetTagIsw != "" {
+			if err := r.SetQueryParam("asset_tag__isw", qAssetTagIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AssetTagn != nil {
+
+		// query param asset_tag__n
+		var qrAssetTagn string
+		if o.AssetTagn != nil {
+			qrAssetTagn = *o.AssetTagn
+		}
+		qAssetTagn := qrAssetTagn
+		if qAssetTagn != "" {
+			if err := r.SetQueryParam("asset_tag__n", qAssetTagn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AssetTagNic != nil {
+
+		// query param asset_tag__nic
+		var qrAssetTagNic string
+		if o.AssetTagNic != nil {
+			qrAssetTagNic = *o.AssetTagNic
+		}
+		qAssetTagNic := qrAssetTagNic
+		if qAssetTagNic != "" {
+			if err := r.SetQueryParam("asset_tag__nic", qAssetTagNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AssetTagNie != nil {
+
+		// query param asset_tag__nie
+		var qrAssetTagNie string
+		if o.AssetTagNie != nil {
+			qrAssetTagNie = *o.AssetTagNie
+		}
+		qAssetTagNie := qrAssetTagNie
+		if qAssetTagNie != "" {
+			if err := r.SetQueryParam("asset_tag__nie", qAssetTagNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AssetTagNiew != nil {
+
+		// query param asset_tag__niew
+		var qrAssetTagNiew string
+		if o.AssetTagNiew != nil {
+			qrAssetTagNiew = *o.AssetTagNiew
+		}
+		qAssetTagNiew := qrAssetTagNiew
+		if qAssetTagNiew != "" {
+			if err := r.SetQueryParam("asset_tag__niew", qAssetTagNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.AssetTagNisw != nil {
+
+		// query param asset_tag__nisw
+		var qrAssetTagNisw string
+		if o.AssetTagNisw != nil {
+			qrAssetTagNisw = *o.AssetTagNisw
+		}
+		qAssetTagNisw := qrAssetTagNisw
+		if qAssetTagNisw != "" {
+			if err := r.SetQueryParam("asset_tag__nisw", qAssetTagNisw); err != nil {
 				return err
 			}
 		}
@@ -697,6 +1656,150 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.FacilityIDIc != nil {
+
+		// query param facility_id__ic
+		var qrFacilityIDIc string
+		if o.FacilityIDIc != nil {
+			qrFacilityIDIc = *o.FacilityIDIc
+		}
+		qFacilityIDIc := qrFacilityIDIc
+		if qFacilityIDIc != "" {
+			if err := r.SetQueryParam("facility_id__ic", qFacilityIDIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.FacilityIDIe != nil {
+
+		// query param facility_id__ie
+		var qrFacilityIDIe string
+		if o.FacilityIDIe != nil {
+			qrFacilityIDIe = *o.FacilityIDIe
+		}
+		qFacilityIDIe := qrFacilityIDIe
+		if qFacilityIDIe != "" {
+			if err := r.SetQueryParam("facility_id__ie", qFacilityIDIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.FacilityIDIew != nil {
+
+		// query param facility_id__iew
+		var qrFacilityIDIew string
+		if o.FacilityIDIew != nil {
+			qrFacilityIDIew = *o.FacilityIDIew
+		}
+		qFacilityIDIew := qrFacilityIDIew
+		if qFacilityIDIew != "" {
+			if err := r.SetQueryParam("facility_id__iew", qFacilityIDIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.FacilityIDIsw != nil {
+
+		// query param facility_id__isw
+		var qrFacilityIDIsw string
+		if o.FacilityIDIsw != nil {
+			qrFacilityIDIsw = *o.FacilityIDIsw
+		}
+		qFacilityIDIsw := qrFacilityIDIsw
+		if qFacilityIDIsw != "" {
+			if err := r.SetQueryParam("facility_id__isw", qFacilityIDIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.FacilityIDn != nil {
+
+		// query param facility_id__n
+		var qrFacilityIDn string
+		if o.FacilityIDn != nil {
+			qrFacilityIDn = *o.FacilityIDn
+		}
+		qFacilityIDn := qrFacilityIDn
+		if qFacilityIDn != "" {
+			if err := r.SetQueryParam("facility_id__n", qFacilityIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.FacilityIDNic != nil {
+
+		// query param facility_id__nic
+		var qrFacilityIDNic string
+		if o.FacilityIDNic != nil {
+			qrFacilityIDNic = *o.FacilityIDNic
+		}
+		qFacilityIDNic := qrFacilityIDNic
+		if qFacilityIDNic != "" {
+			if err := r.SetQueryParam("facility_id__nic", qFacilityIDNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.FacilityIDNie != nil {
+
+		// query param facility_id__nie
+		var qrFacilityIDNie string
+		if o.FacilityIDNie != nil {
+			qrFacilityIDNie = *o.FacilityIDNie
+		}
+		qFacilityIDNie := qrFacilityIDNie
+		if qFacilityIDNie != "" {
+			if err := r.SetQueryParam("facility_id__nie", qFacilityIDNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.FacilityIDNiew != nil {
+
+		// query param facility_id__niew
+		var qrFacilityIDNiew string
+		if o.FacilityIDNiew != nil {
+			qrFacilityIDNiew = *o.FacilityIDNiew
+		}
+		qFacilityIDNiew := qrFacilityIDNiew
+		if qFacilityIDNiew != "" {
+			if err := r.SetQueryParam("facility_id__niew", qFacilityIDNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.FacilityIDNisw != nil {
+
+		// query param facility_id__nisw
+		var qrFacilityIDNisw string
+		if o.FacilityIDNisw != nil {
+			qrFacilityIDNisw = *o.FacilityIDNisw
+		}
+		qFacilityIDNisw := qrFacilityIDNisw
+		if qFacilityIDNisw != "" {
+			if err := r.SetQueryParam("facility_id__nisw", qFacilityIDNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Group != nil {
 
 		// query param group
@@ -707,6 +1810,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qGroup := qrGroup
 		if qGroup != "" {
 			if err := r.SetQueryParam("group", qGroup); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Groupn != nil {
+
+		// query param group__n
+		var qrGroupn string
+		if o.Groupn != nil {
+			qrGroupn = *o.Groupn
+		}
+		qGroupn := qrGroupn
+		if qGroupn != "" {
+			if err := r.SetQueryParam("group__n", qGroupn); err != nil {
 				return err
 			}
 		}
@@ -729,6 +1848,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.GroupIDn != nil {
+
+		// query param group_id__n
+		var qrGroupIDn string
+		if o.GroupIDn != nil {
+			qrGroupIDn = *o.GroupIDn
+		}
+		qGroupIDn := qrGroupIDn
+		if qGroupIDn != "" {
+			if err := r.SetQueryParam("group_id__n", qGroupIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -745,16 +1880,80 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
-	if o.IDIn != nil {
+	if o.IDGt != nil {
 
-		// query param id__in
-		var qrIDIn string
-		if o.IDIn != nil {
-			qrIDIn = *o.IDIn
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
 		}
-		qIDIn := qrIDIn
-		if qIDIn != "" {
-			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
@@ -841,6 +2040,150 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.NameIc != nil {
+
+		// query param name__ic
+		var qrNameIc string
+		if o.NameIc != nil {
+			qrNameIc = *o.NameIc
+		}
+		qNameIc := qrNameIc
+		if qNameIc != "" {
+			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIe != nil {
+
+		// query param name__ie
+		var qrNameIe string
+		if o.NameIe != nil {
+			qrNameIe = *o.NameIe
+		}
+		qNameIe := qrNameIe
+		if qNameIe != "" {
+			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIew != nil {
+
+		// query param name__iew
+		var qrNameIew string
+		if o.NameIew != nil {
+			qrNameIew = *o.NameIew
+		}
+		qNameIew := qrNameIew
+		if qNameIew != "" {
+			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIsw != nil {
+
+		// query param name__isw
+		var qrNameIsw string
+		if o.NameIsw != nil {
+			qrNameIsw = *o.NameIsw
+		}
+		qNameIsw := qrNameIsw
+		if qNameIsw != "" {
+			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Namen != nil {
+
+		// query param name__n
+		var qrNamen string
+		if o.Namen != nil {
+			qrNamen = *o.Namen
+		}
+		qNamen := qrNamen
+		if qNamen != "" {
+			if err := r.SetQueryParam("name__n", qNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNic != nil {
+
+		// query param name__nic
+		var qrNameNic string
+		if o.NameNic != nil {
+			qrNameNic = *o.NameNic
+		}
+		qNameNic := qrNameNic
+		if qNameNic != "" {
+			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNie != nil {
+
+		// query param name__nie
+		var qrNameNie string
+		if o.NameNie != nil {
+			qrNameNie = *o.NameNie
+		}
+		qNameNie := qrNameNie
+		if qNameNie != "" {
+			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNiew != nil {
+
+		// query param name__niew
+		var qrNameNiew string
+		if o.NameNiew != nil {
+			qrNameNiew = *o.NameNiew
+		}
+		qNameNiew := qrNameNiew
+		if qNameNiew != "" {
+			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNisw != nil {
+
+		// query param name__nisw
+		var qrNameNisw string
+		if o.NameNisw != nil {
+			qrNameNisw = *o.NameNisw
+		}
+		qNameNisw := qrNameNisw
+		if qNameNisw != "" {
+			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -873,6 +2216,86 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.OuterDepthGt != nil {
+
+		// query param outer_depth__gt
+		var qrOuterDepthGt string
+		if o.OuterDepthGt != nil {
+			qrOuterDepthGt = *o.OuterDepthGt
+		}
+		qOuterDepthGt := qrOuterDepthGt
+		if qOuterDepthGt != "" {
+			if err := r.SetQueryParam("outer_depth__gt", qOuterDepthGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterDepthGte != nil {
+
+		// query param outer_depth__gte
+		var qrOuterDepthGte string
+		if o.OuterDepthGte != nil {
+			qrOuterDepthGte = *o.OuterDepthGte
+		}
+		qOuterDepthGte := qrOuterDepthGte
+		if qOuterDepthGte != "" {
+			if err := r.SetQueryParam("outer_depth__gte", qOuterDepthGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterDepthLt != nil {
+
+		// query param outer_depth__lt
+		var qrOuterDepthLt string
+		if o.OuterDepthLt != nil {
+			qrOuterDepthLt = *o.OuterDepthLt
+		}
+		qOuterDepthLt := qrOuterDepthLt
+		if qOuterDepthLt != "" {
+			if err := r.SetQueryParam("outer_depth__lt", qOuterDepthLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterDepthLte != nil {
+
+		// query param outer_depth__lte
+		var qrOuterDepthLte string
+		if o.OuterDepthLte != nil {
+			qrOuterDepthLte = *o.OuterDepthLte
+		}
+		qOuterDepthLte := qrOuterDepthLte
+		if qOuterDepthLte != "" {
+			if err := r.SetQueryParam("outer_depth__lte", qOuterDepthLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterDepthn != nil {
+
+		// query param outer_depth__n
+		var qrOuterDepthn string
+		if o.OuterDepthn != nil {
+			qrOuterDepthn = *o.OuterDepthn
+		}
+		qOuterDepthn := qrOuterDepthn
+		if qOuterDepthn != "" {
+			if err := r.SetQueryParam("outer_depth__n", qOuterDepthn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.OuterUnit != nil {
 
 		// query param outer_unit
@@ -889,6 +2312,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.OuterUnitn != nil {
+
+		// query param outer_unit__n
+		var qrOuterUnitn string
+		if o.OuterUnitn != nil {
+			qrOuterUnitn = *o.OuterUnitn
+		}
+		qOuterUnitn := qrOuterUnitn
+		if qOuterUnitn != "" {
+			if err := r.SetQueryParam("outer_unit__n", qOuterUnitn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.OuterWidth != nil {
 
 		// query param outer_width
@@ -899,6 +2338,86 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qOuterWidth := qrOuterWidth
 		if qOuterWidth != "" {
 			if err := r.SetQueryParam("outer_width", qOuterWidth); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterWidthGt != nil {
+
+		// query param outer_width__gt
+		var qrOuterWidthGt string
+		if o.OuterWidthGt != nil {
+			qrOuterWidthGt = *o.OuterWidthGt
+		}
+		qOuterWidthGt := qrOuterWidthGt
+		if qOuterWidthGt != "" {
+			if err := r.SetQueryParam("outer_width__gt", qOuterWidthGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterWidthGte != nil {
+
+		// query param outer_width__gte
+		var qrOuterWidthGte string
+		if o.OuterWidthGte != nil {
+			qrOuterWidthGte = *o.OuterWidthGte
+		}
+		qOuterWidthGte := qrOuterWidthGte
+		if qOuterWidthGte != "" {
+			if err := r.SetQueryParam("outer_width__gte", qOuterWidthGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterWidthLt != nil {
+
+		// query param outer_width__lt
+		var qrOuterWidthLt string
+		if o.OuterWidthLt != nil {
+			qrOuterWidthLt = *o.OuterWidthLt
+		}
+		qOuterWidthLt := qrOuterWidthLt
+		if qOuterWidthLt != "" {
+			if err := r.SetQueryParam("outer_width__lt", qOuterWidthLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterWidthLte != nil {
+
+		// query param outer_width__lte
+		var qrOuterWidthLte string
+		if o.OuterWidthLte != nil {
+			qrOuterWidthLte = *o.OuterWidthLte
+		}
+		qOuterWidthLte := qrOuterWidthLte
+		if qOuterWidthLte != "" {
+			if err := r.SetQueryParam("outer_width__lte", qOuterWidthLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.OuterWidthn != nil {
+
+		// query param outer_width__n
+		var qrOuterWidthn string
+		if o.OuterWidthn != nil {
+			qrOuterWidthn = *o.OuterWidthn
+		}
+		qOuterWidthn := qrOuterWidthn
+		if qOuterWidthn != "" {
+			if err := r.SetQueryParam("outer_width__n", qOuterWidthn); err != nil {
 				return err
 			}
 		}
@@ -937,6 +2456,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.Regionn != nil {
+
+		// query param region__n
+		var qrRegionn string
+		if o.Regionn != nil {
+			qrRegionn = *o.Regionn
+		}
+		qRegionn := qrRegionn
+		if qRegionn != "" {
+			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.RegionID != nil {
 
 		// query param region_id
@@ -947,6 +2482,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qRegionID := qrRegionID
 		if qRegionID != "" {
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.RegionIDn != nil {
+
+		// query param region_id__n
+		var qrRegionIDn string
+		if o.RegionIDn != nil {
+			qrRegionIDn = *o.RegionIDn
+		}
+		qRegionIDn := qrRegionIDn
+		if qRegionIDn != "" {
+			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
 				return err
 			}
 		}
@@ -969,6 +2520,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.Rolen != nil {
+
+		// query param role__n
+		var qrRolen string
+		if o.Rolen != nil {
+			qrRolen = *o.Rolen
+		}
+		qRolen := qrRolen
+		if qRolen != "" {
+			if err := r.SetQueryParam("role__n", qRolen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.RoleID != nil {
 
 		// query param role_id
@@ -979,6 +2546,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qRoleID := qrRoleID
 		if qRoleID != "" {
 			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.RoleIDn != nil {
+
+		// query param role_id__n
+		var qrRoleIDn string
+		if o.RoleIDn != nil {
+			qrRoleIDn = *o.RoleIDn
+		}
+		qRoleIDn := qrRoleIDn
+		if qRoleIDn != "" {
+			if err := r.SetQueryParam("role_id__n", qRoleIDn); err != nil {
 				return err
 			}
 		}
@@ -1017,6 +2600,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.Siten != nil {
+
+		// query param site__n
+		var qrSiten string
+		if o.Siten != nil {
+			qrSiten = *o.Siten
+		}
+		qSiten := qrSiten
+		if qSiten != "" {
+			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.SiteID != nil {
 
 		// query param site_id
@@ -1027,6 +2626,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qSiteID := qrSiteID
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SiteIDn != nil {
+
+		// query param site_id__n
+		var qrSiteIDn string
+		if o.SiteIDn != nil {
+			qrSiteIDn = *o.SiteIDn
+		}
+		qSiteIDn := qrSiteIDn
+		if qSiteIDn != "" {
+			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
@@ -1049,6 +2664,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.Statusn != nil {
+
+		// query param status__n
+		var qrStatusn string
+		if o.Statusn != nil {
+			qrStatusn = *o.Statusn
+		}
+		qStatusn := qrStatusn
+		if qStatusn != "" {
+			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tag != nil {
 
 		// query param tag
@@ -1059,6 +2690,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qTag := qrTag
 		if qTag != "" {
 			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
@@ -1081,6 +2728,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.Tenantn != nil {
+
+		// query param tenant__n
+		var qrTenantn string
+		if o.Tenantn != nil {
+			qrTenantn = *o.Tenantn
+		}
+		qTenantn := qrTenantn
+		if qTenantn != "" {
+			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.TenantGroup != nil {
 
 		// query param tenant_group
@@ -1091,6 +2754,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qTenantGroup := qrTenantGroup
 		if qTenantGroup != "" {
 			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupn != nil {
+
+		// query param tenant_group__n
+		var qrTenantGroupn string
+		if o.TenantGroupn != nil {
+			qrTenantGroupn = *o.TenantGroupn
+		}
+		qTenantGroupn := qrTenantGroupn
+		if qTenantGroupn != "" {
+			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
 				return err
 			}
 		}
@@ -1113,6 +2792,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.TenantGroupIDn != nil {
+
+		// query param tenant_group_id__n
+		var qrTenantGroupIDn string
+		if o.TenantGroupIDn != nil {
+			qrTenantGroupIDn = *o.TenantGroupIDn
+		}
+		qTenantGroupIDn := qrTenantGroupIDn
+		if qTenantGroupIDn != "" {
+			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.TenantID != nil {
 
 		// query param tenant_id
@@ -1123,6 +2818,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qTenantID := qrTenantID
 		if qTenantID != "" {
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantIDn != nil {
+
+		// query param tenant_id__n
+		var qrTenantIDn string
+		if o.TenantIDn != nil {
+			qrTenantIDn = *o.TenantIDn
+		}
+		qTenantIDn := qrTenantIDn
+		if qTenantIDn != "" {
+			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}
@@ -1145,6 +2856,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.Typen != nil {
+
+		// query param type__n
+		var qrTypen string
+		if o.Typen != nil {
+			qrTypen = *o.Typen
+		}
+		qTypen := qrTypen
+		if qTypen != "" {
+			if err := r.SetQueryParam("type__n", qTypen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.UHeight != nil {
 
 		// query param u_height
@@ -1161,6 +2888,86 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
+	if o.UHeightGt != nil {
+
+		// query param u_height__gt
+		var qrUHeightGt string
+		if o.UHeightGt != nil {
+			qrUHeightGt = *o.UHeightGt
+		}
+		qUHeightGt := qrUHeightGt
+		if qUHeightGt != "" {
+			if err := r.SetQueryParam("u_height__gt", qUHeightGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UHeightGte != nil {
+
+		// query param u_height__gte
+		var qrUHeightGte string
+		if o.UHeightGte != nil {
+			qrUHeightGte = *o.UHeightGte
+		}
+		qUHeightGte := qrUHeightGte
+		if qUHeightGte != "" {
+			if err := r.SetQueryParam("u_height__gte", qUHeightGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UHeightLt != nil {
+
+		// query param u_height__lt
+		var qrUHeightLt string
+		if o.UHeightLt != nil {
+			qrUHeightLt = *o.UHeightLt
+		}
+		qUHeightLt := qrUHeightLt
+		if qUHeightLt != "" {
+			if err := r.SetQueryParam("u_height__lt", qUHeightLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UHeightLte != nil {
+
+		// query param u_height__lte
+		var qrUHeightLte string
+		if o.UHeightLte != nil {
+			qrUHeightLte = *o.UHeightLte
+		}
+		qUHeightLte := qrUHeightLte
+		if qUHeightLte != "" {
+			if err := r.SetQueryParam("u_height__lte", qUHeightLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UHeightn != nil {
+
+		// query param u_height__n
+		var qrUHeightn string
+		if o.UHeightn != nil {
+			qrUHeightn = *o.UHeightn
+		}
+		qUHeightn := qrUHeightn
+		if qUHeightn != "" {
+			if err := r.SetQueryParam("u_height__n", qUHeightn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Width != nil {
 
 		// query param width
@@ -1171,6 +2978,22 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qWidth := qrWidth
 		if qWidth != "" {
 			if err := r.SetQueryParam("width", qWidth); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Widthn != nil {
+
+		// query param width__n
+		var qrWidthn string
+		if o.Widthn != nil {
+			qrWidthn = *o.Widthn
+		}
+		qWidthn := qrWidthn
+		if qWidthn != "" {
+			if err := r.SetQueryParam("width__n", qWidthn); err != nil {
 				return err
 			}
 		}

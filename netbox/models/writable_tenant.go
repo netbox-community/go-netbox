@@ -23,14 +23,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritableTenant writable tenant
+//
 // swagger:model WritableTenant
 type WritableTenant struct {
 
@@ -54,9 +54,7 @@ type WritableTenant struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	//
-	// Long-form name (optional)
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device count
@@ -173,7 +171,7 @@ func (m *WritableTenant) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

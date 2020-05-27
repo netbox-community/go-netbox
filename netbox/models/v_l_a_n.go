@@ -21,16 +21,17 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // VLAN v l a n
+//
 // swagger:model VLAN
 type VLAN struct {
 
@@ -43,7 +44,7 @@ type VLAN struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Display name
@@ -167,7 +168,7 @@ func (m *VLAN) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 
@@ -347,15 +348,18 @@ func (m *VLAN) UnmarshalBinary(b []byte) error {
 }
 
 // VLANStatus Status
+//
 // swagger:model VLANStatus
 type VLANStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Active Reserved Deprecated]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [active reserved deprecated]
 	Value *string `json:"value"`
 }
 
@@ -377,18 +381,92 @@ func (m *VLANStatus) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var vLANStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Active","Reserved","Deprecated"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		vLANStatusTypeLabelPropEnum = append(vLANStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// VLANStatusLabelActive captures enum value "Active"
+	VLANStatusLabelActive string = "Active"
+
+	// VLANStatusLabelReserved captures enum value "Reserved"
+	VLANStatusLabelReserved string = "Reserved"
+
+	// VLANStatusLabelDeprecated captures enum value "Deprecated"
+	VLANStatusLabelDeprecated string = "Deprecated"
+)
+
+// prop value enum
+func (m *VLANStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, vLANStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *VLANStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var vLANStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["active","reserved","deprecated"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		vLANStatusTypeValuePropEnum = append(vLANStatusTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// VLANStatusValueActive captures enum value "active"
+	VLANStatusValueActive string = "active"
+
+	// VLANStatusValueReserved captures enum value "reserved"
+	VLANStatusValueReserved string = "reserved"
+
+	// VLANStatusValueDeprecated captures enum value "deprecated"
+	VLANStatusValueDeprecated string = "deprecated"
+)
+
+// prop value enum
+func (m *VLANStatus) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, vLANStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *VLANStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

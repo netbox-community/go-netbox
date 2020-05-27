@@ -21,20 +21,23 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // Site site
+//
 // swagger:model Site
 type Site struct {
 
 	// ASN
+	//
+	// 32-bit autonomous system number
 	// Maximum: 4.294967295e+09
 	// Minimum: 1
 	Asn *int64 `json:"asn,omitempty"`
@@ -68,7 +71,7 @@ type Site struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device count
@@ -76,6 +79,8 @@ type Site struct {
 	DeviceCount int64 `json:"device_count,omitempty"`
 
 	// Facility
+	//
+	// Local facility ID or description
 	// Max Length: 50
 	Facility string `json:"facility,omitempty"`
 
@@ -89,9 +94,13 @@ type Site struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Latitude
+	//
+	// GPS coordinate (latitude)
 	Latitude *string `json:"latitude,omitempty"`
 
 	// Longitude
+	//
+	// GPS coordinate (longitude)
 	Longitude *string `json:"longitude,omitempty"`
 
 	// Name
@@ -300,7 +309,7 @@ func (m *Site) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 
@@ -487,15 +496,18 @@ func (m *Site) UnmarshalBinary(b []byte) error {
 }
 
 // SiteStatus Status
+//
 // swagger:model SiteStatus
 type SiteStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Active Planned Retired]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [active planned retired]
 	Value *string `json:"value"`
 }
 
@@ -517,18 +529,92 @@ func (m *SiteStatus) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var siteStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Active","Planned","Retired"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		siteStatusTypeLabelPropEnum = append(siteStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// SiteStatusLabelActive captures enum value "Active"
+	SiteStatusLabelActive string = "Active"
+
+	// SiteStatusLabelPlanned captures enum value "Planned"
+	SiteStatusLabelPlanned string = "Planned"
+
+	// SiteStatusLabelRetired captures enum value "Retired"
+	SiteStatusLabelRetired string = "Retired"
+)
+
+// prop value enum
+func (m *SiteStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, siteStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *SiteStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var siteStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["active","planned","retired"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		siteStatusTypeValuePropEnum = append(siteStatusTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// SiteStatusValueActive captures enum value "active"
+	SiteStatusValueActive string = "active"
+
+	// SiteStatusValuePlanned captures enum value "planned"
+	SiteStatusValuePlanned string = "planned"
+
+	// SiteStatusValueRetired captures enum value "retired"
+	SiteStatusValueRetired string = "retired"
+)
+
+// prop value enum
+func (m *SiteStatus) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, siteStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *SiteStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

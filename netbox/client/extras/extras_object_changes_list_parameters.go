@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewExtrasObjectChangesListParams creates a new ExtrasObjectChangesListParams object
@@ -79,10 +78,36 @@ type ExtrasObjectChangesListParams struct {
 
 	/*Action*/
 	Action *string
+	/*Actionn*/
+	Actionn *string
 	/*ChangedObjectID*/
-	ChangedObjectID *float64
+	ChangedObjectID *string
+	/*ChangedObjectIDGt*/
+	ChangedObjectIDGt *string
+	/*ChangedObjectIDGte*/
+	ChangedObjectIDGte *string
+	/*ChangedObjectIDLt*/
+	ChangedObjectIDLt *string
+	/*ChangedObjectIDLte*/
+	ChangedObjectIDLte *string
+	/*ChangedObjectIDn*/
+	ChangedObjectIDn *string
 	/*ChangedObjectType*/
 	ChangedObjectType *string
+	/*ChangedObjectTypen*/
+	ChangedObjectTypen *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -90,6 +115,24 @@ type ExtrasObjectChangesListParams struct {
 	Limit *int64
 	/*ObjectRepr*/
 	ObjectRepr *string
+	/*ObjectReprIc*/
+	ObjectReprIc *string
+	/*ObjectReprIe*/
+	ObjectReprIe *string
+	/*ObjectReprIew*/
+	ObjectReprIew *string
+	/*ObjectReprIsw*/
+	ObjectReprIsw *string
+	/*ObjectReprn*/
+	ObjectReprn *string
+	/*ObjectReprNic*/
+	ObjectReprNic *string
+	/*ObjectReprNie*/
+	ObjectReprNie *string
+	/*ObjectReprNiew*/
+	ObjectReprNiew *string
+	/*ObjectReprNisw*/
+	ObjectReprNisw *string
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -103,8 +146,28 @@ type ExtrasObjectChangesListParams struct {
 	Time *string
 	/*User*/
 	User *string
+	/*Usern*/
+	Usern *string
 	/*UserName*/
 	UserName *string
+	/*UserNameIc*/
+	UserNameIc *string
+	/*UserNameIe*/
+	UserNameIe *string
+	/*UserNameIew*/
+	UserNameIew *string
+	/*UserNameIsw*/
+	UserNameIsw *string
+	/*UserNamen*/
+	UserNamen *string
+	/*UserNameNic*/
+	UserNameNic *string
+	/*UserNameNie*/
+	UserNameNie *string
+	/*UserNameNiew*/
+	UserNameNiew *string
+	/*UserNameNisw*/
+	UserNameNisw *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -155,15 +218,81 @@ func (o *ExtrasObjectChangesListParams) SetAction(action *string) {
 	o.Action = action
 }
 
+// WithActionn adds the actionn to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithActionn(actionn *string) *ExtrasObjectChangesListParams {
+	o.SetActionn(actionn)
+	return o
+}
+
+// SetActionn adds the actionN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetActionn(actionn *string) {
+	o.Actionn = actionn
+}
+
 // WithChangedObjectID adds the changedObjectID to the extras object changes list params
-func (o *ExtrasObjectChangesListParams) WithChangedObjectID(changedObjectID *float64) *ExtrasObjectChangesListParams {
+func (o *ExtrasObjectChangesListParams) WithChangedObjectID(changedObjectID *string) *ExtrasObjectChangesListParams {
 	o.SetChangedObjectID(changedObjectID)
 	return o
 }
 
 // SetChangedObjectID adds the changedObjectId to the extras object changes list params
-func (o *ExtrasObjectChangesListParams) SetChangedObjectID(changedObjectID *float64) {
+func (o *ExtrasObjectChangesListParams) SetChangedObjectID(changedObjectID *string) {
 	o.ChangedObjectID = changedObjectID
+}
+
+// WithChangedObjectIDGt adds the changedObjectIDGt to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectIDGt(changedObjectIDGt *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectIDGt(changedObjectIDGt)
+	return o
+}
+
+// SetChangedObjectIDGt adds the changedObjectIdGt to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectIDGt(changedObjectIDGt *string) {
+	o.ChangedObjectIDGt = changedObjectIDGt
+}
+
+// WithChangedObjectIDGte adds the changedObjectIDGte to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectIDGte(changedObjectIDGte *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectIDGte(changedObjectIDGte)
+	return o
+}
+
+// SetChangedObjectIDGte adds the changedObjectIdGte to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectIDGte(changedObjectIDGte *string) {
+	o.ChangedObjectIDGte = changedObjectIDGte
+}
+
+// WithChangedObjectIDLt adds the changedObjectIDLt to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectIDLt(changedObjectIDLt *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectIDLt(changedObjectIDLt)
+	return o
+}
+
+// SetChangedObjectIDLt adds the changedObjectIdLt to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectIDLt(changedObjectIDLt *string) {
+	o.ChangedObjectIDLt = changedObjectIDLt
+}
+
+// WithChangedObjectIDLte adds the changedObjectIDLte to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectIDLte(changedObjectIDLte *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectIDLte(changedObjectIDLte)
+	return o
+}
+
+// SetChangedObjectIDLte adds the changedObjectIdLte to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectIDLte(changedObjectIDLte *string) {
+	o.ChangedObjectIDLte = changedObjectIDLte
+}
+
+// WithChangedObjectIDn adds the changedObjectIDn to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectIDn(changedObjectIDn *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectIDn(changedObjectIDn)
+	return o
+}
+
+// SetChangedObjectIDn adds the changedObjectIdN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectIDn(changedObjectIDn *string) {
+	o.ChangedObjectIDn = changedObjectIDn
 }
 
 // WithChangedObjectType adds the changedObjectType to the extras object changes list params
@@ -175,6 +304,83 @@ func (o *ExtrasObjectChangesListParams) WithChangedObjectType(changedObjectType 
 // SetChangedObjectType adds the changedObjectType to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) SetChangedObjectType(changedObjectType *string) {
 	o.ChangedObjectType = changedObjectType
+}
+
+// WithChangedObjectTypen adds the changedObjectTypen to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectTypen(changedObjectTypen *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectTypen(changedObjectTypen)
+	return o
+}
+
+// SetChangedObjectTypen adds the changedObjectTypeN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectTypen(changedObjectTypen *string) {
+	o.ChangedObjectTypen = changedObjectTypen
+}
+
+// WithID adds the id to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithID(id *string) *ExtrasObjectChangesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithIDGt(iDGt *string) *ExtrasObjectChangesListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithIDGte(iDGte *string) *ExtrasObjectChangesListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithIDLt(iDLt *string) *ExtrasObjectChangesListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithIDLte(iDLte *string) *ExtrasObjectChangesListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithIDn(iDn *string) *ExtrasObjectChangesListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLimit adds the limit to the extras object changes list params
@@ -197,6 +403,105 @@ func (o *ExtrasObjectChangesListParams) WithObjectRepr(objectRepr *string) *Extr
 // SetObjectRepr adds the objectRepr to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) SetObjectRepr(objectRepr *string) {
 	o.ObjectRepr = objectRepr
+}
+
+// WithObjectReprIc adds the objectReprIc to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprIc(objectReprIc *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprIc(objectReprIc)
+	return o
+}
+
+// SetObjectReprIc adds the objectReprIc to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprIc(objectReprIc *string) {
+	o.ObjectReprIc = objectReprIc
+}
+
+// WithObjectReprIe adds the objectReprIe to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprIe(objectReprIe *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprIe(objectReprIe)
+	return o
+}
+
+// SetObjectReprIe adds the objectReprIe to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprIe(objectReprIe *string) {
+	o.ObjectReprIe = objectReprIe
+}
+
+// WithObjectReprIew adds the objectReprIew to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprIew(objectReprIew *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprIew(objectReprIew)
+	return o
+}
+
+// SetObjectReprIew adds the objectReprIew to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprIew(objectReprIew *string) {
+	o.ObjectReprIew = objectReprIew
+}
+
+// WithObjectReprIsw adds the objectReprIsw to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprIsw(objectReprIsw *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprIsw(objectReprIsw)
+	return o
+}
+
+// SetObjectReprIsw adds the objectReprIsw to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprIsw(objectReprIsw *string) {
+	o.ObjectReprIsw = objectReprIsw
+}
+
+// WithObjectReprn adds the objectReprn to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprn(objectReprn *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprn(objectReprn)
+	return o
+}
+
+// SetObjectReprn adds the objectReprN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprn(objectReprn *string) {
+	o.ObjectReprn = objectReprn
+}
+
+// WithObjectReprNic adds the objectReprNic to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprNic(objectReprNic *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprNic(objectReprNic)
+	return o
+}
+
+// SetObjectReprNic adds the objectReprNic to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprNic(objectReprNic *string) {
+	o.ObjectReprNic = objectReprNic
+}
+
+// WithObjectReprNie adds the objectReprNie to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprNie(objectReprNie *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprNie(objectReprNie)
+	return o
+}
+
+// SetObjectReprNie adds the objectReprNie to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprNie(objectReprNie *string) {
+	o.ObjectReprNie = objectReprNie
+}
+
+// WithObjectReprNiew adds the objectReprNiew to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprNiew(objectReprNiew *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprNiew(objectReprNiew)
+	return o
+}
+
+// SetObjectReprNiew adds the objectReprNiew to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprNiew(objectReprNiew *string) {
+	o.ObjectReprNiew = objectReprNiew
+}
+
+// WithObjectReprNisw adds the objectReprNisw to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprNisw(objectReprNisw *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprNisw(objectReprNisw)
+	return o
+}
+
+// SetObjectReprNisw adds the objectReprNisw to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprNisw(objectReprNisw *string) {
+	o.ObjectReprNisw = objectReprNisw
 }
 
 // WithOffset adds the offset to the extras object changes list params
@@ -254,6 +559,17 @@ func (o *ExtrasObjectChangesListParams) SetUser(user *string) {
 	o.User = user
 }
 
+// WithUsern adds the usern to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUsern(usern *string) *ExtrasObjectChangesListParams {
+	o.SetUsern(usern)
+	return o
+}
+
+// SetUsern adds the userN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUsern(usern *string) {
+	o.Usern = usern
+}
+
 // WithUserName adds the userName to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) WithUserName(userName *string) *ExtrasObjectChangesListParams {
 	o.SetUserName(userName)
@@ -263,6 +579,105 @@ func (o *ExtrasObjectChangesListParams) WithUserName(userName *string) *ExtrasOb
 // SetUserName adds the userName to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) SetUserName(userName *string) {
 	o.UserName = userName
+}
+
+// WithUserNameIc adds the userNameIc to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNameIc(userNameIc *string) *ExtrasObjectChangesListParams {
+	o.SetUserNameIc(userNameIc)
+	return o
+}
+
+// SetUserNameIc adds the userNameIc to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNameIc(userNameIc *string) {
+	o.UserNameIc = userNameIc
+}
+
+// WithUserNameIe adds the userNameIe to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNameIe(userNameIe *string) *ExtrasObjectChangesListParams {
+	o.SetUserNameIe(userNameIe)
+	return o
+}
+
+// SetUserNameIe adds the userNameIe to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNameIe(userNameIe *string) {
+	o.UserNameIe = userNameIe
+}
+
+// WithUserNameIew adds the userNameIew to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNameIew(userNameIew *string) *ExtrasObjectChangesListParams {
+	o.SetUserNameIew(userNameIew)
+	return o
+}
+
+// SetUserNameIew adds the userNameIew to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNameIew(userNameIew *string) {
+	o.UserNameIew = userNameIew
+}
+
+// WithUserNameIsw adds the userNameIsw to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNameIsw(userNameIsw *string) *ExtrasObjectChangesListParams {
+	o.SetUserNameIsw(userNameIsw)
+	return o
+}
+
+// SetUserNameIsw adds the userNameIsw to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNameIsw(userNameIsw *string) {
+	o.UserNameIsw = userNameIsw
+}
+
+// WithUserNamen adds the userNamen to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNamen(userNamen *string) *ExtrasObjectChangesListParams {
+	o.SetUserNamen(userNamen)
+	return o
+}
+
+// SetUserNamen adds the userNameN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNamen(userNamen *string) {
+	o.UserNamen = userNamen
+}
+
+// WithUserNameNic adds the userNameNic to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNameNic(userNameNic *string) *ExtrasObjectChangesListParams {
+	o.SetUserNameNic(userNameNic)
+	return o
+}
+
+// SetUserNameNic adds the userNameNic to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNameNic(userNameNic *string) {
+	o.UserNameNic = userNameNic
+}
+
+// WithUserNameNie adds the userNameNie to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNameNie(userNameNie *string) *ExtrasObjectChangesListParams {
+	o.SetUserNameNie(userNameNie)
+	return o
+}
+
+// SetUserNameNie adds the userNameNie to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNameNie(userNameNie *string) {
+	o.UserNameNie = userNameNie
+}
+
+// WithUserNameNiew adds the userNameNiew to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNameNiew(userNameNiew *string) *ExtrasObjectChangesListParams {
+	o.SetUserNameNiew(userNameNiew)
+	return o
+}
+
+// SetUserNameNiew adds the userNameNiew to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNameNiew(userNameNiew *string) {
+	o.UserNameNiew = userNameNiew
+}
+
+// WithUserNameNisw adds the userNameNisw to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNameNisw(userNameNisw *string) *ExtrasObjectChangesListParams {
+	o.SetUserNameNisw(userNameNisw)
+	return o
+}
+
+// SetUserNameNisw adds the userNameNisw to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNameNisw(userNameNisw *string) {
+	o.UserNameNisw = userNameNisw
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -289,16 +704,112 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 
 	}
 
+	if o.Actionn != nil {
+
+		// query param action__n
+		var qrActionn string
+		if o.Actionn != nil {
+			qrActionn = *o.Actionn
+		}
+		qActionn := qrActionn
+		if qActionn != "" {
+			if err := r.SetQueryParam("action__n", qActionn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.ChangedObjectID != nil {
 
 		// query param changed_object_id
-		var qrChangedObjectID float64
+		var qrChangedObjectID string
 		if o.ChangedObjectID != nil {
 			qrChangedObjectID = *o.ChangedObjectID
 		}
-		qChangedObjectID := swag.FormatFloat64(qrChangedObjectID)
+		qChangedObjectID := qrChangedObjectID
 		if qChangedObjectID != "" {
 			if err := r.SetQueryParam("changed_object_id", qChangedObjectID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ChangedObjectIDGt != nil {
+
+		// query param changed_object_id__gt
+		var qrChangedObjectIDGt string
+		if o.ChangedObjectIDGt != nil {
+			qrChangedObjectIDGt = *o.ChangedObjectIDGt
+		}
+		qChangedObjectIDGt := qrChangedObjectIDGt
+		if qChangedObjectIDGt != "" {
+			if err := r.SetQueryParam("changed_object_id__gt", qChangedObjectIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ChangedObjectIDGte != nil {
+
+		// query param changed_object_id__gte
+		var qrChangedObjectIDGte string
+		if o.ChangedObjectIDGte != nil {
+			qrChangedObjectIDGte = *o.ChangedObjectIDGte
+		}
+		qChangedObjectIDGte := qrChangedObjectIDGte
+		if qChangedObjectIDGte != "" {
+			if err := r.SetQueryParam("changed_object_id__gte", qChangedObjectIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ChangedObjectIDLt != nil {
+
+		// query param changed_object_id__lt
+		var qrChangedObjectIDLt string
+		if o.ChangedObjectIDLt != nil {
+			qrChangedObjectIDLt = *o.ChangedObjectIDLt
+		}
+		qChangedObjectIDLt := qrChangedObjectIDLt
+		if qChangedObjectIDLt != "" {
+			if err := r.SetQueryParam("changed_object_id__lt", qChangedObjectIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ChangedObjectIDLte != nil {
+
+		// query param changed_object_id__lte
+		var qrChangedObjectIDLte string
+		if o.ChangedObjectIDLte != nil {
+			qrChangedObjectIDLte = *o.ChangedObjectIDLte
+		}
+		qChangedObjectIDLte := qrChangedObjectIDLte
+		if qChangedObjectIDLte != "" {
+			if err := r.SetQueryParam("changed_object_id__lte", qChangedObjectIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ChangedObjectIDn != nil {
+
+		// query param changed_object_id__n
+		var qrChangedObjectIDn string
+		if o.ChangedObjectIDn != nil {
+			qrChangedObjectIDn = *o.ChangedObjectIDn
+		}
+		qChangedObjectIDn := qrChangedObjectIDn
+		if qChangedObjectIDn != "" {
+			if err := r.SetQueryParam("changed_object_id__n", qChangedObjectIDn); err != nil {
 				return err
 			}
 		}
@@ -315,6 +826,118 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 		qChangedObjectType := qrChangedObjectType
 		if qChangedObjectType != "" {
 			if err := r.SetQueryParam("changed_object_type", qChangedObjectType); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ChangedObjectTypen != nil {
+
+		// query param changed_object_type__n
+		var qrChangedObjectTypen string
+		if o.ChangedObjectTypen != nil {
+			qrChangedObjectTypen = *o.ChangedObjectTypen
+		}
+		qChangedObjectTypen := qrChangedObjectTypen
+		if qChangedObjectTypen != "" {
+			if err := r.SetQueryParam("changed_object_type__n", qChangedObjectTypen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
@@ -347,6 +970,150 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 		qObjectRepr := qrObjectRepr
 		if qObjectRepr != "" {
 			if err := r.SetQueryParam("object_repr", qObjectRepr); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ObjectReprIc != nil {
+
+		// query param object_repr__ic
+		var qrObjectReprIc string
+		if o.ObjectReprIc != nil {
+			qrObjectReprIc = *o.ObjectReprIc
+		}
+		qObjectReprIc := qrObjectReprIc
+		if qObjectReprIc != "" {
+			if err := r.SetQueryParam("object_repr__ic", qObjectReprIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ObjectReprIe != nil {
+
+		// query param object_repr__ie
+		var qrObjectReprIe string
+		if o.ObjectReprIe != nil {
+			qrObjectReprIe = *o.ObjectReprIe
+		}
+		qObjectReprIe := qrObjectReprIe
+		if qObjectReprIe != "" {
+			if err := r.SetQueryParam("object_repr__ie", qObjectReprIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ObjectReprIew != nil {
+
+		// query param object_repr__iew
+		var qrObjectReprIew string
+		if o.ObjectReprIew != nil {
+			qrObjectReprIew = *o.ObjectReprIew
+		}
+		qObjectReprIew := qrObjectReprIew
+		if qObjectReprIew != "" {
+			if err := r.SetQueryParam("object_repr__iew", qObjectReprIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ObjectReprIsw != nil {
+
+		// query param object_repr__isw
+		var qrObjectReprIsw string
+		if o.ObjectReprIsw != nil {
+			qrObjectReprIsw = *o.ObjectReprIsw
+		}
+		qObjectReprIsw := qrObjectReprIsw
+		if qObjectReprIsw != "" {
+			if err := r.SetQueryParam("object_repr__isw", qObjectReprIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ObjectReprn != nil {
+
+		// query param object_repr__n
+		var qrObjectReprn string
+		if o.ObjectReprn != nil {
+			qrObjectReprn = *o.ObjectReprn
+		}
+		qObjectReprn := qrObjectReprn
+		if qObjectReprn != "" {
+			if err := r.SetQueryParam("object_repr__n", qObjectReprn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ObjectReprNic != nil {
+
+		// query param object_repr__nic
+		var qrObjectReprNic string
+		if o.ObjectReprNic != nil {
+			qrObjectReprNic = *o.ObjectReprNic
+		}
+		qObjectReprNic := qrObjectReprNic
+		if qObjectReprNic != "" {
+			if err := r.SetQueryParam("object_repr__nic", qObjectReprNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ObjectReprNie != nil {
+
+		// query param object_repr__nie
+		var qrObjectReprNie string
+		if o.ObjectReprNie != nil {
+			qrObjectReprNie = *o.ObjectReprNie
+		}
+		qObjectReprNie := qrObjectReprNie
+		if qObjectReprNie != "" {
+			if err := r.SetQueryParam("object_repr__nie", qObjectReprNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ObjectReprNiew != nil {
+
+		// query param object_repr__niew
+		var qrObjectReprNiew string
+		if o.ObjectReprNiew != nil {
+			qrObjectReprNiew = *o.ObjectReprNiew
+		}
+		qObjectReprNiew := qrObjectReprNiew
+		if qObjectReprNiew != "" {
+			if err := r.SetQueryParam("object_repr__niew", qObjectReprNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ObjectReprNisw != nil {
+
+		// query param object_repr__nisw
+		var qrObjectReprNisw string
+		if o.ObjectReprNisw != nil {
+			qrObjectReprNisw = *o.ObjectReprNisw
+		}
+		qObjectReprNisw := qrObjectReprNisw
+		if qObjectReprNisw != "" {
+			if err := r.SetQueryParam("object_repr__nisw", qObjectReprNisw); err != nil {
 				return err
 			}
 		}
@@ -433,6 +1200,22 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 
 	}
 
+	if o.Usern != nil {
+
+		// query param user__n
+		var qrUsern string
+		if o.Usern != nil {
+			qrUsern = *o.Usern
+		}
+		qUsern := qrUsern
+		if qUsern != "" {
+			if err := r.SetQueryParam("user__n", qUsern); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.UserName != nil {
 
 		// query param user_name
@@ -443,6 +1226,150 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 		qUserName := qrUserName
 		if qUserName != "" {
 			if err := r.SetQueryParam("user_name", qUserName); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserNameIc != nil {
+
+		// query param user_name__ic
+		var qrUserNameIc string
+		if o.UserNameIc != nil {
+			qrUserNameIc = *o.UserNameIc
+		}
+		qUserNameIc := qrUserNameIc
+		if qUserNameIc != "" {
+			if err := r.SetQueryParam("user_name__ic", qUserNameIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserNameIe != nil {
+
+		// query param user_name__ie
+		var qrUserNameIe string
+		if o.UserNameIe != nil {
+			qrUserNameIe = *o.UserNameIe
+		}
+		qUserNameIe := qrUserNameIe
+		if qUserNameIe != "" {
+			if err := r.SetQueryParam("user_name__ie", qUserNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserNameIew != nil {
+
+		// query param user_name__iew
+		var qrUserNameIew string
+		if o.UserNameIew != nil {
+			qrUserNameIew = *o.UserNameIew
+		}
+		qUserNameIew := qrUserNameIew
+		if qUserNameIew != "" {
+			if err := r.SetQueryParam("user_name__iew", qUserNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserNameIsw != nil {
+
+		// query param user_name__isw
+		var qrUserNameIsw string
+		if o.UserNameIsw != nil {
+			qrUserNameIsw = *o.UserNameIsw
+		}
+		qUserNameIsw := qrUserNameIsw
+		if qUserNameIsw != "" {
+			if err := r.SetQueryParam("user_name__isw", qUserNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserNamen != nil {
+
+		// query param user_name__n
+		var qrUserNamen string
+		if o.UserNamen != nil {
+			qrUserNamen = *o.UserNamen
+		}
+		qUserNamen := qrUserNamen
+		if qUserNamen != "" {
+			if err := r.SetQueryParam("user_name__n", qUserNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserNameNic != nil {
+
+		// query param user_name__nic
+		var qrUserNameNic string
+		if o.UserNameNic != nil {
+			qrUserNameNic = *o.UserNameNic
+		}
+		qUserNameNic := qrUserNameNic
+		if qUserNameNic != "" {
+			if err := r.SetQueryParam("user_name__nic", qUserNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserNameNie != nil {
+
+		// query param user_name__nie
+		var qrUserNameNie string
+		if o.UserNameNie != nil {
+			qrUserNameNie = *o.UserNameNie
+		}
+		qUserNameNie := qrUserNameNie
+		if qUserNameNie != "" {
+			if err := r.SetQueryParam("user_name__nie", qUserNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserNameNiew != nil {
+
+		// query param user_name__niew
+		var qrUserNameNiew string
+		if o.UserNameNiew != nil {
+			qrUserNameNiew = *o.UserNameNiew
+		}
+		qUserNameNiew := qrUserNameNiew
+		if qUserNameNiew != "" {
+			if err := r.SetQueryParam("user_name__niew", qUserNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserNameNisw != nil {
+
+		// query param user_name__nisw
+		var qrUserNameNisw string
+		if o.UserNameNisw != nil {
+			qrUserNameNisw = *o.UserNameNisw
+		}
+		qUserNameNisw := qrUserNameNisw
+		if qUserNameNisw != "" {
+			if err := r.SetQueryParam("user_name__nisw", qUserNameNisw); err != nil {
 				return err
 			}
 		}

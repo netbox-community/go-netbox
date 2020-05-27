@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewVirtualizationClustersListParams creates a new VirtualizationClustersListParams object
@@ -85,13 +84,24 @@ type VirtualizationClustersListParams struct {
 	CreatedLte *string
 	/*Group*/
 	Group *string
+	/*Groupn*/
+	Groupn *string
 	/*GroupID*/
 	GroupID *string
-	/*IDIn
-	  Multiple values may be separated by commas.
-
-	*/
-	IDIn *string
+	/*GroupIDn*/
+	GroupIDn *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -105,6 +115,24 @@ type VirtualizationClustersListParams struct {
 	Limit *int64
 	/*Name*/
 	Name *string
+	/*NameIc*/
+	NameIc *string
+	/*NameIe*/
+	NameIe *string
+	/*NameIew*/
+	NameIew *string
+	/*NameIsw*/
+	NameIsw *string
+	/*Namen*/
+	Namen *string
+	/*NameNic*/
+	NameNic *string
+	/*NameNie*/
+	NameNie *string
+	/*NameNiew*/
+	NameNiew *string
+	/*NameNisw*/
+	NameNisw *string
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -114,20 +142,48 @@ type VirtualizationClustersListParams struct {
 	Q *string
 	/*Region*/
 	Region *string
+	/*Regionn*/
+	Regionn *string
 	/*RegionID*/
 	RegionID *string
+	/*RegionIDn*/
+	RegionIDn *string
 	/*Site*/
 	Site *string
+	/*Siten*/
+	Siten *string
 	/*SiteID*/
 	SiteID *string
+	/*SiteIDn*/
+	SiteIDn *string
 	/*Tag*/
 	Tag *string
+	/*Tagn*/
+	Tagn *string
 	/*Tenant*/
 	Tenant *string
+	/*Tenantn*/
+	Tenantn *string
+	/*TenantGroup*/
+	TenantGroup *string
+	/*TenantGroupn*/
+	TenantGroupn *string
+	/*TenantGroupID*/
+	TenantGroupID *string
+	/*TenantGroupIDn*/
+	TenantGroupIDn *string
+	/*TenantID*/
+	TenantID *string
+	/*TenantIDn*/
+	TenantIDn *string
 	/*Type*/
 	Type *string
+	/*Typen*/
+	Typen *string
 	/*TypeID*/
 	TypeID *string
+	/*TypeIDn*/
+	TypeIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -211,6 +267,17 @@ func (o *VirtualizationClustersListParams) SetGroup(group *string) {
 	o.Group = group
 }
 
+// WithGroupn adds the groupn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithGroupn(groupn *string) *VirtualizationClustersListParams {
+	o.SetGroupn(groupn)
+	return o
+}
+
+// SetGroupn adds the groupN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetGroupn(groupn *string) {
+	o.Groupn = groupn
+}
+
 // WithGroupID adds the groupID to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) WithGroupID(groupID *string) *VirtualizationClustersListParams {
 	o.SetGroupID(groupID)
@@ -222,15 +289,81 @@ func (o *VirtualizationClustersListParams) SetGroupID(groupID *string) {
 	o.GroupID = groupID
 }
 
-// WithIDIn adds the iDIn to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) WithIDIn(iDIn *string) *VirtualizationClustersListParams {
-	o.SetIDIn(iDIn)
+// WithGroupIDn adds the groupIDn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithGroupIDn(groupIDn *string) *VirtualizationClustersListParams {
+	o.SetGroupIDn(groupIDn)
 	return o
 }
 
-// SetIDIn adds the idIn to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) SetIDIn(iDIn *string) {
-	o.IDIn = iDIn
+// SetGroupIDn adds the groupIdN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetGroupIDn(groupIDn *string) {
+	o.GroupIDn = groupIDn
+}
+
+// WithID adds the id to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithID(id *string) *VirtualizationClustersListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithIDGt(iDGt *string) *VirtualizationClustersListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithIDGte(iDGte *string) *VirtualizationClustersListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithIDLt(iDLt *string) *VirtualizationClustersListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithIDLte(iDLte *string) *VirtualizationClustersListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithIDn(iDn *string) *VirtualizationClustersListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLastUpdated adds the lastUpdated to the virtualization clusters list params
@@ -288,6 +421,105 @@ func (o *VirtualizationClustersListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameIc adds the nameIc to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNameIc(nameIc *string) *VirtualizationClustersListParams {
+	o.SetNameIc(nameIc)
+	return o
+}
+
+// SetNameIc adds the nameIc to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNameIc(nameIc *string) {
+	o.NameIc = nameIc
+}
+
+// WithNameIe adds the nameIe to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNameIe(nameIe *string) *VirtualizationClustersListParams {
+	o.SetNameIe(nameIe)
+	return o
+}
+
+// SetNameIe adds the nameIe to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNameIe(nameIe *string) {
+	o.NameIe = nameIe
+}
+
+// WithNameIew adds the nameIew to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNameIew(nameIew *string) *VirtualizationClustersListParams {
+	o.SetNameIew(nameIew)
+	return o
+}
+
+// SetNameIew adds the nameIew to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNameIew(nameIew *string) {
+	o.NameIew = nameIew
+}
+
+// WithNameIsw adds the nameIsw to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNameIsw(nameIsw *string) *VirtualizationClustersListParams {
+	o.SetNameIsw(nameIsw)
+	return o
+}
+
+// SetNameIsw adds the nameIsw to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNameIsw(nameIsw *string) {
+	o.NameIsw = nameIsw
+}
+
+// WithNamen adds the namen to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNamen(namen *string) *VirtualizationClustersListParams {
+	o.SetNamen(namen)
+	return o
+}
+
+// SetNamen adds the nameN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNamen(namen *string) {
+	o.Namen = namen
+}
+
+// WithNameNic adds the nameNic to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNameNic(nameNic *string) *VirtualizationClustersListParams {
+	o.SetNameNic(nameNic)
+	return o
+}
+
+// SetNameNic adds the nameNic to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNameNic(nameNic *string) {
+	o.NameNic = nameNic
+}
+
+// WithNameNie adds the nameNie to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNameNie(nameNie *string) *VirtualizationClustersListParams {
+	o.SetNameNie(nameNie)
+	return o
+}
+
+// SetNameNie adds the nameNie to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNameNie(nameNie *string) {
+	o.NameNie = nameNie
+}
+
+// WithNameNiew adds the nameNiew to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNameNiew(nameNiew *string) *VirtualizationClustersListParams {
+	o.SetNameNiew(nameNiew)
+	return o
+}
+
+// SetNameNiew adds the nameNiew to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNameNiew(nameNiew *string) {
+	o.NameNiew = nameNiew
+}
+
+// WithNameNisw adds the nameNisw to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNameNisw(nameNisw *string) *VirtualizationClustersListParams {
+	o.SetNameNisw(nameNisw)
+	return o
+}
+
+// SetNameNisw adds the nameNisw to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNameNisw(nameNisw *string) {
+	o.NameNisw = nameNisw
+}
+
 // WithOffset adds the offset to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) WithOffset(offset *int64) *VirtualizationClustersListParams {
 	o.SetOffset(offset)
@@ -321,6 +553,17 @@ func (o *VirtualizationClustersListParams) SetRegion(region *string) {
 	o.Region = region
 }
 
+// WithRegionn adds the regionn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithRegionn(regionn *string) *VirtualizationClustersListParams {
+	o.SetRegionn(regionn)
+	return o
+}
+
+// SetRegionn adds the regionN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetRegionn(regionn *string) {
+	o.Regionn = regionn
+}
+
 // WithRegionID adds the regionID to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) WithRegionID(regionID *string) *VirtualizationClustersListParams {
 	o.SetRegionID(regionID)
@@ -330,6 +573,17 @@ func (o *VirtualizationClustersListParams) WithRegionID(regionID *string) *Virtu
 // SetRegionID adds the regionId to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) SetRegionID(regionID *string) {
 	o.RegionID = regionID
+}
+
+// WithRegionIDn adds the regionIDn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithRegionIDn(regionIDn *string) *VirtualizationClustersListParams {
+	o.SetRegionIDn(regionIDn)
+	return o
+}
+
+// SetRegionIDn adds the regionIdN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetRegionIDn(regionIDn *string) {
+	o.RegionIDn = regionIDn
 }
 
 // WithSite adds the site to the virtualization clusters list params
@@ -343,6 +597,17 @@ func (o *VirtualizationClustersListParams) SetSite(site *string) {
 	o.Site = site
 }
 
+// WithSiten adds the siten to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithSiten(siten *string) *VirtualizationClustersListParams {
+	o.SetSiten(siten)
+	return o
+}
+
+// SetSiten adds the siteN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetSiten(siten *string) {
+	o.Siten = siten
+}
+
 // WithSiteID adds the siteID to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) WithSiteID(siteID *string) *VirtualizationClustersListParams {
 	o.SetSiteID(siteID)
@@ -352,6 +617,17 @@ func (o *VirtualizationClustersListParams) WithSiteID(siteID *string) *Virtualiz
 // SetSiteID adds the siteId to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) SetSiteID(siteID *string) {
 	o.SiteID = siteID
+}
+
+// WithSiteIDn adds the siteIDn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithSiteIDn(siteIDn *string) *VirtualizationClustersListParams {
+	o.SetSiteIDn(siteIDn)
+	return o
+}
+
+// SetSiteIDn adds the siteIdN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetSiteIDn(siteIDn *string) {
+	o.SiteIDn = siteIDn
 }
 
 // WithTag adds the tag to the virtualization clusters list params
@@ -365,6 +641,17 @@ func (o *VirtualizationClustersListParams) SetTag(tag *string) {
 	o.Tag = tag
 }
 
+// WithTagn adds the tagn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTagn(tagn *string) *VirtualizationClustersListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WithTenant adds the tenant to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) WithTenant(tenant *string) *VirtualizationClustersListParams {
 	o.SetTenant(tenant)
@@ -374,6 +661,83 @@ func (o *VirtualizationClustersListParams) WithTenant(tenant *string) *Virtualiz
 // SetTenant adds the tenant to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) SetTenant(tenant *string) {
 	o.Tenant = tenant
+}
+
+// WithTenantn adds the tenantn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTenantn(tenantn *string) *VirtualizationClustersListParams {
+	o.SetTenantn(tenantn)
+	return o
+}
+
+// SetTenantn adds the tenantN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTenantn(tenantn *string) {
+	o.Tenantn = tenantn
+}
+
+// WithTenantGroup adds the tenantGroup to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTenantGroup(tenantGroup *string) *VirtualizationClustersListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupn adds the tenantGroupn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTenantGroupn(tenantGroupn *string) *VirtualizationClustersListParams {
+	o.SetTenantGroupn(tenantGroupn)
+	return o
+}
+
+// SetTenantGroupn adds the tenantGroupN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTenantGroupn(tenantGroupn *string) {
+	o.TenantGroupn = tenantGroupn
+}
+
+// WithTenantGroupID adds the tenantGroupID to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTenantGroupID(tenantGroupID *string) *VirtualizationClustersListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
+}
+
+// WithTenantGroupIDn adds the tenantGroupIDn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTenantGroupIDn(tenantGroupIDn *string) *VirtualizationClustersListParams {
+	o.SetTenantGroupIDn(tenantGroupIDn)
+	return o
+}
+
+// SetTenantGroupIDn adds the tenantGroupIdN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTenantGroupIDn(tenantGroupIDn *string) {
+	o.TenantGroupIDn = tenantGroupIDn
+}
+
+// WithTenantID adds the tenantID to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTenantID(tenantID *string) *VirtualizationClustersListParams {
+	o.SetTenantID(tenantID)
+	return o
+}
+
+// SetTenantID adds the tenantId to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTenantID(tenantID *string) {
+	o.TenantID = tenantID
+}
+
+// WithTenantIDn adds the tenantIDn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTenantIDn(tenantIDn *string) *VirtualizationClustersListParams {
+	o.SetTenantIDn(tenantIDn)
+	return o
+}
+
+// SetTenantIDn adds the tenantIdN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTenantIDn(tenantIDn *string) {
+	o.TenantIDn = tenantIDn
 }
 
 // WithType adds the typeVar to the virtualization clusters list params
@@ -387,6 +751,17 @@ func (o *VirtualizationClustersListParams) SetType(typeVar *string) {
 	o.Type = typeVar
 }
 
+// WithTypen adds the typen to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTypen(typen *string) *VirtualizationClustersListParams {
+	o.SetTypen(typen)
+	return o
+}
+
+// SetTypen adds the typeN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTypen(typen *string) {
+	o.Typen = typen
+}
+
 // WithTypeID adds the typeID to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) WithTypeID(typeID *string) *VirtualizationClustersListParams {
 	o.SetTypeID(typeID)
@@ -396,6 +771,17 @@ func (o *VirtualizationClustersListParams) WithTypeID(typeID *string) *Virtualiz
 // SetTypeID adds the typeId to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) SetTypeID(typeID *string) {
 	o.TypeID = typeID
+}
+
+// WithTypeIDn adds the typeIDn to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithTypeIDn(typeIDn *string) *VirtualizationClustersListParams {
+	o.SetTypeIDn(typeIDn)
+	return o
+}
+
+// SetTypeIDn adds the typeIdN to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetTypeIDn(typeIDn *string) {
+	o.TypeIDn = typeIDn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -470,6 +856,22 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 
 	}
 
+	if o.Groupn != nil {
+
+		// query param group__n
+		var qrGroupn string
+		if o.Groupn != nil {
+			qrGroupn = *o.Groupn
+		}
+		qGroupn := qrGroupn
+		if qGroupn != "" {
+			if err := r.SetQueryParam("group__n", qGroupn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.GroupID != nil {
 
 		// query param group_id
@@ -486,16 +888,112 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 
 	}
 
-	if o.IDIn != nil {
+	if o.GroupIDn != nil {
 
-		// query param id__in
-		var qrIDIn string
-		if o.IDIn != nil {
-			qrIDIn = *o.IDIn
+		// query param group_id__n
+		var qrGroupIDn string
+		if o.GroupIDn != nil {
+			qrGroupIDn = *o.GroupIDn
 		}
-		qIDIn := qrIDIn
-		if qIDIn != "" {
-			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
+		qGroupIDn := qrGroupIDn
+		if qGroupIDn != "" {
+			if err := r.SetQueryParam("group_id__n", qGroupIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
@@ -582,6 +1080,150 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 
 	}
 
+	if o.NameIc != nil {
+
+		// query param name__ic
+		var qrNameIc string
+		if o.NameIc != nil {
+			qrNameIc = *o.NameIc
+		}
+		qNameIc := qrNameIc
+		if qNameIc != "" {
+			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIe != nil {
+
+		// query param name__ie
+		var qrNameIe string
+		if o.NameIe != nil {
+			qrNameIe = *o.NameIe
+		}
+		qNameIe := qrNameIe
+		if qNameIe != "" {
+			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIew != nil {
+
+		// query param name__iew
+		var qrNameIew string
+		if o.NameIew != nil {
+			qrNameIew = *o.NameIew
+		}
+		qNameIew := qrNameIew
+		if qNameIew != "" {
+			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIsw != nil {
+
+		// query param name__isw
+		var qrNameIsw string
+		if o.NameIsw != nil {
+			qrNameIsw = *o.NameIsw
+		}
+		qNameIsw := qrNameIsw
+		if qNameIsw != "" {
+			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Namen != nil {
+
+		// query param name__n
+		var qrNamen string
+		if o.Namen != nil {
+			qrNamen = *o.Namen
+		}
+		qNamen := qrNamen
+		if qNamen != "" {
+			if err := r.SetQueryParam("name__n", qNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNic != nil {
+
+		// query param name__nic
+		var qrNameNic string
+		if o.NameNic != nil {
+			qrNameNic = *o.NameNic
+		}
+		qNameNic := qrNameNic
+		if qNameNic != "" {
+			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNie != nil {
+
+		// query param name__nie
+		var qrNameNie string
+		if o.NameNie != nil {
+			qrNameNie = *o.NameNie
+		}
+		qNameNie := qrNameNie
+		if qNameNie != "" {
+			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNiew != nil {
+
+		// query param name__niew
+		var qrNameNiew string
+		if o.NameNiew != nil {
+			qrNameNiew = *o.NameNiew
+		}
+		qNameNiew := qrNameNiew
+		if qNameNiew != "" {
+			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNisw != nil {
+
+		// query param name__nisw
+		var qrNameNisw string
+		if o.NameNisw != nil {
+			qrNameNisw = *o.NameNisw
+		}
+		qNameNisw := qrNameNisw
+		if qNameNisw != "" {
+			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -630,6 +1272,22 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 
 	}
 
+	if o.Regionn != nil {
+
+		// query param region__n
+		var qrRegionn string
+		if o.Regionn != nil {
+			qrRegionn = *o.Regionn
+		}
+		qRegionn := qrRegionn
+		if qRegionn != "" {
+			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.RegionID != nil {
 
 		// query param region_id
@@ -640,6 +1298,22 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 		qRegionID := qrRegionID
 		if qRegionID != "" {
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.RegionIDn != nil {
+
+		// query param region_id__n
+		var qrRegionIDn string
+		if o.RegionIDn != nil {
+			qrRegionIDn = *o.RegionIDn
+		}
+		qRegionIDn := qrRegionIDn
+		if qRegionIDn != "" {
+			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
 				return err
 			}
 		}
@@ -662,6 +1336,22 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 
 	}
 
+	if o.Siten != nil {
+
+		// query param site__n
+		var qrSiten string
+		if o.Siten != nil {
+			qrSiten = *o.Siten
+		}
+		qSiten := qrSiten
+		if qSiten != "" {
+			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.SiteID != nil {
 
 		// query param site_id
@@ -672,6 +1362,22 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 		qSiteID := qrSiteID
 		if qSiteID != "" {
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.SiteIDn != nil {
+
+		// query param site_id__n
+		var qrSiteIDn string
+		if o.SiteIDn != nil {
+			qrSiteIDn = *o.SiteIDn
+		}
+		qSiteIDn := qrSiteIDn
+		if qSiteIDn != "" {
+			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
@@ -694,6 +1400,22 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 
 	}
 
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tenant != nil {
 
 		// query param tenant
@@ -704,6 +1426,118 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 		qTenant := qrTenant
 		if qTenant != "" {
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tenantn != nil {
+
+		// query param tenant__n
+		var qrTenantn string
+		if o.Tenantn != nil {
+			qrTenantn = *o.Tenantn
+		}
+		qTenantn := qrTenantn
+		if qTenantn != "" {
+			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupn != nil {
+
+		// query param tenant_group__n
+		var qrTenantGroupn string
+		if o.TenantGroupn != nil {
+			qrTenantGroupn = *o.TenantGroupn
+		}
+		qTenantGroupn := qrTenantGroupn
+		if qTenantGroupn != "" {
+			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupIDn != nil {
+
+		// query param tenant_group_id__n
+		var qrTenantGroupIDn string
+		if o.TenantGroupIDn != nil {
+			qrTenantGroupIDn = *o.TenantGroupIDn
+		}
+		qTenantGroupIDn := qrTenantGroupIDn
+		if qTenantGroupIDn != "" {
+			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantID != nil {
+
+		// query param tenant_id
+		var qrTenantID string
+		if o.TenantID != nil {
+			qrTenantID = *o.TenantID
+		}
+		qTenantID := qrTenantID
+		if qTenantID != "" {
+			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantIDn != nil {
+
+		// query param tenant_id__n
+		var qrTenantIDn string
+		if o.TenantIDn != nil {
+			qrTenantIDn = *o.TenantIDn
+		}
+		qTenantIDn := qrTenantIDn
+		if qTenantIDn != "" {
+			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}
@@ -726,6 +1560,22 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 
 	}
 
+	if o.Typen != nil {
+
+		// query param type__n
+		var qrTypen string
+		if o.Typen != nil {
+			qrTypen = *o.Typen
+		}
+		qTypen := qrTypen
+		if qTypen != "" {
+			if err := r.SetQueryParam("type__n", qTypen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.TypeID != nil {
 
 		// query param type_id
@@ -736,6 +1586,22 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 		qTypeID := qrTypeID
 		if qTypeID != "" {
 			if err := r.SetQueryParam("type_id", qTypeID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TypeIDn != nil {
+
+		// query param type_id__n
+		var qrTypeIDn string
+		if o.TypeIDn != nil {
+			qrTypeIDn = *o.TypeIDn
+		}
+		qTypeIDn := qrTypeIDn
+		if qTypeIDn != "" {
+			if err := r.SetQueryParam("type_id__n", qTypeIDn); err != nil {
 				return err
 			}
 		}

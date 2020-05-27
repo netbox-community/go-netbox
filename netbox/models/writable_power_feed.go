@@ -24,14 +24,14 @@ import (
 	"encoding/json"
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // WritablePowerFeed writable power feed
+//
 // swagger:model WritablePowerFeed
 type WritablePowerFeed struct {
 
@@ -101,8 +101,8 @@ type WritablePowerFeed struct {
 
 	// Voltage
 	// Maximum: 32767
-	// Minimum: 1
-	Voltage int64 `json:"voltage,omitempty"`
+	// Minimum: -32768
+	Voltage *int64 `json:"voltage,omitempty"`
 }
 
 // Validate validates this writable power feed
@@ -450,11 +450,11 @@ func (m *WritablePowerFeed) validateVoltage(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MinimumInt("voltage", "body", int64(m.Voltage), 1, false); err != nil {
+	if err := validate.MinimumInt("voltage", "body", int64(*m.Voltage), -32768, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("voltage", "body", int64(m.Voltage), 32767, false); err != nil {
+	if err := validate.MaximumInt("voltage", "body", int64(*m.Voltage), 32767, false); err != nil {
 		return err
 	}
 

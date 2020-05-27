@@ -21,14 +21,16 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
+	"encoding/json"
 
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // InterfaceConnection interface connection
+//
 // swagger:model InterfaceConnection
 type InterfaceConnection struct {
 
@@ -138,15 +140,18 @@ func (m *InterfaceConnection) UnmarshalBinary(b []byte) error {
 }
 
 // InterfaceConnectionConnectionStatus Connection status
+//
 // swagger:model InterfaceConnectionConnectionStatus
 type InterfaceConnectionConnectionStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Not Connected Connected]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [false true]
 	Value *bool `json:"value"`
 }
 
@@ -168,18 +173,77 @@ func (m *InterfaceConnectionConnectionStatus) Validate(formats strfmt.Registry) 
 	return nil
 }
 
+var interfaceConnectionConnectionStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Not Connected","Connected"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		interfaceConnectionConnectionStatusTypeLabelPropEnum = append(interfaceConnectionConnectionStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// InterfaceConnectionConnectionStatusLabelNotConnected captures enum value "Not Connected"
+	InterfaceConnectionConnectionStatusLabelNotConnected string = "Not Connected"
+
+	// InterfaceConnectionConnectionStatusLabelConnected captures enum value "Connected"
+	InterfaceConnectionConnectionStatusLabelConnected string = "Connected"
+)
+
+// prop value enum
+func (m *InterfaceConnectionConnectionStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, interfaceConnectionConnectionStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *InterfaceConnectionConnectionStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("connection_status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var interfaceConnectionConnectionStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []bool
+	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		interfaceConnectionConnectionStatusTypeValuePropEnum = append(interfaceConnectionConnectionStatusTypeValuePropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *InterfaceConnectionConnectionStatus) validateValueEnum(path, location string, value bool) error {
+	if err := validate.Enum(path, location, value, interfaceConnectionConnectionStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *InterfaceConnectionConnectionStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("connection_status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

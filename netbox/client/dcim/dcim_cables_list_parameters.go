@@ -28,9 +28,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewDcimCablesListParams creates a new DcimCablesListParams object
@@ -79,18 +78,60 @@ type DcimCablesListParams struct {
 
 	/*Color*/
 	Color *string
+	/*Colorn*/
+	Colorn *string
 	/*Device*/
 	Device *string
 	/*DeviceID*/
 	DeviceID *string
 	/*ID*/
 	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*Label*/
 	Label *string
+	/*LabelIc*/
+	LabelIc *string
+	/*LabelIe*/
+	LabelIe *string
+	/*LabelIew*/
+	LabelIew *string
+	/*LabelIsw*/
+	LabelIsw *string
+	/*Labeln*/
+	Labeln *string
+	/*LabelNic*/
+	LabelNic *string
+	/*LabelNie*/
+	LabelNie *string
+	/*LabelNiew*/
+	LabelNiew *string
+	/*LabelNisw*/
+	LabelNisw *string
 	/*Length*/
 	Length *string
+	/*LengthGt*/
+	LengthGt *string
+	/*LengthGte*/
+	LengthGte *string
+	/*LengthLt*/
+	LengthLt *string
+	/*LengthLte*/
+	LengthLte *string
+	/*Lengthn*/
+	Lengthn *string
 	/*LengthUnit*/
 	LengthUnit *string
+	/*LengthUnitn*/
+	LengthUnitn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -113,12 +154,16 @@ type DcimCablesListParams struct {
 	SiteID *string
 	/*Status*/
 	Status *string
+	/*Statusn*/
+	Statusn *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
 	TenantID *string
 	/*Type*/
 	Type *string
+	/*Typen*/
+	Typen *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -169,6 +214,17 @@ func (o *DcimCablesListParams) SetColor(color *string) {
 	o.Color = color
 }
 
+// WithColorn adds the colorn to the dcim cables list params
+func (o *DcimCablesListParams) WithColorn(colorn *string) *DcimCablesListParams {
+	o.SetColorn(colorn)
+	return o
+}
+
+// SetColorn adds the colorN to the dcim cables list params
+func (o *DcimCablesListParams) SetColorn(colorn *string) {
+	o.Colorn = colorn
+}
+
 // WithDevice adds the device to the dcim cables list params
 func (o *DcimCablesListParams) WithDevice(device *string) *DcimCablesListParams {
 	o.SetDevice(device)
@@ -202,6 +258,61 @@ func (o *DcimCablesListParams) SetID(id *string) {
 	o.ID = id
 }
 
+// WithIDGt adds the iDGt to the dcim cables list params
+func (o *DcimCablesListParams) WithIDGt(iDGt *string) *DcimCablesListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the dcim cables list params
+func (o *DcimCablesListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the dcim cables list params
+func (o *DcimCablesListParams) WithIDGte(iDGte *string) *DcimCablesListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the dcim cables list params
+func (o *DcimCablesListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the dcim cables list params
+func (o *DcimCablesListParams) WithIDLt(iDLt *string) *DcimCablesListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the dcim cables list params
+func (o *DcimCablesListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the dcim cables list params
+func (o *DcimCablesListParams) WithIDLte(iDLte *string) *DcimCablesListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the dcim cables list params
+func (o *DcimCablesListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the dcim cables list params
+func (o *DcimCablesListParams) WithIDn(iDn *string) *DcimCablesListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the dcim cables list params
+func (o *DcimCablesListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
+}
+
 // WithLabel adds the label to the dcim cables list params
 func (o *DcimCablesListParams) WithLabel(label *string) *DcimCablesListParams {
 	o.SetLabel(label)
@@ -211,6 +322,105 @@ func (o *DcimCablesListParams) WithLabel(label *string) *DcimCablesListParams {
 // SetLabel adds the label to the dcim cables list params
 func (o *DcimCablesListParams) SetLabel(label *string) {
 	o.Label = label
+}
+
+// WithLabelIc adds the labelIc to the dcim cables list params
+func (o *DcimCablesListParams) WithLabelIc(labelIc *string) *DcimCablesListParams {
+	o.SetLabelIc(labelIc)
+	return o
+}
+
+// SetLabelIc adds the labelIc to the dcim cables list params
+func (o *DcimCablesListParams) SetLabelIc(labelIc *string) {
+	o.LabelIc = labelIc
+}
+
+// WithLabelIe adds the labelIe to the dcim cables list params
+func (o *DcimCablesListParams) WithLabelIe(labelIe *string) *DcimCablesListParams {
+	o.SetLabelIe(labelIe)
+	return o
+}
+
+// SetLabelIe adds the labelIe to the dcim cables list params
+func (o *DcimCablesListParams) SetLabelIe(labelIe *string) {
+	o.LabelIe = labelIe
+}
+
+// WithLabelIew adds the labelIew to the dcim cables list params
+func (o *DcimCablesListParams) WithLabelIew(labelIew *string) *DcimCablesListParams {
+	o.SetLabelIew(labelIew)
+	return o
+}
+
+// SetLabelIew adds the labelIew to the dcim cables list params
+func (o *DcimCablesListParams) SetLabelIew(labelIew *string) {
+	o.LabelIew = labelIew
+}
+
+// WithLabelIsw adds the labelIsw to the dcim cables list params
+func (o *DcimCablesListParams) WithLabelIsw(labelIsw *string) *DcimCablesListParams {
+	o.SetLabelIsw(labelIsw)
+	return o
+}
+
+// SetLabelIsw adds the labelIsw to the dcim cables list params
+func (o *DcimCablesListParams) SetLabelIsw(labelIsw *string) {
+	o.LabelIsw = labelIsw
+}
+
+// WithLabeln adds the labeln to the dcim cables list params
+func (o *DcimCablesListParams) WithLabeln(labeln *string) *DcimCablesListParams {
+	o.SetLabeln(labeln)
+	return o
+}
+
+// SetLabeln adds the labelN to the dcim cables list params
+func (o *DcimCablesListParams) SetLabeln(labeln *string) {
+	o.Labeln = labeln
+}
+
+// WithLabelNic adds the labelNic to the dcim cables list params
+func (o *DcimCablesListParams) WithLabelNic(labelNic *string) *DcimCablesListParams {
+	o.SetLabelNic(labelNic)
+	return o
+}
+
+// SetLabelNic adds the labelNic to the dcim cables list params
+func (o *DcimCablesListParams) SetLabelNic(labelNic *string) {
+	o.LabelNic = labelNic
+}
+
+// WithLabelNie adds the labelNie to the dcim cables list params
+func (o *DcimCablesListParams) WithLabelNie(labelNie *string) *DcimCablesListParams {
+	o.SetLabelNie(labelNie)
+	return o
+}
+
+// SetLabelNie adds the labelNie to the dcim cables list params
+func (o *DcimCablesListParams) SetLabelNie(labelNie *string) {
+	o.LabelNie = labelNie
+}
+
+// WithLabelNiew adds the labelNiew to the dcim cables list params
+func (o *DcimCablesListParams) WithLabelNiew(labelNiew *string) *DcimCablesListParams {
+	o.SetLabelNiew(labelNiew)
+	return o
+}
+
+// SetLabelNiew adds the labelNiew to the dcim cables list params
+func (o *DcimCablesListParams) SetLabelNiew(labelNiew *string) {
+	o.LabelNiew = labelNiew
+}
+
+// WithLabelNisw adds the labelNisw to the dcim cables list params
+func (o *DcimCablesListParams) WithLabelNisw(labelNisw *string) *DcimCablesListParams {
+	o.SetLabelNisw(labelNisw)
+	return o
+}
+
+// SetLabelNisw adds the labelNisw to the dcim cables list params
+func (o *DcimCablesListParams) SetLabelNisw(labelNisw *string) {
+	o.LabelNisw = labelNisw
 }
 
 // WithLength adds the length to the dcim cables list params
@@ -224,6 +434,61 @@ func (o *DcimCablesListParams) SetLength(length *string) {
 	o.Length = length
 }
 
+// WithLengthGt adds the lengthGt to the dcim cables list params
+func (o *DcimCablesListParams) WithLengthGt(lengthGt *string) *DcimCablesListParams {
+	o.SetLengthGt(lengthGt)
+	return o
+}
+
+// SetLengthGt adds the lengthGt to the dcim cables list params
+func (o *DcimCablesListParams) SetLengthGt(lengthGt *string) {
+	o.LengthGt = lengthGt
+}
+
+// WithLengthGte adds the lengthGte to the dcim cables list params
+func (o *DcimCablesListParams) WithLengthGte(lengthGte *string) *DcimCablesListParams {
+	o.SetLengthGte(lengthGte)
+	return o
+}
+
+// SetLengthGte adds the lengthGte to the dcim cables list params
+func (o *DcimCablesListParams) SetLengthGte(lengthGte *string) {
+	o.LengthGte = lengthGte
+}
+
+// WithLengthLt adds the lengthLt to the dcim cables list params
+func (o *DcimCablesListParams) WithLengthLt(lengthLt *string) *DcimCablesListParams {
+	o.SetLengthLt(lengthLt)
+	return o
+}
+
+// SetLengthLt adds the lengthLt to the dcim cables list params
+func (o *DcimCablesListParams) SetLengthLt(lengthLt *string) {
+	o.LengthLt = lengthLt
+}
+
+// WithLengthLte adds the lengthLte to the dcim cables list params
+func (o *DcimCablesListParams) WithLengthLte(lengthLte *string) *DcimCablesListParams {
+	o.SetLengthLte(lengthLte)
+	return o
+}
+
+// SetLengthLte adds the lengthLte to the dcim cables list params
+func (o *DcimCablesListParams) SetLengthLte(lengthLte *string) {
+	o.LengthLte = lengthLte
+}
+
+// WithLengthn adds the lengthn to the dcim cables list params
+func (o *DcimCablesListParams) WithLengthn(lengthn *string) *DcimCablesListParams {
+	o.SetLengthn(lengthn)
+	return o
+}
+
+// SetLengthn adds the lengthN to the dcim cables list params
+func (o *DcimCablesListParams) SetLengthn(lengthn *string) {
+	o.Lengthn = lengthn
+}
+
 // WithLengthUnit adds the lengthUnit to the dcim cables list params
 func (o *DcimCablesListParams) WithLengthUnit(lengthUnit *string) *DcimCablesListParams {
 	o.SetLengthUnit(lengthUnit)
@@ -233,6 +498,17 @@ func (o *DcimCablesListParams) WithLengthUnit(lengthUnit *string) *DcimCablesLis
 // SetLengthUnit adds the lengthUnit to the dcim cables list params
 func (o *DcimCablesListParams) SetLengthUnit(lengthUnit *string) {
 	o.LengthUnit = lengthUnit
+}
+
+// WithLengthUnitn adds the lengthUnitn to the dcim cables list params
+func (o *DcimCablesListParams) WithLengthUnitn(lengthUnitn *string) *DcimCablesListParams {
+	o.SetLengthUnitn(lengthUnitn)
+	return o
+}
+
+// SetLengthUnitn adds the lengthUnitN to the dcim cables list params
+func (o *DcimCablesListParams) SetLengthUnitn(lengthUnitn *string) {
+	o.LengthUnitn = lengthUnitn
 }
 
 // WithLimit adds the limit to the dcim cables list params
@@ -323,6 +599,17 @@ func (o *DcimCablesListParams) SetStatus(status *string) {
 	o.Status = status
 }
 
+// WithStatusn adds the statusn to the dcim cables list params
+func (o *DcimCablesListParams) WithStatusn(statusn *string) *DcimCablesListParams {
+	o.SetStatusn(statusn)
+	return o
+}
+
+// SetStatusn adds the statusN to the dcim cables list params
+func (o *DcimCablesListParams) SetStatusn(statusn *string) {
+	o.Statusn = statusn
+}
+
 // WithTenant adds the tenant to the dcim cables list params
 func (o *DcimCablesListParams) WithTenant(tenant *string) *DcimCablesListParams {
 	o.SetTenant(tenant)
@@ -356,6 +643,17 @@ func (o *DcimCablesListParams) SetType(typeVar *string) {
 	o.Type = typeVar
 }
 
+// WithTypen adds the typen to the dcim cables list params
+func (o *DcimCablesListParams) WithTypen(typen *string) *DcimCablesListParams {
+	o.SetTypen(typen)
+	return o
+}
+
+// SetTypen adds the typeN to the dcim cables list params
+func (o *DcimCablesListParams) SetTypen(typen *string) {
+	o.Typen = typen
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -374,6 +672,22 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		qColor := qrColor
 		if qColor != "" {
 			if err := r.SetQueryParam("color", qColor); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Colorn != nil {
+
+		// query param color__n
+		var qrColorn string
+		if o.Colorn != nil {
+			qrColorn = *o.Colorn
+		}
+		qColorn := qrColorn
+		if qColorn != "" {
+			if err := r.SetQueryParam("color__n", qColorn); err != nil {
 				return err
 			}
 		}
@@ -428,6 +742,86 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 
 	}
 
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Label != nil {
 
 		// query param label
@@ -438,6 +832,150 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		qLabel := qrLabel
 		if qLabel != "" {
 			if err := r.SetQueryParam("label", qLabel); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelIc != nil {
+
+		// query param label__ic
+		var qrLabelIc string
+		if o.LabelIc != nil {
+			qrLabelIc = *o.LabelIc
+		}
+		qLabelIc := qrLabelIc
+		if qLabelIc != "" {
+			if err := r.SetQueryParam("label__ic", qLabelIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelIe != nil {
+
+		// query param label__ie
+		var qrLabelIe string
+		if o.LabelIe != nil {
+			qrLabelIe = *o.LabelIe
+		}
+		qLabelIe := qrLabelIe
+		if qLabelIe != "" {
+			if err := r.SetQueryParam("label__ie", qLabelIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelIew != nil {
+
+		// query param label__iew
+		var qrLabelIew string
+		if o.LabelIew != nil {
+			qrLabelIew = *o.LabelIew
+		}
+		qLabelIew := qrLabelIew
+		if qLabelIew != "" {
+			if err := r.SetQueryParam("label__iew", qLabelIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelIsw != nil {
+
+		// query param label__isw
+		var qrLabelIsw string
+		if o.LabelIsw != nil {
+			qrLabelIsw = *o.LabelIsw
+		}
+		qLabelIsw := qrLabelIsw
+		if qLabelIsw != "" {
+			if err := r.SetQueryParam("label__isw", qLabelIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Labeln != nil {
+
+		// query param label__n
+		var qrLabeln string
+		if o.Labeln != nil {
+			qrLabeln = *o.Labeln
+		}
+		qLabeln := qrLabeln
+		if qLabeln != "" {
+			if err := r.SetQueryParam("label__n", qLabeln); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelNic != nil {
+
+		// query param label__nic
+		var qrLabelNic string
+		if o.LabelNic != nil {
+			qrLabelNic = *o.LabelNic
+		}
+		qLabelNic := qrLabelNic
+		if qLabelNic != "" {
+			if err := r.SetQueryParam("label__nic", qLabelNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelNie != nil {
+
+		// query param label__nie
+		var qrLabelNie string
+		if o.LabelNie != nil {
+			qrLabelNie = *o.LabelNie
+		}
+		qLabelNie := qrLabelNie
+		if qLabelNie != "" {
+			if err := r.SetQueryParam("label__nie", qLabelNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelNiew != nil {
+
+		// query param label__niew
+		var qrLabelNiew string
+		if o.LabelNiew != nil {
+			qrLabelNiew = *o.LabelNiew
+		}
+		qLabelNiew := qrLabelNiew
+		if qLabelNiew != "" {
+			if err := r.SetQueryParam("label__niew", qLabelNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelNisw != nil {
+
+		// query param label__nisw
+		var qrLabelNisw string
+		if o.LabelNisw != nil {
+			qrLabelNisw = *o.LabelNisw
+		}
+		qLabelNisw := qrLabelNisw
+		if qLabelNisw != "" {
+			if err := r.SetQueryParam("label__nisw", qLabelNisw); err != nil {
 				return err
 			}
 		}
@@ -460,6 +998,86 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 
 	}
 
+	if o.LengthGt != nil {
+
+		// query param length__gt
+		var qrLengthGt string
+		if o.LengthGt != nil {
+			qrLengthGt = *o.LengthGt
+		}
+		qLengthGt := qrLengthGt
+		if qLengthGt != "" {
+			if err := r.SetQueryParam("length__gt", qLengthGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LengthGte != nil {
+
+		// query param length__gte
+		var qrLengthGte string
+		if o.LengthGte != nil {
+			qrLengthGte = *o.LengthGte
+		}
+		qLengthGte := qrLengthGte
+		if qLengthGte != "" {
+			if err := r.SetQueryParam("length__gte", qLengthGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LengthLt != nil {
+
+		// query param length__lt
+		var qrLengthLt string
+		if o.LengthLt != nil {
+			qrLengthLt = *o.LengthLt
+		}
+		qLengthLt := qrLengthLt
+		if qLengthLt != "" {
+			if err := r.SetQueryParam("length__lt", qLengthLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LengthLte != nil {
+
+		// query param length__lte
+		var qrLengthLte string
+		if o.LengthLte != nil {
+			qrLengthLte = *o.LengthLte
+		}
+		qLengthLte := qrLengthLte
+		if qLengthLte != "" {
+			if err := r.SetQueryParam("length__lte", qLengthLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Lengthn != nil {
+
+		// query param length__n
+		var qrLengthn string
+		if o.Lengthn != nil {
+			qrLengthn = *o.Lengthn
+		}
+		qLengthn := qrLengthn
+		if qLengthn != "" {
+			if err := r.SetQueryParam("length__n", qLengthn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.LengthUnit != nil {
 
 		// query param length_unit
@@ -470,6 +1088,22 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		qLengthUnit := qrLengthUnit
 		if qLengthUnit != "" {
 			if err := r.SetQueryParam("length_unit", qLengthUnit); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LengthUnitn != nil {
+
+		// query param length_unit__n
+		var qrLengthUnitn string
+		if o.LengthUnitn != nil {
+			qrLengthUnitn = *o.LengthUnitn
+		}
+		qLengthUnitn := qrLengthUnitn
+		if qLengthUnitn != "" {
+			if err := r.SetQueryParam("length_unit__n", qLengthUnitn); err != nil {
 				return err
 			}
 		}
@@ -604,6 +1238,22 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 
 	}
 
+	if o.Statusn != nil {
+
+		// query param status__n
+		var qrStatusn string
+		if o.Statusn != nil {
+			qrStatusn = *o.Statusn
+		}
+		qStatusn := qrStatusn
+		if qStatusn != "" {
+			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tenant != nil {
 
 		// query param tenant
@@ -646,6 +1296,22 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		qType := qrType
 		if qType != "" {
 			if err := r.SetQueryParam("type", qType); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Typen != nil {
+
+		// query param type__n
+		var qrTypen string
+		if o.Typen != nil {
+			qrTypen = *o.Typen
+		}
+		qTypen := qrTypen
+		if qTypen != "" {
+			if err := r.SetQueryParam("type__n", qTypen); err != nil {
 				return err
 			}
 		}
