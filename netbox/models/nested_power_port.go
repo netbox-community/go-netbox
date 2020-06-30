@@ -226,7 +226,7 @@ const (
 
 // prop value enum
 func (m *NestedPowerPortConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, nestedPowerPortConnectionStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, nestedPowerPortConnectionStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -260,7 +260,7 @@ func init() {
 
 // prop value enum
 func (m *NestedPowerPortConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, nestedPowerPortConnectionStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, nestedPowerPortConnectionStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

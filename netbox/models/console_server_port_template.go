@@ -235,7 +235,7 @@ const (
 
 // prop value enum
 func (m *ConsoleServerPortTemplateType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, consoleServerPortTemplateTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, consoleServerPortTemplateTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -311,7 +311,7 @@ const (
 
 // prop value enum
 func (m *ConsoleServerPortTemplateType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, consoleServerPortTemplateTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, consoleServerPortTemplateTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

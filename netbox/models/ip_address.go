@@ -464,7 +464,7 @@ const (
 
 // prop value enum
 func (m *IPAddressFamily) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressFamilyTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressFamilyTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -498,7 +498,7 @@ func init() {
 
 // prop value enum
 func (m *IPAddressFamily) validateValueEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, ipAddressFamilyTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressFamilyTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -611,7 +611,7 @@ const (
 
 // prop value enum
 func (m *IPAddressRole) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressRoleTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressRoleTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -672,7 +672,7 @@ const (
 
 // prop value enum
 func (m *IPAddressRole) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressRoleTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressRoleTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -773,7 +773,7 @@ const (
 
 // prop value enum
 func (m *IPAddressStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -822,7 +822,7 @@ const (
 
 // prop value enum
 func (m *IPAddressStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

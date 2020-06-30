@@ -470,7 +470,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedPhase) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedPhaseTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedPhaseTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -513,7 +513,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedPhase) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedPhaseTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedPhaseTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -627,7 +627,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -676,7 +676,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -784,7 +784,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedSupply) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedSupplyTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedSupplyTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -827,7 +827,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedSupply) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedSupplyTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedSupplyTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -935,7 +935,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -978,7 +978,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

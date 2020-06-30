@@ -305,7 +305,7 @@ const (
 
 // prop value enum
 func (m *WritableDeviceType) validateSubdeviceRoleEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableDeviceTypeTypeSubdeviceRolePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableDeviceTypeTypeSubdeviceRolePropEnum, true); err != nil {
 		return err
 	}
 	return nil

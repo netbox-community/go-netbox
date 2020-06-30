@@ -197,7 +197,7 @@ func init() {
 
 // prop value enum
 func (m *WritableDeviceInterface) validateConnectionStatusEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, writableDeviceInterfaceTypeConnectionStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableDeviceInterfaceTypeConnectionStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -265,7 +265,7 @@ const (
 
 // prop value enum
 func (m *WritableDeviceInterface) validateModeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableDeviceInterfaceTypeModePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableDeviceInterfaceTypeModePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -582,7 +582,7 @@ const (
 
 // prop value enum
 func (m *WritableDeviceInterface) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableDeviceInterfaceTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableDeviceInterfaceTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil

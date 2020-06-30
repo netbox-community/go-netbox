@@ -336,7 +336,7 @@ const (
 
 // prop value enum
 func (m *RearPortType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rearPortTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rearPortTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -415,7 +415,7 @@ const (
 
 // prop value enum
 func (m *RearPortType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rearPortTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rearPortTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

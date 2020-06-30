@@ -383,7 +383,7 @@ const (
 
 // prop value enum
 func (m *ServiceProtocol) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, serviceProtocolTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, serviceProtocolTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -426,7 +426,7 @@ const (
 
 // prop value enum
 func (m *ServiceProtocol) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, serviceProtocolTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, serviceProtocolTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

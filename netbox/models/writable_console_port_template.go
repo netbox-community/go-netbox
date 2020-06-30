@@ -157,7 +157,7 @@ const (
 
 // prop value enum
 func (m *WritableConsolePortTemplate) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableConsolePortTemplateTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableConsolePortTemplateTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil

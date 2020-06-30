@@ -263,7 +263,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerFeed) validatePhaseEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerFeedTypePhasePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerFeedTypePhasePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -321,7 +321,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerFeed) validateStatusEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerFeedTypeStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerFeedTypeStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -364,7 +364,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerFeed) validateSupplyEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerFeedTypeSupplyPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerFeedTypeSupplyPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -424,7 +424,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerFeed) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerFeedTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerFeedTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil

@@ -281,7 +281,7 @@ const (
 
 // prop value enum
 func (m *WritableCircuit) validateStatusEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableCircuitTypeStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableCircuitTypeStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil

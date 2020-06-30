@@ -310,7 +310,7 @@ const (
 
 // prop value enum
 func (m *ConsoleServerPortConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, consoleServerPortConnectionStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, consoleServerPortConnectionStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -344,7 +344,7 @@ func init() {
 
 // prop value enum
 func (m *ConsoleServerPortConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, consoleServerPortConnectionStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, consoleServerPortConnectionStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -472,7 +472,7 @@ const (
 
 // prop value enum
 func (m *ConsoleServerPortType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, consoleServerPortTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, consoleServerPortTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -548,7 +548,7 @@ const (
 
 // prop value enum
 func (m *ConsoleServerPortType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, consoleServerPortTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, consoleServerPortTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

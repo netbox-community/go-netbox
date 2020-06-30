@@ -362,7 +362,7 @@ const (
 
 // prop value enum
 func (m *FrontPortType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, frontPortTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, frontPortTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -441,7 +441,7 @@ const (
 
 // prop value enum
 func (m *FrontPortType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, frontPortTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, frontPortTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

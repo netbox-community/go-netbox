@@ -704,7 +704,7 @@ const (
 
 // prop value enum
 func (m *DeviceFace) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceFaceTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceFaceTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -747,7 +747,7 @@ const (
 
 // prop value enum
 func (m *DeviceFace) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceFaceTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceFaceTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -857,7 +857,7 @@ const (
 
 // prop value enum
 func (m *DeviceStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -915,7 +915,7 @@ const (
 
 // prop value enum
 func (m *DeviceStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

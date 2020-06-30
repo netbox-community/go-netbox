@@ -8057,6 +8057,33 @@
         }
       ]
     },
+    "/dcim/front-ports/{id}/trace/": {
+      "get": {
+        "operationId": "dcim_front-ports_trace",
+        "description": "Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FrontPort"
+            }
+          }
+        },
+        "tags": [
+          "dcim"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this front port.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
     "/dcim/interface-connections/": {
       "get": {
         "operationId": "dcim_interface-connections_list",
@@ -16977,6 +17004,33 @@
         }
       ]
     },
+    "/dcim/rear-ports/{id}/trace/": {
+      "get": {
+        "operationId": "dcim_rear-ports_trace",
+        "description": "Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RearPort"
+            }
+          }
+        },
+        "tags": [
+          "dcim"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this rear port.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
     "/dcim/regions/": {
       "get": {
         "operationId": "dcim_regions_list",
@@ -22540,12 +22594,12 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/WritablePrefix"
+              "$ref": "#/definitions/WritableAvailableIP"
             }
           }
         ],
         "responses": {
-          "200": {
+          "201": {
             "description": "",
             "schema": {
               "type": "array",
@@ -22605,7 +22659,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "201": {
             "description": "",
             "schema": {
               "type": "array",
@@ -31392,7 +31446,8 @@
           "title": "Custom fields",
           "type": "object",
           "default": {
-            "test": null
+            "boot_state": null,
+            "device_label": null
           }
         },
         "created": {
@@ -32172,8 +32227,7 @@
     "DeviceRole": {
       "required": [
         "name",
-        "slug",
-        "color"
+        "slug"
       ],
       "type": "object",
       "properties": {
@@ -32629,7 +32683,8 @@
           "title": "Custom fields",
           "type": "object",
           "default": {
-            "test": null
+            "boot_state": null,
+            "device_label": null
           }
         },
         "config_context": {
@@ -32808,7 +32863,8 @@
           "title": "Custom fields",
           "type": "object",
           "default": {
-            "test": null
+            "boot_state": null,
+            "device_label": null
           }
         },
         "config_context": {
@@ -34453,6 +34509,10 @@
                 "NEMA L6-20P",
                 "NEMA L6-30P",
                 "NEMA L6-50P",
+                "NEMA L14-20P",
+                "NEMA L14-30P",
+                "NEMA L21-20P",
+                "NEMA L21-30P",
                 "CS6361C",
                 "CS6365C",
                 "CS8165C",
@@ -34508,6 +34568,10 @@
                 "nema-l6-20p",
                 "nema-l6-30p",
                 "nema-l6-50p",
+                "nema-l14-20p",
+                "nema-l14-30p",
+                "nema-l21-20p",
+                "nema-l21-30p",
                 "cs6361c",
                 "cs6365c",
                 "cs8165c",
@@ -35027,6 +35091,10 @@
                 "NEMA L6-20R",
                 "NEMA L6-30R",
                 "NEMA L6-50R",
+                "NEMA L14-20R",
+                "NEMA L14-30R",
+                "NEMA L21-20R",
+                "NEMA L21-30R",
                 "CS6360C",
                 "CS6364C",
                 "CS8164C",
@@ -35082,6 +35150,10 @@
                 "nema-l6-20r",
                 "nema-l6-30r",
                 "nema-l6-50r",
+                "nema-l14-20r",
+                "nema-l14-30r",
+                "nema-l21-20r",
+                "nema-l21-30r",
                 "CS6360C",
                 "CS6364C",
                 "CS8164C",
@@ -35193,6 +35265,10 @@
             "nema-l6-20r",
             "nema-l6-30r",
             "nema-l6-50r",
+            "nema-l14-20r",
+            "nema-l14-30r",
+            "nema-l21-20r",
+            "nema-l21-30r",
             "CS6360C",
             "CS6364C",
             "CS8164C",
@@ -35354,6 +35430,10 @@
                 "NEMA L6-20R",
                 "NEMA L6-30R",
                 "NEMA L6-50R",
+                "NEMA L14-20R",
+                "NEMA L14-30R",
+                "NEMA L21-20R",
+                "NEMA L21-30R",
                 "CS6360C",
                 "CS6364C",
                 "CS8164C",
@@ -35409,6 +35489,10 @@
                 "nema-l6-20r",
                 "nema-l6-30r",
                 "nema-l6-50r",
+                "nema-l14-20r",
+                "nema-l14-30r",
+                "nema-l21-20r",
+                "nema-l21-30r",
                 "CS6360C",
                 "CS6364C",
                 "CS8164C",
@@ -35576,6 +35660,10 @@
             "nema-l6-20r",
             "nema-l6-30r",
             "nema-l6-50r",
+            "nema-l14-20r",
+            "nema-l14-30r",
+            "nema-l21-20r",
+            "nema-l21-30r",
             "CS6360C",
             "CS6364C",
             "CS8164C",
@@ -35819,6 +35907,10 @@
                 "NEMA L6-20P",
                 "NEMA L6-30P",
                 "NEMA L6-50P",
+                "NEMA L14-20P",
+                "NEMA L14-30P",
+                "NEMA L21-20P",
+                "NEMA L21-30P",
                 "CS6361C",
                 "CS6365C",
                 "CS8165C",
@@ -35874,6 +35966,10 @@
                 "nema-l6-20p",
                 "nema-l6-30p",
                 "nema-l6-50p",
+                "nema-l14-20p",
+                "nema-l14-30p",
+                "nema-l21-20p",
+                "nema-l21-30p",
                 "cs6361c",
                 "cs6365c",
                 "cs8165c",
@@ -35972,6 +36068,10 @@
             "nema-l6-20p",
             "nema-l6-30p",
             "nema-l6-50p",
+            "nema-l14-20p",
+            "nema-l14-30p",
+            "nema-l21-20p",
+            "nema-l21-30p",
             "cs6361c",
             "cs6365c",
             "cs8165c",
@@ -36069,6 +36169,10 @@
             "nema-l6-20p",
             "nema-l6-30p",
             "nema-l6-50p",
+            "nema-l14-20p",
+            "nema-l14-30p",
+            "nema-l21-20p",
+            "nema-l21-30p",
             "cs6361c",
             "cs6365c",
             "cs8165c",
@@ -36358,8 +36462,7 @@
     "RackRole": {
       "required": [
         "name",
-        "slug",
-        "color"
+        "slug"
       ],
       "type": "object",
       "properties": {
@@ -36650,7 +36753,7 @@
           "title": "Custom fields",
           "type": "object",
           "default": {
-            "test2": null
+            "rack_label": null
           }
         },
         "created": {
@@ -36824,7 +36927,7 @@
           "title": "Custom fields",
           "type": "object",
           "default": {
-            "test2": null
+            "rack_label": null
           }
         },
         "created": {
@@ -39209,6 +39312,22 @@
         },
         "vrf": {
           "$ref": "#/definitions/NestedVRF"
+        }
+      }
+    },
+    "WritableAvailableIP": {
+      "type": "object",
+      "properties": {
+        "family": {
+          "title": "Family",
+          "type": "integer",
+          "readOnly": true
+        },
+        "address": {
+          "title": "Address",
+          "type": "string",
+          "readOnly": true,
+          "minLength": 1
         }
       }
     },

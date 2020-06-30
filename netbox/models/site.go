@@ -555,7 +555,7 @@ const (
 
 // prop value enum
 func (m *SiteStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, siteStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, siteStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -601,7 +601,7 @@ const (
 
 // prop value enum
 func (m *SiteStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, siteStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, siteStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

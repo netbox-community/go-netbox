@@ -33,11 +33,10 @@ import (
 type DeviceRole struct {
 
 	// Color
-	// Required: true
 	// Max Length: 6
 	// Min Length: 1
 	// Pattern: ^[0-9a-f]{6}$
-	Color *string `json:"color"`
+	Color string `json:"color,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -102,19 +101,19 @@ func (m *DeviceRole) Validate(formats strfmt.Registry) error {
 
 func (m *DeviceRole) validateColor(formats strfmt.Registry) error {
 
-	if err := validate.Required("color", "body", m.Color); err != nil {
+	if swag.IsZero(m.Color) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("color", "body", string(m.Color), 1); err != nil {
 		return err
 	}
 
-	if err := validate.MinLength("color", "body", string(*m.Color), 1); err != nil {
+	if err := validate.MaxLength("color", "body", string(m.Color), 6); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("color", "body", string(*m.Color), 6); err != nil {
-		return err
-	}
-
-	if err := validate.Pattern("color", "body", string(*m.Color), `^[0-9a-f]{6}$`); err != nil {
+	if err := validate.Pattern("color", "body", string(m.Color), `^[0-9a-f]{6}$`); err != nil {
 		return err
 	}
 

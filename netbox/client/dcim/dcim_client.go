@@ -196,6 +196,8 @@ type ClientService interface {
 
 	DcimFrontPortsRead(params *DcimFrontPortsReadParams, authInfo runtime.ClientAuthInfoWriter) (*DcimFrontPortsReadOK, error)
 
+	DcimFrontPortsTrace(params *DcimFrontPortsTraceParams, authInfo runtime.ClientAuthInfoWriter) (*DcimFrontPortsTraceOK, error)
+
 	DcimFrontPortsUpdate(params *DcimFrontPortsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*DcimFrontPortsUpdateOK, error)
 
 	DcimInterfaceConnectionsList(params *DcimInterfaceConnectionsListParams, authInfo runtime.ClientAuthInfoWriter) (*DcimInterfaceConnectionsListOK, error)
@@ -413,6 +415,8 @@ type ClientService interface {
 	DcimRearPortsPartialUpdate(params *DcimRearPortsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*DcimRearPortsPartialUpdateOK, error)
 
 	DcimRearPortsRead(params *DcimRearPortsReadParams, authInfo runtime.ClientAuthInfoWriter) (*DcimRearPortsReadOK, error)
+
+	DcimRearPortsTrace(params *DcimRearPortsTraceParams, authInfo runtime.ClientAuthInfoWriter) (*DcimRearPortsTraceOK, error)
 
 	DcimRearPortsUpdate(params *DcimRearPortsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*DcimRearPortsUpdateOK, error)
 
@@ -3154,6 +3158,41 @@ func (a *Client) DcimFrontPortsRead(params *DcimFrontPortsReadParams, authInfo r
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for dcim_front-ports_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  DcimFrontPortsTrace Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).
+*/
+func (a *Client) DcimFrontPortsTrace(params *DcimFrontPortsTraceParams, authInfo runtime.ClientAuthInfoWriter) (*DcimFrontPortsTraceOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimFrontPortsTraceParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "dcim_front-ports_trace",
+		Method:             "GET",
+		PathPattern:        "/dcim/front-ports/{id}/trace/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimFrontPortsTraceReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimFrontPortsTraceOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for dcim_front-ports_trace: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -6969,6 +7008,41 @@ func (a *Client) DcimRearPortsRead(params *DcimRearPortsReadParams, authInfo run
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for dcim_rear-ports_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  DcimRearPortsTrace Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).
+*/
+func (a *Client) DcimRearPortsTrace(params *DcimRearPortsTraceParams, authInfo runtime.ClientAuthInfoWriter) (*DcimRearPortsTraceOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimRearPortsTraceParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "dcim_rear-ports_trace",
+		Method:             "GET",
+		PathPattern:        "/dcim/rear-ports/{id}/trace/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimRearPortsTraceReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimRearPortsTraceOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for dcim_rear-ports_trace: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

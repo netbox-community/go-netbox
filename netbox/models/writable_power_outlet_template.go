@@ -58,7 +58,7 @@ type WritablePowerOutletTemplate struct {
 	PowerPort *int64 `json:"power_port,omitempty"`
 
 	// Type
-	// Enum: [iec-60320-c5 iec-60320-c7 iec-60320-c13 iec-60320-c15 iec-60320-c19 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-5-15r nema-5-20r nema-5-30r nema-5-50r nema-6-15r nema-6-20r nema-6-30r nema-6-50r nema-l5-15r nema-l5-20r nema-l5-30r nema-l5-50r nema-l6-20r nema-l6-30r nema-l6-50r CS6360C CS6364C CS8164C CS8264C CS8364C CS8464C ita-e ita-f ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o hdot-cx]
+	// Enum: [iec-60320-c5 iec-60320-c7 iec-60320-c13 iec-60320-c15 iec-60320-c19 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-5-15r nema-5-20r nema-5-30r nema-5-50r nema-6-15r nema-6-20r nema-6-30r nema-6-50r nema-l5-15r nema-l5-20r nema-l5-30r nema-l5-50r nema-l6-20r nema-l6-30r nema-l6-50r nema-l14-20r nema-l14-30r nema-l21-20r nema-l21-30r CS6360C CS6364C CS8164C CS8264C CS8364C CS8464C ita-e ita-f ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o hdot-cx]
 	Type string `json:"type,omitempty"`
 }
 
@@ -123,7 +123,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerOutletTemplate) validateFeedLegEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerOutletTemplateTypeFeedLegPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerOutletTemplateTypeFeedLegPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -164,7 +164,7 @@ var writablePowerOutletTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["iec-60320-c5","iec-60320-c7","iec-60320-c13","iec-60320-c15","iec-60320-c19","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-5-15r","nema-5-20r","nema-5-30r","nema-5-50r","nema-6-15r","nema-6-20r","nema-6-30r","nema-6-50r","nema-l5-15r","nema-l5-20r","nema-l5-30r","nema-l5-50r","nema-l6-20r","nema-l6-30r","nema-l6-50r","CS6360C","CS6364C","CS8164C","CS8264C","CS8364C","CS8464C","ita-e","ita-f","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o","hdot-cx"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["iec-60320-c5","iec-60320-c7","iec-60320-c13","iec-60320-c15","iec-60320-c19","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-5-15r","nema-5-20r","nema-5-30r","nema-5-50r","nema-6-15r","nema-6-20r","nema-6-30r","nema-6-50r","nema-l5-15r","nema-l5-20r","nema-l5-30r","nema-l5-50r","nema-l6-20r","nema-l6-30r","nema-l6-50r","nema-l14-20r","nema-l14-30r","nema-l21-20r","nema-l21-30r","CS6360C","CS6364C","CS8164C","CS8264C","CS8364C","CS8464C","ita-e","ita-f","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o","hdot-cx"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -270,6 +270,18 @@ const (
 	// WritablePowerOutletTemplateTypeNemaL650r captures enum value "nema-l6-50r"
 	WritablePowerOutletTemplateTypeNemaL650r string = "nema-l6-50r"
 
+	// WritablePowerOutletTemplateTypeNemaL1420r captures enum value "nema-l14-20r"
+	WritablePowerOutletTemplateTypeNemaL1420r string = "nema-l14-20r"
+
+	// WritablePowerOutletTemplateTypeNemaL1430r captures enum value "nema-l14-30r"
+	WritablePowerOutletTemplateTypeNemaL1430r string = "nema-l14-30r"
+
+	// WritablePowerOutletTemplateTypeNemaL2120r captures enum value "nema-l21-20r"
+	WritablePowerOutletTemplateTypeNemaL2120r string = "nema-l21-20r"
+
+	// WritablePowerOutletTemplateTypeNemaL2130r captures enum value "nema-l21-30r"
+	WritablePowerOutletTemplateTypeNemaL2130r string = "nema-l21-30r"
+
 	// WritablePowerOutletTemplateTypeCS6360C captures enum value "CS6360C"
 	WritablePowerOutletTemplateTypeCS6360C string = "CS6360C"
 
@@ -327,7 +339,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerOutletTemplate) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerOutletTemplateTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerOutletTemplateTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil

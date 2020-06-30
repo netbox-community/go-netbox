@@ -66,11 +66,11 @@ type ClientService interface {
 
 	IpamIPAddressesUpdate(params *IpamIPAddressesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*IpamIPAddressesUpdateOK, error)
 
-	IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailableIpsCreateOK, error)
+	IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailableIpsCreateCreated, error)
 
 	IpamPrefixesAvailableIpsRead(params *IpamPrefixesAvailableIpsReadParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailableIpsReadOK, error)
 
-	IpamPrefixesAvailablePrefixesCreate(params *IpamPrefixesAvailablePrefixesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailablePrefixesCreateOK, error)
+	IpamPrefixesAvailablePrefixesCreate(params *IpamPrefixesAvailablePrefixesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailablePrefixesCreateCreated, error)
 
 	IpamPrefixesAvailablePrefixesRead(params *IpamPrefixesAvailablePrefixesReadParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailablePrefixesReadOK, error)
 
@@ -589,7 +589,7 @@ however results will not be paginated.
 The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
 invoked in parallel, which results in a race condition where multiple insertions can occur.
 */
-func (a *Client) IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailableIpsCreateOK, error) {
+func (a *Client) IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailableIpsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewIpamPrefixesAvailableIpsCreateParams()
@@ -611,7 +611,7 @@ func (a *Client) IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIps
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*IpamPrefixesAvailableIpsCreateOK)
+	success, ok := result.(*IpamPrefixesAvailableIpsCreateCreated)
 	if ok {
 		return success, nil
 	}
@@ -667,7 +667,7 @@ func (a *Client) IpamPrefixesAvailableIpsRead(params *IpamPrefixesAvailableIpsRe
   The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
 invoked in parallel, which results in a race condition where multiple insertions can occur.
 */
-func (a *Client) IpamPrefixesAvailablePrefixesCreate(params *IpamPrefixesAvailablePrefixesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailablePrefixesCreateOK, error) {
+func (a *Client) IpamPrefixesAvailablePrefixesCreate(params *IpamPrefixesAvailablePrefixesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*IpamPrefixesAvailablePrefixesCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewIpamPrefixesAvailablePrefixesCreateParams()
@@ -689,7 +689,7 @@ func (a *Client) IpamPrefixesAvailablePrefixesCreate(params *IpamPrefixesAvailab
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*IpamPrefixesAvailablePrefixesCreateOK)
+	success, ok := result.(*IpamPrefixesAvailablePrefixesCreateCreated)
 	if ok {
 		return success, nil
 	}

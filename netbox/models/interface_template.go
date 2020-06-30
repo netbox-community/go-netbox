@@ -416,7 +416,7 @@ const (
 
 // prop value enum
 func (m *InterfaceTemplateType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, interfaceTemplateTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, interfaceTemplateTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -669,7 +669,7 @@ const (
 
 // prop value enum
 func (m *InterfaceTemplateType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, interfaceTemplateTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, interfaceTemplateTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

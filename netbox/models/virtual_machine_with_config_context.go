@@ -549,7 +549,7 @@ const (
 
 // prop value enum
 func (m *VirtualMachineWithConfigContextStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, virtualMachineWithConfigContextStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, virtualMachineWithConfigContextStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -604,7 +604,7 @@ const (
 
 // prop value enum
 func (m *VirtualMachineWithConfigContextStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, virtualMachineWithConfigContextStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, virtualMachineWithConfigContextStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

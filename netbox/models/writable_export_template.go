@@ -215,7 +215,7 @@ const (
 
 // prop value enum
 func (m *WritableExportTemplate) validateTemplateLanguageEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableExportTemplateTypeTemplateLanguagePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableExportTemplateTypeTemplateLanguagePropEnum, true); err != nil {
 		return err
 	}
 	return nil

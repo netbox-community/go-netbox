@@ -285,7 +285,7 @@ const (
 
 // prop value enum
 func (m *WritableVirtualMachineWithConfigContext) validateStatusEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableVirtualMachineWithConfigContextTypeStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableVirtualMachineWithConfigContextTypeStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil

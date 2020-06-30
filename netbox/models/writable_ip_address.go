@@ -268,7 +268,7 @@ const (
 
 // prop value enum
 func (m *WritableIPAddress) validateRoleEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableIpAddressTypeRolePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableIpAddressTypeRolePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -317,7 +317,7 @@ const (
 
 // prop value enum
 func (m *WritableIPAddress) validateStatusEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableIpAddressTypeStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableIpAddressTypeStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil

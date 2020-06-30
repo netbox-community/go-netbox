@@ -226,7 +226,7 @@ const (
 
 // prop value enum
 func (m *NestedInterfaceConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, nestedInterfaceConnectionStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, nestedInterfaceConnectionStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -260,7 +260,7 @@ func init() {
 
 // prop value enum
 func (m *NestedInterfaceConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, nestedInterfaceConnectionStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, nestedInterfaceConnectionStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

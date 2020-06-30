@@ -25,22 +25,21 @@ import (
 	"io"
 
 	"github.com/go-openapi/runtime"
+	"github.com/go-openapi/strfmt"
 
-	strfmt "github.com/go-openapi/strfmt"
-
-	models "github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// DcimRacksUnitsReader is a Reader for the DcimRacksUnits structure.
-type DcimRacksUnitsReader struct {
+// DcimFrontPortsTraceReader is a Reader for the DcimFrontPortsTrace structure.
+type DcimFrontPortsTraceReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *DcimRacksUnitsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *DcimFrontPortsTraceReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewDcimRacksUnitsOK()
+		result := NewDcimFrontPortsTraceOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -51,30 +50,30 @@ func (o *DcimRacksUnitsReader) ReadResponse(response runtime.ClientResponse, con
 	}
 }
 
-// NewDcimRacksUnitsOK creates a DcimRacksUnitsOK with default headers values
-func NewDcimRacksUnitsOK() *DcimRacksUnitsOK {
-	return &DcimRacksUnitsOK{}
+// NewDcimFrontPortsTraceOK creates a DcimFrontPortsTraceOK with default headers values
+func NewDcimFrontPortsTraceOK() *DcimFrontPortsTraceOK {
+	return &DcimFrontPortsTraceOK{}
 }
 
-/*DcimRacksUnitsOK handles this case with default header values.
+/*DcimFrontPortsTraceOK handles this case with default header values.
 
-DcimRacksUnitsOK dcim racks units o k
+DcimFrontPortsTraceOK dcim front ports trace o k
 */
-type DcimRacksUnitsOK struct {
-	Payload *models.Rack
+type DcimFrontPortsTraceOK struct {
+	Payload *models.FrontPort
 }
 
-func (o *DcimRacksUnitsOK) Error() string {
-	return fmt.Sprintf("[GET /dcim/racks/{id}/units/][%d] dcimRacksUnitsOK  %+v", 200, o.Payload)
+func (o *DcimFrontPortsTraceOK) Error() string {
+	return fmt.Sprintf("[GET /dcim/front-ports/{id}/trace/][%d] dcimFrontPortsTraceOK  %+v", 200, o.Payload)
 }
 
-func (o *DcimRacksUnitsOK) GetPayload() *models.Rack {
+func (o *DcimFrontPortsTraceOK) GetPayload() *models.FrontPort {
 	return o.Payload
 }
 
-func (o *DcimRacksUnitsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *DcimFrontPortsTraceOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.Rack)
+	o.Payload = new(models.FrontPort)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

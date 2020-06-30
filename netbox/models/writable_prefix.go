@@ -209,7 +209,7 @@ const (
 
 // prop value enum
 func (m *WritablePrefix) validateStatusEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePrefixTypeStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePrefixTypeStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil

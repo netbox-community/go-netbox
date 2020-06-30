@@ -160,7 +160,7 @@ const (
 
 // prop value enum
 func (m *WritableVirtualMachineInterface) validateModeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableVirtualMachineInterfaceTypeModePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableVirtualMachineInterfaceTypeModePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -477,7 +477,7 @@ const (
 
 // prop value enum
 func (m *WritableVirtualMachineInterface) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableVirtualMachineInterfaceTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableVirtualMachineInterfaceTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil

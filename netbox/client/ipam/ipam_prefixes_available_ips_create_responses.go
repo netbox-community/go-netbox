@@ -38,8 +38,8 @@ type IpamPrefixesAvailableIpsCreateReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *IpamPrefixesAvailableIpsCreateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-	case 200:
-		result := NewIpamPrefixesAvailableIpsCreateOK()
+	case 201:
+		result := NewIpamPrefixesAvailableIpsCreateCreated()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -50,28 +50,28 @@ func (o *IpamPrefixesAvailableIpsCreateReader) ReadResponse(response runtime.Cli
 	}
 }
 
-// NewIpamPrefixesAvailableIpsCreateOK creates a IpamPrefixesAvailableIpsCreateOK with default headers values
-func NewIpamPrefixesAvailableIpsCreateOK() *IpamPrefixesAvailableIpsCreateOK {
-	return &IpamPrefixesAvailableIpsCreateOK{}
+// NewIpamPrefixesAvailableIpsCreateCreated creates a IpamPrefixesAvailableIpsCreateCreated with default headers values
+func NewIpamPrefixesAvailableIpsCreateCreated() *IpamPrefixesAvailableIpsCreateCreated {
+	return &IpamPrefixesAvailableIpsCreateCreated{}
 }
 
-/*IpamPrefixesAvailableIpsCreateOK handles this case with default header values.
+/*IpamPrefixesAvailableIpsCreateCreated handles this case with default header values.
 
-IpamPrefixesAvailableIpsCreateOK ipam prefixes available ips create o k
+IpamPrefixesAvailableIpsCreateCreated ipam prefixes available ips create created
 */
-type IpamPrefixesAvailableIpsCreateOK struct {
+type IpamPrefixesAvailableIpsCreateCreated struct {
 	Payload []*models.AvailableIP
 }
 
-func (o *IpamPrefixesAvailableIpsCreateOK) Error() string {
-	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsCreateOK  %+v", 200, o.Payload)
+func (o *IpamPrefixesAvailableIpsCreateCreated) Error() string {
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsCreateCreated  %+v", 201, o.Payload)
 }
 
-func (o *IpamPrefixesAvailableIpsCreateOK) GetPayload() []*models.AvailableIP {
+func (o *IpamPrefixesAvailableIpsCreateCreated) GetPayload() []*models.AvailableIP {
 	return o.Payload
 }
 
-func (o *IpamPrefixesAvailableIpsCreateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *IpamPrefixesAvailableIpsCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {

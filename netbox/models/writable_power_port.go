@@ -92,7 +92,7 @@ type WritablePowerPort struct {
 	// Type
 	//
 	// Physical port type
-	// Enum: [iec-60320-c6 iec-60320-c8 iec-60320-c14 iec-60320-c16 iec-60320-c20 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-5-15p nema-5-20p nema-5-30p nema-5-50p nema-6-15p nema-6-20p nema-6-30p nema-6-50p nema-l5-15p nema-l5-20p nema-l5-30p nema-l5-50p nema-l6-20p nema-l6-30p nema-l6-50p cs6361c cs6365c cs8165c cs8265c cs8365c cs8465c ita-e ita-f ita-ef ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o]
+	// Enum: [iec-60320-c6 iec-60320-c8 iec-60320-c14 iec-60320-c16 iec-60320-c20 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-5-15p nema-5-20p nema-5-30p nema-5-50p nema-6-15p nema-6-20p nema-6-30p nema-6-50p nema-l5-15p nema-l5-20p nema-l5-30p nema-l5-50p nema-l6-20p nema-l6-30p nema-l6-50p nema-l14-20p nema-l14-30p nema-l21-20p nema-l21-30p cs6361c cs6365c cs8165c cs8265c cs8365c cs8465c ita-e ita-f ita-ef ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o]
 	Type string `json:"type,omitempty"`
 }
 
@@ -191,7 +191,7 @@ func init() {
 
 // prop value enum
 func (m *WritablePowerPort) validateConnectionStatusEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, writablePowerPortTypeConnectionStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerPortTypeConnectionStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -288,7 +288,7 @@ var writablePowerPortTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["iec-60320-c6","iec-60320-c8","iec-60320-c14","iec-60320-c16","iec-60320-c20","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-5-15p","nema-5-20p","nema-5-30p","nema-5-50p","nema-6-15p","nema-6-20p","nema-6-30p","nema-6-50p","nema-l5-15p","nema-l5-20p","nema-l5-30p","nema-l5-50p","nema-l6-20p","nema-l6-30p","nema-l6-50p","cs6361c","cs6365c","cs8165c","cs8265c","cs8365c","cs8465c","ita-e","ita-f","ita-ef","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["iec-60320-c6","iec-60320-c8","iec-60320-c14","iec-60320-c16","iec-60320-c20","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-5-15p","nema-5-20p","nema-5-30p","nema-5-50p","nema-6-15p","nema-6-20p","nema-6-30p","nema-6-50p","nema-l5-15p","nema-l5-20p","nema-l5-30p","nema-l5-50p","nema-l6-20p","nema-l6-30p","nema-l6-50p","nema-l14-20p","nema-l14-30p","nema-l21-20p","nema-l21-30p","cs6361c","cs6365c","cs8165c","cs8265c","cs8365c","cs8465c","ita-e","ita-f","ita-ef","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -394,6 +394,18 @@ const (
 	// WritablePowerPortTypeNemaL650p captures enum value "nema-l6-50p"
 	WritablePowerPortTypeNemaL650p string = "nema-l6-50p"
 
+	// WritablePowerPortTypeNemaL1420p captures enum value "nema-l14-20p"
+	WritablePowerPortTypeNemaL1420p string = "nema-l14-20p"
+
+	// WritablePowerPortTypeNemaL1430p captures enum value "nema-l14-30p"
+	WritablePowerPortTypeNemaL1430p string = "nema-l14-30p"
+
+	// WritablePowerPortTypeNemaL2120p captures enum value "nema-l21-20p"
+	WritablePowerPortTypeNemaL2120p string = "nema-l21-20p"
+
+	// WritablePowerPortTypeNemaL2130p captures enum value "nema-l21-30p"
+	WritablePowerPortTypeNemaL2130p string = "nema-l21-30p"
+
 	// WritablePowerPortTypeCs6361c captures enum value "cs6361c"
 	WritablePowerPortTypeCs6361c string = "cs6361c"
 
@@ -451,7 +463,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerPort) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerPortTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerPortTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil

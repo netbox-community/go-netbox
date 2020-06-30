@@ -216,7 +216,7 @@ const (
 
 // prop value enum
 func (m *WritableVLAN) validateStatusEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableVLANTypeStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableVLANTypeStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil

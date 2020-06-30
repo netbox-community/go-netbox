@@ -370,7 +370,7 @@ const (
 
 // prop value enum
 func (m *VirtualMachineInterfaceMode) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, virtualMachineInterfaceModeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, virtualMachineInterfaceModeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -416,7 +416,7 @@ const (
 
 // prop value enum
 func (m *VirtualMachineInterfaceMode) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, virtualMachineInterfaceModeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, virtualMachineInterfaceModeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -521,7 +521,7 @@ const (
 
 // prop value enum
 func (m *VirtualMachineInterfaceType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, virtualMachineInterfaceTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, virtualMachineInterfaceTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -561,7 +561,7 @@ const (
 
 // prop value enum
 func (m *VirtualMachineInterfaceType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, virtualMachineInterfaceTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, virtualMachineInterfaceTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

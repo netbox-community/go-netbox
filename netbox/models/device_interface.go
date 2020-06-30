@@ -464,7 +464,7 @@ const (
 
 // prop value enum
 func (m *DeviceInterfaceConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceInterfaceConnectionStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceInterfaceConnectionStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -498,7 +498,7 @@ func init() {
 
 // prop value enum
 func (m *DeviceInterfaceConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, deviceInterfaceConnectionStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceInterfaceConnectionStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -596,7 +596,7 @@ const (
 
 // prop value enum
 func (m *DeviceInterfaceMode) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceInterfaceModeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceInterfaceModeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -642,7 +642,7 @@ const (
 
 // prop value enum
 func (m *DeviceInterfaceMode) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceInterfaceModeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceInterfaceModeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -947,7 +947,7 @@ const (
 
 // prop value enum
 func (m *DeviceInterfaceType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceInterfaceTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceInterfaceTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -1200,7 +1200,7 @@ const (
 
 // prop value enum
 func (m *DeviceInterfaceType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceInterfaceTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceInterfaceTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
