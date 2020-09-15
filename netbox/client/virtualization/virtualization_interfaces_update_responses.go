@@ -44,9 +44,15 @@ func (o *VirtualizationInterfacesUpdateReader) ReadResponse(response runtime.Cli
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewVirtualizationInterfacesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -60,23 +66,63 @@ func NewVirtualizationInterfacesUpdateOK() *VirtualizationInterfacesUpdateOK {
 VirtualizationInterfacesUpdateOK virtualization interfaces update o k
 */
 type VirtualizationInterfacesUpdateOK struct {
-	Payload *models.VirtualMachineInterface
+	Payload *models.VMInterface
 }
 
 func (o *VirtualizationInterfacesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualizationInterfacesUpdateOK  %+v", 200, o.Payload)
 }
 
-func (o *VirtualizationInterfacesUpdateOK) GetPayload() *models.VirtualMachineInterface {
+func (o *VirtualizationInterfacesUpdateOK) GetPayload() *models.VMInterface {
 	return o.Payload
 }
 
 func (o *VirtualizationInterfacesUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.VirtualMachineInterface)
+	o.Payload = new(models.VMInterface)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationInterfacesUpdateDefault creates a VirtualizationInterfacesUpdateDefault with default headers values
+func NewVirtualizationInterfacesUpdateDefault(code int) *VirtualizationInterfacesUpdateDefault {
+	return &VirtualizationInterfacesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*VirtualizationInterfacesUpdateDefault handles this case with default header values.
+
+VirtualizationInterfacesUpdateDefault virtualization interfaces update default
+*/
+type VirtualizationInterfacesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization interfaces update default response
+func (o *VirtualizationInterfacesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationInterfacesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualization_interfaces_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *VirtualizationInterfacesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationInterfacesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -44,9 +44,15 @@ func (o *DcimDeviceBayTemplatesCreateReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimDeviceBayTemplatesCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimDeviceBayTemplatesCreateCreated) readResponse(response runtime.Clie
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimDeviceBayTemplatesCreateDefault creates a DcimDeviceBayTemplatesCreateDefault with default headers values
+func NewDcimDeviceBayTemplatesCreateDefault(code int) *DcimDeviceBayTemplatesCreateDefault {
+	return &DcimDeviceBayTemplatesCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimDeviceBayTemplatesCreateDefault handles this case with default header values.
+
+DcimDeviceBayTemplatesCreateDefault dcim device bay templates create default
+*/
+type DcimDeviceBayTemplatesCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim device bay templates create default response
+func (o *DcimDeviceBayTemplatesCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimDeviceBayTemplatesCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcim_device-bay-templates_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimDeviceBayTemplatesCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimDeviceBayTemplatesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

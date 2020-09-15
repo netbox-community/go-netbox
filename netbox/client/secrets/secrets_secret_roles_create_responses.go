@@ -44,9 +44,15 @@ func (o *SecretsSecretRolesCreateReader) ReadResponse(response runtime.ClientRes
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewSecretsSecretRolesCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *SecretsSecretRolesCreateCreated) readResponse(response runtime.ClientRe
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewSecretsSecretRolesCreateDefault creates a SecretsSecretRolesCreateDefault with default headers values
+func NewSecretsSecretRolesCreateDefault(code int) *SecretsSecretRolesCreateDefault {
+	return &SecretsSecretRolesCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*SecretsSecretRolesCreateDefault handles this case with default header values.
+
+SecretsSecretRolesCreateDefault secrets secret roles create default
+*/
+type SecretsSecretRolesCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the secrets secret roles create default response
+func (o *SecretsSecretRolesCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *SecretsSecretRolesCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /secrets/secret-roles/][%d] secrets_secret-roles_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *SecretsSecretRolesCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *SecretsSecretRolesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

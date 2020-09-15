@@ -78,7 +78,7 @@ for the dcim interfaces create operation typically these are written to a http.R
 type DcimInterfacesCreateParams struct {
 
 	/*Data*/
-	Data *models.WritableDeviceInterface
+	Data *models.WritableInterface
 
 	timeout    time.Duration
 	Context    context.Context
@@ -119,13 +119,13 @@ func (o *DcimInterfacesCreateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the dcim interfaces create params
-func (o *DcimInterfacesCreateParams) WithData(data *models.WritableDeviceInterface) *DcimInterfacesCreateParams {
+func (o *DcimInterfacesCreateParams) WithData(data *models.WritableInterface) *DcimInterfacesCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the dcim interfaces create params
-func (o *DcimInterfacesCreateParams) SetData(data *models.WritableDeviceInterface) {
+func (o *DcimInterfacesCreateParams) SetData(data *models.WritableInterface) {
 	o.Data = data
 }
 

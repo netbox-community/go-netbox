@@ -52,7 +52,7 @@ type WritableConsoleServerPort struct {
 
 	// Connection status
 	// Enum: [false true]
-	ConnectionStatus bool `json:"connection_status,omitempty"`
+	ConnectionStatus *bool `json:"connection_status,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -66,20 +66,31 @@ type WritableConsoleServerPort struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// Label
+	//
+	// Physical label
+	// Max Length: 64
+	Label string `json:"label,omitempty"`
+
 	// Name
 	// Required: true
-	// Max Length: 50
+	// Max Length: 64
 	// Min Length: 1
 	Name *string `json:"name"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Type
 	//
 	// Physical port type
 	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b other]
 	Type string `json:"type,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 }
 
 // Validate validates this writable console server port
@@ -102,6 +113,10 @@ func (m *WritableConsoleServerPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -111,6 +126,10 @@ func (m *WritableConsoleServerPort) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -152,7 +171,7 @@ func init() {
 
 // prop value enum
 func (m *WritableConsoleServerPort) validateConnectionStatusEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, writableConsoleServerPortTypeConnectionStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableConsoleServerPortTypeConnectionStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -165,7 +184,7 @@ func (m *WritableConsoleServerPort) validateConnectionStatus(formats strfmt.Regi
 	}
 
 	// value enum
-	if err := m.validateConnectionStatusEnum("connection_status", "body", m.ConnectionStatus); err != nil {
+	if err := m.validateConnectionStatusEnum("connection_status", "body", *m.ConnectionStatus); err != nil {
 		return err
 	}
 
@@ -194,6 +213,19 @@ func (m *WritableConsoleServerPort) validateDevice(formats strfmt.Registry) erro
 	return nil
 }
 
+func (m *WritableConsoleServerPort) validateLabel(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Label) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableConsoleServerPort) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
@@ -204,7 +236,7 @@ func (m *WritableConsoleServerPort) validateName(formats strfmt.Registry) error 
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
 		return err
 	}
 
@@ -218,9 +250,17 @@ func (m *WritableConsoleServerPort) validateTags(formats strfmt.Registry) error 
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -284,7 +324,7 @@ const (
 
 // prop value enum
 func (m *WritableConsoleServerPort) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableConsoleServerPortTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableConsoleServerPortTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -298,6 +338,19 @@ func (m *WritableConsoleServerPort) validateType(formats strfmt.Registry) error 
 
 	// value enum
 	if err := m.validateTypeEnum("type", "body", m.Type); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

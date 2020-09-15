@@ -156,6 +156,10 @@ type DcimCablesListParams struct {
 	Status *string
 	/*Statusn*/
 	Statusn *string
+	/*Tag*/
+	Tag *string
+	/*Tagn*/
+	Tagn *string
 	/*Tenant*/
 	Tenant *string
 	/*TenantID*/
@@ -608,6 +612,28 @@ func (o *DcimCablesListParams) WithStatusn(statusn *string) *DcimCablesListParam
 // SetStatusn adds the statusN to the dcim cables list params
 func (o *DcimCablesListParams) SetStatusn(statusn *string) {
 	o.Statusn = statusn
+}
+
+// WithTag adds the tag to the dcim cables list params
+func (o *DcimCablesListParams) WithTag(tag *string) *DcimCablesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim cables list params
+func (o *DcimCablesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the dcim cables list params
+func (o *DcimCablesListParams) WithTagn(tagn *string) *DcimCablesListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the dcim cables list params
+func (o *DcimCablesListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
 }
 
 // WithTenant adds the tenant to the dcim cables list params
@@ -1248,6 +1274,38 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		qStatusn := qrStatusn
 		if qStatusn != "" {
 			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

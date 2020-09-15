@@ -44,9 +44,15 @@ func (o *CircuitsCircuitTerminationsCreateReader) ReadResponse(response runtime.
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewCircuitsCircuitTerminationsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *CircuitsCircuitTerminationsCreateCreated) readResponse(response runtime
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCircuitsCircuitTerminationsCreateDefault creates a CircuitsCircuitTerminationsCreateDefault with default headers values
+func NewCircuitsCircuitTerminationsCreateDefault(code int) *CircuitsCircuitTerminationsCreateDefault {
+	return &CircuitsCircuitTerminationsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*CircuitsCircuitTerminationsCreateDefault handles this case with default header values.
+
+CircuitsCircuitTerminationsCreateDefault circuits circuit terminations create default
+*/
+type CircuitsCircuitTerminationsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits circuit terminations create default response
+func (o *CircuitsCircuitTerminationsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsCircuitTerminationsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /circuits/circuit-terminations/][%d] circuits_circuit-terminations_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *CircuitsCircuitTerminationsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsCircuitTerminationsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

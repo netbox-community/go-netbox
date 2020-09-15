@@ -44,9 +44,15 @@ func (o *VirtualizationClustersCreateReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewVirtualizationClustersCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *VirtualizationClustersCreateCreated) readResponse(response runtime.Clie
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationClustersCreateDefault creates a VirtualizationClustersCreateDefault with default headers values
+func NewVirtualizationClustersCreateDefault(code int) *VirtualizationClustersCreateDefault {
+	return &VirtualizationClustersCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*VirtualizationClustersCreateDefault handles this case with default header values.
+
+VirtualizationClustersCreateDefault virtualization clusters create default
+*/
+type VirtualizationClustersCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization clusters create default response
+func (o *VirtualizationClustersCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationClustersCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualization_clusters_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *VirtualizationClustersCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationClustersCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -44,9 +44,15 @@ func (o *IpamPrefixesCreateReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewIpamPrefixesCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *IpamPrefixesCreateCreated) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamPrefixesCreateDefault creates a IpamPrefixesCreateDefault with default headers values
+func NewIpamPrefixesCreateDefault(code int) *IpamPrefixesCreateDefault {
+	return &IpamPrefixesCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*IpamPrefixesCreateDefault handles this case with default header values.
+
+IpamPrefixesCreateDefault ipam prefixes create default
+*/
+type IpamPrefixesCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam prefixes create default response
+func (o *IpamPrefixesCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamPrefixesCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /ipam/prefixes/][%d] ipam_prefixes_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *IpamPrefixesCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamPrefixesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

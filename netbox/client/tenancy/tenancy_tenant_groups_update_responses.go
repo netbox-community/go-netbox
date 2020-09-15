@@ -44,9 +44,15 @@ func (o *TenancyTenantGroupsUpdateReader) ReadResponse(response runtime.ClientRe
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewTenancyTenantGroupsUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *TenancyTenantGroupsUpdateOK) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTenancyTenantGroupsUpdateDefault creates a TenancyTenantGroupsUpdateDefault with default headers values
+func NewTenancyTenantGroupsUpdateDefault(code int) *TenancyTenantGroupsUpdateDefault {
+	return &TenancyTenantGroupsUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*TenancyTenantGroupsUpdateDefault handles this case with default header values.
+
+TenancyTenantGroupsUpdateDefault tenancy tenant groups update default
+*/
+type TenancyTenantGroupsUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the tenancy tenant groups update default response
+func (o *TenancyTenantGroupsUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *TenancyTenantGroupsUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *TenancyTenantGroupsUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *TenancyTenantGroupsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

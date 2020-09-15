@@ -44,9 +44,15 @@ func (o *DcimDeviceBayTemplatesPartialUpdateReader) ReadResponse(response runtim
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimDeviceBayTemplatesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimDeviceBayTemplatesPartialUpdateOK) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimDeviceBayTemplatesPartialUpdateDefault creates a DcimDeviceBayTemplatesPartialUpdateDefault with default headers values
+func NewDcimDeviceBayTemplatesPartialUpdateDefault(code int) *DcimDeviceBayTemplatesPartialUpdateDefault {
+	return &DcimDeviceBayTemplatesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimDeviceBayTemplatesPartialUpdateDefault handles this case with default header values.
+
+DcimDeviceBayTemplatesPartialUpdateDefault dcim device bay templates partial update default
+*/
+type DcimDeviceBayTemplatesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim device bay templates partial update default response
+func (o *DcimDeviceBayTemplatesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimDeviceBayTemplatesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcim_device-bay-templates_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimDeviceBayTemplatesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimDeviceBayTemplatesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

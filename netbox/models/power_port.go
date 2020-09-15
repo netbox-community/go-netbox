@@ -72,6 +72,12 @@ type PowerPort struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// Label
+	//
+	// Physical label
+	// Max Length: 64
+	Label string `json:"label,omitempty"`
+
 	// Maximum draw
 	//
 	// Maximum power draw (watts)
@@ -81,15 +87,20 @@ type PowerPort struct {
 
 	// Name
 	// Required: true
-	// Max Length: 50
+	// Max Length: 64
 	// Min Length: 1
 	Name *string `json:"name"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// type
 	Type *PowerPortType `json:"type,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 }
 
 // Validate validates this power port
@@ -116,6 +127,10 @@ func (m *PowerPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateMaximumDraw(formats); err != nil {
 		res = append(res, err)
 	}
@@ -129,6 +144,10 @@ func (m *PowerPort) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -222,6 +241,19 @@ func (m *PowerPort) validateDevice(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *PowerPort) validateLabel(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Label) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PowerPort) validateMaximumDraw(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.MaximumDraw) { // not required
@@ -249,7 +281,7 @@ func (m *PowerPort) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
 		return err
 	}
 
@@ -263,9 +295,17 @@ func (m *PowerPort) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -286,6 +326,19 @@ func (m *PowerPort) validateType(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *PowerPort) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -366,7 +419,7 @@ const (
 
 // prop value enum
 func (m *PowerPortConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerPortConnectionStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerPortConnectionStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -400,7 +453,7 @@ func init() {
 
 // prop value enum
 func (m *PowerPortConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, powerPortConnectionStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerPortConnectionStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -445,12 +498,12 @@ type PowerPortType struct {
 
 	// label
 	// Required: true
-	// Enum: [C6 C8 C14 C16 C20 P+N+E 4H P+N+E 6H P+N+E 9H 2P+E 4H 2P+E 6H 2P+E 9H 3P+E 4H 3P+E 6H 3P+E 9H 3P+N+E 4H 3P+N+E 6H 3P+N+E 9H NEMA 5-15P NEMA 5-20P NEMA 5-30P NEMA 5-50P NEMA 6-15P NEMA 6-20P NEMA 6-30P NEMA 6-50P NEMA L5-15P NEMA L5-20P NEMA L5-30P NEMA L6-15P NEMA L6-20P NEMA L6-30P NEMA L6-50P CS6361C CS6365C CS8165C CS8265C CS8365C CS8465C ITA Type E (CEE 7/5) ITA Type F (CEE 7/4) ITA Type E/F (CEE 7/7) ITA Type G (BS 1363) ITA Type H ITA Type I ITA Type J ITA Type K ITA Type L (CEI 23-50) ITA Type M (BS 546) ITA Type N ITA Type O]
+	// Enum: [C6 C8 C14 C16 C20 P+N+E 4H P+N+E 6H P+N+E 9H 2P+E 4H 2P+E 6H 2P+E 9H 3P+E 4H 3P+E 6H 3P+E 9H 3P+N+E 4H 3P+N+E 6H 3P+N+E 9H NEMA 1-15P NEMA 5-15P NEMA 5-20P NEMA 5-30P NEMA 5-50P NEMA 6-15P NEMA 6-20P NEMA 6-30P NEMA 6-50P NEMA 10-30P NEMA 10-50P NEMA 14-20P NEMA 14-30P NEMA 14-50P NEMA 14-60P NEMA 15-15P NEMA 15-20P NEMA 15-30P NEMA 15-50P NEMA 15-60P NEMA L1-15P NEMA L5-15P NEMA L5-20P NEMA L5-30P NEMA L5-50P NEMA L6-15P NEMA L6-20P NEMA L6-30P NEMA L6-50P NEMA L10-30P NEMA L14-20P NEMA L14-30P NEMA L14-50P NEMA L14-60P NEMA L15-20P NEMA L15-30P NEMA L15-50P NEMA L15-60P NEMA L21-20P NEMA L21-30P CS6361C CS6365C CS8165C CS8265C CS8365C CS8465C ITA Type E (CEE 7/5) ITA Type F (CEE 7/4) ITA Type E/F (CEE 7/7) ITA Type G (BS 1363) ITA Type H ITA Type I ITA Type J ITA Type K ITA Type L (CEI 23-50) ITA Type M (BS 546) ITA Type N ITA Type O]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [iec-60320-c6 iec-60320-c8 iec-60320-c14 iec-60320-c16 iec-60320-c20 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-5-15p nema-5-20p nema-5-30p nema-5-50p nema-6-15p nema-6-20p nema-6-30p nema-6-50p nema-l5-15p nema-l5-20p nema-l5-30p nema-l5-50p nema-l6-20p nema-l6-30p nema-l6-50p cs6361c cs6365c cs8165c cs8265c cs8365c cs8465c ita-e ita-f ita-ef ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o]
+	// Enum: [iec-60320-c6 iec-60320-c8 iec-60320-c14 iec-60320-c16 iec-60320-c20 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-1-15p nema-5-15p nema-5-20p nema-5-30p nema-5-50p nema-6-15p nema-6-20p nema-6-30p nema-6-50p nema-10-30p nema-10-50p nema-14-20p nema-14-30p nema-14-50p nema-14-60p nema-15-15p nema-15-20p nema-15-30p nema-15-50p nema-15-60p nema-l1-15p nema-l5-15p nema-l5-20p nema-l5-30p nema-l5-50p nema-l6-15p nema-l6-20p nema-l6-30p nema-l6-50p nema-l10-30p nema-l14-20p nema-l14-30p nema-l14-50p nema-l14-60p nema-l15-20p nema-l15-30p nema-l15-50p nema-l15-60p nema-l21-20p nema-l21-30p cs6361c cs6365c cs8165c cs8265c cs8365c cs8465c ita-e ita-f ita-ef ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o]
 	Value *string `json:"value"`
 }
 
@@ -476,7 +529,7 @@ var powerPortTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["C6","C8","C14","C16","C20","P+N+E 4H","P+N+E 6H","P+N+E 9H","2P+E 4H","2P+E 6H","2P+E 9H","3P+E 4H","3P+E 6H","3P+E 9H","3P+N+E 4H","3P+N+E 6H","3P+N+E 9H","NEMA 5-15P","NEMA 5-20P","NEMA 5-30P","NEMA 5-50P","NEMA 6-15P","NEMA 6-20P","NEMA 6-30P","NEMA 6-50P","NEMA L5-15P","NEMA L5-20P","NEMA L5-30P","NEMA L6-15P","NEMA L6-20P","NEMA L6-30P","NEMA L6-50P","CS6361C","CS6365C","CS8165C","CS8265C","CS8365C","CS8465C","ITA Type E (CEE 7/5)","ITA Type F (CEE 7/4)","ITA Type E/F (CEE 7/7)","ITA Type G (BS 1363)","ITA Type H","ITA Type I","ITA Type J","ITA Type K","ITA Type L (CEI 23-50)","ITA Type M (BS 546)","ITA Type N","ITA Type O"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["C6","C8","C14","C16","C20","P+N+E 4H","P+N+E 6H","P+N+E 9H","2P+E 4H","2P+E 6H","2P+E 9H","3P+E 4H","3P+E 6H","3P+E 9H","3P+N+E 4H","3P+N+E 6H","3P+N+E 9H","NEMA 1-15P","NEMA 5-15P","NEMA 5-20P","NEMA 5-30P","NEMA 5-50P","NEMA 6-15P","NEMA 6-20P","NEMA 6-30P","NEMA 6-50P","NEMA 10-30P","NEMA 10-50P","NEMA 14-20P","NEMA 14-30P","NEMA 14-50P","NEMA 14-60P","NEMA 15-15P","NEMA 15-20P","NEMA 15-30P","NEMA 15-50P","NEMA 15-60P","NEMA L1-15P","NEMA L5-15P","NEMA L5-20P","NEMA L5-30P","NEMA L5-50P","NEMA L6-15P","NEMA L6-20P","NEMA L6-30P","NEMA L6-50P","NEMA L10-30P","NEMA L14-20P","NEMA L14-30P","NEMA L14-50P","NEMA L14-60P","NEMA L15-20P","NEMA L15-30P","NEMA L15-50P","NEMA L15-60P","NEMA L21-20P","NEMA L21-30P","CS6361C","CS6365C","CS8165C","CS8265C","CS8365C","CS8465C","ITA Type E (CEE 7/5)","ITA Type F (CEE 7/4)","ITA Type E/F (CEE 7/7)","ITA Type G (BS 1363)","ITA Type H","ITA Type I","ITA Type J","ITA Type K","ITA Type L (CEI 23-50)","ITA Type M (BS 546)","ITA Type N","ITA Type O"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -537,6 +590,9 @@ const (
 	// PowerPortTypeLabelNr3PNE9H captures enum value "3P+N+E 9H"
 	PowerPortTypeLabelNr3PNE9H string = "3P+N+E 9H"
 
+	// PowerPortTypeLabelNEMA115P captures enum value "NEMA 1-15P"
+	PowerPortTypeLabelNEMA115P string = "NEMA 1-15P"
+
 	// PowerPortTypeLabelNEMA515P captures enum value "NEMA 5-15P"
 	PowerPortTypeLabelNEMA515P string = "NEMA 5-15P"
 
@@ -561,6 +617,42 @@ const (
 	// PowerPortTypeLabelNEMA650P captures enum value "NEMA 6-50P"
 	PowerPortTypeLabelNEMA650P string = "NEMA 6-50P"
 
+	// PowerPortTypeLabelNEMA1030P captures enum value "NEMA 10-30P"
+	PowerPortTypeLabelNEMA1030P string = "NEMA 10-30P"
+
+	// PowerPortTypeLabelNEMA1050P captures enum value "NEMA 10-50P"
+	PowerPortTypeLabelNEMA1050P string = "NEMA 10-50P"
+
+	// PowerPortTypeLabelNEMA1420P captures enum value "NEMA 14-20P"
+	PowerPortTypeLabelNEMA1420P string = "NEMA 14-20P"
+
+	// PowerPortTypeLabelNEMA1430P captures enum value "NEMA 14-30P"
+	PowerPortTypeLabelNEMA1430P string = "NEMA 14-30P"
+
+	// PowerPortTypeLabelNEMA1450P captures enum value "NEMA 14-50P"
+	PowerPortTypeLabelNEMA1450P string = "NEMA 14-50P"
+
+	// PowerPortTypeLabelNEMA1460P captures enum value "NEMA 14-60P"
+	PowerPortTypeLabelNEMA1460P string = "NEMA 14-60P"
+
+	// PowerPortTypeLabelNEMA1515P captures enum value "NEMA 15-15P"
+	PowerPortTypeLabelNEMA1515P string = "NEMA 15-15P"
+
+	// PowerPortTypeLabelNEMA1520P captures enum value "NEMA 15-20P"
+	PowerPortTypeLabelNEMA1520P string = "NEMA 15-20P"
+
+	// PowerPortTypeLabelNEMA1530P captures enum value "NEMA 15-30P"
+	PowerPortTypeLabelNEMA1530P string = "NEMA 15-30P"
+
+	// PowerPortTypeLabelNEMA1550P captures enum value "NEMA 15-50P"
+	PowerPortTypeLabelNEMA1550P string = "NEMA 15-50P"
+
+	// PowerPortTypeLabelNEMA1560P captures enum value "NEMA 15-60P"
+	PowerPortTypeLabelNEMA1560P string = "NEMA 15-60P"
+
+	// PowerPortTypeLabelNEMAL115P captures enum value "NEMA L1-15P"
+	PowerPortTypeLabelNEMAL115P string = "NEMA L1-15P"
+
 	// PowerPortTypeLabelNEMAL515P captures enum value "NEMA L5-15P"
 	PowerPortTypeLabelNEMAL515P string = "NEMA L5-15P"
 
@@ -569,6 +661,9 @@ const (
 
 	// PowerPortTypeLabelNEMAL530P captures enum value "NEMA L5-30P"
 	PowerPortTypeLabelNEMAL530P string = "NEMA L5-30P"
+
+	// PowerPortTypeLabelNEMAL550P captures enum value "NEMA L5-50P"
+	PowerPortTypeLabelNEMAL550P string = "NEMA L5-50P"
 
 	// PowerPortTypeLabelNEMAL615P captures enum value "NEMA L6-15P"
 	PowerPortTypeLabelNEMAL615P string = "NEMA L6-15P"
@@ -581,6 +676,39 @@ const (
 
 	// PowerPortTypeLabelNEMAL650P captures enum value "NEMA L6-50P"
 	PowerPortTypeLabelNEMAL650P string = "NEMA L6-50P"
+
+	// PowerPortTypeLabelNEMAL1030P captures enum value "NEMA L10-30P"
+	PowerPortTypeLabelNEMAL1030P string = "NEMA L10-30P"
+
+	// PowerPortTypeLabelNEMAL1420P captures enum value "NEMA L14-20P"
+	PowerPortTypeLabelNEMAL1420P string = "NEMA L14-20P"
+
+	// PowerPortTypeLabelNEMAL1430P captures enum value "NEMA L14-30P"
+	PowerPortTypeLabelNEMAL1430P string = "NEMA L14-30P"
+
+	// PowerPortTypeLabelNEMAL1450P captures enum value "NEMA L14-50P"
+	PowerPortTypeLabelNEMAL1450P string = "NEMA L14-50P"
+
+	// PowerPortTypeLabelNEMAL1460P captures enum value "NEMA L14-60P"
+	PowerPortTypeLabelNEMAL1460P string = "NEMA L14-60P"
+
+	// PowerPortTypeLabelNEMAL1520P captures enum value "NEMA L15-20P"
+	PowerPortTypeLabelNEMAL1520P string = "NEMA L15-20P"
+
+	// PowerPortTypeLabelNEMAL1530P captures enum value "NEMA L15-30P"
+	PowerPortTypeLabelNEMAL1530P string = "NEMA L15-30P"
+
+	// PowerPortTypeLabelNEMAL1550P captures enum value "NEMA L15-50P"
+	PowerPortTypeLabelNEMAL1550P string = "NEMA L15-50P"
+
+	// PowerPortTypeLabelNEMAL1560P captures enum value "NEMA L15-60P"
+	PowerPortTypeLabelNEMAL1560P string = "NEMA L15-60P"
+
+	// PowerPortTypeLabelNEMAL2120P captures enum value "NEMA L21-20P"
+	PowerPortTypeLabelNEMAL2120P string = "NEMA L21-20P"
+
+	// PowerPortTypeLabelNEMAL2130P captures enum value "NEMA L21-30P"
+	PowerPortTypeLabelNEMAL2130P string = "NEMA L21-30P"
 
 	// PowerPortTypeLabelCS6361C captures enum value "CS6361C"
 	PowerPortTypeLabelCS6361C string = "CS6361C"
@@ -639,7 +767,7 @@ const (
 
 // prop value enum
 func (m *PowerPortType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerPortTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerPortTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -663,7 +791,7 @@ var powerPortTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["iec-60320-c6","iec-60320-c8","iec-60320-c14","iec-60320-c16","iec-60320-c20","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-5-15p","nema-5-20p","nema-5-30p","nema-5-50p","nema-6-15p","nema-6-20p","nema-6-30p","nema-6-50p","nema-l5-15p","nema-l5-20p","nema-l5-30p","nema-l5-50p","nema-l6-20p","nema-l6-30p","nema-l6-50p","cs6361c","cs6365c","cs8165c","cs8265c","cs8365c","cs8465c","ita-e","ita-f","ita-ef","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["iec-60320-c6","iec-60320-c8","iec-60320-c14","iec-60320-c16","iec-60320-c20","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-1-15p","nema-5-15p","nema-5-20p","nema-5-30p","nema-5-50p","nema-6-15p","nema-6-20p","nema-6-30p","nema-6-50p","nema-10-30p","nema-10-50p","nema-14-20p","nema-14-30p","nema-14-50p","nema-14-60p","nema-15-15p","nema-15-20p","nema-15-30p","nema-15-50p","nema-15-60p","nema-l1-15p","nema-l5-15p","nema-l5-20p","nema-l5-30p","nema-l5-50p","nema-l6-15p","nema-l6-20p","nema-l6-30p","nema-l6-50p","nema-l10-30p","nema-l14-20p","nema-l14-30p","nema-l14-50p","nema-l14-60p","nema-l15-20p","nema-l15-30p","nema-l15-50p","nema-l15-60p","nema-l21-20p","nema-l21-30p","cs6361c","cs6365c","cs8165c","cs8265c","cs8365c","cs8465c","ita-e","ita-f","ita-ef","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -724,6 +852,9 @@ const (
 	// PowerPortTypeValueIec603093pne9h captures enum value "iec-60309-3p-n-e-9h"
 	PowerPortTypeValueIec603093pne9h string = "iec-60309-3p-n-e-9h"
 
+	// PowerPortTypeValueNema115p captures enum value "nema-1-15p"
+	PowerPortTypeValueNema115p string = "nema-1-15p"
+
 	// PowerPortTypeValueNema515p captures enum value "nema-5-15p"
 	PowerPortTypeValueNema515p string = "nema-5-15p"
 
@@ -748,6 +879,42 @@ const (
 	// PowerPortTypeValueNema650p captures enum value "nema-6-50p"
 	PowerPortTypeValueNema650p string = "nema-6-50p"
 
+	// PowerPortTypeValueNema1030p captures enum value "nema-10-30p"
+	PowerPortTypeValueNema1030p string = "nema-10-30p"
+
+	// PowerPortTypeValueNema1050p captures enum value "nema-10-50p"
+	PowerPortTypeValueNema1050p string = "nema-10-50p"
+
+	// PowerPortTypeValueNema1420p captures enum value "nema-14-20p"
+	PowerPortTypeValueNema1420p string = "nema-14-20p"
+
+	// PowerPortTypeValueNema1430p captures enum value "nema-14-30p"
+	PowerPortTypeValueNema1430p string = "nema-14-30p"
+
+	// PowerPortTypeValueNema1450p captures enum value "nema-14-50p"
+	PowerPortTypeValueNema1450p string = "nema-14-50p"
+
+	// PowerPortTypeValueNema1460p captures enum value "nema-14-60p"
+	PowerPortTypeValueNema1460p string = "nema-14-60p"
+
+	// PowerPortTypeValueNema1515p captures enum value "nema-15-15p"
+	PowerPortTypeValueNema1515p string = "nema-15-15p"
+
+	// PowerPortTypeValueNema1520p captures enum value "nema-15-20p"
+	PowerPortTypeValueNema1520p string = "nema-15-20p"
+
+	// PowerPortTypeValueNema1530p captures enum value "nema-15-30p"
+	PowerPortTypeValueNema1530p string = "nema-15-30p"
+
+	// PowerPortTypeValueNema1550p captures enum value "nema-15-50p"
+	PowerPortTypeValueNema1550p string = "nema-15-50p"
+
+	// PowerPortTypeValueNema1560p captures enum value "nema-15-60p"
+	PowerPortTypeValueNema1560p string = "nema-15-60p"
+
+	// PowerPortTypeValueNemaL115p captures enum value "nema-l1-15p"
+	PowerPortTypeValueNemaL115p string = "nema-l1-15p"
+
 	// PowerPortTypeValueNemaL515p captures enum value "nema-l5-15p"
 	PowerPortTypeValueNemaL515p string = "nema-l5-15p"
 
@@ -760,6 +927,9 @@ const (
 	// PowerPortTypeValueNemaL550p captures enum value "nema-l5-50p"
 	PowerPortTypeValueNemaL550p string = "nema-l5-50p"
 
+	// PowerPortTypeValueNemaL615p captures enum value "nema-l6-15p"
+	PowerPortTypeValueNemaL615p string = "nema-l6-15p"
+
 	// PowerPortTypeValueNemaL620p captures enum value "nema-l6-20p"
 	PowerPortTypeValueNemaL620p string = "nema-l6-20p"
 
@@ -768,6 +938,39 @@ const (
 
 	// PowerPortTypeValueNemaL650p captures enum value "nema-l6-50p"
 	PowerPortTypeValueNemaL650p string = "nema-l6-50p"
+
+	// PowerPortTypeValueNemaL1030p captures enum value "nema-l10-30p"
+	PowerPortTypeValueNemaL1030p string = "nema-l10-30p"
+
+	// PowerPortTypeValueNemaL1420p captures enum value "nema-l14-20p"
+	PowerPortTypeValueNemaL1420p string = "nema-l14-20p"
+
+	// PowerPortTypeValueNemaL1430p captures enum value "nema-l14-30p"
+	PowerPortTypeValueNemaL1430p string = "nema-l14-30p"
+
+	// PowerPortTypeValueNemaL1450p captures enum value "nema-l14-50p"
+	PowerPortTypeValueNemaL1450p string = "nema-l14-50p"
+
+	// PowerPortTypeValueNemaL1460p captures enum value "nema-l14-60p"
+	PowerPortTypeValueNemaL1460p string = "nema-l14-60p"
+
+	// PowerPortTypeValueNemaL1520p captures enum value "nema-l15-20p"
+	PowerPortTypeValueNemaL1520p string = "nema-l15-20p"
+
+	// PowerPortTypeValueNemaL1530p captures enum value "nema-l15-30p"
+	PowerPortTypeValueNemaL1530p string = "nema-l15-30p"
+
+	// PowerPortTypeValueNemaL1550p captures enum value "nema-l15-50p"
+	PowerPortTypeValueNemaL1550p string = "nema-l15-50p"
+
+	// PowerPortTypeValueNemaL1560p captures enum value "nema-l15-60p"
+	PowerPortTypeValueNemaL1560p string = "nema-l15-60p"
+
+	// PowerPortTypeValueNemaL2120p captures enum value "nema-l21-20p"
+	PowerPortTypeValueNemaL2120p string = "nema-l21-20p"
+
+	// PowerPortTypeValueNemaL2130p captures enum value "nema-l21-30p"
+	PowerPortTypeValueNemaL2130p string = "nema-l21-30p"
 
 	// PowerPortTypeValueCs6361c captures enum value "cs6361c"
 	PowerPortTypeValueCs6361c string = "cs6361c"
@@ -826,7 +1029,7 @@ const (
 
 // prop value enum
 func (m *PowerPortType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerPortTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerPortTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

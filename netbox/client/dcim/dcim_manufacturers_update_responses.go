@@ -44,9 +44,15 @@ func (o *DcimManufacturersUpdateReader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimManufacturersUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimManufacturersUpdateOK) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimManufacturersUpdateDefault creates a DcimManufacturersUpdateDefault with default headers values
+func NewDcimManufacturersUpdateDefault(code int) *DcimManufacturersUpdateDefault {
+	return &DcimManufacturersUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimManufacturersUpdateDefault handles this case with default header values.
+
+DcimManufacturersUpdateDefault dcim manufacturers update default
+*/
+type DcimManufacturersUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim manufacturers update default response
+func (o *DcimManufacturersUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimManufacturersUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/manufacturers/{id}/][%d] dcim_manufacturers_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimManufacturersUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimManufacturersUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

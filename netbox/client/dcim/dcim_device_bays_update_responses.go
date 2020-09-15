@@ -44,9 +44,15 @@ func (o *DcimDeviceBaysUpdateReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimDeviceBaysUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimDeviceBaysUpdateOK) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimDeviceBaysUpdateDefault creates a DcimDeviceBaysUpdateDefault with default headers values
+func NewDcimDeviceBaysUpdateDefault(code int) *DcimDeviceBaysUpdateDefault {
+	return &DcimDeviceBaysUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimDeviceBaysUpdateDefault handles this case with default header values.
+
+DcimDeviceBaysUpdateDefault dcim device bays update default
+*/
+type DcimDeviceBaysUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim device bays update default response
+func (o *DcimDeviceBaysUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimDeviceBaysUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/device-bays/{id}/][%d] dcim_device-bays_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimDeviceBaysUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimDeviceBaysUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

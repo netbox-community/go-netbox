@@ -44,9 +44,15 @@ func (o *DcimPlatformsPartialUpdateReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimPlatformsPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimPlatformsPartialUpdateOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPlatformsPartialUpdateDefault creates a DcimPlatformsPartialUpdateDefault with default headers values
+func NewDcimPlatformsPartialUpdateDefault(code int) *DcimPlatformsPartialUpdateDefault {
+	return &DcimPlatformsPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimPlatformsPartialUpdateDefault handles this case with default header values.
+
+DcimPlatformsPartialUpdateDefault dcim platforms partial update default
+*/
+type DcimPlatformsPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim platforms partial update default response
+func (o *DcimPlatformsPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPlatformsPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/platforms/{id}/][%d] dcim_platforms_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimPlatformsPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPlatformsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

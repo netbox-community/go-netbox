@@ -44,9 +44,15 @@ func (o *VirtualizationVirtualMachinesPartialUpdateReader) ReadResponse(response
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewVirtualizationVirtualMachinesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *VirtualizationVirtualMachinesPartialUpdateOK) readResponse(response run
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationVirtualMachinesPartialUpdateDefault creates a VirtualizationVirtualMachinesPartialUpdateDefault with default headers values
+func NewVirtualizationVirtualMachinesPartialUpdateDefault(code int) *VirtualizationVirtualMachinesPartialUpdateDefault {
+	return &VirtualizationVirtualMachinesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*VirtualizationVirtualMachinesPartialUpdateDefault handles this case with default header values.
+
+VirtualizationVirtualMachinesPartialUpdateDefault virtualization virtual machines partial update default
+*/
+type VirtualizationVirtualMachinesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization virtual machines partial update default response
+func (o *VirtualizationVirtualMachinesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationVirtualMachinesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *VirtualizationVirtualMachinesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationVirtualMachinesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

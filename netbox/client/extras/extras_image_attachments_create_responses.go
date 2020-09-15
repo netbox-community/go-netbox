@@ -44,9 +44,15 @@ func (o *ExtrasImageAttachmentsCreateReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewExtrasImageAttachmentsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *ExtrasImageAttachmentsCreateCreated) readResponse(response runtime.Clie
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasImageAttachmentsCreateDefault creates a ExtrasImageAttachmentsCreateDefault with default headers values
+func NewExtrasImageAttachmentsCreateDefault(code int) *ExtrasImageAttachmentsCreateDefault {
+	return &ExtrasImageAttachmentsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*ExtrasImageAttachmentsCreateDefault handles this case with default header values.
+
+ExtrasImageAttachmentsCreateDefault extras image attachments create default
+*/
+type ExtrasImageAttachmentsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras image attachments create default response
+func (o *ExtrasImageAttachmentsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasImageAttachmentsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extras_image-attachments_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *ExtrasImageAttachmentsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasImageAttachmentsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

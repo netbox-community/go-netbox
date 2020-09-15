@@ -44,9 +44,15 @@ func (o *VirtualizationVirtualMachinesCreateReader) ReadResponse(response runtim
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewVirtualizationVirtualMachinesCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *VirtualizationVirtualMachinesCreateCreated) readResponse(response runti
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationVirtualMachinesCreateDefault creates a VirtualizationVirtualMachinesCreateDefault with default headers values
+func NewVirtualizationVirtualMachinesCreateDefault(code int) *VirtualizationVirtualMachinesCreateDefault {
+	return &VirtualizationVirtualMachinesCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*VirtualizationVirtualMachinesCreateDefault handles this case with default header values.
+
+VirtualizationVirtualMachinesCreateDefault virtualization virtual machines create default
+*/
+type VirtualizationVirtualMachinesCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization virtual machines create default response
+func (o *VirtualizationVirtualMachinesCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationVirtualMachinesCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualization_virtual-machines_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *VirtualizationVirtualMachinesCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationVirtualMachinesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

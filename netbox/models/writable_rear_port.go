@@ -50,6 +50,12 @@ type WritableRearPort struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// Label
+	//
+	// Physical label
+	// Max Length: 64
+	Label string `json:"label,omitempty"`
+
 	// Name
 	// Required: true
 	// Max Length: 64
@@ -62,12 +68,17 @@ type WritableRearPort struct {
 	Positions int64 `json:"positions,omitempty"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
 	Type *string `json:"type"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 }
 
 // Validate validates this writable rear port
@@ -86,6 +97,10 @@ func (m *WritableRearPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -99,6 +114,10 @@ func (m *WritableRearPort) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -148,6 +167,19 @@ func (m *WritableRearPort) validateDevice(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableRearPort) validateLabel(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Label) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableRearPort) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
@@ -189,9 +221,17 @@ func (m *WritableRearPort) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -203,7 +243,7 @@ var writableRearPortTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -215,6 +255,15 @@ const (
 
 	// WritableRearPortTypeNr8p8c captures enum value "8p8c"
 	WritableRearPortTypeNr8p8c string = "8p8c"
+
+	// WritableRearPortTypeNr8p6c captures enum value "8p6c"
+	WritableRearPortTypeNr8p6c string = "8p6c"
+
+	// WritableRearPortTypeNr8p4c captures enum value "8p4c"
+	WritableRearPortTypeNr8p4c string = "8p4c"
+
+	// WritableRearPortTypeNr8p2c captures enum value "8p2c"
+	WritableRearPortTypeNr8p2c string = "8p2c"
 
 	// WritableRearPortTypeNr110Punch captures enum value "110-punch"
 	WritableRearPortTypeNr110Punch string = "110-punch"
@@ -258,7 +307,7 @@ const (
 
 // prop value enum
 func (m *WritableRearPort) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableRearPortTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableRearPortTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -272,6 +321,19 @@ func (m *WritableRearPort) validateType(formats strfmt.Registry) error {
 
 	// value enum
 	if err := m.validateTypeEnum("type", "body", *m.Type); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableRearPort) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

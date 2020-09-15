@@ -44,9 +44,15 @@ func (o *TenancyTenantsCreateReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewTenancyTenantsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *TenancyTenantsCreateCreated) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTenancyTenantsCreateDefault creates a TenancyTenantsCreateDefault with default headers values
+func NewTenancyTenantsCreateDefault(code int) *TenancyTenantsCreateDefault {
+	return &TenancyTenantsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*TenancyTenantsCreateDefault handles this case with default header values.
+
+TenancyTenantsCreateDefault tenancy tenants create default
+*/
+type TenancyTenantsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the tenancy tenants create default response
+func (o *TenancyTenantsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *TenancyTenantsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /tenancy/tenants/][%d] tenancy_tenants_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *TenancyTenantsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *TenancyTenantsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

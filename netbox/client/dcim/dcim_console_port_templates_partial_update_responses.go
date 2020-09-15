@@ -44,9 +44,15 @@ func (o *DcimConsolePortTemplatesPartialUpdateReader) ReadResponse(response runt
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimConsolePortTemplatesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimConsolePortTemplatesPartialUpdateOK) readResponse(response runtime.
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimConsolePortTemplatesPartialUpdateDefault creates a DcimConsolePortTemplatesPartialUpdateDefault with default headers values
+func NewDcimConsolePortTemplatesPartialUpdateDefault(code int) *DcimConsolePortTemplatesPartialUpdateDefault {
+	return &DcimConsolePortTemplatesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimConsolePortTemplatesPartialUpdateDefault handles this case with default header values.
+
+DcimConsolePortTemplatesPartialUpdateDefault dcim console port templates partial update default
+*/
+type DcimConsolePortTemplatesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim console port templates partial update default response
+func (o *DcimConsolePortTemplatesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimConsolePortTemplatesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimConsolePortTemplatesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimConsolePortTemplatesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

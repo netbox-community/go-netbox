@@ -44,9 +44,15 @@ func (o *CircuitsProvidersCreateReader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewCircuitsProvidersCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *CircuitsProvidersCreateCreated) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCircuitsProvidersCreateDefault creates a CircuitsProvidersCreateDefault with default headers values
+func NewCircuitsProvidersCreateDefault(code int) *CircuitsProvidersCreateDefault {
+	return &CircuitsProvidersCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*CircuitsProvidersCreateDefault handles this case with default header values.
+
+CircuitsProvidersCreateDefault circuits providers create default
+*/
+type CircuitsProvidersCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits providers create default response
+func (o *CircuitsProvidersCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsProvidersCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /circuits/providers/][%d] circuits_providers_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *CircuitsProvidersCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsProvidersCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

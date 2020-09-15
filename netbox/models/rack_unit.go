@@ -48,6 +48,10 @@ type RackUnit struct {
 	// Read Only: true
 	// Min Length: 1
 	Name string `json:"name,omitempty"`
+
+	// Occupied
+	// Read Only: true
+	Occupied *bool `json:"occupied,omitempty"`
 }
 
 // Validate validates this rack unit
@@ -196,7 +200,7 @@ const (
 
 // prop value enum
 func (m *RackUnitFace) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rackUnitFaceTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackUnitFaceTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -239,7 +243,7 @@ const (
 
 // prop value enum
 func (m *RackUnitFace) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rackUnitFaceTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackUnitFaceTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

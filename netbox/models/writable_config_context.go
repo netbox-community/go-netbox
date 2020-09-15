@@ -42,6 +42,11 @@ type WritableConfigContext struct {
 	// Unique: true
 	Clusters []int64 `json:"clusters"`
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Data
 	// Required: true
 	Data *string `json:"data"`
@@ -56,6 +61,11 @@ type WritableConfigContext struct {
 
 	// Is active
 	IsActive bool `json:"is_active,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -91,6 +101,11 @@ type WritableConfigContext struct {
 	// Unique: true
 	Tenants []int64 `json:"tenants"`
 
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
+
 	// Weight
 	// Maximum: 32767
 	// Minimum: 0
@@ -109,11 +124,19 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateData(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -146,6 +169,10 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTenants(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -185,6 +212,19 @@ func (m *WritableConfigContext) validateClusters(formats strfmt.Registry) error 
 	return nil
 }
 
+func (m *WritableConfigContext) validateCreated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableConfigContext) validateData(formats strfmt.Registry) error {
 
 	if err := validate.Required("data", "body", m.Data); err != nil {
@@ -201,6 +241,19 @@ func (m *WritableConfigContext) validateDescription(formats strfmt.Registry) err
 	}
 
 	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) validateLastUpdated(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -317,6 +370,19 @@ func (m *WritableConfigContext) validateTenants(formats strfmt.Registry) error {
 	}
 
 	if err := validate.UniqueItems("tenants", "body", m.Tenants); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

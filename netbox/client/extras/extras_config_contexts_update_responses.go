@@ -44,9 +44,15 @@ func (o *ExtrasConfigContextsUpdateReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewExtrasConfigContextsUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *ExtrasConfigContextsUpdateOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasConfigContextsUpdateDefault creates a ExtrasConfigContextsUpdateDefault with default headers values
+func NewExtrasConfigContextsUpdateDefault(code int) *ExtrasConfigContextsUpdateDefault {
+	return &ExtrasConfigContextsUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*ExtrasConfigContextsUpdateDefault handles this case with default header values.
+
+ExtrasConfigContextsUpdateDefault extras config contexts update default
+*/
+type ExtrasConfigContextsUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras config contexts update default response
+func (o *ExtrasConfigContextsUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasConfigContextsUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /extras/config-contexts/{id}/][%d] extras_config-contexts_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *ExtrasConfigContextsUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasConfigContextsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

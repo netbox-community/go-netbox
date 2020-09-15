@@ -56,12 +56,17 @@ type Graph struct {
 	Source *string `json:"source"`
 
 	// Template language
-	// Enum: [django jinja2]
+	// Enum: [jinja2 django]
 	TemplateLanguage string `json:"template_language,omitempty"`
 
 	// Type
 	// Required: true
 	Type *string `json:"type"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 
 	// Weight
 	// Maximum: 32767
@@ -90,6 +95,10 @@ func (m *Graph) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -158,7 +167,7 @@ var graphTypeTemplateLanguagePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["django","jinja2"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["jinja2","django"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -168,16 +177,16 @@ func init() {
 
 const (
 
-	// GraphTemplateLanguageDjango captures enum value "django"
-	GraphTemplateLanguageDjango string = "django"
-
 	// GraphTemplateLanguageJinja2 captures enum value "jinja2"
 	GraphTemplateLanguageJinja2 string = "jinja2"
+
+	// GraphTemplateLanguageDjango captures enum value "django"
+	GraphTemplateLanguageDjango string = "django"
 )
 
 // prop value enum
 func (m *Graph) validateTemplateLanguageEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, graphTypeTemplateLanguagePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, graphTypeTemplateLanguagePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -200,6 +209,19 @@ func (m *Graph) validateTemplateLanguage(formats strfmt.Registry) error {
 func (m *Graph) validateType(formats strfmt.Registry) error {
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Graph) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

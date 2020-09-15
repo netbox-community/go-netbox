@@ -44,9 +44,15 @@ func (o *DcimCablesUpdateReader) ReadResponse(response runtime.ClientResponse, c
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimCablesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimCablesUpdateOK) readResponse(response runtime.ClientResponse, consu
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimCablesUpdateDefault creates a DcimCablesUpdateDefault with default headers values
+func NewDcimCablesUpdateDefault(code int) *DcimCablesUpdateDefault {
+	return &DcimCablesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimCablesUpdateDefault handles this case with default header values.
+
+DcimCablesUpdateDefault dcim cables update default
+*/
+type DcimCablesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim cables update default response
+func (o *DcimCablesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimCablesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/cables/{id}/][%d] dcim_cables_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimCablesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimCablesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

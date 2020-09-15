@@ -44,9 +44,15 @@ func (o *VirtualizationClustersPartialUpdateReader) ReadResponse(response runtim
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewVirtualizationClustersPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *VirtualizationClustersPartialUpdateOK) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationClustersPartialUpdateDefault creates a VirtualizationClustersPartialUpdateDefault with default headers values
+func NewVirtualizationClustersPartialUpdateDefault(code int) *VirtualizationClustersPartialUpdateDefault {
+	return &VirtualizationClustersPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*VirtualizationClustersPartialUpdateDefault handles this case with default header values.
+
+VirtualizationClustersPartialUpdateDefault virtualization clusters partial update default
+*/
+type VirtualizationClustersPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization clusters partial update default response
+func (o *VirtualizationClustersPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationClustersPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /virtualization/clusters/{id}/][%d] virtualization_clusters_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *VirtualizationClustersPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationClustersPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

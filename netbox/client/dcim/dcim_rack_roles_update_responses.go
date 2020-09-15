@@ -44,9 +44,15 @@ func (o *DcimRackRolesUpdateReader) ReadResponse(response runtime.ClientResponse
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimRackRolesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimRackRolesUpdateOK) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRackRolesUpdateDefault creates a DcimRackRolesUpdateDefault with default headers values
+func NewDcimRackRolesUpdateDefault(code int) *DcimRackRolesUpdateDefault {
+	return &DcimRackRolesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimRackRolesUpdateDefault handles this case with default header values.
+
+DcimRackRolesUpdateDefault dcim rack roles update default
+*/
+type DcimRackRolesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rack roles update default response
+func (o *DcimRackRolesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRackRolesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/rack-roles/{id}/][%d] dcim_rack-roles_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimRackRolesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRackRolesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

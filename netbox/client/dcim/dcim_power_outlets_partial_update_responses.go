@@ -44,9 +44,15 @@ func (o *DcimPowerOutletsPartialUpdateReader) ReadResponse(response runtime.Clie
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimPowerOutletsPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimPowerOutletsPartialUpdateOK) readResponse(response runtime.ClientRe
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerOutletsPartialUpdateDefault creates a DcimPowerOutletsPartialUpdateDefault with default headers values
+func NewDcimPowerOutletsPartialUpdateDefault(code int) *DcimPowerOutletsPartialUpdateDefault {
+	return &DcimPowerOutletsPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimPowerOutletsPartialUpdateDefault handles this case with default header values.
+
+DcimPowerOutletsPartialUpdateDefault dcim power outlets partial update default
+*/
+type DcimPowerOutletsPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power outlets partial update default response
+func (o *DcimPowerOutletsPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerOutletsPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/power-outlets/{id}/][%d] dcim_power-outlets_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimPowerOutletsPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerOutletsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

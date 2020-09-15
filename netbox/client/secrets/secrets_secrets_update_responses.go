@@ -44,9 +44,15 @@ func (o *SecretsSecretsUpdateReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewSecretsSecretsUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *SecretsSecretsUpdateOK) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewSecretsSecretsUpdateDefault creates a SecretsSecretsUpdateDefault with default headers values
+func NewSecretsSecretsUpdateDefault(code int) *SecretsSecretsUpdateDefault {
+	return &SecretsSecretsUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*SecretsSecretsUpdateDefault handles this case with default header values.
+
+SecretsSecretsUpdateDefault secrets secrets update default
+*/
+type SecretsSecretsUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the secrets secrets update default response
+func (o *SecretsSecretsUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *SecretsSecretsUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /secrets/secrets/{id}/][%d] secrets_secrets_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *SecretsSecretsUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *SecretsSecretsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

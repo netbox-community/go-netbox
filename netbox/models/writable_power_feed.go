@@ -40,6 +40,9 @@ type WritablePowerFeed struct {
 	// Minimum: 1
 	Amperage int64 `json:"amperage,omitempty"`
 
+	// cable
+	Cable *NestedCable `json:"cable,omitempty"`
+
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
@@ -93,11 +96,16 @@ type WritablePowerFeed struct {
 	Supply string `json:"supply,omitempty"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Type
 	// Enum: [primary redundant]
 	Type string `json:"type,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 
 	// Voltage
 	// Maximum: 32767
@@ -110,6 +118,10 @@ func (m *WritablePowerFeed) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAmperage(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCable(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -153,6 +165,10 @@ func (m *WritablePowerFeed) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateURL(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateVoltage(formats); err != nil {
 		res = append(res, err)
 	}
@@ -175,6 +191,24 @@ func (m *WritablePowerFeed) validateAmperage(formats strfmt.Registry) error {
 
 	if err := validate.MaximumInt("amperage", "body", int64(m.Amperage), 32767, false); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) validateCable(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Cable) { // not required
+		return nil
+	}
+
+	if m.Cable != nil {
+		if err := m.Cable.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -263,7 +297,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerFeed) validatePhaseEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerFeedTypePhasePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerFeedTypePhasePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -321,7 +355,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerFeed) validateStatusEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerFeedTypeStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerFeedTypeStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -364,7 +398,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerFeed) validateSupplyEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerFeedTypeSupplyPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerFeedTypeSupplyPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -391,9 +425,17 @@ func (m *WritablePowerFeed) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -424,7 +466,7 @@ const (
 
 // prop value enum
 func (m *WritablePowerFeed) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writablePowerFeedTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writablePowerFeedTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -438,6 +480,19 @@ func (m *WritablePowerFeed) validateType(formats strfmt.Registry) error {
 
 	// value enum
 	if err := m.validateTypeEnum("type", "body", m.Type); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

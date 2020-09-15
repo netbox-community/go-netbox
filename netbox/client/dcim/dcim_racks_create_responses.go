@@ -44,9 +44,15 @@ func (o *DcimRacksCreateReader) ReadResponse(response runtime.ClientResponse, co
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimRacksCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimRacksCreateCreated) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRacksCreateDefault creates a DcimRacksCreateDefault with default headers values
+func NewDcimRacksCreateDefault(code int) *DcimRacksCreateDefault {
+	return &DcimRacksCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimRacksCreateDefault handles this case with default header values.
+
+DcimRacksCreateDefault dcim racks create default
+*/
+type DcimRacksCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim racks create default response
+func (o *DcimRacksCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRacksCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /dcim/racks/][%d] dcim_racks_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimRacksCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRacksCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

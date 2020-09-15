@@ -44,9 +44,15 @@ func (o *IpamVlansCreateReader) ReadResponse(response runtime.ClientResponse, co
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewIpamVlansCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *IpamVlansCreateCreated) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamVlansCreateDefault creates a IpamVlansCreateDefault with default headers values
+func NewIpamVlansCreateDefault(code int) *IpamVlansCreateDefault {
+	return &IpamVlansCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*IpamVlansCreateDefault handles this case with default header values.
+
+IpamVlansCreateDefault ipam vlans create default
+*/
+type IpamVlansCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam vlans create default response
+func (o *IpamVlansCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamVlansCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /ipam/vlans/][%d] ipam_vlans_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *IpamVlansCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamVlansCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

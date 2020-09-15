@@ -125,7 +125,7 @@ type Rack struct {
 	Status *RackStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
@@ -139,6 +139,11 @@ type Rack struct {
 	// Maximum: 100
 	// Minimum: 1
 	UHeight int64 `json:"u_height,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 
 	// width
 	Width *RackWidth `json:"width,omitempty"`
@@ -213,6 +218,10 @@ func (m *Rack) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateUHeight(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -439,9 +448,17 @@ func (m *Rack) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -496,6 +513,19 @@ func (m *Rack) validateUHeight(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaximumInt("u_height", "body", int64(m.UHeight), 100, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 
@@ -595,7 +625,7 @@ const (
 
 // prop value enum
 func (m *RackOuterUnit) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rackOuterUnitTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackOuterUnitTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -638,7 +668,7 @@ const (
 
 // prop value enum
 func (m *RackOuterUnit) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rackOuterUnitTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackOuterUnitTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -742,7 +772,7 @@ const (
 
 // prop value enum
 func (m *RackStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rackStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -794,7 +824,7 @@ const (
 
 // prop value enum
 func (m *RackStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rackStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -898,7 +928,7 @@ const (
 
 // prop value enum
 func (m *RackType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rackTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -950,7 +980,7 @@ const (
 
 // prop value enum
 func (m *RackType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rackTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -1051,7 +1081,7 @@ const (
 
 // prop value enum
 func (m *RackWidth) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, rackWidthTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackWidthTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -1085,7 +1115,7 @@ func init() {
 
 // prop value enum
 func (m *RackWidth) validateValueEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, rackWidthTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, rackWidthTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
