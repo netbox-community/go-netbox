@@ -22454,7 +22454,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "date_added",
@@ -22531,7 +22531,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "rir",
@@ -22838,7 +22838,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "dns_name",
@@ -22852,7 +22852,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant_group",
@@ -22866,7 +22866,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -22957,7 +22957,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "vrf",
@@ -22978,7 +22978,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "virtual_machine",
@@ -22992,7 +22992,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "interface",
@@ -23006,7 +23006,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "vminterface",
@@ -23020,7 +23020,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "assigned_to_interface",
@@ -23439,7 +23439,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "is_pool",
@@ -23453,7 +23453,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant_group",
@@ -23467,7 +23467,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -23586,7 +23586,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "vrf",
@@ -23600,7 +23600,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "region",
@@ -23614,7 +23614,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -23628,7 +23628,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "vlan_vid",
@@ -23642,7 +23642,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role",
@@ -24134,7 +24134,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -24595,7 +24595,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -24979,7 +24979,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -25056,7 +25056,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "device",
@@ -25070,7 +25070,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "virtual_machine",
@@ -25461,7 +25461,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -25496,7 +25496,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "region",
@@ -25510,7 +25510,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -25971,14 +25971,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "vid",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -25992,7 +25992,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant_group",
@@ -26006,7 +26006,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -26069,7 +26069,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "region",
@@ -26083,7 +26083,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -26097,7 +26097,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "group",
@@ -26111,7 +26111,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role",
@@ -26565,7 +26565,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -26593,7 +26593,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant_group",
@@ -26607,7 +26607,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
