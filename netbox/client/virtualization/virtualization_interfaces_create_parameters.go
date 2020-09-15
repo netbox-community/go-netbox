@@ -30,7 +30,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/Boulet-/go-netbox/netbox/models"
 )
 
 // NewVirtualizationInterfacesCreateParams creates a new VirtualizationInterfacesCreateParams object
@@ -78,7 +78,7 @@ for the virtualization interfaces create operation typically these are written t
 type VirtualizationInterfacesCreateParams struct {
 
 	/*Data*/
-	Data *models.WritableVirtualMachineInterface
+	Data *models.WritableVMInterface
 
 	timeout    time.Duration
 	Context    context.Context
@@ -119,13 +119,13 @@ func (o *VirtualizationInterfacesCreateParams) SetHTTPClient(client *http.Client
 }
 
 // WithData adds the data to the virtualization interfaces create params
-func (o *VirtualizationInterfacesCreateParams) WithData(data *models.WritableVirtualMachineInterface) *VirtualizationInterfacesCreateParams {
+func (o *VirtualizationInterfacesCreateParams) WithData(data *models.WritableVMInterface) *VirtualizationInterfacesCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the virtualization interfaces create params
-func (o *VirtualizationInterfacesCreateParams) SetData(data *models.WritableVirtualMachineInterface) {
+func (o *VirtualizationInterfacesCreateParams) SetData(data *models.WritableVMInterface) {
 	o.Data = data
 }
 

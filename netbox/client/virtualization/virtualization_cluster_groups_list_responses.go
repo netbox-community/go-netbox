@@ -31,7 +31,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/Boulet-/go-netbox/netbox/models"
 )
 
 // VirtualizationClusterGroupsListReader is a Reader for the VirtualizationClusterGroupsList structure.
@@ -50,7 +50,7 @@ func (o *VirtualizationClusterGroupsListReader) ReadResponse(response runtime.Cl
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 

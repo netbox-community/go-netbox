@@ -132,6 +132,10 @@ type DcimRackReservationsListParams struct {
 	SiteID *string
 	/*SiteIDn*/
 	SiteIDn *string
+	/*Tag*/
+	Tag *string
+	/*Tagn*/
+	Tagn *string
 	/*Tenant*/
 	Tenant *string
 	/*Tenantn*/
@@ -468,6 +472,28 @@ func (o *DcimRackReservationsListParams) WithSiteIDn(siteIDn *string) *DcimRackR
 // SetSiteIDn adds the siteIdN to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) SetSiteIDn(siteIDn *string) {
 	o.SiteIDn = siteIDn
+}
+
+// WithTag adds the tag to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithTag(tag *string) *DcimRackReservationsListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithTagn(tagn *string) *DcimRackReservationsListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
 }
 
 // WithTenant adds the tenant to the dcim rack reservations list params
@@ -1004,6 +1030,38 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		qSiteIDn := qrSiteIDn
 		if qSiteIDn != "" {
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

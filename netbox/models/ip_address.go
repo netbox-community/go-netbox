@@ -41,6 +41,18 @@ type IPAddress struct {
 	// Required: true
 	Address *string `json:"address"`
 
+	// Assigned object
+	// Read Only: true
+	AssignedObject map[string]string `json:"assigned_object,omitempty"`
+
+	// Assigned object id
+	// Maximum: 2.147483647e+09
+	// Minimum: 0
+	AssignedObjectID *int64 `json:"assigned_object_id,omitempty"`
+
+	// Assigned object type
+	AssignedObjectType string `json:"assigned_object_type,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date
@@ -67,9 +79,6 @@ type IPAddress struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
-	// interface
-	Interface *IPAddressInterface `json:"interface,omitempty"`
-
 	// Last updated
 	// Read Only: true
 	// Format: date-time
@@ -88,10 +97,15 @@ type IPAddress struct {
 	Status *IPAddressStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 
 	// vrf
 	Vrf *NestedVRF `json:"vrf,omitempty"`
@@ -102,6 +116,10 @@ func (m *IPAddress) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAddress(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateAssignedObjectID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -118,10 +136,6 @@ func (m *IPAddress) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateFamily(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateInterface(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -153,6 +167,10 @@ func (m *IPAddress) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateURL(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateVrf(formats); err != nil {
 		res = append(res, err)
 	}
@@ -166,6 +184,23 @@ func (m *IPAddress) Validate(formats strfmt.Registry) error {
 func (m *IPAddress) validateAddress(formats strfmt.Registry) error {
 
 	if err := validate.Required("address", "body", m.Address); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *IPAddress) validateAssignedObjectID(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.AssignedObjectID) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("assigned_object_id", "body", int64(*m.AssignedObjectID), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("assigned_object_id", "body", int64(*m.AssignedObjectID), 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -225,24 +260,6 @@ func (m *IPAddress) validateFamily(formats strfmt.Registry) error {
 		if err := m.Family.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *IPAddress) validateInterface(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.Interface) { // not required
-		return nil
-	}
-
-	if m.Interface != nil {
-		if err := m.Interface.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("interface")
 			}
 			return err
 		}
@@ -343,9 +360,17 @@ func (m *IPAddress) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -366,6 +391,19 @@ func (m *IPAddress) validateTenant(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *IPAddress) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -464,7 +502,7 @@ const (
 
 // prop value enum
 func (m *IPAddressFamily) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressFamilyTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressFamilyTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -498,7 +536,7 @@ func init() {
 
 // prop value enum
 func (m *IPAddressFamily) validateValueEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, ipAddressFamilyTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressFamilyTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -611,7 +649,7 @@ const (
 
 // prop value enum
 func (m *IPAddressRole) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressRoleTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressRoleTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -672,7 +710,7 @@ const (
 
 // prop value enum
 func (m *IPAddressRole) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressRoleTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressRoleTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -717,12 +755,12 @@ type IPAddressStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Active Reserved Deprecated DHCP]
+	// Enum: [Active Reserved Deprecated DHCP SLAAC]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [active reserved deprecated dhcp]
+	// Enum: [active reserved deprecated dhcp slaac]
 	Value *string `json:"value"`
 }
 
@@ -748,7 +786,7 @@ var ipAddressStatusTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Active","Reserved","Deprecated","DHCP"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Active","Reserved","Deprecated","DHCP","SLAAC"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -769,11 +807,14 @@ const (
 
 	// IPAddressStatusLabelDHCP captures enum value "DHCP"
 	IPAddressStatusLabelDHCP string = "DHCP"
+
+	// IPAddressStatusLabelSLAAC captures enum value "SLAAC"
+	IPAddressStatusLabelSLAAC string = "SLAAC"
 )
 
 // prop value enum
 func (m *IPAddressStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -797,7 +838,7 @@ var ipAddressStatusTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["active","reserved","deprecated","dhcp"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["active","reserved","deprecated","dhcp","slaac"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -818,11 +859,14 @@ const (
 
 	// IPAddressStatusValueDhcp captures enum value "dhcp"
 	IPAddressStatusValueDhcp string = "dhcp"
+
+	// IPAddressStatusValueSlaac captures enum value "slaac"
+	IPAddressStatusValueSlaac string = "slaac"
 )
 
 // prop value enum
 func (m *IPAddressStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, ipAddressStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, ipAddressStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

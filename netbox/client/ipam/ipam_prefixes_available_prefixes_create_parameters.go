@@ -31,7 +31,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/Boulet-/go-netbox/netbox/models"
 )
 
 // NewIpamPrefixesAvailablePrefixesCreateParams creates a new IpamPrefixesAvailablePrefixesCreateParams object
@@ -79,7 +79,7 @@ for the ipam prefixes available prefixes create operation typically these are wr
 type IpamPrefixesAvailablePrefixesCreateParams struct {
 
 	/*Data*/
-	Data *models.WritablePrefix
+	Data *models.PrefixLength
 	/*ID
 	  A unique integer value identifying this prefix.
 
@@ -125,13 +125,13 @@ func (o *IpamPrefixesAvailablePrefixesCreateParams) SetHTTPClient(client *http.C
 }
 
 // WithData adds the data to the ipam prefixes available prefixes create params
-func (o *IpamPrefixesAvailablePrefixesCreateParams) WithData(data *models.WritablePrefix) *IpamPrefixesAvailablePrefixesCreateParams {
+func (o *IpamPrefixesAvailablePrefixesCreateParams) WithData(data *models.PrefixLength) *IpamPrefixesAvailablePrefixesCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the ipam prefixes available prefixes create params
-func (o *IpamPrefixesAvailablePrefixesCreateParams) SetData(data *models.WritablePrefix) {
+func (o *IpamPrefixesAvailablePrefixesCreateParams) SetData(data *models.PrefixLength) {
 	o.Data = data
 }
 

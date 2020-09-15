@@ -44,6 +44,12 @@ type NestedVirtualChassis struct {
 	// Read Only: true
 	MemberCount int64 `json:"member_count,omitempty"`
 
+	// Name
+	// Required: true
+	// Max Length: 64
+	// Min Length: 1
+	Name *string `json:"name"`
+
 	// Url
 	// Read Only: true
 	// Format: uri
@@ -55,6 +61,10 @@ func (m *NestedVirtualChassis) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateMaster(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -81,6 +91,23 @@ func (m *NestedVirtualChassis) validateMaster(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *NestedVirtualChassis) validateName(formats strfmt.Registry) error {
+
+	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+		return err
 	}
 
 	return nil

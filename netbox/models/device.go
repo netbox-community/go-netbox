@@ -123,10 +123,15 @@ type Device struct {
 	Status *DeviceStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 
 	// Vc position
 	// Maximum: 255
@@ -223,6 +228,10 @@ func (m *Device) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTenant(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -549,9 +558,17 @@ func (m *Device) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -572,6 +589,19 @@ func (m *Device) validateTenant(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Device) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -704,7 +734,7 @@ const (
 
 // prop value enum
 func (m *DeviceFace) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceFaceTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceFaceTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -747,7 +777,7 @@ const (
 
 // prop value enum
 func (m *DeviceFace) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceFaceTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceFaceTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -857,7 +887,7 @@ const (
 
 // prop value enum
 func (m *DeviceStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -915,7 +945,7 @@ const (
 
 // prop value enum
 func (m *DeviceStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, deviceStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, deviceStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

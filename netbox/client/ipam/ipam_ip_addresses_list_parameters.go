@@ -184,12 +184,16 @@ type IpamIPAddressesListParams struct {
 	TenantIDn *string
 	/*VirtualMachine*/
 	VirtualMachine *string
-	/*VirtualMachinen*/
-	VirtualMachinen *string
 	/*VirtualMachineID*/
 	VirtualMachineID *string
-	/*VirtualMachineIDn*/
-	VirtualMachineIDn *string
+	/*Vminterface*/
+	Vminterface *string
+	/*Vminterfacen*/
+	Vminterfacen *string
+	/*VminterfaceID*/
+	VminterfaceID *string
+	/*VminterfaceIDn*/
+	VminterfaceIDn *string
 	/*Vrf*/
 	Vrf *string
 	/*Vrfn*/
@@ -798,17 +802,6 @@ func (o *IpamIPAddressesListParams) SetVirtualMachine(virtualMachine *string) {
 	o.VirtualMachine = virtualMachine
 }
 
-// WithVirtualMachinen adds the virtualMachinen to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) WithVirtualMachinen(virtualMachinen *string) *IpamIPAddressesListParams {
-	o.SetVirtualMachinen(virtualMachinen)
-	return o
-}
-
-// SetVirtualMachinen adds the virtualMachineN to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) SetVirtualMachinen(virtualMachinen *string) {
-	o.VirtualMachinen = virtualMachinen
-}
-
 // WithVirtualMachineID adds the virtualMachineID to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithVirtualMachineID(virtualMachineID *string) *IpamIPAddressesListParams {
 	o.SetVirtualMachineID(virtualMachineID)
@@ -820,15 +813,48 @@ func (o *IpamIPAddressesListParams) SetVirtualMachineID(virtualMachineID *string
 	o.VirtualMachineID = virtualMachineID
 }
 
-// WithVirtualMachineIDn adds the virtualMachineIDn to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) WithVirtualMachineIDn(virtualMachineIDn *string) *IpamIPAddressesListParams {
-	o.SetVirtualMachineIDn(virtualMachineIDn)
+// WithVminterface adds the vminterface to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithVminterface(vminterface *string) *IpamIPAddressesListParams {
+	o.SetVminterface(vminterface)
 	return o
 }
 
-// SetVirtualMachineIDn adds the virtualMachineIdN to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) SetVirtualMachineIDn(virtualMachineIDn *string) {
-	o.VirtualMachineIDn = virtualMachineIDn
+// SetVminterface adds the vminterface to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetVminterface(vminterface *string) {
+	o.Vminterface = vminterface
+}
+
+// WithVminterfacen adds the vminterfacen to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithVminterfacen(vminterfacen *string) *IpamIPAddressesListParams {
+	o.SetVminterfacen(vminterfacen)
+	return o
+}
+
+// SetVminterfacen adds the vminterfaceN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetVminterfacen(vminterfacen *string) {
+	o.Vminterfacen = vminterfacen
+}
+
+// WithVminterfaceID adds the vminterfaceID to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithVminterfaceID(vminterfaceID *string) *IpamIPAddressesListParams {
+	o.SetVminterfaceID(vminterfaceID)
+	return o
+}
+
+// SetVminterfaceID adds the vminterfaceId to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetVminterfaceID(vminterfaceID *string) {
+	o.VminterfaceID = vminterfaceID
+}
+
+// WithVminterfaceIDn adds the vminterfaceIDn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithVminterfaceIDn(vminterfaceIDn *string) *IpamIPAddressesListParams {
+	o.SetVminterfaceIDn(vminterfaceIDn)
+	return o
+}
+
+// SetVminterfaceIDn adds the vminterfaceIdN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetVminterfaceIDn(vminterfaceIDn *string) {
+	o.VminterfaceIDn = vminterfaceIDn
 }
 
 // WithVrf adds the vrf to the ipam ip addresses list params
@@ -1699,22 +1725,6 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
-	if o.VirtualMachinen != nil {
-
-		// query param virtual_machine__n
-		var qrVirtualMachinen string
-		if o.VirtualMachinen != nil {
-			qrVirtualMachinen = *o.VirtualMachinen
-		}
-		qVirtualMachinen := qrVirtualMachinen
-		if qVirtualMachinen != "" {
-			if err := r.SetQueryParam("virtual_machine__n", qVirtualMachinen); err != nil {
-				return err
-			}
-		}
-
-	}
-
 	if o.VirtualMachineID != nil {
 
 		// query param virtual_machine_id
@@ -1731,16 +1741,64 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
-	if o.VirtualMachineIDn != nil {
+	if o.Vminterface != nil {
 
-		// query param virtual_machine_id__n
-		var qrVirtualMachineIDn string
-		if o.VirtualMachineIDn != nil {
-			qrVirtualMachineIDn = *o.VirtualMachineIDn
+		// query param vminterface
+		var qrVminterface string
+		if o.Vminterface != nil {
+			qrVminterface = *o.Vminterface
 		}
-		qVirtualMachineIDn := qrVirtualMachineIDn
-		if qVirtualMachineIDn != "" {
-			if err := r.SetQueryParam("virtual_machine_id__n", qVirtualMachineIDn); err != nil {
+		qVminterface := qrVminterface
+		if qVminterface != "" {
+			if err := r.SetQueryParam("vminterface", qVminterface); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Vminterfacen != nil {
+
+		// query param vminterface__n
+		var qrVminterfacen string
+		if o.Vminterfacen != nil {
+			qrVminterfacen = *o.Vminterfacen
+		}
+		qVminterfacen := qrVminterfacen
+		if qVminterfacen != "" {
+			if err := r.SetQueryParam("vminterface__n", qVminterfacen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VminterfaceID != nil {
+
+		// query param vminterface_id
+		var qrVminterfaceID string
+		if o.VminterfaceID != nil {
+			qrVminterfaceID = *o.VminterfaceID
+		}
+		qVminterfaceID := qrVminterfaceID
+		if qVminterfaceID != "" {
+			if err := r.SetQueryParam("vminterface_id", qVminterfaceID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VminterfaceIDn != nil {
+
+		// query param vminterface_id__n
+		var qrVminterfaceIDn string
+		if o.VminterfaceIDn != nil {
+			qrVminterfaceIDn = *o.VminterfaceIDn
+		}
+		qVminterfaceIDn := qrVminterfaceIDn
+		if qVminterfaceIDn != "" {
+			if err := r.SetQueryParam("vminterface_id__n", qVminterfaceIDn); err != nil {
 				return err
 			}
 		}

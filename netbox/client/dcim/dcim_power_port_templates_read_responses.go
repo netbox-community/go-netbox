@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/Boulet-/go-netbox/netbox/models"
 )
 
 // DcimPowerPortTemplatesReadReader is a Reader for the DcimPowerPortTemplatesRead structure.
@@ -46,7 +46,7 @@ func (o *DcimPowerPortTemplatesReadReader) ReadResponse(response runtime.ClientR
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 

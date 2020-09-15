@@ -31,7 +31,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/Boulet-/go-netbox/netbox/models"
 )
 
 // NewVirtualizationInterfacesUpdateParams creates a new VirtualizationInterfacesUpdateParams object
@@ -79,7 +79,7 @@ for the virtualization interfaces update operation typically these are written t
 type VirtualizationInterfacesUpdateParams struct {
 
 	/*Data*/
-	Data *models.WritableVirtualMachineInterface
+	Data *models.WritableVMInterface
 	/*ID
 	  A unique integer value identifying this interface.
 
@@ -125,13 +125,13 @@ func (o *VirtualizationInterfacesUpdateParams) SetHTTPClient(client *http.Client
 }
 
 // WithData adds the data to the virtualization interfaces update params
-func (o *VirtualizationInterfacesUpdateParams) WithData(data *models.WritableVirtualMachineInterface) *VirtualizationInterfacesUpdateParams {
+func (o *VirtualizationInterfacesUpdateParams) WithData(data *models.WritableVMInterface) *VirtualizationInterfacesUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the virtualization interfaces update params
-func (o *VirtualizationInterfacesUpdateParams) SetData(data *models.WritableVirtualMachineInterface) {
+func (o *VirtualizationInterfacesUpdateParams) SetData(data *models.WritableVMInterface) {
 	o.Data = data
 }
 

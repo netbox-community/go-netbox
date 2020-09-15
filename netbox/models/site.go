@@ -139,13 +139,18 @@ type Site struct {
 	Status *SiteStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
 
 	// Time zone
 	TimeZone string `json:"time_zone,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 
 	// Virtualmachine count
 	// Read Only: true
@@ -221,6 +226,10 @@ func (m *Site) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTenant(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -449,9 +458,17 @@ func (m *Site) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -472,6 +489,19 @@ func (m *Site) validateTenant(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Site) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -502,12 +532,12 @@ type SiteStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Active Planned Retired]
+	// Enum: [Planned Staging Active Decommissioning Retired]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [active planned retired]
+	// Enum: [planned staging active decommissioning retired]
 	Value *string `json:"value"`
 }
 
@@ -533,7 +563,7 @@ var siteStatusTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Active","Planned","Retired"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Planned","Staging","Active","Decommissioning","Retired"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -543,11 +573,17 @@ func init() {
 
 const (
 
+	// SiteStatusLabelPlanned captures enum value "Planned"
+	SiteStatusLabelPlanned string = "Planned"
+
+	// SiteStatusLabelStaging captures enum value "Staging"
+	SiteStatusLabelStaging string = "Staging"
+
 	// SiteStatusLabelActive captures enum value "Active"
 	SiteStatusLabelActive string = "Active"
 
-	// SiteStatusLabelPlanned captures enum value "Planned"
-	SiteStatusLabelPlanned string = "Planned"
+	// SiteStatusLabelDecommissioning captures enum value "Decommissioning"
+	SiteStatusLabelDecommissioning string = "Decommissioning"
 
 	// SiteStatusLabelRetired captures enum value "Retired"
 	SiteStatusLabelRetired string = "Retired"
@@ -555,7 +591,7 @@ const (
 
 // prop value enum
 func (m *SiteStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, siteStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, siteStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -579,7 +615,7 @@ var siteStatusTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["active","planned","retired"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["planned","staging","active","decommissioning","retired"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -589,11 +625,17 @@ func init() {
 
 const (
 
+	// SiteStatusValuePlanned captures enum value "planned"
+	SiteStatusValuePlanned string = "planned"
+
+	// SiteStatusValueStaging captures enum value "staging"
+	SiteStatusValueStaging string = "staging"
+
 	// SiteStatusValueActive captures enum value "active"
 	SiteStatusValueActive string = "active"
 
-	// SiteStatusValuePlanned captures enum value "planned"
-	SiteStatusValuePlanned string = "planned"
+	// SiteStatusValueDecommissioning captures enum value "decommissioning"
+	SiteStatusValueDecommissioning string = "decommissioning"
 
 	// SiteStatusValueRetired captures enum value "retired"
 	SiteStatusValueRetired string = "retired"
@@ -601,7 +643,7 @@ const (
 
 // prop value enum
 func (m *SiteStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, siteStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, siteStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

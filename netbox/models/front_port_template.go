@@ -34,6 +34,10 @@ import (
 // swagger:model FrontPortTemplate
 type FrontPortTemplate struct {
 
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
+
 	// device type
 	// Required: true
 	DeviceType *NestedDeviceType `json:"device_type"`
@@ -41,6 +45,12 @@ type FrontPortTemplate struct {
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Label
+	//
+	// Physical label
+	// Max Length: 64
+	Label string `json:"label,omitempty"`
 
 	// Name
 	// Required: true
@@ -60,13 +70,26 @@ type FrontPortTemplate struct {
 	// type
 	// Required: true
 	Type *FrontPortTemplateType `json:"type"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 }
 
 // Validate validates this front port template
 func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDeviceType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLabel(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -86,9 +109,26 @@ func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateURL(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FrontPortTemplate) validateDescription(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -105,6 +145,19 @@ func (m *FrontPortTemplate) validateDeviceType(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *FrontPortTemplate) validateLabel(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Label) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+		return err
 	}
 
 	return nil
@@ -180,6 +233,19 @@ func (m *FrontPortTemplate) validateType(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *FrontPortTemplate) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // MarshalBinary interface implementation
 func (m *FrontPortTemplate) MarshalBinary() ([]byte, error) {
 	if m == nil {
@@ -205,12 +271,12 @@ type FrontPortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [8P8C 110 Punch BNC MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST]
+	// Enum: [8P8C 8P6C 8P4C 8P2C 110 Punch BNC MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [8p8c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
 	Value *string `json:"value"`
 }
 
@@ -236,7 +302,7 @@ var frontPortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8P8C","110 Punch","BNC","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","110 Punch","BNC","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -248,6 +314,15 @@ const (
 
 	// FrontPortTemplateTypeLabelNr8P8C captures enum value "8P8C"
 	FrontPortTemplateTypeLabelNr8P8C string = "8P8C"
+
+	// FrontPortTemplateTypeLabelNr8P6C captures enum value "8P6C"
+	FrontPortTemplateTypeLabelNr8P6C string = "8P6C"
+
+	// FrontPortTemplateTypeLabelNr8P4C captures enum value "8P4C"
+	FrontPortTemplateTypeLabelNr8P4C string = "8P4C"
+
+	// FrontPortTemplateTypeLabelNr8P2C captures enum value "8P2C"
+	FrontPortTemplateTypeLabelNr8P2C string = "8P2C"
 
 	// FrontPortTemplateTypeLabelNr110Punch captures enum value "110 Punch"
 	FrontPortTemplateTypeLabelNr110Punch string = "110 Punch"
@@ -291,7 +366,7 @@ const (
 
 // prop value enum
 func (m *FrontPortTemplateType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, frontPortTemplateTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, frontPortTemplateTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -315,7 +390,7 @@ var frontPortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -327,6 +402,15 @@ const (
 
 	// FrontPortTemplateTypeValueNr8p8c captures enum value "8p8c"
 	FrontPortTemplateTypeValueNr8p8c string = "8p8c"
+
+	// FrontPortTemplateTypeValueNr8p6c captures enum value "8p6c"
+	FrontPortTemplateTypeValueNr8p6c string = "8p6c"
+
+	// FrontPortTemplateTypeValueNr8p4c captures enum value "8p4c"
+	FrontPortTemplateTypeValueNr8p4c string = "8p4c"
+
+	// FrontPortTemplateTypeValueNr8p2c captures enum value "8p2c"
+	FrontPortTemplateTypeValueNr8p2c string = "8p2c"
 
 	// FrontPortTemplateTypeValueNr110Punch captures enum value "110-punch"
 	FrontPortTemplateTypeValueNr110Punch string = "110-punch"
@@ -370,7 +454,7 @@ const (
 
 // prop value enum
 func (m *FrontPortTemplateType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, frontPortTemplateTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, frontPortTemplateTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

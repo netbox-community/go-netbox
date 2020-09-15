@@ -43,15 +43,25 @@ type VirtualChassis struct {
 	ID int64 `json:"id,omitempty"`
 
 	// master
-	// Required: true
-	Master *NestedDevice `json:"master"`
+	Master *NestedDevice `json:"master,omitempty"`
 
 	// Member count
 	// Read Only: true
 	MemberCount int64 `json:"member_count,omitempty"`
 
+	// Name
+	// Required: true
+	// Max Length: 64
+	// Min Length: 1
+	Name *string `json:"name"`
+
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 }
 
 // Validate validates this virtual chassis
@@ -66,7 +76,15 @@ func (m *VirtualChassis) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTags(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -91,8 +109,8 @@ func (m *VirtualChassis) validateDomain(formats strfmt.Registry) error {
 
 func (m *VirtualChassis) validateMaster(formats strfmt.Registry) error {
 
-	if err := validate.Required("master", "body", m.Master); err != nil {
-		return err
+	if swag.IsZero(m.Master) { // not required
+		return nil
 	}
 
 	if m.Master != nil {
@@ -107,6 +125,23 @@ func (m *VirtualChassis) validateMaster(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *VirtualChassis) validateName(formats strfmt.Registry) error {
+
+	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *VirtualChassis) validateTags(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Tags) { // not required
@@ -114,11 +149,32 @@ func (m *VirtualChassis) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
-
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
 		}
 
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *VirtualChassis) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
