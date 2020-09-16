@@ -30132,7 +30132,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -30586,7 +30586,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -31040,7 +31040,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -31054,7 +31054,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant_group",
@@ -31068,7 +31068,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -31131,7 +31131,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "region",
@@ -31145,7 +31145,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -31159,7 +31159,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "group",
@@ -31173,7 +31173,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "type",
@@ -31578,7 +31578,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -31599,7 +31599,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "number"
           },
           {
             "name": "q",
@@ -31613,7 +31613,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "cluster",
@@ -31627,7 +31627,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "virtual_machine",
@@ -32108,7 +32108,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "name",
@@ -32129,21 +32129,21 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "memory",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "disk",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "local_context_data",
@@ -32157,7 +32157,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant_group",
@@ -32171,7 +32171,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "tenant",
@@ -32241,7 +32241,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "cluster_group",
@@ -32255,7 +32255,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "cluster_type",
@@ -32269,14 +32269,14 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "region_id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "region",
@@ -32290,7 +32290,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "site",
@@ -32304,7 +32304,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "role",
@@ -32318,7 +32318,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "integer"
           },
           {
             "name": "platform",
