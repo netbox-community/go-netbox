@@ -44,9 +44,15 @@ func (o *DcimRackGroupsCreateReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimRackGroupsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimRackGroupsCreateCreated) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRackGroupsCreateDefault creates a DcimRackGroupsCreateDefault with default headers values
+func NewDcimRackGroupsCreateDefault(code int) *DcimRackGroupsCreateDefault {
+	return &DcimRackGroupsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimRackGroupsCreateDefault handles this case with default header values.
+
+DcimRackGroupsCreateDefault dcim rack groups create default
+*/
+type DcimRackGroupsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rack groups create default response
+func (o *DcimRackGroupsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRackGroupsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /dcim/rack-groups/][%d] dcim_rack-groups_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimRackGroupsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRackGroupsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

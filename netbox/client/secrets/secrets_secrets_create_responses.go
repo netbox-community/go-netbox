@@ -44,9 +44,15 @@ func (o *SecretsSecretsCreateReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewSecretsSecretsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *SecretsSecretsCreateCreated) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewSecretsSecretsCreateDefault creates a SecretsSecretsCreateDefault with default headers values
+func NewSecretsSecretsCreateDefault(code int) *SecretsSecretsCreateDefault {
+	return &SecretsSecretsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*SecretsSecretsCreateDefault handles this case with default header values.
+
+SecretsSecretsCreateDefault secrets secrets create default
+*/
+type SecretsSecretsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the secrets secrets create default response
+func (o *SecretsSecretsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *SecretsSecretsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /secrets/secrets/][%d] secrets_secrets_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *SecretsSecretsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *SecretsSecretsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -44,9 +44,15 @@ func (o *DcimInventoryItemsPartialUpdateReader) ReadResponse(response runtime.Cl
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimInventoryItemsPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimInventoryItemsPartialUpdateOK) readResponse(response runtime.Client
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimInventoryItemsPartialUpdateDefault creates a DcimInventoryItemsPartialUpdateDefault with default headers values
+func NewDcimInventoryItemsPartialUpdateDefault(code int) *DcimInventoryItemsPartialUpdateDefault {
+	return &DcimInventoryItemsPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimInventoryItemsPartialUpdateDefault handles this case with default header values.
+
+DcimInventoryItemsPartialUpdateDefault dcim inventory items partial update default
+*/
+type DcimInventoryItemsPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim inventory items partial update default response
+func (o *DcimInventoryItemsPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimInventoryItemsPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcim_inventory-items_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimInventoryItemsPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimInventoryItemsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

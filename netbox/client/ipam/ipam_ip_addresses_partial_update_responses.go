@@ -44,9 +44,15 @@ func (o *IpamIPAddressesPartialUpdateReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewIpamIPAddressesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *IpamIPAddressesPartialUpdateOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamIPAddressesPartialUpdateDefault creates a IpamIPAddressesPartialUpdateDefault with default headers values
+func NewIpamIPAddressesPartialUpdateDefault(code int) *IpamIPAddressesPartialUpdateDefault {
+	return &IpamIPAddressesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*IpamIPAddressesPartialUpdateDefault handles this case with default header values.
+
+IpamIPAddressesPartialUpdateDefault ipam ip addresses partial update default
+*/
+type IpamIPAddressesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam ip addresses partial update default response
+func (o *IpamIPAddressesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamIPAddressesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *IpamIPAddressesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamIPAddressesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

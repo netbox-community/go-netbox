@@ -44,9 +44,15 @@ func (o *ExtrasGraphsCreateReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewExtrasGraphsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *ExtrasGraphsCreateCreated) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasGraphsCreateDefault creates a ExtrasGraphsCreateDefault with default headers values
+func NewExtrasGraphsCreateDefault(code int) *ExtrasGraphsCreateDefault {
+	return &ExtrasGraphsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*ExtrasGraphsCreateDefault handles this case with default header values.
+
+ExtrasGraphsCreateDefault extras graphs create default
+*/
+type ExtrasGraphsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras graphs create default response
+func (o *ExtrasGraphsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasGraphsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /extras/graphs/][%d] extras_graphs_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *ExtrasGraphsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasGraphsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

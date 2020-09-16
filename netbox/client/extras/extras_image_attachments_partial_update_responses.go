@@ -44,9 +44,15 @@ func (o *ExtrasImageAttachmentsPartialUpdateReader) ReadResponse(response runtim
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewExtrasImageAttachmentsPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *ExtrasImageAttachmentsPartialUpdateOK) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasImageAttachmentsPartialUpdateDefault creates a ExtrasImageAttachmentsPartialUpdateDefault with default headers values
+func NewExtrasImageAttachmentsPartialUpdateDefault(code int) *ExtrasImageAttachmentsPartialUpdateDefault {
+	return &ExtrasImageAttachmentsPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*ExtrasImageAttachmentsPartialUpdateDefault handles this case with default header values.
+
+ExtrasImageAttachmentsPartialUpdateDefault extras image attachments partial update default
+*/
+type ExtrasImageAttachmentsPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras image attachments partial update default response
+func (o *ExtrasImageAttachmentsPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasImageAttachmentsPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extras_image-attachments_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *ExtrasImageAttachmentsPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasImageAttachmentsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

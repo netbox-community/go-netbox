@@ -44,9 +44,15 @@ func (o *DcimRearPortsCreateReader) ReadResponse(response runtime.ClientResponse
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimRearPortsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimRearPortsCreateCreated) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRearPortsCreateDefault creates a DcimRearPortsCreateDefault with default headers values
+func NewDcimRearPortsCreateDefault(code int) *DcimRearPortsCreateDefault {
+	return &DcimRearPortsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimRearPortsCreateDefault handles this case with default header values.
+
+DcimRearPortsCreateDefault dcim rear ports create default
+*/
+type DcimRearPortsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rear ports create default response
+func (o *DcimRearPortsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRearPortsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /dcim/rear-ports/][%d] dcim_rear-ports_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimRearPortsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRearPortsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

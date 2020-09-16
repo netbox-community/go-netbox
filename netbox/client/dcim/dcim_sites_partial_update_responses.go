@@ -44,9 +44,15 @@ func (o *DcimSitesPartialUpdateReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimSitesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimSitesPartialUpdateOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimSitesPartialUpdateDefault creates a DcimSitesPartialUpdateDefault with default headers values
+func NewDcimSitesPartialUpdateDefault(code int) *DcimSitesPartialUpdateDefault {
+	return &DcimSitesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimSitesPartialUpdateDefault handles this case with default header values.
+
+DcimSitesPartialUpdateDefault dcim sites partial update default
+*/
+type DcimSitesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim sites partial update default response
+func (o *DcimSitesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimSitesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/sites/{id}/][%d] dcim_sites_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimSitesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimSitesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

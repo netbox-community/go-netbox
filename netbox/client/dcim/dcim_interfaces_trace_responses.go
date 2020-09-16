@@ -46,7 +46,7 @@ func (o *DcimInterfacesTraceReader) ReadResponse(response runtime.ClientResponse
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -60,20 +60,20 @@ func NewDcimInterfacesTraceOK() *DcimInterfacesTraceOK {
 DcimInterfacesTraceOK dcim interfaces trace o k
 */
 type DcimInterfacesTraceOK struct {
-	Payload *models.DeviceInterface
+	Payload *models.Interface
 }
 
 func (o *DcimInterfacesTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcimInterfacesTraceOK  %+v", 200, o.Payload)
 }
 
-func (o *DcimInterfacesTraceOK) GetPayload() *models.DeviceInterface {
+func (o *DcimInterfacesTraceOK) GetPayload() *models.Interface {
 	return o.Payload
 }
 
 func (o *DcimInterfacesTraceOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.DeviceInterface)
+	o.Payload = new(models.Interface)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

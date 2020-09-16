@@ -50,7 +50,7 @@ func (o *VirtualizationInterfacesListReader) ReadResponse(response runtime.Clien
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -106,7 +106,7 @@ type VirtualizationInterfacesListOKBody struct {
 
 	// results
 	// Required: true
-	Results []*models.VirtualMachineInterface `json:"results"`
+	Results []*models.VMInterface `json:"results"`
 }
 
 // Validate validates this virtualization interfaces list o k body

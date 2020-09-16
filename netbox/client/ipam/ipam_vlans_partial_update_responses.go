@@ -44,9 +44,15 @@ func (o *IpamVlansPartialUpdateReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewIpamVlansPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *IpamVlansPartialUpdateOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamVlansPartialUpdateDefault creates a IpamVlansPartialUpdateDefault with default headers values
+func NewIpamVlansPartialUpdateDefault(code int) *IpamVlansPartialUpdateDefault {
+	return &IpamVlansPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*IpamVlansPartialUpdateDefault handles this case with default header values.
+
+IpamVlansPartialUpdateDefault ipam vlans partial update default
+*/
+type IpamVlansPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam vlans partial update default response
+func (o *IpamVlansPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamVlansPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /ipam/vlans/{id}/][%d] ipam_vlans_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *IpamVlansPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamVlansPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

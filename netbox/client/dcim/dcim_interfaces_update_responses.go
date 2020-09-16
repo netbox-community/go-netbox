@@ -44,9 +44,15 @@ func (o *DcimInterfacesUpdateReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimInterfacesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -60,23 +66,63 @@ func NewDcimInterfacesUpdateOK() *DcimInterfacesUpdateOK {
 DcimInterfacesUpdateOK dcim interfaces update o k
 */
 type DcimInterfacesUpdateOK struct {
-	Payload *models.DeviceInterface
+	Payload *models.Interface
 }
 
 func (o *DcimInterfacesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcimInterfacesUpdateOK  %+v", 200, o.Payload)
 }
 
-func (o *DcimInterfacesUpdateOK) GetPayload() *models.DeviceInterface {
+func (o *DcimInterfacesUpdateOK) GetPayload() *models.Interface {
 	return o.Payload
 }
 
 func (o *DcimInterfacesUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.DeviceInterface)
+	o.Payload = new(models.Interface)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimInterfacesUpdateDefault creates a DcimInterfacesUpdateDefault with default headers values
+func NewDcimInterfacesUpdateDefault(code int) *DcimInterfacesUpdateDefault {
+	return &DcimInterfacesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimInterfacesUpdateDefault handles this case with default header values.
+
+DcimInterfacesUpdateDefault dcim interfaces update default
+*/
+type DcimInterfacesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim interfaces update default response
+func (o *DcimInterfacesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimInterfacesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcim_interfaces_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimInterfacesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimInterfacesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

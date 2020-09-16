@@ -113,6 +113,10 @@ type IpamPrefixesListParams struct {
 	Limit *int64
 	/*MaskLength*/
 	MaskLength *float64
+	/*MaskLengthGte*/
+	MaskLengthGte *float64
+	/*MaskLengthLte*/
+	MaskLengthLte *float64
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -412,6 +416,28 @@ func (o *IpamPrefixesListParams) WithMaskLength(maskLength *float64) *IpamPrefix
 // SetMaskLength adds the maskLength to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetMaskLength(maskLength *float64) {
 	o.MaskLength = maskLength
+}
+
+// WithMaskLengthGte adds the maskLengthGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithMaskLengthGte(maskLengthGte *float64) *IpamPrefixesListParams {
+	o.SetMaskLengthGte(maskLengthGte)
+	return o
+}
+
+// SetMaskLengthGte adds the maskLengthGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetMaskLengthGte(maskLengthGte *float64) {
+	o.MaskLengthGte = maskLengthGte
+}
+
+// WithMaskLengthLte adds the maskLengthLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithMaskLengthLte(maskLengthLte *float64) *IpamPrefixesListParams {
+	o.SetMaskLengthLte(maskLengthLte)
+	return o
+}
+
+// SetMaskLengthLte adds the maskLengthLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetMaskLengthLte(maskLengthLte *float64) {
+	o.MaskLengthLte = maskLengthLte
 }
 
 // WithOffset adds the offset to the ipam prefixes list params
@@ -1084,6 +1110,38 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		qMaskLength := swag.FormatFloat64(qrMaskLength)
 		if qMaskLength != "" {
 			if err := r.SetQueryParam("mask_length", qMaskLength); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.MaskLengthGte != nil {
+
+		// query param mask_length__gte
+		var qrMaskLengthGte float64
+		if o.MaskLengthGte != nil {
+			qrMaskLengthGte = *o.MaskLengthGte
+		}
+		qMaskLengthGte := swag.FormatFloat64(qrMaskLengthGte)
+		if qMaskLengthGte != "" {
+			if err := r.SetQueryParam("mask_length__gte", qMaskLengthGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.MaskLengthLte != nil {
+
+		// query param mask_length__lte
+		var qrMaskLengthLte float64
+		if o.MaskLengthLte != nil {
+			qrMaskLengthLte = *o.MaskLengthLte
+		}
+		qMaskLengthLte := swag.FormatFloat64(qrMaskLengthLte)
+		if qMaskLengthLte != "" {
+			if err := r.SetQueryParam("mask_length__lte", qMaskLengthLte); err != nil {
 				return err
 			}
 		}

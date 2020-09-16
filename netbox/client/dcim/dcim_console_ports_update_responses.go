@@ -44,9 +44,15 @@ func (o *DcimConsolePortsUpdateReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimConsolePortsUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimConsolePortsUpdateOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimConsolePortsUpdateDefault creates a DcimConsolePortsUpdateDefault with default headers values
+func NewDcimConsolePortsUpdateDefault(code int) *DcimConsolePortsUpdateDefault {
+	return &DcimConsolePortsUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimConsolePortsUpdateDefault handles this case with default header values.
+
+DcimConsolePortsUpdateDefault dcim console ports update default
+*/
+type DcimConsolePortsUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim console ports update default response
+func (o *DcimConsolePortsUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimConsolePortsUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/console-ports/{id}/][%d] dcim_console-ports_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimConsolePortsUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimConsolePortsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

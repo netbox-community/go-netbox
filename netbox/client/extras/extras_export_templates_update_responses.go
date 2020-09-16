@@ -44,9 +44,15 @@ func (o *ExtrasExportTemplatesUpdateReader) ReadResponse(response runtime.Client
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewExtrasExportTemplatesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *ExtrasExportTemplatesUpdateOK) readResponse(response runtime.ClientResp
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasExportTemplatesUpdateDefault creates a ExtrasExportTemplatesUpdateDefault with default headers values
+func NewExtrasExportTemplatesUpdateDefault(code int) *ExtrasExportTemplatesUpdateDefault {
+	return &ExtrasExportTemplatesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*ExtrasExportTemplatesUpdateDefault handles this case with default header values.
+
+ExtrasExportTemplatesUpdateDefault extras export templates update default
+*/
+type ExtrasExportTemplatesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras export templates update default response
+func (o *ExtrasExportTemplatesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasExportTemplatesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /extras/export-templates/{id}/][%d] extras_export-templates_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *ExtrasExportTemplatesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasExportTemplatesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

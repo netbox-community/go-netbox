@@ -44,9 +44,15 @@ func (o *DcimConsoleServerPortsUpdateReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimConsoleServerPortsUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimConsoleServerPortsUpdateOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimConsoleServerPortsUpdateDefault creates a DcimConsoleServerPortsUpdateDefault with default headers values
+func NewDcimConsoleServerPortsUpdateDefault(code int) *DcimConsoleServerPortsUpdateDefault {
+	return &DcimConsoleServerPortsUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimConsoleServerPortsUpdateDefault handles this case with default header values.
+
+DcimConsoleServerPortsUpdateDefault dcim console server ports update default
+*/
+type DcimConsoleServerPortsUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim console server ports update default response
+func (o *DcimConsoleServerPortsUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimConsoleServerPortsUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/console-server-ports/{id}/][%d] dcim_console-server-ports_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimConsoleServerPortsUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimConsoleServerPortsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -32,6 +32,10 @@ import (
 // swagger:model TenantGroup
 type TenantGroup struct {
 
+	// depth
+	// Read Only: true
+	Depth int64 `json:"_depth,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -59,6 +63,11 @@ type TenantGroup struct {
 	// Tenant count
 	// Read Only: true
 	TenantCount int64 `json:"tenant_count,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 }
 
 // Validate validates this tenant group
@@ -78,6 +87,10 @@ func (m *TenantGroup) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSlug(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -150,6 +163,19 @@ func (m *TenantGroup) validateSlug(formats strfmt.Registry) error {
 	}
 
 	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *TenantGroup) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 

@@ -131,7 +131,7 @@ type WritableRack struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`
@@ -146,6 +146,11 @@ type WritableRack struct {
 	// Maximum: 100
 	// Minimum: 1
 	UHeight int64 `json:"u_height,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 
 	// Width
 	//
@@ -211,6 +216,10 @@ func (m *WritableRack) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateUHeight(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -333,7 +342,7 @@ const (
 
 // prop value enum
 func (m *WritableRack) validateOuterUnitEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableRackTypeOuterUnitPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableRackTypeOuterUnitPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -424,7 +433,7 @@ const (
 
 // prop value enum
 func (m *WritableRack) validateStatusEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableRackTypeStatusPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableRackTypeStatusPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -451,9 +460,17 @@ func (m *WritableRack) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -493,7 +510,7 @@ const (
 
 // prop value enum
 func (m *WritableRack) validateTypeEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, writableRackTypeTypePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableRackTypeTypePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -530,6 +547,19 @@ func (m *WritableRack) validateUHeight(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableRack) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 var writableRackTypeWidthPropEnum []interface{}
 
 func init() {
@@ -544,7 +574,7 @@ func init() {
 
 // prop value enum
 func (m *WritableRack) validateWidthEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, writableRackTypeWidthPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, writableRackTypeWidthPropEnum, true); err != nil {
 		return err
 	}
 	return nil

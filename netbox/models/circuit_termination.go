@@ -90,6 +90,11 @@ type CircuitTermination struct {
 	// Minimum: 0
 	UpstreamSpeed *int64 `json:"upstream_speed,omitempty"`
 
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
+
 	// Cross-connect ID
 	// Max Length: 50
 	XconnectID string `json:"xconnect_id,omitempty"`
@@ -132,6 +137,10 @@ func (m *CircuitTermination) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateUpstreamSpeed(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -283,7 +292,7 @@ const (
 
 // prop value enum
 func (m *CircuitTermination) validateTermSideEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, circuitTerminationTypeTermSidePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, circuitTerminationTypeTermSidePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -314,6 +323,19 @@ func (m *CircuitTermination) validateUpstreamSpeed(formats strfmt.Registry) erro
 	}
 
 	if err := validate.MaximumInt("upstream_speed", "body", int64(*m.UpstreamSpeed), 2.147483647e+09, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CircuitTermination) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
 		return err
 	}
 
@@ -408,7 +430,7 @@ const (
 
 // prop value enum
 func (m *CircuitTerminationConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, circuitTerminationConnectionStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, circuitTerminationConnectionStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -442,7 +464,7 @@ func init() {
 
 // prop value enum
 func (m *CircuitTerminationConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.Enum(path, location, value, circuitTerminationConnectionStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, circuitTerminationConnectionStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

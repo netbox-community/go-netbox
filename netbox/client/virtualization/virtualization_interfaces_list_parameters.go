@@ -76,6 +76,14 @@ for the virtualization interfaces list operation typically these are written to 
 */
 type VirtualizationInterfacesListParams struct {
 
+	/*Cluster*/
+	Cluster *string
+	/*Clustern*/
+	Clustern *string
+	/*ClusterID*/
+	ClusterID *string
+	/*ClusterIDn*/
+	ClusterIDn *string
 	/*Enabled*/
 	Enabled *string
 	/*ID*/
@@ -154,6 +162,10 @@ type VirtualizationInterfacesListParams struct {
 	Offset *int64
 	/*Q*/
 	Q *string
+	/*Tag*/
+	Tag *string
+	/*Tagn*/
+	Tagn *string
 	/*VirtualMachine*/
 	VirtualMachine *string
 	/*VirtualMachinen*/
@@ -199,6 +211,50 @@ func (o *VirtualizationInterfacesListParams) WithHTTPClient(client *http.Client)
 // SetHTTPClient adds the HTTPClient to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithCluster adds the cluster to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithCluster(cluster *string) *VirtualizationInterfacesListParams {
+	o.SetCluster(cluster)
+	return o
+}
+
+// SetCluster adds the cluster to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetCluster(cluster *string) {
+	o.Cluster = cluster
+}
+
+// WithClustern adds the clustern to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithClustern(clustern *string) *VirtualizationInterfacesListParams {
+	o.SetClustern(clustern)
+	return o
+}
+
+// SetClustern adds the clusterN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetClustern(clustern *string) {
+	o.Clustern = clustern
+}
+
+// WithClusterID adds the clusterID to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithClusterID(clusterID *string) *VirtualizationInterfacesListParams {
+	o.SetClusterID(clusterID)
+	return o
+}
+
+// SetClusterID adds the clusterId to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetClusterID(clusterID *string) {
+	o.ClusterID = clusterID
+}
+
+// WithClusterIDn adds the clusterIDn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithClusterIDn(clusterIDn *string) *VirtualizationInterfacesListParams {
+	o.SetClusterIDn(clusterIDn)
+	return o
+}
+
+// SetClusterIDn adds the clusterIdN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetClusterIDn(clusterIDn *string) {
+	o.ClusterIDn = clusterIDn
 }
 
 // WithEnabled adds the enabled to the virtualization interfaces list params
@@ -597,6 +653,28 @@ func (o *VirtualizationInterfacesListParams) SetQ(q *string) {
 	o.Q = q
 }
 
+// WithTag adds the tag to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithTag(tag *string) *VirtualizationInterfacesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithTagn(tagn *string) *VirtualizationInterfacesListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WithVirtualMachine adds the virtualMachine to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) WithVirtualMachine(virtualMachine *string) *VirtualizationInterfacesListParams {
 	o.SetVirtualMachine(virtualMachine)
@@ -648,6 +726,70 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		return err
 	}
 	var res []error
+
+	if o.Cluster != nil {
+
+		// query param cluster
+		var qrCluster string
+		if o.Cluster != nil {
+			qrCluster = *o.Cluster
+		}
+		qCluster := qrCluster
+		if qCluster != "" {
+			if err := r.SetQueryParam("cluster", qCluster); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Clustern != nil {
+
+		// query param cluster__n
+		var qrClustern string
+		if o.Clustern != nil {
+			qrClustern = *o.Clustern
+		}
+		qClustern := qrClustern
+		if qClustern != "" {
+			if err := r.SetQueryParam("cluster__n", qClustern); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ClusterID != nil {
+
+		// query param cluster_id
+		var qrClusterID string
+		if o.ClusterID != nil {
+			qrClusterID = *o.ClusterID
+		}
+		qClusterID := qrClusterID
+		if qClusterID != "" {
+			if err := r.SetQueryParam("cluster_id", qClusterID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ClusterIDn != nil {
+
+		// query param cluster_id__n
+		var qrClusterIDn string
+		if o.ClusterIDn != nil {
+			qrClusterIDn = *o.ClusterIDn
+		}
+		qClusterIDn := qrClusterIDn
+		if qClusterIDn != "" {
+			if err := r.SetQueryParam("cluster_id__n", qClusterIDn); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.Enabled != nil {
 
@@ -1219,6 +1361,38 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		qQ := qrQ
 		if qQ != "" {
 			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

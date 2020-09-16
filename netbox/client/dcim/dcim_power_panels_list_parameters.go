@@ -140,6 +140,10 @@ type DcimPowerPanelsListParams struct {
 	SiteID *string
 	/*SiteIDn*/
 	SiteIDn *string
+	/*Tag*/
+	Tag *string
+	/*Tagn*/
+	Tagn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -496,6 +500,28 @@ func (o *DcimPowerPanelsListParams) WithSiteIDn(siteIDn *string) *DcimPowerPanel
 // SetSiteIDn adds the siteIdN to the dcim power panels list params
 func (o *DcimPowerPanelsListParams) SetSiteIDn(siteIDn *string) {
 	o.SiteIDn = siteIDn
+}
+
+// WithTag adds the tag to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithTag(tag *string) *DcimPowerPanelsListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithTagn(tagn *string) *DcimPowerPanelsListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -964,6 +990,38 @@ func (o *DcimPowerPanelsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qSiteIDn := qrSiteIDn
 		if qSiteIDn != "" {
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

@@ -44,9 +44,15 @@ func (o *DcimFrontPortsUpdateReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimFrontPortsUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimFrontPortsUpdateOK) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimFrontPortsUpdateDefault creates a DcimFrontPortsUpdateDefault with default headers values
+func NewDcimFrontPortsUpdateDefault(code int) *DcimFrontPortsUpdateDefault {
+	return &DcimFrontPortsUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimFrontPortsUpdateDefault handles this case with default header values.
+
+DcimFrontPortsUpdateDefault dcim front ports update default
+*/
+type DcimFrontPortsUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim front ports update default response
+func (o *DcimFrontPortsUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimFrontPortsUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/front-ports/{id}/][%d] dcim_front-ports_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimFrontPortsUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimFrontPortsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

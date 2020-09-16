@@ -36,6 +36,12 @@ type FrontPortRearPort struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// Label
+	//
+	// Physical label
+	// Max Length: 64
+	Label string `json:"label,omitempty"`
+
 	// Name
 	// Required: true
 	// Max Length: 64
@@ -52,6 +58,10 @@ type FrontPortRearPort struct {
 func (m *FrontPortRearPort) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -63,6 +73,19 @@ func (m *FrontPortRearPort) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FrontPortRearPort) validateLabel(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Label) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+		return err
+	}
+
 	return nil
 }
 

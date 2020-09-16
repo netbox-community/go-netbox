@@ -44,9 +44,15 @@ func (o *ExtrasConfigContextsCreateReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewExtrasConfigContextsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *ExtrasConfigContextsCreateCreated) readResponse(response runtime.Client
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasConfigContextsCreateDefault creates a ExtrasConfigContextsCreateDefault with default headers values
+func NewExtrasConfigContextsCreateDefault(code int) *ExtrasConfigContextsCreateDefault {
+	return &ExtrasConfigContextsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*ExtrasConfigContextsCreateDefault handles this case with default header values.
+
+ExtrasConfigContextsCreateDefault extras config contexts create default
+*/
+type ExtrasConfigContextsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras config contexts create default response
+func (o *ExtrasConfigContextsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasConfigContextsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /extras/config-contexts/][%d] extras_config-contexts_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *ExtrasConfigContextsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasConfigContextsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

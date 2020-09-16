@@ -44,9 +44,15 @@ func (o *DcimConsolePortTemplatesUpdateReader) ReadResponse(response runtime.Cli
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimConsolePortTemplatesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimConsolePortTemplatesUpdateOK) readResponse(response runtime.ClientR
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimConsolePortTemplatesUpdateDefault creates a DcimConsolePortTemplatesUpdateDefault with default headers values
+func NewDcimConsolePortTemplatesUpdateDefault(code int) *DcimConsolePortTemplatesUpdateDefault {
+	return &DcimConsolePortTemplatesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimConsolePortTemplatesUpdateDefault handles this case with default header values.
+
+DcimConsolePortTemplatesUpdateDefault dcim console port templates update default
+*/
+type DcimConsolePortTemplatesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim console port templates update default response
+func (o *DcimConsolePortTemplatesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimConsolePortTemplatesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimConsolePortTemplatesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimConsolePortTemplatesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

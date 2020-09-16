@@ -32,6 +32,10 @@ import (
 // swagger:model NestedRegion
 type NestedRegion struct {
 
+	// depth
+	// Read Only: true
+	Depth int64 `json:"_depth,omitempty"`
+
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`

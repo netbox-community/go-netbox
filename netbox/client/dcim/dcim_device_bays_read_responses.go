@@ -46,7 +46,7 @@ func (o *DcimDeviceBaysReadReader) ReadResponse(response runtime.ClientResponse,
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 

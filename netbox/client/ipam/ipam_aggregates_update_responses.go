@@ -44,9 +44,15 @@ func (o *IpamAggregatesUpdateReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewIpamAggregatesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *IpamAggregatesUpdateOK) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamAggregatesUpdateDefault creates a IpamAggregatesUpdateDefault with default headers values
+func NewIpamAggregatesUpdateDefault(code int) *IpamAggregatesUpdateDefault {
+	return &IpamAggregatesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*IpamAggregatesUpdateDefault handles this case with default header values.
+
+IpamAggregatesUpdateDefault ipam aggregates update default
+*/
+type IpamAggregatesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam aggregates update default response
+func (o *IpamAggregatesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamAggregatesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /ipam/aggregates/{id}/][%d] ipam_aggregates_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *IpamAggregatesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamAggregatesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -44,9 +44,15 @@ func (o *SecretsSecretsPartialUpdateReader) ReadResponse(response runtime.Client
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewSecretsSecretsPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *SecretsSecretsPartialUpdateOK) readResponse(response runtime.ClientResp
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewSecretsSecretsPartialUpdateDefault creates a SecretsSecretsPartialUpdateDefault with default headers values
+func NewSecretsSecretsPartialUpdateDefault(code int) *SecretsSecretsPartialUpdateDefault {
+	return &SecretsSecretsPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*SecretsSecretsPartialUpdateDefault handles this case with default header values.
+
+SecretsSecretsPartialUpdateDefault secrets secrets partial update default
+*/
+type SecretsSecretsPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the secrets secrets partial update default response
+func (o *SecretsSecretsPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *SecretsSecretsPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /secrets/secrets/{id}/][%d] secrets_secrets_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *SecretsSecretsPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *SecretsSecretsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

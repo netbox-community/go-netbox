@@ -44,9 +44,15 @@ func (o *DcimPowerOutletsUpdateReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimPowerOutletsUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimPowerOutletsUpdateOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerOutletsUpdateDefault creates a DcimPowerOutletsUpdateDefault with default headers values
+func NewDcimPowerOutletsUpdateDefault(code int) *DcimPowerOutletsUpdateDefault {
+	return &DcimPowerOutletsUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimPowerOutletsUpdateDefault handles this case with default header values.
+
+DcimPowerOutletsUpdateDefault dcim power outlets update default
+*/
+type DcimPowerOutletsUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power outlets update default response
+func (o *DcimPowerOutletsUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerOutletsUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/power-outlets/{id}/][%d] dcim_power-outlets_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimPowerOutletsUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerOutletsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

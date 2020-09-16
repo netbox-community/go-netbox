@@ -40,6 +40,9 @@ type PowerFeed struct {
 	// Minimum: 1
 	Amperage int64 `json:"amperage,omitempty"`
 
+	// cable
+	Cable *NestedCable `json:"cable,omitempty"`
+
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
@@ -90,10 +93,15 @@ type PowerFeed struct {
 	Supply *PowerFeedSupply `json:"supply,omitempty"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// type
 	Type *PowerFeedType `json:"type,omitempty"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 
 	// Voltage
 	// Maximum: 32767
@@ -106,6 +114,10 @@ func (m *PowerFeed) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAmperage(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCable(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -153,6 +165,10 @@ func (m *PowerFeed) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateURL(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateVoltage(formats); err != nil {
 		res = append(res, err)
 	}
@@ -175,6 +191,24 @@ func (m *PowerFeed) validateAmperage(formats strfmt.Registry) error {
 
 	if err := validate.MaximumInt("amperage", "body", int64(m.Amperage), 32767, false); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *PowerFeed) validateCable(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Cable) { // not required
+		return nil
+	}
+
+	if m.Cable != nil {
+		if err := m.Cable.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -337,9 +371,17 @@ func (m *PowerFeed) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -360,6 +402,19 @@ func (m *PowerFeed) validateType(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *PowerFeed) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -419,7 +474,7 @@ type PowerFeedPhase struct {
 func (m *PowerFeedPhase) UnmarshalJSON(b []byte) error {
 	type PowerFeedPhaseAlias PowerFeedPhase
 	var t PowerFeedPhaseAlias
-	if err := json.Unmarshal([]byte("{\"id\":1,\"label\":\"Single phase\",\"value\":\"single-phase\"}"), &t); err != nil {
+	if err := json.Unmarshal([]byte("{\"label\":\"Single phase\",\"value\":\"single-phase\"}"), &t); err != nil {
 		return err
 	}
 	if err := json.Unmarshal(b, &t); err != nil {
@@ -470,7 +525,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedPhase) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedPhaseTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedPhaseTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -513,7 +568,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedPhase) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedPhaseTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedPhaseTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -570,7 +625,7 @@ type PowerFeedStatus struct {
 func (m *PowerFeedStatus) UnmarshalJSON(b []byte) error {
 	type PowerFeedStatusAlias PowerFeedStatus
 	var t PowerFeedStatusAlias
-	if err := json.Unmarshal([]byte("{\"id\":1,\"label\":\"Active\",\"value\":\"active\"}"), &t); err != nil {
+	if err := json.Unmarshal([]byte("{\"label\":\"Active\",\"value\":\"active\"}"), &t); err != nil {
 		return err
 	}
 	if err := json.Unmarshal(b, &t); err != nil {
@@ -627,7 +682,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -676,7 +731,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -733,7 +788,7 @@ type PowerFeedSupply struct {
 func (m *PowerFeedSupply) UnmarshalJSON(b []byte) error {
 	type PowerFeedSupplyAlias PowerFeedSupply
 	var t PowerFeedSupplyAlias
-	if err := json.Unmarshal([]byte("{\"id\":1,\"label\":\"AC\",\"value\":\"ac\"}"), &t); err != nil {
+	if err := json.Unmarshal([]byte("{\"label\":\"AC\",\"value\":\"ac\"}"), &t); err != nil {
 		return err
 	}
 	if err := json.Unmarshal(b, &t); err != nil {
@@ -784,7 +839,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedSupply) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedSupplyTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedSupplyTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -827,7 +882,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedSupply) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedSupplyTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedSupplyTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -884,7 +939,7 @@ type PowerFeedType struct {
 func (m *PowerFeedType) UnmarshalJSON(b []byte) error {
 	type PowerFeedTypeAlias PowerFeedType
 	var t PowerFeedTypeAlias
-	if err := json.Unmarshal([]byte("{\"id\":1,\"label\":\"Primary\",\"value\":\"primary\"}"), &t); err != nil {
+	if err := json.Unmarshal([]byte("{\"label\":\"Primary\",\"value\":\"primary\"}"), &t); err != nil {
 		return err
 	}
 	if err := json.Unmarshal(b, &t); err != nil {
@@ -935,7 +990,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedTypeTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedTypeTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -978,7 +1033,7 @@ const (
 
 // prop value enum
 func (m *PowerFeedType) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, powerFeedTypeTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, powerFeedTypeTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

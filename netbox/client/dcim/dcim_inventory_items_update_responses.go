@@ -44,9 +44,15 @@ func (o *DcimInventoryItemsUpdateReader) ReadResponse(response runtime.ClientRes
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimInventoryItemsUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimInventoryItemsUpdateOK) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimInventoryItemsUpdateDefault creates a DcimInventoryItemsUpdateDefault with default headers values
+func NewDcimInventoryItemsUpdateDefault(code int) *DcimInventoryItemsUpdateDefault {
+	return &DcimInventoryItemsUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimInventoryItemsUpdateDefault handles this case with default header values.
+
+DcimInventoryItemsUpdateDefault dcim inventory items update default
+*/
+type DcimInventoryItemsUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim inventory items update default response
+func (o *DcimInventoryItemsUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimInventoryItemsUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/inventory-items/{id}/][%d] dcim_inventory-items_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimInventoryItemsUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimInventoryItemsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

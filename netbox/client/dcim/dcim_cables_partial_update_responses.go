@@ -44,9 +44,15 @@ func (o *DcimCablesPartialUpdateReader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimCablesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimCablesPartialUpdateOK) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimCablesPartialUpdateDefault creates a DcimCablesPartialUpdateDefault with default headers values
+func NewDcimCablesPartialUpdateDefault(code int) *DcimCablesPartialUpdateDefault {
+	return &DcimCablesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimCablesPartialUpdateDefault handles this case with default header values.
+
+DcimCablesPartialUpdateDefault dcim cables partial update default
+*/
+type DcimCablesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim cables partial update default response
+func (o *DcimCablesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimCablesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/cables/{id}/][%d] dcim_cables_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimCablesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimCablesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

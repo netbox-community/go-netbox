@@ -82,7 +82,7 @@ type Circuit struct {
 	Status *CircuitStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []string `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
@@ -96,6 +96,11 @@ type Circuit struct {
 	// type
 	// Required: true
 	Type *NestedCircuitType `json:"type"`
+
+	// Url
+	// Read Only: true
+	// Format: uri
+	URL strfmt.URI `json:"url,omitempty"`
 }
 
 // Validate validates this circuit
@@ -151,6 +156,10 @@ func (m *Circuit) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -289,9 +298,17 @@ func (m *Circuit) validateTags(formats strfmt.Registry) error {
 	}
 
 	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
 
-		if err := validate.MinLength("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), 1); err != nil {
-			return err
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
 		}
 
 	}
@@ -366,6 +383,19 @@ func (m *Circuit) validateType(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Circuit) validateURL(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.URL) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -458,7 +488,7 @@ const (
 
 // prop value enum
 func (m *CircuitStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, circuitStatusTypeLabelPropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, circuitStatusTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
@@ -513,7 +543,7 @@ const (
 
 // prop value enum
 func (m *CircuitStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, circuitStatusTypeValuePropEnum); err != nil {
+	if err := validate.EnumCase(path, location, value, circuitStatusTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil

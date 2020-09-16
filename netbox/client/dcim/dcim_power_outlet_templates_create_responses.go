@@ -44,9 +44,15 @@ func (o *DcimPowerOutletTemplatesCreateReader) ReadResponse(response runtime.Cli
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimPowerOutletTemplatesCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimPowerOutletTemplatesCreateCreated) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerOutletTemplatesCreateDefault creates a DcimPowerOutletTemplatesCreateDefault with default headers values
+func NewDcimPowerOutletTemplatesCreateDefault(code int) *DcimPowerOutletTemplatesCreateDefault {
+	return &DcimPowerOutletTemplatesCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimPowerOutletTemplatesCreateDefault handles this case with default header values.
+
+DcimPowerOutletTemplatesCreateDefault dcim power outlet templates create default
+*/
+type DcimPowerOutletTemplatesCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power outlet templates create default response
+func (o *DcimPowerOutletTemplatesCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerOutletTemplatesCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_create default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimPowerOutletTemplatesCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerOutletTemplatesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

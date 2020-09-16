@@ -44,9 +44,15 @@ func (o *DcimRackReservationsPartialUpdateReader) ReadResponse(response runtime.
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewDcimRackReservationsPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimRackReservationsPartialUpdateOK) readResponse(response runtime.Clie
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRackReservationsPartialUpdateDefault creates a DcimRackReservationsPartialUpdateDefault with default headers values
+func NewDcimRackReservationsPartialUpdateDefault(code int) *DcimRackReservationsPartialUpdateDefault {
+	return &DcimRackReservationsPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimRackReservationsPartialUpdateDefault handles this case with default header values.
+
+DcimRackReservationsPartialUpdateDefault dcim rack reservations partial update default
+*/
+type DcimRackReservationsPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rack reservations partial update default response
+func (o *DcimRackReservationsPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRackReservationsPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimRackReservationsPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRackReservationsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

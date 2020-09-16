@@ -44,9 +44,15 @@ func (o *IpamServicesUpdateReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewIpamServicesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *IpamServicesUpdateOK) readResponse(response runtime.ClientResponse, con
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamServicesUpdateDefault creates a IpamServicesUpdateDefault with default headers values
+func NewIpamServicesUpdateDefault(code int) *IpamServicesUpdateDefault {
+	return &IpamServicesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*IpamServicesUpdateDefault handles this case with default header values.
+
+IpamServicesUpdateDefault ipam services update default
+*/
+type IpamServicesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam services update default response
+func (o *IpamServicesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamServicesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /ipam/services/{id}/][%d] ipam_services_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *IpamServicesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamServicesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

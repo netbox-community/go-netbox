@@ -44,9 +44,15 @@ func (o *VirtualizationInterfacesPartialUpdateReader) ReadResponse(response runt
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		result := NewVirtualizationInterfacesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -60,23 +66,63 @@ func NewVirtualizationInterfacesPartialUpdateOK() *VirtualizationInterfacesParti
 VirtualizationInterfacesPartialUpdateOK virtualization interfaces partial update o k
 */
 type VirtualizationInterfacesPartialUpdateOK struct {
-	Payload *models.VirtualMachineInterface
+	Payload *models.VMInterface
 }
 
 func (o *VirtualizationInterfacesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualizationInterfacesPartialUpdateOK  %+v", 200, o.Payload)
 }
 
-func (o *VirtualizationInterfacesPartialUpdateOK) GetPayload() *models.VirtualMachineInterface {
+func (o *VirtualizationInterfacesPartialUpdateOK) GetPayload() *models.VMInterface {
 	return o.Payload
 }
 
 func (o *VirtualizationInterfacesPartialUpdateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.VirtualMachineInterface)
+	o.Payload = new(models.VMInterface)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationInterfacesPartialUpdateDefault creates a VirtualizationInterfacesPartialUpdateDefault with default headers values
+func NewVirtualizationInterfacesPartialUpdateDefault(code int) *VirtualizationInterfacesPartialUpdateDefault {
+	return &VirtualizationInterfacesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/*VirtualizationInterfacesPartialUpdateDefault handles this case with default header values.
+
+VirtualizationInterfacesPartialUpdateDefault virtualization interfaces partial update default
+*/
+type VirtualizationInterfacesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization interfaces partial update default response
+func (o *VirtualizationInterfacesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationInterfacesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /virtualization/interfaces/{id}/][%d] virtualization_interfaces_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *VirtualizationInterfacesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationInterfacesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 
