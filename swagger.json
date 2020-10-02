@@ -44466,7 +44466,8 @@
         "enforce_unique": {
           "title": "Enforce unique space",
           "description": "Prevent duplicate prefixes/IP addresses within this VRF",
-          "type": "boolean"
+          "type": "boolean",
+          "x-nullable": true
         },
         "description": {
           "title": "Description",
@@ -44552,7 +44553,8 @@
         "enforce_unique": {
           "title": "Enforce unique space",
           "description": "Prevent duplicate prefixes/IP addresses within this VRF",
-          "type": "boolean"
+          "type": "boolean",
+          "x-nullable": true
         },
         "description": {
           "title": "Description",
