@@ -31,7 +31,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
 // NewDcimCablesUpdateParams creates a new DcimCablesUpdateParams object

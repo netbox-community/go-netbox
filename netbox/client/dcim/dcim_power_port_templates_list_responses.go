@@ -31,7 +31,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
 // DcimPowerPortTemplatesListReader is a Reader for the DcimPowerPortTemplatesList structure.

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
 // DcimDevicesGraphsReader is a Reader for the DcimDevicesGraphs structure.

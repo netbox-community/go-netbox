@@ -25,14 +25,14 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/client/circuits"
-	"github.com/netbox-community/go-netbox/netbox/client/dcim"
-	"github.com/netbox-community/go-netbox/netbox/client/extras"
-	"github.com/netbox-community/go-netbox/netbox/client/ipam"
-	"github.com/netbox-community/go-netbox/netbox/client/secrets"
-	"github.com/netbox-community/go-netbox/netbox/client/tenancy"
-	"github.com/netbox-community/go-netbox/netbox/client/users"
-	"github.com/netbox-community/go-netbox/netbox/client/virtualization"
+	"github.com/fbreckle/go-netbox/netbox/client/circuits"
+	"github.com/fbreckle/go-netbox/netbox/client/dcim"
+	"github.com/fbreckle/go-netbox/netbox/client/extras"
+	"github.com/fbreckle/go-netbox/netbox/client/ipam"
+	"github.com/fbreckle/go-netbox/netbox/client/secrets"
+	"github.com/fbreckle/go-netbox/netbox/client/tenancy"
+	"github.com/fbreckle/go-netbox/netbox/client/users"
+	"github.com/fbreckle/go-netbox/netbox/client/virtualization"
 )
 
 // Default net box API HTTP client.
