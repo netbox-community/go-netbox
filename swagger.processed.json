@@ -46157,17 +46157,20 @@
         "role": {
           "title": "Role",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "tenant": {
           "title": "Tenant",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "platform": {
           "title": "Platform",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "primary_ip": {
           "title": "Primary ip",
@@ -46177,33 +46180,38 @@
         "primary_ip4": {
           "title": "Primary IPv4",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "primary_ip6": {
           "title": "Primary IPv6",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "vcpus": {
           "title": "VCPUs",
           "type": "integer",
           "maximum": 32767,
           "minimum": 0,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "memory": {
           "title": "Memory (MB)",
           "type": "integer",
           "maximum": 2147483647,
           "minimum": 0,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "disk": {
           "title": "Disk (GB)",
           "type": "integer",
           "maximum": 2147483647,
           "minimum": 0,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "comments": {
           "title": "Comments",
@@ -46212,13 +46220,15 @@
         "local_context_data": {
           "title": "Local context data",
           "type": "string",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "tags": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
