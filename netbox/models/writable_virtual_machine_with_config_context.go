@@ -57,7 +57,7 @@ type WritableVirtualMachineWithConfigContext struct {
 	// Disk (GB)
 	// Maximum: 2.147483647e+09
 	// Minimum: 0
-	Disk *int64 `json:"disk,omitempty"`
+	Disk *int64 `json:"disk"`
 
 	// ID
 	// Read Only: true
@@ -69,12 +69,12 @@ type WritableVirtualMachineWithConfigContext struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
-	LocalContextData *string `json:"local_context_data,omitempty"`
+	LocalContextData *string `json:"local_context_data"`
 
 	// Memory (MB)
 	// Maximum: 2.147483647e+09
 	// Minimum: 0
-	Memory *int64 `json:"memory,omitempty"`
+	Memory *int64 `json:"memory"`
 
 	// Name
 	// Required: true
@@ -83,20 +83,20 @@ type WritableVirtualMachineWithConfigContext struct {
 	Name *string `json:"name"`
 
 	// Platform
-	Platform *int64 `json:"platform,omitempty"`
+	Platform *int64 `json:"platform"`
 
 	// Primary ip
 	// Read Only: true
 	PrimaryIP string `json:"primary_ip,omitempty"`
 
 	// Primary IPv4
-	PrimaryIp4 *int64 `json:"primary_ip4,omitempty"`
+	PrimaryIp4 *int64 `json:"primary_ip4"`
 
 	// Primary IPv6
-	PrimaryIp6 *int64 `json:"primary_ip6,omitempty"`
+	PrimaryIp6 *int64 `json:"primary_ip6"`
 
 	// Role
-	Role *int64 `json:"role,omitempty"`
+	Role *int64 `json:"role"`
 
 	// Site
 	// Read Only: true
@@ -107,10 +107,10 @@ type WritableVirtualMachineWithConfigContext struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
-	Tenant *int64 `json:"tenant,omitempty"`
+	Tenant *int64 `json:"tenant"`
 
 	// Url
 	// Read Only: true
@@ -120,7 +120,7 @@ type WritableVirtualMachineWithConfigContext struct {
 	// VCPUs
 	// Maximum: 32767
 	// Minimum: 0
-	Vcpus *int64 `json:"vcpus,omitempty"`
+	Vcpus *int64 `json:"vcpus"`
 }
 
 // Validate validates this writable virtual machine with config context

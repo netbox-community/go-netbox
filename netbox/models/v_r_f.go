@@ -53,7 +53,7 @@ type VRF struct {
 	// Enforce unique space
 	//
 	// Prevent duplicate prefixes/IP addresses within this VRF
-	EnforceUnique bool `json:"enforce_unique,omitempty"`
+	EnforceUnique *bool `json:"enforce_unique,omitempty"`
 
 	// ID
 	// Read Only: true

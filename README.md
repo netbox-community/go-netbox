@@ -8,6 +8,12 @@ IPAM and DCIM service.
 
 This package assumes you are using NetBox 2.0, as the NetBox 1.0 API no longer exists.
 
+Changes in this fork
+====================
+
+Change `models.ip_address.AssignedObject` type to prevent json marshalling errors since [this change](https://github.com/netbox-community/netbox/pull/4781)
+Add `x-omitempty: false` to some attributes, allowing them to be set to their empty value. [issue](https://github.com/netbox-community/go-netbox/issues/107)
+
 Using the client
 ================
 
