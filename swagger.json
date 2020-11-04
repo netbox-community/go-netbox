@@ -37403,10 +37403,7 @@
         "connected_endpoint": {
           "title": "Connected endpoint",
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
+          "$ref": "#/definitions/NestedInterface",
           "readOnly": true
         },
         "connection_status": {
