@@ -44,7 +44,7 @@ type WritableVirtualMachineWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext map[string]string `json:"config_context,omitempty"`
+	ConfigContext map[string]interface{} `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
