@@ -36098,7 +36098,7 @@
           "title": "Config context",
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "type": "object"
           },
           "readOnly": true
         },
@@ -36281,7 +36281,7 @@
           "title": "Config context",
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "type": "object"
           },
           "readOnly": true
         },
@@ -46091,7 +46091,7 @@
           "title": "Config context",
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "type": "object"
           },
           "readOnly": true
         },
@@ -46241,7 +46241,7 @@
           "title": "Config context",
           "type": "object",
           "additionalProperties": {
-            "type": "string"
+            "type": "object"
           },
           "readOnly": true
         },
