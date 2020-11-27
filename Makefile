@@ -2,6 +2,7 @@ swagger=docker run --rm -it -e GOPATH=$(HOME)/go:/go -v $(HOME):$(HOME) -w $$(pw
 generate:
 	$(swagger) generate client --target=./netbox --spec=./swagger.processed.json --copyright-file=./copyright_header.txt
 
+# Note that this preprocession does not regenerate all changes
 preprocess:
 	bash preprocess.sh swagger.json > swagger.processed.json
 

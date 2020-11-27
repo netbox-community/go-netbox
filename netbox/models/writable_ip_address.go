@@ -48,7 +48,7 @@ type WritableIPAddress struct {
 	// Assigned object id
 	// Maximum: 2.147483647e+09
 	// Minimum: 0
-	AssignedObjectID *int64 `json:"assigned_object_id,omitempty"`
+	AssignedObjectID *int64 `json:"assigned_object_id"`
 
 	// Assigned object type
 	AssignedObjectType string `json:"assigned_object_type,omitempty"`
@@ -88,7 +88,7 @@ type WritableIPAddress struct {
 	// NAT (Inside)
 	//
 	// The IP for which this address is the "outside" IP
-	NatInside *int64 `json:"nat_inside,omitempty"`
+	NatInside *int64 `json:"nat_inside"`
 
 	// Nat outside
 	// Required: true
@@ -107,10 +107,10 @@ type WritableIPAddress struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
-	Tenant *int64 `json:"tenant,omitempty"`
+	Tenant *int64 `json:"tenant"`
 
 	// Url
 	// Read Only: true
@@ -118,7 +118,7 @@ type WritableIPAddress struct {
 	URL strfmt.URI `json:"url,omitempty"`
 
 	// VRF
-	Vrf *int64 `json:"vrf,omitempty"`
+	Vrf *int64 `json:"vrf"`
 }
 
 // Validate validates this writable IP address
