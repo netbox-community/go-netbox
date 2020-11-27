@@ -8,11 +8,20 @@ IPAM and DCIM service.
 
 This package assumes you are using NetBox 2.0, as the NetBox 1.0 API no longer exists.
 
+Why this fork exists
+====================
+
+This fork exists solely to support [e-breuninger/terraform-provider-netbox](https://github.com/e-breuninger/terraform-provider-netbox).
+
 Changes in this fork
 ====================
 
 Change `models.ip_address.AssignedObject` type to prevent json marshalling errors since [this change](https://github.com/netbox-community/netbox/pull/4781)
+
 Add `x-omitempty: false` to some attributes, allowing them to be set to their empty value. [issue](https://github.com/netbox-community/go-netbox/issues/107)
+
+Change ConfigContext type for VMs and Devices [#2](https://github.com/fbreckle/go-netbox/pull/2)
+
 
 Using the client
 ================

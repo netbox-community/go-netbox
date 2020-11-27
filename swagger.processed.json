@@ -43331,12 +43331,14 @@
         "vrf": {
           "title": "VRF",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "tenant": {
           "title": "Tenant",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "status": {
           "title": "Status",
@@ -43374,7 +43376,8 @@
           "type": "integer",
           "maximum": 2147483647,
           "minimum": 0,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "assigned_object": {
           "title": "Assigned object",
@@ -43388,7 +43391,8 @@
           "title": "NAT (Inside)",
           "description": "The IP for which this address is the \"outside\" IP",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "nat_outside": {
           "title": "Nat outside",
@@ -43411,7 +43415,7 @@
           "items": {
             "$ref": "#/definitions/NestedTag"
           },
-          "x-omitempty": true
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
