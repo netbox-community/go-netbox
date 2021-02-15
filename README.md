@@ -22,6 +22,8 @@ Add `x-omitempty: false` to some attributes, allowing them to be set to their em
 
 Change ConfigContext type for VMs and Devices [#2](https://github.com/fbreckle/go-netbox/pull/2)
 
+Fix LocalConfigContext to support arbitrary JSON object [#4](https://github.com/fbreckle/go-netbox/pull/4)
+
 
 Using the client
 ================
