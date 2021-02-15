@@ -69,7 +69,7 @@ type WritableVirtualMachineWithConfigContext struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
-	LocalContextData *string `json:"local_context_data"`
+	LocalContextData map[string]interface{} `json:"local_context_data"`
 
 	// Memory (MB)
 	// Maximum: 2.147483647e+09
