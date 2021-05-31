@@ -51,7 +51,7 @@ type IPAddress struct {
 	AssignedObjectID *int64 `json:"assigned_object_id,omitempty"`
 
 	// Assigned object type
-	AssignedObjectType string `json:"assigned_object_type,omitempty"`
+	AssignedObjectType *string `json:"assigned_object_type,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -97,7 +97,7 @@ type IPAddress struct {
 	Status *IPAddressStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`

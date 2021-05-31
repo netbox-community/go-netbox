@@ -78,7 +78,7 @@ for the extras export templates create operation typically these are written to 
 type ExtrasExportTemplatesCreateParams struct {
 
 	/*Data*/
-	Data *models.WritableExportTemplate
+	Data *models.ExportTemplate
 
 	timeout    time.Duration
 	Context    context.Context
@@ -119,13 +119,13 @@ func (o *ExtrasExportTemplatesCreateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the extras export templates create params
-func (o *ExtrasExportTemplatesCreateParams) WithData(data *models.WritableExportTemplate) *ExtrasExportTemplatesCreateParams {
+func (o *ExtrasExportTemplatesCreateParams) WithData(data *models.ExportTemplate) *ExtrasExportTemplatesCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the extras export templates create params
-func (o *ExtrasExportTemplatesCreateParams) SetData(data *models.WritableExportTemplate) {
+func (o *ExtrasExportTemplatesCreateParams) SetData(data *models.ExportTemplate) {
 	o.Data = data
 }
 

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// FrontPortRearPort Rear port
+// FrontPortRearPort front port rear port
 //
 // swagger:model FrontPortRearPort
 type FrontPortRearPort struct {

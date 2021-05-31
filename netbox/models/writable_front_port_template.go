@@ -63,13 +63,13 @@ type WritableFrontPortTemplate struct {
 	RearPort *int64 `json:"rear_port"`
 
 	// Rear port position
-	// Maximum: 64
+	// Maximum: 1024
 	// Minimum: 1
 	RearPortPosition int64 `json:"rear_port_position,omitempty"`
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
+	// Enum: [8p8c 8p6c 8p4c 8p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
 	Type *string `json:"type"`
 
 	// Url
@@ -191,7 +191,7 @@ func (m *WritableFrontPortTemplate) validateRearPortPosition(formats strfmt.Regi
 		return err
 	}
 
-	if err := validate.MaximumInt("rear_port_position", "body", int64(m.RearPortPosition), 64, false); err != nil {
+	if err := validate.MaximumInt("rear_port_position", "body", int64(m.RearPortPosition), 1024, false); err != nil {
 		return err
 	}
 
@@ -202,7 +202,7 @@ var writableFrontPortTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -224,11 +224,26 @@ const (
 	// WritableFrontPortTemplateTypeNr8p2c captures enum value "8p2c"
 	WritableFrontPortTemplateTypeNr8p2c string = "8p2c"
 
+	// WritableFrontPortTemplateTypeGg45 captures enum value "gg45"
+	WritableFrontPortTemplateTypeGg45 string = "gg45"
+
+	// WritableFrontPortTemplateTypeTera4p captures enum value "tera-4p"
+	WritableFrontPortTemplateTypeTera4p string = "tera-4p"
+
+	// WritableFrontPortTemplateTypeTera2p captures enum value "tera-2p"
+	WritableFrontPortTemplateTypeTera2p string = "tera-2p"
+
+	// WritableFrontPortTemplateTypeTera1p captures enum value "tera-1p"
+	WritableFrontPortTemplateTypeTera1p string = "tera-1p"
+
 	// WritableFrontPortTemplateTypeNr110Punch captures enum value "110-punch"
 	WritableFrontPortTemplateTypeNr110Punch string = "110-punch"
 
 	// WritableFrontPortTemplateTypeBnc captures enum value "bnc"
 	WritableFrontPortTemplateTypeBnc string = "bnc"
+
+	// WritableFrontPortTemplateTypeF captures enum value "f"
+	WritableFrontPortTemplateTypeF string = "f"
 
 	// WritableFrontPortTemplateTypeMrj21 captures enum value "mrj21"
 	WritableFrontPortTemplateTypeMrj21 string = "mrj21"
@@ -262,6 +277,15 @@ const (
 
 	// WritableFrontPortTemplateTypeSt captures enum value "st"
 	WritableFrontPortTemplateTypeSt string = "st"
+
+	// WritableFrontPortTemplateTypeCs captures enum value "cs"
+	WritableFrontPortTemplateTypeCs string = "cs"
+
+	// WritableFrontPortTemplateTypeSn captures enum value "sn"
+	WritableFrontPortTemplateTypeSn string = "sn"
+
+	// WritableFrontPortTemplateTypeSplice captures enum value "splice"
+	WritableFrontPortTemplateTypeSplice string = "splice"
 )
 
 // prop value enum

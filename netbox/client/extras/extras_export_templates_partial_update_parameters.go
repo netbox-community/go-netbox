@@ -79,7 +79,7 @@ for the extras export templates partial update operation typically these are wri
 type ExtrasExportTemplatesPartialUpdateParams struct {
 
 	/*Data*/
-	Data *models.WritableExportTemplate
+	Data *models.ExportTemplate
 	/*ID
 	  A unique integer value identifying this export template.
 
@@ -125,13 +125,13 @@ func (o *ExtrasExportTemplatesPartialUpdateParams) SetHTTPClient(client *http.Cl
 }
 
 // WithData adds the data to the extras export templates partial update params
-func (o *ExtrasExportTemplatesPartialUpdateParams) WithData(data *models.WritableExportTemplate) *ExtrasExportTemplatesPartialUpdateParams {
+func (o *ExtrasExportTemplatesPartialUpdateParams) WithData(data *models.ExportTemplate) *ExtrasExportTemplatesPartialUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the extras export templates partial update params
-func (o *ExtrasExportTemplatesPartialUpdateParams) SetData(data *models.WritableExportTemplate) {
+func (o *ExtrasExportTemplatesPartialUpdateParams) SetData(data *models.ExportTemplate) {
 	o.Data = data
 }
 

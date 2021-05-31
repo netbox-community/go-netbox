@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -41,9 +42,15 @@ func (o *DcimRearPortTemplatesDeleteReader) ReadResponse(response runtime.Client
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimRearPortTemplatesDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -64,6 +71,46 @@ func (o *DcimRearPortTemplatesDeleteNoContent) Error() string {
 }
 
 func (o *DcimRearPortTemplatesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimRearPortTemplatesDeleteDefault creates a DcimRearPortTemplatesDeleteDefault with default headers values
+func NewDcimRearPortTemplatesDeleteDefault(code int) *DcimRearPortTemplatesDeleteDefault {
+	return &DcimRearPortTemplatesDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimRearPortTemplatesDeleteDefault handles this case with default header values.
+
+DcimRearPortTemplatesDeleteDefault dcim rear port templates delete default
+*/
+type DcimRearPortTemplatesDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rear port templates delete default response
+func (o *DcimRearPortTemplatesDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRearPortTemplatesDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/rear-port-templates/{id}/][%d] dcim_rear-port-templates_delete default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimRearPortTemplatesDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRearPortTemplatesDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

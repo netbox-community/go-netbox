@@ -152,6 +152,10 @@ type IpamIPAddressesListParams struct {
 	Offset *int64
 	/*Parent*/
 	Parent *string
+	/*PresentInVrf*/
+	PresentInVrf *string
+	/*PresentInVrfID*/
+	PresentInVrfID *string
 	/*Q*/
 	Q *string
 	/*Role*/
@@ -624,6 +628,28 @@ func (o *IpamIPAddressesListParams) WithParent(parent *string) *IpamIPAddressesL
 // SetParent adds the parent to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetParent(parent *string) {
 	o.Parent = parent
+}
+
+// WithPresentInVrf adds the presentInVrf to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithPresentInVrf(presentInVrf *string) *IpamIPAddressesListParams {
+	o.SetPresentInVrf(presentInVrf)
+	return o
+}
+
+// SetPresentInVrf adds the presentInVrf to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetPresentInVrf(presentInVrf *string) {
+	o.PresentInVrf = presentInVrf
+}
+
+// WithPresentInVrfID adds the presentInVrfID to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithPresentInVrfID(presentInVrfID *string) *IpamIPAddressesListParams {
+	o.SetPresentInVrfID(presentInVrfID)
+	return o
+}
+
+// SetPresentInVrfID adds the presentInVrfId to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetPresentInVrfID(presentInVrfID *string) {
+	o.PresentInVrfID = presentInVrfID
 }
 
 // WithQ adds the q to the ipam ip addresses list params
@@ -1463,6 +1489,38 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qParent := qrParent
 		if qParent != "" {
 			if err := r.SetQueryParam("parent", qParent); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PresentInVrf != nil {
+
+		// query param present_in_vrf
+		var qrPresentInVrf string
+		if o.PresentInVrf != nil {
+			qrPresentInVrf = *o.PresentInVrf
+		}
+		qPresentInVrf := qrPresentInVrf
+		if qPresentInVrf != "" {
+			if err := r.SetQueryParam("present_in_vrf", qPresentInVrf); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PresentInVrfID != nil {
+
+		// query param present_in_vrf_id
+		var qrPresentInVrfID string
+		if o.PresentInVrfID != nil {
+			qrPresentInVrfID = *o.PresentInVrfID
+		}
+		qPresentInVrfID := qrPresentInVrfID
+		if qPresentInVrfID != "" {
+			if err := r.SetQueryParam("present_in_vrf_id", qPresentInVrfID); err != nil {
 				return err
 			}
 		}

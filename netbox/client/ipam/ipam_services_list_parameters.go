@@ -139,17 +139,7 @@ type IpamServicesListParams struct {
 	*/
 	Offset *int64
 	/*Port*/
-	Port *string
-	/*PortGt*/
-	PortGt *string
-	/*PortGte*/
-	PortGte *string
-	/*PortLt*/
-	PortLt *string
-	/*PortLte*/
-	PortLte *string
-	/*Portn*/
-	Portn *string
+	Port *float64
 	/*Protocol*/
 	Protocol *string
 	/*Protocoln*/
@@ -516,69 +506,14 @@ func (o *IpamServicesListParams) SetOffset(offset *int64) {
 }
 
 // WithPort adds the port to the ipam services list params
-func (o *IpamServicesListParams) WithPort(port *string) *IpamServicesListParams {
+func (o *IpamServicesListParams) WithPort(port *float64) *IpamServicesListParams {
 	o.SetPort(port)
 	return o
 }
 
 // SetPort adds the port to the ipam services list params
-func (o *IpamServicesListParams) SetPort(port *string) {
+func (o *IpamServicesListParams) SetPort(port *float64) {
 	o.Port = port
-}
-
-// WithPortGt adds the portGt to the ipam services list params
-func (o *IpamServicesListParams) WithPortGt(portGt *string) *IpamServicesListParams {
-	o.SetPortGt(portGt)
-	return o
-}
-
-// SetPortGt adds the portGt to the ipam services list params
-func (o *IpamServicesListParams) SetPortGt(portGt *string) {
-	o.PortGt = portGt
-}
-
-// WithPortGte adds the portGte to the ipam services list params
-func (o *IpamServicesListParams) WithPortGte(portGte *string) *IpamServicesListParams {
-	o.SetPortGte(portGte)
-	return o
-}
-
-// SetPortGte adds the portGte to the ipam services list params
-func (o *IpamServicesListParams) SetPortGte(portGte *string) {
-	o.PortGte = portGte
-}
-
-// WithPortLt adds the portLt to the ipam services list params
-func (o *IpamServicesListParams) WithPortLt(portLt *string) *IpamServicesListParams {
-	o.SetPortLt(portLt)
-	return o
-}
-
-// SetPortLt adds the portLt to the ipam services list params
-func (o *IpamServicesListParams) SetPortLt(portLt *string) {
-	o.PortLt = portLt
-}
-
-// WithPortLte adds the portLte to the ipam services list params
-func (o *IpamServicesListParams) WithPortLte(portLte *string) *IpamServicesListParams {
-	o.SetPortLte(portLte)
-	return o
-}
-
-// SetPortLte adds the portLte to the ipam services list params
-func (o *IpamServicesListParams) SetPortLte(portLte *string) {
-	o.PortLte = portLte
-}
-
-// WithPortn adds the portn to the ipam services list params
-func (o *IpamServicesListParams) WithPortn(portn *string) *IpamServicesListParams {
-	o.SetPortn(portn)
-	return o
-}
-
-// SetPortn adds the portN to the ipam services list params
-func (o *IpamServicesListParams) SetPortn(portn *string) {
-	o.Portn = portn
 }
 
 // WithProtocol adds the protocol to the ipam services list params
@@ -1139,93 +1074,13 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 	if o.Port != nil {
 
 		// query param port
-		var qrPort string
+		var qrPort float64
 		if o.Port != nil {
 			qrPort = *o.Port
 		}
-		qPort := qrPort
+		qPort := swag.FormatFloat64(qrPort)
 		if qPort != "" {
 			if err := r.SetQueryParam("port", qPort); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.PortGt != nil {
-
-		// query param port__gt
-		var qrPortGt string
-		if o.PortGt != nil {
-			qrPortGt = *o.PortGt
-		}
-		qPortGt := qrPortGt
-		if qPortGt != "" {
-			if err := r.SetQueryParam("port__gt", qPortGt); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.PortGte != nil {
-
-		// query param port__gte
-		var qrPortGte string
-		if o.PortGte != nil {
-			qrPortGte = *o.PortGte
-		}
-		qPortGte := qrPortGte
-		if qPortGte != "" {
-			if err := r.SetQueryParam("port__gte", qPortGte); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.PortLt != nil {
-
-		// query param port__lt
-		var qrPortLt string
-		if o.PortLt != nil {
-			qrPortLt = *o.PortLt
-		}
-		qPortLt := qrPortLt
-		if qPortLt != "" {
-			if err := r.SetQueryParam("port__lt", qPortLt); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.PortLte != nil {
-
-		// query param port__lte
-		var qrPortLte string
-		if o.PortLte != nil {
-			qrPortLte = *o.PortLte
-		}
-		qPortLte := qrPortLte
-		if qPortLte != "" {
-			if err := r.SetQueryParam("port__lte", qPortLte); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.Portn != nil {
-
-		// query param port__n
-		var qrPortn string
-		if o.Portn != nil {
-			qrPortn = *o.Portn
-		}
-		qPortn := qrPortn
-		if qPortn != "" {
-			if err := r.SetQueryParam("port__n", qPortn); err != nil {
 				return err
 			}
 		}

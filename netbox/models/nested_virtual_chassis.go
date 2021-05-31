@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedVirtualChassis Virtual chassis
+// NestedVirtualChassis nested virtual chassis
 //
 // swagger:model NestedVirtualChassis
 type NestedVirtualChassis struct {

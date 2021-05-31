@@ -48,9 +48,15 @@ func (o *SecretsSecretsListReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewSecretsSecretsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -81,6 +87,46 @@ func (o *SecretsSecretsListOK) readResponse(response runtime.ClientResponse, con
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewSecretsSecretsListDefault creates a SecretsSecretsListDefault with default headers values
+func NewSecretsSecretsListDefault(code int) *SecretsSecretsListDefault {
+	return &SecretsSecretsListDefault{
+		_statusCode: code,
+	}
+}
+
+/*SecretsSecretsListDefault handles this case with default header values.
+
+SecretsSecretsListDefault secrets secrets list default
+*/
+type SecretsSecretsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the secrets secrets list default response
+func (o *SecretsSecretsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *SecretsSecretsListDefault) Error() string {
+	return fmt.Sprintf("[GET /secrets/secrets/][%d] secrets_secrets_list default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *SecretsSecretsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *SecretsSecretsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

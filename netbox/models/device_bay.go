@@ -62,7 +62,7 @@ type DeviceBay struct {
 	Name *string `json:"name"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true

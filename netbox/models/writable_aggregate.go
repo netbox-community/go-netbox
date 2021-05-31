@@ -72,7 +72,10 @@ type WritableAggregate struct {
 	Rir *int64 `json:"rir"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
+
+	// Tenant
+	Tenant *int64 `json:"tenant,omitempty"`
 
 	// Url
 	// Read Only: true

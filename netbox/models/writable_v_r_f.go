@@ -53,11 +53,19 @@ type WritableVRF struct {
 	// Enforce unique space
 	//
 	// Prevent duplicate prefixes/IP addresses within this VRF
-	EnforceUnique *bool `json:"enforce_unique,omitempty"`
+	EnforceUnique bool `json:"enforce_unique,omitempty"`
+
+	// export targets
+	// Unique: true
+	ExportTargets []int64 `json:"export_targets"`
 
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// import targets
+	// Unique: true
+	ImportTargets []int64 `json:"import_targets"`
 
 	// Ipaddress count
 	// Read Only: true
@@ -70,7 +78,7 @@ type WritableVRF struct {
 
 	// Name
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	Name *string `json:"name"`
 
@@ -85,7 +93,7 @@ type WritableVRF struct {
 	Rd *string `json:"rd,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`
@@ -105,6 +113,14 @@ func (m *WritableVRF) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateExportTargets(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateImportTargets(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -160,6 +176,32 @@ func (m *WritableVRF) validateDescription(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableVRF) validateExportTargets(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ExportTargets) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("export_targets", "body", m.ExportTargets); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVRF) validateImportTargets(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ImportTargets) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("import_targets", "body", m.ImportTargets); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableVRF) validateLastUpdated(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.LastUpdated) { // not required
@@ -183,7 +225,7 @@ func (m *WritableVRF) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
 		return err
 	}
 

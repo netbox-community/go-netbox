@@ -37,6 +37,18 @@ type CircuitTermination struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
+	// Cable peer
+	//
+	//
+	// Return the appropriate serializer for the cable termination model.
+	//
+	// Read Only: true
+	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+
+	// Cable peer type
+	// Read Only: true
+	CablePeerType string `json:"cable_peer_type,omitempty"`
+
 	// circuit
 	// Required: true
 	Circuit *NestedCircuit `json:"circuit"`
@@ -47,14 +59,15 @@ type CircuitTermination struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint reachable
+	// Read Only: true
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
 	// Connected endpoint type
 	// Read Only: true
 	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
-
-	// connection status
-	ConnectionStatus *CircuitTerminationConnectionStatus `json:"connection_status,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -65,10 +78,9 @@ type CircuitTermination struct {
 	ID int64 `json:"id,omitempty"`
 
 	// Port speed (Kbps)
-	// Required: true
 	// Maximum: 2.147483647e+09
 	// Minimum: 0
-	PortSpeed *int64 `json:"port_speed"`
+	PortSpeed *int64 `json:"port_speed,omitempty"`
 
 	// Patch panel/port(s)
 	// Max Length: 100
@@ -109,10 +121,6 @@ func (m *CircuitTermination) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateCircuit(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateConnectionStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -190,24 +198,6 @@ func (m *CircuitTermination) validateCircuit(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *CircuitTermination) validateConnectionStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.ConnectionStatus) { // not required
-		return nil
-	}
-
-	if m.ConnectionStatus != nil {
-		if err := m.ConnectionStatus.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("connection_status")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *CircuitTermination) validateDescription(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Description) { // not required
@@ -223,8 +213,8 @@ func (m *CircuitTermination) validateDescription(formats strfmt.Registry) error 
 
 func (m *CircuitTermination) validatePortSpeed(formats strfmt.Registry) error {
 
-	if err := validate.Required("port_speed", "body", m.PortSpeed); err != nil {
-		return err
+	if swag.IsZero(m.PortSpeed) { // not required
+		return nil
 	}
 
 	if err := validate.MinimumInt("port_speed", "body", int64(*m.PortSpeed), 0, false); err != nil {
@@ -366,135 +356,6 @@ func (m *CircuitTermination) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *CircuitTermination) UnmarshalBinary(b []byte) error {
 	var res CircuitTermination
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// CircuitTerminationConnectionStatus Connection status
-//
-// swagger:model CircuitTerminationConnectionStatus
-type CircuitTerminationConnectionStatus struct {
-
-	// label
-	// Required: true
-	// Enum: [Not Connected Connected]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [false true]
-	Value *bool `json:"value"`
-}
-
-// Validate validates this circuit termination connection status
-func (m *CircuitTerminationConnectionStatus) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var circuitTerminationConnectionStatusTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["Not Connected","Connected"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		circuitTerminationConnectionStatusTypeLabelPropEnum = append(circuitTerminationConnectionStatusTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// CircuitTerminationConnectionStatusLabelNotConnected captures enum value "Not Connected"
-	CircuitTerminationConnectionStatusLabelNotConnected string = "Not Connected"
-
-	// CircuitTerminationConnectionStatusLabelConnected captures enum value "Connected"
-	CircuitTerminationConnectionStatusLabelConnected string = "Connected"
-)
-
-// prop value enum
-func (m *CircuitTerminationConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, circuitTerminationConnectionStatusTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *CircuitTerminationConnectionStatus) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("connection_status"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var circuitTerminationConnectionStatusTypeValuePropEnum []interface{}
-
-func init() {
-	var res []bool
-	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		circuitTerminationConnectionStatusTypeValuePropEnum = append(circuitTerminationConnectionStatusTypeValuePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *CircuitTerminationConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.EnumCase(path, location, value, circuitTerminationConnectionStatusTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *CircuitTerminationConnectionStatus) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("connection_status"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *CircuitTerminationConnectionStatus) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *CircuitTerminationConnectionStatus) UnmarshalBinary(b []byte) error {
-	var res CircuitTerminationConnectionStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

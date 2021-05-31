@@ -35,6 +35,10 @@ import (
 // swagger:model WritableVMInterface
 type WritableVMInterface struct {
 
+	// Count ipaddresses
+	// Read Only: true
+	CountIpaddresses int64 `json:"count_ipaddresses,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -69,7 +73,7 @@ type WritableVMInterface struct {
 	TaggedVlans []int64 `json:"tagged_vlans"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Untagged VLAN
 	UntaggedVlan *int64 `json:"untagged_vlan,omitempty"`

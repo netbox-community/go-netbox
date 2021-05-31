@@ -22,6 +22,7 @@ package secrets
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -41,9 +42,15 @@ func (o *SecretsGenerateRsaKeyPairListReader) ReadResponse(response runtime.Clie
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewSecretsGenerateRsaKeyPairListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -64,6 +71,46 @@ func (o *SecretsGenerateRsaKeyPairListOK) Error() string {
 }
 
 func (o *SecretsGenerateRsaKeyPairListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewSecretsGenerateRsaKeyPairListDefault creates a SecretsGenerateRsaKeyPairListDefault with default headers values
+func NewSecretsGenerateRsaKeyPairListDefault(code int) *SecretsGenerateRsaKeyPairListDefault {
+	return &SecretsGenerateRsaKeyPairListDefault{
+		_statusCode: code,
+	}
+}
+
+/*SecretsGenerateRsaKeyPairListDefault handles this case with default header values.
+
+SecretsGenerateRsaKeyPairListDefault secrets generate rsa key pair list default
+*/
+type SecretsGenerateRsaKeyPairListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the secrets generate rsa key pair list default response
+func (o *SecretsGenerateRsaKeyPairListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *SecretsGenerateRsaKeyPairListDefault) Error() string {
+	return fmt.Sprintf("[GET /secrets/generate-rsa-key-pair/][%d] secrets_generate-rsa-key-pair_list default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *SecretsGenerateRsaKeyPairListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *SecretsGenerateRsaKeyPairListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

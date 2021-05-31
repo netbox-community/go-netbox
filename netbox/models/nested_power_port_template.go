@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedPowerPortTemplate Power port
+// NestedPowerPortTemplate nested power port template
 //
 // swagger:model NestedPowerPortTemplate
 type NestedPowerPortTemplate struct {

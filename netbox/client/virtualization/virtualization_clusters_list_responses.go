@@ -48,9 +48,15 @@ func (o *VirtualizationClustersListReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewVirtualizationClustersListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -81,6 +87,46 @@ func (o *VirtualizationClustersListOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationClustersListDefault creates a VirtualizationClustersListDefault with default headers values
+func NewVirtualizationClustersListDefault(code int) *VirtualizationClustersListDefault {
+	return &VirtualizationClustersListDefault{
+		_statusCode: code,
+	}
+}
+
+/*VirtualizationClustersListDefault handles this case with default header values.
+
+VirtualizationClustersListDefault virtualization clusters list default
+*/
+type VirtualizationClustersListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization clusters list default response
+func (o *VirtualizationClustersListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationClustersListDefault) Error() string {
+	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualization_clusters_list default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *VirtualizationClustersListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationClustersListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

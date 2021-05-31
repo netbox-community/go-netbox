@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedUser User
+// NestedUser nested user
 //
 // swagger:model NestedUser
 type NestedUser struct {

@@ -44,9 +44,15 @@ func (o *SecretsSecretRolesReadReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewSecretsSecretRolesReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *SecretsSecretRolesReadOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewSecretsSecretRolesReadDefault creates a SecretsSecretRolesReadDefault with default headers values
+func NewSecretsSecretRolesReadDefault(code int) *SecretsSecretRolesReadDefault {
+	return &SecretsSecretRolesReadDefault{
+		_statusCode: code,
+	}
+}
+
+/*SecretsSecretRolesReadDefault handles this case with default header values.
+
+SecretsSecretRolesReadDefault secrets secret roles read default
+*/
+type SecretsSecretRolesReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the secrets secret roles read default response
+func (o *SecretsSecretRolesReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *SecretsSecretRolesReadDefault) Error() string {
+	return fmt.Sprintf("[GET /secrets/secret-roles/{id}/][%d] secrets_secret-roles_read default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *SecretsSecretRolesReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *SecretsSecretRolesReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

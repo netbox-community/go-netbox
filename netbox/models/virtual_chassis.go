@@ -34,6 +34,9 @@ import (
 // swagger:model VirtualChassis
 type VirtualChassis struct {
 
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Domain
 	// Max Length: 30
 	Domain string `json:"domain,omitempty"`
@@ -56,7 +59,7 @@ type VirtualChassis struct {
 	Name *string `json:"name"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true

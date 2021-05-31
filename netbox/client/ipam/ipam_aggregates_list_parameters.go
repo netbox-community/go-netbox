@@ -140,6 +140,22 @@ type IpamAggregatesListParams struct {
 	Tag *string
 	/*Tagn*/
 	Tagn *string
+	/*Tenant*/
+	Tenant *string
+	/*Tenantn*/
+	Tenantn *string
+	/*TenantGroup*/
+	TenantGroup *string
+	/*TenantGroupn*/
+	TenantGroupn *string
+	/*TenantGroupID*/
+	TenantGroupID *string
+	/*TenantGroupIDn*/
+	TenantGroupIDn *string
+	/*TenantID*/
+	TenantID *string
+	/*TenantIDn*/
+	TenantIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -496,6 +512,94 @@ func (o *IpamAggregatesListParams) WithTagn(tagn *string) *IpamAggregatesListPar
 // SetTagn adds the tagN to the ipam aggregates list params
 func (o *IpamAggregatesListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
+}
+
+// WithTenant adds the tenant to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenant(tenant *string) *IpamAggregatesListParams {
+	o.SetTenant(tenant)
+	return o
+}
+
+// SetTenant adds the tenant to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenant(tenant *string) {
+	o.Tenant = tenant
+}
+
+// WithTenantn adds the tenantn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantn(tenantn *string) *IpamAggregatesListParams {
+	o.SetTenantn(tenantn)
+	return o
+}
+
+// SetTenantn adds the tenantN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantn(tenantn *string) {
+	o.Tenantn = tenantn
+}
+
+// WithTenantGroup adds the tenantGroup to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantGroup(tenantGroup *string) *IpamAggregatesListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupn adds the tenantGroupn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantGroupn(tenantGroupn *string) *IpamAggregatesListParams {
+	o.SetTenantGroupn(tenantGroupn)
+	return o
+}
+
+// SetTenantGroupn adds the tenantGroupN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantGroupn(tenantGroupn *string) {
+	o.TenantGroupn = tenantGroupn
+}
+
+// WithTenantGroupID adds the tenantGroupID to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantGroupID(tenantGroupID *string) *IpamAggregatesListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
+}
+
+// WithTenantGroupIDn adds the tenantGroupIDn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantGroupIDn(tenantGroupIDn *string) *IpamAggregatesListParams {
+	o.SetTenantGroupIDn(tenantGroupIDn)
+	return o
+}
+
+// SetTenantGroupIDn adds the tenantGroupIdN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantGroupIDn(tenantGroupIDn *string) {
+	o.TenantGroupIDn = tenantGroupIDn
+}
+
+// WithTenantID adds the tenantID to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantID(tenantID *string) *IpamAggregatesListParams {
+	o.SetTenantID(tenantID)
+	return o
+}
+
+// SetTenantID adds the tenantId to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantID(tenantID *string) {
+	o.TenantID = tenantID
+}
+
+// WithTenantIDn adds the tenantIDn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantIDn(tenantIDn *string) *IpamAggregatesListParams {
+	o.SetTenantIDn(tenantIDn)
+	return o
+}
+
+// SetTenantIDn adds the tenantIdN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantIDn(tenantIDn *string) {
+	o.TenantIDn = tenantIDn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -964,6 +1068,134 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qTagn := qrTagn
 		if qTagn != "" {
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tenant != nil {
+
+		// query param tenant
+		var qrTenant string
+		if o.Tenant != nil {
+			qrTenant = *o.Tenant
+		}
+		qTenant := qrTenant
+		if qTenant != "" {
+			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tenantn != nil {
+
+		// query param tenant__n
+		var qrTenantn string
+		if o.Tenantn != nil {
+			qrTenantn = *o.Tenantn
+		}
+		qTenantn := qrTenantn
+		if qTenantn != "" {
+			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupn != nil {
+
+		// query param tenant_group__n
+		var qrTenantGroupn string
+		if o.TenantGroupn != nil {
+			qrTenantGroupn = *o.TenantGroupn
+		}
+		qTenantGroupn := qrTenantGroupn
+		if qTenantGroupn != "" {
+			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupIDn != nil {
+
+		// query param tenant_group_id__n
+		var qrTenantGroupIDn string
+		if o.TenantGroupIDn != nil {
+			qrTenantGroupIDn = *o.TenantGroupIDn
+		}
+		qTenantGroupIDn := qrTenantGroupIDn
+		if qTenantGroupIDn != "" {
+			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantID != nil {
+
+		// query param tenant_id
+		var qrTenantID string
+		if o.TenantID != nil {
+			qrTenantID = *o.TenantID
+		}
+		qTenantID := qrTenantID
+		if qTenantID != "" {
+			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantIDn != nil {
+
+		// query param tenant_id__n
+		var qrTenantIDn string
+		if o.TenantIDn != nil {
+			qrTenantIDn = *o.TenantIDn
+		}
+		qTenantIDn := qrTenantIDn
+		if qTenantIDn != "" {
+			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}

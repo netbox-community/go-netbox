@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedPlatform Platform
+// NestedPlatform nested platform
 //
 // swagger:model NestedPlatform
 type NestedPlatform struct {

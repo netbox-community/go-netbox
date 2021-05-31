@@ -34,6 +34,20 @@ import (
 // swagger:model Secret
 type Secret struct {
 
+	// Assigned object
+	// Read Only: true
+	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
+
+	// Assigned object id
+	// Required: true
+	// Maximum: 2.147483647e+09
+	// Minimum: 0
+	AssignedObjectID *int64 `json:"assigned_object_id"`
+
+	// Assigned object type
+	// Required: true
+	AssignedObjectType *string `json:"assigned_object_type"`
+
 	// Created
 	// Read Only: true
 	// Format: date
@@ -41,10 +55,6 @@ type Secret struct {
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
-
-	// device
-	// Required: true
-	Device *NestedDevice `json:"device"`
 
 	// Hash
 	// Read Only: true
@@ -74,7 +84,7 @@ type Secret struct {
 	Role *NestedSecretRole `json:"role"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true
@@ -86,11 +96,15 @@ type Secret struct {
 func (m *Secret) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateCreated(formats); err != nil {
+	if err := m.validateAssignedObjectID(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateDevice(formats); err != nil {
+	if err := m.validateAssignedObjectType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -128,6 +142,32 @@ func (m *Secret) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Secret) validateAssignedObjectID(formats strfmt.Registry) error {
+
+	if err := validate.Required("assigned_object_id", "body", m.AssignedObjectID); err != nil {
+		return err
+	}
+
+	if err := validate.MinimumInt("assigned_object_id", "body", int64(*m.AssignedObjectID), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("assigned_object_id", "body", int64(*m.AssignedObjectID), 2.147483647e+09, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Secret) validateAssignedObjectType(formats strfmt.Registry) error {
+
+	if err := validate.Required("assigned_object_type", "body", m.AssignedObjectType); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Secret) validateCreated(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Created) { // not required
@@ -136,24 +176,6 @@ func (m *Secret) validateCreated(formats strfmt.Registry) error {
 
 	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *Secret) validateDevice(formats strfmt.Registry) error {
-
-	if err := validate.Required("device", "body", m.Device); err != nil {
-		return err
-	}
-
-	if m.Device != nil {
-		if err := m.Device.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("device")
-			}
-			return err
-		}
 	}
 
 	return nil

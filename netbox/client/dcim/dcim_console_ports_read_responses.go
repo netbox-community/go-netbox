@@ -44,9 +44,15 @@ func (o *DcimConsolePortsReadReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimConsolePortsReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimConsolePortsReadOK) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimConsolePortsReadDefault creates a DcimConsolePortsReadDefault with default headers values
+func NewDcimConsolePortsReadDefault(code int) *DcimConsolePortsReadDefault {
+	return &DcimConsolePortsReadDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimConsolePortsReadDefault handles this case with default header values.
+
+DcimConsolePortsReadDefault dcim console ports read default
+*/
+type DcimConsolePortsReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim console ports read default response
+func (o *DcimConsolePortsReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimConsolePortsReadDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/console-ports/{id}/][%d] dcim_console-ports_read default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimConsolePortsReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimConsolePortsReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

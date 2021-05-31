@@ -80,6 +80,10 @@ type ExtrasImageAttachmentsListParams struct {
 	ContentType *string
 	/*ContentTypen*/
 	ContentTypen *string
+	/*ContentTypeID*/
+	ContentTypeID *string
+	/*ContentTypeIDn*/
+	ContentTypeIDn *string
 	/*ID*/
 	ID *string
 	/*IDGt*/
@@ -193,6 +197,28 @@ func (o *ExtrasImageAttachmentsListParams) WithContentTypen(contentTypen *string
 // SetContentTypen adds the contentTypeN to the extras image attachments list params
 func (o *ExtrasImageAttachmentsListParams) SetContentTypen(contentTypen *string) {
 	o.ContentTypen = contentTypen
+}
+
+// WithContentTypeID adds the contentTypeID to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) WithContentTypeID(contentTypeID *string) *ExtrasImageAttachmentsListParams {
+	o.SetContentTypeID(contentTypeID)
+	return o
+}
+
+// SetContentTypeID adds the contentTypeId to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) SetContentTypeID(contentTypeID *string) {
+	o.ContentTypeID = contentTypeID
+}
+
+// WithContentTypeIDn adds the contentTypeIDn to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) WithContentTypeIDn(contentTypeIDn *string) *ExtrasImageAttachmentsListParams {
+	o.SetContentTypeIDn(contentTypeIDn)
+	return o
+}
+
+// SetContentTypeIDn adds the contentTypeIdN to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) SetContentTypeIDn(contentTypeIDn *string) {
+	o.ContentTypeIDn = contentTypeIDn
 }
 
 // WithID adds the id to the extras image attachments list params
@@ -493,6 +519,38 @@ func (o *ExtrasImageAttachmentsListParams) WriteToRequest(r runtime.ClientReques
 		qContentTypen := qrContentTypen
 		if qContentTypen != "" {
 			if err := r.SetQueryParam("content_type__n", qContentTypen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ContentTypeID != nil {
+
+		// query param content_type_id
+		var qrContentTypeID string
+		if o.ContentTypeID != nil {
+			qrContentTypeID = *o.ContentTypeID
+		}
+		qContentTypeID := qrContentTypeID
+		if qContentTypeID != "" {
+			if err := r.SetQueryParam("content_type_id", qContentTypeID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ContentTypeIDn != nil {
+
+		// query param content_type_id__n
+		var qrContentTypeIDn string
+		if o.ContentTypeIDn != nil {
+			qrContentTypeIDn = *o.ContentTypeIDn
+		}
+		qContentTypeIDn := qrContentTypeIDn
+		if qContentTypeIDn != "" {
+			if err := r.SetQueryParam("content_type_id__n", qContentTypeIDn); err != nil {
 				return err
 			}
 		}

@@ -44,9 +44,15 @@ func (o *DcimRackRolesReadReader) ReadResponse(response runtime.ClientResponse, 
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimRackRolesReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -77,6 +83,46 @@ func (o *DcimRackRolesReadOK) readResponse(response runtime.ClientResponse, cons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRackRolesReadDefault creates a DcimRackRolesReadDefault with default headers values
+func NewDcimRackRolesReadDefault(code int) *DcimRackRolesReadDefault {
+	return &DcimRackRolesReadDefault{
+		_statusCode: code,
+	}
+}
+
+/*DcimRackRolesReadDefault handles this case with default header values.
+
+DcimRackRolesReadDefault dcim rack roles read default
+*/
+type DcimRackRolesReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rack roles read default response
+func (o *DcimRackRolesReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRackRolesReadDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/rack-roles/{id}/][%d] dcim_rack-roles_read default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *DcimRackRolesReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRackRolesReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

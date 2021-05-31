@@ -38,20 +38,33 @@ type ConsoleServerPort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
+	// Cable peer
+	//
+	//
+	// Return the appropriate serializer for the cable termination model.
+	//
+	// Read Only: true
+	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+
+	// Cable peer type
+	// Read Only: true
+	CablePeerType string `json:"cable_peer_type,omitempty"`
+
 	// Connected endpoint
 	//
 	//
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint reachable
+	// Read Only: true
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
 	// Connected endpoint type
 	// Read Only: true
 	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
-
-	// connection status
-	ConnectionStatus *ConsoleServerPortConnectionStatus `json:"connection_status,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -78,7 +91,7 @@ type ConsoleServerPort struct {
 	Name *string `json:"name"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// type
 	Type *ConsoleServerPortType `json:"type,omitempty"`
@@ -94,10 +107,6 @@ func (m *ConsoleServerPort) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCable(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateConnectionStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -145,24 +154,6 @@ func (m *ConsoleServerPort) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *ConsoleServerPort) validateConnectionStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.ConnectionStatus) { // not required
-		return nil
-	}
-
-	if m.ConnectionStatus != nil {
-		if err := m.ConnectionStatus.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("connection_status")
 			}
 			return err
 		}
@@ -299,135 +290,6 @@ func (m *ConsoleServerPort) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *ConsoleServerPort) UnmarshalBinary(b []byte) error {
 	var res ConsoleServerPort
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// ConsoleServerPortConnectionStatus Connection status
-//
-// swagger:model ConsoleServerPortConnectionStatus
-type ConsoleServerPortConnectionStatus struct {
-
-	// label
-	// Required: true
-	// Enum: [Not Connected Connected]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [false true]
-	Value *bool `json:"value"`
-}
-
-// Validate validates this console server port connection status
-func (m *ConsoleServerPortConnectionStatus) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var consoleServerPortConnectionStatusTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["Not Connected","Connected"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		consoleServerPortConnectionStatusTypeLabelPropEnum = append(consoleServerPortConnectionStatusTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// ConsoleServerPortConnectionStatusLabelNotConnected captures enum value "Not Connected"
-	ConsoleServerPortConnectionStatusLabelNotConnected string = "Not Connected"
-
-	// ConsoleServerPortConnectionStatusLabelConnected captures enum value "Connected"
-	ConsoleServerPortConnectionStatusLabelConnected string = "Connected"
-)
-
-// prop value enum
-func (m *ConsoleServerPortConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, consoleServerPortConnectionStatusTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ConsoleServerPortConnectionStatus) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("connection_status"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var consoleServerPortConnectionStatusTypeValuePropEnum []interface{}
-
-func init() {
-	var res []bool
-	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		consoleServerPortConnectionStatusTypeValuePropEnum = append(consoleServerPortConnectionStatusTypeValuePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ConsoleServerPortConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.EnumCase(path, location, value, consoleServerPortConnectionStatusTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ConsoleServerPortConnectionStatus) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("connection_status"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *ConsoleServerPortConnectionStatus) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *ConsoleServerPortConnectionStatus) UnmarshalBinary(b []byte) error {
-	var res ConsoleServerPortConnectionStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

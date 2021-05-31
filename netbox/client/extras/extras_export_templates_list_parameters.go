@@ -122,10 +122,6 @@ type ExtrasExportTemplatesListParams struct {
 
 	*/
 	Offset *int64
-	/*TemplateLanguage*/
-	TemplateLanguage *string
-	/*TemplateLanguagen*/
-	TemplateLanguagen *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -383,28 +379,6 @@ func (o *ExtrasExportTemplatesListParams) WithOffset(offset *int64) *ExtrasExpor
 // SetOffset adds the offset to the extras export templates list params
 func (o *ExtrasExportTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithTemplateLanguage adds the templateLanguage to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) WithTemplateLanguage(templateLanguage *string) *ExtrasExportTemplatesListParams {
-	o.SetTemplateLanguage(templateLanguage)
-	return o
-}
-
-// SetTemplateLanguage adds the templateLanguage to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) SetTemplateLanguage(templateLanguage *string) {
-	o.TemplateLanguage = templateLanguage
-}
-
-// WithTemplateLanguagen adds the templateLanguagen to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) WithTemplateLanguagen(templateLanguagen *string) *ExtrasExportTemplatesListParams {
-	o.SetTemplateLanguagen(templateLanguagen)
-	return o
-}
-
-// SetTemplateLanguagen adds the templateLanguageN to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) SetTemplateLanguagen(templateLanguagen *string) {
-	o.TemplateLanguagen = templateLanguagen
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -729,38 +703,6 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.TemplateLanguage != nil {
-
-		// query param template_language
-		var qrTemplateLanguage string
-		if o.TemplateLanguage != nil {
-			qrTemplateLanguage = *o.TemplateLanguage
-		}
-		qTemplateLanguage := qrTemplateLanguage
-		if qTemplateLanguage != "" {
-			if err := r.SetQueryParam("template_language", qTemplateLanguage); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.TemplateLanguagen != nil {
-
-		// query param template_language__n
-		var qrTemplateLanguagen string
-		if o.TemplateLanguagen != nil {
-			qrTemplateLanguagen = *o.TemplateLanguagen
-		}
-		qTemplateLanguagen := qrTemplateLanguagen
-		if qTemplateLanguagen != "" {
-			if err := r.SetQueryParam("template_language__n", qTemplateLanguagen); err != nil {
 				return err
 			}
 		}

@@ -65,15 +65,13 @@ type WritableService struct {
 
 	// Name
 	// Required: true
-	// Max Length: 30
+	// Max Length: 100
 	// Min Length: 1
 	Name *string `json:"name"`
 
-	// Port number
+	// ports
 	// Required: true
-	// Maximum: 65535
-	// Minimum: 1
-	Port *int64 `json:"port"`
+	Ports []int64 `json:"ports"`
 
 	// Protocol
 	// Required: true
@@ -81,7 +79,7 @@ type WritableService struct {
 	Protocol *string `json:"protocol"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true
@@ -116,7 +114,7 @@ func (m *WritableService) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validatePort(formats); err != nil {
+	if err := m.validatePorts(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -200,25 +198,29 @@ func (m *WritableService) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 30); err != nil {
+	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *WritableService) validatePort(formats strfmt.Registry) error {
+func (m *WritableService) validatePorts(formats strfmt.Registry) error {
 
-	if err := validate.Required("port", "body", m.Port); err != nil {
+	if err := validate.Required("ports", "body", m.Ports); err != nil {
 		return err
 	}
 
-	if err := validate.MinimumInt("port", "body", int64(*m.Port), 1, false); err != nil {
-		return err
-	}
+	for i := 0; i < len(m.Ports); i++ {
 
-	if err := validate.MaximumInt("port", "body", int64(*m.Port), 65535, false); err != nil {
-		return err
+		if err := validate.MinimumInt("ports"+"."+strconv.Itoa(i), "body", int64(m.Ports[i]), 1, false); err != nil {
+			return err
+		}
+
+		if err := validate.MaximumInt("ports"+"."+strconv.Itoa(i), "body", int64(m.Ports[i]), 65535, false); err != nil {
+			return err
+		}
+
 	}
 
 	return nil

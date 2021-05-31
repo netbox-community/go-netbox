@@ -118,6 +118,26 @@ type DcimFrontPortsListParams struct {
 	IDLte *string
 	/*IDn*/
 	IDn *string
+	/*Label*/
+	Label *string
+	/*LabelIc*/
+	LabelIc *string
+	/*LabelIe*/
+	LabelIe *string
+	/*LabelIew*/
+	LabelIew *string
+	/*LabelIsw*/
+	LabelIsw *string
+	/*Labeln*/
+	Labeln *string
+	/*LabelNic*/
+	LabelNic *string
+	/*LabelNie*/
+	LabelNie *string
+	/*LabelNiew*/
+	LabelNiew *string
+	/*LabelNisw*/
+	LabelNisw *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -442,6 +462,116 @@ func (o *DcimFrontPortsListParams) WithIDn(iDn *string) *DcimFrontPortsListParam
 // SetIDn adds the idN to the dcim front ports list params
 func (o *DcimFrontPortsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
+}
+
+// WithLabel adds the label to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabel(label *string) *DcimFrontPortsListParams {
+	o.SetLabel(label)
+	return o
+}
+
+// SetLabel adds the label to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabel(label *string) {
+	o.Label = label
+}
+
+// WithLabelIc adds the labelIc to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabelIc(labelIc *string) *DcimFrontPortsListParams {
+	o.SetLabelIc(labelIc)
+	return o
+}
+
+// SetLabelIc adds the labelIc to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabelIc(labelIc *string) {
+	o.LabelIc = labelIc
+}
+
+// WithLabelIe adds the labelIe to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabelIe(labelIe *string) *DcimFrontPortsListParams {
+	o.SetLabelIe(labelIe)
+	return o
+}
+
+// SetLabelIe adds the labelIe to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabelIe(labelIe *string) {
+	o.LabelIe = labelIe
+}
+
+// WithLabelIew adds the labelIew to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabelIew(labelIew *string) *DcimFrontPortsListParams {
+	o.SetLabelIew(labelIew)
+	return o
+}
+
+// SetLabelIew adds the labelIew to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabelIew(labelIew *string) {
+	o.LabelIew = labelIew
+}
+
+// WithLabelIsw adds the labelIsw to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabelIsw(labelIsw *string) *DcimFrontPortsListParams {
+	o.SetLabelIsw(labelIsw)
+	return o
+}
+
+// SetLabelIsw adds the labelIsw to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabelIsw(labelIsw *string) {
+	o.LabelIsw = labelIsw
+}
+
+// WithLabeln adds the labeln to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabeln(labeln *string) *DcimFrontPortsListParams {
+	o.SetLabeln(labeln)
+	return o
+}
+
+// SetLabeln adds the labelN to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabeln(labeln *string) {
+	o.Labeln = labeln
+}
+
+// WithLabelNic adds the labelNic to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabelNic(labelNic *string) *DcimFrontPortsListParams {
+	o.SetLabelNic(labelNic)
+	return o
+}
+
+// SetLabelNic adds the labelNic to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabelNic(labelNic *string) {
+	o.LabelNic = labelNic
+}
+
+// WithLabelNie adds the labelNie to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabelNie(labelNie *string) *DcimFrontPortsListParams {
+	o.SetLabelNie(labelNie)
+	return o
+}
+
+// SetLabelNie adds the labelNie to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabelNie(labelNie *string) {
+	o.LabelNie = labelNie
+}
+
+// WithLabelNiew adds the labelNiew to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabelNiew(labelNiew *string) *DcimFrontPortsListParams {
+	o.SetLabelNiew(labelNiew)
+	return o
+}
+
+// SetLabelNiew adds the labelNiew to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabelNiew(labelNiew *string) {
+	o.LabelNiew = labelNiew
+}
+
+// WithLabelNisw adds the labelNisw to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabelNisw(labelNisw *string) *DcimFrontPortsListParams {
+	o.SetLabelNisw(labelNisw)
+	return o
+}
+
+// SetLabelNisw adds the labelNisw to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabelNisw(labelNisw *string) {
+	o.LabelNisw = labelNisw
 }
 
 // WithLimit adds the limit to the dcim front ports list params
@@ -1057,6 +1187,166 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qIDn := qrIDn
 		if qIDn != "" {
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Label != nil {
+
+		// query param label
+		var qrLabel string
+		if o.Label != nil {
+			qrLabel = *o.Label
+		}
+		qLabel := qrLabel
+		if qLabel != "" {
+			if err := r.SetQueryParam("label", qLabel); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelIc != nil {
+
+		// query param label__ic
+		var qrLabelIc string
+		if o.LabelIc != nil {
+			qrLabelIc = *o.LabelIc
+		}
+		qLabelIc := qrLabelIc
+		if qLabelIc != "" {
+			if err := r.SetQueryParam("label__ic", qLabelIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelIe != nil {
+
+		// query param label__ie
+		var qrLabelIe string
+		if o.LabelIe != nil {
+			qrLabelIe = *o.LabelIe
+		}
+		qLabelIe := qrLabelIe
+		if qLabelIe != "" {
+			if err := r.SetQueryParam("label__ie", qLabelIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelIew != nil {
+
+		// query param label__iew
+		var qrLabelIew string
+		if o.LabelIew != nil {
+			qrLabelIew = *o.LabelIew
+		}
+		qLabelIew := qrLabelIew
+		if qLabelIew != "" {
+			if err := r.SetQueryParam("label__iew", qLabelIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelIsw != nil {
+
+		// query param label__isw
+		var qrLabelIsw string
+		if o.LabelIsw != nil {
+			qrLabelIsw = *o.LabelIsw
+		}
+		qLabelIsw := qrLabelIsw
+		if qLabelIsw != "" {
+			if err := r.SetQueryParam("label__isw", qLabelIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Labeln != nil {
+
+		// query param label__n
+		var qrLabeln string
+		if o.Labeln != nil {
+			qrLabeln = *o.Labeln
+		}
+		qLabeln := qrLabeln
+		if qLabeln != "" {
+			if err := r.SetQueryParam("label__n", qLabeln); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelNic != nil {
+
+		// query param label__nic
+		var qrLabelNic string
+		if o.LabelNic != nil {
+			qrLabelNic = *o.LabelNic
+		}
+		qLabelNic := qrLabelNic
+		if qLabelNic != "" {
+			if err := r.SetQueryParam("label__nic", qLabelNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelNie != nil {
+
+		// query param label__nie
+		var qrLabelNie string
+		if o.LabelNie != nil {
+			qrLabelNie = *o.LabelNie
+		}
+		qLabelNie := qrLabelNie
+		if qLabelNie != "" {
+			if err := r.SetQueryParam("label__nie", qLabelNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelNiew != nil {
+
+		// query param label__niew
+		var qrLabelNiew string
+		if o.LabelNiew != nil {
+			qrLabelNiew = *o.LabelNiew
+		}
+		qLabelNiew := qrLabelNiew
+		if qLabelNiew != "" {
+			if err := r.SetQueryParam("label__niew", qLabelNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.LabelNisw != nil {
+
+		// query param label__nisw
+		var qrLabelNisw string
+		if o.LabelNisw != nil {
+			qrLabelNisw = *o.LabelNisw
+		}
+		qLabelNisw := qrLabelNisw
+		if qLabelNisw != "" {
+			if err := r.SetQueryParam("label__nisw", qLabelNisw); err != nil {
 				return err
 			}
 		}

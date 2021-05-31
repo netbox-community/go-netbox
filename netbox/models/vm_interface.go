@@ -35,6 +35,10 @@ import (
 // swagger:model VMInterface
 type VMInterface struct {
 
+	// Count ipaddresses
+	// Read Only: true
+	CountIpaddresses int64 `json:"count_ipaddresses,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -68,7 +72,7 @@ type VMInterface struct {
 	TaggedVlans []*NestedVLAN `json:"tagged_vlans"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// untagged vlan
 	UntaggedVlan *NestedVLAN `json:"untagged_vlan,omitempty"`

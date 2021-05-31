@@ -88,6 +88,10 @@ type DcimPowerFeedsListParams struct {
 	AmperageLte *string
 	/*Amperagen*/
 	Amperagen *string
+	/*Cabled*/
+	Cabled *string
+	/*Connected*/
+	Connected *string
 	/*Created*/
 	Created *string
 	/*CreatedGte*/
@@ -315,6 +319,28 @@ func (o *DcimPowerFeedsListParams) WithAmperagen(amperagen *string) *DcimPowerFe
 // SetAmperagen adds the amperageN to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetAmperagen(amperagen *string) {
 	o.Amperagen = amperagen
+}
+
+// WithCabled adds the cabled to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithCabled(cabled *string) *DcimPowerFeedsListParams {
+	o.SetCabled(cabled)
+	return o
+}
+
+// SetCabled adds the cabled to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetCabled(cabled *string) {
+	o.Cabled = cabled
+}
+
+// WithConnected adds the connected to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithConnected(connected *string) *DcimPowerFeedsListParams {
+	o.SetConnected(connected)
+	return o
+}
+
+// SetConnected adds the connected to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetConnected(connected *string) {
+	o.Connected = connected
 }
 
 // WithCreated adds the created to the dcim power feeds list params
@@ -1064,6 +1090,38 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qAmperagen := qrAmperagen
 		if qAmperagen != "" {
 			if err := r.SetQueryParam("amperage__n", qAmperagen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Cabled != nil {
+
+		// query param cabled
+		var qrCabled string
+		if o.Cabled != nil {
+			qrCabled = *o.Cabled
+		}
+		qCabled := qrCabled
+		if qCabled != "" {
+			if err := r.SetQueryParam("cabled", qCabled); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Connected != nil {
+
+		// query param connected
+		var qrConnected string
+		if o.Connected != nil {
+			qrConnected = *o.Connected
+		}
+		qConnected := qrConnected
+		if qConnected != "" {
+			if err := r.SetQueryParam("connected", qConnected); err != nil {
 				return err
 			}
 		}

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedCluster Cluster
+// NestedCluster nested cluster
 //
 // swagger:model NestedCluster
 type NestedCluster struct {

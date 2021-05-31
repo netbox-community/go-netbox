@@ -152,6 +152,14 @@ type SecretsSecretsListParams struct {
 	Tag *string
 	/*Tagn*/
 	Tagn *string
+	/*VirtualMachine*/
+	VirtualMachine *string
+	/*VirtualMachinen*/
+	VirtualMachinen *string
+	/*VirtualMachineID*/
+	VirtualMachineID *string
+	/*VirtualMachineIDn*/
+	VirtualMachineIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -574,6 +582,50 @@ func (o *SecretsSecretsListParams) WithTagn(tagn *string) *SecretsSecretsListPar
 // SetTagn adds the tagN to the secrets secrets list params
 func (o *SecretsSecretsListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
+}
+
+// WithVirtualMachine adds the virtualMachine to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithVirtualMachine(virtualMachine *string) *SecretsSecretsListParams {
+	o.SetVirtualMachine(virtualMachine)
+	return o
+}
+
+// SetVirtualMachine adds the virtualMachine to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetVirtualMachine(virtualMachine *string) {
+	o.VirtualMachine = virtualMachine
+}
+
+// WithVirtualMachinen adds the virtualMachinen to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithVirtualMachinen(virtualMachinen *string) *SecretsSecretsListParams {
+	o.SetVirtualMachinen(virtualMachinen)
+	return o
+}
+
+// SetVirtualMachinen adds the virtualMachineN to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetVirtualMachinen(virtualMachinen *string) {
+	o.VirtualMachinen = virtualMachinen
+}
+
+// WithVirtualMachineID adds the virtualMachineID to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithVirtualMachineID(virtualMachineID *string) *SecretsSecretsListParams {
+	o.SetVirtualMachineID(virtualMachineID)
+	return o
+}
+
+// SetVirtualMachineID adds the virtualMachineId to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetVirtualMachineID(virtualMachineID *string) {
+	o.VirtualMachineID = virtualMachineID
+}
+
+// WithVirtualMachineIDn adds the virtualMachineIDn to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithVirtualMachineIDn(virtualMachineIDn *string) *SecretsSecretsListParams {
+	o.SetVirtualMachineIDn(virtualMachineIDn)
+	return o
+}
+
+// SetVirtualMachineIDn adds the virtualMachineIdN to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetVirtualMachineIDn(virtualMachineIDn *string) {
+	o.VirtualMachineIDn = virtualMachineIDn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -1138,6 +1190,70 @@ func (o *SecretsSecretsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qTagn := qrTagn
 		if qTagn != "" {
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VirtualMachine != nil {
+
+		// query param virtual_machine
+		var qrVirtualMachine string
+		if o.VirtualMachine != nil {
+			qrVirtualMachine = *o.VirtualMachine
+		}
+		qVirtualMachine := qrVirtualMachine
+		if qVirtualMachine != "" {
+			if err := r.SetQueryParam("virtual_machine", qVirtualMachine); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VirtualMachinen != nil {
+
+		// query param virtual_machine__n
+		var qrVirtualMachinen string
+		if o.VirtualMachinen != nil {
+			qrVirtualMachinen = *o.VirtualMachinen
+		}
+		qVirtualMachinen := qrVirtualMachinen
+		if qVirtualMachinen != "" {
+			if err := r.SetQueryParam("virtual_machine__n", qVirtualMachinen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VirtualMachineID != nil {
+
+		// query param virtual_machine_id
+		var qrVirtualMachineID string
+		if o.VirtualMachineID != nil {
+			qrVirtualMachineID = *o.VirtualMachineID
+		}
+		qVirtualMachineID := qrVirtualMachineID
+		if qVirtualMachineID != "" {
+			if err := r.SetQueryParam("virtual_machine_id", qVirtualMachineID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VirtualMachineIDn != nil {
+
+		// query param virtual_machine_id__n
+		var qrVirtualMachineIDn string
+		if o.VirtualMachineIDn != nil {
+			qrVirtualMachineIDn = *o.VirtualMachineIDn
+		}
+		qVirtualMachineIDn := qrVirtualMachineIDn
+		if qVirtualMachineIDn != "" {
+			if err := r.SetQueryParam("virtual_machine_id__n", qVirtualMachineIDn); err != nil {
 				return err
 			}
 		}

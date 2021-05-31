@@ -67,6 +67,12 @@ type WritableUser struct {
 	// Max Length: 150
 	LastName string `json:"last_name,omitempty"`
 
+	// Password
+	// Required: true
+	// Max Length: 128
+	// Min Length: 1
+	Password *string `json:"password"`
+
 	// Url
 	// Read Only: true
 	// Format: uri
@@ -103,6 +109,10 @@ func (m *WritableUser) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePassword(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -183,6 +193,23 @@ func (m *WritableUser) validateLastName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("last_name", "body", string(m.LastName), 150); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableUser) validatePassword(formats strfmt.Registry) error {
+
+	if err := validate.Required("password", "body", m.Password); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("password", "body", string(*m.Password), 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxLength("password", "body", string(*m.Password), 128); err != nil {
 		return err
 	}
 

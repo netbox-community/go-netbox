@@ -22,6 +22,7 @@ package extras
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -41,9 +42,15 @@ func (o *ExtrasConfigContextsDeleteReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasConfigContextsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -64,6 +71,46 @@ func (o *ExtrasConfigContextsDeleteNoContent) Error() string {
 }
 
 func (o *ExtrasConfigContextsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewExtrasConfigContextsDeleteDefault creates a ExtrasConfigContextsDeleteDefault with default headers values
+func NewExtrasConfigContextsDeleteDefault(code int) *ExtrasConfigContextsDeleteDefault {
+	return &ExtrasConfigContextsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/*ExtrasConfigContextsDeleteDefault handles this case with default header values.
+
+ExtrasConfigContextsDeleteDefault extras config contexts delete default
+*/
+type ExtrasConfigContextsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras config contexts delete default response
+func (o *ExtrasConfigContextsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasConfigContextsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extras_config-contexts_delete default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *ExtrasConfigContextsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasConfigContextsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

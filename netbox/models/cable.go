@@ -40,6 +40,9 @@ type Cable struct {
 	// Pattern: ^[0-9a-f]{6}$
 	Color string `json:"color,omitempty"`
 
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
@@ -60,11 +63,11 @@ type Cable struct {
 	Status *CableStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Termination a
 	// Read Only: true
-	Terminationa map[string]string `json:"termination_a,omitempty"`
+	Terminationa map[string]*string `json:"termination_a,omitempty"`
 
 	// Termination a id
 	// Required: true
@@ -78,7 +81,7 @@ type Cable struct {
 
 	// Termination b
 	// Read Only: true
-	Terminationb map[string]string `json:"termination_b,omitempty"`
+	Terminationb map[string]*string `json:"termination_b,omitempty"`
 
 	// Termination b id
 	// Required: true
@@ -91,7 +94,7 @@ type Cable struct {
 	TerminationbType *string `json:"termination_b_type"`
 
 	// Type
-	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 smf smf-os1 smf-os2 aoc power]
+	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 cat7a cat8 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 smf smf-os1 smf-os2 aoc power]
 	Type string `json:"type,omitempty"`
 
 	// Url
@@ -322,7 +325,7 @@ var cableTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["cat3","cat5","cat5e","cat6","cat6a","cat7","dac-active","dac-passive","mrj21-trunk","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","smf","smf-os1","smf-os2","aoc","power"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["cat3","cat5","cat5e","cat6","cat6a","cat7","cat7a","cat8","dac-active","dac-passive","mrj21-trunk","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","smf","smf-os1","smf-os2","aoc","power"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -349,6 +352,12 @@ const (
 
 	// CableTypeCat7 captures enum value "cat7"
 	CableTypeCat7 string = "cat7"
+
+	// CableTypeCat7a captures enum value "cat7a"
+	CableTypeCat7a string = "cat7a"
+
+	// CableTypeCat8 captures enum value "cat8"
+	CableTypeCat8 string = "cat8"
 
 	// CableTypeDacActive captures enum value "dac-active"
 	CableTypeDacActive string = "dac-active"

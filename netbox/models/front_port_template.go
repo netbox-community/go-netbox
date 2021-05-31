@@ -63,7 +63,7 @@ type FrontPortTemplate struct {
 	RearPort *NestedRearPortTemplate `json:"rear_port"`
 
 	// Rear port position
-	// Maximum: 64
+	// Maximum: 1024
 	// Minimum: 1
 	RearPortPosition int64 `json:"rear_port_position,omitempty"`
 
@@ -208,7 +208,7 @@ func (m *FrontPortTemplate) validateRearPortPosition(formats strfmt.Registry) er
 		return err
 	}
 
-	if err := validate.MaximumInt("rear_port_position", "body", int64(m.RearPortPosition), 64, false); err != nil {
+	if err := validate.MaximumInt("rear_port_position", "body", int64(m.RearPortPosition), 1024, false); err != nil {
 		return err
 	}
 
@@ -271,12 +271,12 @@ type FrontPortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [8P8C 8P6C 8P4C 8P2C 110 Punch BNC MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST]
+	// Enum: [8P8C 8P6C 8P4C 8P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST CS SN Splice]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
+	// Enum: [8p8c 8p6c 8p4c 8p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
 	Value *string `json:"value"`
 }
 
@@ -302,7 +302,7 @@ var frontPortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","110 Punch","BNC","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST","CS","SN","Splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -324,11 +324,26 @@ const (
 	// FrontPortTemplateTypeLabelNr8P2C captures enum value "8P2C"
 	FrontPortTemplateTypeLabelNr8P2C string = "8P2C"
 
+	// FrontPortTemplateTypeLabelGG45 captures enum value "GG45"
+	FrontPortTemplateTypeLabelGG45 string = "GG45"
+
+	// FrontPortTemplateTypeLabelTERA4P captures enum value "TERA 4P"
+	FrontPortTemplateTypeLabelTERA4P string = "TERA 4P"
+
+	// FrontPortTemplateTypeLabelTERA2P captures enum value "TERA 2P"
+	FrontPortTemplateTypeLabelTERA2P string = "TERA 2P"
+
+	// FrontPortTemplateTypeLabelTERA1P captures enum value "TERA 1P"
+	FrontPortTemplateTypeLabelTERA1P string = "TERA 1P"
+
 	// FrontPortTemplateTypeLabelNr110Punch captures enum value "110 Punch"
 	FrontPortTemplateTypeLabelNr110Punch string = "110 Punch"
 
 	// FrontPortTemplateTypeLabelBNC captures enum value "BNC"
 	FrontPortTemplateTypeLabelBNC string = "BNC"
+
+	// FrontPortTemplateTypeLabelFConnector captures enum value "F Connector"
+	FrontPortTemplateTypeLabelFConnector string = "F Connector"
 
 	// FrontPortTemplateTypeLabelMRJ21 captures enum value "MRJ21"
 	FrontPortTemplateTypeLabelMRJ21 string = "MRJ21"
@@ -362,6 +377,15 @@ const (
 
 	// FrontPortTemplateTypeLabelST captures enum value "ST"
 	FrontPortTemplateTypeLabelST string = "ST"
+
+	// FrontPortTemplateTypeLabelCS captures enum value "CS"
+	FrontPortTemplateTypeLabelCS string = "CS"
+
+	// FrontPortTemplateTypeLabelSN captures enum value "SN"
+	FrontPortTemplateTypeLabelSN string = "SN"
+
+	// FrontPortTemplateTypeLabelSplice captures enum value "Splice"
+	FrontPortTemplateTypeLabelSplice string = "Splice"
 )
 
 // prop value enum
@@ -390,7 +414,7 @@ var frontPortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -412,11 +436,26 @@ const (
 	// FrontPortTemplateTypeValueNr8p2c captures enum value "8p2c"
 	FrontPortTemplateTypeValueNr8p2c string = "8p2c"
 
+	// FrontPortTemplateTypeValueGg45 captures enum value "gg45"
+	FrontPortTemplateTypeValueGg45 string = "gg45"
+
+	// FrontPortTemplateTypeValueTera4p captures enum value "tera-4p"
+	FrontPortTemplateTypeValueTera4p string = "tera-4p"
+
+	// FrontPortTemplateTypeValueTera2p captures enum value "tera-2p"
+	FrontPortTemplateTypeValueTera2p string = "tera-2p"
+
+	// FrontPortTemplateTypeValueTera1p captures enum value "tera-1p"
+	FrontPortTemplateTypeValueTera1p string = "tera-1p"
+
 	// FrontPortTemplateTypeValueNr110Punch captures enum value "110-punch"
 	FrontPortTemplateTypeValueNr110Punch string = "110-punch"
 
 	// FrontPortTemplateTypeValueBnc captures enum value "bnc"
 	FrontPortTemplateTypeValueBnc string = "bnc"
+
+	// FrontPortTemplateTypeValueF captures enum value "f"
+	FrontPortTemplateTypeValueF string = "f"
 
 	// FrontPortTemplateTypeValueMrj21 captures enum value "mrj21"
 	FrontPortTemplateTypeValueMrj21 string = "mrj21"
@@ -450,6 +489,15 @@ const (
 
 	// FrontPortTemplateTypeValueSt captures enum value "st"
 	FrontPortTemplateTypeValueSt string = "st"
+
+	// FrontPortTemplateTypeValueCs captures enum value "cs"
+	FrontPortTemplateTypeValueCs string = "cs"
+
+	// FrontPortTemplateTypeValueSn captures enum value "sn"
+	FrontPortTemplateTypeValueSn string = "sn"
+
+	// FrontPortTemplateTypeValueSplice captures enum value "splice"
+	FrontPortTemplateTypeValueSplice string = "splice"
 )
 
 // prop value enum

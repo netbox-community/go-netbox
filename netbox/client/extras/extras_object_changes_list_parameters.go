@@ -96,6 +96,10 @@ type ExtrasObjectChangesListParams struct {
 	ChangedObjectType *string
 	/*ChangedObjectTypen*/
 	ChangedObjectTypen *string
+	/*ChangedObjectTypeID*/
+	ChangedObjectTypeID *string
+	/*ChangedObjectTypeIDn*/
+	ChangedObjectTypeIDn *string
 	/*ID*/
 	ID *string
 	/*IDGt*/
@@ -148,6 +152,10 @@ type ExtrasObjectChangesListParams struct {
 	User *string
 	/*Usern*/
 	Usern *string
+	/*UserID*/
+	UserID *string
+	/*UserIDn*/
+	UserIDn *string
 	/*UserName*/
 	UserName *string
 	/*UserNameIc*/
@@ -315,6 +323,28 @@ func (o *ExtrasObjectChangesListParams) WithChangedObjectTypen(changedObjectType
 // SetChangedObjectTypen adds the changedObjectTypeN to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) SetChangedObjectTypen(changedObjectTypen *string) {
 	o.ChangedObjectTypen = changedObjectTypen
+}
+
+// WithChangedObjectTypeID adds the changedObjectTypeID to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectTypeID(changedObjectTypeID *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectTypeID(changedObjectTypeID)
+	return o
+}
+
+// SetChangedObjectTypeID adds the changedObjectTypeId to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectTypeID(changedObjectTypeID *string) {
+	o.ChangedObjectTypeID = changedObjectTypeID
+}
+
+// WithChangedObjectTypeIDn adds the changedObjectTypeIDn to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectTypeIDn(changedObjectTypeIDn *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectTypeIDn(changedObjectTypeIDn)
+	return o
+}
+
+// SetChangedObjectTypeIDn adds the changedObjectTypeIdN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectTypeIDn(changedObjectTypeIDn *string) {
+	o.ChangedObjectTypeIDn = changedObjectTypeIDn
 }
 
 // WithID adds the id to the extras object changes list params
@@ -568,6 +598,28 @@ func (o *ExtrasObjectChangesListParams) WithUsern(usern *string) *ExtrasObjectCh
 // SetUsern adds the userN to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) SetUsern(usern *string) {
 	o.Usern = usern
+}
+
+// WithUserID adds the userID to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserID(userID *string) *ExtrasObjectChangesListParams {
+	o.SetUserID(userID)
+	return o
+}
+
+// SetUserID adds the userId to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserID(userID *string) {
+	o.UserID = userID
+}
+
+// WithUserIDn adds the userIDn to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserIDn(userIDn *string) *ExtrasObjectChangesListParams {
+	o.SetUserIDn(userIDn)
+	return o
+}
+
+// SetUserIDn adds the userIdN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserIDn(userIDn *string) {
+	o.UserIDn = userIDn
 }
 
 // WithUserName adds the userName to the extras object changes list params
@@ -842,6 +894,38 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 		qChangedObjectTypen := qrChangedObjectTypen
 		if qChangedObjectTypen != "" {
 			if err := r.SetQueryParam("changed_object_type__n", qChangedObjectTypen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ChangedObjectTypeID != nil {
+
+		// query param changed_object_type_id
+		var qrChangedObjectTypeID string
+		if o.ChangedObjectTypeID != nil {
+			qrChangedObjectTypeID = *o.ChangedObjectTypeID
+		}
+		qChangedObjectTypeID := qrChangedObjectTypeID
+		if qChangedObjectTypeID != "" {
+			if err := r.SetQueryParam("changed_object_type_id", qChangedObjectTypeID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ChangedObjectTypeIDn != nil {
+
+		// query param changed_object_type_id__n
+		var qrChangedObjectTypeIDn string
+		if o.ChangedObjectTypeIDn != nil {
+			qrChangedObjectTypeIDn = *o.ChangedObjectTypeIDn
+		}
+		qChangedObjectTypeIDn := qrChangedObjectTypeIDn
+		if qChangedObjectTypeIDn != "" {
+			if err := r.SetQueryParam("changed_object_type_id__n", qChangedObjectTypeIDn); err != nil {
 				return err
 			}
 		}
@@ -1210,6 +1294,38 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 		qUsern := qrUsern
 		if qUsern != "" {
 			if err := r.SetQueryParam("user__n", qUsern); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserID != nil {
+
+		// query param user_id
+		var qrUserID string
+		if o.UserID != nil {
+			qrUserID = *o.UserID
+		}
+		qUserID := qrUserID
+		if qUserID != "" {
+			if err := r.SetQueryParam("user_id", qUserID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.UserIDn != nil {
+
+		// query param user_id__n
+		var qrUserIDn string
+		if o.UserIDn != nil {
+			qrUserIDn = *o.UserIDn
+		}
+		qUserIDn := qrUserIDn
+		if qUserIDn != "" {
+			if err := r.SetQueryParam("user_id__n", qUserIDn); err != nil {
 				return err
 			}
 		}

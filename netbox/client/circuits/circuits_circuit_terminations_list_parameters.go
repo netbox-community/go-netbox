@@ -76,10 +76,14 @@ for the circuits circuit terminations list operation typically these are written
 */
 type CircuitsCircuitTerminationsListParams struct {
 
+	/*Cabled*/
+	Cabled *string
 	/*CircuitID*/
 	CircuitID *string
 	/*CircuitIDn*/
 	CircuitIDn *string
+	/*Connected*/
+	Connected *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -187,6 +191,17 @@ func (o *CircuitsCircuitTerminationsListParams) SetHTTPClient(client *http.Clien
 	o.HTTPClient = client
 }
 
+// WithCabled adds the cabled to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCabled(cabled *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCabled(cabled)
+	return o
+}
+
+// SetCabled adds the cabled to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCabled(cabled *string) {
+	o.Cabled = cabled
+}
+
 // WithCircuitID adds the circuitID to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithCircuitID(circuitID *string) *CircuitsCircuitTerminationsListParams {
 	o.SetCircuitID(circuitID)
@@ -207,6 +222,17 @@ func (o *CircuitsCircuitTerminationsListParams) WithCircuitIDn(circuitIDn *strin
 // SetCircuitIDn adds the circuitIdN to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) SetCircuitIDn(circuitIDn *string) {
 	o.CircuitIDn = circuitIDn
+}
+
+// WithConnected adds the connected to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithConnected(connected *string) *CircuitsCircuitTerminationsListParams {
+	o.SetConnected(connected)
+	return o
+}
+
+// SetConnected adds the connected to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetConnected(connected *string) {
+	o.Connected = connected
 }
 
 // WithLimit adds the limit to the circuits circuit terminations list params
@@ -558,6 +584,22 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 	}
 	var res []error
 
+	if o.Cabled != nil {
+
+		// query param cabled
+		var qrCabled string
+		if o.Cabled != nil {
+			qrCabled = *o.Cabled
+		}
+		qCabled := qrCabled
+		if qCabled != "" {
+			if err := r.SetQueryParam("cabled", qCabled); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.CircuitID != nil {
 
 		// query param circuit_id
@@ -584,6 +626,22 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		qCircuitIDn := qrCircuitIDn
 		if qCircuitIDn != "" {
 			if err := r.SetQueryParam("circuit_id__n", qCircuitIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Connected != nil {
+
+		// query param connected
+		var qrConnected string
+		if o.Connected != nil {
+			qrConnected = *o.Connected
+		}
+		qConnected := qrConnected
+		if qConnected != "" {
+			if err := r.SetQueryParam("connected", qConnected); err != nil {
 				return err
 			}
 		}

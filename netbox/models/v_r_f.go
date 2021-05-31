@@ -53,11 +53,19 @@ type VRF struct {
 	// Enforce unique space
 	//
 	// Prevent duplicate prefixes/IP addresses within this VRF
-	EnforceUnique *bool `json:"enforce_unique,omitempty"`
+	EnforceUnique bool `json:"enforce_unique,omitempty"`
+
+	// export targets
+	// Unique: true
+	ExportTargets []*NestedRouteTarget `json:"export_targets"`
 
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// import targets
+	// Unique: true
+	ImportTargets []*NestedRouteTarget `json:"import_targets"`
 
 	// Ipaddress count
 	// Read Only: true
@@ -70,7 +78,7 @@ type VRF struct {
 
 	// Name
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	Name *string `json:"name"`
 
@@ -85,7 +93,7 @@ type VRF struct {
 	Rd *string `json:"rd,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
@@ -105,6 +113,14 @@ func (m *VRF) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateExportTargets(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateImportTargets(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -164,6 +180,64 @@ func (m *VRF) validateDescription(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *VRF) validateExportTargets(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ExportTargets) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("export_targets", "body", m.ExportTargets); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.ExportTargets); i++ {
+		if swag.IsZero(m.ExportTargets[i]) { // not required
+			continue
+		}
+
+		if m.ExportTargets[i] != nil {
+			if err := m.ExportTargets[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("export_targets" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *VRF) validateImportTargets(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ImportTargets) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("import_targets", "body", m.ImportTargets); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.ImportTargets); i++ {
+		if swag.IsZero(m.ImportTargets[i]) { // not required
+			continue
+		}
+
+		if m.ImportTargets[i] != nil {
+			if err := m.ImportTargets[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("import_targets" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *VRF) validateLastUpdated(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.LastUpdated) { // not required
@@ -187,7 +261,7 @@ func (m *VRF) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
 		return err
 	}
 

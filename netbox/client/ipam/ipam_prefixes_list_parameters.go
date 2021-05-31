@@ -124,6 +124,10 @@ type IpamPrefixesListParams struct {
 	Offset *int64
 	/*Prefix*/
 	Prefix *string
+	/*PresentInVrf*/
+	PresentInVrf *string
+	/*PresentInVrfID*/
+	PresentInVrfID *string
 	/*Q*/
 	Q *string
 	/*Region*/
@@ -460,6 +464,28 @@ func (o *IpamPrefixesListParams) WithPrefix(prefix *string) *IpamPrefixesListPar
 // SetPrefix adds the prefix to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetPrefix(prefix *string) {
 	o.Prefix = prefix
+}
+
+// WithPresentInVrf adds the presentInVrf to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithPresentInVrf(presentInVrf *string) *IpamPrefixesListParams {
+	o.SetPresentInVrf(presentInVrf)
+	return o
+}
+
+// SetPresentInVrf adds the presentInVrf to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetPresentInVrf(presentInVrf *string) {
+	o.PresentInVrf = presentInVrf
+}
+
+// WithPresentInVrfID adds the presentInVrfID to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithPresentInVrfID(presentInVrfID *string) *IpamPrefixesListParams {
+	o.SetPresentInVrfID(presentInVrfID)
+	return o
+}
+
+// SetPresentInVrfID adds the presentInVrfId to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetPresentInVrfID(presentInVrfID *string) {
+	o.PresentInVrfID = presentInVrfID
 }
 
 // WithQ adds the q to the ipam prefixes list params
@@ -1174,6 +1200,38 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		qPrefix := qrPrefix
 		if qPrefix != "" {
 			if err := r.SetQueryParam("prefix", qPrefix); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PresentInVrf != nil {
+
+		// query param present_in_vrf
+		var qrPresentInVrf string
+		if o.PresentInVrf != nil {
+			qrPresentInVrf = *o.PresentInVrf
+		}
+		qPresentInVrf := qrPresentInVrf
+		if qPresentInVrf != "" {
+			if err := r.SetQueryParam("present_in_vrf", qPresentInVrf); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.PresentInVrfID != nil {
+
+		// query param present_in_vrf_id
+		var qrPresentInVrfID string
+		if o.PresentInVrfID != nil {
+			qrPresentInVrfID = *o.PresentInVrfID
+		}
+		qPresentInVrfID := qrPresentInVrfID
+		if qPresentInVrfID != "" {
+			if err := r.SetQueryParam("present_in_vrf_id", qPresentInVrfID); err != nil {
 				return err
 			}
 		}

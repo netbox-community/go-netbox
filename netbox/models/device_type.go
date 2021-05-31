@@ -79,7 +79,7 @@ type DeviceType struct {
 
 	// Model
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	Model *string `json:"model"`
 
@@ -96,7 +96,7 @@ type DeviceType struct {
 
 	// Slug
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
@@ -105,7 +105,7 @@ type DeviceType struct {
 	SubdeviceRole *DeviceTypeSubdeviceRole `json:"subdevice_role,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Height (U)
 	// Maximum: 32767
@@ -243,7 +243,7 @@ func (m *DeviceType) validateModel(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("model", "body", string(*m.Model), 50); err != nil {
+	if err := validate.MaxLength("model", "body", string(*m.Model), 100); err != nil {
 		return err
 	}
 
@@ -286,7 +286,7 @@ func (m *DeviceType) validateSlug(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("slug", "body", string(*m.Slug), 50); err != nil {
+	if err := validate.MaxLength("slug", "body", string(*m.Slug), 100); err != nil {
 		return err
 	}
 

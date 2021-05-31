@@ -43,7 +43,7 @@ type WritableIPAddress struct {
 
 	// Assigned object
 	// Read Only: true
-	AssignedObject map[string]string `json:"assigned_object,omitempty"`
+	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
 
 	// Assigned object id
 	// Maximum: 2.147483647e+09
@@ -51,7 +51,7 @@ type WritableIPAddress struct {
 	AssignedObjectID *int64 `json:"assigned_object_id"`
 
 	// Assigned object type
-	AssignedObjectType string `json:"assigned_object_type,omitempty"`
+	AssignedObjectType *string `json:"assigned_object_type,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -107,7 +107,7 @@ type WritableIPAddress struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant"`

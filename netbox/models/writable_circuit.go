@@ -37,7 +37,7 @@ type WritableCircuit struct {
 
 	// Circuit ID
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	Cid *string `json:"cid"`
 
@@ -83,7 +83,7 @@ type WritableCircuit struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`
@@ -170,7 +170,7 @@ func (m *WritableCircuit) validateCid(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("cid", "body", string(*m.Cid), 50); err != nil {
+	if err := validate.MaxLength("cid", "body", string(*m.Cid), 100); err != nil {
 		return err
 	}
 

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedDeviceType Device type
+// NestedDeviceType nested device type
 //
 // swagger:model NestedDeviceType
 type NestedDeviceType struct {
@@ -49,13 +49,13 @@ type NestedDeviceType struct {
 
 	// Model
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	Model *string `json:"model"`
 
 	// Slug
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
@@ -120,7 +120,7 @@ func (m *NestedDeviceType) validateModel(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("model", "body", string(*m.Model), 50); err != nil {
+	if err := validate.MaxLength("model", "body", string(*m.Model), 100); err != nil {
 		return err
 	}
 
@@ -137,7 +137,7 @@ func (m *NestedDeviceType) validateSlug(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("slug", "body", string(*m.Slug), 50); err != nil {
+	if err := validate.MaxLength("slug", "body", string(*m.Slug), 100); err != nil {
 		return err
 	}
 

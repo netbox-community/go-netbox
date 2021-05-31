@@ -21,8 +21,6 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"fmt"
-
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 )
@@ -42,6 +40,12 @@ type Client struct {
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	CircuitsCircuitTerminationsBulkDelete(params *CircuitsCircuitTerminationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsBulkDeleteNoContent, error)
+
+	CircuitsCircuitTerminationsBulkPartialUpdate(params *CircuitsCircuitTerminationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsBulkPartialUpdateOK, error)
+
+	CircuitsCircuitTerminationsBulkUpdate(params *CircuitsCircuitTerminationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsBulkUpdateOK, error)
+
 	CircuitsCircuitTerminationsCreate(params *CircuitsCircuitTerminationsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsCreateCreated, error)
 
 	CircuitsCircuitTerminationsDelete(params *CircuitsCircuitTerminationsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsDeleteNoContent, error)
@@ -52,7 +56,15 @@ type ClientService interface {
 
 	CircuitsCircuitTerminationsRead(params *CircuitsCircuitTerminationsReadParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsReadOK, error)
 
+	CircuitsCircuitTerminationsTrace(params *CircuitsCircuitTerminationsTraceParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsTraceOK, error)
+
 	CircuitsCircuitTerminationsUpdate(params *CircuitsCircuitTerminationsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsUpdateOK, error)
+
+	CircuitsCircuitTypesBulkDelete(params *CircuitsCircuitTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesBulkDeleteNoContent, error)
+
+	CircuitsCircuitTypesBulkPartialUpdate(params *CircuitsCircuitTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesBulkPartialUpdateOK, error)
+
+	CircuitsCircuitTypesBulkUpdate(params *CircuitsCircuitTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesBulkUpdateOK, error)
 
 	CircuitsCircuitTypesCreate(params *CircuitsCircuitTypesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesCreateCreated, error)
 
@@ -66,6 +78,12 @@ type ClientService interface {
 
 	CircuitsCircuitTypesUpdate(params *CircuitsCircuitTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesUpdateOK, error)
 
+	CircuitsCircuitsBulkDelete(params *CircuitsCircuitsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsBulkDeleteNoContent, error)
+
+	CircuitsCircuitsBulkPartialUpdate(params *CircuitsCircuitsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsBulkPartialUpdateOK, error)
+
+	CircuitsCircuitsBulkUpdate(params *CircuitsCircuitsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsBulkUpdateOK, error)
+
 	CircuitsCircuitsCreate(params *CircuitsCircuitsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsCreateCreated, error)
 
 	CircuitsCircuitsDelete(params *CircuitsCircuitsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsDeleteNoContent, error)
@@ -78,11 +96,15 @@ type ClientService interface {
 
 	CircuitsCircuitsUpdate(params *CircuitsCircuitsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsUpdateOK, error)
 
+	CircuitsProvidersBulkDelete(params *CircuitsProvidersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersBulkDeleteNoContent, error)
+
+	CircuitsProvidersBulkPartialUpdate(params *CircuitsProvidersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersBulkPartialUpdateOK, error)
+
+	CircuitsProvidersBulkUpdate(params *CircuitsProvidersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersBulkUpdateOK, error)
+
 	CircuitsProvidersCreate(params *CircuitsProvidersCreateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersCreateCreated, error)
 
 	CircuitsProvidersDelete(params *CircuitsProvidersDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersDeleteNoContent, error)
-
-	CircuitsProvidersGraphs(params *CircuitsProvidersGraphsParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersGraphsOK, error)
 
 	CircuitsProvidersList(params *CircuitsProvidersListParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersListOK, error)
 
@@ -93,6 +115,108 @@ type ClientService interface {
 	CircuitsProvidersUpdate(params *CircuitsProvidersUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  CircuitsCircuitTerminationsBulkDelete circuits circuit terminations bulk delete API
+*/
+func (a *Client) CircuitsCircuitTerminationsBulkDelete(params *CircuitsCircuitTerminationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitTerminationsBulkDeleteParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuit-terminations_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/circuits/circuit-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitTerminationsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitTerminationsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitTerminationsBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsCircuitTerminationsBulkPartialUpdate circuits circuit terminations bulk partial update API
+*/
+func (a *Client) CircuitsCircuitTerminationsBulkPartialUpdate(params *CircuitsCircuitTerminationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitTerminationsBulkPartialUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuit-terminations_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/circuits/circuit-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitTerminationsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitTerminationsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitTerminationsBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsCircuitTerminationsBulkUpdate circuits circuit terminations bulk update API
+*/
+func (a *Client) CircuitsCircuitTerminationsBulkUpdate(params *CircuitsCircuitTerminationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitTerminationsBulkUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuit-terminations_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/circuits/circuit-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitTerminationsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitTerminationsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitTerminationsBulkUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -159,9 +283,8 @@ func (a *Client) CircuitsCircuitTerminationsDelete(params *CircuitsCircuitTermin
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_circuit-terminations_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsCircuitTerminationsDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -194,9 +317,8 @@ func (a *Client) CircuitsCircuitTerminationsList(params *CircuitsCircuitTerminat
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_circuit-terminations_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsCircuitTerminationsListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -263,9 +385,42 @@ func (a *Client) CircuitsCircuitTerminationsRead(params *CircuitsCircuitTerminat
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_circuit-terminations_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsCircuitTerminationsReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsCircuitTerminationsTrace Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).
+*/
+func (a *Client) CircuitsCircuitTerminationsTrace(params *CircuitsCircuitTerminationsTraceParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTerminationsTraceOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitTerminationsTraceParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuit-terminations_trace",
+		Method:             "GET",
+		PathPattern:        "/circuits/circuit-terminations/{id}/trace/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitTerminationsTraceReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitTerminationsTraceOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitTerminationsTraceDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -299,6 +454,108 @@ func (a *Client) CircuitsCircuitTerminationsUpdate(params *CircuitsCircuitTermin
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*CircuitsCircuitTerminationsUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsCircuitTypesBulkDelete circuits circuit types bulk delete API
+*/
+func (a *Client) CircuitsCircuitTypesBulkDelete(params *CircuitsCircuitTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitTypesBulkDeleteParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuit-types_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/circuits/circuit-types/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitTypesBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitTypesBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitTypesBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsCircuitTypesBulkPartialUpdate circuits circuit types bulk partial update API
+*/
+func (a *Client) CircuitsCircuitTypesBulkPartialUpdate(params *CircuitsCircuitTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitTypesBulkPartialUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuit-types_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/circuits/circuit-types/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitTypesBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitTypesBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitTypesBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsCircuitTypesBulkUpdate circuits circuit types bulk update API
+*/
+func (a *Client) CircuitsCircuitTypesBulkUpdate(params *CircuitsCircuitTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitTypesBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitTypesBulkUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuit-types_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/circuits/circuit-types/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitTypesBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitTypesBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitTypesBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -366,9 +623,8 @@ func (a *Client) CircuitsCircuitTypesDelete(params *CircuitsCircuitTypesDeletePa
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_circuit-types_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsCircuitTypesDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -401,9 +657,8 @@ func (a *Client) CircuitsCircuitTypesList(params *CircuitsCircuitTypesListParams
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_circuit-types_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsCircuitTypesListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -470,9 +725,8 @@ func (a *Client) CircuitsCircuitTypesRead(params *CircuitsCircuitTypesReadParams
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_circuit-types_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsCircuitTypesReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -506,6 +760,108 @@ func (a *Client) CircuitsCircuitTypesUpdate(params *CircuitsCircuitTypesUpdatePa
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*CircuitsCircuitTypesUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsCircuitsBulkDelete circuits circuits bulk delete API
+*/
+func (a *Client) CircuitsCircuitsBulkDelete(params *CircuitsCircuitsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitsBulkDeleteParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuits_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/circuits/circuits/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitsBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsCircuitsBulkPartialUpdate circuits circuits bulk partial update API
+*/
+func (a *Client) CircuitsCircuitsBulkPartialUpdate(params *CircuitsCircuitsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitsBulkPartialUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuits_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/circuits/circuits/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitsBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsCircuitsBulkUpdate circuits circuits bulk update API
+*/
+func (a *Client) CircuitsCircuitsBulkUpdate(params *CircuitsCircuitsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsCircuitsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsCircuitsBulkUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_circuits_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/circuits/circuits/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsCircuitsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsCircuitsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsCircuitsBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -573,9 +929,8 @@ func (a *Client) CircuitsCircuitsDelete(params *CircuitsCircuitsDeleteParams, au
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_circuits_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsCircuitsDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -608,9 +963,8 @@ func (a *Client) CircuitsCircuitsList(params *CircuitsCircuitsListParams, authIn
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_circuits_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsCircuitsListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -677,9 +1031,8 @@ func (a *Client) CircuitsCircuitsRead(params *CircuitsCircuitsReadParams, authIn
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_circuits_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsCircuitsReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -713,6 +1066,108 @@ func (a *Client) CircuitsCircuitsUpdate(params *CircuitsCircuitsUpdateParams, au
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*CircuitsCircuitsUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsProvidersBulkDelete circuits providers bulk delete API
+*/
+func (a *Client) CircuitsProvidersBulkDelete(params *CircuitsProvidersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsProvidersBulkDeleteParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_providers_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/circuits/providers/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsProvidersBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsProvidersBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsProvidersBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsProvidersBulkPartialUpdate circuits providers bulk partial update API
+*/
+func (a *Client) CircuitsProvidersBulkPartialUpdate(params *CircuitsProvidersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsProvidersBulkPartialUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_providers_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/circuits/providers/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsProvidersBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsProvidersBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsProvidersBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  CircuitsProvidersBulkUpdate circuits providers bulk update API
+*/
+func (a *Client) CircuitsProvidersBulkUpdate(params *CircuitsProvidersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCircuitsProvidersBulkUpdateParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "circuits_providers_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/circuits/providers/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &CircuitsProvidersBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CircuitsProvidersBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*CircuitsProvidersBulkUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -780,44 +1235,8 @@ func (a *Client) CircuitsProvidersDelete(params *CircuitsProvidersDeleteParams, 
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_providers_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-  CircuitsProvidersGraphs A convenience method for rendering graphs for a particular provider.
-*/
-func (a *Client) CircuitsProvidersGraphs(params *CircuitsProvidersGraphsParams, authInfo runtime.ClientAuthInfoWriter) (*CircuitsProvidersGraphsOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewCircuitsProvidersGraphsParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "circuits_providers_graphs",
-		Method:             "GET",
-		PathPattern:        "/circuits/providers/{id}/graphs/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &CircuitsProvidersGraphsReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*CircuitsProvidersGraphsOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_providers_graphs: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsProvidersDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -850,9 +1269,8 @@ func (a *Client) CircuitsProvidersList(params *CircuitsProvidersListParams, auth
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_providers_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsProvidersListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*
@@ -919,9 +1337,8 @@ func (a *Client) CircuitsProvidersRead(params *CircuitsProvidersReadParams, auth
 		return success, nil
 	}
 	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for circuits_providers_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
+	unexpectedSuccess := result.(*CircuitsProvidersReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
 /*

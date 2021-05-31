@@ -39,6 +39,9 @@ type WritableRackReservation struct {
 	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Description
 	// Required: true
 	// Max Length: 200
@@ -54,7 +57,7 @@ type WritableRackReservation struct {
 	Rack *int64 `json:"rack"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`

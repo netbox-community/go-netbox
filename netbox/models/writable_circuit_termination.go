@@ -37,6 +37,18 @@ type WritableCircuitTermination struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
+	// Cable peer
+	//
+	//
+	// Return the appropriate serializer for the cable termination model.
+	//
+	// Read Only: true
+	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+
+	// Cable peer type
+	// Read Only: true
+	CablePeerType string `json:"cable_peer_type,omitempty"`
+
 	// Circuit
 	// Required: true
 	Circuit *int64 `json:"circuit"`
@@ -47,15 +59,15 @@ type WritableCircuitTermination struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint reachable
+	// Read Only: true
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
 	// Connected endpoint type
 	// Read Only: true
 	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
-
-	// Connection status
-	// Enum: [false true]
-	ConnectionStatus *bool `json:"connection_status,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -66,10 +78,9 @@ type WritableCircuitTermination struct {
 	ID int64 `json:"id,omitempty"`
 
 	// Port speed (Kbps)
-	// Required: true
 	// Maximum: 2.147483647e+09
 	// Minimum: 0
-	PortSpeed *int64 `json:"port_speed"`
+	PortSpeed *int64 `json:"port_speed,omitempty"`
 
 	// Patch panel/port(s)
 	// Max Length: 100
@@ -110,10 +121,6 @@ func (m *WritableCircuitTermination) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateCircuit(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateConnectionStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -182,40 +189,6 @@ func (m *WritableCircuitTermination) validateCircuit(formats strfmt.Registry) er
 	return nil
 }
 
-var writableCircuitTerminationTypeConnectionStatusPropEnum []interface{}
-
-func init() {
-	var res []bool
-	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		writableCircuitTerminationTypeConnectionStatusPropEnum = append(writableCircuitTerminationTypeConnectionStatusPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *WritableCircuitTermination) validateConnectionStatusEnum(path, location string, value bool) error {
-	if err := validate.EnumCase(path, location, value, writableCircuitTerminationTypeConnectionStatusPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *WritableCircuitTermination) validateConnectionStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.ConnectionStatus) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateConnectionStatusEnum("connection_status", "body", *m.ConnectionStatus); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritableCircuitTermination) validateDescription(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Description) { // not required
@@ -231,8 +204,8 @@ func (m *WritableCircuitTermination) validateDescription(formats strfmt.Registry
 
 func (m *WritableCircuitTermination) validatePortSpeed(formats strfmt.Registry) error {
 
-	if err := validate.Required("port_speed", "body", m.PortSpeed); err != nil {
-		return err
+	if swag.IsZero(m.PortSpeed) { // not required
+		return nil
 	}
 
 	if err := validate.MinimumInt("port_speed", "body", int64(*m.PortSpeed), 0, false); err != nil {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedRearPortTemplate Rear port
+// NestedRearPortTemplate nested rear port template
 //
 // swagger:model NestedRearPortTemplate
 type NestedRearPortTemplate struct {

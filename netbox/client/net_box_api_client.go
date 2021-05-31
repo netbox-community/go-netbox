@@ -30,6 +30,7 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/client/extras"
 	"github.com/fbreckle/go-netbox/netbox/client/ipam"
 	"github.com/fbreckle/go-netbox/netbox/client/secrets"
+	"github.com/fbreckle/go-netbox/netbox/client/status"
 	"github.com/fbreckle/go-netbox/netbox/client/tenancy"
 	"github.com/fbreckle/go-netbox/netbox/client/users"
 	"github.com/fbreckle/go-netbox/netbox/client/virtualization"
@@ -82,6 +83,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *NetBoxAPI 
 	cli.Extras = extras.New(transport, formats)
 	cli.Ipam = ipam.New(transport, formats)
 	cli.Secrets = secrets.New(transport, formats)
+	cli.Status = status.New(transport, formats)
 	cli.Tenancy = tenancy.New(transport, formats)
 	cli.Users = users.New(transport, formats)
 	cli.Virtualization = virtualization.New(transport, formats)
@@ -139,6 +141,8 @@ type NetBoxAPI struct {
 
 	Secrets secrets.ClientService
 
+	Status status.ClientService
+
 	Tenancy tenancy.ClientService
 
 	Users users.ClientService
@@ -156,6 +160,7 @@ func (c *NetBoxAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Extras.SetTransport(transport)
 	c.Ipam.SetTransport(transport)
 	c.Secrets.SetTransport(transport)
+	c.Status.SetTransport(transport)
 	c.Tenancy.SetTransport(transport)
 	c.Users.SetTransport(transport)
 	c.Virtualization.SetTransport(transport)

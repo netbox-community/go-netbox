@@ -39,6 +39,9 @@ type RackReservation struct {
 	// Format: date
 	Created strfmt.Date `json:"created,omitempty"`
 
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Description
 	// Required: true
 	// Max Length: 200
@@ -54,7 +57,7 @@ type RackReservation struct {
 	Rack *NestedRack `json:"rack"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`

@@ -118,6 +118,8 @@ type VirtualizationVirtualMachinesListParams struct {
 	DiskLte *string
 	/*Diskn*/
 	Diskn *string
+	/*HasPrimaryIP*/
+	HasPrimaryIP *string
 	/*ID*/
 	ID *string
 	/*IDGt*/
@@ -538,6 +540,17 @@ func (o *VirtualizationVirtualMachinesListParams) WithDiskn(diskn *string) *Virt
 // SetDiskn adds the diskN to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) SetDiskn(diskn *string) {
 	o.Diskn = diskn
+}
+
+// WithHasPrimaryIP adds the hasPrimaryIP to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithHasPrimaryIP(hasPrimaryIP *string) *VirtualizationVirtualMachinesListParams {
+	o.SetHasPrimaryIP(hasPrimaryIP)
+	return o
+}
+
+// SetHasPrimaryIP adds the hasPrimaryIp to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetHasPrimaryIP(hasPrimaryIP *string) {
+	o.HasPrimaryIP = hasPrimaryIP
 }
 
 // WithID adds the id to the virtualization virtual machines list params
@@ -1681,6 +1694,22 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		qDiskn := qrDiskn
 		if qDiskn != "" {
 			if err := r.SetQueryParam("disk__n", qDiskn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.HasPrimaryIP != nil {
+
+		// query param has_primary_ip
+		var qrHasPrimaryIP string
+		if o.HasPrimaryIP != nil {
+			qrHasPrimaryIP = *o.HasPrimaryIP
+		}
+		qHasPrimaryIP := qrHasPrimaryIP
+		if qHasPrimaryIP != "" {
+			if err := r.SetQueryParam("has_primary_ip", qHasPrimaryIP); err != nil {
 				return err
 			}
 		}

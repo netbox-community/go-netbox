@@ -72,7 +72,10 @@ type Aggregate struct {
 	Rir *NestedRIR `json:"rir"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
+
+	// tenant
+	Tenant *NestedTenant `json:"tenant,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -113,6 +116,10 @@ func (m *Aggregate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTags(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTenant(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -243,6 +250,24 @@ func (m *Aggregate) validateTags(formats strfmt.Registry) error {
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *Aggregate) validateTenant(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Tenant) { // not required
+		return nil
+	}
+
+	if m.Tenant != nil {
+		if err := m.Tenant.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			}
+			return err
+		}
 	}
 
 	return nil

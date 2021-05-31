@@ -34,6 +34,10 @@ import (
 // swagger:model WritableInventoryItem
 type WritableInventoryItem struct {
 
+	// depth
+	// Read Only: true
+	Depth int64 `json:"_depth,omitempty"`
+
 	// Asset tag
 	//
 	// A unique tag used to identify this item
@@ -86,7 +90,7 @@ type WritableInventoryItem struct {
 	Serial string `json:"serial,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true

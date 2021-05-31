@@ -38,6 +38,18 @@ type WritableFrontPort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
+	// Cable peer
+	//
+	//
+	// Return the appropriate serializer for the cable termination model.
+	//
+	// Read Only: true
+	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+
+	// Cable peer type
+	// Read Only: true
+	CablePeerType string `json:"cable_peer_type,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -67,16 +79,16 @@ type WritableFrontPort struct {
 	RearPort *int64 `json:"rear_port"`
 
 	// Rear port position
-	// Maximum: 64
+	// Maximum: 1024
 	// Minimum: 1
 	RearPortPosition int64 `json:"rear_port_position,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 110-punch bnc mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st]
+	// Enum: [8p8c 8p6c 8p4c 8p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
 	Type *string `json:"type"`
 
 	// Url
@@ -224,7 +236,7 @@ func (m *WritableFrontPort) validateRearPortPosition(formats strfmt.Registry) er
 		return err
 	}
 
-	if err := validate.MaximumInt("rear_port_position", "body", int64(m.RearPortPosition), 64, false); err != nil {
+	if err := validate.MaximumInt("rear_port_position", "body", int64(m.RearPortPosition), 1024, false); err != nil {
 		return err
 	}
 
@@ -260,7 +272,7 @@ var writableFrontPortTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","110-punch","bnc","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -282,11 +294,26 @@ const (
 	// WritableFrontPortTypeNr8p2c captures enum value "8p2c"
 	WritableFrontPortTypeNr8p2c string = "8p2c"
 
+	// WritableFrontPortTypeGg45 captures enum value "gg45"
+	WritableFrontPortTypeGg45 string = "gg45"
+
+	// WritableFrontPortTypeTera4p captures enum value "tera-4p"
+	WritableFrontPortTypeTera4p string = "tera-4p"
+
+	// WritableFrontPortTypeTera2p captures enum value "tera-2p"
+	WritableFrontPortTypeTera2p string = "tera-2p"
+
+	// WritableFrontPortTypeTera1p captures enum value "tera-1p"
+	WritableFrontPortTypeTera1p string = "tera-1p"
+
 	// WritableFrontPortTypeNr110Punch captures enum value "110-punch"
 	WritableFrontPortTypeNr110Punch string = "110-punch"
 
 	// WritableFrontPortTypeBnc captures enum value "bnc"
 	WritableFrontPortTypeBnc string = "bnc"
+
+	// WritableFrontPortTypeF captures enum value "f"
+	WritableFrontPortTypeF string = "f"
 
 	// WritableFrontPortTypeMrj21 captures enum value "mrj21"
 	WritableFrontPortTypeMrj21 string = "mrj21"
@@ -320,6 +347,15 @@ const (
 
 	// WritableFrontPortTypeSt captures enum value "st"
 	WritableFrontPortTypeSt string = "st"
+
+	// WritableFrontPortTypeCs captures enum value "cs"
+	WritableFrontPortTypeCs string = "cs"
+
+	// WritableFrontPortTypeSn captures enum value "sn"
+	WritableFrontPortTypeSn string = "sn"
+
+	// WritableFrontPortTypeSplice captures enum value "splice"
+	WritableFrontPortTypeSplice string = "splice"
 )
 
 // prop value enum

@@ -43,7 +43,7 @@ type ObjectChange struct {
 	// Serialize a nested representation of the changed object.
 	//
 	// Read Only: true
-	ChangedObject map[string]string `json:"changed_object,omitempty"`
+	ChangedObject map[string]*string `json:"changed_object,omitempty"`
 
 	// Changed object id
 	// Required: true

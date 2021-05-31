@@ -84,6 +84,14 @@ type IpamVrfsListParams struct {
 	CreatedLte *string
 	/*EnforceUnique*/
 	EnforceUnique *string
+	/*ExportTarget*/
+	ExportTarget *string
+	/*ExportTargetn*/
+	ExportTargetn *string
+	/*ExportTargetID*/
+	ExportTargetID *string
+	/*ExportTargetIDn*/
+	ExportTargetIDn *string
 	/*ID*/
 	ID *string
 	/*IDGt*/
@@ -96,6 +104,14 @@ type IpamVrfsListParams struct {
 	IDLte *string
 	/*IDn*/
 	IDn *string
+	/*ImportTarget*/
+	ImportTarget *string
+	/*ImportTargetn*/
+	ImportTargetn *string
+	/*ImportTargetID*/
+	ImportTargetID *string
+	/*ImportTargetIDn*/
+	ImportTargetIDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -257,6 +273,50 @@ func (o *IpamVrfsListParams) SetEnforceUnique(enforceUnique *string) {
 	o.EnforceUnique = enforceUnique
 }
 
+// WithExportTarget adds the exportTarget to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithExportTarget(exportTarget *string) *IpamVrfsListParams {
+	o.SetExportTarget(exportTarget)
+	return o
+}
+
+// SetExportTarget adds the exportTarget to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetExportTarget(exportTarget *string) {
+	o.ExportTarget = exportTarget
+}
+
+// WithExportTargetn adds the exportTargetn to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithExportTargetn(exportTargetn *string) *IpamVrfsListParams {
+	o.SetExportTargetn(exportTargetn)
+	return o
+}
+
+// SetExportTargetn adds the exportTargetN to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetExportTargetn(exportTargetn *string) {
+	o.ExportTargetn = exportTargetn
+}
+
+// WithExportTargetID adds the exportTargetID to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithExportTargetID(exportTargetID *string) *IpamVrfsListParams {
+	o.SetExportTargetID(exportTargetID)
+	return o
+}
+
+// SetExportTargetID adds the exportTargetId to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetExportTargetID(exportTargetID *string) {
+	o.ExportTargetID = exportTargetID
+}
+
+// WithExportTargetIDn adds the exportTargetIDn to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithExportTargetIDn(exportTargetIDn *string) *IpamVrfsListParams {
+	o.SetExportTargetIDn(exportTargetIDn)
+	return o
+}
+
+// SetExportTargetIDn adds the exportTargetIdN to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetExportTargetIDn(exportTargetIDn *string) {
+	o.ExportTargetIDn = exportTargetIDn
+}
+
 // WithID adds the id to the ipam vrfs list params
 func (o *IpamVrfsListParams) WithID(id *string) *IpamVrfsListParams {
 	o.SetID(id)
@@ -321,6 +381,50 @@ func (o *IpamVrfsListParams) WithIDn(iDn *string) *IpamVrfsListParams {
 // SetIDn adds the idN to the ipam vrfs list params
 func (o *IpamVrfsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
+}
+
+// WithImportTarget adds the importTarget to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithImportTarget(importTarget *string) *IpamVrfsListParams {
+	o.SetImportTarget(importTarget)
+	return o
+}
+
+// SetImportTarget adds the importTarget to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetImportTarget(importTarget *string) {
+	o.ImportTarget = importTarget
+}
+
+// WithImportTargetn adds the importTargetn to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithImportTargetn(importTargetn *string) *IpamVrfsListParams {
+	o.SetImportTargetn(importTargetn)
+	return o
+}
+
+// SetImportTargetn adds the importTargetN to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetImportTargetn(importTargetn *string) {
+	o.ImportTargetn = importTargetn
+}
+
+// WithImportTargetID adds the importTargetID to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithImportTargetID(importTargetID *string) *IpamVrfsListParams {
+	o.SetImportTargetID(importTargetID)
+	return o
+}
+
+// SetImportTargetID adds the importTargetId to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetImportTargetID(importTargetID *string) {
+	o.ImportTargetID = importTargetID
+}
+
+// WithImportTargetIDn adds the importTargetIDn to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithImportTargetIDn(importTargetIDn *string) *IpamVrfsListParams {
+	o.SetImportTargetIDn(importTargetIDn)
+	return o
+}
+
+// SetImportTargetIDn adds the importTargetIdN to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetImportTargetIDn(importTargetIDn *string) {
+	o.ImportTargetIDn = importTargetIDn
 }
 
 // WithLastUpdated adds the lastUpdated to the ipam vrfs list params
@@ -791,6 +895,70 @@ func (o *IpamVrfsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 
 	}
 
+	if o.ExportTarget != nil {
+
+		// query param export_target
+		var qrExportTarget string
+		if o.ExportTarget != nil {
+			qrExportTarget = *o.ExportTarget
+		}
+		qExportTarget := qrExportTarget
+		if qExportTarget != "" {
+			if err := r.SetQueryParam("export_target", qExportTarget); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ExportTargetn != nil {
+
+		// query param export_target__n
+		var qrExportTargetn string
+		if o.ExportTargetn != nil {
+			qrExportTargetn = *o.ExportTargetn
+		}
+		qExportTargetn := qrExportTargetn
+		if qExportTargetn != "" {
+			if err := r.SetQueryParam("export_target__n", qExportTargetn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ExportTargetID != nil {
+
+		// query param export_target_id
+		var qrExportTargetID string
+		if o.ExportTargetID != nil {
+			qrExportTargetID = *o.ExportTargetID
+		}
+		qExportTargetID := qrExportTargetID
+		if qExportTargetID != "" {
+			if err := r.SetQueryParam("export_target_id", qExportTargetID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ExportTargetIDn != nil {
+
+		// query param export_target_id__n
+		var qrExportTargetIDn string
+		if o.ExportTargetIDn != nil {
+			qrExportTargetIDn = *o.ExportTargetIDn
+		}
+		qExportTargetIDn := qrExportTargetIDn
+		if qExportTargetIDn != "" {
+			if err := r.SetQueryParam("export_target_id__n", qExportTargetIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -881,6 +1049,70 @@ func (o *IpamVrfsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		qIDn := qrIDn
 		if qIDn != "" {
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ImportTarget != nil {
+
+		// query param import_target
+		var qrImportTarget string
+		if o.ImportTarget != nil {
+			qrImportTarget = *o.ImportTarget
+		}
+		qImportTarget := qrImportTarget
+		if qImportTarget != "" {
+			if err := r.SetQueryParam("import_target", qImportTarget); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ImportTargetn != nil {
+
+		// query param import_target__n
+		var qrImportTargetn string
+		if o.ImportTargetn != nil {
+			qrImportTargetn = *o.ImportTargetn
+		}
+		qImportTargetn := qrImportTargetn
+		if qImportTargetn != "" {
+			if err := r.SetQueryParam("import_target__n", qImportTargetn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ImportTargetID != nil {
+
+		// query param import_target_id
+		var qrImportTargetID string
+		if o.ImportTargetID != nil {
+			qrImportTargetID = *o.ImportTargetID
+		}
+		qImportTargetID := qrImportTargetID
+		if qImportTargetID != "" {
+			if err := r.SetQueryParam("import_target_id", qImportTargetID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ImportTargetIDn != nil {
+
+		// query param import_target_id__n
+		var qrImportTargetIDn string
+		if o.ImportTargetIDn != nil {
+			qrImportTargetIDn = *o.ImportTargetIDn
+		}
+		qImportTargetIDn := qrImportTargetIDn
+		if qImportTargetIDn != "" {
+			if err := r.SetQueryParam("import_target_id__n", qImportTargetIDn); err != nil {
 				return err
 			}
 		}

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedPowerPanel Power panel
+// NestedPowerPanel nested power panel
 //
 // swagger:model NestedPowerPanel
 type NestedPowerPanel struct {
@@ -38,7 +38,7 @@ type NestedPowerPanel struct {
 
 	// Name
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	Name *string `json:"name"`
 
@@ -80,7 +80,7 @@ func (m *NestedPowerPanel) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
 		return err
 	}
 

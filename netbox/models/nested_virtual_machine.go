@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedVirtualMachine Virtual machine
+// NestedVirtualMachine nested virtual machine
 //
 // swagger:model NestedVirtualMachine
 type NestedVirtualMachine struct {

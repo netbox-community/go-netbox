@@ -22,6 +22,7 @@ package secrets
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -41,9 +42,15 @@ func (o *SecretsSecretRolesDeleteReader) ReadResponse(response runtime.ClientRes
 			return nil, err
 		}
 		return result, nil
-
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewSecretsSecretRolesDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -64,6 +71,46 @@ func (o *SecretsSecretRolesDeleteNoContent) Error() string {
 }
 
 func (o *SecretsSecretRolesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewSecretsSecretRolesDeleteDefault creates a SecretsSecretRolesDeleteDefault with default headers values
+func NewSecretsSecretRolesDeleteDefault(code int) *SecretsSecretRolesDeleteDefault {
+	return &SecretsSecretRolesDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/*SecretsSecretRolesDeleteDefault handles this case with default header values.
+
+SecretsSecretRolesDeleteDefault secrets secret roles delete default
+*/
+type SecretsSecretRolesDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the secrets secret roles delete default response
+func (o *SecretsSecretRolesDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *SecretsSecretRolesDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /secrets/secret-roles/{id}/][%d] secrets_secret-roles_delete default  %+v", o._statusCode, o.Payload)
+}
+
+func (o *SecretsSecretRolesDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *SecretsSecretRolesDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

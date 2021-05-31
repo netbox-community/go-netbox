@@ -79,7 +79,7 @@ for the ipam prefixes available ips create operation typically these are written
 type IpamPrefixesAvailableIpsCreateParams struct {
 
 	/*Data*/
-	Data *models.WritableAvailableIP
+	Data []*models.AvailableIP
 	/*ID
 	  A unique integer value identifying this prefix.
 
@@ -125,13 +125,13 @@ func (o *IpamPrefixesAvailableIpsCreateParams) SetHTTPClient(client *http.Client
 }
 
 // WithData adds the data to the ipam prefixes available ips create params
-func (o *IpamPrefixesAvailableIpsCreateParams) WithData(data *models.WritableAvailableIP) *IpamPrefixesAvailableIpsCreateParams {
+func (o *IpamPrefixesAvailableIpsCreateParams) WithData(data []*models.AvailableIP) *IpamPrefixesAvailableIpsCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the ipam prefixes available ips create params
-func (o *IpamPrefixesAvailableIpsCreateParams) SetData(data *models.WritableAvailableIP) {
+func (o *IpamPrefixesAvailableIpsCreateParams) SetData(data []*models.AvailableIP) {
 	o.Data = data
 }
 

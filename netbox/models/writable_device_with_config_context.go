@@ -85,7 +85,7 @@ type WritableDeviceWithConfigContext struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
-	LocalContextData *string `json:"local_context_data,omitempty"`
+	LocalContextData map[string]interface{} `json:"local_context_data,omitempty"`
 
 	// Name
 	// Max Length: 64
@@ -130,7 +130,7 @@ type WritableDeviceWithConfigContext struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`

@@ -74,7 +74,7 @@ type ImageAttachment struct {
 
 	// Parent
 	// Read Only: true
-	Parent map[string]string `json:"parent,omitempty"`
+	Parent map[string]*string `json:"parent,omitempty"`
 
 	// Url
 	// Read Only: true

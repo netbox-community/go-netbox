@@ -27,24 +27,35 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// CircuitCircuitTermination Termination a
+// CircuitCircuitTermination circuit circuit termination
 //
 // swagger:model CircuitCircuitTermination
 type CircuitCircuitTermination struct {
 
-	// connected endpoint
-	// Required: true
-	ConnectedEndpoint *NestedInterface `json:"connected_endpoint"`
+	// Connected endpoint
+	//
+	//
+	// Return the appropriate serializer for the type of connected object.
+	//
+	// Read Only: true
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint reachable
+	// Read Only: true
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
+
+	// Connected endpoint type
+	// Read Only: true
+	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Port speed (Kbps)
-	// Required: true
 	// Maximum: 2.147483647e+09
 	// Minimum: 0
-	PortSpeed *int64 `json:"port_speed"`
+	PortSpeed *int64 `json:"port_speed,omitempty"`
 
 	// site
 	// Required: true
@@ -70,10 +81,6 @@ type CircuitCircuitTermination struct {
 // Validate validates this circuit circuit termination
 func (m *CircuitCircuitTermination) Validate(formats strfmt.Registry) error {
 	var res []error
-
-	if err := m.validateConnectedEndpoint(formats); err != nil {
-		res = append(res, err)
-	}
 
 	if err := m.validatePortSpeed(formats); err != nil {
 		res = append(res, err)
@@ -101,28 +108,10 @@ func (m *CircuitCircuitTermination) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *CircuitCircuitTermination) validateConnectedEndpoint(formats strfmt.Registry) error {
-
-	if err := validate.Required("connected_endpoint", "body", m.ConnectedEndpoint); err != nil {
-		return err
-	}
-
-	if m.ConnectedEndpoint != nil {
-		if err := m.ConnectedEndpoint.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("connected_endpoint")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *CircuitCircuitTermination) validatePortSpeed(formats strfmt.Registry) error {
 
-	if err := validate.Required("port_speed", "body", m.PortSpeed); err != nil {
-		return err
+	if swag.IsZero(m.PortSpeed) { // not required
+		return nil
 	}
 
 	if err := validate.MinimumInt("port_speed", "body", int64(*m.PortSpeed), 0, false); err != nil {

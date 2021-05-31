@@ -33,7 +33,7 @@ type DeviceNAPALM struct {
 
 	// Method
 	// Required: true
-	Method map[string]string `json:"method"`
+	Method map[string]*string `json:"method"`
 }
 
 // Validate validates this device n a p a l m

@@ -1,7 +1,7 @@
 go-netbox 
 =========
 
-[![GoDoc](http://godoc.org/github.com/netbox-community/go-netbox?status.svg)](http://godoc.org/github.com/netbox-community/go-netbox) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
+[![GoDoc](http://godoc.org/github.com/fbreckle/go-netbox?status.svg)](http://godoc.org/github.com/fbreckle/go-netbox) [![Build Status](https://github.com/fbreckle/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/fbreckle/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/fbreckle/go-netbox)](https://goreportcard.com/report/github.com/fbreckle/go-netbox)
 
 Package `netbox` provides an API 2.0 client for [netbox-community's NetBox](https://github.com/netbox-community/netbox)
 IPAM and DCIM service.
@@ -11,7 +11,14 @@ This package assumes you are using NetBox 2.0, as the NetBox 1.0 API no longer e
 Why this fork exists
 ====================
 
-This fork exists solely to support [e-breuninger/terraform-provider-netbox](https://github.com/e-breuninger/terraform-provider-netbox).
+This fork exists solely to support [e-breuninger/terraform-provider-netbox](https://github.com/e-breuninger/terraform-provider-netbox). As such, some changes in this fork do only make sense in that context.
+
+
+Versioning
+==========
+
+tbd. In the meanwhile, look at branches and tags.
+
 
 Changes in this fork
 ====================
@@ -33,7 +40,7 @@ configurations you are likely to need while connecting to NetBox. `NewNetboxAt` 
 (including port, if you need it), and `NewNetboxWithAPIKey` allows you to specify both a hostname:port and API token.
 ```golang
 import (
-    "github.com/netbox-community/go-netbox/netbox"
+    "github.com/fbreckle/go-netbox/netbox"
 )
 ...
     c := netbox.NewNetboxAt("your.netbox.host:8000")
@@ -55,8 +62,8 @@ import (
 	"os"
 
 	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/netbox-community/go-netbox/netbox/client"
-	"github.com/netbox-community/go-netbox/netbox/client/dcim"
+	"github.com/fbreckle/go-netbox/netbox/client"
+	"github.com/fbreckle/go-netbox/netbox/client/dcim"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -91,7 +98,7 @@ Go Module support
 
 Go 1.13+
 
-`go get github.com/netbox-community/go-netbox`
+`go get github.com/fbreckle/go-netbox`
 
 
 More complex client configuration
@@ -110,9 +117,9 @@ Regenerating the client
 =======================
 
 To regenerate the client with a new or different swagger schema, first clean the existing client, then replace
-swagger.json and finally re-generate:
+swagger.json, run the json preprocessor (requires python3) and finally re-generate:
 ```
 make clean
-cp new_swagger_file.json swagger.json
+make preprocess
 make generate
 ```

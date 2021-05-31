@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedCable Cable
+// NestedCable nested cable
 //
 // swagger:model NestedCable
 type NestedCable struct {
