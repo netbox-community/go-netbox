@@ -64,13 +64,23 @@ func NewStatusListOK() *StatusListOK {
 StatusListOK status list o k
 */
 type StatusListOK struct {
+	Payload interface{}
 }
 
 func (o *StatusListOK) Error() string {
-	return fmt.Sprintf("[GET /status/][%d] statusListOK ", 200)
+	return fmt.Sprintf("[GET /status/][%d] statusListOK  %+v", 200, o.Payload)
+}
+
+func (o *StatusListOK) GetPayload() interface{} {
+	return o.Payload
 }
 
 func (o *StatusListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

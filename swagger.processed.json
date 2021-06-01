@@ -34917,7 +34917,11 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
           },
           "default": {
             "description": "",

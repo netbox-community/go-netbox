@@ -86,6 +86,13 @@ for prop, prop_spec in data["definitions"]["WritableVirtualMachineWithConfigCont
             f"set x-omitempty = false on WritableVirtualMachineWithConfigContext.{prop}"
         )
 
+# Fourth, add schema for the 200 response of the /status/ endpoint
+data["paths"]["/status/"]["get"]["responses"]["200"]["schema"] = {
+    "type": "object",
+    "additionalProperties": True,
+}
+logging.info(f"Added schema for 200 response of /status/ get")
+
 # Write output file
 with open("swagger.processed.json", "w") as writefile:
     json.dump(data, writefile, indent=2)
