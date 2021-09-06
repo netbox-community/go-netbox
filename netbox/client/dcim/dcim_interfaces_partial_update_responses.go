@@ -45,14 +45,7 @@ func (o *DcimInterfacesPartialUpdateReader) ReadResponse(response runtime.Client
 		}
 		return result, nil
 	default:
-		result := NewDcimInterfacesPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimInterfacesPartialUpdateOK() *DcimInterfacesPartialUpdateOK {
 	return &DcimInterfacesPartialUpdateOK{}
 }
 
-/*DcimInterfacesPartialUpdateOK handles this case with default header values.
+/* DcimInterfacesPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimInterfacesPartialUpdateOK dcim interfaces partial update o k
 */
@@ -72,7 +65,6 @@ type DcimInterfacesPartialUpdateOK struct {
 func (o *DcimInterfacesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcimInterfacesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfacesPartialUpdateOK) GetPayload() *models.Interface {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimInterfacesPartialUpdateOK) readResponse(response runtime.ClientResp
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimInterfacesPartialUpdateDefault creates a DcimInterfacesPartialUpdateDefault with default headers values
-func NewDcimInterfacesPartialUpdateDefault(code int) *DcimInterfacesPartialUpdateDefault {
-	return &DcimInterfacesPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimInterfacesPartialUpdateDefault handles this case with default header values.
-
-DcimInterfacesPartialUpdateDefault dcim interfaces partial update default
-*/
-type DcimInterfacesPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim interfaces partial update default response
-func (o *DcimInterfacesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimInterfacesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcim_interfaces_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimInterfacesPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimInterfacesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

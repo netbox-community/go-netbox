@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewUsersGroupsReadParams creates a new UsersGroupsReadParams object
-// with the default values initialized.
+// NewUsersGroupsReadParams creates a new UsersGroupsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersGroupsReadParams() *UsersGroupsReadParams {
-	var ()
 	return &UsersGroupsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersGroupsReadParamsWithTimeout creates a new UsersGroupsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersGroupsReadParamsWithTimeout(timeout time.Duration) *UsersGroupsReadParams {
-	var ()
 	return &UsersGroupsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersGroupsReadParamsWithContext creates a new UsersGroupsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersGroupsReadParamsWithContext(ctx context.Context) *UsersGroupsReadParams {
-	var ()
 	return &UsersGroupsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersGroupsReadParamsWithHTTPClient creates a new UsersGroupsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersGroupsReadParamsWithHTTPClient(client *http.Client) *UsersGroupsReadParams {
-	var ()
 	return &UsersGroupsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersGroupsReadParams contains all the parameters to send to the API endpoint
-for the users groups read operation typically these are written to a http.Request
+/* UsersGroupsReadParams contains all the parameters to send to the API endpoint
+   for the users groups read operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersGroupsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this group.
+	/* ID.
 
+	   A unique integer value identifying this group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users groups read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersGroupsReadParams) WithDefaults() *UsersGroupsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users groups read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersGroupsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users groups read params

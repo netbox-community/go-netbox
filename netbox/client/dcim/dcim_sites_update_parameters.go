@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimSitesUpdateParams creates a new DcimSitesUpdateParams object
-// with the default values initialized.
+// NewDcimSitesUpdateParams creates a new DcimSitesUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimSitesUpdateParams() *DcimSitesUpdateParams {
-	var ()
 	return &DcimSitesUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimSitesUpdateParamsWithTimeout creates a new DcimSitesUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimSitesUpdateParamsWithTimeout(timeout time.Duration) *DcimSitesUpdateParams {
-	var ()
 	return &DcimSitesUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimSitesUpdateParamsWithContext creates a new DcimSitesUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimSitesUpdateParamsWithContext(ctx context.Context) *DcimSitesUpdateParams {
-	var ()
 	return &DcimSitesUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimSitesUpdateParamsWithHTTPClient creates a new DcimSitesUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimSitesUpdateParamsWithHTTPClient(client *http.Client) *DcimSitesUpdateParams {
-	var ()
 	return &DcimSitesUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimSitesUpdateParams contains all the parameters to send to the API endpoint
-for the dcim sites update operation typically these are written to a http.Request
+/* DcimSitesUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim sites update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimSitesUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableSite
-	/*ID
-	  A unique integer value identifying this site.
 
+	/* ID.
+
+	   A unique integer value identifying this site.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim sites update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimSitesUpdateParams) WithDefaults() *DcimSitesUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim sites update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimSitesUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim sites update params
@@ -153,7 +168,6 @@ func (o *DcimSitesUpdateParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

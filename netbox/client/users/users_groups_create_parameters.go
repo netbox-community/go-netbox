@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewUsersGroupsCreateParams creates a new UsersGroupsCreateParams object
-// with the default values initialized.
+// NewUsersGroupsCreateParams creates a new UsersGroupsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersGroupsCreateParams() *UsersGroupsCreateParams {
-	var ()
 	return &UsersGroupsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersGroupsCreateParamsWithTimeout creates a new UsersGroupsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersGroupsCreateParamsWithTimeout(timeout time.Duration) *UsersGroupsCreateParams {
-	var ()
 	return &UsersGroupsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersGroupsCreateParamsWithContext creates a new UsersGroupsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersGroupsCreateParamsWithContext(ctx context.Context) *UsersGroupsCreateParams {
-	var ()
 	return &UsersGroupsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersGroupsCreateParamsWithHTTPClient creates a new UsersGroupsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersGroupsCreateParamsWithHTTPClient(client *http.Client) *UsersGroupsCreateParams {
-	var ()
 	return &UsersGroupsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersGroupsCreateParams contains all the parameters to send to the API endpoint
-for the users groups create operation typically these are written to a http.Request
+/* UsersGroupsCreateParams contains all the parameters to send to the API endpoint
+   for the users groups create operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersGroupsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Group
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users groups create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersGroupsCreateParams) WithDefaults() *UsersGroupsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users groups create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersGroupsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users groups create params
@@ -136,7 +150,6 @@ func (o *UsersGroupsCreateParams) WriteToRequest(r runtime.ClientRequest, reg st
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

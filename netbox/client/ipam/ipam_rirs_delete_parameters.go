@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamRirsDeleteParams creates a new IpamRirsDeleteParams object
-// with the default values initialized.
+// NewIpamRirsDeleteParams creates a new IpamRirsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRirsDeleteParams() *IpamRirsDeleteParams {
-	var ()
 	return &IpamRirsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRirsDeleteParamsWithTimeout creates a new IpamRirsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRirsDeleteParamsWithTimeout(timeout time.Duration) *IpamRirsDeleteParams {
-	var ()
 	return &IpamRirsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRirsDeleteParamsWithContext creates a new IpamRirsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRirsDeleteParamsWithContext(ctx context.Context) *IpamRirsDeleteParams {
-	var ()
 	return &IpamRirsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRirsDeleteParamsWithHTTPClient creates a new IpamRirsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRirsDeleteParamsWithHTTPClient(client *http.Client) *IpamRirsDeleteParams {
-	var ()
 	return &IpamRirsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRirsDeleteParams contains all the parameters to send to the API endpoint
-for the ipam rirs delete operation typically these are written to a http.Request
+/* IpamRirsDeleteParams contains all the parameters to send to the API endpoint
+   for the ipam rirs delete operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRirsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this RIR.
+	/* ID.
 
+	   A unique integer value identifying this RIR.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam rirs delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRirsDeleteParams) WithDefaults() *IpamRirsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam rirs delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRirsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam rirs delete params

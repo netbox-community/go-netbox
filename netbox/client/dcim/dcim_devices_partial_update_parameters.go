@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimDevicesPartialUpdateParams creates a new DcimDevicesPartialUpdateParams object
-// with the default values initialized.
+// NewDcimDevicesPartialUpdateParams creates a new DcimDevicesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDevicesPartialUpdateParams() *DcimDevicesPartialUpdateParams {
-	var ()
 	return &DcimDevicesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDevicesPartialUpdateParamsWithTimeout creates a new DcimDevicesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDevicesPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimDevicesPartialUpdateParams {
-	var ()
 	return &DcimDevicesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDevicesPartialUpdateParamsWithContext creates a new DcimDevicesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDevicesPartialUpdateParamsWithContext(ctx context.Context) *DcimDevicesPartialUpdateParams {
-	var ()
 	return &DcimDevicesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDevicesPartialUpdateParamsWithHTTPClient creates a new DcimDevicesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDevicesPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimDevicesPartialUpdateParams {
-	var ()
 	return &DcimDevicesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDevicesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim devices partial update operation typically these are written to a http.Request
+/* DcimDevicesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim devices partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDevicesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableDeviceWithConfigContext
-	/*ID
-	  A unique integer value identifying this device.
 
+	/* ID.
+
+	   A unique integer value identifying this device.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim devices partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesPartialUpdateParams) WithDefaults() *DcimDevicesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim devices partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim devices partial update params
@@ -153,7 +168,6 @@ func (o *DcimDevicesPartialUpdateParams) WriteToRequest(r runtime.ClientRequest,
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

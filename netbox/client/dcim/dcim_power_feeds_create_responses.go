@@ -45,14 +45,7 @@ func (o *DcimPowerFeedsCreateReader) ReadResponse(response runtime.ClientRespons
 		}
 		return result, nil
 	default:
-		result := NewDcimPowerFeedsCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimPowerFeedsCreateCreated() *DcimPowerFeedsCreateCreated {
 	return &DcimPowerFeedsCreateCreated{}
 }
 
-/*DcimPowerFeedsCreateCreated handles this case with default header values.
+/* DcimPowerFeedsCreateCreated describes a response with status code 201, with default header values.
 
 DcimPowerFeedsCreateCreated dcim power feeds create created
 */
@@ -72,7 +65,6 @@ type DcimPowerFeedsCreateCreated struct {
 func (o *DcimPowerFeedsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-feeds/][%d] dcimPowerFeedsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimPowerFeedsCreateCreated) GetPayload() *models.PowerFeed {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimPowerFeedsCreateCreated) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimPowerFeedsCreateDefault creates a DcimPowerFeedsCreateDefault with default headers values
-func NewDcimPowerFeedsCreateDefault(code int) *DcimPowerFeedsCreateDefault {
-	return &DcimPowerFeedsCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimPowerFeedsCreateDefault handles this case with default header values.
-
-DcimPowerFeedsCreateDefault dcim power feeds create default
-*/
-type DcimPowerFeedsCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim power feeds create default response
-func (o *DcimPowerFeedsCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimPowerFeedsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/power-feeds/][%d] dcim_power-feeds_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimPowerFeedsCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimPowerFeedsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

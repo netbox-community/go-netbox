@@ -45,14 +45,7 @@ func (o *UsersGroupsCreateReader) ReadResponse(response runtime.ClientResponse, 
 		}
 		return result, nil
 	default:
-		result := NewUsersGroupsCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewUsersGroupsCreateCreated() *UsersGroupsCreateCreated {
 	return &UsersGroupsCreateCreated{}
 }
 
-/*UsersGroupsCreateCreated handles this case with default header values.
+/* UsersGroupsCreateCreated describes a response with status code 201, with default header values.
 
 UsersGroupsCreateCreated users groups create created
 */
@@ -72,7 +65,6 @@ type UsersGroupsCreateCreated struct {
 func (o *UsersGroupsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /users/groups/][%d] usersGroupsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *UsersGroupsCreateCreated) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *UsersGroupsCreateCreated) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewUsersGroupsCreateDefault creates a UsersGroupsCreateDefault with default headers values
-func NewUsersGroupsCreateDefault(code int) *UsersGroupsCreateDefault {
-	return &UsersGroupsCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*UsersGroupsCreateDefault handles this case with default header values.
-
-UsersGroupsCreateDefault users groups create default
-*/
-type UsersGroupsCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the users groups create default response
-func (o *UsersGroupsCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *UsersGroupsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /users/groups/][%d] users_groups_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *UsersGroupsCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *UsersGroupsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -35,6 +36,14 @@ import (
 // swagger:model Prefix
 type Prefix struct {
 
+	// depth
+	// Read Only: true
+	Depth int64 `json:"_depth,omitempty"`
+
+	// Children
+	// Read Only: true
+	Children int64 `json:"children,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date
@@ -47,10 +56,14 @@ type Prefix struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// family
 	Family *PrefixFamily `json:"family,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -80,7 +93,7 @@ type Prefix struct {
 	Status *PrefixStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
@@ -160,7 +173,6 @@ func (m *Prefix) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -173,12 +185,11 @@ func (m *Prefix) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -186,7 +197,6 @@ func (m *Prefix) validateDescription(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateFamily(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Family) { // not required
 		return nil
 	}
@@ -204,7 +214,6 @@ func (m *Prefix) validateFamily(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -226,7 +235,6 @@ func (m *Prefix) validatePrefix(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateRole(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Role) { // not required
 		return nil
 	}
@@ -244,7 +252,6 @@ func (m *Prefix) validateRole(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateSite(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Site) { // not required
 		return nil
 	}
@@ -262,7 +269,6 @@ func (m *Prefix) validateSite(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -280,7 +286,6 @@ func (m *Prefix) validateStatus(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -305,7 +310,6 @@ func (m *Prefix) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateTenant(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tenant) { // not required
 		return nil
 	}
@@ -323,7 +327,6 @@ func (m *Prefix) validateTenant(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -336,7 +339,6 @@ func (m *Prefix) validateURL(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateVlan(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Vlan) { // not required
 		return nil
 	}
@@ -354,13 +356,261 @@ func (m *Prefix) validateVlan(formats strfmt.Registry) error {
 }
 
 func (m *Prefix) validateVrf(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Vrf) { // not required
 		return nil
 	}
 
 	if m.Vrf != nil {
 		if err := m.Vrf.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vrf")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this prefix based on the context it is used
+func (m *Prefix) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDepth(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateChildren(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFamily(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRole(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSite(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTenant(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVlan(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVrf(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Prefix) contextValidateDepth(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_depth", "body", int64(m.Depth)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateChildren(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "children", "body", int64(m.Children)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateFamily(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Family != nil {
+		if err := m.Family.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("family")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Role != nil {
+		if err := m.Role.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("role")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Site != nil {
+		if err := m.Site.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("site")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Status != nil {
+		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Tenant != nil {
+		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateVlan(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Vlan != nil {
+		if err := m.Vlan.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vlan")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Vrf != nil {
+		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
 			}
@@ -497,6 +747,16 @@ func (m *PrefixFamily) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validate this prefix family based on the context it is used
+func (m *PrefixFamily) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
 	return nil
 }
 
@@ -647,6 +907,11 @@ func (m *PrefixStatus) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this prefix status based on context it is used
+func (m *PrefixStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

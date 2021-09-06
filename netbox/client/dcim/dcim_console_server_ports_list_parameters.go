@@ -32,156 +32,283 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimConsoleServerPortsListParams creates a new DcimConsoleServerPortsListParams object
-// with the default values initialized.
+// NewDcimConsoleServerPortsListParams creates a new DcimConsoleServerPortsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConsoleServerPortsListParams() *DcimConsoleServerPortsListParams {
-	var ()
 	return &DcimConsoleServerPortsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConsoleServerPortsListParamsWithTimeout creates a new DcimConsoleServerPortsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConsoleServerPortsListParamsWithTimeout(timeout time.Duration) *DcimConsoleServerPortsListParams {
-	var ()
 	return &DcimConsoleServerPortsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConsoleServerPortsListParamsWithContext creates a new DcimConsoleServerPortsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConsoleServerPortsListParamsWithContext(ctx context.Context) *DcimConsoleServerPortsListParams {
-	var ()
 	return &DcimConsoleServerPortsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConsoleServerPortsListParamsWithHTTPClient creates a new DcimConsoleServerPortsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConsoleServerPortsListParamsWithHTTPClient(client *http.Client) *DcimConsoleServerPortsListParams {
-	var ()
 	return &DcimConsoleServerPortsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConsoleServerPortsListParams contains all the parameters to send to the API endpoint
-for the dcim console server ports list operation typically these are written to a http.Request
+/* DcimConsoleServerPortsListParams contains all the parameters to send to the API endpoint
+   for the dcim console server ports list operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConsoleServerPortsListParams struct {
 
-	/*Cabled*/
+	// Cabled.
 	Cabled *string
-	/*ConnectionStatus*/
-	ConnectionStatus *string
-	/*ConnectionStatusn*/
-	ConnectionStatusn *string
-	/*Description*/
-	Description *string
-	/*DescriptionIc*/
-	DescriptionIc *string
-	/*DescriptionIe*/
-	DescriptionIe *string
-	/*DescriptionIew*/
-	DescriptionIew *string
-	/*DescriptionIsw*/
-	DescriptionIsw *string
-	/*Descriptionn*/
-	Descriptionn *string
-	/*DescriptionNic*/
-	DescriptionNic *string
-	/*DescriptionNie*/
-	DescriptionNie *string
-	/*DescriptionNiew*/
-	DescriptionNiew *string
-	/*DescriptionNisw*/
-	DescriptionNisw *string
-	/*Device*/
-	Device *string
-	/*Devicen*/
-	Devicen *string
-	/*DeviceID*/
-	DeviceID *string
-	/*DeviceIDn*/
-	DeviceIDn *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Limit
-	  Number of results to return per page.
 
+	// Connected.
+	Connected *string
+
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// Description.
+	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
+	// DescriptionIc.
+	DescriptionIc *string
+
+	// DescriptionIe.
+	DescriptionIe *string
+
+	// DescriptionIew.
+	DescriptionIew *string
+
+	// DescriptionIsw.
+	DescriptionIsw *string
+
+	// Descriptionn.
+	Descriptionn *string
+
+	// DescriptionNic.
+	DescriptionNic *string
+
+	// DescriptionNie.
+	DescriptionNie *string
+
+	// DescriptionNiew.
+	DescriptionNiew *string
+
+	// DescriptionNisw.
+	DescriptionNisw *string
+
+	// Device.
+	Device *string
+
+	// Devicen.
+	Devicen *string
+
+	// DeviceID.
+	DeviceID *string
+
+	// DeviceIDn.
+	DeviceIDn *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// Label.
+	Label *string
+
+	// LabelEmpty.
+	LabelEmpty *string
+
+	// LabelIc.
+	LabelIc *string
+
+	// LabelIe.
+	LabelIe *string
+
+	// LabelIew.
+	LabelIew *string
+
+	// LabelIsw.
+	LabelIsw *string
+
+	// Labeln.
+	Labeln *string
+
+	// LabelNic.
+	LabelNic *string
+
+	// LabelNie.
+	LabelNie *string
+
+	// LabelNiew.
+	LabelNiew *string
+
+	// LabelNisw.
+	LabelNisw *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Name.
+	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*Region*/
+
+	// Region.
 	Region *string
-	/*Regionn*/
+
+	// Regionn.
 	Regionn *string
-	/*RegionID*/
+
+	// RegionID.
 	RegionID *string
-	/*RegionIDn*/
+
+	// RegionIDn.
 	RegionIDn *string
-	/*Site*/
+
+	// Site.
 	Site *string
-	/*Siten*/
+
+	// Siten.
 	Siten *string
-	/*SiteID*/
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
+
+	// SiteID.
 	SiteID *string
-	/*SiteIDn*/
+
+	// SiteIDn.
 	SiteIDn *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
-	/*Type*/
+
+	// Type.
 	Type *string
-	/*Typen*/
+
+	// Typen.
 	Typen *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim console server ports list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsoleServerPortsListParams) WithDefaults() *DcimConsoleServerPortsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim console server ports list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsoleServerPortsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim console server ports list params
@@ -228,26 +355,48 @@ func (o *DcimConsoleServerPortsListParams) SetCabled(cabled *string) {
 	o.Cabled = cabled
 }
 
-// WithConnectionStatus adds the connectionStatus to the dcim console server ports list params
-func (o *DcimConsoleServerPortsListParams) WithConnectionStatus(connectionStatus *string) *DcimConsoleServerPortsListParams {
-	o.SetConnectionStatus(connectionStatus)
+// WithConnected adds the connected to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithConnected(connected *string) *DcimConsoleServerPortsListParams {
+	o.SetConnected(connected)
 	return o
 }
 
-// SetConnectionStatus adds the connectionStatus to the dcim console server ports list params
-func (o *DcimConsoleServerPortsListParams) SetConnectionStatus(connectionStatus *string) {
-	o.ConnectionStatus = connectionStatus
+// SetConnected adds the connected to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetConnected(connected *string) {
+	o.Connected = connected
 }
 
-// WithConnectionStatusn adds the connectionStatusn to the dcim console server ports list params
-func (o *DcimConsoleServerPortsListParams) WithConnectionStatusn(connectionStatusn *string) *DcimConsoleServerPortsListParams {
-	o.SetConnectionStatusn(connectionStatusn)
+// WithCreated adds the created to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithCreated(created *string) *DcimConsoleServerPortsListParams {
+	o.SetCreated(created)
 	return o
 }
 
-// SetConnectionStatusn adds the connectionStatusN to the dcim console server ports list params
-func (o *DcimConsoleServerPortsListParams) SetConnectionStatusn(connectionStatusn *string) {
-	o.ConnectionStatusn = connectionStatusn
+// SetCreated adds the created to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithCreatedGte(createdGte *string) *DcimConsoleServerPortsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithCreatedLte(createdLte *string) *DcimConsoleServerPortsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
 }
 
 // WithDescription adds the description to the dcim console server ports list params
@@ -259,6 +408,17 @@ func (o *DcimConsoleServerPortsListParams) WithDescription(description *string) 
 // SetDescription adds the description to the dcim console server ports list params
 func (o *DcimConsoleServerPortsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimConsoleServerPortsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim console server ports list params
@@ -470,6 +630,160 @@ func (o *DcimConsoleServerPortsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLabel adds the label to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabel(label *string) *DcimConsoleServerPortsListParams {
+	o.SetLabel(label)
+	return o
+}
+
+// SetLabel adds the label to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabel(label *string) {
+	o.Label = label
+}
+
+// WithLabelEmpty adds the labelEmpty to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabelEmpty(labelEmpty *string) *DcimConsoleServerPortsListParams {
+	o.SetLabelEmpty(labelEmpty)
+	return o
+}
+
+// SetLabelEmpty adds the labelEmpty to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabelEmpty(labelEmpty *string) {
+	o.LabelEmpty = labelEmpty
+}
+
+// WithLabelIc adds the labelIc to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabelIc(labelIc *string) *DcimConsoleServerPortsListParams {
+	o.SetLabelIc(labelIc)
+	return o
+}
+
+// SetLabelIc adds the labelIc to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabelIc(labelIc *string) {
+	o.LabelIc = labelIc
+}
+
+// WithLabelIe adds the labelIe to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabelIe(labelIe *string) *DcimConsoleServerPortsListParams {
+	o.SetLabelIe(labelIe)
+	return o
+}
+
+// SetLabelIe adds the labelIe to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabelIe(labelIe *string) {
+	o.LabelIe = labelIe
+}
+
+// WithLabelIew adds the labelIew to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabelIew(labelIew *string) *DcimConsoleServerPortsListParams {
+	o.SetLabelIew(labelIew)
+	return o
+}
+
+// SetLabelIew adds the labelIew to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabelIew(labelIew *string) {
+	o.LabelIew = labelIew
+}
+
+// WithLabelIsw adds the labelIsw to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabelIsw(labelIsw *string) *DcimConsoleServerPortsListParams {
+	o.SetLabelIsw(labelIsw)
+	return o
+}
+
+// SetLabelIsw adds the labelIsw to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabelIsw(labelIsw *string) {
+	o.LabelIsw = labelIsw
+}
+
+// WithLabeln adds the labeln to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabeln(labeln *string) *DcimConsoleServerPortsListParams {
+	o.SetLabeln(labeln)
+	return o
+}
+
+// SetLabeln adds the labelN to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabeln(labeln *string) {
+	o.Labeln = labeln
+}
+
+// WithLabelNic adds the labelNic to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabelNic(labelNic *string) *DcimConsoleServerPortsListParams {
+	o.SetLabelNic(labelNic)
+	return o
+}
+
+// SetLabelNic adds the labelNic to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabelNic(labelNic *string) {
+	o.LabelNic = labelNic
+}
+
+// WithLabelNie adds the labelNie to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabelNie(labelNie *string) *DcimConsoleServerPortsListParams {
+	o.SetLabelNie(labelNie)
+	return o
+}
+
+// SetLabelNie adds the labelNie to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabelNie(labelNie *string) {
+	o.LabelNie = labelNie
+}
+
+// WithLabelNiew adds the labelNiew to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabelNiew(labelNiew *string) *DcimConsoleServerPortsListParams {
+	o.SetLabelNiew(labelNiew)
+	return o
+}
+
+// SetLabelNiew adds the labelNiew to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabelNiew(labelNiew *string) {
+	o.LabelNiew = labelNiew
+}
+
+// WithLabelNisw adds the labelNisw to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLabelNisw(labelNisw *string) *DcimConsoleServerPortsListParams {
+	o.SetLabelNisw(labelNisw)
+	return o
+}
+
+// SetLabelNisw adds the labelNisw to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLabelNisw(labelNisw *string) {
+	o.LabelNisw = labelNisw
+}
+
+// WithLastUpdated adds the lastUpdated to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLastUpdated(lastUpdated *string) *DcimConsoleServerPortsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimConsoleServerPortsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimConsoleServerPortsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim console server ports list params
 func (o *DcimConsoleServerPortsListParams) WithLimit(limit *int64) *DcimConsoleServerPortsListParams {
 	o.SetLimit(limit)
@@ -490,6 +804,17 @@ func (o *DcimConsoleServerPortsListParams) WithName(name *string) *DcimConsoleSe
 // SetName adds the name to the dcim console server ports list params
 func (o *DcimConsoleServerPortsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithNameEmpty(nameEmpty *string) *DcimConsoleServerPortsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim console server ports list params
@@ -679,6 +1004,50 @@ func (o *DcimConsoleServerPortsListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithSiteGroup(siteGroup *string) *DcimConsoleServerPortsListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithSiteGroupn(siteGroupn *string) *DcimConsoleServerPortsListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithSiteGroupID(siteGroupID *string) *DcimConsoleServerPortsListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) WithSiteGroupIDn(siteGroupIDn *string) *DcimConsoleServerPortsListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the dcim console server ports list params
+func (o *DcimConsoleServerPortsListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the dcim console server ports list params
 func (o *DcimConsoleServerPortsListParams) WithSiteID(siteID *string) *DcimConsoleServerPortsListParams {
 	o.SetSiteID(siteID)
@@ -757,768 +1126,1190 @@ func (o *DcimConsoleServerPortsListParams) WriteToRequest(r runtime.ClientReques
 
 		// query param cabled
 		var qrCabled string
+
 		if o.Cabled != nil {
 			qrCabled = *o.Cabled
 		}
 		qCabled := qrCabled
 		if qCabled != "" {
+
 			if err := r.SetQueryParam("cabled", qCabled); err != nil {
 				return err
 			}
 		}
-
 	}
 
-	if o.ConnectionStatus != nil {
+	if o.Connected != nil {
 
-		// query param connection_status
-		var qrConnectionStatus string
-		if o.ConnectionStatus != nil {
-			qrConnectionStatus = *o.ConnectionStatus
+		// query param connected
+		var qrConnected string
+
+		if o.Connected != nil {
+			qrConnected = *o.Connected
 		}
-		qConnectionStatus := qrConnectionStatus
-		if qConnectionStatus != "" {
-			if err := r.SetQueryParam("connection_status", qConnectionStatus); err != nil {
+		qConnected := qrConnected
+		if qConnected != "" {
+
+			if err := r.SetQueryParam("connected", qConnected); err != nil {
 				return err
 			}
 		}
-
 	}
 
-	if o.ConnectionStatusn != nil {
+	if o.Created != nil {
 
-		// query param connection_status__n
-		var qrConnectionStatusn string
-		if o.ConnectionStatusn != nil {
-			qrConnectionStatusn = *o.ConnectionStatusn
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
 		}
-		qConnectionStatusn := qrConnectionStatusn
-		if qConnectionStatusn != "" {
-			if err := r.SetQueryParam("connection_status__n", qConnectionStatusn); err != nil {
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Description != nil {
 
 		// query param description
 		var qrDescription string
+
 		if o.Description != nil {
 			qrDescription = *o.Description
 		}
 		qDescription := qrDescription
 		if qDescription != "" {
+
 			if err := r.SetQueryParam("description", qDescription); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.DescriptionIc != nil {
 
 		// query param description__ic
 		var qrDescriptionIc string
+
 		if o.DescriptionIc != nil {
 			qrDescriptionIc = *o.DescriptionIc
 		}
 		qDescriptionIc := qrDescriptionIc
 		if qDescriptionIc != "" {
+
 			if err := r.SetQueryParam("description__ic", qDescriptionIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DescriptionIe != nil {
 
 		// query param description__ie
 		var qrDescriptionIe string
+
 		if o.DescriptionIe != nil {
 			qrDescriptionIe = *o.DescriptionIe
 		}
 		qDescriptionIe := qrDescriptionIe
 		if qDescriptionIe != "" {
+
 			if err := r.SetQueryParam("description__ie", qDescriptionIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DescriptionIew != nil {
 
 		// query param description__iew
 		var qrDescriptionIew string
+
 		if o.DescriptionIew != nil {
 			qrDescriptionIew = *o.DescriptionIew
 		}
 		qDescriptionIew := qrDescriptionIew
 		if qDescriptionIew != "" {
+
 			if err := r.SetQueryParam("description__iew", qDescriptionIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DescriptionIsw != nil {
 
 		// query param description__isw
 		var qrDescriptionIsw string
+
 		if o.DescriptionIsw != nil {
 			qrDescriptionIsw = *o.DescriptionIsw
 		}
 		qDescriptionIsw := qrDescriptionIsw
 		if qDescriptionIsw != "" {
+
 			if err := r.SetQueryParam("description__isw", qDescriptionIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Descriptionn != nil {
 
 		// query param description__n
 		var qrDescriptionn string
+
 		if o.Descriptionn != nil {
 			qrDescriptionn = *o.Descriptionn
 		}
 		qDescriptionn := qrDescriptionn
 		if qDescriptionn != "" {
+
 			if err := r.SetQueryParam("description__n", qDescriptionn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DescriptionNic != nil {
 
 		// query param description__nic
 		var qrDescriptionNic string
+
 		if o.DescriptionNic != nil {
 			qrDescriptionNic = *o.DescriptionNic
 		}
 		qDescriptionNic := qrDescriptionNic
 		if qDescriptionNic != "" {
+
 			if err := r.SetQueryParam("description__nic", qDescriptionNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DescriptionNie != nil {
 
 		// query param description__nie
 		var qrDescriptionNie string
+
 		if o.DescriptionNie != nil {
 			qrDescriptionNie = *o.DescriptionNie
 		}
 		qDescriptionNie := qrDescriptionNie
 		if qDescriptionNie != "" {
+
 			if err := r.SetQueryParam("description__nie", qDescriptionNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DescriptionNiew != nil {
 
 		// query param description__niew
 		var qrDescriptionNiew string
+
 		if o.DescriptionNiew != nil {
 			qrDescriptionNiew = *o.DescriptionNiew
 		}
 		qDescriptionNiew := qrDescriptionNiew
 		if qDescriptionNiew != "" {
+
 			if err := r.SetQueryParam("description__niew", qDescriptionNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DescriptionNisw != nil {
 
 		// query param description__nisw
 		var qrDescriptionNisw string
+
 		if o.DescriptionNisw != nil {
 			qrDescriptionNisw = *o.DescriptionNisw
 		}
 		qDescriptionNisw := qrDescriptionNisw
 		if qDescriptionNisw != "" {
+
 			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Device != nil {
 
 		// query param device
 		var qrDevice string
+
 		if o.Device != nil {
 			qrDevice = *o.Device
 		}
 		qDevice := qrDevice
 		if qDevice != "" {
+
 			if err := r.SetQueryParam("device", qDevice); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Devicen != nil {
 
 		// query param device__n
 		var qrDevicen string
+
 		if o.Devicen != nil {
 			qrDevicen = *o.Devicen
 		}
 		qDevicen := qrDevicen
 		if qDevicen != "" {
+
 			if err := r.SetQueryParam("device__n", qDevicen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceID != nil {
 
 		// query param device_id
 		var qrDeviceID string
+
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
 		qDeviceID := qrDeviceID
 		if qDeviceID != "" {
+
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceIDn != nil {
 
 		// query param device_id__n
 		var qrDeviceIDn string
+
 		if o.DeviceIDn != nil {
 			qrDeviceIDn = *o.DeviceIDn
 		}
 		qDeviceIDn := qrDeviceIDn
 		if qDeviceIDn != "" {
+
 			if err := r.SetQueryParam("device_id__n", qDeviceIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.Label != nil {
+
+		// query param label
+		var qrLabel string
+
+		if o.Label != nil {
+			qrLabel = *o.Label
+		}
+		qLabel := qrLabel
+		if qLabel != "" {
+
+			if err := r.SetQueryParam("label", qLabel); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelEmpty != nil {
+
+		// query param label__empty
+		var qrLabelEmpty string
+
+		if o.LabelEmpty != nil {
+			qrLabelEmpty = *o.LabelEmpty
+		}
+		qLabelEmpty := qrLabelEmpty
+		if qLabelEmpty != "" {
+
+			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelIc != nil {
+
+		// query param label__ic
+		var qrLabelIc string
+
+		if o.LabelIc != nil {
+			qrLabelIc = *o.LabelIc
+		}
+		qLabelIc := qrLabelIc
+		if qLabelIc != "" {
+
+			if err := r.SetQueryParam("label__ic", qLabelIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelIe != nil {
+
+		// query param label__ie
+		var qrLabelIe string
+
+		if o.LabelIe != nil {
+			qrLabelIe = *o.LabelIe
+		}
+		qLabelIe := qrLabelIe
+		if qLabelIe != "" {
+
+			if err := r.SetQueryParam("label__ie", qLabelIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelIew != nil {
+
+		// query param label__iew
+		var qrLabelIew string
+
+		if o.LabelIew != nil {
+			qrLabelIew = *o.LabelIew
+		}
+		qLabelIew := qrLabelIew
+		if qLabelIew != "" {
+
+			if err := r.SetQueryParam("label__iew", qLabelIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelIsw != nil {
+
+		// query param label__isw
+		var qrLabelIsw string
+
+		if o.LabelIsw != nil {
+			qrLabelIsw = *o.LabelIsw
+		}
+		qLabelIsw := qrLabelIsw
+		if qLabelIsw != "" {
+
+			if err := r.SetQueryParam("label__isw", qLabelIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Labeln != nil {
+
+		// query param label__n
+		var qrLabeln string
+
+		if o.Labeln != nil {
+			qrLabeln = *o.Labeln
+		}
+		qLabeln := qrLabeln
+		if qLabeln != "" {
+
+			if err := r.SetQueryParam("label__n", qLabeln); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelNic != nil {
+
+		// query param label__nic
+		var qrLabelNic string
+
+		if o.LabelNic != nil {
+			qrLabelNic = *o.LabelNic
+		}
+		qLabelNic := qrLabelNic
+		if qLabelNic != "" {
+
+			if err := r.SetQueryParam("label__nic", qLabelNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelNie != nil {
+
+		// query param label__nie
+		var qrLabelNie string
+
+		if o.LabelNie != nil {
+			qrLabelNie = *o.LabelNie
+		}
+		qLabelNie := qrLabelNie
+		if qLabelNie != "" {
+
+			if err := r.SetQueryParam("label__nie", qLabelNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelNiew != nil {
+
+		// query param label__niew
+		var qrLabelNiew string
+
+		if o.LabelNiew != nil {
+			qrLabelNiew = *o.LabelNiew
+		}
+		qLabelNiew := qrLabelNiew
+		if qLabelNiew != "" {
+
+			if err := r.SetQueryParam("label__niew", qLabelNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelNisw != nil {
+
+		// query param label__nisw
+		var qrLabelNisw string
+
+		if o.LabelNisw != nil {
+			qrLabelNisw = *o.LabelNisw
+		}
+		qLabelNisw := qrLabelNisw
+		if qLabelNisw != "" {
+
+			if err := r.SetQueryParam("label__nisw", qLabelNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Region != nil {
 
 		// query param region
 		var qrRegion string
+
 		if o.Region != nil {
 			qrRegion = *o.Region
 		}
 		qRegion := qrRegion
 		if qRegion != "" {
+
 			if err := r.SetQueryParam("region", qRegion); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Regionn != nil {
 
 		// query param region__n
 		var qrRegionn string
+
 		if o.Regionn != nil {
 			qrRegionn = *o.Regionn
 		}
 		qRegionn := qrRegionn
 		if qRegionn != "" {
+
 			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionID != nil {
 
 		// query param region_id
 		var qrRegionID string
+
 		if o.RegionID != nil {
 			qrRegionID = *o.RegionID
 		}
 		qRegionID := qrRegionID
 		if qRegionID != "" {
+
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionIDn != nil {
 
 		// query param region_id__n
 		var qrRegionIDn string
+
 		if o.RegionIDn != nil {
 			qrRegionIDn = *o.RegionIDn
 		}
 		qRegionIDn := qrRegionIDn
 		if qRegionIDn != "" {
+
 			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Site != nil {
 
 		// query param site
 		var qrSite string
+
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
 		qSite := qrSite
 		if qSite != "" {
+
 			if err := r.SetQueryParam("site", qSite); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Siten != nil {
 
 		// query param site__n
 		var qrSiten string
+
 		if o.Siten != nil {
 			qrSiten = *o.Siten
 		}
 		qSiten := qrSiten
 		if qSiten != "" {
+
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.SiteID != nil {
 
 		// query param site_id
 		var qrSiteID string
+
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
 		qSiteID := qrSiteID
 		if qSiteID != "" {
+
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteIDn != nil {
 
 		// query param site_id__n
 		var qrSiteIDn string
+
 		if o.SiteIDn != nil {
 			qrSiteIDn = *o.SiteIDn
 		}
 		qSiteIDn := qrSiteIDn
 		if qSiteIDn != "" {
+
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Type != nil {
 
 		// query param type
 		var qrType string
+
 		if o.Type != nil {
 			qrType = *o.Type
 		}
 		qType := qrType
 		if qType != "" {
+
 			if err := r.SetQueryParam("type", qType); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Typen != nil {
 
 		// query param type__n
 		var qrTypen string
+
 		if o.Typen != nil {
 			qrTypen = *o.Typen
 		}
 		qTypen := qrTypen
 		if qTypen != "" {
+
 			if err := r.SetQueryParam("type__n", qTypen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

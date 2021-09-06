@@ -45,14 +45,7 @@ func (o *CircuitsCircuitTypesUpdateReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		result := NewCircuitsCircuitTypesUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewCircuitsCircuitTypesUpdateOK() *CircuitsCircuitTypesUpdateOK {
 	return &CircuitsCircuitTypesUpdateOK{}
 }
 
-/*CircuitsCircuitTypesUpdateOK handles this case with default header values.
+/* CircuitsCircuitTypesUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTypesUpdateOK circuits circuit types update o k
 */
@@ -72,7 +65,6 @@ type CircuitsCircuitTypesUpdateOK struct {
 func (o *CircuitsCircuitTypesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /circuits/circuit-types/{id}/][%d] circuitsCircuitTypesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *CircuitsCircuitTypesUpdateOK) GetPayload() *models.CircuitType {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *CircuitsCircuitTypesUpdateOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewCircuitsCircuitTypesUpdateDefault creates a CircuitsCircuitTypesUpdateDefault with default headers values
-func NewCircuitsCircuitTypesUpdateDefault(code int) *CircuitsCircuitTypesUpdateDefault {
-	return &CircuitsCircuitTypesUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*CircuitsCircuitTypesUpdateDefault handles this case with default header values.
-
-CircuitsCircuitTypesUpdateDefault circuits circuit types update default
-*/
-type CircuitsCircuitTypesUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the circuits circuit types update default response
-func (o *CircuitsCircuitTypesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *CircuitsCircuitTypesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /circuits/circuit-types/{id}/][%d] circuits_circuit-types_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *CircuitsCircuitTypesUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *CircuitsCircuitTypesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

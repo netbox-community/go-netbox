@@ -45,14 +45,7 @@ func (o *SecretsSecretRolesUpdateReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		result := NewSecretsSecretRolesUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewSecretsSecretRolesUpdateOK() *SecretsSecretRolesUpdateOK {
 	return &SecretsSecretRolesUpdateOK{}
 }
 
-/*SecretsSecretRolesUpdateOK handles this case with default header values.
+/* SecretsSecretRolesUpdateOK describes a response with status code 200, with default header values.
 
 SecretsSecretRolesUpdateOK secrets secret roles update o k
 */
@@ -72,7 +65,6 @@ type SecretsSecretRolesUpdateOK struct {
 func (o *SecretsSecretRolesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /secrets/secret-roles/{id}/][%d] secretsSecretRolesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *SecretsSecretRolesUpdateOK) GetPayload() *models.SecretRole {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *SecretsSecretRolesUpdateOK) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewSecretsSecretRolesUpdateDefault creates a SecretsSecretRolesUpdateDefault with default headers values
-func NewSecretsSecretRolesUpdateDefault(code int) *SecretsSecretRolesUpdateDefault {
-	return &SecretsSecretRolesUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*SecretsSecretRolesUpdateDefault handles this case with default header values.
-
-SecretsSecretRolesUpdateDefault secrets secret roles update default
-*/
-type SecretsSecretRolesUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the secrets secret roles update default response
-func (o *SecretsSecretRolesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *SecretsSecretRolesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /secrets/secret-roles/{id}/][%d] secrets_secret-roles_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *SecretsSecretRolesUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *SecretsSecretRolesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

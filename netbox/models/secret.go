@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -34,6 +35,20 @@ import (
 // swagger:model Secret
 type Secret struct {
 
+	// Assigned object
+	// Read Only: true
+	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
+
+	// Assigned object id
+	// Required: true
+	// Maximum: 2.147483647e+09
+	// Minimum: 0
+	AssignedObjectID *int64 `json:"assigned_object_id"`
+
+	// Assigned object type
+	// Required: true
+	AssignedObjectType *string `json:"assigned_object_type"`
+
 	// Created
 	// Read Only: true
 	// Format: date
@@ -42,16 +57,16 @@ type Secret struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
-	// device
-	// Required: true
-	Device *NestedDevice `json:"device"`
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
 
 	// Hash
 	// Read Only: true
 	// Min Length: 1
 	Hash string `json:"hash,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -74,7 +89,7 @@ type Secret struct {
 	Role *NestedSecretRole `json:"role"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true
@@ -86,11 +101,15 @@ type Secret struct {
 func (m *Secret) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateCreated(formats); err != nil {
+	if err := m.validateAssignedObjectID(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateDevice(formats); err != nil {
+	if err := m.validateAssignedObjectType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -128,8 +147,33 @@ func (m *Secret) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Secret) validateCreated(formats strfmt.Registry) error {
+func (m *Secret) validateAssignedObjectID(formats strfmt.Registry) error {
 
+	if err := validate.Required("assigned_object_id", "body", m.AssignedObjectID); err != nil {
+		return err
+	}
+
+	if err := validate.MinimumInt("assigned_object_id", "body", *m.AssignedObjectID, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Secret) validateAssignedObjectType(formats strfmt.Registry) error {
+
+	if err := validate.Required("assigned_object_type", "body", m.AssignedObjectType); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Secret) validateCreated(formats strfmt.Registry) error {
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -141,31 +185,12 @@ func (m *Secret) validateCreated(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Secret) validateDevice(formats strfmt.Registry) error {
-
-	if err := validate.Required("device", "body", m.Device); err != nil {
-		return err
-	}
-
-	if m.Device != nil {
-		if err := m.Device.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("device")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Secret) validateHash(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Hash) { // not required
 		return nil
 	}
 
-	if err := validate.MinLength("hash", "body", string(m.Hash), 1); err != nil {
+	if err := validate.MinLength("hash", "body", m.Hash, 1); err != nil {
 		return err
 	}
 
@@ -173,7 +198,6 @@ func (m *Secret) validateHash(formats strfmt.Registry) error {
 }
 
 func (m *Secret) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -186,12 +210,11 @@ func (m *Secret) validateLastUpdated(formats strfmt.Registry) error {
 }
 
 func (m *Secret) validateName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Name) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("name", "body", string(m.Name), 100); err != nil {
+	if err := validate.MaxLength("name", "body", m.Name, 100); err != nil {
 		return err
 	}
 
@@ -204,7 +227,7 @@ func (m *Secret) validatePlaintext(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("plaintext", "body", string(*m.Plaintext), 1); err != nil {
+	if err := validate.MinLength("plaintext", "body", *m.Plaintext, 1); err != nil {
 		return err
 	}
 
@@ -230,7 +253,6 @@ func (m *Secret) validateRole(formats strfmt.Registry) error {
 }
 
 func (m *Secret) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -255,12 +277,148 @@ func (m *Secret) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *Secret) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this secret based on the context it is used
+func (m *Secret) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAssignedObject(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateHash(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRole(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Secret) contextValidateAssignedObject(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *Secret) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Secret) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Secret) contextValidateHash(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "hash", "body", string(m.Hash)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Secret) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Secret) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Secret) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Role != nil {
+		if err := m.Role.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("role")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Secret) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Secret) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

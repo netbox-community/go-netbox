@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -50,7 +51,11 @@ type Service struct {
 	// device
 	Device *NestedDevice `json:"device,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -65,21 +70,19 @@ type Service struct {
 
 	// Name
 	// Required: true
-	// Max Length: 30
+	// Max Length: 100
 	// Min Length: 1
 	Name *string `json:"name"`
 
-	// Port number
+	// ports
 	// Required: true
-	// Maximum: 65535
-	// Minimum: 1
-	Port *int64 `json:"port"`
+	Ports []int64 `json:"ports"`
 
 	// protocol
 	Protocol *ServiceProtocol `json:"protocol,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true
@@ -118,7 +121,7 @@ func (m *Service) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validatePort(formats); err != nil {
+	if err := m.validatePorts(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -145,7 +148,6 @@ func (m *Service) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Service) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -158,12 +160,11 @@ func (m *Service) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *Service) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -171,7 +172,6 @@ func (m *Service) validateDescription(formats strfmt.Registry) error {
 }
 
 func (m *Service) validateDevice(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Device) { // not required
 		return nil
 	}
@@ -189,7 +189,6 @@ func (m *Service) validateDevice(formats strfmt.Registry) error {
 }
 
 func (m *Service) validateIpaddresses(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Ipaddresses) { // not required
 		return nil
 	}
@@ -218,7 +217,6 @@ func (m *Service) validateIpaddresses(formats strfmt.Registry) error {
 }
 
 func (m *Service) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -236,36 +234,39 @@ func (m *Service) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 30); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *Service) validatePort(formats strfmt.Registry) error {
+func (m *Service) validatePorts(formats strfmt.Registry) error {
 
-	if err := validate.Required("port", "body", m.Port); err != nil {
+	if err := validate.Required("ports", "body", m.Ports); err != nil {
 		return err
 	}
 
-	if err := validate.MinimumInt("port", "body", int64(*m.Port), 1, false); err != nil {
-		return err
-	}
+	for i := 0; i < len(m.Ports); i++ {
 
-	if err := validate.MaximumInt("port", "body", int64(*m.Port), 65535, false); err != nil {
-		return err
+		if err := validate.MinimumInt("ports"+"."+strconv.Itoa(i), "body", m.Ports[i], 1, false); err != nil {
+			return err
+		}
+
+		if err := validate.MaximumInt("ports"+"."+strconv.Itoa(i), "body", m.Ports[i], 65535, false); err != nil {
+			return err
+		}
+
 	}
 
 	return nil
 }
 
 func (m *Service) validateProtocol(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Protocol) { // not required
 		return nil
 	}
@@ -283,7 +284,6 @@ func (m *Service) validateProtocol(formats strfmt.Registry) error {
 }
 
 func (m *Service) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -308,7 +308,6 @@ func (m *Service) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *Service) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -321,13 +320,185 @@ func (m *Service) validateURL(formats strfmt.Registry) error {
 }
 
 func (m *Service) validateVirtualMachine(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.VirtualMachine) { // not required
 		return nil
 	}
 
 	if m.VirtualMachine != nil {
 		if err := m.VirtualMachine.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("virtual_machine")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this service based on the context it is used
+func (m *Service) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDevice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateIpaddresses(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateProtocol(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVirtualMachine(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Service) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Service) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Device != nil {
+		if err := m.Device.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Service) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Service) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Service) contextValidateIpaddresses(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Ipaddresses); i++ {
+
+		if m.Ipaddresses[i] != nil {
+			if err := m.Ipaddresses[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ipaddresses" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Service) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Service) contextValidateProtocol(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Protocol != nil {
+		if err := m.Protocol.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("protocol")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Service) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Service) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Service) contextValidateVirtualMachine(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.VirtualMachine != nil {
+		if err := m.VirtualMachine.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")
 			}
@@ -473,6 +644,11 @@ func (m *ServiceProtocol) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this service protocol based on context it is used
+func (m *ServiceProtocol) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimInterfacesPartialUpdateParams creates a new DcimInterfacesPartialUpdateParams object
-// with the default values initialized.
+// NewDcimInterfacesPartialUpdateParams creates a new DcimInterfacesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInterfacesPartialUpdateParams() *DcimInterfacesPartialUpdateParams {
-	var ()
 	return &DcimInterfacesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInterfacesPartialUpdateParamsWithTimeout creates a new DcimInterfacesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInterfacesPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimInterfacesPartialUpdateParams {
-	var ()
 	return &DcimInterfacesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInterfacesPartialUpdateParamsWithContext creates a new DcimInterfacesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInterfacesPartialUpdateParamsWithContext(ctx context.Context) *DcimInterfacesPartialUpdateParams {
-	var ()
 	return &DcimInterfacesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInterfacesPartialUpdateParamsWithHTTPClient creates a new DcimInterfacesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInterfacesPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimInterfacesPartialUpdateParams {
-	var ()
 	return &DcimInterfacesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInterfacesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim interfaces partial update operation typically these are written to a http.Request
+/* DcimInterfacesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim interfaces partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInterfacesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableInterface
-	/*ID
-	  A unique integer value identifying this interface.
 
+	/* ID.
+
+	   A unique integer value identifying this interface.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim interfaces partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfacesPartialUpdateParams) WithDefaults() *DcimInterfacesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim interfaces partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfacesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim interfaces partial update params
@@ -153,7 +168,6 @@ func (o *DcimInterfacesPartialUpdateParams) WriteToRequest(r runtime.ClientReque
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

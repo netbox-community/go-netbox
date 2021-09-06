@@ -21,7 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
+	"context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -34,8 +34,9 @@ import (
 // swagger:model InterfaceConnection
 type InterfaceConnection struct {
 
-	// connection status
-	ConnectionStatus *InterfaceConnectionConnectionStatus `json:"connection_status,omitempty"`
+	// Connected endpoint reachable
+	// Read Only: true
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
 	// interface a
 	Interfacea *NestedInterface `json:"interface_a,omitempty"`
@@ -48,10 +49,6 @@ type InterfaceConnection struct {
 // Validate validates this interface connection
 func (m *InterfaceConnection) Validate(formats strfmt.Registry) error {
 	var res []error
-
-	if err := m.validateConnectionStatus(formats); err != nil {
-		res = append(res, err)
-	}
 
 	if err := m.validateInterfacea(formats); err != nil {
 		res = append(res, err)
@@ -67,26 +64,7 @@ func (m *InterfaceConnection) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *InterfaceConnection) validateConnectionStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.ConnectionStatus) { // not required
-		return nil
-	}
-
-	if m.ConnectionStatus != nil {
-		if err := m.ConnectionStatus.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("connection_status")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *InterfaceConnection) validateInterfacea(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Interfacea) { // not required
 		return nil
 	}
@@ -121,6 +99,65 @@ func (m *InterfaceConnection) validateInterfaceb(formats strfmt.Registry) error 
 	return nil
 }
 
+// ContextValidate validate this interface connection based on the context it is used
+func (m *InterfaceConnection) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInterfacea(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInterfaceb(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *InterfaceConnection) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *InterfaceConnection) contextValidateInterfacea(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Interfacea != nil {
+		if err := m.Interfacea.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("interface_a")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *InterfaceConnection) contextValidateInterfaceb(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Interfaceb != nil {
+		if err := m.Interfaceb.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("interface_b")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // MarshalBinary interface implementation
 func (m *InterfaceConnection) MarshalBinary() ([]byte, error) {
 	if m == nil {
@@ -132,135 +169,6 @@ func (m *InterfaceConnection) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *InterfaceConnection) UnmarshalBinary(b []byte) error {
 	var res InterfaceConnection
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// InterfaceConnectionConnectionStatus Connection status
-//
-// swagger:model InterfaceConnectionConnectionStatus
-type InterfaceConnectionConnectionStatus struct {
-
-	// label
-	// Required: true
-	// Enum: [Not Connected Connected]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [false true]
-	Value *bool `json:"value"`
-}
-
-// Validate validates this interface connection connection status
-func (m *InterfaceConnectionConnectionStatus) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var interfaceConnectionConnectionStatusTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["Not Connected","Connected"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfaceConnectionConnectionStatusTypeLabelPropEnum = append(interfaceConnectionConnectionStatusTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// InterfaceConnectionConnectionStatusLabelNotConnected captures enum value "Not Connected"
-	InterfaceConnectionConnectionStatusLabelNotConnected string = "Not Connected"
-
-	// InterfaceConnectionConnectionStatusLabelConnected captures enum value "Connected"
-	InterfaceConnectionConnectionStatusLabelConnected string = "Connected"
-)
-
-// prop value enum
-func (m *InterfaceConnectionConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, interfaceConnectionConnectionStatusTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfaceConnectionConnectionStatus) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("connection_status"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var interfaceConnectionConnectionStatusTypeValuePropEnum []interface{}
-
-func init() {
-	var res []bool
-	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfaceConnectionConnectionStatusTypeValuePropEnum = append(interfaceConnectionConnectionStatusTypeValuePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *InterfaceConnectionConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.EnumCase(path, location, value, interfaceConnectionConnectionStatusTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfaceConnectionConnectionStatus) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("connection_status"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *InterfaceConnectionConnectionStatus) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *InterfaceConnectionConnectionStatus) UnmarshalBinary(b []byte) error {
-	var res InterfaceConnectionConnectionStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

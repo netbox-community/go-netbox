@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewExtrasImageAttachmentsPartialUpdateParams creates a new ExtrasImageAttachmentsPartialUpdateParams object
-// with the default values initialized.
+// NewExtrasImageAttachmentsPartialUpdateParams creates a new ExtrasImageAttachmentsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasImageAttachmentsPartialUpdateParams() *ExtrasImageAttachmentsPartialUpdateParams {
-	var ()
 	return &ExtrasImageAttachmentsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasImageAttachmentsPartialUpdateParamsWithTimeout creates a new ExtrasImageAttachmentsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasImageAttachmentsPartialUpdateParamsWithTimeout(timeout time.Duration) *ExtrasImageAttachmentsPartialUpdateParams {
-	var ()
 	return &ExtrasImageAttachmentsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasImageAttachmentsPartialUpdateParamsWithContext creates a new ExtrasImageAttachmentsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasImageAttachmentsPartialUpdateParamsWithContext(ctx context.Context) *ExtrasImageAttachmentsPartialUpdateParams {
-	var ()
 	return &ExtrasImageAttachmentsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasImageAttachmentsPartialUpdateParamsWithHTTPClient creates a new ExtrasImageAttachmentsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasImageAttachmentsPartialUpdateParamsWithHTTPClient(client *http.Client) *ExtrasImageAttachmentsPartialUpdateParams {
-	var ()
 	return &ExtrasImageAttachmentsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasImageAttachmentsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the extras image attachments partial update operation typically these are written to a http.Request
+/* ExtrasImageAttachmentsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the extras image attachments partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasImageAttachmentsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.ImageAttachment
-	/*ID
-	  A unique integer value identifying this image attachment.
 
+	/* ID.
+
+	   A unique integer value identifying this image attachment.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras image attachments partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsPartialUpdateParams) WithDefaults() *ExtrasImageAttachmentsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras image attachments partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras image attachments partial update params
@@ -153,7 +168,6 @@ func (o *ExtrasImageAttachmentsPartialUpdateParams) WriteToRequest(r runtime.Cli
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

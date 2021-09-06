@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamServicesCreateParams creates a new IpamServicesCreateParams object
-// with the default values initialized.
+// NewIpamServicesCreateParams creates a new IpamServicesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamServicesCreateParams() *IpamServicesCreateParams {
-	var ()
 	return &IpamServicesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamServicesCreateParamsWithTimeout creates a new IpamServicesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamServicesCreateParamsWithTimeout(timeout time.Duration) *IpamServicesCreateParams {
-	var ()
 	return &IpamServicesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamServicesCreateParamsWithContext creates a new IpamServicesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamServicesCreateParamsWithContext(ctx context.Context) *IpamServicesCreateParams {
-	var ()
 	return &IpamServicesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamServicesCreateParamsWithHTTPClient creates a new IpamServicesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamServicesCreateParamsWithHTTPClient(client *http.Client) *IpamServicesCreateParams {
-	var ()
 	return &IpamServicesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamServicesCreateParams contains all the parameters to send to the API endpoint
-for the ipam services create operation typically these are written to a http.Request
+/* IpamServicesCreateParams contains all the parameters to send to the API endpoint
+   for the ipam services create operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamServicesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableService
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam services create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamServicesCreateParams) WithDefaults() *IpamServicesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam services create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamServicesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam services create params
@@ -136,7 +150,6 @@ func (o *IpamServicesCreateParams) WriteToRequest(r runtime.ClientRequest, reg s
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

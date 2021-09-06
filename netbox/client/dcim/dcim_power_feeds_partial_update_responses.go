@@ -45,14 +45,7 @@ func (o *DcimPowerFeedsPartialUpdateReader) ReadResponse(response runtime.Client
 		}
 		return result, nil
 	default:
-		result := NewDcimPowerFeedsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimPowerFeedsPartialUpdateOK() *DcimPowerFeedsPartialUpdateOK {
 	return &DcimPowerFeedsPartialUpdateOK{}
 }
 
-/*DcimPowerFeedsPartialUpdateOK handles this case with default header values.
+/* DcimPowerFeedsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerFeedsPartialUpdateOK dcim power feeds partial update o k
 */
@@ -72,7 +65,6 @@ type DcimPowerFeedsPartialUpdateOK struct {
 func (o *DcimPowerFeedsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-feeds/{id}/][%d] dcimPowerFeedsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerFeedsPartialUpdateOK) GetPayload() *models.PowerFeed {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimPowerFeedsPartialUpdateOK) readResponse(response runtime.ClientResp
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimPowerFeedsPartialUpdateDefault creates a DcimPowerFeedsPartialUpdateDefault with default headers values
-func NewDcimPowerFeedsPartialUpdateDefault(code int) *DcimPowerFeedsPartialUpdateDefault {
-	return &DcimPowerFeedsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimPowerFeedsPartialUpdateDefault handles this case with default header values.
-
-DcimPowerFeedsPartialUpdateDefault dcim power feeds partial update default
-*/
-type DcimPowerFeedsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim power feeds partial update default response
-func (o *DcimPowerFeedsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimPowerFeedsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/power-feeds/{id}/][%d] dcim_power-feeds_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimPowerFeedsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimPowerFeedsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

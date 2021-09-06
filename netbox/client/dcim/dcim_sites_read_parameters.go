@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimSitesReadParams creates a new DcimSitesReadParams object
-// with the default values initialized.
+// NewDcimSitesReadParams creates a new DcimSitesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimSitesReadParams() *DcimSitesReadParams {
-	var ()
 	return &DcimSitesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimSitesReadParamsWithTimeout creates a new DcimSitesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimSitesReadParamsWithTimeout(timeout time.Duration) *DcimSitesReadParams {
-	var ()
 	return &DcimSitesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimSitesReadParamsWithContext creates a new DcimSitesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimSitesReadParamsWithContext(ctx context.Context) *DcimSitesReadParams {
-	var ()
 	return &DcimSitesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimSitesReadParamsWithHTTPClient creates a new DcimSitesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimSitesReadParamsWithHTTPClient(client *http.Client) *DcimSitesReadParams {
-	var ()
 	return &DcimSitesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimSitesReadParams contains all the parameters to send to the API endpoint
-for the dcim sites read operation typically these are written to a http.Request
+/* DcimSitesReadParams contains all the parameters to send to the API endpoint
+   for the dcim sites read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimSitesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this site.
+	/* ID.
 
+	   A unique integer value identifying this site.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim sites read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimSitesReadParams) WithDefaults() *DcimSitesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim sites read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimSitesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim sites read params

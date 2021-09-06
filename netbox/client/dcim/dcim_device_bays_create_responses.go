@@ -45,14 +45,7 @@ func (o *DcimDeviceBaysCreateReader) ReadResponse(response runtime.ClientRespons
 		}
 		return result, nil
 	default:
-		result := NewDcimDeviceBaysCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimDeviceBaysCreateCreated() *DcimDeviceBaysCreateCreated {
 	return &DcimDeviceBaysCreateCreated{}
 }
 
-/*DcimDeviceBaysCreateCreated handles this case with default header values.
+/* DcimDeviceBaysCreateCreated describes a response with status code 201, with default header values.
 
 DcimDeviceBaysCreateCreated dcim device bays create created
 */
@@ -72,7 +65,6 @@ type DcimDeviceBaysCreateCreated struct {
 func (o *DcimDeviceBaysCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-bays/][%d] dcimDeviceBaysCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimDeviceBaysCreateCreated) GetPayload() *models.DeviceBay {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimDeviceBaysCreateCreated) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimDeviceBaysCreateDefault creates a DcimDeviceBaysCreateDefault with default headers values
-func NewDcimDeviceBaysCreateDefault(code int) *DcimDeviceBaysCreateDefault {
-	return &DcimDeviceBaysCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimDeviceBaysCreateDefault handles this case with default header values.
-
-DcimDeviceBaysCreateDefault dcim device bays create default
-*/
-type DcimDeviceBaysCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim device bays create default response
-func (o *DcimDeviceBaysCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimDeviceBaysCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/device-bays/][%d] dcim_device-bays_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimDeviceBaysCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimDeviceBaysCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

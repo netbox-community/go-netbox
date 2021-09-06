@@ -32,94 +32,130 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimRacksElevationParams creates a new DcimRacksElevationParams object
-// with the default values initialized.
+// NewDcimRacksElevationParams creates a new DcimRacksElevationParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRacksElevationParams() *DcimRacksElevationParams {
-	var (
-		expandDevicesDefault = bool(true)
-		faceDefault          = string("front")
-		includeImagesDefault = bool(true)
-		legendWidthDefault   = int64(30)
-		renderDefault        = string("json")
-		unitHeightDefault    = int64(22)
-		unitWidthDefault     = int64(220)
-	)
 	return &DcimRacksElevationParams{
-		ExpandDevices: &expandDevicesDefault,
-		Face:          &faceDefault,
-		IncludeImages: &includeImagesDefault,
-		LegendWidth:   &legendWidthDefault,
-		Render:        &renderDefault,
-		UnitHeight:    &unitHeightDefault,
-		UnitWidth:     &unitWidthDefault,
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRacksElevationParamsWithTimeout creates a new DcimRacksElevationParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRacksElevationParamsWithTimeout(timeout time.Duration) *DcimRacksElevationParams {
-	var (
-		expandDevicesDefault = bool(true)
-		faceDefault          = string("front")
-		includeImagesDefault = bool(true)
-		legendWidthDefault   = int64(30)
-		renderDefault        = string("json")
-		unitHeightDefault    = int64(22)
-		unitWidthDefault     = int64(220)
-	)
 	return &DcimRacksElevationParams{
-		ExpandDevices: &expandDevicesDefault,
-		Face:          &faceDefault,
-		IncludeImages: &includeImagesDefault,
-		LegendWidth:   &legendWidthDefault,
-		Render:        &renderDefault,
-		UnitHeight:    &unitHeightDefault,
-		UnitWidth:     &unitWidthDefault,
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRacksElevationParamsWithContext creates a new DcimRacksElevationParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRacksElevationParamsWithContext(ctx context.Context) *DcimRacksElevationParams {
-	var (
-		expandDevicesDefault = bool(true)
-		faceDefault          = string("front")
-		includeImagesDefault = bool(true)
-		legendWidthDefault   = int64(30)
-		renderDefault        = string("json")
-		unitHeightDefault    = int64(22)
-		unitWidthDefault     = int64(220)
-	)
 	return &DcimRacksElevationParams{
-		ExpandDevices: &expandDevicesDefault,
-		Face:          &faceDefault,
-		IncludeImages: &includeImagesDefault,
-		LegendWidth:   &legendWidthDefault,
-		Render:        &renderDefault,
-		UnitHeight:    &unitHeightDefault,
-		UnitWidth:     &unitWidthDefault,
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRacksElevationParamsWithHTTPClient creates a new DcimRacksElevationParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRacksElevationParamsWithHTTPClient(client *http.Client) *DcimRacksElevationParams {
+	return &DcimRacksElevationParams{
+		HTTPClient: client,
+	}
+}
+
+/* DcimRacksElevationParams contains all the parameters to send to the API endpoint
+   for the dcim racks elevation operation.
+
+   Typically these are written to a http.Request.
+*/
+type DcimRacksElevationParams struct {
+
+	// Exclude.
+	Exclude *int64
+
+	// ExpandDevices.
+	//
+	// Default: true
+	ExpandDevices *bool
+
+	// Face.
+	//
+	// Default: "front"
+	Face *string
+
+	/* ID.
+
+	   A unique integer value identifying this rack.
+	*/
+	ID int64
+
+	// IncludeImages.
+	//
+	// Default: true
+	IncludeImages *bool
+
+	// LegendWidth.
+	//
+	// Default: 30
+	LegendWidth *int64
+
+	// Q.
+	Q *string
+
+	// Render.
+	//
+	// Default: "json"
+	Render *string
+
+	// UnitHeight.
+	//
+	// Default: 22
+	UnitHeight *int64
+
+	// UnitWidth.
+	//
+	// Default: 220
+	UnitWidth *int64
+
+	timeout    time.Duration
+	Context    context.Context
+	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim racks elevation params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRacksElevationParams) WithDefaults() *DcimRacksElevationParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim racks elevation params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRacksElevationParams) SetDefaults() {
 	var (
 		expandDevicesDefault = bool(true)
-		faceDefault          = string("front")
+
+		faceDefault = string("front")
+
 		includeImagesDefault = bool(true)
-		legendWidthDefault   = int64(30)
-		renderDefault        = string("json")
-		unitHeightDefault    = int64(22)
-		unitWidthDefault     = int64(220)
+
+		legendWidthDefault = int64(30)
+
+		renderDefault = string("json")
+
+		unitHeightDefault = int64(22)
+
+		unitWidthDefault = int64(220)
 	)
-	return &DcimRacksElevationParams{
+
+	val := DcimRacksElevationParams{
 		ExpandDevices: &expandDevicesDefault,
 		Face:          &faceDefault,
 		IncludeImages: &includeImagesDefault,
@@ -127,42 +163,12 @@ func NewDcimRacksElevationParamsWithHTTPClient(client *http.Client) *DcimRacksEl
 		Render:        &renderDefault,
 		UnitHeight:    &unitHeightDefault,
 		UnitWidth:     &unitWidthDefault,
-		HTTPClient:    client,
 	}
-}
 
-/*DcimRacksElevationParams contains all the parameters to send to the API endpoint
-for the dcim racks elevation operation typically these are written to a http.Request
-*/
-type DcimRacksElevationParams struct {
-
-	/*Exclude*/
-	Exclude *int64
-	/*ExpandDevices*/
-	ExpandDevices *bool
-	/*Face*/
-	Face *string
-	/*ID
-	  A unique integer value identifying this rack.
-
-	*/
-	ID int64
-	/*IncludeImages*/
-	IncludeImages *bool
-	/*LegendWidth*/
-	LegendWidth *int64
-	/*Q*/
-	Q *string
-	/*Render*/
-	Render *string
-	/*UnitHeight*/
-	UnitHeight *int64
-	/*UnitWidth*/
-	UnitWidth *int64
-
-	timeout    time.Duration
-	Context    context.Context
-	HTTPClient *http.Client
+	val.timeout = o.timeout
+	val.Context = o.Context
+	val.HTTPClient = o.HTTPClient
+	*o = val
 }
 
 // WithTimeout adds the timeout to the dcim racks elevation params
@@ -320,48 +326,51 @@ func (o *DcimRacksElevationParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 		// query param exclude
 		var qrExclude int64
+
 		if o.Exclude != nil {
 			qrExclude = *o.Exclude
 		}
 		qExclude := swag.FormatInt64(qrExclude)
 		if qExclude != "" {
+
 			if err := r.SetQueryParam("exclude", qExclude); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ExpandDevices != nil {
 
 		// query param expand_devices
 		var qrExpandDevices bool
+
 		if o.ExpandDevices != nil {
 			qrExpandDevices = *o.ExpandDevices
 		}
 		qExpandDevices := swag.FormatBool(qrExpandDevices)
 		if qExpandDevices != "" {
+
 			if err := r.SetQueryParam("expand_devices", qExpandDevices); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Face != nil {
 
 		// query param face
 		var qrFace string
+
 		if o.Face != nil {
 			qrFace = *o.Face
 		}
 		qFace := qrFace
 		if qFace != "" {
+
 			if err := r.SetQueryParam("face", qFace); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// path param id
@@ -373,96 +382,102 @@ func (o *DcimRacksElevationParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 		// query param include_images
 		var qrIncludeImages bool
+
 		if o.IncludeImages != nil {
 			qrIncludeImages = *o.IncludeImages
 		}
 		qIncludeImages := swag.FormatBool(qrIncludeImages)
 		if qIncludeImages != "" {
+
 			if err := r.SetQueryParam("include_images", qIncludeImages); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LegendWidth != nil {
 
 		// query param legend_width
 		var qrLegendWidth int64
+
 		if o.LegendWidth != nil {
 			qrLegendWidth = *o.LegendWidth
 		}
 		qLegendWidth := swag.FormatInt64(qrLegendWidth)
 		if qLegendWidth != "" {
+
 			if err := r.SetQueryParam("legend_width", qLegendWidth); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Render != nil {
 
 		// query param render
 		var qrRender string
+
 		if o.Render != nil {
 			qrRender = *o.Render
 		}
 		qRender := qrRender
 		if qRender != "" {
+
 			if err := r.SetQueryParam("render", qRender); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UnitHeight != nil {
 
 		// query param unit_height
 		var qrUnitHeight int64
+
 		if o.UnitHeight != nil {
 			qrUnitHeight = *o.UnitHeight
 		}
 		qUnitHeight := swag.FormatInt64(qrUnitHeight)
 		if qUnitHeight != "" {
+
 			if err := r.SetQueryParam("unit_height", qUnitHeight); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UnitWidth != nil {
 
 		// query param unit_width
 		var qrUnitWidth int64
+
 		if o.UnitWidth != nil {
 			qrUnitWidth = *o.UnitWidth
 		}
 		qUnitWidth := swag.FormatInt64(qrUnitWidth)
 		if qUnitWidth != "" {
+
 			if err := r.SetQueryParam("unit_width", qUnitWidth); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

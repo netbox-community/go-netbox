@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewSecretsSecretsUpdateParams creates a new SecretsSecretsUpdateParams object
-// with the default values initialized.
+// NewSecretsSecretsUpdateParams creates a new SecretsSecretsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsSecretsUpdateParams() *SecretsSecretsUpdateParams {
-	var ()
 	return &SecretsSecretsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsSecretsUpdateParamsWithTimeout creates a new SecretsSecretsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsSecretsUpdateParamsWithTimeout(timeout time.Duration) *SecretsSecretsUpdateParams {
-	var ()
 	return &SecretsSecretsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsSecretsUpdateParamsWithContext creates a new SecretsSecretsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsSecretsUpdateParamsWithContext(ctx context.Context) *SecretsSecretsUpdateParams {
-	var ()
 	return &SecretsSecretsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsSecretsUpdateParamsWithHTTPClient creates a new SecretsSecretsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsSecretsUpdateParamsWithHTTPClient(client *http.Client) *SecretsSecretsUpdateParams {
-	var ()
 	return &SecretsSecretsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsSecretsUpdateParams contains all the parameters to send to the API endpoint
-for the secrets secrets update operation typically these are written to a http.Request
+/* SecretsSecretsUpdateParams contains all the parameters to send to the API endpoint
+   for the secrets secrets update operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsSecretsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableSecret
-	/*ID
-	  A unique integer value identifying this secret.
 
+	/* ID.
+
+	   A unique integer value identifying this secret.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets secrets update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsUpdateParams) WithDefaults() *SecretsSecretsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets secrets update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets secrets update params
@@ -153,7 +168,6 @@ func (o *SecretsSecretsUpdateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewTenancyTenantsPartialUpdateParams creates a new TenancyTenantsPartialUpdateParams object
-// with the default values initialized.
+// NewTenancyTenantsPartialUpdateParams creates a new TenancyTenantsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewTenancyTenantsPartialUpdateParams() *TenancyTenantsPartialUpdateParams {
-	var ()
 	return &TenancyTenantsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewTenancyTenantsPartialUpdateParamsWithTimeout creates a new TenancyTenantsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewTenancyTenantsPartialUpdateParamsWithTimeout(timeout time.Duration) *TenancyTenantsPartialUpdateParams {
-	var ()
 	return &TenancyTenantsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewTenancyTenantsPartialUpdateParamsWithContext creates a new TenancyTenantsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewTenancyTenantsPartialUpdateParamsWithContext(ctx context.Context) *TenancyTenantsPartialUpdateParams {
-	var ()
 	return &TenancyTenantsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewTenancyTenantsPartialUpdateParamsWithHTTPClient creates a new TenancyTenantsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewTenancyTenantsPartialUpdateParamsWithHTTPClient(client *http.Client) *TenancyTenantsPartialUpdateParams {
-	var ()
 	return &TenancyTenantsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*TenancyTenantsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the tenancy tenants partial update operation typically these are written to a http.Request
+/* TenancyTenantsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the tenancy tenants partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type TenancyTenantsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableTenant
-	/*ID
-	  A unique integer value identifying this tenant.
 
+	/* ID.
+
+	   A unique integer value identifying this tenant.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the tenancy tenants partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TenancyTenantsPartialUpdateParams) WithDefaults() *TenancyTenantsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the tenancy tenants partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TenancyTenantsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the tenancy tenants partial update params
@@ -153,7 +168,6 @@ func (o *TenancyTenantsPartialUpdateParams) WriteToRequest(r runtime.ClientReque
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

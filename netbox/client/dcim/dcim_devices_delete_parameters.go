@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimDevicesDeleteParams creates a new DcimDevicesDeleteParams object
-// with the default values initialized.
+// NewDcimDevicesDeleteParams creates a new DcimDevicesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDevicesDeleteParams() *DcimDevicesDeleteParams {
-	var ()
 	return &DcimDevicesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDevicesDeleteParamsWithTimeout creates a new DcimDevicesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDevicesDeleteParamsWithTimeout(timeout time.Duration) *DcimDevicesDeleteParams {
-	var ()
 	return &DcimDevicesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDevicesDeleteParamsWithContext creates a new DcimDevicesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDevicesDeleteParamsWithContext(ctx context.Context) *DcimDevicesDeleteParams {
-	var ()
 	return &DcimDevicesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDevicesDeleteParamsWithHTTPClient creates a new DcimDevicesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDevicesDeleteParamsWithHTTPClient(client *http.Client) *DcimDevicesDeleteParams {
-	var ()
 	return &DcimDevicesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDevicesDeleteParams contains all the parameters to send to the API endpoint
-for the dcim devices delete operation typically these are written to a http.Request
+/* DcimDevicesDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim devices delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDevicesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this device.
+	/* ID.
 
+	   A unique integer value identifying this device.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim devices delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesDeleteParams) WithDefaults() *DcimDevicesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim devices delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim devices delete params

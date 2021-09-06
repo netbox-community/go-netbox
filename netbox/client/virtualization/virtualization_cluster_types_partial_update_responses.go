@@ -45,14 +45,7 @@ func (o *VirtualizationClusterTypesPartialUpdateReader) ReadResponse(response ru
 		}
 		return result, nil
 	default:
-		result := NewVirtualizationClusterTypesPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewVirtualizationClusterTypesPartialUpdateOK() *VirtualizationClusterTypesP
 	return &VirtualizationClusterTypesPartialUpdateOK{}
 }
 
-/*VirtualizationClusterTypesPartialUpdateOK handles this case with default header values.
+/* VirtualizationClusterTypesPartialUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterTypesPartialUpdateOK virtualization cluster types partial update o k
 */
@@ -72,7 +65,6 @@ type VirtualizationClusterTypesPartialUpdateOK struct {
 func (o *VirtualizationClusterTypesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterTypesPartialUpdateOK) GetPayload() *models.ClusterType {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *VirtualizationClusterTypesPartialUpdateOK) readResponse(response runtim
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewVirtualizationClusterTypesPartialUpdateDefault creates a VirtualizationClusterTypesPartialUpdateDefault with default headers values
-func NewVirtualizationClusterTypesPartialUpdateDefault(code int) *VirtualizationClusterTypesPartialUpdateDefault {
-	return &VirtualizationClusterTypesPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*VirtualizationClusterTypesPartialUpdateDefault handles this case with default header values.
-
-VirtualizationClusterTypesPartialUpdateDefault virtualization cluster types partial update default
-*/
-type VirtualizationClusterTypesPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the virtualization cluster types partial update default response
-func (o *VirtualizationClusterTypesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *VirtualizationClusterTypesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *VirtualizationClusterTypesPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *VirtualizationClusterTypesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

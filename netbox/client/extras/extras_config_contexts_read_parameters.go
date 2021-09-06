@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasConfigContextsReadParams creates a new ExtrasConfigContextsReadParams object
-// with the default values initialized.
+// NewExtrasConfigContextsReadParams creates a new ExtrasConfigContextsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasConfigContextsReadParams() *ExtrasConfigContextsReadParams {
-	var ()
 	return &ExtrasConfigContextsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasConfigContextsReadParamsWithTimeout creates a new ExtrasConfigContextsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasConfigContextsReadParamsWithTimeout(timeout time.Duration) *ExtrasConfigContextsReadParams {
-	var ()
 	return &ExtrasConfigContextsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasConfigContextsReadParamsWithContext creates a new ExtrasConfigContextsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasConfigContextsReadParamsWithContext(ctx context.Context) *ExtrasConfigContextsReadParams {
-	var ()
 	return &ExtrasConfigContextsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasConfigContextsReadParamsWithHTTPClient creates a new ExtrasConfigContextsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasConfigContextsReadParamsWithHTTPClient(client *http.Client) *ExtrasConfigContextsReadParams {
-	var ()
 	return &ExtrasConfigContextsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasConfigContextsReadParams contains all the parameters to send to the API endpoint
-for the extras config contexts read operation typically these are written to a http.Request
+/* ExtrasConfigContextsReadParams contains all the parameters to send to the API endpoint
+   for the extras config contexts read operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this config context.
+	/* ID.
 
+	   A unique integer value identifying this config context.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras config contexts read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsReadParams) WithDefaults() *ExtrasConfigContextsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras config contexts read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras config contexts read params

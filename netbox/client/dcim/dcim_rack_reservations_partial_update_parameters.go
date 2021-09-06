@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimRackReservationsPartialUpdateParams creates a new DcimRackReservationsPartialUpdateParams object
-// with the default values initialized.
+// NewDcimRackReservationsPartialUpdateParams creates a new DcimRackReservationsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackReservationsPartialUpdateParams() *DcimRackReservationsPartialUpdateParams {
-	var ()
 	return &DcimRackReservationsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackReservationsPartialUpdateParamsWithTimeout creates a new DcimRackReservationsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackReservationsPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimRackReservationsPartialUpdateParams {
-	var ()
 	return &DcimRackReservationsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackReservationsPartialUpdateParamsWithContext creates a new DcimRackReservationsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackReservationsPartialUpdateParamsWithContext(ctx context.Context) *DcimRackReservationsPartialUpdateParams {
-	var ()
 	return &DcimRackReservationsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackReservationsPartialUpdateParamsWithHTTPClient creates a new DcimRackReservationsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackReservationsPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimRackReservationsPartialUpdateParams {
-	var ()
 	return &DcimRackReservationsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackReservationsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim rack reservations partial update operation typically these are written to a http.Request
+/* DcimRackReservationsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim rack reservations partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackReservationsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRackReservation
-	/*ID
-	  A unique integer value identifying this rack reservation.
 
+	/* ID.
+
+	   A unique integer value identifying this rack reservation.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack reservations partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackReservationsPartialUpdateParams) WithDefaults() *DcimRackReservationsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack reservations partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackReservationsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack reservations partial update params
@@ -153,7 +168,6 @@ func (o *DcimRackReservationsPartialUpdateParams) WriteToRequest(r runtime.Clien
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

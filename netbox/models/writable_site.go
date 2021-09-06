@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -78,13 +79,20 @@ type WritableSite struct {
 	// Read Only: true
 	DeviceCount int64 `json:"device_count,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Facility
 	//
 	// Local facility ID or description
 	// Max Length: 50
 	Facility string `json:"facility,omitempty"`
 
-	// ID
+	// Group
+	Group *int64 `json:"group,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -105,7 +113,7 @@ type WritableSite struct {
 
 	// Name
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	Name *string `json:"name"`
 
@@ -130,7 +138,7 @@ type WritableSite struct {
 
 	// Slug
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
@@ -140,7 +148,7 @@ type WritableSite struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`
@@ -233,16 +241,15 @@ func (m *WritableSite) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateAsn(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Asn) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("asn", "body", int64(*m.Asn), 1, false); err != nil {
+	if err := validate.MinimumInt("asn", "body", *m.Asn, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("asn", "body", int64(*m.Asn), 4.294967295e+09, false); err != nil {
+	if err := validate.MaximumInt("asn", "body", *m.Asn, 4.294967295e+09, false); err != nil {
 		return err
 	}
 
@@ -250,12 +257,11 @@ func (m *WritableSite) validateAsn(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateContactEmail(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ContactEmail) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("contact_email", "body", string(m.ContactEmail), 254); err != nil {
+	if err := validate.MaxLength("contact_email", "body", m.ContactEmail.String(), 254); err != nil {
 		return err
 	}
 
@@ -267,12 +273,11 @@ func (m *WritableSite) validateContactEmail(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateContactName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ContactName) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("contact_name", "body", string(m.ContactName), 50); err != nil {
+	if err := validate.MaxLength("contact_name", "body", m.ContactName, 50); err != nil {
 		return err
 	}
 
@@ -280,12 +285,11 @@ func (m *WritableSite) validateContactName(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateContactPhone(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ContactPhone) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("contact_phone", "body", string(m.ContactPhone), 20); err != nil {
+	if err := validate.MaxLength("contact_phone", "body", m.ContactPhone, 20); err != nil {
 		return err
 	}
 
@@ -293,7 +297,6 @@ func (m *WritableSite) validateContactPhone(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -306,12 +309,11 @@ func (m *WritableSite) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -319,12 +321,11 @@ func (m *WritableSite) validateDescription(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateFacility(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Facility) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("facility", "body", string(m.Facility), 50); err != nil {
+	if err := validate.MaxLength("facility", "body", m.Facility, 50); err != nil {
 		return err
 	}
 
@@ -332,7 +333,6 @@ func (m *WritableSite) validateFacility(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -350,11 +350,11 @@ func (m *WritableSite) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
@@ -362,12 +362,11 @@ func (m *WritableSite) validateName(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validatePhysicalAddress(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PhysicalAddress) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("physical_address", "body", string(m.PhysicalAddress), 200); err != nil {
+	if err := validate.MaxLength("physical_address", "body", m.PhysicalAddress, 200); err != nil {
 		return err
 	}
 
@@ -375,12 +374,11 @@ func (m *WritableSite) validatePhysicalAddress(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateShippingAddress(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ShippingAddress) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("shipping_address", "body", string(m.ShippingAddress), 200); err != nil {
+	if err := validate.MaxLength("shipping_address", "body", m.ShippingAddress, 200); err != nil {
 		return err
 	}
 
@@ -393,15 +391,15 @@ func (m *WritableSite) validateSlug(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
+	if err := validate.MinLength("slug", "body", *m.Slug, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("slug", "body", string(*m.Slug), 50); err != nil {
+	if err := validate.MaxLength("slug", "body", *m.Slug, 100); err != nil {
 		return err
 	}
 
-	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
+	if err := validate.Pattern("slug", "body", *m.Slug, `^[-a-zA-Z0-9_]+$`); err != nil {
 		return err
 	}
 
@@ -447,7 +445,6 @@ func (m *WritableSite) validateStatusEnum(path, location string, value string) e
 }
 
 func (m *WritableSite) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -461,7 +458,6 @@ func (m *WritableSite) validateStatus(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -486,12 +482,186 @@ func (m *WritableSite) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *WritableSite) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable site based on the context it is used
+func (m *WritableSite) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCircuitCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDeviceCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrefixCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRackCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVirtualmachineCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVlanCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableSite) contextValidateCircuitCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "circuit_count", "body", int64(m.CircuitCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateDeviceCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "device_count", "body", int64(m.DeviceCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidatePrefixCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "prefix_count", "body", int64(m.PrefixCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateRackCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "rack_count", "body", int64(m.RackCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateVirtualmachineCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "virtualmachine_count", "body", int64(m.VirtualmachineCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) contextValidateVlanCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "vlan_count", "body", int64(m.VlanCount)); err != nil {
 		return err
 	}
 

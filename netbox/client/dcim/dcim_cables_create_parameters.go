@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimCablesCreateParams creates a new DcimCablesCreateParams object
-// with the default values initialized.
+// NewDcimCablesCreateParams creates a new DcimCablesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimCablesCreateParams() *DcimCablesCreateParams {
-	var ()
 	return &DcimCablesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimCablesCreateParamsWithTimeout creates a new DcimCablesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimCablesCreateParamsWithTimeout(timeout time.Duration) *DcimCablesCreateParams {
-	var ()
 	return &DcimCablesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimCablesCreateParamsWithContext creates a new DcimCablesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimCablesCreateParamsWithContext(ctx context.Context) *DcimCablesCreateParams {
-	var ()
 	return &DcimCablesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimCablesCreateParamsWithHTTPClient creates a new DcimCablesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimCablesCreateParamsWithHTTPClient(client *http.Client) *DcimCablesCreateParams {
-	var ()
 	return &DcimCablesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimCablesCreateParams contains all the parameters to send to the API endpoint
-for the dcim cables create operation typically these are written to a http.Request
+/* DcimCablesCreateParams contains all the parameters to send to the API endpoint
+   for the dcim cables create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimCablesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCable
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim cables create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesCreateParams) WithDefaults() *DcimCablesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim cables create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim cables create params
@@ -136,7 +150,6 @@ func (o *DcimCablesCreateParams) WriteToRequest(r runtime.ClientRequest, reg str
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamIPAddressesCreateParams creates a new IpamIPAddressesCreateParams object
-// with the default values initialized.
+// NewIpamIPAddressesCreateParams creates a new IpamIPAddressesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamIPAddressesCreateParams() *IpamIPAddressesCreateParams {
-	var ()
 	return &IpamIPAddressesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamIPAddressesCreateParamsWithTimeout creates a new IpamIPAddressesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamIPAddressesCreateParamsWithTimeout(timeout time.Duration) *IpamIPAddressesCreateParams {
-	var ()
 	return &IpamIPAddressesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamIPAddressesCreateParamsWithContext creates a new IpamIPAddressesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamIPAddressesCreateParamsWithContext(ctx context.Context) *IpamIPAddressesCreateParams {
-	var ()
 	return &IpamIPAddressesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamIPAddressesCreateParamsWithHTTPClient creates a new IpamIPAddressesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamIPAddressesCreateParamsWithHTTPClient(client *http.Client) *IpamIPAddressesCreateParams {
-	var ()
 	return &IpamIPAddressesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamIPAddressesCreateParams contains all the parameters to send to the API endpoint
-for the ipam ip addresses create operation typically these are written to a http.Request
+/* IpamIPAddressesCreateParams contains all the parameters to send to the API endpoint
+   for the ipam ip addresses create operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamIPAddressesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableIPAddress
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam ip addresses create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesCreateParams) WithDefaults() *IpamIPAddressesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam ip addresses create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam ip addresses create params
@@ -136,7 +150,6 @@ func (o *IpamIPAddressesCreateParams) WriteToRequest(r runtime.ClientRequest, re
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

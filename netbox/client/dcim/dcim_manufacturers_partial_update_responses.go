@@ -45,14 +45,7 @@ func (o *DcimManufacturersPartialUpdateReader) ReadResponse(response runtime.Cli
 		}
 		return result, nil
 	default:
-		result := NewDcimManufacturersPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimManufacturersPartialUpdateOK() *DcimManufacturersPartialUpdateOK {
 	return &DcimManufacturersPartialUpdateOK{}
 }
 
-/*DcimManufacturersPartialUpdateOK handles this case with default header values.
+/* DcimManufacturersPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimManufacturersPartialUpdateOK dcim manufacturers partial update o k
 */
@@ -72,7 +65,6 @@ type DcimManufacturersPartialUpdateOK struct {
 func (o *DcimManufacturersPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/manufacturers/{id}/][%d] dcimManufacturersPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimManufacturersPartialUpdateOK) GetPayload() *models.Manufacturer {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimManufacturersPartialUpdateOK) readResponse(response runtime.ClientR
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimManufacturersPartialUpdateDefault creates a DcimManufacturersPartialUpdateDefault with default headers values
-func NewDcimManufacturersPartialUpdateDefault(code int) *DcimManufacturersPartialUpdateDefault {
-	return &DcimManufacturersPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimManufacturersPartialUpdateDefault handles this case with default header values.
-
-DcimManufacturersPartialUpdateDefault dcim manufacturers partial update default
-*/
-type DcimManufacturersPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim manufacturers partial update default response
-func (o *DcimManufacturersPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimManufacturersPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/manufacturers/{id}/][%d] dcim_manufacturers_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimManufacturersPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimManufacturersPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

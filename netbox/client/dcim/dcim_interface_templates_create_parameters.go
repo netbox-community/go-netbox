@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimInterfaceTemplatesCreateParams creates a new DcimInterfaceTemplatesCreateParams object
-// with the default values initialized.
+// NewDcimInterfaceTemplatesCreateParams creates a new DcimInterfaceTemplatesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInterfaceTemplatesCreateParams() *DcimInterfaceTemplatesCreateParams {
-	var ()
 	return &DcimInterfaceTemplatesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInterfaceTemplatesCreateParamsWithTimeout creates a new DcimInterfaceTemplatesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInterfaceTemplatesCreateParamsWithTimeout(timeout time.Duration) *DcimInterfaceTemplatesCreateParams {
-	var ()
 	return &DcimInterfaceTemplatesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInterfaceTemplatesCreateParamsWithContext creates a new DcimInterfaceTemplatesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInterfaceTemplatesCreateParamsWithContext(ctx context.Context) *DcimInterfaceTemplatesCreateParams {
-	var ()
 	return &DcimInterfaceTemplatesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInterfaceTemplatesCreateParamsWithHTTPClient creates a new DcimInterfaceTemplatesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInterfaceTemplatesCreateParamsWithHTTPClient(client *http.Client) *DcimInterfaceTemplatesCreateParams {
-	var ()
 	return &DcimInterfaceTemplatesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInterfaceTemplatesCreateParams contains all the parameters to send to the API endpoint
-for the dcim interface templates create operation typically these are written to a http.Request
+/* DcimInterfaceTemplatesCreateParams contains all the parameters to send to the API endpoint
+   for the dcim interface templates create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInterfaceTemplatesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableInterfaceTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim interface templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceTemplatesCreateParams) WithDefaults() *DcimInterfaceTemplatesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim interface templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceTemplatesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim interface templates create params
@@ -136,7 +150,6 @@ func (o *DcimInterfaceTemplatesCreateParams) WriteToRequest(r runtime.ClientRequ
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

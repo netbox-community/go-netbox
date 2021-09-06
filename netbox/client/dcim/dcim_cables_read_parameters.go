@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimCablesReadParams creates a new DcimCablesReadParams object
-// with the default values initialized.
+// NewDcimCablesReadParams creates a new DcimCablesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimCablesReadParams() *DcimCablesReadParams {
-	var ()
 	return &DcimCablesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimCablesReadParamsWithTimeout creates a new DcimCablesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimCablesReadParamsWithTimeout(timeout time.Duration) *DcimCablesReadParams {
-	var ()
 	return &DcimCablesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimCablesReadParamsWithContext creates a new DcimCablesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimCablesReadParamsWithContext(ctx context.Context) *DcimCablesReadParams {
-	var ()
 	return &DcimCablesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimCablesReadParamsWithHTTPClient creates a new DcimCablesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimCablesReadParamsWithHTTPClient(client *http.Client) *DcimCablesReadParams {
-	var ()
 	return &DcimCablesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimCablesReadParams contains all the parameters to send to the API endpoint
-for the dcim cables read operation typically these are written to a http.Request
+/* DcimCablesReadParams contains all the parameters to send to the API endpoint
+   for the dcim cables read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimCablesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this cable.
+	/* ID.
 
+	   A unique integer value identifying this cable.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim cables read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesReadParams) WithDefaults() *DcimCablesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim cables read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim cables read params

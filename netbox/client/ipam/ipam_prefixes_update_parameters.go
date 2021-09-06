@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamPrefixesUpdateParams creates a new IpamPrefixesUpdateParams object
-// with the default values initialized.
+// NewIpamPrefixesUpdateParams creates a new IpamPrefixesUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamPrefixesUpdateParams() *IpamPrefixesUpdateParams {
-	var ()
 	return &IpamPrefixesUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamPrefixesUpdateParamsWithTimeout creates a new IpamPrefixesUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamPrefixesUpdateParamsWithTimeout(timeout time.Duration) *IpamPrefixesUpdateParams {
-	var ()
 	return &IpamPrefixesUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamPrefixesUpdateParamsWithContext creates a new IpamPrefixesUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamPrefixesUpdateParamsWithContext(ctx context.Context) *IpamPrefixesUpdateParams {
-	var ()
 	return &IpamPrefixesUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamPrefixesUpdateParamsWithHTTPClient creates a new IpamPrefixesUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamPrefixesUpdateParamsWithHTTPClient(client *http.Client) *IpamPrefixesUpdateParams {
-	var ()
 	return &IpamPrefixesUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamPrefixesUpdateParams contains all the parameters to send to the API endpoint
-for the ipam prefixes update operation typically these are written to a http.Request
+/* IpamPrefixesUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam prefixes update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamPrefixesUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePrefix
-	/*ID
-	  A unique integer value identifying this prefix.
 
+	/* ID.
+
+	   A unique integer value identifying this prefix.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam prefixes update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesUpdateParams) WithDefaults() *IpamPrefixesUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam prefixes update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam prefixes update params
@@ -153,7 +168,6 @@ func (o *IpamPrefixesUpdateParams) WriteToRequest(r runtime.ClientRequest, reg s
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

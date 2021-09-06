@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewExtrasImageAttachmentsCreateParams creates a new ExtrasImageAttachmentsCreateParams object
-// with the default values initialized.
+// NewExtrasImageAttachmentsCreateParams creates a new ExtrasImageAttachmentsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasImageAttachmentsCreateParams() *ExtrasImageAttachmentsCreateParams {
-	var ()
 	return &ExtrasImageAttachmentsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasImageAttachmentsCreateParamsWithTimeout creates a new ExtrasImageAttachmentsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasImageAttachmentsCreateParamsWithTimeout(timeout time.Duration) *ExtrasImageAttachmentsCreateParams {
-	var ()
 	return &ExtrasImageAttachmentsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasImageAttachmentsCreateParamsWithContext creates a new ExtrasImageAttachmentsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasImageAttachmentsCreateParamsWithContext(ctx context.Context) *ExtrasImageAttachmentsCreateParams {
-	var ()
 	return &ExtrasImageAttachmentsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasImageAttachmentsCreateParamsWithHTTPClient creates a new ExtrasImageAttachmentsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasImageAttachmentsCreateParamsWithHTTPClient(client *http.Client) *ExtrasImageAttachmentsCreateParams {
-	var ()
 	return &ExtrasImageAttachmentsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasImageAttachmentsCreateParams contains all the parameters to send to the API endpoint
-for the extras image attachments create operation typically these are written to a http.Request
+/* ExtrasImageAttachmentsCreateParams contains all the parameters to send to the API endpoint
+   for the extras image attachments create operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasImageAttachmentsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.ImageAttachment
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras image attachments create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsCreateParams) WithDefaults() *ExtrasImageAttachmentsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras image attachments create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras image attachments create params
@@ -136,7 +150,6 @@ func (o *ExtrasImageAttachmentsCreateParams) WriteToRequest(r runtime.ClientRequ
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

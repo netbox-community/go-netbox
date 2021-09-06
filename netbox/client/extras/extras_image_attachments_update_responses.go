@@ -45,14 +45,7 @@ func (o *ExtrasImageAttachmentsUpdateReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		result := NewExtrasImageAttachmentsUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewExtrasImageAttachmentsUpdateOK() *ExtrasImageAttachmentsUpdateOK {
 	return &ExtrasImageAttachmentsUpdateOK{}
 }
 
-/*ExtrasImageAttachmentsUpdateOK handles this case with default header values.
+/* ExtrasImageAttachmentsUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasImageAttachmentsUpdateOK extras image attachments update o k
 */
@@ -72,7 +65,6 @@ type ExtrasImageAttachmentsUpdateOK struct {
 func (o *ExtrasImageAttachmentsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/image-attachments/{id}/][%d] extrasImageAttachmentsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsUpdateOK) GetPayload() *models.ImageAttachment {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *ExtrasImageAttachmentsUpdateOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewExtrasImageAttachmentsUpdateDefault creates a ExtrasImageAttachmentsUpdateDefault with default headers values
-func NewExtrasImageAttachmentsUpdateDefault(code int) *ExtrasImageAttachmentsUpdateDefault {
-	return &ExtrasImageAttachmentsUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*ExtrasImageAttachmentsUpdateDefault handles this case with default header values.
-
-ExtrasImageAttachmentsUpdateDefault extras image attachments update default
-*/
-type ExtrasImageAttachmentsUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the extras image attachments update default response
-func (o *ExtrasImageAttachmentsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *ExtrasImageAttachmentsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /extras/image-attachments/{id}/][%d] extras_image-attachments_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *ExtrasImageAttachmentsUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *ExtrasImageAttachmentsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

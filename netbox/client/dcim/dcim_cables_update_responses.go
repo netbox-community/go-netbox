@@ -45,14 +45,7 @@ func (o *DcimCablesUpdateReader) ReadResponse(response runtime.ClientResponse, c
 		}
 		return result, nil
 	default:
-		result := NewDcimCablesUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimCablesUpdateOK() *DcimCablesUpdateOK {
 	return &DcimCablesUpdateOK{}
 }
 
-/*DcimCablesUpdateOK handles this case with default header values.
+/* DcimCablesUpdateOK describes a response with status code 200, with default header values.
 
 DcimCablesUpdateOK dcim cables update o k
 */
@@ -72,7 +65,6 @@ type DcimCablesUpdateOK struct {
 func (o *DcimCablesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/cables/{id}/][%d] dcimCablesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimCablesUpdateOK) GetPayload() *models.Cable {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimCablesUpdateOK) readResponse(response runtime.ClientResponse, consu
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimCablesUpdateDefault creates a DcimCablesUpdateDefault with default headers values
-func NewDcimCablesUpdateDefault(code int) *DcimCablesUpdateDefault {
-	return &DcimCablesUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimCablesUpdateDefault handles this case with default header values.
-
-DcimCablesUpdateDefault dcim cables update default
-*/
-type DcimCablesUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim cables update default response
-func (o *DcimCablesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimCablesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/cables/{id}/][%d] dcim_cables_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimCablesUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimCablesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

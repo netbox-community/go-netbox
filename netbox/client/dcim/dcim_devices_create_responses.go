@@ -45,14 +45,7 @@ func (o *DcimDevicesCreateReader) ReadResponse(response runtime.ClientResponse, 
 		}
 		return result, nil
 	default:
-		result := NewDcimDevicesCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimDevicesCreateCreated() *DcimDevicesCreateCreated {
 	return &DcimDevicesCreateCreated{}
 }
 
-/*DcimDevicesCreateCreated handles this case with default header values.
+/* DcimDevicesCreateCreated describes a response with status code 201, with default header values.
 
 DcimDevicesCreateCreated dcim devices create created
 */
@@ -72,7 +65,6 @@ type DcimDevicesCreateCreated struct {
 func (o *DcimDevicesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/devices/][%d] dcimDevicesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimDevicesCreateCreated) GetPayload() *models.DeviceWithConfigContext {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimDevicesCreateCreated) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimDevicesCreateDefault creates a DcimDevicesCreateDefault with default headers values
-func NewDcimDevicesCreateDefault(code int) *DcimDevicesCreateDefault {
-	return &DcimDevicesCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimDevicesCreateDefault handles this case with default header values.
-
-DcimDevicesCreateDefault dcim devices create default
-*/
-type DcimDevicesCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim devices create default response
-func (o *DcimDevicesCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimDevicesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/devices/][%d] dcim_devices_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimDevicesCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimDevicesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

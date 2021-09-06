@@ -44,7 +44,6 @@ func (o *DcimDeviceBaysReadReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimDeviceBaysReadOK() *DcimDeviceBaysReadOK {
 	return &DcimDeviceBaysReadOK{}
 }
 
-/*DcimDeviceBaysReadOK handles this case with default header values.
+/* DcimDeviceBaysReadOK describes a response with status code 200, with default header values.
 
 DcimDeviceBaysReadOK dcim device bays read o k
 */
@@ -66,7 +65,6 @@ type DcimDeviceBaysReadOK struct {
 func (o *DcimDeviceBaysReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-bays/{id}/][%d] dcimDeviceBaysReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceBaysReadOK) GetPayload() *models.DeviceBay {
 	return o.Payload
 }

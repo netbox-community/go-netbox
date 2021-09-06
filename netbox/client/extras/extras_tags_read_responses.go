@@ -44,7 +44,6 @@ func (o *ExtrasTagsReadReader) ReadResponse(response runtime.ClientResponse, con
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewExtrasTagsReadOK() *ExtrasTagsReadOK {
 	return &ExtrasTagsReadOK{}
 }
 
-/*ExtrasTagsReadOK handles this case with default header values.
+/* ExtrasTagsReadOK describes a response with status code 200, with default header values.
 
 ExtrasTagsReadOK extras tags read o k
 */
@@ -66,7 +65,6 @@ type ExtrasTagsReadOK struct {
 func (o *ExtrasTagsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/tags/{id}/][%d] extrasTagsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasTagsReadOK) GetPayload() *models.Tag {
 	return o.Payload
 }

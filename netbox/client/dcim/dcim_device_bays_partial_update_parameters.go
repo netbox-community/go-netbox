@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimDeviceBaysPartialUpdateParams creates a new DcimDeviceBaysPartialUpdateParams object
-// with the default values initialized.
+// NewDcimDeviceBaysPartialUpdateParams creates a new DcimDeviceBaysPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDeviceBaysPartialUpdateParams() *DcimDeviceBaysPartialUpdateParams {
-	var ()
 	return &DcimDeviceBaysPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDeviceBaysPartialUpdateParamsWithTimeout creates a new DcimDeviceBaysPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDeviceBaysPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimDeviceBaysPartialUpdateParams {
-	var ()
 	return &DcimDeviceBaysPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDeviceBaysPartialUpdateParamsWithContext creates a new DcimDeviceBaysPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDeviceBaysPartialUpdateParamsWithContext(ctx context.Context) *DcimDeviceBaysPartialUpdateParams {
-	var ()
 	return &DcimDeviceBaysPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDeviceBaysPartialUpdateParamsWithHTTPClient creates a new DcimDeviceBaysPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDeviceBaysPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimDeviceBaysPartialUpdateParams {
-	var ()
 	return &DcimDeviceBaysPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDeviceBaysPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim device bays partial update operation typically these are written to a http.Request
+/* DcimDeviceBaysPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim device bays partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDeviceBaysPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableDeviceBay
-	/*ID
-	  A unique integer value identifying this device bay.
 
+	/* ID.
+
+	   A unique integer value identifying this device bay.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim device bays partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBaysPartialUpdateParams) WithDefaults() *DcimDeviceBaysPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim device bays partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBaysPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim device bays partial update params
@@ -153,7 +168,6 @@ func (o *DcimDeviceBaysPartialUpdateParams) WriteToRequest(r runtime.ClientReque
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

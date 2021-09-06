@@ -44,7 +44,6 @@ func (o *DcimInventoryItemsReadReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimInventoryItemsReadOK() *DcimInventoryItemsReadOK {
 	return &DcimInventoryItemsReadOK{}
 }
 
-/*DcimInventoryItemsReadOK handles this case with default header values.
+/* DcimInventoryItemsReadOK describes a response with status code 200, with default header values.
 
 DcimInventoryItemsReadOK dcim inventory items read o k
 */
@@ -66,7 +65,6 @@ type DcimInventoryItemsReadOK struct {
 func (o *DcimInventoryItemsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/inventory-items/{id}/][%d] dcimInventoryItemsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInventoryItemsReadOK) GetPayload() *models.InventoryItem {
 	return o.Payload
 }

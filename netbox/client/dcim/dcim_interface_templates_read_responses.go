@@ -44,7 +44,6 @@ func (o *DcimInterfaceTemplatesReadReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimInterfaceTemplatesReadOK() *DcimInterfaceTemplatesReadOK {
 	return &DcimInterfaceTemplatesReadOK{}
 }
 
-/*DcimInterfaceTemplatesReadOK handles this case with default header values.
+/* DcimInterfaceTemplatesReadOK describes a response with status code 200, with default header values.
 
 DcimInterfaceTemplatesReadOK dcim interface templates read o k
 */
@@ -66,7 +65,6 @@ type DcimInterfaceTemplatesReadOK struct {
 func (o *DcimInterfaceTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesReadOK) GetPayload() *models.InterfaceTemplate {
 	return o.Payload
 }

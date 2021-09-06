@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPowerFeedsReadParams creates a new DcimPowerFeedsReadParams object
-// with the default values initialized.
+// NewDcimPowerFeedsReadParams creates a new DcimPowerFeedsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerFeedsReadParams() *DcimPowerFeedsReadParams {
-	var ()
 	return &DcimPowerFeedsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerFeedsReadParamsWithTimeout creates a new DcimPowerFeedsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerFeedsReadParamsWithTimeout(timeout time.Duration) *DcimPowerFeedsReadParams {
-	var ()
 	return &DcimPowerFeedsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerFeedsReadParamsWithContext creates a new DcimPowerFeedsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerFeedsReadParamsWithContext(ctx context.Context) *DcimPowerFeedsReadParams {
-	var ()
 	return &DcimPowerFeedsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerFeedsReadParamsWithHTTPClient creates a new DcimPowerFeedsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerFeedsReadParamsWithHTTPClient(client *http.Client) *DcimPowerFeedsReadParams {
-	var ()
 	return &DcimPowerFeedsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerFeedsReadParams contains all the parameters to send to the API endpoint
-for the dcim power feeds read operation typically these are written to a http.Request
+/* DcimPowerFeedsReadParams contains all the parameters to send to the API endpoint
+   for the dcim power feeds read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerFeedsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this power feed.
+	/* ID.
 
+	   A unique integer value identifying this power feed.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power feeds read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsReadParams) WithDefaults() *DcimPowerFeedsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power feeds read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power feeds read params

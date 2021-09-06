@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewExtrasExportTemplatesPartialUpdateParams creates a new ExtrasExportTemplatesPartialUpdateParams object
-// with the default values initialized.
+// NewExtrasExportTemplatesPartialUpdateParams creates a new ExtrasExportTemplatesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasExportTemplatesPartialUpdateParams() *ExtrasExportTemplatesPartialUpdateParams {
-	var ()
 	return &ExtrasExportTemplatesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasExportTemplatesPartialUpdateParamsWithTimeout creates a new ExtrasExportTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasExportTemplatesPartialUpdateParamsWithTimeout(timeout time.Duration) *ExtrasExportTemplatesPartialUpdateParams {
-	var ()
 	return &ExtrasExportTemplatesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasExportTemplatesPartialUpdateParamsWithContext creates a new ExtrasExportTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasExportTemplatesPartialUpdateParamsWithContext(ctx context.Context) *ExtrasExportTemplatesPartialUpdateParams {
-	var ()
 	return &ExtrasExportTemplatesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasExportTemplatesPartialUpdateParamsWithHTTPClient creates a new ExtrasExportTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasExportTemplatesPartialUpdateParamsWithHTTPClient(client *http.Client) *ExtrasExportTemplatesPartialUpdateParams {
-	var ()
 	return &ExtrasExportTemplatesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasExportTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the extras export templates partial update operation typically these are written to a http.Request
+/* ExtrasExportTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the extras export templates partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasExportTemplatesPartialUpdateParams struct {
 
-	/*Data*/
-	Data *models.WritableExportTemplate
-	/*ID
-	  A unique integer value identifying this export template.
+	// Data.
+	Data *models.ExportTemplate
 
+	/* ID.
+
+	   A unique integer value identifying this export template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras export templates partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasExportTemplatesPartialUpdateParams) WithDefaults() *ExtrasExportTemplatesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras export templates partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasExportTemplatesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras export templates partial update params
@@ -125,13 +140,13 @@ func (o *ExtrasExportTemplatesPartialUpdateParams) SetHTTPClient(client *http.Cl
 }
 
 // WithData adds the data to the extras export templates partial update params
-func (o *ExtrasExportTemplatesPartialUpdateParams) WithData(data *models.WritableExportTemplate) *ExtrasExportTemplatesPartialUpdateParams {
+func (o *ExtrasExportTemplatesPartialUpdateParams) WithData(data *models.ExportTemplate) *ExtrasExportTemplatesPartialUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the extras export templates partial update params
-func (o *ExtrasExportTemplatesPartialUpdateParams) SetData(data *models.WritableExportTemplate) {
+func (o *ExtrasExportTemplatesPartialUpdateParams) SetData(data *models.ExportTemplate) {
 	o.Data = data
 }
 
@@ -153,7 +168,6 @@ func (o *ExtrasExportTemplatesPartialUpdateParams) WriteToRequest(r runtime.Clie
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewCircuitsProvidersCreateParams creates a new CircuitsProvidersCreateParams object
-// with the default values initialized.
+// NewCircuitsProvidersCreateParams creates a new CircuitsProvidersCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsProvidersCreateParams() *CircuitsProvidersCreateParams {
-	var ()
 	return &CircuitsProvidersCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsProvidersCreateParamsWithTimeout creates a new CircuitsProvidersCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsProvidersCreateParamsWithTimeout(timeout time.Duration) *CircuitsProvidersCreateParams {
-	var ()
 	return &CircuitsProvidersCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsProvidersCreateParamsWithContext creates a new CircuitsProvidersCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsProvidersCreateParamsWithContext(ctx context.Context) *CircuitsProvidersCreateParams {
-	var ()
 	return &CircuitsProvidersCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsProvidersCreateParamsWithHTTPClient creates a new CircuitsProvidersCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsProvidersCreateParamsWithHTTPClient(client *http.Client) *CircuitsProvidersCreateParams {
-	var ()
 	return &CircuitsProvidersCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsProvidersCreateParams contains all the parameters to send to the API endpoint
-for the circuits providers create operation typically these are written to a http.Request
+/* CircuitsProvidersCreateParams contains all the parameters to send to the API endpoint
+   for the circuits providers create operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsProvidersCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Provider
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits providers create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsProvidersCreateParams) WithDefaults() *CircuitsProvidersCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits providers create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsProvidersCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits providers create params
@@ -136,7 +150,6 @@ func (o *CircuitsProvidersCreateParams) WriteToRequest(r runtime.ClientRequest, 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

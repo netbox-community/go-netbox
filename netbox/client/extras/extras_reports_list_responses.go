@@ -41,7 +41,6 @@ func (o *ExtrasReportsListReader) ReadResponse(response runtime.ClientResponse, 
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -52,7 +51,7 @@ func NewExtrasReportsListOK() *ExtrasReportsListOK {
 	return &ExtrasReportsListOK{}
 }
 
-/*ExtrasReportsListOK handles this case with default header values.
+/* ExtrasReportsListOK describes a response with status code 200, with default header values.
 
 ExtrasReportsListOK extras reports list o k
 */

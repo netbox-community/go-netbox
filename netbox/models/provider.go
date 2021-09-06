@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -63,7 +64,11 @@ type Provider struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -74,7 +79,7 @@ type Provider struct {
 
 	// Name
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	Name *string `json:"name"`
 
@@ -88,13 +93,13 @@ type Provider struct {
 
 	// Slug
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true
@@ -149,12 +154,11 @@ func (m *Provider) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Provider) validateAccount(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Account) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("account", "body", string(m.Account), 30); err != nil {
+	if err := validate.MaxLength("account", "body", m.Account, 30); err != nil {
 		return err
 	}
 
@@ -162,16 +166,15 @@ func (m *Provider) validateAccount(formats strfmt.Registry) error {
 }
 
 func (m *Provider) validateAsn(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Asn) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("asn", "body", int64(*m.Asn), 1, false); err != nil {
+	if err := validate.MinimumInt("asn", "body", *m.Asn, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("asn", "body", int64(*m.Asn), 4.294967295e+09, false); err != nil {
+	if err := validate.MaximumInt("asn", "body", *m.Asn, 4.294967295e+09, false); err != nil {
 		return err
 	}
 
@@ -179,7 +182,6 @@ func (m *Provider) validateAsn(formats strfmt.Registry) error {
 }
 
 func (m *Provider) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -192,7 +194,6 @@ func (m *Provider) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *Provider) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -210,11 +211,11 @@ func (m *Provider) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
@@ -222,12 +223,11 @@ func (m *Provider) validateName(formats strfmt.Registry) error {
 }
 
 func (m *Provider) validatePortalURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PortalURL) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("portal_url", "body", string(m.PortalURL), 200); err != nil {
+	if err := validate.MaxLength("portal_url", "body", m.PortalURL.String(), 200); err != nil {
 		return err
 	}
 
@@ -244,15 +244,15 @@ func (m *Provider) validateSlug(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
+	if err := validate.MinLength("slug", "body", *m.Slug, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("slug", "body", string(*m.Slug), 50); err != nil {
+	if err := validate.MaxLength("slug", "body", *m.Slug, 100); err != nil {
 		return err
 	}
 
-	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
+	if err := validate.Pattern("slug", "body", *m.Slug, `^[-a-zA-Z0-9_]+$`); err != nil {
 		return err
 	}
 
@@ -260,7 +260,6 @@ func (m *Provider) validateSlug(formats strfmt.Registry) error {
 }
 
 func (m *Provider) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -285,12 +284,121 @@ func (m *Provider) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *Provider) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this provider based on the context it is used
+func (m *Provider) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCircuitCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Provider) contextValidateCircuitCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "circuit_count", "body", int64(m.CircuitCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Provider) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Provider) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Provider) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Provider) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Provider) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Provider) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

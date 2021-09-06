@@ -45,14 +45,7 @@ func (o *DcimPowerOutletTemplatesUpdateReader) ReadResponse(response runtime.Cli
 		}
 		return result, nil
 	default:
-		result := NewDcimPowerOutletTemplatesUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimPowerOutletTemplatesUpdateOK() *DcimPowerOutletTemplatesUpdateOK {
 	return &DcimPowerOutletTemplatesUpdateOK{}
 }
 
-/*DcimPowerOutletTemplatesUpdateOK handles this case with default header values.
+/* DcimPowerOutletTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletTemplatesUpdateOK dcim power outlet templates update o k
 */
@@ -72,7 +65,6 @@ type DcimPowerOutletTemplatesUpdateOK struct {
 func (o *DcimPowerOutletTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerOutletTemplatesUpdateOK) GetPayload() *models.PowerOutletTemplate {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimPowerOutletTemplatesUpdateOK) readResponse(response runtime.ClientR
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimPowerOutletTemplatesUpdateDefault creates a DcimPowerOutletTemplatesUpdateDefault with default headers values
-func NewDcimPowerOutletTemplatesUpdateDefault(code int) *DcimPowerOutletTemplatesUpdateDefault {
-	return &DcimPowerOutletTemplatesUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimPowerOutletTemplatesUpdateDefault handles this case with default header values.
-
-DcimPowerOutletTemplatesUpdateDefault dcim power outlet templates update default
-*/
-type DcimPowerOutletTemplatesUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim power outlet templates update default response
-func (o *DcimPowerOutletTemplatesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimPowerOutletTemplatesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimPowerOutletTemplatesUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimPowerOutletTemplatesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

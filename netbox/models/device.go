@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -63,6 +64,10 @@ type Device struct {
 	// Required: true
 	DeviceType *NestedDeviceType `json:"device_type"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Display name
 	// Read Only: true
 	DisplayName string `json:"display_name,omitempty"`
@@ -70,7 +75,7 @@ type Device struct {
 	// face
 	Face *DeviceFace `json:"face,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -81,6 +86,9 @@ type Device struct {
 
 	// Local context data
 	LocalContextData *string `json:"local_context_data,omitempty"`
+
+	// location
+	Location *NestedLocation `json:"location,omitempty"`
 
 	// Name
 	// Max Length: 64
@@ -123,7 +131,7 @@ type Device struct {
 	Status *DeviceStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
@@ -176,6 +184,10 @@ func (m *Device) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLocation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -254,12 +266,11 @@ func (m *Device) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateAssetTag(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AssetTag) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("asset_tag", "body", string(*m.AssetTag), 50); err != nil {
+	if err := validate.MaxLength("asset_tag", "body", *m.AssetTag, 50); err != nil {
 		return err
 	}
 
@@ -267,7 +278,6 @@ func (m *Device) validateAssetTag(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateCluster(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Cluster) { // not required
 		return nil
 	}
@@ -285,7 +295,6 @@ func (m *Device) validateCluster(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -334,7 +343,6 @@ func (m *Device) validateDeviceType(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateFace(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Face) { // not required
 		return nil
 	}
@@ -352,7 +360,6 @@ func (m *Device) validateFace(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -364,13 +371,29 @@ func (m *Device) validateLastUpdated(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Device) validateName(formats strfmt.Registry) error {
+func (m *Device) validateLocation(formats strfmt.Registry) error {
+	if swag.IsZero(m.Location) { // not required
+		return nil
+	}
 
+	if m.Location != nil {
+		if err := m.Location.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) validateName(formats strfmt.Registry) error {
 	if swag.IsZero(m.Name) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -378,7 +401,6 @@ func (m *Device) validateName(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateParentDevice(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ParentDevice) { // not required
 		return nil
 	}
@@ -396,7 +418,6 @@ func (m *Device) validateParentDevice(formats strfmt.Registry) error {
 }
 
 func (m *Device) validatePlatform(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Platform) { // not required
 		return nil
 	}
@@ -414,16 +435,15 @@ func (m *Device) validatePlatform(formats strfmt.Registry) error {
 }
 
 func (m *Device) validatePosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Position) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("position", "body", int64(*m.Position), 1, false); err != nil {
+	if err := validate.MinimumInt("position", "body", *m.Position, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("position", "body", int64(*m.Position), 32767, false); err != nil {
+	if err := validate.MaximumInt("position", "body", *m.Position, 32767, false); err != nil {
 		return err
 	}
 
@@ -431,7 +451,6 @@ func (m *Device) validatePosition(formats strfmt.Registry) error {
 }
 
 func (m *Device) validatePrimaryIP(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PrimaryIP) { // not required
 		return nil
 	}
@@ -449,7 +468,6 @@ func (m *Device) validatePrimaryIP(formats strfmt.Registry) error {
 }
 
 func (m *Device) validatePrimaryIp4(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PrimaryIp4) { // not required
 		return nil
 	}
@@ -467,7 +485,6 @@ func (m *Device) validatePrimaryIp4(formats strfmt.Registry) error {
 }
 
 func (m *Device) validatePrimaryIp6(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PrimaryIp6) { // not required
 		return nil
 	}
@@ -485,7 +502,6 @@ func (m *Device) validatePrimaryIp6(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateRack(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Rack) { // not required
 		return nil
 	}
@@ -503,12 +519,11 @@ func (m *Device) validateRack(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateSerial(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Serial) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("serial", "body", string(m.Serial), 50); err != nil {
+	if err := validate.MaxLength("serial", "body", m.Serial, 50); err != nil {
 		return err
 	}
 
@@ -534,7 +549,6 @@ func (m *Device) validateSite(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -552,7 +566,6 @@ func (m *Device) validateStatus(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -577,7 +590,6 @@ func (m *Device) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateTenant(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tenant) { // not required
 		return nil
 	}
@@ -595,7 +607,6 @@ func (m *Device) validateTenant(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -608,16 +619,15 @@ func (m *Device) validateURL(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateVcPosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.VcPosition) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("vc_position", "body", int64(*m.VcPosition), 0, false); err != nil {
+	if err := validate.MinimumInt("vc_position", "body", *m.VcPosition, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("vc_position", "body", int64(*m.VcPosition), 255, false); err != nil {
+	if err := validate.MaximumInt("vc_position", "body", *m.VcPosition, 255, false); err != nil {
 		return err
 	}
 
@@ -625,16 +635,15 @@ func (m *Device) validateVcPosition(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateVcPriority(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.VcPriority) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("vc_priority", "body", int64(*m.VcPriority), 0, false); err != nil {
+	if err := validate.MinimumInt("vc_priority", "body", *m.VcPriority, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("vc_priority", "body", int64(*m.VcPriority), 255, false); err != nil {
+	if err := validate.MaximumInt("vc_priority", "body", *m.VcPriority, 255, false); err != nil {
 		return err
 	}
 
@@ -642,13 +651,392 @@ func (m *Device) validateVcPriority(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateVirtualChassis(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.VirtualChassis) { // not required
 		return nil
 	}
 
 	if m.VirtualChassis != nil {
 		if err := m.VirtualChassis.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("virtual_chassis")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this device based on the context it is used
+func (m *Device) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCluster(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDeviceRole(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDeviceType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFace(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLocation(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateParentDevice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePlatform(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrimaryIP(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrimaryIp4(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrimaryIp6(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRack(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSite(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTenant(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVirtualChassis(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Device) contextValidateCluster(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cluster != nil {
+		if err := m.Cluster.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cluster")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateDeviceRole(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.DeviceRole != nil {
+		if err := m.DeviceRole.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device_role")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.DeviceType != nil {
+		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device_type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateFace(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Face != nil {
+		if err := m.Face.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("face")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateLocation(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Location != nil {
+		if err := m.Location.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateParentDevice(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ParentDevice != nil {
+		if err := m.ParentDevice.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("parent_device")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidatePlatform(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Platform != nil {
+		if err := m.Platform.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("platform")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidatePrimaryIP(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PrimaryIP != nil {
+		if err := m.PrimaryIP.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("primary_ip")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidatePrimaryIp4(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PrimaryIp4 != nil {
+		if err := m.PrimaryIp4.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("primary_ip4")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidatePrimaryIp6(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PrimaryIp6 != nil {
+		if err := m.PrimaryIp6.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("primary_ip6")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateRack(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Rack != nil {
+		if err := m.Rack.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("rack")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Site != nil {
+		if err := m.Site.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("site")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Status != nil {
+		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Tenant != nil {
+		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Device) contextValidateVirtualChassis(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.VirtualChassis != nil {
+		if err := m.VirtualChassis.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_chassis")
 			}
@@ -794,6 +1182,11 @@ func (m *DeviceFace) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this device face based on context it is used
+func (m *DeviceFace) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 
@@ -962,6 +1355,11 @@ func (m *DeviceStatus) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this device status based on context it is used
+func (m *DeviceStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

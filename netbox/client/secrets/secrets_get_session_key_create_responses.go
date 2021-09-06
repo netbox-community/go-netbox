@@ -22,7 +22,6 @@ package secrets
 
 import (
 	"fmt"
-	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -43,14 +42,7 @@ func (o *SecretsGetSessionKeyCreateReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		result := NewSecretsGetSessionKeyCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -59,7 +51,7 @@ func NewSecretsGetSessionKeyCreateCreated() *SecretsGetSessionKeyCreateCreated {
 	return &SecretsGetSessionKeyCreateCreated{}
 }
 
-/*SecretsGetSessionKeyCreateCreated handles this case with default header values.
+/* SecretsGetSessionKeyCreateCreated describes a response with status code 201, with default header values.
 
 SecretsGetSessionKeyCreateCreated secrets get session key create created
 */
@@ -71,46 +63,6 @@ func (o *SecretsGetSessionKeyCreateCreated) Error() string {
 }
 
 func (o *SecretsGetSessionKeyCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	return nil
-}
-
-// NewSecretsGetSessionKeyCreateDefault creates a SecretsGetSessionKeyCreateDefault with default headers values
-func NewSecretsGetSessionKeyCreateDefault(code int) *SecretsGetSessionKeyCreateDefault {
-	return &SecretsGetSessionKeyCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*SecretsGetSessionKeyCreateDefault handles this case with default header values.
-
-SecretsGetSessionKeyCreateDefault secrets get session key create default
-*/
-type SecretsGetSessionKeyCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the secrets get session key create default response
-func (o *SecretsGetSessionKeyCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *SecretsGetSessionKeyCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /secrets/get-session-key/][%d] secrets_get-session-key_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *SecretsGetSessionKeyCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *SecretsGetSessionKeyCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
-		return err
-	}
 
 	return nil
 }

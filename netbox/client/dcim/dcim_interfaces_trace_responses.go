@@ -44,7 +44,6 @@ func (o *DcimInterfacesTraceReader) ReadResponse(response runtime.ClientResponse
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimInterfacesTraceOK() *DcimInterfacesTraceOK {
 	return &DcimInterfacesTraceOK{}
 }
 
-/*DcimInterfacesTraceOK handles this case with default header values.
+/* DcimInterfacesTraceOK describes a response with status code 200, with default header values.
 
 DcimInterfacesTraceOK dcim interfaces trace o k
 */
@@ -66,7 +65,6 @@ type DcimInterfacesTraceOK struct {
 func (o *DcimInterfacesTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcimInterfacesTraceOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfacesTraceOK) GetPayload() *models.Interface {
 	return o.Payload
 }

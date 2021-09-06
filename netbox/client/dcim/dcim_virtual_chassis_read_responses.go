@@ -44,7 +44,6 @@ func (o *DcimVirtualChassisReadReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimVirtualChassisReadOK() *DcimVirtualChassisReadOK {
 	return &DcimVirtualChassisReadOK{}
 }
 
-/*DcimVirtualChassisReadOK handles this case with default header values.
+/* DcimVirtualChassisReadOK describes a response with status code 200, with default header values.
 
 DcimVirtualChassisReadOK dcim virtual chassis read o k
 */
@@ -66,7 +65,6 @@ type DcimVirtualChassisReadOK struct {
 func (o *DcimVirtualChassisReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimVirtualChassisReadOK) GetPayload() *models.VirtualChassis {
 	return o.Payload
 }

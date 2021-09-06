@@ -45,14 +45,7 @@ func (o *DcimCablesCreateReader) ReadResponse(response runtime.ClientResponse, c
 		}
 		return result, nil
 	default:
-		result := NewDcimCablesCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimCablesCreateCreated() *DcimCablesCreateCreated {
 	return &DcimCablesCreateCreated{}
 }
 
-/*DcimCablesCreateCreated handles this case with default header values.
+/* DcimCablesCreateCreated describes a response with status code 201, with default header values.
 
 DcimCablesCreateCreated dcim cables create created
 */
@@ -72,7 +65,6 @@ type DcimCablesCreateCreated struct {
 func (o *DcimCablesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/cables/][%d] dcimCablesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimCablesCreateCreated) GetPayload() *models.Cable {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimCablesCreateCreated) readResponse(response runtime.ClientResponse, 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimCablesCreateDefault creates a DcimCablesCreateDefault with default headers values
-func NewDcimCablesCreateDefault(code int) *DcimCablesCreateDefault {
-	return &DcimCablesCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimCablesCreateDefault handles this case with default header values.
-
-DcimCablesCreateDefault dcim cables create default
-*/
-type DcimCablesCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim cables create default response
-func (o *DcimCablesCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimCablesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/cables/][%d] dcim_cables_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimCablesCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimCablesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

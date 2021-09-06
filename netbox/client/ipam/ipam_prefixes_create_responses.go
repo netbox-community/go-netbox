@@ -45,14 +45,7 @@ func (o *IpamPrefixesCreateReader) ReadResponse(response runtime.ClientResponse,
 		}
 		return result, nil
 	default:
-		result := NewIpamPrefixesCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewIpamPrefixesCreateCreated() *IpamPrefixesCreateCreated {
 	return &IpamPrefixesCreateCreated{}
 }
 
-/*IpamPrefixesCreateCreated handles this case with default header values.
+/* IpamPrefixesCreateCreated describes a response with status code 201, with default header values.
 
 IpamPrefixesCreateCreated ipam prefixes create created
 */
@@ -72,7 +65,6 @@ type IpamPrefixesCreateCreated struct {
 func (o *IpamPrefixesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/prefixes/][%d] ipamPrefixesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamPrefixesCreateCreated) GetPayload() *models.Prefix {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *IpamPrefixesCreateCreated) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewIpamPrefixesCreateDefault creates a IpamPrefixesCreateDefault with default headers values
-func NewIpamPrefixesCreateDefault(code int) *IpamPrefixesCreateDefault {
-	return &IpamPrefixesCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*IpamPrefixesCreateDefault handles this case with default header values.
-
-IpamPrefixesCreateDefault ipam prefixes create default
-*/
-type IpamPrefixesCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the ipam prefixes create default response
-func (o *IpamPrefixesCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *IpamPrefixesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/prefixes/][%d] ipam_prefixes_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *IpamPrefixesCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *IpamPrefixesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

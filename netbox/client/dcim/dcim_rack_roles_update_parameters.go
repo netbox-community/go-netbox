@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimRackRolesUpdateParams creates a new DcimRackRolesUpdateParams object
-// with the default values initialized.
+// NewDcimRackRolesUpdateParams creates a new DcimRackRolesUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackRolesUpdateParams() *DcimRackRolesUpdateParams {
-	var ()
 	return &DcimRackRolesUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackRolesUpdateParamsWithTimeout creates a new DcimRackRolesUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackRolesUpdateParamsWithTimeout(timeout time.Duration) *DcimRackRolesUpdateParams {
-	var ()
 	return &DcimRackRolesUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackRolesUpdateParamsWithContext creates a new DcimRackRolesUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackRolesUpdateParamsWithContext(ctx context.Context) *DcimRackRolesUpdateParams {
-	var ()
 	return &DcimRackRolesUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackRolesUpdateParamsWithHTTPClient creates a new DcimRackRolesUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackRolesUpdateParamsWithHTTPClient(client *http.Client) *DcimRackRolesUpdateParams {
-	var ()
 	return &DcimRackRolesUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackRolesUpdateParams contains all the parameters to send to the API endpoint
-for the dcim rack roles update operation typically these are written to a http.Request
+/* DcimRackRolesUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim rack roles update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackRolesUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.RackRole
-	/*ID
-	  A unique integer value identifying this rack role.
 
+	/* ID.
+
+	   A unique integer value identifying this rack role.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack roles update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackRolesUpdateParams) WithDefaults() *DcimRackRolesUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack roles update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackRolesUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack roles update params
@@ -153,7 +168,6 @@ func (o *DcimRackRolesUpdateParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

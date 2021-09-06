@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamPrefixesAvailablePrefixesReadParams creates a new IpamPrefixesAvailablePrefixesReadParams object
-// with the default values initialized.
+// NewIpamPrefixesAvailablePrefixesReadParams creates a new IpamPrefixesAvailablePrefixesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamPrefixesAvailablePrefixesReadParams() *IpamPrefixesAvailablePrefixesReadParams {
-	var ()
 	return &IpamPrefixesAvailablePrefixesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamPrefixesAvailablePrefixesReadParamsWithTimeout creates a new IpamPrefixesAvailablePrefixesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamPrefixesAvailablePrefixesReadParamsWithTimeout(timeout time.Duration) *IpamPrefixesAvailablePrefixesReadParams {
-	var ()
 	return &IpamPrefixesAvailablePrefixesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamPrefixesAvailablePrefixesReadParamsWithContext creates a new IpamPrefixesAvailablePrefixesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamPrefixesAvailablePrefixesReadParamsWithContext(ctx context.Context) *IpamPrefixesAvailablePrefixesReadParams {
-	var ()
 	return &IpamPrefixesAvailablePrefixesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamPrefixesAvailablePrefixesReadParamsWithHTTPClient creates a new IpamPrefixesAvailablePrefixesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamPrefixesAvailablePrefixesReadParamsWithHTTPClient(client *http.Client) *IpamPrefixesAvailablePrefixesReadParams {
-	var ()
 	return &IpamPrefixesAvailablePrefixesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamPrefixesAvailablePrefixesReadParams contains all the parameters to send to the API endpoint
-for the ipam prefixes available prefixes read operation typically these are written to a http.Request
+/* IpamPrefixesAvailablePrefixesReadParams contains all the parameters to send to the API endpoint
+   for the ipam prefixes available prefixes read operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamPrefixesAvailablePrefixesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this prefix.
+	/* ID.
 
+	   A unique integer value identifying this prefix.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam prefixes available prefixes read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesAvailablePrefixesReadParams) WithDefaults() *IpamPrefixesAvailablePrefixesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam prefixes available prefixes read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesAvailablePrefixesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam prefixes available prefixes read params

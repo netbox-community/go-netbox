@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamVrfsCreateParams creates a new IpamVrfsCreateParams object
-// with the default values initialized.
+// NewIpamVrfsCreateParams creates a new IpamVrfsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVrfsCreateParams() *IpamVrfsCreateParams {
-	var ()
 	return &IpamVrfsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVrfsCreateParamsWithTimeout creates a new IpamVrfsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVrfsCreateParamsWithTimeout(timeout time.Duration) *IpamVrfsCreateParams {
-	var ()
 	return &IpamVrfsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVrfsCreateParamsWithContext creates a new IpamVrfsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVrfsCreateParamsWithContext(ctx context.Context) *IpamVrfsCreateParams {
-	var ()
 	return &IpamVrfsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVrfsCreateParamsWithHTTPClient creates a new IpamVrfsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVrfsCreateParamsWithHTTPClient(client *http.Client) *IpamVrfsCreateParams {
-	var ()
 	return &IpamVrfsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVrfsCreateParams contains all the parameters to send to the API endpoint
-for the ipam vrfs create operation typically these are written to a http.Request
+/* IpamVrfsCreateParams contains all the parameters to send to the API endpoint
+   for the ipam vrfs create operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVrfsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVRF
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vrfs create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsCreateParams) WithDefaults() *IpamVrfsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vrfs create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vrfs create params
@@ -136,7 +150,6 @@ func (o *IpamVrfsCreateParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

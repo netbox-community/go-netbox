@@ -45,14 +45,7 @@ func (o *DcimRegionsPartialUpdateReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		result := NewDcimRegionsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimRegionsPartialUpdateOK() *DcimRegionsPartialUpdateOK {
 	return &DcimRegionsPartialUpdateOK{}
 }
 
-/*DcimRegionsPartialUpdateOK handles this case with default header values.
+/* DcimRegionsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimRegionsPartialUpdateOK dcim regions partial update o k
 */
@@ -72,7 +65,6 @@ type DcimRegionsPartialUpdateOK struct {
 func (o *DcimRegionsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/regions/{id}/][%d] dcimRegionsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRegionsPartialUpdateOK) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimRegionsPartialUpdateOK) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimRegionsPartialUpdateDefault creates a DcimRegionsPartialUpdateDefault with default headers values
-func NewDcimRegionsPartialUpdateDefault(code int) *DcimRegionsPartialUpdateDefault {
-	return &DcimRegionsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimRegionsPartialUpdateDefault handles this case with default header values.
-
-DcimRegionsPartialUpdateDefault dcim regions partial update default
-*/
-type DcimRegionsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim regions partial update default response
-func (o *DcimRegionsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimRegionsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/regions/{id}/][%d] dcim_regions_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimRegionsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimRegionsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

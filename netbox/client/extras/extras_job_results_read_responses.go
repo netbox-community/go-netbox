@@ -44,7 +44,6 @@ func (o *ExtrasJobResultsReadReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewExtrasJobResultsReadOK() *ExtrasJobResultsReadOK {
 	return &ExtrasJobResultsReadOK{}
 }
 
-/*ExtrasJobResultsReadOK handles this case with default header values.
+/* ExtrasJobResultsReadOK describes a response with status code 200, with default header values.
 
 ExtrasJobResultsReadOK extras job results read o k
 */
@@ -66,7 +65,6 @@ type ExtrasJobResultsReadOK struct {
 func (o *ExtrasJobResultsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extrasJobResultsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasJobResultsReadOK) GetPayload() *models.JobResult {
 	return o.Payload
 }

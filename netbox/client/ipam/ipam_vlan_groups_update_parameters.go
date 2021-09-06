@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamVlanGroupsUpdateParams creates a new IpamVlanGroupsUpdateParams object
-// with the default values initialized.
+// NewIpamVlanGroupsUpdateParams creates a new IpamVlanGroupsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVlanGroupsUpdateParams() *IpamVlanGroupsUpdateParams {
-	var ()
 	return &IpamVlanGroupsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVlanGroupsUpdateParamsWithTimeout creates a new IpamVlanGroupsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVlanGroupsUpdateParamsWithTimeout(timeout time.Duration) *IpamVlanGroupsUpdateParams {
-	var ()
 	return &IpamVlanGroupsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVlanGroupsUpdateParamsWithContext creates a new IpamVlanGroupsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVlanGroupsUpdateParamsWithContext(ctx context.Context) *IpamVlanGroupsUpdateParams {
-	var ()
 	return &IpamVlanGroupsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVlanGroupsUpdateParamsWithHTTPClient creates a new IpamVlanGroupsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVlanGroupsUpdateParamsWithHTTPClient(client *http.Client) *IpamVlanGroupsUpdateParams {
-	var ()
 	return &IpamVlanGroupsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVlanGroupsUpdateParams contains all the parameters to send to the API endpoint
-for the ipam vlan groups update operation typically these are written to a http.Request
+/* IpamVlanGroupsUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam vlan groups update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVlanGroupsUpdateParams struct {
 
-	/*Data*/
-	Data *models.WritableVLANGroup
-	/*ID
-	  A unique integer value identifying this VLAN group.
+	// Data.
+	Data *models.VLANGroup
 
+	/* ID.
+
+	   A unique integer value identifying this VLAN group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vlan groups update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlanGroupsUpdateParams) WithDefaults() *IpamVlanGroupsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vlan groups update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlanGroupsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vlan groups update params
@@ -125,13 +140,13 @@ func (o *IpamVlanGroupsUpdateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the ipam vlan groups update params
-func (o *IpamVlanGroupsUpdateParams) WithData(data *models.WritableVLANGroup) *IpamVlanGroupsUpdateParams {
+func (o *IpamVlanGroupsUpdateParams) WithData(data *models.VLANGroup) *IpamVlanGroupsUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the ipam vlan groups update params
-func (o *IpamVlanGroupsUpdateParams) SetData(data *models.WritableVLANGroup) {
+func (o *IpamVlanGroupsUpdateParams) SetData(data *models.VLANGroup) {
 	o.Data = data
 }
 
@@ -153,7 +168,6 @@ func (o *IpamVlanGroupsUpdateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

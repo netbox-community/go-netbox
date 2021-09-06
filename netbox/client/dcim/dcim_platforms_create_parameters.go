@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimPlatformsCreateParams creates a new DcimPlatformsCreateParams object
-// with the default values initialized.
+// NewDcimPlatformsCreateParams creates a new DcimPlatformsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPlatformsCreateParams() *DcimPlatformsCreateParams {
-	var ()
 	return &DcimPlatformsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPlatformsCreateParamsWithTimeout creates a new DcimPlatformsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPlatformsCreateParamsWithTimeout(timeout time.Duration) *DcimPlatformsCreateParams {
-	var ()
 	return &DcimPlatformsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPlatformsCreateParamsWithContext creates a new DcimPlatformsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPlatformsCreateParamsWithContext(ctx context.Context) *DcimPlatformsCreateParams {
-	var ()
 	return &DcimPlatformsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPlatformsCreateParamsWithHTTPClient creates a new DcimPlatformsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPlatformsCreateParamsWithHTTPClient(client *http.Client) *DcimPlatformsCreateParams {
-	var ()
 	return &DcimPlatformsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPlatformsCreateParams contains all the parameters to send to the API endpoint
-for the dcim platforms create operation typically these are written to a http.Request
+/* DcimPlatformsCreateParams contains all the parameters to send to the API endpoint
+   for the dcim platforms create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPlatformsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePlatform
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim platforms create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPlatformsCreateParams) WithDefaults() *DcimPlatformsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim platforms create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPlatformsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim platforms create params
@@ -136,7 +150,6 @@ func (o *DcimPlatformsCreateParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

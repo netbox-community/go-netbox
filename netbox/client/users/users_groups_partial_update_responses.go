@@ -45,14 +45,7 @@ func (o *UsersGroupsPartialUpdateReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		result := NewUsersGroupsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewUsersGroupsPartialUpdateOK() *UsersGroupsPartialUpdateOK {
 	return &UsersGroupsPartialUpdateOK{}
 }
 
-/*UsersGroupsPartialUpdateOK handles this case with default header values.
+/* UsersGroupsPartialUpdateOK describes a response with status code 200, with default header values.
 
 UsersGroupsPartialUpdateOK users groups partial update o k
 */
@@ -72,7 +65,6 @@ type UsersGroupsPartialUpdateOK struct {
 func (o *UsersGroupsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] usersGroupsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersGroupsPartialUpdateOK) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *UsersGroupsPartialUpdateOK) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewUsersGroupsPartialUpdateDefault creates a UsersGroupsPartialUpdateDefault with default headers values
-func NewUsersGroupsPartialUpdateDefault(code int) *UsersGroupsPartialUpdateDefault {
-	return &UsersGroupsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*UsersGroupsPartialUpdateDefault handles this case with default header values.
-
-UsersGroupsPartialUpdateDefault users groups partial update default
-*/
-type UsersGroupsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the users groups partial update default response
-func (o *UsersGroupsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *UsersGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /users/groups/{id}/][%d] users_groups_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *UsersGroupsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *UsersGroupsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimInventoryItemsUpdateParams creates a new DcimInventoryItemsUpdateParams object
-// with the default values initialized.
+// NewDcimInventoryItemsUpdateParams creates a new DcimInventoryItemsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInventoryItemsUpdateParams() *DcimInventoryItemsUpdateParams {
-	var ()
 	return &DcimInventoryItemsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInventoryItemsUpdateParamsWithTimeout creates a new DcimInventoryItemsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInventoryItemsUpdateParamsWithTimeout(timeout time.Duration) *DcimInventoryItemsUpdateParams {
-	var ()
 	return &DcimInventoryItemsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInventoryItemsUpdateParamsWithContext creates a new DcimInventoryItemsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInventoryItemsUpdateParamsWithContext(ctx context.Context) *DcimInventoryItemsUpdateParams {
-	var ()
 	return &DcimInventoryItemsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInventoryItemsUpdateParamsWithHTTPClient creates a new DcimInventoryItemsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInventoryItemsUpdateParamsWithHTTPClient(client *http.Client) *DcimInventoryItemsUpdateParams {
-	var ()
 	return &DcimInventoryItemsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInventoryItemsUpdateParams contains all the parameters to send to the API endpoint
-for the dcim inventory items update operation typically these are written to a http.Request
+/* DcimInventoryItemsUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim inventory items update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInventoryItemsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableInventoryItem
-	/*ID
-	  A unique integer value identifying this inventory item.
 
+	/* ID.
+
+	   A unique integer value identifying this inventory item.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim inventory items update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInventoryItemsUpdateParams) WithDefaults() *DcimInventoryItemsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim inventory items update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInventoryItemsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim inventory items update params
@@ -153,7 +168,6 @@ func (o *DcimInventoryItemsUpdateParams) WriteToRequest(r runtime.ClientRequest,
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

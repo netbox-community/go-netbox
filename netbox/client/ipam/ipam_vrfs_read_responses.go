@@ -44,7 +44,6 @@ func (o *IpamVrfsReadReader) ReadResponse(response runtime.ClientResponse, consu
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewIpamVrfsReadOK() *IpamVrfsReadOK {
 	return &IpamVrfsReadOK{}
 }
 
-/*IpamVrfsReadOK handles this case with default header values.
+/* IpamVrfsReadOK describes a response with status code 200, with default header values.
 
 IpamVrfsReadOK ipam vrfs read o k
 */
@@ -66,7 +65,6 @@ type IpamVrfsReadOK struct {
 func (o *IpamVrfsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipamVrfsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVrfsReadOK) GetPayload() *models.VRF {
 	return o.Payload
 }

@@ -45,14 +45,7 @@ func (o *IpamVlanGroupsPartialUpdateReader) ReadResponse(response runtime.Client
 		}
 		return result, nil
 	default:
-		result := NewIpamVlanGroupsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewIpamVlanGroupsPartialUpdateOK() *IpamVlanGroupsPartialUpdateOK {
 	return &IpamVlanGroupsPartialUpdateOK{}
 }
 
-/*IpamVlanGroupsPartialUpdateOK handles this case with default header values.
+/* IpamVlanGroupsPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamVlanGroupsPartialUpdateOK ipam vlan groups partial update o k
 */
@@ -72,7 +65,6 @@ type IpamVlanGroupsPartialUpdateOK struct {
 func (o *IpamVlanGroupsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/vlan-groups/{id}/][%d] ipamVlanGroupsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVlanGroupsPartialUpdateOK) GetPayload() *models.VLANGroup {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *IpamVlanGroupsPartialUpdateOK) readResponse(response runtime.ClientResp
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewIpamVlanGroupsPartialUpdateDefault creates a IpamVlanGroupsPartialUpdateDefault with default headers values
-func NewIpamVlanGroupsPartialUpdateDefault(code int) *IpamVlanGroupsPartialUpdateDefault {
-	return &IpamVlanGroupsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*IpamVlanGroupsPartialUpdateDefault handles this case with default header values.
-
-IpamVlanGroupsPartialUpdateDefault ipam vlan groups partial update default
-*/
-type IpamVlanGroupsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the ipam vlan groups partial update default response
-func (o *IpamVlanGroupsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *IpamVlanGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /ipam/vlan-groups/{id}/][%d] ipam_vlan-groups_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *IpamVlanGroupsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *IpamVlanGroupsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

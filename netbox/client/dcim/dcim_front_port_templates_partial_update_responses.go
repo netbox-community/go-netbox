@@ -45,14 +45,7 @@ func (o *DcimFrontPortTemplatesPartialUpdateReader) ReadResponse(response runtim
 		}
 		return result, nil
 	default:
-		result := NewDcimFrontPortTemplatesPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimFrontPortTemplatesPartialUpdateOK() *DcimFrontPortTemplatesPartialUp
 	return &DcimFrontPortTemplatesPartialUpdateOK{}
 }
 
-/*DcimFrontPortTemplatesPartialUpdateOK handles this case with default header values.
+/* DcimFrontPortTemplatesPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimFrontPortTemplatesPartialUpdateOK dcim front port templates partial update o k
 */
@@ -72,7 +65,6 @@ type DcimFrontPortTemplatesPartialUpdateOK struct {
 func (o *DcimFrontPortTemplatesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/front-port-templates/{id}/][%d] dcimFrontPortTemplatesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimFrontPortTemplatesPartialUpdateOK) GetPayload() *models.FrontPortTemplate {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimFrontPortTemplatesPartialUpdateOK) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimFrontPortTemplatesPartialUpdateDefault creates a DcimFrontPortTemplatesPartialUpdateDefault with default headers values
-func NewDcimFrontPortTemplatesPartialUpdateDefault(code int) *DcimFrontPortTemplatesPartialUpdateDefault {
-	return &DcimFrontPortTemplatesPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimFrontPortTemplatesPartialUpdateDefault handles this case with default header values.
-
-DcimFrontPortTemplatesPartialUpdateDefault dcim front port templates partial update default
-*/
-type DcimFrontPortTemplatesPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim front port templates partial update default response
-func (o *DcimFrontPortTemplatesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimFrontPortTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/front-port-templates/{id}/][%d] dcim_front-port-templates_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimFrontPortTemplatesPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimFrontPortTemplatesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

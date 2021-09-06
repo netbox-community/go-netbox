@@ -31,64 +31,79 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewDcimConnectedDeviceListParams creates a new DcimConnectedDeviceListParams object
-// with the default values initialized.
+// NewDcimConnectedDeviceListParams creates a new DcimConnectedDeviceListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConnectedDeviceListParams() *DcimConnectedDeviceListParams {
-	var ()
 	return &DcimConnectedDeviceListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConnectedDeviceListParamsWithTimeout creates a new DcimConnectedDeviceListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConnectedDeviceListParamsWithTimeout(timeout time.Duration) *DcimConnectedDeviceListParams {
-	var ()
 	return &DcimConnectedDeviceListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConnectedDeviceListParamsWithContext creates a new DcimConnectedDeviceListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConnectedDeviceListParamsWithContext(ctx context.Context) *DcimConnectedDeviceListParams {
-	var ()
 	return &DcimConnectedDeviceListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConnectedDeviceListParamsWithHTTPClient creates a new DcimConnectedDeviceListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConnectedDeviceListParamsWithHTTPClient(client *http.Client) *DcimConnectedDeviceListParams {
-	var ()
 	return &DcimConnectedDeviceListParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConnectedDeviceListParams contains all the parameters to send to the API endpoint
-for the dcim connected device list operation typically these are written to a http.Request
+/* DcimConnectedDeviceListParams contains all the parameters to send to the API endpoint
+   for the dcim connected device list operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConnectedDeviceListParams struct {
 
-	/*PeerDevice
-	  The name of the peer device
+	/* PeerDevice.
 
+	   The name of the peer device
 	*/
 	PeerDevice string
-	/*PeerInterface
-	  The name of the peer interface
 
+	/* PeerInterface.
+
+	   The name of the peer interface
 	*/
 	PeerInterface string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim connected device list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConnectedDeviceListParams) WithDefaults() *DcimConnectedDeviceListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim connected device list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConnectedDeviceListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim connected device list params
@@ -158,6 +173,7 @@ func (o *DcimConnectedDeviceListParams) WriteToRequest(r runtime.ClientRequest, 
 	qrPeerDevice := o.PeerDevice
 	qPeerDevice := qrPeerDevice
 	if qPeerDevice != "" {
+
 		if err := r.SetQueryParam("peer_device", qPeerDevice); err != nil {
 			return err
 		}
@@ -167,6 +183,7 @@ func (o *DcimConnectedDeviceListParams) WriteToRequest(r runtime.ClientRequest, 
 	qrPeerInterface := o.PeerInterface
 	qPeerInterface := qrPeerInterface
 	if qPeerInterface != "" {
+
 		if err := r.SetQueryParam("peer_interface", qPeerInterface); err != nil {
 			return err
 		}

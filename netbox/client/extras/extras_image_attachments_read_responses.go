@@ -44,7 +44,6 @@ func (o *ExtrasImageAttachmentsReadReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewExtrasImageAttachmentsReadOK() *ExtrasImageAttachmentsReadOK {
 	return &ExtrasImageAttachmentsReadOK{}
 }
 
-/*ExtrasImageAttachmentsReadOK handles this case with default header values.
+/* ExtrasImageAttachmentsReadOK describes a response with status code 200, with default header values.
 
 ExtrasImageAttachmentsReadOK extras image attachments read o k
 */
@@ -66,7 +65,6 @@ type ExtrasImageAttachmentsReadOK struct {
 func (o *ExtrasImageAttachmentsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extrasImageAttachmentsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsReadOK) GetPayload() *models.ImageAttachment {
 	return o.Payload
 }

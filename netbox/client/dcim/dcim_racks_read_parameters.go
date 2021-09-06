@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimRacksReadParams creates a new DcimRacksReadParams object
-// with the default values initialized.
+// NewDcimRacksReadParams creates a new DcimRacksReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRacksReadParams() *DcimRacksReadParams {
-	var ()
 	return &DcimRacksReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRacksReadParamsWithTimeout creates a new DcimRacksReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRacksReadParamsWithTimeout(timeout time.Duration) *DcimRacksReadParams {
-	var ()
 	return &DcimRacksReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRacksReadParamsWithContext creates a new DcimRacksReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRacksReadParamsWithContext(ctx context.Context) *DcimRacksReadParams {
-	var ()
 	return &DcimRacksReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRacksReadParamsWithHTTPClient creates a new DcimRacksReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRacksReadParamsWithHTTPClient(client *http.Client) *DcimRacksReadParams {
-	var ()
 	return &DcimRacksReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRacksReadParams contains all the parameters to send to the API endpoint
-for the dcim racks read operation typically these are written to a http.Request
+/* DcimRacksReadParams contains all the parameters to send to the API endpoint
+   for the dcim racks read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRacksReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this rack.
+	/* ID.
 
+	   A unique integer value identifying this rack.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim racks read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRacksReadParams) WithDefaults() *DcimRacksReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim racks read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRacksReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim racks read params

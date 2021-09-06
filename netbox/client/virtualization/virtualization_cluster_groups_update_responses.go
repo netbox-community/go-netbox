@@ -45,14 +45,7 @@ func (o *VirtualizationClusterGroupsUpdateReader) ReadResponse(response runtime.
 		}
 		return result, nil
 	default:
-		result := NewVirtualizationClusterGroupsUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewVirtualizationClusterGroupsUpdateOK() *VirtualizationClusterGroupsUpdate
 	return &VirtualizationClusterGroupsUpdateOK{}
 }
 
-/*VirtualizationClusterGroupsUpdateOK handles this case with default header values.
+/* VirtualizationClusterGroupsUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterGroupsUpdateOK virtualization cluster groups update o k
 */
@@ -72,7 +65,6 @@ type VirtualizationClusterGroupsUpdateOK struct {
 func (o *VirtualizationClusterGroupsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsUpdateOK) GetPayload() *models.ClusterGroup {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *VirtualizationClusterGroupsUpdateOK) readResponse(response runtime.Clie
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewVirtualizationClusterGroupsUpdateDefault creates a VirtualizationClusterGroupsUpdateDefault with default headers values
-func NewVirtualizationClusterGroupsUpdateDefault(code int) *VirtualizationClusterGroupsUpdateDefault {
-	return &VirtualizationClusterGroupsUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*VirtualizationClusterGroupsUpdateDefault handles this case with default header values.
-
-VirtualizationClusterGroupsUpdateDefault virtualization cluster groups update default
-*/
-type VirtualizationClusterGroupsUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the virtualization cluster groups update default response
-func (o *VirtualizationClusterGroupsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *VirtualizationClusterGroupsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *VirtualizationClusterGroupsUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *VirtualizationClusterGroupsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

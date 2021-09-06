@@ -44,7 +44,6 @@ func (o *VirtualizationInterfacesReadReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewVirtualizationInterfacesReadOK() *VirtualizationInterfacesReadOK {
 	return &VirtualizationInterfacesReadOK{}
 }
 
-/*VirtualizationInterfacesReadOK handles this case with default header values.
+/* VirtualizationInterfacesReadOK describes a response with status code 200, with default header values.
 
 VirtualizationInterfacesReadOK virtualization interfaces read o k
 */
@@ -66,7 +65,6 @@ type VirtualizationInterfacesReadOK struct {
 func (o *VirtualizationInterfacesReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/interfaces/{id}/][%d] virtualizationInterfacesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationInterfacesReadOK) GetPayload() *models.VMInterface {
 	return o.Payload
 }

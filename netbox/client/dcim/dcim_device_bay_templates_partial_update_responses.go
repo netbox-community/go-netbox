@@ -45,14 +45,7 @@ func (o *DcimDeviceBayTemplatesPartialUpdateReader) ReadResponse(response runtim
 		}
 		return result, nil
 	default:
-		result := NewDcimDeviceBayTemplatesPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimDeviceBayTemplatesPartialUpdateOK() *DcimDeviceBayTemplatesPartialUp
 	return &DcimDeviceBayTemplatesPartialUpdateOK{}
 }
 
-/*DcimDeviceBayTemplatesPartialUpdateOK handles this case with default header values.
+/* DcimDeviceBayTemplatesPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimDeviceBayTemplatesPartialUpdateOK dcim device bay templates partial update o k
 */
@@ -72,7 +65,6 @@ type DcimDeviceBayTemplatesPartialUpdateOK struct {
 func (o *DcimDeviceBayTemplatesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcimDeviceBayTemplatesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceBayTemplatesPartialUpdateOK) GetPayload() *models.DeviceBayTemplate {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimDeviceBayTemplatesPartialUpdateOK) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimDeviceBayTemplatesPartialUpdateDefault creates a DcimDeviceBayTemplatesPartialUpdateDefault with default headers values
-func NewDcimDeviceBayTemplatesPartialUpdateDefault(code int) *DcimDeviceBayTemplatesPartialUpdateDefault {
-	return &DcimDeviceBayTemplatesPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimDeviceBayTemplatesPartialUpdateDefault handles this case with default header values.
-
-DcimDeviceBayTemplatesPartialUpdateDefault dcim device bay templates partial update default
-*/
-type DcimDeviceBayTemplatesPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim device bay templates partial update default response
-func (o *DcimDeviceBayTemplatesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimDeviceBayTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/{id}/][%d] dcim_device-bay-templates_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimDeviceBayTemplatesPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimDeviceBayTemplatesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

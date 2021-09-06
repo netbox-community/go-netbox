@@ -41,7 +41,6 @@ func (o *DcimRearPortTemplatesDeleteReader) ReadResponse(response runtime.Client
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -52,7 +51,7 @@ func NewDcimRearPortTemplatesDeleteNoContent() *DcimRearPortTemplatesDeleteNoCon
 	return &DcimRearPortTemplatesDeleteNoContent{}
 }
 
-/*DcimRearPortTemplatesDeleteNoContent handles this case with default header values.
+/* DcimRearPortTemplatesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimRearPortTemplatesDeleteNoContent dcim rear port templates delete no content
 */

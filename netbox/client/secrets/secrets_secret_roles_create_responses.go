@@ -45,14 +45,7 @@ func (o *SecretsSecretRolesCreateReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		result := NewSecretsSecretRolesCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewSecretsSecretRolesCreateCreated() *SecretsSecretRolesCreateCreated {
 	return &SecretsSecretRolesCreateCreated{}
 }
 
-/*SecretsSecretRolesCreateCreated handles this case with default header values.
+/* SecretsSecretRolesCreateCreated describes a response with status code 201, with default header values.
 
 SecretsSecretRolesCreateCreated secrets secret roles create created
 */
@@ -72,7 +65,6 @@ type SecretsSecretRolesCreateCreated struct {
 func (o *SecretsSecretRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /secrets/secret-roles/][%d] secretsSecretRolesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *SecretsSecretRolesCreateCreated) GetPayload() *models.SecretRole {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *SecretsSecretRolesCreateCreated) readResponse(response runtime.ClientRe
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewSecretsSecretRolesCreateDefault creates a SecretsSecretRolesCreateDefault with default headers values
-func NewSecretsSecretRolesCreateDefault(code int) *SecretsSecretRolesCreateDefault {
-	return &SecretsSecretRolesCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*SecretsSecretRolesCreateDefault handles this case with default header values.
-
-SecretsSecretRolesCreateDefault secrets secret roles create default
-*/
-type SecretsSecretRolesCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the secrets secret roles create default response
-func (o *SecretsSecretRolesCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *SecretsSecretRolesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /secrets/secret-roles/][%d] secrets_secret-roles_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *SecretsSecretRolesCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *SecretsSecretRolesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

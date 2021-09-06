@@ -44,7 +44,6 @@ func (o *DcimRackReservationsReadReader) ReadResponse(response runtime.ClientRes
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimRackReservationsReadOK() *DcimRackReservationsReadOK {
 	return &DcimRackReservationsReadOK{}
 }
 
-/*DcimRackReservationsReadOK handles this case with default header values.
+/* DcimRackReservationsReadOK describes a response with status code 200, with default header values.
 
 DcimRackReservationsReadOK dcim rack reservations read o k
 */
@@ -66,7 +65,6 @@ type DcimRackReservationsReadOK struct {
 func (o *DcimRackReservationsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-reservations/{id}/][%d] dcimRackReservationsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackReservationsReadOK) GetPayload() *models.RackReservation {
 	return o.Payload
 }
