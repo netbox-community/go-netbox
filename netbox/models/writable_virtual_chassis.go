@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -34,11 +35,18 @@ import (
 // swagger:model WritableVirtualChassis
 type WritableVirtualChassis struct {
 
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Domain
 	// Max Length: 30
 	Domain string `json:"domain,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -56,7 +64,7 @@ type WritableVirtualChassis struct {
 	Name *string `json:"name"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true
@@ -91,12 +99,11 @@ func (m *WritableVirtualChassis) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableVirtualChassis) validateDomain(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Domain) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("domain", "body", string(m.Domain), 30); err != nil {
+	if err := validate.MaxLength("domain", "body", m.Domain, 30); err != nil {
 		return err
 	}
 
@@ -109,11 +116,11 @@ func (m *WritableVirtualChassis) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -121,7 +128,6 @@ func (m *WritableVirtualChassis) validateName(formats strfmt.Registry) error {
 }
 
 func (m *WritableVirtualChassis) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -146,12 +152,95 @@ func (m *WritableVirtualChassis) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *WritableVirtualChassis) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable virtual chassis based on the context it is used
+func (m *WritableVirtualChassis) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateMemberCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableVirtualChassis) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVirtualChassis) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVirtualChassis) contextValidateMemberCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "member_count", "body", int64(m.MemberCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVirtualChassis) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableVirtualChassis) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

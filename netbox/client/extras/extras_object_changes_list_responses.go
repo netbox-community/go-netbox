@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -48,7 +49,6 @@ func (o *ExtrasObjectChangesListReader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -59,7 +59,7 @@ func NewExtrasObjectChangesListOK() *ExtrasObjectChangesListOK {
 	return &ExtrasObjectChangesListOK{}
 }
 
-/*ExtrasObjectChangesListOK handles this case with default header values.
+/* ExtrasObjectChangesListOK describes a response with status code 200, with default header values.
 
 ExtrasObjectChangesListOK extras object changes list o k
 */
@@ -70,7 +70,6 @@ type ExtrasObjectChangesListOK struct {
 func (o *ExtrasObjectChangesListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/object-changes/][%d] extrasObjectChangesListOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasObjectChangesListOK) GetPayload() *ExtrasObjectChangesListOKBody {
 	return o.Payload
 }
@@ -145,7 +144,6 @@ func (o *ExtrasObjectChangesListOKBody) validateCount(formats strfmt.Registry) e
 }
 
 func (o *ExtrasObjectChangesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -158,7 +156,6 @@ func (o *ExtrasObjectChangesListOKBody) validateNext(formats strfmt.Registry) er
 }
 
 func (o *ExtrasObjectChangesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -183,6 +180,38 @@ func (o *ExtrasObjectChangesListOKBody) validateResults(formats strfmt.Registry)
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("extrasObjectChangesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this extras object changes list o k body based on the context it is used
+func (o *ExtrasObjectChangesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *ExtrasObjectChangesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasObjectChangesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

@@ -44,7 +44,6 @@ func (o *IpamPrefixesAvailableIpsReadReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewIpamPrefixesAvailableIpsReadOK() *IpamPrefixesAvailableIpsReadOK {
 	return &IpamPrefixesAvailableIpsReadOK{}
 }
 
-/*IpamPrefixesAvailableIpsReadOK handles this case with default header values.
+/* IpamPrefixesAvailableIpsReadOK describes a response with status code 200, with default header values.
 
 IpamPrefixesAvailableIpsReadOK ipam prefixes available ips read o k
 */
@@ -66,7 +65,6 @@ type IpamPrefixesAvailableIpsReadOK struct {
 func (o *IpamPrefixesAvailableIpsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamPrefixesAvailableIpsReadOK) GetPayload() []*models.AvailableIP {
 	return o.Payload
 }

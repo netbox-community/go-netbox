@@ -45,14 +45,7 @@ func (o *IpamRirsCreateReader) ReadResponse(response runtime.ClientResponse, con
 		}
 		return result, nil
 	default:
-		result := NewIpamRirsCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewIpamRirsCreateCreated() *IpamRirsCreateCreated {
 	return &IpamRirsCreateCreated{}
 }
 
-/*IpamRirsCreateCreated handles this case with default header values.
+/* IpamRirsCreateCreated describes a response with status code 201, with default header values.
 
 IpamRirsCreateCreated ipam rirs create created
 */
@@ -72,7 +65,6 @@ type IpamRirsCreateCreated struct {
 func (o *IpamRirsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipamRirsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamRirsCreateCreated) GetPayload() *models.RIR {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *IpamRirsCreateCreated) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewIpamRirsCreateDefault creates a IpamRirsCreateDefault with default headers values
-func NewIpamRirsCreateDefault(code int) *IpamRirsCreateDefault {
-	return &IpamRirsCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*IpamRirsCreateDefault handles this case with default header values.
-
-IpamRirsCreateDefault ipam rirs create default
-*/
-type IpamRirsCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the ipam rirs create default response
-func (o *IpamRirsCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *IpamRirsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipam_rirs_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *IpamRirsCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *IpamRirsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

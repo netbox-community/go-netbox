@@ -45,14 +45,7 @@ func (o *DcimDeviceBaysUpdateReader) ReadResponse(response runtime.ClientRespons
 		}
 		return result, nil
 	default:
-		result := NewDcimDeviceBaysUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimDeviceBaysUpdateOK() *DcimDeviceBaysUpdateOK {
 	return &DcimDeviceBaysUpdateOK{}
 }
 
-/*DcimDeviceBaysUpdateOK handles this case with default header values.
+/* DcimDeviceBaysUpdateOK describes a response with status code 200, with default header values.
 
 DcimDeviceBaysUpdateOK dcim device bays update o k
 */
@@ -72,7 +65,6 @@ type DcimDeviceBaysUpdateOK struct {
 func (o *DcimDeviceBaysUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/device-bays/{id}/][%d] dcimDeviceBaysUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceBaysUpdateOK) GetPayload() *models.DeviceBay {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimDeviceBaysUpdateOK) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimDeviceBaysUpdateDefault creates a DcimDeviceBaysUpdateDefault with default headers values
-func NewDcimDeviceBaysUpdateDefault(code int) *DcimDeviceBaysUpdateDefault {
-	return &DcimDeviceBaysUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimDeviceBaysUpdateDefault handles this case with default header values.
-
-DcimDeviceBaysUpdateDefault dcim device bays update default
-*/
-type DcimDeviceBaysUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim device bays update default response
-func (o *DcimDeviceBaysUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimDeviceBaysUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/device-bays/{id}/][%d] dcim_device-bays_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimDeviceBaysUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimDeviceBaysUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

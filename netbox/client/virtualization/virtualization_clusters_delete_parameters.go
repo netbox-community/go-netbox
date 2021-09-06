@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewVirtualizationClustersDeleteParams creates a new VirtualizationClustersDeleteParams object
-// with the default values initialized.
+// NewVirtualizationClustersDeleteParams creates a new VirtualizationClustersDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationClustersDeleteParams() *VirtualizationClustersDeleteParams {
-	var ()
 	return &VirtualizationClustersDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationClustersDeleteParamsWithTimeout creates a new VirtualizationClustersDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationClustersDeleteParamsWithTimeout(timeout time.Duration) *VirtualizationClustersDeleteParams {
-	var ()
 	return &VirtualizationClustersDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationClustersDeleteParamsWithContext creates a new VirtualizationClustersDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationClustersDeleteParamsWithContext(ctx context.Context) *VirtualizationClustersDeleteParams {
-	var ()
 	return &VirtualizationClustersDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationClustersDeleteParamsWithHTTPClient creates a new VirtualizationClustersDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationClustersDeleteParamsWithHTTPClient(client *http.Client) *VirtualizationClustersDeleteParams {
-	var ()
 	return &VirtualizationClustersDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationClustersDeleteParams contains all the parameters to send to the API endpoint
-for the virtualization clusters delete operation typically these are written to a http.Request
+/* VirtualizationClustersDeleteParams contains all the parameters to send to the API endpoint
+   for the virtualization clusters delete operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationClustersDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this cluster.
+	/* ID.
 
+	   A unique integer value identifying this cluster.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization clusters delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClustersDeleteParams) WithDefaults() *VirtualizationClustersDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization clusters delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClustersDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization clusters delete params

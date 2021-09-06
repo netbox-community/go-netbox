@@ -45,14 +45,7 @@ func (o *DcimDeviceRolesUpdateReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		result := NewDcimDeviceRolesUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimDeviceRolesUpdateOK() *DcimDeviceRolesUpdateOK {
 	return &DcimDeviceRolesUpdateOK{}
 }
 
-/*DcimDeviceRolesUpdateOK handles this case with default header values.
+/* DcimDeviceRolesUpdateOK describes a response with status code 200, with default header values.
 
 DcimDeviceRolesUpdateOK dcim device roles update o k
 */
@@ -72,7 +65,6 @@ type DcimDeviceRolesUpdateOK struct {
 func (o *DcimDeviceRolesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/device-roles/{id}/][%d] dcimDeviceRolesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceRolesUpdateOK) GetPayload() *models.DeviceRole {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimDeviceRolesUpdateOK) readResponse(response runtime.ClientResponse, 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimDeviceRolesUpdateDefault creates a DcimDeviceRolesUpdateDefault with default headers values
-func NewDcimDeviceRolesUpdateDefault(code int) *DcimDeviceRolesUpdateDefault {
-	return &DcimDeviceRolesUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimDeviceRolesUpdateDefault handles this case with default header values.
-
-DcimDeviceRolesUpdateDefault dcim device roles update default
-*/
-type DcimDeviceRolesUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim device roles update default response
-func (o *DcimDeviceRolesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimDeviceRolesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/device-roles/{id}/][%d] dcim_device-roles_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimDeviceRolesUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimDeviceRolesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

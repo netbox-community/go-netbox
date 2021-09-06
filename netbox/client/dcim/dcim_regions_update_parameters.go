@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimRegionsUpdateParams creates a new DcimRegionsUpdateParams object
-// with the default values initialized.
+// NewDcimRegionsUpdateParams creates a new DcimRegionsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRegionsUpdateParams() *DcimRegionsUpdateParams {
-	var ()
 	return &DcimRegionsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRegionsUpdateParamsWithTimeout creates a new DcimRegionsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRegionsUpdateParamsWithTimeout(timeout time.Duration) *DcimRegionsUpdateParams {
-	var ()
 	return &DcimRegionsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRegionsUpdateParamsWithContext creates a new DcimRegionsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRegionsUpdateParamsWithContext(ctx context.Context) *DcimRegionsUpdateParams {
-	var ()
 	return &DcimRegionsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRegionsUpdateParamsWithHTTPClient creates a new DcimRegionsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRegionsUpdateParamsWithHTTPClient(client *http.Client) *DcimRegionsUpdateParams {
-	var ()
 	return &DcimRegionsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRegionsUpdateParams contains all the parameters to send to the API endpoint
-for the dcim regions update operation typically these are written to a http.Request
+/* DcimRegionsUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim regions update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRegionsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRegion
-	/*ID
-	  A unique integer value identifying this region.
 
+	/* ID.
+
+	   A unique integer value identifying this region.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim regions update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRegionsUpdateParams) WithDefaults() *DcimRegionsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim regions update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRegionsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim regions update params
@@ -153,7 +168,6 @@ func (o *DcimRegionsUpdateParams) WriteToRequest(r runtime.ClientRequest, reg st
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

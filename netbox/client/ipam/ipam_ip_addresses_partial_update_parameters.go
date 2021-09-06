@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamIPAddressesPartialUpdateParams creates a new IpamIPAddressesPartialUpdateParams object
-// with the default values initialized.
+// NewIpamIPAddressesPartialUpdateParams creates a new IpamIPAddressesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamIPAddressesPartialUpdateParams() *IpamIPAddressesPartialUpdateParams {
-	var ()
 	return &IpamIPAddressesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamIPAddressesPartialUpdateParamsWithTimeout creates a new IpamIPAddressesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamIPAddressesPartialUpdateParamsWithTimeout(timeout time.Duration) *IpamIPAddressesPartialUpdateParams {
-	var ()
 	return &IpamIPAddressesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamIPAddressesPartialUpdateParamsWithContext creates a new IpamIPAddressesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamIPAddressesPartialUpdateParamsWithContext(ctx context.Context) *IpamIPAddressesPartialUpdateParams {
-	var ()
 	return &IpamIPAddressesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamIPAddressesPartialUpdateParamsWithHTTPClient creates a new IpamIPAddressesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamIPAddressesPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamIPAddressesPartialUpdateParams {
-	var ()
 	return &IpamIPAddressesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamIPAddressesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the ipam ip addresses partial update operation typically these are written to a http.Request
+/* IpamIPAddressesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam ip addresses partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamIPAddressesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableIPAddress
-	/*ID
-	  A unique integer value identifying this IP address.
 
+	/* ID.
+
+	   A unique integer value identifying this IP address.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam ip addresses partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesPartialUpdateParams) WithDefaults() *IpamIPAddressesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam ip addresses partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam ip addresses partial update params
@@ -153,7 +168,6 @@ func (o *IpamIPAddressesPartialUpdateParams) WriteToRequest(r runtime.ClientRequ
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

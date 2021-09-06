@@ -44,7 +44,6 @@ func (o *SecretsSecretsReadReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewSecretsSecretsReadOK() *SecretsSecretsReadOK {
 	return &SecretsSecretsReadOK{}
 }
 
-/*SecretsSecretsReadOK handles this case with default header values.
+/* SecretsSecretsReadOK describes a response with status code 200, with default header values.
 
 SecretsSecretsReadOK secrets secrets read o k
 */
@@ -66,7 +65,6 @@ type SecretsSecretsReadOK struct {
 func (o *SecretsSecretsReadOK) Error() string {
 	return fmt.Sprintf("[GET /secrets/secrets/{id}/][%d] secretsSecretsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *SecretsSecretsReadOK) GetPayload() *models.Secret {
 	return o.Payload
 }

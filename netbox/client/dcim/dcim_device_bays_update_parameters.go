@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimDeviceBaysUpdateParams creates a new DcimDeviceBaysUpdateParams object
-// with the default values initialized.
+// NewDcimDeviceBaysUpdateParams creates a new DcimDeviceBaysUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDeviceBaysUpdateParams() *DcimDeviceBaysUpdateParams {
-	var ()
 	return &DcimDeviceBaysUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDeviceBaysUpdateParamsWithTimeout creates a new DcimDeviceBaysUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDeviceBaysUpdateParamsWithTimeout(timeout time.Duration) *DcimDeviceBaysUpdateParams {
-	var ()
 	return &DcimDeviceBaysUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDeviceBaysUpdateParamsWithContext creates a new DcimDeviceBaysUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDeviceBaysUpdateParamsWithContext(ctx context.Context) *DcimDeviceBaysUpdateParams {
-	var ()
 	return &DcimDeviceBaysUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDeviceBaysUpdateParamsWithHTTPClient creates a new DcimDeviceBaysUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDeviceBaysUpdateParamsWithHTTPClient(client *http.Client) *DcimDeviceBaysUpdateParams {
-	var ()
 	return &DcimDeviceBaysUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDeviceBaysUpdateParams contains all the parameters to send to the API endpoint
-for the dcim device bays update operation typically these are written to a http.Request
+/* DcimDeviceBaysUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim device bays update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDeviceBaysUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableDeviceBay
-	/*ID
-	  A unique integer value identifying this device bay.
 
+	/* ID.
+
+	   A unique integer value identifying this device bay.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim device bays update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBaysUpdateParams) WithDefaults() *DcimDeviceBaysUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim device bays update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBaysUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim device bays update params
@@ -153,7 +168,6 @@ func (o *DcimDeviceBaysUpdateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

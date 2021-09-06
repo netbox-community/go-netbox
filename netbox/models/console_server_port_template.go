@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 
 	"github.com/go-openapi/errors"
@@ -34,6 +35,11 @@ import (
 // swagger:model ConsoleServerPortTemplate
 type ConsoleServerPortTemplate struct {
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -42,7 +48,11 @@ type ConsoleServerPortTemplate struct {
 	// Required: true
 	DeviceType *NestedDeviceType `json:"device_type"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -51,6 +61,11 @@ type ConsoleServerPortTemplate struct {
 	// Physical label
 	// Max Length: 64
 	Label string `json:"label,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -71,6 +86,10 @@ type ConsoleServerPortTemplate struct {
 func (m *ConsoleServerPortTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
@@ -80,6 +99,10 @@ func (m *ConsoleServerPortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -101,13 +124,24 @@ func (m *ConsoleServerPortTemplate) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ConsoleServerPortTemplate) validateDescription(formats strfmt.Registry) error {
+func (m *ConsoleServerPortTemplate) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
 
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) validateDescription(formats strfmt.Registry) error {
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -133,12 +167,23 @@ func (m *ConsoleServerPortTemplate) validateDeviceType(formats strfmt.Registry) 
 }
 
 func (m *ConsoleServerPortTemplate) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -151,11 +196,11 @@ func (m *ConsoleServerPortTemplate) validateName(formats strfmt.Registry) error 
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -163,7 +208,6 @@ func (m *ConsoleServerPortTemplate) validateName(formats strfmt.Registry) error 
 }
 
 func (m *ConsoleServerPortTemplate) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -181,12 +225,122 @@ func (m *ConsoleServerPortTemplate) validateType(formats strfmt.Registry) error 
 }
 
 func (m *ConsoleServerPortTemplate) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this console server port template based on the context it is used
+func (m *ConsoleServerPortTemplate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDeviceType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.DeviceType != nil {
+		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device_type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Type != nil {
+		if err := m.Type.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -259,20 +413,20 @@ func init() {
 
 const (
 
-	// ConsoleServerPortTemplateTypeLabelDE9 captures enum value "DE-9"
-	ConsoleServerPortTemplateTypeLabelDE9 string = "DE-9"
+	// ConsoleServerPortTemplateTypeLabelDEDash9 captures enum value "DE-9"
+	ConsoleServerPortTemplateTypeLabelDEDash9 string = "DE-9"
 
-	// ConsoleServerPortTemplateTypeLabelDB25 captures enum value "DB-25"
-	ConsoleServerPortTemplateTypeLabelDB25 string = "DB-25"
+	// ConsoleServerPortTemplateTypeLabelDBDash25 captures enum value "DB-25"
+	ConsoleServerPortTemplateTypeLabelDBDash25 string = "DB-25"
 
-	// ConsoleServerPortTemplateTypeLabelRJ11 captures enum value "RJ-11"
-	ConsoleServerPortTemplateTypeLabelRJ11 string = "RJ-11"
+	// ConsoleServerPortTemplateTypeLabelRJDash11 captures enum value "RJ-11"
+	ConsoleServerPortTemplateTypeLabelRJDash11 string = "RJ-11"
 
-	// ConsoleServerPortTemplateTypeLabelRJ12 captures enum value "RJ-12"
-	ConsoleServerPortTemplateTypeLabelRJ12 string = "RJ-12"
+	// ConsoleServerPortTemplateTypeLabelRJDash12 captures enum value "RJ-12"
+	ConsoleServerPortTemplateTypeLabelRJDash12 string = "RJ-12"
 
-	// ConsoleServerPortTemplateTypeLabelRJ45 captures enum value "RJ-45"
-	ConsoleServerPortTemplateTypeLabelRJ45 string = "RJ-45"
+	// ConsoleServerPortTemplateTypeLabelRJDash45 captures enum value "RJ-45"
+	ConsoleServerPortTemplateTypeLabelRJDash45 string = "RJ-45"
 
 	// ConsoleServerPortTemplateTypeLabelUSBTypeA captures enum value "USB Type A"
 	ConsoleServerPortTemplateTypeLabelUSBTypeA string = "USB Type A"
@@ -335,41 +489,41 @@ func init() {
 
 const (
 
-	// ConsoleServerPortTemplateTypeValueDe9 captures enum value "de-9"
-	ConsoleServerPortTemplateTypeValueDe9 string = "de-9"
+	// ConsoleServerPortTemplateTypeValueDeDash9 captures enum value "de-9"
+	ConsoleServerPortTemplateTypeValueDeDash9 string = "de-9"
 
-	// ConsoleServerPortTemplateTypeValueDb25 captures enum value "db-25"
-	ConsoleServerPortTemplateTypeValueDb25 string = "db-25"
+	// ConsoleServerPortTemplateTypeValueDbDash25 captures enum value "db-25"
+	ConsoleServerPortTemplateTypeValueDbDash25 string = "db-25"
 
-	// ConsoleServerPortTemplateTypeValueRj11 captures enum value "rj-11"
-	ConsoleServerPortTemplateTypeValueRj11 string = "rj-11"
+	// ConsoleServerPortTemplateTypeValueRjDash11 captures enum value "rj-11"
+	ConsoleServerPortTemplateTypeValueRjDash11 string = "rj-11"
 
-	// ConsoleServerPortTemplateTypeValueRj12 captures enum value "rj-12"
-	ConsoleServerPortTemplateTypeValueRj12 string = "rj-12"
+	// ConsoleServerPortTemplateTypeValueRjDash12 captures enum value "rj-12"
+	ConsoleServerPortTemplateTypeValueRjDash12 string = "rj-12"
 
-	// ConsoleServerPortTemplateTypeValueRj45 captures enum value "rj-45"
-	ConsoleServerPortTemplateTypeValueRj45 string = "rj-45"
+	// ConsoleServerPortTemplateTypeValueRjDash45 captures enum value "rj-45"
+	ConsoleServerPortTemplateTypeValueRjDash45 string = "rj-45"
 
-	// ConsoleServerPortTemplateTypeValueUsba captures enum value "usb-a"
-	ConsoleServerPortTemplateTypeValueUsba string = "usb-a"
+	// ConsoleServerPortTemplateTypeValueUsbDasha captures enum value "usb-a"
+	ConsoleServerPortTemplateTypeValueUsbDasha string = "usb-a"
 
-	// ConsoleServerPortTemplateTypeValueUsbb captures enum value "usb-b"
-	ConsoleServerPortTemplateTypeValueUsbb string = "usb-b"
+	// ConsoleServerPortTemplateTypeValueUsbDashb captures enum value "usb-b"
+	ConsoleServerPortTemplateTypeValueUsbDashb string = "usb-b"
 
-	// ConsoleServerPortTemplateTypeValueUsbc captures enum value "usb-c"
-	ConsoleServerPortTemplateTypeValueUsbc string = "usb-c"
+	// ConsoleServerPortTemplateTypeValueUsbDashc captures enum value "usb-c"
+	ConsoleServerPortTemplateTypeValueUsbDashc string = "usb-c"
 
-	// ConsoleServerPortTemplateTypeValueUsbMinia captures enum value "usb-mini-a"
-	ConsoleServerPortTemplateTypeValueUsbMinia string = "usb-mini-a"
+	// ConsoleServerPortTemplateTypeValueUsbDashMiniDasha captures enum value "usb-mini-a"
+	ConsoleServerPortTemplateTypeValueUsbDashMiniDasha string = "usb-mini-a"
 
-	// ConsoleServerPortTemplateTypeValueUsbMinib captures enum value "usb-mini-b"
-	ConsoleServerPortTemplateTypeValueUsbMinib string = "usb-mini-b"
+	// ConsoleServerPortTemplateTypeValueUsbDashMiniDashb captures enum value "usb-mini-b"
+	ConsoleServerPortTemplateTypeValueUsbDashMiniDashb string = "usb-mini-b"
 
-	// ConsoleServerPortTemplateTypeValueUsbMicroa captures enum value "usb-micro-a"
-	ConsoleServerPortTemplateTypeValueUsbMicroa string = "usb-micro-a"
+	// ConsoleServerPortTemplateTypeValueUsbDashMicroDasha captures enum value "usb-micro-a"
+	ConsoleServerPortTemplateTypeValueUsbDashMicroDasha string = "usb-micro-a"
 
-	// ConsoleServerPortTemplateTypeValueUsbMicrob captures enum value "usb-micro-b"
-	ConsoleServerPortTemplateTypeValueUsbMicrob string = "usb-micro-b"
+	// ConsoleServerPortTemplateTypeValueUsbDashMicroDashb captures enum value "usb-micro-b"
+	ConsoleServerPortTemplateTypeValueUsbDashMicroDashb string = "usb-micro-b"
 
 	// ConsoleServerPortTemplateTypeValueOther captures enum value "other"
 	ConsoleServerPortTemplateTypeValueOther string = "other"
@@ -394,6 +548,11 @@ func (m *ConsoleServerPortTemplateType) validateValue(formats strfmt.Registry) e
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this console server port template type based on context it is used
+func (m *ConsoleServerPortTemplateType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

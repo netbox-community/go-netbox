@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamAggregatesCreateParams creates a new IpamAggregatesCreateParams object
-// with the default values initialized.
+// NewIpamAggregatesCreateParams creates a new IpamAggregatesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamAggregatesCreateParams() *IpamAggregatesCreateParams {
-	var ()
 	return &IpamAggregatesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamAggregatesCreateParamsWithTimeout creates a new IpamAggregatesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamAggregatesCreateParamsWithTimeout(timeout time.Duration) *IpamAggregatesCreateParams {
-	var ()
 	return &IpamAggregatesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamAggregatesCreateParamsWithContext creates a new IpamAggregatesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamAggregatesCreateParamsWithContext(ctx context.Context) *IpamAggregatesCreateParams {
-	var ()
 	return &IpamAggregatesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamAggregatesCreateParamsWithHTTPClient creates a new IpamAggregatesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamAggregatesCreateParamsWithHTTPClient(client *http.Client) *IpamAggregatesCreateParams {
-	var ()
 	return &IpamAggregatesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamAggregatesCreateParams contains all the parameters to send to the API endpoint
-for the ipam aggregates create operation typically these are written to a http.Request
+/* IpamAggregatesCreateParams contains all the parameters to send to the API endpoint
+   for the ipam aggregates create operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamAggregatesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableAggregate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam aggregates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesCreateParams) WithDefaults() *IpamAggregatesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam aggregates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam aggregates create params
@@ -136,7 +150,6 @@ func (o *IpamAggregatesCreateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimRackReservationsUpdateParams creates a new DcimRackReservationsUpdateParams object
-// with the default values initialized.
+// NewDcimRackReservationsUpdateParams creates a new DcimRackReservationsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackReservationsUpdateParams() *DcimRackReservationsUpdateParams {
-	var ()
 	return &DcimRackReservationsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackReservationsUpdateParamsWithTimeout creates a new DcimRackReservationsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackReservationsUpdateParamsWithTimeout(timeout time.Duration) *DcimRackReservationsUpdateParams {
-	var ()
 	return &DcimRackReservationsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackReservationsUpdateParamsWithContext creates a new DcimRackReservationsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackReservationsUpdateParamsWithContext(ctx context.Context) *DcimRackReservationsUpdateParams {
-	var ()
 	return &DcimRackReservationsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackReservationsUpdateParamsWithHTTPClient creates a new DcimRackReservationsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackReservationsUpdateParamsWithHTTPClient(client *http.Client) *DcimRackReservationsUpdateParams {
-	var ()
 	return &DcimRackReservationsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackReservationsUpdateParams contains all the parameters to send to the API endpoint
-for the dcim rack reservations update operation typically these are written to a http.Request
+/* DcimRackReservationsUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim rack reservations update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackReservationsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRackReservation
-	/*ID
-	  A unique integer value identifying this rack reservation.
 
+	/* ID.
+
+	   A unique integer value identifying this rack reservation.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack reservations update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackReservationsUpdateParams) WithDefaults() *DcimRackReservationsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack reservations update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackReservationsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack reservations update params
@@ -153,7 +168,6 @@ func (o *DcimRackReservationsUpdateParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

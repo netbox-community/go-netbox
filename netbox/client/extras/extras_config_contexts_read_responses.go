@@ -44,7 +44,6 @@ func (o *ExtrasConfigContextsReadReader) ReadResponse(response runtime.ClientRes
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewExtrasConfigContextsReadOK() *ExtrasConfigContextsReadOK {
 	return &ExtrasConfigContextsReadOK{}
 }
 
-/*ExtrasConfigContextsReadOK handles this case with default header values.
+/* ExtrasConfigContextsReadOK describes a response with status code 200, with default header values.
 
 ExtrasConfigContextsReadOK extras config contexts read o k
 */
@@ -66,7 +65,6 @@ type ExtrasConfigContextsReadOK struct {
 func (o *ExtrasConfigContextsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extrasConfigContextsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasConfigContextsReadOK) GetPayload() *models.ConfigContext {
 	return o.Payload
 }

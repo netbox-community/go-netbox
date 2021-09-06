@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimRegionsDeleteParams creates a new DcimRegionsDeleteParams object
-// with the default values initialized.
+// NewDcimRegionsDeleteParams creates a new DcimRegionsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRegionsDeleteParams() *DcimRegionsDeleteParams {
-	var ()
 	return &DcimRegionsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRegionsDeleteParamsWithTimeout creates a new DcimRegionsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRegionsDeleteParamsWithTimeout(timeout time.Duration) *DcimRegionsDeleteParams {
-	var ()
 	return &DcimRegionsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRegionsDeleteParamsWithContext creates a new DcimRegionsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRegionsDeleteParamsWithContext(ctx context.Context) *DcimRegionsDeleteParams {
-	var ()
 	return &DcimRegionsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRegionsDeleteParamsWithHTTPClient creates a new DcimRegionsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRegionsDeleteParamsWithHTTPClient(client *http.Client) *DcimRegionsDeleteParams {
-	var ()
 	return &DcimRegionsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRegionsDeleteParams contains all the parameters to send to the API endpoint
-for the dcim regions delete operation typically these are written to a http.Request
+/* DcimRegionsDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim regions delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRegionsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this region.
+	/* ID.
 
+	   A unique integer value identifying this region.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim regions delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRegionsDeleteParams) WithDefaults() *DcimRegionsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim regions delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRegionsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim regions delete params

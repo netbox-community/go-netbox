@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -61,6 +62,10 @@ type Rack struct {
 	// Read Only: true
 	DeviceCount int64 `json:"device_count,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Display name
 	// Read Only: true
 	DisplayName string `json:"display_name,omitempty"`
@@ -71,10 +76,7 @@ type Rack struct {
 	// Max Length: 50
 	FacilityID *string `json:"facility_id,omitempty"`
 
-	// group
-	Group *NestedRackGroup `json:"group,omitempty"`
-
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -83,9 +85,12 @@ type Rack struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// location
+	Location *NestedLocation `json:"location,omitempty"`
+
 	// Name
 	// Required: true
-	// Max Length: 50
+	// Max Length: 100
 	// Min Length: 1
 	Name *string `json:"name"`
 
@@ -125,7 +130,7 @@ type Rack struct {
 	Status *RackStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
@@ -165,11 +170,11 @@ func (m *Rack) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateGroup(formats); err != nil {
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateLastUpdated(formats); err != nil {
+	if err := m.validateLocation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -236,12 +241,11 @@ func (m *Rack) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateAssetTag(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AssetTag) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("asset_tag", "body", string(*m.AssetTag), 50); err != nil {
+	if err := validate.MaxLength("asset_tag", "body", *m.AssetTag, 50); err != nil {
 		return err
 	}
 
@@ -249,7 +253,6 @@ func (m *Rack) validateAssetTag(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -262,38 +265,18 @@ func (m *Rack) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateFacilityID(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.FacilityID) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("facility_id", "body", string(*m.FacilityID), 50); err != nil {
+	if err := validate.MaxLength("facility_id", "body", *m.FacilityID, 50); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *Rack) validateGroup(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.Group) { // not required
-		return nil
-	}
-
-	if m.Group != nil {
-		if err := m.Group.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("group")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Rack) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -305,17 +288,34 @@ func (m *Rack) validateLastUpdated(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Rack) validateLocation(formats strfmt.Registry) error {
+	if swag.IsZero(m.Location) { // not required
+		return nil
+	}
+
+	if m.Location != nil {
+		if err := m.Location.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Rack) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
@@ -323,16 +323,15 @@ func (m *Rack) validateName(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateOuterDepth(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.OuterDepth) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("outer_depth", "body", int64(*m.OuterDepth), 0, false); err != nil {
+	if err := validate.MinimumInt("outer_depth", "body", *m.OuterDepth, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("outer_depth", "body", int64(*m.OuterDepth), 32767, false); err != nil {
+	if err := validate.MaximumInt("outer_depth", "body", *m.OuterDepth, 32767, false); err != nil {
 		return err
 	}
 
@@ -340,7 +339,6 @@ func (m *Rack) validateOuterDepth(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateOuterUnit(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.OuterUnit) { // not required
 		return nil
 	}
@@ -358,16 +356,15 @@ func (m *Rack) validateOuterUnit(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateOuterWidth(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.OuterWidth) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("outer_width", "body", int64(*m.OuterWidth), 0, false); err != nil {
+	if err := validate.MinimumInt("outer_width", "body", *m.OuterWidth, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("outer_width", "body", int64(*m.OuterWidth), 32767, false); err != nil {
+	if err := validate.MaximumInt("outer_width", "body", *m.OuterWidth, 32767, false); err != nil {
 		return err
 	}
 
@@ -375,7 +372,6 @@ func (m *Rack) validateOuterWidth(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateRole(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Role) { // not required
 		return nil
 	}
@@ -393,12 +389,11 @@ func (m *Rack) validateRole(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateSerial(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Serial) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("serial", "body", string(m.Serial), 50); err != nil {
+	if err := validate.MaxLength("serial", "body", m.Serial, 50); err != nil {
 		return err
 	}
 
@@ -424,7 +419,6 @@ func (m *Rack) validateSite(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -442,7 +436,6 @@ func (m *Rack) validateStatus(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -467,7 +460,6 @@ func (m *Rack) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateTenant(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tenant) { // not required
 		return nil
 	}
@@ -485,7 +477,6 @@ func (m *Rack) validateTenant(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -503,16 +494,15 @@ func (m *Rack) validateType(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateUHeight(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.UHeight) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("u_height", "body", int64(m.UHeight), 1, false); err != nil {
+	if err := validate.MinimumInt("u_height", "body", m.UHeight, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("u_height", "body", int64(m.UHeight), 100, false); err != nil {
+	if err := validate.MaximumInt("u_height", "body", m.UHeight, 100, false); err != nil {
 		return err
 	}
 
@@ -520,7 +510,6 @@ func (m *Rack) validateUHeight(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -533,13 +522,292 @@ func (m *Rack) validateURL(formats strfmt.Registry) error {
 }
 
 func (m *Rack) validateWidth(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Width) { // not required
 		return nil
 	}
 
 	if m.Width != nil {
 		if err := m.Width.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("width")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this rack based on the context it is used
+func (m *Rack) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDeviceCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLocation(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOuterUnit(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePowerfeedCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRole(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSite(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTenant(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateWidth(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Rack) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateDeviceCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "device_count", "body", int64(m.DeviceCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateLocation(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Location != nil {
+		if err := m.Location.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateOuterUnit(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.OuterUnit != nil {
+		if err := m.OuterUnit.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("outer_unit")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidatePowerfeedCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "powerfeed_count", "body", int64(m.PowerfeedCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Role != nil {
+		if err := m.Role.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("role")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Site != nil {
+		if err := m.Site.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("site")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Status != nil {
+		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Tenant != nil {
+		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Type != nil {
+		if err := m.Type.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateWidth(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Width != nil {
+		if err := m.Width.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("width")
 			}
@@ -685,6 +953,11 @@ func (m *RackOuterUnit) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this rack outer unit based on context it is used
+func (m *RackOuterUnit) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 
@@ -844,6 +1117,11 @@ func (m *RackStatus) validateValue(formats strfmt.Registry) error {
 	return nil
 }
 
+// ContextValidate validates this rack status based on context it is used
+func (m *RackStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
 // MarshalBinary interface implementation
 func (m *RackStatus) MarshalBinary() ([]byte, error) {
 	if m == nil {
@@ -910,20 +1188,20 @@ func init() {
 
 const (
 
-	// RackTypeLabelNr2PostFrame captures enum value "2-post frame"
-	RackTypeLabelNr2PostFrame string = "2-post frame"
+	// RackTypeLabelNr2DashPostFrame captures enum value "2-post frame"
+	RackTypeLabelNr2DashPostFrame string = "2-post frame"
 
-	// RackTypeLabelNr4PostFrame captures enum value "4-post frame"
-	RackTypeLabelNr4PostFrame string = "4-post frame"
+	// RackTypeLabelNr4DashPostFrame captures enum value "4-post frame"
+	RackTypeLabelNr4DashPostFrame string = "4-post frame"
 
-	// RackTypeLabelNr4PostCabinet captures enum value "4-post cabinet"
-	RackTypeLabelNr4PostCabinet string = "4-post cabinet"
+	// RackTypeLabelNr4DashPostCabinet captures enum value "4-post cabinet"
+	RackTypeLabelNr4DashPostCabinet string = "4-post cabinet"
 
-	// RackTypeLabelWallMountedFrame captures enum value "Wall-mounted frame"
-	RackTypeLabelWallMountedFrame string = "Wall-mounted frame"
+	// RackTypeLabelWallDashMountedFrame captures enum value "Wall-mounted frame"
+	RackTypeLabelWallDashMountedFrame string = "Wall-mounted frame"
 
-	// RackTypeLabelWallMountedCabinet captures enum value "Wall-mounted cabinet"
-	RackTypeLabelWallMountedCabinet string = "Wall-mounted cabinet"
+	// RackTypeLabelWallDashMountedCabinet captures enum value "Wall-mounted cabinet"
+	RackTypeLabelWallDashMountedCabinet string = "Wall-mounted cabinet"
 )
 
 // prop value enum
@@ -962,20 +1240,20 @@ func init() {
 
 const (
 
-	// RackTypeValueNr2PostFrame captures enum value "2-post-frame"
-	RackTypeValueNr2PostFrame string = "2-post-frame"
+	// RackTypeValueNr2DashPostDashFrame captures enum value "2-post-frame"
+	RackTypeValueNr2DashPostDashFrame string = "2-post-frame"
 
-	// RackTypeValueNr4PostFrame captures enum value "4-post-frame"
-	RackTypeValueNr4PostFrame string = "4-post-frame"
+	// RackTypeValueNr4DashPostDashFrame captures enum value "4-post-frame"
+	RackTypeValueNr4DashPostDashFrame string = "4-post-frame"
 
-	// RackTypeValueNr4PostCabinet captures enum value "4-post-cabinet"
-	RackTypeValueNr4PostCabinet string = "4-post-cabinet"
+	// RackTypeValueNr4DashPostDashCabinet captures enum value "4-post-cabinet"
+	RackTypeValueNr4DashPostDashCabinet string = "4-post-cabinet"
 
-	// RackTypeValueWallFrame captures enum value "wall-frame"
-	RackTypeValueWallFrame string = "wall-frame"
+	// RackTypeValueWallDashFrame captures enum value "wall-frame"
+	RackTypeValueWallDashFrame string = "wall-frame"
 
-	// RackTypeValueWallCabinet captures enum value "wall-cabinet"
-	RackTypeValueWallCabinet string = "wall-cabinet"
+	// RackTypeValueWallDashCabinet captures enum value "wall-cabinet"
+	RackTypeValueWallDashCabinet string = "wall-cabinet"
 )
 
 // prop value enum
@@ -997,6 +1275,11 @@ func (m *RackType) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this rack type based on context it is used
+func (m *RackType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 
@@ -1132,6 +1415,11 @@ func (m *RackWidth) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this rack width based on context it is used
+func (m *RackWidth) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewCircuitsCircuitTerminationsUpdateParams creates a new CircuitsCircuitTerminationsUpdateParams object
-// with the default values initialized.
+// NewCircuitsCircuitTerminationsUpdateParams creates a new CircuitsCircuitTerminationsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitTerminationsUpdateParams() *CircuitsCircuitTerminationsUpdateParams {
-	var ()
 	return &CircuitsCircuitTerminationsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitTerminationsUpdateParamsWithTimeout creates a new CircuitsCircuitTerminationsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitTerminationsUpdateParamsWithTimeout(timeout time.Duration) *CircuitsCircuitTerminationsUpdateParams {
-	var ()
 	return &CircuitsCircuitTerminationsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitTerminationsUpdateParamsWithContext creates a new CircuitsCircuitTerminationsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitTerminationsUpdateParamsWithContext(ctx context.Context) *CircuitsCircuitTerminationsUpdateParams {
-	var ()
 	return &CircuitsCircuitTerminationsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitTerminationsUpdateParamsWithHTTPClient creates a new CircuitsCircuitTerminationsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitTerminationsUpdateParamsWithHTTPClient(client *http.Client) *CircuitsCircuitTerminationsUpdateParams {
-	var ()
 	return &CircuitsCircuitTerminationsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitTerminationsUpdateParams contains all the parameters to send to the API endpoint
-for the circuits circuit terminations update operation typically these are written to a http.Request
+/* CircuitsCircuitTerminationsUpdateParams contains all the parameters to send to the API endpoint
+   for the circuits circuit terminations update operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitTerminationsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCircuitTermination
-	/*ID
-	  A unique integer value identifying this circuit termination.
 
+	/* ID.
+
+	   A unique integer value identifying this circuit termination.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuit terminations update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTerminationsUpdateParams) WithDefaults() *CircuitsCircuitTerminationsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuit terminations update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTerminationsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuit terminations update params
@@ -153,7 +168,6 @@ func (o *CircuitsCircuitTerminationsUpdateParams) WriteToRequest(r runtime.Clien
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

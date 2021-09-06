@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -48,7 +49,6 @@ func (o *UsersUsersListReader) ReadResponse(response runtime.ClientResponse, con
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -59,7 +59,7 @@ func NewUsersUsersListOK() *UsersUsersListOK {
 	return &UsersUsersListOK{}
 }
 
-/*UsersUsersListOK handles this case with default header values.
+/* UsersUsersListOK describes a response with status code 200, with default header values.
 
 UsersUsersListOK users users list o k
 */
@@ -70,7 +70,6 @@ type UsersUsersListOK struct {
 func (o *UsersUsersListOK) Error() string {
 	return fmt.Sprintf("[GET /users/users/][%d] usersUsersListOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersUsersListOK) GetPayload() *UsersUsersListOKBody {
 	return o.Payload
 }
@@ -145,7 +144,6 @@ func (o *UsersUsersListOKBody) validateCount(formats strfmt.Registry) error {
 }
 
 func (o *UsersUsersListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -158,7 +156,6 @@ func (o *UsersUsersListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *UsersUsersListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -183,6 +180,38 @@ func (o *UsersUsersListOKBody) validateResults(formats strfmt.Registry) error {
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("usersUsersListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this users users list o k body based on the context it is used
+func (o *UsersUsersListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *UsersUsersListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("usersUsersListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimRackRolesCreateParams creates a new DcimRackRolesCreateParams object
-// with the default values initialized.
+// NewDcimRackRolesCreateParams creates a new DcimRackRolesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackRolesCreateParams() *DcimRackRolesCreateParams {
-	var ()
 	return &DcimRackRolesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackRolesCreateParamsWithTimeout creates a new DcimRackRolesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackRolesCreateParamsWithTimeout(timeout time.Duration) *DcimRackRolesCreateParams {
-	var ()
 	return &DcimRackRolesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackRolesCreateParamsWithContext creates a new DcimRackRolesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackRolesCreateParamsWithContext(ctx context.Context) *DcimRackRolesCreateParams {
-	var ()
 	return &DcimRackRolesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackRolesCreateParamsWithHTTPClient creates a new DcimRackRolesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackRolesCreateParamsWithHTTPClient(client *http.Client) *DcimRackRolesCreateParams {
-	var ()
 	return &DcimRackRolesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackRolesCreateParams contains all the parameters to send to the API endpoint
-for the dcim rack roles create operation typically these are written to a http.Request
+/* DcimRackRolesCreateParams contains all the parameters to send to the API endpoint
+   for the dcim rack roles create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackRolesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.RackRole
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack roles create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackRolesCreateParams) WithDefaults() *DcimRackRolesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack roles create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackRolesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack roles create params
@@ -136,7 +150,6 @@ func (o *DcimRackRolesCreateParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

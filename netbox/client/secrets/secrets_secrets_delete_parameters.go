@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewSecretsSecretsDeleteParams creates a new SecretsSecretsDeleteParams object
-// with the default values initialized.
+// NewSecretsSecretsDeleteParams creates a new SecretsSecretsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsSecretsDeleteParams() *SecretsSecretsDeleteParams {
-	var ()
 	return &SecretsSecretsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsSecretsDeleteParamsWithTimeout creates a new SecretsSecretsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsSecretsDeleteParamsWithTimeout(timeout time.Duration) *SecretsSecretsDeleteParams {
-	var ()
 	return &SecretsSecretsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsSecretsDeleteParamsWithContext creates a new SecretsSecretsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsSecretsDeleteParamsWithContext(ctx context.Context) *SecretsSecretsDeleteParams {
-	var ()
 	return &SecretsSecretsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsSecretsDeleteParamsWithHTTPClient creates a new SecretsSecretsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsSecretsDeleteParamsWithHTTPClient(client *http.Client) *SecretsSecretsDeleteParams {
-	var ()
 	return &SecretsSecretsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsSecretsDeleteParams contains all the parameters to send to the API endpoint
-for the secrets secrets delete operation typically these are written to a http.Request
+/* SecretsSecretsDeleteParams contains all the parameters to send to the API endpoint
+   for the secrets secrets delete operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsSecretsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this secret.
+	/* ID.
 
+	   A unique integer value identifying this secret.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets secrets delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsDeleteParams) WithDefaults() *SecretsSecretsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets secrets delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets secrets delete params

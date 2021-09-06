@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewExtrasConfigContextsUpdateParams creates a new ExtrasConfigContextsUpdateParams object
-// with the default values initialized.
+// NewExtrasConfigContextsUpdateParams creates a new ExtrasConfigContextsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasConfigContextsUpdateParams() *ExtrasConfigContextsUpdateParams {
-	var ()
 	return &ExtrasConfigContextsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasConfigContextsUpdateParamsWithTimeout creates a new ExtrasConfigContextsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasConfigContextsUpdateParamsWithTimeout(timeout time.Duration) *ExtrasConfigContextsUpdateParams {
-	var ()
 	return &ExtrasConfigContextsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasConfigContextsUpdateParamsWithContext creates a new ExtrasConfigContextsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasConfigContextsUpdateParamsWithContext(ctx context.Context) *ExtrasConfigContextsUpdateParams {
-	var ()
 	return &ExtrasConfigContextsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasConfigContextsUpdateParamsWithHTTPClient creates a new ExtrasConfigContextsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasConfigContextsUpdateParamsWithHTTPClient(client *http.Client) *ExtrasConfigContextsUpdateParams {
-	var ()
 	return &ExtrasConfigContextsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasConfigContextsUpdateParams contains all the parameters to send to the API endpoint
-for the extras config contexts update operation typically these are written to a http.Request
+/* ExtrasConfigContextsUpdateParams contains all the parameters to send to the API endpoint
+   for the extras config contexts update operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableConfigContext
-	/*ID
-	  A unique integer value identifying this config context.
 
+	/* ID.
+
+	   A unique integer value identifying this config context.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras config contexts update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsUpdateParams) WithDefaults() *ExtrasConfigContextsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras config contexts update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras config contexts update params
@@ -153,7 +168,6 @@ func (o *ExtrasConfigContextsUpdateParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

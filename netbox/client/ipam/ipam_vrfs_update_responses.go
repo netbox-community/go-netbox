@@ -45,14 +45,7 @@ func (o *IpamVrfsUpdateReader) ReadResponse(response runtime.ClientResponse, con
 		}
 		return result, nil
 	default:
-		result := NewIpamVrfsUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewIpamVrfsUpdateOK() *IpamVrfsUpdateOK {
 	return &IpamVrfsUpdateOK{}
 }
 
-/*IpamVrfsUpdateOK handles this case with default header values.
+/* IpamVrfsUpdateOK describes a response with status code 200, with default header values.
 
 IpamVrfsUpdateOK ipam vrfs update o k
 */
@@ -72,7 +65,6 @@ type IpamVrfsUpdateOK struct {
 func (o *IpamVrfsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vrfs/{id}/][%d] ipamVrfsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVrfsUpdateOK) GetPayload() *models.VRF {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *IpamVrfsUpdateOK) readResponse(response runtime.ClientResponse, consume
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewIpamVrfsUpdateDefault creates a IpamVrfsUpdateDefault with default headers values
-func NewIpamVrfsUpdateDefault(code int) *IpamVrfsUpdateDefault {
-	return &IpamVrfsUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*IpamVrfsUpdateDefault handles this case with default header values.
-
-IpamVrfsUpdateDefault ipam vrfs update default
-*/
-type IpamVrfsUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the ipam vrfs update default response
-func (o *IpamVrfsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *IpamVrfsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /ipam/vrfs/{id}/][%d] ipam_vrfs_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *IpamVrfsUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *IpamVrfsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

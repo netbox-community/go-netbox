@@ -44,7 +44,6 @@ func (o *DcimConnectedDeviceListReader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimConnectedDeviceListOK() *DcimConnectedDeviceListOK {
 	return &DcimConnectedDeviceListOK{}
 }
 
-/*DcimConnectedDeviceListOK handles this case with default header values.
+/* DcimConnectedDeviceListOK describes a response with status code 200, with default header values.
 
 DcimConnectedDeviceListOK dcim connected device list o k
 */
@@ -66,7 +65,6 @@ type DcimConnectedDeviceListOK struct {
 func (o *DcimConnectedDeviceListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcimConnectedDeviceListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimConnectedDeviceListOK) GetPayload() *models.Device {
 	return o.Payload
 }

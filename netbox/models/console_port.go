@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -35,8 +36,24 @@ import (
 // swagger:model ConsolePort
 type ConsolePort struct {
 
+	// occupied
+	// Read Only: true
+	Occupied *bool `json:"_occupied,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
+
+	// Cable peer
+	//
+	//
+	// Return the appropriate serializer for the cable termination model.
+	//
+	// Read Only: true
+	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+
+	// Cable peer type
+	// Read Only: true
+	CablePeerType string `json:"cable_peer_type,omitempty"`
 
 	// Connected endpoint
 	//
@@ -44,14 +61,23 @@ type ConsolePort struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint reachable
+	// Read Only: true
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
 	// Connected endpoint type
 	// Read Only: true
 	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
-	// connection status
-	ConnectionStatus *ConsolePortConnectionStatus `json:"connection_status,omitempty"`
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -61,7 +87,11 @@ type ConsolePort struct {
 	// Required: true
 	Device *NestedDevice `json:"device"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -71,14 +101,27 @@ type ConsolePort struct {
 	// Max Length: 64
 	Label string `json:"label,omitempty"`
 
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Mark connected
+	//
+	// Treat as if a cable is connected
+	MarkConnected bool `json:"mark_connected,omitempty"`
+
 	// Name
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1
 	Name *string `json:"name"`
 
+	// speed
+	Speed *ConsolePortSpeed `json:"speed,omitempty"`
+
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// type
 	Type *ConsolePortType `json:"type,omitempty"`
@@ -97,7 +140,7 @@ func (m *ConsolePort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateConnectionStatus(formats); err != nil {
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -113,7 +156,15 @@ func (m *ConsolePort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSpeed(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -136,7 +187,6 @@ func (m *ConsolePort) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ConsolePort) validateCable(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Cable) { // not required
 		return nil
 	}
@@ -153,31 +203,24 @@ func (m *ConsolePort) validateCable(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ConsolePort) validateConnectionStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.ConnectionStatus) { // not required
+func (m *ConsolePort) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	if m.ConnectionStatus != nil {
-		if err := m.ConnectionStatus.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("connection_status")
-			}
-			return err
-		}
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
 }
 
 func (m *ConsolePort) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -203,12 +246,23 @@ func (m *ConsolePort) validateDevice(formats strfmt.Registry) error {
 }
 
 func (m *ConsolePort) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -221,19 +275,35 @@ func (m *ConsolePort) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *ConsolePort) validateTags(formats strfmt.Registry) error {
+func (m *ConsolePort) validateSpeed(formats strfmt.Registry) error {
+	if swag.IsZero(m.Speed) { // not required
+		return nil
+	}
 
+	if m.Speed != nil {
+		if err := m.Speed.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("speed")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) validateTags(formats strfmt.Registry) error {
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -258,7 +328,6 @@ func (m *ConsolePort) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *ConsolePort) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -276,12 +345,250 @@ func (m *ConsolePort) validateType(formats strfmt.Registry) error {
 }
 
 func (m *ConsolePort) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this console port based on the context it is used
+func (m *ConsolePort) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDevice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSpeed(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *ConsolePort) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cable != nil {
+		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Device != nil {
+		if err := m.Device.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateSpeed(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Speed != nil {
+		if err := m.Speed.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("speed")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Type != nil {
+		if err := m.Type.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsolePort) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -306,24 +613,24 @@ func (m *ConsolePort) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-// ConsolePortConnectionStatus Connection status
+// ConsolePortSpeed Speed
 //
-// swagger:model ConsolePortConnectionStatus
-type ConsolePortConnectionStatus struct {
+// swagger:model ConsolePortSpeed
+type ConsolePortSpeed struct {
 
 	// label
 	// Required: true
-	// Enum: [Not Connected Connected]
+	// Enum: [1200 bps 2400 bps 4800 bps 9600 bps 19.2 kbps 38.4 kbps 57.6 kbps 115.2 kbps]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [false true]
-	Value *bool `json:"value"`
+	// Enum: [1200 2400 4800 9600 19200 38400 57600 115200]
+	Value *int64 `json:"value"`
 }
 
-// Validate validates this console port connection status
-func (m *ConsolePortConnectionStatus) Validate(formats strfmt.Registry) error {
+// Validate validates this console port speed
+func (m *ConsolePortSpeed) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateLabel(formats); err != nil {
@@ -340,85 +647,108 @@ func (m *ConsolePortConnectionStatus) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var consolePortConnectionStatusTypeLabelPropEnum []interface{}
+var consolePortSpeedTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Not Connected","Connected"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["1200 bps","2400 bps","4800 bps","9600 bps","19.2 kbps","38.4 kbps","57.6 kbps","115.2 kbps"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
-		consolePortConnectionStatusTypeLabelPropEnum = append(consolePortConnectionStatusTypeLabelPropEnum, v)
+		consolePortSpeedTypeLabelPropEnum = append(consolePortSpeedTypeLabelPropEnum, v)
 	}
 }
 
 const (
 
-	// ConsolePortConnectionStatusLabelNotConnected captures enum value "Not Connected"
-	ConsolePortConnectionStatusLabelNotConnected string = "Not Connected"
+	// ConsolePortSpeedLabelNr1200Bps captures enum value "1200 bps"
+	ConsolePortSpeedLabelNr1200Bps string = "1200 bps"
 
-	// ConsolePortConnectionStatusLabelConnected captures enum value "Connected"
-	ConsolePortConnectionStatusLabelConnected string = "Connected"
+	// ConsolePortSpeedLabelNr2400Bps captures enum value "2400 bps"
+	ConsolePortSpeedLabelNr2400Bps string = "2400 bps"
+
+	// ConsolePortSpeedLabelNr4800Bps captures enum value "4800 bps"
+	ConsolePortSpeedLabelNr4800Bps string = "4800 bps"
+
+	// ConsolePortSpeedLabelNr9600Bps captures enum value "9600 bps"
+	ConsolePortSpeedLabelNr9600Bps string = "9600 bps"
+
+	// ConsolePortSpeedLabelNr19Dot2Kbps captures enum value "19.2 kbps"
+	ConsolePortSpeedLabelNr19Dot2Kbps string = "19.2 kbps"
+
+	// ConsolePortSpeedLabelNr38Dot4Kbps captures enum value "38.4 kbps"
+	ConsolePortSpeedLabelNr38Dot4Kbps string = "38.4 kbps"
+
+	// ConsolePortSpeedLabelNr57Dot6Kbps captures enum value "57.6 kbps"
+	ConsolePortSpeedLabelNr57Dot6Kbps string = "57.6 kbps"
+
+	// ConsolePortSpeedLabelNr115Dot2Kbps captures enum value "115.2 kbps"
+	ConsolePortSpeedLabelNr115Dot2Kbps string = "115.2 kbps"
 )
 
 // prop value enum
-func (m *ConsolePortConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, consolePortConnectionStatusTypeLabelPropEnum, true); err != nil {
+func (m *ConsolePortSpeed) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, consolePortSpeedTypeLabelPropEnum, true); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (m *ConsolePortConnectionStatus) validateLabel(formats strfmt.Registry) error {
+func (m *ConsolePortSpeed) validateLabel(formats strfmt.Registry) error {
 
-	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
+	if err := validate.Required("speed"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
 	// value enum
-	if err := m.validateLabelEnum("connection_status"+"."+"label", "body", *m.Label); err != nil {
+	if err := m.validateLabelEnum("speed"+"."+"label", "body", *m.Label); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-var consolePortConnectionStatusTypeValuePropEnum []interface{}
+var consolePortSpeedTypeValuePropEnum []interface{}
 
 func init() {
-	var res []bool
-	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[1200,2400,4800,9600,19200,38400,57600,115200]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
-		consolePortConnectionStatusTypeValuePropEnum = append(consolePortConnectionStatusTypeValuePropEnum, v)
+		consolePortSpeedTypeValuePropEnum = append(consolePortSpeedTypeValuePropEnum, v)
 	}
 }
 
 // prop value enum
-func (m *ConsolePortConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.EnumCase(path, location, value, consolePortConnectionStatusTypeValuePropEnum, true); err != nil {
+func (m *ConsolePortSpeed) validateValueEnum(path, location string, value int64) error {
+	if err := validate.EnumCase(path, location, value, consolePortSpeedTypeValuePropEnum, true); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (m *ConsolePortConnectionStatus) validateValue(formats strfmt.Registry) error {
+func (m *ConsolePortSpeed) validateValue(formats strfmt.Registry) error {
 
-	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+	if err := validate.Required("speed"+"."+"value", "body", m.Value); err != nil {
 		return err
 	}
 
 	// value enum
-	if err := m.validateValueEnum("connection_status"+"."+"value", "body", *m.Value); err != nil {
+	if err := m.validateValueEnum("speed"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this console port speed based on context it is used
+func (m *ConsolePortSpeed) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (m *ConsolePortConnectionStatus) MarshalBinary() ([]byte, error) {
+func (m *ConsolePortSpeed) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -426,8 +756,8 @@ func (m *ConsolePortConnectionStatus) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ConsolePortConnectionStatus) UnmarshalBinary(b []byte) error {
-	var res ConsolePortConnectionStatus
+func (m *ConsolePortSpeed) UnmarshalBinary(b []byte) error {
+	var res ConsolePortSpeed
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -483,20 +813,20 @@ func init() {
 
 const (
 
-	// ConsolePortTypeLabelDE9 captures enum value "DE-9"
-	ConsolePortTypeLabelDE9 string = "DE-9"
+	// ConsolePortTypeLabelDEDash9 captures enum value "DE-9"
+	ConsolePortTypeLabelDEDash9 string = "DE-9"
 
-	// ConsolePortTypeLabelDB25 captures enum value "DB-25"
-	ConsolePortTypeLabelDB25 string = "DB-25"
+	// ConsolePortTypeLabelDBDash25 captures enum value "DB-25"
+	ConsolePortTypeLabelDBDash25 string = "DB-25"
 
-	// ConsolePortTypeLabelRJ11 captures enum value "RJ-11"
-	ConsolePortTypeLabelRJ11 string = "RJ-11"
+	// ConsolePortTypeLabelRJDash11 captures enum value "RJ-11"
+	ConsolePortTypeLabelRJDash11 string = "RJ-11"
 
-	// ConsolePortTypeLabelRJ12 captures enum value "RJ-12"
-	ConsolePortTypeLabelRJ12 string = "RJ-12"
+	// ConsolePortTypeLabelRJDash12 captures enum value "RJ-12"
+	ConsolePortTypeLabelRJDash12 string = "RJ-12"
 
-	// ConsolePortTypeLabelRJ45 captures enum value "RJ-45"
-	ConsolePortTypeLabelRJ45 string = "RJ-45"
+	// ConsolePortTypeLabelRJDash45 captures enum value "RJ-45"
+	ConsolePortTypeLabelRJDash45 string = "RJ-45"
 
 	// ConsolePortTypeLabelUSBTypeA captures enum value "USB Type A"
 	ConsolePortTypeLabelUSBTypeA string = "USB Type A"
@@ -559,41 +889,41 @@ func init() {
 
 const (
 
-	// ConsolePortTypeValueDe9 captures enum value "de-9"
-	ConsolePortTypeValueDe9 string = "de-9"
+	// ConsolePortTypeValueDeDash9 captures enum value "de-9"
+	ConsolePortTypeValueDeDash9 string = "de-9"
 
-	// ConsolePortTypeValueDb25 captures enum value "db-25"
-	ConsolePortTypeValueDb25 string = "db-25"
+	// ConsolePortTypeValueDbDash25 captures enum value "db-25"
+	ConsolePortTypeValueDbDash25 string = "db-25"
 
-	// ConsolePortTypeValueRj11 captures enum value "rj-11"
-	ConsolePortTypeValueRj11 string = "rj-11"
+	// ConsolePortTypeValueRjDash11 captures enum value "rj-11"
+	ConsolePortTypeValueRjDash11 string = "rj-11"
 
-	// ConsolePortTypeValueRj12 captures enum value "rj-12"
-	ConsolePortTypeValueRj12 string = "rj-12"
+	// ConsolePortTypeValueRjDash12 captures enum value "rj-12"
+	ConsolePortTypeValueRjDash12 string = "rj-12"
 
-	// ConsolePortTypeValueRj45 captures enum value "rj-45"
-	ConsolePortTypeValueRj45 string = "rj-45"
+	// ConsolePortTypeValueRjDash45 captures enum value "rj-45"
+	ConsolePortTypeValueRjDash45 string = "rj-45"
 
-	// ConsolePortTypeValueUsba captures enum value "usb-a"
-	ConsolePortTypeValueUsba string = "usb-a"
+	// ConsolePortTypeValueUsbDasha captures enum value "usb-a"
+	ConsolePortTypeValueUsbDasha string = "usb-a"
 
-	// ConsolePortTypeValueUsbb captures enum value "usb-b"
-	ConsolePortTypeValueUsbb string = "usb-b"
+	// ConsolePortTypeValueUsbDashb captures enum value "usb-b"
+	ConsolePortTypeValueUsbDashb string = "usb-b"
 
-	// ConsolePortTypeValueUsbc captures enum value "usb-c"
-	ConsolePortTypeValueUsbc string = "usb-c"
+	// ConsolePortTypeValueUsbDashc captures enum value "usb-c"
+	ConsolePortTypeValueUsbDashc string = "usb-c"
 
-	// ConsolePortTypeValueUsbMinia captures enum value "usb-mini-a"
-	ConsolePortTypeValueUsbMinia string = "usb-mini-a"
+	// ConsolePortTypeValueUsbDashMiniDasha captures enum value "usb-mini-a"
+	ConsolePortTypeValueUsbDashMiniDasha string = "usb-mini-a"
 
-	// ConsolePortTypeValueUsbMinib captures enum value "usb-mini-b"
-	ConsolePortTypeValueUsbMinib string = "usb-mini-b"
+	// ConsolePortTypeValueUsbDashMiniDashb captures enum value "usb-mini-b"
+	ConsolePortTypeValueUsbDashMiniDashb string = "usb-mini-b"
 
-	// ConsolePortTypeValueUsbMicroa captures enum value "usb-micro-a"
-	ConsolePortTypeValueUsbMicroa string = "usb-micro-a"
+	// ConsolePortTypeValueUsbDashMicroDasha captures enum value "usb-micro-a"
+	ConsolePortTypeValueUsbDashMicroDasha string = "usb-micro-a"
 
-	// ConsolePortTypeValueUsbMicrob captures enum value "usb-micro-b"
-	ConsolePortTypeValueUsbMicrob string = "usb-micro-b"
+	// ConsolePortTypeValueUsbDashMicroDashb captures enum value "usb-micro-b"
+	ConsolePortTypeValueUsbDashMicroDashb string = "usb-micro-b"
 
 	// ConsolePortTypeValueOther captures enum value "other"
 	ConsolePortTypeValueOther string = "other"
@@ -618,6 +948,11 @@ func (m *ConsolePortType) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this console port type based on context it is used
+func (m *ConsolePortType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

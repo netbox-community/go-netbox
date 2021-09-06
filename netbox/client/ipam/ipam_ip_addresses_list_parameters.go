@@ -32,180 +32,295 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamIPAddressesListParams creates a new IpamIPAddressesListParams object
-// with the default values initialized.
+// NewIpamIPAddressesListParams creates a new IpamIPAddressesListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamIPAddressesListParams() *IpamIPAddressesListParams {
-	var ()
 	return &IpamIPAddressesListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamIPAddressesListParamsWithTimeout creates a new IpamIPAddressesListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamIPAddressesListParamsWithTimeout(timeout time.Duration) *IpamIPAddressesListParams {
-	var ()
 	return &IpamIPAddressesListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamIPAddressesListParamsWithContext creates a new IpamIPAddressesListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamIPAddressesListParamsWithContext(ctx context.Context) *IpamIPAddressesListParams {
-	var ()
 	return &IpamIPAddressesListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamIPAddressesListParamsWithHTTPClient creates a new IpamIPAddressesListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamIPAddressesListParamsWithHTTPClient(client *http.Client) *IpamIPAddressesListParams {
-	var ()
 	return &IpamIPAddressesListParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamIPAddressesListParams contains all the parameters to send to the API endpoint
-for the ipam ip addresses list operation typically these are written to a http.Request
+/* IpamIPAddressesListParams contains all the parameters to send to the API endpoint
+   for the ipam ip addresses list operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamIPAddressesListParams struct {
 
-	/*Address*/
+	// Address.
 	Address *string
-	/*AssignedToInterface*/
-	AssignedToInterface *string
-	/*Created*/
-	Created *string
-	/*CreatedGte*/
-	CreatedGte *string
-	/*CreatedLte*/
-	CreatedLte *string
-	/*Device*/
-	Device *string
-	/*DeviceID*/
-	DeviceID *string
-	/*DNSName*/
-	DNSName *string
-	/*DNSNameIc*/
-	DNSNameIc *string
-	/*DNSNameIe*/
-	DNSNameIe *string
-	/*DNSNameIew*/
-	DNSNameIew *string
-	/*DNSNameIsw*/
-	DNSNameIsw *string
-	/*DNSNamen*/
-	DNSNamen *string
-	/*DNSNameNic*/
-	DNSNameNic *string
-	/*DNSNameNie*/
-	DNSNameNie *string
-	/*DNSNameNiew*/
-	DNSNameNiew *string
-	/*DNSNameNisw*/
-	DNSNameNisw *string
-	/*Family*/
-	Family *float64
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Interface*/
-	Interface *string
-	/*Interfacen*/
-	Interfacen *string
-	/*InterfaceID*/
-	InterfaceID *string
-	/*InterfaceIDn*/
-	InterfaceIDn *string
-	/*LastUpdated*/
-	LastUpdated *string
-	/*LastUpdatedGte*/
-	LastUpdatedGte *string
-	/*LastUpdatedLte*/
-	LastUpdatedLte *string
-	/*Limit
-	  Number of results to return per page.
 
+	// AssignedToInterface.
+	AssignedToInterface *string
+
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// Description.
+	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
+	// DescriptionIc.
+	DescriptionIc *string
+
+	// DescriptionIe.
+	DescriptionIe *string
+
+	// DescriptionIew.
+	DescriptionIew *string
+
+	// DescriptionIsw.
+	DescriptionIsw *string
+
+	// Descriptionn.
+	Descriptionn *string
+
+	// DescriptionNic.
+	DescriptionNic *string
+
+	// DescriptionNie.
+	DescriptionNie *string
+
+	// DescriptionNiew.
+	DescriptionNiew *string
+
+	// DescriptionNisw.
+	DescriptionNisw *string
+
+	// Device.
+	Device *string
+
+	// DeviceID.
+	DeviceID *string
+
+	// DNSName.
+	DNSName *string
+
+	// DNSNameEmpty.
+	DNSNameEmpty *string
+
+	// DNSNameIc.
+	DNSNameIc *string
+
+	// DNSNameIe.
+	DNSNameIe *string
+
+	// DNSNameIew.
+	DNSNameIew *string
+
+	// DNSNameIsw.
+	DNSNameIsw *string
+
+	// DNSNamen.
+	DNSNamen *string
+
+	// DNSNameNic.
+	DNSNameNic *string
+
+	// DNSNameNie.
+	DNSNameNie *string
+
+	// DNSNameNiew.
+	DNSNameNiew *string
+
+	// DNSNameNisw.
+	DNSNameNisw *string
+
+	// Family.
+	Family *float64
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// Interface.
+	Interface *string
+
+	// Interfacen.
+	Interfacen *string
+
+	// InterfaceID.
+	InterfaceID *string
+
+	// InterfaceIDn.
+	InterfaceIDn *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*MaskLength*/
-	MaskLength *float64
-	/*Offset
-	  The initial index from which to return the results.
 
+	// MaskLength.
+	MaskLength *float64
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Parent*/
+
+	// Parent.
 	Parent *string
-	/*Q*/
+
+	// PresentInVrf.
+	PresentInVrf *string
+
+	// PresentInVrfID.
+	PresentInVrfID *string
+
+	// Q.
 	Q *string
-	/*Role*/
+
+	// Role.
 	Role *string
-	/*Rolen*/
+
+	// Rolen.
 	Rolen *string
-	/*Status*/
+
+	// Status.
 	Status *string
-	/*Statusn*/
+
+	// Statusn.
 	Statusn *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
-	/*Tenant*/
+
+	// Tenant.
 	Tenant *string
-	/*Tenantn*/
+
+	// Tenantn.
 	Tenantn *string
-	/*TenantGroup*/
+
+	// TenantGroup.
 	TenantGroup *string
-	/*TenantGroupn*/
+
+	// TenantGroupn.
 	TenantGroupn *string
-	/*TenantGroupID*/
+
+	// TenantGroupID.
 	TenantGroupID *string
-	/*TenantGroupIDn*/
+
+	// TenantGroupIDn.
 	TenantGroupIDn *string
-	/*TenantID*/
+
+	// TenantID.
 	TenantID *string
-	/*TenantIDn*/
+
+	// TenantIDn.
 	TenantIDn *string
-	/*VirtualMachine*/
+
+	// VirtualMachine.
 	VirtualMachine *string
-	/*VirtualMachineID*/
+
+	// VirtualMachineID.
 	VirtualMachineID *string
-	/*Vminterface*/
+
+	// Vminterface.
 	Vminterface *string
-	/*Vminterfacen*/
+
+	// Vminterfacen.
 	Vminterfacen *string
-	/*VminterfaceID*/
+
+	// VminterfaceID.
 	VminterfaceID *string
-	/*VminterfaceIDn*/
+
+	// VminterfaceIDn.
 	VminterfaceIDn *string
-	/*Vrf*/
+
+	// Vrf.
 	Vrf *string
-	/*Vrfn*/
+
+	// Vrfn.
 	Vrfn *string
-	/*VrfID*/
+
+	// VrfID.
 	VrfID *string
-	/*VrfIDn*/
+
+	// VrfIDn.
 	VrfIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam ip addresses list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesListParams) WithDefaults() *IpamIPAddressesListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam ip addresses list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam ip addresses list params
@@ -296,6 +411,127 @@ func (o *IpamIPAddressesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
 }
 
+// WithDescription adds the description to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescription(description *string) *IpamIPAddressesListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamIPAddressesListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
+}
+
+// WithDescriptionIc adds the descriptionIc to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionIc(descriptionIc *string) *IpamIPAddressesListParams {
+	o.SetDescriptionIc(descriptionIc)
+	return o
+}
+
+// SetDescriptionIc adds the descriptionIc to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionIc(descriptionIc *string) {
+	o.DescriptionIc = descriptionIc
+}
+
+// WithDescriptionIe adds the descriptionIe to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionIe(descriptionIe *string) *IpamIPAddressesListParams {
+	o.SetDescriptionIe(descriptionIe)
+	return o
+}
+
+// SetDescriptionIe adds the descriptionIe to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionIe(descriptionIe *string) {
+	o.DescriptionIe = descriptionIe
+}
+
+// WithDescriptionIew adds the descriptionIew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionIew(descriptionIew *string) *IpamIPAddressesListParams {
+	o.SetDescriptionIew(descriptionIew)
+	return o
+}
+
+// SetDescriptionIew adds the descriptionIew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionIew(descriptionIew *string) {
+	o.DescriptionIew = descriptionIew
+}
+
+// WithDescriptionIsw adds the descriptionIsw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionIsw(descriptionIsw *string) *IpamIPAddressesListParams {
+	o.SetDescriptionIsw(descriptionIsw)
+	return o
+}
+
+// SetDescriptionIsw adds the descriptionIsw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionIsw(descriptionIsw *string) {
+	o.DescriptionIsw = descriptionIsw
+}
+
+// WithDescriptionn adds the descriptionn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionn(descriptionn *string) *IpamIPAddressesListParams {
+	o.SetDescriptionn(descriptionn)
+	return o
+}
+
+// SetDescriptionn adds the descriptionN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionn(descriptionn *string) {
+	o.Descriptionn = descriptionn
+}
+
+// WithDescriptionNic adds the descriptionNic to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionNic(descriptionNic *string) *IpamIPAddressesListParams {
+	o.SetDescriptionNic(descriptionNic)
+	return o
+}
+
+// SetDescriptionNic adds the descriptionNic to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionNic(descriptionNic *string) {
+	o.DescriptionNic = descriptionNic
+}
+
+// WithDescriptionNie adds the descriptionNie to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionNie(descriptionNie *string) *IpamIPAddressesListParams {
+	o.SetDescriptionNie(descriptionNie)
+	return o
+}
+
+// SetDescriptionNie adds the descriptionNie to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionNie(descriptionNie *string) {
+	o.DescriptionNie = descriptionNie
+}
+
+// WithDescriptionNiew adds the descriptionNiew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionNiew(descriptionNiew *string) *IpamIPAddressesListParams {
+	o.SetDescriptionNiew(descriptionNiew)
+	return o
+}
+
+// SetDescriptionNiew adds the descriptionNiew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionNiew(descriptionNiew *string) {
+	o.DescriptionNiew = descriptionNiew
+}
+
+// WithDescriptionNisw adds the descriptionNisw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionNisw(descriptionNisw *string) *IpamIPAddressesListParams {
+	o.SetDescriptionNisw(descriptionNisw)
+	return o
+}
+
+// SetDescriptionNisw adds the descriptionNisw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionNisw(descriptionNisw *string) {
+	o.DescriptionNisw = descriptionNisw
+}
+
 // WithDevice adds the device to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithDevice(device *string) *IpamIPAddressesListParams {
 	o.SetDevice(device)
@@ -327,6 +563,17 @@ func (o *IpamIPAddressesListParams) WithDNSName(dNSName *string) *IpamIPAddresse
 // SetDNSName adds the dnsName to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetDNSName(dNSName *string) {
 	o.DNSName = dNSName
+}
+
+// WithDNSNameEmpty adds the dNSNameEmpty to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameEmpty(dNSNameEmpty *string) *IpamIPAddressesListParams {
+	o.SetDNSNameEmpty(dNSNameEmpty)
+	return o
+}
+
+// SetDNSNameEmpty adds the dnsNameEmpty to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameEmpty(dNSNameEmpty *string) {
+	o.DNSNameEmpty = dNSNameEmpty
 }
 
 // WithDNSNameIc adds the dNSNameIc to the ipam ip addresses list params
@@ -626,6 +873,28 @@ func (o *IpamIPAddressesListParams) SetParent(parent *string) {
 	o.Parent = parent
 }
 
+// WithPresentInVrf adds the presentInVrf to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithPresentInVrf(presentInVrf *string) *IpamIPAddressesListParams {
+	o.SetPresentInVrf(presentInVrf)
+	return o
+}
+
+// SetPresentInVrf adds the presentInVrf to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetPresentInVrf(presentInVrf *string) {
+	o.PresentInVrf = presentInVrf
+}
+
+// WithPresentInVrfID adds the presentInVrfID to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithPresentInVrfID(presentInVrfID *string) *IpamIPAddressesListParams {
+	o.SetPresentInVrfID(presentInVrfID)
+	return o
+}
+
+// SetPresentInVrfID adds the presentInVrfId to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetPresentInVrfID(presentInVrfID *string) {
+	o.PresentInVrfID = presentInVrfID
+}
+
 // WithQ adds the q to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithQ(q *string) *IpamIPAddressesListParams {
 	o.SetQ(q)
@@ -913,960 +1182,1258 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 		// query param address
 		var qrAddress string
+
 		if o.Address != nil {
 			qrAddress = *o.Address
 		}
 		qAddress := qrAddress
 		if qAddress != "" {
+
 			if err := r.SetQueryParam("address", qAddress); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssignedToInterface != nil {
 
 		// query param assigned_to_interface
 		var qrAssignedToInterface string
+
 		if o.AssignedToInterface != nil {
 			qrAssignedToInterface = *o.AssignedToInterface
 		}
 		qAssignedToInterface := qrAssignedToInterface
 		if qAssignedToInterface != "" {
+
 			if err := r.SetQueryParam("assigned_to_interface", qAssignedToInterface); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Created != nil {
 
 		// query param created
 		var qrCreated string
+
 		if o.Created != nil {
 			qrCreated = *o.Created
 		}
 		qCreated := qrCreated
 		if qCreated != "" {
+
 			if err := r.SetQueryParam("created", qCreated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedGte != nil {
 
 		// query param created__gte
 		var qrCreatedGte string
+
 		if o.CreatedGte != nil {
 			qrCreatedGte = *o.CreatedGte
 		}
 		qCreatedGte := qrCreatedGte
 		if qCreatedGte != "" {
+
 			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedLte != nil {
 
 		// query param created__lte
 		var qrCreatedLte string
+
 		if o.CreatedLte != nil {
 			qrCreatedLte = *o.CreatedLte
 		}
 		qCreatedLte := qrCreatedLte
 		if qCreatedLte != "" {
+
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIc != nil {
+
+		// query param description__ic
+		var qrDescriptionIc string
+
+		if o.DescriptionIc != nil {
+			qrDescriptionIc = *o.DescriptionIc
+		}
+		qDescriptionIc := qrDescriptionIc
+		if qDescriptionIc != "" {
+
+			if err := r.SetQueryParam("description__ic", qDescriptionIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIe != nil {
+
+		// query param description__ie
+		var qrDescriptionIe string
+
+		if o.DescriptionIe != nil {
+			qrDescriptionIe = *o.DescriptionIe
+		}
+		qDescriptionIe := qrDescriptionIe
+		if qDescriptionIe != "" {
+
+			if err := r.SetQueryParam("description__ie", qDescriptionIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIew != nil {
+
+		// query param description__iew
+		var qrDescriptionIew string
+
+		if o.DescriptionIew != nil {
+			qrDescriptionIew = *o.DescriptionIew
+		}
+		qDescriptionIew := qrDescriptionIew
+		if qDescriptionIew != "" {
+
+			if err := r.SetQueryParam("description__iew", qDescriptionIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIsw != nil {
+
+		// query param description__isw
+		var qrDescriptionIsw string
+
+		if o.DescriptionIsw != nil {
+			qrDescriptionIsw = *o.DescriptionIsw
+		}
+		qDescriptionIsw := qrDescriptionIsw
+		if qDescriptionIsw != "" {
+
+			if err := r.SetQueryParam("description__isw", qDescriptionIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Descriptionn != nil {
+
+		// query param description__n
+		var qrDescriptionn string
+
+		if o.Descriptionn != nil {
+			qrDescriptionn = *o.Descriptionn
+		}
+		qDescriptionn := qrDescriptionn
+		if qDescriptionn != "" {
+
+			if err := r.SetQueryParam("description__n", qDescriptionn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNic != nil {
+
+		// query param description__nic
+		var qrDescriptionNic string
+
+		if o.DescriptionNic != nil {
+			qrDescriptionNic = *o.DescriptionNic
+		}
+		qDescriptionNic := qrDescriptionNic
+		if qDescriptionNic != "" {
+
+			if err := r.SetQueryParam("description__nic", qDescriptionNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNie != nil {
+
+		// query param description__nie
+		var qrDescriptionNie string
+
+		if o.DescriptionNie != nil {
+			qrDescriptionNie = *o.DescriptionNie
+		}
+		qDescriptionNie := qrDescriptionNie
+		if qDescriptionNie != "" {
+
+			if err := r.SetQueryParam("description__nie", qDescriptionNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNiew != nil {
+
+		// query param description__niew
+		var qrDescriptionNiew string
+
+		if o.DescriptionNiew != nil {
+			qrDescriptionNiew = *o.DescriptionNiew
+		}
+		qDescriptionNiew := qrDescriptionNiew
+		if qDescriptionNiew != "" {
+
+			if err := r.SetQueryParam("description__niew", qDescriptionNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNisw != nil {
+
+		// query param description__nisw
+		var qrDescriptionNisw string
+
+		if o.DescriptionNisw != nil {
+			qrDescriptionNisw = *o.DescriptionNisw
+		}
+		qDescriptionNisw := qrDescriptionNisw
+		if qDescriptionNisw != "" {
+
+			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Device != nil {
 
 		// query param device
 		var qrDevice string
+
 		if o.Device != nil {
 			qrDevice = *o.Device
 		}
 		qDevice := qrDevice
 		if qDevice != "" {
+
 			if err := r.SetQueryParam("device", qDevice); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceID != nil {
 
 		// query param device_id
 		var qrDeviceID string
+
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
 		qDeviceID := qrDeviceID
 		if qDeviceID != "" {
+
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DNSName != nil {
 
 		// query param dns_name
 		var qrDNSName string
+
 		if o.DNSName != nil {
 			qrDNSName = *o.DNSName
 		}
 		qDNSName := qrDNSName
 		if qDNSName != "" {
+
 			if err := r.SetQueryParam("dns_name", qDNSName); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.DNSNameEmpty != nil {
+
+		// query param dns_name__empty
+		var qrDNSNameEmpty string
+
+		if o.DNSNameEmpty != nil {
+			qrDNSNameEmpty = *o.DNSNameEmpty
+		}
+		qDNSNameEmpty := qrDNSNameEmpty
+		if qDNSNameEmpty != "" {
+
+			if err := r.SetQueryParam("dns_name__empty", qDNSNameEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.DNSNameIc != nil {
 
 		// query param dns_name__ic
 		var qrDNSNameIc string
+
 		if o.DNSNameIc != nil {
 			qrDNSNameIc = *o.DNSNameIc
 		}
 		qDNSNameIc := qrDNSNameIc
 		if qDNSNameIc != "" {
+
 			if err := r.SetQueryParam("dns_name__ic", qDNSNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DNSNameIe != nil {
 
 		// query param dns_name__ie
 		var qrDNSNameIe string
+
 		if o.DNSNameIe != nil {
 			qrDNSNameIe = *o.DNSNameIe
 		}
 		qDNSNameIe := qrDNSNameIe
 		if qDNSNameIe != "" {
+
 			if err := r.SetQueryParam("dns_name__ie", qDNSNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DNSNameIew != nil {
 
 		// query param dns_name__iew
 		var qrDNSNameIew string
+
 		if o.DNSNameIew != nil {
 			qrDNSNameIew = *o.DNSNameIew
 		}
 		qDNSNameIew := qrDNSNameIew
 		if qDNSNameIew != "" {
+
 			if err := r.SetQueryParam("dns_name__iew", qDNSNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DNSNameIsw != nil {
 
 		// query param dns_name__isw
 		var qrDNSNameIsw string
+
 		if o.DNSNameIsw != nil {
 			qrDNSNameIsw = *o.DNSNameIsw
 		}
 		qDNSNameIsw := qrDNSNameIsw
 		if qDNSNameIsw != "" {
+
 			if err := r.SetQueryParam("dns_name__isw", qDNSNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DNSNamen != nil {
 
 		// query param dns_name__n
 		var qrDNSNamen string
+
 		if o.DNSNamen != nil {
 			qrDNSNamen = *o.DNSNamen
 		}
 		qDNSNamen := qrDNSNamen
 		if qDNSNamen != "" {
+
 			if err := r.SetQueryParam("dns_name__n", qDNSNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DNSNameNic != nil {
 
 		// query param dns_name__nic
 		var qrDNSNameNic string
+
 		if o.DNSNameNic != nil {
 			qrDNSNameNic = *o.DNSNameNic
 		}
 		qDNSNameNic := qrDNSNameNic
 		if qDNSNameNic != "" {
+
 			if err := r.SetQueryParam("dns_name__nic", qDNSNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DNSNameNie != nil {
 
 		// query param dns_name__nie
 		var qrDNSNameNie string
+
 		if o.DNSNameNie != nil {
 			qrDNSNameNie = *o.DNSNameNie
 		}
 		qDNSNameNie := qrDNSNameNie
 		if qDNSNameNie != "" {
+
 			if err := r.SetQueryParam("dns_name__nie", qDNSNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DNSNameNiew != nil {
 
 		// query param dns_name__niew
 		var qrDNSNameNiew string
+
 		if o.DNSNameNiew != nil {
 			qrDNSNameNiew = *o.DNSNameNiew
 		}
 		qDNSNameNiew := qrDNSNameNiew
 		if qDNSNameNiew != "" {
+
 			if err := r.SetQueryParam("dns_name__niew", qDNSNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DNSNameNisw != nil {
 
 		// query param dns_name__nisw
 		var qrDNSNameNisw string
+
 		if o.DNSNameNisw != nil {
 			qrDNSNameNisw = *o.DNSNameNisw
 		}
 		qDNSNameNisw := qrDNSNameNisw
 		if qDNSNameNisw != "" {
+
 			if err := r.SetQueryParam("dns_name__nisw", qDNSNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Family != nil {
 
 		// query param family
 		var qrFamily float64
+
 		if o.Family != nil {
 			qrFamily = *o.Family
 		}
 		qFamily := swag.FormatFloat64(qrFamily)
 		if qFamily != "" {
+
 			if err := r.SetQueryParam("family", qFamily); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Interface != nil {
 
 		// query param interface
 		var qrInterface string
+
 		if o.Interface != nil {
 			qrInterface = *o.Interface
 		}
 		qInterface := qrInterface
 		if qInterface != "" {
+
 			if err := r.SetQueryParam("interface", qInterface); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Interfacen != nil {
 
 		// query param interface__n
 		var qrInterfacen string
+
 		if o.Interfacen != nil {
 			qrInterfacen = *o.Interfacen
 		}
 		qInterfacen := qrInterfacen
 		if qInterfacen != "" {
+
 			if err := r.SetQueryParam("interface__n", qInterfacen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.InterfaceID != nil {
 
 		// query param interface_id
 		var qrInterfaceID string
+
 		if o.InterfaceID != nil {
 			qrInterfaceID = *o.InterfaceID
 		}
 		qInterfaceID := qrInterfaceID
 		if qInterfaceID != "" {
+
 			if err := r.SetQueryParam("interface_id", qInterfaceID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.InterfaceIDn != nil {
 
 		// query param interface_id__n
 		var qrInterfaceIDn string
+
 		if o.InterfaceIDn != nil {
 			qrInterfaceIDn = *o.InterfaceIDn
 		}
 		qInterfaceIDn := qrInterfaceIDn
 		if qInterfaceIDn != "" {
+
 			if err := r.SetQueryParam("interface_id__n", qInterfaceIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdated != nil {
 
 		// query param last_updated
 		var qrLastUpdated string
+
 		if o.LastUpdated != nil {
 			qrLastUpdated = *o.LastUpdated
 		}
 		qLastUpdated := qrLastUpdated
 		if qLastUpdated != "" {
+
 			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
 		var qrLastUpdatedGte string
+
 		if o.LastUpdatedGte != nil {
 			qrLastUpdatedGte = *o.LastUpdatedGte
 		}
 		qLastUpdatedGte := qrLastUpdatedGte
 		if qLastUpdatedGte != "" {
+
 			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
 		var qrLastUpdatedLte string
+
 		if o.LastUpdatedLte != nil {
 			qrLastUpdatedLte = *o.LastUpdatedLte
 		}
 		qLastUpdatedLte := qrLastUpdatedLte
 		if qLastUpdatedLte != "" {
+
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MaskLength != nil {
 
 		// query param mask_length
 		var qrMaskLength float64
+
 		if o.MaskLength != nil {
 			qrMaskLength = *o.MaskLength
 		}
 		qMaskLength := swag.FormatFloat64(qrMaskLength)
 		if qMaskLength != "" {
+
 			if err := r.SetQueryParam("mask_length", qMaskLength); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Parent != nil {
 
 		// query param parent
 		var qrParent string
+
 		if o.Parent != nil {
 			qrParent = *o.Parent
 		}
 		qParent := qrParent
 		if qParent != "" {
+
 			if err := r.SetQueryParam("parent", qParent); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.PresentInVrf != nil {
+
+		// query param present_in_vrf
+		var qrPresentInVrf string
+
+		if o.PresentInVrf != nil {
+			qrPresentInVrf = *o.PresentInVrf
+		}
+		qPresentInVrf := qrPresentInVrf
+		if qPresentInVrf != "" {
+
+			if err := r.SetQueryParam("present_in_vrf", qPresentInVrf); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PresentInVrfID != nil {
+
+		// query param present_in_vrf_id
+		var qrPresentInVrfID string
+
+		if o.PresentInVrfID != nil {
+			qrPresentInVrfID = *o.PresentInVrfID
+		}
+		qPresentInVrfID := qrPresentInVrfID
+		if qPresentInVrfID != "" {
+
+			if err := r.SetQueryParam("present_in_vrf_id", qPresentInVrfID); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Role != nil {
 
 		// query param role
 		var qrRole string
+
 		if o.Role != nil {
 			qrRole = *o.Role
 		}
 		qRole := qrRole
 		if qRole != "" {
+
 			if err := r.SetQueryParam("role", qRole); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Rolen != nil {
 
 		// query param role__n
 		var qrRolen string
+
 		if o.Rolen != nil {
 			qrRolen = *o.Rolen
 		}
 		qRolen := qrRolen
 		if qRolen != "" {
+
 			if err := r.SetQueryParam("role__n", qRolen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Status != nil {
 
 		// query param status
 		var qrStatus string
+
 		if o.Status != nil {
 			qrStatus = *o.Status
 		}
 		qStatus := qrStatus
 		if qStatus != "" {
+
 			if err := r.SetQueryParam("status", qStatus); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Statusn != nil {
 
 		// query param status__n
 		var qrStatusn string
+
 		if o.Statusn != nil {
 			qrStatusn = *o.Statusn
 		}
 		qStatusn := qrStatusn
 		if qStatusn != "" {
+
 			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenant != nil {
 
 		// query param tenant
 		var qrTenant string
+
 		if o.Tenant != nil {
 			qrTenant = *o.Tenant
 		}
 		qTenant := qrTenant
 		if qTenant != "" {
+
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenantn != nil {
 
 		// query param tenant__n
 		var qrTenantn string
+
 		if o.Tenantn != nil {
 			qrTenantn = *o.Tenantn
 		}
 		qTenantn := qrTenantn
 		if qTenantn != "" {
+
 			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroup != nil {
 
 		// query param tenant_group
 		var qrTenantGroup string
+
 		if o.TenantGroup != nil {
 			qrTenantGroup = *o.TenantGroup
 		}
 		qTenantGroup := qrTenantGroup
 		if qTenantGroup != "" {
+
 			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupn != nil {
 
 		// query param tenant_group__n
 		var qrTenantGroupn string
+
 		if o.TenantGroupn != nil {
 			qrTenantGroupn = *o.TenantGroupn
 		}
 		qTenantGroupn := qrTenantGroupn
 		if qTenantGroupn != "" {
+
 			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupID != nil {
 
 		// query param tenant_group_id
 		var qrTenantGroupID string
+
 		if o.TenantGroupID != nil {
 			qrTenantGroupID = *o.TenantGroupID
 		}
 		qTenantGroupID := qrTenantGroupID
 		if qTenantGroupID != "" {
+
 			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupIDn != nil {
 
 		// query param tenant_group_id__n
 		var qrTenantGroupIDn string
+
 		if o.TenantGroupIDn != nil {
 			qrTenantGroupIDn = *o.TenantGroupIDn
 		}
 		qTenantGroupIDn := qrTenantGroupIDn
 		if qTenantGroupIDn != "" {
+
 			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantID != nil {
 
 		// query param tenant_id
 		var qrTenantID string
+
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
 		qTenantID := qrTenantID
 		if qTenantID != "" {
+
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantIDn != nil {
 
 		// query param tenant_id__n
 		var qrTenantIDn string
+
 		if o.TenantIDn != nil {
 			qrTenantIDn = *o.TenantIDn
 		}
 		qTenantIDn := qrTenantIDn
 		if qTenantIDn != "" {
+
 			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VirtualMachine != nil {
 
 		// query param virtual_machine
 		var qrVirtualMachine string
+
 		if o.VirtualMachine != nil {
 			qrVirtualMachine = *o.VirtualMachine
 		}
 		qVirtualMachine := qrVirtualMachine
 		if qVirtualMachine != "" {
+
 			if err := r.SetQueryParam("virtual_machine", qVirtualMachine); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VirtualMachineID != nil {
 
 		// query param virtual_machine_id
 		var qrVirtualMachineID string
+
 		if o.VirtualMachineID != nil {
 			qrVirtualMachineID = *o.VirtualMachineID
 		}
 		qVirtualMachineID := qrVirtualMachineID
 		if qVirtualMachineID != "" {
+
 			if err := r.SetQueryParam("virtual_machine_id", qVirtualMachineID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Vminterface != nil {
 
 		// query param vminterface
 		var qrVminterface string
+
 		if o.Vminterface != nil {
 			qrVminterface = *o.Vminterface
 		}
 		qVminterface := qrVminterface
 		if qVminterface != "" {
+
 			if err := r.SetQueryParam("vminterface", qVminterface); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Vminterfacen != nil {
 
 		// query param vminterface__n
 		var qrVminterfacen string
+
 		if o.Vminterfacen != nil {
 			qrVminterfacen = *o.Vminterfacen
 		}
 		qVminterfacen := qrVminterfacen
 		if qVminterfacen != "" {
+
 			if err := r.SetQueryParam("vminterface__n", qVminterfacen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VminterfaceID != nil {
 
 		// query param vminterface_id
 		var qrVminterfaceID string
+
 		if o.VminterfaceID != nil {
 			qrVminterfaceID = *o.VminterfaceID
 		}
 		qVminterfaceID := qrVminterfaceID
 		if qVminterfaceID != "" {
+
 			if err := r.SetQueryParam("vminterface_id", qVminterfaceID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VminterfaceIDn != nil {
 
 		// query param vminterface_id__n
 		var qrVminterfaceIDn string
+
 		if o.VminterfaceIDn != nil {
 			qrVminterfaceIDn = *o.VminterfaceIDn
 		}
 		qVminterfaceIDn := qrVminterfaceIDn
 		if qVminterfaceIDn != "" {
+
 			if err := r.SetQueryParam("vminterface_id__n", qVminterfaceIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Vrf != nil {
 
 		// query param vrf
 		var qrVrf string
+
 		if o.Vrf != nil {
 			qrVrf = *o.Vrf
 		}
 		qVrf := qrVrf
 		if qVrf != "" {
+
 			if err := r.SetQueryParam("vrf", qVrf); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Vrfn != nil {
 
 		// query param vrf__n
 		var qrVrfn string
+
 		if o.Vrfn != nil {
 			qrVrfn = *o.Vrfn
 		}
 		qVrfn := qrVrfn
 		if qVrfn != "" {
+
 			if err := r.SetQueryParam("vrf__n", qVrfn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VrfID != nil {
 
 		// query param vrf_id
 		var qrVrfID string
+
 		if o.VrfID != nil {
 			qrVrfID = *o.VrfID
 		}
 		qVrfID := qrVrfID
 		if qVrfID != "" {
+
 			if err := r.SetQueryParam("vrf_id", qVrfID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VrfIDn != nil {
 
 		// query param vrf_id__n
 		var qrVrfIDn string
+
 		if o.VrfIDn != nil {
 			qrVrfIDn = *o.VrfIDn
 		}
 		qVrfIDn := qrVrfIDn
 		if qVrfIDn != "" {
+
 			if err := r.SetQueryParam("vrf_id__n", qVrfIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

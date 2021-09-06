@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimPowerOutletTemplatesPartialUpdateParams creates a new DcimPowerOutletTemplatesPartialUpdateParams object
-// with the default values initialized.
+// NewDcimPowerOutletTemplatesPartialUpdateParams creates a new DcimPowerOutletTemplatesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerOutletTemplatesPartialUpdateParams() *DcimPowerOutletTemplatesPartialUpdateParams {
-	var ()
 	return &DcimPowerOutletTemplatesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerOutletTemplatesPartialUpdateParamsWithTimeout creates a new DcimPowerOutletTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerOutletTemplatesPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimPowerOutletTemplatesPartialUpdateParams {
-	var ()
 	return &DcimPowerOutletTemplatesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerOutletTemplatesPartialUpdateParamsWithContext creates a new DcimPowerOutletTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerOutletTemplatesPartialUpdateParamsWithContext(ctx context.Context) *DcimPowerOutletTemplatesPartialUpdateParams {
-	var ()
 	return &DcimPowerOutletTemplatesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerOutletTemplatesPartialUpdateParamsWithHTTPClient creates a new DcimPowerOutletTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerOutletTemplatesPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimPowerOutletTemplatesPartialUpdateParams {
-	var ()
 	return &DcimPowerOutletTemplatesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerOutletTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim power outlet templates partial update operation typically these are written to a http.Request
+/* DcimPowerOutletTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim power outlet templates partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerOutletTemplatesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerOutletTemplate
-	/*ID
-	  A unique integer value identifying this power outlet template.
 
+	/* ID.
+
+	   A unique integer value identifying this power outlet template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power outlet templates partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletTemplatesPartialUpdateParams) WithDefaults() *DcimPowerOutletTemplatesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power outlet templates partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletTemplatesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power outlet templates partial update params
@@ -153,7 +168,6 @@ func (o *DcimPowerOutletTemplatesPartialUpdateParams) WriteToRequest(r runtime.C
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -35,8 +36,24 @@ import (
 // swagger:model WritableConsoleServerPort
 type WritableConsoleServerPort struct {
 
+	// occupied
+	// Read Only: true
+	Occupied *bool `json:"_occupied,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
+
+	// Cable peer
+	//
+	//
+	// Return the appropriate serializer for the cable termination model.
+	//
+	// Read Only: true
+	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+
+	// Cable peer type
+	// Read Only: true
+	CablePeerType string `json:"cable_peer_type,omitempty"`
 
 	// Connected endpoint
 	//
@@ -44,15 +61,23 @@ type WritableConsoleServerPort struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint reachable
+	// Read Only: true
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
 	// Connected endpoint type
 	// Read Only: true
 	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
-	// Connection status
-	// Enum: [false true]
-	ConnectionStatus *bool `json:"connection_status,omitempty"`
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -62,7 +87,11 @@ type WritableConsoleServerPort struct {
 	// Required: true
 	Device *int64 `json:"device"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -72,14 +101,30 @@ type WritableConsoleServerPort struct {
 	// Max Length: 64
 	Label string `json:"label,omitempty"`
 
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Mark connected
+	//
+	// Treat as if a cable is connected
+	MarkConnected bool `json:"mark_connected,omitempty"`
+
 	// Name
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1
 	Name *string `json:"name"`
 
+	// Speed
+	//
+	// Port speed in bits per second
+	// Enum: [1200 2400 4800 9600 19200 38400 57600 115200]
+	Speed *int64 `json:"speed,omitempty"`
+
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Type
 	//
@@ -101,7 +146,7 @@ func (m *WritableConsoleServerPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateConnectionStatus(formats); err != nil {
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -117,7 +162,15 @@ func (m *WritableConsoleServerPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSpeed(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -140,7 +193,6 @@ func (m *WritableConsoleServerPort) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableConsoleServerPort) validateCable(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Cable) { // not required
 		return nil
 	}
@@ -157,34 +209,12 @@ func (m *WritableConsoleServerPort) validateCable(formats strfmt.Registry) error
 	return nil
 }
 
-var writableConsoleServerPortTypeConnectionStatusPropEnum []interface{}
-
-func init() {
-	var res []bool
-	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		writableConsoleServerPortTypeConnectionStatusPropEnum = append(writableConsoleServerPortTypeConnectionStatusPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *WritableConsoleServerPort) validateConnectionStatusEnum(path, location string, value bool) error {
-	if err := validate.EnumCase(path, location, value, writableConsoleServerPortTypeConnectionStatusPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *WritableConsoleServerPort) validateConnectionStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.ConnectionStatus) { // not required
+func (m *WritableConsoleServerPort) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	// value enum
-	if err := m.validateConnectionStatusEnum("connection_status", "body", *m.ConnectionStatus); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -192,12 +222,11 @@ func (m *WritableConsoleServerPort) validateConnectionStatus(formats strfmt.Regi
 }
 
 func (m *WritableConsoleServerPort) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -214,12 +243,23 @@ func (m *WritableConsoleServerPort) validateDevice(formats strfmt.Registry) erro
 }
 
 func (m *WritableConsoleServerPort) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -232,11 +272,44 @@ func (m *WritableConsoleServerPort) validateName(formats strfmt.Registry) error 
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var writableConsoleServerPortTypeSpeedPropEnum []interface{}
+
+func init() {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[1200,2400,4800,9600,19200,38400,57600,115200]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableConsoleServerPortTypeSpeedPropEnum = append(writableConsoleServerPortTypeSpeedPropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *WritableConsoleServerPort) validateSpeedEnum(path, location string, value int64) error {
+	if err := validate.EnumCase(path, location, value, writableConsoleServerPortTypeSpeedPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableConsoleServerPort) validateSpeed(formats strfmt.Registry) error {
+	if swag.IsZero(m.Speed) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateSpeedEnum("speed", "body", *m.Speed); err != nil {
 		return err
 	}
 
@@ -244,7 +317,6 @@ func (m *WritableConsoleServerPort) validateName(formats strfmt.Registry) error 
 }
 
 func (m *WritableConsoleServerPort) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -282,41 +354,41 @@ func init() {
 
 const (
 
-	// WritableConsoleServerPortTypeDe9 captures enum value "de-9"
-	WritableConsoleServerPortTypeDe9 string = "de-9"
+	// WritableConsoleServerPortTypeDeDash9 captures enum value "de-9"
+	WritableConsoleServerPortTypeDeDash9 string = "de-9"
 
-	// WritableConsoleServerPortTypeDb25 captures enum value "db-25"
-	WritableConsoleServerPortTypeDb25 string = "db-25"
+	// WritableConsoleServerPortTypeDbDash25 captures enum value "db-25"
+	WritableConsoleServerPortTypeDbDash25 string = "db-25"
 
-	// WritableConsoleServerPortTypeRj11 captures enum value "rj-11"
-	WritableConsoleServerPortTypeRj11 string = "rj-11"
+	// WritableConsoleServerPortTypeRjDash11 captures enum value "rj-11"
+	WritableConsoleServerPortTypeRjDash11 string = "rj-11"
 
-	// WritableConsoleServerPortTypeRj12 captures enum value "rj-12"
-	WritableConsoleServerPortTypeRj12 string = "rj-12"
+	// WritableConsoleServerPortTypeRjDash12 captures enum value "rj-12"
+	WritableConsoleServerPortTypeRjDash12 string = "rj-12"
 
-	// WritableConsoleServerPortTypeRj45 captures enum value "rj-45"
-	WritableConsoleServerPortTypeRj45 string = "rj-45"
+	// WritableConsoleServerPortTypeRjDash45 captures enum value "rj-45"
+	WritableConsoleServerPortTypeRjDash45 string = "rj-45"
 
-	// WritableConsoleServerPortTypeUsba captures enum value "usb-a"
-	WritableConsoleServerPortTypeUsba string = "usb-a"
+	// WritableConsoleServerPortTypeUsbDasha captures enum value "usb-a"
+	WritableConsoleServerPortTypeUsbDasha string = "usb-a"
 
-	// WritableConsoleServerPortTypeUsbb captures enum value "usb-b"
-	WritableConsoleServerPortTypeUsbb string = "usb-b"
+	// WritableConsoleServerPortTypeUsbDashb captures enum value "usb-b"
+	WritableConsoleServerPortTypeUsbDashb string = "usb-b"
 
-	// WritableConsoleServerPortTypeUsbc captures enum value "usb-c"
-	WritableConsoleServerPortTypeUsbc string = "usb-c"
+	// WritableConsoleServerPortTypeUsbDashc captures enum value "usb-c"
+	WritableConsoleServerPortTypeUsbDashc string = "usb-c"
 
-	// WritableConsoleServerPortTypeUsbMinia captures enum value "usb-mini-a"
-	WritableConsoleServerPortTypeUsbMinia string = "usb-mini-a"
+	// WritableConsoleServerPortTypeUsbDashMiniDasha captures enum value "usb-mini-a"
+	WritableConsoleServerPortTypeUsbDashMiniDasha string = "usb-mini-a"
 
-	// WritableConsoleServerPortTypeUsbMinib captures enum value "usb-mini-b"
-	WritableConsoleServerPortTypeUsbMinib string = "usb-mini-b"
+	// WritableConsoleServerPortTypeUsbDashMiniDashb captures enum value "usb-mini-b"
+	WritableConsoleServerPortTypeUsbDashMiniDashb string = "usb-mini-b"
 
-	// WritableConsoleServerPortTypeUsbMicroa captures enum value "usb-micro-a"
-	WritableConsoleServerPortTypeUsbMicroa string = "usb-micro-a"
+	// WritableConsoleServerPortTypeUsbDashMicroDasha captures enum value "usb-micro-a"
+	WritableConsoleServerPortTypeUsbDashMicroDasha string = "usb-micro-a"
 
-	// WritableConsoleServerPortTypeUsbMicrob captures enum value "usb-micro-b"
-	WritableConsoleServerPortTypeUsbMicrob string = "usb-micro-b"
+	// WritableConsoleServerPortTypeUsbDashMicroDashb captures enum value "usb-micro-b"
+	WritableConsoleServerPortTypeUsbDashMicroDashb string = "usb-micro-b"
 
 	// WritableConsoleServerPortTypeOther captures enum value "other"
 	WritableConsoleServerPortTypeOther string = "other"
@@ -331,7 +403,6 @@ func (m *WritableConsoleServerPort) validateTypeEnum(path, location string, valu
 }
 
 func (m *WritableConsoleServerPort) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -345,12 +416,196 @@ func (m *WritableConsoleServerPort) validateType(formats strfmt.Registry) error 
 }
 
 func (m *WritableConsoleServerPort) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable console server port based on the context it is used
+func (m *WritableConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cable != nil {
+		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewSecretsGenerateRsaKeyPairListParams creates a new SecretsGenerateRsaKeyPairListParams object
-// with the default values initialized.
+// NewSecretsGenerateRsaKeyPairListParams creates a new SecretsGenerateRsaKeyPairListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsGenerateRsaKeyPairListParams() *SecretsGenerateRsaKeyPairListParams {
-
 	return &SecretsGenerateRsaKeyPairListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsGenerateRsaKeyPairListParamsWithTimeout creates a new SecretsGenerateRsaKeyPairListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsGenerateRsaKeyPairListParamsWithTimeout(timeout time.Duration) *SecretsGenerateRsaKeyPairListParams {
-
 	return &SecretsGenerateRsaKeyPairListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsGenerateRsaKeyPairListParamsWithContext creates a new SecretsGenerateRsaKeyPairListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsGenerateRsaKeyPairListParamsWithContext(ctx context.Context) *SecretsGenerateRsaKeyPairListParams {
-
 	return &SecretsGenerateRsaKeyPairListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsGenerateRsaKeyPairListParamsWithHTTPClient creates a new SecretsGenerateRsaKeyPairListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsGenerateRsaKeyPairListParamsWithHTTPClient(client *http.Client) *SecretsGenerateRsaKeyPairListParams {
-
 	return &SecretsGenerateRsaKeyPairListParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsGenerateRsaKeyPairListParams contains all the parameters to send to the API endpoint
-for the secrets generate rsa key pair list operation typically these are written to a http.Request
+/* SecretsGenerateRsaKeyPairListParams contains all the parameters to send to the API endpoint
+   for the secrets generate rsa key pair list operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsGenerateRsaKeyPairListParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets generate rsa key pair list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsGenerateRsaKeyPairListParams) WithDefaults() *SecretsGenerateRsaKeyPairListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets generate rsa key pair list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsGenerateRsaKeyPairListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets generate rsa key pair list params

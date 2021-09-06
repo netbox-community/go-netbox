@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimConsolePortTemplatesUpdateParams creates a new DcimConsolePortTemplatesUpdateParams object
-// with the default values initialized.
+// NewDcimConsolePortTemplatesUpdateParams creates a new DcimConsolePortTemplatesUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConsolePortTemplatesUpdateParams() *DcimConsolePortTemplatesUpdateParams {
-	var ()
 	return &DcimConsolePortTemplatesUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConsolePortTemplatesUpdateParamsWithTimeout creates a new DcimConsolePortTemplatesUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConsolePortTemplatesUpdateParamsWithTimeout(timeout time.Duration) *DcimConsolePortTemplatesUpdateParams {
-	var ()
 	return &DcimConsolePortTemplatesUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConsolePortTemplatesUpdateParamsWithContext creates a new DcimConsolePortTemplatesUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConsolePortTemplatesUpdateParamsWithContext(ctx context.Context) *DcimConsolePortTemplatesUpdateParams {
-	var ()
 	return &DcimConsolePortTemplatesUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConsolePortTemplatesUpdateParamsWithHTTPClient creates a new DcimConsolePortTemplatesUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConsolePortTemplatesUpdateParamsWithHTTPClient(client *http.Client) *DcimConsolePortTemplatesUpdateParams {
-	var ()
 	return &DcimConsolePortTemplatesUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConsolePortTemplatesUpdateParams contains all the parameters to send to the API endpoint
-for the dcim console port templates update operation typically these are written to a http.Request
+/* DcimConsolePortTemplatesUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim console port templates update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConsolePortTemplatesUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableConsolePortTemplate
-	/*ID
-	  A unique integer value identifying this console port template.
 
+	/* ID.
+
+	   A unique integer value identifying this console port template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim console port templates update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortTemplatesUpdateParams) WithDefaults() *DcimConsolePortTemplatesUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim console port templates update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortTemplatesUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim console port templates update params
@@ -153,7 +168,6 @@ func (o *DcimConsolePortTemplatesUpdateParams) WriteToRequest(r runtime.ClientRe
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamVlansCreateParams creates a new IpamVlansCreateParams object
-// with the default values initialized.
+// NewIpamVlansCreateParams creates a new IpamVlansCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVlansCreateParams() *IpamVlansCreateParams {
-	var ()
 	return &IpamVlansCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVlansCreateParamsWithTimeout creates a new IpamVlansCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVlansCreateParamsWithTimeout(timeout time.Duration) *IpamVlansCreateParams {
-	var ()
 	return &IpamVlansCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVlansCreateParamsWithContext creates a new IpamVlansCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVlansCreateParamsWithContext(ctx context.Context) *IpamVlansCreateParams {
-	var ()
 	return &IpamVlansCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVlansCreateParamsWithHTTPClient creates a new IpamVlansCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVlansCreateParamsWithHTTPClient(client *http.Client) *IpamVlansCreateParams {
-	var ()
 	return &IpamVlansCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVlansCreateParams contains all the parameters to send to the API endpoint
-for the ipam vlans create operation typically these are written to a http.Request
+/* IpamVlansCreateParams contains all the parameters to send to the API endpoint
+   for the ipam vlans create operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVlansCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVLAN
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vlans create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlansCreateParams) WithDefaults() *IpamVlansCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vlans create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlansCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vlans create params
@@ -136,7 +150,6 @@ func (o *IpamVlansCreateParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

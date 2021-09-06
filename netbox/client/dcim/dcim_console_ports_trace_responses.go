@@ -44,7 +44,6 @@ func (o *DcimConsolePortsTraceReader) ReadResponse(response runtime.ClientRespon
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimConsolePortsTraceOK() *DcimConsolePortsTraceOK {
 	return &DcimConsolePortsTraceOK{}
 }
 
-/*DcimConsolePortsTraceOK handles this case with default header values.
+/* DcimConsolePortsTraceOK describes a response with status code 200, with default header values.
 
 DcimConsolePortsTraceOK dcim console ports trace o k
 */
@@ -66,7 +65,6 @@ type DcimConsolePortsTraceOK struct {
 func (o *DcimConsolePortsTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-ports/{id}/trace/][%d] dcimConsolePortsTraceOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimConsolePortsTraceOK) GetPayload() *models.ConsolePort {
 	return o.Payload
 }

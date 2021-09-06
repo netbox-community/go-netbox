@@ -44,7 +44,6 @@ func (o *DcimSitesReadReader) ReadResponse(response runtime.ClientResponse, cons
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimSitesReadOK() *DcimSitesReadOK {
 	return &DcimSitesReadOK{}
 }
 
-/*DcimSitesReadOK handles this case with default header values.
+/* DcimSitesReadOK describes a response with status code 200, with default header values.
 
 DcimSitesReadOK dcim sites read o k
 */
@@ -66,7 +65,6 @@ type DcimSitesReadOK struct {
 func (o *DcimSitesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcimSitesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimSitesReadOK) GetPayload() *models.Site {
 	return o.Payload
 }

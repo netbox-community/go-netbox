@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewSecretsSecretsCreateParams creates a new SecretsSecretsCreateParams object
-// with the default values initialized.
+// NewSecretsSecretsCreateParams creates a new SecretsSecretsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsSecretsCreateParams() *SecretsSecretsCreateParams {
-	var ()
 	return &SecretsSecretsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsSecretsCreateParamsWithTimeout creates a new SecretsSecretsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsSecretsCreateParamsWithTimeout(timeout time.Duration) *SecretsSecretsCreateParams {
-	var ()
 	return &SecretsSecretsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsSecretsCreateParamsWithContext creates a new SecretsSecretsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsSecretsCreateParamsWithContext(ctx context.Context) *SecretsSecretsCreateParams {
-	var ()
 	return &SecretsSecretsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsSecretsCreateParamsWithHTTPClient creates a new SecretsSecretsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsSecretsCreateParamsWithHTTPClient(client *http.Client) *SecretsSecretsCreateParams {
-	var ()
 	return &SecretsSecretsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsSecretsCreateParams contains all the parameters to send to the API endpoint
-for the secrets secrets create operation typically these are written to a http.Request
+/* SecretsSecretsCreateParams contains all the parameters to send to the API endpoint
+   for the secrets secrets create operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsSecretsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableSecret
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets secrets create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsCreateParams) WithDefaults() *SecretsSecretsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets secrets create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets secrets create params
@@ -136,7 +150,6 @@ func (o *SecretsSecretsCreateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

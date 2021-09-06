@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasTagsReadParams creates a new ExtrasTagsReadParams object
-// with the default values initialized.
+// NewExtrasTagsReadParams creates a new ExtrasTagsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasTagsReadParams() *ExtrasTagsReadParams {
-	var ()
 	return &ExtrasTagsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasTagsReadParamsWithTimeout creates a new ExtrasTagsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasTagsReadParamsWithTimeout(timeout time.Duration) *ExtrasTagsReadParams {
-	var ()
 	return &ExtrasTagsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasTagsReadParamsWithContext creates a new ExtrasTagsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasTagsReadParamsWithContext(ctx context.Context) *ExtrasTagsReadParams {
-	var ()
 	return &ExtrasTagsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasTagsReadParamsWithHTTPClient creates a new ExtrasTagsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasTagsReadParamsWithHTTPClient(client *http.Client) *ExtrasTagsReadParams {
-	var ()
 	return &ExtrasTagsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasTagsReadParams contains all the parameters to send to the API endpoint
-for the extras tags read operation typically these are written to a http.Request
+/* ExtrasTagsReadParams contains all the parameters to send to the API endpoint
+   for the extras tags read operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasTagsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this tag.
+	/* ID.
 
+	   A unique integer value identifying this tag.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras tags read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasTagsReadParams) WithDefaults() *ExtrasTagsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras tags read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasTagsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras tags read params

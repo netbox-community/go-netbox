@@ -45,14 +45,7 @@ func (o *DcimInterfaceTemplatesPartialUpdateReader) ReadResponse(response runtim
 		}
 		return result, nil
 	default:
-		result := NewDcimInterfaceTemplatesPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimInterfaceTemplatesPartialUpdateOK() *DcimInterfaceTemplatesPartialUp
 	return &DcimInterfaceTemplatesPartialUpdateOK{}
 }
 
-/*DcimInterfaceTemplatesPartialUpdateOK handles this case with default header values.
+/* DcimInterfaceTemplatesPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimInterfaceTemplatesPartialUpdateOK dcim interface templates partial update o k
 */
@@ -72,7 +65,6 @@ type DcimInterfaceTemplatesPartialUpdateOK struct {
 func (o *DcimInterfaceTemplatesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesPartialUpdateOK) GetPayload() *models.InterfaceTemplate {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimInterfaceTemplatesPartialUpdateOK) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimInterfaceTemplatesPartialUpdateDefault creates a DcimInterfaceTemplatesPartialUpdateDefault with default headers values
-func NewDcimInterfaceTemplatesPartialUpdateDefault(code int) *DcimInterfaceTemplatesPartialUpdateDefault {
-	return &DcimInterfaceTemplatesPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimInterfaceTemplatesPartialUpdateDefault handles this case with default header values.
-
-DcimInterfaceTemplatesPartialUpdateDefault dcim interface templates partial update default
-*/
-type DcimInterfaceTemplatesPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim interface templates partial update default response
-func (o *DcimInterfaceTemplatesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimInterfaceTemplatesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcim_interface-templates_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimInterfaceTemplatesPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimInterfaceTemplatesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

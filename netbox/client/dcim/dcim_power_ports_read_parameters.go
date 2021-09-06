@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPowerPortsReadParams creates a new DcimPowerPortsReadParams object
-// with the default values initialized.
+// NewDcimPowerPortsReadParams creates a new DcimPowerPortsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerPortsReadParams() *DcimPowerPortsReadParams {
-	var ()
 	return &DcimPowerPortsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerPortsReadParamsWithTimeout creates a new DcimPowerPortsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerPortsReadParamsWithTimeout(timeout time.Duration) *DcimPowerPortsReadParams {
-	var ()
 	return &DcimPowerPortsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerPortsReadParamsWithContext creates a new DcimPowerPortsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerPortsReadParamsWithContext(ctx context.Context) *DcimPowerPortsReadParams {
-	var ()
 	return &DcimPowerPortsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerPortsReadParamsWithHTTPClient creates a new DcimPowerPortsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerPortsReadParamsWithHTTPClient(client *http.Client) *DcimPowerPortsReadParams {
-	var ()
 	return &DcimPowerPortsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerPortsReadParams contains all the parameters to send to the API endpoint
-for the dcim power ports read operation typically these are written to a http.Request
+/* DcimPowerPortsReadParams contains all the parameters to send to the API endpoint
+   for the dcim power ports read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerPortsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this power port.
+	/* ID.
 
+	   A unique integer value identifying this power port.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power ports read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortsReadParams) WithDefaults() *DcimPowerPortsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power ports read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power ports read params

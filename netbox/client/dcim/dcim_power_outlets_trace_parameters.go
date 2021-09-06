@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPowerOutletsTraceParams creates a new DcimPowerOutletsTraceParams object
-// with the default values initialized.
+// NewDcimPowerOutletsTraceParams creates a new DcimPowerOutletsTraceParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerOutletsTraceParams() *DcimPowerOutletsTraceParams {
-	var ()
 	return &DcimPowerOutletsTraceParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerOutletsTraceParamsWithTimeout creates a new DcimPowerOutletsTraceParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerOutletsTraceParamsWithTimeout(timeout time.Duration) *DcimPowerOutletsTraceParams {
-	var ()
 	return &DcimPowerOutletsTraceParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerOutletsTraceParamsWithContext creates a new DcimPowerOutletsTraceParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerOutletsTraceParamsWithContext(ctx context.Context) *DcimPowerOutletsTraceParams {
-	var ()
 	return &DcimPowerOutletsTraceParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerOutletsTraceParamsWithHTTPClient creates a new DcimPowerOutletsTraceParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerOutletsTraceParamsWithHTTPClient(client *http.Client) *DcimPowerOutletsTraceParams {
-	var ()
 	return &DcimPowerOutletsTraceParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerOutletsTraceParams contains all the parameters to send to the API endpoint
-for the dcim power outlets trace operation typically these are written to a http.Request
+/* DcimPowerOutletsTraceParams contains all the parameters to send to the API endpoint
+   for the dcim power outlets trace operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerOutletsTraceParams struct {
 
-	/*ID
-	  A unique integer value identifying this power outlet.
+	/* ID.
 
+	   A unique integer value identifying this power outlet.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power outlets trace params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletsTraceParams) WithDefaults() *DcimPowerOutletsTraceParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power outlets trace params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletsTraceParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power outlets trace params

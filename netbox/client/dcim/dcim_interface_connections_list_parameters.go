@@ -32,74 +32,88 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimInterfaceConnectionsListParams creates a new DcimInterfaceConnectionsListParams object
-// with the default values initialized.
+// NewDcimInterfaceConnectionsListParams creates a new DcimInterfaceConnectionsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInterfaceConnectionsListParams() *DcimInterfaceConnectionsListParams {
-	var ()
 	return &DcimInterfaceConnectionsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInterfaceConnectionsListParamsWithTimeout creates a new DcimInterfaceConnectionsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInterfaceConnectionsListParamsWithTimeout(timeout time.Duration) *DcimInterfaceConnectionsListParams {
-	var ()
 	return &DcimInterfaceConnectionsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInterfaceConnectionsListParamsWithContext creates a new DcimInterfaceConnectionsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInterfaceConnectionsListParamsWithContext(ctx context.Context) *DcimInterfaceConnectionsListParams {
-	var ()
 	return &DcimInterfaceConnectionsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInterfaceConnectionsListParamsWithHTTPClient creates a new DcimInterfaceConnectionsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInterfaceConnectionsListParamsWithHTTPClient(client *http.Client) *DcimInterfaceConnectionsListParams {
-	var ()
 	return &DcimInterfaceConnectionsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInterfaceConnectionsListParams contains all the parameters to send to the API endpoint
-for the dcim interface connections list operation typically these are written to a http.Request
+/* DcimInterfaceConnectionsListParams contains all the parameters to send to the API endpoint
+   for the dcim interface connections list operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInterfaceConnectionsListParams struct {
 
-	/*ConnectionStatus*/
-	ConnectionStatus *string
-	/*ConnectionStatusn*/
-	ConnectionStatusn *string
-	/*Device*/
+	// Device.
 	Device *string
-	/*DeviceID*/
-	DeviceID *string
-	/*Limit
-	  Number of results to return per page.
 
+	// DeviceID.
+	DeviceID *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Offset
-	  The initial index from which to return the results.
 
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Site*/
+
+	// Site.
 	Site *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim interface connections list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceConnectionsListParams) WithDefaults() *DcimInterfaceConnectionsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim interface connections list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceConnectionsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim interface connections list params
@@ -133,28 +147,6 @@ func (o *DcimInterfaceConnectionsListParams) WithHTTPClient(client *http.Client)
 // SetHTTPClient adds the HTTPClient to the dcim interface connections list params
 func (o *DcimInterfaceConnectionsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
-}
-
-// WithConnectionStatus adds the connectionStatus to the dcim interface connections list params
-func (o *DcimInterfaceConnectionsListParams) WithConnectionStatus(connectionStatus *string) *DcimInterfaceConnectionsListParams {
-	o.SetConnectionStatus(connectionStatus)
-	return o
-}
-
-// SetConnectionStatus adds the connectionStatus to the dcim interface connections list params
-func (o *DcimInterfaceConnectionsListParams) SetConnectionStatus(connectionStatus *string) {
-	o.ConnectionStatus = connectionStatus
-}
-
-// WithConnectionStatusn adds the connectionStatusn to the dcim interface connections list params
-func (o *DcimInterfaceConnectionsListParams) WithConnectionStatusn(connectionStatusn *string) *DcimInterfaceConnectionsListParams {
-	o.SetConnectionStatusn(connectionStatusn)
-	return o
-}
-
-// SetConnectionStatusn adds the connectionStatusN to the dcim interface connections list params
-func (o *DcimInterfaceConnectionsListParams) SetConnectionStatusn(connectionStatusn *string) {
-	o.ConnectionStatusn = connectionStatusn
 }
 
 // WithDevice adds the device to the dcim interface connections list params
@@ -220,116 +212,89 @@ func (o *DcimInterfaceConnectionsListParams) WriteToRequest(r runtime.ClientRequ
 	}
 	var res []error
 
-	if o.ConnectionStatus != nil {
-
-		// query param connection_status
-		var qrConnectionStatus string
-		if o.ConnectionStatus != nil {
-			qrConnectionStatus = *o.ConnectionStatus
-		}
-		qConnectionStatus := qrConnectionStatus
-		if qConnectionStatus != "" {
-			if err := r.SetQueryParam("connection_status", qConnectionStatus); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.ConnectionStatusn != nil {
-
-		// query param connection_status__n
-		var qrConnectionStatusn string
-		if o.ConnectionStatusn != nil {
-			qrConnectionStatusn = *o.ConnectionStatusn
-		}
-		qConnectionStatusn := qrConnectionStatusn
-		if qConnectionStatusn != "" {
-			if err := r.SetQueryParam("connection_status__n", qConnectionStatusn); err != nil {
-				return err
-			}
-		}
-
-	}
-
 	if o.Device != nil {
 
 		// query param device
 		var qrDevice string
+
 		if o.Device != nil {
 			qrDevice = *o.Device
 		}
 		qDevice := qrDevice
 		if qDevice != "" {
+
 			if err := r.SetQueryParam("device", qDevice); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceID != nil {
 
 		// query param device_id
 		var qrDeviceID string
+
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
 		qDeviceID := qrDeviceID
 		if qDeviceID != "" {
+
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Site != nil {
 
 		// query param site
 		var qrSite string
+
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
 		qSite := qrSite
 		if qSite != "" {
+
 			if err := r.SetQueryParam("site", qSite); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

@@ -44,7 +44,6 @@ func (o *CircuitsCircuitTerminationsReadReader) ReadResponse(response runtime.Cl
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewCircuitsCircuitTerminationsReadOK() *CircuitsCircuitTerminationsReadOK {
 	return &CircuitsCircuitTerminationsReadOK{}
 }
 
-/*CircuitsCircuitTerminationsReadOK handles this case with default header values.
+/* CircuitsCircuitTerminationsReadOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTerminationsReadOK circuits circuit terminations read o k
 */
@@ -66,7 +65,6 @@ type CircuitsCircuitTerminationsReadOK struct {
 func (o *CircuitsCircuitTerminationsReadOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsReadOK) GetPayload() *models.CircuitTermination {
 	return o.Payload
 }

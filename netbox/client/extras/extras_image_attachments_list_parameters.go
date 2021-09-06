@@ -32,112 +32,163 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasImageAttachmentsListParams creates a new ExtrasImageAttachmentsListParams object
-// with the default values initialized.
+// NewExtrasImageAttachmentsListParams creates a new ExtrasImageAttachmentsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasImageAttachmentsListParams() *ExtrasImageAttachmentsListParams {
-	var ()
 	return &ExtrasImageAttachmentsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasImageAttachmentsListParamsWithTimeout creates a new ExtrasImageAttachmentsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasImageAttachmentsListParamsWithTimeout(timeout time.Duration) *ExtrasImageAttachmentsListParams {
-	var ()
 	return &ExtrasImageAttachmentsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasImageAttachmentsListParamsWithContext creates a new ExtrasImageAttachmentsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasImageAttachmentsListParamsWithContext(ctx context.Context) *ExtrasImageAttachmentsListParams {
-	var ()
 	return &ExtrasImageAttachmentsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasImageAttachmentsListParamsWithHTTPClient creates a new ExtrasImageAttachmentsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasImageAttachmentsListParamsWithHTTPClient(client *http.Client) *ExtrasImageAttachmentsListParams {
-	var ()
 	return &ExtrasImageAttachmentsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasImageAttachmentsListParams contains all the parameters to send to the API endpoint
-for the extras image attachments list operation typically these are written to a http.Request
+/* ExtrasImageAttachmentsListParams contains all the parameters to send to the API endpoint
+   for the extras image attachments list operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasImageAttachmentsListParams struct {
 
-	/*ContentType*/
+	// ContentType.
 	ContentType *string
-	/*ContentTypen*/
-	ContentTypen *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Limit
-	  Number of results to return per page.
 
+	// ContentTypen.
+	ContentTypen *string
+
+	// ContentTypeID.
+	ContentTypeID *string
+
+	// ContentTypeIDn.
+	ContentTypeIDn *string
+
+	// Created.
+	Created *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*ObjectID*/
-	ObjectID *string
-	/*ObjectIDGt*/
-	ObjectIDGt *string
-	/*ObjectIDGte*/
-	ObjectIDGte *string
-	/*ObjectIDLt*/
-	ObjectIDLt *string
-	/*ObjectIDLte*/
-	ObjectIDLte *string
-	/*ObjectIDn*/
-	ObjectIDn *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Name.
+	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	// ObjectID.
+	ObjectID *string
+
+	// ObjectIDGt.
+	ObjectIDGt *string
+
+	// ObjectIDGte.
+	ObjectIDGte *string
+
+	// ObjectIDLt.
+	ObjectIDLt *string
+
+	// ObjectIDLte.
+	ObjectIDLte *string
+
+	// ObjectIDn.
+	ObjectIDn *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras image attachments list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsListParams) WithDefaults() *ExtrasImageAttachmentsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras image attachments list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras image attachments list params
@@ -193,6 +244,39 @@ func (o *ExtrasImageAttachmentsListParams) WithContentTypen(contentTypen *string
 // SetContentTypen adds the contentTypeN to the extras image attachments list params
 func (o *ExtrasImageAttachmentsListParams) SetContentTypen(contentTypen *string) {
 	o.ContentTypen = contentTypen
+}
+
+// WithContentTypeID adds the contentTypeID to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) WithContentTypeID(contentTypeID *string) *ExtrasImageAttachmentsListParams {
+	o.SetContentTypeID(contentTypeID)
+	return o
+}
+
+// SetContentTypeID adds the contentTypeId to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) SetContentTypeID(contentTypeID *string) {
+	o.ContentTypeID = contentTypeID
+}
+
+// WithContentTypeIDn adds the contentTypeIDn to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) WithContentTypeIDn(contentTypeIDn *string) *ExtrasImageAttachmentsListParams {
+	o.SetContentTypeIDn(contentTypeIDn)
+	return o
+}
+
+// SetContentTypeIDn adds the contentTypeIdN to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) SetContentTypeIDn(contentTypeIDn *string) {
+	o.ContentTypeIDn = contentTypeIDn
+}
+
+// WithCreated adds the created to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) WithCreated(created *string) *ExtrasImageAttachmentsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) SetCreated(created *string) {
+	o.Created = created
 }
 
 // WithID adds the id to the extras image attachments list params
@@ -281,6 +365,17 @@ func (o *ExtrasImageAttachmentsListParams) WithName(name *string) *ExtrasImageAt
 // SetName adds the name to the extras image attachments list params
 func (o *ExtrasImageAttachmentsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) WithNameEmpty(nameEmpty *string) *ExtrasImageAttachmentsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the extras image attachments list params
@@ -471,416 +566,510 @@ func (o *ExtrasImageAttachmentsListParams) WriteToRequest(r runtime.ClientReques
 
 		// query param content_type
 		var qrContentType string
+
 		if o.ContentType != nil {
 			qrContentType = *o.ContentType
 		}
 		qContentType := qrContentType
 		if qContentType != "" {
+
 			if err := r.SetQueryParam("content_type", qContentType); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ContentTypen != nil {
 
 		// query param content_type__n
 		var qrContentTypen string
+
 		if o.ContentTypen != nil {
 			qrContentTypen = *o.ContentTypen
 		}
 		qContentTypen := qrContentTypen
 		if qContentTypen != "" {
+
 			if err := r.SetQueryParam("content_type__n", qContentTypen); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.ContentTypeID != nil {
+
+		// query param content_type_id
+		var qrContentTypeID string
+
+		if o.ContentTypeID != nil {
+			qrContentTypeID = *o.ContentTypeID
+		}
+		qContentTypeID := qrContentTypeID
+		if qContentTypeID != "" {
+
+			if err := r.SetQueryParam("content_type_id", qContentTypeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDn != nil {
+
+		// query param content_type_id__n
+		var qrContentTypeIDn string
+
+		if o.ContentTypeIDn != nil {
+			qrContentTypeIDn = *o.ContentTypeIDn
+		}
+		qContentTypeIDn := qrContentTypeIDn
+		if qContentTypeIDn != "" {
+
+			if err := r.SetQueryParam("content_type_id__n", qContentTypeIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectID != nil {
 
 		// query param object_id
 		var qrObjectID string
+
 		if o.ObjectID != nil {
 			qrObjectID = *o.ObjectID
 		}
 		qObjectID := qrObjectID
 		if qObjectID != "" {
+
 			if err := r.SetQueryParam("object_id", qObjectID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectIDGt != nil {
 
 		// query param object_id__gt
 		var qrObjectIDGt string
+
 		if o.ObjectIDGt != nil {
 			qrObjectIDGt = *o.ObjectIDGt
 		}
 		qObjectIDGt := qrObjectIDGt
 		if qObjectIDGt != "" {
+
 			if err := r.SetQueryParam("object_id__gt", qObjectIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectIDGte != nil {
 
 		// query param object_id__gte
 		var qrObjectIDGte string
+
 		if o.ObjectIDGte != nil {
 			qrObjectIDGte = *o.ObjectIDGte
 		}
 		qObjectIDGte := qrObjectIDGte
 		if qObjectIDGte != "" {
+
 			if err := r.SetQueryParam("object_id__gte", qObjectIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectIDLt != nil {
 
 		// query param object_id__lt
 		var qrObjectIDLt string
+
 		if o.ObjectIDLt != nil {
 			qrObjectIDLt = *o.ObjectIDLt
 		}
 		qObjectIDLt := qrObjectIDLt
 		if qObjectIDLt != "" {
+
 			if err := r.SetQueryParam("object_id__lt", qObjectIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectIDLte != nil {
 
 		// query param object_id__lte
 		var qrObjectIDLte string
+
 		if o.ObjectIDLte != nil {
 			qrObjectIDLte = *o.ObjectIDLte
 		}
 		qObjectIDLte := qrObjectIDLte
 		if qObjectIDLte != "" {
+
 			if err := r.SetQueryParam("object_id__lte", qObjectIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectIDn != nil {
 
 		// query param object_id__n
 		var qrObjectIDn string
+
 		if o.ObjectIDn != nil {
 			qrObjectIDn = *o.ObjectIDn
 		}
 		qObjectIDn := qrObjectIDn
 		if qObjectIDn != "" {
+
 			if err := r.SetQueryParam("object_id__n", qObjectIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

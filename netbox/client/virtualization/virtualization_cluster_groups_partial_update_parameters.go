@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewVirtualizationClusterGroupsPartialUpdateParams creates a new VirtualizationClusterGroupsPartialUpdateParams object
-// with the default values initialized.
+// NewVirtualizationClusterGroupsPartialUpdateParams creates a new VirtualizationClusterGroupsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationClusterGroupsPartialUpdateParams() *VirtualizationClusterGroupsPartialUpdateParams {
-	var ()
 	return &VirtualizationClusterGroupsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationClusterGroupsPartialUpdateParamsWithTimeout creates a new VirtualizationClusterGroupsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationClusterGroupsPartialUpdateParamsWithTimeout(timeout time.Duration) *VirtualizationClusterGroupsPartialUpdateParams {
-	var ()
 	return &VirtualizationClusterGroupsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationClusterGroupsPartialUpdateParamsWithContext creates a new VirtualizationClusterGroupsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationClusterGroupsPartialUpdateParamsWithContext(ctx context.Context) *VirtualizationClusterGroupsPartialUpdateParams {
-	var ()
 	return &VirtualizationClusterGroupsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationClusterGroupsPartialUpdateParamsWithHTTPClient creates a new VirtualizationClusterGroupsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationClusterGroupsPartialUpdateParamsWithHTTPClient(client *http.Client) *VirtualizationClusterGroupsPartialUpdateParams {
-	var ()
 	return &VirtualizationClusterGroupsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationClusterGroupsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the virtualization cluster groups partial update operation typically these are written to a http.Request
+/* VirtualizationClusterGroupsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the virtualization cluster groups partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationClusterGroupsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.ClusterGroup
-	/*ID
-	  A unique integer value identifying this cluster group.
 
+	/* ID.
+
+	   A unique integer value identifying this cluster group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization cluster groups partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterGroupsPartialUpdateParams) WithDefaults() *VirtualizationClusterGroupsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization cluster groups partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterGroupsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization cluster groups partial update params
@@ -153,7 +168,6 @@ func (o *VirtualizationClusterGroupsPartialUpdateParams) WriteToRequest(r runtim
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -45,14 +45,7 @@ func (o *DcimPowerPanelsPartialUpdateReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		result := NewDcimPowerPanelsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimPowerPanelsPartialUpdateOK() *DcimPowerPanelsPartialUpdateOK {
 	return &DcimPowerPanelsPartialUpdateOK{}
 }
 
-/*DcimPowerPanelsPartialUpdateOK handles this case with default header values.
+/* DcimPowerPanelsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPanelsPartialUpdateOK dcim power panels partial update o k
 */
@@ -72,7 +65,6 @@ type DcimPowerPanelsPartialUpdateOK struct {
 func (o *DcimPowerPanelsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-panels/{id}/][%d] dcimPowerPanelsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPanelsPartialUpdateOK) GetPayload() *models.PowerPanel {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimPowerPanelsPartialUpdateOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimPowerPanelsPartialUpdateDefault creates a DcimPowerPanelsPartialUpdateDefault with default headers values
-func NewDcimPowerPanelsPartialUpdateDefault(code int) *DcimPowerPanelsPartialUpdateDefault {
-	return &DcimPowerPanelsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimPowerPanelsPartialUpdateDefault handles this case with default header values.
-
-DcimPowerPanelsPartialUpdateDefault dcim power panels partial update default
-*/
-type DcimPowerPanelsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim power panels partial update default response
-func (o *DcimPowerPanelsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimPowerPanelsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/power-panels/{id}/][%d] dcim_power-panels_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimPowerPanelsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimPowerPanelsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

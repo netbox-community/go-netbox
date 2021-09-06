@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamRolesPartialUpdateParams creates a new IpamRolesPartialUpdateParams object
-// with the default values initialized.
+// NewIpamRolesPartialUpdateParams creates a new IpamRolesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRolesPartialUpdateParams() *IpamRolesPartialUpdateParams {
-	var ()
 	return &IpamRolesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRolesPartialUpdateParamsWithTimeout creates a new IpamRolesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRolesPartialUpdateParamsWithTimeout(timeout time.Duration) *IpamRolesPartialUpdateParams {
-	var ()
 	return &IpamRolesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRolesPartialUpdateParamsWithContext creates a new IpamRolesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRolesPartialUpdateParamsWithContext(ctx context.Context) *IpamRolesPartialUpdateParams {
-	var ()
 	return &IpamRolesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRolesPartialUpdateParamsWithHTTPClient creates a new IpamRolesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRolesPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamRolesPartialUpdateParams {
-	var ()
 	return &IpamRolesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRolesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the ipam roles partial update operation typically these are written to a http.Request
+/* IpamRolesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam roles partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRolesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Role
-	/*ID
-	  A unique integer value identifying this role.
 
+	/* ID.
+
+	   A unique integer value identifying this role.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam roles partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRolesPartialUpdateParams) WithDefaults() *IpamRolesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam roles partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRolesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam roles partial update params
@@ -153,7 +168,6 @@ func (o *IpamRolesPartialUpdateParams) WriteToRequest(r runtime.ClientRequest, r
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

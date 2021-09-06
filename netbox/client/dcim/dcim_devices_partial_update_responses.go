@@ -45,14 +45,7 @@ func (o *DcimDevicesPartialUpdateReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		result := NewDcimDevicesPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimDevicesPartialUpdateOK() *DcimDevicesPartialUpdateOK {
 	return &DcimDevicesPartialUpdateOK{}
 }
 
-/*DcimDevicesPartialUpdateOK handles this case with default header values.
+/* DcimDevicesPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimDevicesPartialUpdateOK dcim devices partial update o k
 */
@@ -72,7 +65,6 @@ type DcimDevicesPartialUpdateOK struct {
 func (o *DcimDevicesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/devices/{id}/][%d] dcimDevicesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDevicesPartialUpdateOK) GetPayload() *models.DeviceWithConfigContext {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimDevicesPartialUpdateOK) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimDevicesPartialUpdateDefault creates a DcimDevicesPartialUpdateDefault with default headers values
-func NewDcimDevicesPartialUpdateDefault(code int) *DcimDevicesPartialUpdateDefault {
-	return &DcimDevicesPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimDevicesPartialUpdateDefault handles this case with default header values.
-
-DcimDevicesPartialUpdateDefault dcim devices partial update default
-*/
-type DcimDevicesPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim devices partial update default response
-func (o *DcimDevicesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimDevicesPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/devices/{id}/][%d] dcim_devices_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimDevicesPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimDevicesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimManufacturersCreateParams creates a new DcimManufacturersCreateParams object
-// with the default values initialized.
+// NewDcimManufacturersCreateParams creates a new DcimManufacturersCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimManufacturersCreateParams() *DcimManufacturersCreateParams {
-	var ()
 	return &DcimManufacturersCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimManufacturersCreateParamsWithTimeout creates a new DcimManufacturersCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimManufacturersCreateParamsWithTimeout(timeout time.Duration) *DcimManufacturersCreateParams {
-	var ()
 	return &DcimManufacturersCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimManufacturersCreateParamsWithContext creates a new DcimManufacturersCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimManufacturersCreateParamsWithContext(ctx context.Context) *DcimManufacturersCreateParams {
-	var ()
 	return &DcimManufacturersCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimManufacturersCreateParamsWithHTTPClient creates a new DcimManufacturersCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimManufacturersCreateParamsWithHTTPClient(client *http.Client) *DcimManufacturersCreateParams {
-	var ()
 	return &DcimManufacturersCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimManufacturersCreateParams contains all the parameters to send to the API endpoint
-for the dcim manufacturers create operation typically these are written to a http.Request
+/* DcimManufacturersCreateParams contains all the parameters to send to the API endpoint
+   for the dcim manufacturers create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimManufacturersCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Manufacturer
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim manufacturers create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimManufacturersCreateParams) WithDefaults() *DcimManufacturersCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim manufacturers create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimManufacturersCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim manufacturers create params
@@ -136,7 +150,6 @@ func (o *DcimManufacturersCreateParams) WriteToRequest(r runtime.ClientRequest, 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

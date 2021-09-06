@@ -45,14 +45,7 @@ func (o *DcimRackReservationsUpdateReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		result := NewDcimRackReservationsUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimRackReservationsUpdateOK() *DcimRackReservationsUpdateOK {
 	return &DcimRackReservationsUpdateOK{}
 }
 
-/*DcimRackReservationsUpdateOK handles this case with default header values.
+/* DcimRackReservationsUpdateOK describes a response with status code 200, with default header values.
 
 DcimRackReservationsUpdateOK dcim rack reservations update o k
 */
@@ -72,7 +65,6 @@ type DcimRackReservationsUpdateOK struct {
 func (o *DcimRackReservationsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-reservations/{id}/][%d] dcimRackReservationsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackReservationsUpdateOK) GetPayload() *models.RackReservation {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimRackReservationsUpdateOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimRackReservationsUpdateDefault creates a DcimRackReservationsUpdateDefault with default headers values
-func NewDcimRackReservationsUpdateDefault(code int) *DcimRackReservationsUpdateDefault {
-	return &DcimRackReservationsUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimRackReservationsUpdateDefault handles this case with default header values.
-
-DcimRackReservationsUpdateDefault dcim rack reservations update default
-*/
-type DcimRackReservationsUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim rack reservations update default response
-func (o *DcimRackReservationsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimRackReservationsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimRackReservationsUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimRackReservationsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

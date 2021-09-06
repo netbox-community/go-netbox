@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimDeviceBayTemplatesCreateParams creates a new DcimDeviceBayTemplatesCreateParams object
-// with the default values initialized.
+// NewDcimDeviceBayTemplatesCreateParams creates a new DcimDeviceBayTemplatesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDeviceBayTemplatesCreateParams() *DcimDeviceBayTemplatesCreateParams {
-	var ()
 	return &DcimDeviceBayTemplatesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDeviceBayTemplatesCreateParamsWithTimeout creates a new DcimDeviceBayTemplatesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDeviceBayTemplatesCreateParamsWithTimeout(timeout time.Duration) *DcimDeviceBayTemplatesCreateParams {
-	var ()
 	return &DcimDeviceBayTemplatesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDeviceBayTemplatesCreateParamsWithContext creates a new DcimDeviceBayTemplatesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDeviceBayTemplatesCreateParamsWithContext(ctx context.Context) *DcimDeviceBayTemplatesCreateParams {
-	var ()
 	return &DcimDeviceBayTemplatesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDeviceBayTemplatesCreateParamsWithHTTPClient creates a new DcimDeviceBayTemplatesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDeviceBayTemplatesCreateParamsWithHTTPClient(client *http.Client) *DcimDeviceBayTemplatesCreateParams {
-	var ()
 	return &DcimDeviceBayTemplatesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDeviceBayTemplatesCreateParams contains all the parameters to send to the API endpoint
-for the dcim device bay templates create operation typically these are written to a http.Request
+/* DcimDeviceBayTemplatesCreateParams contains all the parameters to send to the API endpoint
+   for the dcim device bay templates create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDeviceBayTemplatesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableDeviceBayTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim device bay templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBayTemplatesCreateParams) WithDefaults() *DcimDeviceBayTemplatesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim device bay templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBayTemplatesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim device bay templates create params
@@ -136,7 +150,6 @@ func (o *DcimDeviceBayTemplatesCreateParams) WriteToRequest(r runtime.ClientRequ
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

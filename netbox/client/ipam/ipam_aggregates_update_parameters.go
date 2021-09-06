@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamAggregatesUpdateParams creates a new IpamAggregatesUpdateParams object
-// with the default values initialized.
+// NewIpamAggregatesUpdateParams creates a new IpamAggregatesUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamAggregatesUpdateParams() *IpamAggregatesUpdateParams {
-	var ()
 	return &IpamAggregatesUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamAggregatesUpdateParamsWithTimeout creates a new IpamAggregatesUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamAggregatesUpdateParamsWithTimeout(timeout time.Duration) *IpamAggregatesUpdateParams {
-	var ()
 	return &IpamAggregatesUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamAggregatesUpdateParamsWithContext creates a new IpamAggregatesUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamAggregatesUpdateParamsWithContext(ctx context.Context) *IpamAggregatesUpdateParams {
-	var ()
 	return &IpamAggregatesUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamAggregatesUpdateParamsWithHTTPClient creates a new IpamAggregatesUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamAggregatesUpdateParamsWithHTTPClient(client *http.Client) *IpamAggregatesUpdateParams {
-	var ()
 	return &IpamAggregatesUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamAggregatesUpdateParams contains all the parameters to send to the API endpoint
-for the ipam aggregates update operation typically these are written to a http.Request
+/* IpamAggregatesUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam aggregates update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamAggregatesUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableAggregate
-	/*ID
-	  A unique integer value identifying this aggregate.
 
+	/* ID.
+
+	   A unique integer value identifying this aggregate.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam aggregates update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesUpdateParams) WithDefaults() *IpamAggregatesUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam aggregates update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam aggregates update params
@@ -153,7 +168,6 @@ func (o *IpamAggregatesUpdateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

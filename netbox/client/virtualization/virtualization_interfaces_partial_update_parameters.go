@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewVirtualizationInterfacesPartialUpdateParams creates a new VirtualizationInterfacesPartialUpdateParams object
-// with the default values initialized.
+// NewVirtualizationInterfacesPartialUpdateParams creates a new VirtualizationInterfacesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationInterfacesPartialUpdateParams() *VirtualizationInterfacesPartialUpdateParams {
-	var ()
 	return &VirtualizationInterfacesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationInterfacesPartialUpdateParamsWithTimeout creates a new VirtualizationInterfacesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationInterfacesPartialUpdateParamsWithTimeout(timeout time.Duration) *VirtualizationInterfacesPartialUpdateParams {
-	var ()
 	return &VirtualizationInterfacesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationInterfacesPartialUpdateParamsWithContext creates a new VirtualizationInterfacesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationInterfacesPartialUpdateParamsWithContext(ctx context.Context) *VirtualizationInterfacesPartialUpdateParams {
-	var ()
 	return &VirtualizationInterfacesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationInterfacesPartialUpdateParamsWithHTTPClient creates a new VirtualizationInterfacesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationInterfacesPartialUpdateParamsWithHTTPClient(client *http.Client) *VirtualizationInterfacesPartialUpdateParams {
-	var ()
 	return &VirtualizationInterfacesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationInterfacesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the virtualization interfaces partial update operation typically these are written to a http.Request
+/* VirtualizationInterfacesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the virtualization interfaces partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationInterfacesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVMInterface
-	/*ID
-	  A unique integer value identifying this interface.
 
+	/* ID.
+
+	   A unique integer value identifying this interface.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization interfaces partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationInterfacesPartialUpdateParams) WithDefaults() *VirtualizationInterfacesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization interfaces partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationInterfacesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization interfaces partial update params
@@ -153,7 +168,6 @@ func (o *VirtualizationInterfacesPartialUpdateParams) WriteToRequest(r runtime.C
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

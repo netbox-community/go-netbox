@@ -44,7 +44,6 @@ func (o *DcimConsoleServerPortTemplatesReadReader) ReadResponse(response runtime
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimConsoleServerPortTemplatesReadOK() *DcimConsoleServerPortTemplatesRe
 	return &DcimConsoleServerPortTemplatesReadOK{}
 }
 
-/*DcimConsoleServerPortTemplatesReadOK handles this case with default header values.
+/* DcimConsoleServerPortTemplatesReadOK describes a response with status code 200, with default header values.
 
 DcimConsoleServerPortTemplatesReadOK dcim console server port templates read o k
 */
@@ -66,7 +65,6 @@ type DcimConsoleServerPortTemplatesReadOK struct {
 func (o *DcimConsoleServerPortTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimConsoleServerPortTemplatesReadOK) GetPayload() *models.ConsoleServerPortTemplate {
 	return o.Payload
 }

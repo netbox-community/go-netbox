@@ -45,14 +45,7 @@ func (o *DcimRacksPartialUpdateReader) ReadResponse(response runtime.ClientRespo
 		}
 		return result, nil
 	default:
-		result := NewDcimRacksPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimRacksPartialUpdateOK() *DcimRacksPartialUpdateOK {
 	return &DcimRacksPartialUpdateOK{}
 }
 
-/*DcimRacksPartialUpdateOK handles this case with default header values.
+/* DcimRacksPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimRacksPartialUpdateOK dcim racks partial update o k
 */
@@ -72,7 +65,6 @@ type DcimRacksPartialUpdateOK struct {
 func (o *DcimRacksPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/racks/{id}/][%d] dcimRacksPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRacksPartialUpdateOK) GetPayload() *models.Rack {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimRacksPartialUpdateOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimRacksPartialUpdateDefault creates a DcimRacksPartialUpdateDefault with default headers values
-func NewDcimRacksPartialUpdateDefault(code int) *DcimRacksPartialUpdateDefault {
-	return &DcimRacksPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimRacksPartialUpdateDefault handles this case with default header values.
-
-DcimRacksPartialUpdateDefault dcim racks partial update default
-*/
-type DcimRacksPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim racks partial update default response
-func (o *DcimRacksPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimRacksPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/racks/{id}/][%d] dcim_racks_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimRacksPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimRacksPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

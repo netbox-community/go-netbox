@@ -21,7 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
+	"context"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -34,6 +34,11 @@ import (
 // swagger:model ExportTemplate
 type ExportTemplate struct {
 
+	// As attachment
+	//
+	// Download file as attachment
+	AsAttachment bool `json:"as_attachment,omitempty"`
+
 	// Content type
 	// Required: true
 	ContentType *string `json:"content_type"`
@@ -42,13 +47,17 @@ type ExportTemplate struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// File extension
 	//
 	// Extension to append to the rendered filename
 	// Max Length: 15
 	FileExtension string `json:"file_extension,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -70,9 +79,6 @@ type ExportTemplate struct {
 	// Required: true
 	// Min Length: 1
 	TemplateCode *string `json:"template_code"`
-
-	// template language
-	TemplateLanguage *ExportTemplateTemplateLanguage `json:"template_language,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -108,10 +114,6 @@ func (m *ExportTemplate) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateTemplateLanguage(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
@@ -132,12 +134,11 @@ func (m *ExportTemplate) validateContentType(formats strfmt.Registry) error {
 }
 
 func (m *ExportTemplate) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -145,12 +146,11 @@ func (m *ExportTemplate) validateDescription(formats strfmt.Registry) error {
 }
 
 func (m *ExportTemplate) validateFileExtension(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.FileExtension) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("file_extension", "body", string(m.FileExtension), 15); err != nil {
+	if err := validate.MaxLength("file_extension", "body", m.FileExtension, 15); err != nil {
 		return err
 	}
 
@@ -158,12 +158,11 @@ func (m *ExportTemplate) validateFileExtension(formats strfmt.Registry) error {
 }
 
 func (m *ExportTemplate) validateMimeType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.MimeType) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("mime_type", "body", string(m.MimeType), 50); err != nil {
+	if err := validate.MaxLength("mime_type", "body", m.MimeType, 50); err != nil {
 		return err
 	}
 
@@ -176,11 +175,11 @@ func (m *ExportTemplate) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
@@ -193,38 +192,68 @@ func (m *ExportTemplate) validateTemplateCode(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("template_code", "body", string(*m.TemplateCode), 1); err != nil {
+	if err := validate.MinLength("template_code", "body", *m.TemplateCode, 1); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *ExportTemplate) validateTemplateLanguage(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.TemplateLanguage) { // not required
-		return nil
-	}
-
-	if m.TemplateLanguage != nil {
-		if err := m.TemplateLanguage.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("template_language")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *ExportTemplate) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this export template based on the context it is used
+func (m *ExportTemplate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *ExportTemplate) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ExportTemplate) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ExportTemplate) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -242,157 +271,6 @@ func (m *ExportTemplate) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *ExportTemplate) UnmarshalBinary(b []byte) error {
 	var res ExportTemplate
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// ExportTemplateTemplateLanguage Template language
-//
-// swagger:model ExportTemplateTemplateLanguage
-type ExportTemplateTemplateLanguage struct {
-
-	// label
-	// Required: true
-	// Enum: [Jinja2 Django (Legacy)]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [jinja2 django]
-	Value *string `json:"value"`
-}
-
-func (m *ExportTemplateTemplateLanguage) UnmarshalJSON(b []byte) error {
-	type ExportTemplateTemplateLanguageAlias ExportTemplateTemplateLanguage
-	var t ExportTemplateTemplateLanguageAlias
-	if err := json.Unmarshal([]byte("{\"label\":\"Jinja2\",\"value\":\"jinja2\"}"), &t); err != nil {
-		return err
-	}
-	if err := json.Unmarshal(b, &t); err != nil {
-		return err
-	}
-	*m = ExportTemplateTemplateLanguage(t)
-	return nil
-}
-
-// Validate validates this export template template language
-func (m *ExportTemplateTemplateLanguage) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var exportTemplateTemplateLanguageTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["Jinja2","Django (Legacy)"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		exportTemplateTemplateLanguageTypeLabelPropEnum = append(exportTemplateTemplateLanguageTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// ExportTemplateTemplateLanguageLabelJinja2 captures enum value "Jinja2"
-	ExportTemplateTemplateLanguageLabelJinja2 string = "Jinja2"
-
-	// ExportTemplateTemplateLanguageLabelDjangoLegacy captures enum value "Django (Legacy)"
-	ExportTemplateTemplateLanguageLabelDjangoLegacy string = "Django (Legacy)"
-)
-
-// prop value enum
-func (m *ExportTemplateTemplateLanguage) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, exportTemplateTemplateLanguageTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ExportTemplateTemplateLanguage) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("template_language"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("template_language"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var exportTemplateTemplateLanguageTypeValuePropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["jinja2","django"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		exportTemplateTemplateLanguageTypeValuePropEnum = append(exportTemplateTemplateLanguageTypeValuePropEnum, v)
-	}
-}
-
-const (
-
-	// ExportTemplateTemplateLanguageValueJinja2 captures enum value "jinja2"
-	ExportTemplateTemplateLanguageValueJinja2 string = "jinja2"
-
-	// ExportTemplateTemplateLanguageValueDjango captures enum value "django"
-	ExportTemplateTemplateLanguageValueDjango string = "django"
-)
-
-// prop value enum
-func (m *ExportTemplateTemplateLanguage) validateValueEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, exportTemplateTemplateLanguageTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ExportTemplateTemplateLanguage) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("template_language"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("template_language"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *ExportTemplateTemplateLanguage) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *ExportTemplateTemplateLanguage) UnmarshalBinary(b []byte) error {
-	var res ExportTemplateTemplateLanguage
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

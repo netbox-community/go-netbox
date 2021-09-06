@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamVlansPartialUpdateParams creates a new IpamVlansPartialUpdateParams object
-// with the default values initialized.
+// NewIpamVlansPartialUpdateParams creates a new IpamVlansPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVlansPartialUpdateParams() *IpamVlansPartialUpdateParams {
-	var ()
 	return &IpamVlansPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVlansPartialUpdateParamsWithTimeout creates a new IpamVlansPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVlansPartialUpdateParamsWithTimeout(timeout time.Duration) *IpamVlansPartialUpdateParams {
-	var ()
 	return &IpamVlansPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVlansPartialUpdateParamsWithContext creates a new IpamVlansPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVlansPartialUpdateParamsWithContext(ctx context.Context) *IpamVlansPartialUpdateParams {
-	var ()
 	return &IpamVlansPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVlansPartialUpdateParamsWithHTTPClient creates a new IpamVlansPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVlansPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamVlansPartialUpdateParams {
-	var ()
 	return &IpamVlansPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVlansPartialUpdateParams contains all the parameters to send to the API endpoint
-for the ipam vlans partial update operation typically these are written to a http.Request
+/* IpamVlansPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam vlans partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVlansPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVLAN
-	/*ID
-	  A unique integer value identifying this VLAN.
 
+	/* ID.
+
+	   A unique integer value identifying this VLAN.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vlans partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlansPartialUpdateParams) WithDefaults() *IpamVlansPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vlans partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlansPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vlans partial update params
@@ -153,7 +168,6 @@ func (o *IpamVlansPartialUpdateParams) WriteToRequest(r runtime.ClientRequest, r
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

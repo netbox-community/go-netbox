@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimManufacturersPartialUpdateParams creates a new DcimManufacturersPartialUpdateParams object
-// with the default values initialized.
+// NewDcimManufacturersPartialUpdateParams creates a new DcimManufacturersPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimManufacturersPartialUpdateParams() *DcimManufacturersPartialUpdateParams {
-	var ()
 	return &DcimManufacturersPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimManufacturersPartialUpdateParamsWithTimeout creates a new DcimManufacturersPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimManufacturersPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimManufacturersPartialUpdateParams {
-	var ()
 	return &DcimManufacturersPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimManufacturersPartialUpdateParamsWithContext creates a new DcimManufacturersPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimManufacturersPartialUpdateParamsWithContext(ctx context.Context) *DcimManufacturersPartialUpdateParams {
-	var ()
 	return &DcimManufacturersPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimManufacturersPartialUpdateParamsWithHTTPClient creates a new DcimManufacturersPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimManufacturersPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimManufacturersPartialUpdateParams {
-	var ()
 	return &DcimManufacturersPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimManufacturersPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim manufacturers partial update operation typically these are written to a http.Request
+/* DcimManufacturersPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim manufacturers partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimManufacturersPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Manufacturer
-	/*ID
-	  A unique integer value identifying this manufacturer.
 
+	/* ID.
+
+	   A unique integer value identifying this manufacturer.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim manufacturers partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimManufacturersPartialUpdateParams) WithDefaults() *DcimManufacturersPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim manufacturers partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimManufacturersPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim manufacturers partial update params
@@ -153,7 +168,6 @@ func (o *DcimManufacturersPartialUpdateParams) WriteToRequest(r runtime.ClientRe
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

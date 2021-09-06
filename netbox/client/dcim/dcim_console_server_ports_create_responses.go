@@ -45,14 +45,7 @@ func (o *DcimConsoleServerPortsCreateReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		result := NewDcimConsoleServerPortsCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimConsoleServerPortsCreateCreated() *DcimConsoleServerPortsCreateCreat
 	return &DcimConsoleServerPortsCreateCreated{}
 }
 
-/*DcimConsoleServerPortsCreateCreated handles this case with default header values.
+/* DcimConsoleServerPortsCreateCreated describes a response with status code 201, with default header values.
 
 DcimConsoleServerPortsCreateCreated dcim console server ports create created
 */
@@ -72,7 +65,6 @@ type DcimConsoleServerPortsCreateCreated struct {
 func (o *DcimConsoleServerPortsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/console-server-ports/][%d] dcimConsoleServerPortsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimConsoleServerPortsCreateCreated) GetPayload() *models.ConsoleServerPort {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimConsoleServerPortsCreateCreated) readResponse(response runtime.Clie
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimConsoleServerPortsCreateDefault creates a DcimConsoleServerPortsCreateDefault with default headers values
-func NewDcimConsoleServerPortsCreateDefault(code int) *DcimConsoleServerPortsCreateDefault {
-	return &DcimConsoleServerPortsCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimConsoleServerPortsCreateDefault handles this case with default header values.
-
-DcimConsoleServerPortsCreateDefault dcim console server ports create default
-*/
-type DcimConsoleServerPortsCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim console server ports create default response
-func (o *DcimConsoleServerPortsCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimConsoleServerPortsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/console-server-ports/][%d] dcim_console-server-ports_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimConsoleServerPortsCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimConsoleServerPortsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

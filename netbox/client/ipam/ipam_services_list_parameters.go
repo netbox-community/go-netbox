@@ -32,146 +32,190 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamServicesListParams creates a new IpamServicesListParams object
-// with the default values initialized.
+// NewIpamServicesListParams creates a new IpamServicesListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamServicesListParams() *IpamServicesListParams {
-	var ()
 	return &IpamServicesListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamServicesListParamsWithTimeout creates a new IpamServicesListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamServicesListParamsWithTimeout(timeout time.Duration) *IpamServicesListParams {
-	var ()
 	return &IpamServicesListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamServicesListParamsWithContext creates a new IpamServicesListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamServicesListParamsWithContext(ctx context.Context) *IpamServicesListParams {
-	var ()
 	return &IpamServicesListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamServicesListParamsWithHTTPClient creates a new IpamServicesListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamServicesListParamsWithHTTPClient(client *http.Client) *IpamServicesListParams {
-	var ()
 	return &IpamServicesListParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamServicesListParams contains all the parameters to send to the API endpoint
-for the ipam services list operation typically these are written to a http.Request
+/* IpamServicesListParams contains all the parameters to send to the API endpoint
+   for the ipam services list operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamServicesListParams struct {
 
-	/*Created*/
+	// Created.
 	Created *string
-	/*CreatedGte*/
-	CreatedGte *string
-	/*CreatedLte*/
-	CreatedLte *string
-	/*Device*/
-	Device *string
-	/*Devicen*/
-	Devicen *string
-	/*DeviceID*/
-	DeviceID *string
-	/*DeviceIDn*/
-	DeviceIDn *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*LastUpdated*/
-	LastUpdated *string
-	/*LastUpdatedGte*/
-	LastUpdatedGte *string
-	/*LastUpdatedLte*/
-	LastUpdatedLte *string
-	/*Limit
-	  Number of results to return per page.
 
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// Device.
+	Device *string
+
+	// Devicen.
+	Devicen *string
+
+	// DeviceID.
+	DeviceID *string
+
+	// DeviceIDn.
+	DeviceIDn *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Name.
+	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Port*/
-	Port *string
-	/*PortGt*/
-	PortGt *string
-	/*PortGte*/
-	PortGte *string
-	/*PortLt*/
-	PortLt *string
-	/*PortLte*/
-	PortLte *string
-	/*Portn*/
-	Portn *string
-	/*Protocol*/
+
+	// Port.
+	Port *float64
+
+	// Protocol.
 	Protocol *string
-	/*Protocoln*/
+
+	// Protocoln.
 	Protocoln *string
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
-	/*VirtualMachine*/
+
+	// VirtualMachine.
 	VirtualMachine *string
-	/*VirtualMachinen*/
+
+	// VirtualMachinen.
 	VirtualMachinen *string
-	/*VirtualMachineID*/
+
+	// VirtualMachineID.
 	VirtualMachineID *string
-	/*VirtualMachineIDn*/
+
+	// VirtualMachineIDn.
 	VirtualMachineIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam services list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamServicesListParams) WithDefaults() *IpamServicesListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam services list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamServicesListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam services list params
@@ -405,6 +449,17 @@ func (o *IpamServicesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the ipam services list params
+func (o *IpamServicesListParams) WithNameEmpty(nameEmpty *string) *IpamServicesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the ipam services list params
+func (o *IpamServicesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the ipam services list params
 func (o *IpamServicesListParams) WithNameIc(nameIc *string) *IpamServicesListParams {
 	o.SetNameIc(nameIc)
@@ -516,69 +571,14 @@ func (o *IpamServicesListParams) SetOffset(offset *int64) {
 }
 
 // WithPort adds the port to the ipam services list params
-func (o *IpamServicesListParams) WithPort(port *string) *IpamServicesListParams {
+func (o *IpamServicesListParams) WithPort(port *float64) *IpamServicesListParams {
 	o.SetPort(port)
 	return o
 }
 
 // SetPort adds the port to the ipam services list params
-func (o *IpamServicesListParams) SetPort(port *string) {
+func (o *IpamServicesListParams) SetPort(port *float64) {
 	o.Port = port
-}
-
-// WithPortGt adds the portGt to the ipam services list params
-func (o *IpamServicesListParams) WithPortGt(portGt *string) *IpamServicesListParams {
-	o.SetPortGt(portGt)
-	return o
-}
-
-// SetPortGt adds the portGt to the ipam services list params
-func (o *IpamServicesListParams) SetPortGt(portGt *string) {
-	o.PortGt = portGt
-}
-
-// WithPortGte adds the portGte to the ipam services list params
-func (o *IpamServicesListParams) WithPortGte(portGte *string) *IpamServicesListParams {
-	o.SetPortGte(portGte)
-	return o
-}
-
-// SetPortGte adds the portGte to the ipam services list params
-func (o *IpamServicesListParams) SetPortGte(portGte *string) {
-	o.PortGte = portGte
-}
-
-// WithPortLt adds the portLt to the ipam services list params
-func (o *IpamServicesListParams) WithPortLt(portLt *string) *IpamServicesListParams {
-	o.SetPortLt(portLt)
-	return o
-}
-
-// SetPortLt adds the portLt to the ipam services list params
-func (o *IpamServicesListParams) SetPortLt(portLt *string) {
-	o.PortLt = portLt
-}
-
-// WithPortLte adds the portLte to the ipam services list params
-func (o *IpamServicesListParams) WithPortLte(portLte *string) *IpamServicesListParams {
-	o.SetPortLte(portLte)
-	return o
-}
-
-// SetPortLte adds the portLte to the ipam services list params
-func (o *IpamServicesListParams) SetPortLte(portLte *string) {
-	o.PortLte = portLte
-}
-
-// WithPortn adds the portn to the ipam services list params
-func (o *IpamServicesListParams) WithPortn(portn *string) *IpamServicesListParams {
-	o.SetPortn(portn)
-	return o
-}
-
-// SetPortn adds the portN to the ipam services list params
-func (o *IpamServicesListParams) SetPortn(portn *string) {
-	o.Portn = portn
 }
 
 // WithProtocol adds the protocol to the ipam services list params
@@ -692,688 +692,663 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 		// query param created
 		var qrCreated string
+
 		if o.Created != nil {
 			qrCreated = *o.Created
 		}
 		qCreated := qrCreated
 		if qCreated != "" {
+
 			if err := r.SetQueryParam("created", qCreated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedGte != nil {
 
 		// query param created__gte
 		var qrCreatedGte string
+
 		if o.CreatedGte != nil {
 			qrCreatedGte = *o.CreatedGte
 		}
 		qCreatedGte := qrCreatedGte
 		if qCreatedGte != "" {
+
 			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedLte != nil {
 
 		// query param created__lte
 		var qrCreatedLte string
+
 		if o.CreatedLte != nil {
 			qrCreatedLte = *o.CreatedLte
 		}
 		qCreatedLte := qrCreatedLte
 		if qCreatedLte != "" {
+
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Device != nil {
 
 		// query param device
 		var qrDevice string
+
 		if o.Device != nil {
 			qrDevice = *o.Device
 		}
 		qDevice := qrDevice
 		if qDevice != "" {
+
 			if err := r.SetQueryParam("device", qDevice); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Devicen != nil {
 
 		// query param device__n
 		var qrDevicen string
+
 		if o.Devicen != nil {
 			qrDevicen = *o.Devicen
 		}
 		qDevicen := qrDevicen
 		if qDevicen != "" {
+
 			if err := r.SetQueryParam("device__n", qDevicen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceID != nil {
 
 		// query param device_id
 		var qrDeviceID string
+
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
 		qDeviceID := qrDeviceID
 		if qDeviceID != "" {
+
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceIDn != nil {
 
 		// query param device_id__n
 		var qrDeviceIDn string
+
 		if o.DeviceIDn != nil {
 			qrDeviceIDn = *o.DeviceIDn
 		}
 		qDeviceIDn := qrDeviceIDn
 		if qDeviceIDn != "" {
+
 			if err := r.SetQueryParam("device_id__n", qDeviceIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdated != nil {
 
 		// query param last_updated
 		var qrLastUpdated string
+
 		if o.LastUpdated != nil {
 			qrLastUpdated = *o.LastUpdated
 		}
 		qLastUpdated := qrLastUpdated
 		if qLastUpdated != "" {
+
 			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
 		var qrLastUpdatedGte string
+
 		if o.LastUpdatedGte != nil {
 			qrLastUpdatedGte = *o.LastUpdatedGte
 		}
 		qLastUpdatedGte := qrLastUpdatedGte
 		if qLastUpdatedGte != "" {
+
 			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
 		var qrLastUpdatedLte string
+
 		if o.LastUpdatedLte != nil {
 			qrLastUpdatedLte = *o.LastUpdatedLte
 		}
 		qLastUpdatedLte := qrLastUpdatedLte
 		if qLastUpdatedLte != "" {
+
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Port != nil {
 
 		// query param port
-		var qrPort string
+		var qrPort float64
+
 		if o.Port != nil {
 			qrPort = *o.Port
 		}
-		qPort := qrPort
+		qPort := swag.FormatFloat64(qrPort)
 		if qPort != "" {
+
 			if err := r.SetQueryParam("port", qPort); err != nil {
 				return err
 			}
 		}
-
-	}
-
-	if o.PortGt != nil {
-
-		// query param port__gt
-		var qrPortGt string
-		if o.PortGt != nil {
-			qrPortGt = *o.PortGt
-		}
-		qPortGt := qrPortGt
-		if qPortGt != "" {
-			if err := r.SetQueryParam("port__gt", qPortGt); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.PortGte != nil {
-
-		// query param port__gte
-		var qrPortGte string
-		if o.PortGte != nil {
-			qrPortGte = *o.PortGte
-		}
-		qPortGte := qrPortGte
-		if qPortGte != "" {
-			if err := r.SetQueryParam("port__gte", qPortGte); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.PortLt != nil {
-
-		// query param port__lt
-		var qrPortLt string
-		if o.PortLt != nil {
-			qrPortLt = *o.PortLt
-		}
-		qPortLt := qrPortLt
-		if qPortLt != "" {
-			if err := r.SetQueryParam("port__lt", qPortLt); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.PortLte != nil {
-
-		// query param port__lte
-		var qrPortLte string
-		if o.PortLte != nil {
-			qrPortLte = *o.PortLte
-		}
-		qPortLte := qrPortLte
-		if qPortLte != "" {
-			if err := r.SetQueryParam("port__lte", qPortLte); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.Portn != nil {
-
-		// query param port__n
-		var qrPortn string
-		if o.Portn != nil {
-			qrPortn = *o.Portn
-		}
-		qPortn := qrPortn
-		if qPortn != "" {
-			if err := r.SetQueryParam("port__n", qPortn); err != nil {
-				return err
-			}
-		}
-
 	}
 
 	if o.Protocol != nil {
 
 		// query param protocol
 		var qrProtocol string
+
 		if o.Protocol != nil {
 			qrProtocol = *o.Protocol
 		}
 		qProtocol := qrProtocol
 		if qProtocol != "" {
+
 			if err := r.SetQueryParam("protocol", qProtocol); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Protocoln != nil {
 
 		// query param protocol__n
 		var qrProtocoln string
+
 		if o.Protocoln != nil {
 			qrProtocoln = *o.Protocoln
 		}
 		qProtocoln := qrProtocoln
 		if qProtocoln != "" {
+
 			if err := r.SetQueryParam("protocol__n", qProtocoln); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VirtualMachine != nil {
 
 		// query param virtual_machine
 		var qrVirtualMachine string
+
 		if o.VirtualMachine != nil {
 			qrVirtualMachine = *o.VirtualMachine
 		}
 		qVirtualMachine := qrVirtualMachine
 		if qVirtualMachine != "" {
+
 			if err := r.SetQueryParam("virtual_machine", qVirtualMachine); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VirtualMachinen != nil {
 
 		// query param virtual_machine__n
 		var qrVirtualMachinen string
+
 		if o.VirtualMachinen != nil {
 			qrVirtualMachinen = *o.VirtualMachinen
 		}
 		qVirtualMachinen := qrVirtualMachinen
 		if qVirtualMachinen != "" {
+
 			if err := r.SetQueryParam("virtual_machine__n", qVirtualMachinen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VirtualMachineID != nil {
 
 		// query param virtual_machine_id
 		var qrVirtualMachineID string
+
 		if o.VirtualMachineID != nil {
 			qrVirtualMachineID = *o.VirtualMachineID
 		}
 		qVirtualMachineID := qrVirtualMachineID
 		if qVirtualMachineID != "" {
+
 			if err := r.SetQueryParam("virtual_machine_id", qVirtualMachineID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VirtualMachineIDn != nil {
 
 		// query param virtual_machine_id__n
 		var qrVirtualMachineIDn string
+
 		if o.VirtualMachineIDn != nil {
 			qrVirtualMachineIDn = *o.VirtualMachineIDn
 		}
 		qVirtualMachineIDn := qrVirtualMachineIDn
 		if qVirtualMachineIDn != "" {
+
 			if err := r.SetQueryParam("virtual_machine_id__n", qVirtualMachineIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

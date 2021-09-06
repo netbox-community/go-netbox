@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -55,7 +56,15 @@ type WritableConfigContext struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
-	// ID
+	// device types
+	// Unique: true
+	DeviceTypes []int64 `json:"device_types"`
+
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -84,6 +93,10 @@ type WritableConfigContext struct {
 	// roles
 	// Unique: true
 	Roles []int64 `json:"roles"`
+
+	// site groups
+	// Unique: true
+	SiteGroups []int64 `json:"site_groups"`
 
 	// sites
 	// Unique: true
@@ -136,6 +149,10 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateDeviceTypes(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
@@ -153,6 +170,10 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateRoles(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSiteGroups(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -187,7 +208,6 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableConfigContext) validateClusterGroups(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ClusterGroups) { // not required
 		return nil
 	}
@@ -200,7 +220,6 @@ func (m *WritableConfigContext) validateClusterGroups(formats strfmt.Registry) e
 }
 
 func (m *WritableConfigContext) validateClusters(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Clusters) { // not required
 		return nil
 	}
@@ -213,7 +232,6 @@ func (m *WritableConfigContext) validateClusters(formats strfmt.Registry) error 
 }
 
 func (m *WritableConfigContext) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -235,12 +253,23 @@ func (m *WritableConfigContext) validateData(formats strfmt.Registry) error {
 }
 
 func (m *WritableConfigContext) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) validateDeviceTypes(formats strfmt.Registry) error {
+	if swag.IsZero(m.DeviceTypes) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("device_types", "body", m.DeviceTypes); err != nil {
 		return err
 	}
 
@@ -248,7 +277,6 @@ func (m *WritableConfigContext) validateDescription(formats strfmt.Registry) err
 }
 
 func (m *WritableConfigContext) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -266,11 +294,11 @@ func (m *WritableConfigContext) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
@@ -278,7 +306,6 @@ func (m *WritableConfigContext) validateName(formats strfmt.Registry) error {
 }
 
 func (m *WritableConfigContext) validatePlatforms(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Platforms) { // not required
 		return nil
 	}
@@ -291,7 +318,6 @@ func (m *WritableConfigContext) validatePlatforms(formats strfmt.Registry) error
 }
 
 func (m *WritableConfigContext) validateRegions(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Regions) { // not required
 		return nil
 	}
@@ -304,7 +330,6 @@ func (m *WritableConfigContext) validateRegions(formats strfmt.Registry) error {
 }
 
 func (m *WritableConfigContext) validateRoles(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Roles) { // not required
 		return nil
 	}
@@ -316,8 +341,19 @@ func (m *WritableConfigContext) validateRoles(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableConfigContext) validateSites(formats strfmt.Registry) error {
+func (m *WritableConfigContext) validateSiteGroups(formats strfmt.Registry) error {
+	if swag.IsZero(m.SiteGroups) { // not required
+		return nil
+	}
 
+	if err := validate.UniqueItems("site_groups", "body", m.SiteGroups); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) validateSites(formats strfmt.Registry) error {
 	if swag.IsZero(m.Sites) { // not required
 		return nil
 	}
@@ -330,7 +366,6 @@ func (m *WritableConfigContext) validateSites(formats strfmt.Registry) error {
 }
 
 func (m *WritableConfigContext) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -341,7 +376,7 @@ func (m *WritableConfigContext) validateTags(formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Tags); i++ {
 
-		if err := validate.Pattern("tags"+"."+strconv.Itoa(i), "body", string(m.Tags[i]), `^[-a-zA-Z0-9_]+$`); err != nil {
+		if err := validate.Pattern("tags"+"."+strconv.Itoa(i), "body", m.Tags[i], `^[-a-zA-Z0-9_]+$`); err != nil {
 			return err
 		}
 
@@ -351,7 +386,6 @@ func (m *WritableConfigContext) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *WritableConfigContext) validateTenantGroups(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TenantGroups) { // not required
 		return nil
 	}
@@ -364,7 +398,6 @@ func (m *WritableConfigContext) validateTenantGroups(formats strfmt.Registry) er
 }
 
 func (m *WritableConfigContext) validateTenants(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tenants) { // not required
 		return nil
 	}
@@ -377,7 +410,6 @@ func (m *WritableConfigContext) validateTenants(formats strfmt.Registry) error {
 }
 
 func (m *WritableConfigContext) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -390,16 +422,90 @@ func (m *WritableConfigContext) validateURL(formats strfmt.Registry) error {
 }
 
 func (m *WritableConfigContext) validateWeight(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Weight) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("weight", "body", int64(*m.Weight), 0, false); err != nil {
+	if err := validate.MinimumInt("weight", "body", *m.Weight, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("weight", "body", int64(*m.Weight), 32767, false); err != nil {
+	if err := validate.MaximumInt("weight", "body", *m.Weight, 32767, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable config context based on the context it is used
+func (m *WritableConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

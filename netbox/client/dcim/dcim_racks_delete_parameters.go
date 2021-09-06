@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimRacksDeleteParams creates a new DcimRacksDeleteParams object
-// with the default values initialized.
+// NewDcimRacksDeleteParams creates a new DcimRacksDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRacksDeleteParams() *DcimRacksDeleteParams {
-	var ()
 	return &DcimRacksDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRacksDeleteParamsWithTimeout creates a new DcimRacksDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRacksDeleteParamsWithTimeout(timeout time.Duration) *DcimRacksDeleteParams {
-	var ()
 	return &DcimRacksDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRacksDeleteParamsWithContext creates a new DcimRacksDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRacksDeleteParamsWithContext(ctx context.Context) *DcimRacksDeleteParams {
-	var ()
 	return &DcimRacksDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRacksDeleteParamsWithHTTPClient creates a new DcimRacksDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRacksDeleteParamsWithHTTPClient(client *http.Client) *DcimRacksDeleteParams {
-	var ()
 	return &DcimRacksDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRacksDeleteParams contains all the parameters to send to the API endpoint
-for the dcim racks delete operation typically these are written to a http.Request
+/* DcimRacksDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim racks delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRacksDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this rack.
+	/* ID.
 
+	   A unique integer value identifying this rack.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim racks delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRacksDeleteParams) WithDefaults() *DcimRacksDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim racks delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRacksDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim racks delete params

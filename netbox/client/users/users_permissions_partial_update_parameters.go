@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewUsersPermissionsPartialUpdateParams creates a new UsersPermissionsPartialUpdateParams object
-// with the default values initialized.
+// NewUsersPermissionsPartialUpdateParams creates a new UsersPermissionsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersPermissionsPartialUpdateParams() *UsersPermissionsPartialUpdateParams {
-	var ()
 	return &UsersPermissionsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersPermissionsPartialUpdateParamsWithTimeout creates a new UsersPermissionsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersPermissionsPartialUpdateParamsWithTimeout(timeout time.Duration) *UsersPermissionsPartialUpdateParams {
-	var ()
 	return &UsersPermissionsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersPermissionsPartialUpdateParamsWithContext creates a new UsersPermissionsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersPermissionsPartialUpdateParamsWithContext(ctx context.Context) *UsersPermissionsPartialUpdateParams {
-	var ()
 	return &UsersPermissionsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersPermissionsPartialUpdateParamsWithHTTPClient creates a new UsersPermissionsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersPermissionsPartialUpdateParamsWithHTTPClient(client *http.Client) *UsersPermissionsPartialUpdateParams {
-	var ()
 	return &UsersPermissionsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersPermissionsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the users permissions partial update operation typically these are written to a http.Request
+/* UsersPermissionsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the users permissions partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersPermissionsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableObjectPermission
-	/*ID
-	  A unique integer value identifying this permission.
 
+	/* ID.
+
+	   A unique integer value identifying this permission.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users permissions partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersPermissionsPartialUpdateParams) WithDefaults() *UsersPermissionsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users permissions partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersPermissionsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users permissions partial update params
@@ -153,7 +168,6 @@ func (o *UsersPermissionsPartialUpdateParams) WriteToRequest(r runtime.ClientReq
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

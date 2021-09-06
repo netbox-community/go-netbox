@@ -32,170 +32,292 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamPrefixesListParams creates a new IpamPrefixesListParams object
-// with the default values initialized.
+// NewIpamPrefixesListParams creates a new IpamPrefixesListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamPrefixesListParams() *IpamPrefixesListParams {
-	var ()
 	return &IpamPrefixesListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamPrefixesListParamsWithTimeout creates a new IpamPrefixesListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamPrefixesListParamsWithTimeout(timeout time.Duration) *IpamPrefixesListParams {
-	var ()
 	return &IpamPrefixesListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamPrefixesListParamsWithContext creates a new IpamPrefixesListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamPrefixesListParamsWithContext(ctx context.Context) *IpamPrefixesListParams {
-	var ()
 	return &IpamPrefixesListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamPrefixesListParamsWithHTTPClient creates a new IpamPrefixesListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamPrefixesListParamsWithHTTPClient(client *http.Client) *IpamPrefixesListParams {
-	var ()
 	return &IpamPrefixesListParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamPrefixesListParams contains all the parameters to send to the API endpoint
-for the ipam prefixes list operation typically these are written to a http.Request
+/* IpamPrefixesListParams contains all the parameters to send to the API endpoint
+   for the ipam prefixes list operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamPrefixesListParams struct {
 
-	/*Contains*/
-	Contains *string
-	/*Created*/
-	Created *string
-	/*CreatedGte*/
-	CreatedGte *string
-	/*CreatedLte*/
-	CreatedLte *string
-	/*Family*/
-	Family *float64
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*IsPool*/
-	IsPool *string
-	/*LastUpdated*/
-	LastUpdated *string
-	/*LastUpdatedGte*/
-	LastUpdatedGte *string
-	/*LastUpdatedLte*/
-	LastUpdatedLte *string
-	/*Limit
-	  Number of results to return per page.
+	// Children.
+	Children *string
 
+	// ChildrenGt.
+	ChildrenGt *string
+
+	// ChildrenGte.
+	ChildrenGte *string
+
+	// ChildrenLt.
+	ChildrenLt *string
+
+	// ChildrenLte.
+	ChildrenLte *string
+
+	// Childrenn.
+	Childrenn *string
+
+	// Contains.
+	Contains *string
+
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// Depth.
+	Depth *string
+
+	// DepthGt.
+	DepthGt *string
+
+	// DepthGte.
+	DepthGte *string
+
+	// DepthLt.
+	DepthLt *string
+
+	// DepthLte.
+	DepthLte *string
+
+	// Depthn.
+	Depthn *string
+
+	// Family.
+	Family *float64
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// IsPool.
+	IsPool *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*MaskLength*/
-	MaskLength *float64
-	/*MaskLengthGte*/
-	MaskLengthGte *float64
-	/*MaskLengthLte*/
-	MaskLengthLte *float64
-	/*Offset
-	  The initial index from which to return the results.
 
+	// MaskLength.
+	MaskLength *float64
+
+	// MaskLengthGte.
+	MaskLengthGte *float64
+
+	// MaskLengthLte.
+	MaskLengthLte *float64
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Prefix*/
+
+	// Prefix.
 	Prefix *string
-	/*Q*/
+
+	// PresentInVrf.
+	PresentInVrf *string
+
+	// PresentInVrfID.
+	PresentInVrfID *string
+
+	// Q.
 	Q *string
-	/*Region*/
+
+	// Region.
 	Region *string
-	/*Regionn*/
+
+	// Regionn.
 	Regionn *string
-	/*RegionID*/
+
+	// RegionID.
 	RegionID *string
-	/*RegionIDn*/
+
+	// RegionIDn.
 	RegionIDn *string
-	/*Role*/
+
+	// Role.
 	Role *string
-	/*Rolen*/
+
+	// Rolen.
 	Rolen *string
-	/*RoleID*/
+
+	// RoleID.
 	RoleID *string
-	/*RoleIDn*/
+
+	// RoleIDn.
 	RoleIDn *string
-	/*Site*/
+
+	// Site.
 	Site *string
-	/*Siten*/
+
+	// Siten.
 	Siten *string
-	/*SiteID*/
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
+
+	// SiteID.
 	SiteID *string
-	/*SiteIDn*/
+
+	// SiteIDn.
 	SiteIDn *string
-	/*Status*/
+
+	// Status.
 	Status *string
-	/*Statusn*/
+
+	// Statusn.
 	Statusn *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
-	/*Tenant*/
+
+	// Tenant.
 	Tenant *string
-	/*Tenantn*/
+
+	// Tenantn.
 	Tenantn *string
-	/*TenantGroup*/
+
+	// TenantGroup.
 	TenantGroup *string
-	/*TenantGroupn*/
+
+	// TenantGroupn.
 	TenantGroupn *string
-	/*TenantGroupID*/
+
+	// TenantGroupID.
 	TenantGroupID *string
-	/*TenantGroupIDn*/
+
+	// TenantGroupIDn.
 	TenantGroupIDn *string
-	/*TenantID*/
+
+	// TenantID.
 	TenantID *string
-	/*TenantIDn*/
+
+	// TenantIDn.
 	TenantIDn *string
-	/*VlanID*/
+
+	// VlanID.
 	VlanID *string
-	/*VlanIDn*/
+
+	// VlanIDn.
 	VlanIDn *string
-	/*VlanVid*/
+
+	// VlanVid.
 	VlanVid *float64
-	/*Vrf*/
+
+	// Vrf.
 	Vrf *string
-	/*Vrfn*/
+
+	// Vrfn.
 	Vrfn *string
-	/*VrfID*/
+
+	// VrfID.
 	VrfID *string
-	/*VrfIDn*/
+
+	// VrfIDn.
 	VrfIDn *string
-	/*Within*/
+
+	// Within.
 	Within *string
-	/*WithinInclude*/
+
+	// WithinInclude.
 	WithinInclude *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam prefixes list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesListParams) WithDefaults() *IpamPrefixesListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam prefixes list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam prefixes list params
@@ -229,6 +351,72 @@ func (o *IpamPrefixesListParams) WithHTTPClient(client *http.Client) *IpamPrefix
 // SetHTTPClient adds the HTTPClient to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithChildren adds the children to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildren(children *string) *IpamPrefixesListParams {
+	o.SetChildren(children)
+	return o
+}
+
+// SetChildren adds the children to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildren(children *string) {
+	o.Children = children
+}
+
+// WithChildrenGt adds the childrenGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenGt(childrenGt *string) *IpamPrefixesListParams {
+	o.SetChildrenGt(childrenGt)
+	return o
+}
+
+// SetChildrenGt adds the childrenGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenGt(childrenGt *string) {
+	o.ChildrenGt = childrenGt
+}
+
+// WithChildrenGte adds the childrenGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenGte(childrenGte *string) *IpamPrefixesListParams {
+	o.SetChildrenGte(childrenGte)
+	return o
+}
+
+// SetChildrenGte adds the childrenGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenGte(childrenGte *string) {
+	o.ChildrenGte = childrenGte
+}
+
+// WithChildrenLt adds the childrenLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenLt(childrenLt *string) *IpamPrefixesListParams {
+	o.SetChildrenLt(childrenLt)
+	return o
+}
+
+// SetChildrenLt adds the childrenLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenLt(childrenLt *string) {
+	o.ChildrenLt = childrenLt
+}
+
+// WithChildrenLte adds the childrenLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenLte(childrenLte *string) *IpamPrefixesListParams {
+	o.SetChildrenLte(childrenLte)
+	return o
+}
+
+// SetChildrenLte adds the childrenLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenLte(childrenLte *string) {
+	o.ChildrenLte = childrenLte
+}
+
+// WithChildrenn adds the childrenn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenn(childrenn *string) *IpamPrefixesListParams {
+	o.SetChildrenn(childrenn)
+	return o
+}
+
+// SetChildrenn adds the childrenN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenn(childrenn *string) {
+	o.Childrenn = childrenn
 }
 
 // WithContains adds the contains to the ipam prefixes list params
@@ -273,6 +461,72 @@ func (o *IpamPrefixesListParams) WithCreatedLte(createdLte *string) *IpamPrefixe
 // SetCreatedLte adds the createdLte to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithDepth adds the depth to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepth(depth *string) *IpamPrefixesListParams {
+	o.SetDepth(depth)
+	return o
+}
+
+// SetDepth adds the depth to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepth(depth *string) {
+	o.Depth = depth
+}
+
+// WithDepthGt adds the depthGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthGt(depthGt *string) *IpamPrefixesListParams {
+	o.SetDepthGt(depthGt)
+	return o
+}
+
+// SetDepthGt adds the depthGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthGt(depthGt *string) {
+	o.DepthGt = depthGt
+}
+
+// WithDepthGte adds the depthGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthGte(depthGte *string) *IpamPrefixesListParams {
+	o.SetDepthGte(depthGte)
+	return o
+}
+
+// SetDepthGte adds the depthGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthGte(depthGte *string) {
+	o.DepthGte = depthGte
+}
+
+// WithDepthLt adds the depthLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthLt(depthLt *string) *IpamPrefixesListParams {
+	o.SetDepthLt(depthLt)
+	return o
+}
+
+// SetDepthLt adds the depthLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthLt(depthLt *string) {
+	o.DepthLt = depthLt
+}
+
+// WithDepthLte adds the depthLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthLte(depthLte *string) *IpamPrefixesListParams {
+	o.SetDepthLte(depthLte)
+	return o
+}
+
+// SetDepthLte adds the depthLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthLte(depthLte *string) {
+	o.DepthLte = depthLte
+}
+
+// WithDepthn adds the depthn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthn(depthn *string) *IpamPrefixesListParams {
+	o.SetDepthn(depthn)
+	return o
+}
+
+// SetDepthn adds the depthN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthn(depthn *string) {
+	o.Depthn = depthn
 }
 
 // WithFamily adds the family to the ipam prefixes list params
@@ -462,6 +716,28 @@ func (o *IpamPrefixesListParams) SetPrefix(prefix *string) {
 	o.Prefix = prefix
 }
 
+// WithPresentInVrf adds the presentInVrf to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithPresentInVrf(presentInVrf *string) *IpamPrefixesListParams {
+	o.SetPresentInVrf(presentInVrf)
+	return o
+}
+
+// SetPresentInVrf adds the presentInVrf to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetPresentInVrf(presentInVrf *string) {
+	o.PresentInVrf = presentInVrf
+}
+
+// WithPresentInVrfID adds the presentInVrfID to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithPresentInVrfID(presentInVrfID *string) *IpamPrefixesListParams {
+	o.SetPresentInVrfID(presentInVrfID)
+	return o
+}
+
+// SetPresentInVrfID adds the presentInVrfId to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetPresentInVrfID(presentInVrfID *string) {
+	o.PresentInVrfID = presentInVrfID
+}
+
 // WithQ adds the q to the ipam prefixes list params
 func (o *IpamPrefixesListParams) WithQ(q *string) *IpamPrefixesListParams {
 	o.SetQ(q)
@@ -581,6 +857,50 @@ func (o *IpamPrefixesListParams) WithSiten(siten *string) *IpamPrefixesListParam
 // SetSiten adds the siteN to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetSiten(siten *string) {
 	o.Siten = siten
+}
+
+// WithSiteGroup adds the siteGroup to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithSiteGroup(siteGroup *string) *IpamPrefixesListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithSiteGroupn(siteGroupn *string) *IpamPrefixesListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithSiteGroupID(siteGroupID *string) *IpamPrefixesListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithSiteGroupIDn(siteGroupIDn *string) *IpamPrefixesListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
 }
 
 // WithSiteID adds the siteID to the ipam prefixes list params
@@ -844,884 +1164,1245 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 	}
 	var res []error
 
+	if o.Children != nil {
+
+		// query param children
+		var qrChildren string
+
+		if o.Children != nil {
+			qrChildren = *o.Children
+		}
+		qChildren := qrChildren
+		if qChildren != "" {
+
+			if err := r.SetQueryParam("children", qChildren); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ChildrenGt != nil {
+
+		// query param children__gt
+		var qrChildrenGt string
+
+		if o.ChildrenGt != nil {
+			qrChildrenGt = *o.ChildrenGt
+		}
+		qChildrenGt := qrChildrenGt
+		if qChildrenGt != "" {
+
+			if err := r.SetQueryParam("children__gt", qChildrenGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ChildrenGte != nil {
+
+		// query param children__gte
+		var qrChildrenGte string
+
+		if o.ChildrenGte != nil {
+			qrChildrenGte = *o.ChildrenGte
+		}
+		qChildrenGte := qrChildrenGte
+		if qChildrenGte != "" {
+
+			if err := r.SetQueryParam("children__gte", qChildrenGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ChildrenLt != nil {
+
+		// query param children__lt
+		var qrChildrenLt string
+
+		if o.ChildrenLt != nil {
+			qrChildrenLt = *o.ChildrenLt
+		}
+		qChildrenLt := qrChildrenLt
+		if qChildrenLt != "" {
+
+			if err := r.SetQueryParam("children__lt", qChildrenLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ChildrenLte != nil {
+
+		// query param children__lte
+		var qrChildrenLte string
+
+		if o.ChildrenLte != nil {
+			qrChildrenLte = *o.ChildrenLte
+		}
+		qChildrenLte := qrChildrenLte
+		if qChildrenLte != "" {
+
+			if err := r.SetQueryParam("children__lte", qChildrenLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Childrenn != nil {
+
+		// query param children__n
+		var qrChildrenn string
+
+		if o.Childrenn != nil {
+			qrChildrenn = *o.Childrenn
+		}
+		qChildrenn := qrChildrenn
+		if qChildrenn != "" {
+
+			if err := r.SetQueryParam("children__n", qChildrenn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Contains != nil {
 
 		// query param contains
 		var qrContains string
+
 		if o.Contains != nil {
 			qrContains = *o.Contains
 		}
 		qContains := qrContains
 		if qContains != "" {
+
 			if err := r.SetQueryParam("contains", qContains); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Created != nil {
 
 		// query param created
 		var qrCreated string
+
 		if o.Created != nil {
 			qrCreated = *o.Created
 		}
 		qCreated := qrCreated
 		if qCreated != "" {
+
 			if err := r.SetQueryParam("created", qCreated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedGte != nil {
 
 		// query param created__gte
 		var qrCreatedGte string
+
 		if o.CreatedGte != nil {
 			qrCreatedGte = *o.CreatedGte
 		}
 		qCreatedGte := qrCreatedGte
 		if qCreatedGte != "" {
+
 			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedLte != nil {
 
 		// query param created__lte
 		var qrCreatedLte string
+
 		if o.CreatedLte != nil {
 			qrCreatedLte = *o.CreatedLte
 		}
 		qCreatedLte := qrCreatedLte
 		if qCreatedLte != "" {
+
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.Depth != nil {
+
+		// query param depth
+		var qrDepth string
+
+		if o.Depth != nil {
+			qrDepth = *o.Depth
+		}
+		qDepth := qrDepth
+		if qDepth != "" {
+
+			if err := r.SetQueryParam("depth", qDepth); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DepthGt != nil {
+
+		// query param depth__gt
+		var qrDepthGt string
+
+		if o.DepthGt != nil {
+			qrDepthGt = *o.DepthGt
+		}
+		qDepthGt := qrDepthGt
+		if qDepthGt != "" {
+
+			if err := r.SetQueryParam("depth__gt", qDepthGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DepthGte != nil {
+
+		// query param depth__gte
+		var qrDepthGte string
+
+		if o.DepthGte != nil {
+			qrDepthGte = *o.DepthGte
+		}
+		qDepthGte := qrDepthGte
+		if qDepthGte != "" {
+
+			if err := r.SetQueryParam("depth__gte", qDepthGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DepthLt != nil {
+
+		// query param depth__lt
+		var qrDepthLt string
+
+		if o.DepthLt != nil {
+			qrDepthLt = *o.DepthLt
+		}
+		qDepthLt := qrDepthLt
+		if qDepthLt != "" {
+
+			if err := r.SetQueryParam("depth__lt", qDepthLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DepthLte != nil {
+
+		// query param depth__lte
+		var qrDepthLte string
+
+		if o.DepthLte != nil {
+			qrDepthLte = *o.DepthLte
+		}
+		qDepthLte := qrDepthLte
+		if qDepthLte != "" {
+
+			if err := r.SetQueryParam("depth__lte", qDepthLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Depthn != nil {
+
+		// query param depth__n
+		var qrDepthn string
+
+		if o.Depthn != nil {
+			qrDepthn = *o.Depthn
+		}
+		qDepthn := qrDepthn
+		if qDepthn != "" {
+
+			if err := r.SetQueryParam("depth__n", qDepthn); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Family != nil {
 
 		// query param family
 		var qrFamily float64
+
 		if o.Family != nil {
 			qrFamily = *o.Family
 		}
 		qFamily := swag.FormatFloat64(qrFamily)
 		if qFamily != "" {
+
 			if err := r.SetQueryParam("family", qFamily); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IsPool != nil {
 
 		// query param is_pool
 		var qrIsPool string
+
 		if o.IsPool != nil {
 			qrIsPool = *o.IsPool
 		}
 		qIsPool := qrIsPool
 		if qIsPool != "" {
+
 			if err := r.SetQueryParam("is_pool", qIsPool); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdated != nil {
 
 		// query param last_updated
 		var qrLastUpdated string
+
 		if o.LastUpdated != nil {
 			qrLastUpdated = *o.LastUpdated
 		}
 		qLastUpdated := qrLastUpdated
 		if qLastUpdated != "" {
+
 			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
 		var qrLastUpdatedGte string
+
 		if o.LastUpdatedGte != nil {
 			qrLastUpdatedGte = *o.LastUpdatedGte
 		}
 		qLastUpdatedGte := qrLastUpdatedGte
 		if qLastUpdatedGte != "" {
+
 			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
 		var qrLastUpdatedLte string
+
 		if o.LastUpdatedLte != nil {
 			qrLastUpdatedLte = *o.LastUpdatedLte
 		}
 		qLastUpdatedLte := qrLastUpdatedLte
 		if qLastUpdatedLte != "" {
+
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MaskLength != nil {
 
 		// query param mask_length
 		var qrMaskLength float64
+
 		if o.MaskLength != nil {
 			qrMaskLength = *o.MaskLength
 		}
 		qMaskLength := swag.FormatFloat64(qrMaskLength)
 		if qMaskLength != "" {
+
 			if err := r.SetQueryParam("mask_length", qMaskLength); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MaskLengthGte != nil {
 
 		// query param mask_length__gte
 		var qrMaskLengthGte float64
+
 		if o.MaskLengthGte != nil {
 			qrMaskLengthGte = *o.MaskLengthGte
 		}
 		qMaskLengthGte := swag.FormatFloat64(qrMaskLengthGte)
 		if qMaskLengthGte != "" {
+
 			if err := r.SetQueryParam("mask_length__gte", qMaskLengthGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MaskLengthLte != nil {
 
 		// query param mask_length__lte
 		var qrMaskLengthLte float64
+
 		if o.MaskLengthLte != nil {
 			qrMaskLengthLte = *o.MaskLengthLte
 		}
 		qMaskLengthLte := swag.FormatFloat64(qrMaskLengthLte)
 		if qMaskLengthLte != "" {
+
 			if err := r.SetQueryParam("mask_length__lte", qMaskLengthLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Prefix != nil {
 
 		// query param prefix
 		var qrPrefix string
+
 		if o.Prefix != nil {
 			qrPrefix = *o.Prefix
 		}
 		qPrefix := qrPrefix
 		if qPrefix != "" {
+
 			if err := r.SetQueryParam("prefix", qPrefix); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.PresentInVrf != nil {
+
+		// query param present_in_vrf
+		var qrPresentInVrf string
+
+		if o.PresentInVrf != nil {
+			qrPresentInVrf = *o.PresentInVrf
+		}
+		qPresentInVrf := qrPresentInVrf
+		if qPresentInVrf != "" {
+
+			if err := r.SetQueryParam("present_in_vrf", qPresentInVrf); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PresentInVrfID != nil {
+
+		// query param present_in_vrf_id
+		var qrPresentInVrfID string
+
+		if o.PresentInVrfID != nil {
+			qrPresentInVrfID = *o.PresentInVrfID
+		}
+		qPresentInVrfID := qrPresentInVrfID
+		if qPresentInVrfID != "" {
+
+			if err := r.SetQueryParam("present_in_vrf_id", qPresentInVrfID); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Region != nil {
 
 		// query param region
 		var qrRegion string
+
 		if o.Region != nil {
 			qrRegion = *o.Region
 		}
 		qRegion := qrRegion
 		if qRegion != "" {
+
 			if err := r.SetQueryParam("region", qRegion); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Regionn != nil {
 
 		// query param region__n
 		var qrRegionn string
+
 		if o.Regionn != nil {
 			qrRegionn = *o.Regionn
 		}
 		qRegionn := qrRegionn
 		if qRegionn != "" {
+
 			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionID != nil {
 
 		// query param region_id
 		var qrRegionID string
+
 		if o.RegionID != nil {
 			qrRegionID = *o.RegionID
 		}
 		qRegionID := qrRegionID
 		if qRegionID != "" {
+
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionIDn != nil {
 
 		// query param region_id__n
 		var qrRegionIDn string
+
 		if o.RegionIDn != nil {
 			qrRegionIDn = *o.RegionIDn
 		}
 		qRegionIDn := qrRegionIDn
 		if qRegionIDn != "" {
+
 			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Role != nil {
 
 		// query param role
 		var qrRole string
+
 		if o.Role != nil {
 			qrRole = *o.Role
 		}
 		qRole := qrRole
 		if qRole != "" {
+
 			if err := r.SetQueryParam("role", qRole); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Rolen != nil {
 
 		// query param role__n
 		var qrRolen string
+
 		if o.Rolen != nil {
 			qrRolen = *o.Rolen
 		}
 		qRolen := qrRolen
 		if qRolen != "" {
+
 			if err := r.SetQueryParam("role__n", qRolen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RoleID != nil {
 
 		// query param role_id
 		var qrRoleID string
+
 		if o.RoleID != nil {
 			qrRoleID = *o.RoleID
 		}
 		qRoleID := qrRoleID
 		if qRoleID != "" {
+
 			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RoleIDn != nil {
 
 		// query param role_id__n
 		var qrRoleIDn string
+
 		if o.RoleIDn != nil {
 			qrRoleIDn = *o.RoleIDn
 		}
 		qRoleIDn := qrRoleIDn
 		if qRoleIDn != "" {
+
 			if err := r.SetQueryParam("role_id__n", qRoleIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Site != nil {
 
 		// query param site
 		var qrSite string
+
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
 		qSite := qrSite
 		if qSite != "" {
+
 			if err := r.SetQueryParam("site", qSite); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Siten != nil {
 
 		// query param site__n
 		var qrSiten string
+
 		if o.Siten != nil {
 			qrSiten = *o.Siten
 		}
 		qSiten := qrSiten
 		if qSiten != "" {
+
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.SiteID != nil {
 
 		// query param site_id
 		var qrSiteID string
+
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
 		qSiteID := qrSiteID
 		if qSiteID != "" {
+
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteIDn != nil {
 
 		// query param site_id__n
 		var qrSiteIDn string
+
 		if o.SiteIDn != nil {
 			qrSiteIDn = *o.SiteIDn
 		}
 		qSiteIDn := qrSiteIDn
 		if qSiteIDn != "" {
+
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Status != nil {
 
 		// query param status
 		var qrStatus string
+
 		if o.Status != nil {
 			qrStatus = *o.Status
 		}
 		qStatus := qrStatus
 		if qStatus != "" {
+
 			if err := r.SetQueryParam("status", qStatus); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Statusn != nil {
 
 		// query param status__n
 		var qrStatusn string
+
 		if o.Statusn != nil {
 			qrStatusn = *o.Statusn
 		}
 		qStatusn := qrStatusn
 		if qStatusn != "" {
+
 			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenant != nil {
 
 		// query param tenant
 		var qrTenant string
+
 		if o.Tenant != nil {
 			qrTenant = *o.Tenant
 		}
 		qTenant := qrTenant
 		if qTenant != "" {
+
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenantn != nil {
 
 		// query param tenant__n
 		var qrTenantn string
+
 		if o.Tenantn != nil {
 			qrTenantn = *o.Tenantn
 		}
 		qTenantn := qrTenantn
 		if qTenantn != "" {
+
 			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroup != nil {
 
 		// query param tenant_group
 		var qrTenantGroup string
+
 		if o.TenantGroup != nil {
 			qrTenantGroup = *o.TenantGroup
 		}
 		qTenantGroup := qrTenantGroup
 		if qTenantGroup != "" {
+
 			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupn != nil {
 
 		// query param tenant_group__n
 		var qrTenantGroupn string
+
 		if o.TenantGroupn != nil {
 			qrTenantGroupn = *o.TenantGroupn
 		}
 		qTenantGroupn := qrTenantGroupn
 		if qTenantGroupn != "" {
+
 			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupID != nil {
 
 		// query param tenant_group_id
 		var qrTenantGroupID string
+
 		if o.TenantGroupID != nil {
 			qrTenantGroupID = *o.TenantGroupID
 		}
 		qTenantGroupID := qrTenantGroupID
 		if qTenantGroupID != "" {
+
 			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupIDn != nil {
 
 		// query param tenant_group_id__n
 		var qrTenantGroupIDn string
+
 		if o.TenantGroupIDn != nil {
 			qrTenantGroupIDn = *o.TenantGroupIDn
 		}
 		qTenantGroupIDn := qrTenantGroupIDn
 		if qTenantGroupIDn != "" {
+
 			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantID != nil {
 
 		// query param tenant_id
 		var qrTenantID string
+
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
 		qTenantID := qrTenantID
 		if qTenantID != "" {
+
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantIDn != nil {
 
 		// query param tenant_id__n
 		var qrTenantIDn string
+
 		if o.TenantIDn != nil {
 			qrTenantIDn = *o.TenantIDn
 		}
 		qTenantIDn := qrTenantIDn
 		if qTenantIDn != "" {
+
 			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VlanID != nil {
 
 		// query param vlan_id
 		var qrVlanID string
+
 		if o.VlanID != nil {
 			qrVlanID = *o.VlanID
 		}
 		qVlanID := qrVlanID
 		if qVlanID != "" {
+
 			if err := r.SetQueryParam("vlan_id", qVlanID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VlanIDn != nil {
 
 		// query param vlan_id__n
 		var qrVlanIDn string
+
 		if o.VlanIDn != nil {
 			qrVlanIDn = *o.VlanIDn
 		}
 		qVlanIDn := qrVlanIDn
 		if qVlanIDn != "" {
+
 			if err := r.SetQueryParam("vlan_id__n", qVlanIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VlanVid != nil {
 
 		// query param vlan_vid
 		var qrVlanVid float64
+
 		if o.VlanVid != nil {
 			qrVlanVid = *o.VlanVid
 		}
 		qVlanVid := swag.FormatFloat64(qrVlanVid)
 		if qVlanVid != "" {
+
 			if err := r.SetQueryParam("vlan_vid", qVlanVid); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Vrf != nil {
 
 		// query param vrf
 		var qrVrf string
+
 		if o.Vrf != nil {
 			qrVrf = *o.Vrf
 		}
 		qVrf := qrVrf
 		if qVrf != "" {
+
 			if err := r.SetQueryParam("vrf", qVrf); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Vrfn != nil {
 
 		// query param vrf__n
 		var qrVrfn string
+
 		if o.Vrfn != nil {
 			qrVrfn = *o.Vrfn
 		}
 		qVrfn := qrVrfn
 		if qVrfn != "" {
+
 			if err := r.SetQueryParam("vrf__n", qVrfn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VrfID != nil {
 
 		// query param vrf_id
 		var qrVrfID string
+
 		if o.VrfID != nil {
 			qrVrfID = *o.VrfID
 		}
 		qVrfID := qrVrfID
 		if qVrfID != "" {
+
 			if err := r.SetQueryParam("vrf_id", qVrfID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VrfIDn != nil {
 
 		// query param vrf_id__n
 		var qrVrfIDn string
+
 		if o.VrfIDn != nil {
 			qrVrfIDn = *o.VrfIDn
 		}
 		qVrfIDn := qrVrfIDn
 		if qVrfIDn != "" {
+
 			if err := r.SetQueryParam("vrf_id__n", qVrfIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Within != nil {
 
 		// query param within
 		var qrWithin string
+
 		if o.Within != nil {
 			qrWithin = *o.Within
 		}
 		qWithin := qrWithin
 		if qWithin != "" {
+
 			if err := r.SetQueryParam("within", qWithin); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.WithinInclude != nil {
 
 		// query param within_include
 		var qrWithinInclude string
+
 		if o.WithinInclude != nil {
 			qrWithinInclude = *o.WithinInclude
 		}
 		qWithinInclude := qrWithinInclude
 		if qWithinInclude != "" {
+
 			if err := r.SetQueryParam("within_include", qWithinInclude); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

@@ -45,14 +45,7 @@ func (o *DcimInventoryItemsCreateReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		result := NewDcimInventoryItemsCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimInventoryItemsCreateCreated() *DcimInventoryItemsCreateCreated {
 	return &DcimInventoryItemsCreateCreated{}
 }
 
-/*DcimInventoryItemsCreateCreated handles this case with default header values.
+/* DcimInventoryItemsCreateCreated describes a response with status code 201, with default header values.
 
 DcimInventoryItemsCreateCreated dcim inventory items create created
 */
@@ -72,7 +65,6 @@ type DcimInventoryItemsCreateCreated struct {
 func (o *DcimInventoryItemsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcimInventoryItemsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimInventoryItemsCreateCreated) GetPayload() *models.InventoryItem {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimInventoryItemsCreateCreated) readResponse(response runtime.ClientRe
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimInventoryItemsCreateDefault creates a DcimInventoryItemsCreateDefault with default headers values
-func NewDcimInventoryItemsCreateDefault(code int) *DcimInventoryItemsCreateDefault {
-	return &DcimInventoryItemsCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimInventoryItemsCreateDefault handles this case with default header values.
-
-DcimInventoryItemsCreateDefault dcim inventory items create default
-*/
-type DcimInventoryItemsCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim inventory items create default response
-func (o *DcimInventoryItemsCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimInventoryItemsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcim_inventory-items_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimInventoryItemsCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimInventoryItemsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

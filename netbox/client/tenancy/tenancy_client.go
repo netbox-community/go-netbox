@@ -40,45 +40,176 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	TenancyTenantGroupsCreate(params *TenancyTenantGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsCreateCreated, error)
+	TenancyTenantGroupsBulkDelete(params *TenancyTenantGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsBulkDeleteNoContent, error)
 
-	TenancyTenantGroupsDelete(params *TenancyTenantGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsDeleteNoContent, error)
+	TenancyTenantGroupsBulkPartialUpdate(params *TenancyTenantGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsBulkPartialUpdateOK, error)
 
-	TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsListOK, error)
+	TenancyTenantGroupsBulkUpdate(params *TenancyTenantGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsBulkUpdateOK, error)
 
-	TenancyTenantGroupsPartialUpdate(params *TenancyTenantGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsPartialUpdateOK, error)
+	TenancyTenantGroupsCreate(params *TenancyTenantGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsCreateCreated, error)
 
-	TenancyTenantGroupsRead(params *TenancyTenantGroupsReadParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsReadOK, error)
+	TenancyTenantGroupsDelete(params *TenancyTenantGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsDeleteNoContent, error)
 
-	TenancyTenantGroupsUpdate(params *TenancyTenantGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsUpdateOK, error)
+	TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsListOK, error)
 
-	TenancyTenantsCreate(params *TenancyTenantsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsCreateCreated, error)
+	TenancyTenantGroupsPartialUpdate(params *TenancyTenantGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsPartialUpdateOK, error)
 
-	TenancyTenantsDelete(params *TenancyTenantsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsDeleteNoContent, error)
+	TenancyTenantGroupsRead(params *TenancyTenantGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsReadOK, error)
 
-	TenancyTenantsList(params *TenancyTenantsListParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsListOK, error)
+	TenancyTenantGroupsUpdate(params *TenancyTenantGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsUpdateOK, error)
 
-	TenancyTenantsPartialUpdate(params *TenancyTenantsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsPartialUpdateOK, error)
+	TenancyTenantsBulkDelete(params *TenancyTenantsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsBulkDeleteNoContent, error)
 
-	TenancyTenantsRead(params *TenancyTenantsReadParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsReadOK, error)
+	TenancyTenantsBulkPartialUpdate(params *TenancyTenantsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsBulkPartialUpdateOK, error)
 
-	TenancyTenantsUpdate(params *TenancyTenantsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsUpdateOK, error)
+	TenancyTenantsBulkUpdate(params *TenancyTenantsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsBulkUpdateOK, error)
+
+	TenancyTenantsCreate(params *TenancyTenantsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsCreateCreated, error)
+
+	TenancyTenantsDelete(params *TenancyTenantsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsDeleteNoContent, error)
+
+	TenancyTenantsList(params *TenancyTenantsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsListOK, error)
+
+	TenancyTenantsPartialUpdate(params *TenancyTenantsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsPartialUpdateOK, error)
+
+	TenancyTenantsRead(params *TenancyTenantsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsReadOK, error)
+
+	TenancyTenantsUpdate(params *TenancyTenantsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
+  TenancyTenantGroupsBulkDelete tenancy tenant groups bulk delete API
+*/
+func (a *Client) TenancyTenantGroupsBulkDelete(params *TenancyTenantGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTenancyTenantGroupsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "tenancy_tenant-groups_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/tenancy/tenant-groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &TenancyTenantGroupsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*TenancyTenantGroupsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  TenancyTenantGroupsBulkPartialUpdate tenancy tenant groups bulk partial update API
+*/
+func (a *Client) TenancyTenantGroupsBulkPartialUpdate(params *TenancyTenantGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTenancyTenantGroupsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "tenancy_tenant-groups_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/tenancy/tenant-groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &TenancyTenantGroupsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*TenancyTenantGroupsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  TenancyTenantGroupsBulkUpdate tenancy tenant groups bulk update API
+*/
+func (a *Client) TenancyTenantGroupsBulkUpdate(params *TenancyTenantGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTenancyTenantGroupsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "tenancy_tenant-groups_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/tenancy/tenant-groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &TenancyTenantGroupsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*TenancyTenantGroupsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
   TenancyTenantGroupsCreate tenancy tenant groups create API
 */
-func (a *Client) TenancyTenantGroupsCreate(params *TenancyTenantGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsCreateCreated, error) {
+func (a *Client) TenancyTenantGroupsCreate(params *TenancyTenantGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantGroupsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenant-groups_create",
 		Method:             "POST",
 		PathPattern:        "/tenancy/tenant-groups/",
@@ -90,7 +221,12 @@ func (a *Client) TenancyTenantGroupsCreate(params *TenancyTenantGroupsCreatePara
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -99,20 +235,20 @@ func (a *Client) TenancyTenantGroupsCreate(params *TenancyTenantGroupsCreatePara
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*TenancyTenantGroupsCreateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   TenancyTenantGroupsDelete tenancy tenant groups delete API
 */
-func (a *Client) TenancyTenantGroupsDelete(params *TenancyTenantGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsDeleteNoContent, error) {
+func (a *Client) TenancyTenantGroupsDelete(params *TenancyTenantGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantGroupsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenant-groups_delete",
 		Method:             "DELETE",
 		PathPattern:        "/tenancy/tenant-groups/{id}/",
@@ -124,7 +260,12 @@ func (a *Client) TenancyTenantGroupsDelete(params *TenancyTenantGroupsDeletePara
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -141,13 +282,12 @@ func (a *Client) TenancyTenantGroupsDelete(params *TenancyTenantGroupsDeletePara
 /*
   TenancyTenantGroupsList tenancy tenant groups list API
 */
-func (a *Client) TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsListOK, error) {
+func (a *Client) TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantGroupsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenant-groups_list",
 		Method:             "GET",
 		PathPattern:        "/tenancy/tenant-groups/",
@@ -159,7 +299,12 @@ func (a *Client) TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, 
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -176,13 +321,12 @@ func (a *Client) TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, 
 /*
   TenancyTenantGroupsPartialUpdate tenancy tenant groups partial update API
 */
-func (a *Client) TenancyTenantGroupsPartialUpdate(params *TenancyTenantGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsPartialUpdateOK, error) {
+func (a *Client) TenancyTenantGroupsPartialUpdate(params *TenancyTenantGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantGroupsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenant-groups_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/tenancy/tenant-groups/{id}/",
@@ -194,7 +338,12 @@ func (a *Client) TenancyTenantGroupsPartialUpdate(params *TenancyTenantGroupsPar
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -203,20 +352,20 @@ func (a *Client) TenancyTenantGroupsPartialUpdate(params *TenancyTenantGroupsPar
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*TenancyTenantGroupsPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   TenancyTenantGroupsRead tenancy tenant groups read API
 */
-func (a *Client) TenancyTenantGroupsRead(params *TenancyTenantGroupsReadParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsReadOK, error) {
+func (a *Client) TenancyTenantGroupsRead(params *TenancyTenantGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantGroupsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenant-groups_read",
 		Method:             "GET",
 		PathPattern:        "/tenancy/tenant-groups/{id}/",
@@ -228,7 +377,12 @@ func (a *Client) TenancyTenantGroupsRead(params *TenancyTenantGroupsReadParams, 
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -245,13 +399,12 @@ func (a *Client) TenancyTenantGroupsRead(params *TenancyTenantGroupsReadParams, 
 /*
   TenancyTenantGroupsUpdate tenancy tenant groups update API
 */
-func (a *Client) TenancyTenantGroupsUpdate(params *TenancyTenantGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsUpdateOK, error) {
+func (a *Client) TenancyTenantGroupsUpdate(params *TenancyTenantGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantGroupsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenant-groups_update",
 		Method:             "PUT",
 		PathPattern:        "/tenancy/tenant-groups/{id}/",
@@ -263,7 +416,12 @@ func (a *Client) TenancyTenantGroupsUpdate(params *TenancyTenantGroupsUpdatePara
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -272,20 +430,137 @@ func (a *Client) TenancyTenantGroupsUpdate(params *TenancyTenantGroupsUpdatePara
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*TenancyTenantGroupsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenant-groups_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  TenancyTenantsBulkDelete tenancy tenants bulk delete API
+*/
+func (a *Client) TenancyTenantsBulkDelete(params *TenancyTenantsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTenancyTenantsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "tenancy_tenants_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/tenancy/tenants/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &TenancyTenantsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*TenancyTenantsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  TenancyTenantsBulkPartialUpdate tenancy tenants bulk partial update API
+*/
+func (a *Client) TenancyTenantsBulkPartialUpdate(params *TenancyTenantsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTenancyTenantsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "tenancy_tenants_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/tenancy/tenants/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &TenancyTenantsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*TenancyTenantsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  TenancyTenantsBulkUpdate tenancy tenants bulk update API
+*/
+func (a *Client) TenancyTenantsBulkUpdate(params *TenancyTenantsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTenancyTenantsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "tenancy_tenants_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/tenancy/tenants/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &TenancyTenantsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*TenancyTenantsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   TenancyTenantsCreate tenancy tenants create API
 */
-func (a *Client) TenancyTenantsCreate(params *TenancyTenantsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsCreateCreated, error) {
+func (a *Client) TenancyTenantsCreate(params *TenancyTenantsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenants_create",
 		Method:             "POST",
 		PathPattern:        "/tenancy/tenants/",
@@ -297,7 +572,12 @@ func (a *Client) TenancyTenantsCreate(params *TenancyTenantsCreateParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -306,20 +586,20 @@ func (a *Client) TenancyTenantsCreate(params *TenancyTenantsCreateParams, authIn
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*TenancyTenantsCreateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   TenancyTenantsDelete tenancy tenants delete API
 */
-func (a *Client) TenancyTenantsDelete(params *TenancyTenantsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsDeleteNoContent, error) {
+func (a *Client) TenancyTenantsDelete(params *TenancyTenantsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenants_delete",
 		Method:             "DELETE",
 		PathPattern:        "/tenancy/tenants/{id}/",
@@ -331,7 +611,12 @@ func (a *Client) TenancyTenantsDelete(params *TenancyTenantsDeleteParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -348,13 +633,12 @@ func (a *Client) TenancyTenantsDelete(params *TenancyTenantsDeleteParams, authIn
 /*
   TenancyTenantsList tenancy tenants list API
 */
-func (a *Client) TenancyTenantsList(params *TenancyTenantsListParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsListOK, error) {
+func (a *Client) TenancyTenantsList(params *TenancyTenantsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenants_list",
 		Method:             "GET",
 		PathPattern:        "/tenancy/tenants/",
@@ -366,7 +650,12 @@ func (a *Client) TenancyTenantsList(params *TenancyTenantsListParams, authInfo r
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -383,13 +672,12 @@ func (a *Client) TenancyTenantsList(params *TenancyTenantsListParams, authInfo r
 /*
   TenancyTenantsPartialUpdate tenancy tenants partial update API
 */
-func (a *Client) TenancyTenantsPartialUpdate(params *TenancyTenantsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsPartialUpdateOK, error) {
+func (a *Client) TenancyTenantsPartialUpdate(params *TenancyTenantsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenants_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/tenancy/tenants/{id}/",
@@ -401,7 +689,12 @@ func (a *Client) TenancyTenantsPartialUpdate(params *TenancyTenantsPartialUpdate
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -410,20 +703,20 @@ func (a *Client) TenancyTenantsPartialUpdate(params *TenancyTenantsPartialUpdate
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*TenancyTenantsPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   TenancyTenantsRead tenancy tenants read API
 */
-func (a *Client) TenancyTenantsRead(params *TenancyTenantsReadParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsReadOK, error) {
+func (a *Client) TenancyTenantsRead(params *TenancyTenantsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenants_read",
 		Method:             "GET",
 		PathPattern:        "/tenancy/tenants/{id}/",
@@ -435,7 +728,12 @@ func (a *Client) TenancyTenantsRead(params *TenancyTenantsReadParams, authInfo r
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -452,13 +750,12 @@ func (a *Client) TenancyTenantsRead(params *TenancyTenantsReadParams, authInfo r
 /*
   TenancyTenantsUpdate tenancy tenants update API
 */
-func (a *Client) TenancyTenantsUpdate(params *TenancyTenantsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantsUpdateOK, error) {
+func (a *Client) TenancyTenantsUpdate(params *TenancyTenantsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTenancyTenantsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "tenancy_tenants_update",
 		Method:             "PUT",
 		PathPattern:        "/tenancy/tenants/{id}/",
@@ -470,7 +767,12 @@ func (a *Client) TenancyTenantsUpdate(params *TenancyTenantsUpdateParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -479,8 +781,9 @@ func (a *Client) TenancyTenantsUpdate(params *TenancyTenantsUpdateParams, authIn
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*TenancyTenantsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tenancy_tenants_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 // SetTransport changes the transport on the client

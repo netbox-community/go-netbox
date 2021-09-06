@@ -11,7 +11,7 @@ This package assumes you are using NetBox 2.0, as the NetBox 1.0 API no longer e
 Using the client
 ================
 
-The `github.com/go-netbox/netbox` package has some convenience functions for creating clients with the most common
+The `github.com/netbox-community/go-netbox/netbox` package has some convenience functions for creating clients with the most common
 configurations you are likely to need while connecting to NetBox. `NewNetboxAt` allows you to specify a hostname
 (including port, if you need it), and `NewNetboxWithAPIKey` allows you to specify both a hostname:port and API token.
 ```golang
@@ -72,7 +72,7 @@ func main() {
 Go Module support
 ================
 
-Go 1.13+
+Go 1.16+
 
 `go get github.com/netbox-community/go-netbox`
 

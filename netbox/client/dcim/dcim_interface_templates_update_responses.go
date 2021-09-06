@@ -45,14 +45,7 @@ func (o *DcimInterfaceTemplatesUpdateReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		result := NewDcimInterfaceTemplatesUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimInterfaceTemplatesUpdateOK() *DcimInterfaceTemplatesUpdateOK {
 	return &DcimInterfaceTemplatesUpdateOK{}
 }
 
-/*DcimInterfaceTemplatesUpdateOK handles this case with default header values.
+/* DcimInterfaceTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 DcimInterfaceTemplatesUpdateOK dcim interface templates update o k
 */
@@ -72,7 +65,6 @@ type DcimInterfaceTemplatesUpdateOK struct {
 func (o *DcimInterfaceTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesUpdateOK) GetPayload() *models.InterfaceTemplate {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimInterfaceTemplatesUpdateOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimInterfaceTemplatesUpdateDefault creates a DcimInterfaceTemplatesUpdateDefault with default headers values
-func NewDcimInterfaceTemplatesUpdateDefault(code int) *DcimInterfaceTemplatesUpdateDefault {
-	return &DcimInterfaceTemplatesUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimInterfaceTemplatesUpdateDefault handles this case with default header values.
-
-DcimInterfaceTemplatesUpdateDefault dcim interface templates update default
-*/
-type DcimInterfaceTemplatesUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim interface templates update default response
-func (o *DcimInterfaceTemplatesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimInterfaceTemplatesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/interface-templates/{id}/][%d] dcim_interface-templates_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimInterfaceTemplatesUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimInterfaceTemplatesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

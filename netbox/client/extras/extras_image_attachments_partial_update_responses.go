@@ -45,14 +45,7 @@ func (o *ExtrasImageAttachmentsPartialUpdateReader) ReadResponse(response runtim
 		}
 		return result, nil
 	default:
-		result := NewExtrasImageAttachmentsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewExtrasImageAttachmentsPartialUpdateOK() *ExtrasImageAttachmentsPartialUp
 	return &ExtrasImageAttachmentsPartialUpdateOK{}
 }
 
-/*ExtrasImageAttachmentsPartialUpdateOK handles this case with default header values.
+/* ExtrasImageAttachmentsPartialUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasImageAttachmentsPartialUpdateOK extras image attachments partial update o k
 */
@@ -72,7 +65,6 @@ type ExtrasImageAttachmentsPartialUpdateOK struct {
 func (o *ExtrasImageAttachmentsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extrasImageAttachmentsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsPartialUpdateOK) GetPayload() *models.ImageAttachment {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *ExtrasImageAttachmentsPartialUpdateOK) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewExtrasImageAttachmentsPartialUpdateDefault creates a ExtrasImageAttachmentsPartialUpdateDefault with default headers values
-func NewExtrasImageAttachmentsPartialUpdateDefault(code int) *ExtrasImageAttachmentsPartialUpdateDefault {
-	return &ExtrasImageAttachmentsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*ExtrasImageAttachmentsPartialUpdateDefault handles this case with default header values.
-
-ExtrasImageAttachmentsPartialUpdateDefault extras image attachments partial update default
-*/
-type ExtrasImageAttachmentsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the extras image attachments partial update default response
-func (o *ExtrasImageAttachmentsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *ExtrasImageAttachmentsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extras_image-attachments_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *ExtrasImageAttachmentsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *ExtrasImageAttachmentsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -45,14 +45,7 @@ func (o *DcimConsolePortsPartialUpdateReader) ReadResponse(response runtime.Clie
 		}
 		return result, nil
 	default:
-		result := NewDcimConsolePortsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimConsolePortsPartialUpdateOK() *DcimConsolePortsPartialUpdateOK {
 	return &DcimConsolePortsPartialUpdateOK{}
 }
 
-/*DcimConsolePortsPartialUpdateOK handles this case with default header values.
+/* DcimConsolePortsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimConsolePortsPartialUpdateOK dcim console ports partial update o k
 */
@@ -72,7 +65,6 @@ type DcimConsolePortsPartialUpdateOK struct {
 func (o *DcimConsolePortsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/console-ports/{id}/][%d] dcimConsolePortsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimConsolePortsPartialUpdateOK) GetPayload() *models.ConsolePort {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimConsolePortsPartialUpdateOK) readResponse(response runtime.ClientRe
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimConsolePortsPartialUpdateDefault creates a DcimConsolePortsPartialUpdateDefault with default headers values
-func NewDcimConsolePortsPartialUpdateDefault(code int) *DcimConsolePortsPartialUpdateDefault {
-	return &DcimConsolePortsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimConsolePortsPartialUpdateDefault handles this case with default header values.
-
-DcimConsolePortsPartialUpdateDefault dcim console ports partial update default
-*/
-type DcimConsolePortsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim console ports partial update default response
-func (o *DcimConsolePortsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimConsolePortsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/console-ports/{id}/][%d] dcim_console-ports_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimConsolePortsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimConsolePortsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

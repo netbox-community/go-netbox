@@ -45,14 +45,7 @@ func (o *IpamVrfsCreateReader) ReadResponse(response runtime.ClientResponse, con
 		}
 		return result, nil
 	default:
-		result := NewIpamVrfsCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewIpamVrfsCreateCreated() *IpamVrfsCreateCreated {
 	return &IpamVrfsCreateCreated{}
 }
 
-/*IpamVrfsCreateCreated handles this case with default header values.
+/* IpamVrfsCreateCreated describes a response with status code 201, with default header values.
 
 IpamVrfsCreateCreated ipam vrfs create created
 */
@@ -72,7 +65,6 @@ type IpamVrfsCreateCreated struct {
 func (o *IpamVrfsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipamVrfsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamVrfsCreateCreated) GetPayload() *models.VRF {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *IpamVrfsCreateCreated) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewIpamVrfsCreateDefault creates a IpamVrfsCreateDefault with default headers values
-func NewIpamVrfsCreateDefault(code int) *IpamVrfsCreateDefault {
-	return &IpamVrfsCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*IpamVrfsCreateDefault handles this case with default header values.
-
-IpamVrfsCreateDefault ipam vrfs create default
-*/
-type IpamVrfsCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the ipam vrfs create default response
-func (o *IpamVrfsCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *IpamVrfsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipam_vrfs_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *IpamVrfsCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *IpamVrfsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

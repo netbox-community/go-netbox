@@ -44,7 +44,6 @@ func (o *DcimRearPortTemplatesReadReader) ReadResponse(response runtime.ClientRe
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimRearPortTemplatesReadOK() *DcimRearPortTemplatesReadOK {
 	return &DcimRearPortTemplatesReadOK{}
 }
 
-/*DcimRearPortTemplatesReadOK handles this case with default header values.
+/* DcimRearPortTemplatesReadOK describes a response with status code 200, with default header values.
 
 DcimRearPortTemplatesReadOK dcim rear port templates read o k
 */
@@ -66,7 +65,6 @@ type DcimRearPortTemplatesReadOK struct {
 func (o *DcimRearPortTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rear-port-templates/{id}/][%d] dcimRearPortTemplatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRearPortTemplatesReadOK) GetPayload() *models.RearPortTemplate {
 	return o.Payload
 }

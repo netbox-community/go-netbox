@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimInventoryItemsDeleteParams creates a new DcimInventoryItemsDeleteParams object
-// with the default values initialized.
+// NewDcimInventoryItemsDeleteParams creates a new DcimInventoryItemsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInventoryItemsDeleteParams() *DcimInventoryItemsDeleteParams {
-	var ()
 	return &DcimInventoryItemsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInventoryItemsDeleteParamsWithTimeout creates a new DcimInventoryItemsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInventoryItemsDeleteParamsWithTimeout(timeout time.Duration) *DcimInventoryItemsDeleteParams {
-	var ()
 	return &DcimInventoryItemsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInventoryItemsDeleteParamsWithContext creates a new DcimInventoryItemsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInventoryItemsDeleteParamsWithContext(ctx context.Context) *DcimInventoryItemsDeleteParams {
-	var ()
 	return &DcimInventoryItemsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInventoryItemsDeleteParamsWithHTTPClient creates a new DcimInventoryItemsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInventoryItemsDeleteParamsWithHTTPClient(client *http.Client) *DcimInventoryItemsDeleteParams {
-	var ()
 	return &DcimInventoryItemsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInventoryItemsDeleteParams contains all the parameters to send to the API endpoint
-for the dcim inventory items delete operation typically these are written to a http.Request
+/* DcimInventoryItemsDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim inventory items delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInventoryItemsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this inventory item.
+	/* ID.
 
+	   A unique integer value identifying this inventory item.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim inventory items delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInventoryItemsDeleteParams) WithDefaults() *DcimInventoryItemsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim inventory items delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInventoryItemsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim inventory items delete params

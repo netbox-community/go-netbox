@@ -44,7 +44,6 @@ func (o *DcimPowerOutletsTraceReader) ReadResponse(response runtime.ClientRespon
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimPowerOutletsTraceOK() *DcimPowerOutletsTraceOK {
 	return &DcimPowerOutletsTraceOK{}
 }
 
-/*DcimPowerOutletsTraceOK handles this case with default header values.
+/* DcimPowerOutletsTraceOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletsTraceOK dcim power outlets trace o k
 */
@@ -66,7 +65,6 @@ type DcimPowerOutletsTraceOK struct {
 func (o *DcimPowerOutletsTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/trace/][%d] dcimPowerOutletsTraceOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerOutletsTraceOK) GetPayload() *models.PowerOutlet {
 	return o.Payload
 }

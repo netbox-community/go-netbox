@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewCircuitsCircuitTypesReadParams creates a new CircuitsCircuitTypesReadParams object
-// with the default values initialized.
+// NewCircuitsCircuitTypesReadParams creates a new CircuitsCircuitTypesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitTypesReadParams() *CircuitsCircuitTypesReadParams {
-	var ()
 	return &CircuitsCircuitTypesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitTypesReadParamsWithTimeout creates a new CircuitsCircuitTypesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitTypesReadParamsWithTimeout(timeout time.Duration) *CircuitsCircuitTypesReadParams {
-	var ()
 	return &CircuitsCircuitTypesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitTypesReadParamsWithContext creates a new CircuitsCircuitTypesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitTypesReadParamsWithContext(ctx context.Context) *CircuitsCircuitTypesReadParams {
-	var ()
 	return &CircuitsCircuitTypesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitTypesReadParamsWithHTTPClient creates a new CircuitsCircuitTypesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitTypesReadParamsWithHTTPClient(client *http.Client) *CircuitsCircuitTypesReadParams {
-	var ()
 	return &CircuitsCircuitTypesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitTypesReadParams contains all the parameters to send to the API endpoint
-for the circuits circuit types read operation typically these are written to a http.Request
+/* CircuitsCircuitTypesReadParams contains all the parameters to send to the API endpoint
+   for the circuits circuit types read operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitTypesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this circuit type.
+	/* ID.
 
+	   A unique integer value identifying this circuit type.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuit types read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTypesReadParams) WithDefaults() *CircuitsCircuitTypesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuit types read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTypesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuit types read params

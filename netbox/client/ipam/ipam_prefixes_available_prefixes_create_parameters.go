@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamPrefixesAvailablePrefixesCreateParams creates a new IpamPrefixesAvailablePrefixesCreateParams object
-// with the default values initialized.
+// NewIpamPrefixesAvailablePrefixesCreateParams creates a new IpamPrefixesAvailablePrefixesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamPrefixesAvailablePrefixesCreateParams() *IpamPrefixesAvailablePrefixesCreateParams {
-	var ()
 	return &IpamPrefixesAvailablePrefixesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamPrefixesAvailablePrefixesCreateParamsWithTimeout creates a new IpamPrefixesAvailablePrefixesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamPrefixesAvailablePrefixesCreateParamsWithTimeout(timeout time.Duration) *IpamPrefixesAvailablePrefixesCreateParams {
-	var ()
 	return &IpamPrefixesAvailablePrefixesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamPrefixesAvailablePrefixesCreateParamsWithContext creates a new IpamPrefixesAvailablePrefixesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamPrefixesAvailablePrefixesCreateParamsWithContext(ctx context.Context) *IpamPrefixesAvailablePrefixesCreateParams {
-	var ()
 	return &IpamPrefixesAvailablePrefixesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamPrefixesAvailablePrefixesCreateParamsWithHTTPClient creates a new IpamPrefixesAvailablePrefixesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamPrefixesAvailablePrefixesCreateParamsWithHTTPClient(client *http.Client) *IpamPrefixesAvailablePrefixesCreateParams {
-	var ()
 	return &IpamPrefixesAvailablePrefixesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamPrefixesAvailablePrefixesCreateParams contains all the parameters to send to the API endpoint
-for the ipam prefixes available prefixes create operation typically these are written to a http.Request
+/* IpamPrefixesAvailablePrefixesCreateParams contains all the parameters to send to the API endpoint
+   for the ipam prefixes available prefixes create operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamPrefixesAvailablePrefixesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.PrefixLength
-	/*ID
-	  A unique integer value identifying this prefix.
 
+	/* ID.
+
+	   A unique integer value identifying this prefix.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam prefixes available prefixes create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesAvailablePrefixesCreateParams) WithDefaults() *IpamPrefixesAvailablePrefixesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam prefixes available prefixes create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesAvailablePrefixesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam prefixes available prefixes create params
@@ -153,7 +168,6 @@ func (o *IpamPrefixesAvailablePrefixesCreateParams) WriteToRequest(r runtime.Cli
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

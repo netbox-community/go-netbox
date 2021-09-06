@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimRackRolesDeleteParams creates a new DcimRackRolesDeleteParams object
-// with the default values initialized.
+// NewDcimRackRolesDeleteParams creates a new DcimRackRolesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackRolesDeleteParams() *DcimRackRolesDeleteParams {
-	var ()
 	return &DcimRackRolesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackRolesDeleteParamsWithTimeout creates a new DcimRackRolesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackRolesDeleteParamsWithTimeout(timeout time.Duration) *DcimRackRolesDeleteParams {
-	var ()
 	return &DcimRackRolesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackRolesDeleteParamsWithContext creates a new DcimRackRolesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackRolesDeleteParamsWithContext(ctx context.Context) *DcimRackRolesDeleteParams {
-	var ()
 	return &DcimRackRolesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackRolesDeleteParamsWithHTTPClient creates a new DcimRackRolesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackRolesDeleteParamsWithHTTPClient(client *http.Client) *DcimRackRolesDeleteParams {
-	var ()
 	return &DcimRackRolesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackRolesDeleteParams contains all the parameters to send to the API endpoint
-for the dcim rack roles delete operation typically these are written to a http.Request
+/* DcimRackRolesDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim rack roles delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackRolesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this rack role.
+	/* ID.
 
+	   A unique integer value identifying this rack role.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack roles delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackRolesDeleteParams) WithDefaults() *DcimRackRolesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack roles delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackRolesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack roles delete params

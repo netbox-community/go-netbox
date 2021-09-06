@@ -45,14 +45,7 @@ func (o *UsersGroupsUpdateReader) ReadResponse(response runtime.ClientResponse, 
 		}
 		return result, nil
 	default:
-		result := NewUsersGroupsUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewUsersGroupsUpdateOK() *UsersGroupsUpdateOK {
 	return &UsersGroupsUpdateOK{}
 }
 
-/*UsersGroupsUpdateOK handles this case with default header values.
+/* UsersGroupsUpdateOK describes a response with status code 200, with default header values.
 
 UsersGroupsUpdateOK users groups update o k
 */
@@ -72,7 +65,6 @@ type UsersGroupsUpdateOK struct {
 func (o *UsersGroupsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/groups/{id}/][%d] usersGroupsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersGroupsUpdateOK) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *UsersGroupsUpdateOK) readResponse(response runtime.ClientResponse, cons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewUsersGroupsUpdateDefault creates a UsersGroupsUpdateDefault with default headers values
-func NewUsersGroupsUpdateDefault(code int) *UsersGroupsUpdateDefault {
-	return &UsersGroupsUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*UsersGroupsUpdateDefault handles this case with default header values.
-
-UsersGroupsUpdateDefault users groups update default
-*/
-type UsersGroupsUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the users groups update default response
-func (o *UsersGroupsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *UsersGroupsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /users/groups/{id}/][%d] users_groups_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *UsersGroupsUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *UsersGroupsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

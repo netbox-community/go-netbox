@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -48,7 +49,6 @@ func (o *VirtualizationInterfacesListReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -59,7 +59,7 @@ func NewVirtualizationInterfacesListOK() *VirtualizationInterfacesListOK {
 	return &VirtualizationInterfacesListOK{}
 }
 
-/*VirtualizationInterfacesListOK handles this case with default header values.
+/* VirtualizationInterfacesListOK describes a response with status code 200, with default header values.
 
 VirtualizationInterfacesListOK virtualization interfaces list o k
 */
@@ -70,7 +70,6 @@ type VirtualizationInterfacesListOK struct {
 func (o *VirtualizationInterfacesListOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualizationInterfacesListOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationInterfacesListOK) GetPayload() *VirtualizationInterfacesListOKBody {
 	return o.Payload
 }
@@ -145,7 +144,6 @@ func (o *VirtualizationInterfacesListOKBody) validateCount(formats strfmt.Regist
 }
 
 func (o *VirtualizationInterfacesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -158,7 +156,6 @@ func (o *VirtualizationInterfacesListOKBody) validateNext(formats strfmt.Registr
 }
 
 func (o *VirtualizationInterfacesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -183,6 +180,38 @@ func (o *VirtualizationInterfacesListOKBody) validateResults(formats strfmt.Regi
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("virtualizationInterfacesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this virtualization interfaces list o k body based on the context it is used
+func (o *VirtualizationInterfacesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *VirtualizationInterfacesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("virtualizationInterfacesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

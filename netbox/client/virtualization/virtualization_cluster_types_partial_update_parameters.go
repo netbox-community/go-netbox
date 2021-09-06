@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewVirtualizationClusterTypesPartialUpdateParams creates a new VirtualizationClusterTypesPartialUpdateParams object
-// with the default values initialized.
+// NewVirtualizationClusterTypesPartialUpdateParams creates a new VirtualizationClusterTypesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationClusterTypesPartialUpdateParams() *VirtualizationClusterTypesPartialUpdateParams {
-	var ()
 	return &VirtualizationClusterTypesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationClusterTypesPartialUpdateParamsWithTimeout creates a new VirtualizationClusterTypesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationClusterTypesPartialUpdateParamsWithTimeout(timeout time.Duration) *VirtualizationClusterTypesPartialUpdateParams {
-	var ()
 	return &VirtualizationClusterTypesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationClusterTypesPartialUpdateParamsWithContext creates a new VirtualizationClusterTypesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationClusterTypesPartialUpdateParamsWithContext(ctx context.Context) *VirtualizationClusterTypesPartialUpdateParams {
-	var ()
 	return &VirtualizationClusterTypesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationClusterTypesPartialUpdateParamsWithHTTPClient creates a new VirtualizationClusterTypesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationClusterTypesPartialUpdateParamsWithHTTPClient(client *http.Client) *VirtualizationClusterTypesPartialUpdateParams {
-	var ()
 	return &VirtualizationClusterTypesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationClusterTypesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the virtualization cluster types partial update operation typically these are written to a http.Request
+/* VirtualizationClusterTypesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the virtualization cluster types partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationClusterTypesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.ClusterType
-	/*ID
-	  A unique integer value identifying this cluster type.
 
+	/* ID.
+
+	   A unique integer value identifying this cluster type.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization cluster types partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterTypesPartialUpdateParams) WithDefaults() *VirtualizationClusterTypesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization cluster types partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterTypesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization cluster types partial update params
@@ -153,7 +168,6 @@ func (o *VirtualizationClusterTypesPartialUpdateParams) WriteToRequest(r runtime
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

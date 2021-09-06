@@ -44,7 +44,6 @@ func (o *TenancyTenantsReadReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewTenancyTenantsReadOK() *TenancyTenantsReadOK {
 	return &TenancyTenantsReadOK{}
 }
 
-/*TenancyTenantsReadOK handles this case with default header values.
+/* TenancyTenantsReadOK describes a response with status code 200, with default header values.
 
 TenancyTenantsReadOK tenancy tenants read o k
 */
@@ -66,7 +65,6 @@ type TenancyTenantsReadOK struct {
 func (o *TenancyTenantsReadOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenants/{id}/][%d] tenancyTenantsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *TenancyTenantsReadOK) GetPayload() *models.Tenant {
 	return o.Payload
 }

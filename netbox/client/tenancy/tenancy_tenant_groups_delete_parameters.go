@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewTenancyTenantGroupsDeleteParams creates a new TenancyTenantGroupsDeleteParams object
-// with the default values initialized.
+// NewTenancyTenantGroupsDeleteParams creates a new TenancyTenantGroupsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewTenancyTenantGroupsDeleteParams() *TenancyTenantGroupsDeleteParams {
-	var ()
 	return &TenancyTenantGroupsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewTenancyTenantGroupsDeleteParamsWithTimeout creates a new TenancyTenantGroupsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewTenancyTenantGroupsDeleteParamsWithTimeout(timeout time.Duration) *TenancyTenantGroupsDeleteParams {
-	var ()
 	return &TenancyTenantGroupsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewTenancyTenantGroupsDeleteParamsWithContext creates a new TenancyTenantGroupsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewTenancyTenantGroupsDeleteParamsWithContext(ctx context.Context) *TenancyTenantGroupsDeleteParams {
-	var ()
 	return &TenancyTenantGroupsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewTenancyTenantGroupsDeleteParamsWithHTTPClient creates a new TenancyTenantGroupsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewTenancyTenantGroupsDeleteParamsWithHTTPClient(client *http.Client) *TenancyTenantGroupsDeleteParams {
-	var ()
 	return &TenancyTenantGroupsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*TenancyTenantGroupsDeleteParams contains all the parameters to send to the API endpoint
-for the tenancy tenant groups delete operation typically these are written to a http.Request
+/* TenancyTenantGroupsDeleteParams contains all the parameters to send to the API endpoint
+   for the tenancy tenant groups delete operation.
+
+   Typically these are written to a http.Request.
 */
 type TenancyTenantGroupsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this tenant group.
+	/* ID.
 
+	   A unique integer value identifying this tenant group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the tenancy tenant groups delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TenancyTenantGroupsDeleteParams) WithDefaults() *TenancyTenantGroupsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the tenancy tenant groups delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TenancyTenantGroupsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the tenancy tenant groups delete params

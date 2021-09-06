@@ -32,104 +32,136 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasExportTemplatesListParams creates a new ExtrasExportTemplatesListParams object
-// with the default values initialized.
+// NewExtrasExportTemplatesListParams creates a new ExtrasExportTemplatesListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasExportTemplatesListParams() *ExtrasExportTemplatesListParams {
-	var ()
 	return &ExtrasExportTemplatesListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasExportTemplatesListParamsWithTimeout creates a new ExtrasExportTemplatesListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasExportTemplatesListParamsWithTimeout(timeout time.Duration) *ExtrasExportTemplatesListParams {
-	var ()
 	return &ExtrasExportTemplatesListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasExportTemplatesListParamsWithContext creates a new ExtrasExportTemplatesListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasExportTemplatesListParamsWithContext(ctx context.Context) *ExtrasExportTemplatesListParams {
-	var ()
 	return &ExtrasExportTemplatesListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasExportTemplatesListParamsWithHTTPClient creates a new ExtrasExportTemplatesListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasExportTemplatesListParamsWithHTTPClient(client *http.Client) *ExtrasExportTemplatesListParams {
-	var ()
 	return &ExtrasExportTemplatesListParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasExportTemplatesListParams contains all the parameters to send to the API endpoint
-for the extras export templates list operation typically these are written to a http.Request
+/* ExtrasExportTemplatesListParams contains all the parameters to send to the API endpoint
+   for the extras export templates list operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasExportTemplatesListParams struct {
 
-	/*ContentType*/
+	// ContentType.
 	ContentType *string
-	/*ContentTypen*/
-	ContentTypen *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Limit
-	  Number of results to return per page.
 
+	// ContentTypen.
+	ContentTypen *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Name.
+	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*TemplateLanguage*/
-	TemplateLanguage *string
-	/*TemplateLanguagen*/
-	TemplateLanguagen *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras export templates list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasExportTemplatesListParams) WithDefaults() *ExtrasExportTemplatesListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras export templates list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasExportTemplatesListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras export templates list params
@@ -275,6 +307,17 @@ func (o *ExtrasExportTemplatesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameEmpty(nameEmpty *string) *ExtrasExportTemplatesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the extras export templates list params
 func (o *ExtrasExportTemplatesListParams) WithNameIc(nameIc *string) *ExtrasExportTemplatesListParams {
 	o.SetNameIc(nameIc)
@@ -385,28 +428,6 @@ func (o *ExtrasExportTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
-// WithTemplateLanguage adds the templateLanguage to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) WithTemplateLanguage(templateLanguage *string) *ExtrasExportTemplatesListParams {
-	o.SetTemplateLanguage(templateLanguage)
-	return o
-}
-
-// SetTemplateLanguage adds the templateLanguage to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) SetTemplateLanguage(templateLanguage *string) {
-	o.TemplateLanguage = templateLanguage
-}
-
-// WithTemplateLanguagen adds the templateLanguagen to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) WithTemplateLanguagen(templateLanguagen *string) *ExtrasExportTemplatesListParams {
-	o.SetTemplateLanguagen(templateLanguagen)
-	return o
-}
-
-// SetTemplateLanguagen adds the templateLanguageN to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) SetTemplateLanguagen(templateLanguagen *string) {
-	o.TemplateLanguagen = templateLanguagen
-}
-
 // WriteToRequest writes these params to a swagger request
 func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -419,352 +440,357 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 
 		// query param content_type
 		var qrContentType string
+
 		if o.ContentType != nil {
 			qrContentType = *o.ContentType
 		}
 		qContentType := qrContentType
 		if qContentType != "" {
+
 			if err := r.SetQueryParam("content_type", qContentType); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ContentTypen != nil {
 
 		// query param content_type__n
 		var qrContentTypen string
+
 		if o.ContentTypen != nil {
 			qrContentTypen = *o.ContentTypen
 		}
 		qContentTypen := qrContentTypen
 		if qContentTypen != "" {
+
 			if err := r.SetQueryParam("content_type__n", qContentTypen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
-	}
-
-	if o.TemplateLanguage != nil {
-
-		// query param template_language
-		var qrTemplateLanguage string
-		if o.TemplateLanguage != nil {
-			qrTemplateLanguage = *o.TemplateLanguage
-		}
-		qTemplateLanguage := qrTemplateLanguage
-		if qTemplateLanguage != "" {
-			if err := r.SetQueryParam("template_language", qTemplateLanguage); err != nil {
-				return err
-			}
-		}
-
-	}
-
-	if o.TemplateLanguagen != nil {
-
-		// query param template_language__n
-		var qrTemplateLanguagen string
-		if o.TemplateLanguagen != nil {
-			qrTemplateLanguagen = *o.TemplateLanguagen
-		}
-		qTemplateLanguagen := qrTemplateLanguagen
-		if qTemplateLanguagen != "" {
-			if err := r.SetQueryParam("template_language__n", qTemplateLanguagen); err != nil {
-				return err
-			}
-		}
-
 	}
 
 	if len(res) > 0 {

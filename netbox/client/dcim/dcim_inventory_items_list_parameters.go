@@ -32,182 +32,328 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimInventoryItemsListParams creates a new DcimInventoryItemsListParams object
-// with the default values initialized.
+// NewDcimInventoryItemsListParams creates a new DcimInventoryItemsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInventoryItemsListParams() *DcimInventoryItemsListParams {
-	var ()
 	return &DcimInventoryItemsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInventoryItemsListParamsWithTimeout creates a new DcimInventoryItemsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInventoryItemsListParamsWithTimeout(timeout time.Duration) *DcimInventoryItemsListParams {
-	var ()
 	return &DcimInventoryItemsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInventoryItemsListParamsWithContext creates a new DcimInventoryItemsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInventoryItemsListParamsWithContext(ctx context.Context) *DcimInventoryItemsListParams {
-	var ()
 	return &DcimInventoryItemsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInventoryItemsListParamsWithHTTPClient creates a new DcimInventoryItemsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInventoryItemsListParamsWithHTTPClient(client *http.Client) *DcimInventoryItemsListParams {
-	var ()
 	return &DcimInventoryItemsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInventoryItemsListParams contains all the parameters to send to the API endpoint
-for the dcim inventory items list operation typically these are written to a http.Request
+/* DcimInventoryItemsListParams contains all the parameters to send to the API endpoint
+   for the dcim inventory items list operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInventoryItemsListParams struct {
 
-	/*AssetTag*/
+	// AssetTag.
 	AssetTag *string
-	/*AssetTagIc*/
-	AssetTagIc *string
-	/*AssetTagIe*/
-	AssetTagIe *string
-	/*AssetTagIew*/
-	AssetTagIew *string
-	/*AssetTagIsw*/
-	AssetTagIsw *string
-	/*AssetTagn*/
-	AssetTagn *string
-	/*AssetTagNic*/
-	AssetTagNic *string
-	/*AssetTagNie*/
-	AssetTagNie *string
-	/*AssetTagNiew*/
-	AssetTagNiew *string
-	/*AssetTagNisw*/
-	AssetTagNisw *string
-	/*Device*/
-	Device *string
-	/*Devicen*/
-	Devicen *string
-	/*DeviceID*/
-	DeviceID *string
-	/*DeviceIDn*/
-	DeviceIDn *string
-	/*Discovered*/
-	Discovered *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Limit
-	  Number of results to return per page.
 
+	// AssetTagEmpty.
+	AssetTagEmpty *string
+
+	// AssetTagIc.
+	AssetTagIc *string
+
+	// AssetTagIe.
+	AssetTagIe *string
+
+	// AssetTagIew.
+	AssetTagIew *string
+
+	// AssetTagIsw.
+	AssetTagIsw *string
+
+	// AssetTagn.
+	AssetTagn *string
+
+	// AssetTagNic.
+	AssetTagNic *string
+
+	// AssetTagNie.
+	AssetTagNie *string
+
+	// AssetTagNiew.
+	AssetTagNiew *string
+
+	// AssetTagNisw.
+	AssetTagNisw *string
+
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// Device.
+	Device *string
+
+	// Devicen.
+	Devicen *string
+
+	// DeviceID.
+	DeviceID *string
+
+	// DeviceIDn.
+	DeviceIDn *string
+
+	// Discovered.
+	Discovered *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// Label.
+	Label *string
+
+	// LabelEmpty.
+	LabelEmpty *string
+
+	// LabelIc.
+	LabelIc *string
+
+	// LabelIe.
+	LabelIe *string
+
+	// LabelIew.
+	LabelIew *string
+
+	// LabelIsw.
+	LabelIsw *string
+
+	// Labeln.
+	Labeln *string
+
+	// LabelNic.
+	LabelNic *string
+
+	// LabelNie.
+	LabelNie *string
+
+	// LabelNiew.
+	LabelNiew *string
+
+	// LabelNisw.
+	LabelNisw *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Manufacturer*/
-	Manufacturer *string
-	/*Manufacturern*/
-	Manufacturern *string
-	/*ManufacturerID*/
-	ManufacturerID *string
-	/*ManufacturerIDn*/
-	ManufacturerIDn *string
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Manufacturer.
+	Manufacturer *string
+
+	// Manufacturern.
+	Manufacturern *string
+
+	// ManufacturerID.
+	ManufacturerID *string
+
+	// ManufacturerIDn.
+	ManufacturerIDn *string
+
+	// Name.
+	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*ParentID*/
+
+	// ParentID.
 	ParentID *string
-	/*ParentIDn*/
+
+	// ParentIDn.
 	ParentIDn *string
-	/*PartID*/
+
+	// PartID.
 	PartID *string
-	/*PartIDIc*/
+
+	// PartIDEmpty.
+	PartIDEmpty *string
+
+	// PartIDIc.
 	PartIDIc *string
-	/*PartIDIe*/
+
+	// PartIDIe.
 	PartIDIe *string
-	/*PartIDIew*/
+
+	// PartIDIew.
 	PartIDIew *string
-	/*PartIDIsw*/
+
+	// PartIDIsw.
 	PartIDIsw *string
-	/*PartIDn*/
+
+	// PartIDn.
 	PartIDn *string
-	/*PartIDNic*/
+
+	// PartIDNic.
 	PartIDNic *string
-	/*PartIDNie*/
+
+	// PartIDNie.
 	PartIDNie *string
-	/*PartIDNiew*/
+
+	// PartIDNiew.
 	PartIDNiew *string
-	/*PartIDNisw*/
+
+	// PartIDNisw.
 	PartIDNisw *string
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*Region*/
+
+	// Region.
 	Region *string
-	/*Regionn*/
+
+	// Regionn.
 	Regionn *string
-	/*RegionID*/
+
+	// RegionID.
 	RegionID *string
-	/*RegionIDn*/
+
+	// RegionIDn.
 	RegionIDn *string
-	/*Serial*/
+
+	// Serial.
 	Serial *string
-	/*Site*/
+
+	// Site.
 	Site *string
-	/*Siten*/
+
+	// Siten.
 	Siten *string
-	/*SiteID*/
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
+
+	// SiteID.
 	SiteID *string
-	/*SiteIDn*/
+
+	// SiteIDn.
 	SiteIDn *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim inventory items list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInventoryItemsListParams) WithDefaults() *DcimInventoryItemsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim inventory items list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInventoryItemsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim inventory items list params
@@ -252,6 +398,17 @@ func (o *DcimInventoryItemsListParams) WithAssetTag(assetTag *string) *DcimInven
 // SetAssetTag adds the assetTag to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetAssetTag(assetTag *string) {
 	o.AssetTag = assetTag
+}
+
+// WithAssetTagEmpty adds the assetTagEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithAssetTagEmpty(assetTagEmpty *string) *DcimInventoryItemsListParams {
+	o.SetAssetTagEmpty(assetTagEmpty)
+	return o
+}
+
+// SetAssetTagEmpty adds the assetTagEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetAssetTagEmpty(assetTagEmpty *string) {
+	o.AssetTagEmpty = assetTagEmpty
 }
 
 // WithAssetTagIc adds the assetTagIc to the dcim inventory items list params
@@ -351,6 +508,39 @@ func (o *DcimInventoryItemsListParams) WithAssetTagNisw(assetTagNisw *string) *D
 // SetAssetTagNisw adds the assetTagNisw to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetAssetTagNisw(assetTagNisw *string) {
 	o.AssetTagNisw = assetTagNisw
+}
+
+// WithCreated adds the created to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithCreated(created *string) *DcimInventoryItemsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithCreatedGte(createdGte *string) *DcimInventoryItemsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithCreatedLte(createdLte *string) *DcimInventoryItemsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
 }
 
 // WithDevice adds the device to the dcim inventory items list params
@@ -474,6 +664,160 @@ func (o *DcimInventoryItemsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLabel adds the label to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabel(label *string) *DcimInventoryItemsListParams {
+	o.SetLabel(label)
+	return o
+}
+
+// SetLabel adds the label to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabel(label *string) {
+	o.Label = label
+}
+
+// WithLabelEmpty adds the labelEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelEmpty(labelEmpty *string) *DcimInventoryItemsListParams {
+	o.SetLabelEmpty(labelEmpty)
+	return o
+}
+
+// SetLabelEmpty adds the labelEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelEmpty(labelEmpty *string) {
+	o.LabelEmpty = labelEmpty
+}
+
+// WithLabelIc adds the labelIc to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelIc(labelIc *string) *DcimInventoryItemsListParams {
+	o.SetLabelIc(labelIc)
+	return o
+}
+
+// SetLabelIc adds the labelIc to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelIc(labelIc *string) {
+	o.LabelIc = labelIc
+}
+
+// WithLabelIe adds the labelIe to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelIe(labelIe *string) *DcimInventoryItemsListParams {
+	o.SetLabelIe(labelIe)
+	return o
+}
+
+// SetLabelIe adds the labelIe to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelIe(labelIe *string) {
+	o.LabelIe = labelIe
+}
+
+// WithLabelIew adds the labelIew to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelIew(labelIew *string) *DcimInventoryItemsListParams {
+	o.SetLabelIew(labelIew)
+	return o
+}
+
+// SetLabelIew adds the labelIew to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelIew(labelIew *string) {
+	o.LabelIew = labelIew
+}
+
+// WithLabelIsw adds the labelIsw to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelIsw(labelIsw *string) *DcimInventoryItemsListParams {
+	o.SetLabelIsw(labelIsw)
+	return o
+}
+
+// SetLabelIsw adds the labelIsw to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelIsw(labelIsw *string) {
+	o.LabelIsw = labelIsw
+}
+
+// WithLabeln adds the labeln to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabeln(labeln *string) *DcimInventoryItemsListParams {
+	o.SetLabeln(labeln)
+	return o
+}
+
+// SetLabeln adds the labelN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabeln(labeln *string) {
+	o.Labeln = labeln
+}
+
+// WithLabelNic adds the labelNic to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelNic(labelNic *string) *DcimInventoryItemsListParams {
+	o.SetLabelNic(labelNic)
+	return o
+}
+
+// SetLabelNic adds the labelNic to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelNic(labelNic *string) {
+	o.LabelNic = labelNic
+}
+
+// WithLabelNie adds the labelNie to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelNie(labelNie *string) *DcimInventoryItemsListParams {
+	o.SetLabelNie(labelNie)
+	return o
+}
+
+// SetLabelNie adds the labelNie to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelNie(labelNie *string) {
+	o.LabelNie = labelNie
+}
+
+// WithLabelNiew adds the labelNiew to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelNiew(labelNiew *string) *DcimInventoryItemsListParams {
+	o.SetLabelNiew(labelNiew)
+	return o
+}
+
+// SetLabelNiew adds the labelNiew to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelNiew(labelNiew *string) {
+	o.LabelNiew = labelNiew
+}
+
+// WithLabelNisw adds the labelNisw to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelNisw(labelNisw *string) *DcimInventoryItemsListParams {
+	o.SetLabelNisw(labelNisw)
+	return o
+}
+
+// SetLabelNisw adds the labelNisw to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelNisw(labelNisw *string) {
+	o.LabelNisw = labelNisw
+}
+
+// WithLastUpdated adds the lastUpdated to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLastUpdated(lastUpdated *string) *DcimInventoryItemsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimInventoryItemsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimInventoryItemsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithLimit(limit *int64) *DcimInventoryItemsListParams {
 	o.SetLimit(limit)
@@ -538,6 +882,17 @@ func (o *DcimInventoryItemsListParams) WithName(name *string) *DcimInventoryItem
 // SetName adds the name to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithNameEmpty(nameEmpty *string) *DcimInventoryItemsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim inventory items list params
@@ -681,6 +1036,17 @@ func (o *DcimInventoryItemsListParams) WithPartID(partID *string) *DcimInventory
 // SetPartID adds the partId to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetPartID(partID *string) {
 	o.PartID = partID
+}
+
+// WithPartIDEmpty adds the partIDEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithPartIDEmpty(partIDEmpty *string) *DcimInventoryItemsListParams {
+	o.SetPartIDEmpty(partIDEmpty)
+	return o
+}
+
+// SetPartIDEmpty adds the partIdEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetPartIDEmpty(partIDEmpty *string) {
+	o.PartIDEmpty = partIDEmpty
 }
 
 // WithPartIDIc adds the partIDIc to the dcim inventory items list params
@@ -870,6 +1236,50 @@ func (o *DcimInventoryItemsListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithSiteGroup(siteGroup *string) *DcimInventoryItemsListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithSiteGroupn(siteGroupn *string) *DcimInventoryItemsListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithSiteGroupID(siteGroupID *string) *DcimInventoryItemsListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithSiteGroupIDn(siteGroupIDn *string) *DcimInventoryItemsListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithSiteID(siteID *string) *DcimInventoryItemsListParams {
 	o.SetSiteID(siteID)
@@ -926,976 +1336,1445 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 
 		// query param asset_tag
 		var qrAssetTag string
+
 		if o.AssetTag != nil {
 			qrAssetTag = *o.AssetTag
 		}
 		qAssetTag := qrAssetTag
 		if qAssetTag != "" {
+
 			if err := r.SetQueryParam("asset_tag", qAssetTag); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.AssetTagEmpty != nil {
+
+		// query param asset_tag__empty
+		var qrAssetTagEmpty string
+
+		if o.AssetTagEmpty != nil {
+			qrAssetTagEmpty = *o.AssetTagEmpty
+		}
+		qAssetTagEmpty := qrAssetTagEmpty
+		if qAssetTagEmpty != "" {
+
+			if err := r.SetQueryParam("asset_tag__empty", qAssetTagEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.AssetTagIc != nil {
 
 		// query param asset_tag__ic
 		var qrAssetTagIc string
+
 		if o.AssetTagIc != nil {
 			qrAssetTagIc = *o.AssetTagIc
 		}
 		qAssetTagIc := qrAssetTagIc
 		if qAssetTagIc != "" {
+
 			if err := r.SetQueryParam("asset_tag__ic", qAssetTagIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagIe != nil {
 
 		// query param asset_tag__ie
 		var qrAssetTagIe string
+
 		if o.AssetTagIe != nil {
 			qrAssetTagIe = *o.AssetTagIe
 		}
 		qAssetTagIe := qrAssetTagIe
 		if qAssetTagIe != "" {
+
 			if err := r.SetQueryParam("asset_tag__ie", qAssetTagIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagIew != nil {
 
 		// query param asset_tag__iew
 		var qrAssetTagIew string
+
 		if o.AssetTagIew != nil {
 			qrAssetTagIew = *o.AssetTagIew
 		}
 		qAssetTagIew := qrAssetTagIew
 		if qAssetTagIew != "" {
+
 			if err := r.SetQueryParam("asset_tag__iew", qAssetTagIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagIsw != nil {
 
 		// query param asset_tag__isw
 		var qrAssetTagIsw string
+
 		if o.AssetTagIsw != nil {
 			qrAssetTagIsw = *o.AssetTagIsw
 		}
 		qAssetTagIsw := qrAssetTagIsw
 		if qAssetTagIsw != "" {
+
 			if err := r.SetQueryParam("asset_tag__isw", qAssetTagIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagn != nil {
 
 		// query param asset_tag__n
 		var qrAssetTagn string
+
 		if o.AssetTagn != nil {
 			qrAssetTagn = *o.AssetTagn
 		}
 		qAssetTagn := qrAssetTagn
 		if qAssetTagn != "" {
+
 			if err := r.SetQueryParam("asset_tag__n", qAssetTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagNic != nil {
 
 		// query param asset_tag__nic
 		var qrAssetTagNic string
+
 		if o.AssetTagNic != nil {
 			qrAssetTagNic = *o.AssetTagNic
 		}
 		qAssetTagNic := qrAssetTagNic
 		if qAssetTagNic != "" {
+
 			if err := r.SetQueryParam("asset_tag__nic", qAssetTagNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagNie != nil {
 
 		// query param asset_tag__nie
 		var qrAssetTagNie string
+
 		if o.AssetTagNie != nil {
 			qrAssetTagNie = *o.AssetTagNie
 		}
 		qAssetTagNie := qrAssetTagNie
 		if qAssetTagNie != "" {
+
 			if err := r.SetQueryParam("asset_tag__nie", qAssetTagNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagNiew != nil {
 
 		// query param asset_tag__niew
 		var qrAssetTagNiew string
+
 		if o.AssetTagNiew != nil {
 			qrAssetTagNiew = *o.AssetTagNiew
 		}
 		qAssetTagNiew := qrAssetTagNiew
 		if qAssetTagNiew != "" {
+
 			if err := r.SetQueryParam("asset_tag__niew", qAssetTagNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagNisw != nil {
 
 		// query param asset_tag__nisw
 		var qrAssetTagNisw string
+
 		if o.AssetTagNisw != nil {
 			qrAssetTagNisw = *o.AssetTagNisw
 		}
 		qAssetTagNisw := qrAssetTagNisw
 		if qAssetTagNisw != "" {
+
 			if err := r.SetQueryParam("asset_tag__nisw", qAssetTagNisw); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Device != nil {
 
 		// query param device
 		var qrDevice string
+
 		if o.Device != nil {
 			qrDevice = *o.Device
 		}
 		qDevice := qrDevice
 		if qDevice != "" {
+
 			if err := r.SetQueryParam("device", qDevice); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Devicen != nil {
 
 		// query param device__n
 		var qrDevicen string
+
 		if o.Devicen != nil {
 			qrDevicen = *o.Devicen
 		}
 		qDevicen := qrDevicen
 		if qDevicen != "" {
+
 			if err := r.SetQueryParam("device__n", qDevicen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceID != nil {
 
 		// query param device_id
 		var qrDeviceID string
+
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
 		qDeviceID := qrDeviceID
 		if qDeviceID != "" {
+
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceIDn != nil {
 
 		// query param device_id__n
 		var qrDeviceIDn string
+
 		if o.DeviceIDn != nil {
 			qrDeviceIDn = *o.DeviceIDn
 		}
 		qDeviceIDn := qrDeviceIDn
 		if qDeviceIDn != "" {
+
 			if err := r.SetQueryParam("device_id__n", qDeviceIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Discovered != nil {
 
 		// query param discovered
 		var qrDiscovered string
+
 		if o.Discovered != nil {
 			qrDiscovered = *o.Discovered
 		}
 		qDiscovered := qrDiscovered
 		if qDiscovered != "" {
+
 			if err := r.SetQueryParam("discovered", qDiscovered); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.Label != nil {
+
+		// query param label
+		var qrLabel string
+
+		if o.Label != nil {
+			qrLabel = *o.Label
+		}
+		qLabel := qrLabel
+		if qLabel != "" {
+
+			if err := r.SetQueryParam("label", qLabel); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelEmpty != nil {
+
+		// query param label__empty
+		var qrLabelEmpty string
+
+		if o.LabelEmpty != nil {
+			qrLabelEmpty = *o.LabelEmpty
+		}
+		qLabelEmpty := qrLabelEmpty
+		if qLabelEmpty != "" {
+
+			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelIc != nil {
+
+		// query param label__ic
+		var qrLabelIc string
+
+		if o.LabelIc != nil {
+			qrLabelIc = *o.LabelIc
+		}
+		qLabelIc := qrLabelIc
+		if qLabelIc != "" {
+
+			if err := r.SetQueryParam("label__ic", qLabelIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelIe != nil {
+
+		// query param label__ie
+		var qrLabelIe string
+
+		if o.LabelIe != nil {
+			qrLabelIe = *o.LabelIe
+		}
+		qLabelIe := qrLabelIe
+		if qLabelIe != "" {
+
+			if err := r.SetQueryParam("label__ie", qLabelIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelIew != nil {
+
+		// query param label__iew
+		var qrLabelIew string
+
+		if o.LabelIew != nil {
+			qrLabelIew = *o.LabelIew
+		}
+		qLabelIew := qrLabelIew
+		if qLabelIew != "" {
+
+			if err := r.SetQueryParam("label__iew", qLabelIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelIsw != nil {
+
+		// query param label__isw
+		var qrLabelIsw string
+
+		if o.LabelIsw != nil {
+			qrLabelIsw = *o.LabelIsw
+		}
+		qLabelIsw := qrLabelIsw
+		if qLabelIsw != "" {
+
+			if err := r.SetQueryParam("label__isw", qLabelIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Labeln != nil {
+
+		// query param label__n
+		var qrLabeln string
+
+		if o.Labeln != nil {
+			qrLabeln = *o.Labeln
+		}
+		qLabeln := qrLabeln
+		if qLabeln != "" {
+
+			if err := r.SetQueryParam("label__n", qLabeln); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelNic != nil {
+
+		// query param label__nic
+		var qrLabelNic string
+
+		if o.LabelNic != nil {
+			qrLabelNic = *o.LabelNic
+		}
+		qLabelNic := qrLabelNic
+		if qLabelNic != "" {
+
+			if err := r.SetQueryParam("label__nic", qLabelNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelNie != nil {
+
+		// query param label__nie
+		var qrLabelNie string
+
+		if o.LabelNie != nil {
+			qrLabelNie = *o.LabelNie
+		}
+		qLabelNie := qrLabelNie
+		if qLabelNie != "" {
+
+			if err := r.SetQueryParam("label__nie", qLabelNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelNiew != nil {
+
+		// query param label__niew
+		var qrLabelNiew string
+
+		if o.LabelNiew != nil {
+			qrLabelNiew = *o.LabelNiew
+		}
+		qLabelNiew := qrLabelNiew
+		if qLabelNiew != "" {
+
+			if err := r.SetQueryParam("label__niew", qLabelNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelNisw != nil {
+
+		// query param label__nisw
+		var qrLabelNisw string
+
+		if o.LabelNisw != nil {
+			qrLabelNisw = *o.LabelNisw
+		}
+		qLabelNisw := qrLabelNisw
+		if qLabelNisw != "" {
+
+			if err := r.SetQueryParam("label__nisw", qLabelNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Manufacturer != nil {
 
 		// query param manufacturer
 		var qrManufacturer string
+
 		if o.Manufacturer != nil {
 			qrManufacturer = *o.Manufacturer
 		}
 		qManufacturer := qrManufacturer
 		if qManufacturer != "" {
+
 			if err := r.SetQueryParam("manufacturer", qManufacturer); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Manufacturern != nil {
 
 		// query param manufacturer__n
 		var qrManufacturern string
+
 		if o.Manufacturern != nil {
 			qrManufacturern = *o.Manufacturern
 		}
 		qManufacturern := qrManufacturern
 		if qManufacturern != "" {
+
 			if err := r.SetQueryParam("manufacturer__n", qManufacturern); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ManufacturerID != nil {
 
 		// query param manufacturer_id
 		var qrManufacturerID string
+
 		if o.ManufacturerID != nil {
 			qrManufacturerID = *o.ManufacturerID
 		}
 		qManufacturerID := qrManufacturerID
 		if qManufacturerID != "" {
+
 			if err := r.SetQueryParam("manufacturer_id", qManufacturerID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ManufacturerIDn != nil {
 
 		// query param manufacturer_id__n
 		var qrManufacturerIDn string
+
 		if o.ManufacturerIDn != nil {
 			qrManufacturerIDn = *o.ManufacturerIDn
 		}
 		qManufacturerIDn := qrManufacturerIDn
 		if qManufacturerIDn != "" {
+
 			if err := r.SetQueryParam("manufacturer_id__n", qManufacturerIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ParentID != nil {
 
 		// query param parent_id
 		var qrParentID string
+
 		if o.ParentID != nil {
 			qrParentID = *o.ParentID
 		}
 		qParentID := qrParentID
 		if qParentID != "" {
+
 			if err := r.SetQueryParam("parent_id", qParentID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ParentIDn != nil {
 
 		// query param parent_id__n
 		var qrParentIDn string
+
 		if o.ParentIDn != nil {
 			qrParentIDn = *o.ParentIDn
 		}
 		qParentIDn := qrParentIDn
 		if qParentIDn != "" {
+
 			if err := r.SetQueryParam("parent_id__n", qParentIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PartID != nil {
 
 		// query param part_id
 		var qrPartID string
+
 		if o.PartID != nil {
 			qrPartID = *o.PartID
 		}
 		qPartID := qrPartID
 		if qPartID != "" {
+
 			if err := r.SetQueryParam("part_id", qPartID); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.PartIDEmpty != nil {
+
+		// query param part_id__empty
+		var qrPartIDEmpty string
+
+		if o.PartIDEmpty != nil {
+			qrPartIDEmpty = *o.PartIDEmpty
+		}
+		qPartIDEmpty := qrPartIDEmpty
+		if qPartIDEmpty != "" {
+
+			if err := r.SetQueryParam("part_id__empty", qPartIDEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.PartIDIc != nil {
 
 		// query param part_id__ic
 		var qrPartIDIc string
+
 		if o.PartIDIc != nil {
 			qrPartIDIc = *o.PartIDIc
 		}
 		qPartIDIc := qrPartIDIc
 		if qPartIDIc != "" {
+
 			if err := r.SetQueryParam("part_id__ic", qPartIDIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PartIDIe != nil {
 
 		// query param part_id__ie
 		var qrPartIDIe string
+
 		if o.PartIDIe != nil {
 			qrPartIDIe = *o.PartIDIe
 		}
 		qPartIDIe := qrPartIDIe
 		if qPartIDIe != "" {
+
 			if err := r.SetQueryParam("part_id__ie", qPartIDIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PartIDIew != nil {
 
 		// query param part_id__iew
 		var qrPartIDIew string
+
 		if o.PartIDIew != nil {
 			qrPartIDIew = *o.PartIDIew
 		}
 		qPartIDIew := qrPartIDIew
 		if qPartIDIew != "" {
+
 			if err := r.SetQueryParam("part_id__iew", qPartIDIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PartIDIsw != nil {
 
 		// query param part_id__isw
 		var qrPartIDIsw string
+
 		if o.PartIDIsw != nil {
 			qrPartIDIsw = *o.PartIDIsw
 		}
 		qPartIDIsw := qrPartIDIsw
 		if qPartIDIsw != "" {
+
 			if err := r.SetQueryParam("part_id__isw", qPartIDIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PartIDn != nil {
 
 		// query param part_id__n
 		var qrPartIDn string
+
 		if o.PartIDn != nil {
 			qrPartIDn = *o.PartIDn
 		}
 		qPartIDn := qrPartIDn
 		if qPartIDn != "" {
+
 			if err := r.SetQueryParam("part_id__n", qPartIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PartIDNic != nil {
 
 		// query param part_id__nic
 		var qrPartIDNic string
+
 		if o.PartIDNic != nil {
 			qrPartIDNic = *o.PartIDNic
 		}
 		qPartIDNic := qrPartIDNic
 		if qPartIDNic != "" {
+
 			if err := r.SetQueryParam("part_id__nic", qPartIDNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PartIDNie != nil {
 
 		// query param part_id__nie
 		var qrPartIDNie string
+
 		if o.PartIDNie != nil {
 			qrPartIDNie = *o.PartIDNie
 		}
 		qPartIDNie := qrPartIDNie
 		if qPartIDNie != "" {
+
 			if err := r.SetQueryParam("part_id__nie", qPartIDNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PartIDNiew != nil {
 
 		// query param part_id__niew
 		var qrPartIDNiew string
+
 		if o.PartIDNiew != nil {
 			qrPartIDNiew = *o.PartIDNiew
 		}
 		qPartIDNiew := qrPartIDNiew
 		if qPartIDNiew != "" {
+
 			if err := r.SetQueryParam("part_id__niew", qPartIDNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PartIDNisw != nil {
 
 		// query param part_id__nisw
 		var qrPartIDNisw string
+
 		if o.PartIDNisw != nil {
 			qrPartIDNisw = *o.PartIDNisw
 		}
 		qPartIDNisw := qrPartIDNisw
 		if qPartIDNisw != "" {
+
 			if err := r.SetQueryParam("part_id__nisw", qPartIDNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Region != nil {
 
 		// query param region
 		var qrRegion string
+
 		if o.Region != nil {
 			qrRegion = *o.Region
 		}
 		qRegion := qrRegion
 		if qRegion != "" {
+
 			if err := r.SetQueryParam("region", qRegion); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Regionn != nil {
 
 		// query param region__n
 		var qrRegionn string
+
 		if o.Regionn != nil {
 			qrRegionn = *o.Regionn
 		}
 		qRegionn := qrRegionn
 		if qRegionn != "" {
+
 			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionID != nil {
 
 		// query param region_id
 		var qrRegionID string
+
 		if o.RegionID != nil {
 			qrRegionID = *o.RegionID
 		}
 		qRegionID := qrRegionID
 		if qRegionID != "" {
+
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionIDn != nil {
 
 		// query param region_id__n
 		var qrRegionIDn string
+
 		if o.RegionIDn != nil {
 			qrRegionIDn = *o.RegionIDn
 		}
 		qRegionIDn := qrRegionIDn
 		if qRegionIDn != "" {
+
 			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Serial != nil {
 
 		// query param serial
 		var qrSerial string
+
 		if o.Serial != nil {
 			qrSerial = *o.Serial
 		}
 		qSerial := qrSerial
 		if qSerial != "" {
+
 			if err := r.SetQueryParam("serial", qSerial); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Site != nil {
 
 		// query param site
 		var qrSite string
+
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
 		qSite := qrSite
 		if qSite != "" {
+
 			if err := r.SetQueryParam("site", qSite); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Siten != nil {
 
 		// query param site__n
 		var qrSiten string
+
 		if o.Siten != nil {
 			qrSiten = *o.Siten
 		}
 		qSiten := qrSiten
 		if qSiten != "" {
+
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.SiteID != nil {
 
 		// query param site_id
 		var qrSiteID string
+
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
 		qSiteID := qrSiteID
 		if qSiteID != "" {
+
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteIDn != nil {
 
 		// query param site_id__n
 		var qrSiteIDn string
+
 		if o.SiteIDn != nil {
 			qrSiteIDn = *o.SiteIDn
 		}
 		qSiteIDn := qrSiteIDn
 		if qSiteIDn != "" {
+
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

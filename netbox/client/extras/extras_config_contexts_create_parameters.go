@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewExtrasConfigContextsCreateParams creates a new ExtrasConfigContextsCreateParams object
-// with the default values initialized.
+// NewExtrasConfigContextsCreateParams creates a new ExtrasConfigContextsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasConfigContextsCreateParams() *ExtrasConfigContextsCreateParams {
-	var ()
 	return &ExtrasConfigContextsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasConfigContextsCreateParamsWithTimeout creates a new ExtrasConfigContextsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasConfigContextsCreateParamsWithTimeout(timeout time.Duration) *ExtrasConfigContextsCreateParams {
-	var ()
 	return &ExtrasConfigContextsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasConfigContextsCreateParamsWithContext creates a new ExtrasConfigContextsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasConfigContextsCreateParamsWithContext(ctx context.Context) *ExtrasConfigContextsCreateParams {
-	var ()
 	return &ExtrasConfigContextsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasConfigContextsCreateParamsWithHTTPClient creates a new ExtrasConfigContextsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasConfigContextsCreateParamsWithHTTPClient(client *http.Client) *ExtrasConfigContextsCreateParams {
-	var ()
 	return &ExtrasConfigContextsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasConfigContextsCreateParams contains all the parameters to send to the API endpoint
-for the extras config contexts create operation typically these are written to a http.Request
+/* ExtrasConfigContextsCreateParams contains all the parameters to send to the API endpoint
+   for the extras config contexts create operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableConfigContext
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras config contexts create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsCreateParams) WithDefaults() *ExtrasConfigContextsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras config contexts create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras config contexts create params
@@ -136,7 +150,6 @@ func (o *ExtrasConfigContextsCreateParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

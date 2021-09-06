@@ -45,14 +45,7 @@ func (o *DcimRegionsCreateReader) ReadResponse(response runtime.ClientResponse, 
 		}
 		return result, nil
 	default:
-		result := NewDcimRegionsCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimRegionsCreateCreated() *DcimRegionsCreateCreated {
 	return &DcimRegionsCreateCreated{}
 }
 
-/*DcimRegionsCreateCreated handles this case with default header values.
+/* DcimRegionsCreateCreated describes a response with status code 201, with default header values.
 
 DcimRegionsCreateCreated dcim regions create created
 */
@@ -72,7 +65,6 @@ type DcimRegionsCreateCreated struct {
 func (o *DcimRegionsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/regions/][%d] dcimRegionsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimRegionsCreateCreated) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimRegionsCreateCreated) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimRegionsCreateDefault creates a DcimRegionsCreateDefault with default headers values
-func NewDcimRegionsCreateDefault(code int) *DcimRegionsCreateDefault {
-	return &DcimRegionsCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimRegionsCreateDefault handles this case with default header values.
-
-DcimRegionsCreateDefault dcim regions create default
-*/
-type DcimRegionsCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim regions create default response
-func (o *DcimRegionsCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimRegionsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/regions/][%d] dcim_regions_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimRegionsCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimRegionsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

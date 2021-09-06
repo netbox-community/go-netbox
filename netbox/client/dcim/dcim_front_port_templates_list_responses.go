@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -48,7 +49,6 @@ func (o *DcimFrontPortTemplatesListReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -59,7 +59,7 @@ func NewDcimFrontPortTemplatesListOK() *DcimFrontPortTemplatesListOK {
 	return &DcimFrontPortTemplatesListOK{}
 }
 
-/*DcimFrontPortTemplatesListOK handles this case with default header values.
+/* DcimFrontPortTemplatesListOK describes a response with status code 200, with default header values.
 
 DcimFrontPortTemplatesListOK dcim front port templates list o k
 */
@@ -70,7 +70,6 @@ type DcimFrontPortTemplatesListOK struct {
 func (o *DcimFrontPortTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcimFrontPortTemplatesListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimFrontPortTemplatesListOK) GetPayload() *DcimFrontPortTemplatesListOKBody {
 	return o.Payload
 }
@@ -145,7 +144,6 @@ func (o *DcimFrontPortTemplatesListOKBody) validateCount(formats strfmt.Registry
 }
 
 func (o *DcimFrontPortTemplatesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -158,7 +156,6 @@ func (o *DcimFrontPortTemplatesListOKBody) validateNext(formats strfmt.Registry)
 }
 
 func (o *DcimFrontPortTemplatesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -183,6 +180,38 @@ func (o *DcimFrontPortTemplatesListOKBody) validateResults(formats strfmt.Regist
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimFrontPortTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim front port templates list o k body based on the context it is used
+func (o *DcimFrontPortTemplatesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimFrontPortTemplatesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimFrontPortTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

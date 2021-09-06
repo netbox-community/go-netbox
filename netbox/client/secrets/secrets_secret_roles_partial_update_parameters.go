@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewSecretsSecretRolesPartialUpdateParams creates a new SecretsSecretRolesPartialUpdateParams object
-// with the default values initialized.
+// NewSecretsSecretRolesPartialUpdateParams creates a new SecretsSecretRolesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsSecretRolesPartialUpdateParams() *SecretsSecretRolesPartialUpdateParams {
-	var ()
 	return &SecretsSecretRolesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsSecretRolesPartialUpdateParamsWithTimeout creates a new SecretsSecretRolesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsSecretRolesPartialUpdateParamsWithTimeout(timeout time.Duration) *SecretsSecretRolesPartialUpdateParams {
-	var ()
 	return &SecretsSecretRolesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsSecretRolesPartialUpdateParamsWithContext creates a new SecretsSecretRolesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsSecretRolesPartialUpdateParamsWithContext(ctx context.Context) *SecretsSecretRolesPartialUpdateParams {
-	var ()
 	return &SecretsSecretRolesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsSecretRolesPartialUpdateParamsWithHTTPClient creates a new SecretsSecretRolesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsSecretRolesPartialUpdateParamsWithHTTPClient(client *http.Client) *SecretsSecretRolesPartialUpdateParams {
-	var ()
 	return &SecretsSecretRolesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsSecretRolesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the secrets secret roles partial update operation typically these are written to a http.Request
+/* SecretsSecretRolesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the secrets secret roles partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsSecretRolesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.SecretRole
-	/*ID
-	  A unique integer value identifying this secret role.
 
+	/* ID.
+
+	   A unique integer value identifying this secret role.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets secret roles partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretRolesPartialUpdateParams) WithDefaults() *SecretsSecretRolesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets secret roles partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretRolesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets secret roles partial update params
@@ -153,7 +168,6 @@ func (o *SecretsSecretRolesPartialUpdateParams) WriteToRequest(r runtime.ClientR
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

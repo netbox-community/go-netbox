@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimConsolePortsTraceParams creates a new DcimConsolePortsTraceParams object
-// with the default values initialized.
+// NewDcimConsolePortsTraceParams creates a new DcimConsolePortsTraceParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConsolePortsTraceParams() *DcimConsolePortsTraceParams {
-	var ()
 	return &DcimConsolePortsTraceParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConsolePortsTraceParamsWithTimeout creates a new DcimConsolePortsTraceParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConsolePortsTraceParamsWithTimeout(timeout time.Duration) *DcimConsolePortsTraceParams {
-	var ()
 	return &DcimConsolePortsTraceParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConsolePortsTraceParamsWithContext creates a new DcimConsolePortsTraceParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConsolePortsTraceParamsWithContext(ctx context.Context) *DcimConsolePortsTraceParams {
-	var ()
 	return &DcimConsolePortsTraceParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConsolePortsTraceParamsWithHTTPClient creates a new DcimConsolePortsTraceParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConsolePortsTraceParamsWithHTTPClient(client *http.Client) *DcimConsolePortsTraceParams {
-	var ()
 	return &DcimConsolePortsTraceParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConsolePortsTraceParams contains all the parameters to send to the API endpoint
-for the dcim console ports trace operation typically these are written to a http.Request
+/* DcimConsolePortsTraceParams contains all the parameters to send to the API endpoint
+   for the dcim console ports trace operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConsolePortsTraceParams struct {
 
-	/*ID
-	  A unique integer value identifying this console port.
+	/* ID.
 
+	   A unique integer value identifying this console port.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim console ports trace params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortsTraceParams) WithDefaults() *DcimConsolePortsTraceParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim console ports trace params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortsTraceParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim console ports trace params
