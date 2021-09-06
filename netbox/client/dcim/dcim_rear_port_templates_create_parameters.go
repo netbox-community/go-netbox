@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimRearPortTemplatesCreateParams creates a new DcimRearPortTemplatesCreateParams object
-// with the default values initialized.
+// NewDcimRearPortTemplatesCreateParams creates a new DcimRearPortTemplatesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRearPortTemplatesCreateParams() *DcimRearPortTemplatesCreateParams {
-	var ()
 	return &DcimRearPortTemplatesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRearPortTemplatesCreateParamsWithTimeout creates a new DcimRearPortTemplatesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRearPortTemplatesCreateParamsWithTimeout(timeout time.Duration) *DcimRearPortTemplatesCreateParams {
-	var ()
 	return &DcimRearPortTemplatesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRearPortTemplatesCreateParamsWithContext creates a new DcimRearPortTemplatesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRearPortTemplatesCreateParamsWithContext(ctx context.Context) *DcimRearPortTemplatesCreateParams {
-	var ()
 	return &DcimRearPortTemplatesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRearPortTemplatesCreateParamsWithHTTPClient creates a new DcimRearPortTemplatesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRearPortTemplatesCreateParamsWithHTTPClient(client *http.Client) *DcimRearPortTemplatesCreateParams {
-	var ()
 	return &DcimRearPortTemplatesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRearPortTemplatesCreateParams contains all the parameters to send to the API endpoint
-for the dcim rear port templates create operation typically these are written to a http.Request
+/* DcimRearPortTemplatesCreateParams contains all the parameters to send to the API endpoint
+   for the dcim rear port templates create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRearPortTemplatesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRearPortTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rear port templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRearPortTemplatesCreateParams) WithDefaults() *DcimRearPortTemplatesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rear port templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRearPortTemplatesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rear port templates create params
@@ -136,7 +150,6 @@ func (o *DcimRearPortTemplatesCreateParams) WriteToRequest(r runtime.ClientReque
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

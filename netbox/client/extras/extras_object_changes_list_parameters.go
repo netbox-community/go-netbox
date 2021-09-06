@@ -32,146 +32,220 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasObjectChangesListParams creates a new ExtrasObjectChangesListParams object
-// with the default values initialized.
+// NewExtrasObjectChangesListParams creates a new ExtrasObjectChangesListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasObjectChangesListParams() *ExtrasObjectChangesListParams {
-	var ()
 	return &ExtrasObjectChangesListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasObjectChangesListParamsWithTimeout creates a new ExtrasObjectChangesListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasObjectChangesListParamsWithTimeout(timeout time.Duration) *ExtrasObjectChangesListParams {
-	var ()
 	return &ExtrasObjectChangesListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasObjectChangesListParamsWithContext creates a new ExtrasObjectChangesListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasObjectChangesListParamsWithContext(ctx context.Context) *ExtrasObjectChangesListParams {
-	var ()
 	return &ExtrasObjectChangesListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasObjectChangesListParamsWithHTTPClient creates a new ExtrasObjectChangesListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasObjectChangesListParamsWithHTTPClient(client *http.Client) *ExtrasObjectChangesListParams {
-	var ()
 	return &ExtrasObjectChangesListParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasObjectChangesListParams contains all the parameters to send to the API endpoint
-for the extras object changes list operation typically these are written to a http.Request
+/* ExtrasObjectChangesListParams contains all the parameters to send to the API endpoint
+   for the extras object changes list operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasObjectChangesListParams struct {
 
-	/*Action*/
+	// Action.
 	Action *string
-	/*Actionn*/
-	Actionn *string
-	/*ChangedObjectID*/
-	ChangedObjectID *string
-	/*ChangedObjectIDGt*/
-	ChangedObjectIDGt *string
-	/*ChangedObjectIDGte*/
-	ChangedObjectIDGte *string
-	/*ChangedObjectIDLt*/
-	ChangedObjectIDLt *string
-	/*ChangedObjectIDLte*/
-	ChangedObjectIDLte *string
-	/*ChangedObjectIDn*/
-	ChangedObjectIDn *string
-	/*ChangedObjectType*/
-	ChangedObjectType *string
-	/*ChangedObjectTypen*/
-	ChangedObjectTypen *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Limit
-	  Number of results to return per page.
 
+	// Actionn.
+	Actionn *string
+
+	// ChangedObjectID.
+	ChangedObjectID *string
+
+	// ChangedObjectIDGt.
+	ChangedObjectIDGt *string
+
+	// ChangedObjectIDGte.
+	ChangedObjectIDGte *string
+
+	// ChangedObjectIDLt.
+	ChangedObjectIDLt *string
+
+	// ChangedObjectIDLte.
+	ChangedObjectIDLte *string
+
+	// ChangedObjectIDn.
+	ChangedObjectIDn *string
+
+	// ChangedObjectType.
+	ChangedObjectType *string
+
+	// ChangedObjectTypen.
+	ChangedObjectTypen *string
+
+	// ChangedObjectTypeID.
+	ChangedObjectTypeID *string
+
+	// ChangedObjectTypeIDn.
+	ChangedObjectTypeIDn *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*ObjectRepr*/
-	ObjectRepr *string
-	/*ObjectReprIc*/
-	ObjectReprIc *string
-	/*ObjectReprIe*/
-	ObjectReprIe *string
-	/*ObjectReprIew*/
-	ObjectReprIew *string
-	/*ObjectReprIsw*/
-	ObjectReprIsw *string
-	/*ObjectReprn*/
-	ObjectReprn *string
-	/*ObjectReprNic*/
-	ObjectReprNic *string
-	/*ObjectReprNie*/
-	ObjectReprNie *string
-	/*ObjectReprNiew*/
-	ObjectReprNiew *string
-	/*ObjectReprNisw*/
-	ObjectReprNisw *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// ObjectRepr.
+	ObjectRepr *string
+
+	// ObjectReprEmpty.
+	ObjectReprEmpty *string
+
+	// ObjectReprIc.
+	ObjectReprIc *string
+
+	// ObjectReprIe.
+	ObjectReprIe *string
+
+	// ObjectReprIew.
+	ObjectReprIew *string
+
+	// ObjectReprIsw.
+	ObjectReprIsw *string
+
+	// ObjectReprn.
+	ObjectReprn *string
+
+	// ObjectReprNic.
+	ObjectReprNic *string
+
+	// ObjectReprNie.
+	ObjectReprNie *string
+
+	// ObjectReprNiew.
+	ObjectReprNiew *string
+
+	// ObjectReprNisw.
+	ObjectReprNisw *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*RequestID*/
+
+	// RequestID.
 	RequestID *string
-	/*Time*/
+
+	// Time.
 	Time *string
-	/*User*/
+
+	// User.
 	User *string
-	/*Usern*/
+
+	// Usern.
 	Usern *string
-	/*UserName*/
+
+	// UserID.
+	UserID *string
+
+	// UserIDn.
+	UserIDn *string
+
+	// UserName.
 	UserName *string
-	/*UserNameIc*/
+
+	// UserNameEmpty.
+	UserNameEmpty *string
+
+	// UserNameIc.
 	UserNameIc *string
-	/*UserNameIe*/
+
+	// UserNameIe.
 	UserNameIe *string
-	/*UserNameIew*/
+
+	// UserNameIew.
 	UserNameIew *string
-	/*UserNameIsw*/
+
+	// UserNameIsw.
 	UserNameIsw *string
-	/*UserNamen*/
+
+	// UserNamen.
 	UserNamen *string
-	/*UserNameNic*/
+
+	// UserNameNic.
 	UserNameNic *string
-	/*UserNameNie*/
+
+	// UserNameNie.
 	UserNameNie *string
-	/*UserNameNiew*/
+
+	// UserNameNiew.
 	UserNameNiew *string
-	/*UserNameNisw*/
+
+	// UserNameNisw.
 	UserNameNisw *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras object changes list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasObjectChangesListParams) WithDefaults() *ExtrasObjectChangesListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras object changes list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasObjectChangesListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras object changes list params
@@ -317,6 +391,28 @@ func (o *ExtrasObjectChangesListParams) SetChangedObjectTypen(changedObjectTypen
 	o.ChangedObjectTypen = changedObjectTypen
 }
 
+// WithChangedObjectTypeID adds the changedObjectTypeID to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectTypeID(changedObjectTypeID *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectTypeID(changedObjectTypeID)
+	return o
+}
+
+// SetChangedObjectTypeID adds the changedObjectTypeId to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectTypeID(changedObjectTypeID *string) {
+	o.ChangedObjectTypeID = changedObjectTypeID
+}
+
+// WithChangedObjectTypeIDn adds the changedObjectTypeIDn to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithChangedObjectTypeIDn(changedObjectTypeIDn *string) *ExtrasObjectChangesListParams {
+	o.SetChangedObjectTypeIDn(changedObjectTypeIDn)
+	return o
+}
+
+// SetChangedObjectTypeIDn adds the changedObjectTypeIdN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetChangedObjectTypeIDn(changedObjectTypeIDn *string) {
+	o.ChangedObjectTypeIDn = changedObjectTypeIDn
+}
+
 // WithID adds the id to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) WithID(id *string) *ExtrasObjectChangesListParams {
 	o.SetID(id)
@@ -403,6 +499,17 @@ func (o *ExtrasObjectChangesListParams) WithObjectRepr(objectRepr *string) *Extr
 // SetObjectRepr adds the objectRepr to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) SetObjectRepr(objectRepr *string) {
 	o.ObjectRepr = objectRepr
+}
+
+// WithObjectReprEmpty adds the objectReprEmpty to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithObjectReprEmpty(objectReprEmpty *string) *ExtrasObjectChangesListParams {
+	o.SetObjectReprEmpty(objectReprEmpty)
+	return o
+}
+
+// SetObjectReprEmpty adds the objectReprEmpty to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetObjectReprEmpty(objectReprEmpty *string) {
+	o.ObjectReprEmpty = objectReprEmpty
 }
 
 // WithObjectReprIc adds the objectReprIc to the extras object changes list params
@@ -570,6 +677,28 @@ func (o *ExtrasObjectChangesListParams) SetUsern(usern *string) {
 	o.Usern = usern
 }
 
+// WithUserID adds the userID to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserID(userID *string) *ExtrasObjectChangesListParams {
+	o.SetUserID(userID)
+	return o
+}
+
+// SetUserID adds the userId to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserID(userID *string) {
+	o.UserID = userID
+}
+
+// WithUserIDn adds the userIDn to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserIDn(userIDn *string) *ExtrasObjectChangesListParams {
+	o.SetUserIDn(userIDn)
+	return o
+}
+
+// SetUserIDn adds the userIdN to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserIDn(userIDn *string) {
+	o.UserIDn = userIDn
+}
+
 // WithUserName adds the userName to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) WithUserName(userName *string) *ExtrasObjectChangesListParams {
 	o.SetUserName(userName)
@@ -579,6 +708,17 @@ func (o *ExtrasObjectChangesListParams) WithUserName(userName *string) *ExtrasOb
 // SetUserName adds the userName to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) SetUserName(userName *string) {
 	o.UserName = userName
+}
+
+// WithUserNameEmpty adds the userNameEmpty to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) WithUserNameEmpty(userNameEmpty *string) *ExtrasObjectChangesListParams {
+	o.SetUserNameEmpty(userNameEmpty)
+	return o
+}
+
+// SetUserNameEmpty adds the userNameEmpty to the extras object changes list params
+func (o *ExtrasObjectChangesListParams) SetUserNameEmpty(userNameEmpty *string) {
+	o.UserNameEmpty = userNameEmpty
 }
 
 // WithUserNameIc adds the userNameIc to the extras object changes list params
@@ -692,688 +832,833 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 
 		// query param action
 		var qrAction string
+
 		if o.Action != nil {
 			qrAction = *o.Action
 		}
 		qAction := qrAction
 		if qAction != "" {
+
 			if err := r.SetQueryParam("action", qAction); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Actionn != nil {
 
 		// query param action__n
 		var qrActionn string
+
 		if o.Actionn != nil {
 			qrActionn = *o.Actionn
 		}
 		qActionn := qrActionn
 		if qActionn != "" {
+
 			if err := r.SetQueryParam("action__n", qActionn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ChangedObjectID != nil {
 
 		// query param changed_object_id
 		var qrChangedObjectID string
+
 		if o.ChangedObjectID != nil {
 			qrChangedObjectID = *o.ChangedObjectID
 		}
 		qChangedObjectID := qrChangedObjectID
 		if qChangedObjectID != "" {
+
 			if err := r.SetQueryParam("changed_object_id", qChangedObjectID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ChangedObjectIDGt != nil {
 
 		// query param changed_object_id__gt
 		var qrChangedObjectIDGt string
+
 		if o.ChangedObjectIDGt != nil {
 			qrChangedObjectIDGt = *o.ChangedObjectIDGt
 		}
 		qChangedObjectIDGt := qrChangedObjectIDGt
 		if qChangedObjectIDGt != "" {
+
 			if err := r.SetQueryParam("changed_object_id__gt", qChangedObjectIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ChangedObjectIDGte != nil {
 
 		// query param changed_object_id__gte
 		var qrChangedObjectIDGte string
+
 		if o.ChangedObjectIDGte != nil {
 			qrChangedObjectIDGte = *o.ChangedObjectIDGte
 		}
 		qChangedObjectIDGte := qrChangedObjectIDGte
 		if qChangedObjectIDGte != "" {
+
 			if err := r.SetQueryParam("changed_object_id__gte", qChangedObjectIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ChangedObjectIDLt != nil {
 
 		// query param changed_object_id__lt
 		var qrChangedObjectIDLt string
+
 		if o.ChangedObjectIDLt != nil {
 			qrChangedObjectIDLt = *o.ChangedObjectIDLt
 		}
 		qChangedObjectIDLt := qrChangedObjectIDLt
 		if qChangedObjectIDLt != "" {
+
 			if err := r.SetQueryParam("changed_object_id__lt", qChangedObjectIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ChangedObjectIDLte != nil {
 
 		// query param changed_object_id__lte
 		var qrChangedObjectIDLte string
+
 		if o.ChangedObjectIDLte != nil {
 			qrChangedObjectIDLte = *o.ChangedObjectIDLte
 		}
 		qChangedObjectIDLte := qrChangedObjectIDLte
 		if qChangedObjectIDLte != "" {
+
 			if err := r.SetQueryParam("changed_object_id__lte", qChangedObjectIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ChangedObjectIDn != nil {
 
 		// query param changed_object_id__n
 		var qrChangedObjectIDn string
+
 		if o.ChangedObjectIDn != nil {
 			qrChangedObjectIDn = *o.ChangedObjectIDn
 		}
 		qChangedObjectIDn := qrChangedObjectIDn
 		if qChangedObjectIDn != "" {
+
 			if err := r.SetQueryParam("changed_object_id__n", qChangedObjectIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ChangedObjectType != nil {
 
 		// query param changed_object_type
 		var qrChangedObjectType string
+
 		if o.ChangedObjectType != nil {
 			qrChangedObjectType = *o.ChangedObjectType
 		}
 		qChangedObjectType := qrChangedObjectType
 		if qChangedObjectType != "" {
+
 			if err := r.SetQueryParam("changed_object_type", qChangedObjectType); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ChangedObjectTypen != nil {
 
 		// query param changed_object_type__n
 		var qrChangedObjectTypen string
+
 		if o.ChangedObjectTypen != nil {
 			qrChangedObjectTypen = *o.ChangedObjectTypen
 		}
 		qChangedObjectTypen := qrChangedObjectTypen
 		if qChangedObjectTypen != "" {
+
 			if err := r.SetQueryParam("changed_object_type__n", qChangedObjectTypen); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.ChangedObjectTypeID != nil {
+
+		// query param changed_object_type_id
+		var qrChangedObjectTypeID string
+
+		if o.ChangedObjectTypeID != nil {
+			qrChangedObjectTypeID = *o.ChangedObjectTypeID
+		}
+		qChangedObjectTypeID := qrChangedObjectTypeID
+		if qChangedObjectTypeID != "" {
+
+			if err := r.SetQueryParam("changed_object_type_id", qChangedObjectTypeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ChangedObjectTypeIDn != nil {
+
+		// query param changed_object_type_id__n
+		var qrChangedObjectTypeIDn string
+
+		if o.ChangedObjectTypeIDn != nil {
+			qrChangedObjectTypeIDn = *o.ChangedObjectTypeIDn
+		}
+		qChangedObjectTypeIDn := qrChangedObjectTypeIDn
+		if qChangedObjectTypeIDn != "" {
+
+			if err := r.SetQueryParam("changed_object_type_id__n", qChangedObjectTypeIDn); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectRepr != nil {
 
 		// query param object_repr
 		var qrObjectRepr string
+
 		if o.ObjectRepr != nil {
 			qrObjectRepr = *o.ObjectRepr
 		}
 		qObjectRepr := qrObjectRepr
 		if qObjectRepr != "" {
+
 			if err := r.SetQueryParam("object_repr", qObjectRepr); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.ObjectReprEmpty != nil {
+
+		// query param object_repr__empty
+		var qrObjectReprEmpty string
+
+		if o.ObjectReprEmpty != nil {
+			qrObjectReprEmpty = *o.ObjectReprEmpty
+		}
+		qObjectReprEmpty := qrObjectReprEmpty
+		if qObjectReprEmpty != "" {
+
+			if err := r.SetQueryParam("object_repr__empty", qObjectReprEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.ObjectReprIc != nil {
 
 		// query param object_repr__ic
 		var qrObjectReprIc string
+
 		if o.ObjectReprIc != nil {
 			qrObjectReprIc = *o.ObjectReprIc
 		}
 		qObjectReprIc := qrObjectReprIc
 		if qObjectReprIc != "" {
+
 			if err := r.SetQueryParam("object_repr__ic", qObjectReprIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectReprIe != nil {
 
 		// query param object_repr__ie
 		var qrObjectReprIe string
+
 		if o.ObjectReprIe != nil {
 			qrObjectReprIe = *o.ObjectReprIe
 		}
 		qObjectReprIe := qrObjectReprIe
 		if qObjectReprIe != "" {
+
 			if err := r.SetQueryParam("object_repr__ie", qObjectReprIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectReprIew != nil {
 
 		// query param object_repr__iew
 		var qrObjectReprIew string
+
 		if o.ObjectReprIew != nil {
 			qrObjectReprIew = *o.ObjectReprIew
 		}
 		qObjectReprIew := qrObjectReprIew
 		if qObjectReprIew != "" {
+
 			if err := r.SetQueryParam("object_repr__iew", qObjectReprIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectReprIsw != nil {
 
 		// query param object_repr__isw
 		var qrObjectReprIsw string
+
 		if o.ObjectReprIsw != nil {
 			qrObjectReprIsw = *o.ObjectReprIsw
 		}
 		qObjectReprIsw := qrObjectReprIsw
 		if qObjectReprIsw != "" {
+
 			if err := r.SetQueryParam("object_repr__isw", qObjectReprIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectReprn != nil {
 
 		// query param object_repr__n
 		var qrObjectReprn string
+
 		if o.ObjectReprn != nil {
 			qrObjectReprn = *o.ObjectReprn
 		}
 		qObjectReprn := qrObjectReprn
 		if qObjectReprn != "" {
+
 			if err := r.SetQueryParam("object_repr__n", qObjectReprn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectReprNic != nil {
 
 		// query param object_repr__nic
 		var qrObjectReprNic string
+
 		if o.ObjectReprNic != nil {
 			qrObjectReprNic = *o.ObjectReprNic
 		}
 		qObjectReprNic := qrObjectReprNic
 		if qObjectReprNic != "" {
+
 			if err := r.SetQueryParam("object_repr__nic", qObjectReprNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectReprNie != nil {
 
 		// query param object_repr__nie
 		var qrObjectReprNie string
+
 		if o.ObjectReprNie != nil {
 			qrObjectReprNie = *o.ObjectReprNie
 		}
 		qObjectReprNie := qrObjectReprNie
 		if qObjectReprNie != "" {
+
 			if err := r.SetQueryParam("object_repr__nie", qObjectReprNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectReprNiew != nil {
 
 		// query param object_repr__niew
 		var qrObjectReprNiew string
+
 		if o.ObjectReprNiew != nil {
 			qrObjectReprNiew = *o.ObjectReprNiew
 		}
 		qObjectReprNiew := qrObjectReprNiew
 		if qObjectReprNiew != "" {
+
 			if err := r.SetQueryParam("object_repr__niew", qObjectReprNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjectReprNisw != nil {
 
 		// query param object_repr__nisw
 		var qrObjectReprNisw string
+
 		if o.ObjectReprNisw != nil {
 			qrObjectReprNisw = *o.ObjectReprNisw
 		}
 		qObjectReprNisw := qrObjectReprNisw
 		if qObjectReprNisw != "" {
+
 			if err := r.SetQueryParam("object_repr__nisw", qObjectReprNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RequestID != nil {
 
 		// query param request_id
 		var qrRequestID string
+
 		if o.RequestID != nil {
 			qrRequestID = *o.RequestID
 		}
 		qRequestID := qrRequestID
 		if qRequestID != "" {
+
 			if err := r.SetQueryParam("request_id", qRequestID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Time != nil {
 
 		// query param time
 		var qrTime string
+
 		if o.Time != nil {
 			qrTime = *o.Time
 		}
 		qTime := qrTime
 		if qTime != "" {
+
 			if err := r.SetQueryParam("time", qTime); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.User != nil {
 
 		// query param user
 		var qrUser string
+
 		if o.User != nil {
 			qrUser = *o.User
 		}
 		qUser := qrUser
 		if qUser != "" {
+
 			if err := r.SetQueryParam("user", qUser); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Usern != nil {
 
 		// query param user__n
 		var qrUsern string
+
 		if o.Usern != nil {
 			qrUsern = *o.Usern
 		}
 		qUsern := qrUsern
 		if qUsern != "" {
+
 			if err := r.SetQueryParam("user__n", qUsern); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.UserID != nil {
+
+		// query param user_id
+		var qrUserID string
+
+		if o.UserID != nil {
+			qrUserID = *o.UserID
+		}
+		qUserID := qrUserID
+		if qUserID != "" {
+
+			if err := r.SetQueryParam("user_id", qUserID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.UserIDn != nil {
+
+		// query param user_id__n
+		var qrUserIDn string
+
+		if o.UserIDn != nil {
+			qrUserIDn = *o.UserIDn
+		}
+		qUserIDn := qrUserIDn
+		if qUserIDn != "" {
+
+			if err := r.SetQueryParam("user_id__n", qUserIDn); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.UserName != nil {
 
 		// query param user_name
 		var qrUserName string
+
 		if o.UserName != nil {
 			qrUserName = *o.UserName
 		}
 		qUserName := qrUserName
 		if qUserName != "" {
+
 			if err := r.SetQueryParam("user_name", qUserName); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.UserNameEmpty != nil {
+
+		// query param user_name__empty
+		var qrUserNameEmpty string
+
+		if o.UserNameEmpty != nil {
+			qrUserNameEmpty = *o.UserNameEmpty
+		}
+		qUserNameEmpty := qrUserNameEmpty
+		if qUserNameEmpty != "" {
+
+			if err := r.SetQueryParam("user_name__empty", qUserNameEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.UserNameIc != nil {
 
 		// query param user_name__ic
 		var qrUserNameIc string
+
 		if o.UserNameIc != nil {
 			qrUserNameIc = *o.UserNameIc
 		}
 		qUserNameIc := qrUserNameIc
 		if qUserNameIc != "" {
+
 			if err := r.SetQueryParam("user_name__ic", qUserNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserNameIe != nil {
 
 		// query param user_name__ie
 		var qrUserNameIe string
+
 		if o.UserNameIe != nil {
 			qrUserNameIe = *o.UserNameIe
 		}
 		qUserNameIe := qrUserNameIe
 		if qUserNameIe != "" {
+
 			if err := r.SetQueryParam("user_name__ie", qUserNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserNameIew != nil {
 
 		// query param user_name__iew
 		var qrUserNameIew string
+
 		if o.UserNameIew != nil {
 			qrUserNameIew = *o.UserNameIew
 		}
 		qUserNameIew := qrUserNameIew
 		if qUserNameIew != "" {
+
 			if err := r.SetQueryParam("user_name__iew", qUserNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserNameIsw != nil {
 
 		// query param user_name__isw
 		var qrUserNameIsw string
+
 		if o.UserNameIsw != nil {
 			qrUserNameIsw = *o.UserNameIsw
 		}
 		qUserNameIsw := qrUserNameIsw
 		if qUserNameIsw != "" {
+
 			if err := r.SetQueryParam("user_name__isw", qUserNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserNamen != nil {
 
 		// query param user_name__n
 		var qrUserNamen string
+
 		if o.UserNamen != nil {
 			qrUserNamen = *o.UserNamen
 		}
 		qUserNamen := qrUserNamen
 		if qUserNamen != "" {
+
 			if err := r.SetQueryParam("user_name__n", qUserNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserNameNic != nil {
 
 		// query param user_name__nic
 		var qrUserNameNic string
+
 		if o.UserNameNic != nil {
 			qrUserNameNic = *o.UserNameNic
 		}
 		qUserNameNic := qrUserNameNic
 		if qUserNameNic != "" {
+
 			if err := r.SetQueryParam("user_name__nic", qUserNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserNameNie != nil {
 
 		// query param user_name__nie
 		var qrUserNameNie string
+
 		if o.UserNameNie != nil {
 			qrUserNameNie = *o.UserNameNie
 		}
 		qUserNameNie := qrUserNameNie
 		if qUserNameNie != "" {
+
 			if err := r.SetQueryParam("user_name__nie", qUserNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserNameNiew != nil {
 
 		// query param user_name__niew
 		var qrUserNameNiew string
+
 		if o.UserNameNiew != nil {
 			qrUserNameNiew = *o.UserNameNiew
 		}
 		qUserNameNiew := qrUserNameNiew
 		if qUserNameNiew != "" {
+
 			if err := r.SetQueryParam("user_name__niew", qUserNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserNameNisw != nil {
 
 		// query param user_name__nisw
 		var qrUserNameNisw string
+
 		if o.UserNameNisw != nil {
 			qrUserNameNisw = *o.UserNameNisw
 		}
 		qUserNameNisw := qrUserNameNisw
 		if qUserNameNisw != "" {
+
 			if err := r.SetQueryParam("user_name__nisw", qUserNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

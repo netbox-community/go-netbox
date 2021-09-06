@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasImageAttachmentsReadParams creates a new ExtrasImageAttachmentsReadParams object
-// with the default values initialized.
+// NewExtrasImageAttachmentsReadParams creates a new ExtrasImageAttachmentsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasImageAttachmentsReadParams() *ExtrasImageAttachmentsReadParams {
-	var ()
 	return &ExtrasImageAttachmentsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasImageAttachmentsReadParamsWithTimeout creates a new ExtrasImageAttachmentsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasImageAttachmentsReadParamsWithTimeout(timeout time.Duration) *ExtrasImageAttachmentsReadParams {
-	var ()
 	return &ExtrasImageAttachmentsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasImageAttachmentsReadParamsWithContext creates a new ExtrasImageAttachmentsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasImageAttachmentsReadParamsWithContext(ctx context.Context) *ExtrasImageAttachmentsReadParams {
-	var ()
 	return &ExtrasImageAttachmentsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasImageAttachmentsReadParamsWithHTTPClient creates a new ExtrasImageAttachmentsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasImageAttachmentsReadParamsWithHTTPClient(client *http.Client) *ExtrasImageAttachmentsReadParams {
-	var ()
 	return &ExtrasImageAttachmentsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasImageAttachmentsReadParams contains all the parameters to send to the API endpoint
-for the extras image attachments read operation typically these are written to a http.Request
+/* ExtrasImageAttachmentsReadParams contains all the parameters to send to the API endpoint
+   for the extras image attachments read operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasImageAttachmentsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this image attachment.
+	/* ID.
 
+	   A unique integer value identifying this image attachment.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras image attachments read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsReadParams) WithDefaults() *ExtrasImageAttachmentsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras image attachments read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras image attachments read params

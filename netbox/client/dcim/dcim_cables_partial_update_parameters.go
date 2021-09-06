@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimCablesPartialUpdateParams creates a new DcimCablesPartialUpdateParams object
-// with the default values initialized.
+// NewDcimCablesPartialUpdateParams creates a new DcimCablesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimCablesPartialUpdateParams() *DcimCablesPartialUpdateParams {
-	var ()
 	return &DcimCablesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimCablesPartialUpdateParamsWithTimeout creates a new DcimCablesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimCablesPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimCablesPartialUpdateParams {
-	var ()
 	return &DcimCablesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimCablesPartialUpdateParamsWithContext creates a new DcimCablesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimCablesPartialUpdateParamsWithContext(ctx context.Context) *DcimCablesPartialUpdateParams {
-	var ()
 	return &DcimCablesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimCablesPartialUpdateParamsWithHTTPClient creates a new DcimCablesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimCablesPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimCablesPartialUpdateParams {
-	var ()
 	return &DcimCablesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimCablesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim cables partial update operation typically these are written to a http.Request
+/* DcimCablesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim cables partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimCablesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCable
-	/*ID
-	  A unique integer value identifying this cable.
 
+	/* ID.
+
+	   A unique integer value identifying this cable.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim cables partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesPartialUpdateParams) WithDefaults() *DcimCablesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim cables partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim cables partial update params
@@ -153,7 +168,6 @@ func (o *DcimCablesPartialUpdateParams) WriteToRequest(r runtime.ClientRequest, 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

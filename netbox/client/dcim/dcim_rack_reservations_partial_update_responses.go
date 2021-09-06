@@ -45,14 +45,7 @@ func (o *DcimRackReservationsPartialUpdateReader) ReadResponse(response runtime.
 		}
 		return result, nil
 	default:
-		result := NewDcimRackReservationsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimRackReservationsPartialUpdateOK() *DcimRackReservationsPartialUpdate
 	return &DcimRackReservationsPartialUpdateOK{}
 }
 
-/*DcimRackReservationsPartialUpdateOK handles this case with default header values.
+/* DcimRackReservationsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimRackReservationsPartialUpdateOK dcim rack reservations partial update o k
 */
@@ -72,7 +65,6 @@ type DcimRackReservationsPartialUpdateOK struct {
 func (o *DcimRackReservationsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcimRackReservationsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackReservationsPartialUpdateOK) GetPayload() *models.RackReservation {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimRackReservationsPartialUpdateOK) readResponse(response runtime.Clie
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimRackReservationsPartialUpdateDefault creates a DcimRackReservationsPartialUpdateDefault with default headers values
-func NewDcimRackReservationsPartialUpdateDefault(code int) *DcimRackReservationsPartialUpdateDefault {
-	return &DcimRackReservationsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimRackReservationsPartialUpdateDefault handles this case with default header values.
-
-DcimRackReservationsPartialUpdateDefault dcim rack reservations partial update default
-*/
-type DcimRackReservationsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim rack reservations partial update default response
-func (o *DcimRackReservationsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimRackReservationsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimRackReservationsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimRackReservationsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

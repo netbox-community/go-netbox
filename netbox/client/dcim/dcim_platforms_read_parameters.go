@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPlatformsReadParams creates a new DcimPlatformsReadParams object
-// with the default values initialized.
+// NewDcimPlatformsReadParams creates a new DcimPlatformsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPlatformsReadParams() *DcimPlatformsReadParams {
-	var ()
 	return &DcimPlatformsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPlatformsReadParamsWithTimeout creates a new DcimPlatformsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPlatformsReadParamsWithTimeout(timeout time.Duration) *DcimPlatformsReadParams {
-	var ()
 	return &DcimPlatformsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPlatformsReadParamsWithContext creates a new DcimPlatformsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPlatformsReadParamsWithContext(ctx context.Context) *DcimPlatformsReadParams {
-	var ()
 	return &DcimPlatformsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPlatformsReadParamsWithHTTPClient creates a new DcimPlatformsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPlatformsReadParamsWithHTTPClient(client *http.Client) *DcimPlatformsReadParams {
-	var ()
 	return &DcimPlatformsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPlatformsReadParams contains all the parameters to send to the API endpoint
-for the dcim platforms read operation typically these are written to a http.Request
+/* DcimPlatformsReadParams contains all the parameters to send to the API endpoint
+   for the dcim platforms read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPlatformsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this platform.
+	/* ID.
 
+	   A unique integer value identifying this platform.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim platforms read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPlatformsReadParams) WithDefaults() *DcimPlatformsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim platforms read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPlatformsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim platforms read params

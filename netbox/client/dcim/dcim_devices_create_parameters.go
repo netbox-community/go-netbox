@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimDevicesCreateParams creates a new DcimDevicesCreateParams object
-// with the default values initialized.
+// NewDcimDevicesCreateParams creates a new DcimDevicesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDevicesCreateParams() *DcimDevicesCreateParams {
-	var ()
 	return &DcimDevicesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDevicesCreateParamsWithTimeout creates a new DcimDevicesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDevicesCreateParamsWithTimeout(timeout time.Duration) *DcimDevicesCreateParams {
-	var ()
 	return &DcimDevicesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDevicesCreateParamsWithContext creates a new DcimDevicesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDevicesCreateParamsWithContext(ctx context.Context) *DcimDevicesCreateParams {
-	var ()
 	return &DcimDevicesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDevicesCreateParamsWithHTTPClient creates a new DcimDevicesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDevicesCreateParamsWithHTTPClient(client *http.Client) *DcimDevicesCreateParams {
-	var ()
 	return &DcimDevicesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDevicesCreateParams contains all the parameters to send to the API endpoint
-for the dcim devices create operation typically these are written to a http.Request
+/* DcimDevicesCreateParams contains all the parameters to send to the API endpoint
+   for the dcim devices create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDevicesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableDeviceWithConfigContext
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim devices create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesCreateParams) WithDefaults() *DcimDevicesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim devices create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim devices create params
@@ -136,7 +150,6 @@ func (o *DcimDevicesCreateParams) WriteToRequest(r runtime.ClientRequest, reg st
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimPowerFeedsCreateParams creates a new DcimPowerFeedsCreateParams object
-// with the default values initialized.
+// NewDcimPowerFeedsCreateParams creates a new DcimPowerFeedsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerFeedsCreateParams() *DcimPowerFeedsCreateParams {
-	var ()
 	return &DcimPowerFeedsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerFeedsCreateParamsWithTimeout creates a new DcimPowerFeedsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerFeedsCreateParamsWithTimeout(timeout time.Duration) *DcimPowerFeedsCreateParams {
-	var ()
 	return &DcimPowerFeedsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerFeedsCreateParamsWithContext creates a new DcimPowerFeedsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerFeedsCreateParamsWithContext(ctx context.Context) *DcimPowerFeedsCreateParams {
-	var ()
 	return &DcimPowerFeedsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerFeedsCreateParamsWithHTTPClient creates a new DcimPowerFeedsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerFeedsCreateParamsWithHTTPClient(client *http.Client) *DcimPowerFeedsCreateParams {
-	var ()
 	return &DcimPowerFeedsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerFeedsCreateParams contains all the parameters to send to the API endpoint
-for the dcim power feeds create operation typically these are written to a http.Request
+/* DcimPowerFeedsCreateParams contains all the parameters to send to the API endpoint
+   for the dcim power feeds create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerFeedsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerFeed
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power feeds create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsCreateParams) WithDefaults() *DcimPowerFeedsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power feeds create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power feeds create params
@@ -136,7 +150,6 @@ func (o *DcimPowerFeedsCreateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

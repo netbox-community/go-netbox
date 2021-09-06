@@ -45,14 +45,7 @@ func (o *DcimFrontPortsCreateReader) ReadResponse(response runtime.ClientRespons
 		}
 		return result, nil
 	default:
-		result := NewDcimFrontPortsCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimFrontPortsCreateCreated() *DcimFrontPortsCreateCreated {
 	return &DcimFrontPortsCreateCreated{}
 }
 
-/*DcimFrontPortsCreateCreated handles this case with default header values.
+/* DcimFrontPortsCreateCreated describes a response with status code 201, with default header values.
 
 DcimFrontPortsCreateCreated dcim front ports create created
 */
@@ -72,7 +65,6 @@ type DcimFrontPortsCreateCreated struct {
 func (o *DcimFrontPortsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcimFrontPortsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimFrontPortsCreateCreated) GetPayload() *models.FrontPort {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimFrontPortsCreateCreated) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimFrontPortsCreateDefault creates a DcimFrontPortsCreateDefault with default headers values
-func NewDcimFrontPortsCreateDefault(code int) *DcimFrontPortsCreateDefault {
-	return &DcimFrontPortsCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimFrontPortsCreateDefault handles this case with default header values.
-
-DcimFrontPortsCreateDefault dcim front ports create default
-*/
-type DcimFrontPortsCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim front ports create default response
-func (o *DcimFrontPortsCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimFrontPortsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/front-ports/][%d] dcim_front-ports_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimFrontPortsCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimFrontPortsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

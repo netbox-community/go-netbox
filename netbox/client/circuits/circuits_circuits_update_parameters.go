@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewCircuitsCircuitsUpdateParams creates a new CircuitsCircuitsUpdateParams object
-// with the default values initialized.
+// NewCircuitsCircuitsUpdateParams creates a new CircuitsCircuitsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitsUpdateParams() *CircuitsCircuitsUpdateParams {
-	var ()
 	return &CircuitsCircuitsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitsUpdateParamsWithTimeout creates a new CircuitsCircuitsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitsUpdateParamsWithTimeout(timeout time.Duration) *CircuitsCircuitsUpdateParams {
-	var ()
 	return &CircuitsCircuitsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitsUpdateParamsWithContext creates a new CircuitsCircuitsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitsUpdateParamsWithContext(ctx context.Context) *CircuitsCircuitsUpdateParams {
-	var ()
 	return &CircuitsCircuitsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitsUpdateParamsWithHTTPClient creates a new CircuitsCircuitsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitsUpdateParamsWithHTTPClient(client *http.Client) *CircuitsCircuitsUpdateParams {
-	var ()
 	return &CircuitsCircuitsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitsUpdateParams contains all the parameters to send to the API endpoint
-for the circuits circuits update operation typically these are written to a http.Request
+/* CircuitsCircuitsUpdateParams contains all the parameters to send to the API endpoint
+   for the circuits circuits update operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCircuit
-	/*ID
-	  A unique integer value identifying this circuit.
 
+	/* ID.
+
+	   A unique integer value identifying this circuit.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuits update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitsUpdateParams) WithDefaults() *CircuitsCircuitsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuits update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuits update params
@@ -153,7 +168,6 @@ func (o *CircuitsCircuitsUpdateParams) WriteToRequest(r runtime.ClientRequest, r
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

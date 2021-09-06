@@ -41,7 +41,6 @@ func (o *IpamPrefixesDeleteReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -52,7 +51,7 @@ func NewIpamPrefixesDeleteNoContent() *IpamPrefixesDeleteNoContent {
 	return &IpamPrefixesDeleteNoContent{}
 }
 
-/*IpamPrefixesDeleteNoContent handles this case with default header values.
+/* IpamPrefixesDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamPrefixesDeleteNoContent ipam prefixes delete no content
 */

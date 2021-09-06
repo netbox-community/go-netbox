@@ -44,7 +44,6 @@ func (o *VirtualizationClusterGroupsReadReader) ReadResponse(response runtime.Cl
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewVirtualizationClusterGroupsReadOK() *VirtualizationClusterGroupsReadOK {
 	return &VirtualizationClusterGroupsReadOK{}
 }
 
-/*VirtualizationClusterGroupsReadOK handles this case with default header values.
+/* VirtualizationClusterGroupsReadOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterGroupsReadOK virtualization cluster groups read o k
 */
@@ -66,7 +65,6 @@ type VirtualizationClusterGroupsReadOK struct {
 func (o *VirtualizationClusterGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsReadOK) GetPayload() *models.ClusterGroup {
 	return o.Payload
 }

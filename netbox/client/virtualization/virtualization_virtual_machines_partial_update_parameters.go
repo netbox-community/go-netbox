@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewVirtualizationVirtualMachinesPartialUpdateParams creates a new VirtualizationVirtualMachinesPartialUpdateParams object
-// with the default values initialized.
+// NewVirtualizationVirtualMachinesPartialUpdateParams creates a new VirtualizationVirtualMachinesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationVirtualMachinesPartialUpdateParams() *VirtualizationVirtualMachinesPartialUpdateParams {
-	var ()
 	return &VirtualizationVirtualMachinesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationVirtualMachinesPartialUpdateParamsWithTimeout creates a new VirtualizationVirtualMachinesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationVirtualMachinesPartialUpdateParamsWithTimeout(timeout time.Duration) *VirtualizationVirtualMachinesPartialUpdateParams {
-	var ()
 	return &VirtualizationVirtualMachinesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationVirtualMachinesPartialUpdateParamsWithContext creates a new VirtualizationVirtualMachinesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationVirtualMachinesPartialUpdateParamsWithContext(ctx context.Context) *VirtualizationVirtualMachinesPartialUpdateParams {
-	var ()
 	return &VirtualizationVirtualMachinesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationVirtualMachinesPartialUpdateParamsWithHTTPClient creates a new VirtualizationVirtualMachinesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationVirtualMachinesPartialUpdateParamsWithHTTPClient(client *http.Client) *VirtualizationVirtualMachinesPartialUpdateParams {
-	var ()
 	return &VirtualizationVirtualMachinesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationVirtualMachinesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the virtualization virtual machines partial update operation typically these are written to a http.Request
+/* VirtualizationVirtualMachinesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the virtualization virtual machines partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationVirtualMachinesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVirtualMachineWithConfigContext
-	/*ID
-	  A unique integer value identifying this virtual machine.
 
+	/* ID.
+
+	   A unique integer value identifying this virtual machine.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization virtual machines partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationVirtualMachinesPartialUpdateParams) WithDefaults() *VirtualizationVirtualMachinesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization virtual machines partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationVirtualMachinesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization virtual machines partial update params
@@ -153,7 +168,6 @@ func (o *VirtualizationVirtualMachinesPartialUpdateParams) WriteToRequest(r runt
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

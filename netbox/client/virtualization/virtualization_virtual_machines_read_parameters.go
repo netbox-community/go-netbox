@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewVirtualizationVirtualMachinesReadParams creates a new VirtualizationVirtualMachinesReadParams object
-// with the default values initialized.
+// NewVirtualizationVirtualMachinesReadParams creates a new VirtualizationVirtualMachinesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationVirtualMachinesReadParams() *VirtualizationVirtualMachinesReadParams {
-	var ()
 	return &VirtualizationVirtualMachinesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationVirtualMachinesReadParamsWithTimeout creates a new VirtualizationVirtualMachinesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationVirtualMachinesReadParamsWithTimeout(timeout time.Duration) *VirtualizationVirtualMachinesReadParams {
-	var ()
 	return &VirtualizationVirtualMachinesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationVirtualMachinesReadParamsWithContext creates a new VirtualizationVirtualMachinesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationVirtualMachinesReadParamsWithContext(ctx context.Context) *VirtualizationVirtualMachinesReadParams {
-	var ()
 	return &VirtualizationVirtualMachinesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationVirtualMachinesReadParamsWithHTTPClient creates a new VirtualizationVirtualMachinesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationVirtualMachinesReadParamsWithHTTPClient(client *http.Client) *VirtualizationVirtualMachinesReadParams {
-	var ()
 	return &VirtualizationVirtualMachinesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationVirtualMachinesReadParams contains all the parameters to send to the API endpoint
-for the virtualization virtual machines read operation typically these are written to a http.Request
+/* VirtualizationVirtualMachinesReadParams contains all the parameters to send to the API endpoint
+   for the virtualization virtual machines read operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationVirtualMachinesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this virtual machine.
+	/* ID.
 
+	   A unique integer value identifying this virtual machine.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization virtual machines read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationVirtualMachinesReadParams) WithDefaults() *VirtualizationVirtualMachinesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization virtual machines read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationVirtualMachinesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization virtual machines read params

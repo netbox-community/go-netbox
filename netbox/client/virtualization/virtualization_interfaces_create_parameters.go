@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewVirtualizationInterfacesCreateParams creates a new VirtualizationInterfacesCreateParams object
-// with the default values initialized.
+// NewVirtualizationInterfacesCreateParams creates a new VirtualizationInterfacesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationInterfacesCreateParams() *VirtualizationInterfacesCreateParams {
-	var ()
 	return &VirtualizationInterfacesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationInterfacesCreateParamsWithTimeout creates a new VirtualizationInterfacesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationInterfacesCreateParamsWithTimeout(timeout time.Duration) *VirtualizationInterfacesCreateParams {
-	var ()
 	return &VirtualizationInterfacesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationInterfacesCreateParamsWithContext creates a new VirtualizationInterfacesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationInterfacesCreateParamsWithContext(ctx context.Context) *VirtualizationInterfacesCreateParams {
-	var ()
 	return &VirtualizationInterfacesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationInterfacesCreateParamsWithHTTPClient creates a new VirtualizationInterfacesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationInterfacesCreateParamsWithHTTPClient(client *http.Client) *VirtualizationInterfacesCreateParams {
-	var ()
 	return &VirtualizationInterfacesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationInterfacesCreateParams contains all the parameters to send to the API endpoint
-for the virtualization interfaces create operation typically these are written to a http.Request
+/* VirtualizationInterfacesCreateParams contains all the parameters to send to the API endpoint
+   for the virtualization interfaces create operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationInterfacesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVMInterface
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization interfaces create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationInterfacesCreateParams) WithDefaults() *VirtualizationInterfacesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization interfaces create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationInterfacesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization interfaces create params
@@ -136,7 +150,6 @@ func (o *VirtualizationInterfacesCreateParams) WriteToRequest(r runtime.ClientRe
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

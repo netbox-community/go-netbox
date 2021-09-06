@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimPowerPortTemplatesPartialUpdateParams creates a new DcimPowerPortTemplatesPartialUpdateParams object
-// with the default values initialized.
+// NewDcimPowerPortTemplatesPartialUpdateParams creates a new DcimPowerPortTemplatesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerPortTemplatesPartialUpdateParams() *DcimPowerPortTemplatesPartialUpdateParams {
-	var ()
 	return &DcimPowerPortTemplatesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerPortTemplatesPartialUpdateParamsWithTimeout creates a new DcimPowerPortTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerPortTemplatesPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimPowerPortTemplatesPartialUpdateParams {
-	var ()
 	return &DcimPowerPortTemplatesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerPortTemplatesPartialUpdateParamsWithContext creates a new DcimPowerPortTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerPortTemplatesPartialUpdateParamsWithContext(ctx context.Context) *DcimPowerPortTemplatesPartialUpdateParams {
-	var ()
 	return &DcimPowerPortTemplatesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerPortTemplatesPartialUpdateParamsWithHTTPClient creates a new DcimPowerPortTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerPortTemplatesPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimPowerPortTemplatesPartialUpdateParams {
-	var ()
 	return &DcimPowerPortTemplatesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerPortTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim power port templates partial update operation typically these are written to a http.Request
+/* DcimPowerPortTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim power port templates partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerPortTemplatesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerPortTemplate
-	/*ID
-	  A unique integer value identifying this power port template.
 
+	/* ID.
+
+	   A unique integer value identifying this power port template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power port templates partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortTemplatesPartialUpdateParams) WithDefaults() *DcimPowerPortTemplatesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power port templates partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortTemplatesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power port templates partial update params
@@ -153,7 +168,6 @@ func (o *DcimPowerPortTemplatesPartialUpdateParams) WriteToRequest(r runtime.Cli
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

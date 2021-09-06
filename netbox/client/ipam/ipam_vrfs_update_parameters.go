@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamVrfsUpdateParams creates a new IpamVrfsUpdateParams object
-// with the default values initialized.
+// NewIpamVrfsUpdateParams creates a new IpamVrfsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVrfsUpdateParams() *IpamVrfsUpdateParams {
-	var ()
 	return &IpamVrfsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVrfsUpdateParamsWithTimeout creates a new IpamVrfsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVrfsUpdateParamsWithTimeout(timeout time.Duration) *IpamVrfsUpdateParams {
-	var ()
 	return &IpamVrfsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVrfsUpdateParamsWithContext creates a new IpamVrfsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVrfsUpdateParamsWithContext(ctx context.Context) *IpamVrfsUpdateParams {
-	var ()
 	return &IpamVrfsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVrfsUpdateParamsWithHTTPClient creates a new IpamVrfsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVrfsUpdateParamsWithHTTPClient(client *http.Client) *IpamVrfsUpdateParams {
-	var ()
 	return &IpamVrfsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVrfsUpdateParams contains all the parameters to send to the API endpoint
-for the ipam vrfs update operation typically these are written to a http.Request
+/* IpamVrfsUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam vrfs update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVrfsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVRF
-	/*ID
-	  A unique integer value identifying this VRF.
 
+	/* ID.
+
+	   A unique integer value identifying this VRF.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vrfs update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsUpdateParams) WithDefaults() *IpamVrfsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vrfs update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vrfs update params
@@ -153,7 +168,6 @@ func (o *IpamVrfsUpdateParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

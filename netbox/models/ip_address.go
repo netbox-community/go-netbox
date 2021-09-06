@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -43,7 +44,7 @@ type IPAddress struct {
 
 	// Assigned object
 	// Read Only: true
-	AssignedObject interface{} `json:"assigned_object,omitempty"`
+	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
 
 	// Assigned object id
 	// Maximum: 2.147483647e+09
@@ -51,7 +52,7 @@ type IPAddress struct {
 	AssignedObjectID *int64 `json:"assigned_object_id,omitempty"`
 
 	// Assigned object type
-	AssignedObjectType string `json:"assigned_object_type,omitempty"`
+	AssignedObjectType *string `json:"assigned_object_type,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -65,6 +66,10 @@ type IPAddress struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// DNS Name
 	//
 	// Hostname or FQDN (not case-sensitive)
@@ -75,7 +80,7 @@ type IPAddress struct {
 	// family
 	Family *IPAddressFamily `json:"family,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -97,7 +102,7 @@ type IPAddress struct {
 	Status *IPAddressStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`
@@ -191,16 +196,15 @@ func (m *IPAddress) validateAddress(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateAssignedObjectID(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AssignedObjectID) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("assigned_object_id", "body", int64(*m.AssignedObjectID), 0, false); err != nil {
+	if err := validate.MinimumInt("assigned_object_id", "body", *m.AssignedObjectID, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("assigned_object_id", "body", int64(*m.AssignedObjectID), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -208,7 +212,6 @@ func (m *IPAddress) validateAssignedObjectID(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -221,12 +224,11 @@ func (m *IPAddress) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -234,16 +236,15 @@ func (m *IPAddress) validateDescription(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateDNSName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.DNSName) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("dns_name", "body", string(m.DNSName), 255); err != nil {
+	if err := validate.MaxLength("dns_name", "body", m.DNSName, 255); err != nil {
 		return err
 	}
 
-	if err := validate.Pattern("dns_name", "body", string(m.DNSName), `^[0-9A-Za-z._-]+$`); err != nil {
+	if err := validate.Pattern("dns_name", "body", m.DNSName, `^[0-9A-Za-z._-]+$`); err != nil {
 		return err
 	}
 
@@ -251,7 +252,6 @@ func (m *IPAddress) validateDNSName(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateFamily(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Family) { // not required
 		return nil
 	}
@@ -269,7 +269,6 @@ func (m *IPAddress) validateFamily(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -282,7 +281,6 @@ func (m *IPAddress) validateLastUpdated(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateNatInside(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.NatInside) { // not required
 		return nil
 	}
@@ -300,7 +298,6 @@ func (m *IPAddress) validateNatInside(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateNatOutside(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.NatOutside) { // not required
 		return nil
 	}
@@ -318,7 +315,6 @@ func (m *IPAddress) validateNatOutside(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateRole(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Role) { // not required
 		return nil
 	}
@@ -336,7 +332,6 @@ func (m *IPAddress) validateRole(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -354,7 +349,6 @@ func (m *IPAddress) validateStatus(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -379,7 +373,6 @@ func (m *IPAddress) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateTenant(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tenant) { // not required
 		return nil
 	}
@@ -397,7 +390,6 @@ func (m *IPAddress) validateTenant(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -410,13 +402,244 @@ func (m *IPAddress) validateURL(formats strfmt.Registry) error {
 }
 
 func (m *IPAddress) validateVrf(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Vrf) { // not required
 		return nil
 	}
 
 	if m.Vrf != nil {
 		if err := m.Vrf.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vrf")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this IP address based on the context it is used
+func (m *IPAddress) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAssignedObject(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFamily(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNatInside(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNatOutside(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRole(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTenant(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVrf(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *IPAddress) contextValidateAssignedObject(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateFamily(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Family != nil {
+		if err := m.Family.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("family")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateNatInside(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.NatInside != nil {
+		if err := m.NatInside.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("nat_inside")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateNatOutside(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.NatOutside != nil {
+		if err := m.NatOutside.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("nat_outside")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Role != nil {
+		if err := m.Role.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("role")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Status != nil {
+		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Tenant != nil {
+		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Vrf != nil {
+		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
 			}
@@ -553,6 +776,16 @@ func (m *IPAddressFamily) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validate this IP address family based on the context it is used
+func (m *IPAddressFamily) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
 	return nil
 }
 
@@ -730,6 +963,11 @@ func (m *IPAddressRole) validateValue(formats strfmt.Registry) error {
 	return nil
 }
 
+// ContextValidate validates this IP address role based on context it is used
+func (m *IPAddressRole) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
 // MarshalBinary interface implementation
 func (m *IPAddressRole) MarshalBinary() ([]byte, error) {
 	if m == nil {
@@ -883,6 +1121,11 @@ func (m *IPAddressStatus) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this IP address status based on context it is used
+func (m *IPAddressStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

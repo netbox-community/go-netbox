@@ -45,14 +45,7 @@ func (o *DcimRackRolesUpdateReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		result := NewDcimRackRolesUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimRackRolesUpdateOK() *DcimRackRolesUpdateOK {
 	return &DcimRackRolesUpdateOK{}
 }
 
-/*DcimRackRolesUpdateOK handles this case with default header values.
+/* DcimRackRolesUpdateOK describes a response with status code 200, with default header values.
 
 DcimRackRolesUpdateOK dcim rack roles update o k
 */
@@ -72,7 +65,6 @@ type DcimRackRolesUpdateOK struct {
 func (o *DcimRackRolesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-roles/{id}/][%d] dcimRackRolesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackRolesUpdateOK) GetPayload() *models.RackRole {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimRackRolesUpdateOK) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimRackRolesUpdateDefault creates a DcimRackRolesUpdateDefault with default headers values
-func NewDcimRackRolesUpdateDefault(code int) *DcimRackRolesUpdateDefault {
-	return &DcimRackRolesUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimRackRolesUpdateDefault handles this case with default header values.
-
-DcimRackRolesUpdateDefault dcim rack roles update default
-*/
-type DcimRackRolesUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim rack roles update default response
-func (o *DcimRackRolesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimRackRolesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/rack-roles/{id}/][%d] dcim_rack-roles_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimRackRolesUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimRackRolesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -45,14 +45,7 @@ func (o *ExtrasConfigContextsPartialUpdateReader) ReadResponse(response runtime.
 		}
 		return result, nil
 	default:
-		result := NewExtrasConfigContextsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewExtrasConfigContextsPartialUpdateOK() *ExtrasConfigContextsPartialUpdate
 	return &ExtrasConfigContextsPartialUpdateOK{}
 }
 
-/*ExtrasConfigContextsPartialUpdateOK handles this case with default header values.
+/* ExtrasConfigContextsPartialUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasConfigContextsPartialUpdateOK extras config contexts partial update o k
 */
@@ -72,7 +65,6 @@ type ExtrasConfigContextsPartialUpdateOK struct {
 func (o *ExtrasConfigContextsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extrasConfigContextsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasConfigContextsPartialUpdateOK) GetPayload() *models.ConfigContext {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *ExtrasConfigContextsPartialUpdateOK) readResponse(response runtime.Clie
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewExtrasConfigContextsPartialUpdateDefault creates a ExtrasConfigContextsPartialUpdateDefault with default headers values
-func NewExtrasConfigContextsPartialUpdateDefault(code int) *ExtrasConfigContextsPartialUpdateDefault {
-	return &ExtrasConfigContextsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*ExtrasConfigContextsPartialUpdateDefault handles this case with default header values.
-
-ExtrasConfigContextsPartialUpdateDefault extras config contexts partial update default
-*/
-type ExtrasConfigContextsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the extras config contexts partial update default response
-func (o *ExtrasConfigContextsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *ExtrasConfigContextsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extras_config-contexts_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *ExtrasConfigContextsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *ExtrasConfigContextsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

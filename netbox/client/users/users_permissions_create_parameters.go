@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewUsersPermissionsCreateParams creates a new UsersPermissionsCreateParams object
-// with the default values initialized.
+// NewUsersPermissionsCreateParams creates a new UsersPermissionsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersPermissionsCreateParams() *UsersPermissionsCreateParams {
-	var ()
 	return &UsersPermissionsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersPermissionsCreateParamsWithTimeout creates a new UsersPermissionsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersPermissionsCreateParamsWithTimeout(timeout time.Duration) *UsersPermissionsCreateParams {
-	var ()
 	return &UsersPermissionsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersPermissionsCreateParamsWithContext creates a new UsersPermissionsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersPermissionsCreateParamsWithContext(ctx context.Context) *UsersPermissionsCreateParams {
-	var ()
 	return &UsersPermissionsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersPermissionsCreateParamsWithHTTPClient creates a new UsersPermissionsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersPermissionsCreateParamsWithHTTPClient(client *http.Client) *UsersPermissionsCreateParams {
-	var ()
 	return &UsersPermissionsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersPermissionsCreateParams contains all the parameters to send to the API endpoint
-for the users permissions create operation typically these are written to a http.Request
+/* UsersPermissionsCreateParams contains all the parameters to send to the API endpoint
+   for the users permissions create operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersPermissionsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableObjectPermission
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users permissions create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersPermissionsCreateParams) WithDefaults() *UsersPermissionsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users permissions create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersPermissionsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users permissions create params
@@ -136,7 +150,6 @@ func (o *UsersPermissionsCreateParams) WriteToRequest(r runtime.ClientRequest, r
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

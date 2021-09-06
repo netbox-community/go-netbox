@@ -41,7 +41,6 @@ func (o *IpamRolesDeleteReader) ReadResponse(response runtime.ClientResponse, co
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -52,7 +51,7 @@ func NewIpamRolesDeleteNoContent() *IpamRolesDeleteNoContent {
 	return &IpamRolesDeleteNoContent{}
 }
 
-/*IpamRolesDeleteNoContent handles this case with default header values.
+/* IpamRolesDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamRolesDeleteNoContent ipam roles delete no content
 */

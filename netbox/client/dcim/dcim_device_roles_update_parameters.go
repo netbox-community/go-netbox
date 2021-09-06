@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimDeviceRolesUpdateParams creates a new DcimDeviceRolesUpdateParams object
-// with the default values initialized.
+// NewDcimDeviceRolesUpdateParams creates a new DcimDeviceRolesUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDeviceRolesUpdateParams() *DcimDeviceRolesUpdateParams {
-	var ()
 	return &DcimDeviceRolesUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDeviceRolesUpdateParamsWithTimeout creates a new DcimDeviceRolesUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDeviceRolesUpdateParamsWithTimeout(timeout time.Duration) *DcimDeviceRolesUpdateParams {
-	var ()
 	return &DcimDeviceRolesUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDeviceRolesUpdateParamsWithContext creates a new DcimDeviceRolesUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDeviceRolesUpdateParamsWithContext(ctx context.Context) *DcimDeviceRolesUpdateParams {
-	var ()
 	return &DcimDeviceRolesUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDeviceRolesUpdateParamsWithHTTPClient creates a new DcimDeviceRolesUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDeviceRolesUpdateParamsWithHTTPClient(client *http.Client) *DcimDeviceRolesUpdateParams {
-	var ()
 	return &DcimDeviceRolesUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDeviceRolesUpdateParams contains all the parameters to send to the API endpoint
-for the dcim device roles update operation typically these are written to a http.Request
+/* DcimDeviceRolesUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim device roles update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDeviceRolesUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.DeviceRole
-	/*ID
-	  A unique integer value identifying this device role.
 
+	/* ID.
+
+	   A unique integer value identifying this device role.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim device roles update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceRolesUpdateParams) WithDefaults() *DcimDeviceRolesUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim device roles update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceRolesUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim device roles update params
@@ -153,7 +168,6 @@ func (o *DcimDeviceRolesUpdateParams) WriteToRequest(r runtime.ClientRequest, re
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

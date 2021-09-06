@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewCircuitsCircuitTypesDeleteParams creates a new CircuitsCircuitTypesDeleteParams object
-// with the default values initialized.
+// NewCircuitsCircuitTypesDeleteParams creates a new CircuitsCircuitTypesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitTypesDeleteParams() *CircuitsCircuitTypesDeleteParams {
-	var ()
 	return &CircuitsCircuitTypesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitTypesDeleteParamsWithTimeout creates a new CircuitsCircuitTypesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitTypesDeleteParamsWithTimeout(timeout time.Duration) *CircuitsCircuitTypesDeleteParams {
-	var ()
 	return &CircuitsCircuitTypesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitTypesDeleteParamsWithContext creates a new CircuitsCircuitTypesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitTypesDeleteParamsWithContext(ctx context.Context) *CircuitsCircuitTypesDeleteParams {
-	var ()
 	return &CircuitsCircuitTypesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitTypesDeleteParamsWithHTTPClient creates a new CircuitsCircuitTypesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitTypesDeleteParamsWithHTTPClient(client *http.Client) *CircuitsCircuitTypesDeleteParams {
-	var ()
 	return &CircuitsCircuitTypesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitTypesDeleteParams contains all the parameters to send to the API endpoint
-for the circuits circuit types delete operation typically these are written to a http.Request
+/* CircuitsCircuitTypesDeleteParams contains all the parameters to send to the API endpoint
+   for the circuits circuit types delete operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitTypesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this circuit type.
+	/* ID.
 
+	   A unique integer value identifying this circuit type.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuit types delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTypesDeleteParams) WithDefaults() *CircuitsCircuitTypesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuit types delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTypesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuit types delete params

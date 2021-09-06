@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -35,8 +36,24 @@ import (
 // swagger:model Interface
 type Interface struct {
 
+	// occupied
+	// Read Only: true
+	Occupied *bool `json:"_occupied,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
+
+	// Cable peer
+	//
+	//
+	// Return the appropriate serializer for the cable termination model.
+	//
+	// Read Only: true
+	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+
+	// Cable peer type
+	// Read Only: true
+	CablePeerType string `json:"cable_peer_type,omitempty"`
 
 	// Connected endpoint
 	//
@@ -44,18 +61,27 @@ type Interface struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+
+	// Connected endpoint reachable
+	// Read Only: true
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
 	// Connected endpoint type
 	// Read Only: true
 	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
-	// connection status
-	ConnectionStatus *InterfaceConnectionStatus `json:"connection_status,omitempty"`
-
 	// Count ipaddresses
 	// Read Only: true
 	CountIpaddresses int64 `json:"count_ipaddresses,omitempty"`
+
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -65,10 +91,14 @@ type Interface struct {
 	// Required: true
 	Device *NestedDevice `json:"device"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Enabled
 	Enabled bool `json:"enabled,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -81,10 +111,20 @@ type Interface struct {
 	// lag
 	Lag *NestedInterface `json:"lag,omitempty"`
 
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
 	// MAC Address
 	MacAddress *string `json:"mac_address,omitempty"`
 
-	// OOB Management
+	// Mark connected
+	//
+	// Treat as if a cable is connected
+	MarkConnected bool `json:"mark_connected,omitempty"`
+
+	// Management only
 	//
 	// This interface is used only for out-of-band management
 	MgmtOnly bool `json:"mgmt_only,omitempty"`
@@ -103,12 +143,15 @@ type Interface struct {
 	// Min Length: 1
 	Name *string `json:"name"`
 
+	// parent
+	Parent *NestedInterface `json:"parent,omitempty"`
+
 	// tagged vlans
 	// Unique: true
 	TaggedVlans []*NestedVLAN `json:"tagged_vlans"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// type
 	// Required: true
@@ -131,7 +174,7 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateConnectionStatus(formats); err != nil {
+	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -151,6 +194,10 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateMode(formats); err != nil {
 		res = append(res, err)
 	}
@@ -160,6 +207,10 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateParent(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -190,7 +241,6 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Interface) validateCable(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Cable) { // not required
 		return nil
 	}
@@ -207,31 +257,24 @@ func (m *Interface) validateCable(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Interface) validateConnectionStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.ConnectionStatus) { // not required
+func (m *Interface) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	if m.ConnectionStatus != nil {
-		if err := m.ConnectionStatus.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("connection_status")
-			}
-			return err
-		}
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
 }
 
 func (m *Interface) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -257,12 +300,11 @@ func (m *Interface) validateDevice(formats strfmt.Registry) error {
 }
 
 func (m *Interface) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
 		return err
 	}
 
@@ -270,7 +312,6 @@ func (m *Interface) validateLabel(formats strfmt.Registry) error {
 }
 
 func (m *Interface) validateLag(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Lag) { // not required
 		return nil
 	}
@@ -287,8 +328,19 @@ func (m *Interface) validateLag(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Interface) validateMode(formats strfmt.Registry) error {
+func (m *Interface) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
 
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) validateMode(formats strfmt.Registry) error {
 	if swag.IsZero(m.Mode) { // not required
 		return nil
 	}
@@ -306,16 +358,15 @@ func (m *Interface) validateMode(formats strfmt.Registry) error {
 }
 
 func (m *Interface) validateMtu(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Mtu) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("mtu", "body", int64(*m.Mtu), 1, false); err != nil {
+	if err := validate.MinimumInt("mtu", "body", *m.Mtu, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("mtu", "body", int64(*m.Mtu), 65536, false); err != nil {
+	if err := validate.MaximumInt("mtu", "body", *m.Mtu, 65536, false); err != nil {
 		return err
 	}
 
@@ -328,19 +379,35 @@ func (m *Interface) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *Interface) validateTaggedVlans(formats strfmt.Registry) error {
+func (m *Interface) validateParent(formats strfmt.Registry) error {
+	if swag.IsZero(m.Parent) { // not required
+		return nil
+	}
 
+	if m.Parent != nil {
+		if err := m.Parent.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("parent")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) validateTaggedVlans(formats strfmt.Registry) error {
 	if swag.IsZero(m.TaggedVlans) { // not required
 		return nil
 	}
@@ -369,7 +436,6 @@ func (m *Interface) validateTaggedVlans(formats strfmt.Registry) error {
 }
 
 func (m *Interface) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -412,7 +478,6 @@ func (m *Interface) validateType(formats strfmt.Registry) error {
 }
 
 func (m *Interface) validateUntaggedVlan(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.UntaggedVlan) { // not required
 		return nil
 	}
@@ -430,12 +495,339 @@ func (m *Interface) validateUntaggedVlan(formats strfmt.Registry) error {
 }
 
 func (m *Interface) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this interface based on the context it is used
+func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCountIpaddresses(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDevice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLag(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateMode(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateParent(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaggedVlans(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateUntaggedVlan(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Interface) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cable != nil {
+		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *Interface) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *Interface) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateCountIpaddresses(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "count_ipaddresses", "body", int64(m.CountIpaddresses)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Device != nil {
+		if err := m.Device.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateLag(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Lag != nil {
+		if err := m.Lag.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("lag")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateMode(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Mode != nil {
+		if err := m.Mode.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("mode")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateParent(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Parent != nil {
+		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("parent")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateTaggedVlans(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.TaggedVlans); i++ {
+
+		if m.TaggedVlans[i] != nil {
+			if err := m.TaggedVlans[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Type != nil {
+		if err := m.Type.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateUntaggedVlan(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.UntaggedVlan != nil {
+		if err := m.UntaggedVlan.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("untagged_vlan")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -453,135 +845,6 @@ func (m *Interface) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Interface) UnmarshalBinary(b []byte) error {
 	var res Interface
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// InterfaceConnectionStatus Connection status
-//
-// swagger:model InterfaceConnectionStatus
-type InterfaceConnectionStatus struct {
-
-	// label
-	// Required: true
-	// Enum: [Not Connected Connected]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [false true]
-	Value *bool `json:"value"`
-}
-
-// Validate validates this interface connection status
-func (m *InterfaceConnectionStatus) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var interfaceConnectionStatusTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["Not Connected","Connected"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfaceConnectionStatusTypeLabelPropEnum = append(interfaceConnectionStatusTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// InterfaceConnectionStatusLabelNotConnected captures enum value "Not Connected"
-	InterfaceConnectionStatusLabelNotConnected string = "Not Connected"
-
-	// InterfaceConnectionStatusLabelConnected captures enum value "Connected"
-	InterfaceConnectionStatusLabelConnected string = "Connected"
-)
-
-// prop value enum
-func (m *InterfaceConnectionStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, interfaceConnectionStatusTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfaceConnectionStatus) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("connection_status"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var interfaceConnectionStatusTypeValuePropEnum []interface{}
-
-func init() {
-	var res []bool
-	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfaceConnectionStatusTypeValuePropEnum = append(interfaceConnectionStatusTypeValuePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *InterfaceConnectionStatus) validateValueEnum(path, location string, value bool) error {
-	if err := validate.EnumCase(path, location, value, interfaceConnectionStatusTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfaceConnectionStatus) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("connection_status"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *InterfaceConnectionStatus) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *InterfaceConnectionStatus) UnmarshalBinary(b []byte) error {
-	var res InterfaceConnectionStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -689,8 +952,8 @@ const (
 	// InterfaceModeValueTagged captures enum value "tagged"
 	InterfaceModeValueTagged string = "tagged"
 
-	// InterfaceModeValueTaggedAll captures enum value "tagged-all"
-	InterfaceModeValueTaggedAll string = "tagged-all"
+	// InterfaceModeValueTaggedDashAll captures enum value "tagged-all"
+	InterfaceModeValueTaggedDashAll string = "tagged-all"
 )
 
 // prop value enum
@@ -712,6 +975,11 @@ func (m *InterfaceMode) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this interface mode based on context it is used
+func (m *InterfaceMode) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 
@@ -740,12 +1008,12 @@ type InterfaceType struct {
 
 	// label
 	// Required: true
-	// Enum: [Virtual Link Aggregation Group (LAG) 100BASE-TX (10/100ME) 1000BASE-T (1GE) 2.5GBASE-T (2.5GE) 5GBASE-T (5GE) 10GBASE-T (10GE) 10GBASE-CX4 (10GE) GBIC (1GE) SFP (1GE) SFP+ (10GE) XFP (10GE) XENPAK (10GE) X2 (10GE) SFP28 (25GE) QSFP+ (40GE) QSFP28 (50GE) CFP (100GE) CFP2 (100GE) CFP2 (200GE) CFP4 (100GE) Cisco CPAK (100GE) QSFP28 (100GE) QSFP56 (200GE) QSFP-DD (400GE) OSFP (400GE) IEEE 802.11a IEEE 802.11b/g IEEE 802.11n IEEE 802.11ac IEEE 802.11ad IEEE 802.11ax GSM CDMA LTE OC-3/STM-1 OC-12/STM-4 OC-48/STM-16 OC-192/STM-64 OC-768/STM-256 OC-1920/STM-640 OC-3840/STM-1234 SFP (1GFC) SFP (2GFC) SFP (4GFC) SFP+ (8GFC) SFP+ (16GFC) SFP28 (32GFC) QSFP28 (128GFC) SDR (2 Gbps) DDR (4 Gbps) QDR (8 Gbps) FDR10 (10 Gbps) FDR (13.5 Gbps) EDR (25 Gbps) HDR (50 Gbps) NDR (100 Gbps) XDR (250 Gbps) T1 (1.544 Mbps) E1 (2.048 Mbps) T3 (45 Mbps) E3 (34 Mbps) Cisco StackWise Cisco StackWise Plus Cisco FlexStack Cisco FlexStack Plus Juniper VCP Extreme SummitStack Extreme SummitStack-128 Extreme SummitStack-256 Extreme SummitStack-512 Other]
+	// Enum: [Virtual Link Aggregation Group (LAG) 100BASE-TX (10/100ME) 1000BASE-T (1GE) 2.5GBASE-T (2.5GE) 5GBASE-T (5GE) 10GBASE-T (10GE) 10GBASE-CX4 (10GE) GBIC (1GE) SFP (1GE) SFP+ (10GE) XFP (10GE) XENPAK (10GE) X2 (10GE) SFP28 (25GE) SFP56 (50GE) QSFP+ (40GE) QSFP28 (50GE) CFP (100GE) CFP2 (100GE) CFP2 (200GE) CFP4 (100GE) Cisco CPAK (100GE) QSFP28 (100GE) QSFP56 (200GE) QSFP-DD (400GE) OSFP (400GE) IEEE 802.11a IEEE 802.11b/g IEEE 802.11n IEEE 802.11ac IEEE 802.11ad IEEE 802.11ax GSM CDMA LTE OC-3/STM-1 OC-12/STM-4 OC-48/STM-16 OC-192/STM-64 OC-768/STM-256 OC-1920/STM-640 OC-3840/STM-1234 SFP (1GFC) SFP (2GFC) SFP (4GFC) SFP+ (8GFC) SFP+ (16GFC) SFP28 (32GFC) QSFP+ (64GFC) QSFP28 (128GFC) SDR (2 Gbps) DDR (4 Gbps) QDR (8 Gbps) FDR10 (10 Gbps) FDR (13.5 Gbps) EDR (25 Gbps) HDR (50 Gbps) NDR (100 Gbps) XDR (250 Gbps) T1 (1.544 Mbps) E1 (2.048 Mbps) T3 (45 Mbps) E3 (34 Mbps) Cisco StackWise Cisco StackWise Plus Cisco FlexStack Cisco FlexStack Plus Juniper VCP Extreme SummitStack Extreme SummitStack-128 Extreme SummitStack-256 Extreme SummitStack-512 Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [virtual lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 128gfc-sfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
+	// Enum: [virtual lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-sfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
 	Value *string `json:"value"`
 }
 
@@ -771,7 +1039,7 @@ var interfaceTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Virtual","Link Aggregation Group (LAG)","100BASE-TX (10/100ME)","1000BASE-T (1GE)","2.5GBASE-T (2.5GE)","5GBASE-T (5GE)","10GBASE-T (10GE)","10GBASE-CX4 (10GE)","GBIC (1GE)","SFP (1GE)","SFP+ (10GE)","XFP (10GE)","XENPAK (10GE)","X2 (10GE)","SFP28 (25GE)","QSFP+ (40GE)","QSFP28 (50GE)","CFP (100GE)","CFP2 (100GE)","CFP2 (200GE)","CFP4 (100GE)","Cisco CPAK (100GE)","QSFP28 (100GE)","QSFP56 (200GE)","QSFP-DD (400GE)","OSFP (400GE)","IEEE 802.11a","IEEE 802.11b/g","IEEE 802.11n","IEEE 802.11ac","IEEE 802.11ad","IEEE 802.11ax","GSM","CDMA","LTE","OC-3/STM-1","OC-12/STM-4","OC-48/STM-16","OC-192/STM-64","OC-768/STM-256","OC-1920/STM-640","OC-3840/STM-1234","SFP (1GFC)","SFP (2GFC)","SFP (4GFC)","SFP+ (8GFC)","SFP+ (16GFC)","SFP28 (32GFC)","QSFP28 (128GFC)","SDR (2 Gbps)","DDR (4 Gbps)","QDR (8 Gbps)","FDR10 (10 Gbps)","FDR (13.5 Gbps)","EDR (25 Gbps)","HDR (50 Gbps)","NDR (100 Gbps)","XDR (250 Gbps)","T1 (1.544 Mbps)","E1 (2.048 Mbps)","T3 (45 Mbps)","E3 (34 Mbps)","Cisco StackWise","Cisco StackWise Plus","Cisco FlexStack","Cisco FlexStack Plus","Juniper VCP","Extreme SummitStack","Extreme SummitStack-128","Extreme SummitStack-256","Extreme SummitStack-512","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Virtual","Link Aggregation Group (LAG)","100BASE-TX (10/100ME)","1000BASE-T (1GE)","2.5GBASE-T (2.5GE)","5GBASE-T (5GE)","10GBASE-T (10GE)","10GBASE-CX4 (10GE)","GBIC (1GE)","SFP (1GE)","SFP+ (10GE)","XFP (10GE)","XENPAK (10GE)","X2 (10GE)","SFP28 (25GE)","SFP56 (50GE)","QSFP+ (40GE)","QSFP28 (50GE)","CFP (100GE)","CFP2 (100GE)","CFP2 (200GE)","CFP4 (100GE)","Cisco CPAK (100GE)","QSFP28 (100GE)","QSFP56 (200GE)","QSFP-DD (400GE)","OSFP (400GE)","IEEE 802.11a","IEEE 802.11b/g","IEEE 802.11n","IEEE 802.11ac","IEEE 802.11ad","IEEE 802.11ax","GSM","CDMA","LTE","OC-3/STM-1","OC-12/STM-4","OC-48/STM-16","OC-192/STM-64","OC-768/STM-256","OC-1920/STM-640","OC-3840/STM-1234","SFP (1GFC)","SFP (2GFC)","SFP (4GFC)","SFP+ (8GFC)","SFP+ (16GFC)","SFP28 (32GFC)","QSFP+ (64GFC)","QSFP28 (128GFC)","SDR (2 Gbps)","DDR (4 Gbps)","QDR (8 Gbps)","FDR10 (10 Gbps)","FDR (13.5 Gbps)","EDR (25 Gbps)","HDR (50 Gbps)","NDR (100 Gbps)","XDR (250 Gbps)","T1 (1.544 Mbps)","E1 (2.048 Mbps)","T3 (45 Mbps)","E3 (34 Mbps)","Cisco StackWise","Cisco StackWise Plus","Cisco FlexStack","Cisco FlexStack Plus","Juniper VCP","Extreme SummitStack","Extreme SummitStack-128","Extreme SummitStack-256","Extreme SummitStack-512","Other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -787,23 +1055,23 @@ const (
 	// InterfaceTypeLabelLinkAggregationGroupLAG captures enum value "Link Aggregation Group (LAG)"
 	InterfaceTypeLabelLinkAggregationGroupLAG string = "Link Aggregation Group (LAG)"
 
-	// InterfaceTypeLabelNr100BASETX10100ME captures enum value "100BASE-TX (10/100ME)"
-	InterfaceTypeLabelNr100BASETX10100ME string = "100BASE-TX (10/100ME)"
+	// InterfaceTypeLabelNr100BASEDashTX10100ME captures enum value "100BASE-TX (10/100ME)"
+	InterfaceTypeLabelNr100BASEDashTX10100ME string = "100BASE-TX (10/100ME)"
 
-	// InterfaceTypeLabelNr1000BASET1GE captures enum value "1000BASE-T (1GE)"
-	InterfaceTypeLabelNr1000BASET1GE string = "1000BASE-T (1GE)"
+	// InterfaceTypeLabelNr1000BASEDashT1GE captures enum value "1000BASE-T (1GE)"
+	InterfaceTypeLabelNr1000BASEDashT1GE string = "1000BASE-T (1GE)"
 
-	// InterfaceTypeLabelNr25GBASET25GE captures enum value "2.5GBASE-T (2.5GE)"
-	InterfaceTypeLabelNr25GBASET25GE string = "2.5GBASE-T (2.5GE)"
+	// InterfaceTypeLabelNr2Dot5GBASEDashT2Dot5GE captures enum value "2.5GBASE-T (2.5GE)"
+	InterfaceTypeLabelNr2Dot5GBASEDashT2Dot5GE string = "2.5GBASE-T (2.5GE)"
 
-	// InterfaceTypeLabelNr5GBASET5GE captures enum value "5GBASE-T (5GE)"
-	InterfaceTypeLabelNr5GBASET5GE string = "5GBASE-T (5GE)"
+	// InterfaceTypeLabelNr5GBASEDashT5GE captures enum value "5GBASE-T (5GE)"
+	InterfaceTypeLabelNr5GBASEDashT5GE string = "5GBASE-T (5GE)"
 
-	// InterfaceTypeLabelNr10GBASET10GE captures enum value "10GBASE-T (10GE)"
-	InterfaceTypeLabelNr10GBASET10GE string = "10GBASE-T (10GE)"
+	// InterfaceTypeLabelNr10GBASEDashT10GE captures enum value "10GBASE-T (10GE)"
+	InterfaceTypeLabelNr10GBASEDashT10GE string = "10GBASE-T (10GE)"
 
-	// InterfaceTypeLabelNr10GBASECX410GE captures enum value "10GBASE-CX4 (10GE)"
-	InterfaceTypeLabelNr10GBASECX410GE string = "10GBASE-CX4 (10GE)"
+	// InterfaceTypeLabelNr10GBASEDashCX410GE captures enum value "10GBASE-CX4 (10GE)"
+	InterfaceTypeLabelNr10GBASEDashCX410GE string = "10GBASE-CX4 (10GE)"
 
 	// InterfaceTypeLabelGBIC1GE captures enum value "GBIC (1GE)"
 	InterfaceTypeLabelGBIC1GE string = "GBIC (1GE)"
@@ -811,8 +1079,8 @@ const (
 	// InterfaceTypeLabelSFP1GE captures enum value "SFP (1GE)"
 	InterfaceTypeLabelSFP1GE string = "SFP (1GE)"
 
-	// InterfaceTypeLabelSFP10GE captures enum value "SFP+ (10GE)"
-	InterfaceTypeLabelSFP10GE string = "SFP+ (10GE)"
+	// InterfaceTypeLabelSFPPlus10GE captures enum value "SFP+ (10GE)"
+	InterfaceTypeLabelSFPPlus10GE string = "SFP+ (10GE)"
 
 	// InterfaceTypeLabelXFP10GE captures enum value "XFP (10GE)"
 	InterfaceTypeLabelXFP10GE string = "XFP (10GE)"
@@ -826,8 +1094,11 @@ const (
 	// InterfaceTypeLabelSFP2825GE captures enum value "SFP28 (25GE)"
 	InterfaceTypeLabelSFP2825GE string = "SFP28 (25GE)"
 
-	// InterfaceTypeLabelQSFP40GE captures enum value "QSFP+ (40GE)"
-	InterfaceTypeLabelQSFP40GE string = "QSFP+ (40GE)"
+	// InterfaceTypeLabelSFP5650GE captures enum value "SFP56 (50GE)"
+	InterfaceTypeLabelSFP5650GE string = "SFP56 (50GE)"
+
+	// InterfaceTypeLabelQSFPPlus40GE captures enum value "QSFP+ (40GE)"
+	InterfaceTypeLabelQSFPPlus40GE string = "QSFP+ (40GE)"
 
 	// InterfaceTypeLabelQSFP2850GE captures enum value "QSFP28 (50GE)"
 	InterfaceTypeLabelQSFP2850GE string = "QSFP28 (50GE)"
@@ -853,29 +1124,29 @@ const (
 	// InterfaceTypeLabelQSFP56200GE captures enum value "QSFP56 (200GE)"
 	InterfaceTypeLabelQSFP56200GE string = "QSFP56 (200GE)"
 
-	// InterfaceTypeLabelQSFPDD400GE captures enum value "QSFP-DD (400GE)"
-	InterfaceTypeLabelQSFPDD400GE string = "QSFP-DD (400GE)"
+	// InterfaceTypeLabelQSFPDashDD400GE captures enum value "QSFP-DD (400GE)"
+	InterfaceTypeLabelQSFPDashDD400GE string = "QSFP-DD (400GE)"
 
 	// InterfaceTypeLabelOSFP400GE captures enum value "OSFP (400GE)"
 	InterfaceTypeLabelOSFP400GE string = "OSFP (400GE)"
 
-	// InterfaceTypeLabelIEEE80211a captures enum value "IEEE 802.11a"
-	InterfaceTypeLabelIEEE80211a string = "IEEE 802.11a"
+	// InterfaceTypeLabelIEEE802Dot11a captures enum value "IEEE 802.11a"
+	InterfaceTypeLabelIEEE802Dot11a string = "IEEE 802.11a"
 
-	// InterfaceTypeLabelIEEE80211bg captures enum value "IEEE 802.11b/g"
-	InterfaceTypeLabelIEEE80211bg string = "IEEE 802.11b/g"
+	// InterfaceTypeLabelIEEE802Dot11bg captures enum value "IEEE 802.11b/g"
+	InterfaceTypeLabelIEEE802Dot11bg string = "IEEE 802.11b/g"
 
-	// InterfaceTypeLabelIEEE80211n captures enum value "IEEE 802.11n"
-	InterfaceTypeLabelIEEE80211n string = "IEEE 802.11n"
+	// InterfaceTypeLabelIEEE802Dot11n captures enum value "IEEE 802.11n"
+	InterfaceTypeLabelIEEE802Dot11n string = "IEEE 802.11n"
 
-	// InterfaceTypeLabelIEEE80211ac captures enum value "IEEE 802.11ac"
-	InterfaceTypeLabelIEEE80211ac string = "IEEE 802.11ac"
+	// InterfaceTypeLabelIEEE802Dot11ac captures enum value "IEEE 802.11ac"
+	InterfaceTypeLabelIEEE802Dot11ac string = "IEEE 802.11ac"
 
-	// InterfaceTypeLabelIEEE80211ad captures enum value "IEEE 802.11ad"
-	InterfaceTypeLabelIEEE80211ad string = "IEEE 802.11ad"
+	// InterfaceTypeLabelIEEE802Dot11ad captures enum value "IEEE 802.11ad"
+	InterfaceTypeLabelIEEE802Dot11ad string = "IEEE 802.11ad"
 
-	// InterfaceTypeLabelIEEE80211ax captures enum value "IEEE 802.11ax"
-	InterfaceTypeLabelIEEE80211ax string = "IEEE 802.11ax"
+	// InterfaceTypeLabelIEEE802Dot11ax captures enum value "IEEE 802.11ax"
+	InterfaceTypeLabelIEEE802Dot11ax string = "IEEE 802.11ax"
 
 	// InterfaceTypeLabelGSM captures enum value "GSM"
 	InterfaceTypeLabelGSM string = "GSM"
@@ -886,26 +1157,26 @@ const (
 	// InterfaceTypeLabelLTE captures enum value "LTE"
 	InterfaceTypeLabelLTE string = "LTE"
 
-	// InterfaceTypeLabelOC3STM1 captures enum value "OC-3/STM-1"
-	InterfaceTypeLabelOC3STM1 string = "OC-3/STM-1"
+	// InterfaceTypeLabelOCDash3STMDash1 captures enum value "OC-3/STM-1"
+	InterfaceTypeLabelOCDash3STMDash1 string = "OC-3/STM-1"
 
-	// InterfaceTypeLabelOC12STM4 captures enum value "OC-12/STM-4"
-	InterfaceTypeLabelOC12STM4 string = "OC-12/STM-4"
+	// InterfaceTypeLabelOCDash12STMDash4 captures enum value "OC-12/STM-4"
+	InterfaceTypeLabelOCDash12STMDash4 string = "OC-12/STM-4"
 
-	// InterfaceTypeLabelOC48STM16 captures enum value "OC-48/STM-16"
-	InterfaceTypeLabelOC48STM16 string = "OC-48/STM-16"
+	// InterfaceTypeLabelOCDash48STMDash16 captures enum value "OC-48/STM-16"
+	InterfaceTypeLabelOCDash48STMDash16 string = "OC-48/STM-16"
 
-	// InterfaceTypeLabelOC192STM64 captures enum value "OC-192/STM-64"
-	InterfaceTypeLabelOC192STM64 string = "OC-192/STM-64"
+	// InterfaceTypeLabelOCDash192STMDash64 captures enum value "OC-192/STM-64"
+	InterfaceTypeLabelOCDash192STMDash64 string = "OC-192/STM-64"
 
-	// InterfaceTypeLabelOC768STM256 captures enum value "OC-768/STM-256"
-	InterfaceTypeLabelOC768STM256 string = "OC-768/STM-256"
+	// InterfaceTypeLabelOCDash768STMDash256 captures enum value "OC-768/STM-256"
+	InterfaceTypeLabelOCDash768STMDash256 string = "OC-768/STM-256"
 
-	// InterfaceTypeLabelOC1920STM640 captures enum value "OC-1920/STM-640"
-	InterfaceTypeLabelOC1920STM640 string = "OC-1920/STM-640"
+	// InterfaceTypeLabelOCDash1920STMDash640 captures enum value "OC-1920/STM-640"
+	InterfaceTypeLabelOCDash1920STMDash640 string = "OC-1920/STM-640"
 
-	// InterfaceTypeLabelOC3840STM1234 captures enum value "OC-3840/STM-1234"
-	InterfaceTypeLabelOC3840STM1234 string = "OC-3840/STM-1234"
+	// InterfaceTypeLabelOCDash3840STMDash1234 captures enum value "OC-3840/STM-1234"
+	InterfaceTypeLabelOCDash3840STMDash1234 string = "OC-3840/STM-1234"
 
 	// InterfaceTypeLabelSFP1GFC captures enum value "SFP (1GFC)"
 	InterfaceTypeLabelSFP1GFC string = "SFP (1GFC)"
@@ -916,14 +1187,17 @@ const (
 	// InterfaceTypeLabelSFP4GFC captures enum value "SFP (4GFC)"
 	InterfaceTypeLabelSFP4GFC string = "SFP (4GFC)"
 
-	// InterfaceTypeLabelSFP8GFC captures enum value "SFP+ (8GFC)"
-	InterfaceTypeLabelSFP8GFC string = "SFP+ (8GFC)"
+	// InterfaceTypeLabelSFPPlus8GFC captures enum value "SFP+ (8GFC)"
+	InterfaceTypeLabelSFPPlus8GFC string = "SFP+ (8GFC)"
 
-	// InterfaceTypeLabelSFP16GFC captures enum value "SFP+ (16GFC)"
-	InterfaceTypeLabelSFP16GFC string = "SFP+ (16GFC)"
+	// InterfaceTypeLabelSFPPlus16GFC captures enum value "SFP+ (16GFC)"
+	InterfaceTypeLabelSFPPlus16GFC string = "SFP+ (16GFC)"
 
 	// InterfaceTypeLabelSFP2832GFC captures enum value "SFP28 (32GFC)"
 	InterfaceTypeLabelSFP2832GFC string = "SFP28 (32GFC)"
+
+	// InterfaceTypeLabelQSFPPlus64GFC captures enum value "QSFP+ (64GFC)"
+	InterfaceTypeLabelQSFPPlus64GFC string = "QSFP+ (64GFC)"
 
 	// InterfaceTypeLabelQSFP28128GFC captures enum value "QSFP28 (128GFC)"
 	InterfaceTypeLabelQSFP28128GFC string = "QSFP28 (128GFC)"
@@ -940,8 +1214,8 @@ const (
 	// InterfaceTypeLabelFDR1010Gbps captures enum value "FDR10 (10 Gbps)"
 	InterfaceTypeLabelFDR1010Gbps string = "FDR10 (10 Gbps)"
 
-	// InterfaceTypeLabelFDR135Gbps captures enum value "FDR (13.5 Gbps)"
-	InterfaceTypeLabelFDR135Gbps string = "FDR (13.5 Gbps)"
+	// InterfaceTypeLabelFDR13Dot5Gbps captures enum value "FDR (13.5 Gbps)"
+	InterfaceTypeLabelFDR13Dot5Gbps string = "FDR (13.5 Gbps)"
 
 	// InterfaceTypeLabelEDR25Gbps captures enum value "EDR (25 Gbps)"
 	InterfaceTypeLabelEDR25Gbps string = "EDR (25 Gbps)"
@@ -955,11 +1229,11 @@ const (
 	// InterfaceTypeLabelXDR250Gbps captures enum value "XDR (250 Gbps)"
 	InterfaceTypeLabelXDR250Gbps string = "XDR (250 Gbps)"
 
-	// InterfaceTypeLabelT11544Mbps captures enum value "T1 (1.544 Mbps)"
-	InterfaceTypeLabelT11544Mbps string = "T1 (1.544 Mbps)"
+	// InterfaceTypeLabelT11Dot544Mbps captures enum value "T1 (1.544 Mbps)"
+	InterfaceTypeLabelT11Dot544Mbps string = "T1 (1.544 Mbps)"
 
-	// InterfaceTypeLabelE12048Mbps captures enum value "E1 (2.048 Mbps)"
-	InterfaceTypeLabelE12048Mbps string = "E1 (2.048 Mbps)"
+	// InterfaceTypeLabelE12Dot048Mbps captures enum value "E1 (2.048 Mbps)"
+	InterfaceTypeLabelE12Dot048Mbps string = "E1 (2.048 Mbps)"
 
 	// InterfaceTypeLabelT345Mbps captures enum value "T3 (45 Mbps)"
 	InterfaceTypeLabelT345Mbps string = "T3 (45 Mbps)"
@@ -985,14 +1259,14 @@ const (
 	// InterfaceTypeLabelExtremeSummitStack captures enum value "Extreme SummitStack"
 	InterfaceTypeLabelExtremeSummitStack string = "Extreme SummitStack"
 
-	// InterfaceTypeLabelExtremeSummitStack128 captures enum value "Extreme SummitStack-128"
-	InterfaceTypeLabelExtremeSummitStack128 string = "Extreme SummitStack-128"
+	// InterfaceTypeLabelExtremeSummitStackDash128 captures enum value "Extreme SummitStack-128"
+	InterfaceTypeLabelExtremeSummitStackDash128 string = "Extreme SummitStack-128"
 
-	// InterfaceTypeLabelExtremeSummitStack256 captures enum value "Extreme SummitStack-256"
-	InterfaceTypeLabelExtremeSummitStack256 string = "Extreme SummitStack-256"
+	// InterfaceTypeLabelExtremeSummitStackDash256 captures enum value "Extreme SummitStack-256"
+	InterfaceTypeLabelExtremeSummitStackDash256 string = "Extreme SummitStack-256"
 
-	// InterfaceTypeLabelExtremeSummitStack512 captures enum value "Extreme SummitStack-512"
-	InterfaceTypeLabelExtremeSummitStack512 string = "Extreme SummitStack-512"
+	// InterfaceTypeLabelExtremeSummitStackDash512 captures enum value "Extreme SummitStack-512"
+	InterfaceTypeLabelExtremeSummitStackDash512 string = "Extreme SummitStack-512"
 
 	// InterfaceTypeLabelOther captures enum value "Other"
 	InterfaceTypeLabelOther string = "Other"
@@ -1024,7 +1298,7 @@ var interfaceTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["virtual","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","128gfc-sfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["virtual","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-sfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -1040,95 +1314,98 @@ const (
 	// InterfaceTypeValueLag captures enum value "lag"
 	InterfaceTypeValueLag string = "lag"
 
-	// InterfaceTypeValueNr100baseTx captures enum value "100base-tx"
-	InterfaceTypeValueNr100baseTx string = "100base-tx"
+	// InterfaceTypeValueNr100baseDashTx captures enum value "100base-tx"
+	InterfaceTypeValueNr100baseDashTx string = "100base-tx"
 
-	// InterfaceTypeValueNr1000baset captures enum value "1000base-t"
-	InterfaceTypeValueNr1000baset string = "1000base-t"
+	// InterfaceTypeValueNr1000baseDasht captures enum value "1000base-t"
+	InterfaceTypeValueNr1000baseDasht string = "1000base-t"
 
-	// InterfaceTypeValueNr25gbaset captures enum value "2.5gbase-t"
-	InterfaceTypeValueNr25gbaset string = "2.5gbase-t"
+	// InterfaceTypeValueNr2Dot5gbaseDasht captures enum value "2.5gbase-t"
+	InterfaceTypeValueNr2Dot5gbaseDasht string = "2.5gbase-t"
 
-	// InterfaceTypeValueNr5gbaset captures enum value "5gbase-t"
-	InterfaceTypeValueNr5gbaset string = "5gbase-t"
+	// InterfaceTypeValueNr5gbaseDasht captures enum value "5gbase-t"
+	InterfaceTypeValueNr5gbaseDasht string = "5gbase-t"
 
-	// InterfaceTypeValueNr10gbaset captures enum value "10gbase-t"
-	InterfaceTypeValueNr10gbaset string = "10gbase-t"
+	// InterfaceTypeValueNr10gbaseDasht captures enum value "10gbase-t"
+	InterfaceTypeValueNr10gbaseDasht string = "10gbase-t"
 
-	// InterfaceTypeValueNr10gbaseCx4 captures enum value "10gbase-cx4"
-	InterfaceTypeValueNr10gbaseCx4 string = "10gbase-cx4"
+	// InterfaceTypeValueNr10gbaseDashCx4 captures enum value "10gbase-cx4"
+	InterfaceTypeValueNr10gbaseDashCx4 string = "10gbase-cx4"
 
-	// InterfaceTypeValueNr1000basexGbic captures enum value "1000base-x-gbic"
-	InterfaceTypeValueNr1000basexGbic string = "1000base-x-gbic"
+	// InterfaceTypeValueNr1000baseDashxDashGbic captures enum value "1000base-x-gbic"
+	InterfaceTypeValueNr1000baseDashxDashGbic string = "1000base-x-gbic"
 
-	// InterfaceTypeValueNr1000basexSfp captures enum value "1000base-x-sfp"
-	InterfaceTypeValueNr1000basexSfp string = "1000base-x-sfp"
+	// InterfaceTypeValueNr1000baseDashxDashSfp captures enum value "1000base-x-sfp"
+	InterfaceTypeValueNr1000baseDashxDashSfp string = "1000base-x-sfp"
 
-	// InterfaceTypeValueNr10gbasexSfpp captures enum value "10gbase-x-sfpp"
-	InterfaceTypeValueNr10gbasexSfpp string = "10gbase-x-sfpp"
+	// InterfaceTypeValueNr10gbaseDashxDashSfpp captures enum value "10gbase-x-sfpp"
+	InterfaceTypeValueNr10gbaseDashxDashSfpp string = "10gbase-x-sfpp"
 
-	// InterfaceTypeValueNr10gbasexXfp captures enum value "10gbase-x-xfp"
-	InterfaceTypeValueNr10gbasexXfp string = "10gbase-x-xfp"
+	// InterfaceTypeValueNr10gbaseDashxDashXfp captures enum value "10gbase-x-xfp"
+	InterfaceTypeValueNr10gbaseDashxDashXfp string = "10gbase-x-xfp"
 
-	// InterfaceTypeValueNr10gbasexXenpak captures enum value "10gbase-x-xenpak"
-	InterfaceTypeValueNr10gbasexXenpak string = "10gbase-x-xenpak"
+	// InterfaceTypeValueNr10gbaseDashxDashXenpak captures enum value "10gbase-x-xenpak"
+	InterfaceTypeValueNr10gbaseDashxDashXenpak string = "10gbase-x-xenpak"
 
-	// InterfaceTypeValueNr10gbasexX2 captures enum value "10gbase-x-x2"
-	InterfaceTypeValueNr10gbasexX2 string = "10gbase-x-x2"
+	// InterfaceTypeValueNr10gbaseDashxDashX2 captures enum value "10gbase-x-x2"
+	InterfaceTypeValueNr10gbaseDashxDashX2 string = "10gbase-x-x2"
 
-	// InterfaceTypeValueNr25gbasexSfp28 captures enum value "25gbase-x-sfp28"
-	InterfaceTypeValueNr25gbasexSfp28 string = "25gbase-x-sfp28"
+	// InterfaceTypeValueNr25gbaseDashxDashSfp28 captures enum value "25gbase-x-sfp28"
+	InterfaceTypeValueNr25gbaseDashxDashSfp28 string = "25gbase-x-sfp28"
 
-	// InterfaceTypeValueNr40gbasexQsfpp captures enum value "40gbase-x-qsfpp"
-	InterfaceTypeValueNr40gbasexQsfpp string = "40gbase-x-qsfpp"
+	// InterfaceTypeValueNr50gbaseDashxDashSfp56 captures enum value "50gbase-x-sfp56"
+	InterfaceTypeValueNr50gbaseDashxDashSfp56 string = "50gbase-x-sfp56"
 
-	// InterfaceTypeValueNr50gbasexSfp28 captures enum value "50gbase-x-sfp28"
-	InterfaceTypeValueNr50gbasexSfp28 string = "50gbase-x-sfp28"
+	// InterfaceTypeValueNr40gbaseDashxDashQsfpp captures enum value "40gbase-x-qsfpp"
+	InterfaceTypeValueNr40gbaseDashxDashQsfpp string = "40gbase-x-qsfpp"
 
-	// InterfaceTypeValueNr100gbasexCfp captures enum value "100gbase-x-cfp"
-	InterfaceTypeValueNr100gbasexCfp string = "100gbase-x-cfp"
+	// InterfaceTypeValueNr50gbaseDashxDashSfp28 captures enum value "50gbase-x-sfp28"
+	InterfaceTypeValueNr50gbaseDashxDashSfp28 string = "50gbase-x-sfp28"
 
-	// InterfaceTypeValueNr100gbasexCfp2 captures enum value "100gbase-x-cfp2"
-	InterfaceTypeValueNr100gbasexCfp2 string = "100gbase-x-cfp2"
+	// InterfaceTypeValueNr100gbaseDashxDashCfp captures enum value "100gbase-x-cfp"
+	InterfaceTypeValueNr100gbaseDashxDashCfp string = "100gbase-x-cfp"
 
-	// InterfaceTypeValueNr200gbasexCfp2 captures enum value "200gbase-x-cfp2"
-	InterfaceTypeValueNr200gbasexCfp2 string = "200gbase-x-cfp2"
+	// InterfaceTypeValueNr100gbaseDashxDashCfp2 captures enum value "100gbase-x-cfp2"
+	InterfaceTypeValueNr100gbaseDashxDashCfp2 string = "100gbase-x-cfp2"
 
-	// InterfaceTypeValueNr100gbasexCfp4 captures enum value "100gbase-x-cfp4"
-	InterfaceTypeValueNr100gbasexCfp4 string = "100gbase-x-cfp4"
+	// InterfaceTypeValueNr200gbaseDashxDashCfp2 captures enum value "200gbase-x-cfp2"
+	InterfaceTypeValueNr200gbaseDashxDashCfp2 string = "200gbase-x-cfp2"
 
-	// InterfaceTypeValueNr100gbasexCpak captures enum value "100gbase-x-cpak"
-	InterfaceTypeValueNr100gbasexCpak string = "100gbase-x-cpak"
+	// InterfaceTypeValueNr100gbaseDashxDashCfp4 captures enum value "100gbase-x-cfp4"
+	InterfaceTypeValueNr100gbaseDashxDashCfp4 string = "100gbase-x-cfp4"
 
-	// InterfaceTypeValueNr100gbasexQsfp28 captures enum value "100gbase-x-qsfp28"
-	InterfaceTypeValueNr100gbasexQsfp28 string = "100gbase-x-qsfp28"
+	// InterfaceTypeValueNr100gbaseDashxDashCpak captures enum value "100gbase-x-cpak"
+	InterfaceTypeValueNr100gbaseDashxDashCpak string = "100gbase-x-cpak"
 
-	// InterfaceTypeValueNr200gbasexQsfp56 captures enum value "200gbase-x-qsfp56"
-	InterfaceTypeValueNr200gbasexQsfp56 string = "200gbase-x-qsfp56"
+	// InterfaceTypeValueNr100gbaseDashxDashQsfp28 captures enum value "100gbase-x-qsfp28"
+	InterfaceTypeValueNr100gbaseDashxDashQsfp28 string = "100gbase-x-qsfp28"
 
-	// InterfaceTypeValueNr400gbasexQsfpdd captures enum value "400gbase-x-qsfpdd"
-	InterfaceTypeValueNr400gbasexQsfpdd string = "400gbase-x-qsfpdd"
+	// InterfaceTypeValueNr200gbaseDashxDashQsfp56 captures enum value "200gbase-x-qsfp56"
+	InterfaceTypeValueNr200gbaseDashxDashQsfp56 string = "200gbase-x-qsfp56"
 
-	// InterfaceTypeValueNr400gbasexOsfp captures enum value "400gbase-x-osfp"
-	InterfaceTypeValueNr400gbasexOsfp string = "400gbase-x-osfp"
+	// InterfaceTypeValueNr400gbaseDashxDashQsfpdd captures enum value "400gbase-x-qsfpdd"
+	InterfaceTypeValueNr400gbaseDashxDashQsfpdd string = "400gbase-x-qsfpdd"
 
-	// InterfaceTypeValueIeee80211a captures enum value "ieee802.11a"
-	InterfaceTypeValueIeee80211a string = "ieee802.11a"
+	// InterfaceTypeValueNr400gbaseDashxDashOsfp captures enum value "400gbase-x-osfp"
+	InterfaceTypeValueNr400gbaseDashxDashOsfp string = "400gbase-x-osfp"
 
-	// InterfaceTypeValueIeee80211g captures enum value "ieee802.11g"
-	InterfaceTypeValueIeee80211g string = "ieee802.11g"
+	// InterfaceTypeValueIeee802Dot11a captures enum value "ieee802.11a"
+	InterfaceTypeValueIeee802Dot11a string = "ieee802.11a"
 
-	// InterfaceTypeValueIeee80211n captures enum value "ieee802.11n"
-	InterfaceTypeValueIeee80211n string = "ieee802.11n"
+	// InterfaceTypeValueIeee802Dot11g captures enum value "ieee802.11g"
+	InterfaceTypeValueIeee802Dot11g string = "ieee802.11g"
 
-	// InterfaceTypeValueIeee80211ac captures enum value "ieee802.11ac"
-	InterfaceTypeValueIeee80211ac string = "ieee802.11ac"
+	// InterfaceTypeValueIeee802Dot11n captures enum value "ieee802.11n"
+	InterfaceTypeValueIeee802Dot11n string = "ieee802.11n"
 
-	// InterfaceTypeValueIeee80211ad captures enum value "ieee802.11ad"
-	InterfaceTypeValueIeee80211ad string = "ieee802.11ad"
+	// InterfaceTypeValueIeee802Dot11ac captures enum value "ieee802.11ac"
+	InterfaceTypeValueIeee802Dot11ac string = "ieee802.11ac"
 
-	// InterfaceTypeValueIeee80211ax captures enum value "ieee802.11ax"
-	InterfaceTypeValueIeee80211ax string = "ieee802.11ax"
+	// InterfaceTypeValueIeee802Dot11ad captures enum value "ieee802.11ad"
+	InterfaceTypeValueIeee802Dot11ad string = "ieee802.11ad"
+
+	// InterfaceTypeValueIeee802Dot11ax captures enum value "ieee802.11ax"
+	InterfaceTypeValueIeee802Dot11ax string = "ieee802.11ax"
 
 	// InterfaceTypeValueGsm captures enum value "gsm"
 	InterfaceTypeValueGsm string = "gsm"
@@ -1139,74 +1416,77 @@ const (
 	// InterfaceTypeValueLte captures enum value "lte"
 	InterfaceTypeValueLte string = "lte"
 
-	// InterfaceTypeValueSonetOc3 captures enum value "sonet-oc3"
-	InterfaceTypeValueSonetOc3 string = "sonet-oc3"
+	// InterfaceTypeValueSonetDashOc3 captures enum value "sonet-oc3"
+	InterfaceTypeValueSonetDashOc3 string = "sonet-oc3"
 
-	// InterfaceTypeValueSonetOc12 captures enum value "sonet-oc12"
-	InterfaceTypeValueSonetOc12 string = "sonet-oc12"
+	// InterfaceTypeValueSonetDashOc12 captures enum value "sonet-oc12"
+	InterfaceTypeValueSonetDashOc12 string = "sonet-oc12"
 
-	// InterfaceTypeValueSonetOc48 captures enum value "sonet-oc48"
-	InterfaceTypeValueSonetOc48 string = "sonet-oc48"
+	// InterfaceTypeValueSonetDashOc48 captures enum value "sonet-oc48"
+	InterfaceTypeValueSonetDashOc48 string = "sonet-oc48"
 
-	// InterfaceTypeValueSonetOc192 captures enum value "sonet-oc192"
-	InterfaceTypeValueSonetOc192 string = "sonet-oc192"
+	// InterfaceTypeValueSonetDashOc192 captures enum value "sonet-oc192"
+	InterfaceTypeValueSonetDashOc192 string = "sonet-oc192"
 
-	// InterfaceTypeValueSonetOc768 captures enum value "sonet-oc768"
-	InterfaceTypeValueSonetOc768 string = "sonet-oc768"
+	// InterfaceTypeValueSonetDashOc768 captures enum value "sonet-oc768"
+	InterfaceTypeValueSonetDashOc768 string = "sonet-oc768"
 
-	// InterfaceTypeValueSonetOc1920 captures enum value "sonet-oc1920"
-	InterfaceTypeValueSonetOc1920 string = "sonet-oc1920"
+	// InterfaceTypeValueSonetDashOc1920 captures enum value "sonet-oc1920"
+	InterfaceTypeValueSonetDashOc1920 string = "sonet-oc1920"
 
-	// InterfaceTypeValueSonetOc3840 captures enum value "sonet-oc3840"
-	InterfaceTypeValueSonetOc3840 string = "sonet-oc3840"
+	// InterfaceTypeValueSonetDashOc3840 captures enum value "sonet-oc3840"
+	InterfaceTypeValueSonetDashOc3840 string = "sonet-oc3840"
 
-	// InterfaceTypeValueNr1gfcSfp captures enum value "1gfc-sfp"
-	InterfaceTypeValueNr1gfcSfp string = "1gfc-sfp"
+	// InterfaceTypeValueNr1gfcDashSfp captures enum value "1gfc-sfp"
+	InterfaceTypeValueNr1gfcDashSfp string = "1gfc-sfp"
 
-	// InterfaceTypeValueNr2gfcSfp captures enum value "2gfc-sfp"
-	InterfaceTypeValueNr2gfcSfp string = "2gfc-sfp"
+	// InterfaceTypeValueNr2gfcDashSfp captures enum value "2gfc-sfp"
+	InterfaceTypeValueNr2gfcDashSfp string = "2gfc-sfp"
 
-	// InterfaceTypeValueNr4gfcSfp captures enum value "4gfc-sfp"
-	InterfaceTypeValueNr4gfcSfp string = "4gfc-sfp"
+	// InterfaceTypeValueNr4gfcDashSfp captures enum value "4gfc-sfp"
+	InterfaceTypeValueNr4gfcDashSfp string = "4gfc-sfp"
 
-	// InterfaceTypeValueNr8gfcSfpp captures enum value "8gfc-sfpp"
-	InterfaceTypeValueNr8gfcSfpp string = "8gfc-sfpp"
+	// InterfaceTypeValueNr8gfcDashSfpp captures enum value "8gfc-sfpp"
+	InterfaceTypeValueNr8gfcDashSfpp string = "8gfc-sfpp"
 
-	// InterfaceTypeValueNr16gfcSfpp captures enum value "16gfc-sfpp"
-	InterfaceTypeValueNr16gfcSfpp string = "16gfc-sfpp"
+	// InterfaceTypeValueNr16gfcDashSfpp captures enum value "16gfc-sfpp"
+	InterfaceTypeValueNr16gfcDashSfpp string = "16gfc-sfpp"
 
-	// InterfaceTypeValueNr32gfcSfp28 captures enum value "32gfc-sfp28"
-	InterfaceTypeValueNr32gfcSfp28 string = "32gfc-sfp28"
+	// InterfaceTypeValueNr32gfcDashSfp28 captures enum value "32gfc-sfp28"
+	InterfaceTypeValueNr32gfcDashSfp28 string = "32gfc-sfp28"
 
-	// InterfaceTypeValueNr128gfcSfp28 captures enum value "128gfc-sfp28"
-	InterfaceTypeValueNr128gfcSfp28 string = "128gfc-sfp28"
+	// InterfaceTypeValueNr64gfcDashQsfpp captures enum value "64gfc-qsfpp"
+	InterfaceTypeValueNr64gfcDashQsfpp string = "64gfc-qsfpp"
 
-	// InterfaceTypeValueInfinibandSdr captures enum value "infiniband-sdr"
-	InterfaceTypeValueInfinibandSdr string = "infiniband-sdr"
+	// InterfaceTypeValueNr128gfcDashSfp28 captures enum value "128gfc-sfp28"
+	InterfaceTypeValueNr128gfcDashSfp28 string = "128gfc-sfp28"
 
-	// InterfaceTypeValueInfinibandDdr captures enum value "infiniband-ddr"
-	InterfaceTypeValueInfinibandDdr string = "infiniband-ddr"
+	// InterfaceTypeValueInfinibandDashSdr captures enum value "infiniband-sdr"
+	InterfaceTypeValueInfinibandDashSdr string = "infiniband-sdr"
 
-	// InterfaceTypeValueInfinibandQdr captures enum value "infiniband-qdr"
-	InterfaceTypeValueInfinibandQdr string = "infiniband-qdr"
+	// InterfaceTypeValueInfinibandDashDdr captures enum value "infiniband-ddr"
+	InterfaceTypeValueInfinibandDashDdr string = "infiniband-ddr"
 
-	// InterfaceTypeValueInfinibandFdr10 captures enum value "infiniband-fdr10"
-	InterfaceTypeValueInfinibandFdr10 string = "infiniband-fdr10"
+	// InterfaceTypeValueInfinibandDashQdr captures enum value "infiniband-qdr"
+	InterfaceTypeValueInfinibandDashQdr string = "infiniband-qdr"
 
-	// InterfaceTypeValueInfinibandFdr captures enum value "infiniband-fdr"
-	InterfaceTypeValueInfinibandFdr string = "infiniband-fdr"
+	// InterfaceTypeValueInfinibandDashFdr10 captures enum value "infiniband-fdr10"
+	InterfaceTypeValueInfinibandDashFdr10 string = "infiniband-fdr10"
 
-	// InterfaceTypeValueInfinibandEdr captures enum value "infiniband-edr"
-	InterfaceTypeValueInfinibandEdr string = "infiniband-edr"
+	// InterfaceTypeValueInfinibandDashFdr captures enum value "infiniband-fdr"
+	InterfaceTypeValueInfinibandDashFdr string = "infiniband-fdr"
 
-	// InterfaceTypeValueInfinibandHdr captures enum value "infiniband-hdr"
-	InterfaceTypeValueInfinibandHdr string = "infiniband-hdr"
+	// InterfaceTypeValueInfinibandDashEdr captures enum value "infiniband-edr"
+	InterfaceTypeValueInfinibandDashEdr string = "infiniband-edr"
 
-	// InterfaceTypeValueInfinibandNdr captures enum value "infiniband-ndr"
-	InterfaceTypeValueInfinibandNdr string = "infiniband-ndr"
+	// InterfaceTypeValueInfinibandDashHdr captures enum value "infiniband-hdr"
+	InterfaceTypeValueInfinibandDashHdr string = "infiniband-hdr"
 
-	// InterfaceTypeValueInfinibandXdr captures enum value "infiniband-xdr"
-	InterfaceTypeValueInfinibandXdr string = "infiniband-xdr"
+	// InterfaceTypeValueInfinibandDashNdr captures enum value "infiniband-ndr"
+	InterfaceTypeValueInfinibandDashNdr string = "infiniband-ndr"
+
+	// InterfaceTypeValueInfinibandDashXdr captures enum value "infiniband-xdr"
+	InterfaceTypeValueInfinibandDashXdr string = "infiniband-xdr"
 
 	// InterfaceTypeValueT1 captures enum value "t1"
 	InterfaceTypeValueT1 string = "t1"
@@ -1220,32 +1500,32 @@ const (
 	// InterfaceTypeValueE3 captures enum value "e3"
 	InterfaceTypeValueE3 string = "e3"
 
-	// InterfaceTypeValueCiscoStackwise captures enum value "cisco-stackwise"
-	InterfaceTypeValueCiscoStackwise string = "cisco-stackwise"
+	// InterfaceTypeValueCiscoDashStackwise captures enum value "cisco-stackwise"
+	InterfaceTypeValueCiscoDashStackwise string = "cisco-stackwise"
 
-	// InterfaceTypeValueCiscoStackwisePlus captures enum value "cisco-stackwise-plus"
-	InterfaceTypeValueCiscoStackwisePlus string = "cisco-stackwise-plus"
+	// InterfaceTypeValueCiscoDashStackwiseDashPlus captures enum value "cisco-stackwise-plus"
+	InterfaceTypeValueCiscoDashStackwiseDashPlus string = "cisco-stackwise-plus"
 
-	// InterfaceTypeValueCiscoFlexstack captures enum value "cisco-flexstack"
-	InterfaceTypeValueCiscoFlexstack string = "cisco-flexstack"
+	// InterfaceTypeValueCiscoDashFlexstack captures enum value "cisco-flexstack"
+	InterfaceTypeValueCiscoDashFlexstack string = "cisco-flexstack"
 
-	// InterfaceTypeValueCiscoFlexstackPlus captures enum value "cisco-flexstack-plus"
-	InterfaceTypeValueCiscoFlexstackPlus string = "cisco-flexstack-plus"
+	// InterfaceTypeValueCiscoDashFlexstackDashPlus captures enum value "cisco-flexstack-plus"
+	InterfaceTypeValueCiscoDashFlexstackDashPlus string = "cisco-flexstack-plus"
 
-	// InterfaceTypeValueJuniperVcp captures enum value "juniper-vcp"
-	InterfaceTypeValueJuniperVcp string = "juniper-vcp"
+	// InterfaceTypeValueJuniperDashVcp captures enum value "juniper-vcp"
+	InterfaceTypeValueJuniperDashVcp string = "juniper-vcp"
 
-	// InterfaceTypeValueExtremeSummitstack captures enum value "extreme-summitstack"
-	InterfaceTypeValueExtremeSummitstack string = "extreme-summitstack"
+	// InterfaceTypeValueExtremeDashSummitstack captures enum value "extreme-summitstack"
+	InterfaceTypeValueExtremeDashSummitstack string = "extreme-summitstack"
 
-	// InterfaceTypeValueExtremeSummitstack128 captures enum value "extreme-summitstack-128"
-	InterfaceTypeValueExtremeSummitstack128 string = "extreme-summitstack-128"
+	// InterfaceTypeValueExtremeDashSummitstackDash128 captures enum value "extreme-summitstack-128"
+	InterfaceTypeValueExtremeDashSummitstackDash128 string = "extreme-summitstack-128"
 
-	// InterfaceTypeValueExtremeSummitstack256 captures enum value "extreme-summitstack-256"
-	InterfaceTypeValueExtremeSummitstack256 string = "extreme-summitstack-256"
+	// InterfaceTypeValueExtremeDashSummitstackDash256 captures enum value "extreme-summitstack-256"
+	InterfaceTypeValueExtremeDashSummitstackDash256 string = "extreme-summitstack-256"
 
-	// InterfaceTypeValueExtremeSummitstack512 captures enum value "extreme-summitstack-512"
-	InterfaceTypeValueExtremeSummitstack512 string = "extreme-summitstack-512"
+	// InterfaceTypeValueExtremeDashSummitstackDash512 captures enum value "extreme-summitstack-512"
+	InterfaceTypeValueExtremeDashSummitstackDash512 string = "extreme-summitstack-512"
 
 	// InterfaceTypeValueOther captures enum value "other"
 	InterfaceTypeValueOther string = "other"
@@ -1270,6 +1550,11 @@ func (m *InterfaceType) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this interface type based on context it is used
+func (m *InterfaceType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

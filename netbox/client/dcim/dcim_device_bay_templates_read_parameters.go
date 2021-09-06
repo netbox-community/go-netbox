@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimDeviceBayTemplatesReadParams creates a new DcimDeviceBayTemplatesReadParams object
-// with the default values initialized.
+// NewDcimDeviceBayTemplatesReadParams creates a new DcimDeviceBayTemplatesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDeviceBayTemplatesReadParams() *DcimDeviceBayTemplatesReadParams {
-	var ()
 	return &DcimDeviceBayTemplatesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDeviceBayTemplatesReadParamsWithTimeout creates a new DcimDeviceBayTemplatesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDeviceBayTemplatesReadParamsWithTimeout(timeout time.Duration) *DcimDeviceBayTemplatesReadParams {
-	var ()
 	return &DcimDeviceBayTemplatesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDeviceBayTemplatesReadParamsWithContext creates a new DcimDeviceBayTemplatesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDeviceBayTemplatesReadParamsWithContext(ctx context.Context) *DcimDeviceBayTemplatesReadParams {
-	var ()
 	return &DcimDeviceBayTemplatesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDeviceBayTemplatesReadParamsWithHTTPClient creates a new DcimDeviceBayTemplatesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDeviceBayTemplatesReadParamsWithHTTPClient(client *http.Client) *DcimDeviceBayTemplatesReadParams {
-	var ()
 	return &DcimDeviceBayTemplatesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDeviceBayTemplatesReadParams contains all the parameters to send to the API endpoint
-for the dcim device bay templates read operation typically these are written to a http.Request
+/* DcimDeviceBayTemplatesReadParams contains all the parameters to send to the API endpoint
+   for the dcim device bay templates read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDeviceBayTemplatesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this device bay template.
+	/* ID.
 
+	   A unique integer value identifying this device bay template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim device bay templates read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBayTemplatesReadParams) WithDefaults() *DcimDeviceBayTemplatesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim device bay templates read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBayTemplatesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim device bay templates read params

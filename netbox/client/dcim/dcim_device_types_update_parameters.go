@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimDeviceTypesUpdateParams creates a new DcimDeviceTypesUpdateParams object
-// with the default values initialized.
+// NewDcimDeviceTypesUpdateParams creates a new DcimDeviceTypesUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDeviceTypesUpdateParams() *DcimDeviceTypesUpdateParams {
-	var ()
 	return &DcimDeviceTypesUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDeviceTypesUpdateParamsWithTimeout creates a new DcimDeviceTypesUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDeviceTypesUpdateParamsWithTimeout(timeout time.Duration) *DcimDeviceTypesUpdateParams {
-	var ()
 	return &DcimDeviceTypesUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDeviceTypesUpdateParamsWithContext creates a new DcimDeviceTypesUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDeviceTypesUpdateParamsWithContext(ctx context.Context) *DcimDeviceTypesUpdateParams {
-	var ()
 	return &DcimDeviceTypesUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDeviceTypesUpdateParamsWithHTTPClient creates a new DcimDeviceTypesUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDeviceTypesUpdateParamsWithHTTPClient(client *http.Client) *DcimDeviceTypesUpdateParams {
-	var ()
 	return &DcimDeviceTypesUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDeviceTypesUpdateParams contains all the parameters to send to the API endpoint
-for the dcim device types update operation typically these are written to a http.Request
+/* DcimDeviceTypesUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim device types update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDeviceTypesUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableDeviceType
-	/*ID
-	  A unique integer value identifying this device type.
 
+	/* ID.
+
+	   A unique integer value identifying this device type.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim device types update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceTypesUpdateParams) WithDefaults() *DcimDeviceTypesUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim device types update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceTypesUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim device types update params
@@ -153,7 +168,6 @@ func (o *DcimDeviceTypesUpdateParams) WriteToRequest(r runtime.ClientRequest, re
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -45,14 +45,7 @@ func (o *DcimRackRolesCreateReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		result := NewDcimRackRolesCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimRackRolesCreateCreated() *DcimRackRolesCreateCreated {
 	return &DcimRackRolesCreateCreated{}
 }
 
-/*DcimRackRolesCreateCreated handles this case with default header values.
+/* DcimRackRolesCreateCreated describes a response with status code 201, with default header values.
 
 DcimRackRolesCreateCreated dcim rack roles create created
 */
@@ -72,7 +65,6 @@ type DcimRackRolesCreateCreated struct {
 func (o *DcimRackRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/rack-roles/][%d] dcimRackRolesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimRackRolesCreateCreated) GetPayload() *models.RackRole {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimRackRolesCreateCreated) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimRackRolesCreateDefault creates a DcimRackRolesCreateDefault with default headers values
-func NewDcimRackRolesCreateDefault(code int) *DcimRackRolesCreateDefault {
-	return &DcimRackRolesCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimRackRolesCreateDefault handles this case with default header values.
-
-DcimRackRolesCreateDefault dcim rack roles create default
-*/
-type DcimRackRolesCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim rack roles create default response
-func (o *DcimRackRolesCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimRackRolesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/rack-roles/][%d] dcim_rack-roles_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimRackRolesCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimRackRolesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

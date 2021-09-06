@@ -44,7 +44,6 @@ func (o *IpamServicesReadReader) ReadResponse(response runtime.ClientResponse, c
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewIpamServicesReadOK() *IpamServicesReadOK {
 	return &IpamServicesReadOK{}
 }
 
-/*IpamServicesReadOK handles this case with default header values.
+/* IpamServicesReadOK describes a response with status code 200, with default header values.
 
 IpamServicesReadOK ipam services read o k
 */
@@ -66,7 +65,6 @@ type IpamServicesReadOK struct {
 func (o *IpamServicesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipamServicesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamServicesReadOK) GetPayload() *models.Service {
 	return o.Payload
 }

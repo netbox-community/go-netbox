@@ -32,118 +32,184 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamAggregatesListParams creates a new IpamAggregatesListParams object
-// with the default values initialized.
+// NewIpamAggregatesListParams creates a new IpamAggregatesListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamAggregatesListParams() *IpamAggregatesListParams {
-	var ()
 	return &IpamAggregatesListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamAggregatesListParamsWithTimeout creates a new IpamAggregatesListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamAggregatesListParamsWithTimeout(timeout time.Duration) *IpamAggregatesListParams {
-	var ()
 	return &IpamAggregatesListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamAggregatesListParamsWithContext creates a new IpamAggregatesListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamAggregatesListParamsWithContext(ctx context.Context) *IpamAggregatesListParams {
-	var ()
 	return &IpamAggregatesListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamAggregatesListParamsWithHTTPClient creates a new IpamAggregatesListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamAggregatesListParamsWithHTTPClient(client *http.Client) *IpamAggregatesListParams {
-	var ()
 	return &IpamAggregatesListParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamAggregatesListParams contains all the parameters to send to the API endpoint
-for the ipam aggregates list operation typically these are written to a http.Request
+/* IpamAggregatesListParams contains all the parameters to send to the API endpoint
+   for the ipam aggregates list operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamAggregatesListParams struct {
 
-	/*Created*/
+	// Created.
 	Created *string
-	/*CreatedGte*/
-	CreatedGte *string
-	/*CreatedLte*/
-	CreatedLte *string
-	/*DateAdded*/
-	DateAdded *string
-	/*DateAddedGt*/
-	DateAddedGt *string
-	/*DateAddedGte*/
-	DateAddedGte *string
-	/*DateAddedLt*/
-	DateAddedLt *string
-	/*DateAddedLte*/
-	DateAddedLte *string
-	/*DateAddedn*/
-	DateAddedn *string
-	/*Family*/
-	Family *float64
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*LastUpdated*/
-	LastUpdated *string
-	/*LastUpdatedGte*/
-	LastUpdatedGte *string
-	/*LastUpdatedLte*/
-	LastUpdatedLte *string
-	/*Limit
-	  Number of results to return per page.
 
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// DateAdded.
+	DateAdded *string
+
+	// DateAddedGt.
+	DateAddedGt *string
+
+	// DateAddedGte.
+	DateAddedGte *string
+
+	// DateAddedLt.
+	DateAddedLt *string
+
+	// DateAddedLte.
+	DateAddedLte *string
+
+	// DateAddedn.
+	DateAddedn *string
+
+	// Family.
+	Family *float64
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Offset
-	  The initial index from which to return the results.
 
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Prefix*/
+
+	// Prefix.
 	Prefix *string
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*Rir*/
+
+	// Rir.
 	Rir *string
-	/*Rirn*/
+
+	// Rirn.
 	Rirn *string
-	/*RirID*/
+
+	// RirID.
 	RirID *string
-	/*RirIDn*/
+
+	// RirIDn.
 	RirIDn *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
+
+	// Tenant.
+	Tenant *string
+
+	// Tenantn.
+	Tenantn *string
+
+	// TenantGroup.
+	TenantGroup *string
+
+	// TenantGroupn.
+	TenantGroupn *string
+
+	// TenantGroupID.
+	TenantGroupID *string
+
+	// TenantGroupIDn.
+	TenantGroupIDn *string
+
+	// TenantID.
+	TenantID *string
+
+	// TenantIDn.
+	TenantIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam aggregates list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesListParams) WithDefaults() *IpamAggregatesListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam aggregates list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam aggregates list params
@@ -498,6 +564,94 @@ func (o *IpamAggregatesListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
 }
 
+// WithTenant adds the tenant to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenant(tenant *string) *IpamAggregatesListParams {
+	o.SetTenant(tenant)
+	return o
+}
+
+// SetTenant adds the tenant to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenant(tenant *string) {
+	o.Tenant = tenant
+}
+
+// WithTenantn adds the tenantn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantn(tenantn *string) *IpamAggregatesListParams {
+	o.SetTenantn(tenantn)
+	return o
+}
+
+// SetTenantn adds the tenantN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantn(tenantn *string) {
+	o.Tenantn = tenantn
+}
+
+// WithTenantGroup adds the tenantGroup to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantGroup(tenantGroup *string) *IpamAggregatesListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupn adds the tenantGroupn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantGroupn(tenantGroupn *string) *IpamAggregatesListParams {
+	o.SetTenantGroupn(tenantGroupn)
+	return o
+}
+
+// SetTenantGroupn adds the tenantGroupN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantGroupn(tenantGroupn *string) {
+	o.TenantGroupn = tenantGroupn
+}
+
+// WithTenantGroupID adds the tenantGroupID to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantGroupID(tenantGroupID *string) *IpamAggregatesListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
+}
+
+// WithTenantGroupIDn adds the tenantGroupIDn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantGroupIDn(tenantGroupIDn *string) *IpamAggregatesListParams {
+	o.SetTenantGroupIDn(tenantGroupIDn)
+	return o
+}
+
+// SetTenantGroupIDn adds the tenantGroupIdN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantGroupIDn(tenantGroupIDn *string) {
+	o.TenantGroupIDn = tenantGroupIDn
+}
+
+// WithTenantID adds the tenantID to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantID(tenantID *string) *IpamAggregatesListParams {
+	o.SetTenantID(tenantID)
+	return o
+}
+
+// SetTenantID adds the tenantId to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantID(tenantID *string) {
+	o.TenantID = tenantID
+}
+
+// WithTenantIDn adds the tenantIDn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTenantIDn(tenantIDn *string) *IpamAggregatesListParams {
+	o.SetTenantIDn(tenantIDn)
+	return o
+}
+
+// SetTenantIDn adds the tenantIdN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTenantIDn(tenantIDn *string) {
+	o.TenantIDn = tenantIDn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -510,464 +664,629 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 		// query param created
 		var qrCreated string
+
 		if o.Created != nil {
 			qrCreated = *o.Created
 		}
 		qCreated := qrCreated
 		if qCreated != "" {
+
 			if err := r.SetQueryParam("created", qCreated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedGte != nil {
 
 		// query param created__gte
 		var qrCreatedGte string
+
 		if o.CreatedGte != nil {
 			qrCreatedGte = *o.CreatedGte
 		}
 		qCreatedGte := qrCreatedGte
 		if qCreatedGte != "" {
+
 			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedLte != nil {
 
 		// query param created__lte
 		var qrCreatedLte string
+
 		if o.CreatedLte != nil {
 			qrCreatedLte = *o.CreatedLte
 		}
 		qCreatedLte := qrCreatedLte
 		if qCreatedLte != "" {
+
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DateAdded != nil {
 
 		// query param date_added
 		var qrDateAdded string
+
 		if o.DateAdded != nil {
 			qrDateAdded = *o.DateAdded
 		}
 		qDateAdded := qrDateAdded
 		if qDateAdded != "" {
+
 			if err := r.SetQueryParam("date_added", qDateAdded); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DateAddedGt != nil {
 
 		// query param date_added__gt
 		var qrDateAddedGt string
+
 		if o.DateAddedGt != nil {
 			qrDateAddedGt = *o.DateAddedGt
 		}
 		qDateAddedGt := qrDateAddedGt
 		if qDateAddedGt != "" {
+
 			if err := r.SetQueryParam("date_added__gt", qDateAddedGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DateAddedGte != nil {
 
 		// query param date_added__gte
 		var qrDateAddedGte string
+
 		if o.DateAddedGte != nil {
 			qrDateAddedGte = *o.DateAddedGte
 		}
 		qDateAddedGte := qrDateAddedGte
 		if qDateAddedGte != "" {
+
 			if err := r.SetQueryParam("date_added__gte", qDateAddedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DateAddedLt != nil {
 
 		// query param date_added__lt
 		var qrDateAddedLt string
+
 		if o.DateAddedLt != nil {
 			qrDateAddedLt = *o.DateAddedLt
 		}
 		qDateAddedLt := qrDateAddedLt
 		if qDateAddedLt != "" {
+
 			if err := r.SetQueryParam("date_added__lt", qDateAddedLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DateAddedLte != nil {
 
 		// query param date_added__lte
 		var qrDateAddedLte string
+
 		if o.DateAddedLte != nil {
 			qrDateAddedLte = *o.DateAddedLte
 		}
 		qDateAddedLte := qrDateAddedLte
 		if qDateAddedLte != "" {
+
 			if err := r.SetQueryParam("date_added__lte", qDateAddedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DateAddedn != nil {
 
 		// query param date_added__n
 		var qrDateAddedn string
+
 		if o.DateAddedn != nil {
 			qrDateAddedn = *o.DateAddedn
 		}
 		qDateAddedn := qrDateAddedn
 		if qDateAddedn != "" {
+
 			if err := r.SetQueryParam("date_added__n", qDateAddedn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Family != nil {
 
 		// query param family
 		var qrFamily float64
+
 		if o.Family != nil {
 			qrFamily = *o.Family
 		}
 		qFamily := swag.FormatFloat64(qrFamily)
 		if qFamily != "" {
+
 			if err := r.SetQueryParam("family", qFamily); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdated != nil {
 
 		// query param last_updated
 		var qrLastUpdated string
+
 		if o.LastUpdated != nil {
 			qrLastUpdated = *o.LastUpdated
 		}
 		qLastUpdated := qrLastUpdated
 		if qLastUpdated != "" {
+
 			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
 		var qrLastUpdatedGte string
+
 		if o.LastUpdatedGte != nil {
 			qrLastUpdatedGte = *o.LastUpdatedGte
 		}
 		qLastUpdatedGte := qrLastUpdatedGte
 		if qLastUpdatedGte != "" {
+
 			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
 		var qrLastUpdatedLte string
+
 		if o.LastUpdatedLte != nil {
 			qrLastUpdatedLte = *o.LastUpdatedLte
 		}
 		qLastUpdatedLte := qrLastUpdatedLte
 		if qLastUpdatedLte != "" {
+
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Prefix != nil {
 
 		// query param prefix
 		var qrPrefix string
+
 		if o.Prefix != nil {
 			qrPrefix = *o.Prefix
 		}
 		qPrefix := qrPrefix
 		if qPrefix != "" {
+
 			if err := r.SetQueryParam("prefix", qPrefix); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Rir != nil {
 
 		// query param rir
 		var qrRir string
+
 		if o.Rir != nil {
 			qrRir = *o.Rir
 		}
 		qRir := qrRir
 		if qRir != "" {
+
 			if err := r.SetQueryParam("rir", qRir); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Rirn != nil {
 
 		// query param rir__n
 		var qrRirn string
+
 		if o.Rirn != nil {
 			qrRirn = *o.Rirn
 		}
 		qRirn := qrRirn
 		if qRirn != "" {
+
 			if err := r.SetQueryParam("rir__n", qRirn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RirID != nil {
 
 		// query param rir_id
 		var qrRirID string
+
 		if o.RirID != nil {
 			qrRirID = *o.RirID
 		}
 		qRirID := qrRirID
 		if qRirID != "" {
+
 			if err := r.SetQueryParam("rir_id", qRirID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RirIDn != nil {
 
 		// query param rir_id__n
 		var qrRirIDn string
+
 		if o.RirIDn != nil {
 			qrRirIDn = *o.RirIDn
 		}
 		qRirIDn := qrRirIDn
 		if qRirIDn != "" {
+
 			if err := r.SetQueryParam("rir_id__n", qRirIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.Tenant != nil {
+
+		// query param tenant
+		var qrTenant string
+
+		if o.Tenant != nil {
+			qrTenant = *o.Tenant
+		}
+		qTenant := qrTenant
+		if qTenant != "" {
+
+			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tenantn != nil {
+
+		// query param tenant__n
+		var qrTenantn string
+
+		if o.Tenantn != nil {
+			qrTenantn = *o.Tenantn
+		}
+		qTenantn := qrTenantn
+		if qTenantn != "" {
+
+			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupn != nil {
+
+		// query param tenant_group__n
+		var qrTenantGroupn string
+
+		if o.TenantGroupn != nil {
+			qrTenantGroupn = *o.TenantGroupn
+		}
+		qTenantGroupn := qrTenantGroupn
+		if qTenantGroupn != "" {
+
+			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupIDn != nil {
+
+		// query param tenant_group_id__n
+		var qrTenantGroupIDn string
+
+		if o.TenantGroupIDn != nil {
+			qrTenantGroupIDn = *o.TenantGroupIDn
+		}
+		qTenantGroupIDn := qrTenantGroupIDn
+		if qTenantGroupIDn != "" {
+
+			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantID != nil {
+
+		// query param tenant_id
+		var qrTenantID string
+
+		if o.TenantID != nil {
+			qrTenantID = *o.TenantID
+		}
+		qTenantID := qrTenantID
+		if qTenantID != "" {
+
+			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantIDn != nil {
+
+		// query param tenant_id__n
+		var qrTenantIDn string
+
+		if o.TenantIDn != nil {
+			qrTenantIDn = *o.TenantIDn
+		}
+		qTenantIDn := qrTenantIDn
+		if qTenantIDn != "" {
+
+			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
+				return err
+			}
+		}
 	}
 
 	if len(res) > 0 {

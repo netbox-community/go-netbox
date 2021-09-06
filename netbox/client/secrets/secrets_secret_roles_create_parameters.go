@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewSecretsSecretRolesCreateParams creates a new SecretsSecretRolesCreateParams object
-// with the default values initialized.
+// NewSecretsSecretRolesCreateParams creates a new SecretsSecretRolesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsSecretRolesCreateParams() *SecretsSecretRolesCreateParams {
-	var ()
 	return &SecretsSecretRolesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsSecretRolesCreateParamsWithTimeout creates a new SecretsSecretRolesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsSecretRolesCreateParamsWithTimeout(timeout time.Duration) *SecretsSecretRolesCreateParams {
-	var ()
 	return &SecretsSecretRolesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsSecretRolesCreateParamsWithContext creates a new SecretsSecretRolesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsSecretRolesCreateParamsWithContext(ctx context.Context) *SecretsSecretRolesCreateParams {
-	var ()
 	return &SecretsSecretRolesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsSecretRolesCreateParamsWithHTTPClient creates a new SecretsSecretRolesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsSecretRolesCreateParamsWithHTTPClient(client *http.Client) *SecretsSecretRolesCreateParams {
-	var ()
 	return &SecretsSecretRolesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsSecretRolesCreateParams contains all the parameters to send to the API endpoint
-for the secrets secret roles create operation typically these are written to a http.Request
+/* SecretsSecretRolesCreateParams contains all the parameters to send to the API endpoint
+   for the secrets secret roles create operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsSecretRolesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.SecretRole
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets secret roles create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretRolesCreateParams) WithDefaults() *SecretsSecretRolesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets secret roles create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretRolesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets secret roles create params
@@ -136,7 +150,6 @@ func (o *SecretsSecretRolesCreateParams) WriteToRequest(r runtime.ClientRequest,
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

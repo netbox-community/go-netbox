@@ -45,14 +45,7 @@ func (o *DcimInventoryItemsPartialUpdateReader) ReadResponse(response runtime.Cl
 		}
 		return result, nil
 	default:
-		result := NewDcimInventoryItemsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimInventoryItemsPartialUpdateOK() *DcimInventoryItemsPartialUpdateOK {
 	return &DcimInventoryItemsPartialUpdateOK{}
 }
 
-/*DcimInventoryItemsPartialUpdateOK handles this case with default header values.
+/* DcimInventoryItemsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimInventoryItemsPartialUpdateOK dcim inventory items partial update o k
 */
@@ -72,7 +65,6 @@ type DcimInventoryItemsPartialUpdateOK struct {
 func (o *DcimInventoryItemsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcimInventoryItemsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInventoryItemsPartialUpdateOK) GetPayload() *models.InventoryItem {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimInventoryItemsPartialUpdateOK) readResponse(response runtime.Client
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimInventoryItemsPartialUpdateDefault creates a DcimInventoryItemsPartialUpdateDefault with default headers values
-func NewDcimInventoryItemsPartialUpdateDefault(code int) *DcimInventoryItemsPartialUpdateDefault {
-	return &DcimInventoryItemsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimInventoryItemsPartialUpdateDefault handles this case with default header values.
-
-DcimInventoryItemsPartialUpdateDefault dcim inventory items partial update default
-*/
-type DcimInventoryItemsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim inventory items partial update default response
-func (o *DcimInventoryItemsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimInventoryItemsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcim_inventory-items_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimInventoryItemsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimInventoryItemsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

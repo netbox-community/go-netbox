@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -40,7 +41,14 @@ type WritableCable struct {
 	// Pattern: ^[0-9a-f]{6}$
 	Color string `json:"color,omitempty"`
 
-	// ID
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -62,11 +70,11 @@ type WritableCable struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Termination a
 	// Read Only: true
-	Terminationa map[string]string `json:"termination_a,omitempty"`
+	Terminationa map[string]*string `json:"termination_a,omitempty"`
 
 	// Termination a id
 	// Required: true
@@ -80,7 +88,7 @@ type WritableCable struct {
 
 	// Termination b
 	// Read Only: true
-	Terminationb map[string]string `json:"termination_b,omitempty"`
+	Terminationb map[string]*string `json:"termination_b,omitempty"`
 
 	// Termination b id
 	// Required: true
@@ -93,7 +101,7 @@ type WritableCable struct {
 	TerminationbType *string `json:"termination_b_type"`
 
 	// Type
-	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 smf smf-os1 smf-os2 aoc power]
+	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 cat7a cat8 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 mmf-om5 smf smf-os1 smf-os2 aoc power]
 	Type string `json:"type,omitempty"`
 
 	// Url
@@ -161,16 +169,15 @@ func (m *WritableCable) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableCable) validateColor(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Color) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("color", "body", string(m.Color), 6); err != nil {
+	if err := validate.MaxLength("color", "body", m.Color, 6); err != nil {
 		return err
 	}
 
-	if err := validate.Pattern("color", "body", string(m.Color), `^[0-9a-f]{6}$`); err != nil {
+	if err := validate.Pattern("color", "body", m.Color, `^[0-9a-f]{6}$`); err != nil {
 		return err
 	}
 
@@ -178,12 +185,11 @@ func (m *WritableCable) validateColor(formats strfmt.Registry) error {
 }
 
 func (m *WritableCable) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 100); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 100); err != nil {
 		return err
 	}
 
@@ -191,16 +197,15 @@ func (m *WritableCable) validateLabel(formats strfmt.Registry) error {
 }
 
 func (m *WritableCable) validateLength(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Length) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("length", "body", int64(*m.Length), 0, false); err != nil {
+	if err := validate.MinimumInt("length", "body", *m.Length, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("length", "body", int64(*m.Length), 32767, false); err != nil {
+	if err := validate.MaximumInt("length", "body", *m.Length, 32767, false); err != nil {
 		return err
 	}
 
@@ -243,7 +248,6 @@ func (m *WritableCable) validateLengthUnitEnum(path, location string, value stri
 }
 
 func (m *WritableCable) validateLengthUnit(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LengthUnit) { // not required
 		return nil
 	}
@@ -289,7 +293,6 @@ func (m *WritableCable) validateStatusEnum(path, location string, value string) 
 }
 
 func (m *WritableCable) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -303,7 +306,6 @@ func (m *WritableCable) validateStatus(formats strfmt.Registry) error {
 }
 
 func (m *WritableCable) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -333,11 +335,11 @@ func (m *WritableCable) validateTerminationaID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinimumInt("termination_a_id", "body", int64(*m.TerminationaID), 0, false); err != nil {
+	if err := validate.MinimumInt("termination_a_id", "body", *m.TerminationaID, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("termination_a_id", "body", int64(*m.TerminationaID), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("termination_a_id", "body", *m.TerminationaID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -359,11 +361,11 @@ func (m *WritableCable) validateTerminationbID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinimumInt("termination_b_id", "body", int64(*m.TerminationbID), 0, false); err != nil {
+	if err := validate.MinimumInt("termination_b_id", "body", *m.TerminationbID, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("termination_b_id", "body", int64(*m.TerminationbID), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("termination_b_id", "body", *m.TerminationbID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -383,7 +385,7 @@ var writableCableTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["cat3","cat5","cat5e","cat6","cat6a","cat7","dac-active","dac-passive","mrj21-trunk","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","smf","smf-os1","smf-os2","aoc","power"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["cat3","cat5","cat5e","cat6","cat6a","cat7","cat7a","cat8","dac-active","dac-passive","mrj21-trunk","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","mmf-om5","smf","smf-os1","smf-os2","aoc","power"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -411,14 +413,20 @@ const (
 	// WritableCableTypeCat7 captures enum value "cat7"
 	WritableCableTypeCat7 string = "cat7"
 
-	// WritableCableTypeDacActive captures enum value "dac-active"
-	WritableCableTypeDacActive string = "dac-active"
+	// WritableCableTypeCat7a captures enum value "cat7a"
+	WritableCableTypeCat7a string = "cat7a"
 
-	// WritableCableTypeDacPassive captures enum value "dac-passive"
-	WritableCableTypeDacPassive string = "dac-passive"
+	// WritableCableTypeCat8 captures enum value "cat8"
+	WritableCableTypeCat8 string = "cat8"
 
-	// WritableCableTypeMrj21Trunk captures enum value "mrj21-trunk"
-	WritableCableTypeMrj21Trunk string = "mrj21-trunk"
+	// WritableCableTypeDacDashActive captures enum value "dac-active"
+	WritableCableTypeDacDashActive string = "dac-active"
+
+	// WritableCableTypeDacDashPassive captures enum value "dac-passive"
+	WritableCableTypeDacDashPassive string = "dac-passive"
+
+	// WritableCableTypeMrj21DashTrunk captures enum value "mrj21-trunk"
+	WritableCableTypeMrj21DashTrunk string = "mrj21-trunk"
 
 	// WritableCableTypeCoaxial captures enum value "coaxial"
 	WritableCableTypeCoaxial string = "coaxial"
@@ -426,26 +434,29 @@ const (
 	// WritableCableTypeMmf captures enum value "mmf"
 	WritableCableTypeMmf string = "mmf"
 
-	// WritableCableTypeMmfOm1 captures enum value "mmf-om1"
-	WritableCableTypeMmfOm1 string = "mmf-om1"
+	// WritableCableTypeMmfDashOm1 captures enum value "mmf-om1"
+	WritableCableTypeMmfDashOm1 string = "mmf-om1"
 
-	// WritableCableTypeMmfOm2 captures enum value "mmf-om2"
-	WritableCableTypeMmfOm2 string = "mmf-om2"
+	// WritableCableTypeMmfDashOm2 captures enum value "mmf-om2"
+	WritableCableTypeMmfDashOm2 string = "mmf-om2"
 
-	// WritableCableTypeMmfOm3 captures enum value "mmf-om3"
-	WritableCableTypeMmfOm3 string = "mmf-om3"
+	// WritableCableTypeMmfDashOm3 captures enum value "mmf-om3"
+	WritableCableTypeMmfDashOm3 string = "mmf-om3"
 
-	// WritableCableTypeMmfOm4 captures enum value "mmf-om4"
-	WritableCableTypeMmfOm4 string = "mmf-om4"
+	// WritableCableTypeMmfDashOm4 captures enum value "mmf-om4"
+	WritableCableTypeMmfDashOm4 string = "mmf-om4"
+
+	// WritableCableTypeMmfDashOm5 captures enum value "mmf-om5"
+	WritableCableTypeMmfDashOm5 string = "mmf-om5"
 
 	// WritableCableTypeSmf captures enum value "smf"
 	WritableCableTypeSmf string = "smf"
 
-	// WritableCableTypeSmfOs1 captures enum value "smf-os1"
-	WritableCableTypeSmfOs1 string = "smf-os1"
+	// WritableCableTypeSmfDashOs1 captures enum value "smf-os1"
+	WritableCableTypeSmfDashOs1 string = "smf-os1"
 
-	// WritableCableTypeSmfOs2 captures enum value "smf-os2"
-	WritableCableTypeSmfOs2 string = "smf-os2"
+	// WritableCableTypeSmfDashOs2 captures enum value "smf-os2"
+	WritableCableTypeSmfDashOs2 string = "smf-os2"
 
 	// WritableCableTypeAoc captures enum value "aoc"
 	WritableCableTypeAoc string = "aoc"
@@ -463,7 +474,6 @@ func (m *WritableCable) validateTypeEnum(path, location string, value string) er
 }
 
 func (m *WritableCable) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -477,12 +487,100 @@ func (m *WritableCable) validateType(formats strfmt.Registry) error {
 }
 
 func (m *WritableCable) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable cable based on the context it is used
+func (m *WritableCable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTerminationa(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTerminationb(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableCable) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCable) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCable) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableCable) contextValidateTerminationa(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableCable) contextValidateTerminationb(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableCable) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

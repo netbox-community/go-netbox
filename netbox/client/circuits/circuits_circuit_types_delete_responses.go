@@ -41,7 +41,6 @@ func (o *CircuitsCircuitTypesDeleteReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -52,7 +51,7 @@ func NewCircuitsCircuitTypesDeleteNoContent() *CircuitsCircuitTypesDeleteNoConte
 	return &CircuitsCircuitTypesDeleteNoContent{}
 }
 
-/*CircuitsCircuitTypesDeleteNoContent handles this case with default header values.
+/* CircuitsCircuitTypesDeleteNoContent describes a response with status code 204, with default header values.
 
 CircuitsCircuitTypesDeleteNoContent circuits circuit types delete no content
 */

@@ -40,57 +40,235 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	UsersGroupsCreate(params *UsersGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsCreateCreated, error)
+	UsersConfigList(params *UsersConfigListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersConfigListOK, error)
 
-	UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsDeleteNoContent, error)
+	UsersGroupsBulkDelete(params *UsersGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkDeleteNoContent, error)
 
-	UsersGroupsList(params *UsersGroupsListParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsListOK, error)
+	UsersGroupsBulkPartialUpdate(params *UsersGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkPartialUpdateOK, error)
 
-	UsersGroupsPartialUpdate(params *UsersGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsPartialUpdateOK, error)
+	UsersGroupsBulkUpdate(params *UsersGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkUpdateOK, error)
 
-	UsersGroupsRead(params *UsersGroupsReadParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsReadOK, error)
+	UsersGroupsCreate(params *UsersGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsCreateCreated, error)
 
-	UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsUpdateOK, error)
+	UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsDeleteNoContent, error)
 
-	UsersPermissionsCreate(params *UsersPermissionsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsCreateCreated, error)
+	UsersGroupsList(params *UsersGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsListOK, error)
 
-	UsersPermissionsDelete(params *UsersPermissionsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsDeleteNoContent, error)
+	UsersGroupsPartialUpdate(params *UsersGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsPartialUpdateOK, error)
 
-	UsersPermissionsList(params *UsersPermissionsListParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsListOK, error)
+	UsersGroupsRead(params *UsersGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsReadOK, error)
 
-	UsersPermissionsPartialUpdate(params *UsersPermissionsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsPartialUpdateOK, error)
+	UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsUpdateOK, error)
 
-	UsersPermissionsRead(params *UsersPermissionsReadParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsReadOK, error)
+	UsersPermissionsBulkDelete(params *UsersPermissionsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkDeleteNoContent, error)
 
-	UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsUpdateOK, error)
+	UsersPermissionsBulkPartialUpdate(params *UsersPermissionsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkPartialUpdateOK, error)
 
-	UsersUsersCreate(params *UsersUsersCreateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersCreateCreated, error)
+	UsersPermissionsBulkUpdate(params *UsersPermissionsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkUpdateOK, error)
 
-	UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersDeleteNoContent, error)
+	UsersPermissionsCreate(params *UsersPermissionsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsCreateCreated, error)
 
-	UsersUsersList(params *UsersUsersListParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersListOK, error)
+	UsersPermissionsDelete(params *UsersPermissionsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsDeleteNoContent, error)
 
-	UsersUsersPartialUpdate(params *UsersUsersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersPartialUpdateOK, error)
+	UsersPermissionsList(params *UsersPermissionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsListOK, error)
 
-	UsersUsersRead(params *UsersUsersReadParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersReadOK, error)
+	UsersPermissionsPartialUpdate(params *UsersPermissionsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsPartialUpdateOK, error)
 
-	UsersUsersUpdate(params *UsersUsersUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersUpdateOK, error)
+	UsersPermissionsRead(params *UsersPermissionsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsReadOK, error)
+
+	UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsUpdateOK, error)
+
+	UsersUsersBulkDelete(params *UsersUsersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkDeleteNoContent, error)
+
+	UsersUsersBulkPartialUpdate(params *UsersUsersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkPartialUpdateOK, error)
+
+	UsersUsersBulkUpdate(params *UsersUsersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkUpdateOK, error)
+
+	UsersUsersCreate(params *UsersUsersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersCreateCreated, error)
+
+	UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersDeleteNoContent, error)
+
+	UsersUsersList(params *UsersUsersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersListOK, error)
+
+	UsersUsersPartialUpdate(params *UsersUsersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersPartialUpdateOK, error)
+
+	UsersUsersRead(params *UsersUsersReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersReadOK, error)
+
+	UsersUsersUpdate(params *UsersUsersUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
+  UsersConfigList Return the UserConfig for the currently authenticated User.
+*/
+func (a *Client) UsersConfigList(params *UsersConfigListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersConfigListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersConfigListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_config_list",
+		Method:             "GET",
+		PathPattern:        "/users/config/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersConfigListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersConfigListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_config_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersGroupsBulkDelete users groups bulk delete API
+*/
+func (a *Client) UsersGroupsBulkDelete(params *UsersGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersGroupsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_groups_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/users/groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersGroupsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersGroupsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_groups_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersGroupsBulkPartialUpdate users groups bulk partial update API
+*/
+func (a *Client) UsersGroupsBulkPartialUpdate(params *UsersGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersGroupsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_groups_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/users/groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersGroupsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersGroupsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_groups_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersGroupsBulkUpdate users groups bulk update API
+*/
+func (a *Client) UsersGroupsBulkUpdate(params *UsersGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersGroupsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_groups_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/users/groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersGroupsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersGroupsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_groups_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
   UsersGroupsCreate users groups create API
 */
-func (a *Client) UsersGroupsCreate(params *UsersGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsCreateCreated, error) {
+func (a *Client) UsersGroupsCreate(params *UsersGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersGroupsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_groups_create",
 		Method:             "POST",
 		PathPattern:        "/users/groups/",
@@ -102,7 +280,12 @@ func (a *Client) UsersGroupsCreate(params *UsersGroupsCreateParams, authInfo run
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -111,20 +294,20 @@ func (a *Client) UsersGroupsCreate(params *UsersGroupsCreateParams, authInfo run
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*UsersGroupsCreateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_groups_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   UsersGroupsDelete users groups delete API
 */
-func (a *Client) UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsDeleteNoContent, error) {
+func (a *Client) UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersGroupsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_groups_delete",
 		Method:             "DELETE",
 		PathPattern:        "/users/groups/{id}/",
@@ -136,7 +319,12 @@ func (a *Client) UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo run
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -153,13 +341,12 @@ func (a *Client) UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo run
 /*
   UsersGroupsList users groups list API
 */
-func (a *Client) UsersGroupsList(params *UsersGroupsListParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsListOK, error) {
+func (a *Client) UsersGroupsList(params *UsersGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersGroupsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_groups_list",
 		Method:             "GET",
 		PathPattern:        "/users/groups/",
@@ -171,7 +358,12 @@ func (a *Client) UsersGroupsList(params *UsersGroupsListParams, authInfo runtime
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -188,13 +380,12 @@ func (a *Client) UsersGroupsList(params *UsersGroupsListParams, authInfo runtime
 /*
   UsersGroupsPartialUpdate users groups partial update API
 */
-func (a *Client) UsersGroupsPartialUpdate(params *UsersGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsPartialUpdateOK, error) {
+func (a *Client) UsersGroupsPartialUpdate(params *UsersGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersGroupsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_groups_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/users/groups/{id}/",
@@ -206,7 +397,12 @@ func (a *Client) UsersGroupsPartialUpdate(params *UsersGroupsPartialUpdateParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -215,20 +411,20 @@ func (a *Client) UsersGroupsPartialUpdate(params *UsersGroupsPartialUpdateParams
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*UsersGroupsPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_groups_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   UsersGroupsRead users groups read API
 */
-func (a *Client) UsersGroupsRead(params *UsersGroupsReadParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsReadOK, error) {
+func (a *Client) UsersGroupsRead(params *UsersGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersGroupsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_groups_read",
 		Method:             "GET",
 		PathPattern:        "/users/groups/{id}/",
@@ -240,7 +436,12 @@ func (a *Client) UsersGroupsRead(params *UsersGroupsReadParams, authInfo runtime
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -257,13 +458,12 @@ func (a *Client) UsersGroupsRead(params *UsersGroupsReadParams, authInfo runtime
 /*
   UsersGroupsUpdate users groups update API
 */
-func (a *Client) UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersGroupsUpdateOK, error) {
+func (a *Client) UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersGroupsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_groups_update",
 		Method:             "PUT",
 		PathPattern:        "/users/groups/{id}/",
@@ -275,7 +475,12 @@ func (a *Client) UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo run
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -284,20 +489,137 @@ func (a *Client) UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo run
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*UsersGroupsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_groups_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersPermissionsBulkDelete users permissions bulk delete API
+*/
+func (a *Client) UsersPermissionsBulkDelete(params *UsersPermissionsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersPermissionsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_permissions_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/users/permissions/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersPermissionsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersPermissionsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_permissions_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersPermissionsBulkPartialUpdate users permissions bulk partial update API
+*/
+func (a *Client) UsersPermissionsBulkPartialUpdate(params *UsersPermissionsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersPermissionsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_permissions_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/users/permissions/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersPermissionsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersPermissionsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_permissions_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersPermissionsBulkUpdate users permissions bulk update API
+*/
+func (a *Client) UsersPermissionsBulkUpdate(params *UsersPermissionsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersPermissionsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_permissions_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/users/permissions/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersPermissionsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersPermissionsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_permissions_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   UsersPermissionsCreate users permissions create API
 */
-func (a *Client) UsersPermissionsCreate(params *UsersPermissionsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsCreateCreated, error) {
+func (a *Client) UsersPermissionsCreate(params *UsersPermissionsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersPermissionsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_permissions_create",
 		Method:             "POST",
 		PathPattern:        "/users/permissions/",
@@ -309,7 +631,12 @@ func (a *Client) UsersPermissionsCreate(params *UsersPermissionsCreateParams, au
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -318,20 +645,20 @@ func (a *Client) UsersPermissionsCreate(params *UsersPermissionsCreateParams, au
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*UsersPermissionsCreateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_permissions_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   UsersPermissionsDelete users permissions delete API
 */
-func (a *Client) UsersPermissionsDelete(params *UsersPermissionsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsDeleteNoContent, error) {
+func (a *Client) UsersPermissionsDelete(params *UsersPermissionsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersPermissionsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_permissions_delete",
 		Method:             "DELETE",
 		PathPattern:        "/users/permissions/{id}/",
@@ -343,7 +670,12 @@ func (a *Client) UsersPermissionsDelete(params *UsersPermissionsDeleteParams, au
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -360,13 +692,12 @@ func (a *Client) UsersPermissionsDelete(params *UsersPermissionsDeleteParams, au
 /*
   UsersPermissionsList users permissions list API
 */
-func (a *Client) UsersPermissionsList(params *UsersPermissionsListParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsListOK, error) {
+func (a *Client) UsersPermissionsList(params *UsersPermissionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersPermissionsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_permissions_list",
 		Method:             "GET",
 		PathPattern:        "/users/permissions/",
@@ -378,7 +709,12 @@ func (a *Client) UsersPermissionsList(params *UsersPermissionsListParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -395,13 +731,12 @@ func (a *Client) UsersPermissionsList(params *UsersPermissionsListParams, authIn
 /*
   UsersPermissionsPartialUpdate users permissions partial update API
 */
-func (a *Client) UsersPermissionsPartialUpdate(params *UsersPermissionsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsPartialUpdateOK, error) {
+func (a *Client) UsersPermissionsPartialUpdate(params *UsersPermissionsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersPermissionsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_permissions_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/users/permissions/{id}/",
@@ -413,7 +748,12 @@ func (a *Client) UsersPermissionsPartialUpdate(params *UsersPermissionsPartialUp
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -422,20 +762,20 @@ func (a *Client) UsersPermissionsPartialUpdate(params *UsersPermissionsPartialUp
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*UsersPermissionsPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_permissions_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   UsersPermissionsRead users permissions read API
 */
-func (a *Client) UsersPermissionsRead(params *UsersPermissionsReadParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsReadOK, error) {
+func (a *Client) UsersPermissionsRead(params *UsersPermissionsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersPermissionsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_permissions_read",
 		Method:             "GET",
 		PathPattern:        "/users/permissions/{id}/",
@@ -447,7 +787,12 @@ func (a *Client) UsersPermissionsRead(params *UsersPermissionsReadParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -464,13 +809,12 @@ func (a *Client) UsersPermissionsRead(params *UsersPermissionsReadParams, authIn
 /*
   UsersPermissionsUpdate users permissions update API
 */
-func (a *Client) UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersPermissionsUpdateOK, error) {
+func (a *Client) UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersPermissionsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_permissions_update",
 		Method:             "PUT",
 		PathPattern:        "/users/permissions/{id}/",
@@ -482,7 +826,12 @@ func (a *Client) UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, au
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -491,20 +840,137 @@ func (a *Client) UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, au
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*UsersPermissionsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_permissions_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersUsersBulkDelete users users bulk delete API
+*/
+func (a *Client) UsersUsersBulkDelete(params *UsersUsersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersUsersBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_users_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/users/users/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersUsersBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersUsersBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_users_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersUsersBulkPartialUpdate users users bulk partial update API
+*/
+func (a *Client) UsersUsersBulkPartialUpdate(params *UsersUsersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersUsersBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_users_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/users/users/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersUsersBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersUsersBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_users_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersUsersBulkUpdate users users bulk update API
+*/
+func (a *Client) UsersUsersBulkUpdate(params *UsersUsersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersUsersBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_users_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/users/users/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersUsersBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersUsersBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_users_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   UsersUsersCreate users users create API
 */
-func (a *Client) UsersUsersCreate(params *UsersUsersCreateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersCreateCreated, error) {
+func (a *Client) UsersUsersCreate(params *UsersUsersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersUsersCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_users_create",
 		Method:             "POST",
 		PathPattern:        "/users/users/",
@@ -516,7 +982,12 @@ func (a *Client) UsersUsersCreate(params *UsersUsersCreateParams, authInfo runti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -525,20 +996,20 @@ func (a *Client) UsersUsersCreate(params *UsersUsersCreateParams, authInfo runti
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*UsersUsersCreateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_users_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   UsersUsersDelete users users delete API
 */
-func (a *Client) UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersDeleteNoContent, error) {
+func (a *Client) UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersUsersDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_users_delete",
 		Method:             "DELETE",
 		PathPattern:        "/users/users/{id}/",
@@ -550,7 +1021,12 @@ func (a *Client) UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -567,13 +1043,12 @@ func (a *Client) UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runti
 /*
   UsersUsersList users users list API
 */
-func (a *Client) UsersUsersList(params *UsersUsersListParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersListOK, error) {
+func (a *Client) UsersUsersList(params *UsersUsersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersUsersListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_users_list",
 		Method:             "GET",
 		PathPattern:        "/users/users/",
@@ -585,7 +1060,12 @@ func (a *Client) UsersUsersList(params *UsersUsersListParams, authInfo runtime.C
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -602,13 +1082,12 @@ func (a *Client) UsersUsersList(params *UsersUsersListParams, authInfo runtime.C
 /*
   UsersUsersPartialUpdate users users partial update API
 */
-func (a *Client) UsersUsersPartialUpdate(params *UsersUsersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersPartialUpdateOK, error) {
+func (a *Client) UsersUsersPartialUpdate(params *UsersUsersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersUsersPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_users_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/users/users/{id}/",
@@ -620,7 +1099,12 @@ func (a *Client) UsersUsersPartialUpdate(params *UsersUsersPartialUpdateParams, 
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -629,20 +1113,20 @@ func (a *Client) UsersUsersPartialUpdate(params *UsersUsersPartialUpdateParams, 
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*UsersUsersPartialUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_users_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
   UsersUsersRead users users read API
 */
-func (a *Client) UsersUsersRead(params *UsersUsersReadParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersReadOK, error) {
+func (a *Client) UsersUsersRead(params *UsersUsersReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersUsersReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_users_read",
 		Method:             "GET",
 		PathPattern:        "/users/users/{id}/",
@@ -654,7 +1138,12 @@ func (a *Client) UsersUsersRead(params *UsersUsersReadParams, authInfo runtime.C
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -671,13 +1160,12 @@ func (a *Client) UsersUsersRead(params *UsersUsersReadParams, authInfo runtime.C
 /*
   UsersUsersUpdate users users update API
 */
-func (a *Client) UsersUsersUpdate(params *UsersUsersUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*UsersUsersUpdateOK, error) {
+func (a *Client) UsersUsersUpdate(params *UsersUsersUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUsersUsersUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "users_users_update",
 		Method:             "PUT",
 		PathPattern:        "/users/users/{id}/",
@@ -689,7 +1177,12 @@ func (a *Client) UsersUsersUpdate(params *UsersUsersUpdateParams, authInfo runti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -698,8 +1191,9 @@ func (a *Client) UsersUsersUpdate(params *UsersUsersUpdateParams, authInfo runti
 		return success, nil
 	}
 	// unexpected success response
-	unexpectedSuccess := result.(*UsersUsersUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_users_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 // SetTransport changes the transport on the client

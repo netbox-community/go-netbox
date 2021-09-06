@@ -45,14 +45,7 @@ func (o *TenancyTenantGroupsPartialUpdateReader) ReadResponse(response runtime.C
 		}
 		return result, nil
 	default:
-		result := NewTenancyTenantGroupsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewTenancyTenantGroupsPartialUpdateOK() *TenancyTenantGroupsPartialUpdateOK
 	return &TenancyTenantGroupsPartialUpdateOK{}
 }
 
-/*TenancyTenantGroupsPartialUpdateOK handles this case with default header values.
+/* TenancyTenantGroupsPartialUpdateOK describes a response with status code 200, with default header values.
 
 TenancyTenantGroupsPartialUpdateOK tenancy tenant groups partial update o k
 */
@@ -72,7 +65,6 @@ type TenancyTenantGroupsPartialUpdateOK struct {
 func (o *TenancyTenantGroupsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *TenancyTenantGroupsPartialUpdateOK) GetPayload() *models.TenantGroup {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *TenancyTenantGroupsPartialUpdateOK) readResponse(response runtime.Clien
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewTenancyTenantGroupsPartialUpdateDefault creates a TenancyTenantGroupsPartialUpdateDefault with default headers values
-func NewTenancyTenantGroupsPartialUpdateDefault(code int) *TenancyTenantGroupsPartialUpdateDefault {
-	return &TenancyTenantGroupsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*TenancyTenantGroupsPartialUpdateDefault handles this case with default header values.
-
-TenancyTenantGroupsPartialUpdateDefault tenancy tenant groups partial update default
-*/
-type TenancyTenantGroupsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the tenancy tenant groups partial update default response
-func (o *TenancyTenantGroupsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *TenancyTenantGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *TenancyTenantGroupsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *TenancyTenantGroupsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -45,14 +45,7 @@ func (o *IpamVlansUpdateReader) ReadResponse(response runtime.ClientResponse, co
 		}
 		return result, nil
 	default:
-		result := NewIpamVlansUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewIpamVlansUpdateOK() *IpamVlansUpdateOK {
 	return &IpamVlansUpdateOK{}
 }
 
-/*IpamVlansUpdateOK handles this case with default header values.
+/* IpamVlansUpdateOK describes a response with status code 200, with default header values.
 
 IpamVlansUpdateOK ipam vlans update o k
 */
@@ -72,7 +65,6 @@ type IpamVlansUpdateOK struct {
 func (o *IpamVlansUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vlans/{id}/][%d] ipamVlansUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVlansUpdateOK) GetPayload() *models.VLAN {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *IpamVlansUpdateOK) readResponse(response runtime.ClientResponse, consum
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewIpamVlansUpdateDefault creates a IpamVlansUpdateDefault with default headers values
-func NewIpamVlansUpdateDefault(code int) *IpamVlansUpdateDefault {
-	return &IpamVlansUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*IpamVlansUpdateDefault handles this case with default header values.
-
-IpamVlansUpdateDefault ipam vlans update default
-*/
-type IpamVlansUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the ipam vlans update default response
-func (o *IpamVlansUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *IpamVlansUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /ipam/vlans/{id}/][%d] ipam_vlans_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *IpamVlansUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *IpamVlansUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

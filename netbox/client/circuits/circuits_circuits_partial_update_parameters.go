@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewCircuitsCircuitsPartialUpdateParams creates a new CircuitsCircuitsPartialUpdateParams object
-// with the default values initialized.
+// NewCircuitsCircuitsPartialUpdateParams creates a new CircuitsCircuitsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitsPartialUpdateParams() *CircuitsCircuitsPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitsPartialUpdateParamsWithTimeout creates a new CircuitsCircuitsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitsPartialUpdateParamsWithTimeout(timeout time.Duration) *CircuitsCircuitsPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitsPartialUpdateParamsWithContext creates a new CircuitsCircuitsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitsPartialUpdateParamsWithContext(ctx context.Context) *CircuitsCircuitsPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitsPartialUpdateParamsWithHTTPClient creates a new CircuitsCircuitsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitsPartialUpdateParamsWithHTTPClient(client *http.Client) *CircuitsCircuitsPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the circuits circuits partial update operation typically these are written to a http.Request
+/* CircuitsCircuitsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the circuits circuits partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCircuit
-	/*ID
-	  A unique integer value identifying this circuit.
 
+	/* ID.
+
+	   A unique integer value identifying this circuit.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuits partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitsPartialUpdateParams) WithDefaults() *CircuitsCircuitsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuits partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuits partial update params
@@ -153,7 +168,6 @@ func (o *CircuitsCircuitsPartialUpdateParams) WriteToRequest(r runtime.ClientReq
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

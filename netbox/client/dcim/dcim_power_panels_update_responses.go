@@ -45,14 +45,7 @@ func (o *DcimPowerPanelsUpdateReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		result := NewDcimPowerPanelsUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimPowerPanelsUpdateOK() *DcimPowerPanelsUpdateOK {
 	return &DcimPowerPanelsUpdateOK{}
 }
 
-/*DcimPowerPanelsUpdateOK handles this case with default header values.
+/* DcimPowerPanelsUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPanelsUpdateOK dcim power panels update o k
 */
@@ -72,7 +65,6 @@ type DcimPowerPanelsUpdateOK struct {
 func (o *DcimPowerPanelsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-panels/{id}/][%d] dcimPowerPanelsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPanelsUpdateOK) GetPayload() *models.PowerPanel {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimPowerPanelsUpdateOK) readResponse(response runtime.ClientResponse, 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimPowerPanelsUpdateDefault creates a DcimPowerPanelsUpdateDefault with default headers values
-func NewDcimPowerPanelsUpdateDefault(code int) *DcimPowerPanelsUpdateDefault {
-	return &DcimPowerPanelsUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimPowerPanelsUpdateDefault handles this case with default header values.
-
-DcimPowerPanelsUpdateDefault dcim power panels update default
-*/
-type DcimPowerPanelsUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim power panels update default response
-func (o *DcimPowerPanelsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimPowerPanelsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/power-panels/{id}/][%d] dcim_power-panels_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimPowerPanelsUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimPowerPanelsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimPowerPanelsCreateParams creates a new DcimPowerPanelsCreateParams object
-// with the default values initialized.
+// NewDcimPowerPanelsCreateParams creates a new DcimPowerPanelsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerPanelsCreateParams() *DcimPowerPanelsCreateParams {
-	var ()
 	return &DcimPowerPanelsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerPanelsCreateParamsWithTimeout creates a new DcimPowerPanelsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerPanelsCreateParamsWithTimeout(timeout time.Duration) *DcimPowerPanelsCreateParams {
-	var ()
 	return &DcimPowerPanelsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerPanelsCreateParamsWithContext creates a new DcimPowerPanelsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerPanelsCreateParamsWithContext(ctx context.Context) *DcimPowerPanelsCreateParams {
-	var ()
 	return &DcimPowerPanelsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerPanelsCreateParamsWithHTTPClient creates a new DcimPowerPanelsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerPanelsCreateParamsWithHTTPClient(client *http.Client) *DcimPowerPanelsCreateParams {
-	var ()
 	return &DcimPowerPanelsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerPanelsCreateParams contains all the parameters to send to the API endpoint
-for the dcim power panels create operation typically these are written to a http.Request
+/* DcimPowerPanelsCreateParams contains all the parameters to send to the API endpoint
+   for the dcim power panels create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerPanelsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerPanel
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power panels create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPanelsCreateParams) WithDefaults() *DcimPowerPanelsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power panels create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPanelsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power panels create params
@@ -136,7 +150,6 @@ func (o *DcimPowerPanelsCreateParams) WriteToRequest(r runtime.ClientRequest, re
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

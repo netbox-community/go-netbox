@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimFrontPortsReadParams creates a new DcimFrontPortsReadParams object
-// with the default values initialized.
+// NewDcimFrontPortsReadParams creates a new DcimFrontPortsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimFrontPortsReadParams() *DcimFrontPortsReadParams {
-	var ()
 	return &DcimFrontPortsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimFrontPortsReadParamsWithTimeout creates a new DcimFrontPortsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimFrontPortsReadParamsWithTimeout(timeout time.Duration) *DcimFrontPortsReadParams {
-	var ()
 	return &DcimFrontPortsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimFrontPortsReadParamsWithContext creates a new DcimFrontPortsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimFrontPortsReadParamsWithContext(ctx context.Context) *DcimFrontPortsReadParams {
-	var ()
 	return &DcimFrontPortsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimFrontPortsReadParamsWithHTTPClient creates a new DcimFrontPortsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimFrontPortsReadParamsWithHTTPClient(client *http.Client) *DcimFrontPortsReadParams {
-	var ()
 	return &DcimFrontPortsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimFrontPortsReadParams contains all the parameters to send to the API endpoint
-for the dcim front ports read operation typically these are written to a http.Request
+/* DcimFrontPortsReadParams contains all the parameters to send to the API endpoint
+   for the dcim front ports read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimFrontPortsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this front port.
+	/* ID.
 
+	   A unique integer value identifying this front port.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim front ports read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimFrontPortsReadParams) WithDefaults() *DcimFrontPortsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim front ports read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimFrontPortsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim front ports read params

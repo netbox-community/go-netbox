@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPowerFeedsDeleteParams creates a new DcimPowerFeedsDeleteParams object
-// with the default values initialized.
+// NewDcimPowerFeedsDeleteParams creates a new DcimPowerFeedsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerFeedsDeleteParams() *DcimPowerFeedsDeleteParams {
-	var ()
 	return &DcimPowerFeedsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerFeedsDeleteParamsWithTimeout creates a new DcimPowerFeedsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerFeedsDeleteParamsWithTimeout(timeout time.Duration) *DcimPowerFeedsDeleteParams {
-	var ()
 	return &DcimPowerFeedsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerFeedsDeleteParamsWithContext creates a new DcimPowerFeedsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerFeedsDeleteParamsWithContext(ctx context.Context) *DcimPowerFeedsDeleteParams {
-	var ()
 	return &DcimPowerFeedsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerFeedsDeleteParamsWithHTTPClient creates a new DcimPowerFeedsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerFeedsDeleteParamsWithHTTPClient(client *http.Client) *DcimPowerFeedsDeleteParams {
-	var ()
 	return &DcimPowerFeedsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerFeedsDeleteParams contains all the parameters to send to the API endpoint
-for the dcim power feeds delete operation typically these are written to a http.Request
+/* DcimPowerFeedsDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim power feeds delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerFeedsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this power feed.
+	/* ID.
 
+	   A unique integer value identifying this power feed.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power feeds delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsDeleteParams) WithDefaults() *DcimPowerFeedsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power feeds delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power feeds delete params

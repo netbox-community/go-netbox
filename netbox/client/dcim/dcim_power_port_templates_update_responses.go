@@ -45,14 +45,7 @@ func (o *DcimPowerPortTemplatesUpdateReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		result := NewDcimPowerPortTemplatesUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimPowerPortTemplatesUpdateOK() *DcimPowerPortTemplatesUpdateOK {
 	return &DcimPowerPortTemplatesUpdateOK{}
 }
 
-/*DcimPowerPortTemplatesUpdateOK handles this case with default header values.
+/* DcimPowerPortTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPortTemplatesUpdateOK dcim power port templates update o k
 */
@@ -72,7 +65,6 @@ type DcimPowerPortTemplatesUpdateOK struct {
 func (o *DcimPowerPortTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPortTemplatesUpdateOK) GetPayload() *models.PowerPortTemplate {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimPowerPortTemplatesUpdateOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimPowerPortTemplatesUpdateDefault creates a DcimPowerPortTemplatesUpdateDefault with default headers values
-func NewDcimPowerPortTemplatesUpdateDefault(code int) *DcimPowerPortTemplatesUpdateDefault {
-	return &DcimPowerPortTemplatesUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimPowerPortTemplatesUpdateDefault handles this case with default header values.
-
-DcimPowerPortTemplatesUpdateDefault dcim power port templates update default
-*/
-type DcimPowerPortTemplatesUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim power port templates update default response
-func (o *DcimPowerPortTemplatesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimPowerPortTemplatesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimPowerPortTemplatesUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimPowerPortTemplatesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

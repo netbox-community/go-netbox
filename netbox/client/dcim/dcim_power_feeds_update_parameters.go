@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimPowerFeedsUpdateParams creates a new DcimPowerFeedsUpdateParams object
-// with the default values initialized.
+// NewDcimPowerFeedsUpdateParams creates a new DcimPowerFeedsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerFeedsUpdateParams() *DcimPowerFeedsUpdateParams {
-	var ()
 	return &DcimPowerFeedsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerFeedsUpdateParamsWithTimeout creates a new DcimPowerFeedsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerFeedsUpdateParamsWithTimeout(timeout time.Duration) *DcimPowerFeedsUpdateParams {
-	var ()
 	return &DcimPowerFeedsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerFeedsUpdateParamsWithContext creates a new DcimPowerFeedsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerFeedsUpdateParamsWithContext(ctx context.Context) *DcimPowerFeedsUpdateParams {
-	var ()
 	return &DcimPowerFeedsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerFeedsUpdateParamsWithHTTPClient creates a new DcimPowerFeedsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerFeedsUpdateParamsWithHTTPClient(client *http.Client) *DcimPowerFeedsUpdateParams {
-	var ()
 	return &DcimPowerFeedsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerFeedsUpdateParams contains all the parameters to send to the API endpoint
-for the dcim power feeds update operation typically these are written to a http.Request
+/* DcimPowerFeedsUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim power feeds update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerFeedsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerFeed
-	/*ID
-	  A unique integer value identifying this power feed.
 
+	/* ID.
+
+	   A unique integer value identifying this power feed.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power feeds update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsUpdateParams) WithDefaults() *DcimPowerFeedsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power feeds update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power feeds update params
@@ -153,7 +168,6 @@ func (o *DcimPowerFeedsUpdateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

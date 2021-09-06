@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimPowerPortsCreateParams creates a new DcimPowerPortsCreateParams object
-// with the default values initialized.
+// NewDcimPowerPortsCreateParams creates a new DcimPowerPortsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerPortsCreateParams() *DcimPowerPortsCreateParams {
-	var ()
 	return &DcimPowerPortsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerPortsCreateParamsWithTimeout creates a new DcimPowerPortsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerPortsCreateParamsWithTimeout(timeout time.Duration) *DcimPowerPortsCreateParams {
-	var ()
 	return &DcimPowerPortsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerPortsCreateParamsWithContext creates a new DcimPowerPortsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerPortsCreateParamsWithContext(ctx context.Context) *DcimPowerPortsCreateParams {
-	var ()
 	return &DcimPowerPortsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerPortsCreateParamsWithHTTPClient creates a new DcimPowerPortsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerPortsCreateParamsWithHTTPClient(client *http.Client) *DcimPowerPortsCreateParams {
-	var ()
 	return &DcimPowerPortsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerPortsCreateParams contains all the parameters to send to the API endpoint
-for the dcim power ports create operation typically these are written to a http.Request
+/* DcimPowerPortsCreateParams contains all the parameters to send to the API endpoint
+   for the dcim power ports create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerPortsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerPort
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power ports create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortsCreateParams) WithDefaults() *DcimPowerPortsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power ports create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power ports create params
@@ -136,7 +150,6 @@ func (o *DcimPowerPortsCreateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

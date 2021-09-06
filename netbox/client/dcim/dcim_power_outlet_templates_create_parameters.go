@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimPowerOutletTemplatesCreateParams creates a new DcimPowerOutletTemplatesCreateParams object
-// with the default values initialized.
+// NewDcimPowerOutletTemplatesCreateParams creates a new DcimPowerOutletTemplatesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerOutletTemplatesCreateParams() *DcimPowerOutletTemplatesCreateParams {
-	var ()
 	return &DcimPowerOutletTemplatesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerOutletTemplatesCreateParamsWithTimeout creates a new DcimPowerOutletTemplatesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerOutletTemplatesCreateParamsWithTimeout(timeout time.Duration) *DcimPowerOutletTemplatesCreateParams {
-	var ()
 	return &DcimPowerOutletTemplatesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerOutletTemplatesCreateParamsWithContext creates a new DcimPowerOutletTemplatesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerOutletTemplatesCreateParamsWithContext(ctx context.Context) *DcimPowerOutletTemplatesCreateParams {
-	var ()
 	return &DcimPowerOutletTemplatesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerOutletTemplatesCreateParamsWithHTTPClient creates a new DcimPowerOutletTemplatesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerOutletTemplatesCreateParamsWithHTTPClient(client *http.Client) *DcimPowerOutletTemplatesCreateParams {
-	var ()
 	return &DcimPowerOutletTemplatesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerOutletTemplatesCreateParams contains all the parameters to send to the API endpoint
-for the dcim power outlet templates create operation typically these are written to a http.Request
+/* DcimPowerOutletTemplatesCreateParams contains all the parameters to send to the API endpoint
+   for the dcim power outlet templates create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerOutletTemplatesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerOutletTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power outlet templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletTemplatesCreateParams) WithDefaults() *DcimPowerOutletTemplatesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power outlet templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletTemplatesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power outlet templates create params
@@ -136,7 +150,6 @@ func (o *DcimPowerOutletTemplatesCreateParams) WriteToRequest(r runtime.ClientRe
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

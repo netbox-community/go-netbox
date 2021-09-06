@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimFrontPortTemplatesCreateParams creates a new DcimFrontPortTemplatesCreateParams object
-// with the default values initialized.
+// NewDcimFrontPortTemplatesCreateParams creates a new DcimFrontPortTemplatesCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimFrontPortTemplatesCreateParams() *DcimFrontPortTemplatesCreateParams {
-	var ()
 	return &DcimFrontPortTemplatesCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimFrontPortTemplatesCreateParamsWithTimeout creates a new DcimFrontPortTemplatesCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimFrontPortTemplatesCreateParamsWithTimeout(timeout time.Duration) *DcimFrontPortTemplatesCreateParams {
-	var ()
 	return &DcimFrontPortTemplatesCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimFrontPortTemplatesCreateParamsWithContext creates a new DcimFrontPortTemplatesCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimFrontPortTemplatesCreateParamsWithContext(ctx context.Context) *DcimFrontPortTemplatesCreateParams {
-	var ()
 	return &DcimFrontPortTemplatesCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimFrontPortTemplatesCreateParamsWithHTTPClient creates a new DcimFrontPortTemplatesCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimFrontPortTemplatesCreateParamsWithHTTPClient(client *http.Client) *DcimFrontPortTemplatesCreateParams {
-	var ()
 	return &DcimFrontPortTemplatesCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimFrontPortTemplatesCreateParams contains all the parameters to send to the API endpoint
-for the dcim front port templates create operation typically these are written to a http.Request
+/* DcimFrontPortTemplatesCreateParams contains all the parameters to send to the API endpoint
+   for the dcim front port templates create operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimFrontPortTemplatesCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableFrontPortTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim front port templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimFrontPortTemplatesCreateParams) WithDefaults() *DcimFrontPortTemplatesCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim front port templates create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimFrontPortTemplatesCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim front port templates create params
@@ -136,7 +150,6 @@ func (o *DcimFrontPortTemplatesCreateParams) WriteToRequest(r runtime.ClientRequ
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

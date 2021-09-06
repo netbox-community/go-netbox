@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -48,7 +49,6 @@ func (o *VirtualizationClusterGroupsListReader) ReadResponse(response runtime.Cl
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -59,7 +59,7 @@ func NewVirtualizationClusterGroupsListOK() *VirtualizationClusterGroupsListOK {
 	return &VirtualizationClusterGroupsListOK{}
 }
 
-/*VirtualizationClusterGroupsListOK handles this case with default header values.
+/* VirtualizationClusterGroupsListOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterGroupsListOK virtualization cluster groups list o k
 */
@@ -70,7 +70,6 @@ type VirtualizationClusterGroupsListOK struct {
 func (o *VirtualizationClusterGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-groups/][%d] virtualizationClusterGroupsListOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsListOK) GetPayload() *VirtualizationClusterGroupsListOKBody {
 	return o.Payload
 }
@@ -145,7 +144,6 @@ func (o *VirtualizationClusterGroupsListOKBody) validateCount(formats strfmt.Reg
 }
 
 func (o *VirtualizationClusterGroupsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -158,7 +156,6 @@ func (o *VirtualizationClusterGroupsListOKBody) validateNext(formats strfmt.Regi
 }
 
 func (o *VirtualizationClusterGroupsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -183,6 +180,38 @@ func (o *VirtualizationClusterGroupsListOKBody) validateResults(formats strfmt.R
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("virtualizationClusterGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this virtualization cluster groups list o k body based on the context it is used
+func (o *VirtualizationClusterGroupsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *VirtualizationClusterGroupsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("virtualizationClusterGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

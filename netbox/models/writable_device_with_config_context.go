@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -49,7 +50,7 @@ type WritableDeviceWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext map[string]string `json:"config_context,omitempty"`
+	ConfigContext map[string]*string `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -67,6 +68,10 @@ type WritableDeviceWithConfigContext struct {
 	// Required: true
 	DeviceType *int64 `json:"device_type"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Display name
 	// Read Only: true
 	DisplayName string `json:"display_name,omitempty"`
@@ -75,7 +80,7 @@ type WritableDeviceWithConfigContext struct {
 	// Enum: [front rear]
 	Face string `json:"face,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -86,6 +91,9 @@ type WritableDeviceWithConfigContext struct {
 
 	// Local context data
 	LocalContextData *string `json:"local_context_data,omitempty"`
+
+	// Location
+	Location *int64 `json:"location,omitempty"`
 
 	// Name
 	// Max Length: 64
@@ -130,7 +138,7 @@ type WritableDeviceWithConfigContext struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`
@@ -229,12 +237,11 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 }
 
 func (m *WritableDeviceWithConfigContext) validateAssetTag(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AssetTag) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("asset_tag", "body", string(*m.AssetTag), 50); err != nil {
+	if err := validate.MaxLength("asset_tag", "body", *m.AssetTag, 50); err != nil {
 		return err
 	}
 
@@ -242,7 +249,6 @@ func (m *WritableDeviceWithConfigContext) validateAssetTag(formats strfmt.Regist
 }
 
 func (m *WritableDeviceWithConfigContext) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -302,7 +308,6 @@ func (m *WritableDeviceWithConfigContext) validateFaceEnum(path, location string
 }
 
 func (m *WritableDeviceWithConfigContext) validateFace(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Face) { // not required
 		return nil
 	}
@@ -316,7 +321,6 @@ func (m *WritableDeviceWithConfigContext) validateFace(formats strfmt.Registry) 
 }
 
 func (m *WritableDeviceWithConfigContext) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -329,12 +333,11 @@ func (m *WritableDeviceWithConfigContext) validateLastUpdated(formats strfmt.Reg
 }
 
 func (m *WritableDeviceWithConfigContext) validateName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Name) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -342,7 +345,6 @@ func (m *WritableDeviceWithConfigContext) validateName(formats strfmt.Registry) 
 }
 
 func (m *WritableDeviceWithConfigContext) validateParentDevice(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ParentDevice) { // not required
 		return nil
 	}
@@ -360,16 +362,15 @@ func (m *WritableDeviceWithConfigContext) validateParentDevice(formats strfmt.Re
 }
 
 func (m *WritableDeviceWithConfigContext) validatePosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Position) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("position", "body", int64(*m.Position), 1, false); err != nil {
+	if err := validate.MinimumInt("position", "body", *m.Position, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("position", "body", int64(*m.Position), 32767, false); err != nil {
+	if err := validate.MaximumInt("position", "body", *m.Position, 32767, false); err != nil {
 		return err
 	}
 
@@ -377,12 +378,11 @@ func (m *WritableDeviceWithConfigContext) validatePosition(formats strfmt.Regist
 }
 
 func (m *WritableDeviceWithConfigContext) validateSerial(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Serial) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("serial", "body", string(m.Serial), 50); err != nil {
+	if err := validate.MaxLength("serial", "body", m.Serial, 50); err != nil {
 		return err
 	}
 
@@ -443,7 +443,6 @@ func (m *WritableDeviceWithConfigContext) validateStatusEnum(path, location stri
 }
 
 func (m *WritableDeviceWithConfigContext) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -457,7 +456,6 @@ func (m *WritableDeviceWithConfigContext) validateStatus(formats strfmt.Registry
 }
 
 func (m *WritableDeviceWithConfigContext) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -482,7 +480,6 @@ func (m *WritableDeviceWithConfigContext) validateTags(formats strfmt.Registry) 
 }
 
 func (m *WritableDeviceWithConfigContext) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -495,16 +492,15 @@ func (m *WritableDeviceWithConfigContext) validateURL(formats strfmt.Registry) e
 }
 
 func (m *WritableDeviceWithConfigContext) validateVcPosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.VcPosition) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("vc_position", "body", int64(*m.VcPosition), 0, false); err != nil {
+	if err := validate.MinimumInt("vc_position", "body", *m.VcPosition, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("vc_position", "body", int64(*m.VcPosition), 255, false); err != nil {
+	if err := validate.MaximumInt("vc_position", "body", *m.VcPosition, 255, false); err != nil {
 		return err
 	}
 
@@ -512,16 +508,165 @@ func (m *WritableDeviceWithConfigContext) validateVcPosition(formats strfmt.Regi
 }
 
 func (m *WritableDeviceWithConfigContext) validateVcPriority(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.VcPriority) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("vc_priority", "body", int64(*m.VcPriority), 0, false); err != nil {
+	if err := validate.MinimumInt("vc_priority", "body", *m.VcPriority, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("vc_priority", "body", int64(*m.VcPriority), 255, false); err != nil {
+	if err := validate.MaximumInt("vc_priority", "body", *m.VcPriority, 255, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable device with config context based on the context it is used
+func (m *WritableDeviceWithConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateParentDevice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrimaryIP(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateParentDevice(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ParentDevice != nil {
+		if err := m.ParentDevice.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("parent_device")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidatePrimaryIP(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "primary_ip", "body", string(m.PrimaryIP)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

@@ -32,130 +32,193 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewSecretsSecretsListParams creates a new SecretsSecretsListParams object
-// with the default values initialized.
+// NewSecretsSecretsListParams creates a new SecretsSecretsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsSecretsListParams() *SecretsSecretsListParams {
-	var ()
 	return &SecretsSecretsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsSecretsListParamsWithTimeout creates a new SecretsSecretsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsSecretsListParamsWithTimeout(timeout time.Duration) *SecretsSecretsListParams {
-	var ()
 	return &SecretsSecretsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsSecretsListParamsWithContext creates a new SecretsSecretsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsSecretsListParamsWithContext(ctx context.Context) *SecretsSecretsListParams {
-	var ()
 	return &SecretsSecretsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsSecretsListParamsWithHTTPClient creates a new SecretsSecretsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsSecretsListParamsWithHTTPClient(client *http.Client) *SecretsSecretsListParams {
-	var ()
 	return &SecretsSecretsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsSecretsListParams contains all the parameters to send to the API endpoint
-for the secrets secrets list operation typically these are written to a http.Request
+/* SecretsSecretsListParams contains all the parameters to send to the API endpoint
+   for the secrets secrets list operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsSecretsListParams struct {
 
-	/*Created*/
+	// Created.
 	Created *string
-	/*CreatedGte*/
-	CreatedGte *string
-	/*CreatedLte*/
-	CreatedLte *string
-	/*Device*/
-	Device *string
-	/*Devicen*/
-	Devicen *string
-	/*DeviceID*/
-	DeviceID *string
-	/*DeviceIDn*/
-	DeviceIDn *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*LastUpdated*/
-	LastUpdated *string
-	/*LastUpdatedGte*/
-	LastUpdatedGte *string
-	/*LastUpdatedLte*/
-	LastUpdatedLte *string
-	/*Limit
-	  Number of results to return per page.
 
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// Device.
+	Device *string
+
+	// Devicen.
+	Devicen *string
+
+	// DeviceID.
+	DeviceID *string
+
+	// DeviceIDn.
+	DeviceIDn *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Name.
+	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*Role*/
+
+	// Role.
 	Role *string
-	/*Rolen*/
+
+	// Rolen.
 	Rolen *string
-	/*RoleID*/
+
+	// RoleID.
 	RoleID *string
-	/*RoleIDn*/
+
+	// RoleIDn.
 	RoleIDn *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
+
+	// VirtualMachine.
+	VirtualMachine *string
+
+	// VirtualMachinen.
+	VirtualMachinen *string
+
+	// VirtualMachineID.
+	VirtualMachineID *string
+
+	// VirtualMachineIDn.
+	VirtualMachineIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets secrets list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsListParams) WithDefaults() *SecretsSecretsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets secrets list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets secrets list params
@@ -389,6 +452,17 @@ func (o *SecretsSecretsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithNameEmpty(nameEmpty *string) *SecretsSecretsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the secrets secrets list params
 func (o *SecretsSecretsListParams) WithNameIc(nameIc *string) *SecretsSecretsListParams {
 	o.SetNameIc(nameIc)
@@ -576,6 +650,50 @@ func (o *SecretsSecretsListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
 }
 
+// WithVirtualMachine adds the virtualMachine to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithVirtualMachine(virtualMachine *string) *SecretsSecretsListParams {
+	o.SetVirtualMachine(virtualMachine)
+	return o
+}
+
+// SetVirtualMachine adds the virtualMachine to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetVirtualMachine(virtualMachine *string) {
+	o.VirtualMachine = virtualMachine
+}
+
+// WithVirtualMachinen adds the virtualMachinen to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithVirtualMachinen(virtualMachinen *string) *SecretsSecretsListParams {
+	o.SetVirtualMachinen(virtualMachinen)
+	return o
+}
+
+// SetVirtualMachinen adds the virtualMachineN to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetVirtualMachinen(virtualMachinen *string) {
+	o.VirtualMachinen = virtualMachinen
+}
+
+// WithVirtualMachineID adds the virtualMachineID to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithVirtualMachineID(virtualMachineID *string) *SecretsSecretsListParams {
+	o.SetVirtualMachineID(virtualMachineID)
+	return o
+}
+
+// SetVirtualMachineID adds the virtualMachineId to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetVirtualMachineID(virtualMachineID *string) {
+	o.VirtualMachineID = virtualMachineID
+}
+
+// WithVirtualMachineIDn adds the virtualMachineIDn to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithVirtualMachineIDn(virtualMachineIDn *string) *SecretsSecretsListParams {
+	o.SetVirtualMachineIDn(virtualMachineIDn)
+	return o
+}
+
+// SetVirtualMachineIDn adds the virtualMachineIdN to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetVirtualMachineIDn(virtualMachineIDn *string) {
+	o.VirtualMachineIDn = virtualMachineIDn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *SecretsSecretsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -588,560 +706,680 @@ func (o *SecretsSecretsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 		// query param created
 		var qrCreated string
+
 		if o.Created != nil {
 			qrCreated = *o.Created
 		}
 		qCreated := qrCreated
 		if qCreated != "" {
+
 			if err := r.SetQueryParam("created", qCreated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedGte != nil {
 
 		// query param created__gte
 		var qrCreatedGte string
+
 		if o.CreatedGte != nil {
 			qrCreatedGte = *o.CreatedGte
 		}
 		qCreatedGte := qrCreatedGte
 		if qCreatedGte != "" {
+
 			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedLte != nil {
 
 		// query param created__lte
 		var qrCreatedLte string
+
 		if o.CreatedLte != nil {
 			qrCreatedLte = *o.CreatedLte
 		}
 		qCreatedLte := qrCreatedLte
 		if qCreatedLte != "" {
+
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Device != nil {
 
 		// query param device
 		var qrDevice string
+
 		if o.Device != nil {
 			qrDevice = *o.Device
 		}
 		qDevice := qrDevice
 		if qDevice != "" {
+
 			if err := r.SetQueryParam("device", qDevice); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Devicen != nil {
 
 		// query param device__n
 		var qrDevicen string
+
 		if o.Devicen != nil {
 			qrDevicen = *o.Devicen
 		}
 		qDevicen := qrDevicen
 		if qDevicen != "" {
+
 			if err := r.SetQueryParam("device__n", qDevicen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceID != nil {
 
 		// query param device_id
 		var qrDeviceID string
+
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
 		qDeviceID := qrDeviceID
 		if qDeviceID != "" {
+
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceIDn != nil {
 
 		// query param device_id__n
 		var qrDeviceIDn string
+
 		if o.DeviceIDn != nil {
 			qrDeviceIDn = *o.DeviceIDn
 		}
 		qDeviceIDn := qrDeviceIDn
 		if qDeviceIDn != "" {
+
 			if err := r.SetQueryParam("device_id__n", qDeviceIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdated != nil {
 
 		// query param last_updated
 		var qrLastUpdated string
+
 		if o.LastUpdated != nil {
 			qrLastUpdated = *o.LastUpdated
 		}
 		qLastUpdated := qrLastUpdated
 		if qLastUpdated != "" {
+
 			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
 		var qrLastUpdatedGte string
+
 		if o.LastUpdatedGte != nil {
 			qrLastUpdatedGte = *o.LastUpdatedGte
 		}
 		qLastUpdatedGte := qrLastUpdatedGte
 		if qLastUpdatedGte != "" {
+
 			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
 		var qrLastUpdatedLte string
+
 		if o.LastUpdatedLte != nil {
 			qrLastUpdatedLte = *o.LastUpdatedLte
 		}
 		qLastUpdatedLte := qrLastUpdatedLte
 		if qLastUpdatedLte != "" {
+
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Role != nil {
 
 		// query param role
 		var qrRole string
+
 		if o.Role != nil {
 			qrRole = *o.Role
 		}
 		qRole := qrRole
 		if qRole != "" {
+
 			if err := r.SetQueryParam("role", qRole); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Rolen != nil {
 
 		// query param role__n
 		var qrRolen string
+
 		if o.Rolen != nil {
 			qrRolen = *o.Rolen
 		}
 		qRolen := qrRolen
 		if qRolen != "" {
+
 			if err := r.SetQueryParam("role__n", qRolen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RoleID != nil {
 
 		// query param role_id
 		var qrRoleID string
+
 		if o.RoleID != nil {
 			qrRoleID = *o.RoleID
 		}
 		qRoleID := qrRoleID
 		if qRoleID != "" {
+
 			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RoleIDn != nil {
 
 		// query param role_id__n
 		var qrRoleIDn string
+
 		if o.RoleIDn != nil {
 			qrRoleIDn = *o.RoleIDn
 		}
 		qRoleIDn := qrRoleIDn
 		if qRoleIDn != "" {
+
 			if err := r.SetQueryParam("role_id__n", qRoleIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.VirtualMachine != nil {
+
+		// query param virtual_machine
+		var qrVirtualMachine string
+
+		if o.VirtualMachine != nil {
+			qrVirtualMachine = *o.VirtualMachine
+		}
+		qVirtualMachine := qrVirtualMachine
+		if qVirtualMachine != "" {
+
+			if err := r.SetQueryParam("virtual_machine", qVirtualMachine); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualMachinen != nil {
+
+		// query param virtual_machine__n
+		var qrVirtualMachinen string
+
+		if o.VirtualMachinen != nil {
+			qrVirtualMachinen = *o.VirtualMachinen
+		}
+		qVirtualMachinen := qrVirtualMachinen
+		if qVirtualMachinen != "" {
+
+			if err := r.SetQueryParam("virtual_machine__n", qVirtualMachinen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualMachineID != nil {
+
+		// query param virtual_machine_id
+		var qrVirtualMachineID string
+
+		if o.VirtualMachineID != nil {
+			qrVirtualMachineID = *o.VirtualMachineID
+		}
+		qVirtualMachineID := qrVirtualMachineID
+		if qVirtualMachineID != "" {
+
+			if err := r.SetQueryParam("virtual_machine_id", qVirtualMachineID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualMachineIDn != nil {
+
+		// query param virtual_machine_id__n
+		var qrVirtualMachineIDn string
+
+		if o.VirtualMachineIDn != nil {
+			qrVirtualMachineIDn = *o.VirtualMachineIDn
+		}
+		qVirtualMachineIDn := qrVirtualMachineIDn
+		if qVirtualMachineIDn != "" {
+
+			if err := r.SetQueryParam("virtual_machine_id__n", qVirtualMachineIDn); err != nil {
+				return err
+			}
+		}
 	}
 
 	if len(res) > 0 {

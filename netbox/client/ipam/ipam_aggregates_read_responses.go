@@ -44,7 +44,6 @@ func (o *IpamAggregatesReadReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewIpamAggregatesReadOK() *IpamAggregatesReadOK {
 	return &IpamAggregatesReadOK{}
 }
 
-/*IpamAggregatesReadOK handles this case with default header values.
+/* IpamAggregatesReadOK describes a response with status code 200, with default header values.
 
 IpamAggregatesReadOK ipam aggregates read o k
 */
@@ -66,7 +65,6 @@ type IpamAggregatesReadOK struct {
 func (o *IpamAggregatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipamAggregatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamAggregatesReadOK) GetPayload() *models.Aggregate {
 	return o.Payload
 }

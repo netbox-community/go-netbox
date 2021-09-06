@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewVirtualizationClusterGroupsUpdateParams creates a new VirtualizationClusterGroupsUpdateParams object
-// with the default values initialized.
+// NewVirtualizationClusterGroupsUpdateParams creates a new VirtualizationClusterGroupsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationClusterGroupsUpdateParams() *VirtualizationClusterGroupsUpdateParams {
-	var ()
 	return &VirtualizationClusterGroupsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationClusterGroupsUpdateParamsWithTimeout creates a new VirtualizationClusterGroupsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationClusterGroupsUpdateParamsWithTimeout(timeout time.Duration) *VirtualizationClusterGroupsUpdateParams {
-	var ()
 	return &VirtualizationClusterGroupsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationClusterGroupsUpdateParamsWithContext creates a new VirtualizationClusterGroupsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationClusterGroupsUpdateParamsWithContext(ctx context.Context) *VirtualizationClusterGroupsUpdateParams {
-	var ()
 	return &VirtualizationClusterGroupsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationClusterGroupsUpdateParamsWithHTTPClient creates a new VirtualizationClusterGroupsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationClusterGroupsUpdateParamsWithHTTPClient(client *http.Client) *VirtualizationClusterGroupsUpdateParams {
-	var ()
 	return &VirtualizationClusterGroupsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationClusterGroupsUpdateParams contains all the parameters to send to the API endpoint
-for the virtualization cluster groups update operation typically these are written to a http.Request
+/* VirtualizationClusterGroupsUpdateParams contains all the parameters to send to the API endpoint
+   for the virtualization cluster groups update operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationClusterGroupsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.ClusterGroup
-	/*ID
-	  A unique integer value identifying this cluster group.
 
+	/* ID.
+
+	   A unique integer value identifying this cluster group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization cluster groups update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterGroupsUpdateParams) WithDefaults() *VirtualizationClusterGroupsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization cluster groups update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterGroupsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization cluster groups update params
@@ -153,7 +168,6 @@ func (o *VirtualizationClusterGroupsUpdateParams) WriteToRequest(r runtime.Clien
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

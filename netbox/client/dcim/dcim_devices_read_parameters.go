@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimDevicesReadParams creates a new DcimDevicesReadParams object
-// with the default values initialized.
+// NewDcimDevicesReadParams creates a new DcimDevicesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDevicesReadParams() *DcimDevicesReadParams {
-	var ()
 	return &DcimDevicesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDevicesReadParamsWithTimeout creates a new DcimDevicesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDevicesReadParamsWithTimeout(timeout time.Duration) *DcimDevicesReadParams {
-	var ()
 	return &DcimDevicesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDevicesReadParamsWithContext creates a new DcimDevicesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDevicesReadParamsWithContext(ctx context.Context) *DcimDevicesReadParams {
-	var ()
 	return &DcimDevicesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDevicesReadParamsWithHTTPClient creates a new DcimDevicesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDevicesReadParamsWithHTTPClient(client *http.Client) *DcimDevicesReadParams {
-	var ()
 	return &DcimDevicesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDevicesReadParams contains all the parameters to send to the API endpoint
-for the dcim devices read operation typically these are written to a http.Request
+/* DcimDevicesReadParams contains all the parameters to send to the API endpoint
+   for the dcim devices read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDevicesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this device.
+	/* ID.
 
+	   A unique integer value identifying this device.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim devices read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesReadParams) WithDefaults() *DcimDevicesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim devices read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim devices read params

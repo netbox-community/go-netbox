@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimConsolePortTemplatesDeleteParams creates a new DcimConsolePortTemplatesDeleteParams object
-// with the default values initialized.
+// NewDcimConsolePortTemplatesDeleteParams creates a new DcimConsolePortTemplatesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConsolePortTemplatesDeleteParams() *DcimConsolePortTemplatesDeleteParams {
-	var ()
 	return &DcimConsolePortTemplatesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConsolePortTemplatesDeleteParamsWithTimeout creates a new DcimConsolePortTemplatesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConsolePortTemplatesDeleteParamsWithTimeout(timeout time.Duration) *DcimConsolePortTemplatesDeleteParams {
-	var ()
 	return &DcimConsolePortTemplatesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConsolePortTemplatesDeleteParamsWithContext creates a new DcimConsolePortTemplatesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConsolePortTemplatesDeleteParamsWithContext(ctx context.Context) *DcimConsolePortTemplatesDeleteParams {
-	var ()
 	return &DcimConsolePortTemplatesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConsolePortTemplatesDeleteParamsWithHTTPClient creates a new DcimConsolePortTemplatesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConsolePortTemplatesDeleteParamsWithHTTPClient(client *http.Client) *DcimConsolePortTemplatesDeleteParams {
-	var ()
 	return &DcimConsolePortTemplatesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConsolePortTemplatesDeleteParams contains all the parameters to send to the API endpoint
-for the dcim console port templates delete operation typically these are written to a http.Request
+/* DcimConsolePortTemplatesDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim console port templates delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConsolePortTemplatesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this console port template.
+	/* ID.
 
+	   A unique integer value identifying this console port template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim console port templates delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortTemplatesDeleteParams) WithDefaults() *DcimConsolePortTemplatesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim console port templates delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortTemplatesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim console port templates delete params

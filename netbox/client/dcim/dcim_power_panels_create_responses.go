@@ -45,14 +45,7 @@ func (o *DcimPowerPanelsCreateReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		result := NewDcimPowerPanelsCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimPowerPanelsCreateCreated() *DcimPowerPanelsCreateCreated {
 	return &DcimPowerPanelsCreateCreated{}
 }
 
-/*DcimPowerPanelsCreateCreated handles this case with default header values.
+/* DcimPowerPanelsCreateCreated describes a response with status code 201, with default header values.
 
 DcimPowerPanelsCreateCreated dcim power panels create created
 */
@@ -72,7 +65,6 @@ type DcimPowerPanelsCreateCreated struct {
 func (o *DcimPowerPanelsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-panels/][%d] dcimPowerPanelsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimPowerPanelsCreateCreated) GetPayload() *models.PowerPanel {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimPowerPanelsCreateCreated) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimPowerPanelsCreateDefault creates a DcimPowerPanelsCreateDefault with default headers values
-func NewDcimPowerPanelsCreateDefault(code int) *DcimPowerPanelsCreateDefault {
-	return &DcimPowerPanelsCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimPowerPanelsCreateDefault handles this case with default header values.
-
-DcimPowerPanelsCreateDefault dcim power panels create default
-*/
-type DcimPowerPanelsCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim power panels create default response
-func (o *DcimPowerPanelsCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimPowerPanelsCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/power-panels/][%d] dcim_power-panels_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimPowerPanelsCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimPowerPanelsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

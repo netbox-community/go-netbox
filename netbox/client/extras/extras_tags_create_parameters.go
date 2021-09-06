@@ -33,56 +33,70 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewExtrasTagsCreateParams creates a new ExtrasTagsCreateParams object
-// with the default values initialized.
+// NewExtrasTagsCreateParams creates a new ExtrasTagsCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasTagsCreateParams() *ExtrasTagsCreateParams {
-	var ()
 	return &ExtrasTagsCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasTagsCreateParamsWithTimeout creates a new ExtrasTagsCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasTagsCreateParamsWithTimeout(timeout time.Duration) *ExtrasTagsCreateParams {
-	var ()
 	return &ExtrasTagsCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasTagsCreateParamsWithContext creates a new ExtrasTagsCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasTagsCreateParamsWithContext(ctx context.Context) *ExtrasTagsCreateParams {
-	var ()
 	return &ExtrasTagsCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasTagsCreateParamsWithHTTPClient creates a new ExtrasTagsCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasTagsCreateParamsWithHTTPClient(client *http.Client) *ExtrasTagsCreateParams {
-	var ()
 	return &ExtrasTagsCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasTagsCreateParams contains all the parameters to send to the API endpoint
-for the extras tags create operation typically these are written to a http.Request
+/* ExtrasTagsCreateParams contains all the parameters to send to the API endpoint
+   for the extras tags create operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasTagsCreateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Tag
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras tags create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasTagsCreateParams) WithDefaults() *ExtrasTagsCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras tags create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasTagsCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras tags create params
@@ -136,7 +150,6 @@ func (o *ExtrasTagsCreateParams) WriteToRequest(r runtime.ClientRequest, reg str
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewIpamVrfsPartialUpdateParams creates a new IpamVrfsPartialUpdateParams object
-// with the default values initialized.
+// NewIpamVrfsPartialUpdateParams creates a new IpamVrfsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVrfsPartialUpdateParams() *IpamVrfsPartialUpdateParams {
-	var ()
 	return &IpamVrfsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVrfsPartialUpdateParamsWithTimeout creates a new IpamVrfsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVrfsPartialUpdateParamsWithTimeout(timeout time.Duration) *IpamVrfsPartialUpdateParams {
-	var ()
 	return &IpamVrfsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVrfsPartialUpdateParamsWithContext creates a new IpamVrfsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVrfsPartialUpdateParamsWithContext(ctx context.Context) *IpamVrfsPartialUpdateParams {
-	var ()
 	return &IpamVrfsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVrfsPartialUpdateParamsWithHTTPClient creates a new IpamVrfsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVrfsPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamVrfsPartialUpdateParams {
-	var ()
 	return &IpamVrfsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVrfsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the ipam vrfs partial update operation typically these are written to a http.Request
+/* IpamVrfsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam vrfs partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVrfsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVRF
-	/*ID
-	  A unique integer value identifying this VRF.
 
+	/* ID.
+
+	   A unique integer value identifying this VRF.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vrfs partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsPartialUpdateParams) WithDefaults() *IpamVrfsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vrfs partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vrfs partial update params
@@ -153,7 +168,6 @@ func (o *IpamVrfsPartialUpdateParams) WriteToRequest(r runtime.ClientRequest, re
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

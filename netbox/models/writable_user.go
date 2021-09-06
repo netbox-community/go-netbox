@@ -21,6 +21,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -35,6 +37,10 @@ type WritableUser struct {
 	// Date joined
 	// Format: date-time
 	DateJoined strfmt.DateTime `json:"date_joined,omitempty"`
+
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
 
 	// Email address
 	// Max Length: 254
@@ -66,6 +72,12 @@ type WritableUser struct {
 	// Last name
 	// Max Length: 150
 	LastName string `json:"last_name,omitempty"`
+
+	// Password
+	// Required: true
+	// Max Length: 128
+	// Min Length: 1
+	Password *string `json:"password"`
 
 	// Url
 	// Read Only: true
@@ -106,6 +118,10 @@ func (m *WritableUser) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validatePassword(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
@@ -121,7 +137,6 @@ func (m *WritableUser) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableUser) validateDateJoined(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.DateJoined) { // not required
 		return nil
 	}
@@ -134,12 +149,11 @@ func (m *WritableUser) validateDateJoined(formats strfmt.Registry) error {
 }
 
 func (m *WritableUser) validateEmail(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Email) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("email", "body", string(m.Email), 254); err != nil {
+	if err := validate.MaxLength("email", "body", m.Email.String(), 254); err != nil {
 		return err
 	}
 
@@ -151,12 +165,11 @@ func (m *WritableUser) validateEmail(formats strfmt.Registry) error {
 }
 
 func (m *WritableUser) validateFirstName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.FirstName) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("first_name", "body", string(m.FirstName), 150); err != nil {
+	if err := validate.MaxLength("first_name", "body", m.FirstName, 150); err != nil {
 		return err
 	}
 
@@ -164,7 +177,6 @@ func (m *WritableUser) validateFirstName(formats strfmt.Registry) error {
 }
 
 func (m *WritableUser) validateGroups(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Groups) { // not required
 		return nil
 	}
@@ -177,12 +189,28 @@ func (m *WritableUser) validateGroups(formats strfmt.Registry) error {
 }
 
 func (m *WritableUser) validateLastName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastName) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("last_name", "body", string(m.LastName), 150); err != nil {
+	if err := validate.MaxLength("last_name", "body", m.LastName, 150); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableUser) validatePassword(formats strfmt.Registry) error {
+
+	if err := validate.Required("password", "body", m.Password); err != nil {
+		return err
+	}
+
+	if err := validate.MinLength("password", "body", *m.Password, 1); err != nil {
+		return err
+	}
+
+	if err := validate.MaxLength("password", "body", *m.Password, 128); err != nil {
 		return err
 	}
 
@@ -190,7 +218,6 @@ func (m *WritableUser) validateLastName(formats strfmt.Registry) error {
 }
 
 func (m *WritableUser) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -208,15 +235,64 @@ func (m *WritableUser) validateUsername(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("username", "body", string(*m.Username), 1); err != nil {
+	if err := validate.MinLength("username", "body", *m.Username, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("username", "body", string(*m.Username), 150); err != nil {
+	if err := validate.MaxLength("username", "body", *m.Username, 150); err != nil {
 		return err
 	}
 
-	if err := validate.Pattern("username", "body", string(*m.Username), `^[\w.@+-]+$`); err != nil {
+	if err := validate.Pattern("username", "body", *m.Username, `^[\w.@+-]+$`); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable user based on the context it is used
+func (m *WritableUser) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableUser) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableUser) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableUser) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

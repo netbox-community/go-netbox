@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimCablesDeleteParams creates a new DcimCablesDeleteParams object
-// with the default values initialized.
+// NewDcimCablesDeleteParams creates a new DcimCablesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimCablesDeleteParams() *DcimCablesDeleteParams {
-	var ()
 	return &DcimCablesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimCablesDeleteParamsWithTimeout creates a new DcimCablesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimCablesDeleteParamsWithTimeout(timeout time.Duration) *DcimCablesDeleteParams {
-	var ()
 	return &DcimCablesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimCablesDeleteParamsWithContext creates a new DcimCablesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimCablesDeleteParamsWithContext(ctx context.Context) *DcimCablesDeleteParams {
-	var ()
 	return &DcimCablesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimCablesDeleteParamsWithHTTPClient creates a new DcimCablesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimCablesDeleteParamsWithHTTPClient(client *http.Client) *DcimCablesDeleteParams {
-	var ()
 	return &DcimCablesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimCablesDeleteParams contains all the parameters to send to the API endpoint
-for the dcim cables delete operation typically these are written to a http.Request
+/* DcimCablesDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim cables delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimCablesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this cable.
+	/* ID.
 
+	   A unique integer value identifying this cable.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim cables delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesDeleteParams) WithDefaults() *DcimCablesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim cables delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim cables delete params

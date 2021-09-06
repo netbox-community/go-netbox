@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimConsoleServerPortTemplatesPartialUpdateParams creates a new DcimConsoleServerPortTemplatesPartialUpdateParams object
-// with the default values initialized.
+// NewDcimConsoleServerPortTemplatesPartialUpdateParams creates a new DcimConsoleServerPortTemplatesPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConsoleServerPortTemplatesPartialUpdateParams() *DcimConsoleServerPortTemplatesPartialUpdateParams {
-	var ()
 	return &DcimConsoleServerPortTemplatesPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConsoleServerPortTemplatesPartialUpdateParamsWithTimeout creates a new DcimConsoleServerPortTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConsoleServerPortTemplatesPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimConsoleServerPortTemplatesPartialUpdateParams {
-	var ()
 	return &DcimConsoleServerPortTemplatesPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConsoleServerPortTemplatesPartialUpdateParamsWithContext creates a new DcimConsoleServerPortTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConsoleServerPortTemplatesPartialUpdateParamsWithContext(ctx context.Context) *DcimConsoleServerPortTemplatesPartialUpdateParams {
-	var ()
 	return &DcimConsoleServerPortTemplatesPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConsoleServerPortTemplatesPartialUpdateParamsWithHTTPClient creates a new DcimConsoleServerPortTemplatesPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConsoleServerPortTemplatesPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimConsoleServerPortTemplatesPartialUpdateParams {
-	var ()
 	return &DcimConsoleServerPortTemplatesPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConsoleServerPortTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim console server port templates partial update operation typically these are written to a http.Request
+/* DcimConsoleServerPortTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim console server port templates partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConsoleServerPortTemplatesPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableConsoleServerPortTemplate
-	/*ID
-	  A unique integer value identifying this console server port template.
 
+	/* ID.
+
+	   A unique integer value identifying this console server port template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim console server port templates partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsoleServerPortTemplatesPartialUpdateParams) WithDefaults() *DcimConsoleServerPortTemplatesPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim console server port templates partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsoleServerPortTemplatesPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim console server port templates partial update params
@@ -153,7 +168,6 @@ func (o *DcimConsoleServerPortTemplatesPartialUpdateParams) WriteToRequest(r run
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -44,7 +44,6 @@ func (o *DcimDevicesNapalmReader) ReadResponse(response runtime.ClientResponse, 
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewDcimDevicesNapalmOK() *DcimDevicesNapalmOK {
 	return &DcimDevicesNapalmOK{}
 }
 
-/*DcimDevicesNapalmOK handles this case with default header values.
+/* DcimDevicesNapalmOK describes a response with status code 200, with default header values.
 
 DcimDevicesNapalmOK dcim devices napalm o k
 */
@@ -66,7 +65,6 @@ type DcimDevicesNapalmOK struct {
 func (o *DcimDevicesNapalmOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcimDevicesNapalmOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDevicesNapalmOK) GetPayload() *models.DeviceNAPALM {
 	return o.Payload
 }

@@ -45,14 +45,7 @@ func (o *DcimDeviceRolesCreateReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		result := NewDcimDeviceRolesCreateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewDcimDeviceRolesCreateCreated() *DcimDeviceRolesCreateCreated {
 	return &DcimDeviceRolesCreateCreated{}
 }
 
-/*DcimDeviceRolesCreateCreated handles this case with default header values.
+/* DcimDeviceRolesCreateCreated describes a response with status code 201, with default header values.
 
 DcimDeviceRolesCreateCreated dcim device roles create created
 */
@@ -72,7 +65,6 @@ type DcimDeviceRolesCreateCreated struct {
 func (o *DcimDeviceRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcimDeviceRolesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimDeviceRolesCreateCreated) GetPayload() *models.DeviceRole {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *DcimDeviceRolesCreateCreated) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewDcimDeviceRolesCreateDefault creates a DcimDeviceRolesCreateDefault with default headers values
-func NewDcimDeviceRolesCreateDefault(code int) *DcimDeviceRolesCreateDefault {
-	return &DcimDeviceRolesCreateDefault{
-		_statusCode: code,
-	}
-}
-
-/*DcimDeviceRolesCreateDefault handles this case with default header values.
-
-DcimDeviceRolesCreateDefault dcim device roles create default
-*/
-type DcimDeviceRolesCreateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the dcim device roles create default response
-func (o *DcimDeviceRolesCreateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *DcimDeviceRolesCreateDefault) Error() string {
-	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcim_device-roles_create default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *DcimDeviceRolesCreateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *DcimDeviceRolesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

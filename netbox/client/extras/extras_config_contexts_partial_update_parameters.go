@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewExtrasConfigContextsPartialUpdateParams creates a new ExtrasConfigContextsPartialUpdateParams object
-// with the default values initialized.
+// NewExtrasConfigContextsPartialUpdateParams creates a new ExtrasConfigContextsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasConfigContextsPartialUpdateParams() *ExtrasConfigContextsPartialUpdateParams {
-	var ()
 	return &ExtrasConfigContextsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasConfigContextsPartialUpdateParamsWithTimeout creates a new ExtrasConfigContextsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasConfigContextsPartialUpdateParamsWithTimeout(timeout time.Duration) *ExtrasConfigContextsPartialUpdateParams {
-	var ()
 	return &ExtrasConfigContextsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasConfigContextsPartialUpdateParamsWithContext creates a new ExtrasConfigContextsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasConfigContextsPartialUpdateParamsWithContext(ctx context.Context) *ExtrasConfigContextsPartialUpdateParams {
-	var ()
 	return &ExtrasConfigContextsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasConfigContextsPartialUpdateParamsWithHTTPClient creates a new ExtrasConfigContextsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasConfigContextsPartialUpdateParamsWithHTTPClient(client *http.Client) *ExtrasConfigContextsPartialUpdateParams {
-	var ()
 	return &ExtrasConfigContextsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasConfigContextsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the extras config contexts partial update operation typically these are written to a http.Request
+/* ExtrasConfigContextsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the extras config contexts partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableConfigContext
-	/*ID
-	  A unique integer value identifying this config context.
 
+	/* ID.
+
+	   A unique integer value identifying this config context.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras config contexts partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsPartialUpdateParams) WithDefaults() *ExtrasConfigContextsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras config contexts partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras config contexts partial update params
@@ -153,7 +168,6 @@ func (o *ExtrasConfigContextsPartialUpdateParams) WriteToRequest(r runtime.Clien
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

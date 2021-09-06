@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewUsersUsersUpdateParams creates a new UsersUsersUpdateParams object
-// with the default values initialized.
+// NewUsersUsersUpdateParams creates a new UsersUsersUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersUsersUpdateParams() *UsersUsersUpdateParams {
-	var ()
 	return &UsersUsersUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersUsersUpdateParamsWithTimeout creates a new UsersUsersUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersUsersUpdateParamsWithTimeout(timeout time.Duration) *UsersUsersUpdateParams {
-	var ()
 	return &UsersUsersUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersUsersUpdateParamsWithContext creates a new UsersUsersUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersUsersUpdateParamsWithContext(ctx context.Context) *UsersUsersUpdateParams {
-	var ()
 	return &UsersUsersUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersUsersUpdateParamsWithHTTPClient creates a new UsersUsersUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersUsersUpdateParamsWithHTTPClient(client *http.Client) *UsersUsersUpdateParams {
-	var ()
 	return &UsersUsersUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersUsersUpdateParams contains all the parameters to send to the API endpoint
-for the users users update operation typically these are written to a http.Request
+/* UsersUsersUpdateParams contains all the parameters to send to the API endpoint
+   for the users users update operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersUsersUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableUser
-	/*ID
-	  A unique integer value identifying this user.
 
+	/* ID.
+
+	   A unique integer value identifying this user.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users users update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersUsersUpdateParams) WithDefaults() *UsersUsersUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users users update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersUsersUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users users update params
@@ -153,7 +168,6 @@ func (o *UsersUsersUpdateParams) WriteToRequest(r runtime.ClientRequest, reg str
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

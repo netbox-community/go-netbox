@@ -45,14 +45,7 @@ func (o *IpamRirsUpdateReader) ReadResponse(response runtime.ClientResponse, con
 		}
 		return result, nil
 	default:
-		result := NewIpamRirsUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewIpamRirsUpdateOK() *IpamRirsUpdateOK {
 	return &IpamRirsUpdateOK{}
 }
 
-/*IpamRirsUpdateOK handles this case with default header values.
+/* IpamRirsUpdateOK describes a response with status code 200, with default header values.
 
 IpamRirsUpdateOK ipam rirs update o k
 */
@@ -72,7 +65,6 @@ type IpamRirsUpdateOK struct {
 func (o *IpamRirsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/rirs/{id}/][%d] ipamRirsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRirsUpdateOK) GetPayload() *models.RIR {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *IpamRirsUpdateOK) readResponse(response runtime.ClientResponse, consume
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewIpamRirsUpdateDefault creates a IpamRirsUpdateDefault with default headers values
-func NewIpamRirsUpdateDefault(code int) *IpamRirsUpdateDefault {
-	return &IpamRirsUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*IpamRirsUpdateDefault handles this case with default header values.
-
-IpamRirsUpdateDefault ipam rirs update default
-*/
-type IpamRirsUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the ipam rirs update default response
-func (o *IpamRirsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *IpamRirsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /ipam/rirs/{id}/][%d] ipam_rirs_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *IpamRirsUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *IpamRirsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

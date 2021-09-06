@@ -45,14 +45,7 @@ func (o *IpamIPAddressesUpdateReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		result := NewIpamIPAddressesUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewIpamIPAddressesUpdateOK() *IpamIPAddressesUpdateOK {
 	return &IpamIPAddressesUpdateOK{}
 }
 
-/*IpamIPAddressesUpdateOK handles this case with default header values.
+/* IpamIPAddressesUpdateOK describes a response with status code 200, with default header values.
 
 IpamIPAddressesUpdateOK ipam Ip addresses update o k
 */
@@ -72,7 +65,6 @@ type IpamIPAddressesUpdateOK struct {
 func (o *IpamIPAddressesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/ip-addresses/{id}/][%d] ipamIpAddressesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamIPAddressesUpdateOK) GetPayload() *models.IPAddress {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *IpamIPAddressesUpdateOK) readResponse(response runtime.ClientResponse, 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewIpamIPAddressesUpdateDefault creates a IpamIPAddressesUpdateDefault with default headers values
-func NewIpamIPAddressesUpdateDefault(code int) *IpamIPAddressesUpdateDefault {
-	return &IpamIPAddressesUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*IpamIPAddressesUpdateDefault handles this case with default header values.
-
-IpamIPAddressesUpdateDefault ipam ip addresses update default
-*/
-type IpamIPAddressesUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the ipam ip addresses update default response
-func (o *IpamIPAddressesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *IpamIPAddressesUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *IpamIPAddressesUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *IpamIPAddressesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewVirtualizationVirtualMachinesUpdateParams creates a new VirtualizationVirtualMachinesUpdateParams object
-// with the default values initialized.
+// NewVirtualizationVirtualMachinesUpdateParams creates a new VirtualizationVirtualMachinesUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationVirtualMachinesUpdateParams() *VirtualizationVirtualMachinesUpdateParams {
-	var ()
 	return &VirtualizationVirtualMachinesUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationVirtualMachinesUpdateParamsWithTimeout creates a new VirtualizationVirtualMachinesUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationVirtualMachinesUpdateParamsWithTimeout(timeout time.Duration) *VirtualizationVirtualMachinesUpdateParams {
-	var ()
 	return &VirtualizationVirtualMachinesUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationVirtualMachinesUpdateParamsWithContext creates a new VirtualizationVirtualMachinesUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationVirtualMachinesUpdateParamsWithContext(ctx context.Context) *VirtualizationVirtualMachinesUpdateParams {
-	var ()
 	return &VirtualizationVirtualMachinesUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationVirtualMachinesUpdateParamsWithHTTPClient creates a new VirtualizationVirtualMachinesUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationVirtualMachinesUpdateParamsWithHTTPClient(client *http.Client) *VirtualizationVirtualMachinesUpdateParams {
-	var ()
 	return &VirtualizationVirtualMachinesUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationVirtualMachinesUpdateParams contains all the parameters to send to the API endpoint
-for the virtualization virtual machines update operation typically these are written to a http.Request
+/* VirtualizationVirtualMachinesUpdateParams contains all the parameters to send to the API endpoint
+   for the virtualization virtual machines update operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationVirtualMachinesUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVirtualMachineWithConfigContext
-	/*ID
-	  A unique integer value identifying this virtual machine.
 
+	/* ID.
+
+	   A unique integer value identifying this virtual machine.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization virtual machines update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationVirtualMachinesUpdateParams) WithDefaults() *VirtualizationVirtualMachinesUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization virtual machines update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationVirtualMachinesUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization virtual machines update params
@@ -153,7 +168,6 @@ func (o *VirtualizationVirtualMachinesUpdateParams) WriteToRequest(r runtime.Cli
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -44,7 +44,6 @@ func (o *ExtrasExportTemplatesReadReader) ReadResponse(response runtime.ClientRe
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -55,7 +54,7 @@ func NewExtrasExportTemplatesReadOK() *ExtrasExportTemplatesReadOK {
 	return &ExtrasExportTemplatesReadOK{}
 }
 
-/*ExtrasExportTemplatesReadOK handles this case with default header values.
+/* ExtrasExportTemplatesReadOK describes a response with status code 200, with default header values.
 
 ExtrasExportTemplatesReadOK extras export templates read o k
 */
@@ -66,7 +65,6 @@ type ExtrasExportTemplatesReadOK struct {
 func (o *ExtrasExportTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extrasExportTemplatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesReadOK) GetPayload() *models.ExportTemplate {
 	return o.Payload
 }

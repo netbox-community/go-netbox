@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewExtrasReportsListParams creates a new ExtrasReportsListParams object
-// with the default values initialized.
+// NewExtrasReportsListParams creates a new ExtrasReportsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasReportsListParams() *ExtrasReportsListParams {
-
 	return &ExtrasReportsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasReportsListParamsWithTimeout creates a new ExtrasReportsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasReportsListParamsWithTimeout(timeout time.Duration) *ExtrasReportsListParams {
-
 	return &ExtrasReportsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasReportsListParamsWithContext creates a new ExtrasReportsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasReportsListParamsWithContext(ctx context.Context) *ExtrasReportsListParams {
-
 	return &ExtrasReportsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasReportsListParamsWithHTTPClient creates a new ExtrasReportsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasReportsListParamsWithHTTPClient(client *http.Client) *ExtrasReportsListParams {
-
 	return &ExtrasReportsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasReportsListParams contains all the parameters to send to the API endpoint
-for the extras reports list operation typically these are written to a http.Request
+/* ExtrasReportsListParams contains all the parameters to send to the API endpoint
+   for the extras reports list operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasReportsListParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras reports list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasReportsListParams) WithDefaults() *ExtrasReportsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras reports list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasReportsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras reports list params

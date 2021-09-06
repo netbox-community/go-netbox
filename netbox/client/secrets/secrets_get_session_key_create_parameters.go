@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewSecretsGetSessionKeyCreateParams creates a new SecretsGetSessionKeyCreateParams object
-// with the default values initialized.
+// NewSecretsGetSessionKeyCreateParams creates a new SecretsGetSessionKeyCreateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsGetSessionKeyCreateParams() *SecretsGetSessionKeyCreateParams {
-
 	return &SecretsGetSessionKeyCreateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsGetSessionKeyCreateParamsWithTimeout creates a new SecretsGetSessionKeyCreateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsGetSessionKeyCreateParamsWithTimeout(timeout time.Duration) *SecretsGetSessionKeyCreateParams {
-
 	return &SecretsGetSessionKeyCreateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsGetSessionKeyCreateParamsWithContext creates a new SecretsGetSessionKeyCreateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsGetSessionKeyCreateParamsWithContext(ctx context.Context) *SecretsGetSessionKeyCreateParams {
-
 	return &SecretsGetSessionKeyCreateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsGetSessionKeyCreateParamsWithHTTPClient creates a new SecretsGetSessionKeyCreateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsGetSessionKeyCreateParamsWithHTTPClient(client *http.Client) *SecretsGetSessionKeyCreateParams {
-
 	return &SecretsGetSessionKeyCreateParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsGetSessionKeyCreateParams contains all the parameters to send to the API endpoint
-for the secrets get session key create operation typically these are written to a http.Request
+/* SecretsGetSessionKeyCreateParams contains all the parameters to send to the API endpoint
+   for the secrets get session key create operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsGetSessionKeyCreateParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets get session key create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsGetSessionKeyCreateParams) WithDefaults() *SecretsGetSessionKeyCreateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets get session key create params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsGetSessionKeyCreateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets get session key create params

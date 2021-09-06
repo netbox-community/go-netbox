@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimVirtualChassisDeleteParams creates a new DcimVirtualChassisDeleteParams object
-// with the default values initialized.
+// NewDcimVirtualChassisDeleteParams creates a new DcimVirtualChassisDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimVirtualChassisDeleteParams() *DcimVirtualChassisDeleteParams {
-	var ()
 	return &DcimVirtualChassisDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimVirtualChassisDeleteParamsWithTimeout creates a new DcimVirtualChassisDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimVirtualChassisDeleteParamsWithTimeout(timeout time.Duration) *DcimVirtualChassisDeleteParams {
-	var ()
 	return &DcimVirtualChassisDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimVirtualChassisDeleteParamsWithContext creates a new DcimVirtualChassisDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimVirtualChassisDeleteParamsWithContext(ctx context.Context) *DcimVirtualChassisDeleteParams {
-	var ()
 	return &DcimVirtualChassisDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimVirtualChassisDeleteParamsWithHTTPClient creates a new DcimVirtualChassisDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimVirtualChassisDeleteParamsWithHTTPClient(client *http.Client) *DcimVirtualChassisDeleteParams {
-	var ()
 	return &DcimVirtualChassisDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimVirtualChassisDeleteParams contains all the parameters to send to the API endpoint
-for the dcim virtual chassis delete operation typically these are written to a http.Request
+/* DcimVirtualChassisDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim virtual chassis delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimVirtualChassisDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this virtual chassis.
+	/* ID.
 
+	   A unique integer value identifying this virtual chassis.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim virtual chassis delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimVirtualChassisDeleteParams) WithDefaults() *DcimVirtualChassisDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim virtual chassis delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimVirtualChassisDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim virtual chassis delete params

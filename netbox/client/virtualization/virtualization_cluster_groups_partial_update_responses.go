@@ -45,14 +45,7 @@ func (o *VirtualizationClusterGroupsPartialUpdateReader) ReadResponse(response r
 		}
 		return result, nil
 	default:
-		result := NewVirtualizationClusterGroupsPartialUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewVirtualizationClusterGroupsPartialUpdateOK() *VirtualizationClusterGroup
 	return &VirtualizationClusterGroupsPartialUpdateOK{}
 }
 
-/*VirtualizationClusterGroupsPartialUpdateOK handles this case with default header values.
+/* VirtualizationClusterGroupsPartialUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterGroupsPartialUpdateOK virtualization cluster groups partial update o k
 */
@@ -72,7 +65,6 @@ type VirtualizationClusterGroupsPartialUpdateOK struct {
 func (o *VirtualizationClusterGroupsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsPartialUpdateOK) GetPayload() *models.ClusterGroup {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *VirtualizationClusterGroupsPartialUpdateOK) readResponse(response runti
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewVirtualizationClusterGroupsPartialUpdateDefault creates a VirtualizationClusterGroupsPartialUpdateDefault with default headers values
-func NewVirtualizationClusterGroupsPartialUpdateDefault(code int) *VirtualizationClusterGroupsPartialUpdateDefault {
-	return &VirtualizationClusterGroupsPartialUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*VirtualizationClusterGroupsPartialUpdateDefault handles this case with default header values.
-
-VirtualizationClusterGroupsPartialUpdateDefault virtualization cluster groups partial update default
-*/
-type VirtualizationClusterGroupsPartialUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the virtualization cluster groups partial update default response
-func (o *VirtualizationClusterGroupsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *VirtualizationClusterGroupsPartialUpdateDefault) Error() string {
-	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_partial_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *VirtualizationClusterGroupsPartialUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *VirtualizationClusterGroupsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

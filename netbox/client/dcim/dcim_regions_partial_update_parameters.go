@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimRegionsPartialUpdateParams creates a new DcimRegionsPartialUpdateParams object
-// with the default values initialized.
+// NewDcimRegionsPartialUpdateParams creates a new DcimRegionsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRegionsPartialUpdateParams() *DcimRegionsPartialUpdateParams {
-	var ()
 	return &DcimRegionsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRegionsPartialUpdateParamsWithTimeout creates a new DcimRegionsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRegionsPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimRegionsPartialUpdateParams {
-	var ()
 	return &DcimRegionsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRegionsPartialUpdateParamsWithContext creates a new DcimRegionsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRegionsPartialUpdateParamsWithContext(ctx context.Context) *DcimRegionsPartialUpdateParams {
-	var ()
 	return &DcimRegionsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRegionsPartialUpdateParamsWithHTTPClient creates a new DcimRegionsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRegionsPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimRegionsPartialUpdateParams {
-	var ()
 	return &DcimRegionsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRegionsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim regions partial update operation typically these are written to a http.Request
+/* DcimRegionsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim regions partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRegionsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRegion
-	/*ID
-	  A unique integer value identifying this region.
 
+	/* ID.
+
+	   A unique integer value identifying this region.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim regions partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRegionsPartialUpdateParams) WithDefaults() *DcimRegionsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim regions partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRegionsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim regions partial update params
@@ -153,7 +168,6 @@ func (o *DcimRegionsPartialUpdateParams) WriteToRequest(r runtime.ClientRequest,
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

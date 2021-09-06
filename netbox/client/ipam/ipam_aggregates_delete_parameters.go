@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamAggregatesDeleteParams creates a new IpamAggregatesDeleteParams object
-// with the default values initialized.
+// NewIpamAggregatesDeleteParams creates a new IpamAggregatesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamAggregatesDeleteParams() *IpamAggregatesDeleteParams {
-	var ()
 	return &IpamAggregatesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamAggregatesDeleteParamsWithTimeout creates a new IpamAggregatesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamAggregatesDeleteParamsWithTimeout(timeout time.Duration) *IpamAggregatesDeleteParams {
-	var ()
 	return &IpamAggregatesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamAggregatesDeleteParamsWithContext creates a new IpamAggregatesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamAggregatesDeleteParamsWithContext(ctx context.Context) *IpamAggregatesDeleteParams {
-	var ()
 	return &IpamAggregatesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamAggregatesDeleteParamsWithHTTPClient creates a new IpamAggregatesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamAggregatesDeleteParamsWithHTTPClient(client *http.Client) *IpamAggregatesDeleteParams {
-	var ()
 	return &IpamAggregatesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamAggregatesDeleteParams contains all the parameters to send to the API endpoint
-for the ipam aggregates delete operation typically these are written to a http.Request
+/* IpamAggregatesDeleteParams contains all the parameters to send to the API endpoint
+   for the ipam aggregates delete operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamAggregatesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this aggregate.
+	/* ID.
 
+	   A unique integer value identifying this aggregate.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam aggregates delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesDeleteParams) WithDefaults() *IpamAggregatesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam aggregates delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam aggregates delete params

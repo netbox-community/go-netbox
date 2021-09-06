@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -35,16 +36,37 @@ import (
 // swagger:model WritableVMInterface
 type WritableVMInterface struct {
 
+	// Count ipaddresses
+	// Read Only: true
+	CountIpaddresses int64 `json:"count_ipaddresses,omitempty"`
+
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Enabled
 	Enabled bool `json:"enabled,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// MAC Address
 	MacAddress *string `json:"mac_address,omitempty"`
@@ -64,12 +86,15 @@ type WritableVMInterface struct {
 	// Min Length: 1
 	Name *string `json:"name"`
 
+	// Parent interface
+	Parent *int64 `json:"parent,omitempty"`
+
 	// tagged vlans
 	// Unique: true
 	TaggedVlans []int64 `json:"tagged_vlans"`
 
 	// tags
-	Tags []*NestedTag `json:"tags,omitempty"`
+	Tags []*NestedTag `json:"tags"`
 
 	// Untagged VLAN
 	UntaggedVlan *int64 `json:"untagged_vlan,omitempty"`
@@ -88,7 +113,15 @@ type WritableVMInterface struct {
 func (m *WritableVMInterface) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -126,13 +159,36 @@ func (m *WritableVMInterface) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableVMInterface) validateDescription(formats strfmt.Registry) error {
+func (m *WritableVMInterface) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
 
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVMInterface) validateDescription(formats strfmt.Registry) error {
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVMInterface) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -159,8 +215,8 @@ const (
 	// WritableVMInterfaceModeTagged captures enum value "tagged"
 	WritableVMInterfaceModeTagged string = "tagged"
 
-	// WritableVMInterfaceModeTaggedAll captures enum value "tagged-all"
-	WritableVMInterfaceModeTaggedAll string = "tagged-all"
+	// WritableVMInterfaceModeTaggedDashAll captures enum value "tagged-all"
+	WritableVMInterfaceModeTaggedDashAll string = "tagged-all"
 )
 
 // prop value enum
@@ -172,7 +228,6 @@ func (m *WritableVMInterface) validateModeEnum(path, location string, value stri
 }
 
 func (m *WritableVMInterface) validateMode(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Mode) { // not required
 		return nil
 	}
@@ -186,16 +241,15 @@ func (m *WritableVMInterface) validateMode(formats strfmt.Registry) error {
 }
 
 func (m *WritableVMInterface) validateMtu(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Mtu) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("mtu", "body", int64(*m.Mtu), 1, false); err != nil {
+	if err := validate.MinimumInt("mtu", "body", *m.Mtu, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("mtu", "body", int64(*m.Mtu), 65536, false); err != nil {
+	if err := validate.MaximumInt("mtu", "body", *m.Mtu, 65536, false); err != nil {
 		return err
 	}
 
@@ -208,11 +262,11 @@ func (m *WritableVMInterface) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -220,7 +274,6 @@ func (m *WritableVMInterface) validateName(formats strfmt.Registry) error {
 }
 
 func (m *WritableVMInterface) validateTaggedVlans(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TaggedVlans) { // not required
 		return nil
 	}
@@ -233,7 +286,6 @@ func (m *WritableVMInterface) validateTaggedVlans(formats strfmt.Registry) error
 }
 
 func (m *WritableVMInterface) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -258,7 +310,6 @@ func (m *WritableVMInterface) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *WritableVMInterface) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -273,6 +324,116 @@ func (m *WritableVMInterface) validateURL(formats strfmt.Registry) error {
 func (m *WritableVMInterface) validateVirtualMachine(formats strfmt.Registry) error {
 
 	if err := validate.Required("virtual_machine", "body", m.VirtualMachine); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable VM interface based on the context it is used
+func (m *WritableVMInterface) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCountIpaddresses(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableVMInterface) contextValidateCountIpaddresses(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "count_ipaddresses", "body", int64(m.CountIpaddresses)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVMInterface) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVMInterface) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVMInterface) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVMInterface) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVMInterface) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableVMInterface) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

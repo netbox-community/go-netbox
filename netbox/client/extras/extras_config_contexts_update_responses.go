@@ -45,14 +45,7 @@ func (o *ExtrasConfigContextsUpdateReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		result := NewExtrasConfigContextsUpdateDefault(response.Code())
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		if response.Code()/100 == 2 {
-			return result, nil
-		}
-		return nil, result
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -61,7 +54,7 @@ func NewExtrasConfigContextsUpdateOK() *ExtrasConfigContextsUpdateOK {
 	return &ExtrasConfigContextsUpdateOK{}
 }
 
-/*ExtrasConfigContextsUpdateOK handles this case with default header values.
+/* ExtrasConfigContextsUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasConfigContextsUpdateOK extras config contexts update o k
 */
@@ -72,7 +65,6 @@ type ExtrasConfigContextsUpdateOK struct {
 func (o *ExtrasConfigContextsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/config-contexts/{id}/][%d] extrasConfigContextsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasConfigContextsUpdateOK) GetPayload() *models.ConfigContext {
 	return o.Payload
 }
@@ -83,46 +75,6 @@ func (o *ExtrasConfigContextsUpdateOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
-		return err
-	}
-
-	return nil
-}
-
-// NewExtrasConfigContextsUpdateDefault creates a ExtrasConfigContextsUpdateDefault with default headers values
-func NewExtrasConfigContextsUpdateDefault(code int) *ExtrasConfigContextsUpdateDefault {
-	return &ExtrasConfigContextsUpdateDefault{
-		_statusCode: code,
-	}
-}
-
-/*ExtrasConfigContextsUpdateDefault handles this case with default header values.
-
-ExtrasConfigContextsUpdateDefault extras config contexts update default
-*/
-type ExtrasConfigContextsUpdateDefault struct {
-	_statusCode int
-
-	Payload interface{}
-}
-
-// Code gets the status code for the extras config contexts update default response
-func (o *ExtrasConfigContextsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
-func (o *ExtrasConfigContextsUpdateDefault) Error() string {
-	return fmt.Sprintf("[PUT /extras/config-contexts/{id}/][%d] extras_config-contexts_update default  %+v", o._statusCode, o.Payload)
-}
-
-func (o *ExtrasConfigContextsUpdateDefault) GetPayload() interface{} {
-	return o.Payload
-}
-
-func (o *ExtrasConfigContextsUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
-
-	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

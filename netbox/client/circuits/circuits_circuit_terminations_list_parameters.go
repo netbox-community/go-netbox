@@ -32,126 +32,220 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewCircuitsCircuitTerminationsListParams creates a new CircuitsCircuitTerminationsListParams object
-// with the default values initialized.
+// NewCircuitsCircuitTerminationsListParams creates a new CircuitsCircuitTerminationsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitTerminationsListParams() *CircuitsCircuitTerminationsListParams {
-	var ()
 	return &CircuitsCircuitTerminationsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitTerminationsListParamsWithTimeout creates a new CircuitsCircuitTerminationsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitTerminationsListParamsWithTimeout(timeout time.Duration) *CircuitsCircuitTerminationsListParams {
-	var ()
 	return &CircuitsCircuitTerminationsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitTerminationsListParamsWithContext creates a new CircuitsCircuitTerminationsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitTerminationsListParamsWithContext(ctx context.Context) *CircuitsCircuitTerminationsListParams {
-	var ()
 	return &CircuitsCircuitTerminationsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitTerminationsListParamsWithHTTPClient creates a new CircuitsCircuitTerminationsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitTerminationsListParamsWithHTTPClient(client *http.Client) *CircuitsCircuitTerminationsListParams {
-	var ()
 	return &CircuitsCircuitTerminationsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitTerminationsListParams contains all the parameters to send to the API endpoint
-for the circuits circuit terminations list operation typically these are written to a http.Request
+/* CircuitsCircuitTerminationsListParams contains all the parameters to send to the API endpoint
+   for the circuits circuit terminations list operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitTerminationsListParams struct {
 
-	/*CircuitID*/
-	CircuitID *string
-	/*CircuitIDn*/
-	CircuitIDn *string
-	/*Limit
-	  Number of results to return per page.
+	// Cabled.
+	Cabled *string
 
+	// CircuitID.
+	CircuitID *string
+
+	// CircuitIDn.
+	CircuitIDn *string
+
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Offset
-	  The initial index from which to return the results.
 
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*PortSpeed*/
+
+	// PortSpeed.
 	PortSpeed *string
-	/*PortSpeedGt*/
+
+	// PortSpeedGt.
 	PortSpeedGt *string
-	/*PortSpeedGte*/
+
+	// PortSpeedGte.
 	PortSpeedGte *string
-	/*PortSpeedLt*/
+
+	// PortSpeedLt.
 	PortSpeedLt *string
-	/*PortSpeedLte*/
+
+	// PortSpeedLte.
 	PortSpeedLte *string
-	/*PortSpeedn*/
+
+	// PortSpeedn.
 	PortSpeedn *string
-	/*Q*/
+
+	// ProviderNetworkID.
+	ProviderNetworkID *string
+
+	// ProviderNetworkIDn.
+	ProviderNetworkIDn *string
+
+	// Q.
 	Q *string
-	/*Site*/
+
+	// Site.
 	Site *string
-	/*Siten*/
+
+	// Siten.
 	Siten *string
-	/*SiteID*/
+
+	// SiteID.
 	SiteID *string
-	/*SiteIDn*/
+
+	// SiteIDn.
 	SiteIDn *string
-	/*TermSide*/
+
+	// TermSide.
 	TermSide *string
-	/*TermSiden*/
+
+	// TermSiden.
 	TermSiden *string
-	/*UpstreamSpeed*/
+
+	// UpstreamSpeed.
 	UpstreamSpeed *string
-	/*UpstreamSpeedGt*/
+
+	// UpstreamSpeedGt.
 	UpstreamSpeedGt *string
-	/*UpstreamSpeedGte*/
+
+	// UpstreamSpeedGte.
 	UpstreamSpeedGte *string
-	/*UpstreamSpeedLt*/
+
+	// UpstreamSpeedLt.
 	UpstreamSpeedLt *string
-	/*UpstreamSpeedLte*/
+
+	// UpstreamSpeedLte.
 	UpstreamSpeedLte *string
-	/*UpstreamSpeedn*/
+
+	// UpstreamSpeedn.
 	UpstreamSpeedn *string
-	/*XconnectID*/
+
+	// XconnectID.
 	XconnectID *string
-	/*XconnectIDIc*/
+
+	// XconnectIDEmpty.
+	XconnectIDEmpty *string
+
+	// XconnectIDIc.
 	XconnectIDIc *string
-	/*XconnectIDIe*/
+
+	// XconnectIDIe.
 	XconnectIDIe *string
-	/*XconnectIDIew*/
+
+	// XconnectIDIew.
 	XconnectIDIew *string
-	/*XconnectIDIsw*/
+
+	// XconnectIDIsw.
 	XconnectIDIsw *string
-	/*XconnectIDn*/
+
+	// XconnectIDn.
 	XconnectIDn *string
-	/*XconnectIDNic*/
+
+	// XconnectIDNic.
 	XconnectIDNic *string
-	/*XconnectIDNie*/
+
+	// XconnectIDNie.
 	XconnectIDNie *string
-	/*XconnectIDNiew*/
+
+	// XconnectIDNiew.
 	XconnectIDNiew *string
-	/*XconnectIDNisw*/
+
+	// XconnectIDNisw.
 	XconnectIDNisw *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuit terminations list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTerminationsListParams) WithDefaults() *CircuitsCircuitTerminationsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuit terminations list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTerminationsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuit terminations list params
@@ -187,6 +281,17 @@ func (o *CircuitsCircuitTerminationsListParams) SetHTTPClient(client *http.Clien
 	o.HTTPClient = client
 }
 
+// WithCabled adds the cabled to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCabled(cabled *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCabled(cabled)
+	return o
+}
+
+// SetCabled adds the cabled to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCabled(cabled *string) {
+	o.Cabled = cabled
+}
+
 // WithCircuitID adds the circuitID to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithCircuitID(circuitID *string) *CircuitsCircuitTerminationsListParams {
 	o.SetCircuitID(circuitID)
@@ -207,6 +312,138 @@ func (o *CircuitsCircuitTerminationsListParams) WithCircuitIDn(circuitIDn *strin
 // SetCircuitIDn adds the circuitIdN to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) SetCircuitIDn(circuitIDn *string) {
 	o.CircuitIDn = circuitIDn
+}
+
+// WithCreated adds the created to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCreated(created *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCreatedGte(createdGte *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCreatedLte(createdLte *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
+// WithID adds the id to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithID(id *string) *CircuitsCircuitTerminationsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithIDGt(iDGt *string) *CircuitsCircuitTerminationsListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithIDGte(iDGte *string) *CircuitsCircuitTerminationsListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithIDLt(iDLt *string) *CircuitsCircuitTerminationsListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithIDLte(iDLte *string) *CircuitsCircuitTerminationsListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithIDn(iDn *string) *CircuitsCircuitTerminationsListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
+}
+
+// WithLastUpdated adds the lastUpdated to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithLastUpdated(lastUpdated *string) *CircuitsCircuitTerminationsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *CircuitsCircuitTerminationsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *CircuitsCircuitTerminationsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
 }
 
 // WithLimit adds the limit to the circuits circuit terminations list params
@@ -295,6 +532,28 @@ func (o *CircuitsCircuitTerminationsListParams) WithPortSpeedn(portSpeedn *strin
 // SetPortSpeedn adds the portSpeedN to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) SetPortSpeedn(portSpeedn *string) {
 	o.PortSpeedn = portSpeedn
+}
+
+// WithProviderNetworkID adds the providerNetworkID to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithProviderNetworkID(providerNetworkID *string) *CircuitsCircuitTerminationsListParams {
+	o.SetProviderNetworkID(providerNetworkID)
+	return o
+}
+
+// SetProviderNetworkID adds the providerNetworkId to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetProviderNetworkID(providerNetworkID *string) {
+	o.ProviderNetworkID = providerNetworkID
+}
+
+// WithProviderNetworkIDn adds the providerNetworkIDn to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithProviderNetworkIDn(providerNetworkIDn *string) *CircuitsCircuitTerminationsListParams {
+	o.SetProviderNetworkIDn(providerNetworkIDn)
+	return o
+}
+
+// SetProviderNetworkIDn adds the providerNetworkIdN to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetProviderNetworkIDn(providerNetworkIDn *string) {
+	o.ProviderNetworkIDn = providerNetworkIDn
 }
 
 // WithQ adds the q to the circuits circuit terminations list params
@@ -451,6 +710,17 @@ func (o *CircuitsCircuitTerminationsListParams) SetXconnectID(xconnectID *string
 	o.XconnectID = xconnectID
 }
 
+// WithXconnectIDEmpty adds the xconnectIDEmpty to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithXconnectIDEmpty(xconnectIDEmpty *string) *CircuitsCircuitTerminationsListParams {
+	o.SetXconnectIDEmpty(xconnectIDEmpty)
+	return o
+}
+
+// SetXconnectIDEmpty adds the xconnectIdEmpty to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetXconnectIDEmpty(xconnectIDEmpty *string) {
+	o.XconnectIDEmpty = xconnectIDEmpty
+}
+
 // WithXconnectIDIc adds the xconnectIDIc to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithXconnectIDIc(xconnectIDIc *string) *CircuitsCircuitTerminationsListParams {
 	o.SetXconnectIDIc(xconnectIDIc)
@@ -558,532 +828,837 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 	}
 	var res []error
 
+	if o.Cabled != nil {
+
+		// query param cabled
+		var qrCabled string
+
+		if o.Cabled != nil {
+			qrCabled = *o.Cabled
+		}
+		qCabled := qrCabled
+		if qCabled != "" {
+
+			if err := r.SetQueryParam("cabled", qCabled); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CircuitID != nil {
 
 		// query param circuit_id
 		var qrCircuitID string
+
 		if o.CircuitID != nil {
 			qrCircuitID = *o.CircuitID
 		}
 		qCircuitID := qrCircuitID
 		if qCircuitID != "" {
+
 			if err := r.SetQueryParam("circuit_id", qCircuitID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CircuitIDn != nil {
 
 		// query param circuit_id__n
 		var qrCircuitIDn string
+
 		if o.CircuitIDn != nil {
 			qrCircuitIDn = *o.CircuitIDn
 		}
 		qCircuitIDn := qrCircuitIDn
 		if qCircuitIDn != "" {
+
 			if err := r.SetQueryParam("circuit_id__n", qCircuitIDn); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PortSpeed != nil {
 
 		// query param port_speed
 		var qrPortSpeed string
+
 		if o.PortSpeed != nil {
 			qrPortSpeed = *o.PortSpeed
 		}
 		qPortSpeed := qrPortSpeed
 		if qPortSpeed != "" {
+
 			if err := r.SetQueryParam("port_speed", qPortSpeed); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PortSpeedGt != nil {
 
 		// query param port_speed__gt
 		var qrPortSpeedGt string
+
 		if o.PortSpeedGt != nil {
 			qrPortSpeedGt = *o.PortSpeedGt
 		}
 		qPortSpeedGt := qrPortSpeedGt
 		if qPortSpeedGt != "" {
+
 			if err := r.SetQueryParam("port_speed__gt", qPortSpeedGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PortSpeedGte != nil {
 
 		// query param port_speed__gte
 		var qrPortSpeedGte string
+
 		if o.PortSpeedGte != nil {
 			qrPortSpeedGte = *o.PortSpeedGte
 		}
 		qPortSpeedGte := qrPortSpeedGte
 		if qPortSpeedGte != "" {
+
 			if err := r.SetQueryParam("port_speed__gte", qPortSpeedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PortSpeedLt != nil {
 
 		// query param port_speed__lt
 		var qrPortSpeedLt string
+
 		if o.PortSpeedLt != nil {
 			qrPortSpeedLt = *o.PortSpeedLt
 		}
 		qPortSpeedLt := qrPortSpeedLt
 		if qPortSpeedLt != "" {
+
 			if err := r.SetQueryParam("port_speed__lt", qPortSpeedLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PortSpeedLte != nil {
 
 		// query param port_speed__lte
 		var qrPortSpeedLte string
+
 		if o.PortSpeedLte != nil {
 			qrPortSpeedLte = *o.PortSpeedLte
 		}
 		qPortSpeedLte := qrPortSpeedLte
 		if qPortSpeedLte != "" {
+
 			if err := r.SetQueryParam("port_speed__lte", qPortSpeedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PortSpeedn != nil {
 
 		// query param port_speed__n
 		var qrPortSpeedn string
+
 		if o.PortSpeedn != nil {
 			qrPortSpeedn = *o.PortSpeedn
 		}
 		qPortSpeedn := qrPortSpeedn
 		if qPortSpeedn != "" {
+
 			if err := r.SetQueryParam("port_speed__n", qPortSpeedn); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.ProviderNetworkID != nil {
+
+		// query param provider_network_id
+		var qrProviderNetworkID string
+
+		if o.ProviderNetworkID != nil {
+			qrProviderNetworkID = *o.ProviderNetworkID
+		}
+		qProviderNetworkID := qrProviderNetworkID
+		if qProviderNetworkID != "" {
+
+			if err := r.SetQueryParam("provider_network_id", qProviderNetworkID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ProviderNetworkIDn != nil {
+
+		// query param provider_network_id__n
+		var qrProviderNetworkIDn string
+
+		if o.ProviderNetworkIDn != nil {
+			qrProviderNetworkIDn = *o.ProviderNetworkIDn
+		}
+		qProviderNetworkIDn := qrProviderNetworkIDn
+		if qProviderNetworkIDn != "" {
+
+			if err := r.SetQueryParam("provider_network_id__n", qProviderNetworkIDn); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Site != nil {
 
 		// query param site
 		var qrSite string
+
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
 		qSite := qrSite
 		if qSite != "" {
+
 			if err := r.SetQueryParam("site", qSite); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Siten != nil {
 
 		// query param site__n
 		var qrSiten string
+
 		if o.Siten != nil {
 			qrSiten = *o.Siten
 		}
 		qSiten := qrSiten
 		if qSiten != "" {
+
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteID != nil {
 
 		// query param site_id
 		var qrSiteID string
+
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
 		qSiteID := qrSiteID
 		if qSiteID != "" {
+
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteIDn != nil {
 
 		// query param site_id__n
 		var qrSiteIDn string
+
 		if o.SiteIDn != nil {
 			qrSiteIDn = *o.SiteIDn
 		}
 		qSiteIDn := qrSiteIDn
 		if qSiteIDn != "" {
+
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TermSide != nil {
 
 		// query param term_side
 		var qrTermSide string
+
 		if o.TermSide != nil {
 			qrTermSide = *o.TermSide
 		}
 		qTermSide := qrTermSide
 		if qTermSide != "" {
+
 			if err := r.SetQueryParam("term_side", qTermSide); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TermSiden != nil {
 
 		// query param term_side__n
 		var qrTermSiden string
+
 		if o.TermSiden != nil {
 			qrTermSiden = *o.TermSiden
 		}
 		qTermSiden := qrTermSiden
 		if qTermSiden != "" {
+
 			if err := r.SetQueryParam("term_side__n", qTermSiden); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UpstreamSpeed != nil {
 
 		// query param upstream_speed
 		var qrUpstreamSpeed string
+
 		if o.UpstreamSpeed != nil {
 			qrUpstreamSpeed = *o.UpstreamSpeed
 		}
 		qUpstreamSpeed := qrUpstreamSpeed
 		if qUpstreamSpeed != "" {
+
 			if err := r.SetQueryParam("upstream_speed", qUpstreamSpeed); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UpstreamSpeedGt != nil {
 
 		// query param upstream_speed__gt
 		var qrUpstreamSpeedGt string
+
 		if o.UpstreamSpeedGt != nil {
 			qrUpstreamSpeedGt = *o.UpstreamSpeedGt
 		}
 		qUpstreamSpeedGt := qrUpstreamSpeedGt
 		if qUpstreamSpeedGt != "" {
+
 			if err := r.SetQueryParam("upstream_speed__gt", qUpstreamSpeedGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UpstreamSpeedGte != nil {
 
 		// query param upstream_speed__gte
 		var qrUpstreamSpeedGte string
+
 		if o.UpstreamSpeedGte != nil {
 			qrUpstreamSpeedGte = *o.UpstreamSpeedGte
 		}
 		qUpstreamSpeedGte := qrUpstreamSpeedGte
 		if qUpstreamSpeedGte != "" {
+
 			if err := r.SetQueryParam("upstream_speed__gte", qUpstreamSpeedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UpstreamSpeedLt != nil {
 
 		// query param upstream_speed__lt
 		var qrUpstreamSpeedLt string
+
 		if o.UpstreamSpeedLt != nil {
 			qrUpstreamSpeedLt = *o.UpstreamSpeedLt
 		}
 		qUpstreamSpeedLt := qrUpstreamSpeedLt
 		if qUpstreamSpeedLt != "" {
+
 			if err := r.SetQueryParam("upstream_speed__lt", qUpstreamSpeedLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UpstreamSpeedLte != nil {
 
 		// query param upstream_speed__lte
 		var qrUpstreamSpeedLte string
+
 		if o.UpstreamSpeedLte != nil {
 			qrUpstreamSpeedLte = *o.UpstreamSpeedLte
 		}
 		qUpstreamSpeedLte := qrUpstreamSpeedLte
 		if qUpstreamSpeedLte != "" {
+
 			if err := r.SetQueryParam("upstream_speed__lte", qUpstreamSpeedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UpstreamSpeedn != nil {
 
 		// query param upstream_speed__n
 		var qrUpstreamSpeedn string
+
 		if o.UpstreamSpeedn != nil {
 			qrUpstreamSpeedn = *o.UpstreamSpeedn
 		}
 		qUpstreamSpeedn := qrUpstreamSpeedn
 		if qUpstreamSpeedn != "" {
+
 			if err := r.SetQueryParam("upstream_speed__n", qUpstreamSpeedn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.XconnectID != nil {
 
 		// query param xconnect_id
 		var qrXconnectID string
+
 		if o.XconnectID != nil {
 			qrXconnectID = *o.XconnectID
 		}
 		qXconnectID := qrXconnectID
 		if qXconnectID != "" {
+
 			if err := r.SetQueryParam("xconnect_id", qXconnectID); err != nil {
 				return err
 			}
 		}
+	}
 
+	if o.XconnectIDEmpty != nil {
+
+		// query param xconnect_id__empty
+		var qrXconnectIDEmpty string
+
+		if o.XconnectIDEmpty != nil {
+			qrXconnectIDEmpty = *o.XconnectIDEmpty
+		}
+		qXconnectIDEmpty := qrXconnectIDEmpty
+		if qXconnectIDEmpty != "" {
+
+			if err := r.SetQueryParam("xconnect_id__empty", qXconnectIDEmpty); err != nil {
+				return err
+			}
+		}
 	}
 
 	if o.XconnectIDIc != nil {
 
 		// query param xconnect_id__ic
 		var qrXconnectIDIc string
+
 		if o.XconnectIDIc != nil {
 			qrXconnectIDIc = *o.XconnectIDIc
 		}
 		qXconnectIDIc := qrXconnectIDIc
 		if qXconnectIDIc != "" {
+
 			if err := r.SetQueryParam("xconnect_id__ic", qXconnectIDIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.XconnectIDIe != nil {
 
 		// query param xconnect_id__ie
 		var qrXconnectIDIe string
+
 		if o.XconnectIDIe != nil {
 			qrXconnectIDIe = *o.XconnectIDIe
 		}
 		qXconnectIDIe := qrXconnectIDIe
 		if qXconnectIDIe != "" {
+
 			if err := r.SetQueryParam("xconnect_id__ie", qXconnectIDIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.XconnectIDIew != nil {
 
 		// query param xconnect_id__iew
 		var qrXconnectIDIew string
+
 		if o.XconnectIDIew != nil {
 			qrXconnectIDIew = *o.XconnectIDIew
 		}
 		qXconnectIDIew := qrXconnectIDIew
 		if qXconnectIDIew != "" {
+
 			if err := r.SetQueryParam("xconnect_id__iew", qXconnectIDIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.XconnectIDIsw != nil {
 
 		// query param xconnect_id__isw
 		var qrXconnectIDIsw string
+
 		if o.XconnectIDIsw != nil {
 			qrXconnectIDIsw = *o.XconnectIDIsw
 		}
 		qXconnectIDIsw := qrXconnectIDIsw
 		if qXconnectIDIsw != "" {
+
 			if err := r.SetQueryParam("xconnect_id__isw", qXconnectIDIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.XconnectIDn != nil {
 
 		// query param xconnect_id__n
 		var qrXconnectIDn string
+
 		if o.XconnectIDn != nil {
 			qrXconnectIDn = *o.XconnectIDn
 		}
 		qXconnectIDn := qrXconnectIDn
 		if qXconnectIDn != "" {
+
 			if err := r.SetQueryParam("xconnect_id__n", qXconnectIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.XconnectIDNic != nil {
 
 		// query param xconnect_id__nic
 		var qrXconnectIDNic string
+
 		if o.XconnectIDNic != nil {
 			qrXconnectIDNic = *o.XconnectIDNic
 		}
 		qXconnectIDNic := qrXconnectIDNic
 		if qXconnectIDNic != "" {
+
 			if err := r.SetQueryParam("xconnect_id__nic", qXconnectIDNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.XconnectIDNie != nil {
 
 		// query param xconnect_id__nie
 		var qrXconnectIDNie string
+
 		if o.XconnectIDNie != nil {
 			qrXconnectIDNie = *o.XconnectIDNie
 		}
 		qXconnectIDNie := qrXconnectIDNie
 		if qXconnectIDNie != "" {
+
 			if err := r.SetQueryParam("xconnect_id__nie", qXconnectIDNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.XconnectIDNiew != nil {
 
 		// query param xconnect_id__niew
 		var qrXconnectIDNiew string
+
 		if o.XconnectIDNiew != nil {
 			qrXconnectIDNiew = *o.XconnectIDNiew
 		}
 		qXconnectIDNiew := qrXconnectIDNiew
 		if qXconnectIDNiew != "" {
+
 			if err := r.SetQueryParam("xconnect_id__niew", qXconnectIDNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.XconnectIDNisw != nil {
 
 		// query param xconnect_id__nisw
 		var qrXconnectIDNisw string
+
 		if o.XconnectIDNisw != nil {
 			qrXconnectIDNisw = *o.XconnectIDNisw
 		}
 		qXconnectIDNisw := qrXconnectIDNisw
 		if qXconnectIDNisw != "" {
+
 			if err := r.SetQueryParam("xconnect_id__nisw", qXconnectIDNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

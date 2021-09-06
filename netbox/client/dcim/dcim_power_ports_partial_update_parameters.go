@@ -34,61 +34,76 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/models"
 )
 
-// NewDcimPowerPortsPartialUpdateParams creates a new DcimPowerPortsPartialUpdateParams object
-// with the default values initialized.
+// NewDcimPowerPortsPartialUpdateParams creates a new DcimPowerPortsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerPortsPartialUpdateParams() *DcimPowerPortsPartialUpdateParams {
-	var ()
 	return &DcimPowerPortsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerPortsPartialUpdateParamsWithTimeout creates a new DcimPowerPortsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerPortsPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimPowerPortsPartialUpdateParams {
-	var ()
 	return &DcimPowerPortsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerPortsPartialUpdateParamsWithContext creates a new DcimPowerPortsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerPortsPartialUpdateParamsWithContext(ctx context.Context) *DcimPowerPortsPartialUpdateParams {
-	var ()
 	return &DcimPowerPortsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerPortsPartialUpdateParamsWithHTTPClient creates a new DcimPowerPortsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerPortsPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimPowerPortsPartialUpdateParams {
-	var ()
 	return &DcimPowerPortsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerPortsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim power ports partial update operation typically these are written to a http.Request
+/* DcimPowerPortsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim power ports partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerPortsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerPort
-	/*ID
-	  A unique integer value identifying this power port.
 
+	/* ID.
+
+	   A unique integer value identifying this power port.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power ports partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortsPartialUpdateParams) WithDefaults() *DcimPowerPortsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power ports partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power ports partial update params
@@ -153,7 +168,6 @@ func (o *DcimPowerPortsPartialUpdateParams) WriteToRequest(r runtime.ClientReque
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

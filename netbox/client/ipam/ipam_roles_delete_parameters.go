@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamRolesDeleteParams creates a new IpamRolesDeleteParams object
-// with the default values initialized.
+// NewIpamRolesDeleteParams creates a new IpamRolesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRolesDeleteParams() *IpamRolesDeleteParams {
-	var ()
 	return &IpamRolesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRolesDeleteParamsWithTimeout creates a new IpamRolesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRolesDeleteParamsWithTimeout(timeout time.Duration) *IpamRolesDeleteParams {
-	var ()
 	return &IpamRolesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRolesDeleteParamsWithContext creates a new IpamRolesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRolesDeleteParamsWithContext(ctx context.Context) *IpamRolesDeleteParams {
-	var ()
 	return &IpamRolesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRolesDeleteParamsWithHTTPClient creates a new IpamRolesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRolesDeleteParamsWithHTTPClient(client *http.Client) *IpamRolesDeleteParams {
-	var ()
 	return &IpamRolesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRolesDeleteParams contains all the parameters to send to the API endpoint
-for the ipam roles delete operation typically these are written to a http.Request
+/* IpamRolesDeleteParams contains all the parameters to send to the API endpoint
+   for the ipam roles delete operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRolesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this role.
+	/* ID.
 
+	   A unique integer value identifying this role.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam roles delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRolesDeleteParams) WithDefaults() *IpamRolesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam roles delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRolesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam roles delete params

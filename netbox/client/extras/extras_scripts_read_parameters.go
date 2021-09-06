@@ -31,56 +31,70 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewExtrasScriptsReadParams creates a new ExtrasScriptsReadParams object
-// with the default values initialized.
+// NewExtrasScriptsReadParams creates a new ExtrasScriptsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasScriptsReadParams() *ExtrasScriptsReadParams {
-	var ()
 	return &ExtrasScriptsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasScriptsReadParamsWithTimeout creates a new ExtrasScriptsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasScriptsReadParamsWithTimeout(timeout time.Duration) *ExtrasScriptsReadParams {
-	var ()
 	return &ExtrasScriptsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasScriptsReadParamsWithContext creates a new ExtrasScriptsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasScriptsReadParamsWithContext(ctx context.Context) *ExtrasScriptsReadParams {
-	var ()
 	return &ExtrasScriptsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasScriptsReadParamsWithHTTPClient creates a new ExtrasScriptsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasScriptsReadParamsWithHTTPClient(client *http.Client) *ExtrasScriptsReadParams {
-	var ()
 	return &ExtrasScriptsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasScriptsReadParams contains all the parameters to send to the API endpoint
-for the extras scripts read operation typically these are written to a http.Request
+/* ExtrasScriptsReadParams contains all the parameters to send to the API endpoint
+   for the extras scripts read operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasScriptsReadParams struct {
 
-	/*ID*/
+	// ID.
 	ID string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras scripts read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasScriptsReadParams) WithDefaults() *ExtrasScriptsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras scripts read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasScriptsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras scripts read params
