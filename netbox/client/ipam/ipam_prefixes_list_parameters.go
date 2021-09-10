@@ -162,8 +162,11 @@ type IpamPrefixesListParams struct {
 	*/
 	Limit *int64
 
+	// MarkUtilized.
+	MarkUtilized *string
+
 	// MaskLength.
-	MaskLength *float64
+	MaskLength *string
 
 	// MaskLengthGte.
 	MaskLengthGte *float64
@@ -661,14 +664,25 @@ func (o *IpamPrefixesListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithMarkUtilized adds the markUtilized to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithMarkUtilized(markUtilized *string) *IpamPrefixesListParams {
+	o.SetMarkUtilized(markUtilized)
+	return o
+}
+
+// SetMarkUtilized adds the markUtilized to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetMarkUtilized(markUtilized *string) {
+	o.MarkUtilized = markUtilized
+}
+
 // WithMaskLength adds the maskLength to the ipam prefixes list params
-func (o *IpamPrefixesListParams) WithMaskLength(maskLength *float64) *IpamPrefixesListParams {
+func (o *IpamPrefixesListParams) WithMaskLength(maskLength *string) *IpamPrefixesListParams {
 	o.SetMaskLength(maskLength)
 	return o
 }
 
 // SetMaskLength adds the maskLength to the ipam prefixes list params
-func (o *IpamPrefixesListParams) SetMaskLength(maskLength *float64) {
+func (o *IpamPrefixesListParams) SetMaskLength(maskLength *string) {
 	o.MaskLength = maskLength
 }
 
@@ -1640,15 +1654,32 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.MarkUtilized != nil {
+
+		// query param mark_utilized
+		var qrMarkUtilized string
+
+		if o.MarkUtilized != nil {
+			qrMarkUtilized = *o.MarkUtilized
+		}
+		qMarkUtilized := qrMarkUtilized
+		if qMarkUtilized != "" {
+
+			if err := r.SetQueryParam("mark_utilized", qMarkUtilized); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.MaskLength != nil {
 
 		// query param mask_length
-		var qrMaskLength float64
+		var qrMaskLength string
 
 		if o.MaskLength != nil {
 			qrMaskLength = *o.MaskLength
 		}
-		qMaskLength := swag.FormatFloat64(qrMaskLength)
+		qMaskLength := qrMaskLength
 		if qMaskLength != "" {
 
 			if err := r.SetQueryParam("mask_length", qMaskLength); err != nil {

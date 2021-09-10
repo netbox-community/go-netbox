@@ -37,7 +37,7 @@ type WritableJournalEntry struct {
 
 	// Assigned object
 	// Read Only: true
-	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
+	AssignedObject interface{} `json:"assigned_object,omitempty"`
 
 	// Assigned object id
 	// Required: true
@@ -229,10 +229,6 @@ func (m *WritableJournalEntry) validateURL(formats strfmt.Registry) error {
 func (m *WritableJournalEntry) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateAssignedObject(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -252,11 +248,6 @@ func (m *WritableJournalEntry) ContextValidate(ctx context.Context, formats strf
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *WritableJournalEntry) contextValidateAssignedObject(ctx context.Context, formats strfmt.Registry) error {
-
 	return nil
 }
 

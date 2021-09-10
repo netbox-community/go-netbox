@@ -49,11 +49,16 @@ type WritableRearPort struct {
 	// Return the appropriate serializer for the cable termination model.
 	//
 	// Read Only: true
-	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+	CablePeer interface{} `json:"cable_peer,omitempty"`
 
 	// Cable peer type
 	// Read Only: true
 	CablePeerType string `json:"cable_peer_type,omitempty"`
+
+	// Color
+	// Max Length: 6
+	// Pattern: ^[0-9a-f]{6}$
+	Color string `json:"color,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -128,6 +133,10 @@ func (m *WritableRearPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateColor(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
@@ -186,6 +195,22 @@ func (m *WritableRearPort) validateCable(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *WritableRearPort) validateColor(formats strfmt.Registry) error {
+	if swag.IsZero(m.Color) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("color", "body", m.Color, 6); err != nil {
+		return err
+	}
+
+	if err := validate.Pattern("color", "body", m.Color, `^[0-9a-f]{6}$`); err != nil {
+		return err
 	}
 
 	return nil
@@ -459,10 +484,6 @@ func (m *WritableRearPort) ContextValidate(ctx context.Context, formats strfmt.R
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -516,11 +537,6 @@ func (m *WritableRearPort) contextValidateCable(ctx context.Context, formats str
 			return err
 		}
 	}
-
-	return nil
-}
-
-func (m *WritableRearPort) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

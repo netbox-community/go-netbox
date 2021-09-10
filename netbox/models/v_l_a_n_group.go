@@ -194,7 +194,7 @@ func (m *VLANGroup) validateScopeID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("scope_id", "body", *m.ScopeID, 9223372036854775807, false); err != nil {
+	if err := validate.MaximumInt("scope_id", "body", *m.ScopeID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 

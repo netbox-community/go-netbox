@@ -38,10 +38,6 @@ type NestedDevice struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Display name
-	// Read Only: true
-	DisplayName string `json:"display_name,omitempty"`
-
 	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
@@ -106,10 +102,6 @@ func (m *NestedDevice) ContextValidate(ctx context.Context, formats strfmt.Regis
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -127,15 +119,6 @@ func (m *NestedDevice) ContextValidate(ctx context.Context, formats strfmt.Regis
 func (m *NestedDevice) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *NestedDevice) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
 		return err
 	}
 

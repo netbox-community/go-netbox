@@ -280,7 +280,7 @@ func (a *Client) TenancyTenantGroupsDelete(params *TenancyTenantGroupsDeletePara
 }
 
 /*
-  TenancyTenantGroupsList tenancy tenant groups list API
+  TenancyTenantGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -631,7 +631,7 @@ func (a *Client) TenancyTenantsDelete(params *TenancyTenantsDeleteParams, authIn
 }
 
 /*
-  TenancyTenantsList tenancy tenants list API
+  TenancyTenantsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) TenancyTenantsList(params *TenancyTenantsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TenancyTenantsListOK, error) {
 	// TODO: Validate the params before sending

@@ -44,11 +44,6 @@ type ContentType struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Display name
-	// Read Only: true
-	// Min Length: 1
-	DisplayName string `json:"display_name,omitempty"`
-
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
@@ -70,10 +65,6 @@ func (m *ContentType) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAppLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateDisplayName(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -102,18 +93,6 @@ func (m *ContentType) validateAppLabel(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("app_label", "body", *m.AppLabel, 100); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ContentType) validateDisplayName(formats strfmt.Registry) error {
-	if swag.IsZero(m.DisplayName) { // not required
-		return nil
-	}
-
-	if err := validate.MinLength("display_name", "body", m.DisplayName, 1); err != nil {
 		return err
 	}
 
@@ -157,10 +136,6 @@ func (m *ContentType) ContextValidate(ctx context.Context, formats strfmt.Regist
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -178,15 +153,6 @@ func (m *ContentType) ContextValidate(ctx context.Context, formats strfmt.Regist
 func (m *ContentType) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ContentType) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
 		return err
 	}
 

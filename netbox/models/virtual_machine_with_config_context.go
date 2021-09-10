@@ -45,7 +45,7 @@ type VirtualMachineWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext map[string]*string `json:"config_context,omitempty"`
+	ConfigContext interface{} `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -120,7 +120,8 @@ type VirtualMachineWithConfigContext struct {
 	URL strfmt.URI `json:"url,omitempty"`
 
 	// VCPUs
-	Vcpus *string `json:"vcpus,omitempty"`
+	// Minimum: 0.01
+	Vcpus *float64 `json:"vcpus,omitempty"`
 }
 
 // Validate validates this virtual machine with config context
@@ -188,6 +189,10 @@ func (m *VirtualMachineWithConfigContext) Validate(formats strfmt.Registry) erro
 	}
 
 	if err := m.validateURL(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateVcpus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -460,15 +465,23 @@ func (m *VirtualMachineWithConfigContext) validateURL(formats strfmt.Registry) e
 	return nil
 }
 
+func (m *VirtualMachineWithConfigContext) validateVcpus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Vcpus) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("vcpus", "body", *m.Vcpus, 0.01, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this virtual machine with config context based on the context it is used
 func (m *VirtualMachineWithConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateCluster(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -544,11 +557,6 @@ func (m *VirtualMachineWithConfigContext) contextValidateCluster(ctx context.Con
 			return err
 		}
 	}
-
-	return nil
-}
-
-func (m *VirtualMachineWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

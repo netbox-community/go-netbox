@@ -51,10 +51,6 @@ type WritableVRF struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Display name
-	// Read Only: true
-	DisplayName string `json:"display_name,omitempty"`
-
 	// Enforce unique space
 	//
 	// Prevent duplicate prefixes/IP addresses within this VRF
@@ -292,10 +288,6 @@ func (m *WritableVRF) ContextValidate(ctx context.Context, formats strfmt.Regist
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -338,15 +330,6 @@ func (m *WritableVRF) contextValidateCreated(ctx context.Context, formats strfmt
 func (m *WritableVRF) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableVRF) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
 		return err
 	}
 

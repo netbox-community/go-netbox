@@ -410,7 +410,7 @@ func (a *Client) ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeletePa
 }
 
 /*
-  ExtrasConfigContextsList extras config contexts list API
+  ExtrasConfigContextsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) ExtrasConfigContextsList(params *ExtrasConfigContextsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsListOK, error) {
 	// TODO: Validate the params before sending
@@ -839,7 +839,7 @@ func (a *Client) ExtrasCustomFieldsDelete(params *ExtrasCustomFieldsDeleteParams
 }
 
 /*
-  ExtrasCustomFieldsList extras custom fields list API
+  ExtrasCustomFieldsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) ExtrasCustomFieldsList(params *ExtrasCustomFieldsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsListOK, error) {
 	// TODO: Validate the params before sending
@@ -1190,7 +1190,7 @@ func (a *Client) ExtrasCustomLinksDelete(params *ExtrasCustomLinksDeleteParams, 
 }
 
 /*
-  ExtrasCustomLinksList extras custom links list API
+  ExtrasCustomLinksList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) ExtrasCustomLinksList(params *ExtrasCustomLinksListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksListOK, error) {
 	// TODO: Validate the params before sending
@@ -1541,7 +1541,7 @@ func (a *Client) ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDelete
 }
 
 /*
-  ExtrasExportTemplatesList extras export templates list API
+  ExtrasExportTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) ExtrasExportTemplatesList(params *ExtrasExportTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -1892,7 +1892,7 @@ func (a *Client) ExtrasImageAttachmentsDelete(params *ExtrasImageAttachmentsDele
 }
 
 /*
-  ExtrasImageAttachmentsList extras image attachments list API
+  ExtrasImageAttachmentsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) ExtrasImageAttachmentsList(params *ExtrasImageAttachmentsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsListOK, error) {
 	// TODO: Validate the params before sending
@@ -2321,7 +2321,7 @@ func (a *Client) ExtrasJournalEntriesDelete(params *ExtrasJournalEntriesDeletePa
 }
 
 /*
-  ExtrasJournalEntriesList extras journal entries list API
+  ExtrasJournalEntriesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) ExtrasJournalEntriesList(params *ExtrasJournalEntriesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesListOK, error) {
 	// TODO: Validate the params before sending
@@ -2945,7 +2945,7 @@ func (a *Client) ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runti
 }
 
 /*
-  ExtrasTagsList extras tags list API
+  ExtrasTagsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) ExtrasTagsList(params *ExtrasTagsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsListOK, error) {
 	// TODO: Validate the params before sending
@@ -3296,7 +3296,7 @@ func (a *Client) ExtrasWebhooksDelete(params *ExtrasWebhooksDeleteParams, authIn
 }
 
 /*
-  ExtrasWebhooksList extras webhooks list API
+  ExtrasWebhooksList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) ExtrasWebhooksList(params *ExtrasWebhooksListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksListOK, error) {
 	// TODO: Validate the params before sending

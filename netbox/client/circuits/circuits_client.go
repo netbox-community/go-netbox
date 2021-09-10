@@ -336,7 +336,7 @@ func (a *Client) CircuitsCircuitTerminationsDelete(params *CircuitsCircuitTermin
 }
 
 /*
-  CircuitsCircuitTerminationsList circuits circuit terminations list API
+  CircuitsCircuitTerminationsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) CircuitsCircuitTerminationsList(params *CircuitsCircuitTerminationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CircuitsCircuitTerminationsListOK, error) {
 	// TODO: Validate the params before sending
@@ -726,7 +726,7 @@ func (a *Client) CircuitsCircuitTypesDelete(params *CircuitsCircuitTypesDeletePa
 }
 
 /*
-  CircuitsCircuitTypesList circuits circuit types list API
+  CircuitsCircuitTypesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) CircuitsCircuitTypesList(params *CircuitsCircuitTypesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CircuitsCircuitTypesListOK, error) {
 	// TODO: Validate the params before sending
@@ -1077,7 +1077,7 @@ func (a *Client) CircuitsCircuitsDelete(params *CircuitsCircuitsDeleteParams, au
 }
 
 /*
-  CircuitsCircuitsList circuits circuits list API
+  CircuitsCircuitsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) CircuitsCircuitsList(params *CircuitsCircuitsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CircuitsCircuitsListOK, error) {
 	// TODO: Validate the params before sending
@@ -1428,7 +1428,7 @@ func (a *Client) CircuitsProviderNetworksDelete(params *CircuitsProviderNetworks
 }
 
 /*
-  CircuitsProviderNetworksList circuits provider networks list API
+  CircuitsProviderNetworksList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) CircuitsProviderNetworksList(params *CircuitsProviderNetworksListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CircuitsProviderNetworksListOK, error) {
 	// TODO: Validate the params before sending
@@ -1779,7 +1779,7 @@ func (a *Client) CircuitsProvidersDelete(params *CircuitsProvidersDeleteParams, 
 }
 
 /*
-  CircuitsProvidersList circuits providers list API
+  CircuitsProvidersList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) CircuitsProvidersList(params *CircuitsProvidersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CircuitsProvidersListOK, error) {
 	// TODO: Validate the params before sending

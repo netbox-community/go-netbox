@@ -35,6 +35,11 @@ import (
 // swagger:model FrontPortTemplate
 type FrontPortTemplate struct {
 
+	// Color
+	// Max Length: 6
+	// Pattern: ^[0-9a-f]{6}$
+	Color string `json:"color,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date
@@ -96,6 +101,10 @@ type FrontPortTemplate struct {
 func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateColor(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
@@ -139,6 +148,22 @@ func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FrontPortTemplate) validateColor(formats strfmt.Registry) error {
+	if swag.IsZero(m.Color) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("color", "body", m.Color, 6); err != nil {
+		return err
+	}
+
+	if err := validate.Pattern("color", "body", m.Color, `^[0-9a-f]{6}$`); err != nil {
+		return err
+	}
+
 	return nil
 }
 

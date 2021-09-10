@@ -37,7 +37,7 @@ type Webhook struct {
 
 	// Additional headers
 	//
-	// User-supplied HTTP headers to be sent with the request in addition to the HTTP content type. Headers should be defined in the format <code>Name: Value</code>. Jinja2 template processing is support with the same context as the request body (below).
+	// User-supplied HTTP headers to be sent with the request in addition to the HTTP content type. Headers should be defined in the format <code>Name: Value</code>. Jinja2 template processing is supported with the same context as the request body (below).
 	AdditionalHeaders string `json:"additional_headers,omitempty"`
 
 	// Body template

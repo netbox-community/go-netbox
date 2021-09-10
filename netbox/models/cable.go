@@ -57,9 +57,7 @@ type Cable struct {
 	Label string `json:"label,omitempty"`
 
 	// Length
-	// Maximum: 32767
-	// Minimum: 0
-	Length *int64 `json:"length,omitempty"`
+	Length *float64 `json:"length,omitempty"`
 
 	// length unit
 	LengthUnit *CableLengthUnit `json:"length_unit,omitempty"`
@@ -72,7 +70,7 @@ type Cable struct {
 
 	// Termination a
 	// Read Only: true
-	Terminationa map[string]*string `json:"termination_a,omitempty"`
+	Terminationa interface{} `json:"termination_a,omitempty"`
 
 	// Termination a id
 	// Required: true
@@ -86,7 +84,7 @@ type Cable struct {
 
 	// Termination b
 	// Read Only: true
-	Terminationb map[string]*string `json:"termination_b,omitempty"`
+	Terminationb interface{} `json:"termination_b,omitempty"`
 
 	// Termination b id
 	// Required: true
@@ -117,10 +115,6 @@ func (m *Cable) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateLength(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -188,22 +182,6 @@ func (m *Cable) validateLabel(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("label", "body", m.Label, 100); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *Cable) validateLength(formats strfmt.Registry) error {
-	if swag.IsZero(m.Length) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("length", "body", *m.Length, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("length", "body", *m.Length, 32767, false); err != nil {
 		return err
 	}
 
@@ -461,14 +439,6 @@ func (m *Cable) ContextValidate(ctx context.Context, formats strfmt.Registry) er
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateTerminationa(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateTerminationb(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateURL(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -543,16 +513,6 @@ func (m *Cable) contextValidateTags(ctx context.Context, formats strfmt.Registry
 	return nil
 }
 
-func (m *Cable) contextValidateTerminationa(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
-func (m *Cable) contextValidateTerminationb(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
 func (m *Cable) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
@@ -587,12 +547,12 @@ type CableLengthUnit struct {
 
 	// label
 	// Required: true
-	// Enum: [Meters Centimeters Feet Inches]
+	// Enum: [Kilometers Meters Centimeters Miles Feet Inches]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [m cm ft in]
+	// Enum: [km m cm mi ft in]
 	Value *string `json:"value"`
 }
 
@@ -618,7 +578,7 @@ var cableLengthUnitTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Meters","Centimeters","Feet","Inches"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Kilometers","Meters","Centimeters","Miles","Feet","Inches"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -628,11 +588,17 @@ func init() {
 
 const (
 
+	// CableLengthUnitLabelKilometers captures enum value "Kilometers"
+	CableLengthUnitLabelKilometers string = "Kilometers"
+
 	// CableLengthUnitLabelMeters captures enum value "Meters"
 	CableLengthUnitLabelMeters string = "Meters"
 
 	// CableLengthUnitLabelCentimeters captures enum value "Centimeters"
 	CableLengthUnitLabelCentimeters string = "Centimeters"
+
+	// CableLengthUnitLabelMiles captures enum value "Miles"
+	CableLengthUnitLabelMiles string = "Miles"
 
 	// CableLengthUnitLabelFeet captures enum value "Feet"
 	CableLengthUnitLabelFeet string = "Feet"
@@ -667,7 +633,7 @@ var cableLengthUnitTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["m","cm","ft","in"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["km","m","cm","mi","ft","in"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -677,11 +643,17 @@ func init() {
 
 const (
 
+	// CableLengthUnitValueKm captures enum value "km"
+	CableLengthUnitValueKm string = "km"
+
 	// CableLengthUnitValueM captures enum value "m"
 	CableLengthUnitValueM string = "m"
 
 	// CableLengthUnitValueCm captures enum value "cm"
 	CableLengthUnitValueCm string = "cm"
+
+	// CableLengthUnitValueMi captures enum value "mi"
+	CableLengthUnitValueMi string = "mi"
 
 	// CableLengthUnitValueFt captures enum value "ft"
 	CableLengthUnitValueFt string = "ft"

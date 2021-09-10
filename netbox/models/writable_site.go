@@ -104,12 +104,12 @@ type WritableSite struct {
 	// Latitude
 	//
 	// GPS coordinate (latitude)
-	Latitude *string `json:"latitude,omitempty"`
+	Latitude *float64 `json:"latitude,omitempty"`
 
 	// Longitude
 	//
 	// GPS coordinate (longitude)
-	Longitude *string `json:"longitude,omitempty"`
+	Longitude *float64 `json:"longitude,omitempty"`
 
 	// Name
 	// Required: true
