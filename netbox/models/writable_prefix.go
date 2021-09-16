@@ -78,6 +78,11 @@ type WritablePrefix struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Mark utilized
+	//
+	// Treat as 100% utilized
+	MarkUtilized bool `json:"mark_utilized,omitempty"`
+
 	// Prefix
 	//
 	// IPv4 or IPv6 network with mask

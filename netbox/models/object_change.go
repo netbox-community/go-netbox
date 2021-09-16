@@ -44,7 +44,7 @@ type ObjectChange struct {
 	// Serialize a nested representation of the changed object.
 	//
 	// Read Only: true
-	ChangedObject map[string]*string `json:"changed_object,omitempty"`
+	ChangedObject interface{} `json:"changed_object,omitempty"`
 
 	// Changed object id
 	// Required: true
@@ -241,10 +241,6 @@ func (m *ObjectChange) ContextValidate(ctx context.Context, formats strfmt.Regis
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateChangedObject(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateChangedObjectType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -301,11 +297,6 @@ func (m *ObjectChange) contextValidateAction(ctx context.Context, formats strfmt
 			return err
 		}
 	}
-
-	return nil
-}
-
-func (m *ObjectChange) contextValidateChangedObject(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

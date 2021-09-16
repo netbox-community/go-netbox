@@ -48,7 +48,7 @@ type WritableCircuitTermination struct {
 	// Return the appropriate serializer for the cable termination model.
 	//
 	// Read Only: true
-	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+	CablePeer interface{} `json:"cable_peer,omitempty"`
 
 	// Cable peer type
 	// Read Only: true
@@ -319,10 +319,6 @@ func (m *WritableCircuitTermination) ContextValidate(ctx context.Context, format
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -364,11 +360,6 @@ func (m *WritableCircuitTermination) contextValidateCable(ctx context.Context, f
 			return err
 		}
 	}
-
-	return nil
-}
-
-func (m *WritableCircuitTermination) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

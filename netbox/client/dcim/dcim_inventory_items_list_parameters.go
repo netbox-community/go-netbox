@@ -198,6 +198,18 @@ type DcimInventoryItemsListParams struct {
 	*/
 	Limit *int64
 
+	// Location.
+	Location *string
+
+	// Locationn.
+	Locationn *string
+
+	// LocationID.
+	LocationID *string
+
+	// LocationIDn.
+	LocationIDn *string
+
 	// Manufacturer.
 	Manufacturer *string
 
@@ -827,6 +839,50 @@ func (o *DcimInventoryItemsListParams) WithLimit(limit *int64) *DcimInventoryIte
 // SetLimit adds the limit to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetLimit(limit *int64) {
 	o.Limit = limit
+}
+
+// WithLocation adds the location to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLocation(location *string) *DcimInventoryItemsListParams {
+	o.SetLocation(location)
+	return o
+}
+
+// SetLocation adds the location to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLocation(location *string) {
+	o.Location = location
+}
+
+// WithLocationn adds the locationn to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLocationn(locationn *string) *DcimInventoryItemsListParams {
+	o.SetLocationn(locationn)
+	return o
+}
+
+// SetLocationn adds the locationN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLocationn(locationn *string) {
+	o.Locationn = locationn
+}
+
+// WithLocationID adds the locationID to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLocationID(locationID *string) *DcimInventoryItemsListParams {
+	o.SetLocationID(locationID)
+	return o
+}
+
+// SetLocationID adds the locationId to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLocationID(locationID *string) {
+	o.LocationID = locationID
+}
+
+// WithLocationIDn adds the locationIDn to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLocationIDn(locationIDn *string) *DcimInventoryItemsListParams {
+	o.SetLocationIDn(locationIDn)
+	return o
+}
+
+// SetLocationIDn adds the locationIdN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLocationIDn(locationIDn *string) {
+	o.LocationIDn = locationIDn
 }
 
 // WithManufacturer adds the manufacturer to the dcim inventory items list params
@@ -2007,6 +2063,74 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qLimit != "" {
 
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Location != nil {
+
+		// query param location
+		var qrLocation string
+
+		if o.Location != nil {
+			qrLocation = *o.Location
+		}
+		qLocation := qrLocation
+		if qLocation != "" {
+
+			if err := r.SetQueryParam("location", qLocation); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Locationn != nil {
+
+		// query param location__n
+		var qrLocationn string
+
+		if o.Locationn != nil {
+			qrLocationn = *o.Locationn
+		}
+		qLocationn := qrLocationn
+		if qLocationn != "" {
+
+			if err := r.SetQueryParam("location__n", qLocationn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationID != nil {
+
+		// query param location_id
+		var qrLocationID string
+
+		if o.LocationID != nil {
+			qrLocationID = *o.LocationID
+		}
+		qLocationID := qrLocationID
+		if qLocationID != "" {
+
+			if err := r.SetQueryParam("location_id", qLocationID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationIDn != nil {
+
+		// query param location_id__n
+		var qrLocationIDn string
+
+		if o.LocationIDn != nil {
+			qrLocationIDn = *o.LocationIDn
+		}
+		qLocationIDn := qrLocationIDn
+		if qLocationIDn != "" {
+
+			if err := r.SetQueryParam("location_id__n", qLocationIDn); err != nil {
 				return err
 			}
 		}

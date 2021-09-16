@@ -52,10 +52,6 @@ type VLAN struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Display name
-	// Read Only: true
-	DisplayName string `json:"display_name,omitempty"`
-
 	// group
 	Group *NestedVLANGroup `json:"group,omitempty"`
 
@@ -366,10 +362,6 @@ func (m *VLAN) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateGroup(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -428,15 +420,6 @@ func (m *VLAN) contextValidateCreated(ctx context.Context, formats strfmt.Regist
 func (m *VLAN) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *VLAN) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
 		return err
 	}
 

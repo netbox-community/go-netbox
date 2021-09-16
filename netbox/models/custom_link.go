@@ -38,7 +38,7 @@ type CustomLink struct {
 	// Button class
 	//
 	// The class of the first link in a group will be used for the dropdown button
-	// Enum: [default primary success info warning danger link]
+	// Enum: [outline-dark ghost-dark blue indigo purple pink red orange yellow green teal cyan secondary]
 	ButtonClass string `json:"button_class,omitempty"`
 
 	// Content type
@@ -143,7 +143,7 @@ var customLinkTypeButtonClassPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["default","primary","success","info","warning","danger","link"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["outline-dark","ghost-dark","blue","indigo","purple","pink","red","orange","yellow","green","teal","cyan","secondary"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -153,26 +153,44 @@ func init() {
 
 const (
 
-	// CustomLinkButtonClassDefault captures enum value "default"
-	CustomLinkButtonClassDefault string = "default"
+	// CustomLinkButtonClassOutlineDashDark captures enum value "outline-dark"
+	CustomLinkButtonClassOutlineDashDark string = "outline-dark"
 
-	// CustomLinkButtonClassPrimary captures enum value "primary"
-	CustomLinkButtonClassPrimary string = "primary"
+	// CustomLinkButtonClassGhostDashDark captures enum value "ghost-dark"
+	CustomLinkButtonClassGhostDashDark string = "ghost-dark"
 
-	// CustomLinkButtonClassSuccess captures enum value "success"
-	CustomLinkButtonClassSuccess string = "success"
+	// CustomLinkButtonClassBlue captures enum value "blue"
+	CustomLinkButtonClassBlue string = "blue"
 
-	// CustomLinkButtonClassInfo captures enum value "info"
-	CustomLinkButtonClassInfo string = "info"
+	// CustomLinkButtonClassIndigo captures enum value "indigo"
+	CustomLinkButtonClassIndigo string = "indigo"
 
-	// CustomLinkButtonClassWarning captures enum value "warning"
-	CustomLinkButtonClassWarning string = "warning"
+	// CustomLinkButtonClassPurple captures enum value "purple"
+	CustomLinkButtonClassPurple string = "purple"
 
-	// CustomLinkButtonClassDanger captures enum value "danger"
-	CustomLinkButtonClassDanger string = "danger"
+	// CustomLinkButtonClassPink captures enum value "pink"
+	CustomLinkButtonClassPink string = "pink"
 
-	// CustomLinkButtonClassLink captures enum value "link"
-	CustomLinkButtonClassLink string = "link"
+	// CustomLinkButtonClassRed captures enum value "red"
+	CustomLinkButtonClassRed string = "red"
+
+	// CustomLinkButtonClassOrange captures enum value "orange"
+	CustomLinkButtonClassOrange string = "orange"
+
+	// CustomLinkButtonClassYellow captures enum value "yellow"
+	CustomLinkButtonClassYellow string = "yellow"
+
+	// CustomLinkButtonClassGreen captures enum value "green"
+	CustomLinkButtonClassGreen string = "green"
+
+	// CustomLinkButtonClassTeal captures enum value "teal"
+	CustomLinkButtonClassTeal string = "teal"
+
+	// CustomLinkButtonClassCyan captures enum value "cyan"
+	CustomLinkButtonClassCyan string = "cyan"
+
+	// CustomLinkButtonClassSecondary captures enum value "secondary"
+	CustomLinkButtonClassSecondary string = "secondary"
 )
 
 // prop value enum

@@ -45,28 +45,38 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	PluginsIPReservationsRelatedIPV6Read(params *PluginsIPReservationsRelatedIPV6ReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsIPReservationsRelatedIPV6ReadOK, error)
+	PluginsNextboxUISavedtopologiesCreate(params *PluginsNextboxUISavedtopologiesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesCreateCreated, error)
+
+	PluginsNextboxUISavedtopologiesDelete(params *PluginsNextboxUISavedtopologiesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesDeleteNoContent, error)
+
+	PluginsNextboxUISavedtopologiesList(params *PluginsNextboxUISavedtopologiesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesListOK, error)
+
+	PluginsNextboxUISavedtopologiesPartialUpdate(params *PluginsNextboxUISavedtopologiesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesPartialUpdateOK, error)
+
+	PluginsNextboxUISavedtopologiesRead(params *PluginsNextboxUISavedtopologiesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesReadOK, error)
+
+	PluginsNextboxUISavedtopologiesUpdate(params *PluginsNextboxUISavedtopologiesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  PluginsIPReservationsRelatedIPV6Read plugins ip reservations related ipv6 read API
+  PluginsNextboxUISavedtopologiesCreate plugins nextbox ui savedtopologies create API
 */
-func (a *Client) PluginsIPReservationsRelatedIPV6Read(params *PluginsIPReservationsRelatedIPV6ReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsIPReservationsRelatedIPV6ReadOK, error) {
+func (a *Client) PluginsNextboxUISavedtopologiesCreate(params *PluginsNextboxUISavedtopologiesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPluginsIPReservationsRelatedIPV6ReadParams()
+		params = NewPluginsNextboxUISavedtopologiesCreateParams()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "plugins_ip-reservations_related-ipv6_read",
-		Method:             "GET",
-		PathPattern:        "/plugins/ip-reservations/related-ipv6/{id}/",
+		ID:                 "plugins_nextbox-ui_savedtopologies_create",
+		Method:             "POST",
+		PathPattern:        "/plugins/nextbox-ui/savedtopologies/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PluginsIPReservationsRelatedIPV6ReadReader{formats: a.formats},
+		Reader:             &PluginsNextboxUISavedtopologiesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -79,13 +89,208 @@ func (a *Client) PluginsIPReservationsRelatedIPV6Read(params *PluginsIPReservati
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PluginsIPReservationsRelatedIPV6ReadOK)
+	success, ok := result.(*PluginsNextboxUISavedtopologiesCreateCreated)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for plugins_ip-reservations_related-ipv6_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for plugins_nextbox-ui_savedtopologies_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  PluginsNextboxUISavedtopologiesDelete plugins nextbox ui savedtopologies delete API
+*/
+func (a *Client) PluginsNextboxUISavedtopologiesDelete(params *PluginsNextboxUISavedtopologiesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPluginsNextboxUISavedtopologiesDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "plugins_nextbox-ui_savedtopologies_delete",
+		Method:             "DELETE",
+		PathPattern:        "/plugins/nextbox-ui/savedtopologies/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PluginsNextboxUISavedtopologiesDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PluginsNextboxUISavedtopologiesDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for plugins_nextbox-ui_savedtopologies_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  PluginsNextboxUISavedtopologiesList plugins nextbox ui savedtopologies list API
+*/
+func (a *Client) PluginsNextboxUISavedtopologiesList(params *PluginsNextboxUISavedtopologiesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPluginsNextboxUISavedtopologiesListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "plugins_nextbox-ui_savedtopologies_list",
+		Method:             "GET",
+		PathPattern:        "/plugins/nextbox-ui/savedtopologies/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PluginsNextboxUISavedtopologiesListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PluginsNextboxUISavedtopologiesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for plugins_nextbox-ui_savedtopologies_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  PluginsNextboxUISavedtopologiesPartialUpdate plugins nextbox ui savedtopologies partial update API
+*/
+func (a *Client) PluginsNextboxUISavedtopologiesPartialUpdate(params *PluginsNextboxUISavedtopologiesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPluginsNextboxUISavedtopologiesPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "plugins_nextbox-ui_savedtopologies_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/plugins/nextbox-ui/savedtopologies/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PluginsNextboxUISavedtopologiesPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PluginsNextboxUISavedtopologiesPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for plugins_nextbox-ui_savedtopologies_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  PluginsNextboxUISavedtopologiesRead plugins nextbox ui savedtopologies read API
+*/
+func (a *Client) PluginsNextboxUISavedtopologiesRead(params *PluginsNextboxUISavedtopologiesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPluginsNextboxUISavedtopologiesReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "plugins_nextbox-ui_savedtopologies_read",
+		Method:             "GET",
+		PathPattern:        "/plugins/nextbox-ui/savedtopologies/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PluginsNextboxUISavedtopologiesReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PluginsNextboxUISavedtopologiesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for plugins_nextbox-ui_savedtopologies_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  PluginsNextboxUISavedtopologiesUpdate plugins nextbox ui savedtopologies update API
+*/
+func (a *Client) PluginsNextboxUISavedtopologiesUpdate(params *PluginsNextboxUISavedtopologiesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PluginsNextboxUISavedtopologiesUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPluginsNextboxUISavedtopologiesUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "plugins_nextbox-ui_savedtopologies_update",
+		Method:             "PUT",
+		PathPattern:        "/plugins/nextbox-ui/savedtopologies/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &PluginsNextboxUISavedtopologiesUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PluginsNextboxUISavedtopologiesUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for plugins_nextbox-ui_savedtopologies_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

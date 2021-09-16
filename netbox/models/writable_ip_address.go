@@ -44,7 +44,7 @@ type WritableIPAddress struct {
 
 	// Assigned object
 	// Read Only: true
-	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
+	AssignedObject interface{} `json:"assigned_object,omitempty"`
 
 	// Assigned object id
 	// Maximum: 2.147483647e+09
@@ -404,10 +404,6 @@ func (m *WritableIPAddress) validateURL(formats strfmt.Registry) error {
 func (m *WritableIPAddress) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateAssignedObject(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -443,11 +439,6 @@ func (m *WritableIPAddress) ContextValidate(ctx context.Context, formats strfmt.
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *WritableIPAddress) contextValidateAssignedObject(ctx context.Context, formats strfmt.Registry) error {
-
 	return nil
 }
 

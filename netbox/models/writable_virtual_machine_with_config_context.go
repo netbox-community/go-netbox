@@ -45,7 +45,7 @@ type WritableVirtualMachineWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext map[string]*string `json:"config_context,omitempty"`
+	ConfigContext interface{} `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -123,7 +123,8 @@ type WritableVirtualMachineWithConfigContext struct {
 	URL strfmt.URI `json:"url,omitempty"`
 
 	// VCPUs
-	Vcpus *string `json:"vcpus,omitempty"`
+	// Minimum: 0.01
+	Vcpus *float64 `json:"vcpus,omitempty"`
 }
 
 // Validate validates this writable virtual machine with config context
@@ -163,6 +164,10 @@ func (m *WritableVirtualMachineWithConfigContext) Validate(formats strfmt.Regist
 	}
 
 	if err := m.validateURL(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateVcpus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -344,13 +349,21 @@ func (m *WritableVirtualMachineWithConfigContext) validateURL(formats strfmt.Reg
 	return nil
 }
 
+func (m *WritableVirtualMachineWithConfigContext) validateVcpus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Vcpus) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("vcpus", "body", *m.Vcpus, 0.01, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this writable virtual machine with config context based on the context it is used
 func (m *WritableVirtualMachineWithConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
-
-	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
-		res = append(res, err)
-	}
 
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
@@ -387,11 +400,6 @@ func (m *WritableVirtualMachineWithConfigContext) ContextValidate(ctx context.Co
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *WritableVirtualMachineWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
-
 	return nil
 }
 

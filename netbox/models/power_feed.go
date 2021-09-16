@@ -54,7 +54,7 @@ type PowerFeed struct {
 	// Return the appropriate serializer for the cable termination model.
 	//
 	// Read Only: true
-	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+	CablePeer interface{} `json:"cable_peer,omitempty"`
 
 	// Cable peer type
 	// Read Only: true
@@ -69,7 +69,7 @@ type PowerFeed struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint interface{} `json:"connected_endpoint,omitempty"`
 
 	// Connected endpoint reachable
 	// Read Only: true
@@ -478,15 +478,7 @@ func (m *PowerFeed) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -575,21 +567,11 @@ func (m *PowerFeed) contextValidateCable(ctx context.Context, formats strfmt.Reg
 	return nil
 }
 
-func (m *PowerFeed) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
 func (m *PowerFeed) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
 		return err
 	}
-
-	return nil
-}
-
-func (m *PowerFeed) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

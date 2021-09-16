@@ -29,8 +29,6 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/client/dcim"
 	"github.com/netbox-community/go-netbox/netbox/client/extras"
 	"github.com/netbox-community/go-netbox/netbox/client/ipam"
-	"github.com/netbox-community/go-netbox/netbox/client/plugins"
-	"github.com/netbox-community/go-netbox/netbox/client/secrets"
 	"github.com/netbox-community/go-netbox/netbox/client/status"
 	"github.com/netbox-community/go-netbox/netbox/client/tenancy"
 	"github.com/netbox-community/go-netbox/netbox/client/users"
@@ -43,7 +41,7 @@ var Default = NewHTTPClient(nil)
 const (
 	// DefaultHost is the default Host
 	// found in Meta (info) section of spec file
-	DefaultHost string = "localhost"
+	DefaultHost string = "localhost:8099"
 	// DefaultBasePath is the default BasePath
 	// found in Meta (info) section of spec file
 	DefaultBasePath string = "/api"
@@ -83,8 +81,6 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *NetBoxAPI 
 	cli.Dcim = dcim.New(transport, formats)
 	cli.Extras = extras.New(transport, formats)
 	cli.Ipam = ipam.New(transport, formats)
-	cli.Plugins = plugins.New(transport, formats)
-	cli.Secrets = secrets.New(transport, formats)
 	cli.Status = status.New(transport, formats)
 	cli.Tenancy = tenancy.New(transport, formats)
 	cli.Users = users.New(transport, formats)
@@ -141,10 +137,6 @@ type NetBoxAPI struct {
 
 	Ipam ipam.ClientService
 
-	Plugins plugins.ClientService
-
-	Secrets secrets.ClientService
-
 	Status status.ClientService
 
 	Tenancy tenancy.ClientService
@@ -163,8 +155,6 @@ func (c *NetBoxAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Dcim.SetTransport(transport)
 	c.Extras.SetTransport(transport)
 	c.Ipam.SetTransport(transport)
-	c.Plugins.SetTransport(transport)
-	c.Secrets.SetTransport(transport)
 	c.Status.SetTransport(transport)
 	c.Tenancy.SetTransport(transport)
 	c.Users.SetTransport(transport)

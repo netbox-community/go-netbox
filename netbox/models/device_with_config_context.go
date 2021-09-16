@@ -50,7 +50,7 @@ type DeviceWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext map[string]*string `json:"config_context,omitempty"`
+	ConfigContext interface{} `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -71,10 +71,6 @@ type DeviceWithConfigContext struct {
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
-
-	// Display name
-	// Read Only: true
-	DisplayName string `json:"display_name,omitempty"`
 
 	// face
 	Face *DeviceWithConfigContextFace `json:"face,omitempty"`
@@ -679,10 +675,6 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -696,10 +688,6 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 	}
 
 	if err := m.contextValidateDisplay(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -787,11 +775,6 @@ func (m *DeviceWithConfigContext) contextValidateCluster(ctx context.Context, fo
 	return nil
 }
 
-func (m *DeviceWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
 func (m *DeviceWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
@@ -832,15 +815,6 @@ func (m *DeviceWithConfigContext) contextValidateDeviceType(ctx context.Context,
 func (m *DeviceWithConfigContext) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *DeviceWithConfigContext) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
 		return err
 	}
 

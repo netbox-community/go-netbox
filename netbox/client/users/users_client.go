@@ -83,6 +83,26 @@ type ClientService interface {
 
 	UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsUpdateOK, error)
 
+	UsersTokensBulkDelete(params *UsersTokensBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkDeleteNoContent, error)
+
+	UsersTokensBulkPartialUpdate(params *UsersTokensBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkPartialUpdateOK, error)
+
+	UsersTokensBulkUpdate(params *UsersTokensBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkUpdateOK, error)
+
+	UsersTokensCreate(params *UsersTokensCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensCreateCreated, error)
+
+	UsersTokensDelete(params *UsersTokensDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensDeleteNoContent, error)
+
+	UsersTokensList(params *UsersTokensListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensListOK, error)
+
+	UsersTokensPartialUpdate(params *UsersTokensPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensPartialUpdateOK, error)
+
+	UsersTokensProvisionCreate(params *UsersTokensProvisionCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensProvisionCreateCreated, error)
+
+	UsersTokensRead(params *UsersTokensReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensReadOK, error)
+
+	UsersTokensUpdate(params *UsersTokensUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensUpdateOK, error)
+
 	UsersUsersBulkDelete(params *UsersUsersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkDeleteNoContent, error)
 
 	UsersUsersBulkPartialUpdate(params *UsersUsersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkPartialUpdateOK, error)
@@ -339,7 +359,7 @@ func (a *Client) UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo run
 }
 
 /*
-  UsersGroupsList users groups list API
+  UsersGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersGroupsList(params *UsersGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -690,7 +710,7 @@ func (a *Client) UsersPermissionsDelete(params *UsersPermissionsDeleteParams, au
 }
 
 /*
-  UsersPermissionsList users permissions list API
+  UsersPermissionsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersPermissionsList(params *UsersPermissionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsListOK, error) {
 	// TODO: Validate the params before sending
@@ -842,6 +862,396 @@ func (a *Client) UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, au
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for users_permissions_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensBulkDelete users tokens bulk delete API
+*/
+func (a *Client) UsersTokensBulkDelete(params *UsersTokensBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/users/tokens/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensBulkPartialUpdate users tokens bulk partial update API
+*/
+func (a *Client) UsersTokensBulkPartialUpdate(params *UsersTokensBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/users/tokens/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensBulkUpdate users tokens bulk update API
+*/
+func (a *Client) UsersTokensBulkUpdate(params *UsersTokensBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/users/tokens/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensCreate users tokens create API
+*/
+func (a *Client) UsersTokensCreate(params *UsersTokensCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_create",
+		Method:             "POST",
+		PathPattern:        "/users/tokens/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensDelete users tokens delete API
+*/
+func (a *Client) UsersTokensDelete(params *UsersTokensDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_delete",
+		Method:             "DELETE",
+		PathPattern:        "/users/tokens/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensList Overrides ListModelMixin to allow processing ExportTemplates.
+*/
+func (a *Client) UsersTokensList(params *UsersTokensListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_list",
+		Method:             "GET",
+		PathPattern:        "/users/tokens/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensPartialUpdate users tokens partial update API
+*/
+func (a *Client) UsersTokensPartialUpdate(params *UsersTokensPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/users/tokens/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensProvisionCreate Non-authenticated REST API endpoint via which a user may create a Token.
+*/
+func (a *Client) UsersTokensProvisionCreate(params *UsersTokensProvisionCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensProvisionCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensProvisionCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_provision_create",
+		Method:             "POST",
+		PathPattern:        "/users/tokens/provision/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensProvisionCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensProvisionCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_provision_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensRead users tokens read API
+*/
+func (a *Client) UsersTokensRead(params *UsersTokensReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_read",
+		Method:             "GET",
+		PathPattern:        "/users/tokens/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  UsersTokensUpdate users tokens update API
+*/
+func (a *Client) UsersTokensUpdate(params *UsersTokensUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewUsersTokensUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "users_tokens_update",
+		Method:             "PUT",
+		PathPattern:        "/users/tokens/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &UsersTokensUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*UsersTokensUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for users_tokens_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1041,7 +1451,7 @@ func (a *Client) UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runti
 }
 
 /*
-  UsersUsersList users users list API
+  UsersUsersList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersUsersList(params *UsersUsersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersListOK, error) {
 	// TODO: Validate the params before sending

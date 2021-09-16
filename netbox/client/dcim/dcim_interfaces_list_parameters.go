@@ -207,6 +207,18 @@ type DcimInterfacesListParams struct {
 	*/
 	Limit *int64
 
+	// Location.
+	Location *string
+
+	// Locationn.
+	Locationn *string
+
+	// LocationID.
+	LocationID *string
+
+	// LocationIDn.
+	LocationIDn *string
+
 	// MacAddress.
 	MacAddress *string
 
@@ -890,6 +902,50 @@ func (o *DcimInterfacesListParams) WithLimit(limit *int64) *DcimInterfacesListPa
 // SetLimit adds the limit to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetLimit(limit *int64) {
 	o.Limit = limit
+}
+
+// WithLocation adds the location to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithLocation(location *string) *DcimInterfacesListParams {
+	o.SetLocation(location)
+	return o
+}
+
+// SetLocation adds the location to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetLocation(location *string) {
+	o.Location = location
+}
+
+// WithLocationn adds the locationn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithLocationn(locationn *string) *DcimInterfacesListParams {
+	o.SetLocationn(locationn)
+	return o
+}
+
+// SetLocationn adds the locationN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetLocationn(locationn *string) {
+	o.Locationn = locationn
+}
+
+// WithLocationID adds the locationID to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithLocationID(locationID *string) *DcimInterfacesListParams {
+	o.SetLocationID(locationID)
+	return o
+}
+
+// SetLocationID adds the locationId to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetLocationID(locationID *string) {
+	o.LocationID = locationID
+}
+
+// WithLocationIDn adds the locationIDn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithLocationIDn(locationIDn *string) *DcimInterfacesListParams {
+	o.SetLocationIDn(locationIDn)
+	return o
+}
+
+// SetLocationIDn adds the locationIdN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetLocationIDn(locationIDn *string) {
+	o.LocationIDn = locationIDn
 }
 
 // WithMacAddress adds the macAddress to the dcim interfaces list params
@@ -2198,6 +2254,74 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLimit != "" {
 
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Location != nil {
+
+		// query param location
+		var qrLocation string
+
+		if o.Location != nil {
+			qrLocation = *o.Location
+		}
+		qLocation := qrLocation
+		if qLocation != "" {
+
+			if err := r.SetQueryParam("location", qLocation); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Locationn != nil {
+
+		// query param location__n
+		var qrLocationn string
+
+		if o.Locationn != nil {
+			qrLocationn = *o.Locationn
+		}
+		qLocationn := qrLocationn
+		if qLocationn != "" {
+
+			if err := r.SetQueryParam("location__n", qLocationn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationID != nil {
+
+		// query param location_id
+		var qrLocationID string
+
+		if o.LocationID != nil {
+			qrLocationID = *o.LocationID
+		}
+		qLocationID := qrLocationID
+		if qLocationID != "" {
+
+			if err := r.SetQueryParam("location_id", qLocationID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationIDn != nil {
+
+		// query param location_id__n
+		var qrLocationIDn string
+
+		if o.LocationIDn != nil {
+			qrLocationIDn = *o.LocationIDn
+		}
+		qLocationIDn := qrLocationIDn
+		if qLocationIDn != "" {
+
+			if err := r.SetQueryParam("location_id__n", qLocationIDn); err != nil {
 				return err
 			}
 		}

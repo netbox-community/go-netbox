@@ -49,7 +49,7 @@ type ConsoleServerPort struct {
 	// Return the appropriate serializer for the cable termination model.
 	//
 	// Read Only: true
-	CablePeer map[string]*string `json:"cable_peer,omitempty"`
+	CablePeer interface{} `json:"cable_peer,omitempty"`
 
 	// Cable peer type
 	// Read Only: true
@@ -61,7 +61,7 @@ type ConsoleServerPort struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint interface{} `json:"connected_endpoint,omitempty"`
 
 	// Connected endpoint reachable
 	// Read Only: true
@@ -368,15 +368,7 @@ func (m *ConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -453,21 +445,11 @@ func (m *ConsoleServerPort) contextValidateCable(ctx context.Context, formats st
 	return nil
 }
 
-func (m *ConsoleServerPort) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
 func (m *ConsoleServerPort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
 		return err
 	}
-
-	return nil
-}
-
-func (m *ConsoleServerPort) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

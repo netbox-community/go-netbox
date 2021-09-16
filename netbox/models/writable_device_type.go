@@ -55,10 +55,6 @@ type WritableDeviceType struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Display name
-	// Read Only: true
-	DisplayName string `json:"display_name,omitempty"`
-
 	// Front image
 	// Read Only: true
 	// Format: uri
@@ -401,10 +397,6 @@ func (m *WritableDeviceType) ContextValidate(ctx context.Context, formats strfmt
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateFrontImage(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -456,15 +448,6 @@ func (m *WritableDeviceType) contextValidateDeviceCount(ctx context.Context, for
 func (m *WritableDeviceType) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableDeviceType) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
 		return err
 	}
 
