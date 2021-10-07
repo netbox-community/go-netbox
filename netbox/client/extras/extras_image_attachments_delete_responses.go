@@ -59,7 +59,7 @@ func NewExtrasImageAttachmentsDeleteNoContent() *ExtrasImageAttachmentsDeleteNoC
 	return &ExtrasImageAttachmentsDeleteNoContent{}
 }
 
-/*ExtrasImageAttachmentsDeleteNoContent handles this case with default header values.
+/* ExtrasImageAttachmentsDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasImageAttachmentsDeleteNoContent extras image attachments delete no content
 */
@@ -82,7 +82,7 @@ func NewExtrasImageAttachmentsDeleteDefault(code int) *ExtrasImageAttachmentsDel
 	}
 }
 
-/*ExtrasImageAttachmentsDeleteDefault handles this case with default header values.
+/* ExtrasImageAttachmentsDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasImageAttachmentsDeleteDefault extras image attachments delete default
 */
@@ -100,7 +100,6 @@ func (o *ExtrasImageAttachmentsDeleteDefault) Code() int {
 func (o *ExtrasImageAttachmentsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/image-attachments/{id}/][%d] extras_image-attachments_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

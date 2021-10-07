@@ -59,7 +59,7 @@ func NewDcimInterfaceTemplatesDeleteNoContent() *DcimInterfaceTemplatesDeleteNoC
 	return &DcimInterfaceTemplatesDeleteNoContent{}
 }
 
-/*DcimInterfaceTemplatesDeleteNoContent handles this case with default header values.
+/* DcimInterfaceTemplatesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimInterfaceTemplatesDeleteNoContent dcim interface templates delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimInterfaceTemplatesDeleteDefault(code int) *DcimInterfaceTemplatesDel
 	}
 }
 
-/*DcimInterfaceTemplatesDeleteDefault handles this case with default header values.
+/* DcimInterfaceTemplatesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimInterfaceTemplatesDeleteDefault dcim interface templates delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimInterfaceTemplatesDeleteDefault) Code() int {
 func (o *DcimInterfaceTemplatesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/interface-templates/{id}/][%d] dcim_interface-templates_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

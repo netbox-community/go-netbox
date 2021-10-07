@@ -61,7 +61,7 @@ func NewIpamRouteTargetsCreateCreated() *IpamRouteTargetsCreateCreated {
 	return &IpamRouteTargetsCreateCreated{}
 }
 
-/*IpamRouteTargetsCreateCreated handles this case with default header values.
+/* IpamRouteTargetsCreateCreated describes a response with status code 201, with default header values.
 
 IpamRouteTargetsCreateCreated ipam route targets create created
 */
@@ -72,7 +72,6 @@ type IpamRouteTargetsCreateCreated struct {
 func (o *IpamRouteTargetsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipamRouteTargetsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamRouteTargetsCreateCreated) GetPayload() *models.RouteTarget {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRouteTargetsCreateDefault(code int) *IpamRouteTargetsCreateDefault {
 	}
 }
 
-/*IpamRouteTargetsCreateDefault handles this case with default header values.
+/* IpamRouteTargetsCreateDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsCreateDefault ipam route targets create default
 */
@@ -114,7 +113,6 @@ func (o *IpamRouteTargetsCreateDefault) Code() int {
 func (o *IpamRouteTargetsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/route-targets/][%d] ipam_route-targets_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRouteTargetsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

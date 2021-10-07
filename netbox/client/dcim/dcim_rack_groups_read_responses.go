@@ -61,7 +61,7 @@ func NewDcimRackGroupsReadOK() *DcimRackGroupsReadOK {
 	return &DcimRackGroupsReadOK{}
 }
 
-/*DcimRackGroupsReadOK handles this case with default header values.
+/* DcimRackGroupsReadOK describes a response with status code 200, with default header values.
 
 DcimRackGroupsReadOK dcim rack groups read o k
 */
@@ -72,7 +72,6 @@ type DcimRackGroupsReadOK struct {
 func (o *DcimRackGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-groups/{id}/][%d] dcimRackGroupsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackGroupsReadOK) GetPayload() *models.RackGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRackGroupsReadDefault(code int) *DcimRackGroupsReadDefault {
 	}
 }
 
-/*DcimRackGroupsReadDefault handles this case with default header values.
+/* DcimRackGroupsReadDefault describes a response with status code -1, with default header values.
 
 DcimRackGroupsReadDefault dcim rack groups read default
 */
@@ -114,7 +113,6 @@ func (o *DcimRackGroupsReadDefault) Code() int {
 func (o *DcimRackGroupsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-groups/{id}/][%d] dcim_rack-groups_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackGroupsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

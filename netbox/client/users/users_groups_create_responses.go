@@ -61,7 +61,7 @@ func NewUsersGroupsCreateCreated() *UsersGroupsCreateCreated {
 	return &UsersGroupsCreateCreated{}
 }
 
-/*UsersGroupsCreateCreated handles this case with default header values.
+/* UsersGroupsCreateCreated describes a response with status code 201, with default header values.
 
 UsersGroupsCreateCreated users groups create created
 */
@@ -72,7 +72,6 @@ type UsersGroupsCreateCreated struct {
 func (o *UsersGroupsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /users/groups/][%d] usersGroupsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *UsersGroupsCreateCreated) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersGroupsCreateDefault(code int) *UsersGroupsCreateDefault {
 	}
 }
 
-/*UsersGroupsCreateDefault handles this case with default header values.
+/* UsersGroupsCreateDefault describes a response with status code -1, with default header values.
 
 UsersGroupsCreateDefault users groups create default
 */
@@ -114,7 +113,6 @@ func (o *UsersGroupsCreateDefault) Code() int {
 func (o *UsersGroupsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /users/groups/][%d] users_groups_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersGroupsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

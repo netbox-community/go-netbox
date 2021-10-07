@@ -61,7 +61,7 @@ func NewDcimFrontPortTemplatesUpdateOK() *DcimFrontPortTemplatesUpdateOK {
 	return &DcimFrontPortTemplatesUpdateOK{}
 }
 
-/*DcimFrontPortTemplatesUpdateOK handles this case with default header values.
+/* DcimFrontPortTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 DcimFrontPortTemplatesUpdateOK dcim front port templates update o k
 */
@@ -72,7 +72,6 @@ type DcimFrontPortTemplatesUpdateOK struct {
 func (o *DcimFrontPortTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/front-port-templates/{id}/][%d] dcimFrontPortTemplatesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimFrontPortTemplatesUpdateOK) GetPayload() *models.FrontPortTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimFrontPortTemplatesUpdateDefault(code int) *DcimFrontPortTemplatesUpd
 	}
 }
 
-/*DcimFrontPortTemplatesUpdateDefault handles this case with default header values.
+/* DcimFrontPortTemplatesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimFrontPortTemplatesUpdateDefault dcim front port templates update default
 */
@@ -114,7 +113,6 @@ func (o *DcimFrontPortTemplatesUpdateDefault) Code() int {
 func (o *DcimFrontPortTemplatesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/front-port-templates/{id}/][%d] dcim_front-port-templates_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimFrontPortTemplatesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

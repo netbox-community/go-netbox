@@ -61,7 +61,7 @@ func NewDcimRackGroupsUpdateOK() *DcimRackGroupsUpdateOK {
 	return &DcimRackGroupsUpdateOK{}
 }
 
-/*DcimRackGroupsUpdateOK handles this case with default header values.
+/* DcimRackGroupsUpdateOK describes a response with status code 200, with default header values.
 
 DcimRackGroupsUpdateOK dcim rack groups update o k
 */
@@ -72,7 +72,6 @@ type DcimRackGroupsUpdateOK struct {
 func (o *DcimRackGroupsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-groups/{id}/][%d] dcimRackGroupsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackGroupsUpdateOK) GetPayload() *models.RackGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRackGroupsUpdateDefault(code int) *DcimRackGroupsUpdateDefault {
 	}
 }
 
-/*DcimRackGroupsUpdateDefault handles this case with default header values.
+/* DcimRackGroupsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRackGroupsUpdateDefault dcim rack groups update default
 */
@@ -114,7 +113,6 @@ func (o *DcimRackGroupsUpdateDefault) Code() int {
 func (o *DcimRackGroupsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-groups/{id}/][%d] dcim_rack-groups_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackGroupsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

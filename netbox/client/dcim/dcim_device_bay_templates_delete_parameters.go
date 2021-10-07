@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimDeviceBayTemplatesDeleteParams creates a new DcimDeviceBayTemplatesDeleteParams object
-// with the default values initialized.
+// NewDcimDeviceBayTemplatesDeleteParams creates a new DcimDeviceBayTemplatesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDeviceBayTemplatesDeleteParams() *DcimDeviceBayTemplatesDeleteParams {
-	var ()
 	return &DcimDeviceBayTemplatesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDeviceBayTemplatesDeleteParamsWithTimeout creates a new DcimDeviceBayTemplatesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDeviceBayTemplatesDeleteParamsWithTimeout(timeout time.Duration) *DcimDeviceBayTemplatesDeleteParams {
-	var ()
 	return &DcimDeviceBayTemplatesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDeviceBayTemplatesDeleteParamsWithContext creates a new DcimDeviceBayTemplatesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDeviceBayTemplatesDeleteParamsWithContext(ctx context.Context) *DcimDeviceBayTemplatesDeleteParams {
-	var ()
 	return &DcimDeviceBayTemplatesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDeviceBayTemplatesDeleteParamsWithHTTPClient creates a new DcimDeviceBayTemplatesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDeviceBayTemplatesDeleteParamsWithHTTPClient(client *http.Client) *DcimDeviceBayTemplatesDeleteParams {
-	var ()
 	return &DcimDeviceBayTemplatesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDeviceBayTemplatesDeleteParams contains all the parameters to send to the API endpoint
-for the dcim device bay templates delete operation typically these are written to a http.Request
+/* DcimDeviceBayTemplatesDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim device bay templates delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDeviceBayTemplatesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this device bay template.
+	/* ID.
 
+	   A unique integer value identifying this device bay template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim device bay templates delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBayTemplatesDeleteParams) WithDefaults() *DcimDeviceBayTemplatesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim device bay templates delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceBayTemplatesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim device bay templates delete params

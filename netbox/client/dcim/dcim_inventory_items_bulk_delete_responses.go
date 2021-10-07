@@ -59,7 +59,7 @@ func NewDcimInventoryItemsBulkDeleteNoContent() *DcimInventoryItemsBulkDeleteNoC
 	return &DcimInventoryItemsBulkDeleteNoContent{}
 }
 
-/*DcimInventoryItemsBulkDeleteNoContent handles this case with default header values.
+/* DcimInventoryItemsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimInventoryItemsBulkDeleteNoContent dcim inventory items bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimInventoryItemsBulkDeleteDefault(code int) *DcimInventoryItemsBulkDel
 	}
 }
 
-/*DcimInventoryItemsBulkDeleteDefault handles this case with default header values.
+/* DcimInventoryItemsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemsBulkDeleteDefault dcim inventory items bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimInventoryItemsBulkDeleteDefault) Code() int {
 func (o *DcimInventoryItemsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/inventory-items/][%d] dcim_inventory-items_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInventoryItemsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

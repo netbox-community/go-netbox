@@ -34,61 +34,76 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimRackGroupsUpdateParams creates a new DcimRackGroupsUpdateParams object
-// with the default values initialized.
+// NewDcimRackGroupsUpdateParams creates a new DcimRackGroupsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackGroupsUpdateParams() *DcimRackGroupsUpdateParams {
-	var ()
 	return &DcimRackGroupsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackGroupsUpdateParamsWithTimeout creates a new DcimRackGroupsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackGroupsUpdateParamsWithTimeout(timeout time.Duration) *DcimRackGroupsUpdateParams {
-	var ()
 	return &DcimRackGroupsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackGroupsUpdateParamsWithContext creates a new DcimRackGroupsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackGroupsUpdateParamsWithContext(ctx context.Context) *DcimRackGroupsUpdateParams {
-	var ()
 	return &DcimRackGroupsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackGroupsUpdateParamsWithHTTPClient creates a new DcimRackGroupsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackGroupsUpdateParamsWithHTTPClient(client *http.Client) *DcimRackGroupsUpdateParams {
-	var ()
 	return &DcimRackGroupsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackGroupsUpdateParams contains all the parameters to send to the API endpoint
-for the dcim rack groups update operation typically these are written to a http.Request
+/* DcimRackGroupsUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim rack groups update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackGroupsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRackGroup
-	/*ID
-	  A unique integer value identifying this rack group.
 
+	/* ID.
+
+	   A unique integer value identifying this rack group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack groups update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackGroupsUpdateParams) WithDefaults() *DcimRackGroupsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack groups update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackGroupsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack groups update params
@@ -153,7 +168,6 @@ func (o *DcimRackGroupsUpdateParams) WriteToRequest(r runtime.ClientRequest, reg
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

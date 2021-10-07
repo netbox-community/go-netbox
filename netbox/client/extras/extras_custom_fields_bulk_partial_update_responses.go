@@ -61,7 +61,7 @@ func NewExtrasCustomFieldsBulkPartialUpdateOK() *ExtrasCustomFieldsBulkPartialUp
 	return &ExtrasCustomFieldsBulkPartialUpdateOK{}
 }
 
-/*ExtrasCustomFieldsBulkPartialUpdateOK handles this case with default header values.
+/* ExtrasCustomFieldsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasCustomFieldsBulkPartialUpdateOK extras custom fields bulk partial update o k
 */
@@ -72,7 +72,6 @@ type ExtrasCustomFieldsBulkPartialUpdateOK struct {
 func (o *ExtrasCustomFieldsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/custom-fields/][%d] extrasCustomFieldsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsBulkPartialUpdateOK) GetPayload() *models.CustomField {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasCustomFieldsBulkPartialUpdateDefault(code int) *ExtrasCustomFields
 	}
 }
 
-/*ExtrasCustomFieldsBulkPartialUpdateDefault handles this case with default header values.
+/* ExtrasCustomFieldsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsBulkPartialUpdateDefault extras custom fields bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasCustomFieldsBulkPartialUpdateDefault) Code() int {
 func (o *ExtrasCustomFieldsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /extras/custom-fields/][%d] extras_custom-fields_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

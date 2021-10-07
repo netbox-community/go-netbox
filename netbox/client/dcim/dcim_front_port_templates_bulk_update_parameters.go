@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimFrontPortTemplatesBulkUpdateParams creates a new DcimFrontPortTemplatesBulkUpdateParams object
-// with the default values initialized.
+// NewDcimFrontPortTemplatesBulkUpdateParams creates a new DcimFrontPortTemplatesBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimFrontPortTemplatesBulkUpdateParams() *DcimFrontPortTemplatesBulkUpdateParams {
-	var ()
 	return &DcimFrontPortTemplatesBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimFrontPortTemplatesBulkUpdateParamsWithTimeout creates a new DcimFrontPortTemplatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimFrontPortTemplatesBulkUpdateParamsWithTimeout(timeout time.Duration) *DcimFrontPortTemplatesBulkUpdateParams {
-	var ()
 	return &DcimFrontPortTemplatesBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimFrontPortTemplatesBulkUpdateParamsWithContext creates a new DcimFrontPortTemplatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimFrontPortTemplatesBulkUpdateParamsWithContext(ctx context.Context) *DcimFrontPortTemplatesBulkUpdateParams {
-	var ()
 	return &DcimFrontPortTemplatesBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimFrontPortTemplatesBulkUpdateParamsWithHTTPClient creates a new DcimFrontPortTemplatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimFrontPortTemplatesBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimFrontPortTemplatesBulkUpdateParams {
-	var ()
 	return &DcimFrontPortTemplatesBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimFrontPortTemplatesBulkUpdateParams contains all the parameters to send to the API endpoint
-for the dcim front port templates bulk update operation typically these are written to a http.Request
+/* DcimFrontPortTemplatesBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim front port templates bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimFrontPortTemplatesBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableFrontPortTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim front port templates bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimFrontPortTemplatesBulkUpdateParams) WithDefaults() *DcimFrontPortTemplatesBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim front port templates bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimFrontPortTemplatesBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim front port templates bulk update params
@@ -136,7 +150,6 @@ func (o *DcimFrontPortTemplatesBulkUpdateParams) WriteToRequest(r runtime.Client
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

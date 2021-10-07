@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamRirsBulkUpdateParams creates a new IpamRirsBulkUpdateParams object
-// with the default values initialized.
+// NewIpamRirsBulkUpdateParams creates a new IpamRirsBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRirsBulkUpdateParams() *IpamRirsBulkUpdateParams {
-	var ()
 	return &IpamRirsBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRirsBulkUpdateParamsWithTimeout creates a new IpamRirsBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRirsBulkUpdateParamsWithTimeout(timeout time.Duration) *IpamRirsBulkUpdateParams {
-	var ()
 	return &IpamRirsBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRirsBulkUpdateParamsWithContext creates a new IpamRirsBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRirsBulkUpdateParamsWithContext(ctx context.Context) *IpamRirsBulkUpdateParams {
-	var ()
 	return &IpamRirsBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRirsBulkUpdateParamsWithHTTPClient creates a new IpamRirsBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRirsBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamRirsBulkUpdateParams {
-	var ()
 	return &IpamRirsBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRirsBulkUpdateParams contains all the parameters to send to the API endpoint
-for the ipam rirs bulk update operation typically these are written to a http.Request
+/* IpamRirsBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam rirs bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRirsBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.RIR
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam rirs bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRirsBulkUpdateParams) WithDefaults() *IpamRirsBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam rirs bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRirsBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam rirs bulk update params
@@ -136,7 +150,6 @@ func (o *IpamRirsBulkUpdateParams) WriteToRequest(r runtime.ClientRequest, reg s
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

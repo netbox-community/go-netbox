@@ -61,7 +61,7 @@ func NewExtrasTagsBulkUpdateOK() *ExtrasTagsBulkUpdateOK {
 	return &ExtrasTagsBulkUpdateOK{}
 }
 
-/*ExtrasTagsBulkUpdateOK handles this case with default header values.
+/* ExtrasTagsBulkUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasTagsBulkUpdateOK extras tags bulk update o k
 */
@@ -72,7 +72,6 @@ type ExtrasTagsBulkUpdateOK struct {
 func (o *ExtrasTagsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/tags/][%d] extrasTagsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasTagsBulkUpdateOK) GetPayload() *models.Tag {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasTagsBulkUpdateDefault(code int) *ExtrasTagsBulkUpdateDefault {
 	}
 }
 
-/*ExtrasTagsBulkUpdateDefault handles this case with default header values.
+/* ExtrasTagsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasTagsBulkUpdateDefault extras tags bulk update default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasTagsBulkUpdateDefault) Code() int {
 func (o *ExtrasTagsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/tags/][%d] extras_tags_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasTagsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

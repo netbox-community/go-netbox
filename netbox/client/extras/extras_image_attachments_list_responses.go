@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewExtrasImageAttachmentsListOK() *ExtrasImageAttachmentsListOK {
 	return &ExtrasImageAttachmentsListOK{}
 }
 
-/*ExtrasImageAttachmentsListOK handles this case with default header values.
+/* ExtrasImageAttachmentsListOK describes a response with status code 200, with default header values.
 
 ExtrasImageAttachmentsListOK extras image attachments list o k
 */
@@ -76,7 +77,6 @@ type ExtrasImageAttachmentsListOK struct {
 func (o *ExtrasImageAttachmentsListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extrasImageAttachmentsListOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsListOK) GetPayload() *ExtrasImageAttachmentsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewExtrasImageAttachmentsListDefault(code int) *ExtrasImageAttachmentsListD
 	}
 }
 
-/*ExtrasImageAttachmentsListDefault handles this case with default header values.
+/* ExtrasImageAttachmentsListDefault describes a response with status code -1, with default header values.
 
 ExtrasImageAttachmentsListDefault extras image attachments list default
 */
@@ -118,7 +118,6 @@ func (o *ExtrasImageAttachmentsListDefault) Code() int {
 func (o *ExtrasImageAttachmentsListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extras_image-attachments_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *ExtrasImageAttachmentsListOKBody) validateCount(formats strfmt.Registry
 }
 
 func (o *ExtrasImageAttachmentsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *ExtrasImageAttachmentsListOKBody) validateNext(formats strfmt.Registry)
 }
 
 func (o *ExtrasImageAttachmentsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *ExtrasImageAttachmentsListOKBody) validateResults(formats strfmt.Regist
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("extrasImageAttachmentsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this extras image attachments list o k body based on the context it is used
+func (o *ExtrasImageAttachmentsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *ExtrasImageAttachmentsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasImageAttachmentsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

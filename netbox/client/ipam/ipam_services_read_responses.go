@@ -61,7 +61,7 @@ func NewIpamServicesReadOK() *IpamServicesReadOK {
 	return &IpamServicesReadOK{}
 }
 
-/*IpamServicesReadOK handles this case with default header values.
+/* IpamServicesReadOK describes a response with status code 200, with default header values.
 
 IpamServicesReadOK ipam services read o k
 */
@@ -72,7 +72,6 @@ type IpamServicesReadOK struct {
 func (o *IpamServicesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipamServicesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamServicesReadOK) GetPayload() *models.Service {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamServicesReadDefault(code int) *IpamServicesReadDefault {
 	}
 }
 
-/*IpamServicesReadDefault handles this case with default header values.
+/* IpamServicesReadDefault describes a response with status code -1, with default header values.
 
 IpamServicesReadDefault ipam services read default
 */
@@ -114,7 +113,6 @@ func (o *IpamServicesReadDefault) Code() int {
 func (o *IpamServicesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/services/{id}/][%d] ipam_services_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamServicesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

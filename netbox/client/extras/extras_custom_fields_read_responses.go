@@ -61,7 +61,7 @@ func NewExtrasCustomFieldsReadOK() *ExtrasCustomFieldsReadOK {
 	return &ExtrasCustomFieldsReadOK{}
 }
 
-/*ExtrasCustomFieldsReadOK handles this case with default header values.
+/* ExtrasCustomFieldsReadOK describes a response with status code 200, with default header values.
 
 ExtrasCustomFieldsReadOK extras custom fields read o k
 */
@@ -72,7 +72,6 @@ type ExtrasCustomFieldsReadOK struct {
 func (o *ExtrasCustomFieldsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-fields/{id}/][%d] extrasCustomFieldsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsReadOK) GetPayload() *models.CustomField {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasCustomFieldsReadDefault(code int) *ExtrasCustomFieldsReadDefault {
 	}
 }
 
-/*ExtrasCustomFieldsReadDefault handles this case with default header values.
+/* ExtrasCustomFieldsReadDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsReadDefault extras custom fields read default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasCustomFieldsReadDefault) Code() int {
 func (o *ExtrasCustomFieldsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-fields/{id}/][%d] extras_custom-fields_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

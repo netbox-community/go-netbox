@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewCircuitsCircuitsBulkPartialUpdateParams creates a new CircuitsCircuitsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewCircuitsCircuitsBulkPartialUpdateParams creates a new CircuitsCircuitsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitsBulkPartialUpdateParams() *CircuitsCircuitsBulkPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitsBulkPartialUpdateParamsWithTimeout creates a new CircuitsCircuitsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *CircuitsCircuitsBulkPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitsBulkPartialUpdateParamsWithContext creates a new CircuitsCircuitsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitsBulkPartialUpdateParamsWithContext(ctx context.Context) *CircuitsCircuitsBulkPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitsBulkPartialUpdateParamsWithHTTPClient creates a new CircuitsCircuitsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *CircuitsCircuitsBulkPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the circuits circuits bulk partial update operation typically these are written to a http.Request
+/* CircuitsCircuitsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the circuits circuits bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCircuit
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuits bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitsBulkPartialUpdateParams) WithDefaults() *CircuitsCircuitsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuits bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuits bulk partial update params
@@ -136,7 +150,6 @@ func (o *CircuitsCircuitsBulkPartialUpdateParams) WriteToRequest(r runtime.Clien
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

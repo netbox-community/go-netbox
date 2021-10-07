@@ -59,7 +59,7 @@ func NewDcimInterfacesDeleteNoContent() *DcimInterfacesDeleteNoContent {
 	return &DcimInterfacesDeleteNoContent{}
 }
 
-/*DcimInterfacesDeleteNoContent handles this case with default header values.
+/* DcimInterfacesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimInterfacesDeleteNoContent dcim interfaces delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimInterfacesDeleteDefault(code int) *DcimInterfacesDeleteDefault {
 	}
 }
 
-/*DcimInterfacesDeleteDefault handles this case with default header values.
+/* DcimInterfacesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimInterfacesDeleteDefault dcim interfaces delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimInterfacesDeleteDefault) Code() int {
 func (o *DcimInterfacesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/interfaces/{id}/][%d] dcim_interfaces_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInterfacesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

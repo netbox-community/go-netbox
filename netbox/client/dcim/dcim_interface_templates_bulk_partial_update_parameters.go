@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimInterfaceTemplatesBulkPartialUpdateParams creates a new DcimInterfaceTemplatesBulkPartialUpdateParams object
-// with the default values initialized.
+// NewDcimInterfaceTemplatesBulkPartialUpdateParams creates a new DcimInterfaceTemplatesBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInterfaceTemplatesBulkPartialUpdateParams() *DcimInterfaceTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimInterfaceTemplatesBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInterfaceTemplatesBulkPartialUpdateParamsWithTimeout creates a new DcimInterfaceTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInterfaceTemplatesBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimInterfaceTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimInterfaceTemplatesBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInterfaceTemplatesBulkPartialUpdateParamsWithContext creates a new DcimInterfaceTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInterfaceTemplatesBulkPartialUpdateParamsWithContext(ctx context.Context) *DcimInterfaceTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimInterfaceTemplatesBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInterfaceTemplatesBulkPartialUpdateParamsWithHTTPClient creates a new DcimInterfaceTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInterfaceTemplatesBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimInterfaceTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimInterfaceTemplatesBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInterfaceTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim interface templates bulk partial update operation typically these are written to a http.Request
+/* DcimInterfaceTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim interface templates bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInterfaceTemplatesBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableInterfaceTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim interface templates bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceTemplatesBulkPartialUpdateParams) WithDefaults() *DcimInterfaceTemplatesBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim interface templates bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceTemplatesBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim interface templates bulk partial update params
@@ -136,7 +150,6 @@ func (o *DcimInterfaceTemplatesBulkPartialUpdateParams) WriteToRequest(r runtime
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimInterfaceTemplatesBulkUpdateParams creates a new DcimInterfaceTemplatesBulkUpdateParams object
-// with the default values initialized.
+// NewDcimInterfaceTemplatesBulkUpdateParams creates a new DcimInterfaceTemplatesBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInterfaceTemplatesBulkUpdateParams() *DcimInterfaceTemplatesBulkUpdateParams {
-	var ()
 	return &DcimInterfaceTemplatesBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInterfaceTemplatesBulkUpdateParamsWithTimeout creates a new DcimInterfaceTemplatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInterfaceTemplatesBulkUpdateParamsWithTimeout(timeout time.Duration) *DcimInterfaceTemplatesBulkUpdateParams {
-	var ()
 	return &DcimInterfaceTemplatesBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInterfaceTemplatesBulkUpdateParamsWithContext creates a new DcimInterfaceTemplatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInterfaceTemplatesBulkUpdateParamsWithContext(ctx context.Context) *DcimInterfaceTemplatesBulkUpdateParams {
-	var ()
 	return &DcimInterfaceTemplatesBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInterfaceTemplatesBulkUpdateParamsWithHTTPClient creates a new DcimInterfaceTemplatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInterfaceTemplatesBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimInterfaceTemplatesBulkUpdateParams {
-	var ()
 	return &DcimInterfaceTemplatesBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInterfaceTemplatesBulkUpdateParams contains all the parameters to send to the API endpoint
-for the dcim interface templates bulk update operation typically these are written to a http.Request
+/* DcimInterfaceTemplatesBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim interface templates bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInterfaceTemplatesBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableInterfaceTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim interface templates bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceTemplatesBulkUpdateParams) WithDefaults() *DcimInterfaceTemplatesBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim interface templates bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceTemplatesBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim interface templates bulk update params
@@ -136,7 +150,6 @@ func (o *DcimInterfaceTemplatesBulkUpdateParams) WriteToRequest(r runtime.Client
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

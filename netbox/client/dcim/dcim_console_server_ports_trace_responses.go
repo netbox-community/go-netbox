@@ -61,7 +61,7 @@ func NewDcimConsoleServerPortsTraceOK() *DcimConsoleServerPortsTraceOK {
 	return &DcimConsoleServerPortsTraceOK{}
 }
 
-/*DcimConsoleServerPortsTraceOK handles this case with default header values.
+/* DcimConsoleServerPortsTraceOK describes a response with status code 200, with default header values.
 
 DcimConsoleServerPortsTraceOK dcim console server ports trace o k
 */
@@ -72,7 +72,6 @@ type DcimConsoleServerPortsTraceOK struct {
 func (o *DcimConsoleServerPortsTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-server-ports/{id}/trace/][%d] dcimConsoleServerPortsTraceOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimConsoleServerPortsTraceOK) GetPayload() *models.ConsoleServerPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimConsoleServerPortsTraceDefault(code int) *DcimConsoleServerPortsTrac
 	}
 }
 
-/*DcimConsoleServerPortsTraceDefault handles this case with default header values.
+/* DcimConsoleServerPortsTraceDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortsTraceDefault dcim console server ports trace default
 */
@@ -114,7 +113,6 @@ func (o *DcimConsoleServerPortsTraceDefault) Code() int {
 func (o *DcimConsoleServerPortsTraceDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-server-ports/{id}/trace/][%d] dcim_console-server-ports_trace default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimConsoleServerPortsTraceDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,7 @@ func NewCircuitsProvidersCreateCreated() *CircuitsProvidersCreateCreated {
 	return &CircuitsProvidersCreateCreated{}
 }
 
-/*CircuitsProvidersCreateCreated handles this case with default header values.
+/* CircuitsProvidersCreateCreated describes a response with status code 201, with default header values.
 
 CircuitsProvidersCreateCreated circuits providers create created
 */
@@ -72,7 +72,6 @@ type CircuitsProvidersCreateCreated struct {
 func (o *CircuitsProvidersCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /circuits/providers/][%d] circuitsProvidersCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *CircuitsProvidersCreateCreated) GetPayload() *models.Provider {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewCircuitsProvidersCreateDefault(code int) *CircuitsProvidersCreateDefault
 	}
 }
 
-/*CircuitsProvidersCreateDefault handles this case with default header values.
+/* CircuitsProvidersCreateDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersCreateDefault circuits providers create default
 */
@@ -114,7 +113,6 @@ func (o *CircuitsProvidersCreateDefault) Code() int {
 func (o *CircuitsProvidersCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /circuits/providers/][%d] circuits_providers_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsProvidersCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

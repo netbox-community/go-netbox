@@ -59,7 +59,7 @@ func NewIpamRirsDeleteNoContent() *IpamRirsDeleteNoContent {
 	return &IpamRirsDeleteNoContent{}
 }
 
-/*IpamRirsDeleteNoContent handles this case with default header values.
+/* IpamRirsDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamRirsDeleteNoContent ipam rirs delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamRirsDeleteDefault(code int) *IpamRirsDeleteDefault {
 	}
 }
 
-/*IpamRirsDeleteDefault handles this case with default header values.
+/* IpamRirsDeleteDefault describes a response with status code -1, with default header values.
 
 IpamRirsDeleteDefault ipam rirs delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamRirsDeleteDefault) Code() int {
 func (o *IpamRirsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/rirs/{id}/][%d] ipam_rirs_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRirsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

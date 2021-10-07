@@ -32,61 +32,76 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimDevicesNapalmParams creates a new DcimDevicesNapalmParams object
-// with the default values initialized.
+// NewDcimDevicesNapalmParams creates a new DcimDevicesNapalmParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDevicesNapalmParams() *DcimDevicesNapalmParams {
-	var ()
 	return &DcimDevicesNapalmParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDevicesNapalmParamsWithTimeout creates a new DcimDevicesNapalmParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDevicesNapalmParamsWithTimeout(timeout time.Duration) *DcimDevicesNapalmParams {
-	var ()
 	return &DcimDevicesNapalmParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDevicesNapalmParamsWithContext creates a new DcimDevicesNapalmParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDevicesNapalmParamsWithContext(ctx context.Context) *DcimDevicesNapalmParams {
-	var ()
 	return &DcimDevicesNapalmParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDevicesNapalmParamsWithHTTPClient creates a new DcimDevicesNapalmParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDevicesNapalmParamsWithHTTPClient(client *http.Client) *DcimDevicesNapalmParams {
-	var ()
 	return &DcimDevicesNapalmParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDevicesNapalmParams contains all the parameters to send to the API endpoint
-for the dcim devices napalm operation typically these are written to a http.Request
+/* DcimDevicesNapalmParams contains all the parameters to send to the API endpoint
+   for the dcim devices napalm operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDevicesNapalmParams struct {
 
-	/*ID
-	  A unique integer value identifying this device.
+	/* ID.
 
+	   A unique integer value identifying this device.
 	*/
 	ID int64
-	/*Method*/
+
+	// Method.
 	Method string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim devices napalm params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesNapalmParams) WithDefaults() *DcimDevicesNapalmParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim devices napalm params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesNapalmParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim devices napalm params
@@ -161,6 +176,7 @@ func (o *DcimDevicesNapalmParams) WriteToRequest(r runtime.ClientRequest, reg st
 	qrMethod := o.Method
 	qMethod := qrMethod
 	if qMethod != "" {
+
 		if err := r.SetQueryParam("method", qMethod); err != nil {
 			return err
 		}

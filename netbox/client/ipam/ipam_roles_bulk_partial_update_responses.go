@@ -61,7 +61,7 @@ func NewIpamRolesBulkPartialUpdateOK() *IpamRolesBulkPartialUpdateOK {
 	return &IpamRolesBulkPartialUpdateOK{}
 }
 
-/*IpamRolesBulkPartialUpdateOK handles this case with default header values.
+/* IpamRolesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamRolesBulkPartialUpdateOK ipam roles bulk partial update o k
 */
@@ -72,7 +72,6 @@ type IpamRolesBulkPartialUpdateOK struct {
 func (o *IpamRolesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/roles/][%d] ipamRolesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRolesBulkPartialUpdateOK) GetPayload() *models.Role {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRolesBulkPartialUpdateDefault(code int) *IpamRolesBulkPartialUpdateD
 	}
 }
 
-/*IpamRolesBulkPartialUpdateDefault handles this case with default header values.
+/* IpamRolesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRolesBulkPartialUpdateDefault ipam roles bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *IpamRolesBulkPartialUpdateDefault) Code() int {
 func (o *IpamRolesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/roles/][%d] ipam_roles_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRolesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

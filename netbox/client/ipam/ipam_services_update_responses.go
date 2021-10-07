@@ -61,7 +61,7 @@ func NewIpamServicesUpdateOK() *IpamServicesUpdateOK {
 	return &IpamServicesUpdateOK{}
 }
 
-/*IpamServicesUpdateOK handles this case with default header values.
+/* IpamServicesUpdateOK describes a response with status code 200, with default header values.
 
 IpamServicesUpdateOK ipam services update o k
 */
@@ -72,7 +72,6 @@ type IpamServicesUpdateOK struct {
 func (o *IpamServicesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/services/{id}/][%d] ipamServicesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamServicesUpdateOK) GetPayload() *models.Service {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamServicesUpdateDefault(code int) *IpamServicesUpdateDefault {
 	}
 }
 
-/*IpamServicesUpdateDefault handles this case with default header values.
+/* IpamServicesUpdateDefault describes a response with status code -1, with default header values.
 
 IpamServicesUpdateDefault ipam services update default
 */
@@ -114,7 +113,6 @@ func (o *IpamServicesUpdateDefault) Code() int {
 func (o *IpamServicesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/services/{id}/][%d] ipam_services_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamServicesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

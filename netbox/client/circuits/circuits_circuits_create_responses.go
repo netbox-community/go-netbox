@@ -61,7 +61,7 @@ func NewCircuitsCircuitsCreateCreated() *CircuitsCircuitsCreateCreated {
 	return &CircuitsCircuitsCreateCreated{}
 }
 
-/*CircuitsCircuitsCreateCreated handles this case with default header values.
+/* CircuitsCircuitsCreateCreated describes a response with status code 201, with default header values.
 
 CircuitsCircuitsCreateCreated circuits circuits create created
 */
@@ -72,7 +72,6 @@ type CircuitsCircuitsCreateCreated struct {
 func (o *CircuitsCircuitsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /circuits/circuits/][%d] circuitsCircuitsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *CircuitsCircuitsCreateCreated) GetPayload() *models.Circuit {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewCircuitsCircuitsCreateDefault(code int) *CircuitsCircuitsCreateDefault {
 	}
 }
 
-/*CircuitsCircuitsCreateDefault handles this case with default header values.
+/* CircuitsCircuitsCreateDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitsCreateDefault circuits circuits create default
 */
@@ -114,7 +113,6 @@ func (o *CircuitsCircuitsCreateDefault) Code() int {
 func (o *CircuitsCircuitsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /circuits/circuits/][%d] circuits_circuits_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsCircuitsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

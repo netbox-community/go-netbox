@@ -59,7 +59,7 @@ func NewDcimConsoleServerPortsDeleteNoContent() *DcimConsoleServerPortsDeleteNoC
 	return &DcimConsoleServerPortsDeleteNoContent{}
 }
 
-/*DcimConsoleServerPortsDeleteNoContent handles this case with default header values.
+/* DcimConsoleServerPortsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimConsoleServerPortsDeleteNoContent dcim console server ports delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimConsoleServerPortsDeleteDefault(code int) *DcimConsoleServerPortsDel
 	}
 }
 
-/*DcimConsoleServerPortsDeleteDefault handles this case with default header values.
+/* DcimConsoleServerPortsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortsDeleteDefault dcim console server ports delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimConsoleServerPortsDeleteDefault) Code() int {
 func (o *DcimConsoleServerPortsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/console-server-ports/{id}/][%d] dcim_console-server-ports_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimConsoleServerPortsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

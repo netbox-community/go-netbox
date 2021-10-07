@@ -38,119 +38,122 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	ExtrasConfigContextsBulkDelete(params *ExtrasConfigContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsBulkDeleteNoContent, error)
+	ExtrasConfigContextsBulkDelete(params *ExtrasConfigContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkDeleteNoContent, error)
 
-	ExtrasConfigContextsBulkPartialUpdate(params *ExtrasConfigContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsBulkPartialUpdateOK, error)
+	ExtrasConfigContextsBulkPartialUpdate(params *ExtrasConfigContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkPartialUpdateOK, error)
 
-	ExtrasConfigContextsBulkUpdate(params *ExtrasConfigContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsBulkUpdateOK, error)
+	ExtrasConfigContextsBulkUpdate(params *ExtrasConfigContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkUpdateOK, error)
 
-	ExtrasConfigContextsCreate(params *ExtrasConfigContextsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsCreateCreated, error)
+	ExtrasConfigContextsCreate(params *ExtrasConfigContextsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsCreateCreated, error)
 
-	ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsDeleteNoContent, error)
+	ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsDeleteNoContent, error)
 
-	ExtrasConfigContextsList(params *ExtrasConfigContextsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsListOK, error)
+	ExtrasConfigContextsList(params *ExtrasConfigContextsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsListOK, error)
 
-	ExtrasConfigContextsPartialUpdate(params *ExtrasConfigContextsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsPartialUpdateOK, error)
+	ExtrasConfigContextsPartialUpdate(params *ExtrasConfigContextsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsPartialUpdateOK, error)
 
-	ExtrasConfigContextsRead(params *ExtrasConfigContextsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsReadOK, error)
+	ExtrasConfigContextsRead(params *ExtrasConfigContextsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsReadOK, error)
 
-	ExtrasConfigContextsUpdate(params *ExtrasConfigContextsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsUpdateOK, error)
+	ExtrasConfigContextsUpdate(params *ExtrasConfigContextsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsUpdateOK, error)
 
-	ExtrasContentTypesList(params *ExtrasContentTypesListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasContentTypesListOK, error)
+	ExtrasContentTypesList(params *ExtrasContentTypesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasContentTypesListOK, error)
 
-	ExtrasContentTypesRead(params *ExtrasContentTypesReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasContentTypesReadOK, error)
+	ExtrasContentTypesRead(params *ExtrasContentTypesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasContentTypesReadOK, error)
 
-	ExtrasCustomFieldsBulkDelete(params *ExtrasCustomFieldsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsBulkDeleteNoContent, error)
+	ExtrasCustomFieldsBulkDelete(params *ExtrasCustomFieldsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkDeleteNoContent, error)
 
-	ExtrasCustomFieldsBulkPartialUpdate(params *ExtrasCustomFieldsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsBulkPartialUpdateOK, error)
+	ExtrasCustomFieldsBulkPartialUpdate(params *ExtrasCustomFieldsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkPartialUpdateOK, error)
 
-	ExtrasCustomFieldsBulkUpdate(params *ExtrasCustomFieldsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsBulkUpdateOK, error)
+	ExtrasCustomFieldsBulkUpdate(params *ExtrasCustomFieldsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkUpdateOK, error)
 
-	ExtrasCustomFieldsCreate(params *ExtrasCustomFieldsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsCreateCreated, error)
+	ExtrasCustomFieldsCreate(params *ExtrasCustomFieldsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsCreateCreated, error)
 
-	ExtrasCustomFieldsDelete(params *ExtrasCustomFieldsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsDeleteNoContent, error)
+	ExtrasCustomFieldsDelete(params *ExtrasCustomFieldsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsDeleteNoContent, error)
 
-	ExtrasCustomFieldsList(params *ExtrasCustomFieldsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsListOK, error)
+	ExtrasCustomFieldsList(params *ExtrasCustomFieldsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsListOK, error)
 
-	ExtrasCustomFieldsPartialUpdate(params *ExtrasCustomFieldsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsPartialUpdateOK, error)
+	ExtrasCustomFieldsPartialUpdate(params *ExtrasCustomFieldsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsPartialUpdateOK, error)
 
-	ExtrasCustomFieldsRead(params *ExtrasCustomFieldsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsReadOK, error)
+	ExtrasCustomFieldsRead(params *ExtrasCustomFieldsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsReadOK, error)
 
-	ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsUpdateOK, error)
+	ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsUpdateOK, error)
 
-	ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesBulkDeleteNoContent, error)
+	ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkDeleteNoContent, error)
 
-	ExtrasExportTemplatesBulkPartialUpdate(params *ExtrasExportTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesBulkPartialUpdateOK, error)
+	ExtrasExportTemplatesBulkPartialUpdate(params *ExtrasExportTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkPartialUpdateOK, error)
 
-	ExtrasExportTemplatesBulkUpdate(params *ExtrasExportTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesBulkUpdateOK, error)
+	ExtrasExportTemplatesBulkUpdate(params *ExtrasExportTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkUpdateOK, error)
 
-	ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesCreateCreated, error)
+	ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesCreateCreated, error)
 
-	ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesDeleteNoContent, error)
+	ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesDeleteNoContent, error)
 
-	ExtrasExportTemplatesList(params *ExtrasExportTemplatesListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesListOK, error)
+	ExtrasExportTemplatesList(params *ExtrasExportTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesListOK, error)
 
-	ExtrasExportTemplatesPartialUpdate(params *ExtrasExportTemplatesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesPartialUpdateOK, error)
+	ExtrasExportTemplatesPartialUpdate(params *ExtrasExportTemplatesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesPartialUpdateOK, error)
 
-	ExtrasExportTemplatesRead(params *ExtrasExportTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesReadOK, error)
+	ExtrasExportTemplatesRead(params *ExtrasExportTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesReadOK, error)
 
-	ExtrasExportTemplatesUpdate(params *ExtrasExportTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesUpdateOK, error)
+	ExtrasExportTemplatesUpdate(params *ExtrasExportTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesUpdateOK, error)
 
-	ExtrasImageAttachmentsBulkDelete(params *ExtrasImageAttachmentsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsBulkDeleteNoContent, error)
+	ExtrasImageAttachmentsBulkDelete(params *ExtrasImageAttachmentsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkDeleteNoContent, error)
 
-	ExtrasImageAttachmentsBulkPartialUpdate(params *ExtrasImageAttachmentsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsBulkPartialUpdateOK, error)
+	ExtrasImageAttachmentsBulkPartialUpdate(params *ExtrasImageAttachmentsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkPartialUpdateOK, error)
 
-	ExtrasImageAttachmentsBulkUpdate(params *ExtrasImageAttachmentsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsBulkUpdateOK, error)
+	ExtrasImageAttachmentsBulkUpdate(params *ExtrasImageAttachmentsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkUpdateOK, error)
 
-	ExtrasImageAttachmentsCreate(params *ExtrasImageAttachmentsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsCreateCreated, error)
+	ExtrasImageAttachmentsCreate(params *ExtrasImageAttachmentsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsCreateCreated, error)
 
-	ExtrasImageAttachmentsDelete(params *ExtrasImageAttachmentsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsDeleteNoContent, error)
+	ExtrasImageAttachmentsDelete(params *ExtrasImageAttachmentsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsDeleteNoContent, error)
 
-	ExtrasImageAttachmentsList(params *ExtrasImageAttachmentsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsListOK, error)
+	ExtrasImageAttachmentsList(params *ExtrasImageAttachmentsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsListOK, error)
 
-	ExtrasImageAttachmentsPartialUpdate(params *ExtrasImageAttachmentsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsPartialUpdateOK, error)
+	ExtrasImageAttachmentsPartialUpdate(params *ExtrasImageAttachmentsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsPartialUpdateOK, error)
 
-	ExtrasImageAttachmentsRead(params *ExtrasImageAttachmentsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsReadOK, error)
+	ExtrasImageAttachmentsRead(params *ExtrasImageAttachmentsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsReadOK, error)
 
-	ExtrasImageAttachmentsUpdate(params *ExtrasImageAttachmentsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsUpdateOK, error)
+	ExtrasImageAttachmentsUpdate(params *ExtrasImageAttachmentsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsUpdateOK, error)
 
-	ExtrasJobResultsList(params *ExtrasJobResultsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasJobResultsListOK, error)
+	ExtrasJobResultsList(params *ExtrasJobResultsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJobResultsListOK, error)
 
-	ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasJobResultsReadOK, error)
+	ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJobResultsReadOK, error)
 
-	ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasObjectChangesListOK, error)
+	ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasObjectChangesListOK, error)
 
-	ExtrasObjectChangesRead(params *ExtrasObjectChangesReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasObjectChangesReadOK, error)
+	ExtrasObjectChangesRead(params *ExtrasObjectChangesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasObjectChangesReadOK, error)
 
-	ExtrasReportsList(params *ExtrasReportsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasReportsListOK, error)
+	ExtrasReportsList(params *ExtrasReportsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasReportsListOK, error)
 
-	ExtrasReportsRead(params *ExtrasReportsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasReportsReadOK, error)
+	ExtrasReportsRead(params *ExtrasReportsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasReportsReadOK, error)
 
-	ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasReportsRunCreated, error)
+	ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasReportsRunCreated, error)
 
-	ExtrasScriptsList(params *ExtrasScriptsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasScriptsListOK, error)
+	ExtrasScriptsList(params *ExtrasScriptsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasScriptsListOK, error)
 
-	ExtrasScriptsRead(params *ExtrasScriptsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasScriptsReadOK, error)
+	ExtrasScriptsRead(params *ExtrasScriptsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasScriptsReadOK, error)
 
-	ExtrasTagsBulkDelete(params *ExtrasTagsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsBulkDeleteNoContent, error)
+	ExtrasTagsBulkDelete(params *ExtrasTagsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkDeleteNoContent, error)
 
-	ExtrasTagsBulkPartialUpdate(params *ExtrasTagsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsBulkPartialUpdateOK, error)
+	ExtrasTagsBulkPartialUpdate(params *ExtrasTagsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkPartialUpdateOK, error)
 
-	ExtrasTagsBulkUpdate(params *ExtrasTagsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsBulkUpdateOK, error)
+	ExtrasTagsBulkUpdate(params *ExtrasTagsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkUpdateOK, error)
 
-	ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsCreateCreated, error)
+	ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsCreateCreated, error)
 
-	ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsDeleteNoContent, error)
+	ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsDeleteNoContent, error)
 
-	ExtrasTagsList(params *ExtrasTagsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsListOK, error)
+	ExtrasTagsList(params *ExtrasTagsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsListOK, error)
 
-	ExtrasTagsPartialUpdate(params *ExtrasTagsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsPartialUpdateOK, error)
+	ExtrasTagsPartialUpdate(params *ExtrasTagsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsPartialUpdateOK, error)
 
-	ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsReadOK, error)
+	ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsReadOK, error)
 
-	ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsUpdateOK, error)
+	ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -158,13 +161,12 @@ type ClientService interface {
 /*
   ExtrasConfigContextsBulkDelete extras config contexts bulk delete API
 */
-func (a *Client) ExtrasConfigContextsBulkDelete(params *ExtrasConfigContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsBulkDeleteNoContent, error) {
+func (a *Client) ExtrasConfigContextsBulkDelete(params *ExtrasConfigContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasConfigContextsBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_config-contexts_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/config-contexts/",
@@ -176,7 +178,12 @@ func (a *Client) ExtrasConfigContextsBulkDelete(params *ExtrasConfigContextsBulk
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -192,13 +199,12 @@ func (a *Client) ExtrasConfigContextsBulkDelete(params *ExtrasConfigContextsBulk
 /*
   ExtrasConfigContextsBulkPartialUpdate extras config contexts bulk partial update API
 */
-func (a *Client) ExtrasConfigContextsBulkPartialUpdate(params *ExtrasConfigContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsBulkPartialUpdateOK, error) {
+func (a *Client) ExtrasConfigContextsBulkPartialUpdate(params *ExtrasConfigContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasConfigContextsBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_config-contexts_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/config-contexts/",
@@ -210,7 +216,12 @@ func (a *Client) ExtrasConfigContextsBulkPartialUpdate(params *ExtrasConfigConte
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -226,13 +237,12 @@ func (a *Client) ExtrasConfigContextsBulkPartialUpdate(params *ExtrasConfigConte
 /*
   ExtrasConfigContextsBulkUpdate extras config contexts bulk update API
 */
-func (a *Client) ExtrasConfigContextsBulkUpdate(params *ExtrasConfigContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsBulkUpdateOK, error) {
+func (a *Client) ExtrasConfigContextsBulkUpdate(params *ExtrasConfigContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasConfigContextsBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_config-contexts_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/config-contexts/",
@@ -244,7 +254,12 @@ func (a *Client) ExtrasConfigContextsBulkUpdate(params *ExtrasConfigContextsBulk
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -260,13 +275,12 @@ func (a *Client) ExtrasConfigContextsBulkUpdate(params *ExtrasConfigContextsBulk
 /*
   ExtrasConfigContextsCreate extras config contexts create API
 */
-func (a *Client) ExtrasConfigContextsCreate(params *ExtrasConfigContextsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsCreateCreated, error) {
+func (a *Client) ExtrasConfigContextsCreate(params *ExtrasConfigContextsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasConfigContextsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_config-contexts_create",
 		Method:             "POST",
 		PathPattern:        "/extras/config-contexts/",
@@ -278,7 +292,12 @@ func (a *Client) ExtrasConfigContextsCreate(params *ExtrasConfigContextsCreatePa
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -294,13 +313,12 @@ func (a *Client) ExtrasConfigContextsCreate(params *ExtrasConfigContextsCreatePa
 /*
   ExtrasConfigContextsDelete extras config contexts delete API
 */
-func (a *Client) ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsDeleteNoContent, error) {
+func (a *Client) ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasConfigContextsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_config-contexts_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/config-contexts/{id}/",
@@ -312,7 +330,12 @@ func (a *Client) ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeletePa
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -328,13 +351,12 @@ func (a *Client) ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeletePa
 /*
   ExtrasConfigContextsList extras config contexts list API
 */
-func (a *Client) ExtrasConfigContextsList(params *ExtrasConfigContextsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsListOK, error) {
+func (a *Client) ExtrasConfigContextsList(params *ExtrasConfigContextsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasConfigContextsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_config-contexts_list",
 		Method:             "GET",
 		PathPattern:        "/extras/config-contexts/",
@@ -346,7 +368,12 @@ func (a *Client) ExtrasConfigContextsList(params *ExtrasConfigContextsListParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -362,13 +389,12 @@ func (a *Client) ExtrasConfigContextsList(params *ExtrasConfigContextsListParams
 /*
   ExtrasConfigContextsPartialUpdate extras config contexts partial update API
 */
-func (a *Client) ExtrasConfigContextsPartialUpdate(params *ExtrasConfigContextsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsPartialUpdateOK, error) {
+func (a *Client) ExtrasConfigContextsPartialUpdate(params *ExtrasConfigContextsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasConfigContextsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_config-contexts_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/config-contexts/{id}/",
@@ -380,7 +406,12 @@ func (a *Client) ExtrasConfigContextsPartialUpdate(params *ExtrasConfigContextsP
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -396,13 +427,12 @@ func (a *Client) ExtrasConfigContextsPartialUpdate(params *ExtrasConfigContextsP
 /*
   ExtrasConfigContextsRead extras config contexts read API
 */
-func (a *Client) ExtrasConfigContextsRead(params *ExtrasConfigContextsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsReadOK, error) {
+func (a *Client) ExtrasConfigContextsRead(params *ExtrasConfigContextsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasConfigContextsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_config-contexts_read",
 		Method:             "GET",
 		PathPattern:        "/extras/config-contexts/{id}/",
@@ -414,7 +444,12 @@ func (a *Client) ExtrasConfigContextsRead(params *ExtrasConfigContextsReadParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -430,13 +465,12 @@ func (a *Client) ExtrasConfigContextsRead(params *ExtrasConfigContextsReadParams
 /*
   ExtrasConfigContextsUpdate extras config contexts update API
 */
-func (a *Client) ExtrasConfigContextsUpdate(params *ExtrasConfigContextsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasConfigContextsUpdateOK, error) {
+func (a *Client) ExtrasConfigContextsUpdate(params *ExtrasConfigContextsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasConfigContextsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasConfigContextsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_config-contexts_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/config-contexts/{id}/",
@@ -448,7 +482,12 @@ func (a *Client) ExtrasConfigContextsUpdate(params *ExtrasConfigContextsUpdatePa
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -464,13 +503,12 @@ func (a *Client) ExtrasConfigContextsUpdate(params *ExtrasConfigContextsUpdatePa
 /*
   ExtrasContentTypesList Read-only list of ContentTypes. Limit results to ContentTypes pertinent to NetBox objects.
 */
-func (a *Client) ExtrasContentTypesList(params *ExtrasContentTypesListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasContentTypesListOK, error) {
+func (a *Client) ExtrasContentTypesList(params *ExtrasContentTypesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasContentTypesListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasContentTypesListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_content-types_list",
 		Method:             "GET",
 		PathPattern:        "/extras/content-types/",
@@ -482,7 +520,12 @@ func (a *Client) ExtrasContentTypesList(params *ExtrasContentTypesListParams, au
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -498,13 +541,12 @@ func (a *Client) ExtrasContentTypesList(params *ExtrasContentTypesListParams, au
 /*
   ExtrasContentTypesRead Read-only list of ContentTypes. Limit results to ContentTypes pertinent to NetBox objects.
 */
-func (a *Client) ExtrasContentTypesRead(params *ExtrasContentTypesReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasContentTypesReadOK, error) {
+func (a *Client) ExtrasContentTypesRead(params *ExtrasContentTypesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasContentTypesReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasContentTypesReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_content-types_read",
 		Method:             "GET",
 		PathPattern:        "/extras/content-types/{id}/",
@@ -516,7 +558,12 @@ func (a *Client) ExtrasContentTypesRead(params *ExtrasContentTypesReadParams, au
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -532,13 +579,12 @@ func (a *Client) ExtrasContentTypesRead(params *ExtrasContentTypesReadParams, au
 /*
   ExtrasCustomFieldsBulkDelete extras custom fields bulk delete API
 */
-func (a *Client) ExtrasCustomFieldsBulkDelete(params *ExtrasCustomFieldsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsBulkDeleteNoContent, error) {
+func (a *Client) ExtrasCustomFieldsBulkDelete(params *ExtrasCustomFieldsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasCustomFieldsBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_custom-fields_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/custom-fields/",
@@ -550,7 +596,12 @@ func (a *Client) ExtrasCustomFieldsBulkDelete(params *ExtrasCustomFieldsBulkDele
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -566,13 +617,12 @@ func (a *Client) ExtrasCustomFieldsBulkDelete(params *ExtrasCustomFieldsBulkDele
 /*
   ExtrasCustomFieldsBulkPartialUpdate extras custom fields bulk partial update API
 */
-func (a *Client) ExtrasCustomFieldsBulkPartialUpdate(params *ExtrasCustomFieldsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsBulkPartialUpdateOK, error) {
+func (a *Client) ExtrasCustomFieldsBulkPartialUpdate(params *ExtrasCustomFieldsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasCustomFieldsBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_custom-fields_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/custom-fields/",
@@ -584,7 +634,12 @@ func (a *Client) ExtrasCustomFieldsBulkPartialUpdate(params *ExtrasCustomFieldsB
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -600,13 +655,12 @@ func (a *Client) ExtrasCustomFieldsBulkPartialUpdate(params *ExtrasCustomFieldsB
 /*
   ExtrasCustomFieldsBulkUpdate extras custom fields bulk update API
 */
-func (a *Client) ExtrasCustomFieldsBulkUpdate(params *ExtrasCustomFieldsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsBulkUpdateOK, error) {
+func (a *Client) ExtrasCustomFieldsBulkUpdate(params *ExtrasCustomFieldsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasCustomFieldsBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_custom-fields_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/custom-fields/",
@@ -618,7 +672,12 @@ func (a *Client) ExtrasCustomFieldsBulkUpdate(params *ExtrasCustomFieldsBulkUpda
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -634,13 +693,12 @@ func (a *Client) ExtrasCustomFieldsBulkUpdate(params *ExtrasCustomFieldsBulkUpda
 /*
   ExtrasCustomFieldsCreate extras custom fields create API
 */
-func (a *Client) ExtrasCustomFieldsCreate(params *ExtrasCustomFieldsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsCreateCreated, error) {
+func (a *Client) ExtrasCustomFieldsCreate(params *ExtrasCustomFieldsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasCustomFieldsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_custom-fields_create",
 		Method:             "POST",
 		PathPattern:        "/extras/custom-fields/",
@@ -652,7 +710,12 @@ func (a *Client) ExtrasCustomFieldsCreate(params *ExtrasCustomFieldsCreateParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -668,13 +731,12 @@ func (a *Client) ExtrasCustomFieldsCreate(params *ExtrasCustomFieldsCreateParams
 /*
   ExtrasCustomFieldsDelete extras custom fields delete API
 */
-func (a *Client) ExtrasCustomFieldsDelete(params *ExtrasCustomFieldsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsDeleteNoContent, error) {
+func (a *Client) ExtrasCustomFieldsDelete(params *ExtrasCustomFieldsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasCustomFieldsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_custom-fields_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/custom-fields/{id}/",
@@ -686,7 +748,12 @@ func (a *Client) ExtrasCustomFieldsDelete(params *ExtrasCustomFieldsDeleteParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -702,13 +769,12 @@ func (a *Client) ExtrasCustomFieldsDelete(params *ExtrasCustomFieldsDeleteParams
 /*
   ExtrasCustomFieldsList extras custom fields list API
 */
-func (a *Client) ExtrasCustomFieldsList(params *ExtrasCustomFieldsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsListOK, error) {
+func (a *Client) ExtrasCustomFieldsList(params *ExtrasCustomFieldsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasCustomFieldsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_custom-fields_list",
 		Method:             "GET",
 		PathPattern:        "/extras/custom-fields/",
@@ -720,7 +786,12 @@ func (a *Client) ExtrasCustomFieldsList(params *ExtrasCustomFieldsListParams, au
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -736,13 +807,12 @@ func (a *Client) ExtrasCustomFieldsList(params *ExtrasCustomFieldsListParams, au
 /*
   ExtrasCustomFieldsPartialUpdate extras custom fields partial update API
 */
-func (a *Client) ExtrasCustomFieldsPartialUpdate(params *ExtrasCustomFieldsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsPartialUpdateOK, error) {
+func (a *Client) ExtrasCustomFieldsPartialUpdate(params *ExtrasCustomFieldsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasCustomFieldsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_custom-fields_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/custom-fields/{id}/",
@@ -754,7 +824,12 @@ func (a *Client) ExtrasCustomFieldsPartialUpdate(params *ExtrasCustomFieldsParti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -770,13 +845,12 @@ func (a *Client) ExtrasCustomFieldsPartialUpdate(params *ExtrasCustomFieldsParti
 /*
   ExtrasCustomFieldsRead extras custom fields read API
 */
-func (a *Client) ExtrasCustomFieldsRead(params *ExtrasCustomFieldsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsReadOK, error) {
+func (a *Client) ExtrasCustomFieldsRead(params *ExtrasCustomFieldsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasCustomFieldsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_custom-fields_read",
 		Method:             "GET",
 		PathPattern:        "/extras/custom-fields/{id}/",
@@ -788,7 +862,12 @@ func (a *Client) ExtrasCustomFieldsRead(params *ExtrasCustomFieldsReadParams, au
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -804,13 +883,12 @@ func (a *Client) ExtrasCustomFieldsRead(params *ExtrasCustomFieldsReadParams, au
 /*
   ExtrasCustomFieldsUpdate extras custom fields update API
 */
-func (a *Client) ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldsUpdateOK, error) {
+func (a *Client) ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasCustomFieldsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_custom-fields_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/custom-fields/{id}/",
@@ -822,7 +900,12 @@ func (a *Client) ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -838,13 +921,12 @@ func (a *Client) ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams
 /*
   ExtrasExportTemplatesBulkDelete extras export templates bulk delete API
 */
-func (a *Client) ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesBulkDeleteNoContent, error) {
+func (a *Client) ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasExportTemplatesBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_export-templates_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/export-templates/",
@@ -856,7 +938,12 @@ func (a *Client) ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBu
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -872,13 +959,12 @@ func (a *Client) ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBu
 /*
   ExtrasExportTemplatesBulkPartialUpdate extras export templates bulk partial update API
 */
-func (a *Client) ExtrasExportTemplatesBulkPartialUpdate(params *ExtrasExportTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesBulkPartialUpdateOK, error) {
+func (a *Client) ExtrasExportTemplatesBulkPartialUpdate(params *ExtrasExportTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasExportTemplatesBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_export-templates_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/export-templates/",
@@ -890,7 +976,12 @@ func (a *Client) ExtrasExportTemplatesBulkPartialUpdate(params *ExtrasExportTemp
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -906,13 +997,12 @@ func (a *Client) ExtrasExportTemplatesBulkPartialUpdate(params *ExtrasExportTemp
 /*
   ExtrasExportTemplatesBulkUpdate extras export templates bulk update API
 */
-func (a *Client) ExtrasExportTemplatesBulkUpdate(params *ExtrasExportTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesBulkUpdateOK, error) {
+func (a *Client) ExtrasExportTemplatesBulkUpdate(params *ExtrasExportTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasExportTemplatesBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_export-templates_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/export-templates/",
@@ -924,7 +1014,12 @@ func (a *Client) ExtrasExportTemplatesBulkUpdate(params *ExtrasExportTemplatesBu
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -940,13 +1035,12 @@ func (a *Client) ExtrasExportTemplatesBulkUpdate(params *ExtrasExportTemplatesBu
 /*
   ExtrasExportTemplatesCreate extras export templates create API
 */
-func (a *Client) ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesCreateCreated, error) {
+func (a *Client) ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasExportTemplatesCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_export-templates_create",
 		Method:             "POST",
 		PathPattern:        "/extras/export-templates/",
@@ -958,7 +1052,12 @@ func (a *Client) ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreate
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -974,13 +1073,12 @@ func (a *Client) ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreate
 /*
   ExtrasExportTemplatesDelete extras export templates delete API
 */
-func (a *Client) ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesDeleteNoContent, error) {
+func (a *Client) ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasExportTemplatesDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_export-templates_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/export-templates/{id}/",
@@ -992,7 +1090,12 @@ func (a *Client) ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDelete
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1008,13 +1111,12 @@ func (a *Client) ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDelete
 /*
   ExtrasExportTemplatesList extras export templates list API
 */
-func (a *Client) ExtrasExportTemplatesList(params *ExtrasExportTemplatesListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesListOK, error) {
+func (a *Client) ExtrasExportTemplatesList(params *ExtrasExportTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasExportTemplatesListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_export-templates_list",
 		Method:             "GET",
 		PathPattern:        "/extras/export-templates/",
@@ -1026,7 +1128,12 @@ func (a *Client) ExtrasExportTemplatesList(params *ExtrasExportTemplatesListPara
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1042,13 +1149,12 @@ func (a *Client) ExtrasExportTemplatesList(params *ExtrasExportTemplatesListPara
 /*
   ExtrasExportTemplatesPartialUpdate extras export templates partial update API
 */
-func (a *Client) ExtrasExportTemplatesPartialUpdate(params *ExtrasExportTemplatesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesPartialUpdateOK, error) {
+func (a *Client) ExtrasExportTemplatesPartialUpdate(params *ExtrasExportTemplatesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasExportTemplatesPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_export-templates_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/export-templates/{id}/",
@@ -1060,7 +1166,12 @@ func (a *Client) ExtrasExportTemplatesPartialUpdate(params *ExtrasExportTemplate
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1076,13 +1187,12 @@ func (a *Client) ExtrasExportTemplatesPartialUpdate(params *ExtrasExportTemplate
 /*
   ExtrasExportTemplatesRead extras export templates read API
 */
-func (a *Client) ExtrasExportTemplatesRead(params *ExtrasExportTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesReadOK, error) {
+func (a *Client) ExtrasExportTemplatesRead(params *ExtrasExportTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasExportTemplatesReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_export-templates_read",
 		Method:             "GET",
 		PathPattern:        "/extras/export-templates/{id}/",
@@ -1094,7 +1204,12 @@ func (a *Client) ExtrasExportTemplatesRead(params *ExtrasExportTemplatesReadPara
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1110,13 +1225,12 @@ func (a *Client) ExtrasExportTemplatesRead(params *ExtrasExportTemplatesReadPara
 /*
   ExtrasExportTemplatesUpdate extras export templates update API
 */
-func (a *Client) ExtrasExportTemplatesUpdate(params *ExtrasExportTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasExportTemplatesUpdateOK, error) {
+func (a *Client) ExtrasExportTemplatesUpdate(params *ExtrasExportTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasExportTemplatesUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_export-templates_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/export-templates/{id}/",
@@ -1128,7 +1242,12 @@ func (a *Client) ExtrasExportTemplatesUpdate(params *ExtrasExportTemplatesUpdate
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1144,13 +1263,12 @@ func (a *Client) ExtrasExportTemplatesUpdate(params *ExtrasExportTemplatesUpdate
 /*
   ExtrasImageAttachmentsBulkDelete extras image attachments bulk delete API
 */
-func (a *Client) ExtrasImageAttachmentsBulkDelete(params *ExtrasImageAttachmentsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsBulkDeleteNoContent, error) {
+func (a *Client) ExtrasImageAttachmentsBulkDelete(params *ExtrasImageAttachmentsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasImageAttachmentsBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_image-attachments_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/image-attachments/",
@@ -1162,7 +1280,12 @@ func (a *Client) ExtrasImageAttachmentsBulkDelete(params *ExtrasImageAttachments
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1178,13 +1301,12 @@ func (a *Client) ExtrasImageAttachmentsBulkDelete(params *ExtrasImageAttachments
 /*
   ExtrasImageAttachmentsBulkPartialUpdate extras image attachments bulk partial update API
 */
-func (a *Client) ExtrasImageAttachmentsBulkPartialUpdate(params *ExtrasImageAttachmentsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsBulkPartialUpdateOK, error) {
+func (a *Client) ExtrasImageAttachmentsBulkPartialUpdate(params *ExtrasImageAttachmentsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasImageAttachmentsBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_image-attachments_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/image-attachments/",
@@ -1196,7 +1318,12 @@ func (a *Client) ExtrasImageAttachmentsBulkPartialUpdate(params *ExtrasImageAtta
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1212,13 +1339,12 @@ func (a *Client) ExtrasImageAttachmentsBulkPartialUpdate(params *ExtrasImageAtta
 /*
   ExtrasImageAttachmentsBulkUpdate extras image attachments bulk update API
 */
-func (a *Client) ExtrasImageAttachmentsBulkUpdate(params *ExtrasImageAttachmentsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsBulkUpdateOK, error) {
+func (a *Client) ExtrasImageAttachmentsBulkUpdate(params *ExtrasImageAttachmentsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasImageAttachmentsBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_image-attachments_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/image-attachments/",
@@ -1230,7 +1356,12 @@ func (a *Client) ExtrasImageAttachmentsBulkUpdate(params *ExtrasImageAttachments
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1246,13 +1377,12 @@ func (a *Client) ExtrasImageAttachmentsBulkUpdate(params *ExtrasImageAttachments
 /*
   ExtrasImageAttachmentsCreate extras image attachments create API
 */
-func (a *Client) ExtrasImageAttachmentsCreate(params *ExtrasImageAttachmentsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsCreateCreated, error) {
+func (a *Client) ExtrasImageAttachmentsCreate(params *ExtrasImageAttachmentsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasImageAttachmentsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_image-attachments_create",
 		Method:             "POST",
 		PathPattern:        "/extras/image-attachments/",
@@ -1264,7 +1394,12 @@ func (a *Client) ExtrasImageAttachmentsCreate(params *ExtrasImageAttachmentsCrea
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1280,13 +1415,12 @@ func (a *Client) ExtrasImageAttachmentsCreate(params *ExtrasImageAttachmentsCrea
 /*
   ExtrasImageAttachmentsDelete extras image attachments delete API
 */
-func (a *Client) ExtrasImageAttachmentsDelete(params *ExtrasImageAttachmentsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsDeleteNoContent, error) {
+func (a *Client) ExtrasImageAttachmentsDelete(params *ExtrasImageAttachmentsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasImageAttachmentsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_image-attachments_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/image-attachments/{id}/",
@@ -1298,7 +1432,12 @@ func (a *Client) ExtrasImageAttachmentsDelete(params *ExtrasImageAttachmentsDele
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1314,13 +1453,12 @@ func (a *Client) ExtrasImageAttachmentsDelete(params *ExtrasImageAttachmentsDele
 /*
   ExtrasImageAttachmentsList extras image attachments list API
 */
-func (a *Client) ExtrasImageAttachmentsList(params *ExtrasImageAttachmentsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsListOK, error) {
+func (a *Client) ExtrasImageAttachmentsList(params *ExtrasImageAttachmentsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasImageAttachmentsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_image-attachments_list",
 		Method:             "GET",
 		PathPattern:        "/extras/image-attachments/",
@@ -1332,7 +1470,12 @@ func (a *Client) ExtrasImageAttachmentsList(params *ExtrasImageAttachmentsListPa
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1348,13 +1491,12 @@ func (a *Client) ExtrasImageAttachmentsList(params *ExtrasImageAttachmentsListPa
 /*
   ExtrasImageAttachmentsPartialUpdate extras image attachments partial update API
 */
-func (a *Client) ExtrasImageAttachmentsPartialUpdate(params *ExtrasImageAttachmentsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsPartialUpdateOK, error) {
+func (a *Client) ExtrasImageAttachmentsPartialUpdate(params *ExtrasImageAttachmentsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasImageAttachmentsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_image-attachments_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/image-attachments/{id}/",
@@ -1366,7 +1508,12 @@ func (a *Client) ExtrasImageAttachmentsPartialUpdate(params *ExtrasImageAttachme
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1382,13 +1529,12 @@ func (a *Client) ExtrasImageAttachmentsPartialUpdate(params *ExtrasImageAttachme
 /*
   ExtrasImageAttachmentsRead extras image attachments read API
 */
-func (a *Client) ExtrasImageAttachmentsRead(params *ExtrasImageAttachmentsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsReadOK, error) {
+func (a *Client) ExtrasImageAttachmentsRead(params *ExtrasImageAttachmentsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasImageAttachmentsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_image-attachments_read",
 		Method:             "GET",
 		PathPattern:        "/extras/image-attachments/{id}/",
@@ -1400,7 +1546,12 @@ func (a *Client) ExtrasImageAttachmentsRead(params *ExtrasImageAttachmentsReadPa
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1416,13 +1567,12 @@ func (a *Client) ExtrasImageAttachmentsRead(params *ExtrasImageAttachmentsReadPa
 /*
   ExtrasImageAttachmentsUpdate extras image attachments update API
 */
-func (a *Client) ExtrasImageAttachmentsUpdate(params *ExtrasImageAttachmentsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasImageAttachmentsUpdateOK, error) {
+func (a *Client) ExtrasImageAttachmentsUpdate(params *ExtrasImageAttachmentsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasImageAttachmentsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasImageAttachmentsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_image-attachments_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/image-attachments/{id}/",
@@ -1434,7 +1584,12 @@ func (a *Client) ExtrasImageAttachmentsUpdate(params *ExtrasImageAttachmentsUpda
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1450,13 +1605,12 @@ func (a *Client) ExtrasImageAttachmentsUpdate(params *ExtrasImageAttachmentsUpda
 /*
   ExtrasJobResultsList Retrieve a list of job results
 */
-func (a *Client) ExtrasJobResultsList(params *ExtrasJobResultsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasJobResultsListOK, error) {
+func (a *Client) ExtrasJobResultsList(params *ExtrasJobResultsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJobResultsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasJobResultsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_job-results_list",
 		Method:             "GET",
 		PathPattern:        "/extras/job-results/",
@@ -1468,7 +1622,12 @@ func (a *Client) ExtrasJobResultsList(params *ExtrasJobResultsListParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1484,13 +1643,12 @@ func (a *Client) ExtrasJobResultsList(params *ExtrasJobResultsListParams, authIn
 /*
   ExtrasJobResultsRead Retrieve a list of job results
 */
-func (a *Client) ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasJobResultsReadOK, error) {
+func (a *Client) ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJobResultsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasJobResultsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_job-results_read",
 		Method:             "GET",
 		PathPattern:        "/extras/job-results/{id}/",
@@ -1502,7 +1660,12 @@ func (a *Client) ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1518,13 +1681,12 @@ func (a *Client) ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authIn
 /*
   ExtrasObjectChangesList Retrieve a list of recent changes.
 */
-func (a *Client) ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasObjectChangesListOK, error) {
+func (a *Client) ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasObjectChangesListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasObjectChangesListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_object-changes_list",
 		Method:             "GET",
 		PathPattern:        "/extras/object-changes/",
@@ -1536,7 +1698,12 @@ func (a *Client) ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, 
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1552,13 +1719,12 @@ func (a *Client) ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, 
 /*
   ExtrasObjectChangesRead Retrieve a list of recent changes.
 */
-func (a *Client) ExtrasObjectChangesRead(params *ExtrasObjectChangesReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasObjectChangesReadOK, error) {
+func (a *Client) ExtrasObjectChangesRead(params *ExtrasObjectChangesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasObjectChangesReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasObjectChangesReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_object-changes_read",
 		Method:             "GET",
 		PathPattern:        "/extras/object-changes/{id}/",
@@ -1570,7 +1736,12 @@ func (a *Client) ExtrasObjectChangesRead(params *ExtrasObjectChangesReadParams, 
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1586,13 +1757,12 @@ func (a *Client) ExtrasObjectChangesRead(params *ExtrasObjectChangesReadParams, 
 /*
   ExtrasReportsList Compile all reports and their related results (if any). Result data is deferred in the list view.
 */
-func (a *Client) ExtrasReportsList(params *ExtrasReportsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasReportsListOK, error) {
+func (a *Client) ExtrasReportsList(params *ExtrasReportsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasReportsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasReportsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_reports_list",
 		Method:             "GET",
 		PathPattern:        "/extras/reports/",
@@ -1604,7 +1774,12 @@ func (a *Client) ExtrasReportsList(params *ExtrasReportsListParams, authInfo run
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1620,13 +1795,12 @@ func (a *Client) ExtrasReportsList(params *ExtrasReportsListParams, authInfo run
 /*
   ExtrasReportsRead Retrieve a single Report identified as "<module>.<report>".
 */
-func (a *Client) ExtrasReportsRead(params *ExtrasReportsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasReportsReadOK, error) {
+func (a *Client) ExtrasReportsRead(params *ExtrasReportsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasReportsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasReportsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_reports_read",
 		Method:             "GET",
 		PathPattern:        "/extras/reports/{id}/",
@@ -1638,7 +1812,12 @@ func (a *Client) ExtrasReportsRead(params *ExtrasReportsReadParams, authInfo run
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1654,13 +1833,12 @@ func (a *Client) ExtrasReportsRead(params *ExtrasReportsReadParams, authInfo run
 /*
   ExtrasReportsRun Run a Report identified as "<module>.<script>" and return the pending JobResult as the result
 */
-func (a *Client) ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasReportsRunCreated, error) {
+func (a *Client) ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasReportsRunCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasReportsRunParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_reports_run",
 		Method:             "POST",
 		PathPattern:        "/extras/reports/{id}/run/",
@@ -1672,7 +1850,12 @@ func (a *Client) ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1688,13 +1871,12 @@ func (a *Client) ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runti
 /*
   ExtrasScriptsList extras scripts list API
 */
-func (a *Client) ExtrasScriptsList(params *ExtrasScriptsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasScriptsListOK, error) {
+func (a *Client) ExtrasScriptsList(params *ExtrasScriptsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasScriptsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasScriptsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_scripts_list",
 		Method:             "GET",
 		PathPattern:        "/extras/scripts/",
@@ -1706,7 +1888,12 @@ func (a *Client) ExtrasScriptsList(params *ExtrasScriptsListParams, authInfo run
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1722,13 +1909,12 @@ func (a *Client) ExtrasScriptsList(params *ExtrasScriptsListParams, authInfo run
 /*
   ExtrasScriptsRead extras scripts read API
 */
-func (a *Client) ExtrasScriptsRead(params *ExtrasScriptsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasScriptsReadOK, error) {
+func (a *Client) ExtrasScriptsRead(params *ExtrasScriptsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasScriptsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasScriptsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_scripts_read",
 		Method:             "GET",
 		PathPattern:        "/extras/scripts/{id}/",
@@ -1740,7 +1926,12 @@ func (a *Client) ExtrasScriptsRead(params *ExtrasScriptsReadParams, authInfo run
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1756,13 +1947,12 @@ func (a *Client) ExtrasScriptsRead(params *ExtrasScriptsReadParams, authInfo run
 /*
   ExtrasTagsBulkDelete extras tags bulk delete API
 */
-func (a *Client) ExtrasTagsBulkDelete(params *ExtrasTagsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsBulkDeleteNoContent, error) {
+func (a *Client) ExtrasTagsBulkDelete(params *ExtrasTagsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasTagsBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_tags_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/tags/",
@@ -1774,7 +1964,12 @@ func (a *Client) ExtrasTagsBulkDelete(params *ExtrasTagsBulkDeleteParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1790,13 +1985,12 @@ func (a *Client) ExtrasTagsBulkDelete(params *ExtrasTagsBulkDeleteParams, authIn
 /*
   ExtrasTagsBulkPartialUpdate extras tags bulk partial update API
 */
-func (a *Client) ExtrasTagsBulkPartialUpdate(params *ExtrasTagsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsBulkPartialUpdateOK, error) {
+func (a *Client) ExtrasTagsBulkPartialUpdate(params *ExtrasTagsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasTagsBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_tags_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/tags/",
@@ -1808,7 +2002,12 @@ func (a *Client) ExtrasTagsBulkPartialUpdate(params *ExtrasTagsBulkPartialUpdate
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1824,13 +2023,12 @@ func (a *Client) ExtrasTagsBulkPartialUpdate(params *ExtrasTagsBulkPartialUpdate
 /*
   ExtrasTagsBulkUpdate extras tags bulk update API
 */
-func (a *Client) ExtrasTagsBulkUpdate(params *ExtrasTagsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsBulkUpdateOK, error) {
+func (a *Client) ExtrasTagsBulkUpdate(params *ExtrasTagsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasTagsBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_tags_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/tags/",
@@ -1842,7 +2040,12 @@ func (a *Client) ExtrasTagsBulkUpdate(params *ExtrasTagsBulkUpdateParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1858,13 +2061,12 @@ func (a *Client) ExtrasTagsBulkUpdate(params *ExtrasTagsBulkUpdateParams, authIn
 /*
   ExtrasTagsCreate extras tags create API
 */
-func (a *Client) ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsCreateCreated, error) {
+func (a *Client) ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasTagsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_tags_create",
 		Method:             "POST",
 		PathPattern:        "/extras/tags/",
@@ -1876,7 +2078,12 @@ func (a *Client) ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1892,13 +2099,12 @@ func (a *Client) ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runti
 /*
   ExtrasTagsDelete extras tags delete API
 */
-func (a *Client) ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsDeleteNoContent, error) {
+func (a *Client) ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasTagsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_tags_delete",
 		Method:             "DELETE",
 		PathPattern:        "/extras/tags/{id}/",
@@ -1910,7 +2116,12 @@ func (a *Client) ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1926,13 +2137,12 @@ func (a *Client) ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runti
 /*
   ExtrasTagsList extras tags list API
 */
-func (a *Client) ExtrasTagsList(params *ExtrasTagsListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsListOK, error) {
+func (a *Client) ExtrasTagsList(params *ExtrasTagsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasTagsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_tags_list",
 		Method:             "GET",
 		PathPattern:        "/extras/tags/",
@@ -1944,7 +2154,12 @@ func (a *Client) ExtrasTagsList(params *ExtrasTagsListParams, authInfo runtime.C
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1960,13 +2175,12 @@ func (a *Client) ExtrasTagsList(params *ExtrasTagsListParams, authInfo runtime.C
 /*
   ExtrasTagsPartialUpdate extras tags partial update API
 */
-func (a *Client) ExtrasTagsPartialUpdate(params *ExtrasTagsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsPartialUpdateOK, error) {
+func (a *Client) ExtrasTagsPartialUpdate(params *ExtrasTagsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasTagsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_tags_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/extras/tags/{id}/",
@@ -1978,7 +2192,12 @@ func (a *Client) ExtrasTagsPartialUpdate(params *ExtrasTagsPartialUpdateParams, 
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1994,13 +2213,12 @@ func (a *Client) ExtrasTagsPartialUpdate(params *ExtrasTagsPartialUpdateParams, 
 /*
   ExtrasTagsRead extras tags read API
 */
-func (a *Client) ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsReadOK, error) {
+func (a *Client) ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasTagsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_tags_read",
 		Method:             "GET",
 		PathPattern:        "/extras/tags/{id}/",
@@ -2012,7 +2230,12 @@ func (a *Client) ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.C
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -2028,13 +2251,12 @@ func (a *Client) ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.C
 /*
   ExtrasTagsUpdate extras tags update API
 */
-func (a *Client) ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasTagsUpdateOK, error) {
+func (a *Client) ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtrasTagsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "extras_tags_update",
 		Method:             "PUT",
 		PathPattern:        "/extras/tags/{id}/",
@@ -2046,7 +2268,12 @@ func (a *Client) ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

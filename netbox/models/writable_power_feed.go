@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -208,16 +209,15 @@ func (m *WritablePowerFeed) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritablePowerFeed) validateAmperage(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Amperage) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("amperage", "body", int64(m.Amperage), 1, false); err != nil {
+	if err := validate.MinimumInt("amperage", "body", m.Amperage, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("amperage", "body", int64(m.Amperage), 32767, false); err != nil {
+	if err := validate.MaximumInt("amperage", "body", m.Amperage, 32767, false); err != nil {
 		return err
 	}
 
@@ -225,7 +225,6 @@ func (m *WritablePowerFeed) validateAmperage(formats strfmt.Registry) error {
 }
 
 func (m *WritablePowerFeed) validateCable(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Cable) { // not required
 		return nil
 	}
@@ -243,7 +242,6 @@ func (m *WritablePowerFeed) validateCable(formats strfmt.Registry) error {
 }
 
 func (m *WritablePowerFeed) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -256,7 +254,6 @@ func (m *WritablePowerFeed) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *WritablePowerFeed) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -269,16 +266,15 @@ func (m *WritablePowerFeed) validateLastUpdated(formats strfmt.Registry) error {
 }
 
 func (m *WritablePowerFeed) validateMaxUtilization(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.MaxUtilization) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("max_utilization", "body", int64(m.MaxUtilization), 1, false); err != nil {
+	if err := validate.MinimumInt("max_utilization", "body", m.MaxUtilization, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("max_utilization", "body", int64(m.MaxUtilization), 100, false); err != nil {
+	if err := validate.MaximumInt("max_utilization", "body", m.MaxUtilization, 100, false); err != nil {
 		return err
 	}
 
@@ -291,11 +287,11 @@ func (m *WritablePowerFeed) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
@@ -316,11 +312,11 @@ func init() {
 
 const (
 
-	// WritablePowerFeedPhaseSinglePhase captures enum value "single-phase"
-	WritablePowerFeedPhaseSinglePhase string = "single-phase"
+	// WritablePowerFeedPhaseSingleDashPhase captures enum value "single-phase"
+	WritablePowerFeedPhaseSingleDashPhase string = "single-phase"
 
-	// WritablePowerFeedPhaseThreePhase captures enum value "three-phase"
-	WritablePowerFeedPhaseThreePhase string = "three-phase"
+	// WritablePowerFeedPhaseThreeDashPhase captures enum value "three-phase"
+	WritablePowerFeedPhaseThreeDashPhase string = "three-phase"
 )
 
 // prop value enum
@@ -332,7 +328,6 @@ func (m *WritablePowerFeed) validatePhaseEnum(path, location string, value strin
 }
 
 func (m *WritablePowerFeed) validatePhase(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Phase) { // not required
 		return nil
 	}
@@ -390,7 +385,6 @@ func (m *WritablePowerFeed) validateStatusEnum(path, location string, value stri
 }
 
 func (m *WritablePowerFeed) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -433,7 +427,6 @@ func (m *WritablePowerFeed) validateSupplyEnum(path, location string, value stri
 }
 
 func (m *WritablePowerFeed) validateSupply(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Supply) { // not required
 		return nil
 	}
@@ -447,7 +440,6 @@ func (m *WritablePowerFeed) validateSupply(formats strfmt.Registry) error {
 }
 
 func (m *WritablePowerFeed) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -501,7 +493,6 @@ func (m *WritablePowerFeed) validateTypeEnum(path, location string, value string
 }
 
 func (m *WritablePowerFeed) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -515,7 +506,6 @@ func (m *WritablePowerFeed) validateType(formats strfmt.Registry) error {
 }
 
 func (m *WritablePowerFeed) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -528,16 +518,174 @@ func (m *WritablePowerFeed) validateURL(formats strfmt.Registry) error {
 }
 
 func (m *WritablePowerFeed) validateVoltage(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Voltage) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("voltage", "body", int64(*m.Voltage), -32768, false); err != nil {
+	if err := validate.MinimumInt("voltage", "body", *m.Voltage, -32768, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("voltage", "body", int64(*m.Voltage), 32767, false); err != nil {
+	if err := validate.MaximumInt("voltage", "body", *m.Voltage, 32767, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable power feed based on the context it is used
+func (m *WritablePowerFeed) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cable != nil {
+		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritablePowerFeed) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

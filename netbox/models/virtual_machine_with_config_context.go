@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -217,7 +218,6 @@ func (m *VirtualMachineWithConfigContext) validateCluster(formats strfmt.Registr
 }
 
 func (m *VirtualMachineWithConfigContext) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -230,16 +230,15 @@ func (m *VirtualMachineWithConfigContext) validateCreated(formats strfmt.Registr
 }
 
 func (m *VirtualMachineWithConfigContext) validateDisk(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Disk) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("disk", "body", int64(*m.Disk), 0, false); err != nil {
+	if err := validate.MinimumInt("disk", "body", *m.Disk, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("disk", "body", int64(*m.Disk), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("disk", "body", *m.Disk, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -247,7 +246,6 @@ func (m *VirtualMachineWithConfigContext) validateDisk(formats strfmt.Registry) 
 }
 
 func (m *VirtualMachineWithConfigContext) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -260,16 +258,15 @@ func (m *VirtualMachineWithConfigContext) validateLastUpdated(formats strfmt.Reg
 }
 
 func (m *VirtualMachineWithConfigContext) validateMemory(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Memory) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("memory", "body", int64(*m.Memory), 0, false); err != nil {
+	if err := validate.MinimumInt("memory", "body", *m.Memory, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("memory", "body", int64(*m.Memory), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("memory", "body", *m.Memory, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -282,11 +279,11 @@ func (m *VirtualMachineWithConfigContext) validateName(formats strfmt.Registry) 
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -294,7 +291,6 @@ func (m *VirtualMachineWithConfigContext) validateName(formats strfmt.Registry) 
 }
 
 func (m *VirtualMachineWithConfigContext) validatePlatform(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Platform) { // not required
 		return nil
 	}
@@ -312,7 +308,6 @@ func (m *VirtualMachineWithConfigContext) validatePlatform(formats strfmt.Regist
 }
 
 func (m *VirtualMachineWithConfigContext) validatePrimaryIP(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PrimaryIP) { // not required
 		return nil
 	}
@@ -330,7 +325,6 @@ func (m *VirtualMachineWithConfigContext) validatePrimaryIP(formats strfmt.Regis
 }
 
 func (m *VirtualMachineWithConfigContext) validatePrimaryIp4(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PrimaryIp4) { // not required
 		return nil
 	}
@@ -348,7 +342,6 @@ func (m *VirtualMachineWithConfigContext) validatePrimaryIp4(formats strfmt.Regi
 }
 
 func (m *VirtualMachineWithConfigContext) validatePrimaryIp6(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PrimaryIp6) { // not required
 		return nil
 	}
@@ -366,7 +359,6 @@ func (m *VirtualMachineWithConfigContext) validatePrimaryIp6(formats strfmt.Regi
 }
 
 func (m *VirtualMachineWithConfigContext) validateRole(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Role) { // not required
 		return nil
 	}
@@ -384,7 +376,6 @@ func (m *VirtualMachineWithConfigContext) validateRole(formats strfmt.Registry) 
 }
 
 func (m *VirtualMachineWithConfigContext) validateSite(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Site) { // not required
 		return nil
 	}
@@ -402,7 +393,6 @@ func (m *VirtualMachineWithConfigContext) validateSite(formats strfmt.Registry) 
 }
 
 func (m *VirtualMachineWithConfigContext) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -420,7 +410,6 @@ func (m *VirtualMachineWithConfigContext) validateStatus(formats strfmt.Registry
 }
 
 func (m *VirtualMachineWithConfigContext) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -445,7 +434,6 @@ func (m *VirtualMachineWithConfigContext) validateTags(formats strfmt.Registry) 
 }
 
 func (m *VirtualMachineWithConfigContext) validateTenant(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tenant) { // not required
 		return nil
 	}
@@ -463,7 +451,6 @@ func (m *VirtualMachineWithConfigContext) validateTenant(formats strfmt.Registry
 }
 
 func (m *VirtualMachineWithConfigContext) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -476,16 +463,270 @@ func (m *VirtualMachineWithConfigContext) validateURL(formats strfmt.Registry) e
 }
 
 func (m *VirtualMachineWithConfigContext) validateVcpus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Vcpus) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("vcpus", "body", int64(*m.Vcpus), 0, false); err != nil {
+	if err := validate.MinimumInt("vcpus", "body", *m.Vcpus, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("vcpus", "body", int64(*m.Vcpus), 32767, false); err != nil {
+	if err := validate.MaximumInt("vcpus", "body", *m.Vcpus, 32767, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this virtual machine with config context based on the context it is used
+func (m *VirtualMachineWithConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCluster(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePlatform(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrimaryIP(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrimaryIp4(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrimaryIp6(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRole(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSite(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTenant(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateCluster(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cluster != nil {
+		if err := m.Cluster.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cluster")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidatePlatform(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Platform != nil {
+		if err := m.Platform.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("platform")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidatePrimaryIP(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PrimaryIP != nil {
+		if err := m.PrimaryIP.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("primary_ip")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidatePrimaryIp4(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PrimaryIp4 != nil {
+		if err := m.PrimaryIp4.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("primary_ip4")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidatePrimaryIp6(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.PrimaryIp6 != nil {
+		if err := m.PrimaryIp6.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("primary_ip6")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Role != nil {
+		if err := m.Role.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("role")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Site != nil {
+		if err := m.Site.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("site")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Status != nil {
+		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Tenant != nil {
+		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -651,6 +892,11 @@ func (m *VirtualMachineWithConfigContextStatus) validateValue(formats strfmt.Reg
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this virtual machine with config context status based on context it is used
+func (m *VirtualMachineWithConfigContextStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewExtrasConfigContextsBulkDeleteParams creates a new ExtrasConfigContextsBulkDeleteParams object
-// with the default values initialized.
+// NewExtrasConfigContextsBulkDeleteParams creates a new ExtrasConfigContextsBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasConfigContextsBulkDeleteParams() *ExtrasConfigContextsBulkDeleteParams {
-
 	return &ExtrasConfigContextsBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasConfigContextsBulkDeleteParamsWithTimeout creates a new ExtrasConfigContextsBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasConfigContextsBulkDeleteParamsWithTimeout(timeout time.Duration) *ExtrasConfigContextsBulkDeleteParams {
-
 	return &ExtrasConfigContextsBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasConfigContextsBulkDeleteParamsWithContext creates a new ExtrasConfigContextsBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasConfigContextsBulkDeleteParamsWithContext(ctx context.Context) *ExtrasConfigContextsBulkDeleteParams {
-
 	return &ExtrasConfigContextsBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasConfigContextsBulkDeleteParamsWithHTTPClient creates a new ExtrasConfigContextsBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasConfigContextsBulkDeleteParamsWithHTTPClient(client *http.Client) *ExtrasConfigContextsBulkDeleteParams {
-
 	return &ExtrasConfigContextsBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasConfigContextsBulkDeleteParams contains all the parameters to send to the API endpoint
-for the extras config contexts bulk delete operation typically these are written to a http.Request
+/* ExtrasConfigContextsBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the extras config contexts bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras config contexts bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsBulkDeleteParams) WithDefaults() *ExtrasConfigContextsBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras config contexts bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras config contexts bulk delete params

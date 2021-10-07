@@ -61,7 +61,7 @@ func NewIpamAggregatesCreateCreated() *IpamAggregatesCreateCreated {
 	return &IpamAggregatesCreateCreated{}
 }
 
-/*IpamAggregatesCreateCreated handles this case with default header values.
+/* IpamAggregatesCreateCreated describes a response with status code 201, with default header values.
 
 IpamAggregatesCreateCreated ipam aggregates create created
 */
@@ -72,7 +72,6 @@ type IpamAggregatesCreateCreated struct {
 func (o *IpamAggregatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/aggregates/][%d] ipamAggregatesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamAggregatesCreateCreated) GetPayload() *models.Aggregate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamAggregatesCreateDefault(code int) *IpamAggregatesCreateDefault {
 	}
 }
 
-/*IpamAggregatesCreateDefault handles this case with default header values.
+/* IpamAggregatesCreateDefault describes a response with status code -1, with default header values.
 
 IpamAggregatesCreateDefault ipam aggregates create default
 */
@@ -114,7 +113,6 @@ func (o *IpamAggregatesCreateDefault) Code() int {
 func (o *IpamAggregatesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/aggregates/][%d] ipam_aggregates_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamAggregatesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

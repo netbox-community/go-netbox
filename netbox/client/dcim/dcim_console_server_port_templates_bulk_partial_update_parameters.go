@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimConsoleServerPortTemplatesBulkPartialUpdateParams creates a new DcimConsoleServerPortTemplatesBulkPartialUpdateParams object
-// with the default values initialized.
+// NewDcimConsoleServerPortTemplatesBulkPartialUpdateParams creates a new DcimConsoleServerPortTemplatesBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConsoleServerPortTemplatesBulkPartialUpdateParams() *DcimConsoleServerPortTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimConsoleServerPortTemplatesBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConsoleServerPortTemplatesBulkPartialUpdateParamsWithTimeout creates a new DcimConsoleServerPortTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConsoleServerPortTemplatesBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimConsoleServerPortTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimConsoleServerPortTemplatesBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConsoleServerPortTemplatesBulkPartialUpdateParamsWithContext creates a new DcimConsoleServerPortTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConsoleServerPortTemplatesBulkPartialUpdateParamsWithContext(ctx context.Context) *DcimConsoleServerPortTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimConsoleServerPortTemplatesBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConsoleServerPortTemplatesBulkPartialUpdateParamsWithHTTPClient creates a new DcimConsoleServerPortTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConsoleServerPortTemplatesBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimConsoleServerPortTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimConsoleServerPortTemplatesBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConsoleServerPortTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim console server port templates bulk partial update operation typically these are written to a http.Request
+/* DcimConsoleServerPortTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim console server port templates bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConsoleServerPortTemplatesBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableConsoleServerPortTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim console server port templates bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateParams) WithDefaults() *DcimConsoleServerPortTemplatesBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim console server port templates bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim console server port templates bulk partial update params
@@ -136,7 +150,6 @@ func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateParams) WriteToRequest(r
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

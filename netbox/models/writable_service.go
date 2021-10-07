@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -137,7 +138,6 @@ func (m *WritableService) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableService) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -150,12 +150,11 @@ func (m *WritableService) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *WritableService) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -163,7 +162,6 @@ func (m *WritableService) validateDescription(formats strfmt.Registry) error {
 }
 
 func (m *WritableService) validateIpaddresses(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Ipaddresses) { // not required
 		return nil
 	}
@@ -176,7 +174,6 @@ func (m *WritableService) validateIpaddresses(formats strfmt.Registry) error {
 }
 
 func (m *WritableService) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -194,11 +191,11 @@ func (m *WritableService) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
@@ -213,11 +210,11 @@ func (m *WritableService) validatePorts(formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Ports); i++ {
 
-		if err := validate.MinimumInt("ports"+"."+strconv.Itoa(i), "body", int64(m.Ports[i]), 1, false); err != nil {
+		if err := validate.MinimumInt("ports"+"."+strconv.Itoa(i), "body", m.Ports[i], 1, false); err != nil {
 			return err
 		}
 
-		if err := validate.MaximumInt("ports"+"."+strconv.Itoa(i), "body", int64(m.Ports[i]), 65535, false); err != nil {
+		if err := validate.MaximumInt("ports"+"."+strconv.Itoa(i), "body", m.Ports[i], 65535, false); err != nil {
 			return err
 		}
 
@@ -270,7 +267,6 @@ func (m *WritableService) validateProtocol(formats strfmt.Registry) error {
 }
 
 func (m *WritableService) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -295,12 +291,95 @@ func (m *WritableService) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *WritableService) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable service based on the context it is used
+func (m *WritableService) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableService) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableService) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableService) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableService) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableService) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

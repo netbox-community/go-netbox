@@ -61,7 +61,7 @@ func NewDcimDevicesBulkPartialUpdateOK() *DcimDevicesBulkPartialUpdateOK {
 	return &DcimDevicesBulkPartialUpdateOK{}
 }
 
-/*DcimDevicesBulkPartialUpdateOK handles this case with default header values.
+/* DcimDevicesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimDevicesBulkPartialUpdateOK dcim devices bulk partial update o k
 */
@@ -72,7 +72,6 @@ type DcimDevicesBulkPartialUpdateOK struct {
 func (o *DcimDevicesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/devices/][%d] dcimDevicesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDevicesBulkPartialUpdateOK) GetPayload() *models.DeviceWithConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDevicesBulkPartialUpdateDefault(code int) *DcimDevicesBulkPartialUpd
 	}
 }
 
-/*DcimDevicesBulkPartialUpdateDefault handles this case with default header values.
+/* DcimDevicesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimDevicesBulkPartialUpdateDefault dcim devices bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimDevicesBulkPartialUpdateDefault) Code() int {
 func (o *DcimDevicesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/devices/][%d] dcim_devices_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDevicesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,7 +59,7 @@ func NewDcimRackReservationsBulkDeleteNoContent() *DcimRackReservationsBulkDelet
 	return &DcimRackReservationsBulkDeleteNoContent{}
 }
 
-/*DcimRackReservationsBulkDeleteNoContent handles this case with default header values.
+/* DcimRackReservationsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimRackReservationsBulkDeleteNoContent dcim rack reservations bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimRackReservationsBulkDeleteDefault(code int) *DcimRackReservationsBul
 	}
 }
 
-/*DcimRackReservationsBulkDeleteDefault handles this case with default header values.
+/* DcimRackReservationsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimRackReservationsBulkDeleteDefault dcim rack reservations bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimRackReservationsBulkDeleteDefault) Code() int {
 func (o *DcimRackReservationsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/rack-reservations/][%d] dcim_rack-reservations_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackReservationsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

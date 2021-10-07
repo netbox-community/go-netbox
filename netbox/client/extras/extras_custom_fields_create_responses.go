@@ -61,7 +61,7 @@ func NewExtrasCustomFieldsCreateCreated() *ExtrasCustomFieldsCreateCreated {
 	return &ExtrasCustomFieldsCreateCreated{}
 }
 
-/*ExtrasCustomFieldsCreateCreated handles this case with default header values.
+/* ExtrasCustomFieldsCreateCreated describes a response with status code 201, with default header values.
 
 ExtrasCustomFieldsCreateCreated extras custom fields create created
 */
@@ -72,7 +72,6 @@ type ExtrasCustomFieldsCreateCreated struct {
 func (o *ExtrasCustomFieldsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extrasCustomFieldsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsCreateCreated) GetPayload() *models.CustomField {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasCustomFieldsCreateDefault(code int) *ExtrasCustomFieldsCreateDefau
 	}
 }
 
-/*ExtrasCustomFieldsCreateDefault handles this case with default header values.
+/* ExtrasCustomFieldsCreateDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsCreateDefault extras custom fields create default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasCustomFieldsCreateDefault) Code() int {
 func (o *ExtrasCustomFieldsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extras_custom-fields_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

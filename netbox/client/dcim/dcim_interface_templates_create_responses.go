@@ -61,7 +61,7 @@ func NewDcimInterfaceTemplatesCreateCreated() *DcimInterfaceTemplatesCreateCreat
 	return &DcimInterfaceTemplatesCreateCreated{}
 }
 
-/*DcimInterfaceTemplatesCreateCreated handles this case with default header values.
+/* DcimInterfaceTemplatesCreateCreated describes a response with status code 201, with default header values.
 
 DcimInterfaceTemplatesCreateCreated dcim interface templates create created
 */
@@ -72,7 +72,6 @@ type DcimInterfaceTemplatesCreateCreated struct {
 func (o *DcimInterfaceTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/interface-templates/][%d] dcimInterfaceTemplatesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesCreateCreated) GetPayload() *models.InterfaceTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimInterfaceTemplatesCreateDefault(code int) *DcimInterfaceTemplatesCre
 	}
 }
 
-/*DcimInterfaceTemplatesCreateDefault handles this case with default header values.
+/* DcimInterfaceTemplatesCreateDefault describes a response with status code -1, with default header values.
 
 DcimInterfaceTemplatesCreateDefault dcim interface templates create default
 */
@@ -114,7 +113,6 @@ func (o *DcimInterfaceTemplatesCreateDefault) Code() int {
 func (o *DcimInterfaceTemplatesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/interface-templates/][%d] dcim_interface-templates_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,7 @@ func NewDcimFrontPortsReadOK() *DcimFrontPortsReadOK {
 	return &DcimFrontPortsReadOK{}
 }
 
-/*DcimFrontPortsReadOK handles this case with default header values.
+/* DcimFrontPortsReadOK describes a response with status code 200, with default header values.
 
 DcimFrontPortsReadOK dcim front ports read o k
 */
@@ -72,7 +72,6 @@ type DcimFrontPortsReadOK struct {
 func (o *DcimFrontPortsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/front-ports/{id}/][%d] dcimFrontPortsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimFrontPortsReadOK) GetPayload() *models.FrontPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimFrontPortsReadDefault(code int) *DcimFrontPortsReadDefault {
 	}
 }
 
-/*DcimFrontPortsReadDefault handles this case with default header values.
+/* DcimFrontPortsReadDefault describes a response with status code -1, with default header values.
 
 DcimFrontPortsReadDefault dcim front ports read default
 */
@@ -114,7 +113,6 @@ func (o *DcimFrontPortsReadDefault) Code() int {
 func (o *DcimFrontPortsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/front-ports/{id}/][%d] dcim_front-ports_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimFrontPortsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

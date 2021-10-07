@@ -61,7 +61,7 @@ func NewExtrasImageAttachmentsCreateCreated() *ExtrasImageAttachmentsCreateCreat
 	return &ExtrasImageAttachmentsCreateCreated{}
 }
 
-/*ExtrasImageAttachmentsCreateCreated handles this case with default header values.
+/* ExtrasImageAttachmentsCreateCreated describes a response with status code 201, with default header values.
 
 ExtrasImageAttachmentsCreateCreated extras image attachments create created
 */
@@ -72,7 +72,6 @@ type ExtrasImageAttachmentsCreateCreated struct {
 func (o *ExtrasImageAttachmentsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extrasImageAttachmentsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsCreateCreated) GetPayload() *models.ImageAttachment {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasImageAttachmentsCreateDefault(code int) *ExtrasImageAttachmentsCre
 	}
 }
 
-/*ExtrasImageAttachmentsCreateDefault handles this case with default header values.
+/* ExtrasImageAttachmentsCreateDefault describes a response with status code -1, with default header values.
 
 ExtrasImageAttachmentsCreateDefault extras image attachments create default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasImageAttachmentsCreateDefault) Code() int {
 func (o *ExtrasImageAttachmentsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/image-attachments/][%d] extras_image-attachments_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

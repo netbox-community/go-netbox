@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimSitesBulkUpdateParams creates a new DcimSitesBulkUpdateParams object
-// with the default values initialized.
+// NewDcimSitesBulkUpdateParams creates a new DcimSitesBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimSitesBulkUpdateParams() *DcimSitesBulkUpdateParams {
-	var ()
 	return &DcimSitesBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimSitesBulkUpdateParamsWithTimeout creates a new DcimSitesBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimSitesBulkUpdateParamsWithTimeout(timeout time.Duration) *DcimSitesBulkUpdateParams {
-	var ()
 	return &DcimSitesBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimSitesBulkUpdateParamsWithContext creates a new DcimSitesBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimSitesBulkUpdateParamsWithContext(ctx context.Context) *DcimSitesBulkUpdateParams {
-	var ()
 	return &DcimSitesBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimSitesBulkUpdateParamsWithHTTPClient creates a new DcimSitesBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimSitesBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimSitesBulkUpdateParams {
-	var ()
 	return &DcimSitesBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimSitesBulkUpdateParams contains all the parameters to send to the API endpoint
-for the dcim sites bulk update operation typically these are written to a http.Request
+/* DcimSitesBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim sites bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimSitesBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableSite
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim sites bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimSitesBulkUpdateParams) WithDefaults() *DcimSitesBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim sites bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimSitesBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim sites bulk update params
@@ -136,7 +150,6 @@ func (o *DcimSitesBulkUpdateParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

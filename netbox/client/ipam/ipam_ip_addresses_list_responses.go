@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewIpamIPAddressesListOK() *IpamIPAddressesListOK {
 	return &IpamIPAddressesListOK{}
 }
 
-/*IpamIPAddressesListOK handles this case with default header values.
+/* IpamIPAddressesListOK describes a response with status code 200, with default header values.
 
 IpamIPAddressesListOK ipam Ip addresses list o k
 */
@@ -76,7 +77,6 @@ type IpamIPAddressesListOK struct {
 func (o *IpamIPAddressesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/ip-addresses/][%d] ipamIpAddressesListOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamIPAddressesListOK) GetPayload() *IpamIPAddressesListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewIpamIPAddressesListDefault(code int) *IpamIPAddressesListDefault {
 	}
 }
 
-/*IpamIPAddressesListDefault handles this case with default header values.
+/* IpamIPAddressesListDefault describes a response with status code -1, with default header values.
 
 IpamIPAddressesListDefault ipam ip addresses list default
 */
@@ -118,7 +118,6 @@ func (o *IpamIPAddressesListDefault) Code() int {
 func (o *IpamIPAddressesListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/ip-addresses/][%d] ipam_ip-addresses_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamIPAddressesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *IpamIPAddressesListOKBody) validateCount(formats strfmt.Registry) error
 }
 
 func (o *IpamIPAddressesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *IpamIPAddressesListOKBody) validateNext(formats strfmt.Registry) error 
 }
 
 func (o *IpamIPAddressesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *IpamIPAddressesListOKBody) validateResults(formats strfmt.Registry) err
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ipamIpAddressesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this ipam IP addresses list o k body based on the context it is used
+func (o *IpamIPAddressesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *IpamIPAddressesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamIpAddressesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

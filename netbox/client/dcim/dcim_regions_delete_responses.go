@@ -59,7 +59,7 @@ func NewDcimRegionsDeleteNoContent() *DcimRegionsDeleteNoContent {
 	return &DcimRegionsDeleteNoContent{}
 }
 
-/*DcimRegionsDeleteNoContent handles this case with default header values.
+/* DcimRegionsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimRegionsDeleteNoContent dcim regions delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimRegionsDeleteDefault(code int) *DcimRegionsDeleteDefault {
 	}
 }
 
-/*DcimRegionsDeleteDefault handles this case with default header values.
+/* DcimRegionsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimRegionsDeleteDefault dcim regions delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimRegionsDeleteDefault) Code() int {
 func (o *DcimRegionsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcim_regions_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRegionsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

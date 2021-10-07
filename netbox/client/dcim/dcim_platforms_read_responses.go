@@ -61,7 +61,7 @@ func NewDcimPlatformsReadOK() *DcimPlatformsReadOK {
 	return &DcimPlatformsReadOK{}
 }
 
-/*DcimPlatformsReadOK handles this case with default header values.
+/* DcimPlatformsReadOK describes a response with status code 200, with default header values.
 
 DcimPlatformsReadOK dcim platforms read o k
 */
@@ -72,7 +72,6 @@ type DcimPlatformsReadOK struct {
 func (o *DcimPlatformsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/platforms/{id}/][%d] dcimPlatformsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPlatformsReadOK) GetPayload() *models.Platform {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPlatformsReadDefault(code int) *DcimPlatformsReadDefault {
 	}
 }
 
-/*DcimPlatformsReadDefault handles this case with default header values.
+/* DcimPlatformsReadDefault describes a response with status code -1, with default header values.
 
 DcimPlatformsReadDefault dcim platforms read default
 */
@@ -114,7 +113,6 @@ func (o *DcimPlatformsReadDefault) Code() int {
 func (o *DcimPlatformsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/platforms/{id}/][%d] dcim_platforms_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPlatformsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

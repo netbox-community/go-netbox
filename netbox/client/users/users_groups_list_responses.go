@@ -21,6 +21,7 @@ package users
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewUsersGroupsListOK() *UsersGroupsListOK {
 	return &UsersGroupsListOK{}
 }
 
-/*UsersGroupsListOK handles this case with default header values.
+/* UsersGroupsListOK describes a response with status code 200, with default header values.
 
 UsersGroupsListOK users groups list o k
 */
@@ -76,7 +77,6 @@ type UsersGroupsListOK struct {
 func (o *UsersGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /users/groups/][%d] usersGroupsListOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersGroupsListOK) GetPayload() *UsersGroupsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewUsersGroupsListDefault(code int) *UsersGroupsListDefault {
 	}
 }
 
-/*UsersGroupsListDefault handles this case with default header values.
+/* UsersGroupsListDefault describes a response with status code -1, with default header values.
 
 UsersGroupsListDefault users groups list default
 */
@@ -118,7 +118,6 @@ func (o *UsersGroupsListDefault) Code() int {
 func (o *UsersGroupsListDefault) Error() string {
 	return fmt.Sprintf("[GET /users/groups/][%d] users_groups_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersGroupsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *UsersGroupsListOKBody) validateCount(formats strfmt.Registry) error {
 }
 
 func (o *UsersGroupsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *UsersGroupsListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *UsersGroupsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *UsersGroupsListOKBody) validateResults(formats strfmt.Registry) error {
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("usersGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this users groups list o k body based on the context it is used
+func (o *UsersGroupsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *UsersGroupsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("usersGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

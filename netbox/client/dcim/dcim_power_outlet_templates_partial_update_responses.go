@@ -61,7 +61,7 @@ func NewDcimPowerOutletTemplatesPartialUpdateOK() *DcimPowerOutletTemplatesParti
 	return &DcimPowerOutletTemplatesPartialUpdateOK{}
 }
 
-/*DcimPowerOutletTemplatesPartialUpdateOK handles this case with default header values.
+/* DcimPowerOutletTemplatesPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletTemplatesPartialUpdateOK dcim power outlet templates partial update o k
 */
@@ -72,7 +72,6 @@ type DcimPowerOutletTemplatesPartialUpdateOK struct {
 func (o *DcimPowerOutletTemplatesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerOutletTemplatesPartialUpdateOK) GetPayload() *models.PowerOutletTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerOutletTemplatesPartialUpdateDefault(code int) *DcimPowerOutletT
 	}
 }
 
-/*DcimPowerOutletTemplatesPartialUpdateDefault handles this case with default header values.
+/* DcimPowerOutletTemplatesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletTemplatesPartialUpdateDefault dcim power outlet templates partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerOutletTemplatesPartialUpdateDefault) Code() int {
 func (o *DcimPowerOutletTemplatesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerOutletTemplatesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

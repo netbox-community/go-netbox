@@ -59,7 +59,7 @@ func NewDcimCablesBulkDeleteNoContent() *DcimCablesBulkDeleteNoContent {
 	return &DcimCablesBulkDeleteNoContent{}
 }
 
-/*DcimCablesBulkDeleteNoContent handles this case with default header values.
+/* DcimCablesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimCablesBulkDeleteNoContent dcim cables bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimCablesBulkDeleteDefault(code int) *DcimCablesBulkDeleteDefault {
 	}
 }
 
-/*DcimCablesBulkDeleteDefault handles this case with default header values.
+/* DcimCablesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimCablesBulkDeleteDefault dcim cables bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimCablesBulkDeleteDefault) Code() int {
 func (o *DcimCablesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/cables/][%d] dcim_cables_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimCablesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

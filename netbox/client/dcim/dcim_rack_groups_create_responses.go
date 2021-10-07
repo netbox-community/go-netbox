@@ -61,7 +61,7 @@ func NewDcimRackGroupsCreateCreated() *DcimRackGroupsCreateCreated {
 	return &DcimRackGroupsCreateCreated{}
 }
 
-/*DcimRackGroupsCreateCreated handles this case with default header values.
+/* DcimRackGroupsCreateCreated describes a response with status code 201, with default header values.
 
 DcimRackGroupsCreateCreated dcim rack groups create created
 */
@@ -72,7 +72,6 @@ type DcimRackGroupsCreateCreated struct {
 func (o *DcimRackGroupsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/rack-groups/][%d] dcimRackGroupsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimRackGroupsCreateCreated) GetPayload() *models.RackGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRackGroupsCreateDefault(code int) *DcimRackGroupsCreateDefault {
 	}
 }
 
-/*DcimRackGroupsCreateDefault handles this case with default header values.
+/* DcimRackGroupsCreateDefault describes a response with status code -1, with default header values.
 
 DcimRackGroupsCreateDefault dcim rack groups create default
 */
@@ -114,7 +113,6 @@ func (o *DcimRackGroupsCreateDefault) Code() int {
 func (o *DcimRackGroupsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/rack-groups/][%d] dcim_rack-groups_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackGroupsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,7 @@ func NewDcimPowerPanelsUpdateOK() *DcimPowerPanelsUpdateOK {
 	return &DcimPowerPanelsUpdateOK{}
 }
 
-/*DcimPowerPanelsUpdateOK handles this case with default header values.
+/* DcimPowerPanelsUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPanelsUpdateOK dcim power panels update o k
 */
@@ -72,7 +72,6 @@ type DcimPowerPanelsUpdateOK struct {
 func (o *DcimPowerPanelsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-panels/{id}/][%d] dcimPowerPanelsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPanelsUpdateOK) GetPayload() *models.PowerPanel {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerPanelsUpdateDefault(code int) *DcimPowerPanelsUpdateDefault {
 	}
 }
 
-/*DcimPowerPanelsUpdateDefault handles this case with default header values.
+/* DcimPowerPanelsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPanelsUpdateDefault dcim power panels update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerPanelsUpdateDefault) Code() int {
 func (o *DcimPowerPanelsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-panels/{id}/][%d] dcim_power-panels_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPanelsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

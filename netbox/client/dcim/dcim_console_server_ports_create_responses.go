@@ -61,7 +61,7 @@ func NewDcimConsoleServerPortsCreateCreated() *DcimConsoleServerPortsCreateCreat
 	return &DcimConsoleServerPortsCreateCreated{}
 }
 
-/*DcimConsoleServerPortsCreateCreated handles this case with default header values.
+/* DcimConsoleServerPortsCreateCreated describes a response with status code 201, with default header values.
 
 DcimConsoleServerPortsCreateCreated dcim console server ports create created
 */
@@ -72,7 +72,6 @@ type DcimConsoleServerPortsCreateCreated struct {
 func (o *DcimConsoleServerPortsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/console-server-ports/][%d] dcimConsoleServerPortsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimConsoleServerPortsCreateCreated) GetPayload() *models.ConsoleServerPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimConsoleServerPortsCreateDefault(code int) *DcimConsoleServerPortsCre
 	}
 }
 
-/*DcimConsoleServerPortsCreateDefault handles this case with default header values.
+/* DcimConsoleServerPortsCreateDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortsCreateDefault dcim console server ports create default
 */
@@ -114,7 +113,6 @@ func (o *DcimConsoleServerPortsCreateDefault) Code() int {
 func (o *DcimConsoleServerPortsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/console-server-ports/][%d] dcim_console-server-ports_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimConsoleServerPortsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

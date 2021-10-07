@@ -61,7 +61,7 @@ func NewIpamRouteTargetsBulkPartialUpdateOK() *IpamRouteTargetsBulkPartialUpdate
 	return &IpamRouteTargetsBulkPartialUpdateOK{}
 }
 
-/*IpamRouteTargetsBulkPartialUpdateOK handles this case with default header values.
+/* IpamRouteTargetsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamRouteTargetsBulkPartialUpdateOK ipam route targets bulk partial update o k
 */
@@ -72,7 +72,6 @@ type IpamRouteTargetsBulkPartialUpdateOK struct {
 func (o *IpamRouteTargetsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/route-targets/][%d] ipamRouteTargetsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRouteTargetsBulkPartialUpdateOK) GetPayload() *models.RouteTarget {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRouteTargetsBulkPartialUpdateDefault(code int) *IpamRouteTargetsBulk
 	}
 }
 
-/*IpamRouteTargetsBulkPartialUpdateDefault handles this case with default header values.
+/* IpamRouteTargetsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsBulkPartialUpdateDefault ipam route targets bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *IpamRouteTargetsBulkPartialUpdateDefault) Code() int {
 func (o *IpamRouteTargetsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/route-targets/][%d] ipam_route-targets_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRouteTargetsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

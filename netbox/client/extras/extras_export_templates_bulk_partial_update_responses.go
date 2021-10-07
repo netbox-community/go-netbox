@@ -61,7 +61,7 @@ func NewExtrasExportTemplatesBulkPartialUpdateOK() *ExtrasExportTemplatesBulkPar
 	return &ExtrasExportTemplatesBulkPartialUpdateOK{}
 }
 
-/*ExtrasExportTemplatesBulkPartialUpdateOK handles this case with default header values.
+/* ExtrasExportTemplatesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasExportTemplatesBulkPartialUpdateOK extras export templates bulk partial update o k
 */
@@ -72,7 +72,6 @@ type ExtrasExportTemplatesBulkPartialUpdateOK struct {
 func (o *ExtrasExportTemplatesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/export-templates/][%d] extrasExportTemplatesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesBulkPartialUpdateOK) GetPayload() *models.ExportTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasExportTemplatesBulkPartialUpdateDefault(code int) *ExtrasExportTem
 	}
 }
 
-/*ExtrasExportTemplatesBulkPartialUpdateDefault handles this case with default header values.
+/* ExtrasExportTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasExportTemplatesBulkPartialUpdateDefault extras export templates bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasExportTemplatesBulkPartialUpdateDefault) Code() int {
 func (o *ExtrasExportTemplatesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /extras/export-templates/][%d] extras_export-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

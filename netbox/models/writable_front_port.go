@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -148,7 +149,6 @@ func (m *WritableFrontPort) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableFrontPort) validateCable(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Cable) { // not required
 		return nil
 	}
@@ -166,12 +166,11 @@ func (m *WritableFrontPort) validateCable(formats strfmt.Registry) error {
 }
 
 func (m *WritableFrontPort) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -188,12 +187,11 @@ func (m *WritableFrontPort) validateDevice(formats strfmt.Registry) error {
 }
 
 func (m *WritableFrontPort) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
 		return err
 	}
 
@@ -206,11 +204,11 @@ func (m *WritableFrontPort) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -227,16 +225,15 @@ func (m *WritableFrontPort) validateRearPort(formats strfmt.Registry) error {
 }
 
 func (m *WritableFrontPort) validateRearPortPosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RearPortPosition) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("rear_port_position", "body", int64(m.RearPortPosition), 1, false); err != nil {
+	if err := validate.MinimumInt("rear_port_position", "body", m.RearPortPosition, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("rear_port_position", "body", int64(m.RearPortPosition), 1024, false); err != nil {
+	if err := validate.MaximumInt("rear_port_position", "body", m.RearPortPosition, 1024, false); err != nil {
 		return err
 	}
 
@@ -244,7 +241,6 @@ func (m *WritableFrontPort) validateRearPortPosition(formats strfmt.Registry) er
 }
 
 func (m *WritableFrontPort) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -297,17 +293,17 @@ const (
 	// WritableFrontPortTypeGg45 captures enum value "gg45"
 	WritableFrontPortTypeGg45 string = "gg45"
 
-	// WritableFrontPortTypeTera4p captures enum value "tera-4p"
-	WritableFrontPortTypeTera4p string = "tera-4p"
+	// WritableFrontPortTypeTeraDash4p captures enum value "tera-4p"
+	WritableFrontPortTypeTeraDash4p string = "tera-4p"
 
-	// WritableFrontPortTypeTera2p captures enum value "tera-2p"
-	WritableFrontPortTypeTera2p string = "tera-2p"
+	// WritableFrontPortTypeTeraDash2p captures enum value "tera-2p"
+	WritableFrontPortTypeTeraDash2p string = "tera-2p"
 
-	// WritableFrontPortTypeTera1p captures enum value "tera-1p"
-	WritableFrontPortTypeTera1p string = "tera-1p"
+	// WritableFrontPortTypeTeraDash1p captures enum value "tera-1p"
+	WritableFrontPortTypeTeraDash1p string = "tera-1p"
 
-	// WritableFrontPortTypeNr110Punch captures enum value "110-punch"
-	WritableFrontPortTypeNr110Punch string = "110-punch"
+	// WritableFrontPortTypeNr110DashPunch captures enum value "110-punch"
+	WritableFrontPortTypeNr110DashPunch string = "110-punch"
 
 	// WritableFrontPortTypeBnc captures enum value "bnc"
 	WritableFrontPortTypeBnc string = "bnc"
@@ -324,14 +320,14 @@ const (
 	// WritableFrontPortTypeLc captures enum value "lc"
 	WritableFrontPortTypeLc string = "lc"
 
-	// WritableFrontPortTypeLcApc captures enum value "lc-apc"
-	WritableFrontPortTypeLcApc string = "lc-apc"
+	// WritableFrontPortTypeLcDashApc captures enum value "lc-apc"
+	WritableFrontPortTypeLcDashApc string = "lc-apc"
 
 	// WritableFrontPortTypeLsh captures enum value "lsh"
 	WritableFrontPortTypeLsh string = "lsh"
 
-	// WritableFrontPortTypeLshApc captures enum value "lsh-apc"
-	WritableFrontPortTypeLshApc string = "lsh-apc"
+	// WritableFrontPortTypeLshDashApc captures enum value "lsh-apc"
+	WritableFrontPortTypeLshDashApc string = "lsh-apc"
 
 	// WritableFrontPortTypeMpo captures enum value "mpo"
 	WritableFrontPortTypeMpo string = "mpo"
@@ -342,8 +338,8 @@ const (
 	// WritableFrontPortTypeSc captures enum value "sc"
 	WritableFrontPortTypeSc string = "sc"
 
-	// WritableFrontPortTypeScApc captures enum value "sc-apc"
-	WritableFrontPortTypeScApc string = "sc-apc"
+	// WritableFrontPortTypeScDashApc captures enum value "sc-apc"
+	WritableFrontPortTypeScDashApc string = "sc-apc"
 
 	// WritableFrontPortTypeSt captures enum value "st"
 	WritableFrontPortTypeSt string = "st"
@@ -381,12 +377,109 @@ func (m *WritableFrontPort) validateType(formats strfmt.Registry) error {
 }
 
 func (m *WritableFrontPort) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable front port based on the context it is used
+func (m *WritableFrontPort) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableFrontPort) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cable != nil {
+		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *WritableFrontPort) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableFrontPort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableFrontPort) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableFrontPort) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableFrontPort) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

@@ -61,7 +61,7 @@ func NewIpamServicesCreateCreated() *IpamServicesCreateCreated {
 	return &IpamServicesCreateCreated{}
 }
 
-/*IpamServicesCreateCreated handles this case with default header values.
+/* IpamServicesCreateCreated describes a response with status code 201, with default header values.
 
 IpamServicesCreateCreated ipam services create created
 */
@@ -72,7 +72,6 @@ type IpamServicesCreateCreated struct {
 func (o *IpamServicesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/services/][%d] ipamServicesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamServicesCreateCreated) GetPayload() *models.Service {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamServicesCreateDefault(code int) *IpamServicesCreateDefault {
 	}
 }
 
-/*IpamServicesCreateDefault handles this case with default header values.
+/* IpamServicesCreateDefault describes a response with status code -1, with default header values.
 
 IpamServicesCreateDefault ipam services create default
 */
@@ -114,7 +113,6 @@ func (o *IpamServicesCreateDefault) Code() int {
 func (o *IpamServicesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/services/][%d] ipam_services_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamServicesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

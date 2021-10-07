@@ -61,7 +61,7 @@ func NewExtrasImageAttachmentsReadOK() *ExtrasImageAttachmentsReadOK {
 	return &ExtrasImageAttachmentsReadOK{}
 }
 
-/*ExtrasImageAttachmentsReadOK handles this case with default header values.
+/* ExtrasImageAttachmentsReadOK describes a response with status code 200, with default header values.
 
 ExtrasImageAttachmentsReadOK extras image attachments read o k
 */
@@ -72,7 +72,6 @@ type ExtrasImageAttachmentsReadOK struct {
 func (o *ExtrasImageAttachmentsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extrasImageAttachmentsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsReadOK) GetPayload() *models.ImageAttachment {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasImageAttachmentsReadDefault(code int) *ExtrasImageAttachmentsReadD
 	}
 }
 
-/*ExtrasImageAttachmentsReadDefault handles this case with default header values.
+/* ExtrasImageAttachmentsReadDefault describes a response with status code -1, with default header values.
 
 ExtrasImageAttachmentsReadDefault extras image attachments read default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasImageAttachmentsReadDefault) Code() int {
 func (o *ExtrasImageAttachmentsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/image-attachments/{id}/][%d] extras_image-attachments_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

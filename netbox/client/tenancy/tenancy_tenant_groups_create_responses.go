@@ -61,7 +61,7 @@ func NewTenancyTenantGroupsCreateCreated() *TenancyTenantGroupsCreateCreated {
 	return &TenancyTenantGroupsCreateCreated{}
 }
 
-/*TenancyTenantGroupsCreateCreated handles this case with default header values.
+/* TenancyTenantGroupsCreateCreated describes a response with status code 201, with default header values.
 
 TenancyTenantGroupsCreateCreated tenancy tenant groups create created
 */
@@ -72,7 +72,6 @@ type TenancyTenantGroupsCreateCreated struct {
 func (o *TenancyTenantGroupsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /tenancy/tenant-groups/][%d] tenancyTenantGroupsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *TenancyTenantGroupsCreateCreated) GetPayload() *models.TenantGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewTenancyTenantGroupsCreateDefault(code int) *TenancyTenantGroupsCreateDef
 	}
 }
 
-/*TenancyTenantGroupsCreateDefault handles this case with default header values.
+/* TenancyTenantGroupsCreateDefault describes a response with status code -1, with default header values.
 
 TenancyTenantGroupsCreateDefault tenancy tenant groups create default
 */
@@ -114,7 +113,6 @@ func (o *TenancyTenantGroupsCreateDefault) Code() int {
 func (o *TenancyTenantGroupsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /tenancy/tenant-groups/][%d] tenancy_tenant-groups_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *TenancyTenantGroupsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

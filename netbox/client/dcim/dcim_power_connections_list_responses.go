@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimPowerConnectionsListOK() *DcimPowerConnectionsListOK {
 	return &DcimPowerConnectionsListOK{}
 }
 
-/*DcimPowerConnectionsListOK handles this case with default header values.
+/* DcimPowerConnectionsListOK describes a response with status code 200, with default header values.
 
 DcimPowerConnectionsListOK dcim power connections list o k
 */
@@ -76,7 +77,6 @@ type DcimPowerConnectionsListOK struct {
 func (o *DcimPowerConnectionsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-connections/][%d] dcimPowerConnectionsListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerConnectionsListOK) GetPayload() *DcimPowerConnectionsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimPowerConnectionsListDefault(code int) *DcimPowerConnectionsListDefau
 	}
 }
 
-/*DcimPowerConnectionsListDefault handles this case with default header values.
+/* DcimPowerConnectionsListDefault describes a response with status code -1, with default header values.
 
 DcimPowerConnectionsListDefault dcim power connections list default
 */
@@ -118,7 +118,6 @@ func (o *DcimPowerConnectionsListDefault) Code() int {
 func (o *DcimPowerConnectionsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-connections/][%d] dcim_power-connections_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerConnectionsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimPowerConnectionsListOKBody) validateCount(formats strfmt.Registry) 
 }
 
 func (o *DcimPowerConnectionsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimPowerConnectionsListOKBody) validateNext(formats strfmt.Registry) e
 }
 
 func (o *DcimPowerConnectionsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimPowerConnectionsListOKBody) validateResults(formats strfmt.Registry
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimPowerConnectionsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim power connections list o k body based on the context it is used
+func (o *DcimPowerConnectionsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimPowerConnectionsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimPowerConnectionsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

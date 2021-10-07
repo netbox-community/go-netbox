@@ -59,7 +59,7 @@ func NewExtrasScriptsReadOK() *ExtrasScriptsReadOK {
 	return &ExtrasScriptsReadOK{}
 }
 
-/*ExtrasScriptsReadOK handles this case with default header values.
+/* ExtrasScriptsReadOK describes a response with status code 200, with default header values.
 
 ExtrasScriptsReadOK extras scripts read o k
 */
@@ -82,7 +82,7 @@ func NewExtrasScriptsReadDefault(code int) *ExtrasScriptsReadDefault {
 	}
 }
 
-/*ExtrasScriptsReadDefault handles this case with default header values.
+/* ExtrasScriptsReadDefault describes a response with status code -1, with default header values.
 
 ExtrasScriptsReadDefault extras scripts read default
 */
@@ -100,7 +100,6 @@ func (o *ExtrasScriptsReadDefault) Code() int {
 func (o *ExtrasScriptsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/scripts/{id}/][%d] extras_scripts_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasScriptsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

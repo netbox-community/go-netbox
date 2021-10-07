@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -119,7 +120,6 @@ func (m *RackReservation) Validate(formats strfmt.Registry) error {
 }
 
 func (m *RackReservation) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -137,11 +137,11 @@ func (m *RackReservation) validateDescription(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("description", "body", string(*m.Description), 1); err != nil {
+	if err := validate.MinLength("description", "body", *m.Description, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("description", "body", string(*m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", *m.Description, 200); err != nil {
 		return err
 	}
 
@@ -167,7 +167,6 @@ func (m *RackReservation) validateRack(formats strfmt.Registry) error {
 }
 
 func (m *RackReservation) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -192,7 +191,6 @@ func (m *RackReservation) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *RackReservation) validateTenant(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tenant) { // not required
 		return nil
 	}
@@ -220,11 +218,11 @@ func (m *RackReservation) validateUnits(formats strfmt.Registry) error {
 			continue
 		}
 
-		if err := validate.MinimumInt("units"+"."+strconv.Itoa(i), "body", int64(*m.Units[i]), 0, false); err != nil {
+		if err := validate.MinimumInt("units"+"."+strconv.Itoa(i), "body", *m.Units[i], 0, false); err != nil {
 			return err
 		}
 
-		if err := validate.MaximumInt("units"+"."+strconv.Itoa(i), "body", int64(*m.Units[i]), 32767, false); err != nil {
+		if err := validate.MaximumInt("units"+"."+strconv.Itoa(i), "body", *m.Units[i], 32767, false); err != nil {
 			return err
 		}
 
@@ -234,7 +232,6 @@ func (m *RackReservation) validateUnits(formats strfmt.Registry) error {
 }
 
 func (m *RackReservation) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -254,6 +251,131 @@ func (m *RackReservation) validateUser(formats strfmt.Registry) error {
 
 	if m.User != nil {
 		if err := m.User.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("user")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this rack reservation based on the context it is used
+func (m *RackReservation) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRack(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTenant(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateUser(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *RackReservation) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *RackReservation) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *RackReservation) contextValidateRack(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Rack != nil {
+		if err := m.Rack.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("rack")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *RackReservation) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *RackReservation) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Tenant != nil {
+		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *RackReservation) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *RackReservation) contextValidateUser(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.User != nil {
+		if err := m.User.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")
 			}

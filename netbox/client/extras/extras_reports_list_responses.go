@@ -59,7 +59,7 @@ func NewExtrasReportsListOK() *ExtrasReportsListOK {
 	return &ExtrasReportsListOK{}
 }
 
-/*ExtrasReportsListOK handles this case with default header values.
+/* ExtrasReportsListOK describes a response with status code 200, with default header values.
 
 ExtrasReportsListOK extras reports list o k
 */
@@ -82,7 +82,7 @@ func NewExtrasReportsListDefault(code int) *ExtrasReportsListDefault {
 	}
 }
 
-/*ExtrasReportsListDefault handles this case with default header values.
+/* ExtrasReportsListDefault describes a response with status code -1, with default header values.
 
 ExtrasReportsListDefault extras reports list default
 */
@@ -100,7 +100,6 @@ func (o *ExtrasReportsListDefault) Code() int {
 func (o *ExtrasReportsListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/reports/][%d] extras_reports_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasReportsListDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,7 @@ func NewVirtualizationClusterGroupsUpdateOK() *VirtualizationClusterGroupsUpdate
 	return &VirtualizationClusterGroupsUpdateOK{}
 }
 
-/*VirtualizationClusterGroupsUpdateOK handles this case with default header values.
+/* VirtualizationClusterGroupsUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterGroupsUpdateOK virtualization cluster groups update o k
 */
@@ -72,7 +72,6 @@ type VirtualizationClusterGroupsUpdateOK struct {
 func (o *VirtualizationClusterGroupsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsUpdateOK) GetPayload() *models.ClusterGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationClusterGroupsUpdateDefault(code int) *VirtualizationCluste
 	}
 }
 
-/*VirtualizationClusterGroupsUpdateDefault handles this case with default header values.
+/* VirtualizationClusterGroupsUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterGroupsUpdateDefault virtualization cluster groups update default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationClusterGroupsUpdateDefault) Code() int {
 func (o *VirtualizationClusterGroupsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

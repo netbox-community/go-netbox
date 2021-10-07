@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewExtrasCustomFieldsListOK() *ExtrasCustomFieldsListOK {
 	return &ExtrasCustomFieldsListOK{}
 }
 
-/*ExtrasCustomFieldsListOK handles this case with default header values.
+/* ExtrasCustomFieldsListOK describes a response with status code 200, with default header values.
 
 ExtrasCustomFieldsListOK extras custom fields list o k
 */
@@ -76,7 +77,6 @@ type ExtrasCustomFieldsListOK struct {
 func (o *ExtrasCustomFieldsListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-fields/][%d] extrasCustomFieldsListOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsListOK) GetPayload() *ExtrasCustomFieldsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewExtrasCustomFieldsListDefault(code int) *ExtrasCustomFieldsListDefault {
 	}
 }
 
-/*ExtrasCustomFieldsListDefault handles this case with default header values.
+/* ExtrasCustomFieldsListDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsListDefault extras custom fields list default
 */
@@ -118,7 +118,6 @@ func (o *ExtrasCustomFieldsListDefault) Code() int {
 func (o *ExtrasCustomFieldsListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-fields/][%d] extras_custom-fields_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *ExtrasCustomFieldsListOKBody) validateCount(formats strfmt.Registry) er
 }
 
 func (o *ExtrasCustomFieldsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *ExtrasCustomFieldsListOKBody) validateNext(formats strfmt.Registry) err
 }
 
 func (o *ExtrasCustomFieldsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *ExtrasCustomFieldsListOKBody) validateResults(formats strfmt.Registry) 
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("extrasCustomFieldsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this extras custom fields list o k body based on the context it is used
+func (o *ExtrasCustomFieldsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *ExtrasCustomFieldsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasCustomFieldsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

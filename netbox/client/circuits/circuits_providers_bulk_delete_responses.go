@@ -59,7 +59,7 @@ func NewCircuitsProvidersBulkDeleteNoContent() *CircuitsProvidersBulkDeleteNoCon
 	return &CircuitsProvidersBulkDeleteNoContent{}
 }
 
-/*CircuitsProvidersBulkDeleteNoContent handles this case with default header values.
+/* CircuitsProvidersBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 CircuitsProvidersBulkDeleteNoContent circuits providers bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewCircuitsProvidersBulkDeleteDefault(code int) *CircuitsProvidersBulkDelet
 	}
 }
 
-/*CircuitsProvidersBulkDeleteDefault handles this case with default header values.
+/* CircuitsProvidersBulkDeleteDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersBulkDeleteDefault circuits providers bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *CircuitsProvidersBulkDeleteDefault) Code() int {
 func (o *CircuitsProvidersBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /circuits/providers/][%d] circuits_providers_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsProvidersBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

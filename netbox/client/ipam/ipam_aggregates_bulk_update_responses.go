@@ -61,7 +61,7 @@ func NewIpamAggregatesBulkUpdateOK() *IpamAggregatesBulkUpdateOK {
 	return &IpamAggregatesBulkUpdateOK{}
 }
 
-/*IpamAggregatesBulkUpdateOK handles this case with default header values.
+/* IpamAggregatesBulkUpdateOK describes a response with status code 200, with default header values.
 
 IpamAggregatesBulkUpdateOK ipam aggregates bulk update o k
 */
@@ -72,7 +72,6 @@ type IpamAggregatesBulkUpdateOK struct {
 func (o *IpamAggregatesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/aggregates/][%d] ipamAggregatesBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamAggregatesBulkUpdateOK) GetPayload() *models.Aggregate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamAggregatesBulkUpdateDefault(code int) *IpamAggregatesBulkUpdateDefau
 	}
 }
 
-/*IpamAggregatesBulkUpdateDefault handles this case with default header values.
+/* IpamAggregatesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 IpamAggregatesBulkUpdateDefault ipam aggregates bulk update default
 */
@@ -114,7 +113,6 @@ func (o *IpamAggregatesBulkUpdateDefault) Code() int {
 func (o *IpamAggregatesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/aggregates/][%d] ipam_aggregates_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamAggregatesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewVirtualizationClusterGroupsBulkDeleteParams creates a new VirtualizationClusterGroupsBulkDeleteParams object
-// with the default values initialized.
+// NewVirtualizationClusterGroupsBulkDeleteParams creates a new VirtualizationClusterGroupsBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationClusterGroupsBulkDeleteParams() *VirtualizationClusterGroupsBulkDeleteParams {
-
 	return &VirtualizationClusterGroupsBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationClusterGroupsBulkDeleteParamsWithTimeout creates a new VirtualizationClusterGroupsBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationClusterGroupsBulkDeleteParamsWithTimeout(timeout time.Duration) *VirtualizationClusterGroupsBulkDeleteParams {
-
 	return &VirtualizationClusterGroupsBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationClusterGroupsBulkDeleteParamsWithContext creates a new VirtualizationClusterGroupsBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationClusterGroupsBulkDeleteParamsWithContext(ctx context.Context) *VirtualizationClusterGroupsBulkDeleteParams {
-
 	return &VirtualizationClusterGroupsBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationClusterGroupsBulkDeleteParamsWithHTTPClient creates a new VirtualizationClusterGroupsBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationClusterGroupsBulkDeleteParamsWithHTTPClient(client *http.Client) *VirtualizationClusterGroupsBulkDeleteParams {
-
 	return &VirtualizationClusterGroupsBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationClusterGroupsBulkDeleteParams contains all the parameters to send to the API endpoint
-for the virtualization cluster groups bulk delete operation typically these are written to a http.Request
+/* VirtualizationClusterGroupsBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the virtualization cluster groups bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationClusterGroupsBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization cluster groups bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterGroupsBulkDeleteParams) WithDefaults() *VirtualizationClusterGroupsBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization cluster groups bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterGroupsBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization cluster groups bulk delete params

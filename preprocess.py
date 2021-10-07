@@ -96,7 +96,7 @@ logging.info(f"Added schema for 200 response of /status/ get")
 # Remove omitempty for site attribute on clusters
 for prop, prop_spec in data["definitions"]["WritableCluster"]["properties"].items():
     if prop == "site":
-        prop_spec["x-nullable"] = False
+        prop_spec["x-omitempty"] = False
         logging.info(f"set x-nullable = false on WritableCluster.{prop}")
 
 # Write output file

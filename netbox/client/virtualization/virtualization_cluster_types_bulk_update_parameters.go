@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewVirtualizationClusterTypesBulkUpdateParams creates a new VirtualizationClusterTypesBulkUpdateParams object
-// with the default values initialized.
+// NewVirtualizationClusterTypesBulkUpdateParams creates a new VirtualizationClusterTypesBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationClusterTypesBulkUpdateParams() *VirtualizationClusterTypesBulkUpdateParams {
-	var ()
 	return &VirtualizationClusterTypesBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationClusterTypesBulkUpdateParamsWithTimeout creates a new VirtualizationClusterTypesBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationClusterTypesBulkUpdateParamsWithTimeout(timeout time.Duration) *VirtualizationClusterTypesBulkUpdateParams {
-	var ()
 	return &VirtualizationClusterTypesBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationClusterTypesBulkUpdateParamsWithContext creates a new VirtualizationClusterTypesBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationClusterTypesBulkUpdateParamsWithContext(ctx context.Context) *VirtualizationClusterTypesBulkUpdateParams {
-	var ()
 	return &VirtualizationClusterTypesBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationClusterTypesBulkUpdateParamsWithHTTPClient creates a new VirtualizationClusterTypesBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationClusterTypesBulkUpdateParamsWithHTTPClient(client *http.Client) *VirtualizationClusterTypesBulkUpdateParams {
-	var ()
 	return &VirtualizationClusterTypesBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationClusterTypesBulkUpdateParams contains all the parameters to send to the API endpoint
-for the virtualization cluster types bulk update operation typically these are written to a http.Request
+/* VirtualizationClusterTypesBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the virtualization cluster types bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationClusterTypesBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.ClusterType
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization cluster types bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterTypesBulkUpdateParams) WithDefaults() *VirtualizationClusterTypesBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization cluster types bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterTypesBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization cluster types bulk update params
@@ -136,7 +150,6 @@ func (o *VirtualizationClusterTypesBulkUpdateParams) WriteToRequest(r runtime.Cl
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

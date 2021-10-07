@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -177,7 +178,6 @@ func (m *DeviceType) Validate(formats strfmt.Registry) error {
 }
 
 func (m *DeviceType) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -190,7 +190,6 @@ func (m *DeviceType) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *DeviceType) validateFrontImage(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.FrontImage) { // not required
 		return nil
 	}
@@ -203,7 +202,6 @@ func (m *DeviceType) validateFrontImage(formats strfmt.Registry) error {
 }
 
 func (m *DeviceType) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -239,11 +237,11 @@ func (m *DeviceType) validateModel(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("model", "body", string(*m.Model), 1); err != nil {
+	if err := validate.MinLength("model", "body", *m.Model, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("model", "body", string(*m.Model), 100); err != nil {
+	if err := validate.MaxLength("model", "body", *m.Model, 100); err != nil {
 		return err
 	}
 
@@ -251,12 +249,11 @@ func (m *DeviceType) validateModel(formats strfmt.Registry) error {
 }
 
 func (m *DeviceType) validatePartNumber(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PartNumber) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("part_number", "body", string(m.PartNumber), 50); err != nil {
+	if err := validate.MaxLength("part_number", "body", m.PartNumber, 50); err != nil {
 		return err
 	}
 
@@ -264,7 +261,6 @@ func (m *DeviceType) validatePartNumber(formats strfmt.Registry) error {
 }
 
 func (m *DeviceType) validateRearImage(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RearImage) { // not required
 		return nil
 	}
@@ -282,15 +278,15 @@ func (m *DeviceType) validateSlug(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
+	if err := validate.MinLength("slug", "body", *m.Slug, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("slug", "body", string(*m.Slug), 100); err != nil {
+	if err := validate.MaxLength("slug", "body", *m.Slug, 100); err != nil {
 		return err
 	}
 
-	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
+	if err := validate.Pattern("slug", "body", *m.Slug, `^[-a-zA-Z0-9_]+$`); err != nil {
 		return err
 	}
 
@@ -298,7 +294,6 @@ func (m *DeviceType) validateSlug(formats strfmt.Registry) error {
 }
 
 func (m *DeviceType) validateSubdeviceRole(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubdeviceRole) { // not required
 		return nil
 	}
@@ -316,7 +311,6 @@ func (m *DeviceType) validateSubdeviceRole(formats strfmt.Registry) error {
 }
 
 func (m *DeviceType) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -341,16 +335,15 @@ func (m *DeviceType) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *DeviceType) validateUHeight(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.UHeight) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("u_height", "body", int64(*m.UHeight), 0, false); err != nil {
+	if err := validate.MinimumInt("u_height", "body", *m.UHeight, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("u_height", "body", int64(*m.UHeight), 32767, false); err != nil {
+	if err := validate.MaximumInt("u_height", "body", *m.UHeight, 32767, false); err != nil {
 		return err
 	}
 
@@ -358,12 +351,183 @@ func (m *DeviceType) validateUHeight(formats strfmt.Registry) error {
 }
 
 func (m *DeviceType) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this device type based on the context it is used
+func (m *DeviceType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDeviceCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFrontImage(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateManufacturer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRearImage(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubdeviceRole(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *DeviceType) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateDeviceCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "device_count", "body", int64(m.DeviceCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateFrontImage(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "front_image", "body", strfmt.URI(m.FrontImage)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateManufacturer(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Manufacturer != nil {
+		if err := m.Manufacturer.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("manufacturer")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateRearImage(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "rear_image", "body", strfmt.URI(m.RearImage)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateSubdeviceRole(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.SubdeviceRole != nil {
+		if err := m.SubdeviceRole.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("subdevice_role")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -505,6 +669,11 @@ func (m *DeviceTypeSubdeviceRole) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this device type subdevice role based on context it is used
+func (m *DeviceTypeSubdeviceRole) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

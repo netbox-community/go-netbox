@@ -61,7 +61,7 @@ func NewDcimPowerPortsCreateCreated() *DcimPowerPortsCreateCreated {
 	return &DcimPowerPortsCreateCreated{}
 }
 
-/*DcimPowerPortsCreateCreated handles this case with default header values.
+/* DcimPowerPortsCreateCreated describes a response with status code 201, with default header values.
 
 DcimPowerPortsCreateCreated dcim power ports create created
 */
@@ -72,7 +72,6 @@ type DcimPowerPortsCreateCreated struct {
 func (o *DcimPowerPortsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-ports/][%d] dcimPowerPortsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimPowerPortsCreateCreated) GetPayload() *models.PowerPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerPortsCreateDefault(code int) *DcimPowerPortsCreateDefault {
 	}
 }
 
-/*DcimPowerPortsCreateDefault handles this case with default header values.
+/* DcimPowerPortsCreateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortsCreateDefault dcim power ports create default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerPortsCreateDefault) Code() int {
 func (o *DcimPowerPortsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-ports/][%d] dcim_power-ports_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPortsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

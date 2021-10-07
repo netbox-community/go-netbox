@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 
 	"github.com/go-openapi/errors"
@@ -106,12 +107,11 @@ func (m *InterfaceTemplate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *InterfaceTemplate) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -137,12 +137,11 @@ func (m *InterfaceTemplate) validateDeviceType(formats strfmt.Registry) error {
 }
 
 func (m *InterfaceTemplate) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
 		return err
 	}
 
@@ -155,11 +154,11 @@ func (m *InterfaceTemplate) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -185,12 +184,83 @@ func (m *InterfaceTemplate) validateType(formats strfmt.Registry) error {
 }
 
 func (m *InterfaceTemplate) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this interface template based on the context it is used
+func (m *InterfaceTemplate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDeviceType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *InterfaceTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.DeviceType != nil {
+		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device_type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *InterfaceTemplate) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *InterfaceTemplate) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Type != nil {
+		if err := m.Type.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *InterfaceTemplate) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -269,23 +339,23 @@ const (
 	// InterfaceTemplateTypeLabelLinkAggregationGroupLAG captures enum value "Link Aggregation Group (LAG)"
 	InterfaceTemplateTypeLabelLinkAggregationGroupLAG string = "Link Aggregation Group (LAG)"
 
-	// InterfaceTemplateTypeLabelNr100BASETX10100ME captures enum value "100BASE-TX (10/100ME)"
-	InterfaceTemplateTypeLabelNr100BASETX10100ME string = "100BASE-TX (10/100ME)"
+	// InterfaceTemplateTypeLabelNr100BASEDashTX10100ME captures enum value "100BASE-TX (10/100ME)"
+	InterfaceTemplateTypeLabelNr100BASEDashTX10100ME string = "100BASE-TX (10/100ME)"
 
-	// InterfaceTemplateTypeLabelNr1000BASET1GE captures enum value "1000BASE-T (1GE)"
-	InterfaceTemplateTypeLabelNr1000BASET1GE string = "1000BASE-T (1GE)"
+	// InterfaceTemplateTypeLabelNr1000BASEDashT1GE captures enum value "1000BASE-T (1GE)"
+	InterfaceTemplateTypeLabelNr1000BASEDashT1GE string = "1000BASE-T (1GE)"
 
-	// InterfaceTemplateTypeLabelNr25GBASET25GE captures enum value "2.5GBASE-T (2.5GE)"
-	InterfaceTemplateTypeLabelNr25GBASET25GE string = "2.5GBASE-T (2.5GE)"
+	// InterfaceTemplateTypeLabelNr2Dot5GBASEDashT2Dot5GE captures enum value "2.5GBASE-T (2.5GE)"
+	InterfaceTemplateTypeLabelNr2Dot5GBASEDashT2Dot5GE string = "2.5GBASE-T (2.5GE)"
 
-	// InterfaceTemplateTypeLabelNr5GBASET5GE captures enum value "5GBASE-T (5GE)"
-	InterfaceTemplateTypeLabelNr5GBASET5GE string = "5GBASE-T (5GE)"
+	// InterfaceTemplateTypeLabelNr5GBASEDashT5GE captures enum value "5GBASE-T (5GE)"
+	InterfaceTemplateTypeLabelNr5GBASEDashT5GE string = "5GBASE-T (5GE)"
 
-	// InterfaceTemplateTypeLabelNr10GBASET10GE captures enum value "10GBASE-T (10GE)"
-	InterfaceTemplateTypeLabelNr10GBASET10GE string = "10GBASE-T (10GE)"
+	// InterfaceTemplateTypeLabelNr10GBASEDashT10GE captures enum value "10GBASE-T (10GE)"
+	InterfaceTemplateTypeLabelNr10GBASEDashT10GE string = "10GBASE-T (10GE)"
 
-	// InterfaceTemplateTypeLabelNr10GBASECX410GE captures enum value "10GBASE-CX4 (10GE)"
-	InterfaceTemplateTypeLabelNr10GBASECX410GE string = "10GBASE-CX4 (10GE)"
+	// InterfaceTemplateTypeLabelNr10GBASEDashCX410GE captures enum value "10GBASE-CX4 (10GE)"
+	InterfaceTemplateTypeLabelNr10GBASEDashCX410GE string = "10GBASE-CX4 (10GE)"
 
 	// InterfaceTemplateTypeLabelGBIC1GE captures enum value "GBIC (1GE)"
 	InterfaceTemplateTypeLabelGBIC1GE string = "GBIC (1GE)"
@@ -293,8 +363,8 @@ const (
 	// InterfaceTemplateTypeLabelSFP1GE captures enum value "SFP (1GE)"
 	InterfaceTemplateTypeLabelSFP1GE string = "SFP (1GE)"
 
-	// InterfaceTemplateTypeLabelSFP10GE captures enum value "SFP+ (10GE)"
-	InterfaceTemplateTypeLabelSFP10GE string = "SFP+ (10GE)"
+	// InterfaceTemplateTypeLabelSFPPlus10GE captures enum value "SFP+ (10GE)"
+	InterfaceTemplateTypeLabelSFPPlus10GE string = "SFP+ (10GE)"
 
 	// InterfaceTemplateTypeLabelXFP10GE captures enum value "XFP (10GE)"
 	InterfaceTemplateTypeLabelXFP10GE string = "XFP (10GE)"
@@ -311,8 +381,8 @@ const (
 	// InterfaceTemplateTypeLabelSFP5650GE captures enum value "SFP56 (50GE)"
 	InterfaceTemplateTypeLabelSFP5650GE string = "SFP56 (50GE)"
 
-	// InterfaceTemplateTypeLabelQSFP40GE captures enum value "QSFP+ (40GE)"
-	InterfaceTemplateTypeLabelQSFP40GE string = "QSFP+ (40GE)"
+	// InterfaceTemplateTypeLabelQSFPPlus40GE captures enum value "QSFP+ (40GE)"
+	InterfaceTemplateTypeLabelQSFPPlus40GE string = "QSFP+ (40GE)"
 
 	// InterfaceTemplateTypeLabelQSFP2850GE captures enum value "QSFP28 (50GE)"
 	InterfaceTemplateTypeLabelQSFP2850GE string = "QSFP28 (50GE)"
@@ -338,29 +408,29 @@ const (
 	// InterfaceTemplateTypeLabelQSFP56200GE captures enum value "QSFP56 (200GE)"
 	InterfaceTemplateTypeLabelQSFP56200GE string = "QSFP56 (200GE)"
 
-	// InterfaceTemplateTypeLabelQSFPDD400GE captures enum value "QSFP-DD (400GE)"
-	InterfaceTemplateTypeLabelQSFPDD400GE string = "QSFP-DD (400GE)"
+	// InterfaceTemplateTypeLabelQSFPDashDD400GE captures enum value "QSFP-DD (400GE)"
+	InterfaceTemplateTypeLabelQSFPDashDD400GE string = "QSFP-DD (400GE)"
 
 	// InterfaceTemplateTypeLabelOSFP400GE captures enum value "OSFP (400GE)"
 	InterfaceTemplateTypeLabelOSFP400GE string = "OSFP (400GE)"
 
-	// InterfaceTemplateTypeLabelIEEE80211a captures enum value "IEEE 802.11a"
-	InterfaceTemplateTypeLabelIEEE80211a string = "IEEE 802.11a"
+	// InterfaceTemplateTypeLabelIEEE802Dot11a captures enum value "IEEE 802.11a"
+	InterfaceTemplateTypeLabelIEEE802Dot11a string = "IEEE 802.11a"
 
-	// InterfaceTemplateTypeLabelIEEE80211bg captures enum value "IEEE 802.11b/g"
-	InterfaceTemplateTypeLabelIEEE80211bg string = "IEEE 802.11b/g"
+	// InterfaceTemplateTypeLabelIEEE802Dot11bg captures enum value "IEEE 802.11b/g"
+	InterfaceTemplateTypeLabelIEEE802Dot11bg string = "IEEE 802.11b/g"
 
-	// InterfaceTemplateTypeLabelIEEE80211n captures enum value "IEEE 802.11n"
-	InterfaceTemplateTypeLabelIEEE80211n string = "IEEE 802.11n"
+	// InterfaceTemplateTypeLabelIEEE802Dot11n captures enum value "IEEE 802.11n"
+	InterfaceTemplateTypeLabelIEEE802Dot11n string = "IEEE 802.11n"
 
-	// InterfaceTemplateTypeLabelIEEE80211ac captures enum value "IEEE 802.11ac"
-	InterfaceTemplateTypeLabelIEEE80211ac string = "IEEE 802.11ac"
+	// InterfaceTemplateTypeLabelIEEE802Dot11ac captures enum value "IEEE 802.11ac"
+	InterfaceTemplateTypeLabelIEEE802Dot11ac string = "IEEE 802.11ac"
 
-	// InterfaceTemplateTypeLabelIEEE80211ad captures enum value "IEEE 802.11ad"
-	InterfaceTemplateTypeLabelIEEE80211ad string = "IEEE 802.11ad"
+	// InterfaceTemplateTypeLabelIEEE802Dot11ad captures enum value "IEEE 802.11ad"
+	InterfaceTemplateTypeLabelIEEE802Dot11ad string = "IEEE 802.11ad"
 
-	// InterfaceTemplateTypeLabelIEEE80211ax captures enum value "IEEE 802.11ax"
-	InterfaceTemplateTypeLabelIEEE80211ax string = "IEEE 802.11ax"
+	// InterfaceTemplateTypeLabelIEEE802Dot11ax captures enum value "IEEE 802.11ax"
+	InterfaceTemplateTypeLabelIEEE802Dot11ax string = "IEEE 802.11ax"
 
 	// InterfaceTemplateTypeLabelGSM captures enum value "GSM"
 	InterfaceTemplateTypeLabelGSM string = "GSM"
@@ -371,26 +441,26 @@ const (
 	// InterfaceTemplateTypeLabelLTE captures enum value "LTE"
 	InterfaceTemplateTypeLabelLTE string = "LTE"
 
-	// InterfaceTemplateTypeLabelOC3STM1 captures enum value "OC-3/STM-1"
-	InterfaceTemplateTypeLabelOC3STM1 string = "OC-3/STM-1"
+	// InterfaceTemplateTypeLabelOCDash3STMDash1 captures enum value "OC-3/STM-1"
+	InterfaceTemplateTypeLabelOCDash3STMDash1 string = "OC-3/STM-1"
 
-	// InterfaceTemplateTypeLabelOC12STM4 captures enum value "OC-12/STM-4"
-	InterfaceTemplateTypeLabelOC12STM4 string = "OC-12/STM-4"
+	// InterfaceTemplateTypeLabelOCDash12STMDash4 captures enum value "OC-12/STM-4"
+	InterfaceTemplateTypeLabelOCDash12STMDash4 string = "OC-12/STM-4"
 
-	// InterfaceTemplateTypeLabelOC48STM16 captures enum value "OC-48/STM-16"
-	InterfaceTemplateTypeLabelOC48STM16 string = "OC-48/STM-16"
+	// InterfaceTemplateTypeLabelOCDash48STMDash16 captures enum value "OC-48/STM-16"
+	InterfaceTemplateTypeLabelOCDash48STMDash16 string = "OC-48/STM-16"
 
-	// InterfaceTemplateTypeLabelOC192STM64 captures enum value "OC-192/STM-64"
-	InterfaceTemplateTypeLabelOC192STM64 string = "OC-192/STM-64"
+	// InterfaceTemplateTypeLabelOCDash192STMDash64 captures enum value "OC-192/STM-64"
+	InterfaceTemplateTypeLabelOCDash192STMDash64 string = "OC-192/STM-64"
 
-	// InterfaceTemplateTypeLabelOC768STM256 captures enum value "OC-768/STM-256"
-	InterfaceTemplateTypeLabelOC768STM256 string = "OC-768/STM-256"
+	// InterfaceTemplateTypeLabelOCDash768STMDash256 captures enum value "OC-768/STM-256"
+	InterfaceTemplateTypeLabelOCDash768STMDash256 string = "OC-768/STM-256"
 
-	// InterfaceTemplateTypeLabelOC1920STM640 captures enum value "OC-1920/STM-640"
-	InterfaceTemplateTypeLabelOC1920STM640 string = "OC-1920/STM-640"
+	// InterfaceTemplateTypeLabelOCDash1920STMDash640 captures enum value "OC-1920/STM-640"
+	InterfaceTemplateTypeLabelOCDash1920STMDash640 string = "OC-1920/STM-640"
 
-	// InterfaceTemplateTypeLabelOC3840STM1234 captures enum value "OC-3840/STM-1234"
-	InterfaceTemplateTypeLabelOC3840STM1234 string = "OC-3840/STM-1234"
+	// InterfaceTemplateTypeLabelOCDash3840STMDash1234 captures enum value "OC-3840/STM-1234"
+	InterfaceTemplateTypeLabelOCDash3840STMDash1234 string = "OC-3840/STM-1234"
 
 	// InterfaceTemplateTypeLabelSFP1GFC captures enum value "SFP (1GFC)"
 	InterfaceTemplateTypeLabelSFP1GFC string = "SFP (1GFC)"
@@ -401,17 +471,17 @@ const (
 	// InterfaceTemplateTypeLabelSFP4GFC captures enum value "SFP (4GFC)"
 	InterfaceTemplateTypeLabelSFP4GFC string = "SFP (4GFC)"
 
-	// InterfaceTemplateTypeLabelSFP8GFC captures enum value "SFP+ (8GFC)"
-	InterfaceTemplateTypeLabelSFP8GFC string = "SFP+ (8GFC)"
+	// InterfaceTemplateTypeLabelSFPPlus8GFC captures enum value "SFP+ (8GFC)"
+	InterfaceTemplateTypeLabelSFPPlus8GFC string = "SFP+ (8GFC)"
 
-	// InterfaceTemplateTypeLabelSFP16GFC captures enum value "SFP+ (16GFC)"
-	InterfaceTemplateTypeLabelSFP16GFC string = "SFP+ (16GFC)"
+	// InterfaceTemplateTypeLabelSFPPlus16GFC captures enum value "SFP+ (16GFC)"
+	InterfaceTemplateTypeLabelSFPPlus16GFC string = "SFP+ (16GFC)"
 
 	// InterfaceTemplateTypeLabelSFP2832GFC captures enum value "SFP28 (32GFC)"
 	InterfaceTemplateTypeLabelSFP2832GFC string = "SFP28 (32GFC)"
 
-	// InterfaceTemplateTypeLabelQSFP64GFC captures enum value "QSFP+ (64GFC)"
-	InterfaceTemplateTypeLabelQSFP64GFC string = "QSFP+ (64GFC)"
+	// InterfaceTemplateTypeLabelQSFPPlus64GFC captures enum value "QSFP+ (64GFC)"
+	InterfaceTemplateTypeLabelQSFPPlus64GFC string = "QSFP+ (64GFC)"
 
 	// InterfaceTemplateTypeLabelQSFP28128GFC captures enum value "QSFP28 (128GFC)"
 	InterfaceTemplateTypeLabelQSFP28128GFC string = "QSFP28 (128GFC)"
@@ -428,8 +498,8 @@ const (
 	// InterfaceTemplateTypeLabelFDR1010Gbps captures enum value "FDR10 (10 Gbps)"
 	InterfaceTemplateTypeLabelFDR1010Gbps string = "FDR10 (10 Gbps)"
 
-	// InterfaceTemplateTypeLabelFDR135Gbps captures enum value "FDR (13.5 Gbps)"
-	InterfaceTemplateTypeLabelFDR135Gbps string = "FDR (13.5 Gbps)"
+	// InterfaceTemplateTypeLabelFDR13Dot5Gbps captures enum value "FDR (13.5 Gbps)"
+	InterfaceTemplateTypeLabelFDR13Dot5Gbps string = "FDR (13.5 Gbps)"
 
 	// InterfaceTemplateTypeLabelEDR25Gbps captures enum value "EDR (25 Gbps)"
 	InterfaceTemplateTypeLabelEDR25Gbps string = "EDR (25 Gbps)"
@@ -443,11 +513,11 @@ const (
 	// InterfaceTemplateTypeLabelXDR250Gbps captures enum value "XDR (250 Gbps)"
 	InterfaceTemplateTypeLabelXDR250Gbps string = "XDR (250 Gbps)"
 
-	// InterfaceTemplateTypeLabelT11544Mbps captures enum value "T1 (1.544 Mbps)"
-	InterfaceTemplateTypeLabelT11544Mbps string = "T1 (1.544 Mbps)"
+	// InterfaceTemplateTypeLabelT11Dot544Mbps captures enum value "T1 (1.544 Mbps)"
+	InterfaceTemplateTypeLabelT11Dot544Mbps string = "T1 (1.544 Mbps)"
 
-	// InterfaceTemplateTypeLabelE12048Mbps captures enum value "E1 (2.048 Mbps)"
-	InterfaceTemplateTypeLabelE12048Mbps string = "E1 (2.048 Mbps)"
+	// InterfaceTemplateTypeLabelE12Dot048Mbps captures enum value "E1 (2.048 Mbps)"
+	InterfaceTemplateTypeLabelE12Dot048Mbps string = "E1 (2.048 Mbps)"
 
 	// InterfaceTemplateTypeLabelT345Mbps captures enum value "T3 (45 Mbps)"
 	InterfaceTemplateTypeLabelT345Mbps string = "T3 (45 Mbps)"
@@ -473,14 +543,14 @@ const (
 	// InterfaceTemplateTypeLabelExtremeSummitStack captures enum value "Extreme SummitStack"
 	InterfaceTemplateTypeLabelExtremeSummitStack string = "Extreme SummitStack"
 
-	// InterfaceTemplateTypeLabelExtremeSummitStack128 captures enum value "Extreme SummitStack-128"
-	InterfaceTemplateTypeLabelExtremeSummitStack128 string = "Extreme SummitStack-128"
+	// InterfaceTemplateTypeLabelExtremeSummitStackDash128 captures enum value "Extreme SummitStack-128"
+	InterfaceTemplateTypeLabelExtremeSummitStackDash128 string = "Extreme SummitStack-128"
 
-	// InterfaceTemplateTypeLabelExtremeSummitStack256 captures enum value "Extreme SummitStack-256"
-	InterfaceTemplateTypeLabelExtremeSummitStack256 string = "Extreme SummitStack-256"
+	// InterfaceTemplateTypeLabelExtremeSummitStackDash256 captures enum value "Extreme SummitStack-256"
+	InterfaceTemplateTypeLabelExtremeSummitStackDash256 string = "Extreme SummitStack-256"
 
-	// InterfaceTemplateTypeLabelExtremeSummitStack512 captures enum value "Extreme SummitStack-512"
-	InterfaceTemplateTypeLabelExtremeSummitStack512 string = "Extreme SummitStack-512"
+	// InterfaceTemplateTypeLabelExtremeSummitStackDash512 captures enum value "Extreme SummitStack-512"
+	InterfaceTemplateTypeLabelExtremeSummitStackDash512 string = "Extreme SummitStack-512"
 
 	// InterfaceTemplateTypeLabelOther captures enum value "Other"
 	InterfaceTemplateTypeLabelOther string = "Other"
@@ -528,98 +598,98 @@ const (
 	// InterfaceTemplateTypeValueLag captures enum value "lag"
 	InterfaceTemplateTypeValueLag string = "lag"
 
-	// InterfaceTemplateTypeValueNr100baseTx captures enum value "100base-tx"
-	InterfaceTemplateTypeValueNr100baseTx string = "100base-tx"
+	// InterfaceTemplateTypeValueNr100baseDashTx captures enum value "100base-tx"
+	InterfaceTemplateTypeValueNr100baseDashTx string = "100base-tx"
 
-	// InterfaceTemplateTypeValueNr1000baset captures enum value "1000base-t"
-	InterfaceTemplateTypeValueNr1000baset string = "1000base-t"
+	// InterfaceTemplateTypeValueNr1000baseDasht captures enum value "1000base-t"
+	InterfaceTemplateTypeValueNr1000baseDasht string = "1000base-t"
 
-	// InterfaceTemplateTypeValueNr25gbaset captures enum value "2.5gbase-t"
-	InterfaceTemplateTypeValueNr25gbaset string = "2.5gbase-t"
+	// InterfaceTemplateTypeValueNr2Dot5gbaseDasht captures enum value "2.5gbase-t"
+	InterfaceTemplateTypeValueNr2Dot5gbaseDasht string = "2.5gbase-t"
 
-	// InterfaceTemplateTypeValueNr5gbaset captures enum value "5gbase-t"
-	InterfaceTemplateTypeValueNr5gbaset string = "5gbase-t"
+	// InterfaceTemplateTypeValueNr5gbaseDasht captures enum value "5gbase-t"
+	InterfaceTemplateTypeValueNr5gbaseDasht string = "5gbase-t"
 
-	// InterfaceTemplateTypeValueNr10gbaset captures enum value "10gbase-t"
-	InterfaceTemplateTypeValueNr10gbaset string = "10gbase-t"
+	// InterfaceTemplateTypeValueNr10gbaseDasht captures enum value "10gbase-t"
+	InterfaceTemplateTypeValueNr10gbaseDasht string = "10gbase-t"
 
-	// InterfaceTemplateTypeValueNr10gbaseCx4 captures enum value "10gbase-cx4"
-	InterfaceTemplateTypeValueNr10gbaseCx4 string = "10gbase-cx4"
+	// InterfaceTemplateTypeValueNr10gbaseDashCx4 captures enum value "10gbase-cx4"
+	InterfaceTemplateTypeValueNr10gbaseDashCx4 string = "10gbase-cx4"
 
-	// InterfaceTemplateTypeValueNr1000basexGbic captures enum value "1000base-x-gbic"
-	InterfaceTemplateTypeValueNr1000basexGbic string = "1000base-x-gbic"
+	// InterfaceTemplateTypeValueNr1000baseDashxDashGbic captures enum value "1000base-x-gbic"
+	InterfaceTemplateTypeValueNr1000baseDashxDashGbic string = "1000base-x-gbic"
 
-	// InterfaceTemplateTypeValueNr1000basexSfp captures enum value "1000base-x-sfp"
-	InterfaceTemplateTypeValueNr1000basexSfp string = "1000base-x-sfp"
+	// InterfaceTemplateTypeValueNr1000baseDashxDashSfp captures enum value "1000base-x-sfp"
+	InterfaceTemplateTypeValueNr1000baseDashxDashSfp string = "1000base-x-sfp"
 
-	// InterfaceTemplateTypeValueNr10gbasexSfpp captures enum value "10gbase-x-sfpp"
-	InterfaceTemplateTypeValueNr10gbasexSfpp string = "10gbase-x-sfpp"
+	// InterfaceTemplateTypeValueNr10gbaseDashxDashSfpp captures enum value "10gbase-x-sfpp"
+	InterfaceTemplateTypeValueNr10gbaseDashxDashSfpp string = "10gbase-x-sfpp"
 
-	// InterfaceTemplateTypeValueNr10gbasexXfp captures enum value "10gbase-x-xfp"
-	InterfaceTemplateTypeValueNr10gbasexXfp string = "10gbase-x-xfp"
+	// InterfaceTemplateTypeValueNr10gbaseDashxDashXfp captures enum value "10gbase-x-xfp"
+	InterfaceTemplateTypeValueNr10gbaseDashxDashXfp string = "10gbase-x-xfp"
 
-	// InterfaceTemplateTypeValueNr10gbasexXenpak captures enum value "10gbase-x-xenpak"
-	InterfaceTemplateTypeValueNr10gbasexXenpak string = "10gbase-x-xenpak"
+	// InterfaceTemplateTypeValueNr10gbaseDashxDashXenpak captures enum value "10gbase-x-xenpak"
+	InterfaceTemplateTypeValueNr10gbaseDashxDashXenpak string = "10gbase-x-xenpak"
 
-	// InterfaceTemplateTypeValueNr10gbasexX2 captures enum value "10gbase-x-x2"
-	InterfaceTemplateTypeValueNr10gbasexX2 string = "10gbase-x-x2"
+	// InterfaceTemplateTypeValueNr10gbaseDashxDashX2 captures enum value "10gbase-x-x2"
+	InterfaceTemplateTypeValueNr10gbaseDashxDashX2 string = "10gbase-x-x2"
 
-	// InterfaceTemplateTypeValueNr25gbasexSfp28 captures enum value "25gbase-x-sfp28"
-	InterfaceTemplateTypeValueNr25gbasexSfp28 string = "25gbase-x-sfp28"
+	// InterfaceTemplateTypeValueNr25gbaseDashxDashSfp28 captures enum value "25gbase-x-sfp28"
+	InterfaceTemplateTypeValueNr25gbaseDashxDashSfp28 string = "25gbase-x-sfp28"
 
-	// InterfaceTemplateTypeValueNr50gbasexSfp56 captures enum value "50gbase-x-sfp56"
-	InterfaceTemplateTypeValueNr50gbasexSfp56 string = "50gbase-x-sfp56"
+	// InterfaceTemplateTypeValueNr50gbaseDashxDashSfp56 captures enum value "50gbase-x-sfp56"
+	InterfaceTemplateTypeValueNr50gbaseDashxDashSfp56 string = "50gbase-x-sfp56"
 
-	// InterfaceTemplateTypeValueNr40gbasexQsfpp captures enum value "40gbase-x-qsfpp"
-	InterfaceTemplateTypeValueNr40gbasexQsfpp string = "40gbase-x-qsfpp"
+	// InterfaceTemplateTypeValueNr40gbaseDashxDashQsfpp captures enum value "40gbase-x-qsfpp"
+	InterfaceTemplateTypeValueNr40gbaseDashxDashQsfpp string = "40gbase-x-qsfpp"
 
-	// InterfaceTemplateTypeValueNr50gbasexSfp28 captures enum value "50gbase-x-sfp28"
-	InterfaceTemplateTypeValueNr50gbasexSfp28 string = "50gbase-x-sfp28"
+	// InterfaceTemplateTypeValueNr50gbaseDashxDashSfp28 captures enum value "50gbase-x-sfp28"
+	InterfaceTemplateTypeValueNr50gbaseDashxDashSfp28 string = "50gbase-x-sfp28"
 
-	// InterfaceTemplateTypeValueNr100gbasexCfp captures enum value "100gbase-x-cfp"
-	InterfaceTemplateTypeValueNr100gbasexCfp string = "100gbase-x-cfp"
+	// InterfaceTemplateTypeValueNr100gbaseDashxDashCfp captures enum value "100gbase-x-cfp"
+	InterfaceTemplateTypeValueNr100gbaseDashxDashCfp string = "100gbase-x-cfp"
 
-	// InterfaceTemplateTypeValueNr100gbasexCfp2 captures enum value "100gbase-x-cfp2"
-	InterfaceTemplateTypeValueNr100gbasexCfp2 string = "100gbase-x-cfp2"
+	// InterfaceTemplateTypeValueNr100gbaseDashxDashCfp2 captures enum value "100gbase-x-cfp2"
+	InterfaceTemplateTypeValueNr100gbaseDashxDashCfp2 string = "100gbase-x-cfp2"
 
-	// InterfaceTemplateTypeValueNr200gbasexCfp2 captures enum value "200gbase-x-cfp2"
-	InterfaceTemplateTypeValueNr200gbasexCfp2 string = "200gbase-x-cfp2"
+	// InterfaceTemplateTypeValueNr200gbaseDashxDashCfp2 captures enum value "200gbase-x-cfp2"
+	InterfaceTemplateTypeValueNr200gbaseDashxDashCfp2 string = "200gbase-x-cfp2"
 
-	// InterfaceTemplateTypeValueNr100gbasexCfp4 captures enum value "100gbase-x-cfp4"
-	InterfaceTemplateTypeValueNr100gbasexCfp4 string = "100gbase-x-cfp4"
+	// InterfaceTemplateTypeValueNr100gbaseDashxDashCfp4 captures enum value "100gbase-x-cfp4"
+	InterfaceTemplateTypeValueNr100gbaseDashxDashCfp4 string = "100gbase-x-cfp4"
 
-	// InterfaceTemplateTypeValueNr100gbasexCpak captures enum value "100gbase-x-cpak"
-	InterfaceTemplateTypeValueNr100gbasexCpak string = "100gbase-x-cpak"
+	// InterfaceTemplateTypeValueNr100gbaseDashxDashCpak captures enum value "100gbase-x-cpak"
+	InterfaceTemplateTypeValueNr100gbaseDashxDashCpak string = "100gbase-x-cpak"
 
-	// InterfaceTemplateTypeValueNr100gbasexQsfp28 captures enum value "100gbase-x-qsfp28"
-	InterfaceTemplateTypeValueNr100gbasexQsfp28 string = "100gbase-x-qsfp28"
+	// InterfaceTemplateTypeValueNr100gbaseDashxDashQsfp28 captures enum value "100gbase-x-qsfp28"
+	InterfaceTemplateTypeValueNr100gbaseDashxDashQsfp28 string = "100gbase-x-qsfp28"
 
-	// InterfaceTemplateTypeValueNr200gbasexQsfp56 captures enum value "200gbase-x-qsfp56"
-	InterfaceTemplateTypeValueNr200gbasexQsfp56 string = "200gbase-x-qsfp56"
+	// InterfaceTemplateTypeValueNr200gbaseDashxDashQsfp56 captures enum value "200gbase-x-qsfp56"
+	InterfaceTemplateTypeValueNr200gbaseDashxDashQsfp56 string = "200gbase-x-qsfp56"
 
-	// InterfaceTemplateTypeValueNr400gbasexQsfpdd captures enum value "400gbase-x-qsfpdd"
-	InterfaceTemplateTypeValueNr400gbasexQsfpdd string = "400gbase-x-qsfpdd"
+	// InterfaceTemplateTypeValueNr400gbaseDashxDashQsfpdd captures enum value "400gbase-x-qsfpdd"
+	InterfaceTemplateTypeValueNr400gbaseDashxDashQsfpdd string = "400gbase-x-qsfpdd"
 
-	// InterfaceTemplateTypeValueNr400gbasexOsfp captures enum value "400gbase-x-osfp"
-	InterfaceTemplateTypeValueNr400gbasexOsfp string = "400gbase-x-osfp"
+	// InterfaceTemplateTypeValueNr400gbaseDashxDashOsfp captures enum value "400gbase-x-osfp"
+	InterfaceTemplateTypeValueNr400gbaseDashxDashOsfp string = "400gbase-x-osfp"
 
-	// InterfaceTemplateTypeValueIeee80211a captures enum value "ieee802.11a"
-	InterfaceTemplateTypeValueIeee80211a string = "ieee802.11a"
+	// InterfaceTemplateTypeValueIeee802Dot11a captures enum value "ieee802.11a"
+	InterfaceTemplateTypeValueIeee802Dot11a string = "ieee802.11a"
 
-	// InterfaceTemplateTypeValueIeee80211g captures enum value "ieee802.11g"
-	InterfaceTemplateTypeValueIeee80211g string = "ieee802.11g"
+	// InterfaceTemplateTypeValueIeee802Dot11g captures enum value "ieee802.11g"
+	InterfaceTemplateTypeValueIeee802Dot11g string = "ieee802.11g"
 
-	// InterfaceTemplateTypeValueIeee80211n captures enum value "ieee802.11n"
-	InterfaceTemplateTypeValueIeee80211n string = "ieee802.11n"
+	// InterfaceTemplateTypeValueIeee802Dot11n captures enum value "ieee802.11n"
+	InterfaceTemplateTypeValueIeee802Dot11n string = "ieee802.11n"
 
-	// InterfaceTemplateTypeValueIeee80211ac captures enum value "ieee802.11ac"
-	InterfaceTemplateTypeValueIeee80211ac string = "ieee802.11ac"
+	// InterfaceTemplateTypeValueIeee802Dot11ac captures enum value "ieee802.11ac"
+	InterfaceTemplateTypeValueIeee802Dot11ac string = "ieee802.11ac"
 
-	// InterfaceTemplateTypeValueIeee80211ad captures enum value "ieee802.11ad"
-	InterfaceTemplateTypeValueIeee80211ad string = "ieee802.11ad"
+	// InterfaceTemplateTypeValueIeee802Dot11ad captures enum value "ieee802.11ad"
+	InterfaceTemplateTypeValueIeee802Dot11ad string = "ieee802.11ad"
 
-	// InterfaceTemplateTypeValueIeee80211ax captures enum value "ieee802.11ax"
-	InterfaceTemplateTypeValueIeee80211ax string = "ieee802.11ax"
+	// InterfaceTemplateTypeValueIeee802Dot11ax captures enum value "ieee802.11ax"
+	InterfaceTemplateTypeValueIeee802Dot11ax string = "ieee802.11ax"
 
 	// InterfaceTemplateTypeValueGsm captures enum value "gsm"
 	InterfaceTemplateTypeValueGsm string = "gsm"
@@ -630,77 +700,77 @@ const (
 	// InterfaceTemplateTypeValueLte captures enum value "lte"
 	InterfaceTemplateTypeValueLte string = "lte"
 
-	// InterfaceTemplateTypeValueSonetOc3 captures enum value "sonet-oc3"
-	InterfaceTemplateTypeValueSonetOc3 string = "sonet-oc3"
+	// InterfaceTemplateTypeValueSonetDashOc3 captures enum value "sonet-oc3"
+	InterfaceTemplateTypeValueSonetDashOc3 string = "sonet-oc3"
 
-	// InterfaceTemplateTypeValueSonetOc12 captures enum value "sonet-oc12"
-	InterfaceTemplateTypeValueSonetOc12 string = "sonet-oc12"
+	// InterfaceTemplateTypeValueSonetDashOc12 captures enum value "sonet-oc12"
+	InterfaceTemplateTypeValueSonetDashOc12 string = "sonet-oc12"
 
-	// InterfaceTemplateTypeValueSonetOc48 captures enum value "sonet-oc48"
-	InterfaceTemplateTypeValueSonetOc48 string = "sonet-oc48"
+	// InterfaceTemplateTypeValueSonetDashOc48 captures enum value "sonet-oc48"
+	InterfaceTemplateTypeValueSonetDashOc48 string = "sonet-oc48"
 
-	// InterfaceTemplateTypeValueSonetOc192 captures enum value "sonet-oc192"
-	InterfaceTemplateTypeValueSonetOc192 string = "sonet-oc192"
+	// InterfaceTemplateTypeValueSonetDashOc192 captures enum value "sonet-oc192"
+	InterfaceTemplateTypeValueSonetDashOc192 string = "sonet-oc192"
 
-	// InterfaceTemplateTypeValueSonetOc768 captures enum value "sonet-oc768"
-	InterfaceTemplateTypeValueSonetOc768 string = "sonet-oc768"
+	// InterfaceTemplateTypeValueSonetDashOc768 captures enum value "sonet-oc768"
+	InterfaceTemplateTypeValueSonetDashOc768 string = "sonet-oc768"
 
-	// InterfaceTemplateTypeValueSonetOc1920 captures enum value "sonet-oc1920"
-	InterfaceTemplateTypeValueSonetOc1920 string = "sonet-oc1920"
+	// InterfaceTemplateTypeValueSonetDashOc1920 captures enum value "sonet-oc1920"
+	InterfaceTemplateTypeValueSonetDashOc1920 string = "sonet-oc1920"
 
-	// InterfaceTemplateTypeValueSonetOc3840 captures enum value "sonet-oc3840"
-	InterfaceTemplateTypeValueSonetOc3840 string = "sonet-oc3840"
+	// InterfaceTemplateTypeValueSonetDashOc3840 captures enum value "sonet-oc3840"
+	InterfaceTemplateTypeValueSonetDashOc3840 string = "sonet-oc3840"
 
-	// InterfaceTemplateTypeValueNr1gfcSfp captures enum value "1gfc-sfp"
-	InterfaceTemplateTypeValueNr1gfcSfp string = "1gfc-sfp"
+	// InterfaceTemplateTypeValueNr1gfcDashSfp captures enum value "1gfc-sfp"
+	InterfaceTemplateTypeValueNr1gfcDashSfp string = "1gfc-sfp"
 
-	// InterfaceTemplateTypeValueNr2gfcSfp captures enum value "2gfc-sfp"
-	InterfaceTemplateTypeValueNr2gfcSfp string = "2gfc-sfp"
+	// InterfaceTemplateTypeValueNr2gfcDashSfp captures enum value "2gfc-sfp"
+	InterfaceTemplateTypeValueNr2gfcDashSfp string = "2gfc-sfp"
 
-	// InterfaceTemplateTypeValueNr4gfcSfp captures enum value "4gfc-sfp"
-	InterfaceTemplateTypeValueNr4gfcSfp string = "4gfc-sfp"
+	// InterfaceTemplateTypeValueNr4gfcDashSfp captures enum value "4gfc-sfp"
+	InterfaceTemplateTypeValueNr4gfcDashSfp string = "4gfc-sfp"
 
-	// InterfaceTemplateTypeValueNr8gfcSfpp captures enum value "8gfc-sfpp"
-	InterfaceTemplateTypeValueNr8gfcSfpp string = "8gfc-sfpp"
+	// InterfaceTemplateTypeValueNr8gfcDashSfpp captures enum value "8gfc-sfpp"
+	InterfaceTemplateTypeValueNr8gfcDashSfpp string = "8gfc-sfpp"
 
-	// InterfaceTemplateTypeValueNr16gfcSfpp captures enum value "16gfc-sfpp"
-	InterfaceTemplateTypeValueNr16gfcSfpp string = "16gfc-sfpp"
+	// InterfaceTemplateTypeValueNr16gfcDashSfpp captures enum value "16gfc-sfpp"
+	InterfaceTemplateTypeValueNr16gfcDashSfpp string = "16gfc-sfpp"
 
-	// InterfaceTemplateTypeValueNr32gfcSfp28 captures enum value "32gfc-sfp28"
-	InterfaceTemplateTypeValueNr32gfcSfp28 string = "32gfc-sfp28"
+	// InterfaceTemplateTypeValueNr32gfcDashSfp28 captures enum value "32gfc-sfp28"
+	InterfaceTemplateTypeValueNr32gfcDashSfp28 string = "32gfc-sfp28"
 
-	// InterfaceTemplateTypeValueNr64gfcQsfpp captures enum value "64gfc-qsfpp"
-	InterfaceTemplateTypeValueNr64gfcQsfpp string = "64gfc-qsfpp"
+	// InterfaceTemplateTypeValueNr64gfcDashQsfpp captures enum value "64gfc-qsfpp"
+	InterfaceTemplateTypeValueNr64gfcDashQsfpp string = "64gfc-qsfpp"
 
-	// InterfaceTemplateTypeValueNr128gfcSfp28 captures enum value "128gfc-sfp28"
-	InterfaceTemplateTypeValueNr128gfcSfp28 string = "128gfc-sfp28"
+	// InterfaceTemplateTypeValueNr128gfcDashSfp28 captures enum value "128gfc-sfp28"
+	InterfaceTemplateTypeValueNr128gfcDashSfp28 string = "128gfc-sfp28"
 
-	// InterfaceTemplateTypeValueInfinibandSdr captures enum value "infiniband-sdr"
-	InterfaceTemplateTypeValueInfinibandSdr string = "infiniband-sdr"
+	// InterfaceTemplateTypeValueInfinibandDashSdr captures enum value "infiniband-sdr"
+	InterfaceTemplateTypeValueInfinibandDashSdr string = "infiniband-sdr"
 
-	// InterfaceTemplateTypeValueInfinibandDdr captures enum value "infiniband-ddr"
-	InterfaceTemplateTypeValueInfinibandDdr string = "infiniband-ddr"
+	// InterfaceTemplateTypeValueInfinibandDashDdr captures enum value "infiniband-ddr"
+	InterfaceTemplateTypeValueInfinibandDashDdr string = "infiniband-ddr"
 
-	// InterfaceTemplateTypeValueInfinibandQdr captures enum value "infiniband-qdr"
-	InterfaceTemplateTypeValueInfinibandQdr string = "infiniband-qdr"
+	// InterfaceTemplateTypeValueInfinibandDashQdr captures enum value "infiniband-qdr"
+	InterfaceTemplateTypeValueInfinibandDashQdr string = "infiniband-qdr"
 
-	// InterfaceTemplateTypeValueInfinibandFdr10 captures enum value "infiniband-fdr10"
-	InterfaceTemplateTypeValueInfinibandFdr10 string = "infiniband-fdr10"
+	// InterfaceTemplateTypeValueInfinibandDashFdr10 captures enum value "infiniband-fdr10"
+	InterfaceTemplateTypeValueInfinibandDashFdr10 string = "infiniband-fdr10"
 
-	// InterfaceTemplateTypeValueInfinibandFdr captures enum value "infiniband-fdr"
-	InterfaceTemplateTypeValueInfinibandFdr string = "infiniband-fdr"
+	// InterfaceTemplateTypeValueInfinibandDashFdr captures enum value "infiniband-fdr"
+	InterfaceTemplateTypeValueInfinibandDashFdr string = "infiniband-fdr"
 
-	// InterfaceTemplateTypeValueInfinibandEdr captures enum value "infiniband-edr"
-	InterfaceTemplateTypeValueInfinibandEdr string = "infiniband-edr"
+	// InterfaceTemplateTypeValueInfinibandDashEdr captures enum value "infiniband-edr"
+	InterfaceTemplateTypeValueInfinibandDashEdr string = "infiniband-edr"
 
-	// InterfaceTemplateTypeValueInfinibandHdr captures enum value "infiniband-hdr"
-	InterfaceTemplateTypeValueInfinibandHdr string = "infiniband-hdr"
+	// InterfaceTemplateTypeValueInfinibandDashHdr captures enum value "infiniband-hdr"
+	InterfaceTemplateTypeValueInfinibandDashHdr string = "infiniband-hdr"
 
-	// InterfaceTemplateTypeValueInfinibandNdr captures enum value "infiniband-ndr"
-	InterfaceTemplateTypeValueInfinibandNdr string = "infiniband-ndr"
+	// InterfaceTemplateTypeValueInfinibandDashNdr captures enum value "infiniband-ndr"
+	InterfaceTemplateTypeValueInfinibandDashNdr string = "infiniband-ndr"
 
-	// InterfaceTemplateTypeValueInfinibandXdr captures enum value "infiniband-xdr"
-	InterfaceTemplateTypeValueInfinibandXdr string = "infiniband-xdr"
+	// InterfaceTemplateTypeValueInfinibandDashXdr captures enum value "infiniband-xdr"
+	InterfaceTemplateTypeValueInfinibandDashXdr string = "infiniband-xdr"
 
 	// InterfaceTemplateTypeValueT1 captures enum value "t1"
 	InterfaceTemplateTypeValueT1 string = "t1"
@@ -714,32 +784,32 @@ const (
 	// InterfaceTemplateTypeValueE3 captures enum value "e3"
 	InterfaceTemplateTypeValueE3 string = "e3"
 
-	// InterfaceTemplateTypeValueCiscoStackwise captures enum value "cisco-stackwise"
-	InterfaceTemplateTypeValueCiscoStackwise string = "cisco-stackwise"
+	// InterfaceTemplateTypeValueCiscoDashStackwise captures enum value "cisco-stackwise"
+	InterfaceTemplateTypeValueCiscoDashStackwise string = "cisco-stackwise"
 
-	// InterfaceTemplateTypeValueCiscoStackwisePlus captures enum value "cisco-stackwise-plus"
-	InterfaceTemplateTypeValueCiscoStackwisePlus string = "cisco-stackwise-plus"
+	// InterfaceTemplateTypeValueCiscoDashStackwiseDashPlus captures enum value "cisco-stackwise-plus"
+	InterfaceTemplateTypeValueCiscoDashStackwiseDashPlus string = "cisco-stackwise-plus"
 
-	// InterfaceTemplateTypeValueCiscoFlexstack captures enum value "cisco-flexstack"
-	InterfaceTemplateTypeValueCiscoFlexstack string = "cisco-flexstack"
+	// InterfaceTemplateTypeValueCiscoDashFlexstack captures enum value "cisco-flexstack"
+	InterfaceTemplateTypeValueCiscoDashFlexstack string = "cisco-flexstack"
 
-	// InterfaceTemplateTypeValueCiscoFlexstackPlus captures enum value "cisco-flexstack-plus"
-	InterfaceTemplateTypeValueCiscoFlexstackPlus string = "cisco-flexstack-plus"
+	// InterfaceTemplateTypeValueCiscoDashFlexstackDashPlus captures enum value "cisco-flexstack-plus"
+	InterfaceTemplateTypeValueCiscoDashFlexstackDashPlus string = "cisco-flexstack-plus"
 
-	// InterfaceTemplateTypeValueJuniperVcp captures enum value "juniper-vcp"
-	InterfaceTemplateTypeValueJuniperVcp string = "juniper-vcp"
+	// InterfaceTemplateTypeValueJuniperDashVcp captures enum value "juniper-vcp"
+	InterfaceTemplateTypeValueJuniperDashVcp string = "juniper-vcp"
 
-	// InterfaceTemplateTypeValueExtremeSummitstack captures enum value "extreme-summitstack"
-	InterfaceTemplateTypeValueExtremeSummitstack string = "extreme-summitstack"
+	// InterfaceTemplateTypeValueExtremeDashSummitstack captures enum value "extreme-summitstack"
+	InterfaceTemplateTypeValueExtremeDashSummitstack string = "extreme-summitstack"
 
-	// InterfaceTemplateTypeValueExtremeSummitstack128 captures enum value "extreme-summitstack-128"
-	InterfaceTemplateTypeValueExtremeSummitstack128 string = "extreme-summitstack-128"
+	// InterfaceTemplateTypeValueExtremeDashSummitstackDash128 captures enum value "extreme-summitstack-128"
+	InterfaceTemplateTypeValueExtremeDashSummitstackDash128 string = "extreme-summitstack-128"
 
-	// InterfaceTemplateTypeValueExtremeSummitstack256 captures enum value "extreme-summitstack-256"
-	InterfaceTemplateTypeValueExtremeSummitstack256 string = "extreme-summitstack-256"
+	// InterfaceTemplateTypeValueExtremeDashSummitstackDash256 captures enum value "extreme-summitstack-256"
+	InterfaceTemplateTypeValueExtremeDashSummitstackDash256 string = "extreme-summitstack-256"
 
-	// InterfaceTemplateTypeValueExtremeSummitstack512 captures enum value "extreme-summitstack-512"
-	InterfaceTemplateTypeValueExtremeSummitstack512 string = "extreme-summitstack-512"
+	// InterfaceTemplateTypeValueExtremeDashSummitstackDash512 captures enum value "extreme-summitstack-512"
+	InterfaceTemplateTypeValueExtremeDashSummitstackDash512 string = "extreme-summitstack-512"
 
 	// InterfaceTemplateTypeValueOther captures enum value "other"
 	InterfaceTemplateTypeValueOther string = "other"
@@ -764,6 +834,11 @@ func (m *InterfaceTemplateType) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this interface template type based on context it is used
+func (m *InterfaceTemplateType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

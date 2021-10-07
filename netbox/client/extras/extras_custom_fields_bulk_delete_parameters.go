@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewExtrasCustomFieldsBulkDeleteParams creates a new ExtrasCustomFieldsBulkDeleteParams object
-// with the default values initialized.
+// NewExtrasCustomFieldsBulkDeleteParams creates a new ExtrasCustomFieldsBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasCustomFieldsBulkDeleteParams() *ExtrasCustomFieldsBulkDeleteParams {
-
 	return &ExtrasCustomFieldsBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasCustomFieldsBulkDeleteParamsWithTimeout creates a new ExtrasCustomFieldsBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasCustomFieldsBulkDeleteParamsWithTimeout(timeout time.Duration) *ExtrasCustomFieldsBulkDeleteParams {
-
 	return &ExtrasCustomFieldsBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasCustomFieldsBulkDeleteParamsWithContext creates a new ExtrasCustomFieldsBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasCustomFieldsBulkDeleteParamsWithContext(ctx context.Context) *ExtrasCustomFieldsBulkDeleteParams {
-
 	return &ExtrasCustomFieldsBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasCustomFieldsBulkDeleteParamsWithHTTPClient creates a new ExtrasCustomFieldsBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasCustomFieldsBulkDeleteParamsWithHTTPClient(client *http.Client) *ExtrasCustomFieldsBulkDeleteParams {
-
 	return &ExtrasCustomFieldsBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasCustomFieldsBulkDeleteParams contains all the parameters to send to the API endpoint
-for the extras custom fields bulk delete operation typically these are written to a http.Request
+/* ExtrasCustomFieldsBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the extras custom fields bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasCustomFieldsBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras custom fields bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsBulkDeleteParams) WithDefaults() *ExtrasCustomFieldsBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras custom fields bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras custom fields bulk delete params

@@ -61,7 +61,7 @@ func NewIpamRouteTargetsPartialUpdateOK() *IpamRouteTargetsPartialUpdateOK {
 	return &IpamRouteTargetsPartialUpdateOK{}
 }
 
-/*IpamRouteTargetsPartialUpdateOK handles this case with default header values.
+/* IpamRouteTargetsPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamRouteTargetsPartialUpdateOK ipam route targets partial update o k
 */
@@ -72,7 +72,6 @@ type IpamRouteTargetsPartialUpdateOK struct {
 func (o *IpamRouteTargetsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipamRouteTargetsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRouteTargetsPartialUpdateOK) GetPayload() *models.RouteTarget {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRouteTargetsPartialUpdateDefault(code int) *IpamRouteTargetsPartialU
 	}
 }
 
-/*IpamRouteTargetsPartialUpdateDefault handles this case with default header values.
+/* IpamRouteTargetsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsPartialUpdateDefault ipam route targets partial update default
 */
@@ -114,7 +113,6 @@ func (o *IpamRouteTargetsPartialUpdateDefault) Code() int {
 func (o *IpamRouteTargetsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipam_route-targets_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRouteTargetsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

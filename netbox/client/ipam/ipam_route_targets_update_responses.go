@@ -61,7 +61,7 @@ func NewIpamRouteTargetsUpdateOK() *IpamRouteTargetsUpdateOK {
 	return &IpamRouteTargetsUpdateOK{}
 }
 
-/*IpamRouteTargetsUpdateOK handles this case with default header values.
+/* IpamRouteTargetsUpdateOK describes a response with status code 200, with default header values.
 
 IpamRouteTargetsUpdateOK ipam route targets update o k
 */
@@ -72,7 +72,6 @@ type IpamRouteTargetsUpdateOK struct {
 func (o *IpamRouteTargetsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/route-targets/{id}/][%d] ipamRouteTargetsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRouteTargetsUpdateOK) GetPayload() *models.RouteTarget {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRouteTargetsUpdateDefault(code int) *IpamRouteTargetsUpdateDefault {
 	}
 }
 
-/*IpamRouteTargetsUpdateDefault handles this case with default header values.
+/* IpamRouteTargetsUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsUpdateDefault ipam route targets update default
 */
@@ -114,7 +113,6 @@ func (o *IpamRouteTargetsUpdateDefault) Code() int {
 func (o *IpamRouteTargetsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/route-targets/{id}/][%d] ipam_route-targets_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRouteTargetsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,7 +59,7 @@ func NewDcimPowerPortTemplatesDeleteNoContent() *DcimPowerPortTemplatesDeleteNoC
 	return &DcimPowerPortTemplatesDeleteNoContent{}
 }
 
-/*DcimPowerPortTemplatesDeleteNoContent handles this case with default header values.
+/* DcimPowerPortTemplatesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimPowerPortTemplatesDeleteNoContent dcim power port templates delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimPowerPortTemplatesDeleteDefault(code int) *DcimPowerPortTemplatesDel
 	}
 }
 
-/*DcimPowerPortTemplatesDeleteDefault handles this case with default header values.
+/* DcimPowerPortTemplatesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortTemplatesDeleteDefault dcim power port templates delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimPowerPortTemplatesDeleteDefault) Code() int {
 func (o *DcimPowerPortTemplatesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPortTemplatesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

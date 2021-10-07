@@ -61,7 +61,7 @@ func NewUsersPermissionsBulkUpdateOK() *UsersPermissionsBulkUpdateOK {
 	return &UsersPermissionsBulkUpdateOK{}
 }
 
-/*UsersPermissionsBulkUpdateOK handles this case with default header values.
+/* UsersPermissionsBulkUpdateOK describes a response with status code 200, with default header values.
 
 UsersPermissionsBulkUpdateOK users permissions bulk update o k
 */
@@ -72,7 +72,6 @@ type UsersPermissionsBulkUpdateOK struct {
 func (o *UsersPermissionsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/permissions/][%d] usersPermissionsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersPermissionsBulkUpdateOK) GetPayload() *models.ObjectPermission {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersPermissionsBulkUpdateDefault(code int) *UsersPermissionsBulkUpdateD
 	}
 }
 
-/*UsersPermissionsBulkUpdateDefault handles this case with default header values.
+/* UsersPermissionsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 UsersPermissionsBulkUpdateDefault users permissions bulk update default
 */
@@ -114,7 +113,6 @@ func (o *UsersPermissionsBulkUpdateDefault) Code() int {
 func (o *UsersPermissionsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /users/permissions/][%d] users_permissions_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersPermissionsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

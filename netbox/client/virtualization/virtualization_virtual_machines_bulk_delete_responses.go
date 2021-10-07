@@ -59,7 +59,7 @@ func NewVirtualizationVirtualMachinesBulkDeleteNoContent() *VirtualizationVirtua
 	return &VirtualizationVirtualMachinesBulkDeleteNoContent{}
 }
 
-/*VirtualizationVirtualMachinesBulkDeleteNoContent handles this case with default header values.
+/* VirtualizationVirtualMachinesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationVirtualMachinesBulkDeleteNoContent virtualization virtual machines bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewVirtualizationVirtualMachinesBulkDeleteDefault(code int) *Virtualization
 	}
 }
 
-/*VirtualizationVirtualMachinesBulkDeleteDefault handles this case with default header values.
+/* VirtualizationVirtualMachinesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesBulkDeleteDefault virtualization virtual machines bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *VirtualizationVirtualMachinesBulkDeleteDefault) Code() int {
 func (o *VirtualizationVirtualMachinesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/][%d] virtualization_virtual-machines_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationVirtualMachinesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

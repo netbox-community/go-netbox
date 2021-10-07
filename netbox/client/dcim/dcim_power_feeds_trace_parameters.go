@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPowerFeedsTraceParams creates a new DcimPowerFeedsTraceParams object
-// with the default values initialized.
+// NewDcimPowerFeedsTraceParams creates a new DcimPowerFeedsTraceParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerFeedsTraceParams() *DcimPowerFeedsTraceParams {
-	var ()
 	return &DcimPowerFeedsTraceParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerFeedsTraceParamsWithTimeout creates a new DcimPowerFeedsTraceParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerFeedsTraceParamsWithTimeout(timeout time.Duration) *DcimPowerFeedsTraceParams {
-	var ()
 	return &DcimPowerFeedsTraceParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerFeedsTraceParamsWithContext creates a new DcimPowerFeedsTraceParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerFeedsTraceParamsWithContext(ctx context.Context) *DcimPowerFeedsTraceParams {
-	var ()
 	return &DcimPowerFeedsTraceParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerFeedsTraceParamsWithHTTPClient creates a new DcimPowerFeedsTraceParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerFeedsTraceParamsWithHTTPClient(client *http.Client) *DcimPowerFeedsTraceParams {
-	var ()
 	return &DcimPowerFeedsTraceParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerFeedsTraceParams contains all the parameters to send to the API endpoint
-for the dcim power feeds trace operation typically these are written to a http.Request
+/* DcimPowerFeedsTraceParams contains all the parameters to send to the API endpoint
+   for the dcim power feeds trace operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerFeedsTraceParams struct {
 
-	/*ID
-	  A unique integer value identifying this power feed.
+	/* ID.
 
+	   A unique integer value identifying this power feed.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power feeds trace params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsTraceParams) WithDefaults() *DcimPowerFeedsTraceParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power feeds trace params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerFeedsTraceParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power feeds trace params

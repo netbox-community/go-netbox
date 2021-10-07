@@ -32,76 +32,97 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasCustomFieldsListParams creates a new ExtrasCustomFieldsListParams object
-// with the default values initialized.
+// NewExtrasCustomFieldsListParams creates a new ExtrasCustomFieldsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasCustomFieldsListParams() *ExtrasCustomFieldsListParams {
-	var ()
 	return &ExtrasCustomFieldsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasCustomFieldsListParamsWithTimeout creates a new ExtrasCustomFieldsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasCustomFieldsListParamsWithTimeout(timeout time.Duration) *ExtrasCustomFieldsListParams {
-	var ()
 	return &ExtrasCustomFieldsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasCustomFieldsListParamsWithContext creates a new ExtrasCustomFieldsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasCustomFieldsListParamsWithContext(ctx context.Context) *ExtrasCustomFieldsListParams {
-	var ()
 	return &ExtrasCustomFieldsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasCustomFieldsListParamsWithHTTPClient creates a new ExtrasCustomFieldsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasCustomFieldsListParamsWithHTTPClient(client *http.Client) *ExtrasCustomFieldsListParams {
-	var ()
 	return &ExtrasCustomFieldsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasCustomFieldsListParams contains all the parameters to send to the API endpoint
-for the extras custom fields list operation typically these are written to a http.Request
+/* ExtrasCustomFieldsListParams contains all the parameters to send to the API endpoint
+   for the extras custom fields list operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasCustomFieldsListParams struct {
 
-	/*ContentTypes*/
+	// ContentTypes.
 	ContentTypes *string
-	/*FilterLogic*/
-	FilterLogic *string
-	/*ID*/
-	ID *float64
-	/*Limit
-	  Number of results to return per page.
 
+	// FilterLogic.
+	FilterLogic *string
+
+	// ID.
+	ID *float64
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Name*/
-	Name *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Name.
+	Name *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Required*/
+
+	// Required.
 	Required *string
-	/*Weight*/
+
+	// Weight.
 	Weight *float64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras custom fields list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsListParams) WithDefaults() *ExtrasCustomFieldsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras custom fields list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras custom fields list params
@@ -237,128 +258,136 @@ func (o *ExtrasCustomFieldsListParams) WriteToRequest(r runtime.ClientRequest, r
 
 		// query param content_types
 		var qrContentTypes string
+
 		if o.ContentTypes != nil {
 			qrContentTypes = *o.ContentTypes
 		}
 		qContentTypes := qrContentTypes
 		if qContentTypes != "" {
+
 			if err := r.SetQueryParam("content_types", qContentTypes); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FilterLogic != nil {
 
 		// query param filter_logic
 		var qrFilterLogic string
+
 		if o.FilterLogic != nil {
 			qrFilterLogic = *o.FilterLogic
 		}
 		qFilterLogic := qrFilterLogic
 		if qFilterLogic != "" {
+
 			if err := r.SetQueryParam("filter_logic", qFilterLogic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID float64
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := swag.FormatFloat64(qrID)
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Required != nil {
 
 		// query param required
 		var qrRequired string
+
 		if o.Required != nil {
 			qrRequired = *o.Required
 		}
 		qRequired := qrRequired
 		if qRequired != "" {
+
 			if err := r.SetQueryParam("required", qRequired); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Weight != nil {
 
 		// query param weight
 		var qrWeight float64
+
 		if o.Weight != nil {
 			qrWeight = *o.Weight
 		}
 		qWeight := swag.FormatFloat64(qrWeight)
 		if qWeight != "" {
+
 			if err := r.SetQueryParam("weight", qWeight); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

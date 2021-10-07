@@ -61,7 +61,7 @@ func NewDcimRegionsUpdateOK() *DcimRegionsUpdateOK {
 	return &DcimRegionsUpdateOK{}
 }
 
-/*DcimRegionsUpdateOK handles this case with default header values.
+/* DcimRegionsUpdateOK describes a response with status code 200, with default header values.
 
 DcimRegionsUpdateOK dcim regions update o k
 */
@@ -72,7 +72,6 @@ type DcimRegionsUpdateOK struct {
 func (o *DcimRegionsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/regions/{id}/][%d] dcimRegionsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRegionsUpdateOK) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRegionsUpdateDefault(code int) *DcimRegionsUpdateDefault {
 	}
 }
 
-/*DcimRegionsUpdateDefault handles this case with default header values.
+/* DcimRegionsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRegionsUpdateDefault dcim regions update default
 */
@@ -114,7 +113,6 @@ func (o *DcimRegionsUpdateDefault) Code() int {
 func (o *DcimRegionsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/regions/{id}/][%d] dcim_regions_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRegionsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,7 @@ func NewDcimDevicesBulkUpdateOK() *DcimDevicesBulkUpdateOK {
 	return &DcimDevicesBulkUpdateOK{}
 }
 
-/*DcimDevicesBulkUpdateOK handles this case with default header values.
+/* DcimDevicesBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimDevicesBulkUpdateOK dcim devices bulk update o k
 */
@@ -72,7 +72,6 @@ type DcimDevicesBulkUpdateOK struct {
 func (o *DcimDevicesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/devices/][%d] dcimDevicesBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDevicesBulkUpdateOK) GetPayload() *models.DeviceWithConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDevicesBulkUpdateDefault(code int) *DcimDevicesBulkUpdateDefault {
 	}
 }
 
-/*DcimDevicesBulkUpdateDefault handles this case with default header values.
+/* DcimDevicesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimDevicesBulkUpdateDefault dcim devices bulk update default
 */
@@ -114,7 +113,6 @@ func (o *DcimDevicesBulkUpdateDefault) Code() int {
 func (o *DcimDevicesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/devices/][%d] dcim_devices_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDevicesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

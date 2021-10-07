@@ -61,7 +61,7 @@ func NewDcimRearPortsBulkUpdateOK() *DcimRearPortsBulkUpdateOK {
 	return &DcimRearPortsBulkUpdateOK{}
 }
 
-/*DcimRearPortsBulkUpdateOK handles this case with default header values.
+/* DcimRearPortsBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimRearPortsBulkUpdateOK dcim rear ports bulk update o k
 */
@@ -72,7 +72,6 @@ type DcimRearPortsBulkUpdateOK struct {
 func (o *DcimRearPortsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rear-ports/][%d] dcimRearPortsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRearPortsBulkUpdateOK) GetPayload() *models.RearPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRearPortsBulkUpdateDefault(code int) *DcimRearPortsBulkUpdateDefault
 	}
 }
 
-/*DcimRearPortsBulkUpdateDefault handles this case with default header values.
+/* DcimRearPortsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRearPortsBulkUpdateDefault dcim rear ports bulk update default
 */
@@ -114,7 +113,6 @@ func (o *DcimRearPortsBulkUpdateDefault) Code() int {
 func (o *DcimRearPortsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rear-ports/][%d] dcim_rear-ports_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRearPortsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

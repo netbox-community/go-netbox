@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewExtrasImageAttachmentsBulkDeleteParams creates a new ExtrasImageAttachmentsBulkDeleteParams object
-// with the default values initialized.
+// NewExtrasImageAttachmentsBulkDeleteParams creates a new ExtrasImageAttachmentsBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasImageAttachmentsBulkDeleteParams() *ExtrasImageAttachmentsBulkDeleteParams {
-
 	return &ExtrasImageAttachmentsBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasImageAttachmentsBulkDeleteParamsWithTimeout creates a new ExtrasImageAttachmentsBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasImageAttachmentsBulkDeleteParamsWithTimeout(timeout time.Duration) *ExtrasImageAttachmentsBulkDeleteParams {
-
 	return &ExtrasImageAttachmentsBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasImageAttachmentsBulkDeleteParamsWithContext creates a new ExtrasImageAttachmentsBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasImageAttachmentsBulkDeleteParamsWithContext(ctx context.Context) *ExtrasImageAttachmentsBulkDeleteParams {
-
 	return &ExtrasImageAttachmentsBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasImageAttachmentsBulkDeleteParamsWithHTTPClient creates a new ExtrasImageAttachmentsBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasImageAttachmentsBulkDeleteParamsWithHTTPClient(client *http.Client) *ExtrasImageAttachmentsBulkDeleteParams {
-
 	return &ExtrasImageAttachmentsBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasImageAttachmentsBulkDeleteParams contains all the parameters to send to the API endpoint
-for the extras image attachments bulk delete operation typically these are written to a http.Request
+/* ExtrasImageAttachmentsBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the extras image attachments bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasImageAttachmentsBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras image attachments bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsBulkDeleteParams) WithDefaults() *ExtrasImageAttachmentsBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras image attachments bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasImageAttachmentsBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras image attachments bulk delete params

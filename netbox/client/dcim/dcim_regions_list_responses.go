@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimRegionsListOK() *DcimRegionsListOK {
 	return &DcimRegionsListOK{}
 }
 
-/*DcimRegionsListOK handles this case with default header values.
+/* DcimRegionsListOK describes a response with status code 200, with default header values.
 
 DcimRegionsListOK dcim regions list o k
 */
@@ -76,7 +77,6 @@ type DcimRegionsListOK struct {
 func (o *DcimRegionsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/regions/][%d] dcimRegionsListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRegionsListOK) GetPayload() *DcimRegionsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimRegionsListDefault(code int) *DcimRegionsListDefault {
 	}
 }
 
-/*DcimRegionsListDefault handles this case with default header values.
+/* DcimRegionsListDefault describes a response with status code -1, with default header values.
 
 DcimRegionsListDefault dcim regions list default
 */
@@ -118,7 +118,6 @@ func (o *DcimRegionsListDefault) Code() int {
 func (o *DcimRegionsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/regions/][%d] dcim_regions_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRegionsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimRegionsListOKBody) validateCount(formats strfmt.Registry) error {
 }
 
 func (o *DcimRegionsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimRegionsListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *DcimRegionsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimRegionsListOKBody) validateResults(formats strfmt.Registry) error {
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimRegionsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim regions list o k body based on the context it is used
+func (o *DcimRegionsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimRegionsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimRegionsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

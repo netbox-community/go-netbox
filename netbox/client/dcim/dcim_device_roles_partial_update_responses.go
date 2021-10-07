@@ -61,7 +61,7 @@ func NewDcimDeviceRolesPartialUpdateOK() *DcimDeviceRolesPartialUpdateOK {
 	return &DcimDeviceRolesPartialUpdateOK{}
 }
 
-/*DcimDeviceRolesPartialUpdateOK handles this case with default header values.
+/* DcimDeviceRolesPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimDeviceRolesPartialUpdateOK dcim device roles partial update o k
 */
@@ -72,7 +72,6 @@ type DcimDeviceRolesPartialUpdateOK struct {
 func (o *DcimDeviceRolesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcimDeviceRolesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceRolesPartialUpdateOK) GetPayload() *models.DeviceRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDeviceRolesPartialUpdateDefault(code int) *DcimDeviceRolesPartialUpd
 	}
 }
 
-/*DcimDeviceRolesPartialUpdateDefault handles this case with default header values.
+/* DcimDeviceRolesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceRolesPartialUpdateDefault dcim device roles partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimDeviceRolesPartialUpdateDefault) Code() int {
 func (o *DcimDeviceRolesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcim_device-roles_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceRolesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,7 @@ func NewExtrasImageAttachmentsUpdateOK() *ExtrasImageAttachmentsUpdateOK {
 	return &ExtrasImageAttachmentsUpdateOK{}
 }
 
-/*ExtrasImageAttachmentsUpdateOK handles this case with default header values.
+/* ExtrasImageAttachmentsUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasImageAttachmentsUpdateOK extras image attachments update o k
 */
@@ -72,7 +72,6 @@ type ExtrasImageAttachmentsUpdateOK struct {
 func (o *ExtrasImageAttachmentsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/image-attachments/{id}/][%d] extrasImageAttachmentsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsUpdateOK) GetPayload() *models.ImageAttachment {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasImageAttachmentsUpdateDefault(code int) *ExtrasImageAttachmentsUpd
 	}
 }
 
-/*ExtrasImageAttachmentsUpdateDefault handles this case with default header values.
+/* ExtrasImageAttachmentsUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasImageAttachmentsUpdateDefault extras image attachments update default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasImageAttachmentsUpdateDefault) Code() int {
 func (o *ExtrasImageAttachmentsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/image-attachments/{id}/][%d] extras_image-attachments_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,7 +59,7 @@ func NewVirtualizationInterfacesDeleteNoContent() *VirtualizationInterfacesDelet
 	return &VirtualizationInterfacesDeleteNoContent{}
 }
 
-/*VirtualizationInterfacesDeleteNoContent handles this case with default header values.
+/* VirtualizationInterfacesDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationInterfacesDeleteNoContent virtualization interfaces delete no content
 */
@@ -82,7 +82,7 @@ func NewVirtualizationInterfacesDeleteDefault(code int) *VirtualizationInterface
 	}
 }
 
-/*VirtualizationInterfacesDeleteDefault handles this case with default header values.
+/* VirtualizationInterfacesDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesDeleteDefault virtualization interfaces delete default
 */
@@ -100,7 +100,6 @@ func (o *VirtualizationInterfacesDeleteDefault) Code() int {
 func (o *VirtualizationInterfacesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualization_interfaces_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationInterfacesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

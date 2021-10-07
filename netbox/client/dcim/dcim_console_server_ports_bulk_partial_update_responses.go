@@ -61,7 +61,7 @@ func NewDcimConsoleServerPortsBulkPartialUpdateOK() *DcimConsoleServerPortsBulkP
 	return &DcimConsoleServerPortsBulkPartialUpdateOK{}
 }
 
-/*DcimConsoleServerPortsBulkPartialUpdateOK handles this case with default header values.
+/* DcimConsoleServerPortsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimConsoleServerPortsBulkPartialUpdateOK dcim console server ports bulk partial update o k
 */
@@ -72,7 +72,6 @@ type DcimConsoleServerPortsBulkPartialUpdateOK struct {
 func (o *DcimConsoleServerPortsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/console-server-ports/][%d] dcimConsoleServerPortsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimConsoleServerPortsBulkPartialUpdateOK) GetPayload() *models.ConsoleServerPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimConsoleServerPortsBulkPartialUpdateDefault(code int) *DcimConsoleSer
 	}
 }
 
-/*DcimConsoleServerPortsBulkPartialUpdateDefault handles this case with default header values.
+/* DcimConsoleServerPortsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortsBulkPartialUpdateDefault dcim console server ports bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimConsoleServerPortsBulkPartialUpdateDefault) Code() int {
 func (o *DcimConsoleServerPortsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/console-server-ports/][%d] dcim_console-server-ports_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimConsoleServerPortsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

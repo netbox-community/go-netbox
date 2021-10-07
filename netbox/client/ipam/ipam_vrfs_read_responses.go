@@ -61,7 +61,7 @@ func NewIpamVrfsReadOK() *IpamVrfsReadOK {
 	return &IpamVrfsReadOK{}
 }
 
-/*IpamVrfsReadOK handles this case with default header values.
+/* IpamVrfsReadOK describes a response with status code 200, with default header values.
 
 IpamVrfsReadOK ipam vrfs read o k
 */
@@ -72,7 +72,6 @@ type IpamVrfsReadOK struct {
 func (o *IpamVrfsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipamVrfsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVrfsReadOK) GetPayload() *models.VRF {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVrfsReadDefault(code int) *IpamVrfsReadDefault {
 	}
 }
 
-/*IpamVrfsReadDefault handles this case with default header values.
+/* IpamVrfsReadDefault describes a response with status code -1, with default header values.
 
 IpamVrfsReadDefault ipam vrfs read default
 */
@@ -114,7 +113,6 @@ func (o *IpamVrfsReadDefault) Code() int {
 func (o *IpamVrfsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipam_vrfs_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVrfsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

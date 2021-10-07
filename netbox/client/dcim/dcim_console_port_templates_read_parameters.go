@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimConsolePortTemplatesReadParams creates a new DcimConsolePortTemplatesReadParams object
-// with the default values initialized.
+// NewDcimConsolePortTemplatesReadParams creates a new DcimConsolePortTemplatesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConsolePortTemplatesReadParams() *DcimConsolePortTemplatesReadParams {
-	var ()
 	return &DcimConsolePortTemplatesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConsolePortTemplatesReadParamsWithTimeout creates a new DcimConsolePortTemplatesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConsolePortTemplatesReadParamsWithTimeout(timeout time.Duration) *DcimConsolePortTemplatesReadParams {
-	var ()
 	return &DcimConsolePortTemplatesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConsolePortTemplatesReadParamsWithContext creates a new DcimConsolePortTemplatesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConsolePortTemplatesReadParamsWithContext(ctx context.Context) *DcimConsolePortTemplatesReadParams {
-	var ()
 	return &DcimConsolePortTemplatesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConsolePortTemplatesReadParamsWithHTTPClient creates a new DcimConsolePortTemplatesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConsolePortTemplatesReadParamsWithHTTPClient(client *http.Client) *DcimConsolePortTemplatesReadParams {
-	var ()
 	return &DcimConsolePortTemplatesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConsolePortTemplatesReadParams contains all the parameters to send to the API endpoint
-for the dcim console port templates read operation typically these are written to a http.Request
+/* DcimConsolePortTemplatesReadParams contains all the parameters to send to the API endpoint
+   for the dcim console port templates read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConsolePortTemplatesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this console port template.
+	/* ID.
 
+	   A unique integer value identifying this console port template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim console port templates read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortTemplatesReadParams) WithDefaults() *DcimConsolePortTemplatesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim console port templates read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortTemplatesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim console port templates read params

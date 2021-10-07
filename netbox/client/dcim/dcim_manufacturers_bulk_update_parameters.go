@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimManufacturersBulkUpdateParams creates a new DcimManufacturersBulkUpdateParams object
-// with the default values initialized.
+// NewDcimManufacturersBulkUpdateParams creates a new DcimManufacturersBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimManufacturersBulkUpdateParams() *DcimManufacturersBulkUpdateParams {
-	var ()
 	return &DcimManufacturersBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimManufacturersBulkUpdateParamsWithTimeout creates a new DcimManufacturersBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimManufacturersBulkUpdateParamsWithTimeout(timeout time.Duration) *DcimManufacturersBulkUpdateParams {
-	var ()
 	return &DcimManufacturersBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimManufacturersBulkUpdateParamsWithContext creates a new DcimManufacturersBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimManufacturersBulkUpdateParamsWithContext(ctx context.Context) *DcimManufacturersBulkUpdateParams {
-	var ()
 	return &DcimManufacturersBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimManufacturersBulkUpdateParamsWithHTTPClient creates a new DcimManufacturersBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimManufacturersBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimManufacturersBulkUpdateParams {
-	var ()
 	return &DcimManufacturersBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimManufacturersBulkUpdateParams contains all the parameters to send to the API endpoint
-for the dcim manufacturers bulk update operation typically these are written to a http.Request
+/* DcimManufacturersBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim manufacturers bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimManufacturersBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Manufacturer
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim manufacturers bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimManufacturersBulkUpdateParams) WithDefaults() *DcimManufacturersBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim manufacturers bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimManufacturersBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim manufacturers bulk update params
@@ -136,7 +150,6 @@ func (o *DcimManufacturersBulkUpdateParams) WriteToRequest(r runtime.ClientReque
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

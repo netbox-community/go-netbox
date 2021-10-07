@@ -59,7 +59,7 @@ func NewDcimFrontPortsBulkDeleteNoContent() *DcimFrontPortsBulkDeleteNoContent {
 	return &DcimFrontPortsBulkDeleteNoContent{}
 }
 
-/*DcimFrontPortsBulkDeleteNoContent handles this case with default header values.
+/* DcimFrontPortsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimFrontPortsBulkDeleteNoContent dcim front ports bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimFrontPortsBulkDeleteDefault(code int) *DcimFrontPortsBulkDeleteDefau
 	}
 }
 
-/*DcimFrontPortsBulkDeleteDefault handles this case with default header values.
+/* DcimFrontPortsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimFrontPortsBulkDeleteDefault dcim front ports bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimFrontPortsBulkDeleteDefault) Code() int {
 func (o *DcimFrontPortsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/front-ports/][%d] dcim_front-ports_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimFrontPortsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

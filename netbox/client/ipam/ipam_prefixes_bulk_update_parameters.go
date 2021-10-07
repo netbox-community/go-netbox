@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamPrefixesBulkUpdateParams creates a new IpamPrefixesBulkUpdateParams object
-// with the default values initialized.
+// NewIpamPrefixesBulkUpdateParams creates a new IpamPrefixesBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamPrefixesBulkUpdateParams() *IpamPrefixesBulkUpdateParams {
-	var ()
 	return &IpamPrefixesBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamPrefixesBulkUpdateParamsWithTimeout creates a new IpamPrefixesBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamPrefixesBulkUpdateParamsWithTimeout(timeout time.Duration) *IpamPrefixesBulkUpdateParams {
-	var ()
 	return &IpamPrefixesBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamPrefixesBulkUpdateParamsWithContext creates a new IpamPrefixesBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamPrefixesBulkUpdateParamsWithContext(ctx context.Context) *IpamPrefixesBulkUpdateParams {
-	var ()
 	return &IpamPrefixesBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamPrefixesBulkUpdateParamsWithHTTPClient creates a new IpamPrefixesBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamPrefixesBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamPrefixesBulkUpdateParams {
-	var ()
 	return &IpamPrefixesBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamPrefixesBulkUpdateParams contains all the parameters to send to the API endpoint
-for the ipam prefixes bulk update operation typically these are written to a http.Request
+/* IpamPrefixesBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam prefixes bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamPrefixesBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePrefix
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam prefixes bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesBulkUpdateParams) WithDefaults() *IpamPrefixesBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam prefixes bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamPrefixesBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam prefixes bulk update params
@@ -136,7 +150,6 @@ func (o *IpamPrefixesBulkUpdateParams) WriteToRequest(r runtime.ClientRequest, r
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

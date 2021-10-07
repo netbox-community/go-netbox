@@ -61,7 +61,7 @@ func NewVirtualizationVirtualMachinesReadOK() *VirtualizationVirtualMachinesRead
 	return &VirtualizationVirtualMachinesReadOK{}
 }
 
-/*VirtualizationVirtualMachinesReadOK handles this case with default header values.
+/* VirtualizationVirtualMachinesReadOK describes a response with status code 200, with default header values.
 
 VirtualizationVirtualMachinesReadOK virtualization virtual machines read o k
 */
@@ -72,7 +72,6 @@ type VirtualizationVirtualMachinesReadOK struct {
 func (o *VirtualizationVirtualMachinesReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationVirtualMachinesReadOK) GetPayload() *models.VirtualMachineWithConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationVirtualMachinesReadDefault(code int) *VirtualizationVirtua
 	}
 }
 
-/*VirtualizationVirtualMachinesReadDefault handles this case with default header values.
+/* VirtualizationVirtualMachinesReadDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesReadDefault virtualization virtual machines read default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationVirtualMachinesReadDefault) Code() int {
 func (o *VirtualizationVirtualMachinesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationVirtualMachinesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

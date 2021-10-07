@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimDeviceRolesListOK() *DcimDeviceRolesListOK {
 	return &DcimDeviceRolesListOK{}
 }
 
-/*DcimDeviceRolesListOK handles this case with default header values.
+/* DcimDeviceRolesListOK describes a response with status code 200, with default header values.
 
 DcimDeviceRolesListOK dcim device roles list o k
 */
@@ -76,7 +77,6 @@ type DcimDeviceRolesListOK struct {
 func (o *DcimDeviceRolesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcimDeviceRolesListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceRolesListOK) GetPayload() *DcimDeviceRolesListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimDeviceRolesListDefault(code int) *DcimDeviceRolesListDefault {
 	}
 }
 
-/*DcimDeviceRolesListDefault handles this case with default header values.
+/* DcimDeviceRolesListDefault describes a response with status code -1, with default header values.
 
 DcimDeviceRolesListDefault dcim device roles list default
 */
@@ -118,7 +118,6 @@ func (o *DcimDeviceRolesListDefault) Code() int {
 func (o *DcimDeviceRolesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-roles/][%d] dcim_device-roles_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceRolesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimDeviceRolesListOKBody) validateCount(formats strfmt.Registry) error
 }
 
 func (o *DcimDeviceRolesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimDeviceRolesListOKBody) validateNext(formats strfmt.Registry) error 
 }
 
 func (o *DcimDeviceRolesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimDeviceRolesListOKBody) validateResults(formats strfmt.Registry) err
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimDeviceRolesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim device roles list o k body based on the context it is used
+func (o *DcimDeviceRolesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimDeviceRolesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimDeviceRolesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

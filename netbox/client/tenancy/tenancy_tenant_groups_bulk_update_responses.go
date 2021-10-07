@@ -61,7 +61,7 @@ func NewTenancyTenantGroupsBulkUpdateOK() *TenancyTenantGroupsBulkUpdateOK {
 	return &TenancyTenantGroupsBulkUpdateOK{}
 }
 
-/*TenancyTenantGroupsBulkUpdateOK handles this case with default header values.
+/* TenancyTenantGroupsBulkUpdateOK describes a response with status code 200, with default header values.
 
 TenancyTenantGroupsBulkUpdateOK tenancy tenant groups bulk update o k
 */
@@ -72,7 +72,6 @@ type TenancyTenantGroupsBulkUpdateOK struct {
 func (o *TenancyTenantGroupsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/tenant-groups/][%d] tenancyTenantGroupsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *TenancyTenantGroupsBulkUpdateOK) GetPayload() *models.TenantGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewTenancyTenantGroupsBulkUpdateDefault(code int) *TenancyTenantGroupsBulkU
 	}
 }
 
-/*TenancyTenantGroupsBulkUpdateDefault handles this case with default header values.
+/* TenancyTenantGroupsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 TenancyTenantGroupsBulkUpdateDefault tenancy tenant groups bulk update default
 */
@@ -114,7 +113,6 @@ func (o *TenancyTenantGroupsBulkUpdateDefault) Code() int {
 func (o *TenancyTenantGroupsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/tenant-groups/][%d] tenancy_tenant-groups_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *TenancyTenantGroupsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

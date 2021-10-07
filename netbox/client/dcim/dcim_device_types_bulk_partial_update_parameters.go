@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimDeviceTypesBulkPartialUpdateParams creates a new DcimDeviceTypesBulkPartialUpdateParams object
-// with the default values initialized.
+// NewDcimDeviceTypesBulkPartialUpdateParams creates a new DcimDeviceTypesBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDeviceTypesBulkPartialUpdateParams() *DcimDeviceTypesBulkPartialUpdateParams {
-	var ()
 	return &DcimDeviceTypesBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDeviceTypesBulkPartialUpdateParamsWithTimeout creates a new DcimDeviceTypesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDeviceTypesBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimDeviceTypesBulkPartialUpdateParams {
-	var ()
 	return &DcimDeviceTypesBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDeviceTypesBulkPartialUpdateParamsWithContext creates a new DcimDeviceTypesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDeviceTypesBulkPartialUpdateParamsWithContext(ctx context.Context) *DcimDeviceTypesBulkPartialUpdateParams {
-	var ()
 	return &DcimDeviceTypesBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDeviceTypesBulkPartialUpdateParamsWithHTTPClient creates a new DcimDeviceTypesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDeviceTypesBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimDeviceTypesBulkPartialUpdateParams {
-	var ()
 	return &DcimDeviceTypesBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDeviceTypesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim device types bulk partial update operation typically these are written to a http.Request
+/* DcimDeviceTypesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim device types bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDeviceTypesBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableDeviceType
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim device types bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceTypesBulkPartialUpdateParams) WithDefaults() *DcimDeviceTypesBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim device types bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDeviceTypesBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim device types bulk partial update params
@@ -136,7 +150,6 @@ func (o *DcimDeviceTypesBulkPartialUpdateParams) WriteToRequest(r runtime.Client
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

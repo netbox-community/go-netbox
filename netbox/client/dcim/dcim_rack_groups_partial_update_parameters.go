@@ -34,61 +34,76 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimRackGroupsPartialUpdateParams creates a new DcimRackGroupsPartialUpdateParams object
-// with the default values initialized.
+// NewDcimRackGroupsPartialUpdateParams creates a new DcimRackGroupsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackGroupsPartialUpdateParams() *DcimRackGroupsPartialUpdateParams {
-	var ()
 	return &DcimRackGroupsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackGroupsPartialUpdateParamsWithTimeout creates a new DcimRackGroupsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackGroupsPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimRackGroupsPartialUpdateParams {
-	var ()
 	return &DcimRackGroupsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackGroupsPartialUpdateParamsWithContext creates a new DcimRackGroupsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackGroupsPartialUpdateParamsWithContext(ctx context.Context) *DcimRackGroupsPartialUpdateParams {
-	var ()
 	return &DcimRackGroupsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackGroupsPartialUpdateParamsWithHTTPClient creates a new DcimRackGroupsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackGroupsPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimRackGroupsPartialUpdateParams {
-	var ()
 	return &DcimRackGroupsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackGroupsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim rack groups partial update operation typically these are written to a http.Request
+/* DcimRackGroupsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim rack groups partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackGroupsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRackGroup
-	/*ID
-	  A unique integer value identifying this rack group.
 
+	/* ID.
+
+	   A unique integer value identifying this rack group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack groups partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackGroupsPartialUpdateParams) WithDefaults() *DcimRackGroupsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack groups partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackGroupsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack groups partial update params
@@ -153,7 +168,6 @@ func (o *DcimRackGroupsPartialUpdateParams) WriteToRequest(r runtime.ClientReque
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

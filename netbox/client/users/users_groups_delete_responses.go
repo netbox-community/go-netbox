@@ -59,7 +59,7 @@ func NewUsersGroupsDeleteNoContent() *UsersGroupsDeleteNoContent {
 	return &UsersGroupsDeleteNoContent{}
 }
 
-/*UsersGroupsDeleteNoContent handles this case with default header values.
+/* UsersGroupsDeleteNoContent describes a response with status code 204, with default header values.
 
 UsersGroupsDeleteNoContent users groups delete no content
 */
@@ -82,7 +82,7 @@ func NewUsersGroupsDeleteDefault(code int) *UsersGroupsDeleteDefault {
 	}
 }
 
-/*UsersGroupsDeleteDefault handles this case with default header values.
+/* UsersGroupsDeleteDefault describes a response with status code -1, with default header values.
 
 UsersGroupsDeleteDefault users groups delete default
 */
@@ -100,7 +100,6 @@ func (o *UsersGroupsDeleteDefault) Code() int {
 func (o *UsersGroupsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /users/groups/{id}/][%d] users_groups_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersGroupsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

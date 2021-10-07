@@ -59,7 +59,7 @@ func NewExtrasCustomFieldsDeleteNoContent() *ExtrasCustomFieldsDeleteNoContent {
 	return &ExtrasCustomFieldsDeleteNoContent{}
 }
 
-/*ExtrasCustomFieldsDeleteNoContent handles this case with default header values.
+/* ExtrasCustomFieldsDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasCustomFieldsDeleteNoContent extras custom fields delete no content
 */
@@ -82,7 +82,7 @@ func NewExtrasCustomFieldsDeleteDefault(code int) *ExtrasCustomFieldsDeleteDefau
 	}
 }
 
-/*ExtrasCustomFieldsDeleteDefault handles this case with default header values.
+/* ExtrasCustomFieldsDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsDeleteDefault extras custom fields delete default
 */
@@ -100,7 +100,6 @@ func (o *ExtrasCustomFieldsDeleteDefault) Code() int {
 func (o *ExtrasCustomFieldsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extras_custom-fields_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

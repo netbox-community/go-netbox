@@ -59,7 +59,7 @@ func NewExtrasScriptsListOK() *ExtrasScriptsListOK {
 	return &ExtrasScriptsListOK{}
 }
 
-/*ExtrasScriptsListOK handles this case with default header values.
+/* ExtrasScriptsListOK describes a response with status code 200, with default header values.
 
 ExtrasScriptsListOK extras scripts list o k
 */
@@ -82,7 +82,7 @@ func NewExtrasScriptsListDefault(code int) *ExtrasScriptsListDefault {
 	}
 }
 
-/*ExtrasScriptsListDefault handles this case with default header values.
+/* ExtrasScriptsListDefault describes a response with status code -1, with default header values.
 
 ExtrasScriptsListDefault extras scripts list default
 */
@@ -100,7 +100,6 @@ func (o *ExtrasScriptsListDefault) Code() int {
 func (o *ExtrasScriptsListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/scripts/][%d] extras_scripts_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasScriptsListDefault) GetPayload() interface{} {
 	return o.Payload
 }

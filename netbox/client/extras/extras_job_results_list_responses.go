@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewExtrasJobResultsListOK() *ExtrasJobResultsListOK {
 	return &ExtrasJobResultsListOK{}
 }
 
-/*ExtrasJobResultsListOK handles this case with default header values.
+/* ExtrasJobResultsListOK describes a response with status code 200, with default header values.
 
 ExtrasJobResultsListOK extras job results list o k
 */
@@ -76,7 +77,6 @@ type ExtrasJobResultsListOK struct {
 func (o *ExtrasJobResultsListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/job-results/][%d] extrasJobResultsListOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasJobResultsListOK) GetPayload() *ExtrasJobResultsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewExtrasJobResultsListDefault(code int) *ExtrasJobResultsListDefault {
 	}
 }
 
-/*ExtrasJobResultsListDefault handles this case with default header values.
+/* ExtrasJobResultsListDefault describes a response with status code -1, with default header values.
 
 ExtrasJobResultsListDefault extras job results list default
 */
@@ -118,7 +118,6 @@ func (o *ExtrasJobResultsListDefault) Code() int {
 func (o *ExtrasJobResultsListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/job-results/][%d] extras_job-results_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasJobResultsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *ExtrasJobResultsListOKBody) validateCount(formats strfmt.Registry) erro
 }
 
 func (o *ExtrasJobResultsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *ExtrasJobResultsListOKBody) validateNext(formats strfmt.Registry) error
 }
 
 func (o *ExtrasJobResultsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *ExtrasJobResultsListOKBody) validateResults(formats strfmt.Registry) er
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("extrasJobResultsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this extras job results list o k body based on the context it is used
+func (o *ExtrasJobResultsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *ExtrasJobResultsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasJobResultsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

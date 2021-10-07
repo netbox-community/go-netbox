@@ -61,7 +61,7 @@ func NewDcimInventoryItemsReadOK() *DcimInventoryItemsReadOK {
 	return &DcimInventoryItemsReadOK{}
 }
 
-/*DcimInventoryItemsReadOK handles this case with default header values.
+/* DcimInventoryItemsReadOK describes a response with status code 200, with default header values.
 
 DcimInventoryItemsReadOK dcim inventory items read o k
 */
@@ -72,7 +72,6 @@ type DcimInventoryItemsReadOK struct {
 func (o *DcimInventoryItemsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/inventory-items/{id}/][%d] dcimInventoryItemsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInventoryItemsReadOK) GetPayload() *models.InventoryItem {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimInventoryItemsReadDefault(code int) *DcimInventoryItemsReadDefault {
 	}
 }
 
-/*DcimInventoryItemsReadDefault handles this case with default header values.
+/* DcimInventoryItemsReadDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemsReadDefault dcim inventory items read default
 */
@@ -114,7 +113,6 @@ func (o *DcimInventoryItemsReadDefault) Code() int {
 func (o *DcimInventoryItemsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/inventory-items/{id}/][%d] dcim_inventory-items_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInventoryItemsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

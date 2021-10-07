@@ -21,6 +21,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -63,7 +65,6 @@ func (m *InterfaceConnection) Validate(formats strfmt.Registry) error {
 }
 
 func (m *InterfaceConnection) validateInterfacea(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Interfacea) { // not required
 		return nil
 	}
@@ -88,6 +89,65 @@ func (m *InterfaceConnection) validateInterfaceb(formats strfmt.Registry) error 
 
 	if m.Interfaceb != nil {
 		if err := m.Interfaceb.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("interface_b")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this interface connection based on the context it is used
+func (m *InterfaceConnection) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInterfacea(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInterfaceb(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *InterfaceConnection) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *InterfaceConnection) contextValidateInterfacea(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Interfacea != nil {
+		if err := m.Interfacea.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("interface_a")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *InterfaceConnection) contextValidateInterfaceb(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Interfaceb != nil {
+		if err := m.Interfaceb.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("interface_b")
 			}

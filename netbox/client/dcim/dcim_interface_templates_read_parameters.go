@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimInterfaceTemplatesReadParams creates a new DcimInterfaceTemplatesReadParams object
-// with the default values initialized.
+// NewDcimInterfaceTemplatesReadParams creates a new DcimInterfaceTemplatesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInterfaceTemplatesReadParams() *DcimInterfaceTemplatesReadParams {
-	var ()
 	return &DcimInterfaceTemplatesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInterfaceTemplatesReadParamsWithTimeout creates a new DcimInterfaceTemplatesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInterfaceTemplatesReadParamsWithTimeout(timeout time.Duration) *DcimInterfaceTemplatesReadParams {
-	var ()
 	return &DcimInterfaceTemplatesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInterfaceTemplatesReadParamsWithContext creates a new DcimInterfaceTemplatesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInterfaceTemplatesReadParamsWithContext(ctx context.Context) *DcimInterfaceTemplatesReadParams {
-	var ()
 	return &DcimInterfaceTemplatesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInterfaceTemplatesReadParamsWithHTTPClient creates a new DcimInterfaceTemplatesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInterfaceTemplatesReadParamsWithHTTPClient(client *http.Client) *DcimInterfaceTemplatesReadParams {
-	var ()
 	return &DcimInterfaceTemplatesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInterfaceTemplatesReadParams contains all the parameters to send to the API endpoint
-for the dcim interface templates read operation typically these are written to a http.Request
+/* DcimInterfaceTemplatesReadParams contains all the parameters to send to the API endpoint
+   for the dcim interface templates read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInterfaceTemplatesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this interface template.
+	/* ID.
 
+	   A unique integer value identifying this interface template.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim interface templates read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceTemplatesReadParams) WithDefaults() *DcimInterfaceTemplatesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim interface templates read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfaceTemplatesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim interface templates read params

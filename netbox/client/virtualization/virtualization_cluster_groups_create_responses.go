@@ -61,7 +61,7 @@ func NewVirtualizationClusterGroupsCreateCreated() *VirtualizationClusterGroupsC
 	return &VirtualizationClusterGroupsCreateCreated{}
 }
 
-/*VirtualizationClusterGroupsCreateCreated handles this case with default header values.
+/* VirtualizationClusterGroupsCreateCreated describes a response with status code 201, with default header values.
 
 VirtualizationClusterGroupsCreateCreated virtualization cluster groups create created
 */
@@ -72,7 +72,6 @@ type VirtualizationClusterGroupsCreateCreated struct {
 func (o *VirtualizationClusterGroupsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualizationClusterGroupsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsCreateCreated) GetPayload() *models.ClusterGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationClusterGroupsCreateDefault(code int) *VirtualizationCluste
 	}
 }
 
-/*VirtualizationClusterGroupsCreateDefault handles this case with default header values.
+/* VirtualizationClusterGroupsCreateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterGroupsCreateDefault virtualization cluster groups create default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationClusterGroupsCreateDefault) Code() int {
 func (o *VirtualizationClusterGroupsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualization_cluster-groups_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

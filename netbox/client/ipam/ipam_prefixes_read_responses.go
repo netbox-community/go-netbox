@@ -61,7 +61,7 @@ func NewIpamPrefixesReadOK() *IpamPrefixesReadOK {
 	return &IpamPrefixesReadOK{}
 }
 
-/*IpamPrefixesReadOK handles this case with default header values.
+/* IpamPrefixesReadOK describes a response with status code 200, with default header values.
 
 IpamPrefixesReadOK ipam prefixes read o k
 */
@@ -72,7 +72,6 @@ type IpamPrefixesReadOK struct {
 func (o *IpamPrefixesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipamPrefixesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamPrefixesReadOK) GetPayload() *models.Prefix {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamPrefixesReadDefault(code int) *IpamPrefixesReadDefault {
 	}
 }
 
-/*IpamPrefixesReadDefault handles this case with default header values.
+/* IpamPrefixesReadDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesReadDefault ipam prefixes read default
 */
@@ -114,7 +113,6 @@ func (o *IpamPrefixesReadDefault) Code() int {
 func (o *IpamPrefixesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/][%d] ipam_prefixes_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamPrefixesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

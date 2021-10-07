@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPowerPortsDeleteParams creates a new DcimPowerPortsDeleteParams object
-// with the default values initialized.
+// NewDcimPowerPortsDeleteParams creates a new DcimPowerPortsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerPortsDeleteParams() *DcimPowerPortsDeleteParams {
-	var ()
 	return &DcimPowerPortsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerPortsDeleteParamsWithTimeout creates a new DcimPowerPortsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerPortsDeleteParamsWithTimeout(timeout time.Duration) *DcimPowerPortsDeleteParams {
-	var ()
 	return &DcimPowerPortsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerPortsDeleteParamsWithContext creates a new DcimPowerPortsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerPortsDeleteParamsWithContext(ctx context.Context) *DcimPowerPortsDeleteParams {
-	var ()
 	return &DcimPowerPortsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerPortsDeleteParamsWithHTTPClient creates a new DcimPowerPortsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerPortsDeleteParamsWithHTTPClient(client *http.Client) *DcimPowerPortsDeleteParams {
-	var ()
 	return &DcimPowerPortsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerPortsDeleteParams contains all the parameters to send to the API endpoint
-for the dcim power ports delete operation typically these are written to a http.Request
+/* DcimPowerPortsDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim power ports delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerPortsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this power port.
+	/* ID.
 
+	   A unique integer value identifying this power port.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power ports delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortsDeleteParams) WithDefaults() *DcimPowerPortsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power ports delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power ports delete params

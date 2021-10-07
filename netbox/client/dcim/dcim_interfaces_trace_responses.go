@@ -61,7 +61,7 @@ func NewDcimInterfacesTraceOK() *DcimInterfacesTraceOK {
 	return &DcimInterfacesTraceOK{}
 }
 
-/*DcimInterfacesTraceOK handles this case with default header values.
+/* DcimInterfacesTraceOK describes a response with status code 200, with default header values.
 
 DcimInterfacesTraceOK dcim interfaces trace o k
 */
@@ -72,7 +72,6 @@ type DcimInterfacesTraceOK struct {
 func (o *DcimInterfacesTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcimInterfacesTraceOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfacesTraceOK) GetPayload() *models.Interface {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimInterfacesTraceDefault(code int) *DcimInterfacesTraceDefault {
 	}
 }
 
-/*DcimInterfacesTraceDefault handles this case with default header values.
+/* DcimInterfacesTraceDefault describes a response with status code -1, with default header values.
 
 DcimInterfacesTraceDefault dcim interfaces trace default
 */
@@ -114,7 +113,6 @@ func (o *DcimInterfacesTraceDefault) Code() int {
 func (o *DcimInterfacesTraceDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/interfaces/{id}/trace/][%d] dcim_interfaces_trace default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInterfacesTraceDefault) GetPayload() interface{} {
 	return o.Payload
 }

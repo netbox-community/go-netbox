@@ -61,7 +61,7 @@ func NewIpamVrfsCreateCreated() *IpamVrfsCreateCreated {
 	return &IpamVrfsCreateCreated{}
 }
 
-/*IpamVrfsCreateCreated handles this case with default header values.
+/* IpamVrfsCreateCreated describes a response with status code 201, with default header values.
 
 IpamVrfsCreateCreated ipam vrfs create created
 */
@@ -72,7 +72,6 @@ type IpamVrfsCreateCreated struct {
 func (o *IpamVrfsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipamVrfsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamVrfsCreateCreated) GetPayload() *models.VRF {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVrfsCreateDefault(code int) *IpamVrfsCreateDefault {
 	}
 }
 
-/*IpamVrfsCreateDefault handles this case with default header values.
+/* IpamVrfsCreateDefault describes a response with status code -1, with default header values.
 
 IpamVrfsCreateDefault ipam vrfs create default
 */
@@ -114,7 +113,6 @@ func (o *IpamVrfsCreateDefault) Code() int {
 func (o *IpamVrfsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipam_vrfs_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVrfsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

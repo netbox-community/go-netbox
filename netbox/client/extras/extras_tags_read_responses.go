@@ -61,7 +61,7 @@ func NewExtrasTagsReadOK() *ExtrasTagsReadOK {
 	return &ExtrasTagsReadOK{}
 }
 
-/*ExtrasTagsReadOK handles this case with default header values.
+/* ExtrasTagsReadOK describes a response with status code 200, with default header values.
 
 ExtrasTagsReadOK extras tags read o k
 */
@@ -72,7 +72,6 @@ type ExtrasTagsReadOK struct {
 func (o *ExtrasTagsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/tags/{id}/][%d] extrasTagsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasTagsReadOK) GetPayload() *models.Tag {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasTagsReadDefault(code int) *ExtrasTagsReadDefault {
 	}
 }
 
-/*ExtrasTagsReadDefault handles this case with default header values.
+/* ExtrasTagsReadDefault describes a response with status code -1, with default header values.
 
 ExtrasTagsReadDefault extras tags read default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasTagsReadDefault) Code() int {
 func (o *ExtrasTagsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/tags/{id}/][%d] extras_tags_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasTagsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

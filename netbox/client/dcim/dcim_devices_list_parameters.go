@@ -32,302 +32,436 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimDevicesListParams creates a new DcimDevicesListParams object
-// with the default values initialized.
+// NewDcimDevicesListParams creates a new DcimDevicesListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDevicesListParams() *DcimDevicesListParams {
-	var ()
 	return &DcimDevicesListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDevicesListParamsWithTimeout creates a new DcimDevicesListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDevicesListParamsWithTimeout(timeout time.Duration) *DcimDevicesListParams {
-	var ()
 	return &DcimDevicesListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDevicesListParamsWithContext creates a new DcimDevicesListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDevicesListParamsWithContext(ctx context.Context) *DcimDevicesListParams {
-	var ()
 	return &DcimDevicesListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDevicesListParamsWithHTTPClient creates a new DcimDevicesListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDevicesListParamsWithHTTPClient(client *http.Client) *DcimDevicesListParams {
-	var ()
 	return &DcimDevicesListParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDevicesListParams contains all the parameters to send to the API endpoint
-for the dcim devices list operation typically these are written to a http.Request
+/* DcimDevicesListParams contains all the parameters to send to the API endpoint
+   for the dcim devices list operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDevicesListParams struct {
 
-	/*AssetTag*/
+	// AssetTag.
 	AssetTag *string
-	/*AssetTagIc*/
-	AssetTagIc *string
-	/*AssetTagIe*/
-	AssetTagIe *string
-	/*AssetTagIew*/
-	AssetTagIew *string
-	/*AssetTagIsw*/
-	AssetTagIsw *string
-	/*AssetTagn*/
-	AssetTagn *string
-	/*AssetTagNic*/
-	AssetTagNic *string
-	/*AssetTagNie*/
-	AssetTagNie *string
-	/*AssetTagNiew*/
-	AssetTagNiew *string
-	/*AssetTagNisw*/
-	AssetTagNisw *string
-	/*ClusterID*/
-	ClusterID *string
-	/*ClusterIDn*/
-	ClusterIDn *string
-	/*ConsolePorts*/
-	ConsolePorts *string
-	/*ConsoleServerPorts*/
-	ConsoleServerPorts *string
-	/*Created*/
-	Created *string
-	/*CreatedGte*/
-	CreatedGte *string
-	/*CreatedLte*/
-	CreatedLte *string
-	/*DeviceBays*/
-	DeviceBays *string
-	/*DeviceTypeID*/
-	DeviceTypeID *string
-	/*DeviceTypeIDn*/
-	DeviceTypeIDn *string
-	/*Face*/
-	Face *string
-	/*Facen*/
-	Facen *string
-	/*HasPrimaryIP*/
-	HasPrimaryIP *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Interfaces*/
-	Interfaces *string
-	/*IsFullDepth*/
-	IsFullDepth *string
-	/*LastUpdated*/
-	LastUpdated *string
-	/*LastUpdatedGte*/
-	LastUpdatedGte *string
-	/*LastUpdatedLte*/
-	LastUpdatedLte *string
-	/*Limit
-	  Number of results to return per page.
 
+	// AssetTagIc.
+	AssetTagIc *string
+
+	// AssetTagIe.
+	AssetTagIe *string
+
+	// AssetTagIew.
+	AssetTagIew *string
+
+	// AssetTagIsw.
+	AssetTagIsw *string
+
+	// AssetTagn.
+	AssetTagn *string
+
+	// AssetTagNic.
+	AssetTagNic *string
+
+	// AssetTagNie.
+	AssetTagNie *string
+
+	// AssetTagNiew.
+	AssetTagNiew *string
+
+	// AssetTagNisw.
+	AssetTagNisw *string
+
+	// ClusterID.
+	ClusterID *string
+
+	// ClusterIDn.
+	ClusterIDn *string
+
+	// ConsolePorts.
+	ConsolePorts *string
+
+	// ConsoleServerPorts.
+	ConsoleServerPorts *string
+
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// DeviceBays.
+	DeviceBays *string
+
+	// DeviceTypeID.
+	DeviceTypeID *string
+
+	// DeviceTypeIDn.
+	DeviceTypeIDn *string
+
+	// Face.
+	Face *string
+
+	// Facen.
+	Facen *string
+
+	// HasPrimaryIP.
+	HasPrimaryIP *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// Interfaces.
+	Interfaces *string
+
+	// IsFullDepth.
+	IsFullDepth *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*LocalContextData*/
-	LocalContextData *string
-	/*MacAddress*/
-	MacAddress *string
-	/*MacAddressIc*/
-	MacAddressIc *string
-	/*MacAddressIe*/
-	MacAddressIe *string
-	/*MacAddressIew*/
-	MacAddressIew *string
-	/*MacAddressIsw*/
-	MacAddressIsw *string
-	/*MacAddressn*/
-	MacAddressn *string
-	/*MacAddressNic*/
-	MacAddressNic *string
-	/*MacAddressNie*/
-	MacAddressNie *string
-	/*MacAddressNiew*/
-	MacAddressNiew *string
-	/*MacAddressNisw*/
-	MacAddressNisw *string
-	/*Manufacturer*/
-	Manufacturer *string
-	/*Manufacturern*/
-	Manufacturern *string
-	/*ManufacturerID*/
-	ManufacturerID *string
-	/*ManufacturerIDn*/
-	ManufacturerIDn *string
-	/*Model*/
-	Model *string
-	/*Modeln*/
-	Modeln *string
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// LocalContextData.
+	LocalContextData *string
+
+	// MacAddress.
+	MacAddress *string
+
+	// MacAddressIc.
+	MacAddressIc *string
+
+	// MacAddressIe.
+	MacAddressIe *string
+
+	// MacAddressIew.
+	MacAddressIew *string
+
+	// MacAddressIsw.
+	MacAddressIsw *string
+
+	// MacAddressn.
+	MacAddressn *string
+
+	// MacAddressNic.
+	MacAddressNic *string
+
+	// MacAddressNie.
+	MacAddressNie *string
+
+	// MacAddressNiew.
+	MacAddressNiew *string
+
+	// MacAddressNisw.
+	MacAddressNisw *string
+
+	// Manufacturer.
+	Manufacturer *string
+
+	// Manufacturern.
+	Manufacturern *string
+
+	// ManufacturerID.
+	ManufacturerID *string
+
+	// ManufacturerIDn.
+	ManufacturerIDn *string
+
+	// Model.
+	Model *string
+
+	// Modeln.
+	Modeln *string
+
+	// Name.
+	Name *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*PassThroughPorts*/
+
+	// PassThroughPorts.
 	PassThroughPorts *string
-	/*Platform*/
+
+	// Platform.
 	Platform *string
-	/*Platformn*/
+
+	// Platformn.
 	Platformn *string
-	/*PlatformID*/
+
+	// PlatformID.
 	PlatformID *string
-	/*PlatformIDn*/
+
+	// PlatformIDn.
 	PlatformIDn *string
-	/*Position*/
+
+	// Position.
 	Position *string
-	/*PositionGt*/
+
+	// PositionGt.
 	PositionGt *string
-	/*PositionGte*/
+
+	// PositionGte.
 	PositionGte *string
-	/*PositionLt*/
+
+	// PositionLt.
 	PositionLt *string
-	/*PositionLte*/
+
+	// PositionLte.
 	PositionLte *string
-	/*Positionn*/
+
+	// Positionn.
 	Positionn *string
-	/*PowerOutlets*/
+
+	// PowerOutlets.
 	PowerOutlets *string
-	/*PowerPorts*/
+
+	// PowerPorts.
 	PowerPorts *string
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*RackGroupID*/
+
+	// RackGroupID.
 	RackGroupID *string
-	/*RackGroupIDn*/
+
+	// RackGroupIDn.
 	RackGroupIDn *string
-	/*RackID*/
+
+	// RackID.
 	RackID *string
-	/*RackIDn*/
+
+	// RackIDn.
 	RackIDn *string
-	/*Region*/
+
+	// Region.
 	Region *string
-	/*Regionn*/
+
+	// Regionn.
 	Regionn *string
-	/*RegionID*/
+
+	// RegionID.
 	RegionID *string
-	/*RegionIDn*/
+
+	// RegionIDn.
 	RegionIDn *string
-	/*Role*/
+
+	// Role.
 	Role *string
-	/*Rolen*/
+
+	// Rolen.
 	Rolen *string
-	/*RoleID*/
+
+	// RoleID.
 	RoleID *string
-	/*RoleIDn*/
+
+	// RoleIDn.
 	RoleIDn *string
-	/*Serial*/
+
+	// Serial.
 	Serial *string
-	/*Site*/
+
+	// Site.
 	Site *string
-	/*Siten*/
+
+	// Siten.
 	Siten *string
-	/*SiteID*/
+
+	// SiteID.
 	SiteID *string
-	/*SiteIDn*/
+
+	// SiteIDn.
 	SiteIDn *string
-	/*Status*/
+
+	// Status.
 	Status *string
-	/*Statusn*/
+
+	// Statusn.
 	Statusn *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
-	/*Tenant*/
+
+	// Tenant.
 	Tenant *string
-	/*Tenantn*/
+
+	// Tenantn.
 	Tenantn *string
-	/*TenantGroup*/
+
+	// TenantGroup.
 	TenantGroup *string
-	/*TenantGroupn*/
+
+	// TenantGroupn.
 	TenantGroupn *string
-	/*TenantGroupID*/
+
+	// TenantGroupID.
 	TenantGroupID *string
-	/*TenantGroupIDn*/
+
+	// TenantGroupIDn.
 	TenantGroupIDn *string
-	/*TenantID*/
+
+	// TenantID.
 	TenantID *string
-	/*TenantIDn*/
+
+	// TenantIDn.
 	TenantIDn *string
-	/*VcPosition*/
+
+	// VcPosition.
 	VcPosition *string
-	/*VcPositionGt*/
+
+	// VcPositionGt.
 	VcPositionGt *string
-	/*VcPositionGte*/
+
+	// VcPositionGte.
 	VcPositionGte *string
-	/*VcPositionLt*/
+
+	// VcPositionLt.
 	VcPositionLt *string
-	/*VcPositionLte*/
+
+	// VcPositionLte.
 	VcPositionLte *string
-	/*VcPositionn*/
+
+	// VcPositionn.
 	VcPositionn *string
-	/*VcPriority*/
+
+	// VcPriority.
 	VcPriority *string
-	/*VcPriorityGt*/
+
+	// VcPriorityGt.
 	VcPriorityGt *string
-	/*VcPriorityGte*/
+
+	// VcPriorityGte.
 	VcPriorityGte *string
-	/*VcPriorityLt*/
+
+	// VcPriorityLt.
 	VcPriorityLt *string
-	/*VcPriorityLte*/
+
+	// VcPriorityLte.
 	VcPriorityLte *string
-	/*VcPriorityn*/
+
+	// VcPriorityn.
 	VcPriorityn *string
-	/*VirtualChassisID*/
+
+	// VirtualChassisID.
 	VirtualChassisID *string
-	/*VirtualChassisIDn*/
+
+	// VirtualChassisIDn.
 	VirtualChassisIDn *string
-	/*VirtualChassisMember*/
+
+	// VirtualChassisMember.
 	VirtualChassisMember *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim devices list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesListParams) WithDefaults() *DcimDevicesListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim devices list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim devices list params
@@ -1706,1936 +1840,2057 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 		// query param asset_tag
 		var qrAssetTag string
+
 		if o.AssetTag != nil {
 			qrAssetTag = *o.AssetTag
 		}
 		qAssetTag := qrAssetTag
 		if qAssetTag != "" {
+
 			if err := r.SetQueryParam("asset_tag", qAssetTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagIc != nil {
 
 		// query param asset_tag__ic
 		var qrAssetTagIc string
+
 		if o.AssetTagIc != nil {
 			qrAssetTagIc = *o.AssetTagIc
 		}
 		qAssetTagIc := qrAssetTagIc
 		if qAssetTagIc != "" {
+
 			if err := r.SetQueryParam("asset_tag__ic", qAssetTagIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagIe != nil {
 
 		// query param asset_tag__ie
 		var qrAssetTagIe string
+
 		if o.AssetTagIe != nil {
 			qrAssetTagIe = *o.AssetTagIe
 		}
 		qAssetTagIe := qrAssetTagIe
 		if qAssetTagIe != "" {
+
 			if err := r.SetQueryParam("asset_tag__ie", qAssetTagIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagIew != nil {
 
 		// query param asset_tag__iew
 		var qrAssetTagIew string
+
 		if o.AssetTagIew != nil {
 			qrAssetTagIew = *o.AssetTagIew
 		}
 		qAssetTagIew := qrAssetTagIew
 		if qAssetTagIew != "" {
+
 			if err := r.SetQueryParam("asset_tag__iew", qAssetTagIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagIsw != nil {
 
 		// query param asset_tag__isw
 		var qrAssetTagIsw string
+
 		if o.AssetTagIsw != nil {
 			qrAssetTagIsw = *o.AssetTagIsw
 		}
 		qAssetTagIsw := qrAssetTagIsw
 		if qAssetTagIsw != "" {
+
 			if err := r.SetQueryParam("asset_tag__isw", qAssetTagIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagn != nil {
 
 		// query param asset_tag__n
 		var qrAssetTagn string
+
 		if o.AssetTagn != nil {
 			qrAssetTagn = *o.AssetTagn
 		}
 		qAssetTagn := qrAssetTagn
 		if qAssetTagn != "" {
+
 			if err := r.SetQueryParam("asset_tag__n", qAssetTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagNic != nil {
 
 		// query param asset_tag__nic
 		var qrAssetTagNic string
+
 		if o.AssetTagNic != nil {
 			qrAssetTagNic = *o.AssetTagNic
 		}
 		qAssetTagNic := qrAssetTagNic
 		if qAssetTagNic != "" {
+
 			if err := r.SetQueryParam("asset_tag__nic", qAssetTagNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagNie != nil {
 
 		// query param asset_tag__nie
 		var qrAssetTagNie string
+
 		if o.AssetTagNie != nil {
 			qrAssetTagNie = *o.AssetTagNie
 		}
 		qAssetTagNie := qrAssetTagNie
 		if qAssetTagNie != "" {
+
 			if err := r.SetQueryParam("asset_tag__nie", qAssetTagNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagNiew != nil {
 
 		// query param asset_tag__niew
 		var qrAssetTagNiew string
+
 		if o.AssetTagNiew != nil {
 			qrAssetTagNiew = *o.AssetTagNiew
 		}
 		qAssetTagNiew := qrAssetTagNiew
 		if qAssetTagNiew != "" {
+
 			if err := r.SetQueryParam("asset_tag__niew", qAssetTagNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.AssetTagNisw != nil {
 
 		// query param asset_tag__nisw
 		var qrAssetTagNisw string
+
 		if o.AssetTagNisw != nil {
 			qrAssetTagNisw = *o.AssetTagNisw
 		}
 		qAssetTagNisw := qrAssetTagNisw
 		if qAssetTagNisw != "" {
+
 			if err := r.SetQueryParam("asset_tag__nisw", qAssetTagNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ClusterID != nil {
 
 		// query param cluster_id
 		var qrClusterID string
+
 		if o.ClusterID != nil {
 			qrClusterID = *o.ClusterID
 		}
 		qClusterID := qrClusterID
 		if qClusterID != "" {
+
 			if err := r.SetQueryParam("cluster_id", qClusterID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ClusterIDn != nil {
 
 		// query param cluster_id__n
 		var qrClusterIDn string
+
 		if o.ClusterIDn != nil {
 			qrClusterIDn = *o.ClusterIDn
 		}
 		qClusterIDn := qrClusterIDn
 		if qClusterIDn != "" {
+
 			if err := r.SetQueryParam("cluster_id__n", qClusterIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ConsolePorts != nil {
 
 		// query param console_ports
 		var qrConsolePorts string
+
 		if o.ConsolePorts != nil {
 			qrConsolePorts = *o.ConsolePorts
 		}
 		qConsolePorts := qrConsolePorts
 		if qConsolePorts != "" {
+
 			if err := r.SetQueryParam("console_ports", qConsolePorts); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ConsoleServerPorts != nil {
 
 		// query param console_server_ports
 		var qrConsoleServerPorts string
+
 		if o.ConsoleServerPorts != nil {
 			qrConsoleServerPorts = *o.ConsoleServerPorts
 		}
 		qConsoleServerPorts := qrConsoleServerPorts
 		if qConsoleServerPorts != "" {
+
 			if err := r.SetQueryParam("console_server_ports", qConsoleServerPorts); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Created != nil {
 
 		// query param created
 		var qrCreated string
+
 		if o.Created != nil {
 			qrCreated = *o.Created
 		}
 		qCreated := qrCreated
 		if qCreated != "" {
+
 			if err := r.SetQueryParam("created", qCreated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedGte != nil {
 
 		// query param created__gte
 		var qrCreatedGte string
+
 		if o.CreatedGte != nil {
 			qrCreatedGte = *o.CreatedGte
 		}
 		qCreatedGte := qrCreatedGte
 		if qCreatedGte != "" {
+
 			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedLte != nil {
 
 		// query param created__lte
 		var qrCreatedLte string
+
 		if o.CreatedLte != nil {
 			qrCreatedLte = *o.CreatedLte
 		}
 		qCreatedLte := qrCreatedLte
 		if qCreatedLte != "" {
+
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceBays != nil {
 
 		// query param device_bays
 		var qrDeviceBays string
+
 		if o.DeviceBays != nil {
 			qrDeviceBays = *o.DeviceBays
 		}
 		qDeviceBays := qrDeviceBays
 		if qDeviceBays != "" {
+
 			if err := r.SetQueryParam("device_bays", qDeviceBays); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceTypeID != nil {
 
 		// query param device_type_id
 		var qrDeviceTypeID string
+
 		if o.DeviceTypeID != nil {
 			qrDeviceTypeID = *o.DeviceTypeID
 		}
 		qDeviceTypeID := qrDeviceTypeID
 		if qDeviceTypeID != "" {
+
 			if err := r.SetQueryParam("device_type_id", qDeviceTypeID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceTypeIDn != nil {
 
 		// query param device_type_id__n
 		var qrDeviceTypeIDn string
+
 		if o.DeviceTypeIDn != nil {
 			qrDeviceTypeIDn = *o.DeviceTypeIDn
 		}
 		qDeviceTypeIDn := qrDeviceTypeIDn
 		if qDeviceTypeIDn != "" {
+
 			if err := r.SetQueryParam("device_type_id__n", qDeviceTypeIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Face != nil {
 
 		// query param face
 		var qrFace string
+
 		if o.Face != nil {
 			qrFace = *o.Face
 		}
 		qFace := qrFace
 		if qFace != "" {
+
 			if err := r.SetQueryParam("face", qFace); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Facen != nil {
 
 		// query param face__n
 		var qrFacen string
+
 		if o.Facen != nil {
 			qrFacen = *o.Facen
 		}
 		qFacen := qrFacen
 		if qFacen != "" {
+
 			if err := r.SetQueryParam("face__n", qFacen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.HasPrimaryIP != nil {
 
 		// query param has_primary_ip
 		var qrHasPrimaryIP string
+
 		if o.HasPrimaryIP != nil {
 			qrHasPrimaryIP = *o.HasPrimaryIP
 		}
 		qHasPrimaryIP := qrHasPrimaryIP
 		if qHasPrimaryIP != "" {
+
 			if err := r.SetQueryParam("has_primary_ip", qHasPrimaryIP); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Interfaces != nil {
 
 		// query param interfaces
 		var qrInterfaces string
+
 		if o.Interfaces != nil {
 			qrInterfaces = *o.Interfaces
 		}
 		qInterfaces := qrInterfaces
 		if qInterfaces != "" {
+
 			if err := r.SetQueryParam("interfaces", qInterfaces); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IsFullDepth != nil {
 
 		// query param is_full_depth
 		var qrIsFullDepth string
+
 		if o.IsFullDepth != nil {
 			qrIsFullDepth = *o.IsFullDepth
 		}
 		qIsFullDepth := qrIsFullDepth
 		if qIsFullDepth != "" {
+
 			if err := r.SetQueryParam("is_full_depth", qIsFullDepth); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdated != nil {
 
 		// query param last_updated
 		var qrLastUpdated string
+
 		if o.LastUpdated != nil {
 			qrLastUpdated = *o.LastUpdated
 		}
 		qLastUpdated := qrLastUpdated
 		if qLastUpdated != "" {
+
 			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
 		var qrLastUpdatedGte string
+
 		if o.LastUpdatedGte != nil {
 			qrLastUpdatedGte = *o.LastUpdatedGte
 		}
 		qLastUpdatedGte := qrLastUpdatedGte
 		if qLastUpdatedGte != "" {
+
 			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
 		var qrLastUpdatedLte string
+
 		if o.LastUpdatedLte != nil {
 			qrLastUpdatedLte = *o.LastUpdatedLte
 		}
 		qLastUpdatedLte := qrLastUpdatedLte
 		if qLastUpdatedLte != "" {
+
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LocalContextData != nil {
 
 		// query param local_context_data
 		var qrLocalContextData string
+
 		if o.LocalContextData != nil {
 			qrLocalContextData = *o.LocalContextData
 		}
 		qLocalContextData := qrLocalContextData
 		if qLocalContextData != "" {
+
 			if err := r.SetQueryParam("local_context_data", qLocalContextData); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddress != nil {
 
 		// query param mac_address
 		var qrMacAddress string
+
 		if o.MacAddress != nil {
 			qrMacAddress = *o.MacAddress
 		}
 		qMacAddress := qrMacAddress
 		if qMacAddress != "" {
+
 			if err := r.SetQueryParam("mac_address", qMacAddress); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddressIc != nil {
 
 		// query param mac_address__ic
 		var qrMacAddressIc string
+
 		if o.MacAddressIc != nil {
 			qrMacAddressIc = *o.MacAddressIc
 		}
 		qMacAddressIc := qrMacAddressIc
 		if qMacAddressIc != "" {
+
 			if err := r.SetQueryParam("mac_address__ic", qMacAddressIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddressIe != nil {
 
 		// query param mac_address__ie
 		var qrMacAddressIe string
+
 		if o.MacAddressIe != nil {
 			qrMacAddressIe = *o.MacAddressIe
 		}
 		qMacAddressIe := qrMacAddressIe
 		if qMacAddressIe != "" {
+
 			if err := r.SetQueryParam("mac_address__ie", qMacAddressIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddressIew != nil {
 
 		// query param mac_address__iew
 		var qrMacAddressIew string
+
 		if o.MacAddressIew != nil {
 			qrMacAddressIew = *o.MacAddressIew
 		}
 		qMacAddressIew := qrMacAddressIew
 		if qMacAddressIew != "" {
+
 			if err := r.SetQueryParam("mac_address__iew", qMacAddressIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddressIsw != nil {
 
 		// query param mac_address__isw
 		var qrMacAddressIsw string
+
 		if o.MacAddressIsw != nil {
 			qrMacAddressIsw = *o.MacAddressIsw
 		}
 		qMacAddressIsw := qrMacAddressIsw
 		if qMacAddressIsw != "" {
+
 			if err := r.SetQueryParam("mac_address__isw", qMacAddressIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddressn != nil {
 
 		// query param mac_address__n
 		var qrMacAddressn string
+
 		if o.MacAddressn != nil {
 			qrMacAddressn = *o.MacAddressn
 		}
 		qMacAddressn := qrMacAddressn
 		if qMacAddressn != "" {
+
 			if err := r.SetQueryParam("mac_address__n", qMacAddressn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddressNic != nil {
 
 		// query param mac_address__nic
 		var qrMacAddressNic string
+
 		if o.MacAddressNic != nil {
 			qrMacAddressNic = *o.MacAddressNic
 		}
 		qMacAddressNic := qrMacAddressNic
 		if qMacAddressNic != "" {
+
 			if err := r.SetQueryParam("mac_address__nic", qMacAddressNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddressNie != nil {
 
 		// query param mac_address__nie
 		var qrMacAddressNie string
+
 		if o.MacAddressNie != nil {
 			qrMacAddressNie = *o.MacAddressNie
 		}
 		qMacAddressNie := qrMacAddressNie
 		if qMacAddressNie != "" {
+
 			if err := r.SetQueryParam("mac_address__nie", qMacAddressNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddressNiew != nil {
 
 		// query param mac_address__niew
 		var qrMacAddressNiew string
+
 		if o.MacAddressNiew != nil {
 			qrMacAddressNiew = *o.MacAddressNiew
 		}
 		qMacAddressNiew := qrMacAddressNiew
 		if qMacAddressNiew != "" {
+
 			if err := r.SetQueryParam("mac_address__niew", qMacAddressNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MacAddressNisw != nil {
 
 		// query param mac_address__nisw
 		var qrMacAddressNisw string
+
 		if o.MacAddressNisw != nil {
 			qrMacAddressNisw = *o.MacAddressNisw
 		}
 		qMacAddressNisw := qrMacAddressNisw
 		if qMacAddressNisw != "" {
+
 			if err := r.SetQueryParam("mac_address__nisw", qMacAddressNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Manufacturer != nil {
 
 		// query param manufacturer
 		var qrManufacturer string
+
 		if o.Manufacturer != nil {
 			qrManufacturer = *o.Manufacturer
 		}
 		qManufacturer := qrManufacturer
 		if qManufacturer != "" {
+
 			if err := r.SetQueryParam("manufacturer", qManufacturer); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Manufacturern != nil {
 
 		// query param manufacturer__n
 		var qrManufacturern string
+
 		if o.Manufacturern != nil {
 			qrManufacturern = *o.Manufacturern
 		}
 		qManufacturern := qrManufacturern
 		if qManufacturern != "" {
+
 			if err := r.SetQueryParam("manufacturer__n", qManufacturern); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ManufacturerID != nil {
 
 		// query param manufacturer_id
 		var qrManufacturerID string
+
 		if o.ManufacturerID != nil {
 			qrManufacturerID = *o.ManufacturerID
 		}
 		qManufacturerID := qrManufacturerID
 		if qManufacturerID != "" {
+
 			if err := r.SetQueryParam("manufacturer_id", qManufacturerID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ManufacturerIDn != nil {
 
 		// query param manufacturer_id__n
 		var qrManufacturerIDn string
+
 		if o.ManufacturerIDn != nil {
 			qrManufacturerIDn = *o.ManufacturerIDn
 		}
 		qManufacturerIDn := qrManufacturerIDn
 		if qManufacturerIDn != "" {
+
 			if err := r.SetQueryParam("manufacturer_id__n", qManufacturerIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Model != nil {
 
 		// query param model
 		var qrModel string
+
 		if o.Model != nil {
 			qrModel = *o.Model
 		}
 		qModel := qrModel
 		if qModel != "" {
+
 			if err := r.SetQueryParam("model", qModel); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Modeln != nil {
 
 		// query param model__n
 		var qrModeln string
+
 		if o.Modeln != nil {
 			qrModeln = *o.Modeln
 		}
 		qModeln := qrModeln
 		if qModeln != "" {
+
 			if err := r.SetQueryParam("model__n", qModeln); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PassThroughPorts != nil {
 
 		// query param pass_through_ports
 		var qrPassThroughPorts string
+
 		if o.PassThroughPorts != nil {
 			qrPassThroughPorts = *o.PassThroughPorts
 		}
 		qPassThroughPorts := qrPassThroughPorts
 		if qPassThroughPorts != "" {
+
 			if err := r.SetQueryParam("pass_through_ports", qPassThroughPorts); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Platform != nil {
 
 		// query param platform
 		var qrPlatform string
+
 		if o.Platform != nil {
 			qrPlatform = *o.Platform
 		}
 		qPlatform := qrPlatform
 		if qPlatform != "" {
+
 			if err := r.SetQueryParam("platform", qPlatform); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Platformn != nil {
 
 		// query param platform__n
 		var qrPlatformn string
+
 		if o.Platformn != nil {
 			qrPlatformn = *o.Platformn
 		}
 		qPlatformn := qrPlatformn
 		if qPlatformn != "" {
+
 			if err := r.SetQueryParam("platform__n", qPlatformn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PlatformID != nil {
 
 		// query param platform_id
 		var qrPlatformID string
+
 		if o.PlatformID != nil {
 			qrPlatformID = *o.PlatformID
 		}
 		qPlatformID := qrPlatformID
 		if qPlatformID != "" {
+
 			if err := r.SetQueryParam("platform_id", qPlatformID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PlatformIDn != nil {
 
 		// query param platform_id__n
 		var qrPlatformIDn string
+
 		if o.PlatformIDn != nil {
 			qrPlatformIDn = *o.PlatformIDn
 		}
 		qPlatformIDn := qrPlatformIDn
 		if qPlatformIDn != "" {
+
 			if err := r.SetQueryParam("platform_id__n", qPlatformIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Position != nil {
 
 		// query param position
 		var qrPosition string
+
 		if o.Position != nil {
 			qrPosition = *o.Position
 		}
 		qPosition := qrPosition
 		if qPosition != "" {
+
 			if err := r.SetQueryParam("position", qPosition); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PositionGt != nil {
 
 		// query param position__gt
 		var qrPositionGt string
+
 		if o.PositionGt != nil {
 			qrPositionGt = *o.PositionGt
 		}
 		qPositionGt := qrPositionGt
 		if qPositionGt != "" {
+
 			if err := r.SetQueryParam("position__gt", qPositionGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PositionGte != nil {
 
 		// query param position__gte
 		var qrPositionGte string
+
 		if o.PositionGte != nil {
 			qrPositionGte = *o.PositionGte
 		}
 		qPositionGte := qrPositionGte
 		if qPositionGte != "" {
+
 			if err := r.SetQueryParam("position__gte", qPositionGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PositionLt != nil {
 
 		// query param position__lt
 		var qrPositionLt string
+
 		if o.PositionLt != nil {
 			qrPositionLt = *o.PositionLt
 		}
 		qPositionLt := qrPositionLt
 		if qPositionLt != "" {
+
 			if err := r.SetQueryParam("position__lt", qPositionLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PositionLte != nil {
 
 		// query param position__lte
 		var qrPositionLte string
+
 		if o.PositionLte != nil {
 			qrPositionLte = *o.PositionLte
 		}
 		qPositionLte := qrPositionLte
 		if qPositionLte != "" {
+
 			if err := r.SetQueryParam("position__lte", qPositionLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Positionn != nil {
 
 		// query param position__n
 		var qrPositionn string
+
 		if o.Positionn != nil {
 			qrPositionn = *o.Positionn
 		}
 		qPositionn := qrPositionn
 		if qPositionn != "" {
+
 			if err := r.SetQueryParam("position__n", qPositionn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PowerOutlets != nil {
 
 		// query param power_outlets
 		var qrPowerOutlets string
+
 		if o.PowerOutlets != nil {
 			qrPowerOutlets = *o.PowerOutlets
 		}
 		qPowerOutlets := qrPowerOutlets
 		if qPowerOutlets != "" {
+
 			if err := r.SetQueryParam("power_outlets", qPowerOutlets); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.PowerPorts != nil {
 
 		// query param power_ports
 		var qrPowerPorts string
+
 		if o.PowerPorts != nil {
 			qrPowerPorts = *o.PowerPorts
 		}
 		qPowerPorts := qrPowerPorts
 		if qPowerPorts != "" {
+
 			if err := r.SetQueryParam("power_ports", qPowerPorts); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RackGroupID != nil {
 
 		// query param rack_group_id
 		var qrRackGroupID string
+
 		if o.RackGroupID != nil {
 			qrRackGroupID = *o.RackGroupID
 		}
 		qRackGroupID := qrRackGroupID
 		if qRackGroupID != "" {
+
 			if err := r.SetQueryParam("rack_group_id", qRackGroupID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RackGroupIDn != nil {
 
 		// query param rack_group_id__n
 		var qrRackGroupIDn string
+
 		if o.RackGroupIDn != nil {
 			qrRackGroupIDn = *o.RackGroupIDn
 		}
 		qRackGroupIDn := qrRackGroupIDn
 		if qRackGroupIDn != "" {
+
 			if err := r.SetQueryParam("rack_group_id__n", qRackGroupIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RackID != nil {
 
 		// query param rack_id
 		var qrRackID string
+
 		if o.RackID != nil {
 			qrRackID = *o.RackID
 		}
 		qRackID := qrRackID
 		if qRackID != "" {
+
 			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RackIDn != nil {
 
 		// query param rack_id__n
 		var qrRackIDn string
+
 		if o.RackIDn != nil {
 			qrRackIDn = *o.RackIDn
 		}
 		qRackIDn := qrRackIDn
 		if qRackIDn != "" {
+
 			if err := r.SetQueryParam("rack_id__n", qRackIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Region != nil {
 
 		// query param region
 		var qrRegion string
+
 		if o.Region != nil {
 			qrRegion = *o.Region
 		}
 		qRegion := qrRegion
 		if qRegion != "" {
+
 			if err := r.SetQueryParam("region", qRegion); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Regionn != nil {
 
 		// query param region__n
 		var qrRegionn string
+
 		if o.Regionn != nil {
 			qrRegionn = *o.Regionn
 		}
 		qRegionn := qrRegionn
 		if qRegionn != "" {
+
 			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionID != nil {
 
 		// query param region_id
 		var qrRegionID string
+
 		if o.RegionID != nil {
 			qrRegionID = *o.RegionID
 		}
 		qRegionID := qrRegionID
 		if qRegionID != "" {
+
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionIDn != nil {
 
 		// query param region_id__n
 		var qrRegionIDn string
+
 		if o.RegionIDn != nil {
 			qrRegionIDn = *o.RegionIDn
 		}
 		qRegionIDn := qrRegionIDn
 		if qRegionIDn != "" {
+
 			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Role != nil {
 
 		// query param role
 		var qrRole string
+
 		if o.Role != nil {
 			qrRole = *o.Role
 		}
 		qRole := qrRole
 		if qRole != "" {
+
 			if err := r.SetQueryParam("role", qRole); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Rolen != nil {
 
 		// query param role__n
 		var qrRolen string
+
 		if o.Rolen != nil {
 			qrRolen = *o.Rolen
 		}
 		qRolen := qrRolen
 		if qRolen != "" {
+
 			if err := r.SetQueryParam("role__n", qRolen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RoleID != nil {
 
 		// query param role_id
 		var qrRoleID string
+
 		if o.RoleID != nil {
 			qrRoleID = *o.RoleID
 		}
 		qRoleID := qrRoleID
 		if qRoleID != "" {
+
 			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RoleIDn != nil {
 
 		// query param role_id__n
 		var qrRoleIDn string
+
 		if o.RoleIDn != nil {
 			qrRoleIDn = *o.RoleIDn
 		}
 		qRoleIDn := qrRoleIDn
 		if qRoleIDn != "" {
+
 			if err := r.SetQueryParam("role_id__n", qRoleIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Serial != nil {
 
 		// query param serial
 		var qrSerial string
+
 		if o.Serial != nil {
 			qrSerial = *o.Serial
 		}
 		qSerial := qrSerial
 		if qSerial != "" {
+
 			if err := r.SetQueryParam("serial", qSerial); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Site != nil {
 
 		// query param site
 		var qrSite string
+
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
 		qSite := qrSite
 		if qSite != "" {
+
 			if err := r.SetQueryParam("site", qSite); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Siten != nil {
 
 		// query param site__n
 		var qrSiten string
+
 		if o.Siten != nil {
 			qrSiten = *o.Siten
 		}
 		qSiten := qrSiten
 		if qSiten != "" {
+
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteID != nil {
 
 		// query param site_id
 		var qrSiteID string
+
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
 		qSiteID := qrSiteID
 		if qSiteID != "" {
+
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteIDn != nil {
 
 		// query param site_id__n
 		var qrSiteIDn string
+
 		if o.SiteIDn != nil {
 			qrSiteIDn = *o.SiteIDn
 		}
 		qSiteIDn := qrSiteIDn
 		if qSiteIDn != "" {
+
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Status != nil {
 
 		// query param status
 		var qrStatus string
+
 		if o.Status != nil {
 			qrStatus = *o.Status
 		}
 		qStatus := qrStatus
 		if qStatus != "" {
+
 			if err := r.SetQueryParam("status", qStatus); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Statusn != nil {
 
 		// query param status__n
 		var qrStatusn string
+
 		if o.Statusn != nil {
 			qrStatusn = *o.Statusn
 		}
 		qStatusn := qrStatusn
 		if qStatusn != "" {
+
 			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenant != nil {
 
 		// query param tenant
 		var qrTenant string
+
 		if o.Tenant != nil {
 			qrTenant = *o.Tenant
 		}
 		qTenant := qrTenant
 		if qTenant != "" {
+
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenantn != nil {
 
 		// query param tenant__n
 		var qrTenantn string
+
 		if o.Tenantn != nil {
 			qrTenantn = *o.Tenantn
 		}
 		qTenantn := qrTenantn
 		if qTenantn != "" {
+
 			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroup != nil {
 
 		// query param tenant_group
 		var qrTenantGroup string
+
 		if o.TenantGroup != nil {
 			qrTenantGroup = *o.TenantGroup
 		}
 		qTenantGroup := qrTenantGroup
 		if qTenantGroup != "" {
+
 			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupn != nil {
 
 		// query param tenant_group__n
 		var qrTenantGroupn string
+
 		if o.TenantGroupn != nil {
 			qrTenantGroupn = *o.TenantGroupn
 		}
 		qTenantGroupn := qrTenantGroupn
 		if qTenantGroupn != "" {
+
 			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupID != nil {
 
 		// query param tenant_group_id
 		var qrTenantGroupID string
+
 		if o.TenantGroupID != nil {
 			qrTenantGroupID = *o.TenantGroupID
 		}
 		qTenantGroupID := qrTenantGroupID
 		if qTenantGroupID != "" {
+
 			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupIDn != nil {
 
 		// query param tenant_group_id__n
 		var qrTenantGroupIDn string
+
 		if o.TenantGroupIDn != nil {
 			qrTenantGroupIDn = *o.TenantGroupIDn
 		}
 		qTenantGroupIDn := qrTenantGroupIDn
 		if qTenantGroupIDn != "" {
+
 			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantID != nil {
 
 		// query param tenant_id
 		var qrTenantID string
+
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
 		qTenantID := qrTenantID
 		if qTenantID != "" {
+
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantIDn != nil {
 
 		// query param tenant_id__n
 		var qrTenantIDn string
+
 		if o.TenantIDn != nil {
 			qrTenantIDn = *o.TenantIDn
 		}
 		qTenantIDn := qrTenantIDn
 		if qTenantIDn != "" {
+
 			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPosition != nil {
 
 		// query param vc_position
 		var qrVcPosition string
+
 		if o.VcPosition != nil {
 			qrVcPosition = *o.VcPosition
 		}
 		qVcPosition := qrVcPosition
 		if qVcPosition != "" {
+
 			if err := r.SetQueryParam("vc_position", qVcPosition); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPositionGt != nil {
 
 		// query param vc_position__gt
 		var qrVcPositionGt string
+
 		if o.VcPositionGt != nil {
 			qrVcPositionGt = *o.VcPositionGt
 		}
 		qVcPositionGt := qrVcPositionGt
 		if qVcPositionGt != "" {
+
 			if err := r.SetQueryParam("vc_position__gt", qVcPositionGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPositionGte != nil {
 
 		// query param vc_position__gte
 		var qrVcPositionGte string
+
 		if o.VcPositionGte != nil {
 			qrVcPositionGte = *o.VcPositionGte
 		}
 		qVcPositionGte := qrVcPositionGte
 		if qVcPositionGte != "" {
+
 			if err := r.SetQueryParam("vc_position__gte", qVcPositionGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPositionLt != nil {
 
 		// query param vc_position__lt
 		var qrVcPositionLt string
+
 		if o.VcPositionLt != nil {
 			qrVcPositionLt = *o.VcPositionLt
 		}
 		qVcPositionLt := qrVcPositionLt
 		if qVcPositionLt != "" {
+
 			if err := r.SetQueryParam("vc_position__lt", qVcPositionLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPositionLte != nil {
 
 		// query param vc_position__lte
 		var qrVcPositionLte string
+
 		if o.VcPositionLte != nil {
 			qrVcPositionLte = *o.VcPositionLte
 		}
 		qVcPositionLte := qrVcPositionLte
 		if qVcPositionLte != "" {
+
 			if err := r.SetQueryParam("vc_position__lte", qVcPositionLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPositionn != nil {
 
 		// query param vc_position__n
 		var qrVcPositionn string
+
 		if o.VcPositionn != nil {
 			qrVcPositionn = *o.VcPositionn
 		}
 		qVcPositionn := qrVcPositionn
 		if qVcPositionn != "" {
+
 			if err := r.SetQueryParam("vc_position__n", qVcPositionn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPriority != nil {
 
 		// query param vc_priority
 		var qrVcPriority string
+
 		if o.VcPriority != nil {
 			qrVcPriority = *o.VcPriority
 		}
 		qVcPriority := qrVcPriority
 		if qVcPriority != "" {
+
 			if err := r.SetQueryParam("vc_priority", qVcPriority); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPriorityGt != nil {
 
 		// query param vc_priority__gt
 		var qrVcPriorityGt string
+
 		if o.VcPriorityGt != nil {
 			qrVcPriorityGt = *o.VcPriorityGt
 		}
 		qVcPriorityGt := qrVcPriorityGt
 		if qVcPriorityGt != "" {
+
 			if err := r.SetQueryParam("vc_priority__gt", qVcPriorityGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPriorityGte != nil {
 
 		// query param vc_priority__gte
 		var qrVcPriorityGte string
+
 		if o.VcPriorityGte != nil {
 			qrVcPriorityGte = *o.VcPriorityGte
 		}
 		qVcPriorityGte := qrVcPriorityGte
 		if qVcPriorityGte != "" {
+
 			if err := r.SetQueryParam("vc_priority__gte", qVcPriorityGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPriorityLt != nil {
 
 		// query param vc_priority__lt
 		var qrVcPriorityLt string
+
 		if o.VcPriorityLt != nil {
 			qrVcPriorityLt = *o.VcPriorityLt
 		}
 		qVcPriorityLt := qrVcPriorityLt
 		if qVcPriorityLt != "" {
+
 			if err := r.SetQueryParam("vc_priority__lt", qVcPriorityLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPriorityLte != nil {
 
 		// query param vc_priority__lte
 		var qrVcPriorityLte string
+
 		if o.VcPriorityLte != nil {
 			qrVcPriorityLte = *o.VcPriorityLte
 		}
 		qVcPriorityLte := qrVcPriorityLte
 		if qVcPriorityLte != "" {
+
 			if err := r.SetQueryParam("vc_priority__lte", qVcPriorityLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VcPriorityn != nil {
 
 		// query param vc_priority__n
 		var qrVcPriorityn string
+
 		if o.VcPriorityn != nil {
 			qrVcPriorityn = *o.VcPriorityn
 		}
 		qVcPriorityn := qrVcPriorityn
 		if qVcPriorityn != "" {
+
 			if err := r.SetQueryParam("vc_priority__n", qVcPriorityn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VirtualChassisID != nil {
 
 		// query param virtual_chassis_id
 		var qrVirtualChassisID string
+
 		if o.VirtualChassisID != nil {
 			qrVirtualChassisID = *o.VirtualChassisID
 		}
 		qVirtualChassisID := qrVirtualChassisID
 		if qVirtualChassisID != "" {
+
 			if err := r.SetQueryParam("virtual_chassis_id", qVirtualChassisID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VirtualChassisIDn != nil {
 
 		// query param virtual_chassis_id__n
 		var qrVirtualChassisIDn string
+
 		if o.VirtualChassisIDn != nil {
 			qrVirtualChassisIDn = *o.VirtualChassisIDn
 		}
 		qVirtualChassisIDn := qrVirtualChassisIDn
 		if qVirtualChassisIDn != "" {
+
 			if err := r.SetQueryParam("virtual_chassis_id__n", qVirtualChassisIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.VirtualChassisMember != nil {
 
 		// query param virtual_chassis_member
 		var qrVirtualChassisMember string
+
 		if o.VirtualChassisMember != nil {
 			qrVirtualChassisMember = *o.VirtualChassisMember
 		}
 		qVirtualChassisMember := qrVirtualChassisMember
 		if qVirtualChassisMember != "" {
+
 			if err := r.SetQueryParam("virtual_chassis_member", qVirtualChassisMember); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

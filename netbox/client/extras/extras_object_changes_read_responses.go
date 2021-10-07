@@ -61,7 +61,7 @@ func NewExtrasObjectChangesReadOK() *ExtrasObjectChangesReadOK {
 	return &ExtrasObjectChangesReadOK{}
 }
 
-/*ExtrasObjectChangesReadOK handles this case with default header values.
+/* ExtrasObjectChangesReadOK describes a response with status code 200, with default header values.
 
 ExtrasObjectChangesReadOK extras object changes read o k
 */
@@ -72,7 +72,6 @@ type ExtrasObjectChangesReadOK struct {
 func (o *ExtrasObjectChangesReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extrasObjectChangesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasObjectChangesReadOK) GetPayload() *models.ObjectChange {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasObjectChangesReadDefault(code int) *ExtrasObjectChangesReadDefault
 	}
 }
 
-/*ExtrasObjectChangesReadDefault handles this case with default header values.
+/* ExtrasObjectChangesReadDefault describes a response with status code -1, with default header values.
 
 ExtrasObjectChangesReadDefault extras object changes read default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasObjectChangesReadDefault) Code() int {
 func (o *ExtrasObjectChangesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extras_object-changes_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasObjectChangesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

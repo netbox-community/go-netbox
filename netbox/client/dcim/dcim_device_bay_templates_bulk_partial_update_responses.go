@@ -61,7 +61,7 @@ func NewDcimDeviceBayTemplatesBulkPartialUpdateOK() *DcimDeviceBayTemplatesBulkP
 	return &DcimDeviceBayTemplatesBulkPartialUpdateOK{}
 }
 
-/*DcimDeviceBayTemplatesBulkPartialUpdateOK handles this case with default header values.
+/* DcimDeviceBayTemplatesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimDeviceBayTemplatesBulkPartialUpdateOK dcim device bay templates bulk partial update o k
 */
@@ -72,7 +72,6 @@ type DcimDeviceBayTemplatesBulkPartialUpdateOK struct {
 func (o *DcimDeviceBayTemplatesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceBayTemplatesBulkPartialUpdateOK) GetPayload() *models.DeviceBayTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDeviceBayTemplatesBulkPartialUpdateDefault(code int) *DcimDeviceBayT
 	}
 }
 
-/*DcimDeviceBayTemplatesBulkPartialUpdateDefault handles this case with default header values.
+/* DcimDeviceBayTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceBayTemplatesBulkPartialUpdateDefault dcim device bay templates bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimDeviceBayTemplatesBulkPartialUpdateDefault) Code() int {
 func (o *DcimDeviceBayTemplatesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-bay-templates/][%d] dcim_device-bay-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceBayTemplatesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

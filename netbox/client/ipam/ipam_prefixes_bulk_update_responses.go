@@ -61,7 +61,7 @@ func NewIpamPrefixesBulkUpdateOK() *IpamPrefixesBulkUpdateOK {
 	return &IpamPrefixesBulkUpdateOK{}
 }
 
-/*IpamPrefixesBulkUpdateOK handles this case with default header values.
+/* IpamPrefixesBulkUpdateOK describes a response with status code 200, with default header values.
 
 IpamPrefixesBulkUpdateOK ipam prefixes bulk update o k
 */
@@ -72,7 +72,6 @@ type IpamPrefixesBulkUpdateOK struct {
 func (o *IpamPrefixesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/prefixes/][%d] ipamPrefixesBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamPrefixesBulkUpdateOK) GetPayload() *models.Prefix {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamPrefixesBulkUpdateDefault(code int) *IpamPrefixesBulkUpdateDefault {
 	}
 }
 
-/*IpamPrefixesBulkUpdateDefault handles this case with default header values.
+/* IpamPrefixesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesBulkUpdateDefault ipam prefixes bulk update default
 */
@@ -114,7 +113,6 @@ func (o *IpamPrefixesBulkUpdateDefault) Code() int {
 func (o *IpamPrefixesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/prefixes/][%d] ipam_prefixes_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamPrefixesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

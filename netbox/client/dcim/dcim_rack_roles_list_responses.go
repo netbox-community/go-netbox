@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimRackRolesListOK() *DcimRackRolesListOK {
 	return &DcimRackRolesListOK{}
 }
 
-/*DcimRackRolesListOK handles this case with default header values.
+/* DcimRackRolesListOK describes a response with status code 200, with default header values.
 
 DcimRackRolesListOK dcim rack roles list o k
 */
@@ -76,7 +77,6 @@ type DcimRackRolesListOK struct {
 func (o *DcimRackRolesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-roles/][%d] dcimRackRolesListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackRolesListOK) GetPayload() *DcimRackRolesListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimRackRolesListDefault(code int) *DcimRackRolesListDefault {
 	}
 }
 
-/*DcimRackRolesListDefault handles this case with default header values.
+/* DcimRackRolesListDefault describes a response with status code -1, with default header values.
 
 DcimRackRolesListDefault dcim rack roles list default
 */
@@ -118,7 +118,6 @@ func (o *DcimRackRolesListDefault) Code() int {
 func (o *DcimRackRolesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-roles/][%d] dcim_rack-roles_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackRolesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimRackRolesListOKBody) validateCount(formats strfmt.Registry) error {
 }
 
 func (o *DcimRackRolesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimRackRolesListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *DcimRackRolesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimRackRolesListOKBody) validateResults(formats strfmt.Registry) error
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimRackRolesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim rack roles list o k body based on the context it is used
+func (o *DcimRackRolesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimRackRolesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimRackRolesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

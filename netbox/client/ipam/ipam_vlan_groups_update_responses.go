@@ -61,7 +61,7 @@ func NewIpamVlanGroupsUpdateOK() *IpamVlanGroupsUpdateOK {
 	return &IpamVlanGroupsUpdateOK{}
 }
 
-/*IpamVlanGroupsUpdateOK handles this case with default header values.
+/* IpamVlanGroupsUpdateOK describes a response with status code 200, with default header values.
 
 IpamVlanGroupsUpdateOK ipam vlan groups update o k
 */
@@ -72,7 +72,6 @@ type IpamVlanGroupsUpdateOK struct {
 func (o *IpamVlanGroupsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vlan-groups/{id}/][%d] ipamVlanGroupsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVlanGroupsUpdateOK) GetPayload() *models.VLANGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVlanGroupsUpdateDefault(code int) *IpamVlanGroupsUpdateDefault {
 	}
 }
 
-/*IpamVlanGroupsUpdateDefault handles this case with default header values.
+/* IpamVlanGroupsUpdateDefault describes a response with status code -1, with default header values.
 
 IpamVlanGroupsUpdateDefault ipam vlan groups update default
 */
@@ -114,7 +113,6 @@ func (o *IpamVlanGroupsUpdateDefault) Code() int {
 func (o *IpamVlanGroupsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vlan-groups/{id}/][%d] ipam_vlan-groups_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVlanGroupsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

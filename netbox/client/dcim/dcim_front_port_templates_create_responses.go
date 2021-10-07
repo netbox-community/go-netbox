@@ -61,7 +61,7 @@ func NewDcimFrontPortTemplatesCreateCreated() *DcimFrontPortTemplatesCreateCreat
 	return &DcimFrontPortTemplatesCreateCreated{}
 }
 
-/*DcimFrontPortTemplatesCreateCreated handles this case with default header values.
+/* DcimFrontPortTemplatesCreateCreated describes a response with status code 201, with default header values.
 
 DcimFrontPortTemplatesCreateCreated dcim front port templates create created
 */
@@ -72,7 +72,6 @@ type DcimFrontPortTemplatesCreateCreated struct {
 func (o *DcimFrontPortTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/front-port-templates/][%d] dcimFrontPortTemplatesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimFrontPortTemplatesCreateCreated) GetPayload() *models.FrontPortTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimFrontPortTemplatesCreateDefault(code int) *DcimFrontPortTemplatesCre
 	}
 }
 
-/*DcimFrontPortTemplatesCreateDefault handles this case with default header values.
+/* DcimFrontPortTemplatesCreateDefault describes a response with status code -1, with default header values.
 
 DcimFrontPortTemplatesCreateDefault dcim front port templates create default
 */
@@ -114,7 +113,6 @@ func (o *DcimFrontPortTemplatesCreateDefault) Code() int {
 func (o *DcimFrontPortTemplatesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/front-port-templates/][%d] dcim_front-port-templates_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimFrontPortTemplatesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

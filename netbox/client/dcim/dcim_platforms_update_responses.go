@@ -61,7 +61,7 @@ func NewDcimPlatformsUpdateOK() *DcimPlatformsUpdateOK {
 	return &DcimPlatformsUpdateOK{}
 }
 
-/*DcimPlatformsUpdateOK handles this case with default header values.
+/* DcimPlatformsUpdateOK describes a response with status code 200, with default header values.
 
 DcimPlatformsUpdateOK dcim platforms update o k
 */
@@ -72,7 +72,6 @@ type DcimPlatformsUpdateOK struct {
 func (o *DcimPlatformsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcimPlatformsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPlatformsUpdateOK) GetPayload() *models.Platform {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPlatformsUpdateDefault(code int) *DcimPlatformsUpdateDefault {
 	}
 }
 
-/*DcimPlatformsUpdateDefault handles this case with default header values.
+/* DcimPlatformsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPlatformsUpdateDefault dcim platforms update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPlatformsUpdateDefault) Code() int {
 func (o *DcimPlatformsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/platforms/{id}/][%d] dcim_platforms_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPlatformsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -32,114 +32,154 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasJobResultsListParams creates a new ExtrasJobResultsListParams object
-// with the default values initialized.
+// NewExtrasJobResultsListParams creates a new ExtrasJobResultsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasJobResultsListParams() *ExtrasJobResultsListParams {
-	var ()
 	return &ExtrasJobResultsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasJobResultsListParamsWithTimeout creates a new ExtrasJobResultsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasJobResultsListParamsWithTimeout(timeout time.Duration) *ExtrasJobResultsListParams {
-	var ()
 	return &ExtrasJobResultsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasJobResultsListParamsWithContext creates a new ExtrasJobResultsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasJobResultsListParamsWithContext(ctx context.Context) *ExtrasJobResultsListParams {
-	var ()
 	return &ExtrasJobResultsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasJobResultsListParamsWithHTTPClient creates a new ExtrasJobResultsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasJobResultsListParamsWithHTTPClient(client *http.Client) *ExtrasJobResultsListParams {
-	var ()
 	return &ExtrasJobResultsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasJobResultsListParams contains all the parameters to send to the API endpoint
-for the extras job results list operation typically these are written to a http.Request
+/* ExtrasJobResultsListParams contains all the parameters to send to the API endpoint
+   for the extras job results list operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasJobResultsListParams struct {
 
-	/*Completed*/
+	// Completed.
 	Completed *string
-	/*Created*/
-	Created *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Limit
-	  Number of results to return per page.
 
+	// Created.
+	Created *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*ObjType*/
-	ObjType *string
-	/*ObjTypen*/
-	ObjTypen *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Name.
+	Name *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	// ObjType.
+	ObjType *string
+
+	// ObjTypen.
+	ObjTypen *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*Status*/
+
+	// Status.
 	Status *string
-	/*Statusn*/
+
+	// Statusn.
 	Statusn *string
-	/*User*/
+
+	// User.
 	User *string
-	/*Usern*/
+
+	// Usern.
 	Usern *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras job results list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasJobResultsListParams) WithDefaults() *ExtrasJobResultsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras job results list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasJobResultsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras job results list params
@@ -484,432 +524,459 @@ func (o *ExtrasJobResultsListParams) WriteToRequest(r runtime.ClientRequest, reg
 
 		// query param completed
 		var qrCompleted string
+
 		if o.Completed != nil {
 			qrCompleted = *o.Completed
 		}
 		qCompleted := qrCompleted
 		if qCompleted != "" {
+
 			if err := r.SetQueryParam("completed", qCompleted); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Created != nil {
 
 		// query param created
 		var qrCreated string
+
 		if o.Created != nil {
 			qrCreated = *o.Created
 		}
 		qCreated := qrCreated
 		if qCreated != "" {
+
 			if err := r.SetQueryParam("created", qCreated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjType != nil {
 
 		// query param obj_type
 		var qrObjType string
+
 		if o.ObjType != nil {
 			qrObjType = *o.ObjType
 		}
 		qObjType := qrObjType
 		if qObjType != "" {
+
 			if err := r.SetQueryParam("obj_type", qObjType); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ObjTypen != nil {
 
 		// query param obj_type__n
 		var qrObjTypen string
+
 		if o.ObjTypen != nil {
 			qrObjTypen = *o.ObjTypen
 		}
 		qObjTypen := qrObjTypen
 		if qObjTypen != "" {
+
 			if err := r.SetQueryParam("obj_type__n", qObjTypen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Status != nil {
 
 		// query param status
 		var qrStatus string
+
 		if o.Status != nil {
 			qrStatus = *o.Status
 		}
 		qStatus := qrStatus
 		if qStatus != "" {
+
 			if err := r.SetQueryParam("status", qStatus); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Statusn != nil {
 
 		// query param status__n
 		var qrStatusn string
+
 		if o.Statusn != nil {
 			qrStatusn = *o.Statusn
 		}
 		qStatusn := qrStatusn
 		if qStatusn != "" {
+
 			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.User != nil {
 
 		// query param user
 		var qrUser string
+
 		if o.User != nil {
 			qrUser = *o.User
 		}
 		qUser := qrUser
 		if qUser != "" {
+
 			if err := r.SetQueryParam("user", qUser); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Usern != nil {
 
 		// query param user__n
 		var qrUsern string
+
 		if o.Usern != nil {
 			qrUsern = *o.Usern
 		}
 		qUsern := qrUsern
 		if qUsern != "" {
+
 			if err := r.SetQueryParam("user__n", qUsern); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

@@ -61,7 +61,7 @@ func NewDcimCablesReadOK() *DcimCablesReadOK {
 	return &DcimCablesReadOK{}
 }
 
-/*DcimCablesReadOK handles this case with default header values.
+/* DcimCablesReadOK describes a response with status code 200, with default header values.
 
 DcimCablesReadOK dcim cables read o k
 */
@@ -72,7 +72,6 @@ type DcimCablesReadOK struct {
 func (o *DcimCablesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/cables/{id}/][%d] dcimCablesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimCablesReadOK) GetPayload() *models.Cable {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimCablesReadDefault(code int) *DcimCablesReadDefault {
 	}
 }
 
-/*DcimCablesReadDefault handles this case with default header values.
+/* DcimCablesReadDefault describes a response with status code -1, with default header values.
 
 DcimCablesReadDefault dcim cables read default
 */
@@ -114,7 +113,6 @@ func (o *DcimCablesReadDefault) Code() int {
 func (o *DcimCablesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/cables/{id}/][%d] dcim_cables_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimCablesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,7 +59,7 @@ func NewCircuitsCircuitTerminationsBulkDeleteNoContent() *CircuitsCircuitTermina
 	return &CircuitsCircuitTerminationsBulkDeleteNoContent{}
 }
 
-/*CircuitsCircuitTerminationsBulkDeleteNoContent handles this case with default header values.
+/* CircuitsCircuitTerminationsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 CircuitsCircuitTerminationsBulkDeleteNoContent circuits circuit terminations bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewCircuitsCircuitTerminationsBulkDeleteDefault(code int) *CircuitsCircuitT
 	}
 }
 
-/*CircuitsCircuitTerminationsBulkDeleteDefault handles this case with default header values.
+/* CircuitsCircuitTerminationsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsBulkDeleteDefault circuits circuit terminations bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *CircuitsCircuitTerminationsBulkDeleteDefault) Code() int {
 func (o *CircuitsCircuitTerminationsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/][%d] circuits_circuit-terminations_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

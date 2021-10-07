@@ -61,7 +61,7 @@ func NewDcimPowerOutletTemplatesUpdateOK() *DcimPowerOutletTemplatesUpdateOK {
 	return &DcimPowerOutletTemplatesUpdateOK{}
 }
 
-/*DcimPowerOutletTemplatesUpdateOK handles this case with default header values.
+/* DcimPowerOutletTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletTemplatesUpdateOK dcim power outlet templates update o k
 */
@@ -72,7 +72,6 @@ type DcimPowerOutletTemplatesUpdateOK struct {
 func (o *DcimPowerOutletTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerOutletTemplatesUpdateOK) GetPayload() *models.PowerOutletTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerOutletTemplatesUpdateDefault(code int) *DcimPowerOutletTemplate
 	}
 }
 
-/*DcimPowerOutletTemplatesUpdateDefault handles this case with default header values.
+/* DcimPowerOutletTemplatesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletTemplatesUpdateDefault dcim power outlet templates update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerOutletTemplatesUpdateDefault) Code() int {
 func (o *DcimPowerOutletTemplatesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerOutletTemplatesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

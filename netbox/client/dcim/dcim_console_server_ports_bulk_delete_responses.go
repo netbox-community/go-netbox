@@ -59,7 +59,7 @@ func NewDcimConsoleServerPortsBulkDeleteNoContent() *DcimConsoleServerPortsBulkD
 	return &DcimConsoleServerPortsBulkDeleteNoContent{}
 }
 
-/*DcimConsoleServerPortsBulkDeleteNoContent handles this case with default header values.
+/* DcimConsoleServerPortsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimConsoleServerPortsBulkDeleteNoContent dcim console server ports bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimConsoleServerPortsBulkDeleteDefault(code int) *DcimConsoleServerPort
 	}
 }
 
-/*DcimConsoleServerPortsBulkDeleteDefault handles this case with default header values.
+/* DcimConsoleServerPortsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortsBulkDeleteDefault dcim console server ports bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimConsoleServerPortsBulkDeleteDefault) Code() int {
 func (o *DcimConsoleServerPortsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/console-server-ports/][%d] dcim_console-server-ports_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimConsoleServerPortsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

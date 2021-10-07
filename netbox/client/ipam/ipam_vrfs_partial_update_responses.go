@@ -61,7 +61,7 @@ func NewIpamVrfsPartialUpdateOK() *IpamVrfsPartialUpdateOK {
 	return &IpamVrfsPartialUpdateOK{}
 }
 
-/*IpamVrfsPartialUpdateOK handles this case with default header values.
+/* IpamVrfsPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamVrfsPartialUpdateOK ipam vrfs partial update o k
 */
@@ -72,7 +72,6 @@ type IpamVrfsPartialUpdateOK struct {
 func (o *IpamVrfsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipamVrfsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVrfsPartialUpdateOK) GetPayload() *models.VRF {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVrfsPartialUpdateDefault(code int) *IpamVrfsPartialUpdateDefault {
 	}
 }
 
-/*IpamVrfsPartialUpdateDefault handles this case with default header values.
+/* IpamVrfsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamVrfsPartialUpdateDefault ipam vrfs partial update default
 */
@@ -114,7 +113,6 @@ func (o *IpamVrfsPartialUpdateDefault) Code() int {
 func (o *IpamVrfsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/vrfs/{id}/][%d] ipam_vrfs_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVrfsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

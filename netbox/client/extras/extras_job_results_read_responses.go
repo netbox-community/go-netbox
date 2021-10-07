@@ -61,7 +61,7 @@ func NewExtrasJobResultsReadOK() *ExtrasJobResultsReadOK {
 	return &ExtrasJobResultsReadOK{}
 }
 
-/*ExtrasJobResultsReadOK handles this case with default header values.
+/* ExtrasJobResultsReadOK describes a response with status code 200, with default header values.
 
 ExtrasJobResultsReadOK extras job results read o k
 */
@@ -72,7 +72,6 @@ type ExtrasJobResultsReadOK struct {
 func (o *ExtrasJobResultsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extrasJobResultsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasJobResultsReadOK) GetPayload() *models.JobResult {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasJobResultsReadDefault(code int) *ExtrasJobResultsReadDefault {
 	}
 }
 
-/*ExtrasJobResultsReadDefault handles this case with default header values.
+/* ExtrasJobResultsReadDefault describes a response with status code -1, with default header values.
 
 ExtrasJobResultsReadDefault extras job results read default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasJobResultsReadDefault) Code() int {
 func (o *ExtrasJobResultsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extras_job-results_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasJobResultsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

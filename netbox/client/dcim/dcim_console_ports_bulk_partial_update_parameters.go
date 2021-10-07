@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimConsolePortsBulkPartialUpdateParams creates a new DcimConsolePortsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewDcimConsolePortsBulkPartialUpdateParams creates a new DcimConsolePortsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConsolePortsBulkPartialUpdateParams() *DcimConsolePortsBulkPartialUpdateParams {
-	var ()
 	return &DcimConsolePortsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConsolePortsBulkPartialUpdateParamsWithTimeout creates a new DcimConsolePortsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConsolePortsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimConsolePortsBulkPartialUpdateParams {
-	var ()
 	return &DcimConsolePortsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConsolePortsBulkPartialUpdateParamsWithContext creates a new DcimConsolePortsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConsolePortsBulkPartialUpdateParamsWithContext(ctx context.Context) *DcimConsolePortsBulkPartialUpdateParams {
-	var ()
 	return &DcimConsolePortsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConsolePortsBulkPartialUpdateParamsWithHTTPClient creates a new DcimConsolePortsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConsolePortsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimConsolePortsBulkPartialUpdateParams {
-	var ()
 	return &DcimConsolePortsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConsolePortsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim console ports bulk partial update operation typically these are written to a http.Request
+/* DcimConsolePortsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim console ports bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConsolePortsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableConsolePort
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim console ports bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortsBulkPartialUpdateParams) WithDefaults() *DcimConsolePortsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim console ports bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim console ports bulk partial update params
@@ -136,7 +150,6 @@ func (o *DcimConsolePortsBulkPartialUpdateParams) WriteToRequest(r runtime.Clien
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewIpamRirsListOK() *IpamRirsListOK {
 	return &IpamRirsListOK{}
 }
 
-/*IpamRirsListOK handles this case with default header values.
+/* IpamRirsListOK describes a response with status code 200, with default header values.
 
 IpamRirsListOK ipam rirs list o k
 */
@@ -76,7 +77,6 @@ type IpamRirsListOK struct {
 func (o *IpamRirsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/rirs/][%d] ipamRirsListOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRirsListOK) GetPayload() *IpamRirsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewIpamRirsListDefault(code int) *IpamRirsListDefault {
 	}
 }
 
-/*IpamRirsListDefault handles this case with default header values.
+/* IpamRirsListDefault describes a response with status code -1, with default header values.
 
 IpamRirsListDefault ipam rirs list default
 */
@@ -118,7 +118,6 @@ func (o *IpamRirsListDefault) Code() int {
 func (o *IpamRirsListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/rirs/][%d] ipam_rirs_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRirsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *IpamRirsListOKBody) validateCount(formats strfmt.Registry) error {
 }
 
 func (o *IpamRirsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *IpamRirsListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *IpamRirsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *IpamRirsListOKBody) validateResults(formats strfmt.Registry) error {
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ipamRirsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this ipam rirs list o k body based on the context it is used
+func (o *IpamRirsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *IpamRirsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamRirsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

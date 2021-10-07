@@ -61,7 +61,7 @@ func NewUsersPermissionsUpdateOK() *UsersPermissionsUpdateOK {
 	return &UsersPermissionsUpdateOK{}
 }
 
-/*UsersPermissionsUpdateOK handles this case with default header values.
+/* UsersPermissionsUpdateOK describes a response with status code 200, with default header values.
 
 UsersPermissionsUpdateOK users permissions update o k
 */
@@ -72,7 +72,6 @@ type UsersPermissionsUpdateOK struct {
 func (o *UsersPermissionsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/permissions/{id}/][%d] usersPermissionsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersPermissionsUpdateOK) GetPayload() *models.ObjectPermission {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersPermissionsUpdateDefault(code int) *UsersPermissionsUpdateDefault {
 	}
 }
 
-/*UsersPermissionsUpdateDefault handles this case with default header values.
+/* UsersPermissionsUpdateDefault describes a response with status code -1, with default header values.
 
 UsersPermissionsUpdateDefault users permissions update default
 */
@@ -114,7 +113,6 @@ func (o *UsersPermissionsUpdateDefault) Code() int {
 func (o *UsersPermissionsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /users/permissions/{id}/][%d] users_permissions_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersPermissionsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

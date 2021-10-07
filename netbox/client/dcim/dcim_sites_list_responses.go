@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimSitesListOK() *DcimSitesListOK {
 	return &DcimSitesListOK{}
 }
 
-/*DcimSitesListOK handles this case with default header values.
+/* DcimSitesListOK describes a response with status code 200, with default header values.
 
 DcimSitesListOK dcim sites list o k
 */
@@ -76,7 +77,6 @@ type DcimSitesListOK struct {
 func (o *DcimSitesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/sites/][%d] dcimSitesListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimSitesListOK) GetPayload() *DcimSitesListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimSitesListDefault(code int) *DcimSitesListDefault {
 	}
 }
 
-/*DcimSitesListDefault handles this case with default header values.
+/* DcimSitesListDefault describes a response with status code -1, with default header values.
 
 DcimSitesListDefault dcim sites list default
 */
@@ -118,7 +118,6 @@ func (o *DcimSitesListDefault) Code() int {
 func (o *DcimSitesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/sites/][%d] dcim_sites_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimSitesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimSitesListOKBody) validateCount(formats strfmt.Registry) error {
 }
 
 func (o *DcimSitesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimSitesListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *DcimSitesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimSitesListOKBody) validateResults(formats strfmt.Registry) error {
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimSitesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim sites list o k body based on the context it is used
+func (o *DcimSitesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimSitesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimSitesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

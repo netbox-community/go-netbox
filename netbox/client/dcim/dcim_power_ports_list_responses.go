@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimPowerPortsListOK() *DcimPowerPortsListOK {
 	return &DcimPowerPortsListOK{}
 }
 
-/*DcimPowerPortsListOK handles this case with default header values.
+/* DcimPowerPortsListOK describes a response with status code 200, with default header values.
 
 DcimPowerPortsListOK dcim power ports list o k
 */
@@ -76,7 +77,6 @@ type DcimPowerPortsListOK struct {
 func (o *DcimPowerPortsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-ports/][%d] dcimPowerPortsListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPortsListOK) GetPayload() *DcimPowerPortsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimPowerPortsListDefault(code int) *DcimPowerPortsListDefault {
 	}
 }
 
-/*DcimPowerPortsListDefault handles this case with default header values.
+/* DcimPowerPortsListDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortsListDefault dcim power ports list default
 */
@@ -118,7 +118,6 @@ func (o *DcimPowerPortsListDefault) Code() int {
 func (o *DcimPowerPortsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-ports/][%d] dcim_power-ports_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPortsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimPowerPortsListOKBody) validateCount(formats strfmt.Registry) error 
 }
 
 func (o *DcimPowerPortsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimPowerPortsListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *DcimPowerPortsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimPowerPortsListOKBody) validateResults(formats strfmt.Registry) erro
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimPowerPortsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim power ports list o k body based on the context it is used
+func (o *DcimPowerPortsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimPowerPortsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimPowerPortsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

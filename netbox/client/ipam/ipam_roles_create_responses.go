@@ -61,7 +61,7 @@ func NewIpamRolesCreateCreated() *IpamRolesCreateCreated {
 	return &IpamRolesCreateCreated{}
 }
 
-/*IpamRolesCreateCreated handles this case with default header values.
+/* IpamRolesCreateCreated describes a response with status code 201, with default header values.
 
 IpamRolesCreateCreated ipam roles create created
 */
@@ -72,7 +72,6 @@ type IpamRolesCreateCreated struct {
 func (o *IpamRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/roles/][%d] ipamRolesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamRolesCreateCreated) GetPayload() *models.Role {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRolesCreateDefault(code int) *IpamRolesCreateDefault {
 	}
 }
 
-/*IpamRolesCreateDefault handles this case with default header values.
+/* IpamRolesCreateDefault describes a response with status code -1, with default header values.
 
 IpamRolesCreateDefault ipam roles create default
 */
@@ -114,7 +113,6 @@ func (o *IpamRolesCreateDefault) Code() int {
 func (o *IpamRolesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/roles/][%d] ipam_roles_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRolesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

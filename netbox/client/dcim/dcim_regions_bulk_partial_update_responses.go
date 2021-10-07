@@ -61,7 +61,7 @@ func NewDcimRegionsBulkPartialUpdateOK() *DcimRegionsBulkPartialUpdateOK {
 	return &DcimRegionsBulkPartialUpdateOK{}
 }
 
-/*DcimRegionsBulkPartialUpdateOK handles this case with default header values.
+/* DcimRegionsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimRegionsBulkPartialUpdateOK dcim regions bulk partial update o k
 */
@@ -72,7 +72,6 @@ type DcimRegionsBulkPartialUpdateOK struct {
 func (o *DcimRegionsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/regions/][%d] dcimRegionsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRegionsBulkPartialUpdateOK) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRegionsBulkPartialUpdateDefault(code int) *DcimRegionsBulkPartialUpd
 	}
 }
 
-/*DcimRegionsBulkPartialUpdateDefault handles this case with default header values.
+/* DcimRegionsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRegionsBulkPartialUpdateDefault dcim regions bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimRegionsBulkPartialUpdateDefault) Code() int {
 func (o *DcimRegionsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/regions/][%d] dcim_regions_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRegionsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

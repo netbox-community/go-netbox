@@ -61,7 +61,7 @@ func NewIpamIPAddressesPartialUpdateOK() *IpamIPAddressesPartialUpdateOK {
 	return &IpamIPAddressesPartialUpdateOK{}
 }
 
-/*IpamIPAddressesPartialUpdateOK handles this case with default header values.
+/* IpamIPAddressesPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamIPAddressesPartialUpdateOK ipam Ip addresses partial update o k
 */
@@ -72,7 +72,6 @@ type IpamIPAddressesPartialUpdateOK struct {
 func (o *IpamIPAddressesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipamIpAddressesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamIPAddressesPartialUpdateOK) GetPayload() *models.IPAddress {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamIPAddressesPartialUpdateDefault(code int) *IpamIPAddressesPartialUpd
 	}
 }
 
-/*IpamIPAddressesPartialUpdateDefault handles this case with default header values.
+/* IpamIPAddressesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamIPAddressesPartialUpdateDefault ipam ip addresses partial update default
 */
@@ -114,7 +113,6 @@ func (o *IpamIPAddressesPartialUpdateDefault) Code() int {
 func (o *IpamIPAddressesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamIPAddressesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

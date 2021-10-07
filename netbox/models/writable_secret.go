@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -148,11 +149,11 @@ func (m *WritableSecret) validateAssignedObjectID(formats strfmt.Registry) error
 		return err
 	}
 
-	if err := validate.MinimumInt("assigned_object_id", "body", int64(*m.AssignedObjectID), 0, false); err != nil {
+	if err := validate.MinimumInt("assigned_object_id", "body", *m.AssignedObjectID, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("assigned_object_id", "body", int64(*m.AssignedObjectID), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -169,7 +170,6 @@ func (m *WritableSecret) validateAssignedObjectType(formats strfmt.Registry) err
 }
 
 func (m *WritableSecret) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -182,12 +182,11 @@ func (m *WritableSecret) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *WritableSecret) validateHash(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Hash) { // not required
 		return nil
 	}
 
-	if err := validate.MinLength("hash", "body", string(m.Hash), 1); err != nil {
+	if err := validate.MinLength("hash", "body", m.Hash, 1); err != nil {
 		return err
 	}
 
@@ -195,7 +194,6 @@ func (m *WritableSecret) validateHash(formats strfmt.Registry) error {
 }
 
 func (m *WritableSecret) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -208,12 +206,11 @@ func (m *WritableSecret) validateLastUpdated(formats strfmt.Registry) error {
 }
 
 func (m *WritableSecret) validateName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Name) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("name", "body", string(m.Name), 100); err != nil {
+	if err := validate.MaxLength("name", "body", m.Name, 100); err != nil {
 		return err
 	}
 
@@ -226,7 +223,7 @@ func (m *WritableSecret) validatePlaintext(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("plaintext", "body", string(*m.Plaintext), 1); err != nil {
+	if err := validate.MinLength("plaintext", "body", *m.Plaintext, 1); err != nil {
 		return err
 	}
 
@@ -243,7 +240,6 @@ func (m *WritableSecret) validateRole(formats strfmt.Registry) error {
 }
 
 func (m *WritableSecret) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -268,12 +264,117 @@ func (m *WritableSecret) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *WritableSecret) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable secret based on the context it is used
+func (m *WritableSecret) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAssignedObject(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateHash(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableSecret) contextValidateAssignedObject(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableSecret) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSecret) contextValidateHash(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "hash", "body", string(m.Hash)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSecret) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSecret) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSecret) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableSecret) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

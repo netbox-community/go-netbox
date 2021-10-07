@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -166,7 +167,6 @@ func (m *Tenant) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Tenant) validateCreated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
@@ -179,12 +179,11 @@ func (m *Tenant) validateCreated(formats strfmt.Registry) error {
 }
 
 func (m *Tenant) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -192,7 +191,6 @@ func (m *Tenant) validateDescription(formats strfmt.Registry) error {
 }
 
 func (m *Tenant) validateGroup(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Group) { // not required
 		return nil
 	}
@@ -210,7 +208,6 @@ func (m *Tenant) validateGroup(formats strfmt.Registry) error {
 }
 
 func (m *Tenant) validateLastUpdated(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
@@ -228,11 +225,11 @@ func (m *Tenant) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
@@ -245,15 +242,15 @@ func (m *Tenant) validateSlug(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
+	if err := validate.MinLength("slug", "body", *m.Slug, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("slug", "body", string(*m.Slug), 100); err != nil {
+	if err := validate.MaxLength("slug", "body", *m.Slug, 100); err != nil {
 		return err
 	}
 
-	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
+	if err := validate.Pattern("slug", "body", *m.Slug, `^[-a-zA-Z0-9_]+$`); err != nil {
 		return err
 	}
 
@@ -261,7 +258,6 @@ func (m *Tenant) validateSlug(formats strfmt.Registry) error {
 }
 
 func (m *Tenant) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -286,12 +282,243 @@ func (m *Tenant) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *Tenant) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this tenant based on the context it is used
+func (m *Tenant) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCircuitCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateClusterCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDeviceCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateGroup(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateIpaddressCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrefixCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRackCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSiteCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVirtualmachineCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVlanCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVrfCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Tenant) contextValidateCircuitCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "circuit_count", "body", int64(m.CircuitCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateClusterCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cluster_count", "body", int64(m.ClusterCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateDeviceCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "device_count", "body", int64(m.DeviceCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateGroup(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Group != nil {
+		if err := m.Group.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("group")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateIpaddressCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "ipaddress_count", "body", int64(m.IpaddressCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidatePrefixCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "prefix_count", "body", int64(m.PrefixCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateRackCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "rack_count", "body", int64(m.RackCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateSiteCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "site_count", "body", int64(m.SiteCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateVirtualmachineCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "virtualmachine_count", "body", int64(m.VirtualmachineCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateVlanCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "vlan_count", "body", int64(m.VlanCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Tenant) contextValidateVrfCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "vrf_count", "body", int64(m.VrfCount)); err != nil {
 		return err
 	}
 

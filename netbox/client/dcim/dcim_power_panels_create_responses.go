@@ -61,7 +61,7 @@ func NewDcimPowerPanelsCreateCreated() *DcimPowerPanelsCreateCreated {
 	return &DcimPowerPanelsCreateCreated{}
 }
 
-/*DcimPowerPanelsCreateCreated handles this case with default header values.
+/* DcimPowerPanelsCreateCreated describes a response with status code 201, with default header values.
 
 DcimPowerPanelsCreateCreated dcim power panels create created
 */
@@ -72,7 +72,6 @@ type DcimPowerPanelsCreateCreated struct {
 func (o *DcimPowerPanelsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-panels/][%d] dcimPowerPanelsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimPowerPanelsCreateCreated) GetPayload() *models.PowerPanel {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerPanelsCreateDefault(code int) *DcimPowerPanelsCreateDefault {
 	}
 }
 
-/*DcimPowerPanelsCreateDefault handles this case with default header values.
+/* DcimPowerPanelsCreateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPanelsCreateDefault dcim power panels create default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerPanelsCreateDefault) Code() int {
 func (o *DcimPowerPanelsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-panels/][%d] dcim_power-panels_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPanelsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

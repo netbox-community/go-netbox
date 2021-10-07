@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewCircuitsCircuitTerminationsBulkPartialUpdateParams creates a new CircuitsCircuitTerminationsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewCircuitsCircuitTerminationsBulkPartialUpdateParams creates a new CircuitsCircuitTerminationsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitTerminationsBulkPartialUpdateParams() *CircuitsCircuitTerminationsBulkPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitTerminationsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitTerminationsBulkPartialUpdateParamsWithTimeout creates a new CircuitsCircuitTerminationsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitTerminationsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *CircuitsCircuitTerminationsBulkPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitTerminationsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitTerminationsBulkPartialUpdateParamsWithContext creates a new CircuitsCircuitTerminationsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitTerminationsBulkPartialUpdateParamsWithContext(ctx context.Context) *CircuitsCircuitTerminationsBulkPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitTerminationsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitTerminationsBulkPartialUpdateParamsWithHTTPClient creates a new CircuitsCircuitTerminationsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitTerminationsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *CircuitsCircuitTerminationsBulkPartialUpdateParams {
-	var ()
 	return &CircuitsCircuitTerminationsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitTerminationsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the circuits circuit terminations bulk partial update operation typically these are written to a http.Request
+/* CircuitsCircuitTerminationsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the circuits circuit terminations bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitTerminationsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCircuitTermination
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuit terminations bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTerminationsBulkPartialUpdateParams) WithDefaults() *CircuitsCircuitTerminationsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuit terminations bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTerminationsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuit terminations bulk partial update params
@@ -136,7 +150,6 @@ func (o *CircuitsCircuitTerminationsBulkPartialUpdateParams) WriteToRequest(r ru
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

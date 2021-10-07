@@ -61,7 +61,7 @@ func NewDcimRackRolesUpdateOK() *DcimRackRolesUpdateOK {
 	return &DcimRackRolesUpdateOK{}
 }
 
-/*DcimRackRolesUpdateOK handles this case with default header values.
+/* DcimRackRolesUpdateOK describes a response with status code 200, with default header values.
 
 DcimRackRolesUpdateOK dcim rack roles update o k
 */
@@ -72,7 +72,6 @@ type DcimRackRolesUpdateOK struct {
 func (o *DcimRackRolesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-roles/{id}/][%d] dcimRackRolesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackRolesUpdateOK) GetPayload() *models.RackRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRackRolesUpdateDefault(code int) *DcimRackRolesUpdateDefault {
 	}
 }
 
-/*DcimRackRolesUpdateDefault handles this case with default header values.
+/* DcimRackRolesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRackRolesUpdateDefault dcim rack roles update default
 */
@@ -114,7 +113,6 @@ func (o *DcimRackRolesUpdateDefault) Code() int {
 func (o *DcimRackRolesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-roles/{id}/][%d] dcim_rack-roles_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackRolesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

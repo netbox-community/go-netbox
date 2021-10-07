@@ -61,7 +61,7 @@ func NewDcimCablesCreateCreated() *DcimCablesCreateCreated {
 	return &DcimCablesCreateCreated{}
 }
 
-/*DcimCablesCreateCreated handles this case with default header values.
+/* DcimCablesCreateCreated describes a response with status code 201, with default header values.
 
 DcimCablesCreateCreated dcim cables create created
 */
@@ -72,7 +72,6 @@ type DcimCablesCreateCreated struct {
 func (o *DcimCablesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/cables/][%d] dcimCablesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimCablesCreateCreated) GetPayload() *models.Cable {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimCablesCreateDefault(code int) *DcimCablesCreateDefault {
 	}
 }
 
-/*DcimCablesCreateDefault handles this case with default header values.
+/* DcimCablesCreateDefault describes a response with status code -1, with default header values.
 
 DcimCablesCreateDefault dcim cables create default
 */
@@ -114,7 +113,6 @@ func (o *DcimCablesCreateDefault) Code() int {
 func (o *DcimCablesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/cables/][%d] dcim_cables_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimCablesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

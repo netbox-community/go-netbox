@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -98,12 +99,11 @@ func (m *VirtualChassis) Validate(formats strfmt.Registry) error {
 }
 
 func (m *VirtualChassis) validateDomain(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Domain) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("domain", "body", string(m.Domain), 30); err != nil {
+	if err := validate.MaxLength("domain", "body", m.Domain, 30); err != nil {
 		return err
 	}
 
@@ -111,7 +111,6 @@ func (m *VirtualChassis) validateDomain(formats strfmt.Registry) error {
 }
 
 func (m *VirtualChassis) validateMaster(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Master) { // not required
 		return nil
 	}
@@ -134,11 +133,11 @@ func (m *VirtualChassis) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -146,7 +145,6 @@ func (m *VirtualChassis) validateName(formats strfmt.Registry) error {
 }
 
 func (m *VirtualChassis) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -171,12 +169,100 @@ func (m *VirtualChassis) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *VirtualChassis) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this virtual chassis based on the context it is used
+func (m *VirtualChassis) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateMaster(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateMemberCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *VirtualChassis) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualChassis) contextValidateMaster(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Master != nil {
+		if err := m.Master.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("master")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VirtualChassis) contextValidateMemberCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "member_count", "body", int64(m.MemberCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualChassis) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *VirtualChassis) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

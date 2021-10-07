@@ -32,70 +32,88 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasContentTypesListParams creates a new ExtrasContentTypesListParams object
-// with the default values initialized.
+// NewExtrasContentTypesListParams creates a new ExtrasContentTypesListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasContentTypesListParams() *ExtrasContentTypesListParams {
-	var ()
 	return &ExtrasContentTypesListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasContentTypesListParamsWithTimeout creates a new ExtrasContentTypesListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasContentTypesListParamsWithTimeout(timeout time.Duration) *ExtrasContentTypesListParams {
-	var ()
 	return &ExtrasContentTypesListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasContentTypesListParamsWithContext creates a new ExtrasContentTypesListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasContentTypesListParamsWithContext(ctx context.Context) *ExtrasContentTypesListParams {
-	var ()
 	return &ExtrasContentTypesListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasContentTypesListParamsWithHTTPClient creates a new ExtrasContentTypesListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasContentTypesListParamsWithHTTPClient(client *http.Client) *ExtrasContentTypesListParams {
-	var ()
 	return &ExtrasContentTypesListParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasContentTypesListParams contains all the parameters to send to the API endpoint
-for the extras content types list operation typically these are written to a http.Request
+/* ExtrasContentTypesListParams contains all the parameters to send to the API endpoint
+   for the extras content types list operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasContentTypesListParams struct {
 
-	/*AppLabel*/
+	// AppLabel.
 	AppLabel *string
-	/*ID*/
-	ID *float64
-	/*Limit
-	  Number of results to return per page.
 
+	// ID.
+	ID *float64
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Model*/
-	Model *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Model.
+	Model *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras content types list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasContentTypesListParams) WithDefaults() *ExtrasContentTypesListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras content types list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasContentTypesListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras content types list params
@@ -198,80 +216,85 @@ func (o *ExtrasContentTypesListParams) WriteToRequest(r runtime.ClientRequest, r
 
 		// query param app_label
 		var qrAppLabel string
+
 		if o.AppLabel != nil {
 			qrAppLabel = *o.AppLabel
 		}
 		qAppLabel := qrAppLabel
 		if qAppLabel != "" {
+
 			if err := r.SetQueryParam("app_label", qAppLabel); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID float64
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := swag.FormatFloat64(qrID)
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Model != nil {
 
 		// query param model
 		var qrModel string
+
 		if o.Model != nil {
 			qrModel = *o.Model
 		}
 		qModel := qrModel
 		if qModel != "" {
+
 			if err := r.SetQueryParam("model", qModel); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

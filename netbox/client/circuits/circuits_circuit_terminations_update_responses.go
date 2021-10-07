@@ -61,7 +61,7 @@ func NewCircuitsCircuitTerminationsUpdateOK() *CircuitsCircuitTerminationsUpdate
 	return &CircuitsCircuitTerminationsUpdateOK{}
 }
 
-/*CircuitsCircuitTerminationsUpdateOK handles this case with default header values.
+/* CircuitsCircuitTerminationsUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTerminationsUpdateOK circuits circuit terminations update o k
 */
@@ -72,7 +72,6 @@ type CircuitsCircuitTerminationsUpdateOK struct {
 func (o *CircuitsCircuitTerminationsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsUpdateOK) GetPayload() *models.CircuitTermination {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewCircuitsCircuitTerminationsUpdateDefault(code int) *CircuitsCircuitTermi
 	}
 }
 
-/*CircuitsCircuitTerminationsUpdateDefault handles this case with default header values.
+/* CircuitsCircuitTerminationsUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsUpdateDefault circuits circuit terminations update default
 */
@@ -114,7 +113,6 @@ func (o *CircuitsCircuitTerminationsUpdateDefault) Code() int {
 func (o *CircuitsCircuitTerminationsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

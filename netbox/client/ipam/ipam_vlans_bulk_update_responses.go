@@ -61,7 +61,7 @@ func NewIpamVlansBulkUpdateOK() *IpamVlansBulkUpdateOK {
 	return &IpamVlansBulkUpdateOK{}
 }
 
-/*IpamVlansBulkUpdateOK handles this case with default header values.
+/* IpamVlansBulkUpdateOK describes a response with status code 200, with default header values.
 
 IpamVlansBulkUpdateOK ipam vlans bulk update o k
 */
@@ -72,7 +72,6 @@ type IpamVlansBulkUpdateOK struct {
 func (o *IpamVlansBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vlans/][%d] ipamVlansBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVlansBulkUpdateOK) GetPayload() *models.VLAN {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVlansBulkUpdateDefault(code int) *IpamVlansBulkUpdateDefault {
 	}
 }
 
-/*IpamVlansBulkUpdateDefault handles this case with default header values.
+/* IpamVlansBulkUpdateDefault describes a response with status code -1, with default header values.
 
 IpamVlansBulkUpdateDefault ipam vlans bulk update default
 */
@@ -114,7 +113,6 @@ func (o *IpamVlansBulkUpdateDefault) Code() int {
 func (o *IpamVlansBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vlans/][%d] ipam_vlans_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVlansBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

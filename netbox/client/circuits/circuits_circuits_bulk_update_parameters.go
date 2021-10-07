@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewCircuitsCircuitsBulkUpdateParams creates a new CircuitsCircuitsBulkUpdateParams object
-// with the default values initialized.
+// NewCircuitsCircuitsBulkUpdateParams creates a new CircuitsCircuitsBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitsBulkUpdateParams() *CircuitsCircuitsBulkUpdateParams {
-	var ()
 	return &CircuitsCircuitsBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitsBulkUpdateParamsWithTimeout creates a new CircuitsCircuitsBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitsBulkUpdateParamsWithTimeout(timeout time.Duration) *CircuitsCircuitsBulkUpdateParams {
-	var ()
 	return &CircuitsCircuitsBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitsBulkUpdateParamsWithContext creates a new CircuitsCircuitsBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitsBulkUpdateParamsWithContext(ctx context.Context) *CircuitsCircuitsBulkUpdateParams {
-	var ()
 	return &CircuitsCircuitsBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitsBulkUpdateParamsWithHTTPClient creates a new CircuitsCircuitsBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitsBulkUpdateParamsWithHTTPClient(client *http.Client) *CircuitsCircuitsBulkUpdateParams {
-	var ()
 	return &CircuitsCircuitsBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitsBulkUpdateParams contains all the parameters to send to the API endpoint
-for the circuits circuits bulk update operation typically these are written to a http.Request
+/* CircuitsCircuitsBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the circuits circuits bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitsBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCircuit
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuits bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitsBulkUpdateParams) WithDefaults() *CircuitsCircuitsBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuits bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitsBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuits bulk update params
@@ -136,7 +150,6 @@ func (o *CircuitsCircuitsBulkUpdateParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

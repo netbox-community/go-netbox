@@ -21,6 +21,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -64,12 +66,11 @@ func (m *AvailableIP) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AvailableIP) validateAddress(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Address) { // not required
 		return nil
 	}
 
-	if err := validate.MinLength("address", "body", string(m.Address), 1); err != nil {
+	if err := validate.MinLength("address", "body", m.Address, 1); err != nil {
 		return err
 	}
 
@@ -77,13 +78,66 @@ func (m *AvailableIP) validateAddress(formats strfmt.Registry) error {
 }
 
 func (m *AvailableIP) validateVrf(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Vrf) { // not required
 		return nil
 	}
 
 	if m.Vrf != nil {
 		if err := m.Vrf.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vrf")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+// ContextValidate validate this available IP based on the context it is used
+func (m *AvailableIP) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAddress(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFamily(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVrf(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *AvailableIP) contextValidateAddress(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "address", "body", string(m.Address)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *AvailableIP) contextValidateFamily(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "family", "body", int64(m.Family)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *AvailableIP) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Vrf != nil {
+		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
 			}

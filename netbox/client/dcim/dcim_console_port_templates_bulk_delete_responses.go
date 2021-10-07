@@ -59,7 +59,7 @@ func NewDcimConsolePortTemplatesBulkDeleteNoContent() *DcimConsolePortTemplatesB
 	return &DcimConsolePortTemplatesBulkDeleteNoContent{}
 }
 
-/*DcimConsolePortTemplatesBulkDeleteNoContent handles this case with default header values.
+/* DcimConsolePortTemplatesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimConsolePortTemplatesBulkDeleteNoContent dcim console port templates bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimConsolePortTemplatesBulkDeleteDefault(code int) *DcimConsolePortTemp
 	}
 }
 
-/*DcimConsolePortTemplatesBulkDeleteDefault handles this case with default header values.
+/* DcimConsolePortTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimConsolePortTemplatesBulkDeleteDefault dcim console port templates bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimConsolePortTemplatesBulkDeleteDefault) Code() int {
 func (o *DcimConsolePortTemplatesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/console-port-templates/][%d] dcim_console-port-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimConsolePortTemplatesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

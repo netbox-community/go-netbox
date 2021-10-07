@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimInterfaceTemplatesListOK() *DcimInterfaceTemplatesListOK {
 	return &DcimInterfaceTemplatesListOK{}
 }
 
-/*DcimInterfaceTemplatesListOK handles this case with default header values.
+/* DcimInterfaceTemplatesListOK describes a response with status code 200, with default header values.
 
 DcimInterfaceTemplatesListOK dcim interface templates list o k
 */
@@ -76,7 +77,6 @@ type DcimInterfaceTemplatesListOK struct {
 func (o *DcimInterfaceTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcimInterfaceTemplatesListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesListOK) GetPayload() *DcimInterfaceTemplatesListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimInterfaceTemplatesListDefault(code int) *DcimInterfaceTemplatesListD
 	}
 }
 
-/*DcimInterfaceTemplatesListDefault handles this case with default header values.
+/* DcimInterfaceTemplatesListDefault describes a response with status code -1, with default header values.
 
 DcimInterfaceTemplatesListDefault dcim interface templates list default
 */
@@ -118,7 +118,6 @@ func (o *DcimInterfaceTemplatesListDefault) Code() int {
 func (o *DcimInterfaceTemplatesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcim_interface-templates_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimInterfaceTemplatesListOKBody) validateCount(formats strfmt.Registry
 }
 
 func (o *DcimInterfaceTemplatesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimInterfaceTemplatesListOKBody) validateNext(formats strfmt.Registry)
 }
 
 func (o *DcimInterfaceTemplatesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimInterfaceTemplatesListOKBody) validateResults(formats strfmt.Regist
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimInterfaceTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim interface templates list o k body based on the context it is used
+func (o *DcimInterfaceTemplatesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimInterfaceTemplatesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimInterfaceTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPowerOutletsReadParams creates a new DcimPowerOutletsReadParams object
-// with the default values initialized.
+// NewDcimPowerOutletsReadParams creates a new DcimPowerOutletsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerOutletsReadParams() *DcimPowerOutletsReadParams {
-	var ()
 	return &DcimPowerOutletsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerOutletsReadParamsWithTimeout creates a new DcimPowerOutletsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerOutletsReadParamsWithTimeout(timeout time.Duration) *DcimPowerOutletsReadParams {
-	var ()
 	return &DcimPowerOutletsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerOutletsReadParamsWithContext creates a new DcimPowerOutletsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerOutletsReadParamsWithContext(ctx context.Context) *DcimPowerOutletsReadParams {
-	var ()
 	return &DcimPowerOutletsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerOutletsReadParamsWithHTTPClient creates a new DcimPowerOutletsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerOutletsReadParamsWithHTTPClient(client *http.Client) *DcimPowerOutletsReadParams {
-	var ()
 	return &DcimPowerOutletsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerOutletsReadParams contains all the parameters to send to the API endpoint
-for the dcim power outlets read operation typically these are written to a http.Request
+/* DcimPowerOutletsReadParams contains all the parameters to send to the API endpoint
+   for the dcim power outlets read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerOutletsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this power outlet.
+	/* ID.
 
+	   A unique integer value identifying this power outlet.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power outlets read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletsReadParams) WithDefaults() *DcimPowerOutletsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power outlets read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power outlets read params

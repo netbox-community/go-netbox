@@ -59,7 +59,7 @@ func NewDcimDeviceRolesDeleteNoContent() *DcimDeviceRolesDeleteNoContent {
 	return &DcimDeviceRolesDeleteNoContent{}
 }
 
-/*DcimDeviceRolesDeleteNoContent handles this case with default header values.
+/* DcimDeviceRolesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimDeviceRolesDeleteNoContent dcim device roles delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimDeviceRolesDeleteDefault(code int) *DcimDeviceRolesDeleteDefault {
 	}
 }
 
-/*DcimDeviceRolesDeleteDefault handles this case with default header values.
+/* DcimDeviceRolesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimDeviceRolesDeleteDefault dcim device roles delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimDeviceRolesDeleteDefault) Code() int {
 func (o *DcimDeviceRolesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/device-roles/{id}/][%d] dcim_device-roles_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceRolesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

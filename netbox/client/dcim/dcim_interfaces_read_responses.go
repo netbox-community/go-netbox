@@ -61,7 +61,7 @@ func NewDcimInterfacesReadOK() *DcimInterfacesReadOK {
 	return &DcimInterfacesReadOK{}
 }
 
-/*DcimInterfacesReadOK handles this case with default header values.
+/* DcimInterfacesReadOK describes a response with status code 200, with default header values.
 
 DcimInterfacesReadOK dcim interfaces read o k
 */
@@ -72,7 +72,6 @@ type DcimInterfacesReadOK struct {
 func (o *DcimInterfacesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/interfaces/{id}/][%d] dcimInterfacesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfacesReadOK) GetPayload() *models.Interface {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimInterfacesReadDefault(code int) *DcimInterfacesReadDefault {
 	}
 }
 
-/*DcimInterfacesReadDefault handles this case with default header values.
+/* DcimInterfacesReadDefault describes a response with status code -1, with default header values.
 
 DcimInterfacesReadDefault dcim interfaces read default
 */
@@ -114,7 +113,6 @@ func (o *DcimInterfacesReadDefault) Code() int {
 func (o *DcimInterfacesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/interfaces/{id}/][%d] dcim_interfaces_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInterfacesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

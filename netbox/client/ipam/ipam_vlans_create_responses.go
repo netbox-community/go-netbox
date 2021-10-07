@@ -61,7 +61,7 @@ func NewIpamVlansCreateCreated() *IpamVlansCreateCreated {
 	return &IpamVlansCreateCreated{}
 }
 
-/*IpamVlansCreateCreated handles this case with default header values.
+/* IpamVlansCreateCreated describes a response with status code 201, with default header values.
 
 IpamVlansCreateCreated ipam vlans create created
 */
@@ -72,7 +72,6 @@ type IpamVlansCreateCreated struct {
 func (o *IpamVlansCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/vlans/][%d] ipamVlansCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamVlansCreateCreated) GetPayload() *models.VLAN {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVlansCreateDefault(code int) *IpamVlansCreateDefault {
 	}
 }
 
-/*IpamVlansCreateDefault handles this case with default header values.
+/* IpamVlansCreateDefault describes a response with status code -1, with default header values.
 
 IpamVlansCreateDefault ipam vlans create default
 */
@@ -114,7 +113,6 @@ func (o *IpamVlansCreateDefault) Code() int {
 func (o *IpamVlansCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/vlans/][%d] ipam_vlans_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVlansCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

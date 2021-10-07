@@ -61,7 +61,7 @@ func NewExtrasExportTemplatesUpdateOK() *ExtrasExportTemplatesUpdateOK {
 	return &ExtrasExportTemplatesUpdateOK{}
 }
 
-/*ExtrasExportTemplatesUpdateOK handles this case with default header values.
+/* ExtrasExportTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasExportTemplatesUpdateOK extras export templates update o k
 */
@@ -72,7 +72,6 @@ type ExtrasExportTemplatesUpdateOK struct {
 func (o *ExtrasExportTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/export-templates/{id}/][%d] extrasExportTemplatesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesUpdateOK) GetPayload() *models.ExportTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasExportTemplatesUpdateDefault(code int) *ExtrasExportTemplatesUpdat
 	}
 }
 
-/*ExtrasExportTemplatesUpdateDefault handles this case with default header values.
+/* ExtrasExportTemplatesUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasExportTemplatesUpdateDefault extras export templates update default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasExportTemplatesUpdateDefault) Code() int {
 func (o *ExtrasExportTemplatesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/export-templates/{id}/][%d] extras_export-templates_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

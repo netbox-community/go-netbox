@@ -59,7 +59,7 @@ func NewUsersConfigListOK() *UsersConfigListOK {
 	return &UsersConfigListOK{}
 }
 
-/*UsersConfigListOK handles this case with default header values.
+/* UsersConfigListOK describes a response with status code 200, with default header values.
 
 UsersConfigListOK users config list o k
 */
@@ -82,7 +82,7 @@ func NewUsersConfigListDefault(code int) *UsersConfigListDefault {
 	}
 }
 
-/*UsersConfigListDefault handles this case with default header values.
+/* UsersConfigListDefault describes a response with status code -1, with default header values.
 
 UsersConfigListDefault users config list default
 */
@@ -100,7 +100,6 @@ func (o *UsersConfigListDefault) Code() int {
 func (o *UsersConfigListDefault) Error() string {
 	return fmt.Sprintf("[GET /users/config/][%d] users_config_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersConfigListDefault) GetPayload() interface{} {
 	return o.Payload
 }

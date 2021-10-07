@@ -61,7 +61,7 @@ func NewTenancyTenantGroupsReadOK() *TenancyTenantGroupsReadOK {
 	return &TenancyTenantGroupsReadOK{}
 }
 
-/*TenancyTenantGroupsReadOK handles this case with default header values.
+/* TenancyTenantGroupsReadOK describes a response with status code 200, with default header values.
 
 TenancyTenantGroupsReadOK tenancy tenant groups read o k
 */
@@ -72,7 +72,6 @@ type TenancyTenantGroupsReadOK struct {
 func (o *TenancyTenantGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *TenancyTenantGroupsReadOK) GetPayload() *models.TenantGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewTenancyTenantGroupsReadDefault(code int) *TenancyTenantGroupsReadDefault
 	}
 }
 
-/*TenancyTenantGroupsReadDefault handles this case with default header values.
+/* TenancyTenantGroupsReadDefault describes a response with status code -1, with default header values.
 
 TenancyTenantGroupsReadDefault tenancy tenant groups read default
 */
@@ -114,7 +113,6 @@ func (o *TenancyTenantGroupsReadDefault) Code() int {
 func (o *TenancyTenantGroupsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *TenancyTenantGroupsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

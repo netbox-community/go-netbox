@@ -59,7 +59,7 @@ func NewSecretsSecretRolesDeleteNoContent() *SecretsSecretRolesDeleteNoContent {
 	return &SecretsSecretRolesDeleteNoContent{}
 }
 
-/*SecretsSecretRolesDeleteNoContent handles this case with default header values.
+/* SecretsSecretRolesDeleteNoContent describes a response with status code 204, with default header values.
 
 SecretsSecretRolesDeleteNoContent secrets secret roles delete no content
 */
@@ -82,7 +82,7 @@ func NewSecretsSecretRolesDeleteDefault(code int) *SecretsSecretRolesDeleteDefau
 	}
 }
 
-/*SecretsSecretRolesDeleteDefault handles this case with default header values.
+/* SecretsSecretRolesDeleteDefault describes a response with status code -1, with default header values.
 
 SecretsSecretRolesDeleteDefault secrets secret roles delete default
 */
@@ -100,7 +100,6 @@ func (o *SecretsSecretRolesDeleteDefault) Code() int {
 func (o *SecretsSecretRolesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /secrets/secret-roles/{id}/][%d] secrets_secret-roles_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsSecretRolesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewExtrasConfigContextsBulkPartialUpdateParams creates a new ExtrasConfigContextsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewExtrasConfigContextsBulkPartialUpdateParams creates a new ExtrasConfigContextsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasConfigContextsBulkPartialUpdateParams() *ExtrasConfigContextsBulkPartialUpdateParams {
-	var ()
 	return &ExtrasConfigContextsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasConfigContextsBulkPartialUpdateParamsWithTimeout creates a new ExtrasConfigContextsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasConfigContextsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *ExtrasConfigContextsBulkPartialUpdateParams {
-	var ()
 	return &ExtrasConfigContextsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasConfigContextsBulkPartialUpdateParamsWithContext creates a new ExtrasConfigContextsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasConfigContextsBulkPartialUpdateParamsWithContext(ctx context.Context) *ExtrasConfigContextsBulkPartialUpdateParams {
-	var ()
 	return &ExtrasConfigContextsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasConfigContextsBulkPartialUpdateParamsWithHTTPClient creates a new ExtrasConfigContextsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasConfigContextsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *ExtrasConfigContextsBulkPartialUpdateParams {
-	var ()
 	return &ExtrasConfigContextsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasConfigContextsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the extras config contexts bulk partial update operation typically these are written to a http.Request
+/* ExtrasConfigContextsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the extras config contexts bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableConfigContext
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras config contexts bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsBulkPartialUpdateParams) WithDefaults() *ExtrasConfigContextsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras config contexts bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasConfigContextsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras config contexts bulk partial update params
@@ -136,7 +150,6 @@ func (o *ExtrasConfigContextsBulkPartialUpdateParams) WriteToRequest(r runtime.C
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

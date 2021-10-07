@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimPowerOutletsListOK() *DcimPowerOutletsListOK {
 	return &DcimPowerOutletsListOK{}
 }
 
-/*DcimPowerOutletsListOK handles this case with default header values.
+/* DcimPowerOutletsListOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletsListOK dcim power outlets list o k
 */
@@ -76,7 +77,6 @@ type DcimPowerOutletsListOK struct {
 func (o *DcimPowerOutletsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlets/][%d] dcimPowerOutletsListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerOutletsListOK) GetPayload() *DcimPowerOutletsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimPowerOutletsListDefault(code int) *DcimPowerOutletsListDefault {
 	}
 }
 
-/*DcimPowerOutletsListDefault handles this case with default header values.
+/* DcimPowerOutletsListDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletsListDefault dcim power outlets list default
 */
@@ -118,7 +118,6 @@ func (o *DcimPowerOutletsListDefault) Code() int {
 func (o *DcimPowerOutletsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlets/][%d] dcim_power-outlets_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerOutletsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimPowerOutletsListOKBody) validateCount(formats strfmt.Registry) erro
 }
 
 func (o *DcimPowerOutletsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimPowerOutletsListOKBody) validateNext(formats strfmt.Registry) error
 }
 
 func (o *DcimPowerOutletsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimPowerOutletsListOKBody) validateResults(formats strfmt.Registry) er
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimPowerOutletsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim power outlets list o k body based on the context it is used
+func (o *DcimPowerOutletsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimPowerOutletsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimPowerOutletsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

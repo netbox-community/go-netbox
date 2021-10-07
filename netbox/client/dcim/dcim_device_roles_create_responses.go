@@ -61,7 +61,7 @@ func NewDcimDeviceRolesCreateCreated() *DcimDeviceRolesCreateCreated {
 	return &DcimDeviceRolesCreateCreated{}
 }
 
-/*DcimDeviceRolesCreateCreated handles this case with default header values.
+/* DcimDeviceRolesCreateCreated describes a response with status code 201, with default header values.
 
 DcimDeviceRolesCreateCreated dcim device roles create created
 */
@@ -72,7 +72,6 @@ type DcimDeviceRolesCreateCreated struct {
 func (o *DcimDeviceRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcimDeviceRolesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimDeviceRolesCreateCreated) GetPayload() *models.DeviceRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDeviceRolesCreateDefault(code int) *DcimDeviceRolesCreateDefault {
 	}
 }
 
-/*DcimDeviceRolesCreateDefault handles this case with default header values.
+/* DcimDeviceRolesCreateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceRolesCreateDefault dcim device roles create default
 */
@@ -114,7 +113,6 @@ func (o *DcimDeviceRolesCreateDefault) Code() int {
 func (o *DcimDeviceRolesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcim_device-roles_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceRolesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

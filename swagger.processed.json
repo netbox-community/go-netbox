@@ -54528,7 +54528,8 @@
         "site": {
           "title": "Site",
           "type": "integer",
-          "x-nullable": false
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "comments": {
           "title": "Comments",

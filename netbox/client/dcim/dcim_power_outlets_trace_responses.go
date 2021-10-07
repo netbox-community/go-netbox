@@ -61,7 +61,7 @@ func NewDcimPowerOutletsTraceOK() *DcimPowerOutletsTraceOK {
 	return &DcimPowerOutletsTraceOK{}
 }
 
-/*DcimPowerOutletsTraceOK handles this case with default header values.
+/* DcimPowerOutletsTraceOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletsTraceOK dcim power outlets trace o k
 */
@@ -72,7 +72,6 @@ type DcimPowerOutletsTraceOK struct {
 func (o *DcimPowerOutletsTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/trace/][%d] dcimPowerOutletsTraceOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerOutletsTraceOK) GetPayload() *models.PowerOutlet {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerOutletsTraceDefault(code int) *DcimPowerOutletsTraceDefault {
 	}
 }
 
-/*DcimPowerOutletsTraceDefault handles this case with default header values.
+/* DcimPowerOutletsTraceDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletsTraceDefault dcim power outlets trace default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerOutletsTraceDefault) Code() int {
 func (o *DcimPowerOutletsTraceDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/trace/][%d] dcim_power-outlets_trace default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerOutletsTraceDefault) GetPayload() interface{} {
 	return o.Payload
 }

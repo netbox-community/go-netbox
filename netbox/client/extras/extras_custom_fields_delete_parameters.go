@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasCustomFieldsDeleteParams creates a new ExtrasCustomFieldsDeleteParams object
-// with the default values initialized.
+// NewExtrasCustomFieldsDeleteParams creates a new ExtrasCustomFieldsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasCustomFieldsDeleteParams() *ExtrasCustomFieldsDeleteParams {
-	var ()
 	return &ExtrasCustomFieldsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasCustomFieldsDeleteParamsWithTimeout creates a new ExtrasCustomFieldsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasCustomFieldsDeleteParamsWithTimeout(timeout time.Duration) *ExtrasCustomFieldsDeleteParams {
-	var ()
 	return &ExtrasCustomFieldsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasCustomFieldsDeleteParamsWithContext creates a new ExtrasCustomFieldsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasCustomFieldsDeleteParamsWithContext(ctx context.Context) *ExtrasCustomFieldsDeleteParams {
-	var ()
 	return &ExtrasCustomFieldsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasCustomFieldsDeleteParamsWithHTTPClient creates a new ExtrasCustomFieldsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasCustomFieldsDeleteParamsWithHTTPClient(client *http.Client) *ExtrasCustomFieldsDeleteParams {
-	var ()
 	return &ExtrasCustomFieldsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasCustomFieldsDeleteParams contains all the parameters to send to the API endpoint
-for the extras custom fields delete operation typically these are written to a http.Request
+/* ExtrasCustomFieldsDeleteParams contains all the parameters to send to the API endpoint
+   for the extras custom fields delete operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasCustomFieldsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this custom field.
+	/* ID.
 
+	   A unique integer value identifying this custom field.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras custom fields delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsDeleteParams) WithDefaults() *ExtrasCustomFieldsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras custom fields delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras custom fields delete params

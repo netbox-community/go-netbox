@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -162,16 +163,15 @@ func (m *Cable) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Cable) validateColor(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Color) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("color", "body", string(m.Color), 6); err != nil {
+	if err := validate.MaxLength("color", "body", m.Color, 6); err != nil {
 		return err
 	}
 
-	if err := validate.Pattern("color", "body", string(m.Color), `^[0-9a-f]{6}$`); err != nil {
+	if err := validate.Pattern("color", "body", m.Color, `^[0-9a-f]{6}$`); err != nil {
 		return err
 	}
 
@@ -179,12 +179,11 @@ func (m *Cable) validateColor(formats strfmt.Registry) error {
 }
 
 func (m *Cable) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 100); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 100); err != nil {
 		return err
 	}
 
@@ -192,16 +191,15 @@ func (m *Cable) validateLabel(formats strfmt.Registry) error {
 }
 
 func (m *Cable) validateLength(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Length) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("length", "body", int64(*m.Length), 0, false); err != nil {
+	if err := validate.MinimumInt("length", "body", *m.Length, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("length", "body", int64(*m.Length), 32767, false); err != nil {
+	if err := validate.MaximumInt("length", "body", *m.Length, 32767, false); err != nil {
 		return err
 	}
 
@@ -209,7 +207,6 @@ func (m *Cable) validateLength(formats strfmt.Registry) error {
 }
 
 func (m *Cable) validateLengthUnit(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LengthUnit) { // not required
 		return nil
 	}
@@ -227,7 +224,6 @@ func (m *Cable) validateLengthUnit(formats strfmt.Registry) error {
 }
 
 func (m *Cable) validateStatus(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Status) { // not required
 		return nil
 	}
@@ -245,7 +241,6 @@ func (m *Cable) validateStatus(formats strfmt.Registry) error {
 }
 
 func (m *Cable) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -275,11 +270,11 @@ func (m *Cable) validateTerminationaID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinimumInt("termination_a_id", "body", int64(*m.TerminationaID), 0, false); err != nil {
+	if err := validate.MinimumInt("termination_a_id", "body", *m.TerminationaID, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("termination_a_id", "body", int64(*m.TerminationaID), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("termination_a_id", "body", *m.TerminationaID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -301,11 +296,11 @@ func (m *Cable) validateTerminationbID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinimumInt("termination_b_id", "body", int64(*m.TerminationbID), 0, false); err != nil {
+	if err := validate.MinimumInt("termination_b_id", "body", *m.TerminationbID, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("termination_b_id", "body", int64(*m.TerminationbID), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("termination_b_id", "body", *m.TerminationbID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -359,14 +354,14 @@ const (
 	// CableTypeCat8 captures enum value "cat8"
 	CableTypeCat8 string = "cat8"
 
-	// CableTypeDacActive captures enum value "dac-active"
-	CableTypeDacActive string = "dac-active"
+	// CableTypeDacDashActive captures enum value "dac-active"
+	CableTypeDacDashActive string = "dac-active"
 
-	// CableTypeDacPassive captures enum value "dac-passive"
-	CableTypeDacPassive string = "dac-passive"
+	// CableTypeDacDashPassive captures enum value "dac-passive"
+	CableTypeDacDashPassive string = "dac-passive"
 
-	// CableTypeMrj21Trunk captures enum value "mrj21-trunk"
-	CableTypeMrj21Trunk string = "mrj21-trunk"
+	// CableTypeMrj21DashTrunk captures enum value "mrj21-trunk"
+	CableTypeMrj21DashTrunk string = "mrj21-trunk"
 
 	// CableTypeCoaxial captures enum value "coaxial"
 	CableTypeCoaxial string = "coaxial"
@@ -374,26 +369,26 @@ const (
 	// CableTypeMmf captures enum value "mmf"
 	CableTypeMmf string = "mmf"
 
-	// CableTypeMmfOm1 captures enum value "mmf-om1"
-	CableTypeMmfOm1 string = "mmf-om1"
+	// CableTypeMmfDashOm1 captures enum value "mmf-om1"
+	CableTypeMmfDashOm1 string = "mmf-om1"
 
-	// CableTypeMmfOm2 captures enum value "mmf-om2"
-	CableTypeMmfOm2 string = "mmf-om2"
+	// CableTypeMmfDashOm2 captures enum value "mmf-om2"
+	CableTypeMmfDashOm2 string = "mmf-om2"
 
-	// CableTypeMmfOm3 captures enum value "mmf-om3"
-	CableTypeMmfOm3 string = "mmf-om3"
+	// CableTypeMmfDashOm3 captures enum value "mmf-om3"
+	CableTypeMmfDashOm3 string = "mmf-om3"
 
-	// CableTypeMmfOm4 captures enum value "mmf-om4"
-	CableTypeMmfOm4 string = "mmf-om4"
+	// CableTypeMmfDashOm4 captures enum value "mmf-om4"
+	CableTypeMmfDashOm4 string = "mmf-om4"
 
 	// CableTypeSmf captures enum value "smf"
 	CableTypeSmf string = "smf"
 
-	// CableTypeSmfOs1 captures enum value "smf-os1"
-	CableTypeSmfOs1 string = "smf-os1"
+	// CableTypeSmfDashOs1 captures enum value "smf-os1"
+	CableTypeSmfDashOs1 string = "smf-os1"
 
-	// CableTypeSmfOs2 captures enum value "smf-os2"
-	CableTypeSmfOs2 string = "smf-os2"
+	// CableTypeSmfDashOs2 captures enum value "smf-os2"
+	CableTypeSmfDashOs2 string = "smf-os2"
 
 	// CableTypeAoc captures enum value "aoc"
 	CableTypeAoc string = "aoc"
@@ -411,7 +406,6 @@ func (m *Cable) validateTypeEnum(path, location string, value string) error {
 }
 
 func (m *Cable) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -425,12 +419,123 @@ func (m *Cable) validateType(formats strfmt.Registry) error {
 }
 
 func (m *Cable) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this cable based on the context it is used
+func (m *Cable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLengthUnit(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTerminationa(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTerminationb(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *Cable) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Cable) contextValidateLengthUnit(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.LengthUnit != nil {
+		if err := m.LengthUnit.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("length_unit")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Cable) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Status != nil {
+		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Cable) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Cable) contextValidateTerminationa(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *Cable) contextValidateTerminationb(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *Cable) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -587,6 +692,11 @@ func (m *CableLengthUnit) validateValue(formats strfmt.Registry) error {
 	return nil
 }
 
+// ContextValidate validates this cable length unit based on context it is used
+func (m *CableLengthUnit) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
 // MarshalBinary interface implementation
 func (m *CableLengthUnit) MarshalBinary() ([]byte, error) {
 	if m == nil {
@@ -728,6 +838,11 @@ func (m *CableStatus) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this cable status based on context it is used
+func (m *CableStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamVlanGroupsDeleteParams creates a new IpamVlanGroupsDeleteParams object
-// with the default values initialized.
+// NewIpamVlanGroupsDeleteParams creates a new IpamVlanGroupsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVlanGroupsDeleteParams() *IpamVlanGroupsDeleteParams {
-	var ()
 	return &IpamVlanGroupsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVlanGroupsDeleteParamsWithTimeout creates a new IpamVlanGroupsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVlanGroupsDeleteParamsWithTimeout(timeout time.Duration) *IpamVlanGroupsDeleteParams {
-	var ()
 	return &IpamVlanGroupsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVlanGroupsDeleteParamsWithContext creates a new IpamVlanGroupsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVlanGroupsDeleteParamsWithContext(ctx context.Context) *IpamVlanGroupsDeleteParams {
-	var ()
 	return &IpamVlanGroupsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVlanGroupsDeleteParamsWithHTTPClient creates a new IpamVlanGroupsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVlanGroupsDeleteParamsWithHTTPClient(client *http.Client) *IpamVlanGroupsDeleteParams {
-	var ()
 	return &IpamVlanGroupsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVlanGroupsDeleteParams contains all the parameters to send to the API endpoint
-for the ipam vlan groups delete operation typically these are written to a http.Request
+/* IpamVlanGroupsDeleteParams contains all the parameters to send to the API endpoint
+   for the ipam vlan groups delete operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVlanGroupsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this VLAN group.
+	/* ID.
 
+	   A unique integer value identifying this VLAN group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vlan groups delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlanGroupsDeleteParams) WithDefaults() *IpamVlanGroupsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vlan groups delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlanGroupsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vlan groups delete params

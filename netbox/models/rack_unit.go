@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 
 	"github.com/go-openapi/errors"
@@ -77,7 +78,6 @@ func (m *RackUnit) Validate(formats strfmt.Registry) error {
 }
 
 func (m *RackUnit) validateDevice(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Device) { // not required
 		return nil
 	}
@@ -95,7 +95,6 @@ func (m *RackUnit) validateDevice(formats strfmt.Registry) error {
 }
 
 func (m *RackUnit) validateFace(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Face) { // not required
 		return nil
 	}
@@ -113,12 +112,96 @@ func (m *RackUnit) validateFace(formats strfmt.Registry) error {
 }
 
 func (m *RackUnit) validateName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Name) { // not required
 		return nil
 	}
 
-	if err := validate.MinLength("name", "body", string(m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", m.Name, 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this rack unit based on the context it is used
+func (m *RackUnit) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDevice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFace(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *RackUnit) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Device != nil {
+		if err := m.Device.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *RackUnit) contextValidateFace(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Face != nil {
+		if err := m.Face.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("face")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *RackUnit) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *RackUnit) contextValidateName(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "name", "body", string(m.Name)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *RackUnit) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "occupied", "body", m.Occupied); err != nil {
 		return err
 	}
 
@@ -260,6 +343,16 @@ func (m *RackUnitFace) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validate this rack unit face based on the context it is used
+func (m *RackUnitFace) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
 	return nil
 }
 

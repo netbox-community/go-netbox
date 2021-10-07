@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewUsersGroupsBulkUpdateParams creates a new UsersGroupsBulkUpdateParams object
-// with the default values initialized.
+// NewUsersGroupsBulkUpdateParams creates a new UsersGroupsBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersGroupsBulkUpdateParams() *UsersGroupsBulkUpdateParams {
-	var ()
 	return &UsersGroupsBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersGroupsBulkUpdateParamsWithTimeout creates a new UsersGroupsBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersGroupsBulkUpdateParamsWithTimeout(timeout time.Duration) *UsersGroupsBulkUpdateParams {
-	var ()
 	return &UsersGroupsBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersGroupsBulkUpdateParamsWithContext creates a new UsersGroupsBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersGroupsBulkUpdateParamsWithContext(ctx context.Context) *UsersGroupsBulkUpdateParams {
-	var ()
 	return &UsersGroupsBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersGroupsBulkUpdateParamsWithHTTPClient creates a new UsersGroupsBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersGroupsBulkUpdateParamsWithHTTPClient(client *http.Client) *UsersGroupsBulkUpdateParams {
-	var ()
 	return &UsersGroupsBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersGroupsBulkUpdateParams contains all the parameters to send to the API endpoint
-for the users groups bulk update operation typically these are written to a http.Request
+/* UsersGroupsBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the users groups bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersGroupsBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Group
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users groups bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersGroupsBulkUpdateParams) WithDefaults() *UsersGroupsBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users groups bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersGroupsBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users groups bulk update params
@@ -136,7 +150,6 @@ func (o *UsersGroupsBulkUpdateParams) WriteToRequest(r runtime.ClientRequest, re
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

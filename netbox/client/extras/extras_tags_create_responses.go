@@ -61,7 +61,7 @@ func NewExtrasTagsCreateCreated() *ExtrasTagsCreateCreated {
 	return &ExtrasTagsCreateCreated{}
 }
 
-/*ExtrasTagsCreateCreated handles this case with default header values.
+/* ExtrasTagsCreateCreated describes a response with status code 201, with default header values.
 
 ExtrasTagsCreateCreated extras tags create created
 */
@@ -72,7 +72,6 @@ type ExtrasTagsCreateCreated struct {
 func (o *ExtrasTagsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/tags/][%d] extrasTagsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *ExtrasTagsCreateCreated) GetPayload() *models.Tag {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasTagsCreateDefault(code int) *ExtrasTagsCreateDefault {
 	}
 }
 
-/*ExtrasTagsCreateDefault handles this case with default header values.
+/* ExtrasTagsCreateDefault describes a response with status code -1, with default header values.
 
 ExtrasTagsCreateDefault extras tags create default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasTagsCreateDefault) Code() int {
 func (o *ExtrasTagsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/tags/][%d] extras_tags_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasTagsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

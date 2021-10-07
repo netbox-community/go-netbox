@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamAggregatesReadParams creates a new IpamAggregatesReadParams object
-// with the default values initialized.
+// NewIpamAggregatesReadParams creates a new IpamAggregatesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamAggregatesReadParams() *IpamAggregatesReadParams {
-	var ()
 	return &IpamAggregatesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamAggregatesReadParamsWithTimeout creates a new IpamAggregatesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamAggregatesReadParamsWithTimeout(timeout time.Duration) *IpamAggregatesReadParams {
-	var ()
 	return &IpamAggregatesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamAggregatesReadParamsWithContext creates a new IpamAggregatesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamAggregatesReadParamsWithContext(ctx context.Context) *IpamAggregatesReadParams {
-	var ()
 	return &IpamAggregatesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamAggregatesReadParamsWithHTTPClient creates a new IpamAggregatesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamAggregatesReadParamsWithHTTPClient(client *http.Client) *IpamAggregatesReadParams {
-	var ()
 	return &IpamAggregatesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamAggregatesReadParams contains all the parameters to send to the API endpoint
-for the ipam aggregates read operation typically these are written to a http.Request
+/* IpamAggregatesReadParams contains all the parameters to send to the API endpoint
+   for the ipam aggregates read operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamAggregatesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this aggregate.
+	/* ID.
 
+	   A unique integer value identifying this aggregate.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam aggregates read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesReadParams) WithDefaults() *IpamAggregatesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam aggregates read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam aggregates read params

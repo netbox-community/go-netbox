@@ -61,7 +61,7 @@ func NewUsersPermissionsReadOK() *UsersPermissionsReadOK {
 	return &UsersPermissionsReadOK{}
 }
 
-/*UsersPermissionsReadOK handles this case with default header values.
+/* UsersPermissionsReadOK describes a response with status code 200, with default header values.
 
 UsersPermissionsReadOK users permissions read o k
 */
@@ -72,7 +72,6 @@ type UsersPermissionsReadOK struct {
 func (o *UsersPermissionsReadOK) Error() string {
 	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] usersPermissionsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersPermissionsReadOK) GetPayload() *models.ObjectPermission {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersPermissionsReadDefault(code int) *UsersPermissionsReadDefault {
 	}
 }
 
-/*UsersPermissionsReadDefault handles this case with default header values.
+/* UsersPermissionsReadDefault describes a response with status code -1, with default header values.
 
 UsersPermissionsReadDefault users permissions read default
 */
@@ -114,7 +113,6 @@ func (o *UsersPermissionsReadDefault) Code() int {
 func (o *UsersPermissionsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] users_permissions_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersPermissionsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

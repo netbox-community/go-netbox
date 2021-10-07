@@ -61,7 +61,7 @@ func NewUsersUsersReadOK() *UsersUsersReadOK {
 	return &UsersUsersReadOK{}
 }
 
-/*UsersUsersReadOK handles this case with default header values.
+/* UsersUsersReadOK describes a response with status code 200, with default header values.
 
 UsersUsersReadOK users users read o k
 */
@@ -72,7 +72,6 @@ type UsersUsersReadOK struct {
 func (o *UsersUsersReadOK) Error() string {
 	return fmt.Sprintf("[GET /users/users/{id}/][%d] usersUsersReadOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersUsersReadOK) GetPayload() *models.User {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersUsersReadDefault(code int) *UsersUsersReadDefault {
 	}
 }
 
-/*UsersUsersReadDefault handles this case with default header values.
+/* UsersUsersReadDefault describes a response with status code -1, with default header values.
 
 UsersUsersReadDefault users users read default
 */
@@ -114,7 +113,6 @@ func (o *UsersUsersReadDefault) Code() int {
 func (o *UsersUsersReadDefault) Error() string {
 	return fmt.Sprintf("[GET /users/users/{id}/][%d] users_users_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersUsersReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

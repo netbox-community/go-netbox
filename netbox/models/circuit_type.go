@@ -21,6 +21,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -90,12 +92,11 @@ func (m *CircuitType) Validate(formats strfmt.Registry) error {
 }
 
 func (m *CircuitType) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -108,11 +109,11 @@ func (m *CircuitType) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 100); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
 	}
 
@@ -125,15 +126,15 @@ func (m *CircuitType) validateSlug(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("slug", "body", string(*m.Slug), 1); err != nil {
+	if err := validate.MinLength("slug", "body", *m.Slug, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("slug", "body", string(*m.Slug), 100); err != nil {
+	if err := validate.MaxLength("slug", "body", *m.Slug, 100); err != nil {
 		return err
 	}
 
-	if err := validate.Pattern("slug", "body", string(*m.Slug), `^[-a-zA-Z0-9_]+$`); err != nil {
+	if err := validate.Pattern("slug", "body", *m.Slug, `^[-a-zA-Z0-9_]+$`); err != nil {
 		return err
 	}
 
@@ -141,12 +142,60 @@ func (m *CircuitType) validateSlug(formats strfmt.Registry) error {
 }
 
 func (m *CircuitType) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this circuit type based on the context it is used
+func (m *CircuitType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCircuitCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *CircuitType) contextValidateCircuitCount(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "circuit_count", "body", int64(m.CircuitCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CircuitType) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CircuitType) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewExtrasObjectChangesReadParams creates a new ExtrasObjectChangesReadParams object
-// with the default values initialized.
+// NewExtrasObjectChangesReadParams creates a new ExtrasObjectChangesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasObjectChangesReadParams() *ExtrasObjectChangesReadParams {
-	var ()
 	return &ExtrasObjectChangesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasObjectChangesReadParamsWithTimeout creates a new ExtrasObjectChangesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasObjectChangesReadParamsWithTimeout(timeout time.Duration) *ExtrasObjectChangesReadParams {
-	var ()
 	return &ExtrasObjectChangesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasObjectChangesReadParamsWithContext creates a new ExtrasObjectChangesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasObjectChangesReadParamsWithContext(ctx context.Context) *ExtrasObjectChangesReadParams {
-	var ()
 	return &ExtrasObjectChangesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasObjectChangesReadParamsWithHTTPClient creates a new ExtrasObjectChangesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasObjectChangesReadParamsWithHTTPClient(client *http.Client) *ExtrasObjectChangesReadParams {
-	var ()
 	return &ExtrasObjectChangesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasObjectChangesReadParams contains all the parameters to send to the API endpoint
-for the extras object changes read operation typically these are written to a http.Request
+/* ExtrasObjectChangesReadParams contains all the parameters to send to the API endpoint
+   for the extras object changes read operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasObjectChangesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this object change.
+	/* ID.
 
+	   A unique integer value identifying this object change.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras object changes read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasObjectChangesReadParams) WithDefaults() *ExtrasObjectChangesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras object changes read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasObjectChangesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras object changes read params

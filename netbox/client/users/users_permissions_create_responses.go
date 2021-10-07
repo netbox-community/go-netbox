@@ -61,7 +61,7 @@ func NewUsersPermissionsCreateCreated() *UsersPermissionsCreateCreated {
 	return &UsersPermissionsCreateCreated{}
 }
 
-/*UsersPermissionsCreateCreated handles this case with default header values.
+/* UsersPermissionsCreateCreated describes a response with status code 201, with default header values.
 
 UsersPermissionsCreateCreated users permissions create created
 */
@@ -72,7 +72,6 @@ type UsersPermissionsCreateCreated struct {
 func (o *UsersPermissionsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /users/permissions/][%d] usersPermissionsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *UsersPermissionsCreateCreated) GetPayload() *models.ObjectPermission {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersPermissionsCreateDefault(code int) *UsersPermissionsCreateDefault {
 	}
 }
 
-/*UsersPermissionsCreateDefault handles this case with default header values.
+/* UsersPermissionsCreateDefault describes a response with status code -1, with default header values.
 
 UsersPermissionsCreateDefault users permissions create default
 */
@@ -114,7 +113,6 @@ func (o *UsersPermissionsCreateDefault) Code() int {
 func (o *UsersPermissionsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /users/permissions/][%d] users_permissions_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersPermissionsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

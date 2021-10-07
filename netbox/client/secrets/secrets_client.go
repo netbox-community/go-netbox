@@ -38,47 +38,50 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	SecretsGenerateRsaKeyPairList(params *SecretsGenerateRsaKeyPairListParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsGenerateRsaKeyPairListOK, error)
+	SecretsGenerateRsaKeyPairList(params *SecretsGenerateRsaKeyPairListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsGenerateRsaKeyPairListOK, error)
 
-	SecretsGetSessionKeyCreate(params *SecretsGetSessionKeyCreateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsGetSessionKeyCreateCreated, error)
+	SecretsGetSessionKeyCreate(params *SecretsGetSessionKeyCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsGetSessionKeyCreateCreated, error)
 
-	SecretsSecretRolesBulkDelete(params *SecretsSecretRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesBulkDeleteNoContent, error)
+	SecretsSecretRolesBulkDelete(params *SecretsSecretRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesBulkDeleteNoContent, error)
 
-	SecretsSecretRolesBulkPartialUpdate(params *SecretsSecretRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesBulkPartialUpdateOK, error)
+	SecretsSecretRolesBulkPartialUpdate(params *SecretsSecretRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesBulkPartialUpdateOK, error)
 
-	SecretsSecretRolesBulkUpdate(params *SecretsSecretRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesBulkUpdateOK, error)
+	SecretsSecretRolesBulkUpdate(params *SecretsSecretRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesBulkUpdateOK, error)
 
-	SecretsSecretRolesCreate(params *SecretsSecretRolesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesCreateCreated, error)
+	SecretsSecretRolesCreate(params *SecretsSecretRolesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesCreateCreated, error)
 
-	SecretsSecretRolesDelete(params *SecretsSecretRolesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesDeleteNoContent, error)
+	SecretsSecretRolesDelete(params *SecretsSecretRolesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesDeleteNoContent, error)
 
-	SecretsSecretRolesList(params *SecretsSecretRolesListParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesListOK, error)
+	SecretsSecretRolesList(params *SecretsSecretRolesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesListOK, error)
 
-	SecretsSecretRolesPartialUpdate(params *SecretsSecretRolesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesPartialUpdateOK, error)
+	SecretsSecretRolesPartialUpdate(params *SecretsSecretRolesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesPartialUpdateOK, error)
 
-	SecretsSecretRolesRead(params *SecretsSecretRolesReadParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesReadOK, error)
+	SecretsSecretRolesRead(params *SecretsSecretRolesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesReadOK, error)
 
-	SecretsSecretRolesUpdate(params *SecretsSecretRolesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesUpdateOK, error)
+	SecretsSecretRolesUpdate(params *SecretsSecretRolesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesUpdateOK, error)
 
-	SecretsSecretsBulkDelete(params *SecretsSecretsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsBulkDeleteNoContent, error)
+	SecretsSecretsBulkDelete(params *SecretsSecretsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsBulkDeleteNoContent, error)
 
-	SecretsSecretsBulkPartialUpdate(params *SecretsSecretsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsBulkPartialUpdateOK, error)
+	SecretsSecretsBulkPartialUpdate(params *SecretsSecretsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsBulkPartialUpdateOK, error)
 
-	SecretsSecretsBulkUpdate(params *SecretsSecretsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsBulkUpdateOK, error)
+	SecretsSecretsBulkUpdate(params *SecretsSecretsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsBulkUpdateOK, error)
 
-	SecretsSecretsCreate(params *SecretsSecretsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsCreateCreated, error)
+	SecretsSecretsCreate(params *SecretsSecretsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsCreateCreated, error)
 
-	SecretsSecretsDelete(params *SecretsSecretsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsDeleteNoContent, error)
+	SecretsSecretsDelete(params *SecretsSecretsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsDeleteNoContent, error)
 
-	SecretsSecretsList(params *SecretsSecretsListParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsListOK, error)
+	SecretsSecretsList(params *SecretsSecretsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsListOK, error)
 
-	SecretsSecretsPartialUpdate(params *SecretsSecretsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsPartialUpdateOK, error)
+	SecretsSecretsPartialUpdate(params *SecretsSecretsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsPartialUpdateOK, error)
 
-	SecretsSecretsRead(params *SecretsSecretsReadParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsReadOK, error)
+	SecretsSecretsRead(params *SecretsSecretsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsReadOK, error)
 
-	SecretsSecretsUpdate(params *SecretsSecretsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsUpdateOK, error)
+	SecretsSecretsUpdate(params *SecretsSecretsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -91,13 +94,12 @@ type ClientService interface {
         "private_key": "<private key>"
     }
 */
-func (a *Client) SecretsGenerateRsaKeyPairList(params *SecretsGenerateRsaKeyPairListParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsGenerateRsaKeyPairListOK, error) {
+func (a *Client) SecretsGenerateRsaKeyPairList(params *SecretsGenerateRsaKeyPairListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsGenerateRsaKeyPairListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsGenerateRsaKeyPairListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_generate-rsa-key-pair_list",
 		Method:             "GET",
 		PathPattern:        "/secrets/generate-rsa-key-pair/",
@@ -109,7 +111,12 @@ func (a *Client) SecretsGenerateRsaKeyPairList(params *SecretsGenerateRsaKeyPair
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -138,13 +145,12 @@ This request will yield a base64-encoded session key to be included in an `X-Ses
 This endpoint accepts one optional parameter: `preserve_key`. If True and a session key exists, the existing session
 key will be returned instead of a new one.
 */
-func (a *Client) SecretsGetSessionKeyCreate(params *SecretsGetSessionKeyCreateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsGetSessionKeyCreateCreated, error) {
+func (a *Client) SecretsGetSessionKeyCreate(params *SecretsGetSessionKeyCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsGetSessionKeyCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsGetSessionKeyCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_get-session-key_create",
 		Method:             "POST",
 		PathPattern:        "/secrets/get-session-key/",
@@ -156,7 +162,12 @@ func (a *Client) SecretsGetSessionKeyCreate(params *SecretsGetSessionKeyCreatePa
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -172,13 +183,12 @@ func (a *Client) SecretsGetSessionKeyCreate(params *SecretsGetSessionKeyCreatePa
 /*
   SecretsSecretRolesBulkDelete secrets secret roles bulk delete API
 */
-func (a *Client) SecretsSecretRolesBulkDelete(params *SecretsSecretRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesBulkDeleteNoContent, error) {
+func (a *Client) SecretsSecretRolesBulkDelete(params *SecretsSecretRolesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretRolesBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secret-roles_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/secrets/secret-roles/",
@@ -190,7 +200,12 @@ func (a *Client) SecretsSecretRolesBulkDelete(params *SecretsSecretRolesBulkDele
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -206,13 +221,12 @@ func (a *Client) SecretsSecretRolesBulkDelete(params *SecretsSecretRolesBulkDele
 /*
   SecretsSecretRolesBulkPartialUpdate secrets secret roles bulk partial update API
 */
-func (a *Client) SecretsSecretRolesBulkPartialUpdate(params *SecretsSecretRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesBulkPartialUpdateOK, error) {
+func (a *Client) SecretsSecretRolesBulkPartialUpdate(params *SecretsSecretRolesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretRolesBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secret-roles_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/secrets/secret-roles/",
@@ -224,7 +238,12 @@ func (a *Client) SecretsSecretRolesBulkPartialUpdate(params *SecretsSecretRolesB
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -240,13 +259,12 @@ func (a *Client) SecretsSecretRolesBulkPartialUpdate(params *SecretsSecretRolesB
 /*
   SecretsSecretRolesBulkUpdate secrets secret roles bulk update API
 */
-func (a *Client) SecretsSecretRolesBulkUpdate(params *SecretsSecretRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesBulkUpdateOK, error) {
+func (a *Client) SecretsSecretRolesBulkUpdate(params *SecretsSecretRolesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretRolesBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secret-roles_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/secrets/secret-roles/",
@@ -258,7 +276,12 @@ func (a *Client) SecretsSecretRolesBulkUpdate(params *SecretsSecretRolesBulkUpda
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -274,13 +297,12 @@ func (a *Client) SecretsSecretRolesBulkUpdate(params *SecretsSecretRolesBulkUpda
 /*
   SecretsSecretRolesCreate secrets secret roles create API
 */
-func (a *Client) SecretsSecretRolesCreate(params *SecretsSecretRolesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesCreateCreated, error) {
+func (a *Client) SecretsSecretRolesCreate(params *SecretsSecretRolesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretRolesCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secret-roles_create",
 		Method:             "POST",
 		PathPattern:        "/secrets/secret-roles/",
@@ -292,7 +314,12 @@ func (a *Client) SecretsSecretRolesCreate(params *SecretsSecretRolesCreateParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -308,13 +335,12 @@ func (a *Client) SecretsSecretRolesCreate(params *SecretsSecretRolesCreateParams
 /*
   SecretsSecretRolesDelete secrets secret roles delete API
 */
-func (a *Client) SecretsSecretRolesDelete(params *SecretsSecretRolesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesDeleteNoContent, error) {
+func (a *Client) SecretsSecretRolesDelete(params *SecretsSecretRolesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretRolesDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secret-roles_delete",
 		Method:             "DELETE",
 		PathPattern:        "/secrets/secret-roles/{id}/",
@@ -326,7 +352,12 @@ func (a *Client) SecretsSecretRolesDelete(params *SecretsSecretRolesDeleteParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -342,13 +373,12 @@ func (a *Client) SecretsSecretRolesDelete(params *SecretsSecretRolesDeleteParams
 /*
   SecretsSecretRolesList secrets secret roles list API
 */
-func (a *Client) SecretsSecretRolesList(params *SecretsSecretRolesListParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesListOK, error) {
+func (a *Client) SecretsSecretRolesList(params *SecretsSecretRolesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretRolesListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secret-roles_list",
 		Method:             "GET",
 		PathPattern:        "/secrets/secret-roles/",
@@ -360,7 +390,12 @@ func (a *Client) SecretsSecretRolesList(params *SecretsSecretRolesListParams, au
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -376,13 +411,12 @@ func (a *Client) SecretsSecretRolesList(params *SecretsSecretRolesListParams, au
 /*
   SecretsSecretRolesPartialUpdate secrets secret roles partial update API
 */
-func (a *Client) SecretsSecretRolesPartialUpdate(params *SecretsSecretRolesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesPartialUpdateOK, error) {
+func (a *Client) SecretsSecretRolesPartialUpdate(params *SecretsSecretRolesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretRolesPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secret-roles_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/secrets/secret-roles/{id}/",
@@ -394,7 +428,12 @@ func (a *Client) SecretsSecretRolesPartialUpdate(params *SecretsSecretRolesParti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -410,13 +449,12 @@ func (a *Client) SecretsSecretRolesPartialUpdate(params *SecretsSecretRolesParti
 /*
   SecretsSecretRolesRead secrets secret roles read API
 */
-func (a *Client) SecretsSecretRolesRead(params *SecretsSecretRolesReadParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesReadOK, error) {
+func (a *Client) SecretsSecretRolesRead(params *SecretsSecretRolesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretRolesReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secret-roles_read",
 		Method:             "GET",
 		PathPattern:        "/secrets/secret-roles/{id}/",
@@ -428,7 +466,12 @@ func (a *Client) SecretsSecretRolesRead(params *SecretsSecretRolesReadParams, au
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -444,13 +487,12 @@ func (a *Client) SecretsSecretRolesRead(params *SecretsSecretRolesReadParams, au
 /*
   SecretsSecretRolesUpdate secrets secret roles update API
 */
-func (a *Client) SecretsSecretRolesUpdate(params *SecretsSecretRolesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretRolesUpdateOK, error) {
+func (a *Client) SecretsSecretRolesUpdate(params *SecretsSecretRolesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretRolesUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretRolesUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secret-roles_update",
 		Method:             "PUT",
 		PathPattern:        "/secrets/secret-roles/{id}/",
@@ -462,7 +504,12 @@ func (a *Client) SecretsSecretRolesUpdate(params *SecretsSecretRolesUpdateParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -478,13 +525,12 @@ func (a *Client) SecretsSecretRolesUpdate(params *SecretsSecretRolesUpdateParams
 /*
   SecretsSecretsBulkDelete secrets secrets bulk delete API
 */
-func (a *Client) SecretsSecretsBulkDelete(params *SecretsSecretsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsBulkDeleteNoContent, error) {
+func (a *Client) SecretsSecretsBulkDelete(params *SecretsSecretsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretsBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secrets_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/secrets/secrets/",
@@ -496,7 +542,12 @@ func (a *Client) SecretsSecretsBulkDelete(params *SecretsSecretsBulkDeleteParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -512,13 +563,12 @@ func (a *Client) SecretsSecretsBulkDelete(params *SecretsSecretsBulkDeleteParams
 /*
   SecretsSecretsBulkPartialUpdate secrets secrets bulk partial update API
 */
-func (a *Client) SecretsSecretsBulkPartialUpdate(params *SecretsSecretsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsBulkPartialUpdateOK, error) {
+func (a *Client) SecretsSecretsBulkPartialUpdate(params *SecretsSecretsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretsBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secrets_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/secrets/secrets/",
@@ -530,7 +580,12 @@ func (a *Client) SecretsSecretsBulkPartialUpdate(params *SecretsSecretsBulkParti
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -546,13 +601,12 @@ func (a *Client) SecretsSecretsBulkPartialUpdate(params *SecretsSecretsBulkParti
 /*
   SecretsSecretsBulkUpdate secrets secrets bulk update API
 */
-func (a *Client) SecretsSecretsBulkUpdate(params *SecretsSecretsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsBulkUpdateOK, error) {
+func (a *Client) SecretsSecretsBulkUpdate(params *SecretsSecretsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretsBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secrets_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/secrets/secrets/",
@@ -564,7 +618,12 @@ func (a *Client) SecretsSecretsBulkUpdate(params *SecretsSecretsBulkUpdateParams
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -580,13 +639,12 @@ func (a *Client) SecretsSecretsBulkUpdate(params *SecretsSecretsBulkUpdateParams
 /*
   SecretsSecretsCreate secrets secrets create API
 */
-func (a *Client) SecretsSecretsCreate(params *SecretsSecretsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsCreateCreated, error) {
+func (a *Client) SecretsSecretsCreate(params *SecretsSecretsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secrets_create",
 		Method:             "POST",
 		PathPattern:        "/secrets/secrets/",
@@ -598,7 +656,12 @@ func (a *Client) SecretsSecretsCreate(params *SecretsSecretsCreateParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -614,13 +677,12 @@ func (a *Client) SecretsSecretsCreate(params *SecretsSecretsCreateParams, authIn
 /*
   SecretsSecretsDelete secrets secrets delete API
 */
-func (a *Client) SecretsSecretsDelete(params *SecretsSecretsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsDeleteNoContent, error) {
+func (a *Client) SecretsSecretsDelete(params *SecretsSecretsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secrets_delete",
 		Method:             "DELETE",
 		PathPattern:        "/secrets/secrets/{id}/",
@@ -632,7 +694,12 @@ func (a *Client) SecretsSecretsDelete(params *SecretsSecretsDeleteParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -648,13 +715,12 @@ func (a *Client) SecretsSecretsDelete(params *SecretsSecretsDeleteParams, authIn
 /*
   SecretsSecretsList secrets secrets list API
 */
-func (a *Client) SecretsSecretsList(params *SecretsSecretsListParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsListOK, error) {
+func (a *Client) SecretsSecretsList(params *SecretsSecretsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secrets_list",
 		Method:             "GET",
 		PathPattern:        "/secrets/secrets/",
@@ -666,7 +732,12 @@ func (a *Client) SecretsSecretsList(params *SecretsSecretsListParams, authInfo r
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -682,13 +753,12 @@ func (a *Client) SecretsSecretsList(params *SecretsSecretsListParams, authInfo r
 /*
   SecretsSecretsPartialUpdate secrets secrets partial update API
 */
-func (a *Client) SecretsSecretsPartialUpdate(params *SecretsSecretsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsPartialUpdateOK, error) {
+func (a *Client) SecretsSecretsPartialUpdate(params *SecretsSecretsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secrets_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/secrets/secrets/{id}/",
@@ -700,7 +770,12 @@ func (a *Client) SecretsSecretsPartialUpdate(params *SecretsSecretsPartialUpdate
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -716,13 +791,12 @@ func (a *Client) SecretsSecretsPartialUpdate(params *SecretsSecretsPartialUpdate
 /*
   SecretsSecretsRead secrets secrets read API
 */
-func (a *Client) SecretsSecretsRead(params *SecretsSecretsReadParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsReadOK, error) {
+func (a *Client) SecretsSecretsRead(params *SecretsSecretsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secrets_read",
 		Method:             "GET",
 		PathPattern:        "/secrets/secrets/{id}/",
@@ -734,7 +808,12 @@ func (a *Client) SecretsSecretsRead(params *SecretsSecretsReadParams, authInfo r
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -750,13 +829,12 @@ func (a *Client) SecretsSecretsRead(params *SecretsSecretsReadParams, authInfo r
 /*
   SecretsSecretsUpdate secrets secrets update API
 */
-func (a *Client) SecretsSecretsUpdate(params *SecretsSecretsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*SecretsSecretsUpdateOK, error) {
+func (a *Client) SecretsSecretsUpdate(params *SecretsSecretsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SecretsSecretsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSecretsSecretsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "secrets_secrets_update",
 		Method:             "PUT",
 		PathPattern:        "/secrets/secrets/{id}/",
@@ -768,7 +846,12 @@ func (a *Client) SecretsSecretsUpdate(params *SecretsSecretsUpdateParams, authIn
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

@@ -59,7 +59,7 @@ func NewVirtualizationInterfacesBulkDeleteNoContent() *VirtualizationInterfacesB
 	return &VirtualizationInterfacesBulkDeleteNoContent{}
 }
 
-/*VirtualizationInterfacesBulkDeleteNoContent handles this case with default header values.
+/* VirtualizationInterfacesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationInterfacesBulkDeleteNoContent virtualization interfaces bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewVirtualizationInterfacesBulkDeleteDefault(code int) *VirtualizationInter
 	}
 }
 
-/*VirtualizationInterfacesBulkDeleteDefault handles this case with default header values.
+/* VirtualizationInterfacesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesBulkDeleteDefault virtualization interfaces bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *VirtualizationInterfacesBulkDeleteDefault) Code() int {
 func (o *VirtualizationInterfacesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/interfaces/][%d] virtualization_interfaces_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationInterfacesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

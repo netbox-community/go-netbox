@@ -21,6 +21,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -86,11 +88,11 @@ func (m *NestedVLAN) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -98,7 +100,6 @@ func (m *NestedVLAN) validateName(formats strfmt.Registry) error {
 }
 
 func (m *NestedVLAN) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -116,11 +117,60 @@ func (m *NestedVLAN) validateVid(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinimumInt("vid", "body", int64(*m.Vid), 1, false); err != nil {
+	if err := validate.MinimumInt("vid", "body", *m.Vid, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("vid", "body", int64(*m.Vid), 4094, false); err != nil {
+	if err := validate.MaximumInt("vid", "body", *m.Vid, 4094, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this nested v l a n based on the context it is used
+func (m *NestedVLAN) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *NestedVLAN) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *NestedVLAN) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *NestedVLAN) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

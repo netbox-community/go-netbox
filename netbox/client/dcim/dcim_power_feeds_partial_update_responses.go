@@ -61,7 +61,7 @@ func NewDcimPowerFeedsPartialUpdateOK() *DcimPowerFeedsPartialUpdateOK {
 	return &DcimPowerFeedsPartialUpdateOK{}
 }
 
-/*DcimPowerFeedsPartialUpdateOK handles this case with default header values.
+/* DcimPowerFeedsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerFeedsPartialUpdateOK dcim power feeds partial update o k
 */
@@ -72,7 +72,6 @@ type DcimPowerFeedsPartialUpdateOK struct {
 func (o *DcimPowerFeedsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-feeds/{id}/][%d] dcimPowerFeedsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerFeedsPartialUpdateOK) GetPayload() *models.PowerFeed {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerFeedsPartialUpdateDefault(code int) *DcimPowerFeedsPartialUpdat
 	}
 }
 
-/*DcimPowerFeedsPartialUpdateDefault handles this case with default header values.
+/* DcimPowerFeedsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsPartialUpdateDefault dcim power feeds partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerFeedsPartialUpdateDefault) Code() int {
 func (o *DcimPowerFeedsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-feeds/{id}/][%d] dcim_power-feeds_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerFeedsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

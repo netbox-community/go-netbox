@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewVirtualizationInterfacesDeleteParams creates a new VirtualizationInterfacesDeleteParams object
-// with the default values initialized.
+// NewVirtualizationInterfacesDeleteParams creates a new VirtualizationInterfacesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationInterfacesDeleteParams() *VirtualizationInterfacesDeleteParams {
-	var ()
 	return &VirtualizationInterfacesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationInterfacesDeleteParamsWithTimeout creates a new VirtualizationInterfacesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationInterfacesDeleteParamsWithTimeout(timeout time.Duration) *VirtualizationInterfacesDeleteParams {
-	var ()
 	return &VirtualizationInterfacesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationInterfacesDeleteParamsWithContext creates a new VirtualizationInterfacesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationInterfacesDeleteParamsWithContext(ctx context.Context) *VirtualizationInterfacesDeleteParams {
-	var ()
 	return &VirtualizationInterfacesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationInterfacesDeleteParamsWithHTTPClient creates a new VirtualizationInterfacesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationInterfacesDeleteParamsWithHTTPClient(client *http.Client) *VirtualizationInterfacesDeleteParams {
-	var ()
 	return &VirtualizationInterfacesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationInterfacesDeleteParams contains all the parameters to send to the API endpoint
-for the virtualization interfaces delete operation typically these are written to a http.Request
+/* VirtualizationInterfacesDeleteParams contains all the parameters to send to the API endpoint
+   for the virtualization interfaces delete operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationInterfacesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this interface.
+	/* ID.
 
+	   A unique integer value identifying this interface.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization interfaces delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationInterfacesDeleteParams) WithDefaults() *VirtualizationInterfacesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization interfaces delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationInterfacesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization interfaces delete params

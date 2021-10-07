@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewIpamVlanGroupsListOK() *IpamVlanGroupsListOK {
 	return &IpamVlanGroupsListOK{}
 }
 
-/*IpamVlanGroupsListOK handles this case with default header values.
+/* IpamVlanGroupsListOK describes a response with status code 200, with default header values.
 
 IpamVlanGroupsListOK ipam vlan groups list o k
 */
@@ -76,7 +77,6 @@ type IpamVlanGroupsListOK struct {
 func (o *IpamVlanGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipamVlanGroupsListOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVlanGroupsListOK) GetPayload() *IpamVlanGroupsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewIpamVlanGroupsListDefault(code int) *IpamVlanGroupsListDefault {
 	}
 }
 
-/*IpamVlanGroupsListDefault handles this case with default header values.
+/* IpamVlanGroupsListDefault describes a response with status code -1, with default header values.
 
 IpamVlanGroupsListDefault ipam vlan groups list default
 */
@@ -118,7 +118,6 @@ func (o *IpamVlanGroupsListDefault) Code() int {
 func (o *IpamVlanGroupsListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipam_vlan-groups_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVlanGroupsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *IpamVlanGroupsListOKBody) validateCount(formats strfmt.Registry) error 
 }
 
 func (o *IpamVlanGroupsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *IpamVlanGroupsListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *IpamVlanGroupsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *IpamVlanGroupsListOKBody) validateResults(formats strfmt.Registry) erro
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ipamVlanGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this ipam vlan groups list o k body based on the context it is used
+func (o *IpamVlanGroupsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *IpamVlanGroupsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamVlanGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

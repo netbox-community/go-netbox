@@ -32,90 +32,118 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPowerConnectionsListParams creates a new DcimPowerConnectionsListParams object
-// with the default values initialized.
+// NewDcimPowerConnectionsListParams creates a new DcimPowerConnectionsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerConnectionsListParams() *DcimPowerConnectionsListParams {
-	var ()
 	return &DcimPowerConnectionsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerConnectionsListParamsWithTimeout creates a new DcimPowerConnectionsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerConnectionsListParamsWithTimeout(timeout time.Duration) *DcimPowerConnectionsListParams {
-	var ()
 	return &DcimPowerConnectionsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerConnectionsListParamsWithContext creates a new DcimPowerConnectionsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerConnectionsListParamsWithContext(ctx context.Context) *DcimPowerConnectionsListParams {
-	var ()
 	return &DcimPowerConnectionsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerConnectionsListParamsWithHTTPClient creates a new DcimPowerConnectionsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerConnectionsListParamsWithHTTPClient(client *http.Client) *DcimPowerConnectionsListParams {
-	var ()
 	return &DcimPowerConnectionsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerConnectionsListParams contains all the parameters to send to the API endpoint
-for the dcim power connections list operation typically these are written to a http.Request
+/* DcimPowerConnectionsListParams contains all the parameters to send to the API endpoint
+   for the dcim power connections list operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerConnectionsListParams struct {
 
-	/*Device*/
+	// Device.
 	Device *string
-	/*DeviceID*/
-	DeviceID *string
-	/*Limit
-	  Number of results to return per page.
 
+	// DeviceID.
+	DeviceID *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Name.
+	Name *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Site*/
+
+	// Site.
 	Site *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power connections list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerConnectionsListParams) WithDefaults() *DcimPowerConnectionsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power connections list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerConnectionsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power connections list params
@@ -328,240 +356,255 @@ func (o *DcimPowerConnectionsListParams) WriteToRequest(r runtime.ClientRequest,
 
 		// query param device
 		var qrDevice string
+
 		if o.Device != nil {
 			qrDevice = *o.Device
 		}
 		qDevice := qrDevice
 		if qDevice != "" {
+
 			if err := r.SetQueryParam("device", qDevice); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DeviceID != nil {
 
 		// query param device_id
 		var qrDeviceID string
+
 		if o.DeviceID != nil {
 			qrDeviceID = *o.DeviceID
 		}
 		qDeviceID := qrDeviceID
 		if qDeviceID != "" {
+
 			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Site != nil {
 
 		// query param site
 		var qrSite string
+
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
 		qSite := qrSite
 		if qSite != "" {
+
 			if err := r.SetQueryParam("site", qSite); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

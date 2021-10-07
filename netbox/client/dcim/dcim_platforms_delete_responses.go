@@ -59,7 +59,7 @@ func NewDcimPlatformsDeleteNoContent() *DcimPlatformsDeleteNoContent {
 	return &DcimPlatformsDeleteNoContent{}
 }
 
-/*DcimPlatformsDeleteNoContent handles this case with default header values.
+/* DcimPlatformsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimPlatformsDeleteNoContent dcim platforms delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimPlatformsDeleteDefault(code int) *DcimPlatformsDeleteDefault {
 	}
 }
 
-/*DcimPlatformsDeleteDefault handles this case with default header values.
+/* DcimPlatformsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimPlatformsDeleteDefault dcim platforms delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimPlatformsDeleteDefault) Code() int {
 func (o *DcimPlatformsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/platforms/{id}/][%d] dcim_platforms_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPlatformsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

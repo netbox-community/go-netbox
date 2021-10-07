@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewIpamVrfsBulkDeleteParams creates a new IpamVrfsBulkDeleteParams object
-// with the default values initialized.
+// NewIpamVrfsBulkDeleteParams creates a new IpamVrfsBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVrfsBulkDeleteParams() *IpamVrfsBulkDeleteParams {
-
 	return &IpamVrfsBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVrfsBulkDeleteParamsWithTimeout creates a new IpamVrfsBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVrfsBulkDeleteParamsWithTimeout(timeout time.Duration) *IpamVrfsBulkDeleteParams {
-
 	return &IpamVrfsBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVrfsBulkDeleteParamsWithContext creates a new IpamVrfsBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVrfsBulkDeleteParamsWithContext(ctx context.Context) *IpamVrfsBulkDeleteParams {
-
 	return &IpamVrfsBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVrfsBulkDeleteParamsWithHTTPClient creates a new IpamVrfsBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVrfsBulkDeleteParamsWithHTTPClient(client *http.Client) *IpamVrfsBulkDeleteParams {
-
 	return &IpamVrfsBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVrfsBulkDeleteParams contains all the parameters to send to the API endpoint
-for the ipam vrfs bulk delete operation typically these are written to a http.Request
+/* IpamVrfsBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the ipam vrfs bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVrfsBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vrfs bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsBulkDeleteParams) WithDefaults() *IpamVrfsBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vrfs bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vrfs bulk delete params

@@ -59,7 +59,7 @@ func NewIpamVlanGroupsDeleteNoContent() *IpamVlanGroupsDeleteNoContent {
 	return &IpamVlanGroupsDeleteNoContent{}
 }
 
-/*IpamVlanGroupsDeleteNoContent handles this case with default header values.
+/* IpamVlanGroupsDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamVlanGroupsDeleteNoContent ipam vlan groups delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamVlanGroupsDeleteDefault(code int) *IpamVlanGroupsDeleteDefault {
 	}
 }
 
-/*IpamVlanGroupsDeleteDefault handles this case with default header values.
+/* IpamVlanGroupsDeleteDefault describes a response with status code -1, with default header values.
 
 IpamVlanGroupsDeleteDefault ipam vlan groups delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamVlanGroupsDeleteDefault) Code() int {
 func (o *IpamVlanGroupsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/vlan-groups/{id}/][%d] ipam_vlan-groups_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVlanGroupsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

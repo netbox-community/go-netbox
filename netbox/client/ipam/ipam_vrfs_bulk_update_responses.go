@@ -61,7 +61,7 @@ func NewIpamVrfsBulkUpdateOK() *IpamVrfsBulkUpdateOK {
 	return &IpamVrfsBulkUpdateOK{}
 }
 
-/*IpamVrfsBulkUpdateOK handles this case with default header values.
+/* IpamVrfsBulkUpdateOK describes a response with status code 200, with default header values.
 
 IpamVrfsBulkUpdateOK ipam vrfs bulk update o k
 */
@@ -72,7 +72,6 @@ type IpamVrfsBulkUpdateOK struct {
 func (o *IpamVrfsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vrfs/][%d] ipamVrfsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVrfsBulkUpdateOK) GetPayload() *models.VRF {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVrfsBulkUpdateDefault(code int) *IpamVrfsBulkUpdateDefault {
 	}
 }
 
-/*IpamVrfsBulkUpdateDefault handles this case with default header values.
+/* IpamVrfsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 IpamVrfsBulkUpdateDefault ipam vrfs bulk update default
 */
@@ -114,7 +113,6 @@ func (o *IpamVrfsBulkUpdateDefault) Code() int {
 func (o *IpamVrfsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vrfs/][%d] ipam_vrfs_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVrfsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

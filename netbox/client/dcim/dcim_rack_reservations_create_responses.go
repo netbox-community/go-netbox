@@ -61,7 +61,7 @@ func NewDcimRackReservationsCreateCreated() *DcimRackReservationsCreateCreated {
 	return &DcimRackReservationsCreateCreated{}
 }
 
-/*DcimRackReservationsCreateCreated handles this case with default header values.
+/* DcimRackReservationsCreateCreated describes a response with status code 201, with default header values.
 
 DcimRackReservationsCreateCreated dcim rack reservations create created
 */
@@ -72,7 +72,6 @@ type DcimRackReservationsCreateCreated struct {
 func (o *DcimRackReservationsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcimRackReservationsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimRackReservationsCreateCreated) GetPayload() *models.RackReservation {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRackReservationsCreateDefault(code int) *DcimRackReservationsCreateD
 	}
 }
 
-/*DcimRackReservationsCreateDefault handles this case with default header values.
+/* DcimRackReservationsCreateDefault describes a response with status code -1, with default header values.
 
 DcimRackReservationsCreateDefault dcim rack reservations create default
 */
@@ -114,7 +113,6 @@ func (o *DcimRackReservationsCreateDefault) Code() int {
 func (o *DcimRackReservationsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/rack-reservations/][%d] dcim_rack-reservations_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackReservationsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

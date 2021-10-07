@@ -61,7 +61,7 @@ func NewIpamAggregatesReadOK() *IpamAggregatesReadOK {
 	return &IpamAggregatesReadOK{}
 }
 
-/*IpamAggregatesReadOK handles this case with default header values.
+/* IpamAggregatesReadOK describes a response with status code 200, with default header values.
 
 IpamAggregatesReadOK ipam aggregates read o k
 */
@@ -72,7 +72,6 @@ type IpamAggregatesReadOK struct {
 func (o *IpamAggregatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipamAggregatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamAggregatesReadOK) GetPayload() *models.Aggregate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamAggregatesReadDefault(code int) *IpamAggregatesReadDefault {
 	}
 }
 
-/*IpamAggregatesReadDefault handles this case with default header values.
+/* IpamAggregatesReadDefault describes a response with status code -1, with default header values.
 
 IpamAggregatesReadDefault ipam aggregates read default
 */
@@ -114,7 +113,6 @@ func (o *IpamAggregatesReadDefault) Code() int {
 func (o *IpamAggregatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipam_aggregates_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamAggregatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

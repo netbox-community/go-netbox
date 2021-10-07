@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimPowerPanelsDeleteParams creates a new DcimPowerPanelsDeleteParams object
-// with the default values initialized.
+// NewDcimPowerPanelsDeleteParams creates a new DcimPowerPanelsDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerPanelsDeleteParams() *DcimPowerPanelsDeleteParams {
-	var ()
 	return &DcimPowerPanelsDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerPanelsDeleteParamsWithTimeout creates a new DcimPowerPanelsDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerPanelsDeleteParamsWithTimeout(timeout time.Duration) *DcimPowerPanelsDeleteParams {
-	var ()
 	return &DcimPowerPanelsDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerPanelsDeleteParamsWithContext creates a new DcimPowerPanelsDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerPanelsDeleteParamsWithContext(ctx context.Context) *DcimPowerPanelsDeleteParams {
-	var ()
 	return &DcimPowerPanelsDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerPanelsDeleteParamsWithHTTPClient creates a new DcimPowerPanelsDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerPanelsDeleteParamsWithHTTPClient(client *http.Client) *DcimPowerPanelsDeleteParams {
-	var ()
 	return &DcimPowerPanelsDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerPanelsDeleteParams contains all the parameters to send to the API endpoint
-for the dcim power panels delete operation typically these are written to a http.Request
+/* DcimPowerPanelsDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim power panels delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerPanelsDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this power panel.
+	/* ID.
 
+	   A unique integer value identifying this power panel.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power panels delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPanelsDeleteParams) WithDefaults() *DcimPowerPanelsDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power panels delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPanelsDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power panels delete params

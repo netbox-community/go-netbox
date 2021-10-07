@@ -61,7 +61,7 @@ func NewExtrasExportTemplatesCreateCreated() *ExtrasExportTemplatesCreateCreated
 	return &ExtrasExportTemplatesCreateCreated{}
 }
 
-/*ExtrasExportTemplatesCreateCreated handles this case with default header values.
+/* ExtrasExportTemplatesCreateCreated describes a response with status code 201, with default header values.
 
 ExtrasExportTemplatesCreateCreated extras export templates create created
 */
@@ -72,7 +72,6 @@ type ExtrasExportTemplatesCreateCreated struct {
 func (o *ExtrasExportTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/export-templates/][%d] extrasExportTemplatesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesCreateCreated) GetPayload() *models.ExportTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasExportTemplatesCreateDefault(code int) *ExtrasExportTemplatesCreat
 	}
 }
 
-/*ExtrasExportTemplatesCreateDefault handles this case with default header values.
+/* ExtrasExportTemplatesCreateDefault describes a response with status code -1, with default header values.
 
 ExtrasExportTemplatesCreateDefault extras export templates create default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasExportTemplatesCreateDefault) Code() int {
 func (o *ExtrasExportTemplatesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/export-templates/][%d] extras_export-templates_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

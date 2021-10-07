@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimPowerOutletTemplatesBulkPartialUpdateParams creates a new DcimPowerOutletTemplatesBulkPartialUpdateParams object
-// with the default values initialized.
+// NewDcimPowerOutletTemplatesBulkPartialUpdateParams creates a new DcimPowerOutletTemplatesBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerOutletTemplatesBulkPartialUpdateParams() *DcimPowerOutletTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimPowerOutletTemplatesBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerOutletTemplatesBulkPartialUpdateParamsWithTimeout creates a new DcimPowerOutletTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerOutletTemplatesBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimPowerOutletTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimPowerOutletTemplatesBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerOutletTemplatesBulkPartialUpdateParamsWithContext creates a new DcimPowerOutletTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerOutletTemplatesBulkPartialUpdateParamsWithContext(ctx context.Context) *DcimPowerOutletTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimPowerOutletTemplatesBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerOutletTemplatesBulkPartialUpdateParamsWithHTTPClient creates a new DcimPowerOutletTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerOutletTemplatesBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimPowerOutletTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimPowerOutletTemplatesBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerOutletTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim power outlet templates bulk partial update operation typically these are written to a http.Request
+/* DcimPowerOutletTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim power outlet templates bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerOutletTemplatesBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerOutletTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power outlet templates bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletTemplatesBulkPartialUpdateParams) WithDefaults() *DcimPowerOutletTemplatesBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power outlet templates bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerOutletTemplatesBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power outlet templates bulk partial update params
@@ -136,7 +150,6 @@ func (o *DcimPowerOutletTemplatesBulkPartialUpdateParams) WriteToRequest(r runti
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -61,7 +61,7 @@ func NewTenancyTenantsCreateCreated() *TenancyTenantsCreateCreated {
 	return &TenancyTenantsCreateCreated{}
 }
 
-/*TenancyTenantsCreateCreated handles this case with default header values.
+/* TenancyTenantsCreateCreated describes a response with status code 201, with default header values.
 
 TenancyTenantsCreateCreated tenancy tenants create created
 */
@@ -72,7 +72,6 @@ type TenancyTenantsCreateCreated struct {
 func (o *TenancyTenantsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /tenancy/tenants/][%d] tenancyTenantsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *TenancyTenantsCreateCreated) GetPayload() *models.Tenant {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewTenancyTenantsCreateDefault(code int) *TenancyTenantsCreateDefault {
 	}
 }
 
-/*TenancyTenantsCreateDefault handles this case with default header values.
+/* TenancyTenantsCreateDefault describes a response with status code -1, with default header values.
 
 TenancyTenantsCreateDefault tenancy tenants create default
 */
@@ -114,7 +113,6 @@ func (o *TenancyTenantsCreateDefault) Code() int {
 func (o *TenancyTenantsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /tenancy/tenants/][%d] tenancy_tenants_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *TenancyTenantsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

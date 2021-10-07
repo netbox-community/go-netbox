@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamVrfsBulkUpdateParams creates a new IpamVrfsBulkUpdateParams object
-// with the default values initialized.
+// NewIpamVrfsBulkUpdateParams creates a new IpamVrfsBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVrfsBulkUpdateParams() *IpamVrfsBulkUpdateParams {
-	var ()
 	return &IpamVrfsBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVrfsBulkUpdateParamsWithTimeout creates a new IpamVrfsBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVrfsBulkUpdateParamsWithTimeout(timeout time.Duration) *IpamVrfsBulkUpdateParams {
-	var ()
 	return &IpamVrfsBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVrfsBulkUpdateParamsWithContext creates a new IpamVrfsBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVrfsBulkUpdateParamsWithContext(ctx context.Context) *IpamVrfsBulkUpdateParams {
-	var ()
 	return &IpamVrfsBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVrfsBulkUpdateParamsWithHTTPClient creates a new IpamVrfsBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVrfsBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamVrfsBulkUpdateParams {
-	var ()
 	return &IpamVrfsBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVrfsBulkUpdateParams contains all the parameters to send to the API endpoint
-for the ipam vrfs bulk update operation typically these are written to a http.Request
+/* IpamVrfsBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam vrfs bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVrfsBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVRF
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vrfs bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsBulkUpdateParams) WithDefaults() *IpamVrfsBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vrfs bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVrfsBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vrfs bulk update params
@@ -136,7 +150,6 @@ func (o *IpamVrfsBulkUpdateParams) WriteToRequest(r runtime.ClientRequest, reg s
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

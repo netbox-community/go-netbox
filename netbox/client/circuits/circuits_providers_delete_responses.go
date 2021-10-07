@@ -59,7 +59,7 @@ func NewCircuitsProvidersDeleteNoContent() *CircuitsProvidersDeleteNoContent {
 	return &CircuitsProvidersDeleteNoContent{}
 }
 
-/*CircuitsProvidersDeleteNoContent handles this case with default header values.
+/* CircuitsProvidersDeleteNoContent describes a response with status code 204, with default header values.
 
 CircuitsProvidersDeleteNoContent circuits providers delete no content
 */
@@ -82,7 +82,7 @@ func NewCircuitsProvidersDeleteDefault(code int) *CircuitsProvidersDeleteDefault
 	}
 }
 
-/*CircuitsProvidersDeleteDefault handles this case with default header values.
+/* CircuitsProvidersDeleteDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersDeleteDefault circuits providers delete default
 */
@@ -100,7 +100,6 @@ func (o *CircuitsProvidersDeleteDefault) Code() int {
 func (o *CircuitsProvidersDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /circuits/providers/{id}/][%d] circuits_providers_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsProvidersDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

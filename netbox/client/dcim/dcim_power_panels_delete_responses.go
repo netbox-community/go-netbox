@@ -59,7 +59,7 @@ func NewDcimPowerPanelsDeleteNoContent() *DcimPowerPanelsDeleteNoContent {
 	return &DcimPowerPanelsDeleteNoContent{}
 }
 
-/*DcimPowerPanelsDeleteNoContent handles this case with default header values.
+/* DcimPowerPanelsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimPowerPanelsDeleteNoContent dcim power panels delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimPowerPanelsDeleteDefault(code int) *DcimPowerPanelsDeleteDefault {
 	}
 }
 
-/*DcimPowerPanelsDeleteDefault handles this case with default header values.
+/* DcimPowerPanelsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimPowerPanelsDeleteDefault dcim power panels delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimPowerPanelsDeleteDefault) Code() int {
 func (o *DcimPowerPanelsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/power-panels/{id}/][%d] dcim_power-panels_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPanelsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

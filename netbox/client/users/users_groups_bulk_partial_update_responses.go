@@ -61,7 +61,7 @@ func NewUsersGroupsBulkPartialUpdateOK() *UsersGroupsBulkPartialUpdateOK {
 	return &UsersGroupsBulkPartialUpdateOK{}
 }
 
-/*UsersGroupsBulkPartialUpdateOK handles this case with default header values.
+/* UsersGroupsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 UsersGroupsBulkPartialUpdateOK users groups bulk partial update o k
 */
@@ -72,7 +72,6 @@ type UsersGroupsBulkPartialUpdateOK struct {
 func (o *UsersGroupsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /users/groups/][%d] usersGroupsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersGroupsBulkPartialUpdateOK) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersGroupsBulkPartialUpdateDefault(code int) *UsersGroupsBulkPartialUpd
 	}
 }
 
-/*UsersGroupsBulkPartialUpdateDefault handles this case with default header values.
+/* UsersGroupsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 UsersGroupsBulkPartialUpdateDefault users groups bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *UsersGroupsBulkPartialUpdateDefault) Code() int {
 func (o *UsersGroupsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /users/groups/][%d] users_groups_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersGroupsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

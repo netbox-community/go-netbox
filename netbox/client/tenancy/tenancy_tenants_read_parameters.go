@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewTenancyTenantsReadParams creates a new TenancyTenantsReadParams object
-// with the default values initialized.
+// NewTenancyTenantsReadParams creates a new TenancyTenantsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewTenancyTenantsReadParams() *TenancyTenantsReadParams {
-	var ()
 	return &TenancyTenantsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewTenancyTenantsReadParamsWithTimeout creates a new TenancyTenantsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewTenancyTenantsReadParamsWithTimeout(timeout time.Duration) *TenancyTenantsReadParams {
-	var ()
 	return &TenancyTenantsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewTenancyTenantsReadParamsWithContext creates a new TenancyTenantsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewTenancyTenantsReadParamsWithContext(ctx context.Context) *TenancyTenantsReadParams {
-	var ()
 	return &TenancyTenantsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewTenancyTenantsReadParamsWithHTTPClient creates a new TenancyTenantsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewTenancyTenantsReadParamsWithHTTPClient(client *http.Client) *TenancyTenantsReadParams {
-	var ()
 	return &TenancyTenantsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*TenancyTenantsReadParams contains all the parameters to send to the API endpoint
-for the tenancy tenants read operation typically these are written to a http.Request
+/* TenancyTenantsReadParams contains all the parameters to send to the API endpoint
+   for the tenancy tenants read operation.
+
+   Typically these are written to a http.Request.
 */
 type TenancyTenantsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this tenant.
+	/* ID.
 
+	   A unique integer value identifying this tenant.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the tenancy tenants read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TenancyTenantsReadParams) WithDefaults() *TenancyTenantsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the tenancy tenants read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TenancyTenantsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the tenancy tenants read params

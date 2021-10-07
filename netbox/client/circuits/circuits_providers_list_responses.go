@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewCircuitsProvidersListOK() *CircuitsProvidersListOK {
 	return &CircuitsProvidersListOK{}
 }
 
-/*CircuitsProvidersListOK handles this case with default header values.
+/* CircuitsProvidersListOK describes a response with status code 200, with default header values.
 
 CircuitsProvidersListOK circuits providers list o k
 */
@@ -76,7 +77,6 @@ type CircuitsProvidersListOK struct {
 func (o *CircuitsProvidersListOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/providers/][%d] circuitsProvidersListOK  %+v", 200, o.Payload)
 }
-
 func (o *CircuitsProvidersListOK) GetPayload() *CircuitsProvidersListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewCircuitsProvidersListDefault(code int) *CircuitsProvidersListDefault {
 	}
 }
 
-/*CircuitsProvidersListDefault handles this case with default header values.
+/* CircuitsProvidersListDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersListDefault circuits providers list default
 */
@@ -118,7 +118,6 @@ func (o *CircuitsProvidersListDefault) Code() int {
 func (o *CircuitsProvidersListDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/providers/][%d] circuits_providers_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsProvidersListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *CircuitsProvidersListOKBody) validateCount(formats strfmt.Registry) err
 }
 
 func (o *CircuitsProvidersListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *CircuitsProvidersListOKBody) validateNext(formats strfmt.Registry) erro
 }
 
 func (o *CircuitsProvidersListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *CircuitsProvidersListOKBody) validateResults(formats strfmt.Registry) e
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("circuitsProvidersListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this circuits providers list o k body based on the context it is used
+func (o *CircuitsProvidersListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *CircuitsProvidersListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("circuitsProvidersListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

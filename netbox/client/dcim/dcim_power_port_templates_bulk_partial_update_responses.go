@@ -61,7 +61,7 @@ func NewDcimPowerPortTemplatesBulkPartialUpdateOK() *DcimPowerPortTemplatesBulkP
 	return &DcimPowerPortTemplatesBulkPartialUpdateOK{}
 }
 
-/*DcimPowerPortTemplatesBulkPartialUpdateOK handles this case with default header values.
+/* DcimPowerPortTemplatesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPortTemplatesBulkPartialUpdateOK dcim power port templates bulk partial update o k
 */
@@ -72,7 +72,6 @@ type DcimPowerPortTemplatesBulkPartialUpdateOK struct {
 func (o *DcimPowerPortTemplatesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-port-templates/][%d] dcimPowerPortTemplatesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPortTemplatesBulkPartialUpdateOK) GetPayload() *models.PowerPortTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerPortTemplatesBulkPartialUpdateDefault(code int) *DcimPowerPortT
 	}
 }
 
-/*DcimPowerPortTemplatesBulkPartialUpdateDefault handles this case with default header values.
+/* DcimPowerPortTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortTemplatesBulkPartialUpdateDefault dcim power port templates bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerPortTemplatesBulkPartialUpdateDefault) Code() int {
 func (o *DcimPowerPortTemplatesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-port-templates/][%d] dcim_power-port-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPortTemplatesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

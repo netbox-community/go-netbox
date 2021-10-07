@@ -32,170 +32,238 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewUsersUsersListParams creates a new UsersUsersListParams object
-// with the default values initialized.
+// NewUsersUsersListParams creates a new UsersUsersListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersUsersListParams() *UsersUsersListParams {
-	var ()
 	return &UsersUsersListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersUsersListParamsWithTimeout creates a new UsersUsersListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersUsersListParamsWithTimeout(timeout time.Duration) *UsersUsersListParams {
-	var ()
 	return &UsersUsersListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersUsersListParamsWithContext creates a new UsersUsersListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersUsersListParamsWithContext(ctx context.Context) *UsersUsersListParams {
-	var ()
 	return &UsersUsersListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersUsersListParamsWithHTTPClient creates a new UsersUsersListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersUsersListParamsWithHTTPClient(client *http.Client) *UsersUsersListParams {
-	var ()
 	return &UsersUsersListParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersUsersListParams contains all the parameters to send to the API endpoint
-for the users users list operation typically these are written to a http.Request
+/* UsersUsersListParams contains all the parameters to send to the API endpoint
+   for the users users list operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersUsersListParams struct {
 
-	/*Email*/
+	// Email.
 	Email *string
-	/*EmailIc*/
-	EmailIc *string
-	/*EmailIe*/
-	EmailIe *string
-	/*EmailIew*/
-	EmailIew *string
-	/*EmailIsw*/
-	EmailIsw *string
-	/*Emailn*/
-	Emailn *string
-	/*EmailNic*/
-	EmailNic *string
-	/*EmailNie*/
-	EmailNie *string
-	/*EmailNiew*/
-	EmailNiew *string
-	/*EmailNisw*/
-	EmailNisw *string
-	/*FirstName*/
-	FirstName *string
-	/*FirstNameIc*/
-	FirstNameIc *string
-	/*FirstNameIe*/
-	FirstNameIe *string
-	/*FirstNameIew*/
-	FirstNameIew *string
-	/*FirstNameIsw*/
-	FirstNameIsw *string
-	/*FirstNamen*/
-	FirstNamen *string
-	/*FirstNameNic*/
-	FirstNameNic *string
-	/*FirstNameNie*/
-	FirstNameNie *string
-	/*FirstNameNiew*/
-	FirstNameNiew *string
-	/*FirstNameNisw*/
-	FirstNameNisw *string
-	/*Group*/
-	Group *string
-	/*Groupn*/
-	Groupn *string
-	/*GroupID*/
-	GroupID *string
-	/*GroupIDn*/
-	GroupIDn *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*IsActive*/
-	IsActive *string
-	/*IsStaff*/
-	IsStaff *string
-	/*LastName*/
-	LastName *string
-	/*LastNameIc*/
-	LastNameIc *string
-	/*LastNameIe*/
-	LastNameIe *string
-	/*LastNameIew*/
-	LastNameIew *string
-	/*LastNameIsw*/
-	LastNameIsw *string
-	/*LastNamen*/
-	LastNamen *string
-	/*LastNameNic*/
-	LastNameNic *string
-	/*LastNameNie*/
-	LastNameNie *string
-	/*LastNameNiew*/
-	LastNameNiew *string
-	/*LastNameNisw*/
-	LastNameNisw *string
-	/*Limit
-	  Number of results to return per page.
 
+	// EmailIc.
+	EmailIc *string
+
+	// EmailIe.
+	EmailIe *string
+
+	// EmailIew.
+	EmailIew *string
+
+	// EmailIsw.
+	EmailIsw *string
+
+	// Emailn.
+	Emailn *string
+
+	// EmailNic.
+	EmailNic *string
+
+	// EmailNie.
+	EmailNie *string
+
+	// EmailNiew.
+	EmailNiew *string
+
+	// EmailNisw.
+	EmailNisw *string
+
+	// FirstName.
+	FirstName *string
+
+	// FirstNameIc.
+	FirstNameIc *string
+
+	// FirstNameIe.
+	FirstNameIe *string
+
+	// FirstNameIew.
+	FirstNameIew *string
+
+	// FirstNameIsw.
+	FirstNameIsw *string
+
+	// FirstNamen.
+	FirstNamen *string
+
+	// FirstNameNic.
+	FirstNameNic *string
+
+	// FirstNameNie.
+	FirstNameNie *string
+
+	// FirstNameNiew.
+	FirstNameNiew *string
+
+	// FirstNameNisw.
+	FirstNameNisw *string
+
+	// Group.
+	Group *string
+
+	// Groupn.
+	Groupn *string
+
+	// GroupID.
+	GroupID *string
+
+	// GroupIDn.
+	GroupIDn *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	// IsActive.
+	IsActive *string
+
+	// IsStaff.
+	IsStaff *string
+
+	// LastName.
+	LastName *string
+
+	// LastNameIc.
+	LastNameIc *string
+
+	// LastNameIe.
+	LastNameIe *string
+
+	// LastNameIew.
+	LastNameIew *string
+
+	// LastNameIsw.
+	LastNameIsw *string
+
+	// LastNamen.
+	LastNamen *string
+
+	// LastNameNic.
+	LastNameNic *string
+
+	// LastNameNie.
+	LastNameNie *string
+
+	// LastNameNiew.
+	LastNameNiew *string
+
+	// LastNameNisw.
+	LastNameNisw *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Offset
-	  The initial index from which to return the results.
 
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*Username*/
+
+	// Username.
 	Username *string
-	/*UsernameIc*/
+
+	// UsernameIc.
 	UsernameIc *string
-	/*UsernameIe*/
+
+	// UsernameIe.
 	UsernameIe *string
-	/*UsernameIew*/
+
+	// UsernameIew.
 	UsernameIew *string
-	/*UsernameIsw*/
+
+	// UsernameIsw.
 	UsernameIsw *string
-	/*Usernamen*/
+
+	// Usernamen.
 	Usernamen *string
-	/*UsernameNic*/
+
+	// UsernameNic.
 	UsernameNic *string
-	/*UsernameNie*/
+
+	// UsernameNie.
 	UsernameNie *string
-	/*UsernameNiew*/
+
+	// UsernameNiew.
 	UsernameNiew *string
-	/*UsernameNisw*/
+
+	// UsernameNisw.
 	UsernameNisw *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users users list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersUsersListParams) WithDefaults() *UsersUsersListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users users list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersUsersListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users users list params
@@ -848,880 +916,935 @@ func (o *UsersUsersListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 
 		// query param email
 		var qrEmail string
+
 		if o.Email != nil {
 			qrEmail = *o.Email
 		}
 		qEmail := qrEmail
 		if qEmail != "" {
+
 			if err := r.SetQueryParam("email", qEmail); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.EmailIc != nil {
 
 		// query param email__ic
 		var qrEmailIc string
+
 		if o.EmailIc != nil {
 			qrEmailIc = *o.EmailIc
 		}
 		qEmailIc := qrEmailIc
 		if qEmailIc != "" {
+
 			if err := r.SetQueryParam("email__ic", qEmailIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.EmailIe != nil {
 
 		// query param email__ie
 		var qrEmailIe string
+
 		if o.EmailIe != nil {
 			qrEmailIe = *o.EmailIe
 		}
 		qEmailIe := qrEmailIe
 		if qEmailIe != "" {
+
 			if err := r.SetQueryParam("email__ie", qEmailIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.EmailIew != nil {
 
 		// query param email__iew
 		var qrEmailIew string
+
 		if o.EmailIew != nil {
 			qrEmailIew = *o.EmailIew
 		}
 		qEmailIew := qrEmailIew
 		if qEmailIew != "" {
+
 			if err := r.SetQueryParam("email__iew", qEmailIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.EmailIsw != nil {
 
 		// query param email__isw
 		var qrEmailIsw string
+
 		if o.EmailIsw != nil {
 			qrEmailIsw = *o.EmailIsw
 		}
 		qEmailIsw := qrEmailIsw
 		if qEmailIsw != "" {
+
 			if err := r.SetQueryParam("email__isw", qEmailIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Emailn != nil {
 
 		// query param email__n
 		var qrEmailn string
+
 		if o.Emailn != nil {
 			qrEmailn = *o.Emailn
 		}
 		qEmailn := qrEmailn
 		if qEmailn != "" {
+
 			if err := r.SetQueryParam("email__n", qEmailn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.EmailNic != nil {
 
 		// query param email__nic
 		var qrEmailNic string
+
 		if o.EmailNic != nil {
 			qrEmailNic = *o.EmailNic
 		}
 		qEmailNic := qrEmailNic
 		if qEmailNic != "" {
+
 			if err := r.SetQueryParam("email__nic", qEmailNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.EmailNie != nil {
 
 		// query param email__nie
 		var qrEmailNie string
+
 		if o.EmailNie != nil {
 			qrEmailNie = *o.EmailNie
 		}
 		qEmailNie := qrEmailNie
 		if qEmailNie != "" {
+
 			if err := r.SetQueryParam("email__nie", qEmailNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.EmailNiew != nil {
 
 		// query param email__niew
 		var qrEmailNiew string
+
 		if o.EmailNiew != nil {
 			qrEmailNiew = *o.EmailNiew
 		}
 		qEmailNiew := qrEmailNiew
 		if qEmailNiew != "" {
+
 			if err := r.SetQueryParam("email__niew", qEmailNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.EmailNisw != nil {
 
 		// query param email__nisw
 		var qrEmailNisw string
+
 		if o.EmailNisw != nil {
 			qrEmailNisw = *o.EmailNisw
 		}
 		qEmailNisw := qrEmailNisw
 		if qEmailNisw != "" {
+
 			if err := r.SetQueryParam("email__nisw", qEmailNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstName != nil {
 
 		// query param first_name
 		var qrFirstName string
+
 		if o.FirstName != nil {
 			qrFirstName = *o.FirstName
 		}
 		qFirstName := qrFirstName
 		if qFirstName != "" {
+
 			if err := r.SetQueryParam("first_name", qFirstName); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstNameIc != nil {
 
 		// query param first_name__ic
 		var qrFirstNameIc string
+
 		if o.FirstNameIc != nil {
 			qrFirstNameIc = *o.FirstNameIc
 		}
 		qFirstNameIc := qrFirstNameIc
 		if qFirstNameIc != "" {
+
 			if err := r.SetQueryParam("first_name__ic", qFirstNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstNameIe != nil {
 
 		// query param first_name__ie
 		var qrFirstNameIe string
+
 		if o.FirstNameIe != nil {
 			qrFirstNameIe = *o.FirstNameIe
 		}
 		qFirstNameIe := qrFirstNameIe
 		if qFirstNameIe != "" {
+
 			if err := r.SetQueryParam("first_name__ie", qFirstNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstNameIew != nil {
 
 		// query param first_name__iew
 		var qrFirstNameIew string
+
 		if o.FirstNameIew != nil {
 			qrFirstNameIew = *o.FirstNameIew
 		}
 		qFirstNameIew := qrFirstNameIew
 		if qFirstNameIew != "" {
+
 			if err := r.SetQueryParam("first_name__iew", qFirstNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstNameIsw != nil {
 
 		// query param first_name__isw
 		var qrFirstNameIsw string
+
 		if o.FirstNameIsw != nil {
 			qrFirstNameIsw = *o.FirstNameIsw
 		}
 		qFirstNameIsw := qrFirstNameIsw
 		if qFirstNameIsw != "" {
+
 			if err := r.SetQueryParam("first_name__isw", qFirstNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstNamen != nil {
 
 		// query param first_name__n
 		var qrFirstNamen string
+
 		if o.FirstNamen != nil {
 			qrFirstNamen = *o.FirstNamen
 		}
 		qFirstNamen := qrFirstNamen
 		if qFirstNamen != "" {
+
 			if err := r.SetQueryParam("first_name__n", qFirstNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstNameNic != nil {
 
 		// query param first_name__nic
 		var qrFirstNameNic string
+
 		if o.FirstNameNic != nil {
 			qrFirstNameNic = *o.FirstNameNic
 		}
 		qFirstNameNic := qrFirstNameNic
 		if qFirstNameNic != "" {
+
 			if err := r.SetQueryParam("first_name__nic", qFirstNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstNameNie != nil {
 
 		// query param first_name__nie
 		var qrFirstNameNie string
+
 		if o.FirstNameNie != nil {
 			qrFirstNameNie = *o.FirstNameNie
 		}
 		qFirstNameNie := qrFirstNameNie
 		if qFirstNameNie != "" {
+
 			if err := r.SetQueryParam("first_name__nie", qFirstNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstNameNiew != nil {
 
 		// query param first_name__niew
 		var qrFirstNameNiew string
+
 		if o.FirstNameNiew != nil {
 			qrFirstNameNiew = *o.FirstNameNiew
 		}
 		qFirstNameNiew := qrFirstNameNiew
 		if qFirstNameNiew != "" {
+
 			if err := r.SetQueryParam("first_name__niew", qFirstNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.FirstNameNisw != nil {
 
 		// query param first_name__nisw
 		var qrFirstNameNisw string
+
 		if o.FirstNameNisw != nil {
 			qrFirstNameNisw = *o.FirstNameNisw
 		}
 		qFirstNameNisw := qrFirstNameNisw
 		if qFirstNameNisw != "" {
+
 			if err := r.SetQueryParam("first_name__nisw", qFirstNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Group != nil {
 
 		// query param group
 		var qrGroup string
+
 		if o.Group != nil {
 			qrGroup = *o.Group
 		}
 		qGroup := qrGroup
 		if qGroup != "" {
+
 			if err := r.SetQueryParam("group", qGroup); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Groupn != nil {
 
 		// query param group__n
 		var qrGroupn string
+
 		if o.Groupn != nil {
 			qrGroupn = *o.Groupn
 		}
 		qGroupn := qrGroupn
 		if qGroupn != "" {
+
 			if err := r.SetQueryParam("group__n", qGroupn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.GroupID != nil {
 
 		// query param group_id
 		var qrGroupID string
+
 		if o.GroupID != nil {
 			qrGroupID = *o.GroupID
 		}
 		qGroupID := qrGroupID
 		if qGroupID != "" {
+
 			if err := r.SetQueryParam("group_id", qGroupID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.GroupIDn != nil {
 
 		// query param group_id__n
 		var qrGroupIDn string
+
 		if o.GroupIDn != nil {
 			qrGroupIDn = *o.GroupIDn
 		}
 		qGroupIDn := qrGroupIDn
 		if qGroupIDn != "" {
+
 			if err := r.SetQueryParam("group_id__n", qGroupIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IsActive != nil {
 
 		// query param is_active
 		var qrIsActive string
+
 		if o.IsActive != nil {
 			qrIsActive = *o.IsActive
 		}
 		qIsActive := qrIsActive
 		if qIsActive != "" {
+
 			if err := r.SetQueryParam("is_active", qIsActive); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IsStaff != nil {
 
 		// query param is_staff
 		var qrIsStaff string
+
 		if o.IsStaff != nil {
 			qrIsStaff = *o.IsStaff
 		}
 		qIsStaff := qrIsStaff
 		if qIsStaff != "" {
+
 			if err := r.SetQueryParam("is_staff", qIsStaff); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastName != nil {
 
 		// query param last_name
 		var qrLastName string
+
 		if o.LastName != nil {
 			qrLastName = *o.LastName
 		}
 		qLastName := qrLastName
 		if qLastName != "" {
+
 			if err := r.SetQueryParam("last_name", qLastName); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastNameIc != nil {
 
 		// query param last_name__ic
 		var qrLastNameIc string
+
 		if o.LastNameIc != nil {
 			qrLastNameIc = *o.LastNameIc
 		}
 		qLastNameIc := qrLastNameIc
 		if qLastNameIc != "" {
+
 			if err := r.SetQueryParam("last_name__ic", qLastNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastNameIe != nil {
 
 		// query param last_name__ie
 		var qrLastNameIe string
+
 		if o.LastNameIe != nil {
 			qrLastNameIe = *o.LastNameIe
 		}
 		qLastNameIe := qrLastNameIe
 		if qLastNameIe != "" {
+
 			if err := r.SetQueryParam("last_name__ie", qLastNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastNameIew != nil {
 
 		// query param last_name__iew
 		var qrLastNameIew string
+
 		if o.LastNameIew != nil {
 			qrLastNameIew = *o.LastNameIew
 		}
 		qLastNameIew := qrLastNameIew
 		if qLastNameIew != "" {
+
 			if err := r.SetQueryParam("last_name__iew", qLastNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastNameIsw != nil {
 
 		// query param last_name__isw
 		var qrLastNameIsw string
+
 		if o.LastNameIsw != nil {
 			qrLastNameIsw = *o.LastNameIsw
 		}
 		qLastNameIsw := qrLastNameIsw
 		if qLastNameIsw != "" {
+
 			if err := r.SetQueryParam("last_name__isw", qLastNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastNamen != nil {
 
 		// query param last_name__n
 		var qrLastNamen string
+
 		if o.LastNamen != nil {
 			qrLastNamen = *o.LastNamen
 		}
 		qLastNamen := qrLastNamen
 		if qLastNamen != "" {
+
 			if err := r.SetQueryParam("last_name__n", qLastNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastNameNic != nil {
 
 		// query param last_name__nic
 		var qrLastNameNic string
+
 		if o.LastNameNic != nil {
 			qrLastNameNic = *o.LastNameNic
 		}
 		qLastNameNic := qrLastNameNic
 		if qLastNameNic != "" {
+
 			if err := r.SetQueryParam("last_name__nic", qLastNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastNameNie != nil {
 
 		// query param last_name__nie
 		var qrLastNameNie string
+
 		if o.LastNameNie != nil {
 			qrLastNameNie = *o.LastNameNie
 		}
 		qLastNameNie := qrLastNameNie
 		if qLastNameNie != "" {
+
 			if err := r.SetQueryParam("last_name__nie", qLastNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastNameNiew != nil {
 
 		// query param last_name__niew
 		var qrLastNameNiew string
+
 		if o.LastNameNiew != nil {
 			qrLastNameNiew = *o.LastNameNiew
 		}
 		qLastNameNiew := qrLastNameNiew
 		if qLastNameNiew != "" {
+
 			if err := r.SetQueryParam("last_name__niew", qLastNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.LastNameNisw != nil {
 
 		// query param last_name__nisw
 		var qrLastNameNisw string
+
 		if o.LastNameNisw != nil {
 			qrLastNameNisw = *o.LastNameNisw
 		}
 		qLastNameNisw := qrLastNameNisw
 		if qLastNameNisw != "" {
+
 			if err := r.SetQueryParam("last_name__nisw", qLastNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Username != nil {
 
 		// query param username
 		var qrUsername string
+
 		if o.Username != nil {
 			qrUsername = *o.Username
 		}
 		qUsername := qrUsername
 		if qUsername != "" {
+
 			if err := r.SetQueryParam("username", qUsername); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UsernameIc != nil {
 
 		// query param username__ic
 		var qrUsernameIc string
+
 		if o.UsernameIc != nil {
 			qrUsernameIc = *o.UsernameIc
 		}
 		qUsernameIc := qrUsernameIc
 		if qUsernameIc != "" {
+
 			if err := r.SetQueryParam("username__ic", qUsernameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UsernameIe != nil {
 
 		// query param username__ie
 		var qrUsernameIe string
+
 		if o.UsernameIe != nil {
 			qrUsernameIe = *o.UsernameIe
 		}
 		qUsernameIe := qrUsernameIe
 		if qUsernameIe != "" {
+
 			if err := r.SetQueryParam("username__ie", qUsernameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UsernameIew != nil {
 
 		// query param username__iew
 		var qrUsernameIew string
+
 		if o.UsernameIew != nil {
 			qrUsernameIew = *o.UsernameIew
 		}
 		qUsernameIew := qrUsernameIew
 		if qUsernameIew != "" {
+
 			if err := r.SetQueryParam("username__iew", qUsernameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UsernameIsw != nil {
 
 		// query param username__isw
 		var qrUsernameIsw string
+
 		if o.UsernameIsw != nil {
 			qrUsernameIsw = *o.UsernameIsw
 		}
 		qUsernameIsw := qrUsernameIsw
 		if qUsernameIsw != "" {
+
 			if err := r.SetQueryParam("username__isw", qUsernameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Usernamen != nil {
 
 		// query param username__n
 		var qrUsernamen string
+
 		if o.Usernamen != nil {
 			qrUsernamen = *o.Usernamen
 		}
 		qUsernamen := qrUsernamen
 		if qUsernamen != "" {
+
 			if err := r.SetQueryParam("username__n", qUsernamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UsernameNic != nil {
 
 		// query param username__nic
 		var qrUsernameNic string
+
 		if o.UsernameNic != nil {
 			qrUsernameNic = *o.UsernameNic
 		}
 		qUsernameNic := qrUsernameNic
 		if qUsernameNic != "" {
+
 			if err := r.SetQueryParam("username__nic", qUsernameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UsernameNie != nil {
 
 		// query param username__nie
 		var qrUsernameNie string
+
 		if o.UsernameNie != nil {
 			qrUsernameNie = *o.UsernameNie
 		}
 		qUsernameNie := qrUsernameNie
 		if qUsernameNie != "" {
+
 			if err := r.SetQueryParam("username__nie", qUsernameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UsernameNiew != nil {
 
 		// query param username__niew
 		var qrUsernameNiew string
+
 		if o.UsernameNiew != nil {
 			qrUsernameNiew = *o.UsernameNiew
 		}
 		qUsernameNiew := qrUsernameNiew
 		if qUsernameNiew != "" {
+
 			if err := r.SetQueryParam("username__niew", qUsernameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UsernameNisw != nil {
 
 		// query param username__nisw
 		var qrUsernameNisw string
+
 		if o.UsernameNisw != nil {
 			qrUsernameNisw = *o.UsernameNisw
 		}
 		qUsernameNisw := qrUsernameNisw
 		if qUsernameNisw != "" {
+
 			if err := r.SetQueryParam("username__nisw", qUsernameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

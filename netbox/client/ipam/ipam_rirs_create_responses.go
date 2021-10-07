@@ -61,7 +61,7 @@ func NewIpamRirsCreateCreated() *IpamRirsCreateCreated {
 	return &IpamRirsCreateCreated{}
 }
 
-/*IpamRirsCreateCreated handles this case with default header values.
+/* IpamRirsCreateCreated describes a response with status code 201, with default header values.
 
 IpamRirsCreateCreated ipam rirs create created
 */
@@ -72,7 +72,6 @@ type IpamRirsCreateCreated struct {
 func (o *IpamRirsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipamRirsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamRirsCreateCreated) GetPayload() *models.RIR {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRirsCreateDefault(code int) *IpamRirsCreateDefault {
 	}
 }
 
-/*IpamRirsCreateDefault handles this case with default header values.
+/* IpamRirsCreateDefault describes a response with status code -1, with default header values.
 
 IpamRirsCreateDefault ipam rirs create default
 */
@@ -114,7 +113,6 @@ func (o *IpamRirsCreateDefault) Code() int {
 func (o *IpamRirsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/rirs/][%d] ipam_rirs_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRirsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

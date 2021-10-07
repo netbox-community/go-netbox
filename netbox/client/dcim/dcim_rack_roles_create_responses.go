@@ -61,7 +61,7 @@ func NewDcimRackRolesCreateCreated() *DcimRackRolesCreateCreated {
 	return &DcimRackRolesCreateCreated{}
 }
 
-/*DcimRackRolesCreateCreated handles this case with default header values.
+/* DcimRackRolesCreateCreated describes a response with status code 201, with default header values.
 
 DcimRackRolesCreateCreated dcim rack roles create created
 */
@@ -72,7 +72,6 @@ type DcimRackRolesCreateCreated struct {
 func (o *DcimRackRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/rack-roles/][%d] dcimRackRolesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimRackRolesCreateCreated) GetPayload() *models.RackRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRackRolesCreateDefault(code int) *DcimRackRolesCreateDefault {
 	}
 }
 
-/*DcimRackRolesCreateDefault handles this case with default header values.
+/* DcimRackRolesCreateDefault describes a response with status code -1, with default header values.
 
 DcimRackRolesCreateDefault dcim rack roles create default
 */
@@ -114,7 +113,6 @@ func (o *DcimRackRolesCreateDefault) Code() int {
 func (o *DcimRackRolesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/rack-roles/][%d] dcim_rack-roles_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackRolesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

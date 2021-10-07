@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewUsersPermissionsBulkDeleteParams creates a new UsersPermissionsBulkDeleteParams object
-// with the default values initialized.
+// NewUsersPermissionsBulkDeleteParams creates a new UsersPermissionsBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersPermissionsBulkDeleteParams() *UsersPermissionsBulkDeleteParams {
-
 	return &UsersPermissionsBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersPermissionsBulkDeleteParamsWithTimeout creates a new UsersPermissionsBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersPermissionsBulkDeleteParamsWithTimeout(timeout time.Duration) *UsersPermissionsBulkDeleteParams {
-
 	return &UsersPermissionsBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersPermissionsBulkDeleteParamsWithContext creates a new UsersPermissionsBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersPermissionsBulkDeleteParamsWithContext(ctx context.Context) *UsersPermissionsBulkDeleteParams {
-
 	return &UsersPermissionsBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersPermissionsBulkDeleteParamsWithHTTPClient creates a new UsersPermissionsBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersPermissionsBulkDeleteParamsWithHTTPClient(client *http.Client) *UsersPermissionsBulkDeleteParams {
-
 	return &UsersPermissionsBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersPermissionsBulkDeleteParams contains all the parameters to send to the API endpoint
-for the users permissions bulk delete operation typically these are written to a http.Request
+/* UsersPermissionsBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the users permissions bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersPermissionsBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users permissions bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersPermissionsBulkDeleteParams) WithDefaults() *UsersPermissionsBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users permissions bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersPermissionsBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users permissions bulk delete params

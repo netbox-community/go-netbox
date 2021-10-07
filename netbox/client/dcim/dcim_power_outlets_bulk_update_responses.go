@@ -61,7 +61,7 @@ func NewDcimPowerOutletsBulkUpdateOK() *DcimPowerOutletsBulkUpdateOK {
 	return &DcimPowerOutletsBulkUpdateOK{}
 }
 
-/*DcimPowerOutletsBulkUpdateOK handles this case with default header values.
+/* DcimPowerOutletsBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletsBulkUpdateOK dcim power outlets bulk update o k
 */
@@ -72,7 +72,6 @@ type DcimPowerOutletsBulkUpdateOK struct {
 func (o *DcimPowerOutletsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlets/][%d] dcimPowerOutletsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerOutletsBulkUpdateOK) GetPayload() *models.PowerOutlet {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerOutletsBulkUpdateDefault(code int) *DcimPowerOutletsBulkUpdateD
 	}
 }
 
-/*DcimPowerOutletsBulkUpdateDefault handles this case with default header values.
+/* DcimPowerOutletsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletsBulkUpdateDefault dcim power outlets bulk update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerOutletsBulkUpdateDefault) Code() int {
 func (o *DcimPowerOutletsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlets/][%d] dcim_power-outlets_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerOutletsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

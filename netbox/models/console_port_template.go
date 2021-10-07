@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 
 	"github.com/go-openapi/errors"
@@ -102,12 +103,11 @@ func (m *ConsolePortTemplate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ConsolePortTemplate) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -133,12 +133,11 @@ func (m *ConsolePortTemplate) validateDeviceType(formats strfmt.Registry) error 
 }
 
 func (m *ConsolePortTemplate) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
 		return err
 	}
 
@@ -151,11 +150,11 @@ func (m *ConsolePortTemplate) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -163,7 +162,6 @@ func (m *ConsolePortTemplate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *ConsolePortTemplate) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -181,12 +179,83 @@ func (m *ConsolePortTemplate) validateType(formats strfmt.Registry) error {
 }
 
 func (m *ConsolePortTemplate) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this console port template based on the context it is used
+func (m *ConsolePortTemplate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDeviceType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *ConsolePortTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.DeviceType != nil {
+		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device_type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsolePortTemplate) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsolePortTemplate) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Type != nil {
+		if err := m.Type.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ConsolePortTemplate) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -259,20 +328,20 @@ func init() {
 
 const (
 
-	// ConsolePortTemplateTypeLabelDE9 captures enum value "DE-9"
-	ConsolePortTemplateTypeLabelDE9 string = "DE-9"
+	// ConsolePortTemplateTypeLabelDEDash9 captures enum value "DE-9"
+	ConsolePortTemplateTypeLabelDEDash9 string = "DE-9"
 
-	// ConsolePortTemplateTypeLabelDB25 captures enum value "DB-25"
-	ConsolePortTemplateTypeLabelDB25 string = "DB-25"
+	// ConsolePortTemplateTypeLabelDBDash25 captures enum value "DB-25"
+	ConsolePortTemplateTypeLabelDBDash25 string = "DB-25"
 
-	// ConsolePortTemplateTypeLabelRJ11 captures enum value "RJ-11"
-	ConsolePortTemplateTypeLabelRJ11 string = "RJ-11"
+	// ConsolePortTemplateTypeLabelRJDash11 captures enum value "RJ-11"
+	ConsolePortTemplateTypeLabelRJDash11 string = "RJ-11"
 
-	// ConsolePortTemplateTypeLabelRJ12 captures enum value "RJ-12"
-	ConsolePortTemplateTypeLabelRJ12 string = "RJ-12"
+	// ConsolePortTemplateTypeLabelRJDash12 captures enum value "RJ-12"
+	ConsolePortTemplateTypeLabelRJDash12 string = "RJ-12"
 
-	// ConsolePortTemplateTypeLabelRJ45 captures enum value "RJ-45"
-	ConsolePortTemplateTypeLabelRJ45 string = "RJ-45"
+	// ConsolePortTemplateTypeLabelRJDash45 captures enum value "RJ-45"
+	ConsolePortTemplateTypeLabelRJDash45 string = "RJ-45"
 
 	// ConsolePortTemplateTypeLabelUSBTypeA captures enum value "USB Type A"
 	ConsolePortTemplateTypeLabelUSBTypeA string = "USB Type A"
@@ -335,41 +404,41 @@ func init() {
 
 const (
 
-	// ConsolePortTemplateTypeValueDe9 captures enum value "de-9"
-	ConsolePortTemplateTypeValueDe9 string = "de-9"
+	// ConsolePortTemplateTypeValueDeDash9 captures enum value "de-9"
+	ConsolePortTemplateTypeValueDeDash9 string = "de-9"
 
-	// ConsolePortTemplateTypeValueDb25 captures enum value "db-25"
-	ConsolePortTemplateTypeValueDb25 string = "db-25"
+	// ConsolePortTemplateTypeValueDbDash25 captures enum value "db-25"
+	ConsolePortTemplateTypeValueDbDash25 string = "db-25"
 
-	// ConsolePortTemplateTypeValueRj11 captures enum value "rj-11"
-	ConsolePortTemplateTypeValueRj11 string = "rj-11"
+	// ConsolePortTemplateTypeValueRjDash11 captures enum value "rj-11"
+	ConsolePortTemplateTypeValueRjDash11 string = "rj-11"
 
-	// ConsolePortTemplateTypeValueRj12 captures enum value "rj-12"
-	ConsolePortTemplateTypeValueRj12 string = "rj-12"
+	// ConsolePortTemplateTypeValueRjDash12 captures enum value "rj-12"
+	ConsolePortTemplateTypeValueRjDash12 string = "rj-12"
 
-	// ConsolePortTemplateTypeValueRj45 captures enum value "rj-45"
-	ConsolePortTemplateTypeValueRj45 string = "rj-45"
+	// ConsolePortTemplateTypeValueRjDash45 captures enum value "rj-45"
+	ConsolePortTemplateTypeValueRjDash45 string = "rj-45"
 
-	// ConsolePortTemplateTypeValueUsba captures enum value "usb-a"
-	ConsolePortTemplateTypeValueUsba string = "usb-a"
+	// ConsolePortTemplateTypeValueUsbDasha captures enum value "usb-a"
+	ConsolePortTemplateTypeValueUsbDasha string = "usb-a"
 
-	// ConsolePortTemplateTypeValueUsbb captures enum value "usb-b"
-	ConsolePortTemplateTypeValueUsbb string = "usb-b"
+	// ConsolePortTemplateTypeValueUsbDashb captures enum value "usb-b"
+	ConsolePortTemplateTypeValueUsbDashb string = "usb-b"
 
-	// ConsolePortTemplateTypeValueUsbc captures enum value "usb-c"
-	ConsolePortTemplateTypeValueUsbc string = "usb-c"
+	// ConsolePortTemplateTypeValueUsbDashc captures enum value "usb-c"
+	ConsolePortTemplateTypeValueUsbDashc string = "usb-c"
 
-	// ConsolePortTemplateTypeValueUsbMinia captures enum value "usb-mini-a"
-	ConsolePortTemplateTypeValueUsbMinia string = "usb-mini-a"
+	// ConsolePortTemplateTypeValueUsbDashMiniDasha captures enum value "usb-mini-a"
+	ConsolePortTemplateTypeValueUsbDashMiniDasha string = "usb-mini-a"
 
-	// ConsolePortTemplateTypeValueUsbMinib captures enum value "usb-mini-b"
-	ConsolePortTemplateTypeValueUsbMinib string = "usb-mini-b"
+	// ConsolePortTemplateTypeValueUsbDashMiniDashb captures enum value "usb-mini-b"
+	ConsolePortTemplateTypeValueUsbDashMiniDashb string = "usb-mini-b"
 
-	// ConsolePortTemplateTypeValueUsbMicroa captures enum value "usb-micro-a"
-	ConsolePortTemplateTypeValueUsbMicroa string = "usb-micro-a"
+	// ConsolePortTemplateTypeValueUsbDashMicroDasha captures enum value "usb-micro-a"
+	ConsolePortTemplateTypeValueUsbDashMicroDasha string = "usb-micro-a"
 
-	// ConsolePortTemplateTypeValueUsbMicrob captures enum value "usb-micro-b"
-	ConsolePortTemplateTypeValueUsbMicrob string = "usb-micro-b"
+	// ConsolePortTemplateTypeValueUsbDashMicroDashb captures enum value "usb-micro-b"
+	ConsolePortTemplateTypeValueUsbDashMicroDashb string = "usb-micro-b"
 
 	// ConsolePortTemplateTypeValueOther captures enum value "other"
 	ConsolePortTemplateTypeValueOther string = "other"
@@ -394,6 +463,11 @@ func (m *ConsolePortTemplateType) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this console port template type based on context it is used
+func (m *ConsolePortTemplateType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 
