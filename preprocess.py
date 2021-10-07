@@ -93,6 +93,12 @@ data["paths"]["/status/"]["get"]["responses"]["200"]["schema"] = {
 }
 logging.info(f"Added schema for 200 response of /status/ get")
 
+# Remove omitempty for site attribute on clusters
+for prop, prop_spec in data["definitions"]["WritableCluster"]["properties"].items():
+    if prop == "site":
+        prop_spec["x-nullable"] = False
+        logging.info(f"set x-nullable = false on WritableCluster.{prop}")
+
 # Write output file
 with open("swagger.processed.json", "w") as writefile:
     json.dump(data, writefile, indent=2)
