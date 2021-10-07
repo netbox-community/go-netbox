@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -148,7 +149,6 @@ func (m *WritableConsoleServerPort) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableConsoleServerPort) validateCable(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Cable) { // not required
 		return nil
 	}
@@ -166,12 +166,11 @@ func (m *WritableConsoleServerPort) validateCable(formats strfmt.Registry) error
 }
 
 func (m *WritableConsoleServerPort) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -188,12 +187,11 @@ func (m *WritableConsoleServerPort) validateDevice(formats strfmt.Registry) erro
 }
 
 func (m *WritableConsoleServerPort) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
 		return err
 	}
 
@@ -206,11 +204,11 @@ func (m *WritableConsoleServerPort) validateName(formats strfmt.Registry) error 
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -218,7 +216,6 @@ func (m *WritableConsoleServerPort) validateName(formats strfmt.Registry) error 
 }
 
 func (m *WritableConsoleServerPort) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -256,41 +253,41 @@ func init() {
 
 const (
 
-	// WritableConsoleServerPortTypeDe9 captures enum value "de-9"
-	WritableConsoleServerPortTypeDe9 string = "de-9"
+	// WritableConsoleServerPortTypeDeDash9 captures enum value "de-9"
+	WritableConsoleServerPortTypeDeDash9 string = "de-9"
 
-	// WritableConsoleServerPortTypeDb25 captures enum value "db-25"
-	WritableConsoleServerPortTypeDb25 string = "db-25"
+	// WritableConsoleServerPortTypeDbDash25 captures enum value "db-25"
+	WritableConsoleServerPortTypeDbDash25 string = "db-25"
 
-	// WritableConsoleServerPortTypeRj11 captures enum value "rj-11"
-	WritableConsoleServerPortTypeRj11 string = "rj-11"
+	// WritableConsoleServerPortTypeRjDash11 captures enum value "rj-11"
+	WritableConsoleServerPortTypeRjDash11 string = "rj-11"
 
-	// WritableConsoleServerPortTypeRj12 captures enum value "rj-12"
-	WritableConsoleServerPortTypeRj12 string = "rj-12"
+	// WritableConsoleServerPortTypeRjDash12 captures enum value "rj-12"
+	WritableConsoleServerPortTypeRjDash12 string = "rj-12"
 
-	// WritableConsoleServerPortTypeRj45 captures enum value "rj-45"
-	WritableConsoleServerPortTypeRj45 string = "rj-45"
+	// WritableConsoleServerPortTypeRjDash45 captures enum value "rj-45"
+	WritableConsoleServerPortTypeRjDash45 string = "rj-45"
 
-	// WritableConsoleServerPortTypeUsba captures enum value "usb-a"
-	WritableConsoleServerPortTypeUsba string = "usb-a"
+	// WritableConsoleServerPortTypeUsbDasha captures enum value "usb-a"
+	WritableConsoleServerPortTypeUsbDasha string = "usb-a"
 
-	// WritableConsoleServerPortTypeUsbb captures enum value "usb-b"
-	WritableConsoleServerPortTypeUsbb string = "usb-b"
+	// WritableConsoleServerPortTypeUsbDashb captures enum value "usb-b"
+	WritableConsoleServerPortTypeUsbDashb string = "usb-b"
 
-	// WritableConsoleServerPortTypeUsbc captures enum value "usb-c"
-	WritableConsoleServerPortTypeUsbc string = "usb-c"
+	// WritableConsoleServerPortTypeUsbDashc captures enum value "usb-c"
+	WritableConsoleServerPortTypeUsbDashc string = "usb-c"
 
-	// WritableConsoleServerPortTypeUsbMinia captures enum value "usb-mini-a"
-	WritableConsoleServerPortTypeUsbMinia string = "usb-mini-a"
+	// WritableConsoleServerPortTypeUsbDashMiniDasha captures enum value "usb-mini-a"
+	WritableConsoleServerPortTypeUsbDashMiniDasha string = "usb-mini-a"
 
-	// WritableConsoleServerPortTypeUsbMinib captures enum value "usb-mini-b"
-	WritableConsoleServerPortTypeUsbMinib string = "usb-mini-b"
+	// WritableConsoleServerPortTypeUsbDashMiniDashb captures enum value "usb-mini-b"
+	WritableConsoleServerPortTypeUsbDashMiniDashb string = "usb-mini-b"
 
-	// WritableConsoleServerPortTypeUsbMicroa captures enum value "usb-micro-a"
-	WritableConsoleServerPortTypeUsbMicroa string = "usb-micro-a"
+	// WritableConsoleServerPortTypeUsbDashMicroDasha captures enum value "usb-micro-a"
+	WritableConsoleServerPortTypeUsbDashMicroDasha string = "usb-micro-a"
 
-	// WritableConsoleServerPortTypeUsbMicrob captures enum value "usb-micro-b"
-	WritableConsoleServerPortTypeUsbMicrob string = "usb-micro-b"
+	// WritableConsoleServerPortTypeUsbDashMicroDashb captures enum value "usb-micro-b"
+	WritableConsoleServerPortTypeUsbDashMicroDashb string = "usb-micro-b"
 
 	// WritableConsoleServerPortTypeOther captures enum value "other"
 	WritableConsoleServerPortTypeOther string = "other"
@@ -305,7 +302,6 @@ func (m *WritableConsoleServerPort) validateTypeEnum(path, location string, valu
 }
 
 func (m *WritableConsoleServerPort) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -319,12 +315,144 @@ func (m *WritableConsoleServerPort) validateType(formats strfmt.Registry) error 
 }
 
 func (m *WritableConsoleServerPort) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable console server port based on the context it is used
+func (m *WritableConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cable != nil {
+		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

@@ -59,7 +59,7 @@ func NewIpamRouteTargetsDeleteNoContent() *IpamRouteTargetsDeleteNoContent {
 	return &IpamRouteTargetsDeleteNoContent{}
 }
 
-/*IpamRouteTargetsDeleteNoContent handles this case with default header values.
+/* IpamRouteTargetsDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamRouteTargetsDeleteNoContent ipam route targets delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamRouteTargetsDeleteDefault(code int) *IpamRouteTargetsDeleteDefault {
 	}
 }
 
-/*IpamRouteTargetsDeleteDefault handles this case with default header values.
+/* IpamRouteTargetsDeleteDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsDeleteDefault ipam route targets delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamRouteTargetsDeleteDefault) Code() int {
 func (o *IpamRouteTargetsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipam_route-targets_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRouteTargetsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

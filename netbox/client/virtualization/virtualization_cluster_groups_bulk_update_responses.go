@@ -61,7 +61,7 @@ func NewVirtualizationClusterGroupsBulkUpdateOK() *VirtualizationClusterGroupsBu
 	return &VirtualizationClusterGroupsBulkUpdateOK{}
 }
 
-/*VirtualizationClusterGroupsBulkUpdateOK handles this case with default header values.
+/* VirtualizationClusterGroupsBulkUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterGroupsBulkUpdateOK virtualization cluster groups bulk update o k
 */
@@ -72,7 +72,6 @@ type VirtualizationClusterGroupsBulkUpdateOK struct {
 func (o *VirtualizationClusterGroupsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/cluster-groups/][%d] virtualizationClusterGroupsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsBulkUpdateOK) GetPayload() *models.ClusterGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationClusterGroupsBulkUpdateDefault(code int) *VirtualizationCl
 	}
 }
 
-/*VirtualizationClusterGroupsBulkUpdateDefault handles this case with default header values.
+/* VirtualizationClusterGroupsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterGroupsBulkUpdateDefault virtualization cluster groups bulk update default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationClusterGroupsBulkUpdateDefault) Code() int {
 func (o *VirtualizationClusterGroupsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/cluster-groups/][%d] virtualization_cluster-groups_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

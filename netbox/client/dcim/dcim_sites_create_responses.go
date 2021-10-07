@@ -61,7 +61,7 @@ func NewDcimSitesCreateCreated() *DcimSitesCreateCreated {
 	return &DcimSitesCreateCreated{}
 }
 
-/*DcimSitesCreateCreated handles this case with default header values.
+/* DcimSitesCreateCreated describes a response with status code 201, with default header values.
 
 DcimSitesCreateCreated dcim sites create created
 */
@@ -72,7 +72,6 @@ type DcimSitesCreateCreated struct {
 func (o *DcimSitesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/sites/][%d] dcimSitesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimSitesCreateCreated) GetPayload() *models.Site {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimSitesCreateDefault(code int) *DcimSitesCreateDefault {
 	}
 }
 
-/*DcimSitesCreateDefault handles this case with default header values.
+/* DcimSitesCreateDefault describes a response with status code -1, with default header values.
 
 DcimSitesCreateDefault dcim sites create default
 */
@@ -114,7 +113,6 @@ func (o *DcimSitesCreateDefault) Code() int {
 func (o *DcimSitesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/sites/][%d] dcim_sites_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimSitesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

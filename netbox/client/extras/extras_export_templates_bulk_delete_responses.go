@@ -59,7 +59,7 @@ func NewExtrasExportTemplatesBulkDeleteNoContent() *ExtrasExportTemplatesBulkDel
 	return &ExtrasExportTemplatesBulkDeleteNoContent{}
 }
 
-/*ExtrasExportTemplatesBulkDeleteNoContent handles this case with default header values.
+/* ExtrasExportTemplatesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasExportTemplatesBulkDeleteNoContent extras export templates bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewExtrasExportTemplatesBulkDeleteDefault(code int) *ExtrasExportTemplatesB
 	}
 }
 
-/*ExtrasExportTemplatesBulkDeleteDefault handles this case with default header values.
+/* ExtrasExportTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasExportTemplatesBulkDeleteDefault extras export templates bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *ExtrasExportTemplatesBulkDeleteDefault) Code() int {
 func (o *ExtrasExportTemplatesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/export-templates/][%d] extras_export-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

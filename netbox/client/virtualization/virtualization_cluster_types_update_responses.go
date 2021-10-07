@@ -61,7 +61,7 @@ func NewVirtualizationClusterTypesUpdateOK() *VirtualizationClusterTypesUpdateOK
 	return &VirtualizationClusterTypesUpdateOK{}
 }
 
-/*VirtualizationClusterTypesUpdateOK handles this case with default header values.
+/* VirtualizationClusterTypesUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterTypesUpdateOK virtualization cluster types update o k
 */
@@ -72,7 +72,6 @@ type VirtualizationClusterTypesUpdateOK struct {
 func (o *VirtualizationClusterTypesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterTypesUpdateOK) GetPayload() *models.ClusterType {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationClusterTypesUpdateDefault(code int) *VirtualizationCluster
 	}
 }
 
-/*VirtualizationClusterTypesUpdateDefault handles this case with default header values.
+/* VirtualizationClusterTypesUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterTypesUpdateDefault virtualization cluster types update default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationClusterTypesUpdateDefault) Code() int {
 func (o *VirtualizationClusterTypesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterTypesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

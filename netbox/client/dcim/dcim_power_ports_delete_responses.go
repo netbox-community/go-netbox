@@ -59,7 +59,7 @@ func NewDcimPowerPortsDeleteNoContent() *DcimPowerPortsDeleteNoContent {
 	return &DcimPowerPortsDeleteNoContent{}
 }
 
-/*DcimPowerPortsDeleteNoContent handles this case with default header values.
+/* DcimPowerPortsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimPowerPortsDeleteNoContent dcim power ports delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimPowerPortsDeleteDefault(code int) *DcimPowerPortsDeleteDefault {
 	}
 }
 
-/*DcimPowerPortsDeleteDefault handles this case with default header values.
+/* DcimPowerPortsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortsDeleteDefault dcim power ports delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimPowerPortsDeleteDefault) Code() int {
 func (o *DcimPowerPortsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/power-ports/{id}/][%d] dcim_power-ports_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPortsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

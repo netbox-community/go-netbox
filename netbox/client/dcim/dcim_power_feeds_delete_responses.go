@@ -59,7 +59,7 @@ func NewDcimPowerFeedsDeleteNoContent() *DcimPowerFeedsDeleteNoContent {
 	return &DcimPowerFeedsDeleteNoContent{}
 }
 
-/*DcimPowerFeedsDeleteNoContent handles this case with default header values.
+/* DcimPowerFeedsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimPowerFeedsDeleteNoContent dcim power feeds delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimPowerFeedsDeleteDefault(code int) *DcimPowerFeedsDeleteDefault {
 	}
 }
 
-/*DcimPowerFeedsDeleteDefault handles this case with default header values.
+/* DcimPowerFeedsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsDeleteDefault dcim power feeds delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimPowerFeedsDeleteDefault) Code() int {
 func (o *DcimPowerFeedsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/power-feeds/{id}/][%d] dcim_power-feeds_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerFeedsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimManufacturersListOK() *DcimManufacturersListOK {
 	return &DcimManufacturersListOK{}
 }
 
-/*DcimManufacturersListOK handles this case with default header values.
+/* DcimManufacturersListOK describes a response with status code 200, with default header values.
 
 DcimManufacturersListOK dcim manufacturers list o k
 */
@@ -76,7 +77,6 @@ type DcimManufacturersListOK struct {
 func (o *DcimManufacturersListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcimManufacturersListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimManufacturersListOK) GetPayload() *DcimManufacturersListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimManufacturersListDefault(code int) *DcimManufacturersListDefault {
 	}
 }
 
-/*DcimManufacturersListDefault handles this case with default header values.
+/* DcimManufacturersListDefault describes a response with status code -1, with default header values.
 
 DcimManufacturersListDefault dcim manufacturers list default
 */
@@ -118,7 +118,6 @@ func (o *DcimManufacturersListDefault) Code() int {
 func (o *DcimManufacturersListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcim_manufacturers_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimManufacturersListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimManufacturersListOKBody) validateCount(formats strfmt.Registry) err
 }
 
 func (o *DcimManufacturersListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimManufacturersListOKBody) validateNext(formats strfmt.Registry) erro
 }
 
 func (o *DcimManufacturersListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimManufacturersListOKBody) validateResults(formats strfmt.Registry) e
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimManufacturersListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim manufacturers list o k body based on the context it is used
+func (o *DcimManufacturersListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimManufacturersListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimManufacturersListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

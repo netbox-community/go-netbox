@@ -61,7 +61,7 @@ func NewExtrasImageAttachmentsPartialUpdateOK() *ExtrasImageAttachmentsPartialUp
 	return &ExtrasImageAttachmentsPartialUpdateOK{}
 }
 
-/*ExtrasImageAttachmentsPartialUpdateOK handles this case with default header values.
+/* ExtrasImageAttachmentsPartialUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasImageAttachmentsPartialUpdateOK extras image attachments partial update o k
 */
@@ -72,7 +72,6 @@ type ExtrasImageAttachmentsPartialUpdateOK struct {
 func (o *ExtrasImageAttachmentsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extrasImageAttachmentsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsPartialUpdateOK) GetPayload() *models.ImageAttachment {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasImageAttachmentsPartialUpdateDefault(code int) *ExtrasImageAttachm
 	}
 }
 
-/*ExtrasImageAttachmentsPartialUpdateDefault handles this case with default header values.
+/* ExtrasImageAttachmentsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasImageAttachmentsPartialUpdateDefault extras image attachments partial update default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasImageAttachmentsPartialUpdateDefault) Code() int {
 func (o *ExtrasImageAttachmentsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /extras/image-attachments/{id}/][%d] extras_image-attachments_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasImageAttachmentsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

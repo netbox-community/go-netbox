@@ -61,7 +61,7 @@ func NewIpamRirsBulkPartialUpdateOK() *IpamRirsBulkPartialUpdateOK {
 	return &IpamRirsBulkPartialUpdateOK{}
 }
 
-/*IpamRirsBulkPartialUpdateOK handles this case with default header values.
+/* IpamRirsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamRirsBulkPartialUpdateOK ipam rirs bulk partial update o k
 */
@@ -72,7 +72,6 @@ type IpamRirsBulkPartialUpdateOK struct {
 func (o *IpamRirsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/rirs/][%d] ipamRirsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRirsBulkPartialUpdateOK) GetPayload() *models.RIR {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRirsBulkPartialUpdateDefault(code int) *IpamRirsBulkPartialUpdateDef
 	}
 }
 
-/*IpamRirsBulkPartialUpdateDefault handles this case with default header values.
+/* IpamRirsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRirsBulkPartialUpdateDefault ipam rirs bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *IpamRirsBulkPartialUpdateDefault) Code() int {
 func (o *IpamRirsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/rirs/][%d] ipam_rirs_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRirsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

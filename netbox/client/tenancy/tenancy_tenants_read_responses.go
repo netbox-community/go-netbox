@@ -61,7 +61,7 @@ func NewTenancyTenantsReadOK() *TenancyTenantsReadOK {
 	return &TenancyTenantsReadOK{}
 }
 
-/*TenancyTenantsReadOK handles this case with default header values.
+/* TenancyTenantsReadOK describes a response with status code 200, with default header values.
 
 TenancyTenantsReadOK tenancy tenants read o k
 */
@@ -72,7 +72,6 @@ type TenancyTenantsReadOK struct {
 func (o *TenancyTenantsReadOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenants/{id}/][%d] tenancyTenantsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *TenancyTenantsReadOK) GetPayload() *models.Tenant {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewTenancyTenantsReadDefault(code int) *TenancyTenantsReadDefault {
 	}
 }
 
-/*TenancyTenantsReadDefault handles this case with default header values.
+/* TenancyTenantsReadDefault describes a response with status code -1, with default header values.
 
 TenancyTenantsReadDefault tenancy tenants read default
 */
@@ -114,7 +113,6 @@ func (o *TenancyTenantsReadDefault) Code() int {
 func (o *TenancyTenantsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenants/{id}/][%d] tenancy_tenants_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *TenancyTenantsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

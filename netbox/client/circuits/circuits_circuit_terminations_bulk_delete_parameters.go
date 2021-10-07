@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewCircuitsCircuitTerminationsBulkDeleteParams creates a new CircuitsCircuitTerminationsBulkDeleteParams object
-// with the default values initialized.
+// NewCircuitsCircuitTerminationsBulkDeleteParams creates a new CircuitsCircuitTerminationsBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCircuitsCircuitTerminationsBulkDeleteParams() *CircuitsCircuitTerminationsBulkDeleteParams {
-
 	return &CircuitsCircuitTerminationsBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCircuitsCircuitTerminationsBulkDeleteParamsWithTimeout creates a new CircuitsCircuitTerminationsBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCircuitsCircuitTerminationsBulkDeleteParamsWithTimeout(timeout time.Duration) *CircuitsCircuitTerminationsBulkDeleteParams {
-
 	return &CircuitsCircuitTerminationsBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCircuitsCircuitTerminationsBulkDeleteParamsWithContext creates a new CircuitsCircuitTerminationsBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCircuitsCircuitTerminationsBulkDeleteParamsWithContext(ctx context.Context) *CircuitsCircuitTerminationsBulkDeleteParams {
-
 	return &CircuitsCircuitTerminationsBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCircuitsCircuitTerminationsBulkDeleteParamsWithHTTPClient creates a new CircuitsCircuitTerminationsBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCircuitsCircuitTerminationsBulkDeleteParamsWithHTTPClient(client *http.Client) *CircuitsCircuitTerminationsBulkDeleteParams {
-
 	return &CircuitsCircuitTerminationsBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*CircuitsCircuitTerminationsBulkDeleteParams contains all the parameters to send to the API endpoint
-for the circuits circuit terminations bulk delete operation typically these are written to a http.Request
+/* CircuitsCircuitTerminationsBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the circuits circuit terminations bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type CircuitsCircuitTerminationsBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the circuits circuit terminations bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTerminationsBulkDeleteParams) WithDefaults() *CircuitsCircuitTerminationsBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the circuits circuit terminations bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CircuitsCircuitTerminationsBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the circuits circuit terminations bulk delete params

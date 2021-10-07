@@ -61,7 +61,7 @@ func NewDcimPowerPanelsPartialUpdateOK() *DcimPowerPanelsPartialUpdateOK {
 	return &DcimPowerPanelsPartialUpdateOK{}
 }
 
-/*DcimPowerPanelsPartialUpdateOK handles this case with default header values.
+/* DcimPowerPanelsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPanelsPartialUpdateOK dcim power panels partial update o k
 */
@@ -72,7 +72,6 @@ type DcimPowerPanelsPartialUpdateOK struct {
 func (o *DcimPowerPanelsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-panels/{id}/][%d] dcimPowerPanelsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPanelsPartialUpdateOK) GetPayload() *models.PowerPanel {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerPanelsPartialUpdateDefault(code int) *DcimPowerPanelsPartialUpd
 	}
 }
 
-/*DcimPowerPanelsPartialUpdateDefault handles this case with default header values.
+/* DcimPowerPanelsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPanelsPartialUpdateDefault dcim power panels partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerPanelsPartialUpdateDefault) Code() int {
 func (o *DcimPowerPanelsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-panels/{id}/][%d] dcim_power-panels_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPanelsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

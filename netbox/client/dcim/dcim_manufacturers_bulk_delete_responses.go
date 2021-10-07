@@ -59,7 +59,7 @@ func NewDcimManufacturersBulkDeleteNoContent() *DcimManufacturersBulkDeleteNoCon
 	return &DcimManufacturersBulkDeleteNoContent{}
 }
 
-/*DcimManufacturersBulkDeleteNoContent handles this case with default header values.
+/* DcimManufacturersBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimManufacturersBulkDeleteNoContent dcim manufacturers bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimManufacturersBulkDeleteDefault(code int) *DcimManufacturersBulkDelet
 	}
 }
 
-/*DcimManufacturersBulkDeleteDefault handles this case with default header values.
+/* DcimManufacturersBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimManufacturersBulkDeleteDefault dcim manufacturers bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimManufacturersBulkDeleteDefault) Code() int {
 func (o *DcimManufacturersBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/manufacturers/][%d] dcim_manufacturers_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimManufacturersBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

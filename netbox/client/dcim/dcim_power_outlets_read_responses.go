@@ -61,7 +61,7 @@ func NewDcimPowerOutletsReadOK() *DcimPowerOutletsReadOK {
 	return &DcimPowerOutletsReadOK{}
 }
 
-/*DcimPowerOutletsReadOK handles this case with default header values.
+/* DcimPowerOutletsReadOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletsReadOK dcim power outlets read o k
 */
@@ -72,7 +72,6 @@ type DcimPowerOutletsReadOK struct {
 func (o *DcimPowerOutletsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/][%d] dcimPowerOutletsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerOutletsReadOK) GetPayload() *models.PowerOutlet {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerOutletsReadDefault(code int) *DcimPowerOutletsReadDefault {
 	}
 }
 
-/*DcimPowerOutletsReadDefault handles this case with default header values.
+/* DcimPowerOutletsReadDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletsReadDefault dcim power outlets read default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerOutletsReadDefault) Code() int {
 func (o *DcimPowerOutletsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/][%d] dcim_power-outlets_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerOutletsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

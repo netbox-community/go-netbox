@@ -61,7 +61,7 @@ func NewDcimDevicesReadOK() *DcimDevicesReadOK {
 	return &DcimDevicesReadOK{}
 }
 
-/*DcimDevicesReadOK handles this case with default header values.
+/* DcimDevicesReadOK describes a response with status code 200, with default header values.
 
 DcimDevicesReadOK dcim devices read o k
 */
@@ -72,7 +72,6 @@ type DcimDevicesReadOK struct {
 func (o *DcimDevicesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/devices/{id}/][%d] dcimDevicesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDevicesReadOK) GetPayload() *models.DeviceWithConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDevicesReadDefault(code int) *DcimDevicesReadDefault {
 	}
 }
 
-/*DcimDevicesReadDefault handles this case with default header values.
+/* DcimDevicesReadDefault describes a response with status code -1, with default header values.
 
 DcimDevicesReadDefault dcim devices read default
 */
@@ -114,7 +113,6 @@ func (o *DcimDevicesReadDefault) Code() int {
 func (o *DcimDevicesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/devices/{id}/][%d] dcim_devices_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDevicesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

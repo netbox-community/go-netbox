@@ -61,7 +61,7 @@ func NewDcimDeviceBayTemplatesCreateCreated() *DcimDeviceBayTemplatesCreateCreat
 	return &DcimDeviceBayTemplatesCreateCreated{}
 }
 
-/*DcimDeviceBayTemplatesCreateCreated handles this case with default header values.
+/* DcimDeviceBayTemplatesCreateCreated describes a response with status code 201, with default header values.
 
 DcimDeviceBayTemplatesCreateCreated dcim device bay templates create created
 */
@@ -72,7 +72,6 @@ type DcimDeviceBayTemplatesCreateCreated struct {
 func (o *DcimDeviceBayTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimDeviceBayTemplatesCreateCreated) GetPayload() *models.DeviceBayTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDeviceBayTemplatesCreateDefault(code int) *DcimDeviceBayTemplatesCre
 	}
 }
 
-/*DcimDeviceBayTemplatesCreateDefault handles this case with default header values.
+/* DcimDeviceBayTemplatesCreateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceBayTemplatesCreateDefault dcim device bay templates create default
 */
@@ -114,7 +113,6 @@ func (o *DcimDeviceBayTemplatesCreateDefault) Code() int {
 func (o *DcimDeviceBayTemplatesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-bay-templates/][%d] dcim_device-bay-templates_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceBayTemplatesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

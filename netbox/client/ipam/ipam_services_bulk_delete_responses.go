@@ -59,7 +59,7 @@ func NewIpamServicesBulkDeleteNoContent() *IpamServicesBulkDeleteNoContent {
 	return &IpamServicesBulkDeleteNoContent{}
 }
 
-/*IpamServicesBulkDeleteNoContent handles this case with default header values.
+/* IpamServicesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamServicesBulkDeleteNoContent ipam services bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamServicesBulkDeleteDefault(code int) *IpamServicesBulkDeleteDefault {
 	}
 }
 
-/*IpamServicesBulkDeleteDefault handles this case with default header values.
+/* IpamServicesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamServicesBulkDeleteDefault ipam services bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamServicesBulkDeleteDefault) Code() int {
 func (o *IpamServicesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/services/][%d] ipam_services_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamServicesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

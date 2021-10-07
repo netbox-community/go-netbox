@@ -61,7 +61,7 @@ func NewDcimManufacturersBulkUpdateOK() *DcimManufacturersBulkUpdateOK {
 	return &DcimManufacturersBulkUpdateOK{}
 }
 
-/*DcimManufacturersBulkUpdateOK handles this case with default header values.
+/* DcimManufacturersBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimManufacturersBulkUpdateOK dcim manufacturers bulk update o k
 */
@@ -72,7 +72,6 @@ type DcimManufacturersBulkUpdateOK struct {
 func (o *DcimManufacturersBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/manufacturers/][%d] dcimManufacturersBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimManufacturersBulkUpdateOK) GetPayload() *models.Manufacturer {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimManufacturersBulkUpdateDefault(code int) *DcimManufacturersBulkUpdat
 	}
 }
 
-/*DcimManufacturersBulkUpdateDefault handles this case with default header values.
+/* DcimManufacturersBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimManufacturersBulkUpdateDefault dcim manufacturers bulk update default
 */
@@ -114,7 +113,6 @@ func (o *DcimManufacturersBulkUpdateDefault) Code() int {
 func (o *DcimManufacturersBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/manufacturers/][%d] dcim_manufacturers_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimManufacturersBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

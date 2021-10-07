@@ -38,97 +38,100 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	VirtualizationClusterGroupsBulkDelete(params *VirtualizationClusterGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsBulkDeleteNoContent, error)
+	VirtualizationClusterGroupsBulkDelete(params *VirtualizationClusterGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkDeleteNoContent, error)
 
-	VirtualizationClusterGroupsBulkPartialUpdate(params *VirtualizationClusterGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsBulkPartialUpdateOK, error)
+	VirtualizationClusterGroupsBulkPartialUpdate(params *VirtualizationClusterGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkPartialUpdateOK, error)
 
-	VirtualizationClusterGroupsBulkUpdate(params *VirtualizationClusterGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsBulkUpdateOK, error)
+	VirtualizationClusterGroupsBulkUpdate(params *VirtualizationClusterGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkUpdateOK, error)
 
-	VirtualizationClusterGroupsCreate(params *VirtualizationClusterGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsCreateCreated, error)
+	VirtualizationClusterGroupsCreate(params *VirtualizationClusterGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsCreateCreated, error)
 
-	VirtualizationClusterGroupsDelete(params *VirtualizationClusterGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsDeleteNoContent, error)
+	VirtualizationClusterGroupsDelete(params *VirtualizationClusterGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsDeleteNoContent, error)
 
-	VirtualizationClusterGroupsList(params *VirtualizationClusterGroupsListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsListOK, error)
+	VirtualizationClusterGroupsList(params *VirtualizationClusterGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsListOK, error)
 
-	VirtualizationClusterGroupsPartialUpdate(params *VirtualizationClusterGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsPartialUpdateOK, error)
+	VirtualizationClusterGroupsPartialUpdate(params *VirtualizationClusterGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsPartialUpdateOK, error)
 
-	VirtualizationClusterGroupsRead(params *VirtualizationClusterGroupsReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsReadOK, error)
+	VirtualizationClusterGroupsRead(params *VirtualizationClusterGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsReadOK, error)
 
-	VirtualizationClusterGroupsUpdate(params *VirtualizationClusterGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsUpdateOK, error)
+	VirtualizationClusterGroupsUpdate(params *VirtualizationClusterGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsUpdateOK, error)
 
-	VirtualizationClusterTypesBulkDelete(params *VirtualizationClusterTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesBulkDeleteNoContent, error)
+	VirtualizationClusterTypesBulkDelete(params *VirtualizationClusterTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkDeleteNoContent, error)
 
-	VirtualizationClusterTypesBulkPartialUpdate(params *VirtualizationClusterTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesBulkPartialUpdateOK, error)
+	VirtualizationClusterTypesBulkPartialUpdate(params *VirtualizationClusterTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkPartialUpdateOK, error)
 
-	VirtualizationClusterTypesBulkUpdate(params *VirtualizationClusterTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesBulkUpdateOK, error)
+	VirtualizationClusterTypesBulkUpdate(params *VirtualizationClusterTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkUpdateOK, error)
 
-	VirtualizationClusterTypesCreate(params *VirtualizationClusterTypesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesCreateCreated, error)
+	VirtualizationClusterTypesCreate(params *VirtualizationClusterTypesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesCreateCreated, error)
 
-	VirtualizationClusterTypesDelete(params *VirtualizationClusterTypesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesDeleteNoContent, error)
+	VirtualizationClusterTypesDelete(params *VirtualizationClusterTypesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesDeleteNoContent, error)
 
-	VirtualizationClusterTypesList(params *VirtualizationClusterTypesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesListOK, error)
+	VirtualizationClusterTypesList(params *VirtualizationClusterTypesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesListOK, error)
 
-	VirtualizationClusterTypesPartialUpdate(params *VirtualizationClusterTypesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesPartialUpdateOK, error)
+	VirtualizationClusterTypesPartialUpdate(params *VirtualizationClusterTypesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesPartialUpdateOK, error)
 
-	VirtualizationClusterTypesRead(params *VirtualizationClusterTypesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesReadOK, error)
+	VirtualizationClusterTypesRead(params *VirtualizationClusterTypesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesReadOK, error)
 
-	VirtualizationClusterTypesUpdate(params *VirtualizationClusterTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesUpdateOK, error)
+	VirtualizationClusterTypesUpdate(params *VirtualizationClusterTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesUpdateOK, error)
 
-	VirtualizationClustersBulkDelete(params *VirtualizationClustersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersBulkDeleteNoContent, error)
+	VirtualizationClustersBulkDelete(params *VirtualizationClustersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkDeleteNoContent, error)
 
-	VirtualizationClustersBulkPartialUpdate(params *VirtualizationClustersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersBulkPartialUpdateOK, error)
+	VirtualizationClustersBulkPartialUpdate(params *VirtualizationClustersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkPartialUpdateOK, error)
 
-	VirtualizationClustersBulkUpdate(params *VirtualizationClustersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersBulkUpdateOK, error)
+	VirtualizationClustersBulkUpdate(params *VirtualizationClustersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkUpdateOK, error)
 
-	VirtualizationClustersCreate(params *VirtualizationClustersCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersCreateCreated, error)
+	VirtualizationClustersCreate(params *VirtualizationClustersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersCreateCreated, error)
 
-	VirtualizationClustersDelete(params *VirtualizationClustersDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersDeleteNoContent, error)
+	VirtualizationClustersDelete(params *VirtualizationClustersDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersDeleteNoContent, error)
 
-	VirtualizationClustersList(params *VirtualizationClustersListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersListOK, error)
+	VirtualizationClustersList(params *VirtualizationClustersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersListOK, error)
 
-	VirtualizationClustersPartialUpdate(params *VirtualizationClustersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersPartialUpdateOK, error)
+	VirtualizationClustersPartialUpdate(params *VirtualizationClustersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersPartialUpdateOK, error)
 
-	VirtualizationClustersRead(params *VirtualizationClustersReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersReadOK, error)
+	VirtualizationClustersRead(params *VirtualizationClustersReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersReadOK, error)
 
-	VirtualizationClustersUpdate(params *VirtualizationClustersUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersUpdateOK, error)
+	VirtualizationClustersUpdate(params *VirtualizationClustersUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersUpdateOK, error)
 
-	VirtualizationInterfacesBulkDelete(params *VirtualizationInterfacesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesBulkDeleteNoContent, error)
+	VirtualizationInterfacesBulkDelete(params *VirtualizationInterfacesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkDeleteNoContent, error)
 
-	VirtualizationInterfacesBulkPartialUpdate(params *VirtualizationInterfacesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesBulkPartialUpdateOK, error)
+	VirtualizationInterfacesBulkPartialUpdate(params *VirtualizationInterfacesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkPartialUpdateOK, error)
 
-	VirtualizationInterfacesBulkUpdate(params *VirtualizationInterfacesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesBulkUpdateOK, error)
+	VirtualizationInterfacesBulkUpdate(params *VirtualizationInterfacesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkUpdateOK, error)
 
-	VirtualizationInterfacesCreate(params *VirtualizationInterfacesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesCreateCreated, error)
+	VirtualizationInterfacesCreate(params *VirtualizationInterfacesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesCreateCreated, error)
 
-	VirtualizationInterfacesDelete(params *VirtualizationInterfacesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesDeleteNoContent, error)
+	VirtualizationInterfacesDelete(params *VirtualizationInterfacesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesDeleteNoContent, error)
 
-	VirtualizationInterfacesList(params *VirtualizationInterfacesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesListOK, error)
+	VirtualizationInterfacesList(params *VirtualizationInterfacesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesListOK, error)
 
-	VirtualizationInterfacesPartialUpdate(params *VirtualizationInterfacesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesPartialUpdateOK, error)
+	VirtualizationInterfacesPartialUpdate(params *VirtualizationInterfacesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesPartialUpdateOK, error)
 
-	VirtualizationInterfacesRead(params *VirtualizationInterfacesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesReadOK, error)
+	VirtualizationInterfacesRead(params *VirtualizationInterfacesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesReadOK, error)
 
-	VirtualizationInterfacesUpdate(params *VirtualizationInterfacesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesUpdateOK, error)
+	VirtualizationInterfacesUpdate(params *VirtualizationInterfacesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesUpdateOK, error)
 
-	VirtualizationVirtualMachinesBulkDelete(params *VirtualizationVirtualMachinesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesBulkDeleteNoContent, error)
+	VirtualizationVirtualMachinesBulkDelete(params *VirtualizationVirtualMachinesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkDeleteNoContent, error)
 
-	VirtualizationVirtualMachinesBulkPartialUpdate(params *VirtualizationVirtualMachinesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesBulkPartialUpdateOK, error)
+	VirtualizationVirtualMachinesBulkPartialUpdate(params *VirtualizationVirtualMachinesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkPartialUpdateOK, error)
 
-	VirtualizationVirtualMachinesBulkUpdate(params *VirtualizationVirtualMachinesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesBulkUpdateOK, error)
+	VirtualizationVirtualMachinesBulkUpdate(params *VirtualizationVirtualMachinesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkUpdateOK, error)
 
-	VirtualizationVirtualMachinesCreate(params *VirtualizationVirtualMachinesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesCreateCreated, error)
+	VirtualizationVirtualMachinesCreate(params *VirtualizationVirtualMachinesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesCreateCreated, error)
 
-	VirtualizationVirtualMachinesDelete(params *VirtualizationVirtualMachinesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesDeleteNoContent, error)
+	VirtualizationVirtualMachinesDelete(params *VirtualizationVirtualMachinesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesDeleteNoContent, error)
 
-	VirtualizationVirtualMachinesList(params *VirtualizationVirtualMachinesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesListOK, error)
+	VirtualizationVirtualMachinesList(params *VirtualizationVirtualMachinesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesListOK, error)
 
-	VirtualizationVirtualMachinesPartialUpdate(params *VirtualizationVirtualMachinesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesPartialUpdateOK, error)
+	VirtualizationVirtualMachinesPartialUpdate(params *VirtualizationVirtualMachinesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesPartialUpdateOK, error)
 
-	VirtualizationVirtualMachinesRead(params *VirtualizationVirtualMachinesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesReadOK, error)
+	VirtualizationVirtualMachinesRead(params *VirtualizationVirtualMachinesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesReadOK, error)
 
-	VirtualizationVirtualMachinesUpdate(params *VirtualizationVirtualMachinesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesUpdateOK, error)
+	VirtualizationVirtualMachinesUpdate(params *VirtualizationVirtualMachinesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -136,13 +139,12 @@ type ClientService interface {
 /*
   VirtualizationClusterGroupsBulkDelete virtualization cluster groups bulk delete API
 */
-func (a *Client) VirtualizationClusterGroupsBulkDelete(params *VirtualizationClusterGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsBulkDeleteNoContent, error) {
+func (a *Client) VirtualizationClusterGroupsBulkDelete(params *VirtualizationClusterGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterGroupsBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-groups_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/cluster-groups/",
@@ -154,7 +156,12 @@ func (a *Client) VirtualizationClusterGroupsBulkDelete(params *VirtualizationClu
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -170,13 +177,12 @@ func (a *Client) VirtualizationClusterGroupsBulkDelete(params *VirtualizationClu
 /*
   VirtualizationClusterGroupsBulkPartialUpdate virtualization cluster groups bulk partial update API
 */
-func (a *Client) VirtualizationClusterGroupsBulkPartialUpdate(params *VirtualizationClusterGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsBulkPartialUpdateOK, error) {
+func (a *Client) VirtualizationClusterGroupsBulkPartialUpdate(params *VirtualizationClusterGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterGroupsBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-groups_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/cluster-groups/",
@@ -188,7 +194,12 @@ func (a *Client) VirtualizationClusterGroupsBulkPartialUpdate(params *Virtualiza
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -204,13 +215,12 @@ func (a *Client) VirtualizationClusterGroupsBulkPartialUpdate(params *Virtualiza
 /*
   VirtualizationClusterGroupsBulkUpdate virtualization cluster groups bulk update API
 */
-func (a *Client) VirtualizationClusterGroupsBulkUpdate(params *VirtualizationClusterGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsBulkUpdateOK, error) {
+func (a *Client) VirtualizationClusterGroupsBulkUpdate(params *VirtualizationClusterGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterGroupsBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-groups_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/cluster-groups/",
@@ -222,7 +232,12 @@ func (a *Client) VirtualizationClusterGroupsBulkUpdate(params *VirtualizationClu
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -238,13 +253,12 @@ func (a *Client) VirtualizationClusterGroupsBulkUpdate(params *VirtualizationClu
 /*
   VirtualizationClusterGroupsCreate virtualization cluster groups create API
 */
-func (a *Client) VirtualizationClusterGroupsCreate(params *VirtualizationClusterGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsCreateCreated, error) {
+func (a *Client) VirtualizationClusterGroupsCreate(params *VirtualizationClusterGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterGroupsCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-groups_create",
 		Method:             "POST",
 		PathPattern:        "/virtualization/cluster-groups/",
@@ -256,7 +270,12 @@ func (a *Client) VirtualizationClusterGroupsCreate(params *VirtualizationCluster
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -272,13 +291,12 @@ func (a *Client) VirtualizationClusterGroupsCreate(params *VirtualizationCluster
 /*
   VirtualizationClusterGroupsDelete virtualization cluster groups delete API
 */
-func (a *Client) VirtualizationClusterGroupsDelete(params *VirtualizationClusterGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsDeleteNoContent, error) {
+func (a *Client) VirtualizationClusterGroupsDelete(params *VirtualizationClusterGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterGroupsDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-groups_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/cluster-groups/{id}/",
@@ -290,7 +308,12 @@ func (a *Client) VirtualizationClusterGroupsDelete(params *VirtualizationCluster
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -306,13 +329,12 @@ func (a *Client) VirtualizationClusterGroupsDelete(params *VirtualizationCluster
 /*
   VirtualizationClusterGroupsList virtualization cluster groups list API
 */
-func (a *Client) VirtualizationClusterGroupsList(params *VirtualizationClusterGroupsListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsListOK, error) {
+func (a *Client) VirtualizationClusterGroupsList(params *VirtualizationClusterGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterGroupsListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-groups_list",
 		Method:             "GET",
 		PathPattern:        "/virtualization/cluster-groups/",
@@ -324,7 +346,12 @@ func (a *Client) VirtualizationClusterGroupsList(params *VirtualizationClusterGr
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -340,13 +367,12 @@ func (a *Client) VirtualizationClusterGroupsList(params *VirtualizationClusterGr
 /*
   VirtualizationClusterGroupsPartialUpdate virtualization cluster groups partial update API
 */
-func (a *Client) VirtualizationClusterGroupsPartialUpdate(params *VirtualizationClusterGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsPartialUpdateOK, error) {
+func (a *Client) VirtualizationClusterGroupsPartialUpdate(params *VirtualizationClusterGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterGroupsPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-groups_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/cluster-groups/{id}/",
@@ -358,7 +384,12 @@ func (a *Client) VirtualizationClusterGroupsPartialUpdate(params *Virtualization
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -374,13 +405,12 @@ func (a *Client) VirtualizationClusterGroupsPartialUpdate(params *Virtualization
 /*
   VirtualizationClusterGroupsRead virtualization cluster groups read API
 */
-func (a *Client) VirtualizationClusterGroupsRead(params *VirtualizationClusterGroupsReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsReadOK, error) {
+func (a *Client) VirtualizationClusterGroupsRead(params *VirtualizationClusterGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterGroupsReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-groups_read",
 		Method:             "GET",
 		PathPattern:        "/virtualization/cluster-groups/{id}/",
@@ -392,7 +422,12 @@ func (a *Client) VirtualizationClusterGroupsRead(params *VirtualizationClusterGr
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -408,13 +443,12 @@ func (a *Client) VirtualizationClusterGroupsRead(params *VirtualizationClusterGr
 /*
   VirtualizationClusterGroupsUpdate virtualization cluster groups update API
 */
-func (a *Client) VirtualizationClusterGroupsUpdate(params *VirtualizationClusterGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsUpdateOK, error) {
+func (a *Client) VirtualizationClusterGroupsUpdate(params *VirtualizationClusterGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterGroupsUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-groups_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/cluster-groups/{id}/",
@@ -426,7 +460,12 @@ func (a *Client) VirtualizationClusterGroupsUpdate(params *VirtualizationCluster
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -442,13 +481,12 @@ func (a *Client) VirtualizationClusterGroupsUpdate(params *VirtualizationCluster
 /*
   VirtualizationClusterTypesBulkDelete virtualization cluster types bulk delete API
 */
-func (a *Client) VirtualizationClusterTypesBulkDelete(params *VirtualizationClusterTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesBulkDeleteNoContent, error) {
+func (a *Client) VirtualizationClusterTypesBulkDelete(params *VirtualizationClusterTypesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterTypesBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-types_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/cluster-types/",
@@ -460,7 +498,12 @@ func (a *Client) VirtualizationClusterTypesBulkDelete(params *VirtualizationClus
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -476,13 +519,12 @@ func (a *Client) VirtualizationClusterTypesBulkDelete(params *VirtualizationClus
 /*
   VirtualizationClusterTypesBulkPartialUpdate virtualization cluster types bulk partial update API
 */
-func (a *Client) VirtualizationClusterTypesBulkPartialUpdate(params *VirtualizationClusterTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesBulkPartialUpdateOK, error) {
+func (a *Client) VirtualizationClusterTypesBulkPartialUpdate(params *VirtualizationClusterTypesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterTypesBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-types_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/cluster-types/",
@@ -494,7 +536,12 @@ func (a *Client) VirtualizationClusterTypesBulkPartialUpdate(params *Virtualizat
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -510,13 +557,12 @@ func (a *Client) VirtualizationClusterTypesBulkPartialUpdate(params *Virtualizat
 /*
   VirtualizationClusterTypesBulkUpdate virtualization cluster types bulk update API
 */
-func (a *Client) VirtualizationClusterTypesBulkUpdate(params *VirtualizationClusterTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesBulkUpdateOK, error) {
+func (a *Client) VirtualizationClusterTypesBulkUpdate(params *VirtualizationClusterTypesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterTypesBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-types_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/cluster-types/",
@@ -528,7 +574,12 @@ func (a *Client) VirtualizationClusterTypesBulkUpdate(params *VirtualizationClus
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -544,13 +595,12 @@ func (a *Client) VirtualizationClusterTypesBulkUpdate(params *VirtualizationClus
 /*
   VirtualizationClusterTypesCreate virtualization cluster types create API
 */
-func (a *Client) VirtualizationClusterTypesCreate(params *VirtualizationClusterTypesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesCreateCreated, error) {
+func (a *Client) VirtualizationClusterTypesCreate(params *VirtualizationClusterTypesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterTypesCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-types_create",
 		Method:             "POST",
 		PathPattern:        "/virtualization/cluster-types/",
@@ -562,7 +612,12 @@ func (a *Client) VirtualizationClusterTypesCreate(params *VirtualizationClusterT
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -578,13 +633,12 @@ func (a *Client) VirtualizationClusterTypesCreate(params *VirtualizationClusterT
 /*
   VirtualizationClusterTypesDelete virtualization cluster types delete API
 */
-func (a *Client) VirtualizationClusterTypesDelete(params *VirtualizationClusterTypesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesDeleteNoContent, error) {
+func (a *Client) VirtualizationClusterTypesDelete(params *VirtualizationClusterTypesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterTypesDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-types_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/cluster-types/{id}/",
@@ -596,7 +650,12 @@ func (a *Client) VirtualizationClusterTypesDelete(params *VirtualizationClusterT
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -612,13 +671,12 @@ func (a *Client) VirtualizationClusterTypesDelete(params *VirtualizationClusterT
 /*
   VirtualizationClusterTypesList virtualization cluster types list API
 */
-func (a *Client) VirtualizationClusterTypesList(params *VirtualizationClusterTypesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesListOK, error) {
+func (a *Client) VirtualizationClusterTypesList(params *VirtualizationClusterTypesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterTypesListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-types_list",
 		Method:             "GET",
 		PathPattern:        "/virtualization/cluster-types/",
@@ -630,7 +688,12 @@ func (a *Client) VirtualizationClusterTypesList(params *VirtualizationClusterTyp
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -646,13 +709,12 @@ func (a *Client) VirtualizationClusterTypesList(params *VirtualizationClusterTyp
 /*
   VirtualizationClusterTypesPartialUpdate virtualization cluster types partial update API
 */
-func (a *Client) VirtualizationClusterTypesPartialUpdate(params *VirtualizationClusterTypesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesPartialUpdateOK, error) {
+func (a *Client) VirtualizationClusterTypesPartialUpdate(params *VirtualizationClusterTypesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterTypesPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-types_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/cluster-types/{id}/",
@@ -664,7 +726,12 @@ func (a *Client) VirtualizationClusterTypesPartialUpdate(params *VirtualizationC
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -680,13 +747,12 @@ func (a *Client) VirtualizationClusterTypesPartialUpdate(params *VirtualizationC
 /*
   VirtualizationClusterTypesRead virtualization cluster types read API
 */
-func (a *Client) VirtualizationClusterTypesRead(params *VirtualizationClusterTypesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesReadOK, error) {
+func (a *Client) VirtualizationClusterTypesRead(params *VirtualizationClusterTypesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterTypesReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-types_read",
 		Method:             "GET",
 		PathPattern:        "/virtualization/cluster-types/{id}/",
@@ -698,7 +764,12 @@ func (a *Client) VirtualizationClusterTypesRead(params *VirtualizationClusterTyp
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -714,13 +785,12 @@ func (a *Client) VirtualizationClusterTypesRead(params *VirtualizationClusterTyp
 /*
   VirtualizationClusterTypesUpdate virtualization cluster types update API
 */
-func (a *Client) VirtualizationClusterTypesUpdate(params *VirtualizationClusterTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterTypesUpdateOK, error) {
+func (a *Client) VirtualizationClusterTypesUpdate(params *VirtualizationClusterTypesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClusterTypesUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_cluster-types_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/cluster-types/{id}/",
@@ -732,7 +802,12 @@ func (a *Client) VirtualizationClusterTypesUpdate(params *VirtualizationClusterT
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -748,13 +823,12 @@ func (a *Client) VirtualizationClusterTypesUpdate(params *VirtualizationClusterT
 /*
   VirtualizationClustersBulkDelete virtualization clusters bulk delete API
 */
-func (a *Client) VirtualizationClustersBulkDelete(params *VirtualizationClustersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersBulkDeleteNoContent, error) {
+func (a *Client) VirtualizationClustersBulkDelete(params *VirtualizationClustersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClustersBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_clusters_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/clusters/",
@@ -766,7 +840,12 @@ func (a *Client) VirtualizationClustersBulkDelete(params *VirtualizationClusters
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -782,13 +861,12 @@ func (a *Client) VirtualizationClustersBulkDelete(params *VirtualizationClusters
 /*
   VirtualizationClustersBulkPartialUpdate virtualization clusters bulk partial update API
 */
-func (a *Client) VirtualizationClustersBulkPartialUpdate(params *VirtualizationClustersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersBulkPartialUpdateOK, error) {
+func (a *Client) VirtualizationClustersBulkPartialUpdate(params *VirtualizationClustersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClustersBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_clusters_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/clusters/",
@@ -800,7 +878,12 @@ func (a *Client) VirtualizationClustersBulkPartialUpdate(params *VirtualizationC
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -816,13 +899,12 @@ func (a *Client) VirtualizationClustersBulkPartialUpdate(params *VirtualizationC
 /*
   VirtualizationClustersBulkUpdate virtualization clusters bulk update API
 */
-func (a *Client) VirtualizationClustersBulkUpdate(params *VirtualizationClustersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersBulkUpdateOK, error) {
+func (a *Client) VirtualizationClustersBulkUpdate(params *VirtualizationClustersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClustersBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_clusters_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/clusters/",
@@ -834,7 +916,12 @@ func (a *Client) VirtualizationClustersBulkUpdate(params *VirtualizationClusters
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -850,13 +937,12 @@ func (a *Client) VirtualizationClustersBulkUpdate(params *VirtualizationClusters
 /*
   VirtualizationClustersCreate virtualization clusters create API
 */
-func (a *Client) VirtualizationClustersCreate(params *VirtualizationClustersCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersCreateCreated, error) {
+func (a *Client) VirtualizationClustersCreate(params *VirtualizationClustersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClustersCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_clusters_create",
 		Method:             "POST",
 		PathPattern:        "/virtualization/clusters/",
@@ -868,7 +954,12 @@ func (a *Client) VirtualizationClustersCreate(params *VirtualizationClustersCrea
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -884,13 +975,12 @@ func (a *Client) VirtualizationClustersCreate(params *VirtualizationClustersCrea
 /*
   VirtualizationClustersDelete virtualization clusters delete API
 */
-func (a *Client) VirtualizationClustersDelete(params *VirtualizationClustersDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersDeleteNoContent, error) {
+func (a *Client) VirtualizationClustersDelete(params *VirtualizationClustersDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClustersDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_clusters_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/clusters/{id}/",
@@ -902,7 +992,12 @@ func (a *Client) VirtualizationClustersDelete(params *VirtualizationClustersDele
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -918,13 +1013,12 @@ func (a *Client) VirtualizationClustersDelete(params *VirtualizationClustersDele
 /*
   VirtualizationClustersList virtualization clusters list API
 */
-func (a *Client) VirtualizationClustersList(params *VirtualizationClustersListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersListOK, error) {
+func (a *Client) VirtualizationClustersList(params *VirtualizationClustersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClustersListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_clusters_list",
 		Method:             "GET",
 		PathPattern:        "/virtualization/clusters/",
@@ -936,7 +1030,12 @@ func (a *Client) VirtualizationClustersList(params *VirtualizationClustersListPa
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -952,13 +1051,12 @@ func (a *Client) VirtualizationClustersList(params *VirtualizationClustersListPa
 /*
   VirtualizationClustersPartialUpdate virtualization clusters partial update API
 */
-func (a *Client) VirtualizationClustersPartialUpdate(params *VirtualizationClustersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersPartialUpdateOK, error) {
+func (a *Client) VirtualizationClustersPartialUpdate(params *VirtualizationClustersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClustersPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_clusters_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/clusters/{id}/",
@@ -970,7 +1068,12 @@ func (a *Client) VirtualizationClustersPartialUpdate(params *VirtualizationClust
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -986,13 +1089,12 @@ func (a *Client) VirtualizationClustersPartialUpdate(params *VirtualizationClust
 /*
   VirtualizationClustersRead virtualization clusters read API
 */
-func (a *Client) VirtualizationClustersRead(params *VirtualizationClustersReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersReadOK, error) {
+func (a *Client) VirtualizationClustersRead(params *VirtualizationClustersReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClustersReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_clusters_read",
 		Method:             "GET",
 		PathPattern:        "/virtualization/clusters/{id}/",
@@ -1004,7 +1106,12 @@ func (a *Client) VirtualizationClustersRead(params *VirtualizationClustersReadPa
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1020,13 +1127,12 @@ func (a *Client) VirtualizationClustersRead(params *VirtualizationClustersReadPa
 /*
   VirtualizationClustersUpdate virtualization clusters update API
 */
-func (a *Client) VirtualizationClustersUpdate(params *VirtualizationClustersUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClustersUpdateOK, error) {
+func (a *Client) VirtualizationClustersUpdate(params *VirtualizationClustersUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationClustersUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_clusters_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/clusters/{id}/",
@@ -1038,7 +1144,12 @@ func (a *Client) VirtualizationClustersUpdate(params *VirtualizationClustersUpda
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1054,13 +1165,12 @@ func (a *Client) VirtualizationClustersUpdate(params *VirtualizationClustersUpda
 /*
   VirtualizationInterfacesBulkDelete virtualization interfaces bulk delete API
 */
-func (a *Client) VirtualizationInterfacesBulkDelete(params *VirtualizationInterfacesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesBulkDeleteNoContent, error) {
+func (a *Client) VirtualizationInterfacesBulkDelete(params *VirtualizationInterfacesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationInterfacesBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_interfaces_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/interfaces/",
@@ -1072,7 +1182,12 @@ func (a *Client) VirtualizationInterfacesBulkDelete(params *VirtualizationInterf
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1088,13 +1203,12 @@ func (a *Client) VirtualizationInterfacesBulkDelete(params *VirtualizationInterf
 /*
   VirtualizationInterfacesBulkPartialUpdate virtualization interfaces bulk partial update API
 */
-func (a *Client) VirtualizationInterfacesBulkPartialUpdate(params *VirtualizationInterfacesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesBulkPartialUpdateOK, error) {
+func (a *Client) VirtualizationInterfacesBulkPartialUpdate(params *VirtualizationInterfacesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationInterfacesBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_interfaces_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/interfaces/",
@@ -1106,7 +1220,12 @@ func (a *Client) VirtualizationInterfacesBulkPartialUpdate(params *Virtualizatio
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1122,13 +1241,12 @@ func (a *Client) VirtualizationInterfacesBulkPartialUpdate(params *Virtualizatio
 /*
   VirtualizationInterfacesBulkUpdate virtualization interfaces bulk update API
 */
-func (a *Client) VirtualizationInterfacesBulkUpdate(params *VirtualizationInterfacesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesBulkUpdateOK, error) {
+func (a *Client) VirtualizationInterfacesBulkUpdate(params *VirtualizationInterfacesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationInterfacesBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_interfaces_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/interfaces/",
@@ -1140,7 +1258,12 @@ func (a *Client) VirtualizationInterfacesBulkUpdate(params *VirtualizationInterf
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1156,13 +1279,12 @@ func (a *Client) VirtualizationInterfacesBulkUpdate(params *VirtualizationInterf
 /*
   VirtualizationInterfacesCreate virtualization interfaces create API
 */
-func (a *Client) VirtualizationInterfacesCreate(params *VirtualizationInterfacesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesCreateCreated, error) {
+func (a *Client) VirtualizationInterfacesCreate(params *VirtualizationInterfacesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationInterfacesCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_interfaces_create",
 		Method:             "POST",
 		PathPattern:        "/virtualization/interfaces/",
@@ -1174,7 +1296,12 @@ func (a *Client) VirtualizationInterfacesCreate(params *VirtualizationInterfaces
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1190,13 +1317,12 @@ func (a *Client) VirtualizationInterfacesCreate(params *VirtualizationInterfaces
 /*
   VirtualizationInterfacesDelete virtualization interfaces delete API
 */
-func (a *Client) VirtualizationInterfacesDelete(params *VirtualizationInterfacesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesDeleteNoContent, error) {
+func (a *Client) VirtualizationInterfacesDelete(params *VirtualizationInterfacesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationInterfacesDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_interfaces_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/interfaces/{id}/",
@@ -1208,7 +1334,12 @@ func (a *Client) VirtualizationInterfacesDelete(params *VirtualizationInterfaces
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1224,13 +1355,12 @@ func (a *Client) VirtualizationInterfacesDelete(params *VirtualizationInterfaces
 /*
   VirtualizationInterfacesList virtualization interfaces list API
 */
-func (a *Client) VirtualizationInterfacesList(params *VirtualizationInterfacesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesListOK, error) {
+func (a *Client) VirtualizationInterfacesList(params *VirtualizationInterfacesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationInterfacesListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_interfaces_list",
 		Method:             "GET",
 		PathPattern:        "/virtualization/interfaces/",
@@ -1242,7 +1372,12 @@ func (a *Client) VirtualizationInterfacesList(params *VirtualizationInterfacesLi
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1258,13 +1393,12 @@ func (a *Client) VirtualizationInterfacesList(params *VirtualizationInterfacesLi
 /*
   VirtualizationInterfacesPartialUpdate virtualization interfaces partial update API
 */
-func (a *Client) VirtualizationInterfacesPartialUpdate(params *VirtualizationInterfacesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesPartialUpdateOK, error) {
+func (a *Client) VirtualizationInterfacesPartialUpdate(params *VirtualizationInterfacesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationInterfacesPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_interfaces_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/interfaces/{id}/",
@@ -1276,7 +1410,12 @@ func (a *Client) VirtualizationInterfacesPartialUpdate(params *VirtualizationInt
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1292,13 +1431,12 @@ func (a *Client) VirtualizationInterfacesPartialUpdate(params *VirtualizationInt
 /*
   VirtualizationInterfacesRead virtualization interfaces read API
 */
-func (a *Client) VirtualizationInterfacesRead(params *VirtualizationInterfacesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesReadOK, error) {
+func (a *Client) VirtualizationInterfacesRead(params *VirtualizationInterfacesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationInterfacesReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_interfaces_read",
 		Method:             "GET",
 		PathPattern:        "/virtualization/interfaces/{id}/",
@@ -1310,7 +1448,12 @@ func (a *Client) VirtualizationInterfacesRead(params *VirtualizationInterfacesRe
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1326,13 +1469,12 @@ func (a *Client) VirtualizationInterfacesRead(params *VirtualizationInterfacesRe
 /*
   VirtualizationInterfacesUpdate virtualization interfaces update API
 */
-func (a *Client) VirtualizationInterfacesUpdate(params *VirtualizationInterfacesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationInterfacesUpdateOK, error) {
+func (a *Client) VirtualizationInterfacesUpdate(params *VirtualizationInterfacesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationInterfacesUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_interfaces_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/interfaces/{id}/",
@@ -1344,7 +1486,12 @@ func (a *Client) VirtualizationInterfacesUpdate(params *VirtualizationInterfaces
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1360,13 +1507,12 @@ func (a *Client) VirtualizationInterfacesUpdate(params *VirtualizationInterfaces
 /*
   VirtualizationVirtualMachinesBulkDelete virtualization virtual machines bulk delete API
 */
-func (a *Client) VirtualizationVirtualMachinesBulkDelete(params *VirtualizationVirtualMachinesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesBulkDeleteNoContent, error) {
+func (a *Client) VirtualizationVirtualMachinesBulkDelete(params *VirtualizationVirtualMachinesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationVirtualMachinesBulkDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_virtual-machines_bulk_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/virtual-machines/",
@@ -1378,7 +1524,12 @@ func (a *Client) VirtualizationVirtualMachinesBulkDelete(params *VirtualizationV
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1394,13 +1545,12 @@ func (a *Client) VirtualizationVirtualMachinesBulkDelete(params *VirtualizationV
 /*
   VirtualizationVirtualMachinesBulkPartialUpdate virtualization virtual machines bulk partial update API
 */
-func (a *Client) VirtualizationVirtualMachinesBulkPartialUpdate(params *VirtualizationVirtualMachinesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesBulkPartialUpdateOK, error) {
+func (a *Client) VirtualizationVirtualMachinesBulkPartialUpdate(params *VirtualizationVirtualMachinesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationVirtualMachinesBulkPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_virtual-machines_bulk_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/virtual-machines/",
@@ -1412,7 +1562,12 @@ func (a *Client) VirtualizationVirtualMachinesBulkPartialUpdate(params *Virtuali
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1428,13 +1583,12 @@ func (a *Client) VirtualizationVirtualMachinesBulkPartialUpdate(params *Virtuali
 /*
   VirtualizationVirtualMachinesBulkUpdate virtualization virtual machines bulk update API
 */
-func (a *Client) VirtualizationVirtualMachinesBulkUpdate(params *VirtualizationVirtualMachinesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesBulkUpdateOK, error) {
+func (a *Client) VirtualizationVirtualMachinesBulkUpdate(params *VirtualizationVirtualMachinesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationVirtualMachinesBulkUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_virtual-machines_bulk_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/virtual-machines/",
@@ -1446,7 +1600,12 @@ func (a *Client) VirtualizationVirtualMachinesBulkUpdate(params *VirtualizationV
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1462,13 +1621,12 @@ func (a *Client) VirtualizationVirtualMachinesBulkUpdate(params *VirtualizationV
 /*
   VirtualizationVirtualMachinesCreate virtualization virtual machines create API
 */
-func (a *Client) VirtualizationVirtualMachinesCreate(params *VirtualizationVirtualMachinesCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesCreateCreated, error) {
+func (a *Client) VirtualizationVirtualMachinesCreate(params *VirtualizationVirtualMachinesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesCreateCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationVirtualMachinesCreateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_virtual-machines_create",
 		Method:             "POST",
 		PathPattern:        "/virtualization/virtual-machines/",
@@ -1480,7 +1638,12 @@ func (a *Client) VirtualizationVirtualMachinesCreate(params *VirtualizationVirtu
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1496,13 +1659,12 @@ func (a *Client) VirtualizationVirtualMachinesCreate(params *VirtualizationVirtu
 /*
   VirtualizationVirtualMachinesDelete virtualization virtual machines delete API
 */
-func (a *Client) VirtualizationVirtualMachinesDelete(params *VirtualizationVirtualMachinesDeleteParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesDeleteNoContent, error) {
+func (a *Client) VirtualizationVirtualMachinesDelete(params *VirtualizationVirtualMachinesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesDeleteNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationVirtualMachinesDeleteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_virtual-machines_delete",
 		Method:             "DELETE",
 		PathPattern:        "/virtualization/virtual-machines/{id}/",
@@ -1514,7 +1676,12 @@ func (a *Client) VirtualizationVirtualMachinesDelete(params *VirtualizationVirtu
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1530,13 +1697,12 @@ func (a *Client) VirtualizationVirtualMachinesDelete(params *VirtualizationVirtu
 /*
   VirtualizationVirtualMachinesList virtualization virtual machines list API
 */
-func (a *Client) VirtualizationVirtualMachinesList(params *VirtualizationVirtualMachinesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesListOK, error) {
+func (a *Client) VirtualizationVirtualMachinesList(params *VirtualizationVirtualMachinesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationVirtualMachinesListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_virtual-machines_list",
 		Method:             "GET",
 		PathPattern:        "/virtualization/virtual-machines/",
@@ -1548,7 +1714,12 @@ func (a *Client) VirtualizationVirtualMachinesList(params *VirtualizationVirtual
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1564,13 +1735,12 @@ func (a *Client) VirtualizationVirtualMachinesList(params *VirtualizationVirtual
 /*
   VirtualizationVirtualMachinesPartialUpdate virtualization virtual machines partial update API
 */
-func (a *Client) VirtualizationVirtualMachinesPartialUpdate(params *VirtualizationVirtualMachinesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesPartialUpdateOK, error) {
+func (a *Client) VirtualizationVirtualMachinesPartialUpdate(params *VirtualizationVirtualMachinesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationVirtualMachinesPartialUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_virtual-machines_partial_update",
 		Method:             "PATCH",
 		PathPattern:        "/virtualization/virtual-machines/{id}/",
@@ -1582,7 +1752,12 @@ func (a *Client) VirtualizationVirtualMachinesPartialUpdate(params *Virtualizati
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1598,13 +1773,12 @@ func (a *Client) VirtualizationVirtualMachinesPartialUpdate(params *Virtualizati
 /*
   VirtualizationVirtualMachinesRead virtualization virtual machines read API
 */
-func (a *Client) VirtualizationVirtualMachinesRead(params *VirtualizationVirtualMachinesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesReadOK, error) {
+func (a *Client) VirtualizationVirtualMachinesRead(params *VirtualizationVirtualMachinesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesReadOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationVirtualMachinesReadParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_virtual-machines_read",
 		Method:             "GET",
 		PathPattern:        "/virtualization/virtual-machines/{id}/",
@@ -1616,7 +1790,12 @@ func (a *Client) VirtualizationVirtualMachinesRead(params *VirtualizationVirtual
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1632,13 +1811,12 @@ func (a *Client) VirtualizationVirtualMachinesRead(params *VirtualizationVirtual
 /*
   VirtualizationVirtualMachinesUpdate virtualization virtual machines update API
 */
-func (a *Client) VirtualizationVirtualMachinesUpdate(params *VirtualizationVirtualMachinesUpdateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationVirtualMachinesUpdateOK, error) {
+func (a *Client) VirtualizationVirtualMachinesUpdate(params *VirtualizationVirtualMachinesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesUpdateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVirtualizationVirtualMachinesUpdateParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "virtualization_virtual-machines_update",
 		Method:             "PUT",
 		PathPattern:        "/virtualization/virtual-machines/{id}/",
@@ -1650,7 +1828,12 @@ func (a *Client) VirtualizationVirtualMachinesUpdate(params *VirtualizationVirtu
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

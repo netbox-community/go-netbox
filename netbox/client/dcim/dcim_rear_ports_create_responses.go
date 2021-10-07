@@ -61,7 +61,7 @@ func NewDcimRearPortsCreateCreated() *DcimRearPortsCreateCreated {
 	return &DcimRearPortsCreateCreated{}
 }
 
-/*DcimRearPortsCreateCreated handles this case with default header values.
+/* DcimRearPortsCreateCreated describes a response with status code 201, with default header values.
 
 DcimRearPortsCreateCreated dcim rear ports create created
 */
@@ -72,7 +72,6 @@ type DcimRearPortsCreateCreated struct {
 func (o *DcimRearPortsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/rear-ports/][%d] dcimRearPortsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimRearPortsCreateCreated) GetPayload() *models.RearPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRearPortsCreateDefault(code int) *DcimRearPortsCreateDefault {
 	}
 }
 
-/*DcimRearPortsCreateDefault handles this case with default header values.
+/* DcimRearPortsCreateDefault describes a response with status code -1, with default header values.
 
 DcimRearPortsCreateDefault dcim rear ports create default
 */
@@ -114,7 +113,6 @@ func (o *DcimRearPortsCreateDefault) Code() int {
 func (o *DcimRearPortsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/rear-ports/][%d] dcim_rear-ports_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRearPortsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

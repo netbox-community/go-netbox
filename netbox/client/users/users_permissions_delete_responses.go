@@ -59,7 +59,7 @@ func NewUsersPermissionsDeleteNoContent() *UsersPermissionsDeleteNoContent {
 	return &UsersPermissionsDeleteNoContent{}
 }
 
-/*UsersPermissionsDeleteNoContent handles this case with default header values.
+/* UsersPermissionsDeleteNoContent describes a response with status code 204, with default header values.
 
 UsersPermissionsDeleteNoContent users permissions delete no content
 */
@@ -82,7 +82,7 @@ func NewUsersPermissionsDeleteDefault(code int) *UsersPermissionsDeleteDefault {
 	}
 }
 
-/*UsersPermissionsDeleteDefault handles this case with default header values.
+/* UsersPermissionsDeleteDefault describes a response with status code -1, with default header values.
 
 UsersPermissionsDeleteDefault users permissions delete default
 */
@@ -100,7 +100,6 @@ func (o *UsersPermissionsDeleteDefault) Code() int {
 func (o *UsersPermissionsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] users_permissions_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersPermissionsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

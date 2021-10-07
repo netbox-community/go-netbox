@@ -61,7 +61,7 @@ func NewDcimPlatformsCreateCreated() *DcimPlatformsCreateCreated {
 	return &DcimPlatformsCreateCreated{}
 }
 
-/*DcimPlatformsCreateCreated handles this case with default header values.
+/* DcimPlatformsCreateCreated describes a response with status code 201, with default header values.
 
 DcimPlatformsCreateCreated dcim platforms create created
 */
@@ -72,7 +72,6 @@ type DcimPlatformsCreateCreated struct {
 func (o *DcimPlatformsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/platforms/][%d] dcimPlatformsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimPlatformsCreateCreated) GetPayload() *models.Platform {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPlatformsCreateDefault(code int) *DcimPlatformsCreateDefault {
 	}
 }
 
-/*DcimPlatformsCreateDefault handles this case with default header values.
+/* DcimPlatformsCreateDefault describes a response with status code -1, with default header values.
 
 DcimPlatformsCreateDefault dcim platforms create default
 */
@@ -114,7 +113,6 @@ func (o *DcimPlatformsCreateDefault) Code() int {
 func (o *DcimPlatformsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/platforms/][%d] dcim_platforms_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPlatformsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

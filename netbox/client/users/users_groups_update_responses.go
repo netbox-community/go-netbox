@@ -61,7 +61,7 @@ func NewUsersGroupsUpdateOK() *UsersGroupsUpdateOK {
 	return &UsersGroupsUpdateOK{}
 }
 
-/*UsersGroupsUpdateOK handles this case with default header values.
+/* UsersGroupsUpdateOK describes a response with status code 200, with default header values.
 
 UsersGroupsUpdateOK users groups update o k
 */
@@ -72,7 +72,6 @@ type UsersGroupsUpdateOK struct {
 func (o *UsersGroupsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/groups/{id}/][%d] usersGroupsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersGroupsUpdateOK) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersGroupsUpdateDefault(code int) *UsersGroupsUpdateDefault {
 	}
 }
 
-/*UsersGroupsUpdateDefault handles this case with default header values.
+/* UsersGroupsUpdateDefault describes a response with status code -1, with default header values.
 
 UsersGroupsUpdateDefault users groups update default
 */
@@ -114,7 +113,6 @@ func (o *UsersGroupsUpdateDefault) Code() int {
 func (o *UsersGroupsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /users/groups/{id}/][%d] users_groups_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersGroupsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

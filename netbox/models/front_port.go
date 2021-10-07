@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -147,7 +148,6 @@ func (m *FrontPort) Validate(formats strfmt.Registry) error {
 }
 
 func (m *FrontPort) validateCable(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Cable) { // not required
 		return nil
 	}
@@ -165,12 +165,11 @@ func (m *FrontPort) validateCable(formats strfmt.Registry) error {
 }
 
 func (m *FrontPort) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -196,12 +195,11 @@ func (m *FrontPort) validateDevice(formats strfmt.Registry) error {
 }
 
 func (m *FrontPort) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 64); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
 		return err
 	}
 
@@ -214,11 +212,11 @@ func (m *FrontPort) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 64); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
 	}
 
@@ -244,16 +242,15 @@ func (m *FrontPort) validateRearPort(formats strfmt.Registry) error {
 }
 
 func (m *FrontPort) validateRearPortPosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RearPortPosition) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("rear_port_position", "body", int64(m.RearPortPosition), 1, false); err != nil {
+	if err := validate.MinimumInt("rear_port_position", "body", m.RearPortPosition, 1, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("rear_port_position", "body", int64(m.RearPortPosition), 1024, false); err != nil {
+	if err := validate.MaximumInt("rear_port_position", "body", m.RearPortPosition, 1024, false); err != nil {
 		return err
 	}
 
@@ -261,7 +258,6 @@ func (m *FrontPort) validateRearPortPosition(formats strfmt.Registry) error {
 }
 
 func (m *FrontPort) validateTags(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -304,12 +300,163 @@ func (m *FrontPort) validateType(formats strfmt.Registry) error {
 }
 
 func (m *FrontPort) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this front port based on the context it is used
+func (m *FrontPort) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDevice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRearPort(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *FrontPort) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cable != nil {
+		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *FrontPort) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *FrontPort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *FrontPort) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Device != nil {
+		if err := m.Device.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *FrontPort) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *FrontPort) contextValidateRearPort(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.RearPort != nil {
+		if err := m.RearPort.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("rear_port")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *FrontPort) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *FrontPort) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Type != nil {
+		if err := m.Type.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("type")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *FrontPort) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 
@@ -509,17 +656,17 @@ const (
 	// FrontPortTypeValueGg45 captures enum value "gg45"
 	FrontPortTypeValueGg45 string = "gg45"
 
-	// FrontPortTypeValueTera4p captures enum value "tera-4p"
-	FrontPortTypeValueTera4p string = "tera-4p"
+	// FrontPortTypeValueTeraDash4p captures enum value "tera-4p"
+	FrontPortTypeValueTeraDash4p string = "tera-4p"
 
-	// FrontPortTypeValueTera2p captures enum value "tera-2p"
-	FrontPortTypeValueTera2p string = "tera-2p"
+	// FrontPortTypeValueTeraDash2p captures enum value "tera-2p"
+	FrontPortTypeValueTeraDash2p string = "tera-2p"
 
-	// FrontPortTypeValueTera1p captures enum value "tera-1p"
-	FrontPortTypeValueTera1p string = "tera-1p"
+	// FrontPortTypeValueTeraDash1p captures enum value "tera-1p"
+	FrontPortTypeValueTeraDash1p string = "tera-1p"
 
-	// FrontPortTypeValueNr110Punch captures enum value "110-punch"
-	FrontPortTypeValueNr110Punch string = "110-punch"
+	// FrontPortTypeValueNr110DashPunch captures enum value "110-punch"
+	FrontPortTypeValueNr110DashPunch string = "110-punch"
 
 	// FrontPortTypeValueBnc captures enum value "bnc"
 	FrontPortTypeValueBnc string = "bnc"
@@ -536,14 +683,14 @@ const (
 	// FrontPortTypeValueLc captures enum value "lc"
 	FrontPortTypeValueLc string = "lc"
 
-	// FrontPortTypeValueLcApc captures enum value "lc-apc"
-	FrontPortTypeValueLcApc string = "lc-apc"
+	// FrontPortTypeValueLcDashApc captures enum value "lc-apc"
+	FrontPortTypeValueLcDashApc string = "lc-apc"
 
 	// FrontPortTypeValueLsh captures enum value "lsh"
 	FrontPortTypeValueLsh string = "lsh"
 
-	// FrontPortTypeValueLshApc captures enum value "lsh-apc"
-	FrontPortTypeValueLshApc string = "lsh-apc"
+	// FrontPortTypeValueLshDashApc captures enum value "lsh-apc"
+	FrontPortTypeValueLshDashApc string = "lsh-apc"
 
 	// FrontPortTypeValueMpo captures enum value "mpo"
 	FrontPortTypeValueMpo string = "mpo"
@@ -554,8 +701,8 @@ const (
 	// FrontPortTypeValueSc captures enum value "sc"
 	FrontPortTypeValueSc string = "sc"
 
-	// FrontPortTypeValueScApc captures enum value "sc-apc"
-	FrontPortTypeValueScApc string = "sc-apc"
+	// FrontPortTypeValueScDashApc captures enum value "sc-apc"
+	FrontPortTypeValueScDashApc string = "sc-apc"
 
 	// FrontPortTypeValueSt captures enum value "st"
 	FrontPortTypeValueSt string = "st"
@@ -589,6 +736,11 @@ func (m *FrontPortType) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this front port type based on context it is used
+func (m *FrontPortType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewStatusListParams creates a new StatusListParams object
-// with the default values initialized.
+// NewStatusListParams creates a new StatusListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewStatusListParams() *StatusListParams {
-
 	return &StatusListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewStatusListParamsWithTimeout creates a new StatusListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewStatusListParamsWithTimeout(timeout time.Duration) *StatusListParams {
-
 	return &StatusListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewStatusListParamsWithContext creates a new StatusListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewStatusListParamsWithContext(ctx context.Context) *StatusListParams {
-
 	return &StatusListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewStatusListParamsWithHTTPClient creates a new StatusListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewStatusListParamsWithHTTPClient(client *http.Client) *StatusListParams {
-
 	return &StatusListParams{
 		HTTPClient: client,
 	}
 }
 
-/*StatusListParams contains all the parameters to send to the API endpoint
-for the status list operation typically these are written to a http.Request
+/* StatusListParams contains all the parameters to send to the API endpoint
+   for the status list operation.
+
+   Typically these are written to a http.Request.
 */
 type StatusListParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the status list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *StatusListParams) WithDefaults() *StatusListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the status list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *StatusListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the status list params

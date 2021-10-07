@@ -21,6 +21,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -91,11 +93,11 @@ func (m *ContentType) validateAppLabel(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("app_label", "body", string(*m.AppLabel), 1); err != nil {
+	if err := validate.MinLength("app_label", "body", *m.AppLabel, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("app_label", "body", string(*m.AppLabel), 100); err != nil {
+	if err := validate.MaxLength("app_label", "body", *m.AppLabel, 100); err != nil {
 		return err
 	}
 
@@ -103,12 +105,11 @@ func (m *ContentType) validateAppLabel(formats strfmt.Registry) error {
 }
 
 func (m *ContentType) validateDisplayName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.DisplayName) { // not required
 		return nil
 	}
 
-	if err := validate.MinLength("display_name", "body", string(m.DisplayName), 1); err != nil {
+	if err := validate.MinLength("display_name", "body", m.DisplayName, 1); err != nil {
 		return err
 	}
 
@@ -121,11 +122,11 @@ func (m *ContentType) validateModel(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("model", "body", string(*m.Model), 1); err != nil {
+	if err := validate.MinLength("model", "body", *m.Model, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("model", "body", string(*m.Model), 100); err != nil {
+	if err := validate.MaxLength("model", "body", *m.Model, 100); err != nil {
 		return err
 	}
 
@@ -133,12 +134,60 @@ func (m *ContentType) validateModel(formats strfmt.Registry) error {
 }
 
 func (m *ContentType) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this content type based on the context it is used
+func (m *ContentType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *ContentType) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ContentType) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ContentType) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

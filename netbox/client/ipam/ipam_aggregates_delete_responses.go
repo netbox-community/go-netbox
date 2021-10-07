@@ -59,7 +59,7 @@ func NewIpamAggregatesDeleteNoContent() *IpamAggregatesDeleteNoContent {
 	return &IpamAggregatesDeleteNoContent{}
 }
 
-/*IpamAggregatesDeleteNoContent handles this case with default header values.
+/* IpamAggregatesDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamAggregatesDeleteNoContent ipam aggregates delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamAggregatesDeleteDefault(code int) *IpamAggregatesDeleteDefault {
 	}
 }
 
-/*IpamAggregatesDeleteDefault handles this case with default header values.
+/* IpamAggregatesDeleteDefault describes a response with status code -1, with default header values.
 
 IpamAggregatesDeleteDefault ipam aggregates delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamAggregatesDeleteDefault) Code() int {
 func (o *IpamAggregatesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/aggregates/{id}/][%d] ipam_aggregates_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamAggregatesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

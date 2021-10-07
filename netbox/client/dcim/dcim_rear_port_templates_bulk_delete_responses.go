@@ -59,7 +59,7 @@ func NewDcimRearPortTemplatesBulkDeleteNoContent() *DcimRearPortTemplatesBulkDel
 	return &DcimRearPortTemplatesBulkDeleteNoContent{}
 }
 
-/*DcimRearPortTemplatesBulkDeleteNoContent handles this case with default header values.
+/* DcimRearPortTemplatesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimRearPortTemplatesBulkDeleteNoContent dcim rear port templates bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimRearPortTemplatesBulkDeleteDefault(code int) *DcimRearPortTemplatesB
 	}
 }
 
-/*DcimRearPortTemplatesBulkDeleteDefault handles this case with default header values.
+/* DcimRearPortTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimRearPortTemplatesBulkDeleteDefault dcim rear port templates bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimRearPortTemplatesBulkDeleteDefault) Code() int {
 func (o *DcimRearPortTemplatesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/rear-port-templates/][%d] dcim_rear-port-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRearPortTemplatesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

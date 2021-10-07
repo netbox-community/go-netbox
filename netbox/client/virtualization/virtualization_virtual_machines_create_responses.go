@@ -61,7 +61,7 @@ func NewVirtualizationVirtualMachinesCreateCreated() *VirtualizationVirtualMachi
 	return &VirtualizationVirtualMachinesCreateCreated{}
 }
 
-/*VirtualizationVirtualMachinesCreateCreated handles this case with default header values.
+/* VirtualizationVirtualMachinesCreateCreated describes a response with status code 201, with default header values.
 
 VirtualizationVirtualMachinesCreateCreated virtualization virtual machines create created
 */
@@ -72,7 +72,6 @@ type VirtualizationVirtualMachinesCreateCreated struct {
 func (o *VirtualizationVirtualMachinesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *VirtualizationVirtualMachinesCreateCreated) GetPayload() *models.VirtualMachineWithConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationVirtualMachinesCreateDefault(code int) *VirtualizationVirt
 	}
 }
 
-/*VirtualizationVirtualMachinesCreateDefault handles this case with default header values.
+/* VirtualizationVirtualMachinesCreateDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesCreateDefault virtualization virtual machines create default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationVirtualMachinesCreateDefault) Code() int {
 func (o *VirtualizationVirtualMachinesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /virtualization/virtual-machines/][%d] virtualization_virtual-machines_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationVirtualMachinesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

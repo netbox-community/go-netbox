@@ -59,7 +59,7 @@ func NewSecretsGenerateRsaKeyPairListOK() *SecretsGenerateRsaKeyPairListOK {
 	return &SecretsGenerateRsaKeyPairListOK{}
 }
 
-/*SecretsGenerateRsaKeyPairListOK handles this case with default header values.
+/* SecretsGenerateRsaKeyPairListOK describes a response with status code 200, with default header values.
 
 SecretsGenerateRsaKeyPairListOK secrets generate rsa key pair list o k
 */
@@ -82,7 +82,7 @@ func NewSecretsGenerateRsaKeyPairListDefault(code int) *SecretsGenerateRsaKeyPai
 	}
 }
 
-/*SecretsGenerateRsaKeyPairListDefault handles this case with default header values.
+/* SecretsGenerateRsaKeyPairListDefault describes a response with status code -1, with default header values.
 
 SecretsGenerateRsaKeyPairListDefault secrets generate rsa key pair list default
 */
@@ -100,7 +100,6 @@ func (o *SecretsGenerateRsaKeyPairListDefault) Code() int {
 func (o *SecretsGenerateRsaKeyPairListDefault) Error() string {
 	return fmt.Sprintf("[GET /secrets/generate-rsa-key-pair/][%d] secrets_generate-rsa-key-pair_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsGenerateRsaKeyPairListDefault) GetPayload() interface{} {
 	return o.Payload
 }

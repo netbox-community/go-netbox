@@ -61,7 +61,7 @@ func NewDcimPowerPortsReadOK() *DcimPowerPortsReadOK {
 	return &DcimPowerPortsReadOK{}
 }
 
-/*DcimPowerPortsReadOK handles this case with default header values.
+/* DcimPowerPortsReadOK describes a response with status code 200, with default header values.
 
 DcimPowerPortsReadOK dcim power ports read o k
 */
@@ -72,7 +72,6 @@ type DcimPowerPortsReadOK struct {
 func (o *DcimPowerPortsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcimPowerPortsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPortsReadOK) GetPayload() *models.PowerPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerPortsReadDefault(code int) *DcimPowerPortsReadDefault {
 	}
 }
 
-/*DcimPowerPortsReadDefault handles this case with default header values.
+/* DcimPowerPortsReadDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortsReadDefault dcim power ports read default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerPortsReadDefault) Code() int {
 func (o *DcimPowerPortsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-ports/{id}/][%d] dcim_power-ports_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPortsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

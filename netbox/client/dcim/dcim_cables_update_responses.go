@@ -61,7 +61,7 @@ func NewDcimCablesUpdateOK() *DcimCablesUpdateOK {
 	return &DcimCablesUpdateOK{}
 }
 
-/*DcimCablesUpdateOK handles this case with default header values.
+/* DcimCablesUpdateOK describes a response with status code 200, with default header values.
 
 DcimCablesUpdateOK dcim cables update o k
 */
@@ -72,7 +72,6 @@ type DcimCablesUpdateOK struct {
 func (o *DcimCablesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/cables/{id}/][%d] dcimCablesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimCablesUpdateOK) GetPayload() *models.Cable {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimCablesUpdateDefault(code int) *DcimCablesUpdateDefault {
 	}
 }
 
-/*DcimCablesUpdateDefault handles this case with default header values.
+/* DcimCablesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimCablesUpdateDefault dcim cables update default
 */
@@ -114,7 +113,6 @@ func (o *DcimCablesUpdateDefault) Code() int {
 func (o *DcimCablesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/cables/{id}/][%d] dcim_cables_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimCablesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

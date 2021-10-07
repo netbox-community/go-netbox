@@ -61,7 +61,7 @@ func NewDcimManufacturersPartialUpdateOK() *DcimManufacturersPartialUpdateOK {
 	return &DcimManufacturersPartialUpdateOK{}
 }
 
-/*DcimManufacturersPartialUpdateOK handles this case with default header values.
+/* DcimManufacturersPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimManufacturersPartialUpdateOK dcim manufacturers partial update o k
 */
@@ -72,7 +72,6 @@ type DcimManufacturersPartialUpdateOK struct {
 func (o *DcimManufacturersPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/manufacturers/{id}/][%d] dcimManufacturersPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimManufacturersPartialUpdateOK) GetPayload() *models.Manufacturer {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimManufacturersPartialUpdateDefault(code int) *DcimManufacturersPartia
 	}
 }
 
-/*DcimManufacturersPartialUpdateDefault handles this case with default header values.
+/* DcimManufacturersPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimManufacturersPartialUpdateDefault dcim manufacturers partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimManufacturersPartialUpdateDefault) Code() int {
 func (o *DcimManufacturersPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/manufacturers/{id}/][%d] dcim_manufacturers_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimManufacturersPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

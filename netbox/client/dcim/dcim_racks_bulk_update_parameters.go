@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimRacksBulkUpdateParams creates a new DcimRacksBulkUpdateParams object
-// with the default values initialized.
+// NewDcimRacksBulkUpdateParams creates a new DcimRacksBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRacksBulkUpdateParams() *DcimRacksBulkUpdateParams {
-	var ()
 	return &DcimRacksBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRacksBulkUpdateParamsWithTimeout creates a new DcimRacksBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRacksBulkUpdateParamsWithTimeout(timeout time.Duration) *DcimRacksBulkUpdateParams {
-	var ()
 	return &DcimRacksBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRacksBulkUpdateParamsWithContext creates a new DcimRacksBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRacksBulkUpdateParamsWithContext(ctx context.Context) *DcimRacksBulkUpdateParams {
-	var ()
 	return &DcimRacksBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRacksBulkUpdateParamsWithHTTPClient creates a new DcimRacksBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRacksBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimRacksBulkUpdateParams {
-	var ()
 	return &DcimRacksBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRacksBulkUpdateParams contains all the parameters to send to the API endpoint
-for the dcim racks bulk update operation typically these are written to a http.Request
+/* DcimRacksBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim racks bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRacksBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRack
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim racks bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRacksBulkUpdateParams) WithDefaults() *DcimRacksBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim racks bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRacksBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim racks bulk update params
@@ -136,7 +150,6 @@ func (o *DcimRacksBulkUpdateParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

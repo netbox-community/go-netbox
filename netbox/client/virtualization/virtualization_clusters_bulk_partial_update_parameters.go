@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewVirtualizationClustersBulkPartialUpdateParams creates a new VirtualizationClustersBulkPartialUpdateParams object
-// with the default values initialized.
+// NewVirtualizationClustersBulkPartialUpdateParams creates a new VirtualizationClustersBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationClustersBulkPartialUpdateParams() *VirtualizationClustersBulkPartialUpdateParams {
-	var ()
 	return &VirtualizationClustersBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationClustersBulkPartialUpdateParamsWithTimeout creates a new VirtualizationClustersBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationClustersBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *VirtualizationClustersBulkPartialUpdateParams {
-	var ()
 	return &VirtualizationClustersBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationClustersBulkPartialUpdateParamsWithContext creates a new VirtualizationClustersBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationClustersBulkPartialUpdateParamsWithContext(ctx context.Context) *VirtualizationClustersBulkPartialUpdateParams {
-	var ()
 	return &VirtualizationClustersBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationClustersBulkPartialUpdateParamsWithHTTPClient creates a new VirtualizationClustersBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationClustersBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *VirtualizationClustersBulkPartialUpdateParams {
-	var ()
 	return &VirtualizationClustersBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationClustersBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the virtualization clusters bulk partial update operation typically these are written to a http.Request
+/* VirtualizationClustersBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the virtualization clusters bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationClustersBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCluster
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization clusters bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClustersBulkPartialUpdateParams) WithDefaults() *VirtualizationClustersBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization clusters bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClustersBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization clusters bulk partial update params
@@ -136,7 +150,6 @@ func (o *VirtualizationClustersBulkPartialUpdateParams) WriteToRequest(r runtime
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimRearPortsListOK() *DcimRearPortsListOK {
 	return &DcimRearPortsListOK{}
 }
 
-/*DcimRearPortsListOK handles this case with default header values.
+/* DcimRearPortsListOK describes a response with status code 200, with default header values.
 
 DcimRearPortsListOK dcim rear ports list o k
 */
@@ -76,7 +77,6 @@ type DcimRearPortsListOK struct {
 func (o *DcimRearPortsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rear-ports/][%d] dcimRearPortsListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRearPortsListOK) GetPayload() *DcimRearPortsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimRearPortsListDefault(code int) *DcimRearPortsListDefault {
 	}
 }
 
-/*DcimRearPortsListDefault handles this case with default header values.
+/* DcimRearPortsListDefault describes a response with status code -1, with default header values.
 
 DcimRearPortsListDefault dcim rear ports list default
 */
@@ -118,7 +118,6 @@ func (o *DcimRearPortsListDefault) Code() int {
 func (o *DcimRearPortsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rear-ports/][%d] dcim_rear-ports_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRearPortsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimRearPortsListOKBody) validateCount(formats strfmt.Registry) error {
 }
 
 func (o *DcimRearPortsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimRearPortsListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *DcimRearPortsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimRearPortsListOKBody) validateResults(formats strfmt.Registry) error
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimRearPortsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim rear ports list o k body based on the context it is used
+func (o *DcimRearPortsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimRearPortsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimRearPortsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

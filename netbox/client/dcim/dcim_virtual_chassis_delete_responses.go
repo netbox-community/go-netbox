@@ -59,7 +59,7 @@ func NewDcimVirtualChassisDeleteNoContent() *DcimVirtualChassisDeleteNoContent {
 	return &DcimVirtualChassisDeleteNoContent{}
 }
 
-/*DcimVirtualChassisDeleteNoContent handles this case with default header values.
+/* DcimVirtualChassisDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimVirtualChassisDeleteNoContent dcim virtual chassis delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimVirtualChassisDeleteDefault(code int) *DcimVirtualChassisDeleteDefau
 	}
 }
 
-/*DcimVirtualChassisDeleteDefault handles this case with default header values.
+/* DcimVirtualChassisDeleteDefault describes a response with status code -1, with default header values.
 
 DcimVirtualChassisDeleteDefault dcim virtual chassis delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimVirtualChassisDeleteDefault) Code() int {
 func (o *DcimVirtualChassisDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimVirtualChassisDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

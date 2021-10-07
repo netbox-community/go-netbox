@@ -61,7 +61,7 @@ func NewDcimRacksElevationOK() *DcimRacksElevationOK {
 	return &DcimRacksElevationOK{}
 }
 
-/*DcimRacksElevationOK handles this case with default header values.
+/* DcimRacksElevationOK describes a response with status code 200, with default header values.
 
 DcimRacksElevationOK dcim racks elevation o k
 */
@@ -72,7 +72,6 @@ type DcimRacksElevationOK struct {
 func (o *DcimRacksElevationOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcimRacksElevationOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRacksElevationOK) GetPayload() []*models.RackUnit {
 	return o.Payload
 }
@@ -94,7 +93,7 @@ func NewDcimRacksElevationDefault(code int) *DcimRacksElevationDefault {
 	}
 }
 
-/*DcimRacksElevationDefault handles this case with default header values.
+/* DcimRacksElevationDefault describes a response with status code -1, with default header values.
 
 DcimRacksElevationDefault dcim racks elevation default
 */
@@ -112,7 +111,6 @@ func (o *DcimRacksElevationDefault) Code() int {
 func (o *DcimRacksElevationDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/racks/{id}/elevation/][%d] dcim_racks_elevation default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRacksElevationDefault) GetPayload() interface{} {
 	return o.Payload
 }

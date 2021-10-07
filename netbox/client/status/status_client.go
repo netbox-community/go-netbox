@@ -38,9 +38,12 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	StatusList(params *StatusListParams, authInfo runtime.ClientAuthInfoWriter) (*StatusListOK, error)
+	StatusList(params *StatusListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StatusListOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -48,13 +51,12 @@ type ClientService interface {
 /*
   StatusList A lightweight read-only endpoint for conveying NetBox's current operational status.
 */
-func (a *Client) StatusList(params *StatusListParams, authInfo runtime.ClientAuthInfoWriter) (*StatusListOK, error) {
+func (a *Client) StatusList(params *StatusListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StatusListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStatusListParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "status_list",
 		Method:             "GET",
 		PathPattern:        "/status/",
@@ -66,7 +68,12 @@ func (a *Client) StatusList(params *StatusListParams, authInfo runtime.ClientAut
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

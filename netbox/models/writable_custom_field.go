@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 	"strconv"
 
@@ -177,18 +178,17 @@ func (m *WritableCustomField) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableCustomField) validateChoices(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Choices) { // not required
 		return nil
 	}
 
 	for i := 0; i < len(m.Choices); i++ {
 
-		if err := validate.MinLength("choices"+"."+strconv.Itoa(i), "body", string(m.Choices[i]), 1); err != nil {
+		if err := validate.MinLength("choices"+"."+strconv.Itoa(i), "body", m.Choices[i], 1); err != nil {
 			return err
 		}
 
-		if err := validate.MaxLength("choices"+"."+strconv.Itoa(i), "body", string(m.Choices[i]), 100); err != nil {
+		if err := validate.MaxLength("choices"+"."+strconv.Itoa(i), "body", m.Choices[i], 100); err != nil {
 			return err
 		}
 
@@ -211,12 +211,11 @@ func (m *WritableCustomField) validateContentTypes(formats strfmt.Registry) erro
 }
 
 func (m *WritableCustomField) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -256,7 +255,6 @@ func (m *WritableCustomField) validateFilterLogicEnum(path, location string, val
 }
 
 func (m *WritableCustomField) validateFilterLogic(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.FilterLogic) { // not required
 		return nil
 	}
@@ -270,12 +268,11 @@ func (m *WritableCustomField) validateFilterLogic(formats strfmt.Registry) error
 }
 
 func (m *WritableCustomField) validateLabel(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("label", "body", string(m.Label), 50); err != nil {
+	if err := validate.MaxLength("label", "body", m.Label, 50); err != nil {
 		return err
 	}
 
@@ -288,11 +285,11 @@ func (m *WritableCustomField) validateName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinLength("name", "body", string(*m.Name), 1); err != nil {
+	if err := validate.MinLength("name", "body", *m.Name, 1); err != nil {
 		return err
 	}
 
-	if err := validate.MaxLength("name", "body", string(*m.Name), 50); err != nil {
+	if err := validate.MaxLength("name", "body", *m.Name, 50); err != nil {
 		return err
 	}
 
@@ -341,7 +338,6 @@ func (m *WritableCustomField) validateTypeEnum(path, location string, value stri
 }
 
 func (m *WritableCustomField) validateType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -355,7 +351,6 @@ func (m *WritableCustomField) validateType(formats strfmt.Registry) error {
 }
 
 func (m *WritableCustomField) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -368,16 +363,15 @@ func (m *WritableCustomField) validateURL(formats strfmt.Registry) error {
 }
 
 func (m *WritableCustomField) validateValidationMaximum(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ValidationMaximum) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("validation_maximum", "body", int64(*m.ValidationMaximum), 0, false); err != nil {
+	if err := validate.MinimumInt("validation_maximum", "body", *m.ValidationMaximum, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("validation_maximum", "body", int64(*m.ValidationMaximum), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("validation_maximum", "body", *m.ValidationMaximum, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -385,16 +379,15 @@ func (m *WritableCustomField) validateValidationMaximum(formats strfmt.Registry)
 }
 
 func (m *WritableCustomField) validateValidationMinimum(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ValidationMinimum) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("validation_minimum", "body", int64(*m.ValidationMinimum), 0, false); err != nil {
+	if err := validate.MinimumInt("validation_minimum", "body", *m.ValidationMinimum, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("validation_minimum", "body", int64(*m.ValidationMinimum), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("validation_minimum", "body", *m.ValidationMinimum, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -402,12 +395,11 @@ func (m *WritableCustomField) validateValidationMinimum(formats strfmt.Registry)
 }
 
 func (m *WritableCustomField) validateValidationRegex(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ValidationRegex) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("validation_regex", "body", string(m.ValidationRegex), 500); err != nil {
+	if err := validate.MaxLength("validation_regex", "body", m.ValidationRegex, 500); err != nil {
 		return err
 	}
 
@@ -415,16 +407,51 @@ func (m *WritableCustomField) validateValidationRegex(formats strfmt.Registry) e
 }
 
 func (m *WritableCustomField) validateWeight(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Weight) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("weight", "body", int64(*m.Weight), 0, false); err != nil {
+	if err := validate.MinimumInt("weight", "body", *m.Weight, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("weight", "body", int64(*m.Weight), 32767, false); err != nil {
+	if err := validate.MaximumInt("weight", "body", *m.Weight, 32767, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable custom field based on the context it is used
+func (m *WritableCustomField) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableCustomField) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCustomField) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

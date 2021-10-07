@@ -61,7 +61,7 @@ func NewDcimVirtualChassisPartialUpdateOK() *DcimVirtualChassisPartialUpdateOK {
 	return &DcimVirtualChassisPartialUpdateOK{}
 }
 
-/*DcimVirtualChassisPartialUpdateOK handles this case with default header values.
+/* DcimVirtualChassisPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimVirtualChassisPartialUpdateOK dcim virtual chassis partial update o k
 */
@@ -72,7 +72,6 @@ type DcimVirtualChassisPartialUpdateOK struct {
 func (o *DcimVirtualChassisPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimVirtualChassisPartialUpdateOK) GetPayload() *models.VirtualChassis {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimVirtualChassisPartialUpdateDefault(code int) *DcimVirtualChassisPart
 	}
 }
 
-/*DcimVirtualChassisPartialUpdateDefault handles this case with default header values.
+/* DcimVirtualChassisPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimVirtualChassisPartialUpdateDefault dcim virtual chassis partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimVirtualChassisPartialUpdateDefault) Code() int {
 func (o *DcimVirtualChassisPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimVirtualChassisPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

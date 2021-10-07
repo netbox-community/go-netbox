@@ -61,7 +61,7 @@ func NewExtrasCustomFieldsBulkUpdateOK() *ExtrasCustomFieldsBulkUpdateOK {
 	return &ExtrasCustomFieldsBulkUpdateOK{}
 }
 
-/*ExtrasCustomFieldsBulkUpdateOK handles this case with default header values.
+/* ExtrasCustomFieldsBulkUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasCustomFieldsBulkUpdateOK extras custom fields bulk update o k
 */
@@ -72,7 +72,6 @@ type ExtrasCustomFieldsBulkUpdateOK struct {
 func (o *ExtrasCustomFieldsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/custom-fields/][%d] extrasCustomFieldsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsBulkUpdateOK) GetPayload() *models.CustomField {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasCustomFieldsBulkUpdateDefault(code int) *ExtrasCustomFieldsBulkUpd
 	}
 }
 
-/*ExtrasCustomFieldsBulkUpdateDefault handles this case with default header values.
+/* ExtrasCustomFieldsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsBulkUpdateDefault extras custom fields bulk update default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasCustomFieldsBulkUpdateDefault) Code() int {
 func (o *ExtrasCustomFieldsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/custom-fields/][%d] extras_custom-fields_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasCustomFieldsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

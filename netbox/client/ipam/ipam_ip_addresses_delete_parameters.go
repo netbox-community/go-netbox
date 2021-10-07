@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamIPAddressesDeleteParams creates a new IpamIPAddressesDeleteParams object
-// with the default values initialized.
+// NewIpamIPAddressesDeleteParams creates a new IpamIPAddressesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamIPAddressesDeleteParams() *IpamIPAddressesDeleteParams {
-	var ()
 	return &IpamIPAddressesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamIPAddressesDeleteParamsWithTimeout creates a new IpamIPAddressesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamIPAddressesDeleteParamsWithTimeout(timeout time.Duration) *IpamIPAddressesDeleteParams {
-	var ()
 	return &IpamIPAddressesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamIPAddressesDeleteParamsWithContext creates a new IpamIPAddressesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamIPAddressesDeleteParamsWithContext(ctx context.Context) *IpamIPAddressesDeleteParams {
-	var ()
 	return &IpamIPAddressesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamIPAddressesDeleteParamsWithHTTPClient creates a new IpamIPAddressesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamIPAddressesDeleteParamsWithHTTPClient(client *http.Client) *IpamIPAddressesDeleteParams {
-	var ()
 	return &IpamIPAddressesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamIPAddressesDeleteParams contains all the parameters to send to the API endpoint
-for the ipam ip addresses delete operation typically these are written to a http.Request
+/* IpamIPAddressesDeleteParams contains all the parameters to send to the API endpoint
+   for the ipam ip addresses delete operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamIPAddressesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this IP address.
+	/* ID.
 
+	   A unique integer value identifying this IP address.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam ip addresses delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesDeleteParams) WithDefaults() *IpamIPAddressesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam ip addresses delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam ip addresses delete params

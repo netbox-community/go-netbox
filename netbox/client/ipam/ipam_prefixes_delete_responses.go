@@ -59,7 +59,7 @@ func NewIpamPrefixesDeleteNoContent() *IpamPrefixesDeleteNoContent {
 	return &IpamPrefixesDeleteNoContent{}
 }
 
-/*IpamPrefixesDeleteNoContent handles this case with default header values.
+/* IpamPrefixesDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamPrefixesDeleteNoContent ipam prefixes delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamPrefixesDeleteDefault(code int) *IpamPrefixesDeleteDefault {
 	}
 }
 
-/*IpamPrefixesDeleteDefault handles this case with default header values.
+/* IpamPrefixesDeleteDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesDeleteDefault ipam prefixes delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamPrefixesDeleteDefault) Code() int {
 func (o *IpamPrefixesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/prefixes/{id}/][%d] ipam_prefixes_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamPrefixesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

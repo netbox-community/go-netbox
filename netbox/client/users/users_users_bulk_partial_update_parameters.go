@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewUsersUsersBulkPartialUpdateParams creates a new UsersUsersBulkPartialUpdateParams object
-// with the default values initialized.
+// NewUsersUsersBulkPartialUpdateParams creates a new UsersUsersBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersUsersBulkPartialUpdateParams() *UsersUsersBulkPartialUpdateParams {
-	var ()
 	return &UsersUsersBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersUsersBulkPartialUpdateParamsWithTimeout creates a new UsersUsersBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersUsersBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *UsersUsersBulkPartialUpdateParams {
-	var ()
 	return &UsersUsersBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersUsersBulkPartialUpdateParamsWithContext creates a new UsersUsersBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersUsersBulkPartialUpdateParamsWithContext(ctx context.Context) *UsersUsersBulkPartialUpdateParams {
-	var ()
 	return &UsersUsersBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersUsersBulkPartialUpdateParamsWithHTTPClient creates a new UsersUsersBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersUsersBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *UsersUsersBulkPartialUpdateParams {
-	var ()
 	return &UsersUsersBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersUsersBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the users users bulk partial update operation typically these are written to a http.Request
+/* UsersUsersBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the users users bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersUsersBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableUser
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users users bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersUsersBulkPartialUpdateParams) WithDefaults() *UsersUsersBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users users bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersUsersBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users users bulk partial update params
@@ -136,7 +150,6 @@ func (o *UsersUsersBulkPartialUpdateParams) WriteToRequest(r runtime.ClientReque
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

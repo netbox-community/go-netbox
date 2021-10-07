@@ -61,7 +61,7 @@ func NewUsersUsersUpdateOK() *UsersUsersUpdateOK {
 	return &UsersUsersUpdateOK{}
 }
 
-/*UsersUsersUpdateOK handles this case with default header values.
+/* UsersUsersUpdateOK describes a response with status code 200, with default header values.
 
 UsersUsersUpdateOK users users update o k
 */
@@ -72,7 +72,6 @@ type UsersUsersUpdateOK struct {
 func (o *UsersUsersUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/users/{id}/][%d] usersUsersUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersUsersUpdateOK) GetPayload() *models.User {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersUsersUpdateDefault(code int) *UsersUsersUpdateDefault {
 	}
 }
 
-/*UsersUsersUpdateDefault handles this case with default header values.
+/* UsersUsersUpdateDefault describes a response with status code -1, with default header values.
 
 UsersUsersUpdateDefault users users update default
 */
@@ -114,7 +113,6 @@ func (o *UsersUsersUpdateDefault) Code() int {
 func (o *UsersUsersUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /users/users/{id}/][%d] users_users_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersUsersUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,7 @@ func NewDcimDeviceBaysPartialUpdateOK() *DcimDeviceBaysPartialUpdateOK {
 	return &DcimDeviceBaysPartialUpdateOK{}
 }
 
-/*DcimDeviceBaysPartialUpdateOK handles this case with default header values.
+/* DcimDeviceBaysPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimDeviceBaysPartialUpdateOK dcim device bays partial update o k
 */
@@ -72,7 +72,6 @@ type DcimDeviceBaysPartialUpdateOK struct {
 func (o *DcimDeviceBaysPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-bays/{id}/][%d] dcimDeviceBaysPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceBaysPartialUpdateOK) GetPayload() *models.DeviceBay {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDeviceBaysPartialUpdateDefault(code int) *DcimDeviceBaysPartialUpdat
 	}
 }
 
-/*DcimDeviceBaysPartialUpdateDefault handles this case with default header values.
+/* DcimDeviceBaysPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceBaysPartialUpdateDefault dcim device bays partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimDeviceBaysPartialUpdateDefault) Code() int {
 func (o *DcimDeviceBaysPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-bays/{id}/][%d] dcim_device-bays_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceBaysPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

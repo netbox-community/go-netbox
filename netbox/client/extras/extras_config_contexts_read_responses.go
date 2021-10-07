@@ -61,7 +61,7 @@ func NewExtrasConfigContextsReadOK() *ExtrasConfigContextsReadOK {
 	return &ExtrasConfigContextsReadOK{}
 }
 
-/*ExtrasConfigContextsReadOK handles this case with default header values.
+/* ExtrasConfigContextsReadOK describes a response with status code 200, with default header values.
 
 ExtrasConfigContextsReadOK extras config contexts read o k
 */
@@ -72,7 +72,6 @@ type ExtrasConfigContextsReadOK struct {
 func (o *ExtrasConfigContextsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extrasConfigContextsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasConfigContextsReadOK) GetPayload() *models.ConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasConfigContextsReadDefault(code int) *ExtrasConfigContextsReadDefau
 	}
 }
 
-/*ExtrasConfigContextsReadDefault handles this case with default header values.
+/* ExtrasConfigContextsReadDefault describes a response with status code -1, with default header values.
 
 ExtrasConfigContextsReadDefault extras config contexts read default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasConfigContextsReadDefault) Code() int {
 func (o *ExtrasConfigContextsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/config-contexts/{id}/][%d] extras_config-contexts_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasConfigContextsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

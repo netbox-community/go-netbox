@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewSecretsSecretsBulkUpdateParams creates a new SecretsSecretsBulkUpdateParams object
-// with the default values initialized.
+// NewSecretsSecretsBulkUpdateParams creates a new SecretsSecretsBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsSecretsBulkUpdateParams() *SecretsSecretsBulkUpdateParams {
-	var ()
 	return &SecretsSecretsBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsSecretsBulkUpdateParamsWithTimeout creates a new SecretsSecretsBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsSecretsBulkUpdateParamsWithTimeout(timeout time.Duration) *SecretsSecretsBulkUpdateParams {
-	var ()
 	return &SecretsSecretsBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsSecretsBulkUpdateParamsWithContext creates a new SecretsSecretsBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsSecretsBulkUpdateParamsWithContext(ctx context.Context) *SecretsSecretsBulkUpdateParams {
-	var ()
 	return &SecretsSecretsBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsSecretsBulkUpdateParamsWithHTTPClient creates a new SecretsSecretsBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsSecretsBulkUpdateParamsWithHTTPClient(client *http.Client) *SecretsSecretsBulkUpdateParams {
-	var ()
 	return &SecretsSecretsBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsSecretsBulkUpdateParams contains all the parameters to send to the API endpoint
-for the secrets secrets bulk update operation typically these are written to a http.Request
+/* SecretsSecretsBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the secrets secrets bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsSecretsBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableSecret
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets secrets bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsBulkUpdateParams) WithDefaults() *SecretsSecretsBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets secrets bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretsBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets secrets bulk update params
@@ -136,7 +150,6 @@ func (o *SecretsSecretsBulkUpdateParams) WriteToRequest(r runtime.ClientRequest,
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

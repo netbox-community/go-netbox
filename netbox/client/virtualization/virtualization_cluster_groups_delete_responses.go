@@ -59,7 +59,7 @@ func NewVirtualizationClusterGroupsDeleteNoContent() *VirtualizationClusterGroup
 	return &VirtualizationClusterGroupsDeleteNoContent{}
 }
 
-/*VirtualizationClusterGroupsDeleteNoContent handles this case with default header values.
+/* VirtualizationClusterGroupsDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationClusterGroupsDeleteNoContent virtualization cluster groups delete no content
 */
@@ -82,7 +82,7 @@ func NewVirtualizationClusterGroupsDeleteDefault(code int) *VirtualizationCluste
 	}
 }
 
-/*VirtualizationClusterGroupsDeleteDefault handles this case with default header values.
+/* VirtualizationClusterGroupsDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterGroupsDeleteDefault virtualization cluster groups delete default
 */
@@ -100,7 +100,6 @@ func (o *VirtualizationClusterGroupsDeleteDefault) Code() int {
 func (o *VirtualizationClusterGroupsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

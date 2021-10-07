@@ -61,7 +61,7 @@ func NewDcimConnectedDeviceListOK() *DcimConnectedDeviceListOK {
 	return &DcimConnectedDeviceListOK{}
 }
 
-/*DcimConnectedDeviceListOK handles this case with default header values.
+/* DcimConnectedDeviceListOK describes a response with status code 200, with default header values.
 
 DcimConnectedDeviceListOK dcim connected device list o k
 */
@@ -72,7 +72,6 @@ type DcimConnectedDeviceListOK struct {
 func (o *DcimConnectedDeviceListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcimConnectedDeviceListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimConnectedDeviceListOK) GetPayload() *models.Device {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimConnectedDeviceListDefault(code int) *DcimConnectedDeviceListDefault
 	}
 }
 
-/*DcimConnectedDeviceListDefault handles this case with default header values.
+/* DcimConnectedDeviceListDefault describes a response with status code -1, with default header values.
 
 DcimConnectedDeviceListDefault dcim connected device list default
 */
@@ -114,7 +113,6 @@ func (o *DcimConnectedDeviceListDefault) Code() int {
 func (o *DcimConnectedDeviceListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/connected-device/][%d] dcim_connected-device_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimConnectedDeviceListDefault) GetPayload() interface{} {
 	return o.Payload
 }

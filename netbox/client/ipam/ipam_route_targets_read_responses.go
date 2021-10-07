@@ -61,7 +61,7 @@ func NewIpamRouteTargetsReadOK() *IpamRouteTargetsReadOK {
 	return &IpamRouteTargetsReadOK{}
 }
 
-/*IpamRouteTargetsReadOK handles this case with default header values.
+/* IpamRouteTargetsReadOK describes a response with status code 200, with default header values.
 
 IpamRouteTargetsReadOK ipam route targets read o k
 */
@@ -72,7 +72,6 @@ type IpamRouteTargetsReadOK struct {
 func (o *IpamRouteTargetsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/route-targets/{id}/][%d] ipamRouteTargetsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRouteTargetsReadOK) GetPayload() *models.RouteTarget {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRouteTargetsReadDefault(code int) *IpamRouteTargetsReadDefault {
 	}
 }
 
-/*IpamRouteTargetsReadDefault handles this case with default header values.
+/* IpamRouteTargetsReadDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsReadDefault ipam route targets read default
 */
@@ -114,7 +113,6 @@ func (o *IpamRouteTargetsReadDefault) Code() int {
 func (o *IpamRouteTargetsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/route-targets/{id}/][%d] ipam_route-targets_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRouteTargetsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

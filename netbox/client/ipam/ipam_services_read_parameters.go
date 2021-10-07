@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamServicesReadParams creates a new IpamServicesReadParams object
-// with the default values initialized.
+// NewIpamServicesReadParams creates a new IpamServicesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamServicesReadParams() *IpamServicesReadParams {
-	var ()
 	return &IpamServicesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamServicesReadParamsWithTimeout creates a new IpamServicesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamServicesReadParamsWithTimeout(timeout time.Duration) *IpamServicesReadParams {
-	var ()
 	return &IpamServicesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamServicesReadParamsWithContext creates a new IpamServicesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamServicesReadParamsWithContext(ctx context.Context) *IpamServicesReadParams {
-	var ()
 	return &IpamServicesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamServicesReadParamsWithHTTPClient creates a new IpamServicesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamServicesReadParamsWithHTTPClient(client *http.Client) *IpamServicesReadParams {
-	var ()
 	return &IpamServicesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamServicesReadParams contains all the parameters to send to the API endpoint
-for the ipam services read operation typically these are written to a http.Request
+/* IpamServicesReadParams contains all the parameters to send to the API endpoint
+   for the ipam services read operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamServicesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this service.
+	/* ID.
 
+	   A unique integer value identifying this service.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam services read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamServicesReadParams) WithDefaults() *IpamServicesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam services read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamServicesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam services read params

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimRackReservationsListOK() *DcimRackReservationsListOK {
 	return &DcimRackReservationsListOK{}
 }
 
-/*DcimRackReservationsListOK handles this case with default header values.
+/* DcimRackReservationsListOK describes a response with status code 200, with default header values.
 
 DcimRackReservationsListOK dcim rack reservations list o k
 */
@@ -76,7 +77,6 @@ type DcimRackReservationsListOK struct {
 func (o *DcimRackReservationsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcimRackReservationsListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackReservationsListOK) GetPayload() *DcimRackReservationsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimRackReservationsListDefault(code int) *DcimRackReservationsListDefau
 	}
 }
 
-/*DcimRackReservationsListDefault handles this case with default header values.
+/* DcimRackReservationsListDefault describes a response with status code -1, with default header values.
 
 DcimRackReservationsListDefault dcim rack reservations list default
 */
@@ -118,7 +118,6 @@ func (o *DcimRackReservationsListDefault) Code() int {
 func (o *DcimRackReservationsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcim_rack-reservations_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackReservationsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimRackReservationsListOKBody) validateCount(formats strfmt.Registry) 
 }
 
 func (o *DcimRackReservationsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimRackReservationsListOKBody) validateNext(formats strfmt.Registry) e
 }
 
 func (o *DcimRackReservationsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimRackReservationsListOKBody) validateResults(formats strfmt.Registry
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimRackReservationsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim rack reservations list o k body based on the context it is used
+func (o *DcimRackReservationsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimRackReservationsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimRackReservationsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

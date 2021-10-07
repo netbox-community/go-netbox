@@ -61,7 +61,7 @@ func NewUsersUsersCreateCreated() *UsersUsersCreateCreated {
 	return &UsersUsersCreateCreated{}
 }
 
-/*UsersUsersCreateCreated handles this case with default header values.
+/* UsersUsersCreateCreated describes a response with status code 201, with default header values.
 
 UsersUsersCreateCreated users users create created
 */
@@ -72,7 +72,6 @@ type UsersUsersCreateCreated struct {
 func (o *UsersUsersCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /users/users/][%d] usersUsersCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *UsersUsersCreateCreated) GetPayload() *models.User {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersUsersCreateDefault(code int) *UsersUsersCreateDefault {
 	}
 }
 
-/*UsersUsersCreateDefault handles this case with default header values.
+/* UsersUsersCreateDefault describes a response with status code -1, with default header values.
 
 UsersUsersCreateDefault users users create default
 */
@@ -114,7 +113,6 @@ func (o *UsersUsersCreateDefault) Code() int {
 func (o *UsersUsersCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /users/users/][%d] users_users_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersUsersCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

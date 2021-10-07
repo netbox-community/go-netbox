@@ -61,7 +61,7 @@ func NewDcimPowerPanelsReadOK() *DcimPowerPanelsReadOK {
 	return &DcimPowerPanelsReadOK{}
 }
 
-/*DcimPowerPanelsReadOK handles this case with default header values.
+/* DcimPowerPanelsReadOK describes a response with status code 200, with default header values.
 
 DcimPowerPanelsReadOK dcim power panels read o k
 */
@@ -72,7 +72,6 @@ type DcimPowerPanelsReadOK struct {
 func (o *DcimPowerPanelsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-panels/{id}/][%d] dcimPowerPanelsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPanelsReadOK) GetPayload() *models.PowerPanel {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerPanelsReadDefault(code int) *DcimPowerPanelsReadDefault {
 	}
 }
 
-/*DcimPowerPanelsReadDefault handles this case with default header values.
+/* DcimPowerPanelsReadDefault describes a response with status code -1, with default header values.
 
 DcimPowerPanelsReadDefault dcim power panels read default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerPanelsReadDefault) Code() int {
 func (o *DcimPowerPanelsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-panels/{id}/][%d] dcim_power-panels_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPanelsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamRouteTargetsBulkPartialUpdateParams creates a new IpamRouteTargetsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewIpamRouteTargetsBulkPartialUpdateParams creates a new IpamRouteTargetsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRouteTargetsBulkPartialUpdateParams() *IpamRouteTargetsBulkPartialUpdateParams {
-	var ()
 	return &IpamRouteTargetsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRouteTargetsBulkPartialUpdateParamsWithTimeout creates a new IpamRouteTargetsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRouteTargetsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *IpamRouteTargetsBulkPartialUpdateParams {
-	var ()
 	return &IpamRouteTargetsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRouteTargetsBulkPartialUpdateParamsWithContext creates a new IpamRouteTargetsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRouteTargetsBulkPartialUpdateParamsWithContext(ctx context.Context) *IpamRouteTargetsBulkPartialUpdateParams {
-	var ()
 	return &IpamRouteTargetsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRouteTargetsBulkPartialUpdateParamsWithHTTPClient creates a new IpamRouteTargetsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRouteTargetsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamRouteTargetsBulkPartialUpdateParams {
-	var ()
 	return &IpamRouteTargetsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRouteTargetsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the ipam route targets bulk partial update operation typically these are written to a http.Request
+/* IpamRouteTargetsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam route targets bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRouteTargetsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRouteTarget
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam route targets bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRouteTargetsBulkPartialUpdateParams) WithDefaults() *IpamRouteTargetsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam route targets bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRouteTargetsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam route targets bulk partial update params
@@ -136,7 +150,6 @@ func (o *IpamRouteTargetsBulkPartialUpdateParams) WriteToRequest(r runtime.Clien
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

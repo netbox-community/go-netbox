@@ -61,7 +61,7 @@ func NewDcimRegionsCreateCreated() *DcimRegionsCreateCreated {
 	return &DcimRegionsCreateCreated{}
 }
 
-/*DcimRegionsCreateCreated handles this case with default header values.
+/* DcimRegionsCreateCreated describes a response with status code 201, with default header values.
 
 DcimRegionsCreateCreated dcim regions create created
 */
@@ -72,7 +72,6 @@ type DcimRegionsCreateCreated struct {
 func (o *DcimRegionsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/regions/][%d] dcimRegionsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimRegionsCreateCreated) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRegionsCreateDefault(code int) *DcimRegionsCreateDefault {
 	}
 }
 
-/*DcimRegionsCreateDefault handles this case with default header values.
+/* DcimRegionsCreateDefault describes a response with status code -1, with default header values.
 
 DcimRegionsCreateDefault dcim regions create default
 */
@@ -114,7 +113,6 @@ func (o *DcimRegionsCreateDefault) Code() int {
 func (o *DcimRegionsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/regions/][%d] dcim_regions_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRegionsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

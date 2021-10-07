@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 
 	"github.com/go-openapi/errors"
@@ -163,7 +164,6 @@ func (m *WritableCircuitTermination) Validate(formats strfmt.Registry) error {
 }
 
 func (m *WritableCircuitTermination) validateCable(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Cable) { // not required
 		return nil
 	}
@@ -190,12 +190,11 @@ func (m *WritableCircuitTermination) validateCircuit(formats strfmt.Registry) er
 }
 
 func (m *WritableCircuitTermination) validateDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -203,16 +202,15 @@ func (m *WritableCircuitTermination) validateDescription(formats strfmt.Registry
 }
 
 func (m *WritableCircuitTermination) validatePortSpeed(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PortSpeed) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("port_speed", "body", int64(*m.PortSpeed), 0, false); err != nil {
+	if err := validate.MinimumInt("port_speed", "body", *m.PortSpeed, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("port_speed", "body", int64(*m.PortSpeed), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("port_speed", "body", *m.PortSpeed, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -220,12 +218,11 @@ func (m *WritableCircuitTermination) validatePortSpeed(formats strfmt.Registry) 
 }
 
 func (m *WritableCircuitTermination) validatePpInfo(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PpInfo) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("pp_info", "body", string(m.PpInfo), 100); err != nil {
+	if err := validate.MaxLength("pp_info", "body", m.PpInfo, 100); err != nil {
 		return err
 	}
 
@@ -285,16 +282,15 @@ func (m *WritableCircuitTermination) validateTermSide(formats strfmt.Registry) e
 }
 
 func (m *WritableCircuitTermination) validateUpstreamSpeed(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.UpstreamSpeed) { // not required
 		return nil
 	}
 
-	if err := validate.MinimumInt("upstream_speed", "body", int64(*m.UpstreamSpeed), 0, false); err != nil {
+	if err := validate.MinimumInt("upstream_speed", "body", *m.UpstreamSpeed, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("upstream_speed", "body", int64(*m.UpstreamSpeed), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("upstream_speed", "body", *m.UpstreamSpeed, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -302,7 +298,6 @@ func (m *WritableCircuitTermination) validateUpstreamSpeed(formats strfmt.Regist
 }
 
 func (m *WritableCircuitTermination) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -315,12 +310,122 @@ func (m *WritableCircuitTermination) validateURL(formats strfmt.Registry) error 
 }
 
 func (m *WritableCircuitTermination) validateXconnectID(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.XconnectID) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("xconnect_id", "body", string(m.XconnectID), 50); err != nil {
+	if err := validate.MaxLength("xconnect_id", "body", m.XconnectID, 50); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this writable circuit termination based on the context it is used
+func (m *WritableCircuitTermination) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cable != nil {
+		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
 	}
 

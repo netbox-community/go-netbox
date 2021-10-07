@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimRearPortsReadParams creates a new DcimRearPortsReadParams object
-// with the default values initialized.
+// NewDcimRearPortsReadParams creates a new DcimRearPortsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRearPortsReadParams() *DcimRearPortsReadParams {
-	var ()
 	return &DcimRearPortsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRearPortsReadParamsWithTimeout creates a new DcimRearPortsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRearPortsReadParamsWithTimeout(timeout time.Duration) *DcimRearPortsReadParams {
-	var ()
 	return &DcimRearPortsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRearPortsReadParamsWithContext creates a new DcimRearPortsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRearPortsReadParamsWithContext(ctx context.Context) *DcimRearPortsReadParams {
-	var ()
 	return &DcimRearPortsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRearPortsReadParamsWithHTTPClient creates a new DcimRearPortsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRearPortsReadParamsWithHTTPClient(client *http.Client) *DcimRearPortsReadParams {
-	var ()
 	return &DcimRearPortsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRearPortsReadParams contains all the parameters to send to the API endpoint
-for the dcim rear ports read operation typically these are written to a http.Request
+/* DcimRearPortsReadParams contains all the parameters to send to the API endpoint
+   for the dcim rear ports read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRearPortsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this rear port.
+	/* ID.
 
+	   A unique integer value identifying this rear port.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rear ports read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRearPortsReadParams) WithDefaults() *DcimRearPortsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rear ports read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRearPortsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rear ports read params

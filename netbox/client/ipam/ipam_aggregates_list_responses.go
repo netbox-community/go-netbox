@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewIpamAggregatesListOK() *IpamAggregatesListOK {
 	return &IpamAggregatesListOK{}
 }
 
-/*IpamAggregatesListOK handles this case with default header values.
+/* IpamAggregatesListOK describes a response with status code 200, with default header values.
 
 IpamAggregatesListOK ipam aggregates list o k
 */
@@ -76,7 +77,6 @@ type IpamAggregatesListOK struct {
 func (o *IpamAggregatesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipamAggregatesListOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamAggregatesListOK) GetPayload() *IpamAggregatesListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewIpamAggregatesListDefault(code int) *IpamAggregatesListDefault {
 	}
 }
 
-/*IpamAggregatesListDefault handles this case with default header values.
+/* IpamAggregatesListDefault describes a response with status code -1, with default header values.
 
 IpamAggregatesListDefault ipam aggregates list default
 */
@@ -118,7 +118,6 @@ func (o *IpamAggregatesListDefault) Code() int {
 func (o *IpamAggregatesListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/aggregates/][%d] ipam_aggregates_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamAggregatesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *IpamAggregatesListOKBody) validateCount(formats strfmt.Registry) error 
 }
 
 func (o *IpamAggregatesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *IpamAggregatesListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *IpamAggregatesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *IpamAggregatesListOKBody) validateResults(formats strfmt.Registry) erro
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ipamAggregatesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this ipam aggregates list o k body based on the context it is used
+func (o *IpamAggregatesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *IpamAggregatesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamAggregatesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

@@ -61,7 +61,7 @@ func NewTenancyTenantsBulkPartialUpdateOK() *TenancyTenantsBulkPartialUpdateOK {
 	return &TenancyTenantsBulkPartialUpdateOK{}
 }
 
-/*TenancyTenantsBulkPartialUpdateOK handles this case with default header values.
+/* TenancyTenantsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 TenancyTenantsBulkPartialUpdateOK tenancy tenants bulk partial update o k
 */
@@ -72,7 +72,6 @@ type TenancyTenantsBulkPartialUpdateOK struct {
 func (o *TenancyTenantsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/tenants/][%d] tenancyTenantsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *TenancyTenantsBulkPartialUpdateOK) GetPayload() *models.Tenant {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewTenancyTenantsBulkPartialUpdateDefault(code int) *TenancyTenantsBulkPart
 	}
 }
 
-/*TenancyTenantsBulkPartialUpdateDefault handles this case with default header values.
+/* TenancyTenantsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 TenancyTenantsBulkPartialUpdateDefault tenancy tenants bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *TenancyTenantsBulkPartialUpdateDefault) Code() int {
 func (o *TenancyTenantsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/tenants/][%d] tenancy_tenants_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *TenancyTenantsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

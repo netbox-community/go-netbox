@@ -61,7 +61,7 @@ func NewDcimDevicesNapalmOK() *DcimDevicesNapalmOK {
 	return &DcimDevicesNapalmOK{}
 }
 
-/*DcimDevicesNapalmOK handles this case with default header values.
+/* DcimDevicesNapalmOK describes a response with status code 200, with default header values.
 
 DcimDevicesNapalmOK dcim devices napalm o k
 */
@@ -72,7 +72,6 @@ type DcimDevicesNapalmOK struct {
 func (o *DcimDevicesNapalmOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcimDevicesNapalmOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDevicesNapalmOK) GetPayload() *models.DeviceNAPALM {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDevicesNapalmDefault(code int) *DcimDevicesNapalmDefault {
 	}
 }
 
-/*DcimDevicesNapalmDefault handles this case with default header values.
+/* DcimDevicesNapalmDefault describes a response with status code -1, with default header values.
 
 DcimDevicesNapalmDefault dcim devices napalm default
 */
@@ -114,7 +113,6 @@ func (o *DcimDevicesNapalmDefault) Code() int {
 func (o *DcimDevicesNapalmDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcim_devices_napalm default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDevicesNapalmDefault) GetPayload() interface{} {
 	return o.Payload
 }

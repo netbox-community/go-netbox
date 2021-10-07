@@ -61,7 +61,7 @@ func NewSecretsSecretRolesBulkPartialUpdateOK() *SecretsSecretRolesBulkPartialUp
 	return &SecretsSecretRolesBulkPartialUpdateOK{}
 }
 
-/*SecretsSecretRolesBulkPartialUpdateOK handles this case with default header values.
+/* SecretsSecretRolesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 SecretsSecretRolesBulkPartialUpdateOK secrets secret roles bulk partial update o k
 */
@@ -72,7 +72,6 @@ type SecretsSecretRolesBulkPartialUpdateOK struct {
 func (o *SecretsSecretRolesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /secrets/secret-roles/][%d] secretsSecretRolesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *SecretsSecretRolesBulkPartialUpdateOK) GetPayload() *models.SecretRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewSecretsSecretRolesBulkPartialUpdateDefault(code int) *SecretsSecretRoles
 	}
 }
 
-/*SecretsSecretRolesBulkPartialUpdateDefault handles this case with default header values.
+/* SecretsSecretRolesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 SecretsSecretRolesBulkPartialUpdateDefault secrets secret roles bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *SecretsSecretRolesBulkPartialUpdateDefault) Code() int {
 func (o *SecretsSecretRolesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /secrets/secret-roles/][%d] secrets_secret-roles_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsSecretRolesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

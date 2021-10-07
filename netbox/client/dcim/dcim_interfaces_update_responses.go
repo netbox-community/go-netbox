@@ -61,7 +61,7 @@ func NewDcimInterfacesUpdateOK() *DcimInterfacesUpdateOK {
 	return &DcimInterfacesUpdateOK{}
 }
 
-/*DcimInterfacesUpdateOK handles this case with default header values.
+/* DcimInterfacesUpdateOK describes a response with status code 200, with default header values.
 
 DcimInterfacesUpdateOK dcim interfaces update o k
 */
@@ -72,7 +72,6 @@ type DcimInterfacesUpdateOK struct {
 func (o *DcimInterfacesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcimInterfacesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfacesUpdateOK) GetPayload() *models.Interface {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimInterfacesUpdateDefault(code int) *DcimInterfacesUpdateDefault {
 	}
 }
 
-/*DcimInterfacesUpdateDefault handles this case with default header values.
+/* DcimInterfacesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInterfacesUpdateDefault dcim interfaces update default
 */
@@ -114,7 +113,6 @@ func (o *DcimInterfacesUpdateDefault) Code() int {
 func (o *DcimInterfacesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcim_interfaces_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInterfacesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

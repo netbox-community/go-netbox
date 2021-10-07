@@ -59,7 +59,7 @@ func NewVirtualizationVirtualMachinesDeleteNoContent() *VirtualizationVirtualMac
 	return &VirtualizationVirtualMachinesDeleteNoContent{}
 }
 
-/*VirtualizationVirtualMachinesDeleteNoContent handles this case with default header values.
+/* VirtualizationVirtualMachinesDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationVirtualMachinesDeleteNoContent virtualization virtual machines delete no content
 */
@@ -82,7 +82,7 @@ func NewVirtualizationVirtualMachinesDeleteDefault(code int) *VirtualizationVirt
 	}
 }
 
-/*VirtualizationVirtualMachinesDeleteDefault handles this case with default header values.
+/* VirtualizationVirtualMachinesDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesDeleteDefault virtualization virtual machines delete default
 */
@@ -100,7 +100,6 @@ func (o *VirtualizationVirtualMachinesDeleteDefault) Code() int {
 func (o *VirtualizationVirtualMachinesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationVirtualMachinesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

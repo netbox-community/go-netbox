@@ -61,7 +61,7 @@ func NewIpamPrefixesPartialUpdateOK() *IpamPrefixesPartialUpdateOK {
 	return &IpamPrefixesPartialUpdateOK{}
 }
 
-/*IpamPrefixesPartialUpdateOK handles this case with default header values.
+/* IpamPrefixesPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamPrefixesPartialUpdateOK ipam prefixes partial update o k
 */
@@ -72,7 +72,6 @@ type IpamPrefixesPartialUpdateOK struct {
 func (o *IpamPrefixesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/prefixes/{id}/][%d] ipamPrefixesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamPrefixesPartialUpdateOK) GetPayload() *models.Prefix {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamPrefixesPartialUpdateDefault(code int) *IpamPrefixesPartialUpdateDef
 	}
 }
 
-/*IpamPrefixesPartialUpdateDefault handles this case with default header values.
+/* IpamPrefixesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesPartialUpdateDefault ipam prefixes partial update default
 */
@@ -114,7 +113,6 @@ func (o *IpamPrefixesPartialUpdateDefault) Code() int {
 func (o *IpamPrefixesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/prefixes/{id}/][%d] ipam_prefixes_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamPrefixesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

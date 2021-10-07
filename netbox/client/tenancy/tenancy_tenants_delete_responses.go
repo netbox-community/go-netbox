@@ -59,7 +59,7 @@ func NewTenancyTenantsDeleteNoContent() *TenancyTenantsDeleteNoContent {
 	return &TenancyTenantsDeleteNoContent{}
 }
 
-/*TenancyTenantsDeleteNoContent handles this case with default header values.
+/* TenancyTenantsDeleteNoContent describes a response with status code 204, with default header values.
 
 TenancyTenantsDeleteNoContent tenancy tenants delete no content
 */
@@ -82,7 +82,7 @@ func NewTenancyTenantsDeleteDefault(code int) *TenancyTenantsDeleteDefault {
 	}
 }
 
-/*TenancyTenantsDeleteDefault handles this case with default header values.
+/* TenancyTenantsDeleteDefault describes a response with status code -1, with default header values.
 
 TenancyTenantsDeleteDefault tenancy tenants delete default
 */
@@ -100,7 +100,6 @@ func (o *TenancyTenantsDeleteDefault) Code() int {
 func (o *TenancyTenantsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /tenancy/tenants/{id}/][%d] tenancy_tenants_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *TenancyTenantsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

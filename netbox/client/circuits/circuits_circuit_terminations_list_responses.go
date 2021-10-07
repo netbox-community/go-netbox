@@ -21,6 +21,7 @@ package circuits
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewCircuitsCircuitTerminationsListOK() *CircuitsCircuitTerminationsListOK {
 	return &CircuitsCircuitTerminationsListOK{}
 }
 
-/*CircuitsCircuitTerminationsListOK handles this case with default header values.
+/* CircuitsCircuitTerminationsListOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTerminationsListOK circuits circuit terminations list o k
 */
@@ -76,7 +77,6 @@ type CircuitsCircuitTerminationsListOK struct {
 func (o *CircuitsCircuitTerminationsListOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsListOK  %+v", 200, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsListOK) GetPayload() *CircuitsCircuitTerminationsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewCircuitsCircuitTerminationsListDefault(code int) *CircuitsCircuitTermina
 	}
 }
 
-/*CircuitsCircuitTerminationsListDefault handles this case with default header values.
+/* CircuitsCircuitTerminationsListDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsListDefault circuits circuit terminations list default
 */
@@ -118,7 +118,6 @@ func (o *CircuitsCircuitTerminationsListDefault) Code() int {
 func (o *CircuitsCircuitTerminationsListDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuits_circuit-terminations_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *CircuitsCircuitTerminationsListOKBody) validateCount(formats strfmt.Reg
 }
 
 func (o *CircuitsCircuitTerminationsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *CircuitsCircuitTerminationsListOKBody) validateNext(formats strfmt.Regi
 }
 
 func (o *CircuitsCircuitTerminationsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *CircuitsCircuitTerminationsListOKBody) validateResults(formats strfmt.R
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("circuitsCircuitTerminationsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this circuits circuit terminations list o k body based on the context it is used
+func (o *CircuitsCircuitTerminationsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *CircuitsCircuitTerminationsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("circuitsCircuitTerminationsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

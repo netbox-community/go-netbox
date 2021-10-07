@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewDcimDevicesBulkDeleteParams creates a new DcimDevicesBulkDeleteParams object
-// with the default values initialized.
+// NewDcimDevicesBulkDeleteParams creates a new DcimDevicesBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimDevicesBulkDeleteParams() *DcimDevicesBulkDeleteParams {
-
 	return &DcimDevicesBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimDevicesBulkDeleteParamsWithTimeout creates a new DcimDevicesBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimDevicesBulkDeleteParamsWithTimeout(timeout time.Duration) *DcimDevicesBulkDeleteParams {
-
 	return &DcimDevicesBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimDevicesBulkDeleteParamsWithContext creates a new DcimDevicesBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimDevicesBulkDeleteParamsWithContext(ctx context.Context) *DcimDevicesBulkDeleteParams {
-
 	return &DcimDevicesBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimDevicesBulkDeleteParamsWithHTTPClient creates a new DcimDevicesBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimDevicesBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimDevicesBulkDeleteParams {
-
 	return &DcimDevicesBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimDevicesBulkDeleteParams contains all the parameters to send to the API endpoint
-for the dcim devices bulk delete operation typically these are written to a http.Request
+/* DcimDevicesBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim devices bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimDevicesBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim devices bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesBulkDeleteParams) WithDefaults() *DcimDevicesBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim devices bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimDevicesBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim devices bulk delete params

@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewDcimInterfacesBulkDeleteParams creates a new DcimInterfacesBulkDeleteParams object
-// with the default values initialized.
+// NewDcimInterfacesBulkDeleteParams creates a new DcimInterfacesBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimInterfacesBulkDeleteParams() *DcimInterfacesBulkDeleteParams {
-
 	return &DcimInterfacesBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimInterfacesBulkDeleteParamsWithTimeout creates a new DcimInterfacesBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimInterfacesBulkDeleteParamsWithTimeout(timeout time.Duration) *DcimInterfacesBulkDeleteParams {
-
 	return &DcimInterfacesBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimInterfacesBulkDeleteParamsWithContext creates a new DcimInterfacesBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimInterfacesBulkDeleteParamsWithContext(ctx context.Context) *DcimInterfacesBulkDeleteParams {
-
 	return &DcimInterfacesBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimInterfacesBulkDeleteParamsWithHTTPClient creates a new DcimInterfacesBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimInterfacesBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimInterfacesBulkDeleteParams {
-
 	return &DcimInterfacesBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimInterfacesBulkDeleteParams contains all the parameters to send to the API endpoint
-for the dcim interfaces bulk delete operation typically these are written to a http.Request
+/* DcimInterfacesBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim interfaces bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimInterfacesBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim interfaces bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfacesBulkDeleteParams) WithDefaults() *DcimInterfacesBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim interfaces bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimInterfacesBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim interfaces bulk delete params

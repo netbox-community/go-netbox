@@ -59,7 +59,7 @@ func NewDcimPowerOutletTemplatesDeleteNoContent() *DcimPowerOutletTemplatesDelet
 	return &DcimPowerOutletTemplatesDeleteNoContent{}
 }
 
-/*DcimPowerOutletTemplatesDeleteNoContent handles this case with default header values.
+/* DcimPowerOutletTemplatesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimPowerOutletTemplatesDeleteNoContent dcim power outlet templates delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimPowerOutletTemplatesDeleteDefault(code int) *DcimPowerOutletTemplate
 	}
 }
 
-/*DcimPowerOutletTemplatesDeleteDefault handles this case with default header values.
+/* DcimPowerOutletTemplatesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletTemplatesDeleteDefault dcim power outlet templates delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimPowerOutletTemplatesDeleteDefault) Code() int {
 func (o *DcimPowerOutletTemplatesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerOutletTemplatesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -32,138 +32,190 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimRackReservationsListParams creates a new DcimRackReservationsListParams object
-// with the default values initialized.
+// NewDcimRackReservationsListParams creates a new DcimRackReservationsListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackReservationsListParams() *DcimRackReservationsListParams {
-	var ()
 	return &DcimRackReservationsListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackReservationsListParamsWithTimeout creates a new DcimRackReservationsListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackReservationsListParamsWithTimeout(timeout time.Duration) *DcimRackReservationsListParams {
-	var ()
 	return &DcimRackReservationsListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackReservationsListParamsWithContext creates a new DcimRackReservationsListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackReservationsListParamsWithContext(ctx context.Context) *DcimRackReservationsListParams {
-	var ()
 	return &DcimRackReservationsListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackReservationsListParamsWithHTTPClient creates a new DcimRackReservationsListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackReservationsListParamsWithHTTPClient(client *http.Client) *DcimRackReservationsListParams {
-	var ()
 	return &DcimRackReservationsListParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackReservationsListParams contains all the parameters to send to the API endpoint
-for the dcim rack reservations list operation typically these are written to a http.Request
+/* DcimRackReservationsListParams contains all the parameters to send to the API endpoint
+   for the dcim rack reservations list operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackReservationsListParams struct {
 
-	/*Created*/
+	// Created.
 	Created *string
-	/*CreatedGt*/
-	CreatedGt *string
-	/*CreatedGte*/
-	CreatedGte *string
-	/*CreatedLt*/
-	CreatedLt *string
-	/*CreatedLte*/
-	CreatedLte *string
-	/*Createdn*/
-	Createdn *string
-	/*Group*/
-	Group *string
-	/*Groupn*/
-	Groupn *string
-	/*GroupID*/
-	GroupID *string
-	/*GroupIDn*/
-	GroupIDn *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Limit
-	  Number of results to return per page.
 
+	// CreatedGt.
+	CreatedGt *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLt.
+	CreatedLt *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
+
+	// Group.
+	Group *string
+
+	// Groupn.
+	Groupn *string
+
+	// GroupID.
+	GroupID *string
+
+	// GroupIDn.
+	GroupIDn *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Offset
-	  The initial index from which to return the results.
 
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*RackID*/
+
+	// RackID.
 	RackID *string
-	/*RackIDn*/
+
+	// RackIDn.
 	RackIDn *string
-	/*Site*/
+
+	// Site.
 	Site *string
-	/*Siten*/
+
+	// Siten.
 	Siten *string
-	/*SiteID*/
+
+	// SiteID.
 	SiteID *string
-	/*SiteIDn*/
+
+	// SiteIDn.
 	SiteIDn *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
-	/*Tenant*/
+
+	// Tenant.
 	Tenant *string
-	/*Tenantn*/
+
+	// Tenantn.
 	Tenantn *string
-	/*TenantGroup*/
+
+	// TenantGroup.
 	TenantGroup *string
-	/*TenantGroupn*/
+
+	// TenantGroupn.
 	TenantGroupn *string
-	/*TenantGroupID*/
+
+	// TenantGroupID.
 	TenantGroupID *string
-	/*TenantGroupIDn*/
+
+	// TenantGroupIDn.
 	TenantGroupIDn *string
-	/*TenantID*/
+
+	// TenantID.
 	TenantID *string
-	/*TenantIDn*/
+
+	// TenantIDn.
 	TenantIDn *string
-	/*User*/
+
+	// User.
 	User *string
-	/*Usern*/
+
+	// Usern.
 	Usern *string
-	/*UserID*/
+
+	// UserID.
 	UserID *string
-	/*UserIDn*/
+
+	// UserIDn.
 	UserIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack reservations list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackReservationsListParams) WithDefaults() *DcimRackReservationsListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack reservations list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackReservationsListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack reservations list params
@@ -640,624 +692,663 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 
 		// query param created
 		var qrCreated string
+
 		if o.Created != nil {
 			qrCreated = *o.Created
 		}
 		qCreated := qrCreated
 		if qCreated != "" {
+
 			if err := r.SetQueryParam("created", qCreated); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedGt != nil {
 
 		// query param created__gt
 		var qrCreatedGt string
+
 		if o.CreatedGt != nil {
 			qrCreatedGt = *o.CreatedGt
 		}
 		qCreatedGt := qrCreatedGt
 		if qCreatedGt != "" {
+
 			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedGte != nil {
 
 		// query param created__gte
 		var qrCreatedGte string
+
 		if o.CreatedGte != nil {
 			qrCreatedGte = *o.CreatedGte
 		}
 		qCreatedGte := qrCreatedGte
 		if qCreatedGte != "" {
+
 			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedLt != nil {
 
 		// query param created__lt
 		var qrCreatedLt string
+
 		if o.CreatedLt != nil {
 			qrCreatedLt = *o.CreatedLt
 		}
 		qCreatedLt := qrCreatedLt
 		if qCreatedLt != "" {
+
 			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.CreatedLte != nil {
 
 		// query param created__lte
 		var qrCreatedLte string
+
 		if o.CreatedLte != nil {
 			qrCreatedLte = *o.CreatedLte
 		}
 		qCreatedLte := qrCreatedLte
 		if qCreatedLte != "" {
+
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Createdn != nil {
 
 		// query param created__n
 		var qrCreatedn string
+
 		if o.Createdn != nil {
 			qrCreatedn = *o.Createdn
 		}
 		qCreatedn := qrCreatedn
 		if qCreatedn != "" {
+
 			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Group != nil {
 
 		// query param group
 		var qrGroup string
+
 		if o.Group != nil {
 			qrGroup = *o.Group
 		}
 		qGroup := qrGroup
 		if qGroup != "" {
+
 			if err := r.SetQueryParam("group", qGroup); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Groupn != nil {
 
 		// query param group__n
 		var qrGroupn string
+
 		if o.Groupn != nil {
 			qrGroupn = *o.Groupn
 		}
 		qGroupn := qrGroupn
 		if qGroupn != "" {
+
 			if err := r.SetQueryParam("group__n", qGroupn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.GroupID != nil {
 
 		// query param group_id
 		var qrGroupID string
+
 		if o.GroupID != nil {
 			qrGroupID = *o.GroupID
 		}
 		qGroupID := qrGroupID
 		if qGroupID != "" {
+
 			if err := r.SetQueryParam("group_id", qGroupID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.GroupIDn != nil {
 
 		// query param group_id__n
 		var qrGroupIDn string
+
 		if o.GroupIDn != nil {
 			qrGroupIDn = *o.GroupIDn
 		}
 		qGroupIDn := qrGroupIDn
 		if qGroupIDn != "" {
+
 			if err := r.SetQueryParam("group_id__n", qGroupIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RackID != nil {
 
 		// query param rack_id
 		var qrRackID string
+
 		if o.RackID != nil {
 			qrRackID = *o.RackID
 		}
 		qRackID := qrRackID
 		if qRackID != "" {
+
 			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RackIDn != nil {
 
 		// query param rack_id__n
 		var qrRackIDn string
+
 		if o.RackIDn != nil {
 			qrRackIDn = *o.RackIDn
 		}
 		qRackIDn := qrRackIDn
 		if qRackIDn != "" {
+
 			if err := r.SetQueryParam("rack_id__n", qRackIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Site != nil {
 
 		// query param site
 		var qrSite string
+
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
 		qSite := qrSite
 		if qSite != "" {
+
 			if err := r.SetQueryParam("site", qSite); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Siten != nil {
 
 		// query param site__n
 		var qrSiten string
+
 		if o.Siten != nil {
 			qrSiten = *o.Siten
 		}
 		qSiten := qrSiten
 		if qSiten != "" {
+
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteID != nil {
 
 		// query param site_id
 		var qrSiteID string
+
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
 		qSiteID := qrSiteID
 		if qSiteID != "" {
+
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteIDn != nil {
 
 		// query param site_id__n
 		var qrSiteIDn string
+
 		if o.SiteIDn != nil {
 			qrSiteIDn = *o.SiteIDn
 		}
 		qSiteIDn := qrSiteIDn
 		if qSiteIDn != "" {
+
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenant != nil {
 
 		// query param tenant
 		var qrTenant string
+
 		if o.Tenant != nil {
 			qrTenant = *o.Tenant
 		}
 		qTenant := qrTenant
 		if qTenant != "" {
+
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenantn != nil {
 
 		// query param tenant__n
 		var qrTenantn string
+
 		if o.Tenantn != nil {
 			qrTenantn = *o.Tenantn
 		}
 		qTenantn := qrTenantn
 		if qTenantn != "" {
+
 			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroup != nil {
 
 		// query param tenant_group
 		var qrTenantGroup string
+
 		if o.TenantGroup != nil {
 			qrTenantGroup = *o.TenantGroup
 		}
 		qTenantGroup := qrTenantGroup
 		if qTenantGroup != "" {
+
 			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupn != nil {
 
 		// query param tenant_group__n
 		var qrTenantGroupn string
+
 		if o.TenantGroupn != nil {
 			qrTenantGroupn = *o.TenantGroupn
 		}
 		qTenantGroupn := qrTenantGroupn
 		if qTenantGroupn != "" {
+
 			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupID != nil {
 
 		// query param tenant_group_id
 		var qrTenantGroupID string
+
 		if o.TenantGroupID != nil {
 			qrTenantGroupID = *o.TenantGroupID
 		}
 		qTenantGroupID := qrTenantGroupID
 		if qTenantGroupID != "" {
+
 			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantGroupIDn != nil {
 
 		// query param tenant_group_id__n
 		var qrTenantGroupIDn string
+
 		if o.TenantGroupIDn != nil {
 			qrTenantGroupIDn = *o.TenantGroupIDn
 		}
 		qTenantGroupIDn := qrTenantGroupIDn
 		if qTenantGroupIDn != "" {
+
 			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantID != nil {
 
 		// query param tenant_id
 		var qrTenantID string
+
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
 		qTenantID := qrTenantID
 		if qTenantID != "" {
+
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantIDn != nil {
 
 		// query param tenant_id__n
 		var qrTenantIDn string
+
 		if o.TenantIDn != nil {
 			qrTenantIDn = *o.TenantIDn
 		}
 		qTenantIDn := qrTenantIDn
 		if qTenantIDn != "" {
+
 			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.User != nil {
 
 		// query param user
 		var qrUser string
+
 		if o.User != nil {
 			qrUser = *o.User
 		}
 		qUser := qrUser
 		if qUser != "" {
+
 			if err := r.SetQueryParam("user", qUser); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Usern != nil {
 
 		// query param user__n
 		var qrUsern string
+
 		if o.Usern != nil {
 			qrUsern = *o.Usern
 		}
 		qUsern := qrUsern
 		if qUsern != "" {
+
 			if err := r.SetQueryParam("user__n", qUsern); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserID != nil {
 
 		// query param user_id
 		var qrUserID string
+
 		if o.UserID != nil {
 			qrUserID = *o.UserID
 		}
 		qUserID := qrUserID
 		if qUserID != "" {
+
 			if err := r.SetQueryParam("user_id", qUserID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.UserIDn != nil {
 
 		// query param user_id__n
 		var qrUserIDn string
+
 		if o.UserIDn != nil {
 			qrUserIDn = *o.UserIDn
 		}
 		qUserIDn := qrUserIDn
 		if qUserIDn != "" {
+
 			if err := r.SetQueryParam("user_id__n", qUserIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

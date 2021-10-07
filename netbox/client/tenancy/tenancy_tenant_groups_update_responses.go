@@ -61,7 +61,7 @@ func NewTenancyTenantGroupsUpdateOK() *TenancyTenantGroupsUpdateOK {
 	return &TenancyTenantGroupsUpdateOK{}
 }
 
-/*TenancyTenantGroupsUpdateOK handles this case with default header values.
+/* TenancyTenantGroupsUpdateOK describes a response with status code 200, with default header values.
 
 TenancyTenantGroupsUpdateOK tenancy tenant groups update o k
 */
@@ -72,7 +72,6 @@ type TenancyTenantGroupsUpdateOK struct {
 func (o *TenancyTenantGroupsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *TenancyTenantGroupsUpdateOK) GetPayload() *models.TenantGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewTenancyTenantGroupsUpdateDefault(code int) *TenancyTenantGroupsUpdateDef
 	}
 }
 
-/*TenancyTenantGroupsUpdateDefault handles this case with default header values.
+/* TenancyTenantGroupsUpdateDefault describes a response with status code -1, with default header values.
 
 TenancyTenantGroupsUpdateDefault tenancy tenant groups update default
 */
@@ -114,7 +113,6 @@ func (o *TenancyTenantGroupsUpdateDefault) Code() int {
 func (o *TenancyTenantGroupsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *TenancyTenantGroupsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewDcimRearPortsBulkDeleteParams creates a new DcimRearPortsBulkDeleteParams object
-// with the default values initialized.
+// NewDcimRearPortsBulkDeleteParams creates a new DcimRearPortsBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRearPortsBulkDeleteParams() *DcimRearPortsBulkDeleteParams {
-
 	return &DcimRearPortsBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRearPortsBulkDeleteParamsWithTimeout creates a new DcimRearPortsBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRearPortsBulkDeleteParamsWithTimeout(timeout time.Duration) *DcimRearPortsBulkDeleteParams {
-
 	return &DcimRearPortsBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRearPortsBulkDeleteParamsWithContext creates a new DcimRearPortsBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRearPortsBulkDeleteParamsWithContext(ctx context.Context) *DcimRearPortsBulkDeleteParams {
-
 	return &DcimRearPortsBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRearPortsBulkDeleteParamsWithHTTPClient creates a new DcimRearPortsBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRearPortsBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimRearPortsBulkDeleteParams {
-
 	return &DcimRearPortsBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRearPortsBulkDeleteParams contains all the parameters to send to the API endpoint
-for the dcim rear ports bulk delete operation typically these are written to a http.Request
+/* DcimRearPortsBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim rear ports bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRearPortsBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rear ports bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRearPortsBulkDeleteParams) WithDefaults() *DcimRearPortsBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rear ports bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRearPortsBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rear ports bulk delete params

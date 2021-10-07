@@ -61,7 +61,7 @@ func NewSecretsSecretRolesCreateCreated() *SecretsSecretRolesCreateCreated {
 	return &SecretsSecretRolesCreateCreated{}
 }
 
-/*SecretsSecretRolesCreateCreated handles this case with default header values.
+/* SecretsSecretRolesCreateCreated describes a response with status code 201, with default header values.
 
 SecretsSecretRolesCreateCreated secrets secret roles create created
 */
@@ -72,7 +72,6 @@ type SecretsSecretRolesCreateCreated struct {
 func (o *SecretsSecretRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /secrets/secret-roles/][%d] secretsSecretRolesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *SecretsSecretRolesCreateCreated) GetPayload() *models.SecretRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewSecretsSecretRolesCreateDefault(code int) *SecretsSecretRolesCreateDefau
 	}
 }
 
-/*SecretsSecretRolesCreateDefault handles this case with default header values.
+/* SecretsSecretRolesCreateDefault describes a response with status code -1, with default header values.
 
 SecretsSecretRolesCreateDefault secrets secret roles create default
 */
@@ -114,7 +113,6 @@ func (o *SecretsSecretRolesCreateDefault) Code() int {
 func (o *SecretsSecretRolesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /secrets/secret-roles/][%d] secrets_secret-roles_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsSecretRolesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

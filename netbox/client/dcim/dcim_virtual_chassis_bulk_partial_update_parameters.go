@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimVirtualChassisBulkPartialUpdateParams creates a new DcimVirtualChassisBulkPartialUpdateParams object
-// with the default values initialized.
+// NewDcimVirtualChassisBulkPartialUpdateParams creates a new DcimVirtualChassisBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimVirtualChassisBulkPartialUpdateParams() *DcimVirtualChassisBulkPartialUpdateParams {
-	var ()
 	return &DcimVirtualChassisBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimVirtualChassisBulkPartialUpdateParamsWithTimeout creates a new DcimVirtualChassisBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimVirtualChassisBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimVirtualChassisBulkPartialUpdateParams {
-	var ()
 	return &DcimVirtualChassisBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimVirtualChassisBulkPartialUpdateParamsWithContext creates a new DcimVirtualChassisBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimVirtualChassisBulkPartialUpdateParamsWithContext(ctx context.Context) *DcimVirtualChassisBulkPartialUpdateParams {
-	var ()
 	return &DcimVirtualChassisBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimVirtualChassisBulkPartialUpdateParamsWithHTTPClient creates a new DcimVirtualChassisBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimVirtualChassisBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimVirtualChassisBulkPartialUpdateParams {
-	var ()
 	return &DcimVirtualChassisBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimVirtualChassisBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim virtual chassis bulk partial update operation typically these are written to a http.Request
+/* DcimVirtualChassisBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim virtual chassis bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimVirtualChassisBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVirtualChassis
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim virtual chassis bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimVirtualChassisBulkPartialUpdateParams) WithDefaults() *DcimVirtualChassisBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim virtual chassis bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimVirtualChassisBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim virtual chassis bulk partial update params
@@ -136,7 +150,6 @@ func (o *DcimVirtualChassisBulkPartialUpdateParams) WriteToRequest(r runtime.Cli
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

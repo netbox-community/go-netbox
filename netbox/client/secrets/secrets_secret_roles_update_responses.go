@@ -61,7 +61,7 @@ func NewSecretsSecretRolesUpdateOK() *SecretsSecretRolesUpdateOK {
 	return &SecretsSecretRolesUpdateOK{}
 }
 
-/*SecretsSecretRolesUpdateOK handles this case with default header values.
+/* SecretsSecretRolesUpdateOK describes a response with status code 200, with default header values.
 
 SecretsSecretRolesUpdateOK secrets secret roles update o k
 */
@@ -72,7 +72,6 @@ type SecretsSecretRolesUpdateOK struct {
 func (o *SecretsSecretRolesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /secrets/secret-roles/{id}/][%d] secretsSecretRolesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *SecretsSecretRolesUpdateOK) GetPayload() *models.SecretRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewSecretsSecretRolesUpdateDefault(code int) *SecretsSecretRolesUpdateDefau
 	}
 }
 
-/*SecretsSecretRolesUpdateDefault handles this case with default header values.
+/* SecretsSecretRolesUpdateDefault describes a response with status code -1, with default header values.
 
 SecretsSecretRolesUpdateDefault secrets secret roles update default
 */
@@ -114,7 +113,6 @@ func (o *SecretsSecretRolesUpdateDefault) Code() int {
 func (o *SecretsSecretRolesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /secrets/secret-roles/{id}/][%d] secrets_secret-roles_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsSecretRolesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

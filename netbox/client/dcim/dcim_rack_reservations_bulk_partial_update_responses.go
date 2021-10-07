@@ -61,7 +61,7 @@ func NewDcimRackReservationsBulkPartialUpdateOK() *DcimRackReservationsBulkParti
 	return &DcimRackReservationsBulkPartialUpdateOK{}
 }
 
-/*DcimRackReservationsBulkPartialUpdateOK handles this case with default header values.
+/* DcimRackReservationsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimRackReservationsBulkPartialUpdateOK dcim rack reservations bulk partial update o k
 */
@@ -72,7 +72,6 @@ type DcimRackReservationsBulkPartialUpdateOK struct {
 func (o *DcimRackReservationsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/rack-reservations/][%d] dcimRackReservationsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackReservationsBulkPartialUpdateOK) GetPayload() *models.RackReservation {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRackReservationsBulkPartialUpdateDefault(code int) *DcimRackReservat
 	}
 }
 
-/*DcimRackReservationsBulkPartialUpdateDefault handles this case with default header values.
+/* DcimRackReservationsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRackReservationsBulkPartialUpdateDefault dcim rack reservations bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimRackReservationsBulkPartialUpdateDefault) Code() int {
 func (o *DcimRackReservationsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/rack-reservations/][%d] dcim_rack-reservations_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackReservationsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

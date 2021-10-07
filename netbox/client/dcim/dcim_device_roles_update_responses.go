@@ -61,7 +61,7 @@ func NewDcimDeviceRolesUpdateOK() *DcimDeviceRolesUpdateOK {
 	return &DcimDeviceRolesUpdateOK{}
 }
 
-/*DcimDeviceRolesUpdateOK handles this case with default header values.
+/* DcimDeviceRolesUpdateOK describes a response with status code 200, with default header values.
 
 DcimDeviceRolesUpdateOK dcim device roles update o k
 */
@@ -72,7 +72,6 @@ type DcimDeviceRolesUpdateOK struct {
 func (o *DcimDeviceRolesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/device-roles/{id}/][%d] dcimDeviceRolesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceRolesUpdateOK) GetPayload() *models.DeviceRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDeviceRolesUpdateDefault(code int) *DcimDeviceRolesUpdateDefault {
 	}
 }
 
-/*DcimDeviceRolesUpdateDefault handles this case with default header values.
+/* DcimDeviceRolesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceRolesUpdateDefault dcim device roles update default
 */
@@ -114,7 +113,6 @@ func (o *DcimDeviceRolesUpdateDefault) Code() int {
 func (o *DcimDeviceRolesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/device-roles/{id}/][%d] dcim_device-roles_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceRolesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

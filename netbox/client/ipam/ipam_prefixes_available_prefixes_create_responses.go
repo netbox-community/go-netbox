@@ -61,7 +61,7 @@ func NewIpamPrefixesAvailablePrefixesCreateCreated() *IpamPrefixesAvailablePrefi
 	return &IpamPrefixesAvailablePrefixesCreateCreated{}
 }
 
-/*IpamPrefixesAvailablePrefixesCreateCreated handles this case with default header values.
+/* IpamPrefixesAvailablePrefixesCreateCreated describes a response with status code 201, with default header values.
 
 IpamPrefixesAvailablePrefixesCreateCreated ipam prefixes available prefixes create created
 */
@@ -72,7 +72,6 @@ type IpamPrefixesAvailablePrefixesCreateCreated struct {
 func (o *IpamPrefixesAvailablePrefixesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamPrefixesAvailablePrefixesCreateCreated) GetPayload() *models.Prefix {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamPrefixesAvailablePrefixesCreateDefault(code int) *IpamPrefixesAvaila
 	}
 }
 
-/*IpamPrefixesAvailablePrefixesCreateDefault handles this case with default header values.
+/* IpamPrefixesAvailablePrefixesCreateDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesAvailablePrefixesCreateDefault ipam prefixes available prefixes create default
 */
@@ -114,7 +113,6 @@ func (o *IpamPrefixesAvailablePrefixesCreateDefault) Code() int {
 func (o *IpamPrefixesAvailablePrefixesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamPrefixesAvailablePrefixesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

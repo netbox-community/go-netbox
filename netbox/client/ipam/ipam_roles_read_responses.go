@@ -61,7 +61,7 @@ func NewIpamRolesReadOK() *IpamRolesReadOK {
 	return &IpamRolesReadOK{}
 }
 
-/*IpamRolesReadOK handles this case with default header values.
+/* IpamRolesReadOK describes a response with status code 200, with default header values.
 
 IpamRolesReadOK ipam roles read o k
 */
@@ -72,7 +72,6 @@ type IpamRolesReadOK struct {
 func (o *IpamRolesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/roles/{id}/][%d] ipamRolesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRolesReadOK) GetPayload() *models.Role {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRolesReadDefault(code int) *IpamRolesReadDefault {
 	}
 }
 
-/*IpamRolesReadDefault handles this case with default header values.
+/* IpamRolesReadDefault describes a response with status code -1, with default header values.
 
 IpamRolesReadDefault ipam roles read default
 */
@@ -114,7 +113,6 @@ func (o *IpamRolesReadDefault) Code() int {
 func (o *IpamRolesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/roles/{id}/][%d] ipam_roles_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRolesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

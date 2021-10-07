@@ -61,7 +61,7 @@ func NewExtrasExportTemplatesReadOK() *ExtrasExportTemplatesReadOK {
 	return &ExtrasExportTemplatesReadOK{}
 }
 
-/*ExtrasExportTemplatesReadOK handles this case with default header values.
+/* ExtrasExportTemplatesReadOK describes a response with status code 200, with default header values.
 
 ExtrasExportTemplatesReadOK extras export templates read o k
 */
@@ -72,7 +72,6 @@ type ExtrasExportTemplatesReadOK struct {
 func (o *ExtrasExportTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extrasExportTemplatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesReadOK) GetPayload() *models.ExportTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasExportTemplatesReadDefault(code int) *ExtrasExportTemplatesReadDef
 	}
 }
 
-/*ExtrasExportTemplatesReadDefault handles this case with default header values.
+/* ExtrasExportTemplatesReadDefault describes a response with status code -1, with default header values.
 
 ExtrasExportTemplatesReadDefault extras export templates read default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasExportTemplatesReadDefault) Code() int {
 func (o *ExtrasExportTemplatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/export-templates/{id}/][%d] extras_export-templates_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasExportTemplatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

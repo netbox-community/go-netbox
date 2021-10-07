@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamAggregatesBulkUpdateParams creates a new IpamAggregatesBulkUpdateParams object
-// with the default values initialized.
+// NewIpamAggregatesBulkUpdateParams creates a new IpamAggregatesBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamAggregatesBulkUpdateParams() *IpamAggregatesBulkUpdateParams {
-	var ()
 	return &IpamAggregatesBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamAggregatesBulkUpdateParamsWithTimeout creates a new IpamAggregatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamAggregatesBulkUpdateParamsWithTimeout(timeout time.Duration) *IpamAggregatesBulkUpdateParams {
-	var ()
 	return &IpamAggregatesBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamAggregatesBulkUpdateParamsWithContext creates a new IpamAggregatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamAggregatesBulkUpdateParamsWithContext(ctx context.Context) *IpamAggregatesBulkUpdateParams {
-	var ()
 	return &IpamAggregatesBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamAggregatesBulkUpdateParamsWithHTTPClient creates a new IpamAggregatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamAggregatesBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamAggregatesBulkUpdateParams {
-	var ()
 	return &IpamAggregatesBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamAggregatesBulkUpdateParams contains all the parameters to send to the API endpoint
-for the ipam aggregates bulk update operation typically these are written to a http.Request
+/* IpamAggregatesBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam aggregates bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamAggregatesBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableAggregate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam aggregates bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesBulkUpdateParams) WithDefaults() *IpamAggregatesBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam aggregates bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamAggregatesBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam aggregates bulk update params
@@ -136,7 +150,6 @@ func (o *IpamAggregatesBulkUpdateParams) WriteToRequest(r runtime.ClientRequest,
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

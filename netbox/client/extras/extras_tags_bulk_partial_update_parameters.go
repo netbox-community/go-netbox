@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewExtrasTagsBulkPartialUpdateParams creates a new ExtrasTagsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewExtrasTagsBulkPartialUpdateParams creates a new ExtrasTagsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasTagsBulkPartialUpdateParams() *ExtrasTagsBulkPartialUpdateParams {
-	var ()
 	return &ExtrasTagsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasTagsBulkPartialUpdateParamsWithTimeout creates a new ExtrasTagsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasTagsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *ExtrasTagsBulkPartialUpdateParams {
-	var ()
 	return &ExtrasTagsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasTagsBulkPartialUpdateParamsWithContext creates a new ExtrasTagsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasTagsBulkPartialUpdateParamsWithContext(ctx context.Context) *ExtrasTagsBulkPartialUpdateParams {
-	var ()
 	return &ExtrasTagsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasTagsBulkPartialUpdateParamsWithHTTPClient creates a new ExtrasTagsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasTagsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *ExtrasTagsBulkPartialUpdateParams {
-	var ()
 	return &ExtrasTagsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasTagsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the extras tags bulk partial update operation typically these are written to a http.Request
+/* ExtrasTagsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the extras tags bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasTagsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Tag
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras tags bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasTagsBulkPartialUpdateParams) WithDefaults() *ExtrasTagsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras tags bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasTagsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras tags bulk partial update params
@@ -136,7 +150,6 @@ func (o *ExtrasTagsBulkPartialUpdateParams) WriteToRequest(r runtime.ClientReque
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

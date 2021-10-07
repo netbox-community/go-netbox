@@ -61,7 +61,7 @@ func NewVirtualizationInterfacesBulkPartialUpdateOK() *VirtualizationInterfacesB
 	return &VirtualizationInterfacesBulkPartialUpdateOK{}
 }
 
-/*VirtualizationInterfacesBulkPartialUpdateOK handles this case with default header values.
+/* VirtualizationInterfacesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationInterfacesBulkPartialUpdateOK virtualization interfaces bulk partial update o k
 */
@@ -72,7 +72,6 @@ type VirtualizationInterfacesBulkPartialUpdateOK struct {
 func (o *VirtualizationInterfacesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/interfaces/][%d] virtualizationInterfacesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationInterfacesBulkPartialUpdateOK) GetPayload() *models.VMInterface {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationInterfacesBulkPartialUpdateDefault(code int) *Virtualizati
 	}
 }
 
-/*VirtualizationInterfacesBulkPartialUpdateDefault handles this case with default header values.
+/* VirtualizationInterfacesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesBulkPartialUpdateDefault virtualization interfaces bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationInterfacesBulkPartialUpdateDefault) Code() int {
 func (o *VirtualizationInterfacesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/interfaces/][%d] virtualization_interfaces_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationInterfacesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -21,6 +21,7 @@ package tenancy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewTenancyTenantGroupsListOK() *TenancyTenantGroupsListOK {
 	return &TenancyTenantGroupsListOK{}
 }
 
-/*TenancyTenantGroupsListOK handles this case with default header values.
+/* TenancyTenantGroupsListOK describes a response with status code 200, with default header values.
 
 TenancyTenantGroupsListOK tenancy tenant groups list o k
 */
@@ -76,7 +77,6 @@ type TenancyTenantGroupsListOK struct {
 func (o *TenancyTenantGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenant-groups/][%d] tenancyTenantGroupsListOK  %+v", 200, o.Payload)
 }
-
 func (o *TenancyTenantGroupsListOK) GetPayload() *TenancyTenantGroupsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewTenancyTenantGroupsListDefault(code int) *TenancyTenantGroupsListDefault
 	}
 }
 
-/*TenancyTenantGroupsListDefault handles this case with default header values.
+/* TenancyTenantGroupsListDefault describes a response with status code -1, with default header values.
 
 TenancyTenantGroupsListDefault tenancy tenant groups list default
 */
@@ -118,7 +118,6 @@ func (o *TenancyTenantGroupsListDefault) Code() int {
 func (o *TenancyTenantGroupsListDefault) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenant-groups/][%d] tenancy_tenant-groups_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *TenancyTenantGroupsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *TenancyTenantGroupsListOKBody) validateCount(formats strfmt.Registry) e
 }
 
 func (o *TenancyTenantGroupsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *TenancyTenantGroupsListOKBody) validateNext(formats strfmt.Registry) er
 }
 
 func (o *TenancyTenantGroupsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *TenancyTenantGroupsListOKBody) validateResults(formats strfmt.Registry)
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tenancyTenantGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this tenancy tenant groups list o k body based on the context it is used
+func (o *TenancyTenantGroupsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *TenancyTenantGroupsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tenancyTenantGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

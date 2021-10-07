@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamVlansBulkUpdateParams creates a new IpamVlansBulkUpdateParams object
-// with the default values initialized.
+// NewIpamVlansBulkUpdateParams creates a new IpamVlansBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVlansBulkUpdateParams() *IpamVlansBulkUpdateParams {
-	var ()
 	return &IpamVlansBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVlansBulkUpdateParamsWithTimeout creates a new IpamVlansBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVlansBulkUpdateParamsWithTimeout(timeout time.Duration) *IpamVlansBulkUpdateParams {
-	var ()
 	return &IpamVlansBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVlansBulkUpdateParamsWithContext creates a new IpamVlansBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVlansBulkUpdateParamsWithContext(ctx context.Context) *IpamVlansBulkUpdateParams {
-	var ()
 	return &IpamVlansBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVlansBulkUpdateParamsWithHTTPClient creates a new IpamVlansBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVlansBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamVlansBulkUpdateParams {
-	var ()
 	return &IpamVlansBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVlansBulkUpdateParams contains all the parameters to send to the API endpoint
-for the ipam vlans bulk update operation typically these are written to a http.Request
+/* IpamVlansBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam vlans bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVlansBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVLAN
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vlans bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlansBulkUpdateParams) WithDefaults() *IpamVlansBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vlans bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlansBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vlans bulk update params
@@ -136,7 +150,6 @@ func (o *IpamVlansBulkUpdateParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

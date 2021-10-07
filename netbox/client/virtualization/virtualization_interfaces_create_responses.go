@@ -61,7 +61,7 @@ func NewVirtualizationInterfacesCreateCreated() *VirtualizationInterfacesCreateC
 	return &VirtualizationInterfacesCreateCreated{}
 }
 
-/*VirtualizationInterfacesCreateCreated handles this case with default header values.
+/* VirtualizationInterfacesCreateCreated describes a response with status code 201, with default header values.
 
 VirtualizationInterfacesCreateCreated virtualization interfaces create created
 */
@@ -72,7 +72,6 @@ type VirtualizationInterfacesCreateCreated struct {
 func (o *VirtualizationInterfacesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualizationInterfacesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *VirtualizationInterfacesCreateCreated) GetPayload() *models.VMInterface {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationInterfacesCreateDefault(code int) *VirtualizationInterface
 	}
 }
 
-/*VirtualizationInterfacesCreateDefault handles this case with default header values.
+/* VirtualizationInterfacesCreateDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesCreateDefault virtualization interfaces create default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationInterfacesCreateDefault) Code() int {
 func (o *VirtualizationInterfacesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualization_interfaces_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationInterfacesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -34,61 +34,76 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamRouteTargetsPartialUpdateParams creates a new IpamRouteTargetsPartialUpdateParams object
-// with the default values initialized.
+// NewIpamRouteTargetsPartialUpdateParams creates a new IpamRouteTargetsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRouteTargetsPartialUpdateParams() *IpamRouteTargetsPartialUpdateParams {
-	var ()
 	return &IpamRouteTargetsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRouteTargetsPartialUpdateParamsWithTimeout creates a new IpamRouteTargetsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRouteTargetsPartialUpdateParamsWithTimeout(timeout time.Duration) *IpamRouteTargetsPartialUpdateParams {
-	var ()
 	return &IpamRouteTargetsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRouteTargetsPartialUpdateParamsWithContext creates a new IpamRouteTargetsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRouteTargetsPartialUpdateParamsWithContext(ctx context.Context) *IpamRouteTargetsPartialUpdateParams {
-	var ()
 	return &IpamRouteTargetsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRouteTargetsPartialUpdateParamsWithHTTPClient creates a new IpamRouteTargetsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRouteTargetsPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamRouteTargetsPartialUpdateParams {
-	var ()
 	return &IpamRouteTargetsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRouteTargetsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the ipam route targets partial update operation typically these are written to a http.Request
+/* IpamRouteTargetsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam route targets partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRouteTargetsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRouteTarget
-	/*ID
-	  A unique integer value identifying this route target.
 
+	/* ID.
+
+	   A unique integer value identifying this route target.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam route targets partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRouteTargetsPartialUpdateParams) WithDefaults() *IpamRouteTargetsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam route targets partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRouteTargetsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam route targets partial update params
@@ -153,7 +168,6 @@ func (o *IpamRouteTargetsPartialUpdateParams) WriteToRequest(r runtime.ClientReq
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -61,7 +61,7 @@ func NewCircuitsProvidersBulkPartialUpdateOK() *CircuitsProvidersBulkPartialUpda
 	return &CircuitsProvidersBulkPartialUpdateOK{}
 }
 
-/*CircuitsProvidersBulkPartialUpdateOK handles this case with default header values.
+/* CircuitsProvidersBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsProvidersBulkPartialUpdateOK circuits providers bulk partial update o k
 */
@@ -72,7 +72,6 @@ type CircuitsProvidersBulkPartialUpdateOK struct {
 func (o *CircuitsProvidersBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/providers/][%d] circuitsProvidersBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *CircuitsProvidersBulkPartialUpdateOK) GetPayload() *models.Provider {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewCircuitsProvidersBulkPartialUpdateDefault(code int) *CircuitsProvidersBu
 	}
 }
 
-/*CircuitsProvidersBulkPartialUpdateDefault handles this case with default header values.
+/* CircuitsProvidersBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersBulkPartialUpdateDefault circuits providers bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *CircuitsProvidersBulkPartialUpdateDefault) Code() int {
 func (o *CircuitsProvidersBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/providers/][%d] circuits_providers_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsProvidersBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

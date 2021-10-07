@@ -61,7 +61,7 @@ func NewVirtualizationClusterGroupsPartialUpdateOK() *VirtualizationClusterGroup
 	return &VirtualizationClusterGroupsPartialUpdateOK{}
 }
 
-/*VirtualizationClusterGroupsPartialUpdateOK handles this case with default header values.
+/* VirtualizationClusterGroupsPartialUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterGroupsPartialUpdateOK virtualization cluster groups partial update o k
 */
@@ -72,7 +72,6 @@ type VirtualizationClusterGroupsPartialUpdateOK struct {
 func (o *VirtualizationClusterGroupsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsPartialUpdateOK) GetPayload() *models.ClusterGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationClusterGroupsPartialUpdateDefault(code int) *Virtualizatio
 	}
 }
 
-/*VirtualizationClusterGroupsPartialUpdateDefault handles this case with default header values.
+/* VirtualizationClusterGroupsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterGroupsPartialUpdateDefault virtualization cluster groups partial update default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationClusterGroupsPartialUpdateDefault) Code() int {
 func (o *VirtualizationClusterGroupsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

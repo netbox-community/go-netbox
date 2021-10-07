@@ -61,7 +61,7 @@ func NewUsersUsersBulkUpdateOK() *UsersUsersBulkUpdateOK {
 	return &UsersUsersBulkUpdateOK{}
 }
 
-/*UsersUsersBulkUpdateOK handles this case with default header values.
+/* UsersUsersBulkUpdateOK describes a response with status code 200, with default header values.
 
 UsersUsersBulkUpdateOK users users bulk update o k
 */
@@ -72,7 +72,6 @@ type UsersUsersBulkUpdateOK struct {
 func (o *UsersUsersBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/users/][%d] usersUsersBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersUsersBulkUpdateOK) GetPayload() *models.User {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersUsersBulkUpdateDefault(code int) *UsersUsersBulkUpdateDefault {
 	}
 }
 
-/*UsersUsersBulkUpdateDefault handles this case with default header values.
+/* UsersUsersBulkUpdateDefault describes a response with status code -1, with default header values.
 
 UsersUsersBulkUpdateDefault users users bulk update default
 */
@@ -114,7 +113,6 @@ func (o *UsersUsersBulkUpdateDefault) Code() int {
 func (o *UsersUsersBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /users/users/][%d] users_users_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersUsersBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,7 +59,7 @@ func NewSecretsGetSessionKeyCreateCreated() *SecretsGetSessionKeyCreateCreated {
 	return &SecretsGetSessionKeyCreateCreated{}
 }
 
-/*SecretsGetSessionKeyCreateCreated handles this case with default header values.
+/* SecretsGetSessionKeyCreateCreated describes a response with status code 201, with default header values.
 
 SecretsGetSessionKeyCreateCreated secrets get session key create created
 */
@@ -82,7 +82,7 @@ func NewSecretsGetSessionKeyCreateDefault(code int) *SecretsGetSessionKeyCreateD
 	}
 }
 
-/*SecretsGetSessionKeyCreateDefault handles this case with default header values.
+/* SecretsGetSessionKeyCreateDefault describes a response with status code -1, with default header values.
 
 SecretsGetSessionKeyCreateDefault secrets get session key create default
 */
@@ -100,7 +100,6 @@ func (o *SecretsGetSessionKeyCreateDefault) Code() int {
 func (o *SecretsGetSessionKeyCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /secrets/get-session-key/][%d] secrets_get-session-key_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsGetSessionKeyCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

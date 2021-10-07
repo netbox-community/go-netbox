@@ -59,7 +59,7 @@ func NewIpamIPAddressesDeleteNoContent() *IpamIPAddressesDeleteNoContent {
 	return &IpamIPAddressesDeleteNoContent{}
 }
 
-/*IpamIPAddressesDeleteNoContent handles this case with default header values.
+/* IpamIPAddressesDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamIPAddressesDeleteNoContent ipam Ip addresses delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamIPAddressesDeleteDefault(code int) *IpamIPAddressesDeleteDefault {
 	}
 }
 
-/*IpamIPAddressesDeleteDefault handles this case with default header values.
+/* IpamIPAddressesDeleteDefault describes a response with status code -1, with default header values.
 
 IpamIPAddressesDeleteDefault ipam ip addresses delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamIPAddressesDeleteDefault) Code() int {
 func (o *IpamIPAddressesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/ip-addresses/{id}/][%d] ipam_ip-addresses_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamIPAddressesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

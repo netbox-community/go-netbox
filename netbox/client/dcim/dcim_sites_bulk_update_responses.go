@@ -61,7 +61,7 @@ func NewDcimSitesBulkUpdateOK() *DcimSitesBulkUpdateOK {
 	return &DcimSitesBulkUpdateOK{}
 }
 
-/*DcimSitesBulkUpdateOK handles this case with default header values.
+/* DcimSitesBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimSitesBulkUpdateOK dcim sites bulk update o k
 */
@@ -72,7 +72,6 @@ type DcimSitesBulkUpdateOK struct {
 func (o *DcimSitesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/sites/][%d] dcimSitesBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimSitesBulkUpdateOK) GetPayload() *models.Site {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimSitesBulkUpdateDefault(code int) *DcimSitesBulkUpdateDefault {
 	}
 }
 
-/*DcimSitesBulkUpdateDefault handles this case with default header values.
+/* DcimSitesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimSitesBulkUpdateDefault dcim sites bulk update default
 */
@@ -114,7 +113,6 @@ func (o *DcimSitesBulkUpdateDefault) Code() int {
 func (o *DcimSitesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/sites/][%d] dcim_sites_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimSitesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

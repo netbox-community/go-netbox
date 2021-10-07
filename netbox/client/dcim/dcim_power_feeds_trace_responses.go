@@ -61,7 +61,7 @@ func NewDcimPowerFeedsTraceOK() *DcimPowerFeedsTraceOK {
 	return &DcimPowerFeedsTraceOK{}
 }
 
-/*DcimPowerFeedsTraceOK handles this case with default header values.
+/* DcimPowerFeedsTraceOK describes a response with status code 200, with default header values.
 
 DcimPowerFeedsTraceOK dcim power feeds trace o k
 */
@@ -72,7 +72,6 @@ type DcimPowerFeedsTraceOK struct {
 func (o *DcimPowerFeedsTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-feeds/{id}/trace/][%d] dcimPowerFeedsTraceOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerFeedsTraceOK) GetPayload() *models.PowerFeed {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerFeedsTraceDefault(code int) *DcimPowerFeedsTraceDefault {
 	}
 }
 
-/*DcimPowerFeedsTraceDefault handles this case with default header values.
+/* DcimPowerFeedsTraceDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsTraceDefault dcim power feeds trace default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerFeedsTraceDefault) Code() int {
 func (o *DcimPowerFeedsTraceDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-feeds/{id}/trace/][%d] dcim_power-feeds_trace default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerFeedsTraceDefault) GetPayload() interface{} {
 	return o.Payload
 }

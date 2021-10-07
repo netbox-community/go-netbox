@@ -61,7 +61,7 @@ func NewDcimManufacturersCreateCreated() *DcimManufacturersCreateCreated {
 	return &DcimManufacturersCreateCreated{}
 }
 
-/*DcimManufacturersCreateCreated handles this case with default header values.
+/* DcimManufacturersCreateCreated describes a response with status code 201, with default header values.
 
 DcimManufacturersCreateCreated dcim manufacturers create created
 */
@@ -72,7 +72,6 @@ type DcimManufacturersCreateCreated struct {
 func (o *DcimManufacturersCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/manufacturers/][%d] dcimManufacturersCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimManufacturersCreateCreated) GetPayload() *models.Manufacturer {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimManufacturersCreateDefault(code int) *DcimManufacturersCreateDefault
 	}
 }
 
-/*DcimManufacturersCreateDefault handles this case with default header values.
+/* DcimManufacturersCreateDefault describes a response with status code -1, with default header values.
 
 DcimManufacturersCreateDefault dcim manufacturers create default
 */
@@ -114,7 +113,6 @@ func (o *DcimManufacturersCreateDefault) Code() int {
 func (o *DcimManufacturersCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/manufacturers/][%d] dcim_manufacturers_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimManufacturersCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

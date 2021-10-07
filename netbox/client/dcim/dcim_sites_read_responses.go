@@ -61,7 +61,7 @@ func NewDcimSitesReadOK() *DcimSitesReadOK {
 	return &DcimSitesReadOK{}
 }
 
-/*DcimSitesReadOK handles this case with default header values.
+/* DcimSitesReadOK describes a response with status code 200, with default header values.
 
 DcimSitesReadOK dcim sites read o k
 */
@@ -72,7 +72,6 @@ type DcimSitesReadOK struct {
 func (o *DcimSitesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcimSitesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimSitesReadOK) GetPayload() *models.Site {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimSitesReadDefault(code int) *DcimSitesReadDefault {
 	}
 }
 
-/*DcimSitesReadDefault handles this case with default header values.
+/* DcimSitesReadDefault describes a response with status code -1, with default header values.
 
 DcimSitesReadDefault dcim sites read default
 */
@@ -114,7 +113,6 @@ func (o *DcimSitesReadDefault) Code() int {
 func (o *DcimSitesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcim_sites_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimSitesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

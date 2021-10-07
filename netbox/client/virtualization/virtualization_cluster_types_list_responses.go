@@ -21,6 +21,7 @@ package virtualization
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewVirtualizationClusterTypesListOK() *VirtualizationClusterTypesListOK {
 	return &VirtualizationClusterTypesListOK{}
 }
 
-/*VirtualizationClusterTypesListOK handles this case with default header values.
+/* VirtualizationClusterTypesListOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterTypesListOK virtualization cluster types list o k
 */
@@ -76,7 +77,6 @@ type VirtualizationClusterTypesListOK struct {
 func (o *VirtualizationClusterTypesListOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-types/][%d] virtualizationClusterTypesListOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterTypesListOK) GetPayload() *VirtualizationClusterTypesListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewVirtualizationClusterTypesListDefault(code int) *VirtualizationClusterTy
 	}
 }
 
-/*VirtualizationClusterTypesListDefault handles this case with default header values.
+/* VirtualizationClusterTypesListDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterTypesListDefault virtualization cluster types list default
 */
@@ -118,7 +118,6 @@ func (o *VirtualizationClusterTypesListDefault) Code() int {
 func (o *VirtualizationClusterTypesListDefault) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-types/][%d] virtualization_cluster-types_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterTypesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *VirtualizationClusterTypesListOKBody) validateCount(formats strfmt.Regi
 }
 
 func (o *VirtualizationClusterTypesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *VirtualizationClusterTypesListOKBody) validateNext(formats strfmt.Regis
 }
 
 func (o *VirtualizationClusterTypesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *VirtualizationClusterTypesListOKBody) validateResults(formats strfmt.Re
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("virtualizationClusterTypesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this virtualization cluster types list o k body based on the context it is used
+func (o *VirtualizationClusterTypesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *VirtualizationClusterTypesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("virtualizationClusterTypesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

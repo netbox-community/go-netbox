@@ -59,7 +59,7 @@ func NewUsersUsersBulkDeleteNoContent() *UsersUsersBulkDeleteNoContent {
 	return &UsersUsersBulkDeleteNoContent{}
 }
 
-/*UsersUsersBulkDeleteNoContent handles this case with default header values.
+/* UsersUsersBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 UsersUsersBulkDeleteNoContent users users bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewUsersUsersBulkDeleteDefault(code int) *UsersUsersBulkDeleteDefault {
 	}
 }
 
-/*UsersUsersBulkDeleteDefault handles this case with default header values.
+/* UsersUsersBulkDeleteDefault describes a response with status code -1, with default header values.
 
 UsersUsersBulkDeleteDefault users users bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *UsersUsersBulkDeleteDefault) Code() int {
 func (o *UsersUsersBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /users/users/][%d] users_users_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersUsersBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

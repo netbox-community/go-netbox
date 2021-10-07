@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimManufacturersReadParams creates a new DcimManufacturersReadParams object
-// with the default values initialized.
+// NewDcimManufacturersReadParams creates a new DcimManufacturersReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimManufacturersReadParams() *DcimManufacturersReadParams {
-	var ()
 	return &DcimManufacturersReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimManufacturersReadParamsWithTimeout creates a new DcimManufacturersReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimManufacturersReadParamsWithTimeout(timeout time.Duration) *DcimManufacturersReadParams {
-	var ()
 	return &DcimManufacturersReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimManufacturersReadParamsWithContext creates a new DcimManufacturersReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimManufacturersReadParamsWithContext(ctx context.Context) *DcimManufacturersReadParams {
-	var ()
 	return &DcimManufacturersReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimManufacturersReadParamsWithHTTPClient creates a new DcimManufacturersReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimManufacturersReadParamsWithHTTPClient(client *http.Client) *DcimManufacturersReadParams {
-	var ()
 	return &DcimManufacturersReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimManufacturersReadParams contains all the parameters to send to the API endpoint
-for the dcim manufacturers read operation typically these are written to a http.Request
+/* DcimManufacturersReadParams contains all the parameters to send to the API endpoint
+   for the dcim manufacturers read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimManufacturersReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this manufacturer.
+	/* ID.
 
+	   A unique integer value identifying this manufacturer.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim manufacturers read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimManufacturersReadParams) WithDefaults() *DcimManufacturersReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim manufacturers read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimManufacturersReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim manufacturers read params

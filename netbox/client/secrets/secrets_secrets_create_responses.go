@@ -61,7 +61,7 @@ func NewSecretsSecretsCreateCreated() *SecretsSecretsCreateCreated {
 	return &SecretsSecretsCreateCreated{}
 }
 
-/*SecretsSecretsCreateCreated handles this case with default header values.
+/* SecretsSecretsCreateCreated describes a response with status code 201, with default header values.
 
 SecretsSecretsCreateCreated secrets secrets create created
 */
@@ -72,7 +72,6 @@ type SecretsSecretsCreateCreated struct {
 func (o *SecretsSecretsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /secrets/secrets/][%d] secretsSecretsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *SecretsSecretsCreateCreated) GetPayload() *models.Secret {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewSecretsSecretsCreateDefault(code int) *SecretsSecretsCreateDefault {
 	}
 }
 
-/*SecretsSecretsCreateDefault handles this case with default header values.
+/* SecretsSecretsCreateDefault describes a response with status code -1, with default header values.
 
 SecretsSecretsCreateDefault secrets secrets create default
 */
@@ -114,7 +113,6 @@ func (o *SecretsSecretsCreateDefault) Code() int {
 func (o *SecretsSecretsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /secrets/secrets/][%d] secrets_secrets_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsSecretsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

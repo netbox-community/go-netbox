@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamRouteTargetsBulkUpdateParams creates a new IpamRouteTargetsBulkUpdateParams object
-// with the default values initialized.
+// NewIpamRouteTargetsBulkUpdateParams creates a new IpamRouteTargetsBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRouteTargetsBulkUpdateParams() *IpamRouteTargetsBulkUpdateParams {
-	var ()
 	return &IpamRouteTargetsBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRouteTargetsBulkUpdateParamsWithTimeout creates a new IpamRouteTargetsBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRouteTargetsBulkUpdateParamsWithTimeout(timeout time.Duration) *IpamRouteTargetsBulkUpdateParams {
-	var ()
 	return &IpamRouteTargetsBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRouteTargetsBulkUpdateParamsWithContext creates a new IpamRouteTargetsBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRouteTargetsBulkUpdateParamsWithContext(ctx context.Context) *IpamRouteTargetsBulkUpdateParams {
-	var ()
 	return &IpamRouteTargetsBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRouteTargetsBulkUpdateParamsWithHTTPClient creates a new IpamRouteTargetsBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRouteTargetsBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamRouteTargetsBulkUpdateParams {
-	var ()
 	return &IpamRouteTargetsBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRouteTargetsBulkUpdateParams contains all the parameters to send to the API endpoint
-for the ipam route targets bulk update operation typically these are written to a http.Request
+/* IpamRouteTargetsBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam route targets bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRouteTargetsBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRouteTarget
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam route targets bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRouteTargetsBulkUpdateParams) WithDefaults() *IpamRouteTargetsBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam route targets bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRouteTargetsBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam route targets bulk update params
@@ -136,7 +150,6 @@ func (o *IpamRouteTargetsBulkUpdateParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

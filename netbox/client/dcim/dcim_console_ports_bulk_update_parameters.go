@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimConsolePortsBulkUpdateParams creates a new DcimConsolePortsBulkUpdateParams object
-// with the default values initialized.
+// NewDcimConsolePortsBulkUpdateParams creates a new DcimConsolePortsBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimConsolePortsBulkUpdateParams() *DcimConsolePortsBulkUpdateParams {
-	var ()
 	return &DcimConsolePortsBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimConsolePortsBulkUpdateParamsWithTimeout creates a new DcimConsolePortsBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimConsolePortsBulkUpdateParamsWithTimeout(timeout time.Duration) *DcimConsolePortsBulkUpdateParams {
-	var ()
 	return &DcimConsolePortsBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimConsolePortsBulkUpdateParamsWithContext creates a new DcimConsolePortsBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimConsolePortsBulkUpdateParamsWithContext(ctx context.Context) *DcimConsolePortsBulkUpdateParams {
-	var ()
 	return &DcimConsolePortsBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimConsolePortsBulkUpdateParamsWithHTTPClient creates a new DcimConsolePortsBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimConsolePortsBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimConsolePortsBulkUpdateParams {
-	var ()
 	return &DcimConsolePortsBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimConsolePortsBulkUpdateParams contains all the parameters to send to the API endpoint
-for the dcim console ports bulk update operation typically these are written to a http.Request
+/* DcimConsolePortsBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim console ports bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimConsolePortsBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableConsolePort
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim console ports bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortsBulkUpdateParams) WithDefaults() *DcimConsolePortsBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim console ports bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimConsolePortsBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim console ports bulk update params
@@ -136,7 +150,6 @@ func (o *DcimConsolePortsBulkUpdateParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

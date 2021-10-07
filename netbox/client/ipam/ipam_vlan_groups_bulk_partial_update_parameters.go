@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamVlanGroupsBulkPartialUpdateParams creates a new IpamVlanGroupsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewIpamVlanGroupsBulkPartialUpdateParams creates a new IpamVlanGroupsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVlanGroupsBulkPartialUpdateParams() *IpamVlanGroupsBulkPartialUpdateParams {
-	var ()
 	return &IpamVlanGroupsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVlanGroupsBulkPartialUpdateParamsWithTimeout creates a new IpamVlanGroupsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVlanGroupsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *IpamVlanGroupsBulkPartialUpdateParams {
-	var ()
 	return &IpamVlanGroupsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVlanGroupsBulkPartialUpdateParamsWithContext creates a new IpamVlanGroupsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVlanGroupsBulkPartialUpdateParamsWithContext(ctx context.Context) *IpamVlanGroupsBulkPartialUpdateParams {
-	var ()
 	return &IpamVlanGroupsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVlanGroupsBulkPartialUpdateParamsWithHTTPClient creates a new IpamVlanGroupsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVlanGroupsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamVlanGroupsBulkPartialUpdateParams {
-	var ()
 	return &IpamVlanGroupsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVlanGroupsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the ipam vlan groups bulk partial update operation typically these are written to a http.Request
+/* IpamVlanGroupsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam vlan groups bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVlanGroupsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVLANGroup
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vlan groups bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlanGroupsBulkPartialUpdateParams) WithDefaults() *IpamVlanGroupsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vlan groups bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlanGroupsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vlan groups bulk partial update params
@@ -136,7 +150,6 @@ func (o *IpamVlanGroupsBulkPartialUpdateParams) WriteToRequest(r runtime.ClientR
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

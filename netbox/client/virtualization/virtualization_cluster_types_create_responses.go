@@ -61,7 +61,7 @@ func NewVirtualizationClusterTypesCreateCreated() *VirtualizationClusterTypesCre
 	return &VirtualizationClusterTypesCreateCreated{}
 }
 
-/*VirtualizationClusterTypesCreateCreated handles this case with default header values.
+/* VirtualizationClusterTypesCreateCreated describes a response with status code 201, with default header values.
 
 VirtualizationClusterTypesCreateCreated virtualization cluster types create created
 */
@@ -72,7 +72,6 @@ type VirtualizationClusterTypesCreateCreated struct {
 func (o *VirtualizationClusterTypesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /virtualization/cluster-types/][%d] virtualizationClusterTypesCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *VirtualizationClusterTypesCreateCreated) GetPayload() *models.ClusterType {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationClusterTypesCreateDefault(code int) *VirtualizationCluster
 	}
 }
 
-/*VirtualizationClusterTypesCreateDefault handles this case with default header values.
+/* VirtualizationClusterTypesCreateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterTypesCreateDefault virtualization cluster types create default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationClusterTypesCreateDefault) Code() int {
 func (o *VirtualizationClusterTypesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /virtualization/cluster-types/][%d] virtualization_cluster-types_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterTypesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

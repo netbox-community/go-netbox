@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamRouteTargetsReadParams creates a new IpamRouteTargetsReadParams object
-// with the default values initialized.
+// NewIpamRouteTargetsReadParams creates a new IpamRouteTargetsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRouteTargetsReadParams() *IpamRouteTargetsReadParams {
-	var ()
 	return &IpamRouteTargetsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRouteTargetsReadParamsWithTimeout creates a new IpamRouteTargetsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRouteTargetsReadParamsWithTimeout(timeout time.Duration) *IpamRouteTargetsReadParams {
-	var ()
 	return &IpamRouteTargetsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRouteTargetsReadParamsWithContext creates a new IpamRouteTargetsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRouteTargetsReadParamsWithContext(ctx context.Context) *IpamRouteTargetsReadParams {
-	var ()
 	return &IpamRouteTargetsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRouteTargetsReadParamsWithHTTPClient creates a new IpamRouteTargetsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRouteTargetsReadParamsWithHTTPClient(client *http.Client) *IpamRouteTargetsReadParams {
-	var ()
 	return &IpamRouteTargetsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRouteTargetsReadParams contains all the parameters to send to the API endpoint
-for the ipam route targets read operation typically these are written to a http.Request
+/* IpamRouteTargetsReadParams contains all the parameters to send to the API endpoint
+   for the ipam route targets read operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRouteTargetsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this route target.
+	/* ID.
 
+	   A unique integer value identifying this route target.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam route targets read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRouteTargetsReadParams) WithDefaults() *IpamRouteTargetsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam route targets read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRouteTargetsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam route targets read params

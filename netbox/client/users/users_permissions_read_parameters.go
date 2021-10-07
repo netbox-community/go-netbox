@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewUsersPermissionsReadParams creates a new UsersPermissionsReadParams object
-// with the default values initialized.
+// NewUsersPermissionsReadParams creates a new UsersPermissionsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUsersPermissionsReadParams() *UsersPermissionsReadParams {
-	var ()
 	return &UsersPermissionsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewUsersPermissionsReadParamsWithTimeout creates a new UsersPermissionsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewUsersPermissionsReadParamsWithTimeout(timeout time.Duration) *UsersPermissionsReadParams {
-	var ()
 	return &UsersPermissionsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewUsersPermissionsReadParamsWithContext creates a new UsersPermissionsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewUsersPermissionsReadParamsWithContext(ctx context.Context) *UsersPermissionsReadParams {
-	var ()
 	return &UsersPermissionsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewUsersPermissionsReadParamsWithHTTPClient creates a new UsersPermissionsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewUsersPermissionsReadParamsWithHTTPClient(client *http.Client) *UsersPermissionsReadParams {
-	var ()
 	return &UsersPermissionsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*UsersPermissionsReadParams contains all the parameters to send to the API endpoint
-for the users permissions read operation typically these are written to a http.Request
+/* UsersPermissionsReadParams contains all the parameters to send to the API endpoint
+   for the users permissions read operation.
+
+   Typically these are written to a http.Request.
 */
 type UsersPermissionsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this permission.
+	/* ID.
 
+	   A unique integer value identifying this permission.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the users permissions read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersPermissionsReadParams) WithDefaults() *UsersPermissionsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the users permissions read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *UsersPermissionsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the users permissions read params

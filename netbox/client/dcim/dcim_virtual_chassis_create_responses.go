@@ -61,7 +61,7 @@ func NewDcimVirtualChassisCreateCreated() *DcimVirtualChassisCreateCreated {
 	return &DcimVirtualChassisCreateCreated{}
 }
 
-/*DcimVirtualChassisCreateCreated handles this case with default header values.
+/* DcimVirtualChassisCreateCreated describes a response with status code 201, with default header values.
 
 DcimVirtualChassisCreateCreated dcim virtual chassis create created
 */
@@ -72,7 +72,6 @@ type DcimVirtualChassisCreateCreated struct {
 func (o *DcimVirtualChassisCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/virtual-chassis/][%d] dcimVirtualChassisCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimVirtualChassisCreateCreated) GetPayload() *models.VirtualChassis {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimVirtualChassisCreateDefault(code int) *DcimVirtualChassisCreateDefau
 	}
 }
 
-/*DcimVirtualChassisCreateDefault handles this case with default header values.
+/* DcimVirtualChassisCreateDefault describes a response with status code -1, with default header values.
 
 DcimVirtualChassisCreateDefault dcim virtual chassis create default
 */
@@ -114,7 +113,6 @@ func (o *DcimVirtualChassisCreateDefault) Code() int {
 func (o *DcimVirtualChassisCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/virtual-chassis/][%d] dcim_virtual-chassis_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimVirtualChassisCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimSitesDeleteParams creates a new DcimSitesDeleteParams object
-// with the default values initialized.
+// NewDcimSitesDeleteParams creates a new DcimSitesDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimSitesDeleteParams() *DcimSitesDeleteParams {
-	var ()
 	return &DcimSitesDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimSitesDeleteParamsWithTimeout creates a new DcimSitesDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimSitesDeleteParamsWithTimeout(timeout time.Duration) *DcimSitesDeleteParams {
-	var ()
 	return &DcimSitesDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimSitesDeleteParamsWithContext creates a new DcimSitesDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimSitesDeleteParamsWithContext(ctx context.Context) *DcimSitesDeleteParams {
-	var ()
 	return &DcimSitesDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimSitesDeleteParamsWithHTTPClient creates a new DcimSitesDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimSitesDeleteParamsWithHTTPClient(client *http.Client) *DcimSitesDeleteParams {
-	var ()
 	return &DcimSitesDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimSitesDeleteParams contains all the parameters to send to the API endpoint
-for the dcim sites delete operation typically these are written to a http.Request
+/* DcimSitesDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim sites delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimSitesDeleteParams struct {
 
-	/*ID
-	  A unique integer value identifying this site.
+	/* ID.
 
+	   A unique integer value identifying this site.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim sites delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimSitesDeleteParams) WithDefaults() *DcimSitesDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim sites delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimSitesDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim sites delete params

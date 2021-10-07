@@ -61,7 +61,7 @@ func NewIpamRirsReadOK() *IpamRirsReadOK {
 	return &IpamRirsReadOK{}
 }
 
-/*IpamRirsReadOK handles this case with default header values.
+/* IpamRirsReadOK describes a response with status code 200, with default header values.
 
 IpamRirsReadOK ipam rirs read o k
 */
@@ -72,7 +72,6 @@ type IpamRirsReadOK struct {
 func (o *IpamRirsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/rirs/{id}/][%d] ipamRirsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRirsReadOK) GetPayload() *models.RIR {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRirsReadDefault(code int) *IpamRirsReadDefault {
 	}
 }
 
-/*IpamRirsReadDefault handles this case with default header values.
+/* IpamRirsReadDefault describes a response with status code -1, with default header values.
 
 IpamRirsReadDefault ipam rirs read default
 */
@@ -114,7 +113,6 @@ func (o *IpamRirsReadDefault) Code() int {
 func (o *IpamRirsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/rirs/{id}/][%d] ipam_rirs_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRirsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

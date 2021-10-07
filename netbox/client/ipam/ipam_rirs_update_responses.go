@@ -61,7 +61,7 @@ func NewIpamRirsUpdateOK() *IpamRirsUpdateOK {
 	return &IpamRirsUpdateOK{}
 }
 
-/*IpamRirsUpdateOK handles this case with default header values.
+/* IpamRirsUpdateOK describes a response with status code 200, with default header values.
 
 IpamRirsUpdateOK ipam rirs update o k
 */
@@ -72,7 +72,6 @@ type IpamRirsUpdateOK struct {
 func (o *IpamRirsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/rirs/{id}/][%d] ipamRirsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamRirsUpdateOK) GetPayload() *models.RIR {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamRirsUpdateDefault(code int) *IpamRirsUpdateDefault {
 	}
 }
 
-/*IpamRirsUpdateDefault handles this case with default header values.
+/* IpamRirsUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRirsUpdateDefault ipam rirs update default
 */
@@ -114,7 +113,6 @@ func (o *IpamRirsUpdateDefault) Code() int {
 func (o *IpamRirsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/rirs/{id}/][%d] ipam_rirs_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRirsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

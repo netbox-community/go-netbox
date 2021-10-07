@@ -61,7 +61,7 @@ func NewDcimRearPortsReadOK() *DcimRearPortsReadOK {
 	return &DcimRearPortsReadOK{}
 }
 
-/*DcimRearPortsReadOK handles this case with default header values.
+/* DcimRearPortsReadOK describes a response with status code 200, with default header values.
 
 DcimRearPortsReadOK dcim rear ports read o k
 */
@@ -72,7 +72,6 @@ type DcimRearPortsReadOK struct {
 func (o *DcimRearPortsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rear-ports/{id}/][%d] dcimRearPortsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRearPortsReadOK) GetPayload() *models.RearPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRearPortsReadDefault(code int) *DcimRearPortsReadDefault {
 	}
 }
 
-/*DcimRearPortsReadDefault handles this case with default header values.
+/* DcimRearPortsReadDefault describes a response with status code -1, with default header values.
 
 DcimRearPortsReadDefault dcim rear ports read default
 */
@@ -114,7 +113,6 @@ func (o *DcimRearPortsReadDefault) Code() int {
 func (o *DcimRearPortsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rear-ports/{id}/][%d] dcim_rear-ports_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRearPortsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

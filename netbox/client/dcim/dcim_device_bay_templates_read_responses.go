@@ -61,7 +61,7 @@ func NewDcimDeviceBayTemplatesReadOK() *DcimDeviceBayTemplatesReadOK {
 	return &DcimDeviceBayTemplatesReadOK{}
 }
 
-/*DcimDeviceBayTemplatesReadOK handles this case with default header values.
+/* DcimDeviceBayTemplatesReadOK describes a response with status code 200, with default header values.
 
 DcimDeviceBayTemplatesReadOK dcim device bay templates read o k
 */
@@ -72,7 +72,6 @@ type DcimDeviceBayTemplatesReadOK struct {
 func (o *DcimDeviceBayTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-bay-templates/{id}/][%d] dcimDeviceBayTemplatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceBayTemplatesReadOK) GetPayload() *models.DeviceBayTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDeviceBayTemplatesReadDefault(code int) *DcimDeviceBayTemplatesReadD
 	}
 }
 
-/*DcimDeviceBayTemplatesReadDefault handles this case with default header values.
+/* DcimDeviceBayTemplatesReadDefault describes a response with status code -1, with default header values.
 
 DcimDeviceBayTemplatesReadDefault dcim device bay templates read default
 */
@@ -114,7 +113,6 @@ func (o *DcimDeviceBayTemplatesReadDefault) Code() int {
 func (o *DcimDeviceBayTemplatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-bay-templates/{id}/][%d] dcim_device-bay-templates_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceBayTemplatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

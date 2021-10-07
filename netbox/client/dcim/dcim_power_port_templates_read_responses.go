@@ -61,7 +61,7 @@ func NewDcimPowerPortTemplatesReadOK() *DcimPowerPortTemplatesReadOK {
 	return &DcimPowerPortTemplatesReadOK{}
 }
 
-/*DcimPowerPortTemplatesReadOK handles this case with default header values.
+/* DcimPowerPortTemplatesReadOK describes a response with status code 200, with default header values.
 
 DcimPowerPortTemplatesReadOK dcim power port templates read o k
 */
@@ -72,7 +72,6 @@ type DcimPowerPortTemplatesReadOK struct {
 func (o *DcimPowerPortTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPortTemplatesReadOK) GetPayload() *models.PowerPortTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerPortTemplatesReadDefault(code int) *DcimPowerPortTemplatesReadD
 	}
 }
 
-/*DcimPowerPortTemplatesReadDefault handles this case with default header values.
+/* DcimPowerPortTemplatesReadDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortTemplatesReadDefault dcim power port templates read default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerPortTemplatesReadDefault) Code() int {
 func (o *DcimPowerPortTemplatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPortTemplatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

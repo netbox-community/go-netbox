@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimPowerPortTemplatesBulkUpdateParams creates a new DcimPowerPortTemplatesBulkUpdateParams object
-// with the default values initialized.
+// NewDcimPowerPortTemplatesBulkUpdateParams creates a new DcimPowerPortTemplatesBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerPortTemplatesBulkUpdateParams() *DcimPowerPortTemplatesBulkUpdateParams {
-	var ()
 	return &DcimPowerPortTemplatesBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerPortTemplatesBulkUpdateParamsWithTimeout creates a new DcimPowerPortTemplatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerPortTemplatesBulkUpdateParamsWithTimeout(timeout time.Duration) *DcimPowerPortTemplatesBulkUpdateParams {
-	var ()
 	return &DcimPowerPortTemplatesBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerPortTemplatesBulkUpdateParamsWithContext creates a new DcimPowerPortTemplatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerPortTemplatesBulkUpdateParamsWithContext(ctx context.Context) *DcimPowerPortTemplatesBulkUpdateParams {
-	var ()
 	return &DcimPowerPortTemplatesBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerPortTemplatesBulkUpdateParamsWithHTTPClient creates a new DcimPowerPortTemplatesBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerPortTemplatesBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimPowerPortTemplatesBulkUpdateParams {
-	var ()
 	return &DcimPowerPortTemplatesBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerPortTemplatesBulkUpdateParams contains all the parameters to send to the API endpoint
-for the dcim power port templates bulk update operation typically these are written to a http.Request
+/* DcimPowerPortTemplatesBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim power port templates bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerPortTemplatesBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerPortTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power port templates bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortTemplatesBulkUpdateParams) WithDefaults() *DcimPowerPortTemplatesBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power port templates bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPortTemplatesBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power port templates bulk update params
@@ -136,7 +150,6 @@ func (o *DcimPowerPortTemplatesBulkUpdateParams) WriteToRequest(r runtime.Client
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

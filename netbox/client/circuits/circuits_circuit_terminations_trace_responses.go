@@ -61,7 +61,7 @@ func NewCircuitsCircuitTerminationsTraceOK() *CircuitsCircuitTerminationsTraceOK
 	return &CircuitsCircuitTerminationsTraceOK{}
 }
 
-/*CircuitsCircuitTerminationsTraceOK handles this case with default header values.
+/* CircuitsCircuitTerminationsTraceOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTerminationsTraceOK circuits circuit terminations trace o k
 */
@@ -72,7 +72,6 @@ type CircuitsCircuitTerminationsTraceOK struct {
 func (o *CircuitsCircuitTerminationsTraceOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/trace/][%d] circuitsCircuitTerminationsTraceOK  %+v", 200, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsTraceOK) GetPayload() *models.CircuitTermination {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewCircuitsCircuitTerminationsTraceDefault(code int) *CircuitsCircuitTermin
 	}
 }
 
-/*CircuitsCircuitTerminationsTraceDefault handles this case with default header values.
+/* CircuitsCircuitTerminationsTraceDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsTraceDefault circuits circuit terminations trace default
 */
@@ -114,7 +113,6 @@ func (o *CircuitsCircuitTerminationsTraceDefault) Code() int {
 func (o *CircuitsCircuitTerminationsTraceDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/trace/][%d] circuits_circuit-terminations_trace default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsTraceDefault) GetPayload() interface{} {
 	return o.Payload
 }

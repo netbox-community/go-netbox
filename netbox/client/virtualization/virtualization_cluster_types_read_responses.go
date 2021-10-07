@@ -61,7 +61,7 @@ func NewVirtualizationClusterTypesReadOK() *VirtualizationClusterTypesReadOK {
 	return &VirtualizationClusterTypesReadOK{}
 }
 
-/*VirtualizationClusterTypesReadOK handles this case with default header values.
+/* VirtualizationClusterTypesReadOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterTypesReadOK virtualization cluster types read o k
 */
@@ -72,7 +72,6 @@ type VirtualizationClusterTypesReadOK struct {
 func (o *VirtualizationClusterTypesReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterTypesReadOK) GetPayload() *models.ClusterType {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationClusterTypesReadDefault(code int) *VirtualizationClusterTy
 	}
 }
 
-/*VirtualizationClusterTypesReadDefault handles this case with default header values.
+/* VirtualizationClusterTypesReadDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterTypesReadDefault virtualization cluster types read default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationClusterTypesReadDefault) Code() int {
 func (o *VirtualizationClusterTypesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterTypesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

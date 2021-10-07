@@ -59,7 +59,7 @@ func NewIpamVlansBulkDeleteNoContent() *IpamVlansBulkDeleteNoContent {
 	return &IpamVlansBulkDeleteNoContent{}
 }
 
-/*IpamVlansBulkDeleteNoContent handles this case with default header values.
+/* IpamVlansBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamVlansBulkDeleteNoContent ipam vlans bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamVlansBulkDeleteDefault(code int) *IpamVlansBulkDeleteDefault {
 	}
 }
 
-/*IpamVlansBulkDeleteDefault handles this case with default header values.
+/* IpamVlansBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamVlansBulkDeleteDefault ipam vlans bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamVlansBulkDeleteDefault) Code() int {
 func (o *IpamVlansBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/vlans/][%d] ipam_vlans_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVlansBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

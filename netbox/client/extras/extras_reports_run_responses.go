@@ -59,7 +59,7 @@ func NewExtrasReportsRunCreated() *ExtrasReportsRunCreated {
 	return &ExtrasReportsRunCreated{}
 }
 
-/*ExtrasReportsRunCreated handles this case with default header values.
+/* ExtrasReportsRunCreated describes a response with status code 201, with default header values.
 
 ExtrasReportsRunCreated extras reports run created
 */
@@ -82,7 +82,7 @@ func NewExtrasReportsRunDefault(code int) *ExtrasReportsRunDefault {
 	}
 }
 
-/*ExtrasReportsRunDefault handles this case with default header values.
+/* ExtrasReportsRunDefault describes a response with status code -1, with default header values.
 
 ExtrasReportsRunDefault extras reports run default
 */
@@ -100,7 +100,6 @@ func (o *ExtrasReportsRunDefault) Code() int {
 func (o *ExtrasReportsRunDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extras_reports_run default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasReportsRunDefault) GetPayload() interface{} {
 	return o.Payload
 }

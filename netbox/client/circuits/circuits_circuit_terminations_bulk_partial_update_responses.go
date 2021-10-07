@@ -61,7 +61,7 @@ func NewCircuitsCircuitTerminationsBulkPartialUpdateOK() *CircuitsCircuitTermina
 	return &CircuitsCircuitTerminationsBulkPartialUpdateOK{}
 }
 
-/*CircuitsCircuitTerminationsBulkPartialUpdateOK handles this case with default header values.
+/* CircuitsCircuitTerminationsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTerminationsBulkPartialUpdateOK circuits circuit terminations bulk partial update o k
 */
@@ -72,7 +72,6 @@ type CircuitsCircuitTerminationsBulkPartialUpdateOK struct {
 func (o *CircuitsCircuitTerminationsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsBulkPartialUpdateOK) GetPayload() *models.CircuitTermination {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewCircuitsCircuitTerminationsBulkPartialUpdateDefault(code int) *CircuitsC
 	}
 }
 
-/*CircuitsCircuitTerminationsBulkPartialUpdateDefault handles this case with default header values.
+/* CircuitsCircuitTerminationsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsBulkPartialUpdateDefault circuits circuit terminations bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *CircuitsCircuitTerminationsBulkPartialUpdateDefault) Code() int {
 func (o *CircuitsCircuitTerminationsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/circuit-terminations/][%d] circuits_circuit-terminations_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsCircuitTerminationsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

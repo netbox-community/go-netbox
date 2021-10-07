@@ -61,7 +61,7 @@ func NewSecretsSecretsBulkUpdateOK() *SecretsSecretsBulkUpdateOK {
 	return &SecretsSecretsBulkUpdateOK{}
 }
 
-/*SecretsSecretsBulkUpdateOK handles this case with default header values.
+/* SecretsSecretsBulkUpdateOK describes a response with status code 200, with default header values.
 
 SecretsSecretsBulkUpdateOK secrets secrets bulk update o k
 */
@@ -72,7 +72,6 @@ type SecretsSecretsBulkUpdateOK struct {
 func (o *SecretsSecretsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /secrets/secrets/][%d] secretsSecretsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *SecretsSecretsBulkUpdateOK) GetPayload() *models.Secret {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewSecretsSecretsBulkUpdateDefault(code int) *SecretsSecretsBulkUpdateDefau
 	}
 }
 
-/*SecretsSecretsBulkUpdateDefault handles this case with default header values.
+/* SecretsSecretsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 SecretsSecretsBulkUpdateDefault secrets secrets bulk update default
 */
@@ -114,7 +113,6 @@ func (o *SecretsSecretsBulkUpdateDefault) Code() int {
 func (o *SecretsSecretsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /secrets/secrets/][%d] secrets_secrets_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsSecretsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

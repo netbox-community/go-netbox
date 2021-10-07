@@ -61,7 +61,7 @@ func NewExtrasConfigContextsUpdateOK() *ExtrasConfigContextsUpdateOK {
 	return &ExtrasConfigContextsUpdateOK{}
 }
 
-/*ExtrasConfigContextsUpdateOK handles this case with default header values.
+/* ExtrasConfigContextsUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasConfigContextsUpdateOK extras config contexts update o k
 */
@@ -72,7 +72,6 @@ type ExtrasConfigContextsUpdateOK struct {
 func (o *ExtrasConfigContextsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/config-contexts/{id}/][%d] extrasConfigContextsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasConfigContextsUpdateOK) GetPayload() *models.ConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasConfigContextsUpdateDefault(code int) *ExtrasConfigContextsUpdateD
 	}
 }
 
-/*ExtrasConfigContextsUpdateDefault handles this case with default header values.
+/* ExtrasConfigContextsUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasConfigContextsUpdateDefault extras config contexts update default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasConfigContextsUpdateDefault) Code() int {
 func (o *ExtrasConfigContextsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/config-contexts/{id}/][%d] extras_config-contexts_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasConfigContextsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

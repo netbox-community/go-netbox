@@ -61,7 +61,7 @@ func NewExtrasContentTypesReadOK() *ExtrasContentTypesReadOK {
 	return &ExtrasContentTypesReadOK{}
 }
 
-/*ExtrasContentTypesReadOK handles this case with default header values.
+/* ExtrasContentTypesReadOK describes a response with status code 200, with default header values.
 
 ExtrasContentTypesReadOK extras content types read o k
 */
@@ -72,7 +72,6 @@ type ExtrasContentTypesReadOK struct {
 func (o *ExtrasContentTypesReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extrasContentTypesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasContentTypesReadOK) GetPayload() *models.ContentType {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasContentTypesReadDefault(code int) *ExtrasContentTypesReadDefault {
 	}
 }
 
-/*ExtrasContentTypesReadDefault handles this case with default header values.
+/* ExtrasContentTypesReadDefault describes a response with status code -1, with default header values.
 
 ExtrasContentTypesReadDefault extras content types read default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasContentTypesReadDefault) Code() int {
 func (o *ExtrasContentTypesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extras_content-types_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasContentTypesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

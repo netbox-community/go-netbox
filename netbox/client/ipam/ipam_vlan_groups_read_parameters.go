@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamVlanGroupsReadParams creates a new IpamVlanGroupsReadParams object
-// with the default values initialized.
+// NewIpamVlanGroupsReadParams creates a new IpamVlanGroupsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamVlanGroupsReadParams() *IpamVlanGroupsReadParams {
-	var ()
 	return &IpamVlanGroupsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamVlanGroupsReadParamsWithTimeout creates a new IpamVlanGroupsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamVlanGroupsReadParamsWithTimeout(timeout time.Duration) *IpamVlanGroupsReadParams {
-	var ()
 	return &IpamVlanGroupsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamVlanGroupsReadParamsWithContext creates a new IpamVlanGroupsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamVlanGroupsReadParamsWithContext(ctx context.Context) *IpamVlanGroupsReadParams {
-	var ()
 	return &IpamVlanGroupsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamVlanGroupsReadParamsWithHTTPClient creates a new IpamVlanGroupsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamVlanGroupsReadParamsWithHTTPClient(client *http.Client) *IpamVlanGroupsReadParams {
-	var ()
 	return &IpamVlanGroupsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamVlanGroupsReadParams contains all the parameters to send to the API endpoint
-for the ipam vlan groups read operation typically these are written to a http.Request
+/* IpamVlanGroupsReadParams contains all the parameters to send to the API endpoint
+   for the ipam vlan groups read operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamVlanGroupsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this VLAN group.
+	/* ID.
 
+	   A unique integer value identifying this VLAN group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam vlan groups read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlanGroupsReadParams) WithDefaults() *IpamVlanGroupsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam vlan groups read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamVlanGroupsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam vlan groups read params

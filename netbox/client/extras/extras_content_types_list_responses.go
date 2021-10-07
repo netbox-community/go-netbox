@@ -21,6 +21,7 @@ package extras
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewExtrasContentTypesListOK() *ExtrasContentTypesListOK {
 	return &ExtrasContentTypesListOK{}
 }
 
-/*ExtrasContentTypesListOK handles this case with default header values.
+/* ExtrasContentTypesListOK describes a response with status code 200, with default header values.
 
 ExtrasContentTypesListOK extras content types list o k
 */
@@ -76,7 +77,6 @@ type ExtrasContentTypesListOK struct {
 func (o *ExtrasContentTypesListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/content-types/][%d] extrasContentTypesListOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasContentTypesListOK) GetPayload() *ExtrasContentTypesListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewExtrasContentTypesListDefault(code int) *ExtrasContentTypesListDefault {
 	}
 }
 
-/*ExtrasContentTypesListDefault handles this case with default header values.
+/* ExtrasContentTypesListDefault describes a response with status code -1, with default header values.
 
 ExtrasContentTypesListDefault extras content types list default
 */
@@ -118,7 +118,6 @@ func (o *ExtrasContentTypesListDefault) Code() int {
 func (o *ExtrasContentTypesListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/content-types/][%d] extras_content-types_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasContentTypesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *ExtrasContentTypesListOKBody) validateCount(formats strfmt.Registry) er
 }
 
 func (o *ExtrasContentTypesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *ExtrasContentTypesListOKBody) validateNext(formats strfmt.Registry) err
 }
 
 func (o *ExtrasContentTypesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *ExtrasContentTypesListOKBody) validateResults(formats strfmt.Registry) 
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("extrasContentTypesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this extras content types list o k body based on the context it is used
+func (o *ExtrasContentTypesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *ExtrasContentTypesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasContentTypesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

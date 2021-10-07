@@ -61,7 +61,7 @@ func NewExtrasConfigContextsCreateCreated() *ExtrasConfigContextsCreateCreated {
 	return &ExtrasConfigContextsCreateCreated{}
 }
 
-/*ExtrasConfigContextsCreateCreated handles this case with default header values.
+/* ExtrasConfigContextsCreateCreated describes a response with status code 201, with default header values.
 
 ExtrasConfigContextsCreateCreated extras config contexts create created
 */
@@ -72,7 +72,6 @@ type ExtrasConfigContextsCreateCreated struct {
 func (o *ExtrasConfigContextsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/config-contexts/][%d] extrasConfigContextsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *ExtrasConfigContextsCreateCreated) GetPayload() *models.ConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasConfigContextsCreateDefault(code int) *ExtrasConfigContextsCreateD
 	}
 }
 
-/*ExtrasConfigContextsCreateDefault handles this case with default header values.
+/* ExtrasConfigContextsCreateDefault describes a response with status code -1, with default header values.
 
 ExtrasConfigContextsCreateDefault extras config contexts create default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasConfigContextsCreateDefault) Code() int {
 func (o *ExtrasConfigContextsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/config-contexts/][%d] extras_config-contexts_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasConfigContextsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

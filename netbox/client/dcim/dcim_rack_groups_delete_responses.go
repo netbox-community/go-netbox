@@ -59,7 +59,7 @@ func NewDcimRackGroupsDeleteNoContent() *DcimRackGroupsDeleteNoContent {
 	return &DcimRackGroupsDeleteNoContent{}
 }
 
-/*DcimRackGroupsDeleteNoContent handles this case with default header values.
+/* DcimRackGroupsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimRackGroupsDeleteNoContent dcim rack groups delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimRackGroupsDeleteDefault(code int) *DcimRackGroupsDeleteDefault {
 	}
 }
 
-/*DcimRackGroupsDeleteDefault handles this case with default header values.
+/* DcimRackGroupsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimRackGroupsDeleteDefault dcim rack groups delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimRackGroupsDeleteDefault) Code() int {
 func (o *DcimRackGroupsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/rack-groups/{id}/][%d] dcim_rack-groups_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackGroupsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

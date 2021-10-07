@@ -59,7 +59,7 @@ func NewDcimSitesDeleteNoContent() *DcimSitesDeleteNoContent {
 	return &DcimSitesDeleteNoContent{}
 }
 
-/*DcimSitesDeleteNoContent handles this case with default header values.
+/* DcimSitesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimSitesDeleteNoContent dcim sites delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimSitesDeleteDefault(code int) *DcimSitesDeleteDefault {
 	}
 }
 
-/*DcimSitesDeleteDefault handles this case with default header values.
+/* DcimSitesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimSitesDeleteDefault dcim sites delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimSitesDeleteDefault) Code() int {
 func (o *DcimSitesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/sites/{id}/][%d] dcim_sites_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimSitesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

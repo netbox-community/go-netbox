@@ -61,7 +61,7 @@ func NewDcimRegionsReadOK() *DcimRegionsReadOK {
 	return &DcimRegionsReadOK{}
 }
 
-/*DcimRegionsReadOK handles this case with default header values.
+/* DcimRegionsReadOK describes a response with status code 200, with default header values.
 
 DcimRegionsReadOK dcim regions read o k
 */
@@ -72,7 +72,6 @@ type DcimRegionsReadOK struct {
 func (o *DcimRegionsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcimRegionsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRegionsReadOK) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRegionsReadDefault(code int) *DcimRegionsReadDefault {
 	}
 }
 
-/*DcimRegionsReadDefault handles this case with default header values.
+/* DcimRegionsReadDefault describes a response with status code -1, with default header values.
 
 DcimRegionsReadDefault dcim regions read default
 */
@@ -114,7 +113,6 @@ func (o *DcimRegionsReadDefault) Code() int {
 func (o *DcimRegionsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcim_regions_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRegionsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

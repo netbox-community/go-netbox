@@ -61,7 +61,7 @@ func NewVirtualizationClusterGroupsReadOK() *VirtualizationClusterGroupsReadOK {
 	return &VirtualizationClusterGroupsReadOK{}
 }
 
-/*VirtualizationClusterGroupsReadOK handles this case with default header values.
+/* VirtualizationClusterGroupsReadOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterGroupsReadOK virtualization cluster groups read o k
 */
@@ -72,7 +72,6 @@ type VirtualizationClusterGroupsReadOK struct {
 func (o *VirtualizationClusterGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsReadOK) GetPayload() *models.ClusterGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationClusterGroupsReadDefault(code int) *VirtualizationClusterG
 	}
 }
 
-/*VirtualizationClusterGroupsReadDefault handles this case with default header values.
+/* VirtualizationClusterGroupsReadDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterGroupsReadDefault virtualization cluster groups read default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationClusterGroupsReadDefault) Code() int {
 func (o *VirtualizationClusterGroupsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClusterGroupsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

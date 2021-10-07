@@ -59,7 +59,7 @@ func NewExtrasTagsBulkDeleteNoContent() *ExtrasTagsBulkDeleteNoContent {
 	return &ExtrasTagsBulkDeleteNoContent{}
 }
 
-/*ExtrasTagsBulkDeleteNoContent handles this case with default header values.
+/* ExtrasTagsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasTagsBulkDeleteNoContent extras tags bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewExtrasTagsBulkDeleteDefault(code int) *ExtrasTagsBulkDeleteDefault {
 	}
 }
 
-/*ExtrasTagsBulkDeleteDefault handles this case with default header values.
+/* ExtrasTagsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasTagsBulkDeleteDefault extras tags bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *ExtrasTagsBulkDeleteDefault) Code() int {
 func (o *ExtrasTagsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/tags/][%d] extras_tags_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasTagsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

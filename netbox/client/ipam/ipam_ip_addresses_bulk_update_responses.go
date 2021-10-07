@@ -61,7 +61,7 @@ func NewIpamIPAddressesBulkUpdateOK() *IpamIPAddressesBulkUpdateOK {
 	return &IpamIPAddressesBulkUpdateOK{}
 }
 
-/*IpamIPAddressesBulkUpdateOK handles this case with default header values.
+/* IpamIPAddressesBulkUpdateOK describes a response with status code 200, with default header values.
 
 IpamIPAddressesBulkUpdateOK ipam Ip addresses bulk update o k
 */
@@ -72,7 +72,6 @@ type IpamIPAddressesBulkUpdateOK struct {
 func (o *IpamIPAddressesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/ip-addresses/][%d] ipamIpAddressesBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamIPAddressesBulkUpdateOK) GetPayload() *models.IPAddress {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamIPAddressesBulkUpdateDefault(code int) *IpamIPAddressesBulkUpdateDef
 	}
 }
 
-/*IpamIPAddressesBulkUpdateDefault handles this case with default header values.
+/* IpamIPAddressesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 IpamIPAddressesBulkUpdateDefault ipam ip addresses bulk update default
 */
@@ -114,7 +113,6 @@ func (o *IpamIPAddressesBulkUpdateDefault) Code() int {
 func (o *IpamIPAddressesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/ip-addresses/][%d] ipam_ip-addresses_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamIPAddressesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

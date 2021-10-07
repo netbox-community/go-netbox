@@ -61,7 +61,7 @@ func NewIpamVlanGroupsPartialUpdateOK() *IpamVlanGroupsPartialUpdateOK {
 	return &IpamVlanGroupsPartialUpdateOK{}
 }
 
-/*IpamVlanGroupsPartialUpdateOK handles this case with default header values.
+/* IpamVlanGroupsPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamVlanGroupsPartialUpdateOK ipam vlan groups partial update o k
 */
@@ -72,7 +72,6 @@ type IpamVlanGroupsPartialUpdateOK struct {
 func (o *IpamVlanGroupsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/vlan-groups/{id}/][%d] ipamVlanGroupsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVlanGroupsPartialUpdateOK) GetPayload() *models.VLANGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVlanGroupsPartialUpdateDefault(code int) *IpamVlanGroupsPartialUpdat
 	}
 }
 
-/*IpamVlanGroupsPartialUpdateDefault handles this case with default header values.
+/* IpamVlanGroupsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamVlanGroupsPartialUpdateDefault ipam vlan groups partial update default
 */
@@ -114,7 +113,6 @@ func (o *IpamVlanGroupsPartialUpdateDefault) Code() int {
 func (o *IpamVlanGroupsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/vlan-groups/{id}/][%d] ipam_vlan-groups_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVlanGroupsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

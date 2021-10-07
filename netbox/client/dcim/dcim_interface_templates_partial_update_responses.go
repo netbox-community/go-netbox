@@ -61,7 +61,7 @@ func NewDcimInterfaceTemplatesPartialUpdateOK() *DcimInterfaceTemplatesPartialUp
 	return &DcimInterfaceTemplatesPartialUpdateOK{}
 }
 
-/*DcimInterfaceTemplatesPartialUpdateOK handles this case with default header values.
+/* DcimInterfaceTemplatesPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimInterfaceTemplatesPartialUpdateOK dcim interface templates partial update o k
 */
@@ -72,7 +72,6 @@ type DcimInterfaceTemplatesPartialUpdateOK struct {
 func (o *DcimInterfaceTemplatesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesPartialUpdateOK) GetPayload() *models.InterfaceTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimInterfaceTemplatesPartialUpdateDefault(code int) *DcimInterfaceTempl
 	}
 }
 
-/*DcimInterfaceTemplatesPartialUpdateDefault handles this case with default header values.
+/* DcimInterfaceTemplatesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInterfaceTemplatesPartialUpdateDefault dcim interface templates partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimInterfaceTemplatesPartialUpdateDefault) Code() int {
 func (o *DcimInterfaceTemplatesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/interface-templates/{id}/][%d] dcim_interface-templates_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInterfaceTemplatesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,7 +59,7 @@ func NewDcimDeviceBayTemplatesDeleteNoContent() *DcimDeviceBayTemplatesDeleteNoC
 	return &DcimDeviceBayTemplatesDeleteNoContent{}
 }
 
-/*DcimDeviceBayTemplatesDeleteNoContent handles this case with default header values.
+/* DcimDeviceBayTemplatesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimDeviceBayTemplatesDeleteNoContent dcim device bay templates delete no content
 */
@@ -82,7 +82,7 @@ func NewDcimDeviceBayTemplatesDeleteDefault(code int) *DcimDeviceBayTemplatesDel
 	}
 }
 
-/*DcimDeviceBayTemplatesDeleteDefault handles this case with default header values.
+/* DcimDeviceBayTemplatesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimDeviceBayTemplatesDeleteDefault dcim device bay templates delete default
 */
@@ -100,7 +100,6 @@ func (o *DcimDeviceBayTemplatesDeleteDefault) Code() int {
 func (o *DcimDeviceBayTemplatesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/device-bay-templates/{id}/][%d] dcim_device-bay-templates_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceBayTemplatesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

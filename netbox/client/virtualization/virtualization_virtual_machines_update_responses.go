@@ -61,7 +61,7 @@ func NewVirtualizationVirtualMachinesUpdateOK() *VirtualizationVirtualMachinesUp
 	return &VirtualizationVirtualMachinesUpdateOK{}
 }
 
-/*VirtualizationVirtualMachinesUpdateOK handles this case with default header values.
+/* VirtualizationVirtualMachinesUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationVirtualMachinesUpdateOK virtualization virtual machines update o k
 */
@@ -72,7 +72,6 @@ type VirtualizationVirtualMachinesUpdateOK struct {
 func (o *VirtualizationVirtualMachinesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationVirtualMachinesUpdateOK) GetPayload() *models.VirtualMachineWithConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationVirtualMachinesUpdateDefault(code int) *VirtualizationVirt
 	}
 }
 
-/*VirtualizationVirtualMachinesUpdateDefault handles this case with default header values.
+/* VirtualizationVirtualMachinesUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesUpdateDefault virtualization virtual machines update default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationVirtualMachinesUpdateDefault) Code() int {
 func (o *VirtualizationVirtualMachinesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationVirtualMachinesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

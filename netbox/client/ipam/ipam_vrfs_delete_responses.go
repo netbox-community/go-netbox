@@ -59,7 +59,7 @@ func NewIpamVrfsDeleteNoContent() *IpamVrfsDeleteNoContent {
 	return &IpamVrfsDeleteNoContent{}
 }
 
-/*IpamVrfsDeleteNoContent handles this case with default header values.
+/* IpamVrfsDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamVrfsDeleteNoContent ipam vrfs delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamVrfsDeleteDefault(code int) *IpamVrfsDeleteDefault {
 	}
 }
 
-/*IpamVrfsDeleteDefault handles this case with default header values.
+/* IpamVrfsDeleteDefault describes a response with status code -1, with default header values.
 
 IpamVrfsDeleteDefault ipam vrfs delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamVrfsDeleteDefault) Code() int {
 func (o *IpamVrfsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipam_vrfs_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVrfsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimPowerFeedsListOK() *DcimPowerFeedsListOK {
 	return &DcimPowerFeedsListOK{}
 }
 
-/*DcimPowerFeedsListOK handles this case with default header values.
+/* DcimPowerFeedsListOK describes a response with status code 200, with default header values.
 
 DcimPowerFeedsListOK dcim power feeds list o k
 */
@@ -76,7 +77,6 @@ type DcimPowerFeedsListOK struct {
 func (o *DcimPowerFeedsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcimPowerFeedsListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerFeedsListOK) GetPayload() *DcimPowerFeedsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimPowerFeedsListDefault(code int) *DcimPowerFeedsListDefault {
 	}
 }
 
-/*DcimPowerFeedsListDefault handles this case with default header values.
+/* DcimPowerFeedsListDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsListDefault dcim power feeds list default
 */
@@ -118,7 +118,6 @@ func (o *DcimPowerFeedsListDefault) Code() int {
 func (o *DcimPowerFeedsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-feeds/][%d] dcim_power-feeds_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerFeedsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimPowerFeedsListOKBody) validateCount(formats strfmt.Registry) error 
 }
 
 func (o *DcimPowerFeedsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimPowerFeedsListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *DcimPowerFeedsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimPowerFeedsListOKBody) validateResults(formats strfmt.Registry) erro
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimPowerFeedsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim power feeds list o k body based on the context it is used
+func (o *DcimPowerFeedsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimPowerFeedsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimPowerFeedsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

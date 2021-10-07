@@ -61,7 +61,7 @@ func NewIpamPrefixesAvailableIpsReadOK() *IpamPrefixesAvailableIpsReadOK {
 	return &IpamPrefixesAvailableIpsReadOK{}
 }
 
-/*IpamPrefixesAvailableIpsReadOK handles this case with default header values.
+/* IpamPrefixesAvailableIpsReadOK describes a response with status code 200, with default header values.
 
 IpamPrefixesAvailableIpsReadOK ipam prefixes available ips read o k
 */
@@ -72,7 +72,6 @@ type IpamPrefixesAvailableIpsReadOK struct {
 func (o *IpamPrefixesAvailableIpsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamPrefixesAvailableIpsReadOK) GetPayload() []*models.AvailableIP {
 	return o.Payload
 }
@@ -94,7 +93,7 @@ func NewIpamPrefixesAvailableIpsReadDefault(code int) *IpamPrefixesAvailableIpsR
 	}
 }
 
-/*IpamPrefixesAvailableIpsReadDefault handles this case with default header values.
+/* IpamPrefixesAvailableIpsReadDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesAvailableIpsReadDefault ipam prefixes available ips read default
 */
@@ -112,7 +111,6 @@ func (o *IpamPrefixesAvailableIpsReadDefault) Code() int {
 func (o *IpamPrefixesAvailableIpsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-ips/][%d] ipam_prefixes_available-ips_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamPrefixesAvailableIpsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,7 +59,7 @@ func NewIpamRolesDeleteNoContent() *IpamRolesDeleteNoContent {
 	return &IpamRolesDeleteNoContent{}
 }
 
-/*IpamRolesDeleteNoContent handles this case with default header values.
+/* IpamRolesDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamRolesDeleteNoContent ipam roles delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamRolesDeleteDefault(code int) *IpamRolesDeleteDefault {
 	}
 }
 
-/*IpamRolesDeleteDefault handles this case with default header values.
+/* IpamRolesDeleteDefault describes a response with status code -1, with default header values.
 
 IpamRolesDeleteDefault ipam roles delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamRolesDeleteDefault) Code() int {
 func (o *IpamRolesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipam_roles_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRolesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

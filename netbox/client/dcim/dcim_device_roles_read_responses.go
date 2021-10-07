@@ -61,7 +61,7 @@ func NewDcimDeviceRolesReadOK() *DcimDeviceRolesReadOK {
 	return &DcimDeviceRolesReadOK{}
 }
 
-/*DcimDeviceRolesReadOK handles this case with default header values.
+/* DcimDeviceRolesReadOK describes a response with status code 200, with default header values.
 
 DcimDeviceRolesReadOK dcim device roles read o k
 */
@@ -72,7 +72,6 @@ type DcimDeviceRolesReadOK struct {
 func (o *DcimDeviceRolesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcimDeviceRolesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimDeviceRolesReadOK) GetPayload() *models.DeviceRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimDeviceRolesReadDefault(code int) *DcimDeviceRolesReadDefault {
 	}
 }
 
-/*DcimDeviceRolesReadDefault handles this case with default header values.
+/* DcimDeviceRolesReadDefault describes a response with status code -1, with default header values.
 
 DcimDeviceRolesReadDefault dcim device roles read default
 */
@@ -114,7 +113,6 @@ func (o *DcimDeviceRolesReadDefault) Code() int {
 func (o *DcimDeviceRolesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcim_device-roles_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimDeviceRolesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

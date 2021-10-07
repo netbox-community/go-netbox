@@ -61,7 +61,7 @@ func NewDcimConsolePortTemplatesReadOK() *DcimConsolePortTemplatesReadOK {
 	return &DcimConsolePortTemplatesReadOK{}
 }
 
-/*DcimConsolePortTemplatesReadOK handles this case with default header values.
+/* DcimConsolePortTemplatesReadOK describes a response with status code 200, with default header values.
 
 DcimConsolePortTemplatesReadOK dcim console port templates read o k
 */
@@ -72,7 +72,6 @@ type DcimConsolePortTemplatesReadOK struct {
 func (o *DcimConsolePortTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimConsolePortTemplatesReadOK) GetPayload() *models.ConsolePortTemplate {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimConsolePortTemplatesReadDefault(code int) *DcimConsolePortTemplatesR
 	}
 }
 
-/*DcimConsolePortTemplatesReadDefault handles this case with default header values.
+/* DcimConsolePortTemplatesReadDefault describes a response with status code -1, with default header values.
 
 DcimConsolePortTemplatesReadDefault dcim console port templates read default
 */
@@ -114,7 +113,6 @@ func (o *DcimConsolePortTemplatesReadDefault) Code() int {
 func (o *DcimConsolePortTemplatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimConsolePortTemplatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,7 @@ func NewDcimPowerFeedsReadOK() *DcimPowerFeedsReadOK {
 	return &DcimPowerFeedsReadOK{}
 }
 
-/*DcimPowerFeedsReadOK handles this case with default header values.
+/* DcimPowerFeedsReadOK describes a response with status code 200, with default header values.
 
 DcimPowerFeedsReadOK dcim power feeds read o k
 */
@@ -72,7 +72,6 @@ type DcimPowerFeedsReadOK struct {
 func (o *DcimPowerFeedsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-feeds/{id}/][%d] dcimPowerFeedsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerFeedsReadOK) GetPayload() *models.PowerFeed {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerFeedsReadDefault(code int) *DcimPowerFeedsReadDefault {
 	}
 }
 
-/*DcimPowerFeedsReadDefault handles this case with default header values.
+/* DcimPowerFeedsReadDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsReadDefault dcim power feeds read default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerFeedsReadDefault) Code() int {
 func (o *DcimPowerFeedsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-feeds/{id}/][%d] dcim_power-feeds_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerFeedsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

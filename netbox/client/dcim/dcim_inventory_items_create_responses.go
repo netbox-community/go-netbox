@@ -61,7 +61,7 @@ func NewDcimInventoryItemsCreateCreated() *DcimInventoryItemsCreateCreated {
 	return &DcimInventoryItemsCreateCreated{}
 }
 
-/*DcimInventoryItemsCreateCreated handles this case with default header values.
+/* DcimInventoryItemsCreateCreated describes a response with status code 201, with default header values.
 
 DcimInventoryItemsCreateCreated dcim inventory items create created
 */
@@ -72,7 +72,6 @@ type DcimInventoryItemsCreateCreated struct {
 func (o *DcimInventoryItemsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcimInventoryItemsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimInventoryItemsCreateCreated) GetPayload() *models.InventoryItem {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimInventoryItemsCreateDefault(code int) *DcimInventoryItemsCreateDefau
 	}
 }
 
-/*DcimInventoryItemsCreateDefault handles this case with default header values.
+/* DcimInventoryItemsCreateDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemsCreateDefault dcim inventory items create default
 */
@@ -114,7 +113,6 @@ func (o *DcimInventoryItemsCreateDefault) Code() int {
 func (o *DcimInventoryItemsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcim_inventory-items_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInventoryItemsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

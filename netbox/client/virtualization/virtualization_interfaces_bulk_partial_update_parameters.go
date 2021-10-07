@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewVirtualizationInterfacesBulkPartialUpdateParams creates a new VirtualizationInterfacesBulkPartialUpdateParams object
-// with the default values initialized.
+// NewVirtualizationInterfacesBulkPartialUpdateParams creates a new VirtualizationInterfacesBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationInterfacesBulkPartialUpdateParams() *VirtualizationInterfacesBulkPartialUpdateParams {
-	var ()
 	return &VirtualizationInterfacesBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationInterfacesBulkPartialUpdateParamsWithTimeout creates a new VirtualizationInterfacesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationInterfacesBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *VirtualizationInterfacesBulkPartialUpdateParams {
-	var ()
 	return &VirtualizationInterfacesBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationInterfacesBulkPartialUpdateParamsWithContext creates a new VirtualizationInterfacesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationInterfacesBulkPartialUpdateParamsWithContext(ctx context.Context) *VirtualizationInterfacesBulkPartialUpdateParams {
-	var ()
 	return &VirtualizationInterfacesBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationInterfacesBulkPartialUpdateParamsWithHTTPClient creates a new VirtualizationInterfacesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationInterfacesBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *VirtualizationInterfacesBulkPartialUpdateParams {
-	var ()
 	return &VirtualizationInterfacesBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationInterfacesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the virtualization interfaces bulk partial update operation typically these are written to a http.Request
+/* VirtualizationInterfacesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the virtualization interfaces bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationInterfacesBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableVMInterface
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization interfaces bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationInterfacesBulkPartialUpdateParams) WithDefaults() *VirtualizationInterfacesBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization interfaces bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationInterfacesBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization interfaces bulk partial update params
@@ -136,7 +150,6 @@ func (o *VirtualizationInterfacesBulkPartialUpdateParams) WriteToRequest(r runti
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

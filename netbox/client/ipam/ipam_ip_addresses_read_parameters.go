@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamIPAddressesReadParams creates a new IpamIPAddressesReadParams object
-// with the default values initialized.
+// NewIpamIPAddressesReadParams creates a new IpamIPAddressesReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamIPAddressesReadParams() *IpamIPAddressesReadParams {
-	var ()
 	return &IpamIPAddressesReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamIPAddressesReadParamsWithTimeout creates a new IpamIPAddressesReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamIPAddressesReadParamsWithTimeout(timeout time.Duration) *IpamIPAddressesReadParams {
-	var ()
 	return &IpamIPAddressesReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamIPAddressesReadParamsWithContext creates a new IpamIPAddressesReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamIPAddressesReadParamsWithContext(ctx context.Context) *IpamIPAddressesReadParams {
-	var ()
 	return &IpamIPAddressesReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamIPAddressesReadParamsWithHTTPClient creates a new IpamIPAddressesReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamIPAddressesReadParamsWithHTTPClient(client *http.Client) *IpamIPAddressesReadParams {
-	var ()
 	return &IpamIPAddressesReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamIPAddressesReadParams contains all the parameters to send to the API endpoint
-for the ipam ip addresses read operation typically these are written to a http.Request
+/* IpamIPAddressesReadParams contains all the parameters to send to the API endpoint
+   for the ipam ip addresses read operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamIPAddressesReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this IP address.
+	/* ID.
 
+	   A unique integer value identifying this IP address.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam ip addresses read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesReadParams) WithDefaults() *IpamIPAddressesReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam ip addresses read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamIPAddressesReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam ip addresses read params

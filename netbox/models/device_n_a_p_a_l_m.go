@@ -21,9 +21,12 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // DeviceNAPALM device n a p a l m
@@ -52,6 +55,15 @@ func (m *DeviceNAPALM) Validate(formats strfmt.Registry) error {
 
 func (m *DeviceNAPALM) validateMethod(formats strfmt.Registry) error {
 
+	if err := validate.Required("method", "body", m.Method); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this device n a p a l m based on context it is used
+func (m *DeviceNAPALM) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

@@ -21,6 +21,7 @@ package ipam
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewIpamVrfsListOK() *IpamVrfsListOK {
 	return &IpamVrfsListOK{}
 }
 
-/*IpamVrfsListOK handles this case with default header values.
+/* IpamVrfsListOK describes a response with status code 200, with default header values.
 
 IpamVrfsListOK ipam vrfs list o k
 */
@@ -76,7 +77,6 @@ type IpamVrfsListOK struct {
 func (o *IpamVrfsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vrfs/][%d] ipamVrfsListOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVrfsListOK) GetPayload() *IpamVrfsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewIpamVrfsListDefault(code int) *IpamVrfsListDefault {
 	}
 }
 
-/*IpamVrfsListDefault handles this case with default header values.
+/* IpamVrfsListDefault describes a response with status code -1, with default header values.
 
 IpamVrfsListDefault ipam vrfs list default
 */
@@ -118,7 +118,6 @@ func (o *IpamVrfsListDefault) Code() int {
 func (o *IpamVrfsListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/vrfs/][%d] ipam_vrfs_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVrfsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *IpamVrfsListOKBody) validateCount(formats strfmt.Registry) error {
 }
 
 func (o *IpamVrfsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *IpamVrfsListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *IpamVrfsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *IpamVrfsListOKBody) validateResults(formats strfmt.Registry) error {
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ipamVrfsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this ipam vrfs list o k body based on the context it is used
+func (o *IpamVrfsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *IpamVrfsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamVrfsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

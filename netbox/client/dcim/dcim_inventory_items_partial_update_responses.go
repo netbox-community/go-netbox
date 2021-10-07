@@ -61,7 +61,7 @@ func NewDcimInventoryItemsPartialUpdateOK() *DcimInventoryItemsPartialUpdateOK {
 	return &DcimInventoryItemsPartialUpdateOK{}
 }
 
-/*DcimInventoryItemsPartialUpdateOK handles this case with default header values.
+/* DcimInventoryItemsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimInventoryItemsPartialUpdateOK dcim inventory items partial update o k
 */
@@ -72,7 +72,6 @@ type DcimInventoryItemsPartialUpdateOK struct {
 func (o *DcimInventoryItemsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcimInventoryItemsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimInventoryItemsPartialUpdateOK) GetPayload() *models.InventoryItem {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimInventoryItemsPartialUpdateDefault(code int) *DcimInventoryItemsPart
 	}
 }
 
-/*DcimInventoryItemsPartialUpdateDefault handles this case with default header values.
+/* DcimInventoryItemsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemsPartialUpdateDefault dcim inventory items partial update default
 */
@@ -114,7 +113,6 @@ func (o *DcimInventoryItemsPartialUpdateDefault) Code() int {
 func (o *DcimInventoryItemsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/inventory-items/{id}/][%d] dcim_inventory-items_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimInventoryItemsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

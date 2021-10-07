@@ -59,7 +59,7 @@ func NewIpamRolesBulkDeleteNoContent() *IpamRolesBulkDeleteNoContent {
 	return &IpamRolesBulkDeleteNoContent{}
 }
 
-/*IpamRolesBulkDeleteNoContent handles this case with default header values.
+/* IpamRolesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamRolesBulkDeleteNoContent ipam roles bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamRolesBulkDeleteDefault(code int) *IpamRolesBulkDeleteDefault {
 	}
 }
 
-/*IpamRolesBulkDeleteDefault handles this case with default header values.
+/* IpamRolesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamRolesBulkDeleteDefault ipam roles bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamRolesBulkDeleteDefault) Code() int {
 func (o *IpamRolesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/roles/][%d] ipam_roles_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRolesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

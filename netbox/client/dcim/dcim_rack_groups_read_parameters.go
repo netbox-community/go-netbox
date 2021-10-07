@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimRackGroupsReadParams creates a new DcimRackGroupsReadParams object
-// with the default values initialized.
+// NewDcimRackGroupsReadParams creates a new DcimRackGroupsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackGroupsReadParams() *DcimRackGroupsReadParams {
-	var ()
 	return &DcimRackGroupsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackGroupsReadParamsWithTimeout creates a new DcimRackGroupsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackGroupsReadParamsWithTimeout(timeout time.Duration) *DcimRackGroupsReadParams {
-	var ()
 	return &DcimRackGroupsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackGroupsReadParamsWithContext creates a new DcimRackGroupsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackGroupsReadParamsWithContext(ctx context.Context) *DcimRackGroupsReadParams {
-	var ()
 	return &DcimRackGroupsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackGroupsReadParamsWithHTTPClient creates a new DcimRackGroupsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackGroupsReadParamsWithHTTPClient(client *http.Client) *DcimRackGroupsReadParams {
-	var ()
 	return &DcimRackGroupsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackGroupsReadParams contains all the parameters to send to the API endpoint
-for the dcim rack groups read operation typically these are written to a http.Request
+/* DcimRackGroupsReadParams contains all the parameters to send to the API endpoint
+   for the dcim rack groups read operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackGroupsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this rack group.
+	/* ID.
 
+	   A unique integer value identifying this rack group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack groups read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackGroupsReadParams) WithDefaults() *DcimRackGroupsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack groups read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackGroupsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack groups read params

@@ -61,7 +61,7 @@ func NewDcimRearPortsPathsOK() *DcimRearPortsPathsOK {
 	return &DcimRearPortsPathsOK{}
 }
 
-/*DcimRearPortsPathsOK handles this case with default header values.
+/* DcimRearPortsPathsOK describes a response with status code 200, with default header values.
 
 DcimRearPortsPathsOK dcim rear ports paths o k
 */
@@ -72,7 +72,6 @@ type DcimRearPortsPathsOK struct {
 func (o *DcimRearPortsPathsOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rear-ports/{id}/paths/][%d] dcimRearPortsPathsOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRearPortsPathsOK) GetPayload() *models.RearPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRearPortsPathsDefault(code int) *DcimRearPortsPathsDefault {
 	}
 }
 
-/*DcimRearPortsPathsDefault handles this case with default header values.
+/* DcimRearPortsPathsDefault describes a response with status code -1, with default header values.
 
 DcimRearPortsPathsDefault dcim rear ports paths default
 */
@@ -114,7 +113,6 @@ func (o *DcimRearPortsPathsDefault) Code() int {
 func (o *DcimRearPortsPathsDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rear-ports/{id}/paths/][%d] dcim_rear-ports_paths default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRearPortsPathsDefault) GetPayload() interface{} {
 	return o.Payload
 }

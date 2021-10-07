@@ -61,7 +61,7 @@ func NewUsersGroupsReadOK() *UsersGroupsReadOK {
 	return &UsersGroupsReadOK{}
 }
 
-/*UsersGroupsReadOK handles this case with default header values.
+/* UsersGroupsReadOK describes a response with status code 200, with default header values.
 
 UsersGroupsReadOK users groups read o k
 */
@@ -72,7 +72,6 @@ type UsersGroupsReadOK struct {
 func (o *UsersGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /users/groups/{id}/][%d] usersGroupsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *UsersGroupsReadOK) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewUsersGroupsReadDefault(code int) *UsersGroupsReadDefault {
 	}
 }
 
-/*UsersGroupsReadDefault handles this case with default header values.
+/* UsersGroupsReadDefault describes a response with status code -1, with default header values.
 
 UsersGroupsReadDefault users groups read default
 */
@@ -114,7 +113,6 @@ func (o *UsersGroupsReadDefault) Code() int {
 func (o *UsersGroupsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /users/groups/{id}/][%d] users_groups_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersGroupsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

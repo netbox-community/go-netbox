@@ -59,7 +59,7 @@ func NewUsersUsersDeleteNoContent() *UsersUsersDeleteNoContent {
 	return &UsersUsersDeleteNoContent{}
 }
 
-/*UsersUsersDeleteNoContent handles this case with default header values.
+/* UsersUsersDeleteNoContent describes a response with status code 204, with default header values.
 
 UsersUsersDeleteNoContent users users delete no content
 */
@@ -82,7 +82,7 @@ func NewUsersUsersDeleteDefault(code int) *UsersUsersDeleteDefault {
 	}
 }
 
-/*UsersUsersDeleteDefault handles this case with default header values.
+/* UsersUsersDeleteDefault describes a response with status code -1, with default header values.
 
 UsersUsersDeleteDefault users users delete default
 */
@@ -100,7 +100,6 @@ func (o *UsersUsersDeleteDefault) Code() int {
 func (o *UsersUsersDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /users/users/{id}/][%d] users_users_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersUsersDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

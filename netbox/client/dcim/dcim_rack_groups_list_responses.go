@@ -21,6 +21,7 @@ package dcim
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewDcimRackGroupsListOK() *DcimRackGroupsListOK {
 	return &DcimRackGroupsListOK{}
 }
 
-/*DcimRackGroupsListOK handles this case with default header values.
+/* DcimRackGroupsListOK describes a response with status code 200, with default header values.
 
 DcimRackGroupsListOK dcim rack groups list o k
 */
@@ -76,7 +77,6 @@ type DcimRackGroupsListOK struct {
 func (o *DcimRackGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-groups/][%d] dcimRackGroupsListOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackGroupsListOK) GetPayload() *DcimRackGroupsListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewDcimRackGroupsListDefault(code int) *DcimRackGroupsListDefault {
 	}
 }
 
-/*DcimRackGroupsListDefault handles this case with default header values.
+/* DcimRackGroupsListDefault describes a response with status code -1, with default header values.
 
 DcimRackGroupsListDefault dcim rack groups list default
 */
@@ -118,7 +118,6 @@ func (o *DcimRackGroupsListDefault) Code() int {
 func (o *DcimRackGroupsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-groups/][%d] dcim_rack-groups_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackGroupsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *DcimRackGroupsListOKBody) validateCount(formats strfmt.Registry) error 
 }
 
 func (o *DcimRackGroupsListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *DcimRackGroupsListOKBody) validateNext(formats strfmt.Registry) error {
 }
 
 func (o *DcimRackGroupsListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *DcimRackGroupsListOKBody) validateResults(formats strfmt.Registry) erro
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("dcimRackGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this dcim rack groups list o k body based on the context it is used
+func (o *DcimRackGroupsListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *DcimRackGroupsListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimRackGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

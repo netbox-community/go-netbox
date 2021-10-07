@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamRirsBulkPartialUpdateParams creates a new IpamRirsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewIpamRirsBulkPartialUpdateParams creates a new IpamRirsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRirsBulkPartialUpdateParams() *IpamRirsBulkPartialUpdateParams {
-	var ()
 	return &IpamRirsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRirsBulkPartialUpdateParamsWithTimeout creates a new IpamRirsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRirsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *IpamRirsBulkPartialUpdateParams {
-	var ()
 	return &IpamRirsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRirsBulkPartialUpdateParamsWithContext creates a new IpamRirsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRirsBulkPartialUpdateParamsWithContext(ctx context.Context) *IpamRirsBulkPartialUpdateParams {
-	var ()
 	return &IpamRirsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRirsBulkPartialUpdateParamsWithHTTPClient creates a new IpamRirsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRirsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamRirsBulkPartialUpdateParams {
-	var ()
 	return &IpamRirsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRirsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the ipam rirs bulk partial update operation typically these are written to a http.Request
+/* IpamRirsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam rirs bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRirsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.RIR
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam rirs bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRirsBulkPartialUpdateParams) WithDefaults() *IpamRirsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam rirs bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRirsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam rirs bulk partial update params
@@ -136,7 +150,6 @@ func (o *IpamRirsBulkPartialUpdateParams) WriteToRequest(r runtime.ClientRequest
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -61,7 +61,7 @@ func NewDcimManufacturersReadOK() *DcimManufacturersReadOK {
 	return &DcimManufacturersReadOK{}
 }
 
-/*DcimManufacturersReadOK handles this case with default header values.
+/* DcimManufacturersReadOK describes a response with status code 200, with default header values.
 
 DcimManufacturersReadOK dcim manufacturers read o k
 */
@@ -72,7 +72,6 @@ type DcimManufacturersReadOK struct {
 func (o *DcimManufacturersReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/manufacturers/{id}/][%d] dcimManufacturersReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimManufacturersReadOK) GetPayload() *models.Manufacturer {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimManufacturersReadDefault(code int) *DcimManufacturersReadDefault {
 	}
 }
 
-/*DcimManufacturersReadDefault handles this case with default header values.
+/* DcimManufacturersReadDefault describes a response with status code -1, with default header values.
 
 DcimManufacturersReadDefault dcim manufacturers read default
 */
@@ -114,7 +113,6 @@ func (o *DcimManufacturersReadDefault) Code() int {
 func (o *DcimManufacturersReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/manufacturers/{id}/][%d] dcim_manufacturers_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimManufacturersReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

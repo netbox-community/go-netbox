@@ -34,61 +34,76 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewExtrasCustomFieldsUpdateParams creates a new ExtrasCustomFieldsUpdateParams object
-// with the default values initialized.
+// NewExtrasCustomFieldsUpdateParams creates a new ExtrasCustomFieldsUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasCustomFieldsUpdateParams() *ExtrasCustomFieldsUpdateParams {
-	var ()
 	return &ExtrasCustomFieldsUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasCustomFieldsUpdateParamsWithTimeout creates a new ExtrasCustomFieldsUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasCustomFieldsUpdateParamsWithTimeout(timeout time.Duration) *ExtrasCustomFieldsUpdateParams {
-	var ()
 	return &ExtrasCustomFieldsUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasCustomFieldsUpdateParamsWithContext creates a new ExtrasCustomFieldsUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasCustomFieldsUpdateParamsWithContext(ctx context.Context) *ExtrasCustomFieldsUpdateParams {
-	var ()
 	return &ExtrasCustomFieldsUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasCustomFieldsUpdateParamsWithHTTPClient creates a new ExtrasCustomFieldsUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasCustomFieldsUpdateParamsWithHTTPClient(client *http.Client) *ExtrasCustomFieldsUpdateParams {
-	var ()
 	return &ExtrasCustomFieldsUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasCustomFieldsUpdateParams contains all the parameters to send to the API endpoint
-for the extras custom fields update operation typically these are written to a http.Request
+/* ExtrasCustomFieldsUpdateParams contains all the parameters to send to the API endpoint
+   for the extras custom fields update operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasCustomFieldsUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCustomField
-	/*ID
-	  A unique integer value identifying this custom field.
 
+	/* ID.
+
+	   A unique integer value identifying this custom field.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras custom fields update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsUpdateParams) WithDefaults() *ExtrasCustomFieldsUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras custom fields update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras custom fields update params
@@ -153,7 +168,6 @@ func (o *ExtrasCustomFieldsUpdateParams) WriteToRequest(r runtime.ClientRequest,
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

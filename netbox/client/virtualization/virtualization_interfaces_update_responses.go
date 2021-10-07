@@ -61,7 +61,7 @@ func NewVirtualizationInterfacesUpdateOK() *VirtualizationInterfacesUpdateOK {
 	return &VirtualizationInterfacesUpdateOK{}
 }
 
-/*VirtualizationInterfacesUpdateOK handles this case with default header values.
+/* VirtualizationInterfacesUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationInterfacesUpdateOK virtualization interfaces update o k
 */
@@ -72,7 +72,6 @@ type VirtualizationInterfacesUpdateOK struct {
 func (o *VirtualizationInterfacesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualizationInterfacesUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationInterfacesUpdateOK) GetPayload() *models.VMInterface {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationInterfacesUpdateDefault(code int) *VirtualizationInterface
 	}
 }
 
-/*VirtualizationInterfacesUpdateDefault handles this case with default header values.
+/* VirtualizationInterfacesUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesUpdateDefault virtualization interfaces update default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationInterfacesUpdateDefault) Code() int {
 func (o *VirtualizationInterfacesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualization_interfaces_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationInterfacesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

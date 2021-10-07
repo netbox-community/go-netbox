@@ -61,7 +61,7 @@ func NewCircuitsCircuitTypesReadOK() *CircuitsCircuitTypesReadOK {
 	return &CircuitsCircuitTypesReadOK{}
 }
 
-/*CircuitsCircuitTypesReadOK handles this case with default header values.
+/* CircuitsCircuitTypesReadOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTypesReadOK circuits circuit types read o k
 */
@@ -72,7 +72,6 @@ type CircuitsCircuitTypesReadOK struct {
 func (o *CircuitsCircuitTypesReadOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-types/{id}/][%d] circuitsCircuitTypesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *CircuitsCircuitTypesReadOK) GetPayload() *models.CircuitType {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewCircuitsCircuitTypesReadDefault(code int) *CircuitsCircuitTypesReadDefau
 	}
 }
 
-/*CircuitsCircuitTypesReadDefault handles this case with default header values.
+/* CircuitsCircuitTypesReadDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTypesReadDefault circuits circuit types read default
 */
@@ -114,7 +113,6 @@ func (o *CircuitsCircuitTypesReadDefault) Code() int {
 func (o *CircuitsCircuitTypesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-types/{id}/][%d] circuits_circuit-types_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *CircuitsCircuitTypesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

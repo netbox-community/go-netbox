@@ -61,7 +61,7 @@ func NewDcimPowerFeedsCreateCreated() *DcimPowerFeedsCreateCreated {
 	return &DcimPowerFeedsCreateCreated{}
 }
 
-/*DcimPowerFeedsCreateCreated handles this case with default header values.
+/* DcimPowerFeedsCreateCreated describes a response with status code 201, with default header values.
 
 DcimPowerFeedsCreateCreated dcim power feeds create created
 */
@@ -72,7 +72,6 @@ type DcimPowerFeedsCreateCreated struct {
 func (o *DcimPowerFeedsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-feeds/][%d] dcimPowerFeedsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *DcimPowerFeedsCreateCreated) GetPayload() *models.PowerFeed {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerFeedsCreateDefault(code int) *DcimPowerFeedsCreateDefault {
 	}
 }
 
-/*DcimPowerFeedsCreateDefault handles this case with default header values.
+/* DcimPowerFeedsCreateDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsCreateDefault dcim power feeds create default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerFeedsCreateDefault) Code() int {
 func (o *DcimPowerFeedsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-feeds/][%d] dcim_power-feeds_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerFeedsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

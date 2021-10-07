@@ -61,7 +61,7 @@ func NewSecretsSecretsReadOK() *SecretsSecretsReadOK {
 	return &SecretsSecretsReadOK{}
 }
 
-/*SecretsSecretsReadOK handles this case with default header values.
+/* SecretsSecretsReadOK describes a response with status code 200, with default header values.
 
 SecretsSecretsReadOK secrets secrets read o k
 */
@@ -72,7 +72,6 @@ type SecretsSecretsReadOK struct {
 func (o *SecretsSecretsReadOK) Error() string {
 	return fmt.Sprintf("[GET /secrets/secrets/{id}/][%d] secretsSecretsReadOK  %+v", 200, o.Payload)
 }
-
 func (o *SecretsSecretsReadOK) GetPayload() *models.Secret {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewSecretsSecretsReadDefault(code int) *SecretsSecretsReadDefault {
 	}
 }
 
-/*SecretsSecretsReadDefault handles this case with default header values.
+/* SecretsSecretsReadDefault describes a response with status code -1, with default header values.
 
 SecretsSecretsReadDefault secrets secrets read default
 */
@@ -114,7 +113,6 @@ func (o *SecretsSecretsReadDefault) Code() int {
 func (o *SecretsSecretsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /secrets/secrets/{id}/][%d] secrets_secrets_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsSecretsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

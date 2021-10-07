@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewVirtualizationClusterGroupsReadParams creates a new VirtualizationClusterGroupsReadParams object
-// with the default values initialized.
+// NewVirtualizationClusterGroupsReadParams creates a new VirtualizationClusterGroupsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVirtualizationClusterGroupsReadParams() *VirtualizationClusterGroupsReadParams {
-	var ()
 	return &VirtualizationClusterGroupsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewVirtualizationClusterGroupsReadParamsWithTimeout creates a new VirtualizationClusterGroupsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewVirtualizationClusterGroupsReadParamsWithTimeout(timeout time.Duration) *VirtualizationClusterGroupsReadParams {
-	var ()
 	return &VirtualizationClusterGroupsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewVirtualizationClusterGroupsReadParamsWithContext creates a new VirtualizationClusterGroupsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewVirtualizationClusterGroupsReadParamsWithContext(ctx context.Context) *VirtualizationClusterGroupsReadParams {
-	var ()
 	return &VirtualizationClusterGroupsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewVirtualizationClusterGroupsReadParamsWithHTTPClient creates a new VirtualizationClusterGroupsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewVirtualizationClusterGroupsReadParamsWithHTTPClient(client *http.Client) *VirtualizationClusterGroupsReadParams {
-	var ()
 	return &VirtualizationClusterGroupsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*VirtualizationClusterGroupsReadParams contains all the parameters to send to the API endpoint
-for the virtualization cluster groups read operation typically these are written to a http.Request
+/* VirtualizationClusterGroupsReadParams contains all the parameters to send to the API endpoint
+   for the virtualization cluster groups read operation.
+
+   Typically these are written to a http.Request.
 */
 type VirtualizationClusterGroupsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this cluster group.
+	/* ID.
 
+	   A unique integer value identifying this cluster group.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the virtualization cluster groups read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterGroupsReadParams) WithDefaults() *VirtualizationClusterGroupsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the virtualization cluster groups read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *VirtualizationClusterGroupsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the virtualization cluster groups read params

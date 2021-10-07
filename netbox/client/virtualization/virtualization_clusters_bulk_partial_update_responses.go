@@ -61,7 +61,7 @@ func NewVirtualizationClustersBulkPartialUpdateOK() *VirtualizationClustersBulkP
 	return &VirtualizationClustersBulkPartialUpdateOK{}
 }
 
-/*VirtualizationClustersBulkPartialUpdateOK handles this case with default header values.
+/* VirtualizationClustersBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClustersBulkPartialUpdateOK virtualization clusters bulk partial update o k
 */
@@ -72,7 +72,6 @@ type VirtualizationClustersBulkPartialUpdateOK struct {
 func (o *VirtualizationClustersBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/clusters/][%d] virtualizationClustersBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationClustersBulkPartialUpdateOK) GetPayload() *models.Cluster {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationClustersBulkPartialUpdateDefault(code int) *Virtualization
 	}
 }
 
-/*VirtualizationClustersBulkPartialUpdateDefault handles this case with default header values.
+/* VirtualizationClustersBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClustersBulkPartialUpdateDefault virtualization clusters bulk partial update default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationClustersBulkPartialUpdateDefault) Code() int {
 func (o *VirtualizationClustersBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/clusters/][%d] virtualization_clusters_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationClustersBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

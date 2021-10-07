@@ -61,7 +61,7 @@ func NewExtrasConfigContextsPartialUpdateOK() *ExtrasConfigContextsPartialUpdate
 	return &ExtrasConfigContextsPartialUpdateOK{}
 }
 
-/*ExtrasConfigContextsPartialUpdateOK handles this case with default header values.
+/* ExtrasConfigContextsPartialUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasConfigContextsPartialUpdateOK extras config contexts partial update o k
 */
@@ -72,7 +72,6 @@ type ExtrasConfigContextsPartialUpdateOK struct {
 func (o *ExtrasConfigContextsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extrasConfigContextsPartialUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *ExtrasConfigContextsPartialUpdateOK) GetPayload() *models.ConfigContext {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewExtrasConfigContextsPartialUpdateDefault(code int) *ExtrasConfigContexts
 	}
 }
 
-/*ExtrasConfigContextsPartialUpdateDefault handles this case with default header values.
+/* ExtrasConfigContextsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasConfigContextsPartialUpdateDefault extras config contexts partial update default
 */
@@ -114,7 +113,6 @@ func (o *ExtrasConfigContextsPartialUpdateDefault) Code() int {
 func (o *ExtrasConfigContextsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extras_config-contexts_partial_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasConfigContextsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

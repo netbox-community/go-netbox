@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewTenancyTenantGroupsBulkPartialUpdateParams creates a new TenancyTenantGroupsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewTenancyTenantGroupsBulkPartialUpdateParams creates a new TenancyTenantGroupsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewTenancyTenantGroupsBulkPartialUpdateParams() *TenancyTenantGroupsBulkPartialUpdateParams {
-	var ()
 	return &TenancyTenantGroupsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewTenancyTenantGroupsBulkPartialUpdateParamsWithTimeout creates a new TenancyTenantGroupsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewTenancyTenantGroupsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *TenancyTenantGroupsBulkPartialUpdateParams {
-	var ()
 	return &TenancyTenantGroupsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewTenancyTenantGroupsBulkPartialUpdateParamsWithContext creates a new TenancyTenantGroupsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewTenancyTenantGroupsBulkPartialUpdateParamsWithContext(ctx context.Context) *TenancyTenantGroupsBulkPartialUpdateParams {
-	var ()
 	return &TenancyTenantGroupsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewTenancyTenantGroupsBulkPartialUpdateParamsWithHTTPClient creates a new TenancyTenantGroupsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewTenancyTenantGroupsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *TenancyTenantGroupsBulkPartialUpdateParams {
-	var ()
 	return &TenancyTenantGroupsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*TenancyTenantGroupsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the tenancy tenant groups bulk partial update operation typically these are written to a http.Request
+/* TenancyTenantGroupsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the tenancy tenant groups bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type TenancyTenantGroupsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableTenantGroup
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the tenancy tenant groups bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TenancyTenantGroupsBulkPartialUpdateParams) WithDefaults() *TenancyTenantGroupsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the tenancy tenant groups bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TenancyTenantGroupsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the tenancy tenant groups bulk partial update params
@@ -136,7 +150,6 @@ func (o *TenancyTenantGroupsBulkPartialUpdateParams) WriteToRequest(r runtime.Cl
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

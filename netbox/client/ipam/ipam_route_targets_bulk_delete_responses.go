@@ -59,7 +59,7 @@ func NewIpamRouteTargetsBulkDeleteNoContent() *IpamRouteTargetsBulkDeleteNoConte
 	return &IpamRouteTargetsBulkDeleteNoContent{}
 }
 
-/*IpamRouteTargetsBulkDeleteNoContent handles this case with default header values.
+/* IpamRouteTargetsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamRouteTargetsBulkDeleteNoContent ipam route targets bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewIpamRouteTargetsBulkDeleteDefault(code int) *IpamRouteTargetsBulkDeleteD
 	}
 }
 
-/*IpamRouteTargetsBulkDeleteDefault handles this case with default header values.
+/* IpamRouteTargetsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsBulkDeleteDefault ipam route targets bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *IpamRouteTargetsBulkDeleteDefault) Code() int {
 func (o *IpamRouteTargetsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/route-targets/][%d] ipam_route-targets_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamRouteTargetsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

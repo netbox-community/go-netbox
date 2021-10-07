@@ -61,7 +61,7 @@ func NewVirtualizationInterfacesReadOK() *VirtualizationInterfacesReadOK {
 	return &VirtualizationInterfacesReadOK{}
 }
 
-/*VirtualizationInterfacesReadOK handles this case with default header values.
+/* VirtualizationInterfacesReadOK describes a response with status code 200, with default header values.
 
 VirtualizationInterfacesReadOK virtualization interfaces read o k
 */
@@ -72,7 +72,6 @@ type VirtualizationInterfacesReadOK struct {
 func (o *VirtualizationInterfacesReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/interfaces/{id}/][%d] virtualizationInterfacesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *VirtualizationInterfacesReadOK) GetPayload() *models.VMInterface {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewVirtualizationInterfacesReadDefault(code int) *VirtualizationInterfacesR
 	}
 }
 
-/*VirtualizationInterfacesReadDefault handles this case with default header values.
+/* VirtualizationInterfacesReadDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesReadDefault virtualization interfaces read default
 */
@@ -114,7 +113,6 @@ func (o *VirtualizationInterfacesReadDefault) Code() int {
 func (o *VirtualizationInterfacesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /virtualization/interfaces/{id}/][%d] virtualization_interfaces_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *VirtualizationInterfacesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

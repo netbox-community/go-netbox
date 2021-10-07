@@ -34,61 +34,76 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewExtrasCustomFieldsPartialUpdateParams creates a new ExtrasCustomFieldsPartialUpdateParams object
-// with the default values initialized.
+// NewExtrasCustomFieldsPartialUpdateParams creates a new ExtrasCustomFieldsPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtrasCustomFieldsPartialUpdateParams() *ExtrasCustomFieldsPartialUpdateParams {
-	var ()
 	return &ExtrasCustomFieldsPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewExtrasCustomFieldsPartialUpdateParamsWithTimeout creates a new ExtrasCustomFieldsPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewExtrasCustomFieldsPartialUpdateParamsWithTimeout(timeout time.Duration) *ExtrasCustomFieldsPartialUpdateParams {
-	var ()
 	return &ExtrasCustomFieldsPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewExtrasCustomFieldsPartialUpdateParamsWithContext creates a new ExtrasCustomFieldsPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewExtrasCustomFieldsPartialUpdateParamsWithContext(ctx context.Context) *ExtrasCustomFieldsPartialUpdateParams {
-	var ()
 	return &ExtrasCustomFieldsPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewExtrasCustomFieldsPartialUpdateParamsWithHTTPClient creates a new ExtrasCustomFieldsPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewExtrasCustomFieldsPartialUpdateParamsWithHTTPClient(client *http.Client) *ExtrasCustomFieldsPartialUpdateParams {
-	var ()
 	return &ExtrasCustomFieldsPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*ExtrasCustomFieldsPartialUpdateParams contains all the parameters to send to the API endpoint
-for the extras custom fields partial update operation typically these are written to a http.Request
+/* ExtrasCustomFieldsPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the extras custom fields partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type ExtrasCustomFieldsPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableCustomField
-	/*ID
-	  A unique integer value identifying this custom field.
 
+	/* ID.
+
+	   A unique integer value identifying this custom field.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the extras custom fields partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsPartialUpdateParams) WithDefaults() *ExtrasCustomFieldsPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the extras custom fields partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ExtrasCustomFieldsPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extras custom fields partial update params
@@ -153,7 +168,6 @@ func (o *ExtrasCustomFieldsPartialUpdateParams) WriteToRequest(r runtime.ClientR
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

@@ -21,6 +21,7 @@ package secrets
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"strconv"
@@ -65,7 +66,7 @@ func NewSecretsSecretRolesListOK() *SecretsSecretRolesListOK {
 	return &SecretsSecretRolesListOK{}
 }
 
-/*SecretsSecretRolesListOK handles this case with default header values.
+/* SecretsSecretRolesListOK describes a response with status code 200, with default header values.
 
 SecretsSecretRolesListOK secrets secret roles list o k
 */
@@ -76,7 +77,6 @@ type SecretsSecretRolesListOK struct {
 func (o *SecretsSecretRolesListOK) Error() string {
 	return fmt.Sprintf("[GET /secrets/secret-roles/][%d] secretsSecretRolesListOK  %+v", 200, o.Payload)
 }
-
 func (o *SecretsSecretRolesListOK) GetPayload() *SecretsSecretRolesListOKBody {
 	return o.Payload
 }
@@ -100,7 +100,7 @@ func NewSecretsSecretRolesListDefault(code int) *SecretsSecretRolesListDefault {
 	}
 }
 
-/*SecretsSecretRolesListDefault handles this case with default header values.
+/* SecretsSecretRolesListDefault describes a response with status code -1, with default header values.
 
 SecretsSecretRolesListDefault secrets secret roles list default
 */
@@ -118,7 +118,6 @@ func (o *SecretsSecretRolesListDefault) Code() int {
 func (o *SecretsSecretRolesListDefault) Error() string {
 	return fmt.Sprintf("[GET /secrets/secret-roles/][%d] secrets_secret-roles_list default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *SecretsSecretRolesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -191,7 +190,6 @@ func (o *SecretsSecretRolesListOKBody) validateCount(formats strfmt.Registry) er
 }
 
 func (o *SecretsSecretRolesListOKBody) validateNext(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Next) { // not required
 		return nil
 	}
@@ -204,7 +202,6 @@ func (o *SecretsSecretRolesListOKBody) validateNext(formats strfmt.Registry) err
 }
 
 func (o *SecretsSecretRolesListOKBody) validatePrevious(formats strfmt.Registry) error {
-
 	if swag.IsZero(o.Previous) { // not required
 		return nil
 	}
@@ -229,6 +226,38 @@ func (o *SecretsSecretRolesListOKBody) validateResults(formats strfmt.Registry) 
 
 		if o.Results[i] != nil {
 			if err := o.Results[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("secretsSecretRolesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this secrets secret roles list o k body based on the context it is used
+func (o *SecretsSecretRolesListOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := o.contextValidateResults(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (o *SecretsSecretRolesListOKBody) contextValidateResults(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(o.Results); i++ {
+
+		if o.Results[i] != nil {
+			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("secretsSecretRolesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}

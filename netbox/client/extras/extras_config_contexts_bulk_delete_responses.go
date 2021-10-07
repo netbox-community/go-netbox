@@ -59,7 +59,7 @@ func NewExtrasConfigContextsBulkDeleteNoContent() *ExtrasConfigContextsBulkDelet
 	return &ExtrasConfigContextsBulkDeleteNoContent{}
 }
 
-/*ExtrasConfigContextsBulkDeleteNoContent handles this case with default header values.
+/* ExtrasConfigContextsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasConfigContextsBulkDeleteNoContent extras config contexts bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewExtrasConfigContextsBulkDeleteDefault(code int) *ExtrasConfigContextsBul
 	}
 }
 
-/*ExtrasConfigContextsBulkDeleteDefault handles this case with default header values.
+/* ExtrasConfigContextsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasConfigContextsBulkDeleteDefault extras config contexts bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *ExtrasConfigContextsBulkDeleteDefault) Code() int {
 func (o *ExtrasConfigContextsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/config-contexts/][%d] extras_config-contexts_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *ExtrasConfigContextsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

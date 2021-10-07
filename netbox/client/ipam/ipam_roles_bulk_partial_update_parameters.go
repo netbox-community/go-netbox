@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamRolesBulkPartialUpdateParams creates a new IpamRolesBulkPartialUpdateParams object
-// with the default values initialized.
+// NewIpamRolesBulkPartialUpdateParams creates a new IpamRolesBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRolesBulkPartialUpdateParams() *IpamRolesBulkPartialUpdateParams {
-	var ()
 	return &IpamRolesBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRolesBulkPartialUpdateParamsWithTimeout creates a new IpamRolesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRolesBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *IpamRolesBulkPartialUpdateParams {
-	var ()
 	return &IpamRolesBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRolesBulkPartialUpdateParamsWithContext creates a new IpamRolesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRolesBulkPartialUpdateParamsWithContext(ctx context.Context) *IpamRolesBulkPartialUpdateParams {
-	var ()
 	return &IpamRolesBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRolesBulkPartialUpdateParamsWithHTTPClient creates a new IpamRolesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRolesBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamRolesBulkPartialUpdateParams {
-	var ()
 	return &IpamRolesBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRolesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the ipam roles bulk partial update operation typically these are written to a http.Request
+/* IpamRolesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam roles bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRolesBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Role
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam roles bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRolesBulkPartialUpdateParams) WithDefaults() *IpamRolesBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam roles bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRolesBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam roles bulk partial update params
@@ -136,7 +150,6 @@ func (o *IpamRolesBulkPartialUpdateParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

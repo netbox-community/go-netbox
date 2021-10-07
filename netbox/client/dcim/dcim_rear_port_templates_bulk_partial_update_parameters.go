@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimRearPortTemplatesBulkPartialUpdateParams creates a new DcimRearPortTemplatesBulkPartialUpdateParams object
-// with the default values initialized.
+// NewDcimRearPortTemplatesBulkPartialUpdateParams creates a new DcimRearPortTemplatesBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRearPortTemplatesBulkPartialUpdateParams() *DcimRearPortTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimRearPortTemplatesBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRearPortTemplatesBulkPartialUpdateParamsWithTimeout creates a new DcimRearPortTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRearPortTemplatesBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimRearPortTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimRearPortTemplatesBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRearPortTemplatesBulkPartialUpdateParamsWithContext creates a new DcimRearPortTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRearPortTemplatesBulkPartialUpdateParamsWithContext(ctx context.Context) *DcimRearPortTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimRearPortTemplatesBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRearPortTemplatesBulkPartialUpdateParamsWithHTTPClient creates a new DcimRearPortTemplatesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRearPortTemplatesBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimRearPortTemplatesBulkPartialUpdateParams {
-	var ()
 	return &DcimRearPortTemplatesBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRearPortTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim rear port templates bulk partial update operation typically these are written to a http.Request
+/* DcimRearPortTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim rear port templates bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRearPortTemplatesBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritableRearPortTemplate
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rear port templates bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRearPortTemplatesBulkPartialUpdateParams) WithDefaults() *DcimRearPortTemplatesBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rear port templates bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRearPortTemplatesBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rear port templates bulk partial update params
@@ -136,7 +150,6 @@ func (o *DcimRearPortTemplatesBulkPartialUpdateParams) WriteToRequest(r runtime.
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

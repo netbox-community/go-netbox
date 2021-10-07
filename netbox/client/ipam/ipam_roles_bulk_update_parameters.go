@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewIpamRolesBulkUpdateParams creates a new IpamRolesBulkUpdateParams object
-// with the default values initialized.
+// NewIpamRolesBulkUpdateParams creates a new IpamRolesBulkUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRolesBulkUpdateParams() *IpamRolesBulkUpdateParams {
-	var ()
 	return &IpamRolesBulkUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRolesBulkUpdateParamsWithTimeout creates a new IpamRolesBulkUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRolesBulkUpdateParamsWithTimeout(timeout time.Duration) *IpamRolesBulkUpdateParams {
-	var ()
 	return &IpamRolesBulkUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRolesBulkUpdateParamsWithContext creates a new IpamRolesBulkUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRolesBulkUpdateParamsWithContext(ctx context.Context) *IpamRolesBulkUpdateParams {
-	var ()
 	return &IpamRolesBulkUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRolesBulkUpdateParamsWithHTTPClient creates a new IpamRolesBulkUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRolesBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamRolesBulkUpdateParams {
-	var ()
 	return &IpamRolesBulkUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRolesBulkUpdateParams contains all the parameters to send to the API endpoint
-for the ipam roles bulk update operation typically these are written to a http.Request
+/* IpamRolesBulkUpdateParams contains all the parameters to send to the API endpoint
+   for the ipam roles bulk update operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRolesBulkUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.Role
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam roles bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRolesBulkUpdateParams) WithDefaults() *IpamRolesBulkUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam roles bulk update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRolesBulkUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam roles bulk update params
@@ -136,7 +150,6 @@ func (o *IpamRolesBulkUpdateParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

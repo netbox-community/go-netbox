@@ -61,7 +61,7 @@ func NewDcimPowerFeedsUpdateOK() *DcimPowerFeedsUpdateOK {
 	return &DcimPowerFeedsUpdateOK{}
 }
 
-/*DcimPowerFeedsUpdateOK handles this case with default header values.
+/* DcimPowerFeedsUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerFeedsUpdateOK dcim power feeds update o k
 */
@@ -72,7 +72,6 @@ type DcimPowerFeedsUpdateOK struct {
 func (o *DcimPowerFeedsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcimPowerFeedsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerFeedsUpdateOK) GetPayload() *models.PowerFeed {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerFeedsUpdateDefault(code int) *DcimPowerFeedsUpdateDefault {
 	}
 }
 
-/*DcimPowerFeedsUpdateDefault handles this case with default header values.
+/* DcimPowerFeedsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsUpdateDefault dcim power feeds update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerFeedsUpdateDefault) Code() int {
 func (o *DcimPowerFeedsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-feeds/{id}/][%d] dcim_power-feeds_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerFeedsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

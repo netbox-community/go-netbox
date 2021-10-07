@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimRackRolesBulkPartialUpdateParams creates a new DcimRackRolesBulkPartialUpdateParams object
-// with the default values initialized.
+// NewDcimRackRolesBulkPartialUpdateParams creates a new DcimRackRolesBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimRackRolesBulkPartialUpdateParams() *DcimRackRolesBulkPartialUpdateParams {
-	var ()
 	return &DcimRackRolesBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimRackRolesBulkPartialUpdateParamsWithTimeout creates a new DcimRackRolesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimRackRolesBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimRackRolesBulkPartialUpdateParams {
-	var ()
 	return &DcimRackRolesBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimRackRolesBulkPartialUpdateParamsWithContext creates a new DcimRackRolesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimRackRolesBulkPartialUpdateParamsWithContext(ctx context.Context) *DcimRackRolesBulkPartialUpdateParams {
-	var ()
 	return &DcimRackRolesBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimRackRolesBulkPartialUpdateParamsWithHTTPClient creates a new DcimRackRolesBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimRackRolesBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimRackRolesBulkPartialUpdateParams {
-	var ()
 	return &DcimRackRolesBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimRackRolesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim rack roles bulk partial update operation typically these are written to a http.Request
+/* DcimRackRolesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim rack roles bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimRackRolesBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.RackRole
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim rack roles bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackRolesBulkPartialUpdateParams) WithDefaults() *DcimRackRolesBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim rack roles bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimRackRolesBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim rack roles bulk partial update params
@@ -136,7 +150,6 @@ func (o *DcimRackRolesBulkPartialUpdateParams) WriteToRequest(r runtime.ClientRe
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

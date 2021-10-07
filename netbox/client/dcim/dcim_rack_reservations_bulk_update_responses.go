@@ -61,7 +61,7 @@ func NewDcimRackReservationsBulkUpdateOK() *DcimRackReservationsBulkUpdateOK {
 	return &DcimRackReservationsBulkUpdateOK{}
 }
 
-/*DcimRackReservationsBulkUpdateOK handles this case with default header values.
+/* DcimRackReservationsBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimRackReservationsBulkUpdateOK dcim rack reservations bulk update o k
 */
@@ -72,7 +72,6 @@ type DcimRackReservationsBulkUpdateOK struct {
 func (o *DcimRackReservationsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-reservations/][%d] dcimRackReservationsBulkUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackReservationsBulkUpdateOK) GetPayload() *models.RackReservation {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRackReservationsBulkUpdateDefault(code int) *DcimRackReservationsBul
 	}
 }
 
-/*DcimRackReservationsBulkUpdateDefault handles this case with default header values.
+/* DcimRackReservationsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRackReservationsBulkUpdateDefault dcim rack reservations bulk update default
 */
@@ -114,7 +113,6 @@ func (o *DcimRackReservationsBulkUpdateDefault) Code() int {
 func (o *DcimRackReservationsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rack-reservations/][%d] dcim_rack-reservations_bulk_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackReservationsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

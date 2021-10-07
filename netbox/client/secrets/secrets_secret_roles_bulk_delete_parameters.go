@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewSecretsSecretRolesBulkDeleteParams creates a new SecretsSecretRolesBulkDeleteParams object
-// with the default values initialized.
+// NewSecretsSecretRolesBulkDeleteParams creates a new SecretsSecretRolesBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewSecretsSecretRolesBulkDeleteParams() *SecretsSecretRolesBulkDeleteParams {
-
 	return &SecretsSecretRolesBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewSecretsSecretRolesBulkDeleteParamsWithTimeout creates a new SecretsSecretRolesBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewSecretsSecretRolesBulkDeleteParamsWithTimeout(timeout time.Duration) *SecretsSecretRolesBulkDeleteParams {
-
 	return &SecretsSecretRolesBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewSecretsSecretRolesBulkDeleteParamsWithContext creates a new SecretsSecretRolesBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewSecretsSecretRolesBulkDeleteParamsWithContext(ctx context.Context) *SecretsSecretRolesBulkDeleteParams {
-
 	return &SecretsSecretRolesBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewSecretsSecretRolesBulkDeleteParamsWithHTTPClient creates a new SecretsSecretRolesBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewSecretsSecretRolesBulkDeleteParamsWithHTTPClient(client *http.Client) *SecretsSecretRolesBulkDeleteParams {
-
 	return &SecretsSecretRolesBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*SecretsSecretRolesBulkDeleteParams contains all the parameters to send to the API endpoint
-for the secrets secret roles bulk delete operation typically these are written to a http.Request
+/* SecretsSecretRolesBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the secrets secret roles bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type SecretsSecretRolesBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the secrets secret roles bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretRolesBulkDeleteParams) WithDefaults() *SecretsSecretRolesBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the secrets secret roles bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *SecretsSecretRolesBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the secrets secret roles bulk delete params

@@ -33,56 +33,70 @@ import (
 	"github.com/fbreckle/go-netbox/netbox/models"
 )
 
-// NewDcimPowerPanelsBulkPartialUpdateParams creates a new DcimPowerPanelsBulkPartialUpdateParams object
-// with the default values initialized.
+// NewDcimPowerPanelsBulkPartialUpdateParams creates a new DcimPowerPanelsBulkPartialUpdateParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimPowerPanelsBulkPartialUpdateParams() *DcimPowerPanelsBulkPartialUpdateParams {
-	var ()
 	return &DcimPowerPanelsBulkPartialUpdateParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimPowerPanelsBulkPartialUpdateParamsWithTimeout creates a new DcimPowerPanelsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimPowerPanelsBulkPartialUpdateParamsWithTimeout(timeout time.Duration) *DcimPowerPanelsBulkPartialUpdateParams {
-	var ()
 	return &DcimPowerPanelsBulkPartialUpdateParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimPowerPanelsBulkPartialUpdateParamsWithContext creates a new DcimPowerPanelsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimPowerPanelsBulkPartialUpdateParamsWithContext(ctx context.Context) *DcimPowerPanelsBulkPartialUpdateParams {
-	var ()
 	return &DcimPowerPanelsBulkPartialUpdateParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimPowerPanelsBulkPartialUpdateParamsWithHTTPClient creates a new DcimPowerPanelsBulkPartialUpdateParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimPowerPanelsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimPowerPanelsBulkPartialUpdateParams {
-	var ()
 	return &DcimPowerPanelsBulkPartialUpdateParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimPowerPanelsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-for the dcim power panels bulk partial update operation typically these are written to a http.Request
+/* DcimPowerPanelsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
+   for the dcim power panels bulk partial update operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimPowerPanelsBulkPartialUpdateParams struct {
 
-	/*Data*/
+	// Data.
 	Data *models.WritablePowerPanel
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim power panels bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPanelsBulkPartialUpdateParams) WithDefaults() *DcimPowerPanelsBulkPartialUpdateParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim power panels bulk partial update params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimPowerPanelsBulkPartialUpdateParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim power panels bulk partial update params
@@ -136,7 +150,6 @@ func (o *DcimPowerPanelsBulkPartialUpdateParams) WriteToRequest(r runtime.Client
 		return err
 	}
 	var res []error
-
 	if o.Data != nil {
 		if err := r.SetBodyParam(o.Data); err != nil {
 			return err

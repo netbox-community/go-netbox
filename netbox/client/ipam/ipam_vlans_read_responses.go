@@ -61,7 +61,7 @@ func NewIpamVlansReadOK() *IpamVlansReadOK {
 	return &IpamVlansReadOK{}
 }
 
-/*IpamVlansReadOK handles this case with default header values.
+/* IpamVlansReadOK describes a response with status code 200, with default header values.
 
 IpamVlansReadOK ipam vlans read o k
 */
@@ -72,7 +72,6 @@ type IpamVlansReadOK struct {
 func (o *IpamVlansReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipamVlansReadOK  %+v", 200, o.Payload)
 }
-
 func (o *IpamVlansReadOK) GetPayload() *models.VLAN {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVlansReadDefault(code int) *IpamVlansReadDefault {
 	}
 }
 
-/*IpamVlansReadDefault handles this case with default header values.
+/* IpamVlansReadDefault describes a response with status code -1, with default header values.
 
 IpamVlansReadDefault ipam vlans read default
 */
@@ -114,7 +113,6 @@ func (o *IpamVlansReadDefault) Code() int {
 func (o *IpamVlansReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipam_vlans_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVlansReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

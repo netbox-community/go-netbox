@@ -32,154 +32,214 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewDcimVirtualChassisListParams creates a new DcimVirtualChassisListParams object
-// with the default values initialized.
+// NewDcimVirtualChassisListParams creates a new DcimVirtualChassisListParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimVirtualChassisListParams() *DcimVirtualChassisListParams {
-	var ()
 	return &DcimVirtualChassisListParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimVirtualChassisListParamsWithTimeout creates a new DcimVirtualChassisListParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimVirtualChassisListParamsWithTimeout(timeout time.Duration) *DcimVirtualChassisListParams {
-	var ()
 	return &DcimVirtualChassisListParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimVirtualChassisListParamsWithContext creates a new DcimVirtualChassisListParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimVirtualChassisListParamsWithContext(ctx context.Context) *DcimVirtualChassisListParams {
-	var ()
 	return &DcimVirtualChassisListParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimVirtualChassisListParamsWithHTTPClient creates a new DcimVirtualChassisListParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimVirtualChassisListParamsWithHTTPClient(client *http.Client) *DcimVirtualChassisListParams {
-	var ()
 	return &DcimVirtualChassisListParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimVirtualChassisListParams contains all the parameters to send to the API endpoint
-for the dcim virtual chassis list operation typically these are written to a http.Request
+/* DcimVirtualChassisListParams contains all the parameters to send to the API endpoint
+   for the dcim virtual chassis list operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimVirtualChassisListParams struct {
 
-	/*Domain*/
+	// Domain.
 	Domain *string
-	/*DomainIc*/
-	DomainIc *string
-	/*DomainIe*/
-	DomainIe *string
-	/*DomainIew*/
-	DomainIew *string
-	/*DomainIsw*/
-	DomainIsw *string
-	/*Domainn*/
-	Domainn *string
-	/*DomainNic*/
-	DomainNic *string
-	/*DomainNie*/
-	DomainNie *string
-	/*DomainNiew*/
-	DomainNiew *string
-	/*DomainNisw*/
-	DomainNisw *string
-	/*ID*/
-	ID *string
-	/*IDGt*/
-	IDGt *string
-	/*IDGte*/
-	IDGte *string
-	/*IDLt*/
-	IDLt *string
-	/*IDLte*/
-	IDLte *string
-	/*IDn*/
-	IDn *string
-	/*Limit
-	  Number of results to return per page.
 
+	// DomainIc.
+	DomainIc *string
+
+	// DomainIe.
+	DomainIe *string
+
+	// DomainIew.
+	DomainIew *string
+
+	// DomainIsw.
+	DomainIsw *string
+
+	// Domainn.
+	Domainn *string
+
+	// DomainNic.
+	DomainNic *string
+
+	// DomainNie.
+	DomainNie *string
+
+	// DomainNiew.
+	DomainNiew *string
+
+	// DomainNisw.
+	DomainNisw *string
+
+	// ID.
+	ID *string
+
+	// IDGt.
+	IDGt *string
+
+	// IDGte.
+	IDGte *string
+
+	// IDLt.
+	IDLt *string
+
+	// IDLte.
+	IDLte *string
+
+	// IDn.
+	IDn *string
+
+	/* Limit.
+
+	   Number of results to return per page.
 	*/
 	Limit *int64
-	/*Master*/
-	Master *string
-	/*Mastern*/
-	Mastern *string
-	/*MasterID*/
-	MasterID *string
-	/*MasterIDn*/
-	MasterIDn *string
-	/*Name*/
-	Name *string
-	/*NameIc*/
-	NameIc *string
-	/*NameIe*/
-	NameIe *string
-	/*NameIew*/
-	NameIew *string
-	/*NameIsw*/
-	NameIsw *string
-	/*Namen*/
-	Namen *string
-	/*NameNic*/
-	NameNic *string
-	/*NameNie*/
-	NameNie *string
-	/*NameNiew*/
-	NameNiew *string
-	/*NameNisw*/
-	NameNisw *string
-	/*Offset
-	  The initial index from which to return the results.
 
+	// Master.
+	Master *string
+
+	// Mastern.
+	Mastern *string
+
+	// MasterID.
+	MasterID *string
+
+	// MasterIDn.
+	MasterIDn *string
+
+	// Name.
+	Name *string
+
+	// NameIc.
+	NameIc *string
+
+	// NameIe.
+	NameIe *string
+
+	// NameIew.
+	NameIew *string
+
+	// NameIsw.
+	NameIsw *string
+
+	// Namen.
+	Namen *string
+
+	// NameNic.
+	NameNic *string
+
+	// NameNie.
+	NameNie *string
+
+	// NameNiew.
+	NameNiew *string
+
+	// NameNisw.
+	NameNisw *string
+
+	/* Offset.
+
+	   The initial index from which to return the results.
 	*/
 	Offset *int64
-	/*Q*/
+
+	// Q.
 	Q *string
-	/*Region*/
+
+	// Region.
 	Region *string
-	/*Regionn*/
+
+	// Regionn.
 	Regionn *string
-	/*RegionID*/
+
+	// RegionID.
 	RegionID *string
-	/*RegionIDn*/
+
+	// RegionIDn.
 	RegionIDn *string
-	/*Site*/
+
+	// Site.
 	Site *string
-	/*Siten*/
+
+	// Siten.
 	Siten *string
-	/*SiteID*/
+
+	// SiteID.
 	SiteID *string
-	/*SiteIDn*/
+
+	// SiteIDn.
 	SiteIDn *string
-	/*Tag*/
+
+	// Tag.
 	Tag *string
-	/*Tagn*/
+
+	// Tagn.
 	Tagn *string
-	/*Tenant*/
+
+	// Tenant.
 	Tenant *string
-	/*Tenantn*/
+
+	// Tenantn.
 	Tenantn *string
-	/*TenantID*/
+
+	// TenantID.
 	TenantID *string
-	/*TenantIDn*/
+
+	// TenantIDn.
 	TenantIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim virtual chassis list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimVirtualChassisListParams) WithDefaults() *DcimVirtualChassisListParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim virtual chassis list params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimVirtualChassisListParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim virtual chassis list params
@@ -744,752 +804,799 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 
 		// query param domain
 		var qrDomain string
+
 		if o.Domain != nil {
 			qrDomain = *o.Domain
 		}
 		qDomain := qrDomain
 		if qDomain != "" {
+
 			if err := r.SetQueryParam("domain", qDomain); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DomainIc != nil {
 
 		// query param domain__ic
 		var qrDomainIc string
+
 		if o.DomainIc != nil {
 			qrDomainIc = *o.DomainIc
 		}
 		qDomainIc := qrDomainIc
 		if qDomainIc != "" {
+
 			if err := r.SetQueryParam("domain__ic", qDomainIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DomainIe != nil {
 
 		// query param domain__ie
 		var qrDomainIe string
+
 		if o.DomainIe != nil {
 			qrDomainIe = *o.DomainIe
 		}
 		qDomainIe := qrDomainIe
 		if qDomainIe != "" {
+
 			if err := r.SetQueryParam("domain__ie", qDomainIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DomainIew != nil {
 
 		// query param domain__iew
 		var qrDomainIew string
+
 		if o.DomainIew != nil {
 			qrDomainIew = *o.DomainIew
 		}
 		qDomainIew := qrDomainIew
 		if qDomainIew != "" {
+
 			if err := r.SetQueryParam("domain__iew", qDomainIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DomainIsw != nil {
 
 		// query param domain__isw
 		var qrDomainIsw string
+
 		if o.DomainIsw != nil {
 			qrDomainIsw = *o.DomainIsw
 		}
 		qDomainIsw := qrDomainIsw
 		if qDomainIsw != "" {
+
 			if err := r.SetQueryParam("domain__isw", qDomainIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Domainn != nil {
 
 		// query param domain__n
 		var qrDomainn string
+
 		if o.Domainn != nil {
 			qrDomainn = *o.Domainn
 		}
 		qDomainn := qrDomainn
 		if qDomainn != "" {
+
 			if err := r.SetQueryParam("domain__n", qDomainn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DomainNic != nil {
 
 		// query param domain__nic
 		var qrDomainNic string
+
 		if o.DomainNic != nil {
 			qrDomainNic = *o.DomainNic
 		}
 		qDomainNic := qrDomainNic
 		if qDomainNic != "" {
+
 			if err := r.SetQueryParam("domain__nic", qDomainNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DomainNie != nil {
 
 		// query param domain__nie
 		var qrDomainNie string
+
 		if o.DomainNie != nil {
 			qrDomainNie = *o.DomainNie
 		}
 		qDomainNie := qrDomainNie
 		if qDomainNie != "" {
+
 			if err := r.SetQueryParam("domain__nie", qDomainNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DomainNiew != nil {
 
 		// query param domain__niew
 		var qrDomainNiew string
+
 		if o.DomainNiew != nil {
 			qrDomainNiew = *o.DomainNiew
 		}
 		qDomainNiew := qrDomainNiew
 		if qDomainNiew != "" {
+
 			if err := r.SetQueryParam("domain__niew", qDomainNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DomainNisw != nil {
 
 		// query param domain__nisw
 		var qrDomainNisw string
+
 		if o.DomainNisw != nil {
 			qrDomainNisw = *o.DomainNisw
 		}
 		qDomainNisw := qrDomainNisw
 		if qDomainNisw != "" {
+
 			if err := r.SetQueryParam("domain__nisw", qDomainNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.ID != nil {
 
 		// query param id
 		var qrID string
+
 		if o.ID != nil {
 			qrID = *o.ID
 		}
 		qID := qrID
 		if qID != "" {
+
 			if err := r.SetQueryParam("id", qID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGt != nil {
 
 		// query param id__gt
 		var qrIDGt string
+
 		if o.IDGt != nil {
 			qrIDGt = *o.IDGt
 		}
 		qIDGt := qrIDGt
 		if qIDGt != "" {
+
 			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDGte != nil {
 
 		// query param id__gte
 		var qrIDGte string
+
 		if o.IDGte != nil {
 			qrIDGte = *o.IDGte
 		}
 		qIDGte := qrIDGte
 		if qIDGte != "" {
+
 			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLt != nil {
 
 		// query param id__lt
 		var qrIDLt string
+
 		if o.IDLt != nil {
 			qrIDLt = *o.IDLt
 		}
 		qIDLt := qrIDLt
 		if qIDLt != "" {
+
 			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDLte != nil {
 
 		// query param id__lte
 		var qrIDLte string
+
 		if o.IDLte != nil {
 			qrIDLte = *o.IDLte
 		}
 		qIDLte := qrIDLte
 		if qIDLte != "" {
+
 			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.IDn != nil {
 
 		// query param id__n
 		var qrIDn string
+
 		if o.IDn != nil {
 			qrIDn = *o.IDn
 		}
 		qIDn := qrIDn
 		if qIDn != "" {
+
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Limit != nil {
 
 		// query param limit
 		var qrLimit int64
+
 		if o.Limit != nil {
 			qrLimit = *o.Limit
 		}
 		qLimit := swag.FormatInt64(qrLimit)
 		if qLimit != "" {
+
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Master != nil {
 
 		// query param master
 		var qrMaster string
+
 		if o.Master != nil {
 			qrMaster = *o.Master
 		}
 		qMaster := qrMaster
 		if qMaster != "" {
+
 			if err := r.SetQueryParam("master", qMaster); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Mastern != nil {
 
 		// query param master__n
 		var qrMastern string
+
 		if o.Mastern != nil {
 			qrMastern = *o.Mastern
 		}
 		qMastern := qrMastern
 		if qMastern != "" {
+
 			if err := r.SetQueryParam("master__n", qMastern); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MasterID != nil {
 
 		// query param master_id
 		var qrMasterID string
+
 		if o.MasterID != nil {
 			qrMasterID = *o.MasterID
 		}
 		qMasterID := qrMasterID
 		if qMasterID != "" {
+
 			if err := r.SetQueryParam("master_id", qMasterID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.MasterIDn != nil {
 
 		// query param master_id__n
 		var qrMasterIDn string
+
 		if o.MasterIDn != nil {
 			qrMasterIDn = *o.MasterIDn
 		}
 		qMasterIDn := qrMasterIDn
 		if qMasterIDn != "" {
+
 			if err := r.SetQueryParam("master_id__n", qMasterIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Name != nil {
 
 		// query param name
 		var qrName string
+
 		if o.Name != nil {
 			qrName = *o.Name
 		}
 		qName := qrName
 		if qName != "" {
+
 			if err := r.SetQueryParam("name", qName); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIc != nil {
 
 		// query param name__ic
 		var qrNameIc string
+
 		if o.NameIc != nil {
 			qrNameIc = *o.NameIc
 		}
 		qNameIc := qrNameIc
 		if qNameIc != "" {
+
 			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIe != nil {
 
 		// query param name__ie
 		var qrNameIe string
+
 		if o.NameIe != nil {
 			qrNameIe = *o.NameIe
 		}
 		qNameIe := qrNameIe
 		if qNameIe != "" {
+
 			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIew != nil {
 
 		// query param name__iew
 		var qrNameIew string
+
 		if o.NameIew != nil {
 			qrNameIew = *o.NameIew
 		}
 		qNameIew := qrNameIew
 		if qNameIew != "" {
+
 			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameIsw != nil {
 
 		// query param name__isw
 		var qrNameIsw string
+
 		if o.NameIsw != nil {
 			qrNameIsw = *o.NameIsw
 		}
 		qNameIsw := qrNameIsw
 		if qNameIsw != "" {
+
 			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Namen != nil {
 
 		// query param name__n
 		var qrNamen string
+
 		if o.Namen != nil {
 			qrNamen = *o.Namen
 		}
 		qNamen := qrNamen
 		if qNamen != "" {
+
 			if err := r.SetQueryParam("name__n", qNamen); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNic != nil {
 
 		// query param name__nic
 		var qrNameNic string
+
 		if o.NameNic != nil {
 			qrNameNic = *o.NameNic
 		}
 		qNameNic := qrNameNic
 		if qNameNic != "" {
+
 			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNie != nil {
 
 		// query param name__nie
 		var qrNameNie string
+
 		if o.NameNie != nil {
 			qrNameNie = *o.NameNie
 		}
 		qNameNie := qrNameNie
 		if qNameNie != "" {
+
 			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNiew != nil {
 
 		// query param name__niew
 		var qrNameNiew string
+
 		if o.NameNiew != nil {
 			qrNameNiew = *o.NameNiew
 		}
 		qNameNiew := qrNameNiew
 		if qNameNiew != "" {
+
 			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.NameNisw != nil {
 
 		// query param name__nisw
 		var qrNameNisw string
+
 		if o.NameNisw != nil {
 			qrNameNisw = *o.NameNisw
 		}
 		qNameNisw := qrNameNisw
 		if qNameNisw != "" {
+
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Offset != nil {
 
 		// query param offset
 		var qrOffset int64
+
 		if o.Offset != nil {
 			qrOffset = *o.Offset
 		}
 		qOffset := swag.FormatInt64(qrOffset)
 		if qOffset != "" {
+
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Q != nil {
 
 		// query param q
 		var qrQ string
+
 		if o.Q != nil {
 			qrQ = *o.Q
 		}
 		qQ := qrQ
 		if qQ != "" {
+
 			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Region != nil {
 
 		// query param region
 		var qrRegion string
+
 		if o.Region != nil {
 			qrRegion = *o.Region
 		}
 		qRegion := qrRegion
 		if qRegion != "" {
+
 			if err := r.SetQueryParam("region", qRegion); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Regionn != nil {
 
 		// query param region__n
 		var qrRegionn string
+
 		if o.Regionn != nil {
 			qrRegionn = *o.Regionn
 		}
 		qRegionn := qrRegionn
 		if qRegionn != "" {
+
 			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionID != nil {
 
 		// query param region_id
 		var qrRegionID string
+
 		if o.RegionID != nil {
 			qrRegionID = *o.RegionID
 		}
 		qRegionID := qrRegionID
 		if qRegionID != "" {
+
 			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.RegionIDn != nil {
 
 		// query param region_id__n
 		var qrRegionIDn string
+
 		if o.RegionIDn != nil {
 			qrRegionIDn = *o.RegionIDn
 		}
 		qRegionIDn := qrRegionIDn
 		if qRegionIDn != "" {
+
 			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Site != nil {
 
 		// query param site
 		var qrSite string
+
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
 		qSite := qrSite
 		if qSite != "" {
+
 			if err := r.SetQueryParam("site", qSite); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Siten != nil {
 
 		// query param site__n
 		var qrSiten string
+
 		if o.Siten != nil {
 			qrSiten = *o.Siten
 		}
 		qSiten := qrSiten
 		if qSiten != "" {
+
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteID != nil {
 
 		// query param site_id
 		var qrSiteID string
+
 		if o.SiteID != nil {
 			qrSiteID = *o.SiteID
 		}
 		qSiteID := qrSiteID
 		if qSiteID != "" {
+
 			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.SiteIDn != nil {
 
 		// query param site_id__n
 		var qrSiteIDn string
+
 		if o.SiteIDn != nil {
 			qrSiteIDn = *o.SiteIDn
 		}
 		qSiteIDn := qrSiteIDn
 		if qSiteIDn != "" {
+
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tag != nil {
 
 		// query param tag
 		var qrTag string
+
 		if o.Tag != nil {
 			qrTag = *o.Tag
 		}
 		qTag := qrTag
 		if qTag != "" {
+
 			if err := r.SetQueryParam("tag", qTag); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tagn != nil {
 
 		// query param tag__n
 		var qrTagn string
+
 		if o.Tagn != nil {
 			qrTagn = *o.Tagn
 		}
 		qTagn := qrTagn
 		if qTagn != "" {
+
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenant != nil {
 
 		// query param tenant
 		var qrTenant string
+
 		if o.Tenant != nil {
 			qrTenant = *o.Tenant
 		}
 		qTenant := qrTenant
 		if qTenant != "" {
+
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.Tenantn != nil {
 
 		// query param tenant__n
 		var qrTenantn string
+
 		if o.Tenantn != nil {
 			qrTenantn = *o.Tenantn
 		}
 		qTenantn := qrTenantn
 		if qTenantn != "" {
+
 			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantID != nil {
 
 		// query param tenant_id
 		var qrTenantID string
+
 		if o.TenantID != nil {
 			qrTenantID = *o.TenantID
 		}
 		qTenantID := qrTenantID
 		if qTenantID != "" {
+
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.TenantIDn != nil {
 
 		// query param tenant_id__n
 		var qrTenantIDn string
+
 		if o.TenantIDn != nil {
 			qrTenantIDn = *o.TenantIDn
 		}
 		qTenantIDn := qrTenantIDn
 		if qTenantIDn != "" {
+
 			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

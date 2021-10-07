@@ -61,7 +61,7 @@ func NewDcimPowerPortsUpdateOK() *DcimPowerPortsUpdateOK {
 	return &DcimPowerPortsUpdateOK{}
 }
 
-/*DcimPowerPortsUpdateOK handles this case with default header values.
+/* DcimPowerPortsUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPortsUpdateOK dcim power ports update o k
 */
@@ -72,7 +72,6 @@ type DcimPowerPortsUpdateOK struct {
 func (o *DcimPowerPortsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-ports/{id}/][%d] dcimPowerPortsUpdateOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimPowerPortsUpdateOK) GetPayload() *models.PowerPort {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimPowerPortsUpdateDefault(code int) *DcimPowerPortsUpdateDefault {
 	}
 }
 
-/*DcimPowerPortsUpdateDefault handles this case with default header values.
+/* DcimPowerPortsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortsUpdateDefault dcim power ports update default
 */
@@ -114,7 +113,6 @@ func (o *DcimPowerPortsUpdateDefault) Code() int {
 func (o *DcimPowerPortsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-ports/{id}/][%d] dcim_power-ports_update default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimPowerPortsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

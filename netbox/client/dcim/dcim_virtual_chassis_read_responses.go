@@ -61,7 +61,7 @@ func NewDcimVirtualChassisReadOK() *DcimVirtualChassisReadOK {
 	return &DcimVirtualChassisReadOK{}
 }
 
-/*DcimVirtualChassisReadOK handles this case with default header values.
+/* DcimVirtualChassisReadOK describes a response with status code 200, with default header values.
 
 DcimVirtualChassisReadOK dcim virtual chassis read o k
 */
@@ -72,7 +72,6 @@ type DcimVirtualChassisReadOK struct {
 func (o *DcimVirtualChassisReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcimVirtualChassisReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimVirtualChassisReadOK) GetPayload() *models.VirtualChassis {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimVirtualChassisReadDefault(code int) *DcimVirtualChassisReadDefault {
 	}
 }
 
-/*DcimVirtualChassisReadDefault handles this case with default header values.
+/* DcimVirtualChassisReadDefault describes a response with status code -1, with default header values.
 
 DcimVirtualChassisReadDefault dcim virtual chassis read default
 */
@@ -114,7 +113,6 @@ func (o *DcimVirtualChassisReadDefault) Code() int {
 func (o *DcimVirtualChassisReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimVirtualChassisReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,7 @@ func NewDcimRackRolesReadOK() *DcimRackRolesReadOK {
 	return &DcimRackRolesReadOK{}
 }
 
-/*DcimRackRolesReadOK handles this case with default header values.
+/* DcimRackRolesReadOK describes a response with status code 200, with default header values.
 
 DcimRackRolesReadOK dcim rack roles read o k
 */
@@ -72,7 +72,6 @@ type DcimRackRolesReadOK struct {
 func (o *DcimRackRolesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-roles/{id}/][%d] dcimRackRolesReadOK  %+v", 200, o.Payload)
 }
-
 func (o *DcimRackRolesReadOK) GetPayload() *models.RackRole {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewDcimRackRolesReadDefault(code int) *DcimRackRolesReadDefault {
 	}
 }
 
-/*DcimRackRolesReadDefault handles this case with default header values.
+/* DcimRackRolesReadDefault describes a response with status code -1, with default header values.
 
 DcimRackRolesReadDefault dcim rack roles read default
 */
@@ -114,7 +113,6 @@ func (o *DcimRackRolesReadDefault) Code() int {
 func (o *DcimRackRolesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-roles/{id}/][%d] dcim_rack-roles_read default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *DcimRackRolesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

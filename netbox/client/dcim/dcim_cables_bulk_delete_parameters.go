@@ -31,52 +31,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewDcimCablesBulkDeleteParams creates a new DcimCablesBulkDeleteParams object
-// with the default values initialized.
+// NewDcimCablesBulkDeleteParams creates a new DcimCablesBulkDeleteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDcimCablesBulkDeleteParams() *DcimCablesBulkDeleteParams {
-
 	return &DcimCablesBulkDeleteParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewDcimCablesBulkDeleteParamsWithTimeout creates a new DcimCablesBulkDeleteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewDcimCablesBulkDeleteParamsWithTimeout(timeout time.Duration) *DcimCablesBulkDeleteParams {
-
 	return &DcimCablesBulkDeleteParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewDcimCablesBulkDeleteParamsWithContext creates a new DcimCablesBulkDeleteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewDcimCablesBulkDeleteParamsWithContext(ctx context.Context) *DcimCablesBulkDeleteParams {
-
 	return &DcimCablesBulkDeleteParams{
-
 		Context: ctx,
 	}
 }
 
 // NewDcimCablesBulkDeleteParamsWithHTTPClient creates a new DcimCablesBulkDeleteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewDcimCablesBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimCablesBulkDeleteParams {
-
 	return &DcimCablesBulkDeleteParams{
 		HTTPClient: client,
 	}
 }
 
-/*DcimCablesBulkDeleteParams contains all the parameters to send to the API endpoint
-for the dcim cables bulk delete operation typically these are written to a http.Request
+/* DcimCablesBulkDeleteParams contains all the parameters to send to the API endpoint
+   for the dcim cables bulk delete operation.
+
+   Typically these are written to a http.Request.
 */
 type DcimCablesBulkDeleteParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the dcim cables bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesBulkDeleteParams) WithDefaults() *DcimCablesBulkDeleteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the dcim cables bulk delete params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *DcimCablesBulkDeleteParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the dcim cables bulk delete params

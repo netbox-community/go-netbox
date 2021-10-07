@@ -61,7 +61,7 @@ func NewIpamVlanGroupsCreateCreated() *IpamVlanGroupsCreateCreated {
 	return &IpamVlanGroupsCreateCreated{}
 }
 
-/*IpamVlanGroupsCreateCreated handles this case with default header values.
+/* IpamVlanGroupsCreateCreated describes a response with status code 201, with default header values.
 
 IpamVlanGroupsCreateCreated ipam vlan groups create created
 */
@@ -72,7 +72,6 @@ type IpamVlanGroupsCreateCreated struct {
 func (o *IpamVlanGroupsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipamVlanGroupsCreateCreated  %+v", 201, o.Payload)
 }
-
 func (o *IpamVlanGroupsCreateCreated) GetPayload() *models.VLANGroup {
 	return o.Payload
 }
@@ -96,7 +95,7 @@ func NewIpamVlanGroupsCreateDefault(code int) *IpamVlanGroupsCreateDefault {
 	}
 }
 
-/*IpamVlanGroupsCreateDefault handles this case with default header values.
+/* IpamVlanGroupsCreateDefault describes a response with status code -1, with default header values.
 
 IpamVlanGroupsCreateDefault ipam vlan groups create default
 */
@@ -114,7 +113,6 @@ func (o *IpamVlanGroupsCreateDefault) Code() int {
 func (o *IpamVlanGroupsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/vlan-groups/][%d] ipam_vlan-groups_create default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *IpamVlanGroupsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,7 +59,7 @@ func NewUsersPermissionsBulkDeleteNoContent() *UsersPermissionsBulkDeleteNoConte
 	return &UsersPermissionsBulkDeleteNoContent{}
 }
 
-/*UsersPermissionsBulkDeleteNoContent handles this case with default header values.
+/* UsersPermissionsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 UsersPermissionsBulkDeleteNoContent users permissions bulk delete no content
 */
@@ -82,7 +82,7 @@ func NewUsersPermissionsBulkDeleteDefault(code int) *UsersPermissionsBulkDeleteD
 	}
 }
 
-/*UsersPermissionsBulkDeleteDefault handles this case with default header values.
+/* UsersPermissionsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 UsersPermissionsBulkDeleteDefault users permissions bulk delete default
 */
@@ -100,7 +100,6 @@ func (o *UsersPermissionsBulkDeleteDefault) Code() int {
 func (o *UsersPermissionsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /users/permissions/][%d] users_permissions_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
-
 func (o *UsersPermissionsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

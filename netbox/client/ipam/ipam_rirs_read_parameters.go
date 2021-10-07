@@ -32,59 +32,73 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewIpamRirsReadParams creates a new IpamRirsReadParams object
-// with the default values initialized.
+// NewIpamRirsReadParams creates a new IpamRirsReadParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewIpamRirsReadParams() *IpamRirsReadParams {
-	var ()
 	return &IpamRirsReadParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewIpamRirsReadParamsWithTimeout creates a new IpamRirsReadParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewIpamRirsReadParamsWithTimeout(timeout time.Duration) *IpamRirsReadParams {
-	var ()
 	return &IpamRirsReadParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewIpamRirsReadParamsWithContext creates a new IpamRirsReadParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewIpamRirsReadParamsWithContext(ctx context.Context) *IpamRirsReadParams {
-	var ()
 	return &IpamRirsReadParams{
-
 		Context: ctx,
 	}
 }
 
 // NewIpamRirsReadParamsWithHTTPClient creates a new IpamRirsReadParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewIpamRirsReadParamsWithHTTPClient(client *http.Client) *IpamRirsReadParams {
-	var ()
 	return &IpamRirsReadParams{
 		HTTPClient: client,
 	}
 }
 
-/*IpamRirsReadParams contains all the parameters to send to the API endpoint
-for the ipam rirs read operation typically these are written to a http.Request
+/* IpamRirsReadParams contains all the parameters to send to the API endpoint
+   for the ipam rirs read operation.
+
+   Typically these are written to a http.Request.
 */
 type IpamRirsReadParams struct {
 
-	/*ID
-	  A unique integer value identifying this RIR.
+	/* ID.
 
+	   A unique integer value identifying this RIR.
 	*/
 	ID int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the ipam rirs read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRirsReadParams) WithDefaults() *IpamRirsReadParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the ipam rirs read params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *IpamRirsReadParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the ipam rirs read params

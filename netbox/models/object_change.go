@@ -21,6 +21,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"encoding/json"
 
 	"github.com/go-openapi/errors"
@@ -126,7 +127,6 @@ func (m *ObjectChange) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ObjectChange) validateAction(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Action) { // not required
 		return nil
 	}
@@ -149,11 +149,11 @@ func (m *ObjectChange) validateChangedObjectID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MinimumInt("changed_object_id", "body", int64(*m.ChangedObjectID), 0, false); err != nil {
+	if err := validate.MinimumInt("changed_object_id", "body", *m.ChangedObjectID, 0, false); err != nil {
 		return err
 	}
 
-	if err := validate.MaximumInt("changed_object_id", "body", int64(*m.ChangedObjectID), 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("changed_object_id", "body", *m.ChangedObjectID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -161,7 +161,6 @@ func (m *ObjectChange) validateChangedObjectID(formats strfmt.Registry) error {
 }
 
 func (m *ObjectChange) validateRequestID(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RequestID) { // not required
 		return nil
 	}
@@ -174,7 +173,6 @@ func (m *ObjectChange) validateRequestID(formats strfmt.Registry) error {
 }
 
 func (m *ObjectChange) validateTime(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Time) { // not required
 		return nil
 	}
@@ -187,7 +185,6 @@ func (m *ObjectChange) validateTime(formats strfmt.Registry) error {
 }
 
 func (m *ObjectChange) validateURL(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.URL) { // not required
 		return nil
 	}
@@ -200,7 +197,6 @@ func (m *ObjectChange) validateURL(formats strfmt.Registry) error {
 }
 
 func (m *ObjectChange) validateUser(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.User) { // not required
 		return nil
 	}
@@ -218,12 +214,157 @@ func (m *ObjectChange) validateUser(formats strfmt.Registry) error {
 }
 
 func (m *ObjectChange) validateUserName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.UserName) { // not required
 		return nil
 	}
 
-	if err := validate.MinLength("user_name", "body", string(m.UserName), 1); err != nil {
+	if err := validate.MinLength("user_name", "body", m.UserName, 1); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this object change based on the context it is used
+func (m *ObjectChange) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAction(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateChangedObject(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateChangedObjectType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateObjectData(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRequestID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTime(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateUser(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateUserName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *ObjectChange) contextValidateAction(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Action != nil {
+		if err := m.Action.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("action")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateChangedObject(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateChangedObjectType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "changed_object_type", "body", string(m.ChangedObjectType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateObjectData(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "object_data", "body", string(m.ObjectData)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateRequestID(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "request_id", "body", strfmt.UUID(m.RequestID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateTime(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "time", "body", strfmt.DateTime(m.Time)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateURL(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateUser(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.User != nil {
+		if err := m.User.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("user")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateUserName(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "user_name", "body", string(m.UserName)); err != nil {
 		return err
 	}
 
@@ -371,6 +512,16 @@ func (m *ObjectChangeAction) validateValue(formats strfmt.Registry) error {
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validate this object change action based on the context it is used
+func (m *ObjectChangeAction) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
 	return nil
 }
 
