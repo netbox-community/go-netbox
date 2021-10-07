@@ -44,7 +44,7 @@ type IPAddress struct {
 
 	// Assigned object
 	// Read Only: true
-	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
+        AssignedObject map[string]string `-` // TODO. We do not unmarshal this to prevent "json: cannot unmarshal number into Go struct field IPAddress.assigned_object of type string"
 
 	// Assigned object id
 	// Maximum: 2.147483647e+09
