@@ -51,11 +51,15 @@ type WritableAggregate struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Family
 	// Read Only: true
 	Family string `json:"family,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -236,6 +240,10 @@ func (m *WritableAggregate) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateFamily(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -265,6 +273,15 @@ func (m *WritableAggregate) ContextValidate(ctx context.Context, formats strfmt.
 func (m *WritableAggregate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableAggregate) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

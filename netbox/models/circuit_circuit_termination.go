@@ -34,23 +34,11 @@ import (
 // swagger:model CircuitCircuitTermination
 type CircuitCircuitTermination struct {
 
-	// Connected endpoint
-	//
-	//
-	// Return the appropriate serializer for the type of connected object.
-	//
+	// Display
 	// Read Only: true
-	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+	Display string `json:"display,omitempty"`
 
-	// Connected endpoint reachable
-	// Read Only: true
-	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
-
-	// Connected endpoint type
-	// Read Only: true
-	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
-
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -58,6 +46,10 @@ type CircuitCircuitTermination struct {
 	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	PortSpeed *int64 `json:"port_speed,omitempty"`
+
+	// provider network
+	// Required: true
+	ProviderNetwork *NestedProviderNetwork `json:"provider_network"`
 
 	// site
 	// Required: true
@@ -85,6 +77,10 @@ func (m *CircuitCircuitTermination) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validatePortSpeed(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateProviderNetwork(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -121,6 +117,24 @@ func (m *CircuitCircuitTermination) validatePortSpeed(formats strfmt.Registry) e
 
 	if err := validate.MaximumInt("port_speed", "body", *m.PortSpeed, 2.147483647e+09, false); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *CircuitCircuitTermination) validateProviderNetwork(formats strfmt.Registry) error {
+
+	if err := validate.Required("provider_network", "body", m.ProviderNetwork); err != nil {
+		return err
+	}
+
+	if m.ProviderNetwork != nil {
+		if err := m.ProviderNetwork.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("provider_network")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -188,19 +202,15 @@ func (m *CircuitCircuitTermination) validateXconnectID(formats strfmt.Registry) 
 func (m *CircuitCircuitTermination) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateProviderNetwork(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -218,23 +228,9 @@ func (m *CircuitCircuitTermination) ContextValidate(ctx context.Context, formats
 	return nil
 }
 
-func (m *CircuitCircuitTermination) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+func (m *CircuitCircuitTermination) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
-	return nil
-}
-
-func (m *CircuitCircuitTermination) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *CircuitCircuitTermination) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 
@@ -245,6 +241,20 @@ func (m *CircuitCircuitTermination) contextValidateID(ctx context.Context, forma
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *CircuitCircuitTermination) contextValidateProviderNetwork(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ProviderNetwork != nil {
+		if err := m.ProviderNetwork.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("provider_network")
+			}
+			return err
+		}
 	}
 
 	return nil

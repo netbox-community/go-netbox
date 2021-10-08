@@ -162,6 +162,9 @@ type DcimPowerFeedsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -233,6 +236,18 @@ type DcimPowerFeedsListParams struct {
 
 	// Siten.
 	Siten *string
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
 
 	// SiteID.
 	SiteID *string
@@ -643,6 +658,17 @@ func (o *DcimPowerFeedsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameEmpty(nameEmpty *string) *DcimPowerFeedsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithNameIc(nameIc *string) *DcimPowerFeedsListParams {
 	o.SetNameIc(nameIc)
@@ -894,6 +920,50 @@ func (o *DcimPowerFeedsListParams) WithSiten(siten *string) *DcimPowerFeedsListP
 // SetSiten adds the siteN to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetSiten(siten *string) {
 	o.Siten = siten
+}
+
+// WithSiteGroup adds the siteGroup to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithSiteGroup(siteGroup *string) *DcimPowerFeedsListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithSiteGroupn(siteGroupn *string) *DcimPowerFeedsListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithSiteGroupID(siteGroupID *string) *DcimPowerFeedsListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithSiteGroupIDn(siteGroupIDn *string) *DcimPowerFeedsListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
 }
 
 // WithSiteID adds the siteID to the dcim power feeds list params
@@ -1556,6 +1626,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1942,6 +2029,74 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qSiten != "" {
 
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
 				return err
 			}
 		}

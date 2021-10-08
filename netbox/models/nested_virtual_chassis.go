@@ -34,7 +34,7 @@ import (
 // swagger:model NestedVirtualChassis
 type NestedVirtualChassis struct {
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 

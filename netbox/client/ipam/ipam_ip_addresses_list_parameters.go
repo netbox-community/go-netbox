@@ -90,6 +90,39 @@ type IpamIPAddressesListParams struct {
 	// CreatedLte.
 	CreatedLte *string
 
+	// Description.
+	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
+	// DescriptionIc.
+	DescriptionIc *string
+
+	// DescriptionIe.
+	DescriptionIe *string
+
+	// DescriptionIew.
+	DescriptionIew *string
+
+	// DescriptionIsw.
+	DescriptionIsw *string
+
+	// Descriptionn.
+	Descriptionn *string
+
+	// DescriptionNic.
+	DescriptionNic *string
+
+	// DescriptionNie.
+	DescriptionNie *string
+
+	// DescriptionNiew.
+	DescriptionNiew *string
+
+	// DescriptionNisw.
+	DescriptionNisw *string
+
 	// Device.
 	Device *string
 
@@ -98,6 +131,9 @@ type IpamIPAddressesListParams struct {
 
 	// DNSName.
 	DNSName *string
+
+	// DNSNameEmpty.
+	DNSNameEmpty *string
 
 	// DNSNameIc.
 	DNSNameIc *string
@@ -375,6 +411,127 @@ func (o *IpamIPAddressesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
 }
 
+// WithDescription adds the description to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescription(description *string) *IpamIPAddressesListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamIPAddressesListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
+}
+
+// WithDescriptionIc adds the descriptionIc to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionIc(descriptionIc *string) *IpamIPAddressesListParams {
+	o.SetDescriptionIc(descriptionIc)
+	return o
+}
+
+// SetDescriptionIc adds the descriptionIc to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionIc(descriptionIc *string) {
+	o.DescriptionIc = descriptionIc
+}
+
+// WithDescriptionIe adds the descriptionIe to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionIe(descriptionIe *string) *IpamIPAddressesListParams {
+	o.SetDescriptionIe(descriptionIe)
+	return o
+}
+
+// SetDescriptionIe adds the descriptionIe to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionIe(descriptionIe *string) {
+	o.DescriptionIe = descriptionIe
+}
+
+// WithDescriptionIew adds the descriptionIew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionIew(descriptionIew *string) *IpamIPAddressesListParams {
+	o.SetDescriptionIew(descriptionIew)
+	return o
+}
+
+// SetDescriptionIew adds the descriptionIew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionIew(descriptionIew *string) {
+	o.DescriptionIew = descriptionIew
+}
+
+// WithDescriptionIsw adds the descriptionIsw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionIsw(descriptionIsw *string) *IpamIPAddressesListParams {
+	o.SetDescriptionIsw(descriptionIsw)
+	return o
+}
+
+// SetDescriptionIsw adds the descriptionIsw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionIsw(descriptionIsw *string) {
+	o.DescriptionIsw = descriptionIsw
+}
+
+// WithDescriptionn adds the descriptionn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionn(descriptionn *string) *IpamIPAddressesListParams {
+	o.SetDescriptionn(descriptionn)
+	return o
+}
+
+// SetDescriptionn adds the descriptionN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionn(descriptionn *string) {
+	o.Descriptionn = descriptionn
+}
+
+// WithDescriptionNic adds the descriptionNic to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionNic(descriptionNic *string) *IpamIPAddressesListParams {
+	o.SetDescriptionNic(descriptionNic)
+	return o
+}
+
+// SetDescriptionNic adds the descriptionNic to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionNic(descriptionNic *string) {
+	o.DescriptionNic = descriptionNic
+}
+
+// WithDescriptionNie adds the descriptionNie to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionNie(descriptionNie *string) *IpamIPAddressesListParams {
+	o.SetDescriptionNie(descriptionNie)
+	return o
+}
+
+// SetDescriptionNie adds the descriptionNie to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionNie(descriptionNie *string) {
+	o.DescriptionNie = descriptionNie
+}
+
+// WithDescriptionNiew adds the descriptionNiew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionNiew(descriptionNiew *string) *IpamIPAddressesListParams {
+	o.SetDescriptionNiew(descriptionNiew)
+	return o
+}
+
+// SetDescriptionNiew adds the descriptionNiew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionNiew(descriptionNiew *string) {
+	o.DescriptionNiew = descriptionNiew
+}
+
+// WithDescriptionNisw adds the descriptionNisw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDescriptionNisw(descriptionNisw *string) *IpamIPAddressesListParams {
+	o.SetDescriptionNisw(descriptionNisw)
+	return o
+}
+
+// SetDescriptionNisw adds the descriptionNisw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDescriptionNisw(descriptionNisw *string) {
+	o.DescriptionNisw = descriptionNisw
+}
+
 // WithDevice adds the device to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithDevice(device *string) *IpamIPAddressesListParams {
 	o.SetDevice(device)
@@ -406,6 +563,17 @@ func (o *IpamIPAddressesListParams) WithDNSName(dNSName *string) *IpamIPAddresse
 // SetDNSName adds the dnsName to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetDNSName(dNSName *string) {
 	o.DNSName = dNSName
+}
+
+// WithDNSNameEmpty adds the dNSNameEmpty to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameEmpty(dNSNameEmpty *string) *IpamIPAddressesListParams {
+	o.SetDNSNameEmpty(dNSNameEmpty)
+	return o
+}
+
+// SetDNSNameEmpty adds the dnsNameEmpty to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameEmpty(dNSNameEmpty *string) {
+	o.DNSNameEmpty = dNSNameEmpty
 }
 
 // WithDNSNameIc adds the dNSNameIc to the ipam ip addresses list params
@@ -1095,6 +1263,193 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIc != nil {
+
+		// query param description__ic
+		var qrDescriptionIc string
+
+		if o.DescriptionIc != nil {
+			qrDescriptionIc = *o.DescriptionIc
+		}
+		qDescriptionIc := qrDescriptionIc
+		if qDescriptionIc != "" {
+
+			if err := r.SetQueryParam("description__ic", qDescriptionIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIe != nil {
+
+		// query param description__ie
+		var qrDescriptionIe string
+
+		if o.DescriptionIe != nil {
+			qrDescriptionIe = *o.DescriptionIe
+		}
+		qDescriptionIe := qrDescriptionIe
+		if qDescriptionIe != "" {
+
+			if err := r.SetQueryParam("description__ie", qDescriptionIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIew != nil {
+
+		// query param description__iew
+		var qrDescriptionIew string
+
+		if o.DescriptionIew != nil {
+			qrDescriptionIew = *o.DescriptionIew
+		}
+		qDescriptionIew := qrDescriptionIew
+		if qDescriptionIew != "" {
+
+			if err := r.SetQueryParam("description__iew", qDescriptionIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIsw != nil {
+
+		// query param description__isw
+		var qrDescriptionIsw string
+
+		if o.DescriptionIsw != nil {
+			qrDescriptionIsw = *o.DescriptionIsw
+		}
+		qDescriptionIsw := qrDescriptionIsw
+		if qDescriptionIsw != "" {
+
+			if err := r.SetQueryParam("description__isw", qDescriptionIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Descriptionn != nil {
+
+		// query param description__n
+		var qrDescriptionn string
+
+		if o.Descriptionn != nil {
+			qrDescriptionn = *o.Descriptionn
+		}
+		qDescriptionn := qrDescriptionn
+		if qDescriptionn != "" {
+
+			if err := r.SetQueryParam("description__n", qDescriptionn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNic != nil {
+
+		// query param description__nic
+		var qrDescriptionNic string
+
+		if o.DescriptionNic != nil {
+			qrDescriptionNic = *o.DescriptionNic
+		}
+		qDescriptionNic := qrDescriptionNic
+		if qDescriptionNic != "" {
+
+			if err := r.SetQueryParam("description__nic", qDescriptionNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNie != nil {
+
+		// query param description__nie
+		var qrDescriptionNie string
+
+		if o.DescriptionNie != nil {
+			qrDescriptionNie = *o.DescriptionNie
+		}
+		qDescriptionNie := qrDescriptionNie
+		if qDescriptionNie != "" {
+
+			if err := r.SetQueryParam("description__nie", qDescriptionNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNiew != nil {
+
+		// query param description__niew
+		var qrDescriptionNiew string
+
+		if o.DescriptionNiew != nil {
+			qrDescriptionNiew = *o.DescriptionNiew
+		}
+		qDescriptionNiew := qrDescriptionNiew
+		if qDescriptionNiew != "" {
+
+			if err := r.SetQueryParam("description__niew", qDescriptionNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNisw != nil {
+
+		// query param description__nisw
+		var qrDescriptionNisw string
+
+		if o.DescriptionNisw != nil {
+			qrDescriptionNisw = *o.DescriptionNisw
+		}
+		qDescriptionNisw := qrDescriptionNisw
+		if qDescriptionNisw != "" {
+
+			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Device != nil {
 
 		// query param device
@@ -1141,6 +1496,23 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qDNSName != "" {
 
 			if err := r.SetQueryParam("dns_name", qDNSName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DNSNameEmpty != nil {
+
+		// query param dns_name__empty
+		var qrDNSNameEmpty string
+
+		if o.DNSNameEmpty != nil {
+			qrDNSNameEmpty = *o.DNSNameEmpty
+		}
+		qDNSNameEmpty := qrDNSNameEmpty
+		if qDNSNameEmpty != "" {
+
+			if err := r.SetQueryParam("dns_name__empty", qDNSNameEmpty); err != nil {
 				return err
 			}
 		}

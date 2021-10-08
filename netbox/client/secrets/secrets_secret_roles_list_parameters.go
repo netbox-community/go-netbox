@@ -75,6 +75,15 @@ func NewSecretsSecretRolesListParamsWithHTTPClient(client *http.Client) *Secrets
 */
 type SecretsSecretRolesListParams struct {
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// ID.
 	ID *string
 
@@ -93,6 +102,15 @@ type SecretsSecretRolesListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -101,6 +119,9 @@ type SecretsSecretRolesListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -140,6 +161,9 @@ type SecretsSecretRolesListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -221,6 +245,39 @@ func (o *SecretsSecretRolesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCreated adds the created to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithCreated(created *string) *SecretsSecretRolesListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithCreatedGte(createdGte *string) *SecretsSecretRolesListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithCreatedLte(createdLte *string) *SecretsSecretRolesListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithID adds the id to the secrets secret roles list params
 func (o *SecretsSecretRolesListParams) WithID(id *string) *SecretsSecretRolesListParams {
 	o.SetID(id)
@@ -287,6 +344,39 @@ func (o *SecretsSecretRolesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithLastUpdated(lastUpdated *string) *SecretsSecretRolesListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *SecretsSecretRolesListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *SecretsSecretRolesListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the secrets secret roles list params
 func (o *SecretsSecretRolesListParams) WithLimit(limit *int64) *SecretsSecretRolesListParams {
 	o.SetLimit(limit)
@@ -307,6 +397,17 @@ func (o *SecretsSecretRolesListParams) WithName(name *string) *SecretsSecretRole
 // SetName adds the name to the secrets secret roles list params
 func (o *SecretsSecretRolesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithNameEmpty(nameEmpty *string) *SecretsSecretRolesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the secrets secret roles list params
@@ -441,6 +542,17 @@ func (o *SecretsSecretRolesListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithSlugEmpty adds the slugEmpty to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) WithSlugEmpty(slugEmpty *string) *SecretsSecretRolesListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the secrets secret roles list params
+func (o *SecretsSecretRolesListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
+}
+
 // WithSlugIc adds the slugIc to the secrets secret roles list params
 func (o *SecretsSecretRolesListParams) WithSlugIc(slugIc *string) *SecretsSecretRolesListParams {
 	o.SetSlugIc(slugIc)
@@ -548,6 +660,57 @@ func (o *SecretsSecretRolesListParams) WriteToRequest(r runtime.ClientRequest, r
 	}
 	var res []error
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -650,6 +813,57 @@ func (o *SecretsSecretRolesListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -679,6 +893,23 @@ func (o *SecretsSecretRolesListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -883,6 +1114,23 @@ func (o *SecretsSecretRolesListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

@@ -75,8 +75,26 @@ func NewIpamVlanGroupsListParamsWithHTTPClient(client *http.Client) *IpamVlanGro
 */
 type IpamVlanGroupsListParams struct {
 
+	// Cluster.
+	Cluster *float64
+
+	// Clustergroup.
+	Clustergroup *float64
+
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -123,14 +141,29 @@ type IpamVlanGroupsListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
 	*/
 	Limit *int64
 
+	// Location.
+	Location *float64
+
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -168,32 +201,47 @@ type IpamVlanGroupsListParams struct {
 	// Q.
 	Q *string
 
+	// Rack.
+	Rack *float64
+
 	// Region.
-	Region *string
+	Region *float64
 
-	// Regionn.
-	Regionn *string
+	// ScopeID.
+	ScopeID *string
 
-	// RegionID.
-	RegionID *string
+	// ScopeIDGt.
+	ScopeIDGt *string
 
-	// RegionIDn.
-	RegionIDn *string
+	// ScopeIDGte.
+	ScopeIDGte *string
+
+	// ScopeIDLt.
+	ScopeIDLt *string
+
+	// ScopeIDLte.
+	ScopeIDLte *string
+
+	// ScopeIDn.
+	ScopeIDn *string
+
+	// ScopeType.
+	ScopeType *string
+
+	// ScopeTypen.
+	ScopeTypen *string
 
 	// Site.
-	Site *string
+	Site *float64
 
-	// Siten.
-	Siten *string
-
-	// SiteID.
-	SiteID *string
-
-	// SiteIDn.
-	SiteIDn *string
+	// Sitegroup.
+	Sitegroup *float64
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -275,6 +323,61 @@ func (o *IpamVlanGroupsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCluster adds the cluster to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithCluster(cluster *float64) *IpamVlanGroupsListParams {
+	o.SetCluster(cluster)
+	return o
+}
+
+// SetCluster adds the cluster to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetCluster(cluster *float64) {
+	o.Cluster = cluster
+}
+
+// WithClustergroup adds the clustergroup to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithClustergroup(clustergroup *float64) *IpamVlanGroupsListParams {
+	o.SetClustergroup(clustergroup)
+	return o
+}
+
+// SetClustergroup adds the clustergroup to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetClustergroup(clustergroup *float64) {
+	o.Clustergroup = clustergroup
+}
+
+// WithCreated adds the created to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithCreated(created *string) *IpamVlanGroupsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithCreatedGte(createdGte *string) *IpamVlanGroupsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithCreatedLte(createdLte *string) *IpamVlanGroupsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDescription adds the description to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) WithDescription(description *string) *IpamVlanGroupsListParams {
 	o.SetDescription(description)
@@ -284,6 +387,17 @@ func (o *IpamVlanGroupsListParams) WithDescription(description *string) *IpamVla
 // SetDescription adds the description to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamVlanGroupsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the ipam vlan groups list params
@@ -451,6 +565,39 @@ func (o *IpamVlanGroupsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithLastUpdated(lastUpdated *string) *IpamVlanGroupsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *IpamVlanGroupsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamVlanGroupsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) WithLimit(limit *int64) *IpamVlanGroupsListParams {
 	o.SetLimit(limit)
@@ -462,6 +609,17 @@ func (o *IpamVlanGroupsListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithLocation adds the location to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithLocation(location *float64) *IpamVlanGroupsListParams {
+	o.SetLocation(location)
+	return o
+}
+
+// SetLocation adds the location to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetLocation(location *float64) {
+	o.Location = location
+}
+
 // WithName adds the name to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) WithName(name *string) *IpamVlanGroupsListParams {
 	o.SetName(name)
@@ -471,6 +629,17 @@ func (o *IpamVlanGroupsListParams) WithName(name *string) *IpamVlanGroupsListPar
 // SetName adds the name to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithNameEmpty(nameEmpty *string) *IpamVlanGroupsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the ipam vlan groups list params
@@ -594,92 +763,136 @@ func (o *IpamVlanGroupsListParams) SetQ(q *string) {
 	o.Q = q
 }
 
+// WithRack adds the rack to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithRack(rack *float64) *IpamVlanGroupsListParams {
+	o.SetRack(rack)
+	return o
+}
+
+// SetRack adds the rack to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetRack(rack *float64) {
+	o.Rack = rack
+}
+
 // WithRegion adds the region to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithRegion(region *string) *IpamVlanGroupsListParams {
+func (o *IpamVlanGroupsListParams) WithRegion(region *float64) *IpamVlanGroupsListParams {
 	o.SetRegion(region)
 	return o
 }
 
 // SetRegion adds the region to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetRegion(region *string) {
+func (o *IpamVlanGroupsListParams) SetRegion(region *float64) {
 	o.Region = region
 }
 
-// WithRegionn adds the regionn to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithRegionn(regionn *string) *IpamVlanGroupsListParams {
-	o.SetRegionn(regionn)
+// WithScopeID adds the scopeID to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithScopeID(scopeID *string) *IpamVlanGroupsListParams {
+	o.SetScopeID(scopeID)
 	return o
 }
 
-// SetRegionn adds the regionN to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetRegionn(regionn *string) {
-	o.Regionn = regionn
+// SetScopeID adds the scopeId to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetScopeID(scopeID *string) {
+	o.ScopeID = scopeID
 }
 
-// WithRegionID adds the regionID to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithRegionID(regionID *string) *IpamVlanGroupsListParams {
-	o.SetRegionID(regionID)
+// WithScopeIDGt adds the scopeIDGt to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithScopeIDGt(scopeIDGt *string) *IpamVlanGroupsListParams {
+	o.SetScopeIDGt(scopeIDGt)
 	return o
 }
 
-// SetRegionID adds the regionId to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetRegionID(regionID *string) {
-	o.RegionID = regionID
+// SetScopeIDGt adds the scopeIdGt to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetScopeIDGt(scopeIDGt *string) {
+	o.ScopeIDGt = scopeIDGt
 }
 
-// WithRegionIDn adds the regionIDn to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithRegionIDn(regionIDn *string) *IpamVlanGroupsListParams {
-	o.SetRegionIDn(regionIDn)
+// WithScopeIDGte adds the scopeIDGte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithScopeIDGte(scopeIDGte *string) *IpamVlanGroupsListParams {
+	o.SetScopeIDGte(scopeIDGte)
 	return o
 }
 
-// SetRegionIDn adds the regionIdN to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetRegionIDn(regionIDn *string) {
-	o.RegionIDn = regionIDn
+// SetScopeIDGte adds the scopeIdGte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetScopeIDGte(scopeIDGte *string) {
+	o.ScopeIDGte = scopeIDGte
+}
+
+// WithScopeIDLt adds the scopeIDLt to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithScopeIDLt(scopeIDLt *string) *IpamVlanGroupsListParams {
+	o.SetScopeIDLt(scopeIDLt)
+	return o
+}
+
+// SetScopeIDLt adds the scopeIdLt to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetScopeIDLt(scopeIDLt *string) {
+	o.ScopeIDLt = scopeIDLt
+}
+
+// WithScopeIDLte adds the scopeIDLte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithScopeIDLte(scopeIDLte *string) *IpamVlanGroupsListParams {
+	o.SetScopeIDLte(scopeIDLte)
+	return o
+}
+
+// SetScopeIDLte adds the scopeIdLte to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetScopeIDLte(scopeIDLte *string) {
+	o.ScopeIDLte = scopeIDLte
+}
+
+// WithScopeIDn adds the scopeIDn to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithScopeIDn(scopeIDn *string) *IpamVlanGroupsListParams {
+	o.SetScopeIDn(scopeIDn)
+	return o
+}
+
+// SetScopeIDn adds the scopeIdN to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetScopeIDn(scopeIDn *string) {
+	o.ScopeIDn = scopeIDn
+}
+
+// WithScopeType adds the scopeType to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithScopeType(scopeType *string) *IpamVlanGroupsListParams {
+	o.SetScopeType(scopeType)
+	return o
+}
+
+// SetScopeType adds the scopeType to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetScopeType(scopeType *string) {
+	o.ScopeType = scopeType
+}
+
+// WithScopeTypen adds the scopeTypen to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithScopeTypen(scopeTypen *string) *IpamVlanGroupsListParams {
+	o.SetScopeTypen(scopeTypen)
+	return o
+}
+
+// SetScopeTypen adds the scopeTypeN to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetScopeTypen(scopeTypen *string) {
+	o.ScopeTypen = scopeTypen
 }
 
 // WithSite adds the site to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithSite(site *string) *IpamVlanGroupsListParams {
+func (o *IpamVlanGroupsListParams) WithSite(site *float64) *IpamVlanGroupsListParams {
 	o.SetSite(site)
 	return o
 }
 
 // SetSite adds the site to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetSite(site *string) {
+func (o *IpamVlanGroupsListParams) SetSite(site *float64) {
 	o.Site = site
 }
 
-// WithSiten adds the siten to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithSiten(siten *string) *IpamVlanGroupsListParams {
-	o.SetSiten(siten)
+// WithSitegroup adds the sitegroup to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithSitegroup(sitegroup *float64) *IpamVlanGroupsListParams {
+	o.SetSitegroup(sitegroup)
 	return o
 }
 
-// SetSiten adds the siteN to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetSiten(siten *string) {
-	o.Siten = siten
-}
-
-// WithSiteID adds the siteID to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithSiteID(siteID *string) *IpamVlanGroupsListParams {
-	o.SetSiteID(siteID)
-	return o
-}
-
-// SetSiteID adds the siteId to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetSiteID(siteID *string) {
-	o.SiteID = siteID
-}
-
-// WithSiteIDn adds the siteIDn to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithSiteIDn(siteIDn *string) *IpamVlanGroupsListParams {
-	o.SetSiteIDn(siteIDn)
-	return o
-}
-
-// SetSiteIDn adds the siteIdN to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetSiteIDn(siteIDn *string) {
-	o.SiteIDn = siteIDn
+// SetSitegroup adds the sitegroup to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetSitegroup(sitegroup *float64) {
+	o.Sitegroup = sitegroup
 }
 
 // WithSlug adds the slug to the ipam vlan groups list params
@@ -691,6 +904,17 @@ func (o *IpamVlanGroupsListParams) WithSlug(slug *string) *IpamVlanGroupsListPar
 // SetSlug adds the slug to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithSlugEmpty(slugEmpty *string) *IpamVlanGroupsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the ipam vlan groups list params
@@ -800,6 +1024,91 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	}
 	var res []error
 
+	if o.Cluster != nil {
+
+		// query param cluster
+		var qrCluster float64
+
+		if o.Cluster != nil {
+			qrCluster = *o.Cluster
+		}
+		qCluster := swag.FormatFloat64(qrCluster)
+		if qCluster != "" {
+
+			if err := r.SetQueryParam("cluster", qCluster); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Clustergroup != nil {
+
+		// query param clustergroup
+		var qrClustergroup float64
+
+		if o.Clustergroup != nil {
+			qrClustergroup = *o.Clustergroup
+		}
+		qClustergroup := swag.FormatFloat64(qrClustergroup)
+		if qClustergroup != "" {
+
+			if err := r.SetQueryParam("clustergroup", qClustergroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Description != nil {
 
 		// query param description
@@ -812,6 +1121,23 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1072,6 +1398,57 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1089,6 +1466,23 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.Location != nil {
+
+		// query param location
+		var qrLocation float64
+
+		if o.Location != nil {
+			qrLocation = *o.Location
+		}
+		qLocation := swag.FormatFloat64(qrLocation)
+		if qLocation != "" {
+
+			if err := r.SetQueryParam("location", qLocation); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Name != nil {
 
 		// query param name
@@ -1101,6 +1495,23 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1293,15 +1704,32 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.Rack != nil {
+
+		// query param rack
+		var qrRack float64
+
+		if o.Rack != nil {
+			qrRack = *o.Rack
+		}
+		qRack := swag.FormatFloat64(qrRack)
+		if qRack != "" {
+
+			if err := r.SetQueryParam("rack", qRack); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Region != nil {
 
 		// query param region
-		var qrRegion string
+		var qrRegion float64
 
 		if o.Region != nil {
 			qrRegion = *o.Region
 		}
-		qRegion := qrRegion
+		qRegion := swag.FormatFloat64(qrRegion)
 		if qRegion != "" {
 
 			if err := r.SetQueryParam("region", qRegion); err != nil {
@@ -1310,52 +1738,137 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.Regionn != nil {
+	if o.ScopeID != nil {
 
-		// query param region__n
-		var qrRegionn string
+		// query param scope_id
+		var qrScopeID string
 
-		if o.Regionn != nil {
-			qrRegionn = *o.Regionn
+		if o.ScopeID != nil {
+			qrScopeID = *o.ScopeID
 		}
-		qRegionn := qrRegionn
-		if qRegionn != "" {
+		qScopeID := qrScopeID
+		if qScopeID != "" {
 
-			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
+			if err := r.SetQueryParam("scope_id", qScopeID); err != nil {
 				return err
 			}
 		}
 	}
 
-	if o.RegionID != nil {
+	if o.ScopeIDGt != nil {
 
-		// query param region_id
-		var qrRegionID string
+		// query param scope_id__gt
+		var qrScopeIDGt string
 
-		if o.RegionID != nil {
-			qrRegionID = *o.RegionID
+		if o.ScopeIDGt != nil {
+			qrScopeIDGt = *o.ScopeIDGt
 		}
-		qRegionID := qrRegionID
-		if qRegionID != "" {
+		qScopeIDGt := qrScopeIDGt
+		if qScopeIDGt != "" {
 
-			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
+			if err := r.SetQueryParam("scope_id__gt", qScopeIDGt); err != nil {
 				return err
 			}
 		}
 	}
 
-	if o.RegionIDn != nil {
+	if o.ScopeIDGte != nil {
 
-		// query param region_id__n
-		var qrRegionIDn string
+		// query param scope_id__gte
+		var qrScopeIDGte string
 
-		if o.RegionIDn != nil {
-			qrRegionIDn = *o.RegionIDn
+		if o.ScopeIDGte != nil {
+			qrScopeIDGte = *o.ScopeIDGte
 		}
-		qRegionIDn := qrRegionIDn
-		if qRegionIDn != "" {
+		qScopeIDGte := qrScopeIDGte
+		if qScopeIDGte != "" {
 
-			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
+			if err := r.SetQueryParam("scope_id__gte", qScopeIDGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ScopeIDLt != nil {
+
+		// query param scope_id__lt
+		var qrScopeIDLt string
+
+		if o.ScopeIDLt != nil {
+			qrScopeIDLt = *o.ScopeIDLt
+		}
+		qScopeIDLt := qrScopeIDLt
+		if qScopeIDLt != "" {
+
+			if err := r.SetQueryParam("scope_id__lt", qScopeIDLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ScopeIDLte != nil {
+
+		// query param scope_id__lte
+		var qrScopeIDLte string
+
+		if o.ScopeIDLte != nil {
+			qrScopeIDLte = *o.ScopeIDLte
+		}
+		qScopeIDLte := qrScopeIDLte
+		if qScopeIDLte != "" {
+
+			if err := r.SetQueryParam("scope_id__lte", qScopeIDLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ScopeIDn != nil {
+
+		// query param scope_id__n
+		var qrScopeIDn string
+
+		if o.ScopeIDn != nil {
+			qrScopeIDn = *o.ScopeIDn
+		}
+		qScopeIDn := qrScopeIDn
+		if qScopeIDn != "" {
+
+			if err := r.SetQueryParam("scope_id__n", qScopeIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ScopeType != nil {
+
+		// query param scope_type
+		var qrScopeType string
+
+		if o.ScopeType != nil {
+			qrScopeType = *o.ScopeType
+		}
+		qScopeType := qrScopeType
+		if qScopeType != "" {
+
+			if err := r.SetQueryParam("scope_type", qScopeType); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ScopeTypen != nil {
+
+		// query param scope_type__n
+		var qrScopeTypen string
+
+		if o.ScopeTypen != nil {
+			qrScopeTypen = *o.ScopeTypen
+		}
+		qScopeTypen := qrScopeTypen
+		if qScopeTypen != "" {
+
+			if err := r.SetQueryParam("scope_type__n", qScopeTypen); err != nil {
 				return err
 			}
 		}
@@ -1364,12 +1877,12 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.Site != nil {
 
 		// query param site
-		var qrSite string
+		var qrSite float64
 
 		if o.Site != nil {
 			qrSite = *o.Site
 		}
-		qSite := qrSite
+		qSite := swag.FormatFloat64(qrSite)
 		if qSite != "" {
 
 			if err := r.SetQueryParam("site", qSite); err != nil {
@@ -1378,52 +1891,18 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.Siten != nil {
+	if o.Sitegroup != nil {
 
-		// query param site__n
-		var qrSiten string
+		// query param sitegroup
+		var qrSitegroup float64
 
-		if o.Siten != nil {
-			qrSiten = *o.Siten
+		if o.Sitegroup != nil {
+			qrSitegroup = *o.Sitegroup
 		}
-		qSiten := qrSiten
-		if qSiten != "" {
+		qSitegroup := swag.FormatFloat64(qrSitegroup)
+		if qSitegroup != "" {
 
-			if err := r.SetQueryParam("site__n", qSiten); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SiteID != nil {
-
-		// query param site_id
-		var qrSiteID string
-
-		if o.SiteID != nil {
-			qrSiteID = *o.SiteID
-		}
-		qSiteID := qrSiteID
-		if qSiteID != "" {
-
-			if err := r.SetQueryParam("site_id", qSiteID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SiteIDn != nil {
-
-		// query param site_id__n
-		var qrSiteIDn string
-
-		if o.SiteIDn != nil {
-			qrSiteIDn = *o.SiteIDn
-		}
-		qSiteIDn := qrSiteIDn
-		if qSiteIDn != "" {
-
-			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
+			if err := r.SetQueryParam("sitegroup", qSitegroup); err != nil {
 				return err
 			}
 		}
@@ -1441,6 +1920,23 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

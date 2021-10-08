@@ -34,6 +34,14 @@ import (
 // swagger:model Manufacturer
 type Manufacturer struct {
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -42,13 +50,22 @@ type Manufacturer struct {
 	// Read Only: true
 	DevicetypeCount int64 `json:"devicetype_count,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Inventoryitem count
 	// Read Only: true
 	InventoryitemCount int64 `json:"inventoryitem_count,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -77,7 +94,15 @@ type Manufacturer struct {
 func (m *Manufacturer) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -99,12 +124,36 @@ func (m *Manufacturer) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Manufacturer) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Manufacturer) validateDescription(formats strfmt.Registry) error {
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
 	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Manufacturer) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -165,7 +214,15 @@ func (m *Manufacturer) validateURL(formats strfmt.Registry) error {
 func (m *Manufacturer) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDevicetypeCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -174,6 +231,10 @@ func (m *Manufacturer) ContextValidate(ctx context.Context, formats strfmt.Regis
 	}
 
 	if err := m.contextValidateInventoryitemCount(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -191,9 +252,27 @@ func (m *Manufacturer) ContextValidate(ctx context.Context, formats strfmt.Regis
 	return nil
 }
 
+func (m *Manufacturer) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Manufacturer) contextValidateDevicetypeCount(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "devicetype_count", "body", int64(m.DevicetypeCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Manufacturer) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 
@@ -212,6 +291,15 @@ func (m *Manufacturer) contextValidateID(ctx context.Context, formats strfmt.Reg
 func (m *Manufacturer) contextValidateInventoryitemCount(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "inventoryitem_count", "body", int64(m.InventoryitemCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Manufacturer) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

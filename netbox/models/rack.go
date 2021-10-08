@@ -62,6 +62,10 @@ type Rack struct {
 	// Read Only: true
 	DeviceCount int64 `json:"device_count,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Display name
 	// Read Only: true
 	DisplayName string `json:"display_name,omitempty"`
@@ -72,10 +76,7 @@ type Rack struct {
 	// Max Length: 50
 	FacilityID *string `json:"facility_id,omitempty"`
 
-	// group
-	Group *NestedRackGroup `json:"group,omitempty"`
-
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -83,6 +84,9 @@ type Rack struct {
 	// Read Only: true
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// location
+	Location *NestedLocation `json:"location,omitempty"`
 
 	// Name
 	// Required: true
@@ -166,11 +170,11 @@ func (m *Rack) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateGroup(formats); err != nil {
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateLastUpdated(formats); err != nil {
+	if err := m.validateLocation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -272,23 +276,6 @@ func (m *Rack) validateFacilityID(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Rack) validateGroup(formats strfmt.Registry) error {
-	if swag.IsZero(m.Group) { // not required
-		return nil
-	}
-
-	if m.Group != nil {
-		if err := m.Group.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("group")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Rack) validateLastUpdated(formats strfmt.Registry) error {
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
@@ -296,6 +283,23 @@ func (m *Rack) validateLastUpdated(formats strfmt.Registry) error {
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) validateLocation(formats strfmt.Registry) error {
+	if swag.IsZero(m.Location) { // not required
+		return nil
+	}
+
+	if m.Location != nil {
+		if err := m.Location.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -546,11 +550,11 @@ func (m *Rack) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateGroup(ctx, formats); err != nil {
+	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -559,6 +563,10 @@ func (m *Rack) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 	}
 
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLocation(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -626,24 +634,19 @@ func (m *Rack) contextValidateDeviceCount(ctx context.Context, formats strfmt.Re
 	return nil
 }
 
-func (m *Rack) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
+func (m *Rack) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *Rack) contextValidateGroup(ctx context.Context, formats strfmt.Registry) error {
+func (m *Rack) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.Group != nil {
-		if err := m.Group.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("group")
-			}
-			return err
-		}
+	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
+		return err
 	}
 
 	return nil
@@ -662,6 +665,20 @@ func (m *Rack) contextValidateLastUpdated(ctx context.Context, formats strfmt.Re
 
 	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Rack) contextValidateLocation(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Location != nil {
+		if err := m.Location.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
 	}
 
 	return nil

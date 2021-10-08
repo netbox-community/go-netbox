@@ -35,6 +35,11 @@ import (
 // swagger:model WritableFrontPortTemplate
 type WritableFrontPortTemplate struct {
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -43,7 +48,11 @@ type WritableFrontPortTemplate struct {
 	// Required: true
 	DeviceType *int64 `json:"device_type"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -52,6 +61,11 @@ type WritableFrontPortTemplate struct {
 	// Physical label
 	// Max Length: 64
 	Label string `json:"label,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -70,7 +84,7 @@ type WritableFrontPortTemplate struct {
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
 	Type *string `json:"type"`
 
 	// Url
@@ -83,6 +97,10 @@ type WritableFrontPortTemplate struct {
 func (m *WritableFrontPortTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
@@ -92,6 +110,10 @@ func (m *WritableFrontPortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -118,6 +140,18 @@ func (m *WritableFrontPortTemplate) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableFrontPortTemplate) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -148,6 +182,18 @@ func (m *WritableFrontPortTemplate) validateLabel(formats strfmt.Registry) error
 	}
 
 	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableFrontPortTemplate) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -200,7 +246,7 @@ var writableFrontPortTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -222,6 +268,21 @@ const (
 	// WritableFrontPortTemplateTypeNr8p2c captures enum value "8p2c"
 	WritableFrontPortTemplateTypeNr8p2c string = "8p2c"
 
+	// WritableFrontPortTemplateTypeNr6p6c captures enum value "6p6c"
+	WritableFrontPortTemplateTypeNr6p6c string = "6p6c"
+
+	// WritableFrontPortTemplateTypeNr6p4c captures enum value "6p4c"
+	WritableFrontPortTemplateTypeNr6p4c string = "6p4c"
+
+	// WritableFrontPortTemplateTypeNr6p2c captures enum value "6p2c"
+	WritableFrontPortTemplateTypeNr6p2c string = "6p2c"
+
+	// WritableFrontPortTemplateTypeNr4p4c captures enum value "4p4c"
+	WritableFrontPortTemplateTypeNr4p4c string = "4p4c"
+
+	// WritableFrontPortTemplateTypeNr4p2c captures enum value "4p2c"
+	WritableFrontPortTemplateTypeNr4p2c string = "4p2c"
+
 	// WritableFrontPortTemplateTypeGg45 captures enum value "gg45"
 	WritableFrontPortTemplateTypeGg45 string = "gg45"
 
@@ -242,6 +303,9 @@ const (
 
 	// WritableFrontPortTemplateTypeF captures enum value "f"
 	WritableFrontPortTemplateTypeF string = "f"
+
+	// WritableFrontPortTemplateTypeN captures enum value "n"
+	WritableFrontPortTemplateTypeN string = "n"
 
 	// WritableFrontPortTemplateTypeMrj21 captures enum value "mrj21"
 	WritableFrontPortTemplateTypeMrj21 string = "mrj21"
@@ -324,7 +388,19 @@ func (m *WritableFrontPortTemplate) validateURL(formats strfmt.Registry) error {
 func (m *WritableFrontPortTemplate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -338,9 +414,36 @@ func (m *WritableFrontPortTemplate) ContextValidate(ctx context.Context, formats
 	return nil
 }
 
+func (m *WritableFrontPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableFrontPortTemplate) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableFrontPortTemplate) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableFrontPortTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

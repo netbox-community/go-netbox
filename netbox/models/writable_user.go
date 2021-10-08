@@ -38,6 +38,10 @@ type WritableUser struct {
 	// Format: date-time
 	DateJoined strfmt.DateTime `json:"date_joined,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Email address
 	// Max Length: 254
 	// Format: email
@@ -250,6 +254,10 @@ func (m *WritableUser) validateUsername(formats strfmt.Registry) error {
 func (m *WritableUser) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -261,6 +269,15 @@ func (m *WritableUser) ContextValidate(ctx context.Context, formats strfmt.Regis
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableUser) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
 	return nil
 }
 

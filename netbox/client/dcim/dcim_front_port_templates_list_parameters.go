@@ -75,6 +75,15 @@ func NewDcimFrontPortTemplatesListParamsWithHTTPClient(client *http.Client) *Dci
 */
 type DcimFrontPortTemplatesListParams struct {
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// DevicetypeID.
 	DevicetypeID *string
 
@@ -99,6 +108,15 @@ type DcimFrontPortTemplatesListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -107,6 +125,9 @@ type DcimFrontPortTemplatesListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -140,9 +161,6 @@ type DcimFrontPortTemplatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	// Q.
-	Q *string
 
 	// Type.
 	Type *string
@@ -201,6 +219,39 @@ func (o *DcimFrontPortTemplatesListParams) WithHTTPClient(client *http.Client) *
 // SetHTTPClient adds the HTTPClient to the dcim front port templates list params
 func (o *DcimFrontPortTemplatesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithCreated adds the created to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithCreated(created *string) *DcimFrontPortTemplatesListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithCreatedGte(createdGte *string) *DcimFrontPortTemplatesListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithCreatedLte(createdLte *string) *DcimFrontPortTemplatesListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
 }
 
 // WithDevicetypeID adds the devicetypeID to the dcim front port templates list params
@@ -291,6 +342,39 @@ func (o *DcimFrontPortTemplatesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithLastUpdated(lastUpdated *string) *DcimFrontPortTemplatesListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimFrontPortTemplatesListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimFrontPortTemplatesListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim front port templates list params
 func (o *DcimFrontPortTemplatesListParams) WithLimit(limit *int64) *DcimFrontPortTemplatesListParams {
 	o.SetLimit(limit)
@@ -311,6 +395,17 @@ func (o *DcimFrontPortTemplatesListParams) WithName(name *string) *DcimFrontPort
 // SetName adds the name to the dcim front port templates list params
 func (o *DcimFrontPortTemplatesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimFrontPortTemplatesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim front port templates list params
@@ -423,17 +518,6 @@ func (o *DcimFrontPortTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
-// WithQ adds the q to the dcim front port templates list params
-func (o *DcimFrontPortTemplatesListParams) WithQ(q *string) *DcimFrontPortTemplatesListParams {
-	o.SetQ(q)
-	return o
-}
-
-// SetQ adds the q to the dcim front port templates list params
-func (o *DcimFrontPortTemplatesListParams) SetQ(q *string) {
-	o.Q = q
-}
-
 // WithType adds the typeVar to the dcim front port templates list params
 func (o *DcimFrontPortTemplatesListParams) WithType(typeVar *string) *DcimFrontPortTemplatesListParams {
 	o.SetType(typeVar)
@@ -463,6 +547,57 @@ func (o *DcimFrontPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
+
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.DevicetypeID != nil {
 
@@ -600,6 +735,57 @@ func (o *DcimFrontPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -629,6 +815,23 @@ func (o *DcimFrontPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -799,23 +1002,6 @@ func (o *DcimFrontPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Q != nil {
-
-		// query param q
-		var qrQ string
-
-		if o.Q != nil {
-			qrQ = *o.Q
-		}
-		qQ := qrQ
-		if qQ != "" {
-
-			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

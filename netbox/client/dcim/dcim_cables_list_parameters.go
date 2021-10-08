@@ -81,6 +81,15 @@ type DcimCablesListParams struct {
 	// Colorn.
 	Colorn *string
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Device.
 	Device *string
 
@@ -108,6 +117,9 @@ type DcimCablesListParams struct {
 	// Label.
 	Label *string
 
+	// LabelEmpty.
+	LabelEmpty *string
+
 	// LabelIc.
 	LabelIc *string
 
@@ -134,6 +146,15 @@ type DcimCablesListParams struct {
 
 	// LabelNisw.
 	LabelNisw *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
 
 	// Length.
 	Length *string
@@ -285,6 +306,39 @@ func (o *DcimCablesListParams) SetColorn(colorn *string) {
 	o.Colorn = colorn
 }
 
+// WithCreated adds the created to the dcim cables list params
+func (o *DcimCablesListParams) WithCreated(created *string) *DcimCablesListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim cables list params
+func (o *DcimCablesListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim cables list params
+func (o *DcimCablesListParams) WithCreatedGte(createdGte *string) *DcimCablesListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim cables list params
+func (o *DcimCablesListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim cables list params
+func (o *DcimCablesListParams) WithCreatedLte(createdLte *string) *DcimCablesListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim cables list params
+func (o *DcimCablesListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDevice adds the device to the dcim cables list params
 func (o *DcimCablesListParams) WithDevice(device *string) *DcimCablesListParams {
 	o.SetDevice(device)
@@ -384,6 +438,17 @@ func (o *DcimCablesListParams) SetLabel(label *string) {
 	o.Label = label
 }
 
+// WithLabelEmpty adds the labelEmpty to the dcim cables list params
+func (o *DcimCablesListParams) WithLabelEmpty(labelEmpty *string) *DcimCablesListParams {
+	o.SetLabelEmpty(labelEmpty)
+	return o
+}
+
+// SetLabelEmpty adds the labelEmpty to the dcim cables list params
+func (o *DcimCablesListParams) SetLabelEmpty(labelEmpty *string) {
+	o.LabelEmpty = labelEmpty
+}
+
 // WithLabelIc adds the labelIc to the dcim cables list params
 func (o *DcimCablesListParams) WithLabelIc(labelIc *string) *DcimCablesListParams {
 	o.SetLabelIc(labelIc)
@@ -481,6 +546,39 @@ func (o *DcimCablesListParams) WithLabelNisw(labelNisw *string) *DcimCablesListP
 // SetLabelNisw adds the labelNisw to the dcim cables list params
 func (o *DcimCablesListParams) SetLabelNisw(labelNisw *string) {
 	o.LabelNisw = labelNisw
+}
+
+// WithLastUpdated adds the lastUpdated to the dcim cables list params
+func (o *DcimCablesListParams) WithLastUpdated(lastUpdated *string) *DcimCablesListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim cables list params
+func (o *DcimCablesListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim cables list params
+func (o *DcimCablesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimCablesListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim cables list params
+func (o *DcimCablesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim cables list params
+func (o *DcimCablesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimCablesListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim cables list params
+func (o *DcimCablesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
 }
 
 // WithLength adds the length to the dcim cables list params
@@ -778,6 +876,57 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Device != nil {
 
 		// query param device
@@ -931,6 +1080,23 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.LabelEmpty != nil {
+
+		// query param label__empty
+		var qrLabelEmpty string
+
+		if o.LabelEmpty != nil {
+			qrLabelEmpty = *o.LabelEmpty
+		}
+		qLabelEmpty := qrLabelEmpty
+		if qLabelEmpty != "" {
+
+			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LabelIc != nil {
 
 		// query param label__ic
@@ -1079,6 +1245,57 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qLabelNisw != "" {
 
 			if err := r.SetQueryParam("label__nisw", qLabelNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
 				return err
 			}
 		}

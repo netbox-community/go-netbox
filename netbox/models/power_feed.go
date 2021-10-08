@@ -36,6 +36,10 @@ import (
 // swagger:model PowerFeed
 type PowerFeed struct {
 
+	// occupied
+	// Read Only: true
+	Occupied *bool `json:"_occupied,omitempty"`
+
 	// Amperage
 	// Maximum: 32767
 	// Minimum: 1
@@ -83,7 +87,11 @@ type PowerFeed struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -91,6 +99,11 @@ type PowerFeed struct {
 	// Read Only: true
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Mark connected
+	//
+	// Treat as if a cable is connected
+	MarkConnected bool `json:"mark_connected,omitempty"`
 
 	// Max utilization
 	//
@@ -457,6 +470,10 @@ func (m *PowerFeed) validateVoltage(formats strfmt.Registry) error {
 func (m *PowerFeed) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCable(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -482,6 +499,10 @@ func (m *PowerFeed) ContextValidate(ctx context.Context, formats strfmt.Registry
 	}
 
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -528,6 +549,15 @@ func (m *PowerFeed) ContextValidate(ctx context.Context, formats strfmt.Registry
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PowerFeed) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -585,6 +615,15 @@ func (m *PowerFeed) contextValidateConnectedEndpointType(ctx context.Context, fo
 func (m *PowerFeed) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PowerFeed) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

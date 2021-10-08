@@ -62,7 +62,11 @@ type WritableCircuit struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -91,11 +95,11 @@ type WritableCircuit struct {
 
 	// Termination a
 	// Read Only: true
-	Terminationa string `json:"termination_a,omitempty"`
+	Terminationa int64 `json:"termination_a,omitempty"`
 
 	// Termination z
 	// Read Only: true
-	Terminationz string `json:"termination_z,omitempty"`
+	Terminationz int64 `json:"termination_z,omitempty"`
 
 	// Type
 	// Required: true
@@ -358,6 +362,10 @@ func (m *WritableCircuit) ContextValidate(ctx context.Context, formats strfmt.Re
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -391,6 +399,15 @@ func (m *WritableCircuit) ContextValidate(ctx context.Context, formats strfmt.Re
 func (m *WritableCircuit) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuit) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 
@@ -435,7 +452,7 @@ func (m *WritableCircuit) contextValidateTags(ctx context.Context, formats strfm
 
 func (m *WritableCircuit) contextValidateTerminationa(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "termination_a", "body", string(m.Terminationa)); err != nil {
+	if err := validate.ReadOnly(ctx, "termination_a", "body", int64(m.Terminationa)); err != nil {
 		return err
 	}
 
@@ -444,7 +461,7 @@ func (m *WritableCircuit) contextValidateTerminationa(ctx context.Context, forma
 
 func (m *WritableCircuit) contextValidateTerminationz(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "termination_z", "body", string(m.Terminationz)); err != nil {
+	if err := validate.ReadOnly(ctx, "termination_z", "body", int64(m.Terminationz)); err != nil {
 		return err
 	}
 

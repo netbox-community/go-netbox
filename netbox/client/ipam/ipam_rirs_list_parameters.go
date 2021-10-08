@@ -75,8 +75,20 @@ func NewIpamRirsListParamsWithHTTPClient(client *http.Client) *IpamRirsListParam
 */
 type IpamRirsListParams struct {
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -126,6 +138,15 @@ type IpamRirsListParams struct {
 	// IsPrivate.
 	IsPrivate *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -134,6 +155,9 @@ type IpamRirsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -173,6 +197,9 @@ type IpamRirsListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -254,6 +281,39 @@ func (o *IpamRirsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCreated adds the created to the ipam rirs list params
+func (o *IpamRirsListParams) WithCreated(created *string) *IpamRirsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the ipam rirs list params
+func (o *IpamRirsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the ipam rirs list params
+func (o *IpamRirsListParams) WithCreatedGte(createdGte *string) *IpamRirsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the ipam rirs list params
+func (o *IpamRirsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the ipam rirs list params
+func (o *IpamRirsListParams) WithCreatedLte(createdLte *string) *IpamRirsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the ipam rirs list params
+func (o *IpamRirsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDescription adds the description to the ipam rirs list params
 func (o *IpamRirsListParams) WithDescription(description *string) *IpamRirsListParams {
 	o.SetDescription(description)
@@ -263,6 +323,17 @@ func (o *IpamRirsListParams) WithDescription(description *string) *IpamRirsListP
 // SetDescription adds the description to the ipam rirs list params
 func (o *IpamRirsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the ipam rirs list params
+func (o *IpamRirsListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamRirsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the ipam rirs list params
+func (o *IpamRirsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the ipam rirs list params
@@ -441,6 +512,39 @@ func (o *IpamRirsListParams) SetIsPrivate(isPrivate *string) {
 	o.IsPrivate = isPrivate
 }
 
+// WithLastUpdated adds the lastUpdated to the ipam rirs list params
+func (o *IpamRirsListParams) WithLastUpdated(lastUpdated *string) *IpamRirsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the ipam rirs list params
+func (o *IpamRirsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the ipam rirs list params
+func (o *IpamRirsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *IpamRirsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the ipam rirs list params
+func (o *IpamRirsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the ipam rirs list params
+func (o *IpamRirsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamRirsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the ipam rirs list params
+func (o *IpamRirsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the ipam rirs list params
 func (o *IpamRirsListParams) WithLimit(limit *int64) *IpamRirsListParams {
 	o.SetLimit(limit)
@@ -461,6 +565,17 @@ func (o *IpamRirsListParams) WithName(name *string) *IpamRirsListParams {
 // SetName adds the name to the ipam rirs list params
 func (o *IpamRirsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the ipam rirs list params
+func (o *IpamRirsListParams) WithNameEmpty(nameEmpty *string) *IpamRirsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the ipam rirs list params
+func (o *IpamRirsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the ipam rirs list params
@@ -595,6 +710,17 @@ func (o *IpamRirsListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithSlugEmpty adds the slugEmpty to the ipam rirs list params
+func (o *IpamRirsListParams) WithSlugEmpty(slugEmpty *string) *IpamRirsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the ipam rirs list params
+func (o *IpamRirsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
+}
+
 // WithSlugIc adds the slugIc to the ipam rirs list params
 func (o *IpamRirsListParams) WithSlugIc(slugIc *string) *IpamRirsListParams {
 	o.SetSlugIc(slugIc)
@@ -702,6 +828,57 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 	}
 	var res []error
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Description != nil {
 
 		// query param description
@@ -714,6 +891,23 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -991,6 +1185,57 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1020,6 +1265,23 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1224,6 +1486,23 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

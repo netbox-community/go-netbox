@@ -75,8 +75,20 @@ func NewDcimVirtualChassisListParamsWithHTTPClient(client *http.Client) *DcimVir
 */
 type DcimVirtualChassisListParams struct {
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Domain.
 	Domain *string
+
+	// DomainEmpty.
+	DomainEmpty *string
 
 	// DomainIc.
 	DomainIc *string
@@ -123,6 +135,15 @@ type DcimVirtualChassisListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -143,6 +164,9 @@ type DcimVirtualChassisListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -197,6 +221,18 @@ type DcimVirtualChassisListParams struct {
 
 	// Siten.
 	Siten *string
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
 
 	// SiteID.
 	SiteID *string
@@ -275,6 +311,39 @@ func (o *DcimVirtualChassisListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCreated adds the created to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithCreated(created *string) *DcimVirtualChassisListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithCreatedGte(createdGte *string) *DcimVirtualChassisListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithCreatedLte(createdLte *string) *DcimVirtualChassisListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDomain adds the domain to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) WithDomain(domain *string) *DcimVirtualChassisListParams {
 	o.SetDomain(domain)
@@ -284,6 +353,17 @@ func (o *DcimVirtualChassisListParams) WithDomain(domain *string) *DcimVirtualCh
 // SetDomain adds the domain to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) SetDomain(domain *string) {
 	o.Domain = domain
+}
+
+// WithDomainEmpty adds the domainEmpty to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithDomainEmpty(domainEmpty *string) *DcimVirtualChassisListParams {
+	o.SetDomainEmpty(domainEmpty)
+	return o
+}
+
+// SetDomainEmpty adds the domainEmpty to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetDomainEmpty(domainEmpty *string) {
+	o.DomainEmpty = domainEmpty
 }
 
 // WithDomainIc adds the domainIc to the dcim virtual chassis list params
@@ -451,6 +531,39 @@ func (o *DcimVirtualChassisListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithLastUpdated(lastUpdated *string) *DcimVirtualChassisListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimVirtualChassisListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimVirtualChassisListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) WithLimit(limit *int64) *DcimVirtualChassisListParams {
 	o.SetLimit(limit)
@@ -515,6 +628,17 @@ func (o *DcimVirtualChassisListParams) WithName(name *string) *DcimVirtualChassi
 // SetName adds the name to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithNameEmpty(nameEmpty *string) *DcimVirtualChassisListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim virtual chassis list params
@@ -704,6 +828,50 @@ func (o *DcimVirtualChassisListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithSiteGroup(siteGroup *string) *DcimVirtualChassisListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithSiteGroupn(siteGroupn *string) *DcimVirtualChassisListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithSiteGroupID(siteGroupID *string) *DcimVirtualChassisListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) WithSiteGroupIDn(siteGroupIDn *string) *DcimVirtualChassisListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the dcim virtual chassis list params
+func (o *DcimVirtualChassisListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the dcim virtual chassis list params
 func (o *DcimVirtualChassisListParams) WithSiteID(siteID *string) *DcimVirtualChassisListParams {
 	o.SetSiteID(siteID)
@@ -800,6 +968,57 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 	}
 	var res []error
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Domain != nil {
 
 		// query param domain
@@ -812,6 +1031,23 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qDomain != "" {
 
 			if err := r.SetQueryParam("domain", qDomain); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DomainEmpty != nil {
+
+		// query param domain__empty
+		var qrDomainEmpty string
+
+		if o.DomainEmpty != nil {
+			qrDomainEmpty = *o.DomainEmpty
+		}
+		qDomainEmpty := qrDomainEmpty
+		if qDomainEmpty != "" {
+
+			if err := r.SetQueryParam("domain__empty", qDomainEmpty); err != nil {
 				return err
 			}
 		}
@@ -1072,6 +1308,57 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1169,6 +1456,23 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1458,6 +1762,74 @@ func (o *DcimVirtualChassisListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qSiten != "" {
 
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
 				return err
 			}
 		}

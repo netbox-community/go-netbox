@@ -34,11 +34,15 @@ import (
 // swagger:model NestedVLAN
 type NestedVLAN struct {
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Display name
 	// Read Only: true
 	DisplayName string `json:"display_name,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -132,6 +136,10 @@ func (m *NestedVLAN) validateVid(formats strfmt.Registry) error {
 func (m *NestedVLAN) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -147,6 +155,15 @@ func (m *NestedVLAN) ContextValidate(ctx context.Context, formats strfmt.Registr
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *NestedVLAN) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
 	return nil
 }
 

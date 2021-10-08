@@ -75,8 +75,20 @@ func NewDcimManufacturersListParamsWithHTTPClient(client *http.Client) *DcimManu
 */
 type DcimManufacturersListParams struct {
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -123,6 +135,15 @@ type DcimManufacturersListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -131,6 +152,9 @@ type DcimManufacturersListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -170,6 +194,9 @@ type DcimManufacturersListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -251,6 +278,39 @@ func (o *DcimManufacturersListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCreated adds the created to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithCreated(created *string) *DcimManufacturersListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithCreatedGte(createdGte *string) *DcimManufacturersListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithCreatedLte(createdLte *string) *DcimManufacturersListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDescription adds the description to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) WithDescription(description *string) *DcimManufacturersListParams {
 	o.SetDescription(description)
@@ -260,6 +320,17 @@ func (o *DcimManufacturersListParams) WithDescription(description *string) *Dcim
 // SetDescription adds the description to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimManufacturersListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim manufacturers list params
@@ -427,6 +498,39 @@ func (o *DcimManufacturersListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithLastUpdated(lastUpdated *string) *DcimManufacturersListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimManufacturersListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimManufacturersListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) WithLimit(limit *int64) *DcimManufacturersListParams {
 	o.SetLimit(limit)
@@ -447,6 +551,17 @@ func (o *DcimManufacturersListParams) WithName(name *string) *DcimManufacturersL
 // SetName adds the name to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithNameEmpty(nameEmpty *string) *DcimManufacturersListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim manufacturers list params
@@ -581,6 +696,17 @@ func (o *DcimManufacturersListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithSlugEmpty adds the slugEmpty to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithSlugEmpty(slugEmpty *string) *DcimManufacturersListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
+}
+
 // WithSlugIc adds the slugIc to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) WithSlugIc(slugIc *string) *DcimManufacturersListParams {
 	o.SetSlugIc(slugIc)
@@ -688,6 +814,57 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 	}
 	var res []error
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Description != nil {
 
 		// query param description
@@ -700,6 +877,23 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -960,6 +1154,57 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -989,6 +1234,23 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1193,6 +1455,23 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

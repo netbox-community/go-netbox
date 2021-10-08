@@ -87,6 +87,15 @@ type VirtualizationInterfacesListParams struct {
 	// ClusterIDn.
 	ClusterIDn *string
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Enabled.
 	Enabled *string
 
@@ -107,6 +116,15 @@ type VirtualizationInterfacesListParams struct {
 
 	// IDn.
 	IDn *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
 
 	/* Limit.
 
@@ -165,6 +183,9 @@ type VirtualizationInterfacesListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -197,6 +218,12 @@ type VirtualizationInterfacesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	// ParentID.
+	ParentID *string
+
+	// ParentIDn.
+	ParentIDn *string
 
 	// Q.
 	Q *string
@@ -316,6 +343,39 @@ func (o *VirtualizationInterfacesListParams) SetClusterIDn(clusterIDn *string) {
 	o.ClusterIDn = clusterIDn
 }
 
+// WithCreated adds the created to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithCreated(created *string) *VirtualizationInterfacesListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithCreatedGte(createdGte *string) *VirtualizationInterfacesListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithCreatedLte(createdLte *string) *VirtualizationInterfacesListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithEnabled adds the enabled to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) WithEnabled(enabled *string) *VirtualizationInterfacesListParams {
 	o.SetEnabled(enabled)
@@ -391,6 +451,39 @@ func (o *VirtualizationInterfacesListParams) WithIDn(iDn *string) *Virtualizatio
 // SetIDn adds the idN to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
+}
+
+// WithLastUpdated adds the lastUpdated to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithLastUpdated(lastUpdated *string) *VirtualizationInterfacesListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *VirtualizationInterfacesListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *VirtualizationInterfacesListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
 }
 
 // WithLimit adds the limit to the virtualization interfaces list params
@@ -591,6 +684,17 @@ func (o *VirtualizationInterfacesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithNameEmpty(nameEmpty *string) *VirtualizationInterfacesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) WithNameIc(nameIc *string) *VirtualizationInterfacesListParams {
 	o.SetNameIc(nameIc)
@@ -699,6 +803,28 @@ func (o *VirtualizationInterfacesListParams) WithOffset(offset *int64) *Virtuali
 // SetOffset adds the offset to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithParentID adds the parentID to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithParentID(parentID *string) *VirtualizationInterfacesListParams {
+	o.SetParentID(parentID)
+	return o
+}
+
+// SetParentID adds the parentId to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetParentID(parentID *string) {
+	o.ParentID = parentID
+}
+
+// WithParentIDn adds the parentIDn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithParentIDn(parentIDn *string) *VirtualizationInterfacesListParams {
+	o.SetParentIDn(parentIDn)
+	return o
+}
+
+// SetParentIDn adds the parentIdN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetParentIDn(parentIDn *string) {
+	o.ParentIDn = parentIDn
 }
 
 // WithQ adds the q to the virtualization interfaces list params
@@ -854,6 +980,57 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Enabled != nil {
 
 		// query param enabled
@@ -968,6 +1145,57 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		if qIDn != "" {
 
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
 				return err
 			}
 		}
@@ -1279,6 +1507,23 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1444,6 +1689,40 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ParentID != nil {
+
+		// query param parent_id
+		var qrParentID string
+
+		if o.ParentID != nil {
+			qrParentID = *o.ParentID
+		}
+		qParentID := qrParentID
+		if qParentID != "" {
+
+			if err := r.SetQueryParam("parent_id", qParentID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ParentIDn != nil {
+
+		// query param parent_id__n
+		var qrParentIDn string
+
+		if o.ParentIDn != nil {
+			qrParentIDn = *o.ParentIDn
+		}
+		qParentIDn := qrParentIDn
+		if qParentIDn != "" {
+
+			if err := r.SetQueryParam("parent_id__n", qParentIDn); err != nil {
 				return err
 			}
 		}

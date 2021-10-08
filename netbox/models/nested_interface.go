@@ -34,13 +34,21 @@ import (
 // swagger:model NestedInterface
 type NestedInterface struct {
 
+	// occupied
+	// Read Only: true
+	Occupied string `json:"_occupied,omitempty"`
+
 	// Cable
 	Cable *int64 `json:"cable,omitempty"`
 
 	// device
 	Device *NestedDevice `json:"device,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -128,7 +136,15 @@ func (m *NestedInterface) validateURL(formats strfmt.Registry) error {
 func (m *NestedInterface) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDevice(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -146,6 +162,15 @@ func (m *NestedInterface) ContextValidate(ctx context.Context, formats strfmt.Re
 	return nil
 }
 
+func (m *NestedInterface) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", string(m.Occupied)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *NestedInterface) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
@@ -155,6 +180,15 @@ func (m *NestedInterface) contextValidateDevice(ctx context.Context, formats str
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *NestedInterface) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
 	}
 
 	return nil

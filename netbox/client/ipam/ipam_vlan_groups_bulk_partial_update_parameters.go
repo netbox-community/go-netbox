@@ -77,7 +77,7 @@ func NewIpamVlanGroupsBulkPartialUpdateParamsWithHTTPClient(client *http.Client)
 type IpamVlanGroupsBulkPartialUpdateParams struct {
 
 	// Data.
-	Data *models.WritableVLANGroup
+	Data *models.VLANGroup
 
 	timeout    time.Duration
 	Context    context.Context
@@ -133,13 +133,13 @@ func (o *IpamVlanGroupsBulkPartialUpdateParams) SetHTTPClient(client *http.Clien
 }
 
 // WithData adds the data to the ipam vlan groups bulk partial update params
-func (o *IpamVlanGroupsBulkPartialUpdateParams) WithData(data *models.WritableVLANGroup) *IpamVlanGroupsBulkPartialUpdateParams {
+func (o *IpamVlanGroupsBulkPartialUpdateParams) WithData(data *models.VLANGroup) *IpamVlanGroupsBulkPartialUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the ipam vlan groups bulk partial update params
-func (o *IpamVlanGroupsBulkPartialUpdateParams) SetData(data *models.WritableVLANGroup) {
+func (o *IpamVlanGroupsBulkPartialUpdateParams) SetData(data *models.VLANGroup) {
 	o.Data = data
 }
 

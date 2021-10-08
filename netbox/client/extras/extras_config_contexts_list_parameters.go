@@ -93,6 +93,21 @@ type ExtrasConfigContextsListParams struct {
 	// ClusterIDn.
 	ClusterIDn *string
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
+	// DeviceTypeID.
+	DeviceTypeID *string
+
+	// DeviceTypeIDn.
+	DeviceTypeIDn *string
+
 	// ID.
 	ID *string
 
@@ -114,6 +129,15 @@ type ExtrasConfigContextsListParams struct {
 	// IsActive.
 	IsActive *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -122,6 +146,9 @@ type ExtrasConfigContextsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -200,6 +227,18 @@ type ExtrasConfigContextsListParams struct {
 
 	// Siten.
 	Siten *string
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
 
 	// SiteID.
 	SiteID *string
@@ -356,6 +395,61 @@ func (o *ExtrasConfigContextsListParams) SetClusterIDn(clusterIDn *string) {
 	o.ClusterIDn = clusterIDn
 }
 
+// WithCreated adds the created to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithCreated(created *string) *ExtrasConfigContextsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithCreatedGte(createdGte *string) *ExtrasConfigContextsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithCreatedLte(createdLte *string) *ExtrasConfigContextsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
+// WithDeviceTypeID adds the deviceTypeID to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithDeviceTypeID(deviceTypeID *string) *ExtrasConfigContextsListParams {
+	o.SetDeviceTypeID(deviceTypeID)
+	return o
+}
+
+// SetDeviceTypeID adds the deviceTypeId to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetDeviceTypeID(deviceTypeID *string) {
+	o.DeviceTypeID = deviceTypeID
+}
+
+// WithDeviceTypeIDn adds the deviceTypeIDn to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithDeviceTypeIDn(deviceTypeIDn *string) *ExtrasConfigContextsListParams {
+	o.SetDeviceTypeIDn(deviceTypeIDn)
+	return o
+}
+
+// SetDeviceTypeIDn adds the deviceTypeIdN to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetDeviceTypeIDn(deviceTypeIDn *string) {
+	o.DeviceTypeIDn = deviceTypeIDn
+}
+
 // WithID adds the id to the extras config contexts list params
 func (o *ExtrasConfigContextsListParams) WithID(id *string) *ExtrasConfigContextsListParams {
 	o.SetID(id)
@@ -433,6 +527,39 @@ func (o *ExtrasConfigContextsListParams) SetIsActive(isActive *string) {
 	o.IsActive = isActive
 }
 
+// WithLastUpdated adds the lastUpdated to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithLastUpdated(lastUpdated *string) *ExtrasConfigContextsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *ExtrasConfigContextsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *ExtrasConfigContextsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the extras config contexts list params
 func (o *ExtrasConfigContextsListParams) WithLimit(limit *int64) *ExtrasConfigContextsListParams {
 	o.SetLimit(limit)
@@ -453,6 +580,17 @@ func (o *ExtrasConfigContextsListParams) WithName(name *string) *ExtrasConfigCon
 // SetName adds the name to the extras config contexts list params
 func (o *ExtrasConfigContextsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithNameEmpty(nameEmpty *string) *ExtrasConfigContextsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the extras config contexts list params
@@ -730,6 +868,50 @@ func (o *ExtrasConfigContextsListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithSiteGroup(siteGroup *string) *ExtrasConfigContextsListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithSiteGroupn(siteGroupn *string) *ExtrasConfigContextsListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithSiteGroupID(siteGroupID *string) *ExtrasConfigContextsListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithSiteGroupIDn(siteGroupIDn *string) *ExtrasConfigContextsListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the extras config contexts list params
 func (o *ExtrasConfigContextsListParams) WithSiteID(siteID *string) *ExtrasConfigContextsListParams {
 	o.SetSiteID(siteID)
@@ -972,6 +1154,91 @@ func (o *ExtrasConfigContextsListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DeviceTypeID != nil {
+
+		// query param device_type_id
+		var qrDeviceTypeID string
+
+		if o.DeviceTypeID != nil {
+			qrDeviceTypeID = *o.DeviceTypeID
+		}
+		qDeviceTypeID := qrDeviceTypeID
+		if qDeviceTypeID != "" {
+
+			if err := r.SetQueryParam("device_type_id", qDeviceTypeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DeviceTypeIDn != nil {
+
+		// query param device_type_id__n
+		var qrDeviceTypeIDn string
+
+		if o.DeviceTypeIDn != nil {
+			qrDeviceTypeIDn = *o.DeviceTypeIDn
+		}
+		qDeviceTypeIDn := qrDeviceTypeIDn
+		if qDeviceTypeIDn != "" {
+
+			if err := r.SetQueryParam("device_type_id__n", qDeviceTypeIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -1091,6 +1358,57 @@ func (o *ExtrasConfigContextsListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1120,6 +1438,23 @@ func (o *ExtrasConfigContextsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1545,6 +1880,74 @@ func (o *ExtrasConfigContextsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qSiten != "" {
 
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
 				return err
 			}
 		}

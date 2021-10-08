@@ -75,6 +75,15 @@ func NewDcimDeviceBayTemplatesListParamsWithHTTPClient(client *http.Client) *Dci
 */
 type DcimDeviceBayTemplatesListParams struct {
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// DevicetypeID.
 	DevicetypeID *string
 
@@ -99,6 +108,15 @@ type DcimDeviceBayTemplatesListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -107,6 +125,9 @@ type DcimDeviceBayTemplatesListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -140,9 +161,6 @@ type DcimDeviceBayTemplatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	// Q.
-	Q *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -195,6 +213,39 @@ func (o *DcimDeviceBayTemplatesListParams) WithHTTPClient(client *http.Client) *
 // SetHTTPClient adds the HTTPClient to the dcim device bay templates list params
 func (o *DcimDeviceBayTemplatesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithCreated adds the created to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithCreated(created *string) *DcimDeviceBayTemplatesListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithCreatedGte(createdGte *string) *DcimDeviceBayTemplatesListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithCreatedLte(createdLte *string) *DcimDeviceBayTemplatesListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
 }
 
 // WithDevicetypeID adds the devicetypeID to the dcim device bay templates list params
@@ -285,6 +336,39 @@ func (o *DcimDeviceBayTemplatesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithLastUpdated(lastUpdated *string) *DcimDeviceBayTemplatesListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimDeviceBayTemplatesListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimDeviceBayTemplatesListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim device bay templates list params
 func (o *DcimDeviceBayTemplatesListParams) WithLimit(limit *int64) *DcimDeviceBayTemplatesListParams {
 	o.SetLimit(limit)
@@ -305,6 +389,17 @@ func (o *DcimDeviceBayTemplatesListParams) WithName(name *string) *DcimDeviceBay
 // SetName adds the name to the dcim device bay templates list params
 func (o *DcimDeviceBayTemplatesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimDeviceBayTemplatesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim device bay templates list params
@@ -417,17 +512,6 @@ func (o *DcimDeviceBayTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
-// WithQ adds the q to the dcim device bay templates list params
-func (o *DcimDeviceBayTemplatesListParams) WithQ(q *string) *DcimDeviceBayTemplatesListParams {
-	o.SetQ(q)
-	return o
-}
-
-// SetQ adds the q to the dcim device bay templates list params
-func (o *DcimDeviceBayTemplatesListParams) SetQ(q *string) {
-	o.Q = q
-}
-
 // WriteToRequest writes these params to a swagger request
 func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -435,6 +519,57 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
+
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.DevicetypeID != nil {
 
@@ -572,6 +707,57 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -601,6 +787,23 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -771,23 +974,6 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Q != nil {
-
-		// query param q
-		var qrQ string
-
-		if o.Q != nil {
-			qrQ = *o.Q
-		}
-		qQ := qrQ
-		if qQ != "" {
-
-			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

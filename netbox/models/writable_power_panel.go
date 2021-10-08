@@ -38,9 +38,16 @@ type WritablePowerPanel struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Location
+	Location *int64 `json:"location,omitempty"`
 
 	// Name
 	// Required: true
@@ -51,9 +58,6 @@ type WritablePowerPanel struct {
 	// Powerfeed count
 	// Read Only: true
 	PowerfeedCount int64 `json:"powerfeed_count,omitempty"`
-
-	// Rack group
-	RackGroup *int64 `json:"rack_group,omitempty"`
 
 	// Site
 	// Required: true
@@ -160,6 +164,10 @@ func (m *WritablePowerPanel) validateURL(formats strfmt.Registry) error {
 func (m *WritablePowerPanel) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -179,6 +187,15 @@ func (m *WritablePowerPanel) ContextValidate(ctx context.Context, formats strfmt
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritablePowerPanel) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
 	return nil
 }
 

@@ -56,7 +56,15 @@ type WritableConfigContext struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
-	// ID
+	// device types
+	// Unique: true
+	DeviceTypes []int64 `json:"device_types"`
+
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -85,6 +93,10 @@ type WritableConfigContext struct {
 	// roles
 	// Unique: true
 	Roles []int64 `json:"roles"`
+
+	// site groups
+	// Unique: true
+	SiteGroups []int64 `json:"site_groups"`
 
 	// sites
 	// Unique: true
@@ -137,6 +149,10 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateDeviceTypes(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
@@ -154,6 +170,10 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateRoles(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSiteGroups(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -244,6 +264,18 @@ func (m *WritableConfigContext) validateDescription(formats strfmt.Registry) err
 	return nil
 }
 
+func (m *WritableConfigContext) validateDeviceTypes(formats strfmt.Registry) error {
+	if swag.IsZero(m.DeviceTypes) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("device_types", "body", m.DeviceTypes); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableConfigContext) validateLastUpdated(formats strfmt.Registry) error {
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
@@ -303,6 +335,18 @@ func (m *WritableConfigContext) validateRoles(formats strfmt.Registry) error {
 	}
 
 	if err := validate.UniqueItems("roles", "body", m.Roles); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) validateSiteGroups(formats strfmt.Registry) error {
+	if swag.IsZero(m.SiteGroups) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("site_groups", "body", m.SiteGroups); err != nil {
 		return err
 	}
 
@@ -401,6 +445,10 @@ func (m *WritableConfigContext) ContextValidate(ctx context.Context, formats str
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -422,6 +470,15 @@ func (m *WritableConfigContext) ContextValidate(ctx context.Context, formats str
 func (m *WritableConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

@@ -66,6 +66,10 @@ type IPAddress struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// DNS Name
 	//
 	// Hostname or FQDN (not case-sensitive)
@@ -76,7 +80,7 @@ type IPAddress struct {
 	// family
 	Family *IPAddressFamily `json:"family,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -426,6 +430,10 @@ func (m *IPAddress) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateFamily(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -484,6 +492,15 @@ func (m *IPAddress) contextValidateAssignedObject(ctx context.Context, formats s
 func (m *IPAddress) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *IPAddress) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

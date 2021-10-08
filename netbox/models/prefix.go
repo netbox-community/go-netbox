@@ -36,6 +36,14 @@ import (
 // swagger:model Prefix
 type Prefix struct {
 
+	// depth
+	// Read Only: true
+	Depth int64 `json:"_depth,omitempty"`
+
+	// Children
+	// Read Only: true
+	Children int64 `json:"children,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date
@@ -48,10 +56,14 @@ type Prefix struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// family
 	Family *PrefixFamily `json:"family,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -364,7 +376,19 @@ func (m *Prefix) validateVrf(formats strfmt.Registry) error {
 func (m *Prefix) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDepth(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateChildren(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -418,9 +442,36 @@ func (m *Prefix) ContextValidate(ctx context.Context, formats strfmt.Registry) e
 	return nil
 }
 
+func (m *Prefix) contextValidateDepth(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_depth", "body", int64(m.Depth)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateChildren(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "children", "body", int64(m.Children)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Prefix) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Prefix) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

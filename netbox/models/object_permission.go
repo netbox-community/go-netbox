@@ -48,6 +48,10 @@ type ObjectPermission struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Enabled
 	Enabled bool `json:"enabled,omitempty"`
 
@@ -55,7 +59,7 @@ type ObjectPermission struct {
 	// Unique: true
 	Groups []*NestedGroup `json:"groups"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -253,6 +257,10 @@ func (m *ObjectPermission) validateUsers(formats strfmt.Registry) error {
 func (m *ObjectPermission) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateGroups(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -272,6 +280,15 @@ func (m *ObjectPermission) ContextValidate(ctx context.Context, formats strfmt.R
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ObjectPermission) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
 	return nil
 }
 

@@ -78,6 +78,9 @@ type DcimRacksListParams struct {
 	// AssetTag.
 	AssetTag *string
 
+	// AssetTagEmpty.
+	AssetTagEmpty *string
+
 	// AssetTagIc.
 	AssetTagIc *string
 
@@ -120,6 +123,9 @@ type DcimRacksListParams struct {
 	// FacilityID.
 	FacilityID *string
 
+	// FacilityIDEmpty.
+	FacilityIDEmpty *string
+
 	// FacilityIDIc.
 	FacilityIDIc *string
 
@@ -146,18 +152,6 @@ type DcimRacksListParams struct {
 
 	// FacilityIDNisw.
 	FacilityIDNisw *string
-
-	// Group.
-	Group *string
-
-	// Groupn.
-	Groupn *string
-
-	// GroupID.
-	GroupID *string
-
-	// GroupIDn.
-	GroupIDn *string
 
 	// ID.
 	ID *string
@@ -192,8 +186,23 @@ type DcimRacksListParams struct {
 	*/
 	Limit *int64
 
+	// Location.
+	Location *string
+
+	// Locationn.
+	Locationn *string
+
+	// LocationID.
+	LocationID *string
+
+	// LocationIDn.
+	LocationIDn *string
+
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -305,6 +314,18 @@ type DcimRacksListParams struct {
 
 	// Siten.
 	Siten *string
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
 
 	// SiteID.
 	SiteID *string
@@ -440,6 +461,17 @@ func (o *DcimRacksListParams) WithAssetTag(assetTag *string) *DcimRacksListParam
 // SetAssetTag adds the assetTag to the dcim racks list params
 func (o *DcimRacksListParams) SetAssetTag(assetTag *string) {
 	o.AssetTag = assetTag
+}
+
+// WithAssetTagEmpty adds the assetTagEmpty to the dcim racks list params
+func (o *DcimRacksListParams) WithAssetTagEmpty(assetTagEmpty *string) *DcimRacksListParams {
+	o.SetAssetTagEmpty(assetTagEmpty)
+	return o
+}
+
+// SetAssetTagEmpty adds the assetTagEmpty to the dcim racks list params
+func (o *DcimRacksListParams) SetAssetTagEmpty(assetTagEmpty *string) {
+	o.AssetTagEmpty = assetTagEmpty
 }
 
 // WithAssetTagIc adds the assetTagIc to the dcim racks list params
@@ -596,6 +628,17 @@ func (o *DcimRacksListParams) SetFacilityID(facilityID *string) {
 	o.FacilityID = facilityID
 }
 
+// WithFacilityIDEmpty adds the facilityIDEmpty to the dcim racks list params
+func (o *DcimRacksListParams) WithFacilityIDEmpty(facilityIDEmpty *string) *DcimRacksListParams {
+	o.SetFacilityIDEmpty(facilityIDEmpty)
+	return o
+}
+
+// SetFacilityIDEmpty adds the facilityIdEmpty to the dcim racks list params
+func (o *DcimRacksListParams) SetFacilityIDEmpty(facilityIDEmpty *string) {
+	o.FacilityIDEmpty = facilityIDEmpty
+}
+
 // WithFacilityIDIc adds the facilityIDIc to the dcim racks list params
 func (o *DcimRacksListParams) WithFacilityIDIc(facilityIDIc *string) *DcimRacksListParams {
 	o.SetFacilityIDIc(facilityIDIc)
@@ -693,50 +736,6 @@ func (o *DcimRacksListParams) WithFacilityIDNisw(facilityIDNisw *string) *DcimRa
 // SetFacilityIDNisw adds the facilityIdNisw to the dcim racks list params
 func (o *DcimRacksListParams) SetFacilityIDNisw(facilityIDNisw *string) {
 	o.FacilityIDNisw = facilityIDNisw
-}
-
-// WithGroup adds the group to the dcim racks list params
-func (o *DcimRacksListParams) WithGroup(group *string) *DcimRacksListParams {
-	o.SetGroup(group)
-	return o
-}
-
-// SetGroup adds the group to the dcim racks list params
-func (o *DcimRacksListParams) SetGroup(group *string) {
-	o.Group = group
-}
-
-// WithGroupn adds the groupn to the dcim racks list params
-func (o *DcimRacksListParams) WithGroupn(groupn *string) *DcimRacksListParams {
-	o.SetGroupn(groupn)
-	return o
-}
-
-// SetGroupn adds the groupN to the dcim racks list params
-func (o *DcimRacksListParams) SetGroupn(groupn *string) {
-	o.Groupn = groupn
-}
-
-// WithGroupID adds the groupID to the dcim racks list params
-func (o *DcimRacksListParams) WithGroupID(groupID *string) *DcimRacksListParams {
-	o.SetGroupID(groupID)
-	return o
-}
-
-// SetGroupID adds the groupId to the dcim racks list params
-func (o *DcimRacksListParams) SetGroupID(groupID *string) {
-	o.GroupID = groupID
-}
-
-// WithGroupIDn adds the groupIDn to the dcim racks list params
-func (o *DcimRacksListParams) WithGroupIDn(groupIDn *string) *DcimRacksListParams {
-	o.SetGroupIDn(groupIDn)
-	return o
-}
-
-// SetGroupIDn adds the groupIdN to the dcim racks list params
-func (o *DcimRacksListParams) SetGroupIDn(groupIDn *string) {
-	o.GroupIDn = groupIDn
 }
 
 // WithID adds the id to the dcim racks list params
@@ -849,6 +848,50 @@ func (o *DcimRacksListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithLocation adds the location to the dcim racks list params
+func (o *DcimRacksListParams) WithLocation(location *string) *DcimRacksListParams {
+	o.SetLocation(location)
+	return o
+}
+
+// SetLocation adds the location to the dcim racks list params
+func (o *DcimRacksListParams) SetLocation(location *string) {
+	o.Location = location
+}
+
+// WithLocationn adds the locationn to the dcim racks list params
+func (o *DcimRacksListParams) WithLocationn(locationn *string) *DcimRacksListParams {
+	o.SetLocationn(locationn)
+	return o
+}
+
+// SetLocationn adds the locationN to the dcim racks list params
+func (o *DcimRacksListParams) SetLocationn(locationn *string) {
+	o.Locationn = locationn
+}
+
+// WithLocationID adds the locationID to the dcim racks list params
+func (o *DcimRacksListParams) WithLocationID(locationID *string) *DcimRacksListParams {
+	o.SetLocationID(locationID)
+	return o
+}
+
+// SetLocationID adds the locationId to the dcim racks list params
+func (o *DcimRacksListParams) SetLocationID(locationID *string) {
+	o.LocationID = locationID
+}
+
+// WithLocationIDn adds the locationIDn to the dcim racks list params
+func (o *DcimRacksListParams) WithLocationIDn(locationIDn *string) *DcimRacksListParams {
+	o.SetLocationIDn(locationIDn)
+	return o
+}
+
+// SetLocationIDn adds the locationIdN to the dcim racks list params
+func (o *DcimRacksListParams) SetLocationIDn(locationIDn *string) {
+	o.LocationIDn = locationIDn
+}
+
 // WithName adds the name to the dcim racks list params
 func (o *DcimRacksListParams) WithName(name *string) *DcimRacksListParams {
 	o.SetName(name)
@@ -858,6 +901,17 @@ func (o *DcimRacksListParams) WithName(name *string) *DcimRacksListParams {
 // SetName adds the name to the dcim racks list params
 func (o *DcimRacksListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim racks list params
+func (o *DcimRacksListParams) WithNameEmpty(nameEmpty *string) *DcimRacksListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim racks list params
+func (o *DcimRacksListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim racks list params
@@ -1256,6 +1310,50 @@ func (o *DcimRacksListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the dcim racks list params
+func (o *DcimRacksListParams) WithSiteGroup(siteGroup *string) *DcimRacksListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the dcim racks list params
+func (o *DcimRacksListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the dcim racks list params
+func (o *DcimRacksListParams) WithSiteGroupn(siteGroupn *string) *DcimRacksListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the dcim racks list params
+func (o *DcimRacksListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the dcim racks list params
+func (o *DcimRacksListParams) WithSiteGroupID(siteGroupID *string) *DcimRacksListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the dcim racks list params
+func (o *DcimRacksListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the dcim racks list params
+func (o *DcimRacksListParams) WithSiteGroupIDn(siteGroupIDn *string) *DcimRacksListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the dcim racks list params
+func (o *DcimRacksListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the dcim racks list params
 func (o *DcimRacksListParams) WithSiteID(siteID *string) *DcimRacksListParams {
 	o.SetSiteID(siteID)
@@ -1545,6 +1643,23 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
+	if o.AssetTagEmpty != nil {
+
+		// query param asset_tag__empty
+		var qrAssetTagEmpty string
+
+		if o.AssetTagEmpty != nil {
+			qrAssetTagEmpty = *o.AssetTagEmpty
+		}
+		qAssetTagEmpty := qrAssetTagEmpty
+		if qAssetTagEmpty != "" {
+
+			if err := r.SetQueryParam("asset_tag__empty", qAssetTagEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.AssetTagIc != nil {
 
 		// query param asset_tag__ic
@@ -1783,6 +1898,23 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
+	if o.FacilityIDEmpty != nil {
+
+		// query param facility_id__empty
+		var qrFacilityIDEmpty string
+
+		if o.FacilityIDEmpty != nil {
+			qrFacilityIDEmpty = *o.FacilityIDEmpty
+		}
+		qFacilityIDEmpty := qrFacilityIDEmpty
+		if qFacilityIDEmpty != "" {
+
+			if err := r.SetQueryParam("facility_id__empty", qFacilityIDEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.FacilityIDIc != nil {
 
 		// query param facility_id__ic
@@ -1931,74 +2063,6 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qFacilityIDNisw != "" {
 
 			if err := r.SetQueryParam("facility_id__nisw", qFacilityIDNisw); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Group != nil {
-
-		// query param group
-		var qrGroup string
-
-		if o.Group != nil {
-			qrGroup = *o.Group
-		}
-		qGroup := qrGroup
-		if qGroup != "" {
-
-			if err := r.SetQueryParam("group", qGroup); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Groupn != nil {
-
-		// query param group__n
-		var qrGroupn string
-
-		if o.Groupn != nil {
-			qrGroupn = *o.Groupn
-		}
-		qGroupn := qrGroupn
-		if qGroupn != "" {
-
-			if err := r.SetQueryParam("group__n", qGroupn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.GroupID != nil {
-
-		// query param group_id
-		var qrGroupID string
-
-		if o.GroupID != nil {
-			qrGroupID = *o.GroupID
-		}
-		qGroupID := qrGroupID
-		if qGroupID != "" {
-
-			if err := r.SetQueryParam("group_id", qGroupID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.GroupIDn != nil {
-
-		// query param group_id__n
-		var qrGroupIDn string
-
-		if o.GroupIDn != nil {
-			qrGroupIDn = *o.GroupIDn
-		}
-		qGroupIDn := qrGroupIDn
-		if qGroupIDn != "" {
-
-			if err := r.SetQueryParam("group_id__n", qGroupIDn); err != nil {
 				return err
 			}
 		}
@@ -2174,6 +2238,74 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
+	if o.Location != nil {
+
+		// query param location
+		var qrLocation string
+
+		if o.Location != nil {
+			qrLocation = *o.Location
+		}
+		qLocation := qrLocation
+		if qLocation != "" {
+
+			if err := r.SetQueryParam("location", qLocation); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Locationn != nil {
+
+		// query param location__n
+		var qrLocationn string
+
+		if o.Locationn != nil {
+			qrLocationn = *o.Locationn
+		}
+		qLocationn := qrLocationn
+		if qLocationn != "" {
+
+			if err := r.SetQueryParam("location__n", qLocationn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationID != nil {
+
+		// query param location_id
+		var qrLocationID string
+
+		if o.LocationID != nil {
+			qrLocationID = *o.LocationID
+		}
+		qLocationID := qrLocationID
+		if qLocationID != "" {
+
+			if err := r.SetQueryParam("location_id", qLocationID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationIDn != nil {
+
+		// query param location_id__n
+		var qrLocationIDn string
+
+		if o.LocationIDn != nil {
+			qrLocationIDn = *o.LocationIDn
+		}
+		qLocationIDn := qrLocationIDn
+		if qLocationIDn != "" {
+
+			if err := r.SetQueryParam("location_id__n", qLocationIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Name != nil {
 
 		// query param name
@@ -2186,6 +2318,23 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -2798,6 +2947,74 @@ func (o *DcimRacksListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qSiten != "" {
 
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
 				return err
 			}
 		}

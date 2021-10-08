@@ -75,8 +75,20 @@ func NewTenancyTenantGroupsListParamsWithHTTPClient(client *http.Client) *Tenanc
 */
 type TenancyTenantGroupsListParams struct {
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -123,6 +135,15 @@ type TenancyTenantGroupsListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -131,6 +152,9 @@ type TenancyTenantGroupsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -182,6 +206,9 @@ type TenancyTenantGroupsListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -263,6 +290,39 @@ func (o *TenancyTenantGroupsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCreated adds the created to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithCreated(created *string) *TenancyTenantGroupsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithCreatedGte(createdGte *string) *TenancyTenantGroupsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithCreatedLte(createdLte *string) *TenancyTenantGroupsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDescription adds the description to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) WithDescription(description *string) *TenancyTenantGroupsListParams {
 	o.SetDescription(description)
@@ -272,6 +332,17 @@ func (o *TenancyTenantGroupsListParams) WithDescription(description *string) *Te
 // SetDescription adds the description to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithDescriptionEmpty(descriptionEmpty *string) *TenancyTenantGroupsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the tenancy tenant groups list params
@@ -439,6 +510,39 @@ func (o *TenancyTenantGroupsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithLastUpdated(lastUpdated *string) *TenancyTenantGroupsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *TenancyTenantGroupsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *TenancyTenantGroupsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) WithLimit(limit *int64) *TenancyTenantGroupsListParams {
 	o.SetLimit(limit)
@@ -459,6 +563,17 @@ func (o *TenancyTenantGroupsListParams) WithName(name *string) *TenancyTenantGro
 // SetName adds the name to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithNameEmpty(nameEmpty *string) *TenancyTenantGroupsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the tenancy tenant groups list params
@@ -637,6 +752,17 @@ func (o *TenancyTenantGroupsListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithSlugEmpty adds the slugEmpty to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithSlugEmpty(slugEmpty *string) *TenancyTenantGroupsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
+}
+
 // WithSlugIc adds the slugIc to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) WithSlugIc(slugIc *string) *TenancyTenantGroupsListParams {
 	o.SetSlugIc(slugIc)
@@ -744,6 +870,57 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 	}
 	var res []error
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Description != nil {
 
 		// query param description
@@ -756,6 +933,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1016,6 +1210,57 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1045,6 +1290,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1317,6 +1579,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

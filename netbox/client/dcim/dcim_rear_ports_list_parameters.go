@@ -78,8 +78,20 @@ type DcimRearPortsListParams struct {
 	// Cabled.
 	Cabled *string
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -141,6 +153,9 @@ type DcimRearPortsListParams struct {
 	// Label.
 	Label *string
 
+	// LabelEmpty.
+	LabelEmpty *string
+
 	// LabelIc.
 	LabelIc *string
 
@@ -168,6 +183,15 @@ type DcimRearPortsListParams struct {
 	// LabelNisw.
 	LabelNisw *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -176,6 +200,9 @@ type DcimRearPortsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -248,6 +275,18 @@ type DcimRearPortsListParams struct {
 
 	// Siten.
 	Siten *string
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
 
 	// SiteID.
 	SiteID *string
@@ -331,6 +370,39 @@ func (o *DcimRearPortsListParams) SetCabled(cabled *string) {
 	o.Cabled = cabled
 }
 
+// WithCreated adds the created to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithCreated(created *string) *DcimRearPortsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithCreatedGte(createdGte *string) *DcimRearPortsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithCreatedLte(createdLte *string) *DcimRearPortsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDescription adds the description to the dcim rear ports list params
 func (o *DcimRearPortsListParams) WithDescription(description *string) *DcimRearPortsListParams {
 	o.SetDescription(description)
@@ -340,6 +412,17 @@ func (o *DcimRearPortsListParams) WithDescription(description *string) *DcimRear
 // SetDescription adds the description to the dcim rear ports list params
 func (o *DcimRearPortsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimRearPortsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim rear ports list params
@@ -562,6 +645,17 @@ func (o *DcimRearPortsListParams) SetLabel(label *string) {
 	o.Label = label
 }
 
+// WithLabelEmpty adds the labelEmpty to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithLabelEmpty(labelEmpty *string) *DcimRearPortsListParams {
+	o.SetLabelEmpty(labelEmpty)
+	return o
+}
+
+// SetLabelEmpty adds the labelEmpty to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetLabelEmpty(labelEmpty *string) {
+	o.LabelEmpty = labelEmpty
+}
+
 // WithLabelIc adds the labelIc to the dcim rear ports list params
 func (o *DcimRearPortsListParams) WithLabelIc(labelIc *string) *DcimRearPortsListParams {
 	o.SetLabelIc(labelIc)
@@ -661,6 +755,39 @@ func (o *DcimRearPortsListParams) SetLabelNisw(labelNisw *string) {
 	o.LabelNisw = labelNisw
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithLastUpdated(lastUpdated *string) *DcimRearPortsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimRearPortsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimRearPortsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim rear ports list params
 func (o *DcimRearPortsListParams) WithLimit(limit *int64) *DcimRearPortsListParams {
 	o.SetLimit(limit)
@@ -681,6 +808,17 @@ func (o *DcimRearPortsListParams) WithName(name *string) *DcimRearPortsListParam
 // SetName adds the name to the dcim rear ports list params
 func (o *DcimRearPortsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithNameEmpty(nameEmpty *string) *DcimRearPortsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim rear ports list params
@@ -936,6 +1074,50 @@ func (o *DcimRearPortsListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithSiteGroup(siteGroup *string) *DcimRearPortsListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithSiteGroupn(siteGroupn *string) *DcimRearPortsListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithSiteGroupID(siteGroupID *string) *DcimRearPortsListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the dcim rear ports list params
+func (o *DcimRearPortsListParams) WithSiteGroupIDn(siteGroupIDn *string) *DcimRearPortsListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the dcim rear ports list params
+func (o *DcimRearPortsListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the dcim rear ports list params
 func (o *DcimRearPortsListParams) WithSiteID(siteID *string) *DcimRearPortsListParams {
 	o.SetSiteID(siteID)
@@ -1027,6 +1209,57 @@ func (o *DcimRearPortsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Description != nil {
 
 		// query param description
@@ -1039,6 +1272,23 @@ func (o *DcimRearPortsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1384,6 +1634,23 @@ func (o *DcimRearPortsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.LabelEmpty != nil {
+
+		// query param label__empty
+		var qrLabelEmpty string
+
+		if o.LabelEmpty != nil {
+			qrLabelEmpty = *o.LabelEmpty
+		}
+		qLabelEmpty := qrLabelEmpty
+		if qLabelEmpty != "" {
+
+			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LabelIc != nil {
 
 		// query param label__ic
@@ -1537,6 +1804,57 @@ func (o *DcimRearPortsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1566,6 +1884,23 @@ func (o *DcimRearPortsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1957,6 +2292,74 @@ func (o *DcimRearPortsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qSiten != "" {
 
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
 				return err
 			}
 		}

@@ -93,6 +93,15 @@ type DcimPowerPortTemplatesListParams struct {
 	// AllocatedDrawn.
 	AllocatedDrawn *string
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// DevicetypeID.
 	DevicetypeID *string
 
@@ -116,6 +125,15 @@ type DcimPowerPortTemplatesListParams struct {
 
 	// IDn.
 	IDn *string
+
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
 
 	/* Limit.
 
@@ -143,6 +161,9 @@ type DcimPowerPortTemplatesListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -176,9 +197,6 @@ type DcimPowerPortTemplatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	// Q.
-	Q *string
 
 	// Type.
 	Type *string
@@ -305,6 +323,39 @@ func (o *DcimPowerPortTemplatesListParams) SetAllocatedDrawn(allocatedDrawn *str
 	o.AllocatedDrawn = allocatedDrawn
 }
 
+// WithCreated adds the created to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) WithCreated(created *string) *DcimPowerPortTemplatesListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) WithCreatedGte(createdGte *string) *DcimPowerPortTemplatesListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) WithCreatedLte(createdLte *string) *DcimPowerPortTemplatesListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDevicetypeID adds the devicetypeID to the dcim power port templates list params
 func (o *DcimPowerPortTemplatesListParams) WithDevicetypeID(devicetypeID *string) *DcimPowerPortTemplatesListParams {
 	o.SetDevicetypeID(devicetypeID)
@@ -393,6 +444,39 @@ func (o *DcimPowerPortTemplatesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) WithLastUpdated(lastUpdated *string) *DcimPowerPortTemplatesListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimPowerPortTemplatesListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimPowerPortTemplatesListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim power port templates list params
 func (o *DcimPowerPortTemplatesListParams) WithLimit(limit *int64) *DcimPowerPortTemplatesListParams {
 	o.SetLimit(limit)
@@ -479,6 +563,17 @@ func (o *DcimPowerPortTemplatesListParams) WithName(name *string) *DcimPowerPort
 // SetName adds the name to the dcim power port templates list params
 func (o *DcimPowerPortTemplatesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimPowerPortTemplatesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim power port templates list params
@@ -589,17 +684,6 @@ func (o *DcimPowerPortTemplatesListParams) WithOffset(offset *int64) *DcimPowerP
 // SetOffset adds the offset to the dcim power port templates list params
 func (o *DcimPowerPortTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithQ adds the q to the dcim power port templates list params
-func (o *DcimPowerPortTemplatesListParams) WithQ(q *string) *DcimPowerPortTemplatesListParams {
-	o.SetQ(q)
-	return o
-}
-
-// SetQ adds the q to the dcim power port templates list params
-func (o *DcimPowerPortTemplatesListParams) SetQ(q *string) {
-	o.Q = q
 }
 
 // WithType adds the typeVar to the dcim power port templates list params
@@ -729,6 +813,57 @@ func (o *DcimPowerPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qAllocatedDrawn != "" {
 
 			if err := r.SetQueryParam("allocated_draw__n", qAllocatedDrawn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
 				return err
 			}
 		}
@@ -870,6 +1005,57 @@ func (o *DcimPowerPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1001,6 +1187,23 @@ func (o *DcimPowerPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1171,23 +1374,6 @@ func (o *DcimPowerPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Q != nil {
-
-		// query param q
-		var qrQ string
-
-		if o.Q != nil {
-			qrQ = *o.Q
-		}
-		qQ := qrQ
-		if qQ != "" {
-
-			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

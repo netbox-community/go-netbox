@@ -75,6 +75,15 @@ func NewDcimPowerPanelsListParamsWithHTTPClient(client *http.Client) *DcimPowerP
 */
 type DcimPowerPanelsListParams struct {
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// ID.
 	ID *string
 
@@ -93,14 +102,32 @@ type DcimPowerPanelsListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
 	*/
 	Limit *int64
 
+	// LocationID.
+	LocationID *string
+
+	// LocationIDn.
+	LocationIDn *string
+
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -138,12 +165,6 @@ type DcimPowerPanelsListParams struct {
 	// Q.
 	Q *string
 
-	// RackGroupID.
-	RackGroupID *string
-
-	// RackGroupIDn.
-	RackGroupIDn *string
-
 	// Region.
 	Region *string
 
@@ -161,6 +182,18 @@ type DcimPowerPanelsListParams struct {
 
 	// Siten.
 	Siten *string
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
 
 	// SiteID.
 	SiteID *string
@@ -225,6 +258,39 @@ func (o *DcimPowerPanelsListParams) WithHTTPClient(client *http.Client) *DcimPow
 // SetHTTPClient adds the HTTPClient to the dcim power panels list params
 func (o *DcimPowerPanelsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithCreated adds the created to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithCreated(created *string) *DcimPowerPanelsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithCreatedGte(createdGte *string) *DcimPowerPanelsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithCreatedLte(createdLte *string) *DcimPowerPanelsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
 }
 
 // WithID adds the id to the dcim power panels list params
@@ -293,6 +359,39 @@ func (o *DcimPowerPanelsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithLastUpdated(lastUpdated *string) *DcimPowerPanelsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimPowerPanelsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimPowerPanelsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim power panels list params
 func (o *DcimPowerPanelsListParams) WithLimit(limit *int64) *DcimPowerPanelsListParams {
 	o.SetLimit(limit)
@@ -304,6 +403,28 @@ func (o *DcimPowerPanelsListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithLocationID adds the locationID to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithLocationID(locationID *string) *DcimPowerPanelsListParams {
+	o.SetLocationID(locationID)
+	return o
+}
+
+// SetLocationID adds the locationId to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetLocationID(locationID *string) {
+	o.LocationID = locationID
+}
+
+// WithLocationIDn adds the locationIDn to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithLocationIDn(locationIDn *string) *DcimPowerPanelsListParams {
+	o.SetLocationIDn(locationIDn)
+	return o
+}
+
+// SetLocationIDn adds the locationIdN to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetLocationIDn(locationIDn *string) {
+	o.LocationIDn = locationIDn
+}
+
 // WithName adds the name to the dcim power panels list params
 func (o *DcimPowerPanelsListParams) WithName(name *string) *DcimPowerPanelsListParams {
 	o.SetName(name)
@@ -313,6 +434,17 @@ func (o *DcimPowerPanelsListParams) WithName(name *string) *DcimPowerPanelsListP
 // SetName adds the name to the dcim power panels list params
 func (o *DcimPowerPanelsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithNameEmpty(nameEmpty *string) *DcimPowerPanelsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim power panels list params
@@ -436,28 +568,6 @@ func (o *DcimPowerPanelsListParams) SetQ(q *string) {
 	o.Q = q
 }
 
-// WithRackGroupID adds the rackGroupID to the dcim power panels list params
-func (o *DcimPowerPanelsListParams) WithRackGroupID(rackGroupID *string) *DcimPowerPanelsListParams {
-	o.SetRackGroupID(rackGroupID)
-	return o
-}
-
-// SetRackGroupID adds the rackGroupId to the dcim power panels list params
-func (o *DcimPowerPanelsListParams) SetRackGroupID(rackGroupID *string) {
-	o.RackGroupID = rackGroupID
-}
-
-// WithRackGroupIDn adds the rackGroupIDn to the dcim power panels list params
-func (o *DcimPowerPanelsListParams) WithRackGroupIDn(rackGroupIDn *string) *DcimPowerPanelsListParams {
-	o.SetRackGroupIDn(rackGroupIDn)
-	return o
-}
-
-// SetRackGroupIDn adds the rackGroupIdN to the dcim power panels list params
-func (o *DcimPowerPanelsListParams) SetRackGroupIDn(rackGroupIDn *string) {
-	o.RackGroupIDn = rackGroupIDn
-}
-
 // WithRegion adds the region to the dcim power panels list params
 func (o *DcimPowerPanelsListParams) WithRegion(region *string) *DcimPowerPanelsListParams {
 	o.SetRegion(region)
@@ -524,6 +634,50 @@ func (o *DcimPowerPanelsListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithSiteGroup(siteGroup *string) *DcimPowerPanelsListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithSiteGroupn(siteGroupn *string) *DcimPowerPanelsListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithSiteGroupID(siteGroupID *string) *DcimPowerPanelsListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithSiteGroupIDn(siteGroupIDn *string) *DcimPowerPanelsListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the dcim power panels list params
 func (o *DcimPowerPanelsListParams) WithSiteID(siteID *string) *DcimPowerPanelsListParams {
 	o.SetSiteID(siteID)
@@ -575,6 +729,57 @@ func (o *DcimPowerPanelsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return err
 	}
 	var res []error
+
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.ID != nil {
 
@@ -678,6 +883,57 @@ func (o *DcimPowerPanelsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -695,6 +951,40 @@ func (o *DcimPowerPanelsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
+	if o.LocationID != nil {
+
+		// query param location_id
+		var qrLocationID string
+
+		if o.LocationID != nil {
+			qrLocationID = *o.LocationID
+		}
+		qLocationID := qrLocationID
+		if qLocationID != "" {
+
+			if err := r.SetQueryParam("location_id", qLocationID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationIDn != nil {
+
+		// query param location_id__n
+		var qrLocationIDn string
+
+		if o.LocationIDn != nil {
+			qrLocationIDn = *o.LocationIDn
+		}
+		qLocationIDn := qrLocationIDn
+		if qLocationIDn != "" {
+
+			if err := r.SetQueryParam("location_id__n", qLocationIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Name != nil {
 
 		// query param name
@@ -707,6 +997,23 @@ func (o *DcimPowerPanelsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -899,40 +1206,6 @@ func (o *DcimPowerPanelsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
-	if o.RackGroupID != nil {
-
-		// query param rack_group_id
-		var qrRackGroupID string
-
-		if o.RackGroupID != nil {
-			qrRackGroupID = *o.RackGroupID
-		}
-		qRackGroupID := qrRackGroupID
-		if qRackGroupID != "" {
-
-			if err := r.SetQueryParam("rack_group_id", qRackGroupID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.RackGroupIDn != nil {
-
-		// query param rack_group_id__n
-		var qrRackGroupIDn string
-
-		if o.RackGroupIDn != nil {
-			qrRackGroupIDn = *o.RackGroupIDn
-		}
-		qRackGroupIDn := qrRackGroupIDn
-		if qRackGroupIDn != "" {
-
-			if err := r.SetQueryParam("rack_group_id__n", qRackGroupIDn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Region != nil {
 
 		// query param region
@@ -1030,6 +1303,74 @@ func (o *DcimPowerPanelsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qSiten != "" {
 
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
 				return err
 			}
 		}

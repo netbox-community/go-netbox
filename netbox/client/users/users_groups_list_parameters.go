@@ -102,6 +102,9 @@ type UsersGroupsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -277,6 +280,17 @@ func (o *UsersGroupsListParams) WithName(name *string) *UsersGroupsListParams {
 // SetName adds the name to the users groups list params
 func (o *UsersGroupsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the users groups list params
+func (o *UsersGroupsListParams) WithNameEmpty(nameEmpty *string) *UsersGroupsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the users groups list params
+func (o *UsersGroupsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the users groups list params
@@ -539,6 +553,23 @@ func (o *UsersGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

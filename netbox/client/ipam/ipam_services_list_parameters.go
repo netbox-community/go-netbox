@@ -132,6 +132,9 @@ type IpamServicesListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -444,6 +447,17 @@ func (o *IpamServicesListParams) WithName(name *string) *IpamServicesListParams 
 // SetName adds the name to the ipam services list params
 func (o *IpamServicesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the ipam services list params
+func (o *IpamServicesListParams) WithNameEmpty(nameEmpty *string) *IpamServicesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the ipam services list params
+func (o *IpamServicesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the ipam services list params
@@ -975,6 +989,23 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

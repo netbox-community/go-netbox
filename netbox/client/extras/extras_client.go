@@ -83,6 +83,24 @@ type ClientService interface {
 
 	ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomFieldsUpdateOK, error)
 
+	ExtrasCustomLinksBulkDelete(params *ExtrasCustomLinksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkDeleteNoContent, error)
+
+	ExtrasCustomLinksBulkPartialUpdate(params *ExtrasCustomLinksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkPartialUpdateOK, error)
+
+	ExtrasCustomLinksBulkUpdate(params *ExtrasCustomLinksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkUpdateOK, error)
+
+	ExtrasCustomLinksCreate(params *ExtrasCustomLinksCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksCreateCreated, error)
+
+	ExtrasCustomLinksDelete(params *ExtrasCustomLinksDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksDeleteNoContent, error)
+
+	ExtrasCustomLinksList(params *ExtrasCustomLinksListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksListOK, error)
+
+	ExtrasCustomLinksPartialUpdate(params *ExtrasCustomLinksPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksPartialUpdateOK, error)
+
+	ExtrasCustomLinksRead(params *ExtrasCustomLinksReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksReadOK, error)
+
+	ExtrasCustomLinksUpdate(params *ExtrasCustomLinksUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksUpdateOK, error)
+
 	ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkDeleteNoContent, error)
 
 	ExtrasExportTemplatesBulkPartialUpdate(params *ExtrasExportTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkPartialUpdateOK, error)
@@ -123,6 +141,24 @@ type ClientService interface {
 
 	ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJobResultsReadOK, error)
 
+	ExtrasJournalEntriesBulkDelete(params *ExtrasJournalEntriesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkDeleteNoContent, error)
+
+	ExtrasJournalEntriesBulkPartialUpdate(params *ExtrasJournalEntriesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkPartialUpdateOK, error)
+
+	ExtrasJournalEntriesBulkUpdate(params *ExtrasJournalEntriesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkUpdateOK, error)
+
+	ExtrasJournalEntriesCreate(params *ExtrasJournalEntriesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesCreateCreated, error)
+
+	ExtrasJournalEntriesDelete(params *ExtrasJournalEntriesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesDeleteNoContent, error)
+
+	ExtrasJournalEntriesList(params *ExtrasJournalEntriesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesListOK, error)
+
+	ExtrasJournalEntriesPartialUpdate(params *ExtrasJournalEntriesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesPartialUpdateOK, error)
+
+	ExtrasJournalEntriesRead(params *ExtrasJournalEntriesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesReadOK, error)
+
+	ExtrasJournalEntriesUpdate(params *ExtrasJournalEntriesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesUpdateOK, error)
+
 	ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasObjectChangesListOK, error)
 
 	ExtrasObjectChangesRead(params *ExtrasObjectChangesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasObjectChangesReadOK, error)
@@ -154,6 +190,24 @@ type ClientService interface {
 	ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsReadOK, error)
 
 	ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasTagsUpdateOK, error)
+
+	ExtrasWebhooksBulkDelete(params *ExtrasWebhooksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkDeleteNoContent, error)
+
+	ExtrasWebhooksBulkPartialUpdate(params *ExtrasWebhooksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkPartialUpdateOK, error)
+
+	ExtrasWebhooksBulkUpdate(params *ExtrasWebhooksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkUpdateOK, error)
+
+	ExtrasWebhooksCreate(params *ExtrasWebhooksCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksCreateCreated, error)
+
+	ExtrasWebhooksDelete(params *ExtrasWebhooksDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksDeleteNoContent, error)
+
+	ExtrasWebhooksList(params *ExtrasWebhooksListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksListOK, error)
+
+	ExtrasWebhooksPartialUpdate(params *ExtrasWebhooksPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksPartialUpdateOK, error)
+
+	ExtrasWebhooksRead(params *ExtrasWebhooksReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksReadOK, error)
+
+	ExtrasWebhooksUpdate(params *ExtrasWebhooksUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksUpdateOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -919,6 +973,348 @@ func (a *Client) ExtrasCustomFieldsUpdate(params *ExtrasCustomFieldsUpdateParams
 }
 
 /*
+  ExtrasCustomLinksBulkDelete extras custom links bulk delete API
+*/
+func (a *Client) ExtrasCustomLinksBulkDelete(params *ExtrasCustomLinksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomLinksBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-links_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/custom-links/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomLinksBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomLinksBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomLinksBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasCustomLinksBulkPartialUpdate extras custom links bulk partial update API
+*/
+func (a *Client) ExtrasCustomLinksBulkPartialUpdate(params *ExtrasCustomLinksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomLinksBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-links_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/custom-links/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomLinksBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomLinksBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomLinksBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasCustomLinksBulkUpdate extras custom links bulk update API
+*/
+func (a *Client) ExtrasCustomLinksBulkUpdate(params *ExtrasCustomLinksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomLinksBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-links_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/custom-links/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomLinksBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomLinksBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomLinksBulkUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasCustomLinksCreate extras custom links create API
+*/
+func (a *Client) ExtrasCustomLinksCreate(params *ExtrasCustomLinksCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomLinksCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-links_create",
+		Method:             "POST",
+		PathPattern:        "/extras/custom-links/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomLinksCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomLinksCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomLinksCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasCustomLinksDelete extras custom links delete API
+*/
+func (a *Client) ExtrasCustomLinksDelete(params *ExtrasCustomLinksDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomLinksDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-links_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/custom-links/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomLinksDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomLinksDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomLinksDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasCustomLinksList extras custom links list API
+*/
+func (a *Client) ExtrasCustomLinksList(params *ExtrasCustomLinksListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomLinksListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-links_list",
+		Method:             "GET",
+		PathPattern:        "/extras/custom-links/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomLinksListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomLinksListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomLinksListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasCustomLinksPartialUpdate extras custom links partial update API
+*/
+func (a *Client) ExtrasCustomLinksPartialUpdate(params *ExtrasCustomLinksPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomLinksPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-links_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/custom-links/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomLinksPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomLinksPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomLinksPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasCustomLinksRead extras custom links read API
+*/
+func (a *Client) ExtrasCustomLinksRead(params *ExtrasCustomLinksReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomLinksReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-links_read",
+		Method:             "GET",
+		PathPattern:        "/extras/custom-links/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomLinksReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomLinksReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomLinksReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasCustomLinksUpdate extras custom links update API
+*/
+func (a *Client) ExtrasCustomLinksUpdate(params *ExtrasCustomLinksUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasCustomLinksUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasCustomLinksUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_custom-links_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/custom-links/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasCustomLinksUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasCustomLinksUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasCustomLinksUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
   ExtrasExportTemplatesBulkDelete extras export templates bulk delete API
 */
 func (a *Client) ExtrasExportTemplatesBulkDelete(params *ExtrasExportTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasExportTemplatesBulkDeleteNoContent, error) {
@@ -1679,6 +2075,348 @@ func (a *Client) ExtrasJobResultsRead(params *ExtrasJobResultsReadParams, authIn
 }
 
 /*
+  ExtrasJournalEntriesBulkDelete extras journal entries bulk delete API
+*/
+func (a *Client) ExtrasJournalEntriesBulkDelete(params *ExtrasJournalEntriesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasJournalEntriesBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_journal-entries_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/journal-entries/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasJournalEntriesBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasJournalEntriesBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasJournalEntriesBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasJournalEntriesBulkPartialUpdate extras journal entries bulk partial update API
+*/
+func (a *Client) ExtrasJournalEntriesBulkPartialUpdate(params *ExtrasJournalEntriesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasJournalEntriesBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_journal-entries_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/journal-entries/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasJournalEntriesBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasJournalEntriesBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasJournalEntriesBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasJournalEntriesBulkUpdate extras journal entries bulk update API
+*/
+func (a *Client) ExtrasJournalEntriesBulkUpdate(params *ExtrasJournalEntriesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasJournalEntriesBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_journal-entries_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/journal-entries/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasJournalEntriesBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasJournalEntriesBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasJournalEntriesBulkUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasJournalEntriesCreate extras journal entries create API
+*/
+func (a *Client) ExtrasJournalEntriesCreate(params *ExtrasJournalEntriesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasJournalEntriesCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_journal-entries_create",
+		Method:             "POST",
+		PathPattern:        "/extras/journal-entries/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasJournalEntriesCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasJournalEntriesCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasJournalEntriesCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasJournalEntriesDelete extras journal entries delete API
+*/
+func (a *Client) ExtrasJournalEntriesDelete(params *ExtrasJournalEntriesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasJournalEntriesDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_journal-entries_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/journal-entries/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasJournalEntriesDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasJournalEntriesDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasJournalEntriesDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasJournalEntriesList extras journal entries list API
+*/
+func (a *Client) ExtrasJournalEntriesList(params *ExtrasJournalEntriesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasJournalEntriesListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_journal-entries_list",
+		Method:             "GET",
+		PathPattern:        "/extras/journal-entries/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasJournalEntriesListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasJournalEntriesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasJournalEntriesListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasJournalEntriesPartialUpdate extras journal entries partial update API
+*/
+func (a *Client) ExtrasJournalEntriesPartialUpdate(params *ExtrasJournalEntriesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasJournalEntriesPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_journal-entries_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/journal-entries/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasJournalEntriesPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasJournalEntriesPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasJournalEntriesPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasJournalEntriesRead extras journal entries read API
+*/
+func (a *Client) ExtrasJournalEntriesRead(params *ExtrasJournalEntriesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasJournalEntriesReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_journal-entries_read",
+		Method:             "GET",
+		PathPattern:        "/extras/journal-entries/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasJournalEntriesReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasJournalEntriesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasJournalEntriesReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasJournalEntriesUpdate extras journal entries update API
+*/
+func (a *Client) ExtrasJournalEntriesUpdate(params *ExtrasJournalEntriesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasJournalEntriesUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasJournalEntriesUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_journal-entries_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/journal-entries/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasJournalEntriesUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasJournalEntriesUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasJournalEntriesUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
   ExtrasObjectChangesList Retrieve a list of recent changes.
 */
 func (a *Client) ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasObjectChangesListOK, error) {
@@ -2283,6 +3021,348 @@ func (a *Client) ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runti
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*ExtrasTagsUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasWebhooksBulkDelete extras webhooks bulk delete API
+*/
+func (a *Client) ExtrasWebhooksBulkDelete(params *ExtrasWebhooksBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasWebhooksBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_webhooks_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/webhooks/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasWebhooksBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasWebhooksBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasWebhooksBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasWebhooksBulkPartialUpdate extras webhooks bulk partial update API
+*/
+func (a *Client) ExtrasWebhooksBulkPartialUpdate(params *ExtrasWebhooksBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasWebhooksBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_webhooks_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/webhooks/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasWebhooksBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasWebhooksBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasWebhooksBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasWebhooksBulkUpdate extras webhooks bulk update API
+*/
+func (a *Client) ExtrasWebhooksBulkUpdate(params *ExtrasWebhooksBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasWebhooksBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_webhooks_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/webhooks/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasWebhooksBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasWebhooksBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasWebhooksBulkUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasWebhooksCreate extras webhooks create API
+*/
+func (a *Client) ExtrasWebhooksCreate(params *ExtrasWebhooksCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasWebhooksCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_webhooks_create",
+		Method:             "POST",
+		PathPattern:        "/extras/webhooks/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasWebhooksCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasWebhooksCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasWebhooksCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasWebhooksDelete extras webhooks delete API
+*/
+func (a *Client) ExtrasWebhooksDelete(params *ExtrasWebhooksDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasWebhooksDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_webhooks_delete",
+		Method:             "DELETE",
+		PathPattern:        "/extras/webhooks/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasWebhooksDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasWebhooksDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasWebhooksDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasWebhooksList extras webhooks list API
+*/
+func (a *Client) ExtrasWebhooksList(params *ExtrasWebhooksListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasWebhooksListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_webhooks_list",
+		Method:             "GET",
+		PathPattern:        "/extras/webhooks/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasWebhooksListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasWebhooksListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasWebhooksListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasWebhooksPartialUpdate extras webhooks partial update API
+*/
+func (a *Client) ExtrasWebhooksPartialUpdate(params *ExtrasWebhooksPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasWebhooksPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_webhooks_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/extras/webhooks/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasWebhooksPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasWebhooksPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasWebhooksPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasWebhooksRead extras webhooks read API
+*/
+func (a *Client) ExtrasWebhooksRead(params *ExtrasWebhooksReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasWebhooksReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_webhooks_read",
+		Method:             "GET",
+		PathPattern:        "/extras/webhooks/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasWebhooksReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasWebhooksReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasWebhooksReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  ExtrasWebhooksUpdate extras webhooks update API
+*/
+func (a *Client) ExtrasWebhooksUpdate(params *ExtrasWebhooksUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtrasWebhooksUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewExtrasWebhooksUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "extras_webhooks_update",
+		Method:             "PUT",
+		PathPattern:        "/extras/webhooks/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &ExtrasWebhooksUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ExtrasWebhooksUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*ExtrasWebhooksUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

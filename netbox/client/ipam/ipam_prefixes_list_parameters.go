@@ -75,6 +75,24 @@ func NewIpamPrefixesListParamsWithHTTPClient(client *http.Client) *IpamPrefixesL
 */
 type IpamPrefixesListParams struct {
 
+	// Children.
+	Children *string
+
+	// ChildrenGt.
+	ChildrenGt *string
+
+	// ChildrenGte.
+	ChildrenGte *string
+
+	// ChildrenLt.
+	ChildrenLt *string
+
+	// ChildrenLte.
+	ChildrenLte *string
+
+	// Childrenn.
+	Childrenn *string
+
 	// Contains.
 	Contains *string
 
@@ -86,6 +104,24 @@ type IpamPrefixesListParams struct {
 
 	// CreatedLte.
 	CreatedLte *string
+
+	// Depth.
+	Depth *string
+
+	// DepthGt.
+	DepthGt *string
+
+	// DepthGte.
+	DepthGte *string
+
+	// DepthLt.
+	DepthLt *string
+
+	// DepthLte.
+	DepthLte *string
+
+	// Depthn.
+	Depthn *string
 
 	// Family.
 	Family *float64
@@ -182,6 +218,18 @@ type IpamPrefixesListParams struct {
 
 	// Siten.
 	Siten *string
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
 
 	// SiteID.
 	SiteID *string
@@ -305,6 +353,72 @@ func (o *IpamPrefixesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithChildren adds the children to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildren(children *string) *IpamPrefixesListParams {
+	o.SetChildren(children)
+	return o
+}
+
+// SetChildren adds the children to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildren(children *string) {
+	o.Children = children
+}
+
+// WithChildrenGt adds the childrenGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenGt(childrenGt *string) *IpamPrefixesListParams {
+	o.SetChildrenGt(childrenGt)
+	return o
+}
+
+// SetChildrenGt adds the childrenGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenGt(childrenGt *string) {
+	o.ChildrenGt = childrenGt
+}
+
+// WithChildrenGte adds the childrenGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenGte(childrenGte *string) *IpamPrefixesListParams {
+	o.SetChildrenGte(childrenGte)
+	return o
+}
+
+// SetChildrenGte adds the childrenGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenGte(childrenGte *string) {
+	o.ChildrenGte = childrenGte
+}
+
+// WithChildrenLt adds the childrenLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenLt(childrenLt *string) *IpamPrefixesListParams {
+	o.SetChildrenLt(childrenLt)
+	return o
+}
+
+// SetChildrenLt adds the childrenLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenLt(childrenLt *string) {
+	o.ChildrenLt = childrenLt
+}
+
+// WithChildrenLte adds the childrenLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenLte(childrenLte *string) *IpamPrefixesListParams {
+	o.SetChildrenLte(childrenLte)
+	return o
+}
+
+// SetChildrenLte adds the childrenLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenLte(childrenLte *string) {
+	o.ChildrenLte = childrenLte
+}
+
+// WithChildrenn adds the childrenn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithChildrenn(childrenn *string) *IpamPrefixesListParams {
+	o.SetChildrenn(childrenn)
+	return o
+}
+
+// SetChildrenn adds the childrenN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetChildrenn(childrenn *string) {
+	o.Childrenn = childrenn
+}
+
 // WithContains adds the contains to the ipam prefixes list params
 func (o *IpamPrefixesListParams) WithContains(contains *string) *IpamPrefixesListParams {
 	o.SetContains(contains)
@@ -347,6 +461,72 @@ func (o *IpamPrefixesListParams) WithCreatedLte(createdLte *string) *IpamPrefixe
 // SetCreatedLte adds the createdLte to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithDepth adds the depth to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepth(depth *string) *IpamPrefixesListParams {
+	o.SetDepth(depth)
+	return o
+}
+
+// SetDepth adds the depth to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepth(depth *string) {
+	o.Depth = depth
+}
+
+// WithDepthGt adds the depthGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthGt(depthGt *string) *IpamPrefixesListParams {
+	o.SetDepthGt(depthGt)
+	return o
+}
+
+// SetDepthGt adds the depthGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthGt(depthGt *string) {
+	o.DepthGt = depthGt
+}
+
+// WithDepthGte adds the depthGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthGte(depthGte *string) *IpamPrefixesListParams {
+	o.SetDepthGte(depthGte)
+	return o
+}
+
+// SetDepthGte adds the depthGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthGte(depthGte *string) {
+	o.DepthGte = depthGte
+}
+
+// WithDepthLt adds the depthLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthLt(depthLt *string) *IpamPrefixesListParams {
+	o.SetDepthLt(depthLt)
+	return o
+}
+
+// SetDepthLt adds the depthLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthLt(depthLt *string) {
+	o.DepthLt = depthLt
+}
+
+// WithDepthLte adds the depthLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthLte(depthLte *string) *IpamPrefixesListParams {
+	o.SetDepthLte(depthLte)
+	return o
+}
+
+// SetDepthLte adds the depthLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthLte(depthLte *string) {
+	o.DepthLte = depthLte
+}
+
+// WithDepthn adds the depthn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDepthn(depthn *string) *IpamPrefixesListParams {
+	o.SetDepthn(depthn)
+	return o
+}
+
+// SetDepthn adds the depthN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDepthn(depthn *string) {
+	o.Depthn = depthn
 }
 
 // WithFamily adds the family to the ipam prefixes list params
@@ -679,6 +859,50 @@ func (o *IpamPrefixesListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithSiteGroup(siteGroup *string) *IpamPrefixesListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithSiteGroupn(siteGroupn *string) *IpamPrefixesListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithSiteGroupID(siteGroupID *string) *IpamPrefixesListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithSiteGroupIDn(siteGroupIDn *string) *IpamPrefixesListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the ipam prefixes list params
 func (o *IpamPrefixesListParams) WithSiteID(siteID *string) *IpamPrefixesListParams {
 	o.SetSiteID(siteID)
@@ -940,6 +1164,108 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 	}
 	var res []error
 
+	if o.Children != nil {
+
+		// query param children
+		var qrChildren string
+
+		if o.Children != nil {
+			qrChildren = *o.Children
+		}
+		qChildren := qrChildren
+		if qChildren != "" {
+
+			if err := r.SetQueryParam("children", qChildren); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ChildrenGt != nil {
+
+		// query param children__gt
+		var qrChildrenGt string
+
+		if o.ChildrenGt != nil {
+			qrChildrenGt = *o.ChildrenGt
+		}
+		qChildrenGt := qrChildrenGt
+		if qChildrenGt != "" {
+
+			if err := r.SetQueryParam("children__gt", qChildrenGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ChildrenGte != nil {
+
+		// query param children__gte
+		var qrChildrenGte string
+
+		if o.ChildrenGte != nil {
+			qrChildrenGte = *o.ChildrenGte
+		}
+		qChildrenGte := qrChildrenGte
+		if qChildrenGte != "" {
+
+			if err := r.SetQueryParam("children__gte", qChildrenGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ChildrenLt != nil {
+
+		// query param children__lt
+		var qrChildrenLt string
+
+		if o.ChildrenLt != nil {
+			qrChildrenLt = *o.ChildrenLt
+		}
+		qChildrenLt := qrChildrenLt
+		if qChildrenLt != "" {
+
+			if err := r.SetQueryParam("children__lt", qChildrenLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ChildrenLte != nil {
+
+		// query param children__lte
+		var qrChildrenLte string
+
+		if o.ChildrenLte != nil {
+			qrChildrenLte = *o.ChildrenLte
+		}
+		qChildrenLte := qrChildrenLte
+		if qChildrenLte != "" {
+
+			if err := r.SetQueryParam("children__lte", qChildrenLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Childrenn != nil {
+
+		// query param children__n
+		var qrChildrenn string
+
+		if o.Childrenn != nil {
+			qrChildrenn = *o.Childrenn
+		}
+		qChildrenn := qrChildrenn
+		if qChildrenn != "" {
+
+			if err := r.SetQueryParam("children__n", qChildrenn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Contains != nil {
 
 		// query param contains
@@ -1003,6 +1329,108 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Depth != nil {
+
+		// query param depth
+		var qrDepth string
+
+		if o.Depth != nil {
+			qrDepth = *o.Depth
+		}
+		qDepth := qrDepth
+		if qDepth != "" {
+
+			if err := r.SetQueryParam("depth", qDepth); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DepthGt != nil {
+
+		// query param depth__gt
+		var qrDepthGt string
+
+		if o.DepthGt != nil {
+			qrDepthGt = *o.DepthGt
+		}
+		qDepthGt := qrDepthGt
+		if qDepthGt != "" {
+
+			if err := r.SetQueryParam("depth__gt", qDepthGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DepthGte != nil {
+
+		// query param depth__gte
+		var qrDepthGte string
+
+		if o.DepthGte != nil {
+			qrDepthGte = *o.DepthGte
+		}
+		qDepthGte := qrDepthGte
+		if qDepthGte != "" {
+
+			if err := r.SetQueryParam("depth__gte", qDepthGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DepthLt != nil {
+
+		// query param depth__lt
+		var qrDepthLt string
+
+		if o.DepthLt != nil {
+			qrDepthLt = *o.DepthLt
+		}
+		qDepthLt := qrDepthLt
+		if qDepthLt != "" {
+
+			if err := r.SetQueryParam("depth__lt", qDepthLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DepthLte != nil {
+
+		// query param depth__lte
+		var qrDepthLte string
+
+		if o.DepthLte != nil {
+			qrDepthLte = *o.DepthLte
+		}
+		qDepthLte := qrDepthLte
+		if qDepthLte != "" {
+
+			if err := r.SetQueryParam("depth__lte", qDepthLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Depthn != nil {
+
+		// query param depth__n
+		var qrDepthn string
+
+		if o.Depthn != nil {
+			qrDepthn = *o.Depthn
+		}
+		qDepthn := qrDepthn
+		if qDepthn != "" {
+
+			if err := r.SetQueryParam("depth__n", qDepthn); err != nil {
 				return err
 			}
 		}
@@ -1513,6 +1941,74 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qSiten != "" {
 
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
 				return err
 			}
 		}

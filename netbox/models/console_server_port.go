@@ -36,6 +36,10 @@ import (
 // swagger:model ConsoleServerPort
 type ConsoleServerPort struct {
 
+	// occupied
+	// Read Only: true
+	Occupied *bool `json:"_occupied,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
@@ -67,6 +71,14 @@ type ConsoleServerPort struct {
 	// Read Only: true
 	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -75,7 +87,11 @@ type ConsoleServerPort struct {
 	// Required: true
 	Device *NestedDevice `json:"device"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -85,11 +101,24 @@ type ConsoleServerPort struct {
 	// Max Length: 64
 	Label string `json:"label,omitempty"`
 
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Mark connected
+	//
+	// Treat as if a cable is connected
+	MarkConnected bool `json:"mark_connected,omitempty"`
+
 	// Name
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1
 	Name *string `json:"name"`
+
+	// speed
+	Speed *ConsoleServerPortSpeed `json:"speed,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags"`
@@ -111,6 +140,10 @@ func (m *ConsoleServerPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
@@ -123,7 +156,15 @@ func (m *ConsoleServerPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSpeed(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -157,6 +198,18 @@ func (m *ConsoleServerPort) validateCable(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -204,6 +257,18 @@ func (m *ConsoleServerPort) validateLabel(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ConsoleServerPort) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ConsoleServerPort) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
@@ -216,6 +281,23 @@ func (m *ConsoleServerPort) validateName(formats strfmt.Registry) error {
 
 	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) validateSpeed(formats strfmt.Registry) error {
+	if swag.IsZero(m.Speed) { // not required
+		return nil
+	}
+
+	if m.Speed != nil {
+		if err := m.Speed.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("speed")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -278,6 +360,10 @@ func (m *ConsoleServerPort) validateURL(formats strfmt.Registry) error {
 func (m *ConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCable(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -302,11 +388,27 @@ func (m *ConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDevice(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSpeed(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -325,6 +427,15 @@ func (m *ConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ConsoleServerPort) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -379,6 +490,15 @@ func (m *ConsoleServerPort) contextValidateConnectedEndpointType(ctx context.Con
 	return nil
 }
 
+func (m *ConsoleServerPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ConsoleServerPort) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
@@ -393,10 +513,42 @@ func (m *ConsoleServerPort) contextValidateDevice(ctx context.Context, formats s
 	return nil
 }
 
+func (m *ConsoleServerPort) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ConsoleServerPort) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) contextValidateSpeed(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Speed != nil {
+		if err := m.Speed.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("speed")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -454,6 +606,158 @@ func (m *ConsoleServerPort) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *ConsoleServerPort) UnmarshalBinary(b []byte) error {
 	var res ConsoleServerPort
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// ConsoleServerPortSpeed Speed
+//
+// swagger:model ConsoleServerPortSpeed
+type ConsoleServerPortSpeed struct {
+
+	// label
+	// Required: true
+	// Enum: [1200 bps 2400 bps 4800 bps 9600 bps 19.2 kbps 38.4 kbps 57.6 kbps 115.2 kbps]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [1200 2400 4800 9600 19200 38400 57600 115200]
+	Value *int64 `json:"value"`
+}
+
+// Validate validates this console server port speed
+func (m *ConsoleServerPortSpeed) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var consoleServerPortSpeedTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["1200 bps","2400 bps","4800 bps","9600 bps","19.2 kbps","38.4 kbps","57.6 kbps","115.2 kbps"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		consoleServerPortSpeedTypeLabelPropEnum = append(consoleServerPortSpeedTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// ConsoleServerPortSpeedLabelNr1200Bps captures enum value "1200 bps"
+	ConsoleServerPortSpeedLabelNr1200Bps string = "1200 bps"
+
+	// ConsoleServerPortSpeedLabelNr2400Bps captures enum value "2400 bps"
+	ConsoleServerPortSpeedLabelNr2400Bps string = "2400 bps"
+
+	// ConsoleServerPortSpeedLabelNr4800Bps captures enum value "4800 bps"
+	ConsoleServerPortSpeedLabelNr4800Bps string = "4800 bps"
+
+	// ConsoleServerPortSpeedLabelNr9600Bps captures enum value "9600 bps"
+	ConsoleServerPortSpeedLabelNr9600Bps string = "9600 bps"
+
+	// ConsoleServerPortSpeedLabelNr19Dot2Kbps captures enum value "19.2 kbps"
+	ConsoleServerPortSpeedLabelNr19Dot2Kbps string = "19.2 kbps"
+
+	// ConsoleServerPortSpeedLabelNr38Dot4Kbps captures enum value "38.4 kbps"
+	ConsoleServerPortSpeedLabelNr38Dot4Kbps string = "38.4 kbps"
+
+	// ConsoleServerPortSpeedLabelNr57Dot6Kbps captures enum value "57.6 kbps"
+	ConsoleServerPortSpeedLabelNr57Dot6Kbps string = "57.6 kbps"
+
+	// ConsoleServerPortSpeedLabelNr115Dot2Kbps captures enum value "115.2 kbps"
+	ConsoleServerPortSpeedLabelNr115Dot2Kbps string = "115.2 kbps"
+)
+
+// prop value enum
+func (m *ConsoleServerPortSpeed) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, consoleServerPortSpeedTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ConsoleServerPortSpeed) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("speed"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("speed"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var consoleServerPortSpeedTypeValuePropEnum []interface{}
+
+func init() {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[1200,2400,4800,9600,19200,38400,57600,115200]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		consoleServerPortSpeedTypeValuePropEnum = append(consoleServerPortSpeedTypeValuePropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *ConsoleServerPortSpeed) validateValueEnum(path, location string, value int64) error {
+	if err := validate.EnumCase(path, location, value, consoleServerPortSpeedTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ConsoleServerPortSpeed) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("speed"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("speed"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this console server port speed based on context it is used
+func (m *ConsoleServerPortSpeed) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *ConsoleServerPortSpeed) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *ConsoleServerPortSpeed) UnmarshalBinary(b []byte) error {
+	var res ConsoleServerPortSpeed
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

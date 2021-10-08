@@ -38,9 +38,16 @@ type PowerPanel struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// location
+	Location *NestedLocation `json:"location,omitempty"`
 
 	// Name
 	// Required: true
@@ -51,9 +58,6 @@ type PowerPanel struct {
 	// Powerfeed count
 	// Read Only: true
 	PowerfeedCount int64 `json:"powerfeed_count,omitempty"`
-
-	// rack group
-	RackGroup *NestedRackGroup `json:"rack_group,omitempty"`
 
 	// site
 	// Required: true
@@ -72,11 +76,11 @@ type PowerPanel struct {
 func (m *PowerPanel) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateName(formats); err != nil {
+	if err := m.validateLocation(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateRackGroup(formats); err != nil {
+	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -98,6 +102,23 @@ func (m *PowerPanel) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *PowerPanel) validateLocation(formats strfmt.Registry) error {
+	if swag.IsZero(m.Location) { // not required
+		return nil
+	}
+
+	if m.Location != nil {
+		if err := m.Location.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *PowerPanel) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
@@ -110,23 +131,6 @@ func (m *PowerPanel) validateName(formats strfmt.Registry) error {
 
 	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *PowerPanel) validateRackGroup(formats strfmt.Registry) error {
-	if swag.IsZero(m.RackGroup) { // not required
-		return nil
-	}
-
-	if m.RackGroup != nil {
-		if err := m.RackGroup.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("rack_group")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -190,15 +194,19 @@ func (m *PowerPanel) validateURL(formats strfmt.Registry) error {
 func (m *PowerPanel) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidatePowerfeedCount(ctx, formats); err != nil {
+	if err := m.contextValidateLocation(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateRackGroup(ctx, formats); err != nil {
+	if err := m.contextValidatePowerfeedCount(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -220,6 +228,15 @@ func (m *PowerPanel) ContextValidate(ctx context.Context, formats strfmt.Registr
 	return nil
 }
 
+func (m *PowerPanel) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PowerPanel) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
@@ -229,24 +246,24 @@ func (m *PowerPanel) contextValidateID(ctx context.Context, formats strfmt.Regis
 	return nil
 }
 
-func (m *PowerPanel) contextValidatePowerfeedCount(ctx context.Context, formats strfmt.Registry) error {
+func (m *PowerPanel) contextValidateLocation(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "powerfeed_count", "body", int64(m.PowerfeedCount)); err != nil {
-		return err
+	if m.Location != nil {
+		if err := m.Location.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
 	}
 
 	return nil
 }
 
-func (m *PowerPanel) contextValidateRackGroup(ctx context.Context, formats strfmt.Registry) error {
+func (m *PowerPanel) contextValidatePowerfeedCount(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.RackGroup != nil {
-		if err := m.RackGroup.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("rack_group")
-			}
-			return err
-		}
+	if err := validate.ReadOnly(ctx, "powerfeed_count", "body", int64(m.PowerfeedCount)); err != nil {
+		return err
 	}
 
 	return nil

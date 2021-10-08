@@ -81,8 +81,20 @@ type DcimPowerOutletsListParams struct {
 	// Connected.
 	Connected *string
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -150,6 +162,9 @@ type DcimPowerOutletsListParams struct {
 	// Label.
 	Label *string
 
+	// LabelEmpty.
+	LabelEmpty *string
+
 	// LabelIc.
 	LabelIc *string
 
@@ -177,6 +192,15 @@ type DcimPowerOutletsListParams struct {
 	// LabelNisw.
 	LabelNisw *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -185,6 +209,9 @@ type DcimPowerOutletsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -239,6 +266,18 @@ type DcimPowerOutletsListParams struct {
 
 	// Siten.
 	Siten *string
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
 
 	// SiteID.
 	SiteID *string
@@ -333,6 +372,39 @@ func (o *DcimPowerOutletsListParams) SetConnected(connected *string) {
 	o.Connected = connected
 }
 
+// WithCreated adds the created to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithCreated(created *string) *DcimPowerOutletsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithCreatedGte(createdGte *string) *DcimPowerOutletsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithCreatedLte(createdLte *string) *DcimPowerOutletsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDescription adds the description to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithDescription(description *string) *DcimPowerOutletsListParams {
 	o.SetDescription(description)
@@ -342,6 +414,17 @@ func (o *DcimPowerOutletsListParams) WithDescription(description *string) *DcimP
 // SetDescription adds the description to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimPowerOutletsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim power outlets list params
@@ -586,6 +669,17 @@ func (o *DcimPowerOutletsListParams) SetLabel(label *string) {
 	o.Label = label
 }
 
+// WithLabelEmpty adds the labelEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLabelEmpty(labelEmpty *string) *DcimPowerOutletsListParams {
+	o.SetLabelEmpty(labelEmpty)
+	return o
+}
+
+// SetLabelEmpty adds the labelEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLabelEmpty(labelEmpty *string) {
+	o.LabelEmpty = labelEmpty
+}
+
 // WithLabelIc adds the labelIc to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithLabelIc(labelIc *string) *DcimPowerOutletsListParams {
 	o.SetLabelIc(labelIc)
@@ -685,6 +779,39 @@ func (o *DcimPowerOutletsListParams) SetLabelNisw(labelNisw *string) {
 	o.LabelNisw = labelNisw
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLastUpdated(lastUpdated *string) *DcimPowerOutletsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimPowerOutletsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimPowerOutletsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithLimit(limit *int64) *DcimPowerOutletsListParams {
 	o.SetLimit(limit)
@@ -705,6 +832,17 @@ func (o *DcimPowerOutletsListParams) WithName(name *string) *DcimPowerOutletsLis
 // SetName adds the name to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithNameEmpty(nameEmpty *string) *DcimPowerOutletsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim power outlets list params
@@ -894,6 +1032,50 @@ func (o *DcimPowerOutletsListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithSiteGroup(siteGroup *string) *DcimPowerOutletsListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithSiteGroupn(siteGroupn *string) *DcimPowerOutletsListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithSiteGroupID(siteGroupID *string) *DcimPowerOutletsListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithSiteGroupIDn(siteGroupIDn *string) *DcimPowerOutletsListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithSiteID(siteID *string) *DcimPowerOutletsListParams {
 	o.SetSiteID(siteID)
@@ -1002,6 +1184,57 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Description != nil {
 
 		// query param description
@@ -1014,6 +1247,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1393,6 +1643,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.LabelEmpty != nil {
+
+		// query param label__empty
+		var qrLabelEmpty string
+
+		if o.LabelEmpty != nil {
+			qrLabelEmpty = *o.LabelEmpty
+		}
+		qLabelEmpty := qrLabelEmpty
+		if qLabelEmpty != "" {
+
+			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LabelIc != nil {
 
 		// query param label__ic
@@ -1546,6 +1813,57 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1575,6 +1893,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1864,6 +2199,74 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qSiten != "" {
 
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
 				return err
 			}
 		}

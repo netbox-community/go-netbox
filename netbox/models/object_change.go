@@ -56,13 +56,21 @@ type ObjectChange struct {
 	// Read Only: true
 	ChangedObjectType string `json:"changed_object_type,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
-	// Object data
+	// Postchange data
 	// Read Only: true
-	ObjectData string `json:"object_data,omitempty"`
+	PostchangeData string `json:"postchange_data,omitempty"`
+
+	// Prechange data
+	// Read Only: true
+	PrechangeData string `json:"prechange_data,omitempty"`
 
 	// Request id
 	// Read Only: true
@@ -241,11 +249,19 @@ func (m *ObjectChange) ContextValidate(ctx context.Context, formats strfmt.Regis
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateObjectData(ctx, formats); err != nil {
+	if err := m.contextValidatePostchangeData(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrechangeData(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -303,6 +319,15 @@ func (m *ObjectChange) contextValidateChangedObjectType(ctx context.Context, for
 	return nil
 }
 
+func (m *ObjectChange) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ObjectChange) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
@@ -312,9 +337,18 @@ func (m *ObjectChange) contextValidateID(ctx context.Context, formats strfmt.Reg
 	return nil
 }
 
-func (m *ObjectChange) contextValidateObjectData(ctx context.Context, formats strfmt.Registry) error {
+func (m *ObjectChange) contextValidatePostchangeData(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "object_data", "body", string(m.ObjectData)); err != nil {
+	if err := validate.ReadOnly(ctx, "postchange_data", "body", string(m.PostchangeData)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidatePrechangeData(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "prechange_data", "body", string(m.PrechangeData)); err != nil {
 		return err
 	}
 

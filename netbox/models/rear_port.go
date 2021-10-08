@@ -36,6 +36,10 @@ import (
 // swagger:model RearPort
 type RearPort struct {
 
+	// occupied
+	// Read Only: true
+	Occupied *bool `json:"_occupied,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
@@ -51,6 +55,14 @@ type RearPort struct {
 	// Read Only: true
 	CablePeerType string `json:"cable_peer_type,omitempty"`
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -59,7 +71,11 @@ type RearPort struct {
 	// Required: true
 	Device *NestedDevice `json:"device"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -68,6 +84,16 @@ type RearPort struct {
 	// Physical label
 	// Max Length: 64
 	Label string `json:"label,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Mark connected
+	//
+	// Treat as if a cable is connected
+	MarkConnected bool `json:"mark_connected,omitempty"`
 
 	// Name
 	// Required: true
@@ -101,6 +127,10 @@ func (m *RearPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
@@ -110,6 +140,10 @@ func (m *RearPort) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -156,6 +190,18 @@ func (m *RearPort) validateCable(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *RearPort) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *RearPort) validateDescription(formats strfmt.Registry) error {
 	if swag.IsZero(m.Description) { // not required
 		return nil
@@ -192,6 +238,18 @@ func (m *RearPort) validateLabel(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *RearPort) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -289,6 +347,10 @@ func (m *RearPort) validateURL(formats strfmt.Registry) error {
 func (m *RearPort) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCable(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -301,11 +363,23 @@ func (m *RearPort) ContextValidate(ctx context.Context, formats strfmt.Registry)
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDevice(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -324,6 +398,15 @@ func (m *RearPort) ContextValidate(ctx context.Context, formats strfmt.Registry)
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *RearPort) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -355,6 +438,15 @@ func (m *RearPort) contextValidateCablePeerType(ctx context.Context, formats str
 	return nil
 }
 
+func (m *RearPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *RearPort) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Device != nil {
@@ -369,9 +461,27 @@ func (m *RearPort) contextValidateDevice(ctx context.Context, formats strfmt.Reg
 	return nil
 }
 
+func (m *RearPort) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *RearPort) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *RearPort) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
@@ -444,12 +554,12 @@ type RearPortType struct {
 
 	// label
 	// Required: true
-	// Enum: [8P8C 8P6C 8P4C 8P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST CS SN Splice]
+	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST CS SN Splice]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
 	Value *string `json:"value"`
 }
 
@@ -475,7 +585,7 @@ var rearPortTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST","CS","SN","Splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST","CS","SN","Splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -497,6 +607,21 @@ const (
 	// RearPortTypeLabelNr8P2C captures enum value "8P2C"
 	RearPortTypeLabelNr8P2C string = "8P2C"
 
+	// RearPortTypeLabelNr6P6C captures enum value "6P6C"
+	RearPortTypeLabelNr6P6C string = "6P6C"
+
+	// RearPortTypeLabelNr6P4C captures enum value "6P4C"
+	RearPortTypeLabelNr6P4C string = "6P4C"
+
+	// RearPortTypeLabelNr6P2C captures enum value "6P2C"
+	RearPortTypeLabelNr6P2C string = "6P2C"
+
+	// RearPortTypeLabelNr4P4C captures enum value "4P4C"
+	RearPortTypeLabelNr4P4C string = "4P4C"
+
+	// RearPortTypeLabelNr4P2C captures enum value "4P2C"
+	RearPortTypeLabelNr4P2C string = "4P2C"
+
 	// RearPortTypeLabelGG45 captures enum value "GG45"
 	RearPortTypeLabelGG45 string = "GG45"
 
@@ -517,6 +642,9 @@ const (
 
 	// RearPortTypeLabelFConnector captures enum value "F Connector"
 	RearPortTypeLabelFConnector string = "F Connector"
+
+	// RearPortTypeLabelNConnector captures enum value "N Connector"
+	RearPortTypeLabelNConnector string = "N Connector"
 
 	// RearPortTypeLabelMRJ21 captures enum value "MRJ21"
 	RearPortTypeLabelMRJ21 string = "MRJ21"
@@ -587,7 +715,7 @@ var rearPortTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -609,6 +737,21 @@ const (
 	// RearPortTypeValueNr8p2c captures enum value "8p2c"
 	RearPortTypeValueNr8p2c string = "8p2c"
 
+	// RearPortTypeValueNr6p6c captures enum value "6p6c"
+	RearPortTypeValueNr6p6c string = "6p6c"
+
+	// RearPortTypeValueNr6p4c captures enum value "6p4c"
+	RearPortTypeValueNr6p4c string = "6p4c"
+
+	// RearPortTypeValueNr6p2c captures enum value "6p2c"
+	RearPortTypeValueNr6p2c string = "6p2c"
+
+	// RearPortTypeValueNr4p4c captures enum value "4p4c"
+	RearPortTypeValueNr4p4c string = "4p4c"
+
+	// RearPortTypeValueNr4p2c captures enum value "4p2c"
+	RearPortTypeValueNr4p2c string = "4p2c"
+
 	// RearPortTypeValueGg45 captures enum value "gg45"
 	RearPortTypeValueGg45 string = "gg45"
 
@@ -629,6 +772,9 @@ const (
 
 	// RearPortTypeValueF captures enum value "f"
 	RearPortTypeValueF string = "f"
+
+	// RearPortTypeValueN captures enum value "n"
+	RearPortTypeValueN string = "n"
 
 	// RearPortTypeValueMrj21 captures enum value "mrj21"
 	RearPortTypeValueMrj21 string = "mrj21"
