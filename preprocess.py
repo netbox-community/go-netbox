@@ -99,6 +99,10 @@ for prop, prop_spec in data["definitions"]["WritableCluster"]["properties"].item
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-nullable = false on WritableCluster.{prop}")
 
+# Remove maxcap from scope_id attribute in vlangroup
+del data["definitions"]["VLANGroup"]["properties"]["scope_id"]["maximum"]
+logging.info(f"delete maximum of VLANGroup.scope_id")
+
 # Write output file
 with open("swagger.processed.json", "w") as writefile:
     json.dump(data, writefile, indent=2)

@@ -61961,7 +61961,6 @@
         "scope_id": {
           "title": "Scope id",
           "type": "integer",
-          "maximum": 9223372036854776000,
           "minimum": 0,
           "x-nullable": true
         },

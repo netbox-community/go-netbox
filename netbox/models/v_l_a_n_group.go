@@ -70,7 +70,6 @@ type VLANGroup struct {
 	Scope string `json:"scope,omitempty"`
 
 	// Scope id
-	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	ScopeID *int64 `json:"scope_id,omitempty"`
 
@@ -191,10 +190,6 @@ func (m *VLANGroup) validateScopeID(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MinimumInt("scope_id", "body", *m.ScopeID, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("scope_id", "body", *m.ScopeID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 
