@@ -132,6 +132,9 @@ type TenancyTenantsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -170,6 +173,9 @@ type TenancyTenantsListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -455,6 +461,17 @@ func (o *TenancyTenantsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithNameEmpty(nameEmpty *string) *TenancyTenantsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the tenancy tenants list params
 func (o *TenancyTenantsListParams) WithNameIc(nameIc *string) *TenancyTenantsListParams {
 	o.SetNameIc(nameIc)
@@ -585,6 +602,17 @@ func (o *TenancyTenantsListParams) WithSlug(slug *string) *TenancyTenantsListPar
 // SetSlug adds the slug to the tenancy tenants list params
 func (o *TenancyTenantsListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithSlugEmpty(slugEmpty *string) *TenancyTenantsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the tenancy tenants list params
@@ -1022,6 +1050,23 @@ func (o *TenancyTenantsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1221,6 +1266,23 @@ func (o *TenancyTenantsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

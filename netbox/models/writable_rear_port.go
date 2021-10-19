@@ -36,6 +36,10 @@ import (
 // swagger:model WritableRearPort
 type WritableRearPort struct {
 
+	// occupied
+	// Read Only: true
+	Occupied *bool `json:"_occupied,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
@@ -51,6 +55,14 @@ type WritableRearPort struct {
 	// Read Only: true
 	CablePeerType string `json:"cable_peer_type,omitempty"`
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -59,7 +71,11 @@ type WritableRearPort struct {
 	// Required: true
 	Device *int64 `json:"device"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -68,6 +84,16 @@ type WritableRearPort struct {
 	// Physical label
 	// Max Length: 64
 	Label string `json:"label,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Mark connected
+	//
+	// Treat as if a cable is connected
+	MarkConnected bool `json:"mark_connected,omitempty"`
 
 	// Name
 	// Required: true
@@ -85,7 +111,7 @@ type WritableRearPort struct {
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
 	Type *string `json:"type"`
 
 	// Url
@@ -102,6 +128,10 @@ func (m *WritableRearPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
@@ -111,6 +141,10 @@ func (m *WritableRearPort) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -157,6 +191,18 @@ func (m *WritableRearPort) validateCable(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableRearPort) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableRearPort) validateDescription(formats strfmt.Registry) error {
 	if swag.IsZero(m.Description) { // not required
 		return nil
@@ -184,6 +230,18 @@ func (m *WritableRearPort) validateLabel(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableRearPort) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -251,7 +309,7 @@ var writableRearPortTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -273,6 +331,21 @@ const (
 	// WritableRearPortTypeNr8p2c captures enum value "8p2c"
 	WritableRearPortTypeNr8p2c string = "8p2c"
 
+	// WritableRearPortTypeNr6p6c captures enum value "6p6c"
+	WritableRearPortTypeNr6p6c string = "6p6c"
+
+	// WritableRearPortTypeNr6p4c captures enum value "6p4c"
+	WritableRearPortTypeNr6p4c string = "6p4c"
+
+	// WritableRearPortTypeNr6p2c captures enum value "6p2c"
+	WritableRearPortTypeNr6p2c string = "6p2c"
+
+	// WritableRearPortTypeNr4p4c captures enum value "4p4c"
+	WritableRearPortTypeNr4p4c string = "4p4c"
+
+	// WritableRearPortTypeNr4p2c captures enum value "4p2c"
+	WritableRearPortTypeNr4p2c string = "4p2c"
+
 	// WritableRearPortTypeGg45 captures enum value "gg45"
 	WritableRearPortTypeGg45 string = "gg45"
 
@@ -293,6 +366,9 @@ const (
 
 	// WritableRearPortTypeF captures enum value "f"
 	WritableRearPortTypeF string = "f"
+
+	// WritableRearPortTypeN captures enum value "n"
+	WritableRearPortTypeN string = "n"
 
 	// WritableRearPortTypeMrj21 captures enum value "mrj21"
 	WritableRearPortTypeMrj21 string = "mrj21"
@@ -375,6 +451,10 @@ func (m *WritableRearPort) validateURL(formats strfmt.Registry) error {
 func (m *WritableRearPort) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCable(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -387,7 +467,19 @@ func (m *WritableRearPort) ContextValidate(ctx context.Context, formats strfmt.R
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -402,6 +494,15 @@ func (m *WritableRearPort) ContextValidate(ctx context.Context, formats strfmt.R
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableRearPort) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -433,9 +534,36 @@ func (m *WritableRearPort) contextValidateCablePeerType(ctx context.Context, for
 	return nil
 }
 
+func (m *WritableRearPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableRearPort) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableRearPort) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableRearPort) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

@@ -75,8 +75,20 @@ func NewDcimPlatformsListParamsWithHTTPClient(client *http.Client) *DcimPlatform
 */
 type DcimPlatformsListParams struct {
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -123,6 +135,15 @@ type DcimPlatformsListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -143,6 +164,9 @@ type DcimPlatformsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -173,6 +197,9 @@ type DcimPlatformsListParams struct {
 
 	// NapalmDriver.
 	NapalmDriver *string
+
+	// NapalmDriverEmpty.
+	NapalmDriverEmpty *string
 
 	// NapalmDriverIc.
 	NapalmDriverIc *string
@@ -212,6 +239,9 @@ type DcimPlatformsListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -293,6 +323,39 @@ func (o *DcimPlatformsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCreated adds the created to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithCreated(created *string) *DcimPlatformsListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithCreatedGte(createdGte *string) *DcimPlatformsListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithCreatedLte(createdLte *string) *DcimPlatformsListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithDescription adds the description to the dcim platforms list params
 func (o *DcimPlatformsListParams) WithDescription(description *string) *DcimPlatformsListParams {
 	o.SetDescription(description)
@@ -302,6 +365,17 @@ func (o *DcimPlatformsListParams) WithDescription(description *string) *DcimPlat
 // SetDescription adds the description to the dcim platforms list params
 func (o *DcimPlatformsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimPlatformsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim platforms list params
@@ -469,6 +543,39 @@ func (o *DcimPlatformsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithLastUpdated(lastUpdated *string) *DcimPlatformsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimPlatformsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimPlatformsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim platforms list params
 func (o *DcimPlatformsListParams) WithLimit(limit *int64) *DcimPlatformsListParams {
 	o.SetLimit(limit)
@@ -533,6 +640,17 @@ func (o *DcimPlatformsListParams) WithName(name *string) *DcimPlatformsListParam
 // SetName adds the name to the dcim platforms list params
 func (o *DcimPlatformsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithNameEmpty(nameEmpty *string) *DcimPlatformsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim platforms list params
@@ -643,6 +761,17 @@ func (o *DcimPlatformsListParams) WithNapalmDriver(napalmDriver *string) *DcimPl
 // SetNapalmDriver adds the napalmDriver to the dcim platforms list params
 func (o *DcimPlatformsListParams) SetNapalmDriver(napalmDriver *string) {
 	o.NapalmDriver = napalmDriver
+}
+
+// WithNapalmDriverEmpty adds the napalmDriverEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithNapalmDriverEmpty(napalmDriverEmpty *string) *DcimPlatformsListParams {
+	o.SetNapalmDriverEmpty(napalmDriverEmpty)
+	return o
+}
+
+// SetNapalmDriverEmpty adds the napalmDriverEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetNapalmDriverEmpty(napalmDriverEmpty *string) {
+	o.NapalmDriverEmpty = napalmDriverEmpty
 }
 
 // WithNapalmDriverIc adds the napalmDriverIc to the dcim platforms list params
@@ -777,6 +906,17 @@ func (o *DcimPlatformsListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithSlugEmpty adds the slugEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithSlugEmpty(slugEmpty *string) *DcimPlatformsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
+}
+
 // WithSlugIc adds the slugIc to the dcim platforms list params
 func (o *DcimPlatformsListParams) WithSlugIc(slugIc *string) *DcimPlatformsListParams {
 	o.SetSlugIc(slugIc)
@@ -884,6 +1024,57 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 	}
 	var res []error
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Description != nil {
 
 		// query param description
@@ -896,6 +1087,23 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1156,6 +1364,57 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1253,6 +1512,23 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1423,6 +1699,23 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qNapalmDriver != "" {
 
 			if err := r.SetQueryParam("napalm_driver", qNapalmDriver); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NapalmDriverEmpty != nil {
+
+		// query param napalm_driver__empty
+		var qrNapalmDriverEmpty string
+
+		if o.NapalmDriverEmpty != nil {
+			qrNapalmDriverEmpty = *o.NapalmDriverEmpty
+		}
+		qNapalmDriverEmpty := qrNapalmDriverEmpty
+		if qNapalmDriverEmpty != "" {
+
+			if err := r.SetQueryParam("napalm_driver__empty", qNapalmDriverEmpty); err != nil {
 				return err
 			}
 		}
@@ -1627,6 +1920,23 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

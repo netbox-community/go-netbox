@@ -53,10 +53,14 @@ type CustomField struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// filter logic
 	FilterLogic *CustomFieldFilterLogic `json:"filter_logic,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -359,6 +363,10 @@ func (m *CustomField) validateWeight(formats strfmt.Registry) error {
 func (m *CustomField) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateFilterLogic(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -378,6 +386,15 @@ func (m *CustomField) ContextValidate(ctx context.Context, formats strfmt.Regist
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *CustomField) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -601,12 +618,12 @@ type CustomFieldType struct {
 
 	// label
 	// Required: true
-	// Enum: [Text Integer Boolean (true/false) Date URL Selection]
+	// Enum: [Text Integer Boolean (true/false) Date URL Selection Multiple selection]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [text integer boolean date url select]
+	// Enum: [text integer boolean date url select multiselect]
 	Value *string `json:"value"`
 }
 
@@ -632,7 +649,7 @@ var customFieldTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Text","Integer","Boolean (true/false)","Date","URL","Selection"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Text","Integer","Boolean (true/false)","Date","URL","Selection","Multiple selection"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -659,6 +676,9 @@ const (
 
 	// CustomFieldTypeLabelSelection captures enum value "Selection"
 	CustomFieldTypeLabelSelection string = "Selection"
+
+	// CustomFieldTypeLabelMultipleSelection captures enum value "Multiple selection"
+	CustomFieldTypeLabelMultipleSelection string = "Multiple selection"
 )
 
 // prop value enum
@@ -687,7 +707,7 @@ var customFieldTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["text","integer","boolean","date","url","select"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["text","integer","boolean","date","url","select","multiselect"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -714,6 +734,9 @@ const (
 
 	// CustomFieldTypeValueSelect captures enum value "select"
 	CustomFieldTypeValueSelect string = "select"
+
+	// CustomFieldTypeValueMultiselect captures enum value "multiselect"
+	CustomFieldTypeValueMultiselect string = "multiselect"
 )
 
 // prop value enum

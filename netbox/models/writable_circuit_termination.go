@@ -35,6 +35,10 @@ import (
 // swagger:model WritableCircuitTermination
 type WritableCircuitTermination struct {
 
+	// occupied
+	// Read Only: true
+	Occupied *bool `json:"_occupied,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
@@ -54,29 +58,22 @@ type WritableCircuitTermination struct {
 	// Required: true
 	Circuit *int64 `json:"circuit"`
 
-	// Connected endpoint
-	//
-	//
-	// Return the appropriate serializer for the type of connected object.
-	//
-	// Read Only: true
-	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
-
-	// Connected endpoint reachable
-	// Read Only: true
-	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
-
-	// Connected endpoint type
-	// Read Only: true
-	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
-
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Mark connected
+	//
+	// Treat as if a cable is connected
+	MarkConnected bool `json:"mark_connected,omitempty"`
 
 	// Port speed (Kbps)
 	// Maximum: 2.147483647e+09
@@ -87,9 +84,11 @@ type WritableCircuitTermination struct {
 	// Max Length: 100
 	PpInfo string `json:"pp_info,omitempty"`
 
+	// Provider network
+	ProviderNetwork *int64 `json:"provider_network,omitempty"`
+
 	// Site
-	// Required: true
-	Site *int64 `json:"site"`
+	Site *int64 `json:"site,omitempty"`
 
 	// Termination
 	// Required: true
@@ -134,10 +133,6 @@ func (m *WritableCircuitTermination) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validatePpInfo(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateSite(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -223,15 +218,6 @@ func (m *WritableCircuitTermination) validatePpInfo(formats strfmt.Registry) err
 	}
 
 	if err := validate.MaxLength("pp_info", "body", m.PpInfo, 100); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableCircuitTermination) validateSite(formats strfmt.Registry) error {
-
-	if err := validate.Required("site", "body", m.Site); err != nil {
 		return err
 	}
 
@@ -325,6 +311,10 @@ func (m *WritableCircuitTermination) validateXconnectID(formats strfmt.Registry)
 func (m *WritableCircuitTermination) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCable(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -337,15 +327,7 @@ func (m *WritableCircuitTermination) ContextValidate(ctx context.Context, format
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -360,6 +342,15 @@ func (m *WritableCircuitTermination) ContextValidate(ctx context.Context, format
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -391,23 +382,9 @@ func (m *WritableCircuitTermination) contextValidateCablePeerType(ctx context.Co
 	return nil
 }
 
-func (m *WritableCircuitTermination) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritableCircuitTermination) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
-	return nil
-}
-
-func (m *WritableCircuitTermination) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableCircuitTermination) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

@@ -78,6 +78,9 @@ type CircuitsProvidersListParams struct {
 	// Account.
 	Account *string
 
+	// AccountEmpty.
+	AccountEmpty *string
+
 	// AccountIc.
 	AccountIc *string
 
@@ -168,6 +171,9 @@ type CircuitsProvidersListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -222,6 +228,18 @@ type CircuitsProvidersListParams struct {
 	// Siten.
 	Siten *string
 
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
+
 	// SiteID.
 	SiteID *string
 
@@ -230,6 +248,9 @@ type CircuitsProvidersListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -326,6 +347,17 @@ func (o *CircuitsProvidersListParams) WithAccount(account *string) *CircuitsProv
 // SetAccount adds the account to the circuits providers list params
 func (o *CircuitsProvidersListParams) SetAccount(account *string) {
 	o.Account = account
+}
+
+// WithAccountEmpty adds the accountEmpty to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithAccountEmpty(accountEmpty *string) *CircuitsProvidersListParams {
+	o.SetAccountEmpty(accountEmpty)
+	return o
+}
+
+// SetAccountEmpty adds the accountEmpty to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetAccountEmpty(accountEmpty *string) {
+	o.AccountEmpty = accountEmpty
 }
 
 // WithAccountIc adds the accountIc to the circuits providers list params
@@ -647,6 +679,17 @@ func (o *CircuitsProvidersListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithNameEmpty(nameEmpty *string) *CircuitsProvidersListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the circuits providers list params
 func (o *CircuitsProvidersListParams) WithNameIc(nameIc *string) *CircuitsProvidersListParams {
 	o.SetNameIc(nameIc)
@@ -834,6 +877,50 @@ func (o *CircuitsProvidersListParams) SetSiten(siten *string) {
 	o.Siten = siten
 }
 
+// WithSiteGroup adds the siteGroup to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSiteGroup(siteGroup *string) *CircuitsProvidersListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSiteGroupn(siteGroupn *string) *CircuitsProvidersListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSiteGroupID(siteGroupID *string) *CircuitsProvidersListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSiteGroupIDn(siteGroupIDn *string) *CircuitsProvidersListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
+}
+
 // WithSiteID adds the siteID to the circuits providers list params
 func (o *CircuitsProvidersListParams) WithSiteID(siteID *string) *CircuitsProvidersListParams {
 	o.SetSiteID(siteID)
@@ -865,6 +952,17 @@ func (o *CircuitsProvidersListParams) WithSlug(slug *string) *CircuitsProvidersL
 // SetSlug adds the slug to the circuits providers list params
 func (o *CircuitsProvidersListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithSlugEmpty(slugEmpty *string) *CircuitsProvidersListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the circuits providers list params
@@ -1008,6 +1106,23 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qAccount != "" {
 
 			if err := r.SetQueryParam("account", qAccount); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.AccountEmpty != nil {
+
+		// query param account__empty
+		var qrAccountEmpty string
+
+		if o.AccountEmpty != nil {
+			qrAccountEmpty = *o.AccountEmpty
+		}
+		qAccountEmpty := qrAccountEmpty
+		if qAccountEmpty != "" {
+
+			if err := r.SetQueryParam("account__empty", qAccountEmpty); err != nil {
 				return err
 			}
 		}
@@ -1506,6 +1621,23 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1795,6 +1927,74 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		}
 	}
 
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.SiteID != nil {
 
 		// query param site_id
@@ -1841,6 +2041,23 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

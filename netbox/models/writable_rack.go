@@ -62,6 +62,10 @@ type WritableRack struct {
 	// Read Only: true
 	DeviceCount int64 `json:"device_count,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Display name
 	// Read Only: true
 	DisplayName string `json:"display_name,omitempty"`
@@ -72,12 +76,7 @@ type WritableRack struct {
 	// Max Length: 50
 	FacilityID *string `json:"facility_id,omitempty"`
 
-	// Group
-	//
-	// Assigned group
-	Group *int64 `json:"group,omitempty"`
-
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -85,6 +84,9 @@ type WritableRack struct {
 	// Read Only: true
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Location
+	Location *int64 `json:"location,omitempty"`
 
 	// Name
 	// Required: true
@@ -593,6 +595,10 @@ func (m *WritableRack) ContextValidate(ctx context.Context, formats strfmt.Regis
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -635,6 +641,15 @@ func (m *WritableRack) contextValidateCreated(ctx context.Context, formats strfm
 func (m *WritableRack) contextValidateDeviceCount(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "device_count", "body", int64(m.DeviceCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableRack) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

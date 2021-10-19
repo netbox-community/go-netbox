@@ -78,6 +78,9 @@ type UsersUsersListParams struct {
 	// Email.
 	Email *string
 
+	// EmailEmpty.
+	EmailEmpty *string
+
 	// EmailIc.
 	EmailIc *string
 
@@ -107,6 +110,9 @@ type UsersUsersListParams struct {
 
 	// FirstName.
 	FirstName *string
+
+	// FirstNameEmpty.
+	FirstNameEmpty *string
 
 	// FirstNameIc.
 	FirstNameIc *string
@@ -174,6 +180,9 @@ type UsersUsersListParams struct {
 	// LastName.
 	LastName *string
 
+	// LastNameEmpty.
+	LastNameEmpty *string
+
 	// LastNameIc.
 	LastNameIc *string
 
@@ -218,6 +227,9 @@ type UsersUsersListParams struct {
 
 	// Username.
 	Username *string
+
+	// UsernameEmpty.
+	UsernameEmpty *string
 
 	// UsernameIc.
 	UsernameIc *string
@@ -308,6 +320,17 @@ func (o *UsersUsersListParams) WithEmail(email *string) *UsersUsersListParams {
 // SetEmail adds the email to the users users list params
 func (o *UsersUsersListParams) SetEmail(email *string) {
 	o.Email = email
+}
+
+// WithEmailEmpty adds the emailEmpty to the users users list params
+func (o *UsersUsersListParams) WithEmailEmpty(emailEmpty *string) *UsersUsersListParams {
+	o.SetEmailEmpty(emailEmpty)
+	return o
+}
+
+// SetEmailEmpty adds the emailEmpty to the users users list params
+func (o *UsersUsersListParams) SetEmailEmpty(emailEmpty *string) {
+	o.EmailEmpty = emailEmpty
 }
 
 // WithEmailIc adds the emailIc to the users users list params
@@ -418,6 +441,17 @@ func (o *UsersUsersListParams) WithFirstName(firstName *string) *UsersUsersListP
 // SetFirstName adds the firstName to the users users list params
 func (o *UsersUsersListParams) SetFirstName(firstName *string) {
 	o.FirstName = firstName
+}
+
+// WithFirstNameEmpty adds the firstNameEmpty to the users users list params
+func (o *UsersUsersListParams) WithFirstNameEmpty(firstNameEmpty *string) *UsersUsersListParams {
+	o.SetFirstNameEmpty(firstNameEmpty)
+	return o
+}
+
+// SetFirstNameEmpty adds the firstNameEmpty to the users users list params
+func (o *UsersUsersListParams) SetFirstNameEmpty(firstNameEmpty *string) {
+	o.FirstNameEmpty = firstNameEmpty
 }
 
 // WithFirstNameIc adds the firstNameIc to the users users list params
@@ -662,6 +696,17 @@ func (o *UsersUsersListParams) SetLastName(lastName *string) {
 	o.LastName = lastName
 }
 
+// WithLastNameEmpty adds the lastNameEmpty to the users users list params
+func (o *UsersUsersListParams) WithLastNameEmpty(lastNameEmpty *string) *UsersUsersListParams {
+	o.SetLastNameEmpty(lastNameEmpty)
+	return o
+}
+
+// SetLastNameEmpty adds the lastNameEmpty to the users users list params
+func (o *UsersUsersListParams) SetLastNameEmpty(lastNameEmpty *string) {
+	o.LastNameEmpty = lastNameEmpty
+}
+
 // WithLastNameIc adds the lastNameIc to the users users list params
 func (o *UsersUsersListParams) WithLastNameIc(lastNameIc *string) *UsersUsersListParams {
 	o.SetLastNameIc(lastNameIc)
@@ -805,6 +850,17 @@ func (o *UsersUsersListParams) SetUsername(username *string) {
 	o.Username = username
 }
 
+// WithUsernameEmpty adds the usernameEmpty to the users users list params
+func (o *UsersUsersListParams) WithUsernameEmpty(usernameEmpty *string) *UsersUsersListParams {
+	o.SetUsernameEmpty(usernameEmpty)
+	return o
+}
+
+// SetUsernameEmpty adds the usernameEmpty to the users users list params
+func (o *UsersUsersListParams) SetUsernameEmpty(usernameEmpty *string) {
+	o.UsernameEmpty = usernameEmpty
+}
+
 // WithUsernameIc adds the usernameIc to the users users list params
 func (o *UsersUsersListParams) WithUsernameIc(usernameIc *string) *UsersUsersListParams {
 	o.SetUsernameIc(usernameIc)
@@ -924,6 +980,23 @@ func (o *UsersUsersListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qEmail != "" {
 
 			if err := r.SetQueryParam("email", qEmail); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.EmailEmpty != nil {
+
+		// query param email__empty
+		var qrEmailEmpty string
+
+		if o.EmailEmpty != nil {
+			qrEmailEmpty = *o.EmailEmpty
+		}
+		qEmailEmpty := qrEmailEmpty
+		if qEmailEmpty != "" {
+
+			if err := r.SetQueryParam("email__empty", qEmailEmpty); err != nil {
 				return err
 			}
 		}
@@ -1094,6 +1167,23 @@ func (o *UsersUsersListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qFirstName != "" {
 
 			if err := r.SetQueryParam("first_name", qFirstName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.FirstNameEmpty != nil {
+
+		// query param first_name__empty
+		var qrFirstNameEmpty string
+
+		if o.FirstNameEmpty != nil {
+			qrFirstNameEmpty = *o.FirstNameEmpty
+		}
+		qFirstNameEmpty := qrFirstNameEmpty
+		if qFirstNameEmpty != "" {
+
+			if err := r.SetQueryParam("first_name__empty", qFirstNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1473,6 +1563,23 @@ func (o *UsersUsersListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.LastNameEmpty != nil {
+
+		// query param last_name__empty
+		var qrLastNameEmpty string
+
+		if o.LastNameEmpty != nil {
+			qrLastNameEmpty = *o.LastNameEmpty
+		}
+		qLastNameEmpty := qrLastNameEmpty
+		if qLastNameEmpty != "" {
+
+			if err := r.SetQueryParam("last_name__empty", qLastNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastNameIc != nil {
 
 		// query param last_name__ic
@@ -1689,6 +1796,23 @@ func (o *UsersUsersListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qUsername != "" {
 
 			if err := r.SetQueryParam("username", qUsername); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.UsernameEmpty != nil {
+
+		// query param username__empty
+		var qrUsernameEmpty string
+
+		if o.UsernameEmpty != nil {
+			qrUsernameEmpty = *o.UsernameEmpty
+		}
+		qUsernameEmpty := qrUsernameEmpty
+		if qUsernameEmpty != "" {
+
+			if err := r.SetQueryParam("username__empty", qUsernameEmpty); err != nil {
 				return err
 			}
 		}

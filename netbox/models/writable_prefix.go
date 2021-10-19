@@ -36,6 +36,14 @@ import (
 // swagger:model WritablePrefix
 type WritablePrefix struct {
 
+	// depth
+	// Read Only: true
+	Depth int64 `json:"_depth,omitempty"`
+
+	// Children
+	// Read Only: true
+	Children int64 `json:"children,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date
@@ -48,11 +56,15 @@ type WritablePrefix struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Family
 	// Read Only: true
 	Family string `json:"family,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -275,7 +287,19 @@ func (m *WritablePrefix) validateURL(formats strfmt.Registry) error {
 func (m *WritablePrefix) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDepth(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateChildren(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -305,9 +329,36 @@ func (m *WritablePrefix) ContextValidate(ctx context.Context, formats strfmt.Reg
 	return nil
 }
 
+func (m *WritablePrefix) contextValidateDepth(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_depth", "body", int64(m.Depth)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePrefix) contextValidateChildren(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "children", "body", int64(m.Children)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritablePrefix) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePrefix) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

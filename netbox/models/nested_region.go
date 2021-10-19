@@ -38,7 +38,11 @@ type NestedRegion struct {
 	// Read Only: true
 	Depth int64 `json:"_depth,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -145,6 +149,10 @@ func (m *NestedRegion) ContextValidate(ctx context.Context, formats strfmt.Regis
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -166,6 +174,15 @@ func (m *NestedRegion) ContextValidate(ctx context.Context, formats strfmt.Regis
 func (m *NestedRegion) contextValidateDepth(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "_depth", "body", int64(m.Depth)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *NestedRegion) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

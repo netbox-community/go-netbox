@@ -132,6 +132,9 @@ type SecretsSecretsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -447,6 +450,17 @@ func (o *SecretsSecretsListParams) WithName(name *string) *SecretsSecretsListPar
 // SetName adds the name to the secrets secrets list params
 func (o *SecretsSecretsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the secrets secrets list params
+func (o *SecretsSecretsListParams) WithNameEmpty(nameEmpty *string) *SecretsSecretsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the secrets secrets list params
+func (o *SecretsSecretsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the secrets secrets list params
@@ -989,6 +1003,23 @@ func (o *SecretsSecretsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

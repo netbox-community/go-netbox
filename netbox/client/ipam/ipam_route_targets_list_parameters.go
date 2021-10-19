@@ -144,6 +144,9 @@ type IpamRouteTargetsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -503,6 +506,17 @@ func (o *IpamRouteTargetsListParams) WithName(name *string) *IpamRouteTargetsLis
 // SetName adds the name to the ipam route targets list params
 func (o *IpamRouteTargetsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the ipam route targets list params
+func (o *IpamRouteTargetsListParams) WithNameEmpty(nameEmpty *string) *IpamRouteTargetsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the ipam route targets list params
+func (o *IpamRouteTargetsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the ipam route targets list params
@@ -1113,6 +1127,23 @@ func (o *IpamRouteTargetsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

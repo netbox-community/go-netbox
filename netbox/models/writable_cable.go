@@ -44,7 +44,11 @@ type WritableCable struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -97,7 +101,7 @@ type WritableCable struct {
 	TerminationbType *string `json:"termination_b_type"`
 
 	// Type
-	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 cat7a cat8 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 smf smf-os1 smf-os2 aoc power]
+	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 cat7a cat8 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 mmf-om5 smf smf-os1 smf-os2 aoc power]
 	Type string `json:"type,omitempty"`
 
 	// Url
@@ -381,7 +385,7 @@ var writableCableTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["cat3","cat5","cat5e","cat6","cat6a","cat7","cat7a","cat8","dac-active","dac-passive","mrj21-trunk","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","smf","smf-os1","smf-os2","aoc","power"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["cat3","cat5","cat5e","cat6","cat6a","cat7","cat7a","cat8","dac-active","dac-passive","mrj21-trunk","coaxial","mmf","mmf-om1","mmf-om2","mmf-om3","mmf-om4","mmf-om5","smf","smf-os1","smf-os2","aoc","power"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -442,6 +446,9 @@ const (
 	// WritableCableTypeMmfDashOm4 captures enum value "mmf-om4"
 	WritableCableTypeMmfDashOm4 string = "mmf-om4"
 
+	// WritableCableTypeMmfDashOm5 captures enum value "mmf-om5"
+	WritableCableTypeMmfDashOm5 string = "mmf-om5"
+
 	// WritableCableTypeSmf captures enum value "smf"
 	WritableCableTypeSmf string = "smf"
 
@@ -495,6 +502,10 @@ func (m *WritableCable) validateURL(formats strfmt.Registry) error {
 func (m *WritableCable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -518,6 +529,15 @@ func (m *WritableCable) ContextValidate(ctx context.Context, formats strfmt.Regi
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableCable) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
 	return nil
 }
 

@@ -35,6 +35,10 @@ import (
 // swagger:model CircuitTermination
 type CircuitTermination struct {
 
+	// occupied
+	// Read Only: true
+	Occupied *bool `json:"_occupied,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
@@ -54,29 +58,22 @@ type CircuitTermination struct {
 	// Required: true
 	Circuit *NestedCircuit `json:"circuit"`
 
-	// Connected endpoint
-	//
-	//
-	// Return the appropriate serializer for the type of connected object.
-	//
-	// Read Only: true
-	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
-
-	// Connected endpoint reachable
-	// Read Only: true
-	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
-
-	// Connected endpoint type
-	// Read Only: true
-	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
-
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Mark connected
+	//
+	// Treat as if a cable is connected
+	MarkConnected bool `json:"mark_connected,omitempty"`
 
 	// Port speed (Kbps)
 	// Maximum: 2.147483647e+09
@@ -87,9 +84,11 @@ type CircuitTermination struct {
 	// Max Length: 100
 	PpInfo string `json:"pp_info,omitempty"`
 
+	// provider network
+	ProviderNetwork *NestedProviderNetwork `json:"provider_network,omitempty"`
+
 	// site
-	// Required: true
-	Site *NestedSite `json:"site"`
+	Site *NestedSite `json:"site,omitempty"`
 
 	// Termination
 	// Required: true
@@ -134,6 +133,10 @@ func (m *CircuitTermination) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validatePpInfo(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateProviderNetwork(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -238,10 +241,26 @@ func (m *CircuitTermination) validatePpInfo(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *CircuitTermination) validateSite(formats strfmt.Registry) error {
+func (m *CircuitTermination) validateProviderNetwork(formats strfmt.Registry) error {
+	if swag.IsZero(m.ProviderNetwork) { // not required
+		return nil
+	}
 
-	if err := validate.Required("site", "body", m.Site); err != nil {
-		return err
+	if m.ProviderNetwork != nil {
+		if err := m.ProviderNetwork.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("provider_network")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *CircuitTermination) validateSite(formats strfmt.Registry) error {
+	if swag.IsZero(m.Site) { // not required
+		return nil
 	}
 
 	if m.Site != nil {
@@ -343,6 +362,10 @@ func (m *CircuitTermination) validateXconnectID(formats strfmt.Registry) error {
 func (m *CircuitTermination) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateOccupied(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCable(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -359,19 +382,15 @@ func (m *CircuitTermination) ContextValidate(ctx context.Context, formats strfmt
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateProviderNetwork(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -386,6 +405,15 @@ func (m *CircuitTermination) ContextValidate(ctx context.Context, formats strfmt
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *CircuitTermination) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -431,23 +459,9 @@ func (m *CircuitTermination) contextValidateCircuit(ctx context.Context, formats
 	return nil
 }
 
-func (m *CircuitTermination) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+func (m *CircuitTermination) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
-	return nil
-}
-
-func (m *CircuitTermination) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *CircuitTermination) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 
@@ -458,6 +472,20 @@ func (m *CircuitTermination) contextValidateID(ctx context.Context, formats strf
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *CircuitTermination) contextValidateProviderNetwork(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ProviderNetwork != nil {
+		if err := m.ProviderNetwork.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("provider_network")
+			}
+			return err
+		}
 	}
 
 	return nil

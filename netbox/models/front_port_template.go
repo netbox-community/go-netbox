@@ -35,6 +35,11 @@ import (
 // swagger:model FrontPortTemplate
 type FrontPortTemplate struct {
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -43,7 +48,11 @@ type FrontPortTemplate struct {
 	// Required: true
 	DeviceType *NestedDeviceType `json:"device_type"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -52,6 +61,11 @@ type FrontPortTemplate struct {
 	// Physical label
 	// Max Length: 64
 	Label string `json:"label,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -82,6 +96,10 @@ type FrontPortTemplate struct {
 func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
@@ -91,6 +109,10 @@ func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -117,6 +139,18 @@ func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FrontPortTemplate) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -156,6 +190,18 @@ func (m *FrontPortTemplate) validateLabel(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *FrontPortTemplate) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -247,11 +293,23 @@ func (m *FrontPortTemplate) validateURL(formats strfmt.Registry) error {
 func (m *FrontPortTemplate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDeviceType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -273,6 +331,15 @@ func (m *FrontPortTemplate) ContextValidate(ctx context.Context, formats strfmt.
 	return nil
 }
 
+func (m *FrontPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *FrontPortTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DeviceType != nil {
@@ -287,9 +354,27 @@ func (m *FrontPortTemplate) contextValidateDeviceType(ctx context.Context, forma
 	return nil
 }
 
+func (m *FrontPortTemplate) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *FrontPortTemplate) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *FrontPortTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
@@ -358,12 +443,12 @@ type FrontPortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [8P8C 8P6C 8P4C 8P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST CS SN Splice]
+	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST CS SN Splice]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
 	Value *string `json:"value"`
 }
 
@@ -389,7 +474,7 @@ var frontPortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST","CS","SN","Splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST","CS","SN","Splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -411,6 +496,21 @@ const (
 	// FrontPortTemplateTypeLabelNr8P2C captures enum value "8P2C"
 	FrontPortTemplateTypeLabelNr8P2C string = "8P2C"
 
+	// FrontPortTemplateTypeLabelNr6P6C captures enum value "6P6C"
+	FrontPortTemplateTypeLabelNr6P6C string = "6P6C"
+
+	// FrontPortTemplateTypeLabelNr6P4C captures enum value "6P4C"
+	FrontPortTemplateTypeLabelNr6P4C string = "6P4C"
+
+	// FrontPortTemplateTypeLabelNr6P2C captures enum value "6P2C"
+	FrontPortTemplateTypeLabelNr6P2C string = "6P2C"
+
+	// FrontPortTemplateTypeLabelNr4P4C captures enum value "4P4C"
+	FrontPortTemplateTypeLabelNr4P4C string = "4P4C"
+
+	// FrontPortTemplateTypeLabelNr4P2C captures enum value "4P2C"
+	FrontPortTemplateTypeLabelNr4P2C string = "4P2C"
+
 	// FrontPortTemplateTypeLabelGG45 captures enum value "GG45"
 	FrontPortTemplateTypeLabelGG45 string = "GG45"
 
@@ -431,6 +531,9 @@ const (
 
 	// FrontPortTemplateTypeLabelFConnector captures enum value "F Connector"
 	FrontPortTemplateTypeLabelFConnector string = "F Connector"
+
+	// FrontPortTemplateTypeLabelNConnector captures enum value "N Connector"
+	FrontPortTemplateTypeLabelNConnector string = "N Connector"
 
 	// FrontPortTemplateTypeLabelMRJ21 captures enum value "MRJ21"
 	FrontPortTemplateTypeLabelMRJ21 string = "MRJ21"
@@ -501,7 +604,7 @@ var frontPortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -523,6 +626,21 @@ const (
 	// FrontPortTemplateTypeValueNr8p2c captures enum value "8p2c"
 	FrontPortTemplateTypeValueNr8p2c string = "8p2c"
 
+	// FrontPortTemplateTypeValueNr6p6c captures enum value "6p6c"
+	FrontPortTemplateTypeValueNr6p6c string = "6p6c"
+
+	// FrontPortTemplateTypeValueNr6p4c captures enum value "6p4c"
+	FrontPortTemplateTypeValueNr6p4c string = "6p4c"
+
+	// FrontPortTemplateTypeValueNr6p2c captures enum value "6p2c"
+	FrontPortTemplateTypeValueNr6p2c string = "6p2c"
+
+	// FrontPortTemplateTypeValueNr4p4c captures enum value "4p4c"
+	FrontPortTemplateTypeValueNr4p4c string = "4p4c"
+
+	// FrontPortTemplateTypeValueNr4p2c captures enum value "4p2c"
+	FrontPortTemplateTypeValueNr4p2c string = "4p2c"
+
 	// FrontPortTemplateTypeValueGg45 captures enum value "gg45"
 	FrontPortTemplateTypeValueGg45 string = "gg45"
 
@@ -543,6 +661,9 @@ const (
 
 	// FrontPortTemplateTypeValueF captures enum value "f"
 	FrontPortTemplateTypeValueF string = "f"
+
+	// FrontPortTemplateTypeValueN captures enum value "n"
+	FrontPortTemplateTypeValueN string = "n"
 
 	// FrontPortTemplateTypeValueMrj21 captures enum value "mrj21"
 	FrontPortTemplateTypeValueMrj21 string = "mrj21"

@@ -66,6 +66,10 @@ type WritableIPAddress struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// DNS Name
 	//
 	// Hostname or FQDN (not case-sensitive)
@@ -77,7 +81,7 @@ type WritableIPAddress struct {
 	// Read Only: true
 	Family string `json:"family,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -92,8 +96,8 @@ type WritableIPAddress struct {
 	NatInside *int64 `json:"nat_inside"`
 
 	// Nat outside
-	// Required: true
-	NatOutside *int64 `json:"nat_outside"`
+	// Read Only: true
+	NatOutside string `json:"nat_outside,omitempty"`
 
 	// Role
 	//
@@ -147,10 +151,6 @@ func (m *WritableIPAddress) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateNatOutside(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -247,15 +247,6 @@ func (m *WritableIPAddress) validateLastUpdated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableIPAddress) validateNatOutside(formats strfmt.Registry) error {
-
-	if err := validate.Required("nat_outside", "body", m.NatOutside); err != nil {
 		return err
 	}
 
@@ -421,6 +412,10 @@ func (m *WritableIPAddress) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateFamily(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -430,6 +425,10 @@ func (m *WritableIPAddress) ContextValidate(ctx context.Context, formats strfmt.
 	}
 
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNatOutside(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -461,6 +460,15 @@ func (m *WritableIPAddress) contextValidateCreated(ctx context.Context, formats 
 	return nil
 }
 
+func (m *WritableIPAddress) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableIPAddress) contextValidateFamily(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "family", "body", string(m.Family)); err != nil {
@@ -482,6 +490,15 @@ func (m *WritableIPAddress) contextValidateID(ctx context.Context, formats strfm
 func (m *WritableIPAddress) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableIPAddress) contextValidateNatOutside(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "nat_outside", "body", string(m.NatOutside)); err != nil {
 		return err
 	}
 

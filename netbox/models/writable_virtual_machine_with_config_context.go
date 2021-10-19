@@ -60,7 +60,11 @@ type WritableVirtualMachineWithConfigContext struct {
 	// Minimum: 0
 	Disk *int64 `json:"disk"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -119,9 +123,7 @@ type WritableVirtualMachineWithConfigContext struct {
 	URL strfmt.URI `json:"url,omitempty"`
 
 	// VCPUs
-	// Maximum: 32767
-	// Minimum: 0
-	Vcpus *int64 `json:"vcpus"`
+	Vcpus *string `json:"vcpus"`
 }
 
 // Validate validates this writable virtual machine with config context
@@ -161,10 +163,6 @@ func (m *WritableVirtualMachineWithConfigContext) Validate(formats strfmt.Regist
 	}
 
 	if err := m.validateURL(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateVcpus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -346,22 +344,6 @@ func (m *WritableVirtualMachineWithConfigContext) validateURL(formats strfmt.Reg
 	return nil
 }
 
-func (m *WritableVirtualMachineWithConfigContext) validateVcpus(formats strfmt.Registry) error {
-	if swag.IsZero(m.Vcpus) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("vcpus", "body", *m.Vcpus, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("vcpus", "body", *m.Vcpus, 32767, false); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 // ContextValidate validate this writable virtual machine with config context based on the context it is used
 func (m *WritableVirtualMachineWithConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -371,6 +353,10 @@ func (m *WritableVirtualMachineWithConfigContext) ContextValidate(ctx context.Co
 	}
 
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -412,6 +398,15 @@ func (m *WritableVirtualMachineWithConfigContext) contextValidateConfigContext(c
 func (m *WritableVirtualMachineWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVirtualMachineWithConfigContext) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

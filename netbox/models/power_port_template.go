@@ -42,6 +42,11 @@ type PowerPortTemplate struct {
 	// Minimum: 1
 	AllocatedDraw *int64 `json:"allocated_draw,omitempty"`
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
@@ -50,7 +55,11 @@ type PowerPortTemplate struct {
 	// Required: true
 	DeviceType *NestedDeviceType `json:"device_type"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -59,6 +68,11 @@ type PowerPortTemplate struct {
 	// Physical label
 	// Max Length: 64
 	Label string `json:"label,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Maximum draw
 	//
@@ -90,6 +104,10 @@ func (m *PowerPortTemplate) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
@@ -99,6 +117,10 @@ func (m *PowerPortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -134,6 +156,18 @@ func (m *PowerPortTemplate) validateAllocatedDraw(formats strfmt.Registry) error
 	}
 
 	if err := validate.MaximumInt("allocated_draw", "body", *m.AllocatedDraw, 32767, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PowerPortTemplate) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -176,6 +210,18 @@ func (m *PowerPortTemplate) validateLabel(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("label", "body", m.Label, 64); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PowerPortTemplate) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -248,11 +294,23 @@ func (m *PowerPortTemplate) validateURL(formats strfmt.Registry) error {
 func (m *PowerPortTemplate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDeviceType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -270,6 +328,15 @@ func (m *PowerPortTemplate) ContextValidate(ctx context.Context, formats strfmt.
 	return nil
 }
 
+func (m *PowerPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PowerPortTemplate) contextValidateDeviceType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DeviceType != nil {
@@ -284,9 +351,27 @@ func (m *PowerPortTemplate) contextValidateDeviceType(ctx context.Context, forma
 	return nil
 }
 
+func (m *PowerPortTemplate) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PowerPortTemplate) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PowerPortTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
@@ -341,12 +426,12 @@ type PowerPortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [C6 C8 C14 C16 C20 P+N+E 4H P+N+E 6H P+N+E 9H 2P+E 4H 2P+E 6H 2P+E 9H 3P+E 4H 3P+E 6H 3P+E 9H 3P+N+E 4H 3P+N+E 6H 3P+N+E 9H NEMA 1-15P NEMA 5-15P NEMA 5-20P NEMA 5-30P NEMA 5-50P NEMA 6-15P NEMA 6-20P NEMA 6-30P NEMA 6-50P NEMA 10-30P NEMA 10-50P NEMA 14-20P NEMA 14-30P NEMA 14-50P NEMA 14-60P NEMA 15-15P NEMA 15-20P NEMA 15-30P NEMA 15-50P NEMA 15-60P NEMA L1-15P NEMA L5-15P NEMA L5-20P NEMA L5-30P NEMA L5-50P NEMA L6-15P NEMA L6-20P NEMA L6-30P NEMA L6-50P NEMA L10-30P NEMA L14-20P NEMA L14-30P NEMA L14-50P NEMA L14-60P NEMA L15-20P NEMA L15-30P NEMA L15-50P NEMA L15-60P NEMA L21-20P NEMA L21-30P CS6361C CS6365C CS8165C CS8265C CS8365C CS8465C ITA Type E (CEE 7/5) ITA Type F (CEE 7/4) ITA Type E/F (CEE 7/7) ITA Type G (BS 1363) ITA Type H ITA Type I ITA Type J ITA Type K ITA Type L (CEI 23-50) ITA Type M (BS 546) ITA Type N ITA Type O USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B USB 3.0 Type B USB 3.0 Micro B DC Terminal Saf-D-Grid]
+	// Enum: [C6 C8 C14 C16 C20 C22 P+N+E 4H P+N+E 6H P+N+E 9H 2P+E 4H 2P+E 6H 2P+E 9H 3P+E 4H 3P+E 6H 3P+E 9H 3P+N+E 4H 3P+N+E 6H 3P+N+E 9H NEMA 1-15P NEMA 5-15P NEMA 5-20P NEMA 5-30P NEMA 5-50P NEMA 6-15P NEMA 6-20P NEMA 6-30P NEMA 6-50P NEMA 10-30P NEMA 10-50P NEMA 14-20P NEMA 14-30P NEMA 14-50P NEMA 14-60P NEMA 15-15P NEMA 15-20P NEMA 15-30P NEMA 15-50P NEMA 15-60P NEMA L1-15P NEMA L5-15P NEMA L5-20P NEMA L5-30P NEMA L5-50P NEMA L6-15P NEMA L6-20P NEMA L6-30P NEMA L6-50P NEMA L10-30P NEMA L14-20P NEMA L14-30P NEMA L14-50P NEMA L14-60P NEMA L15-20P NEMA L15-30P NEMA L15-50P NEMA L15-60P NEMA L21-20P NEMA L21-30P CS6361C CS6365C CS8165C CS8265C CS8365C CS8465C ITA Type E (CEE 7/5) ITA Type F (CEE 7/4) ITA Type E/F (CEE 7/7) ITA Type G (BS 1363) ITA Type H ITA Type I ITA Type J ITA Type K ITA Type L (CEI 23-50) ITA Type M (BS 546) ITA Type N ITA Type O USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B USB 3.0 Type B USB 3.0 Micro B DC Terminal Saf-D-Grid Hardwired]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [iec-60320-c6 iec-60320-c8 iec-60320-c14 iec-60320-c16 iec-60320-c20 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-1-15p nema-5-15p nema-5-20p nema-5-30p nema-5-50p nema-6-15p nema-6-20p nema-6-30p nema-6-50p nema-10-30p nema-10-50p nema-14-20p nema-14-30p nema-14-50p nema-14-60p nema-15-15p nema-15-20p nema-15-30p nema-15-50p nema-15-60p nema-l1-15p nema-l5-15p nema-l5-20p nema-l5-30p nema-l5-50p nema-l6-15p nema-l6-20p nema-l6-30p nema-l6-50p nema-l10-30p nema-l14-20p nema-l14-30p nema-l14-50p nema-l14-60p nema-l15-20p nema-l15-30p nema-l15-50p nema-l15-60p nema-l21-20p nema-l21-30p cs6361c cs6365c cs8165c cs8265c cs8365c cs8465c ita-e ita-f ita-ef ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-3-b usb-3-micro-b dc-terminal saf-d-grid]
+	// Enum: [iec-60320-c6 iec-60320-c8 iec-60320-c14 iec-60320-c16 iec-60320-c20 iec-60320-c22 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-1-15p nema-5-15p nema-5-20p nema-5-30p nema-5-50p nema-6-15p nema-6-20p nema-6-30p nema-6-50p nema-10-30p nema-10-50p nema-14-20p nema-14-30p nema-14-50p nema-14-60p nema-15-15p nema-15-20p nema-15-30p nema-15-50p nema-15-60p nema-l1-15p nema-l5-15p nema-l5-20p nema-l5-30p nema-l5-50p nema-l6-15p nema-l6-20p nema-l6-30p nema-l6-50p nema-l10-30p nema-l14-20p nema-l14-30p nema-l14-50p nema-l14-60p nema-l15-20p nema-l15-30p nema-l15-50p nema-l15-60p nema-l21-20p nema-l21-30p cs6361c cs6365c cs8165c cs8265c cs8365c cs8465c ita-e ita-f ita-ef ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-3-b usb-3-micro-b dc-terminal saf-d-grid hardwired]
 	Value *string `json:"value"`
 }
 
@@ -372,7 +457,7 @@ var powerPortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["C6","C8","C14","C16","C20","P+N+E 4H","P+N+E 6H","P+N+E 9H","2P+E 4H","2P+E 6H","2P+E 9H","3P+E 4H","3P+E 6H","3P+E 9H","3P+N+E 4H","3P+N+E 6H","3P+N+E 9H","NEMA 1-15P","NEMA 5-15P","NEMA 5-20P","NEMA 5-30P","NEMA 5-50P","NEMA 6-15P","NEMA 6-20P","NEMA 6-30P","NEMA 6-50P","NEMA 10-30P","NEMA 10-50P","NEMA 14-20P","NEMA 14-30P","NEMA 14-50P","NEMA 14-60P","NEMA 15-15P","NEMA 15-20P","NEMA 15-30P","NEMA 15-50P","NEMA 15-60P","NEMA L1-15P","NEMA L5-15P","NEMA L5-20P","NEMA L5-30P","NEMA L5-50P","NEMA L6-15P","NEMA L6-20P","NEMA L6-30P","NEMA L6-50P","NEMA L10-30P","NEMA L14-20P","NEMA L14-30P","NEMA L14-50P","NEMA L14-60P","NEMA L15-20P","NEMA L15-30P","NEMA L15-50P","NEMA L15-60P","NEMA L21-20P","NEMA L21-30P","CS6361C","CS6365C","CS8165C","CS8265C","CS8365C","CS8465C","ITA Type E (CEE 7/5)","ITA Type F (CEE 7/4)","ITA Type E/F (CEE 7/7)","ITA Type G (BS 1363)","ITA Type H","ITA Type I","ITA Type J","ITA Type K","ITA Type L (CEI 23-50)","ITA Type M (BS 546)","ITA Type N","ITA Type O","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","USB 3.0 Type B","USB 3.0 Micro B","DC Terminal","Saf-D-Grid"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["C6","C8","C14","C16","C20","C22","P+N+E 4H","P+N+E 6H","P+N+E 9H","2P+E 4H","2P+E 6H","2P+E 9H","3P+E 4H","3P+E 6H","3P+E 9H","3P+N+E 4H","3P+N+E 6H","3P+N+E 9H","NEMA 1-15P","NEMA 5-15P","NEMA 5-20P","NEMA 5-30P","NEMA 5-50P","NEMA 6-15P","NEMA 6-20P","NEMA 6-30P","NEMA 6-50P","NEMA 10-30P","NEMA 10-50P","NEMA 14-20P","NEMA 14-30P","NEMA 14-50P","NEMA 14-60P","NEMA 15-15P","NEMA 15-20P","NEMA 15-30P","NEMA 15-50P","NEMA 15-60P","NEMA L1-15P","NEMA L5-15P","NEMA L5-20P","NEMA L5-30P","NEMA L5-50P","NEMA L6-15P","NEMA L6-20P","NEMA L6-30P","NEMA L6-50P","NEMA L10-30P","NEMA L14-20P","NEMA L14-30P","NEMA L14-50P","NEMA L14-60P","NEMA L15-20P","NEMA L15-30P","NEMA L15-50P","NEMA L15-60P","NEMA L21-20P","NEMA L21-30P","CS6361C","CS6365C","CS8165C","CS8265C","CS8365C","CS8465C","ITA Type E (CEE 7/5)","ITA Type F (CEE 7/4)","ITA Type E/F (CEE 7/7)","ITA Type G (BS 1363)","ITA Type H","ITA Type I","ITA Type J","ITA Type K","ITA Type L (CEI 23-50)","ITA Type M (BS 546)","ITA Type N","ITA Type O","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","USB 3.0 Type B","USB 3.0 Micro B","DC Terminal","Saf-D-Grid","Hardwired"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -396,6 +481,9 @@ const (
 
 	// PowerPortTemplateTypeLabelC20 captures enum value "C20"
 	PowerPortTemplateTypeLabelC20 string = "C20"
+
+	// PowerPortTemplateTypeLabelC22 captures enum value "C22"
+	PowerPortTemplateTypeLabelC22 string = "C22"
 
 	// PowerPortTemplateTypeLabelPPlusNPlusE4H captures enum value "P+N+E 4H"
 	PowerPortTemplateTypeLabelPPlusNPlusE4H string = "P+N+E 4H"
@@ -639,6 +727,9 @@ const (
 
 	// PowerPortTemplateTypeLabelSafDashDDashGrid captures enum value "Saf-D-Grid"
 	PowerPortTemplateTypeLabelSafDashDDashGrid string = "Saf-D-Grid"
+
+	// PowerPortTemplateTypeLabelHardwired captures enum value "Hardwired"
+	PowerPortTemplateTypeLabelHardwired string = "Hardwired"
 )
 
 // prop value enum
@@ -667,7 +758,7 @@ var powerPortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["iec-60320-c6","iec-60320-c8","iec-60320-c14","iec-60320-c16","iec-60320-c20","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-1-15p","nema-5-15p","nema-5-20p","nema-5-30p","nema-5-50p","nema-6-15p","nema-6-20p","nema-6-30p","nema-6-50p","nema-10-30p","nema-10-50p","nema-14-20p","nema-14-30p","nema-14-50p","nema-14-60p","nema-15-15p","nema-15-20p","nema-15-30p","nema-15-50p","nema-15-60p","nema-l1-15p","nema-l5-15p","nema-l5-20p","nema-l5-30p","nema-l5-50p","nema-l6-15p","nema-l6-20p","nema-l6-30p","nema-l6-50p","nema-l10-30p","nema-l14-20p","nema-l14-30p","nema-l14-50p","nema-l14-60p","nema-l15-20p","nema-l15-30p","nema-l15-50p","nema-l15-60p","nema-l21-20p","nema-l21-30p","cs6361c","cs6365c","cs8165c","cs8265c","cs8365c","cs8465c","ita-e","ita-f","ita-ef","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-3-b","usb-3-micro-b","dc-terminal","saf-d-grid"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["iec-60320-c6","iec-60320-c8","iec-60320-c14","iec-60320-c16","iec-60320-c20","iec-60320-c22","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-1-15p","nema-5-15p","nema-5-20p","nema-5-30p","nema-5-50p","nema-6-15p","nema-6-20p","nema-6-30p","nema-6-50p","nema-10-30p","nema-10-50p","nema-14-20p","nema-14-30p","nema-14-50p","nema-14-60p","nema-15-15p","nema-15-20p","nema-15-30p","nema-15-50p","nema-15-60p","nema-l1-15p","nema-l5-15p","nema-l5-20p","nema-l5-30p","nema-l5-50p","nema-l6-15p","nema-l6-20p","nema-l6-30p","nema-l6-50p","nema-l10-30p","nema-l14-20p","nema-l14-30p","nema-l14-50p","nema-l14-60p","nema-l15-20p","nema-l15-30p","nema-l15-50p","nema-l15-60p","nema-l21-20p","nema-l21-30p","cs6361c","cs6365c","cs8165c","cs8265c","cs8365c","cs8465c","ita-e","ita-f","ita-ef","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-3-b","usb-3-micro-b","dc-terminal","saf-d-grid","hardwired"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -691,6 +782,9 @@ const (
 
 	// PowerPortTemplateTypeValueIecDash60320DashC20 captures enum value "iec-60320-c20"
 	PowerPortTemplateTypeValueIecDash60320DashC20 string = "iec-60320-c20"
+
+	// PowerPortTemplateTypeValueIecDash60320DashC22 captures enum value "iec-60320-c22"
+	PowerPortTemplateTypeValueIecDash60320DashC22 string = "iec-60320-c22"
 
 	// PowerPortTemplateTypeValueIecDash60309DashpDashnDasheDash4h captures enum value "iec-60309-p-n-e-4h"
 	PowerPortTemplateTypeValueIecDash60309DashpDashnDasheDash4h string = "iec-60309-p-n-e-4h"
@@ -934,6 +1028,9 @@ const (
 
 	// PowerPortTemplateTypeValueSafDashdDashGrid captures enum value "saf-d-grid"
 	PowerPortTemplateTypeValueSafDashdDashGrid string = "saf-d-grid"
+
+	// PowerPortTemplateTypeValueHardwired captures enum value "hardwired"
+	PowerPortTemplateTypeValueHardwired string = "hardwired"
 )
 
 // prop value enum

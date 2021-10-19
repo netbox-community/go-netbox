@@ -78,32 +78,11 @@ type DcimRackReservationsListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
-
-	// Group.
-	Group *string
-
-	// Groupn.
-	Groupn *string
-
-	// GroupID.
-	GroupID *string
-
-	// GroupIDn.
-	GroupIDn *string
 
 	// ID.
 	ID *string
@@ -123,11 +102,32 @@ type DcimRackReservationsListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
 	*/
 	Limit *int64
+
+	// Location.
+	Location *string
+
+	// Locationn.
+	Locationn *string
+
+	// LocationID.
+	LocationID *string
+
+	// LocationIDn.
+	LocationIDn *string
 
 	/* Offset.
 
@@ -262,17 +262,6 @@ func (o *DcimRackReservationsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithCreatedGt(createdGt *string) *DcimRackReservationsListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) WithCreatedGte(createdGte *string) *DcimRackReservationsListParams {
 	o.SetCreatedGte(createdGte)
@@ -284,17 +273,6 @@ func (o *DcimRackReservationsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithCreatedLt(createdLt *string) *DcimRackReservationsListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) WithCreatedLte(createdLte *string) *DcimRackReservationsListParams {
 	o.SetCreatedLte(createdLte)
@@ -304,61 +282,6 @@ func (o *DcimRackReservationsListParams) WithCreatedLte(createdLte *string) *Dci
 // SetCreatedLte adds the createdLte to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithCreatedn(createdn *string) *DcimRackReservationsListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
-}
-
-// WithGroup adds the group to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithGroup(group *string) *DcimRackReservationsListParams {
-	o.SetGroup(group)
-	return o
-}
-
-// SetGroup adds the group to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetGroup(group *string) {
-	o.Group = group
-}
-
-// WithGroupn adds the groupn to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithGroupn(groupn *string) *DcimRackReservationsListParams {
-	o.SetGroupn(groupn)
-	return o
-}
-
-// SetGroupn adds the groupN to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetGroupn(groupn *string) {
-	o.Groupn = groupn
-}
-
-// WithGroupID adds the groupID to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithGroupID(groupID *string) *DcimRackReservationsListParams {
-	o.SetGroupID(groupID)
-	return o
-}
-
-// SetGroupID adds the groupId to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetGroupID(groupID *string) {
-	o.GroupID = groupID
-}
-
-// WithGroupIDn adds the groupIDn to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithGroupIDn(groupIDn *string) *DcimRackReservationsListParams {
-	o.SetGroupIDn(groupIDn)
-	return o
-}
-
-// SetGroupIDn adds the groupIdN to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetGroupIDn(groupIDn *string) {
-	o.GroupIDn = groupIDn
 }
 
 // WithID adds the id to the dcim rack reservations list params
@@ -427,6 +350,39 @@ func (o *DcimRackReservationsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithLastUpdated(lastUpdated *string) *DcimRackReservationsListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimRackReservationsListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimRackReservationsListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) WithLimit(limit *int64) *DcimRackReservationsListParams {
 	o.SetLimit(limit)
@@ -436,6 +392,50 @@ func (o *DcimRackReservationsListParams) WithLimit(limit *int64) *DcimRackReserv
 // SetLimit adds the limit to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) SetLimit(limit *int64) {
 	o.Limit = limit
+}
+
+// WithLocation adds the location to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithLocation(location *string) *DcimRackReservationsListParams {
+	o.SetLocation(location)
+	return o
+}
+
+// SetLocation adds the location to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetLocation(location *string) {
+	o.Location = location
+}
+
+// WithLocationn adds the locationn to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithLocationn(locationn *string) *DcimRackReservationsListParams {
+	o.SetLocationn(locationn)
+	return o
+}
+
+// SetLocationn adds the locationN to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetLocationn(locationn *string) {
+	o.Locationn = locationn
+}
+
+// WithLocationID adds the locationID to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithLocationID(locationID *string) *DcimRackReservationsListParams {
+	o.SetLocationID(locationID)
+	return o
+}
+
+// SetLocationID adds the locationId to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetLocationID(locationID *string) {
+	o.LocationID = locationID
+}
+
+// WithLocationIDn adds the locationIDn to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithLocationIDn(locationIDn *string) *DcimRackReservationsListParams {
+	o.SetLocationIDn(locationIDn)
+	return o
+}
+
+// SetLocationIDn adds the locationIdN to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetLocationIDn(locationIDn *string) {
+	o.LocationIDn = locationIDn
 }
 
 // WithOffset adds the offset to the dcim rack reservations list params
@@ -705,23 +705,6 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -739,23 +722,6 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -768,91 +734,6 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Group != nil {
-
-		// query param group
-		var qrGroup string
-
-		if o.Group != nil {
-			qrGroup = *o.Group
-		}
-		qGroup := qrGroup
-		if qGroup != "" {
-
-			if err := r.SetQueryParam("group", qGroup); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Groupn != nil {
-
-		// query param group__n
-		var qrGroupn string
-
-		if o.Groupn != nil {
-			qrGroupn = *o.Groupn
-		}
-		qGroupn := qrGroupn
-		if qGroupn != "" {
-
-			if err := r.SetQueryParam("group__n", qGroupn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.GroupID != nil {
-
-		// query param group_id
-		var qrGroupID string
-
-		if o.GroupID != nil {
-			qrGroupID = *o.GroupID
-		}
-		qGroupID := qrGroupID
-		if qGroupID != "" {
-
-			if err := r.SetQueryParam("group_id", qGroupID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.GroupIDn != nil {
-
-		// query param group_id__n
-		var qrGroupIDn string
-
-		if o.GroupIDn != nil {
-			qrGroupIDn = *o.GroupIDn
-		}
-		qGroupIDn := qrGroupIDn
-		if qGroupIDn != "" {
-
-			if err := r.SetQueryParam("group_id__n", qGroupIDn); err != nil {
 				return err
 			}
 		}
@@ -960,6 +841,57 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -972,6 +904,74 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qLimit != "" {
 
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Location != nil {
+
+		// query param location
+		var qrLocation string
+
+		if o.Location != nil {
+			qrLocation = *o.Location
+		}
+		qLocation := qrLocation
+		if qLocation != "" {
+
+			if err := r.SetQueryParam("location", qLocation); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Locationn != nil {
+
+		// query param location__n
+		var qrLocationn string
+
+		if o.Locationn != nil {
+			qrLocationn = *o.Locationn
+		}
+		qLocationn := qrLocationn
+		if qLocationn != "" {
+
+			if err := r.SetQueryParam("location__n", qLocationn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationID != nil {
+
+		// query param location_id
+		var qrLocationID string
+
+		if o.LocationID != nil {
+			qrLocationID = *o.LocationID
+		}
+		qLocationID := qrLocationID
+		if qLocationID != "" {
+
+			if err := r.SetQueryParam("location_id", qLocationID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationIDn != nil {
+
+		// query param location_id__n
+		var qrLocationIDn string
+
+		if o.LocationIDn != nil {
+			qrLocationIDn = *o.LocationIDn
+		}
+		qLocationIDn := qrLocationIDn
+		if qLocationIDn != "" {
+
+			if err := r.SetQueryParam("location_id__n", qLocationIDn); err != nil {
 				return err
 			}
 		}

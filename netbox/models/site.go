@@ -79,13 +79,20 @@ type Site struct {
 	// Read Only: true
 	DeviceCount int64 `json:"device_count,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Facility
 	//
 	// Local facility ID or description
 	// Max Length: 50
 	Facility string `json:"facility,omitempty"`
 
-	// ID
+	// group
+	Group *NestedSiteGroup `json:"group,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -191,6 +198,10 @@ func (m *Site) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateFacility(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateGroup(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -327,6 +338,23 @@ func (m *Site) validateFacility(formats strfmt.Registry) error {
 
 	if err := validate.MaxLength("facility", "body", m.Facility, 50); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Site) validateGroup(formats strfmt.Registry) error {
+	if swag.IsZero(m.Group) { // not required
+		return nil
+	}
+
+	if m.Group != nil {
+		if err := m.Group.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("group")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -509,6 +537,14 @@ func (m *Site) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateGroup(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -581,6 +617,29 @@ func (m *Site) contextValidateDeviceCount(ctx context.Context, formats strfmt.Re
 
 	if err := validate.ReadOnly(ctx, "device_count", "body", int64(m.DeviceCount)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Site) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Site) contextValidateGroup(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Group != nil {
+		if err := m.Group.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("group")
+			}
+			return err
+		}
 	}
 
 	return nil

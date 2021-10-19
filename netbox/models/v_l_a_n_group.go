@@ -34,13 +34,30 @@ import (
 // swagger:model VLANGroup
 type VLANGroup struct {
 
+	// Created
+	// Read Only: true
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -48,8 +65,16 @@ type VLANGroup struct {
 	// Min Length: 1
 	Name *string `json:"name"`
 
-	// site
-	Site *NestedSite `json:"site,omitempty"`
+	// Scope
+	// Read Only: true
+	Scope string `json:"scope,omitempty"`
+
+	// Scope id
+	// Minimum: 0
+	ScopeID *int64 `json:"scope_id,omitempty"`
+
+	// Scope type
+	ScopeType string `json:"scope_type,omitempty"`
 
 	// Slug
 	// Required: true
@@ -72,7 +97,15 @@ type VLANGroup struct {
 func (m *VLANGroup) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -80,7 +113,7 @@ func (m *VLANGroup) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateSite(formats); err != nil {
+	if err := m.validateScopeID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -98,12 +131,36 @@ func (m *VLANGroup) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *VLANGroup) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *VLANGroup) validateDescription(formats strfmt.Registry) error {
 	if swag.IsZero(m.Description) { // not required
 		return nil
 	}
 
 	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VLANGroup) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -127,18 +184,13 @@ func (m *VLANGroup) validateName(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *VLANGroup) validateSite(formats strfmt.Registry) error {
-	if swag.IsZero(m.Site) { // not required
+func (m *VLANGroup) validateScopeID(formats strfmt.Registry) error {
+	if swag.IsZero(m.ScopeID) { // not required
 		return nil
 	}
 
-	if m.Site != nil {
-		if err := m.Site.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("site")
-			}
-			return err
-		}
+	if err := validate.MinimumInt("scope_id", "body", *m.ScopeID, 0, false); err != nil {
+		return err
 	}
 
 	return nil
@@ -181,11 +233,23 @@ func (m *VLANGroup) validateURL(formats strfmt.Registry) error {
 func (m *VLANGroup) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateSite(ctx, formats); err != nil {
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateScope(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -203,6 +267,24 @@ func (m *VLANGroup) ContextValidate(ctx context.Context, formats strfmt.Registry
 	return nil
 }
 
+func (m *VLANGroup) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VLANGroup) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *VLANGroup) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
@@ -212,15 +294,19 @@ func (m *VLANGroup) contextValidateID(ctx context.Context, formats strfmt.Regist
 	return nil
 }
 
-func (m *VLANGroup) contextValidateSite(ctx context.Context, formats strfmt.Registry) error {
+func (m *VLANGroup) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.Site != nil {
-		if err := m.Site.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("site")
-			}
-			return err
-		}
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VLANGroup) contextValidateScope(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "scope", "body", string(m.Scope)); err != nil {
+		return err
 	}
 
 	return nil

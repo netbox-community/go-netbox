@@ -38,6 +38,10 @@ type RackUnit struct {
 	// device
 	Device *NestedDevice `json:"device,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// face
 	Face *RackUnitFace `json:"face,omitempty"`
 
@@ -131,6 +135,10 @@ func (m *RackUnit) ContextValidate(ctx context.Context, formats strfmt.Registry)
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateFace(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -162,6 +170,15 @@ func (m *RackUnit) contextValidateDevice(ctx context.Context, formats strfmt.Reg
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *RackUnit) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
 	}
 
 	return nil

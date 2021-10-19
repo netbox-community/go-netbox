@@ -56,7 +56,15 @@ type ConfigContext struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
-	// ID
+	// device types
+	// Unique: true
+	DeviceTypes []*NestedDeviceType `json:"device_types"`
+
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -85,6 +93,10 @@ type ConfigContext struct {
 	// roles
 	// Unique: true
 	Roles []*NestedDeviceRole `json:"roles"`
+
+	// site groups
+	// Unique: true
+	SiteGroups []*NestedSiteGroup `json:"site_groups"`
 
 	// sites
 	// Unique: true
@@ -137,6 +149,10 @@ func (m *ConfigContext) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateDeviceTypes(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
@@ -154,6 +170,10 @@ func (m *ConfigContext) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateRoles(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSiteGroups(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -276,6 +296,34 @@ func (m *ConfigContext) validateDescription(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ConfigContext) validateDeviceTypes(formats strfmt.Registry) error {
+	if swag.IsZero(m.DeviceTypes) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("device_types", "body", m.DeviceTypes); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.DeviceTypes); i++ {
+		if swag.IsZero(m.DeviceTypes[i]) { // not required
+			continue
+		}
+
+		if m.DeviceTypes[i] != nil {
+			if err := m.DeviceTypes[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("device_types" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *ConfigContext) validateLastUpdated(formats strfmt.Registry) error {
 	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
@@ -379,6 +427,34 @@ func (m *ConfigContext) validateRoles(formats strfmt.Registry) error {
 			if err := m.Roles[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("roles" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *ConfigContext) validateSiteGroups(formats strfmt.Registry) error {
+	if swag.IsZero(m.SiteGroups) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("site_groups", "body", m.SiteGroups); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.SiteGroups); i++ {
+		if swag.IsZero(m.SiteGroups[i]) { // not required
+			continue
+		}
+
+		if m.SiteGroups[i] != nil {
+			if err := m.SiteGroups[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("site_groups" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -537,6 +613,14 @@ func (m *ConfigContext) ContextValidate(ctx context.Context, formats strfmt.Regi
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDeviceTypes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -554,6 +638,10 @@ func (m *ConfigContext) ContextValidate(ctx context.Context, formats strfmt.Regi
 	}
 
 	if err := m.contextValidateRoles(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSiteGroups(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -624,6 +712,33 @@ func (m *ConfigContext) contextValidateCreated(ctx context.Context, formats strf
 	return nil
 }
 
+func (m *ConfigContext) contextValidateDeviceTypes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.DeviceTypes); i++ {
+
+		if m.DeviceTypes[i] != nil {
+			if err := m.DeviceTypes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("device_types" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *ConfigContext) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ConfigContext) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
@@ -686,6 +801,24 @@ func (m *ConfigContext) contextValidateRoles(ctx context.Context, formats strfmt
 			if err := m.Roles[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("roles" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *ConfigContext) contextValidateSiteGroups(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.SiteGroups); i++ {
+
+		if m.SiteGroups[i] != nil {
+			if err := m.SiteGroups[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("site_groups" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

@@ -78,6 +78,9 @@ type DcimRackRolesListParams struct {
 	// Color.
 	Color *string
 
+	// ColorEmpty.
+	ColorEmpty *string
+
 	// ColorIc.
 	ColorIc *string
 
@@ -105,6 +108,15 @@ type DcimRackRolesListParams struct {
 	// ColorNisw.
 	ColorNisw *string
 
+	// Created.
+	Created *string
+
+	// CreatedGte.
+	CreatedGte *string
+
+	// CreatedLte.
+	CreatedLte *string
+
 	// ID.
 	ID *string
 
@@ -123,6 +135,15 @@ type DcimRackRolesListParams struct {
 	// IDn.
 	IDn *string
 
+	// LastUpdated.
+	LastUpdated *string
+
+	// LastUpdatedGte.
+	LastUpdatedGte *string
+
+	// LastUpdatedLte.
+	LastUpdatedLte *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -131,6 +152,9 @@ type DcimRackRolesListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -170,6 +194,9 @@ type DcimRackRolesListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -260,6 +287,17 @@ func (o *DcimRackRolesListParams) WithColor(color *string) *DcimRackRolesListPar
 // SetColor adds the color to the dcim rack roles list params
 func (o *DcimRackRolesListParams) SetColor(color *string) {
 	o.Color = color
+}
+
+// WithColorEmpty adds the colorEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithColorEmpty(colorEmpty *string) *DcimRackRolesListParams {
+	o.SetColorEmpty(colorEmpty)
+	return o
+}
+
+// SetColorEmpty adds the colorEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetColorEmpty(colorEmpty *string) {
+	o.ColorEmpty = colorEmpty
 }
 
 // WithColorIc adds the colorIc to the dcim rack roles list params
@@ -361,6 +399,39 @@ func (o *DcimRackRolesListParams) SetColorNisw(colorNisw *string) {
 	o.ColorNisw = colorNisw
 }
 
+// WithCreated adds the created to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithCreated(created *string) *DcimRackRolesListParams {
+	o.SetCreated(created)
+	return o
+}
+
+// SetCreated adds the created to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetCreated(created *string) {
+	o.Created = created
+}
+
+// WithCreatedGte adds the createdGte to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithCreatedGte(createdGte *string) *DcimRackRolesListParams {
+	o.SetCreatedGte(createdGte)
+	return o
+}
+
+// SetCreatedGte adds the createdGte to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetCreatedGte(createdGte *string) {
+	o.CreatedGte = createdGte
+}
+
+// WithCreatedLte adds the createdLte to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithCreatedLte(createdLte *string) *DcimRackRolesListParams {
+	o.SetCreatedLte(createdLte)
+	return o
+}
+
+// SetCreatedLte adds the createdLte to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetCreatedLte(createdLte *string) {
+	o.CreatedLte = createdLte
+}
+
 // WithID adds the id to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithID(id *string) *DcimRackRolesListParams {
 	o.SetID(id)
@@ -427,6 +498,39 @@ func (o *DcimRackRolesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithLastUpdated adds the lastUpdated to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithLastUpdated(lastUpdated *string) *DcimRackRolesListParams {
+	o.SetLastUpdated(lastUpdated)
+	return o
+}
+
+// SetLastUpdated adds the lastUpdated to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetLastUpdated(lastUpdated *string) {
+	o.LastUpdated = lastUpdated
+}
+
+// WithLastUpdatedGte adds the lastUpdatedGte to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimRackRolesListParams {
+	o.SetLastUpdatedGte(lastUpdatedGte)
+	return o
+}
+
+// SetLastUpdatedGte adds the lastUpdatedGte to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
+	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLte adds the lastUpdatedLte to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimRackRolesListParams {
+	o.SetLastUpdatedLte(lastUpdatedLte)
+	return o
+}
+
+// SetLastUpdatedLte adds the lastUpdatedLte to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
+	o.LastUpdatedLte = lastUpdatedLte
+}
+
 // WithLimit adds the limit to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithLimit(limit *int64) *DcimRackRolesListParams {
 	o.SetLimit(limit)
@@ -447,6 +551,17 @@ func (o *DcimRackRolesListParams) WithName(name *string) *DcimRackRolesListParam
 // SetName adds the name to the dcim rack roles list params
 func (o *DcimRackRolesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithNameEmpty(nameEmpty *string) *DcimRackRolesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim rack roles list params
@@ -581,6 +696,17 @@ func (o *DcimRackRolesListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithSlugEmpty adds the slugEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithSlugEmpty(slugEmpty *string) *DcimRackRolesListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
+}
+
 // WithSlugIc adds the slugIc to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithSlugIc(slugIc *string) *DcimRackRolesListParams {
 	o.SetSlugIc(slugIc)
@@ -700,6 +826,23 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qColor != "" {
 
 			if err := r.SetQueryParam("color", qColor); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorEmpty != nil {
+
+		// query param color__empty
+		var qrColorEmpty string
+
+		if o.ColorEmpty != nil {
+			qrColorEmpty = *o.ColorEmpty
+		}
+		qColorEmpty := qrColorEmpty
+		if qColorEmpty != "" {
+
+			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
 				return err
 			}
 		}
@@ -858,6 +1001,57 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.Created != nil {
+
+		// query param created
+		var qrCreated string
+
+		if o.Created != nil {
+			qrCreated = *o.Created
+		}
+		qCreated := qrCreated
+		if qCreated != "" {
+
+			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedGte != nil {
+
+		// query param created__gte
+		var qrCreatedGte string
+
+		if o.CreatedGte != nil {
+			qrCreatedGte = *o.CreatedGte
+		}
+		qCreatedGte := qrCreatedGte
+		if qCreatedGte != "" {
+
+			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLte != nil {
+
+		// query param created__lte
+		var qrCreatedLte string
+
+		if o.CreatedLte != nil {
+			qrCreatedLte = *o.CreatedLte
+		}
+		qCreatedLte := qrCreatedLte
+		if qCreatedLte != "" {
+
+			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -960,6 +1154,57 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.LastUpdated != nil {
+
+		// query param last_updated
+		var qrLastUpdated string
+
+		if o.LastUpdated != nil {
+			qrLastUpdated = *o.LastUpdated
+		}
+		qLastUpdated := qrLastUpdated
+		if qLastUpdated != "" {
+
+			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedGte != nil {
+
+		// query param last_updated__gte
+		var qrLastUpdatedGte string
+
+		if o.LastUpdatedGte != nil {
+			qrLastUpdatedGte = *o.LastUpdatedGte
+		}
+		qLastUpdatedGte := qrLastUpdatedGte
+		if qLastUpdatedGte != "" {
+
+			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLte != nil {
+
+		// query param last_updated__lte
+		var qrLastUpdatedLte string
+
+		if o.LastUpdatedLte != nil {
+			qrLastUpdatedLte = *o.LastUpdatedLte
+		}
+		qLastUpdatedLte := qrLastUpdatedLte
+		if qLastUpdatedLte != "" {
+
+			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -989,6 +1234,23 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1193,6 +1455,23 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

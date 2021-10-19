@@ -38,7 +38,11 @@ type NestedRIR struct {
 	// Read Only: true
 	AggregateCount int64 `json:"aggregate_count,omitempty"`
 
-	// ID
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -141,6 +145,10 @@ func (m *NestedRIR) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -158,6 +166,15 @@ func (m *NestedRIR) ContextValidate(ctx context.Context, formats strfmt.Registry
 func (m *NestedRIR) contextValidateAggregateCount(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "aggregate_count", "body", int64(m.AggregateCount)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *NestedRIR) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

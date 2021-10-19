@@ -68,6 +68,10 @@ type WritableDeviceWithConfigContext struct {
 	// Required: true
 	DeviceType *int64 `json:"device_type"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Display name
 	// Read Only: true
 	DisplayName string `json:"display_name,omitempty"`
@@ -76,7 +80,7 @@ type WritableDeviceWithConfigContext struct {
 	// Enum: [front rear]
 	Face string `json:"face,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -87,6 +91,9 @@ type WritableDeviceWithConfigContext struct {
 
 	// Local context data
 	LocalContextData map[string]interface{} `json:"local_context_data,omitempty"`
+
+	// Location
+	Location *int64 `json:"location,omitempty"`
 
 	// Name
 	// Max Length: 64
@@ -528,6 +535,10 @@ func (m *WritableDeviceWithConfigContext) ContextValidate(ctx context.Context, f
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -570,6 +581,15 @@ func (m *WritableDeviceWithConfigContext) contextValidateConfigContext(ctx conte
 func (m *WritableDeviceWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
 	}
 

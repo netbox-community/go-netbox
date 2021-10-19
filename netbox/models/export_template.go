@@ -34,6 +34,11 @@ import (
 // swagger:model ExportTemplate
 type ExportTemplate struct {
 
+	// As attachment
+	//
+	// Download file as attachment
+	AsAttachment bool `json:"as_attachment,omitempty"`
+
 	// Content type
 	// Required: true
 	ContentType *string `json:"content_type"`
@@ -42,13 +47,17 @@ type ExportTemplate struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// File extension
 	//
 	// Extension to append to the rendered filename
 	// Max Length: 15
 	FileExtension string `json:"file_extension,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -206,6 +215,10 @@ func (m *ExportTemplate) validateURL(formats strfmt.Registry) error {
 func (m *ExportTemplate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -217,6 +230,15 @@ func (m *ExportTemplate) ContextValidate(ctx context.Context, formats strfmt.Reg
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ExportTemplate) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
 	return nil
 }
 

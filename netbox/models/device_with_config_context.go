@@ -68,6 +68,10 @@ type DeviceWithConfigContext struct {
 	// Required: true
 	DeviceType *NestedDeviceType `json:"device_type"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Display name
 	// Read Only: true
 	DisplayName string `json:"display_name,omitempty"`
@@ -75,7 +79,7 @@ type DeviceWithConfigContext struct {
 	// face
 	Face *DeviceWithConfigContextFace `json:"face,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -86,6 +90,9 @@ type DeviceWithConfigContext struct {
 
 	// Local context data
 	LocalContextData map[string]interface{} `json:"local_context_data,omitempty"`
+
+	// location
+	Location *NestedLocation `json:"location,omitempty"`
 
 	// Name
 	// Max Length: 64
@@ -181,6 +188,10 @@ func (m *DeviceWithConfigContext) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLocation(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -359,6 +370,23 @@ func (m *DeviceWithConfigContext) validateLastUpdated(formats strfmt.Registry) e
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceWithConfigContext) validateLocation(formats strfmt.Registry) error {
+	if swag.IsZero(m.Location) { // not required
+		return nil
+	}
+
+	if m.Location != nil {
+		if err := m.Location.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -667,6 +695,10 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -680,6 +712,10 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 	}
 
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLocation(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -793,6 +829,15 @@ func (m *DeviceWithConfigContext) contextValidateDeviceType(ctx context.Context,
 	return nil
 }
 
+func (m *DeviceWithConfigContext) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *DeviceWithConfigContext) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
@@ -829,6 +874,20 @@ func (m *DeviceWithConfigContext) contextValidateLastUpdated(ctx context.Context
 
 	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceWithConfigContext) contextValidateLocation(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Location != nil {
+		if err := m.Location.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("location")
+			}
+			return err
+		}
 	}
 
 	return nil

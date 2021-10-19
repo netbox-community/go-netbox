@@ -53,13 +53,17 @@ type WritableCustomField struct {
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
 	// Filter logic
 	//
 	// Loose matches any instance of a given string; exact matches the entire field.
 	// Enum: [disabled loose exact]
 	FilterLogic string `json:"filter_logic,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -83,7 +87,7 @@ type WritableCustomField struct {
 	Required bool `json:"required,omitempty"`
 
 	// Type
-	// Enum: [text integer boolean date url select]
+	// Enum: [text integer boolean date url select multiselect]
 	Type string `json:"type,omitempty"`
 
 	// Url
@@ -300,7 +304,7 @@ var writableCustomFieldTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["text","integer","boolean","date","url","select"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["text","integer","boolean","date","url","select","multiselect"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -327,6 +331,9 @@ const (
 
 	// WritableCustomFieldTypeSelect captures enum value "select"
 	WritableCustomFieldTypeSelect string = "select"
+
+	// WritableCustomFieldTypeMultiselect captures enum value "multiselect"
+	WritableCustomFieldTypeMultiselect string = "multiselect"
 )
 
 // prop value enum
@@ -426,6 +433,10 @@ func (m *WritableCustomField) validateWeight(formats strfmt.Registry) error {
 func (m *WritableCustomField) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -437,6 +448,15 @@ func (m *WritableCustomField) ContextValidate(ctx context.Context, formats strfm
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableCustomField) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
 	return nil
 }
 
