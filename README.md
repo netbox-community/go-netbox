@@ -35,7 +35,7 @@ Fix LocalConfigContext to support arbitrary JSON object [#4](https://github.com/
 Using the client
 ================
 
-The `github.com/go-netbox/netbox` package has some convenience functions for creating clients with the most common
+The `github.com/fbreckle/go-netbox/netbox` package has some convenience functions for creating clients with the most common
 configurations you are likely to need while connecting to NetBox. `NewNetboxAt` allows you to specify a hostname
 (including port, if you need it), and `NewNetboxWithAPIKey` allows you to specify both a hostname:port and API token.
 ```golang
