@@ -372,12 +372,12 @@ type ConsoleServerPortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B Other]
+	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B USB Micro AB Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b other]
+	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
 	Value *string `json:"value"`
 }
 
@@ -403,7 +403,7 @@ var consoleServerPortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","USB Micro AB","Other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -449,6 +449,9 @@ const (
 	// ConsoleServerPortTemplateTypeLabelUSBMicroB captures enum value "USB Micro B"
 	ConsoleServerPortTemplateTypeLabelUSBMicroB string = "USB Micro B"
 
+	// ConsoleServerPortTemplateTypeLabelUSBMicroAB captures enum value "USB Micro AB"
+	ConsoleServerPortTemplateTypeLabelUSBMicroAB string = "USB Micro AB"
+
 	// ConsoleServerPortTemplateTypeLabelOther captures enum value "Other"
 	ConsoleServerPortTemplateTypeLabelOther string = "Other"
 )
@@ -479,7 +482,7 @@ var consoleServerPortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -524,6 +527,9 @@ const (
 
 	// ConsoleServerPortTemplateTypeValueUsbDashMicroDashb captures enum value "usb-micro-b"
 	ConsoleServerPortTemplateTypeValueUsbDashMicroDashb string = "usb-micro-b"
+
+	// ConsoleServerPortTemplateTypeValueUsbDashMicroDashAb captures enum value "usb-micro-ab"
+	ConsoleServerPortTemplateTypeValueUsbDashMicroDashAb string = "usb-micro-ab"
 
 	// ConsoleServerPortTemplateTypeValueOther captures enum value "other"
 	ConsoleServerPortTemplateTypeValueOther string = "other"

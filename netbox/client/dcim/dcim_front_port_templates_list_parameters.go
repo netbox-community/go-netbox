@@ -75,6 +75,39 @@ func NewDcimFrontPortTemplatesListParamsWithHTTPClient(client *http.Client) *Dci
 */
 type DcimFrontPortTemplatesListParams struct {
 
+	// Color.
+	Color *string
+
+	// ColorEmpty.
+	ColorEmpty *string
+
+	// ColorIc.
+	ColorIc *string
+
+	// ColorIe.
+	ColorIe *string
+
+	// ColorIew.
+	ColorIew *string
+
+	// ColorIsw.
+	ColorIsw *string
+
+	// Colorn.
+	Colorn *string
+
+	// ColorNic.
+	ColorNic *string
+
+	// ColorNie.
+	ColorNie *string
+
+	// ColorNiew.
+	ColorNiew *string
+
+	// ColorNisw.
+	ColorNisw *string
+
 	// Created.
 	Created *string
 
@@ -162,6 +195,9 @@ type DcimFrontPortTemplatesListParams struct {
 	*/
 	Offset *int64
 
+	// Q.
+	Q *string
+
 	// Type.
 	Type *string
 
@@ -219,6 +255,127 @@ func (o *DcimFrontPortTemplatesListParams) WithHTTPClient(client *http.Client) *
 // SetHTTPClient adds the HTTPClient to the dcim front port templates list params
 func (o *DcimFrontPortTemplatesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithColor adds the color to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColor(color *string) *DcimFrontPortTemplatesListParams {
+	o.SetColor(color)
+	return o
+}
+
+// SetColor adds the color to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColor(color *string) {
+	o.Color = color
+}
+
+// WithColorEmpty adds the colorEmpty to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorEmpty(colorEmpty *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorEmpty(colorEmpty)
+	return o
+}
+
+// SetColorEmpty adds the colorEmpty to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorEmpty(colorEmpty *string) {
+	o.ColorEmpty = colorEmpty
+}
+
+// WithColorIc adds the colorIc to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorIc(colorIc *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorIc(colorIc)
+	return o
+}
+
+// SetColorIc adds the colorIc to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorIc(colorIc *string) {
+	o.ColorIc = colorIc
+}
+
+// WithColorIe adds the colorIe to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorIe(colorIe *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorIe(colorIe)
+	return o
+}
+
+// SetColorIe adds the colorIe to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorIe(colorIe *string) {
+	o.ColorIe = colorIe
+}
+
+// WithColorIew adds the colorIew to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorIew(colorIew *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorIew(colorIew)
+	return o
+}
+
+// SetColorIew adds the colorIew to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorIew(colorIew *string) {
+	o.ColorIew = colorIew
+}
+
+// WithColorIsw adds the colorIsw to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorIsw(colorIsw *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorIsw(colorIsw)
+	return o
+}
+
+// SetColorIsw adds the colorIsw to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorIsw(colorIsw *string) {
+	o.ColorIsw = colorIsw
+}
+
+// WithColorn adds the colorn to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorn(colorn *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorn(colorn)
+	return o
+}
+
+// SetColorn adds the colorN to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorn(colorn *string) {
+	o.Colorn = colorn
+}
+
+// WithColorNic adds the colorNic to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorNic(colorNic *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorNic(colorNic)
+	return o
+}
+
+// SetColorNic adds the colorNic to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorNic(colorNic *string) {
+	o.ColorNic = colorNic
+}
+
+// WithColorNie adds the colorNie to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorNie(colorNie *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorNie(colorNie)
+	return o
+}
+
+// SetColorNie adds the colorNie to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorNie(colorNie *string) {
+	o.ColorNie = colorNie
+}
+
+// WithColorNiew adds the colorNiew to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorNiew(colorNiew *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorNiew(colorNiew)
+	return o
+}
+
+// SetColorNiew adds the colorNiew to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorNiew(colorNiew *string) {
+	o.ColorNiew = colorNiew
+}
+
+// WithColorNisw adds the colorNisw to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorNisw(colorNisw *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorNisw(colorNisw)
+	return o
+}
+
+// SetColorNisw adds the colorNisw to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorNisw(colorNisw *string) {
+	o.ColorNisw = colorNisw
 }
 
 // WithCreated adds the created to the dcim front port templates list params
@@ -518,6 +675,17 @@ func (o *DcimFrontPortTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithQ adds the q to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithQ(q *string) *DcimFrontPortTemplatesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
 // WithType adds the typeVar to the dcim front port templates list params
 func (o *DcimFrontPortTemplatesListParams) WithType(typeVar *string) *DcimFrontPortTemplatesListParams {
 	o.SetType(typeVar)
@@ -547,6 +715,193 @@ func (o *DcimFrontPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		return err
 	}
 	var res []error
+
+	if o.Color != nil {
+
+		// query param color
+		var qrColor string
+
+		if o.Color != nil {
+			qrColor = *o.Color
+		}
+		qColor := qrColor
+		if qColor != "" {
+
+			if err := r.SetQueryParam("color", qColor); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorEmpty != nil {
+
+		// query param color__empty
+		var qrColorEmpty string
+
+		if o.ColorEmpty != nil {
+			qrColorEmpty = *o.ColorEmpty
+		}
+		qColorEmpty := qrColorEmpty
+		if qColorEmpty != "" {
+
+			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorIc != nil {
+
+		// query param color__ic
+		var qrColorIc string
+
+		if o.ColorIc != nil {
+			qrColorIc = *o.ColorIc
+		}
+		qColorIc := qrColorIc
+		if qColorIc != "" {
+
+			if err := r.SetQueryParam("color__ic", qColorIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorIe != nil {
+
+		// query param color__ie
+		var qrColorIe string
+
+		if o.ColorIe != nil {
+			qrColorIe = *o.ColorIe
+		}
+		qColorIe := qrColorIe
+		if qColorIe != "" {
+
+			if err := r.SetQueryParam("color__ie", qColorIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorIew != nil {
+
+		// query param color__iew
+		var qrColorIew string
+
+		if o.ColorIew != nil {
+			qrColorIew = *o.ColorIew
+		}
+		qColorIew := qrColorIew
+		if qColorIew != "" {
+
+			if err := r.SetQueryParam("color__iew", qColorIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorIsw != nil {
+
+		// query param color__isw
+		var qrColorIsw string
+
+		if o.ColorIsw != nil {
+			qrColorIsw = *o.ColorIsw
+		}
+		qColorIsw := qrColorIsw
+		if qColorIsw != "" {
+
+			if err := r.SetQueryParam("color__isw", qColorIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Colorn != nil {
+
+		// query param color__n
+		var qrColorn string
+
+		if o.Colorn != nil {
+			qrColorn = *o.Colorn
+		}
+		qColorn := qrColorn
+		if qColorn != "" {
+
+			if err := r.SetQueryParam("color__n", qColorn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorNic != nil {
+
+		// query param color__nic
+		var qrColorNic string
+
+		if o.ColorNic != nil {
+			qrColorNic = *o.ColorNic
+		}
+		qColorNic := qrColorNic
+		if qColorNic != "" {
+
+			if err := r.SetQueryParam("color__nic", qColorNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorNie != nil {
+
+		// query param color__nie
+		var qrColorNie string
+
+		if o.ColorNie != nil {
+			qrColorNie = *o.ColorNie
+		}
+		qColorNie := qrColorNie
+		if qColorNie != "" {
+
+			if err := r.SetQueryParam("color__nie", qColorNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorNiew != nil {
+
+		// query param color__niew
+		var qrColorNiew string
+
+		if o.ColorNiew != nil {
+			qrColorNiew = *o.ColorNiew
+		}
+		qColorNiew := qrColorNiew
+		if qColorNiew != "" {
+
+			if err := r.SetQueryParam("color__niew", qColorNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorNisw != nil {
+
+		// query param color__nisw
+		var qrColorNisw string
+
+		if o.ColorNisw != nil {
+			qrColorNisw = *o.ColorNisw
+		}
+		qColorNisw := qrColorNisw
+		if qColorNisw != "" {
+
+			if err := r.SetQueryParam("color__nisw", qColorNisw); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.Created != nil {
 
@@ -1002,6 +1357,23 @@ func (o *DcimFrontPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

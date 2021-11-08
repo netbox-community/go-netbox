@@ -79,6 +79,28 @@ type ClientService interface {
 
 	IpamIPAddressesUpdate(params *IpamIPAddressesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPAddressesUpdateOK, error)
 
+	IpamIPRangesAvailableIpsCreate(params *IpamIPRangesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsCreateCreated, error)
+
+	IpamIPRangesAvailableIpsRead(params *IpamIPRangesAvailableIpsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsReadOK, error)
+
+	IpamIPRangesBulkDelete(params *IpamIPRangesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesBulkDeleteNoContent, error)
+
+	IpamIPRangesBulkPartialUpdate(params *IpamIPRangesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesBulkPartialUpdateOK, error)
+
+	IpamIPRangesBulkUpdate(params *IpamIPRangesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesBulkUpdateOK, error)
+
+	IpamIPRangesCreate(params *IpamIPRangesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesCreateCreated, error)
+
+	IpamIPRangesDelete(params *IpamIPRangesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesDeleteNoContent, error)
+
+	IpamIPRangesList(params *IpamIPRangesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesListOK, error)
+
+	IpamIPRangesPartialUpdate(params *IpamIPRangesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesPartialUpdateOK, error)
+
+	IpamIPRangesRead(params *IpamIPRangesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesReadOK, error)
+
+	IpamIPRangesUpdate(params *IpamIPRangesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesUpdateOK, error)
+
 	IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsCreateCreated, error)
 
 	IpamPrefixesAvailableIpsRead(params *IpamPrefixesAvailableIpsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsReadOK, error)
@@ -425,7 +447,7 @@ func (a *Client) IpamAggregatesDelete(params *IpamAggregatesDeleteParams, authIn
 }
 
 /*
-  IpamAggregatesList ipam aggregates list API
+  IpamAggregatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamAggregatesList(params *IpamAggregatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAggregatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -767,7 +789,7 @@ func (a *Client) IpamIPAddressesDelete(params *IpamIPAddressesDeleteParams, auth
 }
 
 /*
-  IpamIPAddressesList ipam ip addresses list API
+  IpamIPAddressesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamIPAddressesList(params *IpamIPAddressesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPAddressesListOK, error) {
 	// TODO: Validate the params before sending
@@ -919,9 +941,437 @@ func (a *Client) IpamIPAddressesUpdate(params *IpamIPAddressesUpdateParams, auth
 }
 
 /*
-  IpamPrefixesAvailableIpsCreate A convenience method for returning available IP addresses within a prefix. By default, the number of IPs
-returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be passed,
-however results will not be paginated.
+  IpamIPRangesAvailableIpsCreate A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of
+IPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be
+passed, however results will not be paginated.
+
+The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
+invoked in parallel, which results in a race condition where multiple insertions can occur.
+*/
+func (a *Client) IpamIPRangesAvailableIpsCreate(params *IpamIPRangesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesAvailableIpsCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_available-ips_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/ip-ranges/{id}/available-ips/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesAvailableIpsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesAvailableIpsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesAvailableIpsCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesAvailableIpsRead A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of
+IPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be
+passed, however results will not be paginated.
+
+The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
+invoked in parallel, which results in a race condition where multiple insertions can occur.
+*/
+func (a *Client) IpamIPRangesAvailableIpsRead(params *IpamIPRangesAvailableIpsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesAvailableIpsReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_available-ips_read",
+		Method:             "GET",
+		PathPattern:        "/ipam/ip-ranges/{id}/available-ips/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesAvailableIpsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesAvailableIpsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesAvailableIpsReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesBulkDelete ipam ip ranges bulk delete API
+*/
+func (a *Client) IpamIPRangesBulkDelete(params *IpamIPRangesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/ip-ranges/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesBulkPartialUpdate ipam ip ranges bulk partial update API
+*/
+func (a *Client) IpamIPRangesBulkPartialUpdate(params *IpamIPRangesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/ip-ranges/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesBulkUpdate ipam ip ranges bulk update API
+*/
+func (a *Client) IpamIPRangesBulkUpdate(params *IpamIPRangesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/ip-ranges/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesBulkUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesCreate ipam ip ranges create API
+*/
+func (a *Client) IpamIPRangesCreate(params *IpamIPRangesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/ip-ranges/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesDelete ipam ip ranges delete API
+*/
+func (a *Client) IpamIPRangesDelete(params *IpamIPRangesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/ip-ranges/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesList Overrides ListModelMixin to allow processing ExportTemplates.
+*/
+func (a *Client) IpamIPRangesList(params *IpamIPRangesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_list",
+		Method:             "GET",
+		PathPattern:        "/ipam/ip-ranges/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesPartialUpdate ipam ip ranges partial update API
+*/
+func (a *Client) IpamIPRangesPartialUpdate(params *IpamIPRangesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/ip-ranges/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesRead ipam ip ranges read API
+*/
+func (a *Client) IpamIPRangesRead(params *IpamIPRangesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_read",
+		Method:             "GET",
+		PathPattern:        "/ipam/ip-ranges/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamIPRangesUpdate ipam ip ranges update API
+*/
+func (a *Client) IpamIPRangesUpdate(params *IpamIPRangesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamIPRangesUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_ip-ranges_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/ip-ranges/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamIPRangesUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamIPRangesUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamIPRangesUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamPrefixesAvailableIpsCreate A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of
+IPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be
+passed, however results will not be paginated.
 
 The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
 invoked in parallel, which results in a race condition where multiple insertions can occur.
@@ -962,9 +1412,9 @@ func (a *Client) IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIps
 }
 
 /*
-  IpamPrefixesAvailableIpsRead A convenience method for returning available IP addresses within a prefix. By default, the number of IPs
-returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be passed,
-however results will not be paginated.
+  IpamPrefixesAvailableIpsRead A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of
+IPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be
+passed, however results will not be paginated.
 
 The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
 invoked in parallel, which results in a race condition where multiple insertions can occur.
@@ -1277,7 +1727,7 @@ func (a *Client) IpamPrefixesDelete(params *IpamPrefixesDeleteParams, authInfo r
 }
 
 /*
-  IpamPrefixesList ipam prefixes list API
+  IpamPrefixesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamPrefixesList(params *IpamPrefixesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesListOK, error) {
 	// TODO: Validate the params before sending
@@ -1619,7 +2069,7 @@ func (a *Client) IpamRirsDelete(params *IpamRirsDeleteParams, authInfo runtime.C
 }
 
 /*
-  IpamRirsList ipam rirs list API
+  IpamRirsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamRirsList(params *IpamRirsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamRirsListOK, error) {
 	// TODO: Validate the params before sending
@@ -1961,7 +2411,7 @@ func (a *Client) IpamRolesDelete(params *IpamRolesDeleteParams, authInfo runtime
 }
 
 /*
-  IpamRolesList ipam roles list API
+  IpamRolesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamRolesList(params *IpamRolesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamRolesListOK, error) {
 	// TODO: Validate the params before sending
@@ -2303,7 +2753,7 @@ func (a *Client) IpamRouteTargetsDelete(params *IpamRouteTargetsDeleteParams, au
 }
 
 /*
-  IpamRouteTargetsList ipam route targets list API
+  IpamRouteTargetsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamRouteTargetsList(params *IpamRouteTargetsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamRouteTargetsListOK, error) {
 	// TODO: Validate the params before sending
@@ -2645,7 +3095,7 @@ func (a *Client) IpamServicesDelete(params *IpamServicesDeleteParams, authInfo r
 }
 
 /*
-  IpamServicesList ipam services list API
+  IpamServicesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamServicesList(params *IpamServicesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServicesListOK, error) {
 	// TODO: Validate the params before sending
@@ -2987,7 +3437,7 @@ func (a *Client) IpamVlanGroupsDelete(params *IpamVlanGroupsDeleteParams, authIn
 }
 
 /*
-  IpamVlanGroupsList ipam vlan groups list API
+  IpamVlanGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamVlanGroupsList(params *IpamVlanGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlanGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -3329,7 +3779,7 @@ func (a *Client) IpamVlansDelete(params *IpamVlansDeleteParams, authInfo runtime
 }
 
 /*
-  IpamVlansList ipam vlans list API
+  IpamVlansList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamVlansList(params *IpamVlansListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlansListOK, error) {
 	// TODO: Validate the params before sending
@@ -3671,7 +4121,7 @@ func (a *Client) IpamVrfsDelete(params *IpamVrfsDeleteParams, authInfo runtime.C
 }
 
 /*
-  IpamVrfsList ipam vrfs list API
+  IpamVrfsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) IpamVrfsList(params *IpamVrfsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVrfsListOK, error) {
 	// TODO: Validate the params before sending

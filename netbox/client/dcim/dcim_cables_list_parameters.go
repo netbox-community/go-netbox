@@ -225,6 +225,54 @@ type DcimCablesListParams struct {
 	// TenantID.
 	TenantID *string
 
+	// TerminationaID.
+	TerminationaID *string
+
+	// TerminationaIDGt.
+	TerminationaIDGt *string
+
+	// TerminationaIDGte.
+	TerminationaIDGte *string
+
+	// TerminationaIDLt.
+	TerminationaIDLt *string
+
+	// TerminationaIDLte.
+	TerminationaIDLte *string
+
+	// TerminationaIDn.
+	TerminationaIDn *string
+
+	// TerminationaType.
+	TerminationaType *string
+
+	// TerminationaTypen.
+	TerminationaTypen *string
+
+	// TerminationbID.
+	TerminationbID *string
+
+	// TerminationbIDGt.
+	TerminationbIDGt *string
+
+	// TerminationbIDGte.
+	TerminationbIDGte *string
+
+	// TerminationbIDLt.
+	TerminationbIDLt *string
+
+	// TerminationbIDLte.
+	TerminationbIDLte *string
+
+	// TerminationbIDn.
+	TerminationbIDn *string
+
+	// TerminationbType.
+	TerminationbType *string
+
+	// TerminationbTypen.
+	TerminationbTypen *string
+
 	// Type.
 	Type *string
 
@@ -810,6 +858,182 @@ func (o *DcimCablesListParams) WithTenantID(tenantID *string) *DcimCablesListPar
 // SetTenantID adds the tenantId to the dcim cables list params
 func (o *DcimCablesListParams) SetTenantID(tenantID *string) {
 	o.TenantID = tenantID
+}
+
+// WithTerminationaID adds the terminationaID to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationaID(terminationaID *string) *DcimCablesListParams {
+	o.SetTerminationaID(terminationaID)
+	return o
+}
+
+// SetTerminationaID adds the terminationAId to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationaID(terminationaID *string) {
+	o.TerminationaID = terminationaID
+}
+
+// WithTerminationaIDGt adds the terminationaIDGt to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationaIDGt(terminationaIDGt *string) *DcimCablesListParams {
+	o.SetTerminationaIDGt(terminationaIDGt)
+	return o
+}
+
+// SetTerminationaIDGt adds the terminationAIdGt to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationaIDGt(terminationaIDGt *string) {
+	o.TerminationaIDGt = terminationaIDGt
+}
+
+// WithTerminationaIDGte adds the terminationaIDGte to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationaIDGte(terminationaIDGte *string) *DcimCablesListParams {
+	o.SetTerminationaIDGte(terminationaIDGte)
+	return o
+}
+
+// SetTerminationaIDGte adds the terminationAIdGte to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationaIDGte(terminationaIDGte *string) {
+	o.TerminationaIDGte = terminationaIDGte
+}
+
+// WithTerminationaIDLt adds the terminationaIDLt to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationaIDLt(terminationaIDLt *string) *DcimCablesListParams {
+	o.SetTerminationaIDLt(terminationaIDLt)
+	return o
+}
+
+// SetTerminationaIDLt adds the terminationAIdLt to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationaIDLt(terminationaIDLt *string) {
+	o.TerminationaIDLt = terminationaIDLt
+}
+
+// WithTerminationaIDLte adds the terminationaIDLte to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationaIDLte(terminationaIDLte *string) *DcimCablesListParams {
+	o.SetTerminationaIDLte(terminationaIDLte)
+	return o
+}
+
+// SetTerminationaIDLte adds the terminationAIdLte to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationaIDLte(terminationaIDLte *string) {
+	o.TerminationaIDLte = terminationaIDLte
+}
+
+// WithTerminationaIDn adds the terminationaIDn to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationaIDn(terminationaIDn *string) *DcimCablesListParams {
+	o.SetTerminationaIDn(terminationaIDn)
+	return o
+}
+
+// SetTerminationaIDn adds the terminationAIdN to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationaIDn(terminationaIDn *string) {
+	o.TerminationaIDn = terminationaIDn
+}
+
+// WithTerminationaType adds the terminationaType to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationaType(terminationaType *string) *DcimCablesListParams {
+	o.SetTerminationaType(terminationaType)
+	return o
+}
+
+// SetTerminationaType adds the terminationAType to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationaType(terminationaType *string) {
+	o.TerminationaType = terminationaType
+}
+
+// WithTerminationaTypen adds the terminationaTypen to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationaTypen(terminationaTypen *string) *DcimCablesListParams {
+	o.SetTerminationaTypen(terminationaTypen)
+	return o
+}
+
+// SetTerminationaTypen adds the terminationATypeN to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationaTypen(terminationaTypen *string) {
+	o.TerminationaTypen = terminationaTypen
+}
+
+// WithTerminationbID adds the terminationbID to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationbID(terminationbID *string) *DcimCablesListParams {
+	o.SetTerminationbID(terminationbID)
+	return o
+}
+
+// SetTerminationbID adds the terminationBId to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationbID(terminationbID *string) {
+	o.TerminationbID = terminationbID
+}
+
+// WithTerminationbIDGt adds the terminationbIDGt to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationbIDGt(terminationbIDGt *string) *DcimCablesListParams {
+	o.SetTerminationbIDGt(terminationbIDGt)
+	return o
+}
+
+// SetTerminationbIDGt adds the terminationBIdGt to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationbIDGt(terminationbIDGt *string) {
+	o.TerminationbIDGt = terminationbIDGt
+}
+
+// WithTerminationbIDGte adds the terminationbIDGte to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationbIDGte(terminationbIDGte *string) *DcimCablesListParams {
+	o.SetTerminationbIDGte(terminationbIDGte)
+	return o
+}
+
+// SetTerminationbIDGte adds the terminationBIdGte to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationbIDGte(terminationbIDGte *string) {
+	o.TerminationbIDGte = terminationbIDGte
+}
+
+// WithTerminationbIDLt adds the terminationbIDLt to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationbIDLt(terminationbIDLt *string) *DcimCablesListParams {
+	o.SetTerminationbIDLt(terminationbIDLt)
+	return o
+}
+
+// SetTerminationbIDLt adds the terminationBIdLt to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationbIDLt(terminationbIDLt *string) {
+	o.TerminationbIDLt = terminationbIDLt
+}
+
+// WithTerminationbIDLte adds the terminationbIDLte to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationbIDLte(terminationbIDLte *string) *DcimCablesListParams {
+	o.SetTerminationbIDLte(terminationbIDLte)
+	return o
+}
+
+// SetTerminationbIDLte adds the terminationBIdLte to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationbIDLte(terminationbIDLte *string) {
+	o.TerminationbIDLte = terminationbIDLte
+}
+
+// WithTerminationbIDn adds the terminationbIDn to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationbIDn(terminationbIDn *string) *DcimCablesListParams {
+	o.SetTerminationbIDn(terminationbIDn)
+	return o
+}
+
+// SetTerminationbIDn adds the terminationBIdN to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationbIDn(terminationbIDn *string) {
+	o.TerminationbIDn = terminationbIDn
+}
+
+// WithTerminationbType adds the terminationbType to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationbType(terminationbType *string) *DcimCablesListParams {
+	o.SetTerminationbType(terminationbType)
+	return o
+}
+
+// SetTerminationbType adds the terminationBType to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationbType(terminationbType *string) {
+	o.TerminationbType = terminationbType
+}
+
+// WithTerminationbTypen adds the terminationbTypen to the dcim cables list params
+func (o *DcimCablesListParams) WithTerminationbTypen(terminationbTypen *string) *DcimCablesListParams {
+	o.SetTerminationbTypen(terminationbTypen)
+	return o
+}
+
+// SetTerminationbTypen adds the terminationBTypeN to the dcim cables list params
+func (o *DcimCablesListParams) SetTerminationbTypen(terminationbTypen *string) {
+	o.TerminationbTypen = terminationbTypen
 }
 
 // WithType adds the typeVar to the dcim cables list params
@@ -1653,6 +1877,278 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qTenantID != "" {
 
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationaID != nil {
+
+		// query param termination_a_id
+		var qrTerminationaID string
+
+		if o.TerminationaID != nil {
+			qrTerminationaID = *o.TerminationaID
+		}
+		qTerminationaID := qrTerminationaID
+		if qTerminationaID != "" {
+
+			if err := r.SetQueryParam("termination_a_id", qTerminationaID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationaIDGt != nil {
+
+		// query param termination_a_id__gt
+		var qrTerminationaIDGt string
+
+		if o.TerminationaIDGt != nil {
+			qrTerminationaIDGt = *o.TerminationaIDGt
+		}
+		qTerminationaIDGt := qrTerminationaIDGt
+		if qTerminationaIDGt != "" {
+
+			if err := r.SetQueryParam("termination_a_id__gt", qTerminationaIDGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationaIDGte != nil {
+
+		// query param termination_a_id__gte
+		var qrTerminationaIDGte string
+
+		if o.TerminationaIDGte != nil {
+			qrTerminationaIDGte = *o.TerminationaIDGte
+		}
+		qTerminationaIDGte := qrTerminationaIDGte
+		if qTerminationaIDGte != "" {
+
+			if err := r.SetQueryParam("termination_a_id__gte", qTerminationaIDGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationaIDLt != nil {
+
+		// query param termination_a_id__lt
+		var qrTerminationaIDLt string
+
+		if o.TerminationaIDLt != nil {
+			qrTerminationaIDLt = *o.TerminationaIDLt
+		}
+		qTerminationaIDLt := qrTerminationaIDLt
+		if qTerminationaIDLt != "" {
+
+			if err := r.SetQueryParam("termination_a_id__lt", qTerminationaIDLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationaIDLte != nil {
+
+		// query param termination_a_id__lte
+		var qrTerminationaIDLte string
+
+		if o.TerminationaIDLte != nil {
+			qrTerminationaIDLte = *o.TerminationaIDLte
+		}
+		qTerminationaIDLte := qrTerminationaIDLte
+		if qTerminationaIDLte != "" {
+
+			if err := r.SetQueryParam("termination_a_id__lte", qTerminationaIDLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationaIDn != nil {
+
+		// query param termination_a_id__n
+		var qrTerminationaIDn string
+
+		if o.TerminationaIDn != nil {
+			qrTerminationaIDn = *o.TerminationaIDn
+		}
+		qTerminationaIDn := qrTerminationaIDn
+		if qTerminationaIDn != "" {
+
+			if err := r.SetQueryParam("termination_a_id__n", qTerminationaIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationaType != nil {
+
+		// query param termination_a_type
+		var qrTerminationaType string
+
+		if o.TerminationaType != nil {
+			qrTerminationaType = *o.TerminationaType
+		}
+		qTerminationaType := qrTerminationaType
+		if qTerminationaType != "" {
+
+			if err := r.SetQueryParam("termination_a_type", qTerminationaType); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationaTypen != nil {
+
+		// query param termination_a_type__n
+		var qrTerminationaTypen string
+
+		if o.TerminationaTypen != nil {
+			qrTerminationaTypen = *o.TerminationaTypen
+		}
+		qTerminationaTypen := qrTerminationaTypen
+		if qTerminationaTypen != "" {
+
+			if err := r.SetQueryParam("termination_a_type__n", qTerminationaTypen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationbID != nil {
+
+		// query param termination_b_id
+		var qrTerminationbID string
+
+		if o.TerminationbID != nil {
+			qrTerminationbID = *o.TerminationbID
+		}
+		qTerminationbID := qrTerminationbID
+		if qTerminationbID != "" {
+
+			if err := r.SetQueryParam("termination_b_id", qTerminationbID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationbIDGt != nil {
+
+		// query param termination_b_id__gt
+		var qrTerminationbIDGt string
+
+		if o.TerminationbIDGt != nil {
+			qrTerminationbIDGt = *o.TerminationbIDGt
+		}
+		qTerminationbIDGt := qrTerminationbIDGt
+		if qTerminationbIDGt != "" {
+
+			if err := r.SetQueryParam("termination_b_id__gt", qTerminationbIDGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationbIDGte != nil {
+
+		// query param termination_b_id__gte
+		var qrTerminationbIDGte string
+
+		if o.TerminationbIDGte != nil {
+			qrTerminationbIDGte = *o.TerminationbIDGte
+		}
+		qTerminationbIDGte := qrTerminationbIDGte
+		if qTerminationbIDGte != "" {
+
+			if err := r.SetQueryParam("termination_b_id__gte", qTerminationbIDGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationbIDLt != nil {
+
+		// query param termination_b_id__lt
+		var qrTerminationbIDLt string
+
+		if o.TerminationbIDLt != nil {
+			qrTerminationbIDLt = *o.TerminationbIDLt
+		}
+		qTerminationbIDLt := qrTerminationbIDLt
+		if qTerminationbIDLt != "" {
+
+			if err := r.SetQueryParam("termination_b_id__lt", qTerminationbIDLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationbIDLte != nil {
+
+		// query param termination_b_id__lte
+		var qrTerminationbIDLte string
+
+		if o.TerminationbIDLte != nil {
+			qrTerminationbIDLte = *o.TerminationbIDLte
+		}
+		qTerminationbIDLte := qrTerminationbIDLte
+		if qTerminationbIDLte != "" {
+
+			if err := r.SetQueryParam("termination_b_id__lte", qTerminationbIDLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationbIDn != nil {
+
+		// query param termination_b_id__n
+		var qrTerminationbIDn string
+
+		if o.TerminationbIDn != nil {
+			qrTerminationbIDn = *o.TerminationbIDn
+		}
+		qTerminationbIDn := qrTerminationbIDn
+		if qTerminationbIDn != "" {
+
+			if err := r.SetQueryParam("termination_b_id__n", qTerminationbIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationbType != nil {
+
+		// query param termination_b_type
+		var qrTerminationbType string
+
+		if o.TerminationbType != nil {
+			qrTerminationbType = *o.TerminationbType
+		}
+		qTerminationbType := qrTerminationbType
+		if qTerminationbType != "" {
+
+			if err := r.SetQueryParam("termination_b_type", qTerminationbType); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationbTypen != nil {
+
+		// query param termination_b_type__n
+		var qrTerminationbTypen string
+
+		if o.TerminationbTypen != nil {
+			qrTerminationbTypen = *o.TerminationbTypen
+		}
+		qTerminationbTypen := qrTerminationbTypen
+		if qTerminationbTypen != "" {
+
+			if err := r.SetQueryParam("termination_b_type__n", qTerminationbTypen); err != nil {
 				return err
 			}
 		}

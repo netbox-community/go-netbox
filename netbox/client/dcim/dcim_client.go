@@ -63,8 +63,6 @@ type ClientService interface {
 
 	DcimConnectedDeviceList(params *DcimConnectedDeviceListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConnectedDeviceListOK, error)
 
-	DcimConsoleConnectionsList(params *DcimConsoleConnectionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleConnectionsListOK, error)
-
 	DcimConsolePortTemplatesBulkDelete(params *DcimConsolePortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesBulkDeleteNoContent, error)
 
 	DcimConsolePortTemplatesBulkPartialUpdate(params *DcimConsolePortTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesBulkPartialUpdateOK, error)
@@ -271,8 +269,6 @@ type ClientService interface {
 
 	DcimFrontPortsUpdate(params *DcimFrontPortsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsUpdateOK, error)
 
-	DcimInterfaceConnectionsList(params *DcimInterfaceConnectionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceConnectionsListOK, error)
-
 	DcimInterfaceTemplatesBulkDelete(params *DcimInterfaceTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesBulkDeleteNoContent, error)
 
 	DcimInterfaceTemplatesBulkPartialUpdate(params *DcimInterfaceTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesBulkPartialUpdateOK, error)
@@ -382,8 +378,6 @@ type ClientService interface {
 	DcimPlatformsRead(params *DcimPlatformsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsReadOK, error)
 
 	DcimPlatformsUpdate(params *DcimPlatformsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsUpdateOK, error)
-
-	DcimPowerConnectionsList(params *DcimPowerConnectionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerConnectionsListOK, error)
 
 	DcimPowerFeedsBulkDelete(params *DcimPowerFeedsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsBulkDeleteNoContent, error)
 
@@ -859,7 +853,7 @@ func (a *Client) DcimCablesDelete(params *DcimCablesDeleteParams, authInfo runti
 }
 
 /*
-  DcimCablesList dcim cables list API
+  DcimCablesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimCablesList(params *DcimCablesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCablesListOK, error) {
 	// TODO: Validate the params before sending
@@ -1054,44 +1048,6 @@ func (a *Client) DcimConnectedDeviceList(params *DcimConnectedDeviceListParams, 
 }
 
 /*
-  DcimConsoleConnectionsList dcim console connections list API
-*/
-func (a *Client) DcimConsoleConnectionsList(params *DcimConsoleConnectionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleConnectionsListOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimConsoleConnectionsListParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_console-connections_list",
-		Method:             "GET",
-		PathPattern:        "/dcim/console-connections/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimConsoleConnectionsListReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimConsoleConnectionsListOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimConsoleConnectionsListDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
   DcimConsolePortTemplatesBulkDelete dcim console port templates bulk delete API
 */
 func (a *Client) DcimConsolePortTemplatesBulkDelete(params *DcimConsolePortTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesBulkDeleteNoContent, error) {
@@ -1282,7 +1238,7 @@ func (a *Client) DcimConsolePortTemplatesDelete(params *DcimConsolePortTemplates
 }
 
 /*
-  DcimConsolePortTemplatesList dcim console port templates list API
+  DcimConsolePortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimConsolePortTemplatesList(params *DcimConsolePortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -1624,7 +1580,7 @@ func (a *Client) DcimConsolePortsDelete(params *DcimConsolePortsDeleteParams, au
 }
 
 /*
-  DcimConsolePortsList dcim console ports list API
+  DcimConsolePortsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimConsolePortsList(params *DcimConsolePortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -2004,7 +1960,7 @@ func (a *Client) DcimConsoleServerPortTemplatesDelete(params *DcimConsoleServerP
 }
 
 /*
-  DcimConsoleServerPortTemplatesList dcim console server port templates list API
+  DcimConsoleServerPortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimConsoleServerPortTemplatesList(params *DcimConsoleServerPortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -2346,7 +2302,7 @@ func (a *Client) DcimConsoleServerPortsDelete(params *DcimConsoleServerPortsDele
 }
 
 /*
-  DcimConsoleServerPortsList dcim console server ports list API
+  DcimConsoleServerPortsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimConsoleServerPortsList(params *DcimConsoleServerPortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -2726,7 +2682,7 @@ func (a *Client) DcimDeviceBayTemplatesDelete(params *DcimDeviceBayTemplatesDele
 }
 
 /*
-  DcimDeviceBayTemplatesList dcim device bay templates list API
+  DcimDeviceBayTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimDeviceBayTemplatesList(params *DcimDeviceBayTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -3068,7 +3024,7 @@ func (a *Client) DcimDeviceBaysDelete(params *DcimDeviceBaysDeleteParams, authIn
 }
 
 /*
-  DcimDeviceBaysList dcim device bays list API
+  DcimDeviceBaysList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimDeviceBaysList(params *DcimDeviceBaysListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysListOK, error) {
 	// TODO: Validate the params before sending
@@ -3410,7 +3366,7 @@ func (a *Client) DcimDeviceRolesDelete(params *DcimDeviceRolesDeleteParams, auth
 }
 
 /*
-  DcimDeviceRolesList dcim device roles list API
+  DcimDeviceRolesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimDeviceRolesList(params *DcimDeviceRolesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesListOK, error) {
 	// TODO: Validate the params before sending
@@ -3752,7 +3708,7 @@ func (a *Client) DcimDeviceTypesDelete(params *DcimDeviceTypesDeleteParams, auth
 }
 
 /*
-  DcimDeviceTypesList dcim device types list API
+  DcimDeviceTypesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimDeviceTypesList(params *DcimDeviceTypesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesListOK, error) {
 	// TODO: Validate the params before sending
@@ -4094,7 +4050,7 @@ func (a *Client) DcimDevicesDelete(params *DcimDevicesDeleteParams, authInfo run
 }
 
 /*
-  DcimDevicesList dcim devices list API
+  DcimDevicesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimDevicesList(params *DcimDevicesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesListOK, error) {
 	// TODO: Validate the params before sending
@@ -4474,7 +4430,7 @@ func (a *Client) DcimFrontPortTemplatesDelete(params *DcimFrontPortTemplatesDele
 }
 
 /*
-  DcimFrontPortTemplatesList dcim front port templates list API
+  DcimFrontPortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimFrontPortTemplatesList(params *DcimFrontPortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -4816,7 +4772,7 @@ func (a *Client) DcimFrontPortsDelete(params *DcimFrontPortsDeleteParams, authIn
 }
 
 /*
-  DcimFrontPortsList dcim front ports list API
+  DcimFrontPortsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimFrontPortsList(params *DcimFrontPortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -5002,44 +4958,6 @@ func (a *Client) DcimFrontPortsUpdate(params *DcimFrontPortsUpdateParams, authIn
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimFrontPortsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-  DcimInterfaceConnectionsList dcim interface connections list API
-*/
-func (a *Client) DcimInterfaceConnectionsList(params *DcimInterfaceConnectionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceConnectionsListOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimInterfaceConnectionsListParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_interface-connections_list",
-		Method:             "GET",
-		PathPattern:        "/dcim/interface-connections/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimInterfaceConnectionsListReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimInterfaceConnectionsListOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimInterfaceConnectionsListDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -5234,7 +5152,7 @@ func (a *Client) DcimInterfaceTemplatesDelete(params *DcimInterfaceTemplatesDele
 }
 
 /*
-  DcimInterfaceTemplatesList dcim interface templates list API
+  DcimInterfaceTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimInterfaceTemplatesList(params *DcimInterfaceTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -5576,7 +5494,7 @@ func (a *Client) DcimInterfacesDelete(params *DcimInterfacesDeleteParams, authIn
 }
 
 /*
-  DcimInterfacesList dcim interfaces list API
+  DcimInterfacesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimInterfacesList(params *DcimInterfacesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesListOK, error) {
 	// TODO: Validate the params before sending
@@ -5956,7 +5874,7 @@ func (a *Client) DcimInventoryItemsDelete(params *DcimInventoryItemsDeleteParams
 }
 
 /*
-  DcimInventoryItemsList dcim inventory items list API
+  DcimInventoryItemsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimInventoryItemsList(params *DcimInventoryItemsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsListOK, error) {
 	// TODO: Validate the params before sending
@@ -6298,7 +6216,7 @@ func (a *Client) DcimLocationsDelete(params *DcimLocationsDeleteParams, authInfo
 }
 
 /*
-  DcimLocationsList dcim locations list API
+  DcimLocationsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimLocationsList(params *DcimLocationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsListOK, error) {
 	// TODO: Validate the params before sending
@@ -6640,7 +6558,7 @@ func (a *Client) DcimManufacturersDelete(params *DcimManufacturersDeleteParams, 
 }
 
 /*
-  DcimManufacturersList dcim manufacturers list API
+  DcimManufacturersList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimManufacturersList(params *DcimManufacturersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersListOK, error) {
 	// TODO: Validate the params before sending
@@ -6982,7 +6900,7 @@ func (a *Client) DcimPlatformsDelete(params *DcimPlatformsDeleteParams, authInfo
 }
 
 /*
-  DcimPlatformsList dcim platforms list API
+  DcimPlatformsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimPlatformsList(params *DcimPlatformsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsListOK, error) {
 	// TODO: Validate the params before sending
@@ -7130,44 +7048,6 @@ func (a *Client) DcimPlatformsUpdate(params *DcimPlatformsUpdateParams, authInfo
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimPlatformsUpdateDefault)
-	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
-}
-
-/*
-  DcimPowerConnectionsList dcim power connections list API
-*/
-func (a *Client) DcimPowerConnectionsList(params *DcimPowerConnectionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerConnectionsListOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewDcimPowerConnectionsListParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "dcim_power-connections_list",
-		Method:             "GET",
-		PathPattern:        "/dcim/power-connections/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &DcimPowerConnectionsListReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*DcimPowerConnectionsListOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	unexpectedSuccess := result.(*DcimPowerConnectionsListDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 
@@ -7362,7 +7242,7 @@ func (a *Client) DcimPowerFeedsDelete(params *DcimPowerFeedsDeleteParams, authIn
 }
 
 /*
-  DcimPowerFeedsList dcim power feeds list API
+  DcimPowerFeedsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimPowerFeedsList(params *DcimPowerFeedsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsListOK, error) {
 	// TODO: Validate the params before sending
@@ -7742,7 +7622,7 @@ func (a *Client) DcimPowerOutletTemplatesDelete(params *DcimPowerOutletTemplates
 }
 
 /*
-  DcimPowerOutletTemplatesList dcim power outlet templates list API
+  DcimPowerOutletTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimPowerOutletTemplatesList(params *DcimPowerOutletTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -8084,7 +7964,7 @@ func (a *Client) DcimPowerOutletsDelete(params *DcimPowerOutletsDeleteParams, au
 }
 
 /*
-  DcimPowerOutletsList dcim power outlets list API
+  DcimPowerOutletsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimPowerOutletsList(params *DcimPowerOutletsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsListOK, error) {
 	// TODO: Validate the params before sending
@@ -8464,7 +8344,7 @@ func (a *Client) DcimPowerPanelsDelete(params *DcimPowerPanelsDeleteParams, auth
 }
 
 /*
-  DcimPowerPanelsList dcim power panels list API
+  DcimPowerPanelsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimPowerPanelsList(params *DcimPowerPanelsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsListOK, error) {
 	// TODO: Validate the params before sending
@@ -8806,7 +8686,7 @@ func (a *Client) DcimPowerPortTemplatesDelete(params *DcimPowerPortTemplatesDele
 }
 
 /*
-  DcimPowerPortTemplatesList dcim power port templates list API
+  DcimPowerPortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimPowerPortTemplatesList(params *DcimPowerPortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -9148,7 +9028,7 @@ func (a *Client) DcimPowerPortsDelete(params *DcimPowerPortsDeleteParams, authIn
 }
 
 /*
-  DcimPowerPortsList dcim power ports list API
+  DcimPowerPortsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimPowerPortsList(params *DcimPowerPortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -9528,7 +9408,7 @@ func (a *Client) DcimRackReservationsDelete(params *DcimRackReservationsDeletePa
 }
 
 /*
-  DcimRackReservationsList dcim rack reservations list API
+  DcimRackReservationsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimRackReservationsList(params *DcimRackReservationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsListOK, error) {
 	// TODO: Validate the params before sending
@@ -9870,7 +9750,7 @@ func (a *Client) DcimRackRolesDelete(params *DcimRackRolesDeleteParams, authInfo
 }
 
 /*
-  DcimRackRolesList dcim rack roles list API
+  DcimRackRolesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimRackRolesList(params *DcimRackRolesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesListOK, error) {
 	// TODO: Validate the params before sending
@@ -10250,7 +10130,7 @@ func (a *Client) DcimRacksElevation(params *DcimRacksElevationParams, authInfo r
 }
 
 /*
-  DcimRacksList dcim racks list API
+  DcimRacksList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimRacksList(params *DcimRacksListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksListOK, error) {
 	// TODO: Validate the params before sending
@@ -10592,7 +10472,7 @@ func (a *Client) DcimRearPortTemplatesDelete(params *DcimRearPortTemplatesDelete
 }
 
 /*
-  DcimRearPortTemplatesList dcim rear port templates list API
+  DcimRearPortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimRearPortTemplatesList(params *DcimRearPortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -10934,7 +10814,7 @@ func (a *Client) DcimRearPortsDelete(params *DcimRearPortsDeleteParams, authInfo
 }
 
 /*
-  DcimRearPortsList dcim rear ports list API
+  DcimRearPortsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimRearPortsList(params *DcimRearPortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -11314,7 +11194,7 @@ func (a *Client) DcimRegionsDelete(params *DcimRegionsDeleteParams, authInfo run
 }
 
 /*
-  DcimRegionsList dcim regions list API
+  DcimRegionsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimRegionsList(params *DcimRegionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsListOK, error) {
 	// TODO: Validate the params before sending
@@ -11656,7 +11536,7 @@ func (a *Client) DcimSiteGroupsDelete(params *DcimSiteGroupsDeleteParams, authIn
 }
 
 /*
-  DcimSiteGroupsList dcim site groups list API
+  DcimSiteGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimSiteGroupsList(params *DcimSiteGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -11998,7 +11878,7 @@ func (a *Client) DcimSitesDelete(params *DcimSitesDeleteParams, authInfo runtime
 }
 
 /*
-  DcimSitesList dcim sites list API
+  DcimSitesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimSitesList(params *DcimSitesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesListOK, error) {
 	// TODO: Validate the params before sending
@@ -12340,7 +12220,7 @@ func (a *Client) DcimVirtualChassisDelete(params *DcimVirtualChassisDeleteParams
 }
 
 /*
-  DcimVirtualChassisList dcim virtual chassis list API
+  DcimVirtualChassisList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) DcimVirtualChassisList(params *DcimVirtualChassisListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisListOK, error) {
 	// TODO: Validate the params before sending

@@ -66,10 +66,6 @@ type WritableRack struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Display name
-	// Read Only: true
-	DisplayName string `json:"display_name,omitempty"`
-
 	// Facility ID
 	//
 	// Locally-assigned identifier
@@ -599,10 +595,6 @@ func (m *WritableRack) ContextValidate(ctx context.Context, formats strfmt.Regis
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDisplayName(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -650,15 +642,6 @@ func (m *WritableRack) contextValidateDeviceCount(ctx context.Context, formats s
 func (m *WritableRack) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableRack) contextValidateDisplayName(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "display_name", "body", string(m.DisplayName)); err != nil {
 		return err
 	}
 

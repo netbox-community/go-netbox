@@ -120,7 +120,8 @@ type VirtualMachineWithConfigContext struct {
 	URL strfmt.URI `json:"url,omitempty"`
 
 	// VCPUs
-	Vcpus *string `json:"vcpus,omitempty"`
+	// Minimum: 0.01
+	Vcpus *float64 `json:"vcpus,omitempty"`
 }
 
 // Validate validates this virtual machine with config context
@@ -188,6 +189,10 @@ func (m *VirtualMachineWithConfigContext) Validate(formats strfmt.Registry) erro
 	}
 
 	if err := m.validateURL(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateVcpus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -454,6 +459,18 @@ func (m *VirtualMachineWithConfigContext) validateURL(formats strfmt.Registry) e
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) validateVcpus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Vcpus) { // not required
+		return nil
+	}
+
+	if err := validate.Minimum("vcpus", "body", *m.Vcpus, 0.01, false); err != nil {
 		return err
 	}
 

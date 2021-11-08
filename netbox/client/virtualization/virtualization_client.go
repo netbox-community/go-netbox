@@ -327,7 +327,7 @@ func (a *Client) VirtualizationClusterGroupsDelete(params *VirtualizationCluster
 }
 
 /*
-  VirtualizationClusterGroupsList virtualization cluster groups list API
+  VirtualizationClusterGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) VirtualizationClusterGroupsList(params *VirtualizationClusterGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -669,7 +669,7 @@ func (a *Client) VirtualizationClusterTypesDelete(params *VirtualizationClusterT
 }
 
 /*
-  VirtualizationClusterTypesList virtualization cluster types list API
+  VirtualizationClusterTypesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) VirtualizationClusterTypesList(params *VirtualizationClusterTypesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClusterTypesListOK, error) {
 	// TODO: Validate the params before sending
@@ -1011,7 +1011,7 @@ func (a *Client) VirtualizationClustersDelete(params *VirtualizationClustersDele
 }
 
 /*
-  VirtualizationClustersList virtualization clusters list API
+  VirtualizationClustersList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) VirtualizationClustersList(params *VirtualizationClustersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationClustersListOK, error) {
 	// TODO: Validate the params before sending
@@ -1353,7 +1353,7 @@ func (a *Client) VirtualizationInterfacesDelete(params *VirtualizationInterfaces
 }
 
 /*
-  VirtualizationInterfacesList virtualization interfaces list API
+  VirtualizationInterfacesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) VirtualizationInterfacesList(params *VirtualizationInterfacesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationInterfacesListOK, error) {
 	// TODO: Validate the params before sending
@@ -1695,7 +1695,7 @@ func (a *Client) VirtualizationVirtualMachinesDelete(params *VirtualizationVirtu
 }
 
 /*
-  VirtualizationVirtualMachinesList virtualization virtual machines list API
+  VirtualizationVirtualMachinesList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) VirtualizationVirtualMachinesList(params *VirtualizationVirtualMachinesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VirtualizationVirtualMachinesListOK, error) {
 	// TODO: Validate the params before sending

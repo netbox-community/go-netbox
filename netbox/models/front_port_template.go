@@ -35,6 +35,11 @@ import (
 // swagger:model FrontPortTemplate
 type FrontPortTemplate struct {
 
+	// Color
+	// Max Length: 6
+	// Pattern: ^[0-9a-f]{6}$
+	Color string `json:"color,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date
@@ -96,6 +101,10 @@ type FrontPortTemplate struct {
 func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateColor(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
@@ -139,6 +148,22 @@ func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *FrontPortTemplate) validateColor(formats strfmt.Registry) error {
+	if swag.IsZero(m.Color) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("color", "body", m.Color, 6); err != nil {
+		return err
+	}
+
+	if err := validate.Pattern("color", "body", m.Color, `^[0-9a-f]{6}$`); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -443,12 +468,12 @@ type FrontPortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST CS SN Splice]
+	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST CS SN SMA 905 SMA 906 URM-P2 URM-P4 URM-P8 Splice]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
 	Value *string `json:"value"`
 }
 
@@ -474,7 +499,7 @@ var frontPortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST","CS","SN","Splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST","CS","SN","SMA 905","SMA 906","URM-P2","URM-P4","URM-P8","Splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -574,6 +599,21 @@ const (
 	// FrontPortTemplateTypeLabelSN captures enum value "SN"
 	FrontPortTemplateTypeLabelSN string = "SN"
 
+	// FrontPortTemplateTypeLabelSMA905 captures enum value "SMA 905"
+	FrontPortTemplateTypeLabelSMA905 string = "SMA 905"
+
+	// FrontPortTemplateTypeLabelSMA906 captures enum value "SMA 906"
+	FrontPortTemplateTypeLabelSMA906 string = "SMA 906"
+
+	// FrontPortTemplateTypeLabelURMDashP2 captures enum value "URM-P2"
+	FrontPortTemplateTypeLabelURMDashP2 string = "URM-P2"
+
+	// FrontPortTemplateTypeLabelURMDashP4 captures enum value "URM-P4"
+	FrontPortTemplateTypeLabelURMDashP4 string = "URM-P4"
+
+	// FrontPortTemplateTypeLabelURMDashP8 captures enum value "URM-P8"
+	FrontPortTemplateTypeLabelURMDashP8 string = "URM-P8"
+
 	// FrontPortTemplateTypeLabelSplice captures enum value "Splice"
 	FrontPortTemplateTypeLabelSplice string = "Splice"
 )
@@ -604,7 +644,7 @@ var frontPortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -703,6 +743,21 @@ const (
 
 	// FrontPortTemplateTypeValueSn captures enum value "sn"
 	FrontPortTemplateTypeValueSn string = "sn"
+
+	// FrontPortTemplateTypeValueSmaDash905 captures enum value "sma-905"
+	FrontPortTemplateTypeValueSmaDash905 string = "sma-905"
+
+	// FrontPortTemplateTypeValueSmaDash906 captures enum value "sma-906"
+	FrontPortTemplateTypeValueSmaDash906 string = "sma-906"
+
+	// FrontPortTemplateTypeValueUrmDashP2 captures enum value "urm-p2"
+	FrontPortTemplateTypeValueUrmDashP2 string = "urm-p2"
+
+	// FrontPortTemplateTypeValueUrmDashP4 captures enum value "urm-p4"
+	FrontPortTemplateTypeValueUrmDashP4 string = "urm-p4"
+
+	// FrontPortTemplateTypeValueUrmDashP8 captures enum value "urm-p8"
+	FrontPortTemplateTypeValueUrmDashP8 string = "urm-p8"
 
 	// FrontPortTemplateTypeValueSplice captures enum value "splice"
 	FrontPortTemplateTypeValueSplice string = "splice"

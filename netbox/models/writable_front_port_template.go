@@ -35,6 +35,11 @@ import (
 // swagger:model WritableFrontPortTemplate
 type WritableFrontPortTemplate struct {
 
+	// Color
+	// Max Length: 6
+	// Pattern: ^[0-9a-f]{6}$
+	Color string `json:"color,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date
@@ -84,7 +89,7 @@ type WritableFrontPortTemplate struct {
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
 	Type *string `json:"type"`
 
 	// Url
@@ -96,6 +101,10 @@ type WritableFrontPortTemplate struct {
 // Validate validates this writable front port template
 func (m *WritableFrontPortTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateColor(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
@@ -140,6 +149,22 @@ func (m *WritableFrontPortTemplate) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableFrontPortTemplate) validateColor(formats strfmt.Registry) error {
+	if swag.IsZero(m.Color) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("color", "body", m.Color, 6); err != nil {
+		return err
+	}
+
+	if err := validate.Pattern("color", "body", m.Color, `^[0-9a-f]{6}$`); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -246,7 +271,7 @@ var writableFrontPortTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -345,6 +370,21 @@ const (
 
 	// WritableFrontPortTemplateTypeSn captures enum value "sn"
 	WritableFrontPortTemplateTypeSn string = "sn"
+
+	// WritableFrontPortTemplateTypeSmaDash905 captures enum value "sma-905"
+	WritableFrontPortTemplateTypeSmaDash905 string = "sma-905"
+
+	// WritableFrontPortTemplateTypeSmaDash906 captures enum value "sma-906"
+	WritableFrontPortTemplateTypeSmaDash906 string = "sma-906"
+
+	// WritableFrontPortTemplateTypeUrmDashP2 captures enum value "urm-p2"
+	WritableFrontPortTemplateTypeUrmDashP2 string = "urm-p2"
+
+	// WritableFrontPortTemplateTypeUrmDashP4 captures enum value "urm-p4"
+	WritableFrontPortTemplateTypeUrmDashP4 string = "urm-p4"
+
+	// WritableFrontPortTemplateTypeUrmDashP8 captures enum value "urm-p8"
+	WritableFrontPortTemplateTypeUrmDashP8 string = "urm-p8"
 
 	// WritableFrontPortTemplateTypeSplice captures enum value "splice"
 	WritableFrontPortTemplateTypeSplice string = "splice"

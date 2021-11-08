@@ -207,6 +207,18 @@ type DcimPowerOutletsListParams struct {
 	*/
 	Limit *int64
 
+	// Location.
+	Location *string
+
+	// Locationn.
+	Locationn *string
+
+	// LocationID.
+	LocationID *string
+
+	// LocationIDn.
+	LocationIDn *string
+
 	// Name.
 	Name *string
 
@@ -821,6 +833,50 @@ func (o *DcimPowerOutletsListParams) WithLimit(limit *int64) *DcimPowerOutletsLi
 // SetLimit adds the limit to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) SetLimit(limit *int64) {
 	o.Limit = limit
+}
+
+// WithLocation adds the location to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLocation(location *string) *DcimPowerOutletsListParams {
+	o.SetLocation(location)
+	return o
+}
+
+// SetLocation adds the location to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLocation(location *string) {
+	o.Location = location
+}
+
+// WithLocationn adds the locationn to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLocationn(locationn *string) *DcimPowerOutletsListParams {
+	o.SetLocationn(locationn)
+	return o
+}
+
+// SetLocationn adds the locationN to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLocationn(locationn *string) {
+	o.Locationn = locationn
+}
+
+// WithLocationID adds the locationID to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLocationID(locationID *string) *DcimPowerOutletsListParams {
+	o.SetLocationID(locationID)
+	return o
+}
+
+// SetLocationID adds the locationId to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLocationID(locationID *string) {
+	o.LocationID = locationID
+}
+
+// WithLocationIDn adds the locationIDn to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLocationIDn(locationIDn *string) *DcimPowerOutletsListParams {
+	o.SetLocationIDn(locationIDn)
+	return o
+}
+
+// SetLocationIDn adds the locationIdN to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLocationIDn(locationIDn *string) {
+	o.LocationIDn = locationIDn
 }
 
 // WithName adds the name to the dcim power outlets list params
@@ -1876,6 +1932,74 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qLimit != "" {
 
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Location != nil {
+
+		// query param location
+		var qrLocation string
+
+		if o.Location != nil {
+			qrLocation = *o.Location
+		}
+		qLocation := qrLocation
+		if qLocation != "" {
+
+			if err := r.SetQueryParam("location", qLocation); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Locationn != nil {
+
+		// query param location__n
+		var qrLocationn string
+
+		if o.Locationn != nil {
+			qrLocationn = *o.Locationn
+		}
+		qLocationn := qrLocationn
+		if qLocationn != "" {
+
+			if err := r.SetQueryParam("location__n", qLocationn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationID != nil {
+
+		// query param location_id
+		var qrLocationID string
+
+		if o.LocationID != nil {
+			qrLocationID = *o.LocationID
+		}
+		qLocationID := qrLocationID
+		if qLocationID != "" {
+
+			if err := r.SetQueryParam("location_id", qLocationID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LocationIDn != nil {
+
+		// query param location_id__n
+		var qrLocationIDn string
+
+		if o.LocationIDn != nil {
+			qrLocationIDn = *o.LocationIDn
+		}
+		qLocationIDn := qrLocationIDn
+		if qLocationIDn != "" {
+
+			if err := r.SetQueryParam("location_id__n", qLocationIDn); err != nil {
 				return err
 			}
 		}

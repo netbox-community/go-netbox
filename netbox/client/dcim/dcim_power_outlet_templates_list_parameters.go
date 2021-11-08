@@ -168,6 +168,9 @@ type DcimPowerOutletTemplatesListParams struct {
 	*/
 	Offset *int64
 
+	// Q.
+	Q *string
+
 	// Type.
 	Type *string
 
@@ -544,6 +547,17 @@ func (o *DcimPowerOutletTemplatesListParams) WithOffset(offset *int64) *DcimPowe
 // SetOffset adds the offset to the dcim power outlet templates list params
 func (o *DcimPowerOutletTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithQ adds the q to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) WithQ(q *string) *DcimPowerOutletTemplatesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) SetQ(q *string) {
+	o.Q = q
 }
 
 // WithType adds the typeVar to the dcim power outlet templates list params
@@ -1064,6 +1078,23 @@ func (o *DcimPowerOutletTemplatesListParams) WriteToRequest(r runtime.ClientRequ
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

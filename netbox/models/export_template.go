@@ -75,7 +75,7 @@ type ExportTemplate struct {
 
 	// Template code
 	//
-	// The list of objects being exported is passed as a context variable named <code>queryset</code>.
+	// Jinja2 template code. The list of objects being exported is passed as a context variable named <code>queryset</code>.
 	// Required: true
 	// Min Length: 1
 	TemplateCode *string `json:"template_code"`

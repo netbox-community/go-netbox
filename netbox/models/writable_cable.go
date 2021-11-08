@@ -57,12 +57,10 @@ type WritableCable struct {
 	Label string `json:"label,omitempty"`
 
 	// Length
-	// Maximum: 32767
-	// Minimum: 0
-	Length *int64 `json:"length,omitempty"`
+	Length *float64 `json:"length,omitempty"`
 
 	// Length unit
-	// Enum: [m cm ft in]
+	// Enum: [km m cm mi ft in]
 	LengthUnit string `json:"length_unit,omitempty"`
 
 	// Status
@@ -119,10 +117,6 @@ func (m *WritableCable) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateLength(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -196,27 +190,11 @@ func (m *WritableCable) validateLabel(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableCable) validateLength(formats strfmt.Registry) error {
-	if swag.IsZero(m.Length) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("length", "body", *m.Length, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("length", "body", *m.Length, 32767, false); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 var writableCableTypeLengthUnitPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["m","cm","ft","in"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["km","m","cm","mi","ft","in"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -226,11 +204,17 @@ func init() {
 
 const (
 
+	// WritableCableLengthUnitKm captures enum value "km"
+	WritableCableLengthUnitKm string = "km"
+
 	// WritableCableLengthUnitM captures enum value "m"
 	WritableCableLengthUnitM string = "m"
 
 	// WritableCableLengthUnitCm captures enum value "cm"
 	WritableCableLengthUnitCm string = "cm"
+
+	// WritableCableLengthUnitMi captures enum value "mi"
+	WritableCableLengthUnitMi string = "mi"
 
 	// WritableCableLengthUnitFt captures enum value "ft"
 	WritableCableLengthUnitFt string = "ft"

@@ -7,7 +7,7 @@
     "license": {
       "name": "Apache v2 License"
     },
-    "version": "2.11"
+    "version": "3.0"
   },
   "host": "localhost:8001",
   "schemes": [
@@ -36,7 +36,7 @@
     "/circuits/circuit-terminations/": {
       "get": {
         "operationId": "circuits_circuit-terminations_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -699,7 +699,7 @@
     "/circuits/circuit-types/": {
       "get": {
         "operationId": "circuits_circuit-types_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -1244,7 +1244,7 @@
     "/circuits/circuits/": {
       "get": {
         "operationId": "circuits_circuits_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -2034,7 +2034,7 @@
     "/circuits/provider-networks/": {
       "get": {
         "operationId": "circuits_provider-networks_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -2544,7 +2544,7 @@
     "/circuits/providers/": {
       "get": {
         "operationId": "circuits_providers_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -3306,7 +3306,7 @@
     "/dcim/cables/": {
       "get": {
         "operationId": "dcim_cables_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -3331,6 +3331,20 @@
           },
           {
             "name": "length_unit",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_a_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_b_id",
             "in": "query",
             "description": "",
             "required": false,
@@ -3380,6 +3394,20 @@
           },
           {
             "name": "q",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_a_type",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_b_type",
             "in": "query",
             "description": "",
             "required": false,
@@ -3611,6 +3639,90 @@
           },
           {
             "name": "length_unit__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_a_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_a_id__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_a_id__lt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_a_id__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_a_id__gt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_b_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_b_id__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_b_id__lt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_b_id__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_b_id__gt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_a_type__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "termination_b_type__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -3980,174 +4092,10 @@
       },
       "parameters": []
     },
-    "/dcim/console-connections/": {
-      "get": {
-        "operationId": "dcim_console-connections_list",
-        "description": "",
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "site",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device_id",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__ic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__iew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__niew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__isw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nisw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__ie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__empty",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Number of results to return per page.",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "description": "The initial index from which to return the results.",
-            "required": false,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "required": [
-                "count",
-                "results"
-              ],
-              "type": "object",
-              "properties": {
-                "count": {
-                  "type": "integer"
-                },
-                "next": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "previous": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "results": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/ConsolePort"
-                  }
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "dcim"
-        ]
-      },
-      "parameters": []
-    },
     "/dcim/console-port-templates/": {
       "get": {
         "operationId": "dcim_console-port-templates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -4207,6 +4155,13 @@
           },
           {
             "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
             "in": "query",
             "description": "",
             "required": false,
@@ -4636,7 +4591,7 @@
     "/dcim/console-ports/": {
       "get": {
         "operationId": "dcim_console-ports_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -4752,6 +4707,20 @@
           },
           {
             "name": "site",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
             "in": "query",
             "description": "",
             "required": false,
@@ -5081,6 +5050,20 @@
           },
           {
             "name": "site__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -5446,7 +5429,7 @@
     "/dcim/console-server-port-templates/": {
       "get": {
         "operationId": "dcim_console-server-port-templates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -5506,6 +5489,13 @@
           },
           {
             "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
             "in": "query",
             "description": "",
             "required": false,
@@ -5935,7 +5925,7 @@
     "/dcim/console-server-ports/": {
       "get": {
         "operationId": "dcim_console-server-ports_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -6051,6 +6041,20 @@
           },
           {
             "name": "site",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
             "in": "query",
             "description": "",
             "required": false,
@@ -6380,6 +6384,20 @@
           },
           {
             "name": "site__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -6745,7 +6763,7 @@
     "/dcim/device-bay-templates/": {
       "get": {
         "operationId": "dcim_device-bay-templates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -6798,6 +6816,13 @@
           },
           {
             "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
             "in": "query",
             "description": "",
             "required": false,
@@ -7220,7 +7245,7 @@
     "/dcim/device-bays/": {
       "get": {
         "operationId": "dcim_device-bays_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -7336,6 +7361,20 @@
           },
           {
             "name": "site",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
             "in": "query",
             "description": "",
             "required": false,
@@ -7644,6 +7683,20 @@
           },
           {
             "name": "site__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -7968,7 +8021,7 @@
     "/dcim/device-roles/": {
       "get": {
         "operationId": "dcim_device-roles_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -8597,7 +8650,7 @@
     "/dcim/device-types/": {
       "get": {
         "operationId": "dcim_device-types_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -9373,7 +9426,7 @@
     "/dcim/devices/": {
       "get": {
         "operationId": "dcim_devices_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -10589,7 +10642,7 @@
     "/dcim/front-port-templates/": {
       "get": {
         "operationId": "dcim_front-port-templates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -10607,6 +10660,13 @@
           },
           {
             "name": "type",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color",
             "in": "query",
             "description": "",
             "required": false,
@@ -10649,6 +10709,13 @@
           },
           {
             "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
             "in": "query",
             "description": "",
             "required": false,
@@ -10768,6 +10835,76 @@
           },
           {
             "name": "type__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__empty",
             "in": "query",
             "description": "",
             "required": false,
@@ -11078,7 +11215,7 @@
     "/dcim/front-ports/": {
       "get": {
         "operationId": "dcim_front-ports_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -11103,6 +11240,13 @@
           },
           {
             "name": "type",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color",
             "in": "query",
             "description": "",
             "required": false,
@@ -11201,6 +11345,20 @@
           },
           {
             "name": "site",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
             "in": "query",
             "description": "",
             "required": false,
@@ -11417,6 +11575,76 @@
             "type": "string"
           },
           {
+            "name": "color__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__empty",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "description__n",
             "in": "query",
             "description": "",
@@ -11523,6 +11751,20 @@
           },
           {
             "name": "site__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -11878,97 +12120,10 @@
         }
       ]
     },
-    "/dcim/interface-connections/": {
-      "get": {
-        "operationId": "dcim_interface-connections_list",
-        "description": "",
-        "parameters": [
-          {
-            "name": "site",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device_id",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Number of results to return per page.",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "description": "The initial index from which to return the results.",
-            "required": false,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "required": [
-                "count",
-                "results"
-              ],
-              "type": "object",
-              "properties": {
-                "count": {
-                  "type": "integer"
-                },
-                "next": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "previous": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "results": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/InterfaceConnection"
-                  }
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "dcim"
-        ]
-      },
-      "parameters": []
-    },
     "/dcim/interface-templates/": {
       "get": {
         "operationId": "dcim_interface-templates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -12035,6 +12190,13 @@
           },
           {
             "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
             "in": "query",
             "description": "",
             "required": false,
@@ -12464,7 +12626,7 @@
     "/dcim/interfaces/": {
       "get": {
         "operationId": "dcim_interfaces_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -12615,6 +12777,20 @@
           },
           {
             "name": "site",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
             "in": "query",
             "description": "",
             "required": false,
@@ -13028,6 +13204,20 @@
           },
           {
             "name": "site__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -13449,7 +13639,7 @@
     "/dcim/inventory-items/": {
       "get": {
         "operationId": "dcim_inventory-items_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -13579,6 +13769,20 @@
           },
           {
             "name": "site",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
             "in": "query",
             "description": "",
             "required": false,
@@ -13991,6 +14195,20 @@
             "type": "string"
           },
           {
+            "name": "location_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "device_id__n",
             "in": "query",
             "description": "",
@@ -14330,7 +14548,7 @@
     "/dcim/locations/": {
       "get": {
         "operationId": "dcim_locations_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -15064,7 +15282,7 @@
     "/dcim/manufacturers/": {
       "get": {
         "operationId": "dcim_manufacturers_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -15686,7 +15904,7 @@
     "/dcim/platforms/": {
       "get": {
         "operationId": "dcim_platforms_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -16410,174 +16628,10 @@
         }
       ]
     },
-    "/dcim/power-connections/": {
-      "get": {
-        "operationId": "dcim_power-connections_list",
-        "description": "",
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "site",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device_id",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__ic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__iew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__niew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__isw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nisw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__ie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__empty",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Number of results to return per page.",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "description": "The initial index from which to return the results.",
-            "required": false,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "required": [
-                "count",
-                "results"
-              ],
-              "type": "object",
-              "properties": {
-                "count": {
-                  "type": "integer"
-                },
-                "next": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "previous": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "results": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/PowerPort"
-                  }
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "dcim"
-        ]
-      },
-      "parameters": []
-    },
     "/dcim/power-feeds/": {
       "get": {
         "operationId": "dcim_power-feeds_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -17401,7 +17455,7 @@
     "/dcim/power-outlet-templates/": {
       "get": {
         "operationId": "dcim_power-outlet-templates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -17468,6 +17522,13 @@
           },
           {
             "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
             "in": "query",
             "description": "",
             "required": false,
@@ -17904,7 +17965,7 @@
     "/dcim/power-outlets/": {
       "get": {
         "operationId": "dcim_power-outlets_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -18027,6 +18088,20 @@
           },
           {
             "name": "site",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
             "in": "query",
             "description": "",
             "required": false,
@@ -18363,6 +18438,20 @@
           },
           {
             "name": "site__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -18728,7 +18817,7 @@
     "/dcim/power-panels/": {
       "get": {
         "operationId": "dcim_power-panels_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -19308,7 +19397,7 @@
     "/dcim/power-port-templates/": {
       "get": {
         "operationId": "dcim_power-port-templates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -19382,6 +19471,13 @@
           },
           {
             "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
             "in": "query",
             "description": "",
             "required": false,
@@ -19881,7 +19977,7 @@
     "/dcim/power-ports/": {
       "get": {
         "operationId": "dcim_power-ports_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -20011,6 +20107,20 @@
           },
           {
             "name": "site",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
             "in": "query",
             "description": "",
             "required": false,
@@ -20416,6 +20526,20 @@
             "type": "string"
           },
           {
+            "name": "location_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "device_id__n",
             "in": "query",
             "description": "",
@@ -20775,7 +20899,7 @@
     "/dcim/rack-reservations/": {
       "get": {
         "operationId": "dcim_rack-reservations_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -21334,7 +21458,7 @@
     "/dcim/rack-roles/": {
       "get": {
         "operationId": "dcim_rack-roles_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -21956,7 +22080,7 @@
     "/dcim/racks/": {
       "get": {
         "operationId": "dcim_racks_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -23092,7 +23216,7 @@
     "/dcim/rear-port-templates/": {
       "get": {
         "operationId": "dcim_rear-port-templates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -23110,6 +23234,13 @@
           },
           {
             "name": "type",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color",
             "in": "query",
             "description": "",
             "required": false,
@@ -23159,6 +23290,13 @@
           },
           {
             "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
             "in": "query",
             "description": "",
             "required": false,
@@ -23278,6 +23416,76 @@
           },
           {
             "name": "type__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__empty",
             "in": "query",
             "description": "",
             "required": false,
@@ -23623,7 +23831,7 @@
     "/dcim/rear-ports/": {
       "get": {
         "operationId": "dcim_rear-ports_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -23648,6 +23856,13 @@
           },
           {
             "name": "type",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color",
             "in": "query",
             "description": "",
             "required": false,
@@ -23753,6 +23968,20 @@
           },
           {
             "name": "site",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
             "in": "query",
             "description": "",
             "required": false,
@@ -23969,6 +24198,76 @@
             "type": "string"
           },
           {
+            "name": "color__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "color__empty",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "positions__n",
             "in": "query",
             "description": "",
@@ -24110,6 +24409,20 @@
           },
           {
             "name": "site__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -24468,7 +24781,7 @@
     "/dcim/regions/": {
       "get": {
         "operationId": "dcim_regions_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -25118,7 +25431,7 @@
     "/dcim/site-groups/": {
       "get": {
         "operationId": "dcim_site-groups_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -25768,7 +26081,7 @@
     "/dcim/sites/": {
       "get": {
         "operationId": "dcim_sites_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -26887,7 +27200,7 @@
     "/dcim/virtual-chassis/": {
       "get": {
         "operationId": "dcim_virtual-chassis_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -27586,7 +27899,7 @@
     "/extras/config-contexts/": {
       "get": {
         "operationId": "extras_config-contexts_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -28351,6 +28664,13 @@
             "type": "string"
           },
           {
+            "name": "q",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "limit",
             "in": "query",
             "description": "Number of results to return per page.",
@@ -28448,14 +28768,14 @@
     "/extras/custom-fields/": {
       "get": {
         "operationId": "extras_custom-fields_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "content_types",
@@ -28490,7 +28810,217 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "string"
+          },
+          {
+            "name": "id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__lt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__gt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content_types__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content_types__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content_types__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content_types__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content_types__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content_types__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content_types__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content_types__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content_types__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name__empty",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filter_logic__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "weight__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "weight__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "weight__lt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "weight__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "weight__gt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
           },
           {
             "name": "limit",
@@ -28790,7 +29320,7 @@
     "/extras/custom-links/": {
       "get": {
         "operationId": "extras_custom-links_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -29503,7 +30033,7 @@
     "/extras/export-templates/": {
       "get": {
         "operationId": "extras_export-templates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -29936,7 +30466,7 @@
     "/extras/image-attachments/": {
       "get": {
         "operationId": "extras_image-attachments_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -30714,7 +31244,7 @@
     "/extras/journal-entries/": {
       "get": {
         "operationId": "extras_journal-entries_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -31782,7 +32312,7 @@
     "/extras/tags/": {
       "get": {
         "operationId": "extras_tags_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -32418,7 +32948,7 @@
     "/extras/webhooks/": {
       "get": {
         "operationId": "extras_webhooks_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -33264,7 +33794,7 @@
     "/ipam/aggregates/": {
       "get": {
         "operationId": "ipam_aggregates_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -33809,7 +34339,7 @@
     "/ipam/ip-addresses/": {
       "get": {
         "operationId": "ipam_ip-addresses_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -34610,10 +35140,630 @@
         }
       ]
     },
+    "/ipam/ip-ranges/": {
+      "get": {
+        "operationId": "ipam_ip-ranges_list",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tenant_group_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tenant_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tenant_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tenant",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "family",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "name": "contains",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "vrf_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "vrf",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "role_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__lt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__gt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tenant_group_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tenant_group__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tenant_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tenant__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "vrf_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "vrf__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "role_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "status__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial index from which to return the results.",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "required": [
+                "count",
+                "results"
+              ],
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "next": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "previous": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/IPRange"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "post": {
+        "operationId": "ipam_ip-ranges_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableIPRange"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/IPRange"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "put": {
+        "operationId": "ipam_ip-ranges_bulk_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableIPRange"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/IPRange"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "patch": {
+        "operationId": "ipam_ip-ranges_bulk_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableIPRange"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/IPRange"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "delete": {
+        "operationId": "ipam_ip-ranges_bulk_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "parameters": []
+    },
+    "/ipam/ip-ranges/{id}/": {
+      "get": {
+        "operationId": "ipam_ip-ranges_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/IPRange"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "put": {
+        "operationId": "ipam_ip-ranges_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableIPRange"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/IPRange"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "patch": {
+        "operationId": "ipam_ip-ranges_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableIPRange"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/IPRange"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "delete": {
+        "operationId": "ipam_ip-ranges_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this IP range.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
+    "/ipam/ip-ranges/{id}/available-ips/": {
+      "get": {
+        "operationId": "ipam_ip-ranges_available-ips_read",
+        "description": "A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of\nIPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be\npassed, however results will not be paginated.\n\nThe advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being\ninvoked in parallel, which results in a race condition where multiple insertions can occur.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AvailableIP"
+              }
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "post": {
+        "operationId": "ipam_ip-ranges_available-ips_create",
+        "description": "A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of\nIPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be\npassed, however results will not be paginated.\n\nThe advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being\ninvoked in parallel, which results in a race condition where multiple insertions can occur.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AvailableIP"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AvailableIP"
+              }
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "ipam"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this IP range.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
     "/ipam/prefixes/": {
       "get": {
         "operationId": "ipam_prefixes_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -34624,6 +35774,13 @@
           },
           {
             "name": "is_pool",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mark_utilized",
             "in": "query",
             "description": "",
             "required": false,
@@ -34760,7 +35917,7 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "number"
+            "type": "string"
           },
           {
             "name": "mask_length__gte",
@@ -35410,7 +36567,7 @@
     "/ipam/prefixes/{id}/available-ips/": {
       "get": {
         "operationId": "ipam_prefixes_available-ips_read",
-        "description": "A convenience method for returning available IP addresses within a prefix. By default, the number of IPs\nreturned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be passed,\nhowever results will not be paginated.\n\nThe advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being\ninvoked in parallel, which results in a race condition where multiple insertions can occur.",
+        "description": "A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of\nIPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be\npassed, however results will not be paginated.\n\nThe advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being\ninvoked in parallel, which results in a race condition where multiple insertions can occur.",
         "parameters": [],
         "responses": {
           "200": {
@@ -35436,7 +36593,7 @@
       },
       "post": {
         "operationId": "ipam_prefixes_available-ips_create",
-        "description": "A convenience method for returning available IP addresses within a prefix. By default, the number of IPs\nreturned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be passed,\nhowever results will not be paginated.\n\nThe advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being\ninvoked in parallel, which results in a race condition where multiple insertions can occur.",
+        "description": "A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of\nIPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be\npassed, however results will not be paginated.\n\nThe advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being\ninvoked in parallel, which results in a race condition where multiple insertions can occur.",
         "parameters": [
           {
             "name": "data",
@@ -35556,7 +36713,7 @@
     "/ipam/rirs/": {
       "get": {
         "operationId": "ipam_rirs_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -36185,7 +37342,7 @@
     "/ipam/roles/": {
       "get": {
         "operationId": "ipam_roles_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -36730,7 +37887,7 @@
     "/ipam/route-targets/": {
       "get": {
         "operationId": "ipam_route-targets_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -37324,7 +38481,7 @@
     "/ipam/services/": {
       "get": {
         "operationId": "ipam_services_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -37883,7 +39040,7 @@
     "/ipam/vlan-groups/": {
       "get": {
         "operationId": "ipam_vlan-groups_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -38610,7 +39767,7 @@
     "/ipam/vlans/": {
       "get": {
         "operationId": "ipam_vlans_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -39358,7 +40515,7 @@
     "/ipam/vrfs/": {
       "get": {
         "operationId": "ipam_vrfs_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -40033,1164 +41190,6 @@
         }
       ]
     },
-    "/secrets/generate-rsa-key-pair/": {
-      "get": {
-        "operationId": "secrets_generate-rsa-key-pair_list",
-        "summary": "This endpoint can be used to generate a new RSA key pair. The keys are returned in PEM format.",
-        "description": "{\n        \"public_key\": \"<public key>\",\n        \"private_key\": \"<private key>\"\n    }",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": ""
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "parameters": []
-    },
-    "/secrets/get-session-key/": {
-      "post": {
-        "operationId": "secrets_get-session-key_create",
-        "description": "Retrieve a temporary session key to use for encrypting and decrypting secrets via the API. The user's private RSA\nkey is POSTed with the name `private_key`. An example:\n\n    curl -v -X POST -H \"Authorization: Token <token>\" -H \"Accept: application/json; indent=4\" \\\n    --data-urlencode \"private_key@<filename>\" https://netbox/api/secrets/get-session-key/\n\nThis request will yield a base64-encoded session key to be included in an `X-Session-Key` header in future requests:\n\n    {\n        \"session_key\": \"+8t4SI6XikgVmB5+/urhozx9O5qCQANyOk1MNe6taRf=\"\n    }\n\nThis endpoint accepts one optional parameter: `preserve_key`. If True and a session key exists, the existing session\nkey will be returned instead of a new one.",
-        "parameters": [],
-        "responses": {
-          "201": {
-            "description": ""
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "parameters": []
-    },
-    "/secrets/secret-roles/": {
-      "get": {
-        "operationId": "secrets_secret-roles_list",
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__lt",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__gt",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__ic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__iew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__niew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__isw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nisw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__ie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__empty",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__ic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__nic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__iew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__niew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__isw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__nisw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__ie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__nie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "slug__empty",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Number of results to return per page.",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "description": "The initial index from which to return the results.",
-            "required": false,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "required": [
-                "count",
-                "results"
-              ],
-              "type": "object",
-              "properties": {
-                "count": {
-                  "type": "integer"
-                },
-                "next": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "previous": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "results": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/SecretRole"
-                  }
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "post": {
-        "operationId": "secrets_secret-roles_create",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "put": {
-        "operationId": "secrets_secret-roles_bulk_update",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "patch": {
-        "operationId": "secrets_secret-roles_bulk_partial_update",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "delete": {
-        "operationId": "secrets_secret-roles_bulk_delete",
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "204": {
-            "description": ""
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "parameters": []
-    },
-    "/secrets/secret-roles/{id}/": {
-      "get": {
-        "operationId": "secrets_secret-roles_read",
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "put": {
-        "operationId": "secrets_secret-roles_update",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "patch": {
-        "operationId": "secrets_secret-roles_partial_update",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/SecretRole"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "delete": {
-        "operationId": "secrets_secret-roles_delete",
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "204": {
-            "description": ""
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this secret role.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
-    },
-    "/secrets/secrets/": {
-      "get": {
-        "operationId": "secrets_secrets_list",
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "role_id",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "role",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device_id",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "virtual_machine",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "virtual_machine_id",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__lt",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "id__gt",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__ic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nic",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__iew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__niew",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__isw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nisw",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__ie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__nie",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "name__empty",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "role_id__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "role__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "device_id__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "virtual_machine__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "virtual_machine_id__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Number of results to return per page.",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "description": "The initial index from which to return the results.",
-            "required": false,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "required": [
-                "count",
-                "results"
-              ],
-              "type": "object",
-              "properties": {
-                "count": {
-                  "type": "integer"
-                },
-                "next": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "previous": {
-                  "type": "string",
-                  "format": "uri",
-                  "x-nullable": true
-                },
-                "results": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/Secret"
-                  }
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "post": {
-        "operationId": "secrets_secrets_create",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSecret"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/Secret"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "put": {
-        "operationId": "secrets_secrets_bulk_update",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSecret"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/Secret"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "patch": {
-        "operationId": "secrets_secrets_bulk_partial_update",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSecret"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/Secret"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "delete": {
-        "operationId": "secrets_secrets_bulk_delete",
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "204": {
-            "description": ""
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "parameters": []
-    },
-    "/secrets/secrets/{id}/": {
-      "get": {
-        "operationId": "secrets_secrets_read",
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/Secret"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "put": {
-        "operationId": "secrets_secrets_update",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSecret"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/Secret"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "patch": {
-        "operationId": "secrets_secrets_partial_update",
-        "description": "",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WritableSecret"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/Secret"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "delete": {
-        "operationId": "secrets_secrets_delete",
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "204": {
-            "description": ""
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "additionalProperties": true
-            }
-          }
-        },
-        "tags": [
-          "secrets"
-        ]
-      },
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "A unique integer value identifying this secret.",
-          "required": true,
-          "type": "integer"
-        }
-      ]
-    },
     "/status/": {
       "get": {
         "operationId": "status_list",
@@ -41221,7 +41220,7 @@
     "/tenancy/tenant-groups/": {
       "get": {
         "operationId": "tenancy_tenant-groups_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -41871,7 +41870,7 @@
     "/tenancy/tenants/": {
       "get": {
         "operationId": "tenancy_tenants_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -42481,7 +42480,7 @@
     "/users/groups/": {
       "get": {
         "operationId": "users_groups_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -42907,7 +42906,7 @@
     "/users/permissions/": {
       "get": {
         "operationId": "users_permissions_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -43400,10 +43399,536 @@
         }
       ]
     },
+    "/users/tokens/": {
+      "get": {
+        "operationId": "users_tokens_list",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "write_enabled",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expires",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expires__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expires__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__lt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id__gt",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__ic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__nic",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__iew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__niew",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__isw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__nisw",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__ie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__nie",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key__empty",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "user__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial index from which to return the results.",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "required": [
+                "count",
+                "results"
+              ],
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "next": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "previous": {
+                  "type": "string",
+                  "format": "uri",
+                  "x-nullable": true
+                },
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Token"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "post": {
+        "operationId": "users_tokens_create",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableToken"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Token"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "put": {
+        "operationId": "users_tokens_bulk_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableToken"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Token"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "patch": {
+        "operationId": "users_tokens_bulk_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableToken"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Token"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "delete": {
+        "operationId": "users_tokens_bulk_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "parameters": []
+    },
+    "/users/tokens/provision/": {
+      "post": {
+        "operationId": "users_tokens_provision_create",
+        "description": "Non-authenticated REST API endpoint via which a user may create a Token.",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "parameters": []
+    },
+    "/users/tokens/{id}/": {
+      "get": {
+        "operationId": "users_tokens_read",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Token"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "put": {
+        "operationId": "users_tokens_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableToken"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Token"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "patch": {
+        "operationId": "users_tokens_partial_update",
+        "description": "",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WritableToken"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Token"
+            }
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "delete": {
+        "operationId": "users_tokens_delete",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "default": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "tags": [
+          "users"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "A unique integer value identifying this token.",
+          "required": true,
+          "type": "integer"
+        }
+      ]
+    },
     "/users/users/": {
       "get": {
         "operationId": "users_users_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -44102,7 +44627,7 @@
     "/virtualization/cluster-groups/": {
       "get": {
         "operationId": "virtualization_cluster-groups_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -44724,7 +45249,7 @@
     "/virtualization/cluster-types/": {
       "get": {
         "operationId": "virtualization_cluster-types_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -45346,7 +45871,7 @@
     "/virtualization/clusters/": {
       "get": {
         "operationId": "virtualization_clusters_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -46024,7 +46549,7 @@
     "/virtualization/interfaces/": {
       "get": {
         "operationId": "virtualization_interfaces_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -46695,7 +47220,7 @@
     "/virtualization/virtual-machines/": {
       "get": {
         "operationId": "virtualization_virtual-machines_list",
-        "description": "",
+        "description": "Overrides ListModelMixin to allow processing ExportTemplates.",
         "parameters": [
           {
             "name": "id",
@@ -47747,7 +48272,8 @@
           "maxLength": 100,
           "minLength": 1
         }
-      }
+      },
+      "x-nullable": true
     },
     "NestedProviderNetwork": {
       "required": [
@@ -47777,7 +48303,8 @@
           "maxLength": 100,
           "minLength": 1
         }
-      }
+      },
+      "x-nullable": true
     },
     "NestedCable": {
       "type": "object",
@@ -48899,9 +49426,8 @@
         },
         "length": {
           "title": "Length",
-          "type": "integer",
-          "maximum": 32767,
-          "minimum": 0,
+          "type": "number",
+          "format": "decimal",
           "x-nullable": true
         },
         "length_unit": {
@@ -48915,8 +49441,10 @@
             "label": {
               "type": "string",
               "enum": [
+                "Kilometers",
                 "Meters",
                 "Centimeters",
+                "Miles",
                 "Feet",
                 "Inches"
               ]
@@ -48924,8 +49452,10 @@
             "value": {
               "type": "string",
               "enum": [
+                "km",
                 "m",
                 "cm",
+                "mi",
                 "ft",
                 "in"
               ]
@@ -49059,17 +49589,18 @@
         },
         "length": {
           "title": "Length",
-          "type": "integer",
-          "maximum": 32767,
-          "minimum": 0,
+          "type": "number",
+          "format": "decimal",
           "x-nullable": true
         },
         "length_unit": {
           "title": "Length unit",
           "type": "string",
           "enum": [
+            "km",
             "m",
             "cm",
+            "mi",
             "ft",
             "in"
           ]
@@ -49170,11 +49701,6 @@
           "pattern": "^[-a-zA-Z0-9_]+$",
           "maxLength": 100,
           "minLength": 1
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
         },
         "device_count": {
           "title": "Device count",
@@ -49360,11 +49886,6 @@
           "maxLength": 100,
           "minLength": 1
         },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
-        },
         "device_count": {
           "title": "Device count",
           "type": "integer",
@@ -49397,11 +49918,6 @@
           "type": "string",
           "maxLength": 64,
           "x-nullable": true
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
         }
       }
     },
@@ -49539,11 +50055,6 @@
           "type": "string",
           "maxLength": 64,
           "x-nullable": true
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
         },
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
@@ -49713,6 +50224,189 @@
         }
       }
     },
+    "ConsolePortTemplate": {
+      "required": [
+        "device_type",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "device_type": {
+          "$ref": "#/definitions/NestedDeviceType"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 64,
+          "minLength": 1
+        },
+        "label": {
+          "title": "Label",
+          "description": "Physical label",
+          "type": "string",
+          "maxLength": 64
+        },
+        "type": {
+          "title": "Type",
+          "required": [
+            "label",
+            "value"
+          ],
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "enum": [
+                "DE-9",
+                "DB-25",
+                "RJ-11",
+                "RJ-12",
+                "RJ-45",
+                "USB Type A",
+                "USB Type B",
+                "USB Type C",
+                "USB Mini A",
+                "USB Mini B",
+                "USB Micro A",
+                "USB Micro B",
+                "USB Micro AB",
+                "Other"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "enum": [
+                "de-9",
+                "db-25",
+                "rj-11",
+                "rj-12",
+                "rj-45",
+                "usb-a",
+                "usb-b",
+                "usb-c",
+                "usb-mini-a",
+                "usb-mini-b",
+                "usb-micro-a",
+                "usb-micro-b",
+                "usb-micro-ab",
+                "other"
+              ]
+            }
+          }
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        }
+      }
+    },
+    "WritableConsolePortTemplate": {
+      "required": [
+        "device_type",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "device_type": {
+          "title": "Device type",
+          "type": "integer"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 64,
+          "minLength": 1
+        },
+        "label": {
+          "title": "Label",
+          "description": "Physical label",
+          "type": "string",
+          "maxLength": 64
+        },
+        "type": {
+          "title": "Type",
+          "type": "string",
+          "enum": [
+            "de-9",
+            "db-25",
+            "rj-11",
+            "rj-12",
+            "rj-45",
+            "usb-a",
+            "usb-b",
+            "usb-c",
+            "usb-mini-a",
+            "usb-mini-b",
+            "usb-micro-a",
+            "usb-micro-b",
+            "usb-micro-ab",
+            "other"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        }
+      }
+    },
     "ConsolePort": {
       "required": [
         "device",
@@ -49774,6 +50468,7 @@
                 "USB Mini B",
                 "USB Micro A",
                 "USB Micro B",
+                "USB Micro AB",
                 "Other"
               ]
             },
@@ -49792,6 +50487,7 @@
                 "usb-mini-b",
                 "usb-micro-a",
                 "usb-micro-b",
+                "usb-micro-ab",
                 "other"
               ]
             }
@@ -49911,186 +50607,6 @@
         }
       }
     },
-    "ConsolePortTemplate": {
-      "required": [
-        "device_type",
-        "name"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Id",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "display": {
-          "title": "Display",
-          "type": "string",
-          "readOnly": true
-        },
-        "device_type": {
-          "$ref": "#/definitions/NestedDeviceType"
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 64,
-          "minLength": 1
-        },
-        "label": {
-          "title": "Label",
-          "description": "Physical label",
-          "type": "string",
-          "maxLength": 64
-        },
-        "type": {
-          "title": "Type",
-          "required": [
-            "label",
-            "value"
-          ],
-          "type": "object",
-          "properties": {
-            "label": {
-              "type": "string",
-              "enum": [
-                "DE-9",
-                "DB-25",
-                "RJ-11",
-                "RJ-12",
-                "RJ-45",
-                "USB Type A",
-                "USB Type B",
-                "USB Type C",
-                "USB Mini A",
-                "USB Mini B",
-                "USB Micro A",
-                "USB Micro B",
-                "Other"
-              ]
-            },
-            "value": {
-              "type": "string",
-              "enum": [
-                "de-9",
-                "db-25",
-                "rj-11",
-                "rj-12",
-                "rj-45",
-                "usb-a",
-                "usb-b",
-                "usb-c",
-                "usb-mini-a",
-                "usb-mini-b",
-                "usb-micro-a",
-                "usb-micro-b",
-                "other"
-              ]
-            }
-          }
-        },
-        "description": {
-          "title": "Description",
-          "type": "string",
-          "maxLength": 200
-        },
-        "created": {
-          "title": "Created",
-          "type": "string",
-          "format": "date",
-          "readOnly": true
-        },
-        "last_updated": {
-          "title": "Last updated",
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        }
-      }
-    },
-    "WritableConsolePortTemplate": {
-      "required": [
-        "device_type",
-        "name"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Id",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "display": {
-          "title": "Display",
-          "type": "string",
-          "readOnly": true
-        },
-        "device_type": {
-          "title": "Device type",
-          "type": "integer"
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 64,
-          "minLength": 1
-        },
-        "label": {
-          "title": "Label",
-          "description": "Physical label",
-          "type": "string",
-          "maxLength": 64
-        },
-        "type": {
-          "title": "Type",
-          "type": "string",
-          "enum": [
-            "de-9",
-            "db-25",
-            "rj-11",
-            "rj-12",
-            "rj-45",
-            "usb-a",
-            "usb-b",
-            "usb-c",
-            "usb-mini-a",
-            "usb-mini-b",
-            "usb-micro-a",
-            "usb-micro-b",
-            "other"
-          ]
-        },
-        "description": {
-          "title": "Description",
-          "type": "string",
-          "maxLength": 200
-        },
-        "created": {
-          "title": "Created",
-          "type": "string",
-          "format": "date",
-          "readOnly": true
-        },
-        "last_updated": {
-          "title": "Last updated",
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        }
-      }
-    },
     "WritableConsolePort": {
       "required": [
         "device",
@@ -50147,6 +50663,7 @@
             "usb-mini-b",
             "usb-micro-a",
             "usb-micro-b",
+            "usb-micro-ab",
             "other"
           ]
         },
@@ -50305,6 +50822,7 @@
                 "USB Mini B",
                 "USB Micro A",
                 "USB Micro B",
+                "USB Micro AB",
                 "Other"
               ]
             },
@@ -50323,6 +50841,7 @@
                 "usb-mini-b",
                 "usb-micro-a",
                 "usb-micro-b",
+                "usb-micro-ab",
                 "other"
               ]
             }
@@ -50402,6 +50921,7 @@
             "usb-mini-b",
             "usb-micro-a",
             "usb-micro-b",
+            "usb-micro-ab",
             "other"
           ]
         },
@@ -50485,6 +51005,7 @@
                 "USB Mini B",
                 "USB Micro A",
                 "USB Micro B",
+                "USB Micro AB",
                 "Other"
               ]
             },
@@ -50503,6 +51024,7 @@
                 "usb-mini-b",
                 "usb-micro-a",
                 "usb-micro-b",
+                "usb-micro-ab",
                 "other"
               ]
             }
@@ -50678,6 +51200,7 @@
             "usb-mini-b",
             "usb-micro-a",
             "usb-micro-b",
+            "usb-micro-ab",
             "other"
           ]
         },
@@ -51159,11 +51682,6 @@
           "maxLength": 100,
           "minLength": 1
         },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
-        },
         "part_number": {
           "title": "Part number",
           "description": "Discrete part number (optional)",
@@ -51293,11 +51811,6 @@
           "maxLength": 100,
           "minLength": 1
         },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
-        },
         "part_number": {
           "title": "Part number",
           "description": "Discrete part number (optional)",
@@ -51399,11 +51912,6 @@
           "type": "string",
           "maxLength": 64,
           "x-nullable": true
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
         },
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
@@ -51610,11 +52118,6 @@
           "type": "string",
           "maxLength": 64,
           "x-nullable": true
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
         },
         "device_type": {
           "title": "Device type",
@@ -51903,6 +52406,11 @@
                 "ST",
                 "CS",
                 "SN",
+                "SMA 905",
+                "SMA 906",
+                "URM-P2",
+                "URM-P4",
+                "URM-P8",
                 "Splice"
               ]
             },
@@ -51939,10 +52447,21 @@
                 "st",
                 "cs",
                 "sn",
+                "sma-905",
+                "sma-906",
+                "urm-p2",
+                "urm-p4",
+                "urm-p8",
                 "splice"
               ]
             }
           }
+        },
+        "color": {
+          "title": "Color",
+          "type": "string",
+          "pattern": "^[0-9a-f]{6}$",
+          "maxLength": 6
         },
         "rear_port": {
           "$ref": "#/definitions/NestedRearPortTemplate"
@@ -52048,8 +52567,19 @@
             "st",
             "cs",
             "sn",
+            "sma-905",
+            "sma-906",
+            "urm-p2",
+            "urm-p4",
+            "urm-p8",
             "splice"
           ]
+        },
+        "color": {
+          "title": "Color",
+          "type": "string",
+          "pattern": "^[0-9a-f]{6}$",
+          "maxLength": 6
         },
         "rear_port": {
           "title": "Rear port",
@@ -52198,6 +52728,11 @@
                 "ST",
                 "CS",
                 "SN",
+                "SMA 905",
+                "SMA 906",
+                "URM-P2",
+                "URM-P4",
+                "URM-P8",
                 "Splice"
               ]
             },
@@ -52234,10 +52769,21 @@
                 "st",
                 "cs",
                 "sn",
+                "sma-905",
+                "sma-906",
+                "urm-p2",
+                "urm-p4",
+                "urm-p8",
                 "splice"
               ]
             }
           }
+        },
+        "color": {
+          "title": "Color",
+          "type": "string",
+          "pattern": "^[0-9a-f]{6}$",
+          "maxLength": 6
         },
         "rear_port": {
           "$ref": "#/definitions/FrontPortRearPort"
@@ -52382,8 +52928,19 @@
             "st",
             "cs",
             "sn",
+            "sma-905",
+            "sma-906",
+            "urm-p2",
+            "urm-p4",
+            "urm-p8",
             "splice"
           ]
+        },
+        "color": {
+          "title": "Color",
+          "type": "string",
+          "pattern": "^[0-9a-f]{6}$",
+          "maxLength": 6
         },
         "rear_port": {
           "title": "Rear port",
@@ -52449,68 +53006,6 @@
         },
         "_occupied": {
           "title": "occupied",
-          "type": "boolean",
-          "readOnly": true
-        }
-      }
-    },
-    "NestedInterface": {
-      "required": [
-        "name"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Id",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "display": {
-          "title": "Display",
-          "type": "string",
-          "readOnly": true
-        },
-        "device": {
-          "$ref": "#/definitions/NestedDevice"
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 64,
-          "minLength": 1
-        },
-        "cable": {
-          "title": "Cable",
-          "type": "integer",
-          "x-nullable": true
-        },
-        "_occupied": {
-          "title": "occupied",
-          "type": "string",
-          "readOnly": true
-        }
-      }
-    },
-    "InterfaceConnection": {
-      "required": [
-        "interface_b"
-      ],
-      "type": "object",
-      "properties": {
-        "interface_a": {
-          "$ref": "#/definitions/NestedInterface"
-        },
-        "interface_b": {
-          "$ref": "#/definitions/NestedInterface"
-        },
-        "connected_endpoint_reachable": {
-          "title": "Connected endpoint reachable",
           "type": "boolean",
           "readOnly": true
         }
@@ -52630,6 +53125,7 @@
                 "E1 (2.048 Mbps)",
                 "T3 (45 Mbps)",
                 "E3 (34 Mbps)",
+                "xDSL",
                 "Cisco StackWise",
                 "Cisco StackWise Plus",
                 "Cisco FlexStack",
@@ -52709,6 +53205,7 @@
                 "e1",
                 "t3",
                 "e3",
+                "xdsl",
                 "cisco-stackwise",
                 "cisco-stackwise-plus",
                 "cisco-flexstack",
@@ -52854,6 +53351,7 @@
             "e1",
             "t3",
             "e3",
+            "xdsl",
             "cisco-stackwise",
             "cisco-stackwise-plus",
             "cisco-flexstack",
@@ -52889,6 +53387,50 @@
         }
       }
     },
+    "NestedInterface": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "device": {
+          "$ref": "#/definitions/NestedDevice"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 64,
+          "minLength": 1
+        },
+        "cable": {
+          "title": "Cable",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "_occupied": {
+          "title": "occupied",
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "x-nullable": true
+    },
     "NestedVLAN": {
       "required": [
         "vid",
@@ -52923,11 +53465,6 @@
           "type": "string",
           "maxLength": 64,
           "minLength": 1
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
         }
       },
       "x-nullable": true
@@ -53046,6 +53583,7 @@
                 "E1 (2.048 Mbps)",
                 "T3 (45 Mbps)",
                 "E3 (34 Mbps)",
+                "xDSL",
                 "Cisco StackWise",
                 "Cisco StackWise Plus",
                 "Cisco FlexStack",
@@ -53125,6 +53663,7 @@
                 "e1",
                 "t3",
                 "e3",
+                "xdsl",
                 "cisco-stackwise",
                 "cisco-stackwise-plus",
                 "cisco-flexstack",
@@ -53393,6 +53932,7 @@
             "e1",
             "t3",
             "e3",
+            "xdsl",
             "cisco-stackwise",
             "cisco-stackwise-plus",
             "cisco-flexstack",
@@ -54168,334 +54708,6 @@
         "virtualmachine_count": {
           "title": "Virtualmachine count",
           "type": "integer",
-          "readOnly": true
-        }
-      }
-    },
-    "PowerPort": {
-      "required": [
-        "device",
-        "name"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Id",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "display": {
-          "title": "Display",
-          "type": "string",
-          "readOnly": true
-        },
-        "device": {
-          "$ref": "#/definitions/NestedDevice"
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 64,
-          "minLength": 1
-        },
-        "label": {
-          "title": "Label",
-          "description": "Physical label",
-          "type": "string",
-          "maxLength": 64
-        },
-        "type": {
-          "title": "Type",
-          "required": [
-            "label",
-            "value"
-          ],
-          "type": "object",
-          "properties": {
-            "label": {
-              "type": "string",
-              "enum": [
-                "C6",
-                "C8",
-                "C14",
-                "C16",
-                "C20",
-                "C22",
-                "P+N+E 4H",
-                "P+N+E 6H",
-                "P+N+E 9H",
-                "2P+E 4H",
-                "2P+E 6H",
-                "2P+E 9H",
-                "3P+E 4H",
-                "3P+E 6H",
-                "3P+E 9H",
-                "3P+N+E 4H",
-                "3P+N+E 6H",
-                "3P+N+E 9H",
-                "NEMA 1-15P",
-                "NEMA 5-15P",
-                "NEMA 5-20P",
-                "NEMA 5-30P",
-                "NEMA 5-50P",
-                "NEMA 6-15P",
-                "NEMA 6-20P",
-                "NEMA 6-30P",
-                "NEMA 6-50P",
-                "NEMA 10-30P",
-                "NEMA 10-50P",
-                "NEMA 14-20P",
-                "NEMA 14-30P",
-                "NEMA 14-50P",
-                "NEMA 14-60P",
-                "NEMA 15-15P",
-                "NEMA 15-20P",
-                "NEMA 15-30P",
-                "NEMA 15-50P",
-                "NEMA 15-60P",
-                "NEMA L1-15P",
-                "NEMA L5-15P",
-                "NEMA L5-20P",
-                "NEMA L5-30P",
-                "NEMA L5-50P",
-                "NEMA L6-15P",
-                "NEMA L6-20P",
-                "NEMA L6-30P",
-                "NEMA L6-50P",
-                "NEMA L10-30P",
-                "NEMA L14-20P",
-                "NEMA L14-30P",
-                "NEMA L14-50P",
-                "NEMA L14-60P",
-                "NEMA L15-20P",
-                "NEMA L15-30P",
-                "NEMA L15-50P",
-                "NEMA L15-60P",
-                "NEMA L21-20P",
-                "NEMA L21-30P",
-                "CS6361C",
-                "CS6365C",
-                "CS8165C",
-                "CS8265C",
-                "CS8365C",
-                "CS8465C",
-                "ITA Type E (CEE 7/5)",
-                "ITA Type F (CEE 7/4)",
-                "ITA Type E/F (CEE 7/7)",
-                "ITA Type G (BS 1363)",
-                "ITA Type H",
-                "ITA Type I",
-                "ITA Type J",
-                "ITA Type K",
-                "ITA Type L (CEI 23-50)",
-                "ITA Type M (BS 546)",
-                "ITA Type N",
-                "ITA Type O",
-                "USB Type A",
-                "USB Type B",
-                "USB Type C",
-                "USB Mini A",
-                "USB Mini B",
-                "USB Micro A",
-                "USB Micro B",
-                "USB 3.0 Type B",
-                "USB 3.0 Micro B",
-                "DC Terminal",
-                "Saf-D-Grid",
-                "Hardwired"
-              ]
-            },
-            "value": {
-              "type": "string",
-              "enum": [
-                "iec-60320-c6",
-                "iec-60320-c8",
-                "iec-60320-c14",
-                "iec-60320-c16",
-                "iec-60320-c20",
-                "iec-60320-c22",
-                "iec-60309-p-n-e-4h",
-                "iec-60309-p-n-e-6h",
-                "iec-60309-p-n-e-9h",
-                "iec-60309-2p-e-4h",
-                "iec-60309-2p-e-6h",
-                "iec-60309-2p-e-9h",
-                "iec-60309-3p-e-4h",
-                "iec-60309-3p-e-6h",
-                "iec-60309-3p-e-9h",
-                "iec-60309-3p-n-e-4h",
-                "iec-60309-3p-n-e-6h",
-                "iec-60309-3p-n-e-9h",
-                "nema-1-15p",
-                "nema-5-15p",
-                "nema-5-20p",
-                "nema-5-30p",
-                "nema-5-50p",
-                "nema-6-15p",
-                "nema-6-20p",
-                "nema-6-30p",
-                "nema-6-50p",
-                "nema-10-30p",
-                "nema-10-50p",
-                "nema-14-20p",
-                "nema-14-30p",
-                "nema-14-50p",
-                "nema-14-60p",
-                "nema-15-15p",
-                "nema-15-20p",
-                "nema-15-30p",
-                "nema-15-50p",
-                "nema-15-60p",
-                "nema-l1-15p",
-                "nema-l5-15p",
-                "nema-l5-20p",
-                "nema-l5-30p",
-                "nema-l5-50p",
-                "nema-l6-15p",
-                "nema-l6-20p",
-                "nema-l6-30p",
-                "nema-l6-50p",
-                "nema-l10-30p",
-                "nema-l14-20p",
-                "nema-l14-30p",
-                "nema-l14-50p",
-                "nema-l14-60p",
-                "nema-l15-20p",
-                "nema-l15-30p",
-                "nema-l15-50p",
-                "nema-l15-60p",
-                "nema-l21-20p",
-                "nema-l21-30p",
-                "cs6361c",
-                "cs6365c",
-                "cs8165c",
-                "cs8265c",
-                "cs8365c",
-                "cs8465c",
-                "ita-e",
-                "ita-f",
-                "ita-ef",
-                "ita-g",
-                "ita-h",
-                "ita-i",
-                "ita-j",
-                "ita-k",
-                "ita-l",
-                "ita-m",
-                "ita-n",
-                "ita-o",
-                "usb-a",
-                "usb-b",
-                "usb-c",
-                "usb-mini-a",
-                "usb-mini-b",
-                "usb-micro-a",
-                "usb-micro-b",
-                "usb-3-b",
-                "usb-3-micro-b",
-                "dc-terminal",
-                "saf-d-grid",
-                "hardwired"
-              ]
-            }
-          }
-        },
-        "maximum_draw": {
-          "title": "Maximum draw",
-          "description": "Maximum power draw (watts)",
-          "type": "integer",
-          "maximum": 32767,
-          "minimum": 1,
-          "x-nullable": true
-        },
-        "allocated_draw": {
-          "title": "Allocated draw",
-          "description": "Allocated power draw (watts)",
-          "type": "integer",
-          "maximum": 32767,
-          "minimum": 1,
-          "x-nullable": true
-        },
-        "description": {
-          "title": "Description",
-          "type": "string",
-          "maxLength": 200
-        },
-        "mark_connected": {
-          "title": "Mark connected",
-          "description": "Treat as if a cable is connected",
-          "type": "boolean"
-        },
-        "cable": {
-          "$ref": "#/definitions/NestedCable"
-        },
-        "cable_peer": {
-          "title": "Cable peer",
-          "description": "\nReturn the appropriate serializer for the cable termination model.\n",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string",
-            "x-nullable": true
-          },
-          "readOnly": true
-        },
-        "cable_peer_type": {
-          "title": "Cable peer type",
-          "type": "string",
-          "readOnly": true
-        },
-        "connected_endpoint": {
-          "title": "Connected endpoint",
-          "description": "\nReturn the appropriate serializer for the type of connected object.\n",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string",
-            "x-nullable": true
-          },
-          "readOnly": true
-        },
-        "connected_endpoint_type": {
-          "title": "Connected endpoint type",
-          "type": "string",
-          "readOnly": true
-        },
-        "connected_endpoint_reachable": {
-          "title": "Connected endpoint reachable",
-          "type": "boolean",
-          "readOnly": true
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/NestedTag"
-          }
-        },
-        "custom_fields": {
-          "title": "Custom fields",
-          "type": "object",
-          "default": {}
-        },
-        "created": {
-          "title": "Created",
-          "type": "string",
-          "format": "date",
-          "readOnly": true
-        },
-        "last_updated": {
-          "title": "Last updated",
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "_occupied": {
-          "title": "occupied",
-          "type": "boolean",
           "readOnly": true
         }
       }
@@ -56226,6 +56438,7 @@
                 "CS8265C",
                 "CS8365C",
                 "CS8465C",
+                "ITA Type C (CEE 7/16)",
                 "ITA Type E (CEE 7/5)",
                 "ITA Type F (CEE 7/4)",
                 "ITA Type E/F (CEE 7/7)",
@@ -56245,6 +56458,7 @@
                 "USB Mini B",
                 "USB Micro A",
                 "USB Micro B",
+                "USB Micro AB",
                 "USB 3.0 Type B",
                 "USB 3.0 Micro B",
                 "DC Terminal",
@@ -56319,6 +56533,7 @@
                 "cs8265c",
                 "cs8365c",
                 "cs8465c",
+                "ita-c",
                 "ita-e",
                 "ita-f",
                 "ita-ef",
@@ -56338,6 +56553,7 @@
                 "usb-mini-b",
                 "usb-micro-a",
                 "usb-micro-b",
+                "usb-micro-ab",
                 "usb-3-b",
                 "usb-3-micro-b",
                 "dc-terminal",
@@ -56489,6 +56705,7 @@
             "cs8265c",
             "cs8365c",
             "cs8465c",
+            "ita-c",
             "ita-e",
             "ita-f",
             "ita-ef",
@@ -56508,6 +56725,7 @@
             "usb-mini-b",
             "usb-micro-a",
             "usb-micro-b",
+            "usb-micro-ab",
             "usb-3-b",
             "usb-3-micro-b",
             "dc-terminal",
@@ -56546,6 +56764,338 @@
           "title": "Last updated",
           "type": "string",
           "format": "date-time",
+          "readOnly": true
+        }
+      }
+    },
+    "PowerPort": {
+      "required": [
+        "device",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "device": {
+          "$ref": "#/definitions/NestedDevice"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "maxLength": 64,
+          "minLength": 1
+        },
+        "label": {
+          "title": "Label",
+          "description": "Physical label",
+          "type": "string",
+          "maxLength": 64
+        },
+        "type": {
+          "title": "Type",
+          "required": [
+            "label",
+            "value"
+          ],
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "enum": [
+                "C6",
+                "C8",
+                "C14",
+                "C16",
+                "C20",
+                "C22",
+                "P+N+E 4H",
+                "P+N+E 6H",
+                "P+N+E 9H",
+                "2P+E 4H",
+                "2P+E 6H",
+                "2P+E 9H",
+                "3P+E 4H",
+                "3P+E 6H",
+                "3P+E 9H",
+                "3P+N+E 4H",
+                "3P+N+E 6H",
+                "3P+N+E 9H",
+                "NEMA 1-15P",
+                "NEMA 5-15P",
+                "NEMA 5-20P",
+                "NEMA 5-30P",
+                "NEMA 5-50P",
+                "NEMA 6-15P",
+                "NEMA 6-20P",
+                "NEMA 6-30P",
+                "NEMA 6-50P",
+                "NEMA 10-30P",
+                "NEMA 10-50P",
+                "NEMA 14-20P",
+                "NEMA 14-30P",
+                "NEMA 14-50P",
+                "NEMA 14-60P",
+                "NEMA 15-15P",
+                "NEMA 15-20P",
+                "NEMA 15-30P",
+                "NEMA 15-50P",
+                "NEMA 15-60P",
+                "NEMA L1-15P",
+                "NEMA L5-15P",
+                "NEMA L5-20P",
+                "NEMA L5-30P",
+                "NEMA L5-50P",
+                "NEMA L6-15P",
+                "NEMA L6-20P",
+                "NEMA L6-30P",
+                "NEMA L6-50P",
+                "NEMA L10-30P",
+                "NEMA L14-20P",
+                "NEMA L14-30P",
+                "NEMA L14-50P",
+                "NEMA L14-60P",
+                "NEMA L15-20P",
+                "NEMA L15-30P",
+                "NEMA L15-50P",
+                "NEMA L15-60P",
+                "NEMA L21-20P",
+                "NEMA L21-30P",
+                "CS6361C",
+                "CS6365C",
+                "CS8165C",
+                "CS8265C",
+                "CS8365C",
+                "CS8465C",
+                "ITA Type C (CEE 7/16)",
+                "ITA Type E (CEE 7/5)",
+                "ITA Type F (CEE 7/4)",
+                "ITA Type E/F (CEE 7/7)",
+                "ITA Type G (BS 1363)",
+                "ITA Type H",
+                "ITA Type I",
+                "ITA Type J",
+                "ITA Type K",
+                "ITA Type L (CEI 23-50)",
+                "ITA Type M (BS 546)",
+                "ITA Type N",
+                "ITA Type O",
+                "USB Type A",
+                "USB Type B",
+                "USB Type C",
+                "USB Mini A",
+                "USB Mini B",
+                "USB Micro A",
+                "USB Micro B",
+                "USB Micro AB",
+                "USB 3.0 Type B",
+                "USB 3.0 Micro B",
+                "DC Terminal",
+                "Saf-D-Grid",
+                "Hardwired"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "enum": [
+                "iec-60320-c6",
+                "iec-60320-c8",
+                "iec-60320-c14",
+                "iec-60320-c16",
+                "iec-60320-c20",
+                "iec-60320-c22",
+                "iec-60309-p-n-e-4h",
+                "iec-60309-p-n-e-6h",
+                "iec-60309-p-n-e-9h",
+                "iec-60309-2p-e-4h",
+                "iec-60309-2p-e-6h",
+                "iec-60309-2p-e-9h",
+                "iec-60309-3p-e-4h",
+                "iec-60309-3p-e-6h",
+                "iec-60309-3p-e-9h",
+                "iec-60309-3p-n-e-4h",
+                "iec-60309-3p-n-e-6h",
+                "iec-60309-3p-n-e-9h",
+                "nema-1-15p",
+                "nema-5-15p",
+                "nema-5-20p",
+                "nema-5-30p",
+                "nema-5-50p",
+                "nema-6-15p",
+                "nema-6-20p",
+                "nema-6-30p",
+                "nema-6-50p",
+                "nema-10-30p",
+                "nema-10-50p",
+                "nema-14-20p",
+                "nema-14-30p",
+                "nema-14-50p",
+                "nema-14-60p",
+                "nema-15-15p",
+                "nema-15-20p",
+                "nema-15-30p",
+                "nema-15-50p",
+                "nema-15-60p",
+                "nema-l1-15p",
+                "nema-l5-15p",
+                "nema-l5-20p",
+                "nema-l5-30p",
+                "nema-l5-50p",
+                "nema-l6-15p",
+                "nema-l6-20p",
+                "nema-l6-30p",
+                "nema-l6-50p",
+                "nema-l10-30p",
+                "nema-l14-20p",
+                "nema-l14-30p",
+                "nema-l14-50p",
+                "nema-l14-60p",
+                "nema-l15-20p",
+                "nema-l15-30p",
+                "nema-l15-50p",
+                "nema-l15-60p",
+                "nema-l21-20p",
+                "nema-l21-30p",
+                "cs6361c",
+                "cs6365c",
+                "cs8165c",
+                "cs8265c",
+                "cs8365c",
+                "cs8465c",
+                "ita-c",
+                "ita-e",
+                "ita-f",
+                "ita-ef",
+                "ita-g",
+                "ita-h",
+                "ita-i",
+                "ita-j",
+                "ita-k",
+                "ita-l",
+                "ita-m",
+                "ita-n",
+                "ita-o",
+                "usb-a",
+                "usb-b",
+                "usb-c",
+                "usb-mini-a",
+                "usb-mini-b",
+                "usb-micro-a",
+                "usb-micro-b",
+                "usb-micro-ab",
+                "usb-3-b",
+                "usb-3-micro-b",
+                "dc-terminal",
+                "saf-d-grid",
+                "hardwired"
+              ]
+            }
+          }
+        },
+        "maximum_draw": {
+          "title": "Maximum draw",
+          "description": "Maximum power draw (watts)",
+          "type": "integer",
+          "maximum": 32767,
+          "minimum": 1,
+          "x-nullable": true
+        },
+        "allocated_draw": {
+          "title": "Allocated draw",
+          "description": "Allocated power draw (watts)",
+          "type": "integer",
+          "maximum": 32767,
+          "minimum": 1,
+          "x-nullable": true
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
+        },
+        "mark_connected": {
+          "title": "Mark connected",
+          "description": "Treat as if a cable is connected",
+          "type": "boolean"
+        },
+        "cable": {
+          "$ref": "#/definitions/NestedCable"
+        },
+        "cable_peer": {
+          "title": "Cable peer",
+          "description": "\nReturn the appropriate serializer for the cable termination model.\n",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "x-nullable": true
+          },
+          "readOnly": true
+        },
+        "cable_peer_type": {
+          "title": "Cable peer type",
+          "type": "string",
+          "readOnly": true
+        },
+        "connected_endpoint": {
+          "title": "Connected endpoint",
+          "description": "\nReturn the appropriate serializer for the type of connected object.\n",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "x-nullable": true
+          },
+          "readOnly": true
+        },
+        "connected_endpoint_type": {
+          "title": "Connected endpoint type",
+          "type": "string",
+          "readOnly": true
+        },
+        "connected_endpoint_reachable": {
+          "title": "Connected endpoint reachable",
+          "type": "boolean",
+          "readOnly": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NestedTag"
+          }
+        },
+        "custom_fields": {
+          "title": "Custom fields",
+          "type": "object",
+          "default": {}
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "_occupied": {
+          "title": "occupied",
+          "type": "boolean",
           "readOnly": true
         }
       }
@@ -56658,6 +57208,7 @@
             "cs8265c",
             "cs8365c",
             "cs8465c",
+            "ita-c",
             "ita-e",
             "ita-f",
             "ita-ef",
@@ -56677,6 +57228,7 @@
             "usb-mini-b",
             "usb-micro-a",
             "usb-micro-b",
+            "usb-micro-ab",
             "usb-3-b",
             "usb-3-micro-b",
             "dc-terminal",
@@ -57104,11 +57656,6 @@
           "maxLength": 50,
           "x-nullable": true
         },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
-        },
         "site": {
           "$ref": "#/definitions/NestedSite"
         },
@@ -57347,11 +57894,6 @@
           "type": "string",
           "maxLength": 50,
           "x-nullable": true
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
         },
         "site": {
           "title": "Site",
@@ -57627,6 +58169,11 @@
                 "ST",
                 "CS",
                 "SN",
+                "SMA 905",
+                "SMA 906",
+                "URM-P2",
+                "URM-P4",
+                "URM-P8",
                 "Splice"
               ]
             },
@@ -57663,10 +58210,21 @@
                 "st",
                 "cs",
                 "sn",
+                "sma-905",
+                "sma-906",
+                "urm-p2",
+                "urm-p4",
+                "urm-p8",
                 "splice"
               ]
             }
           }
+        },
+        "color": {
+          "title": "Color",
+          "type": "string",
+          "pattern": "^[0-9a-f]{6}$",
+          "maxLength": 6
         },
         "positions": {
           "title": "Positions",
@@ -57767,8 +58325,19 @@
             "st",
             "cs",
             "sn",
+            "sma-905",
+            "sma-906",
+            "urm-p2",
+            "urm-p4",
+            "urm-p8",
             "splice"
           ]
+        },
+        "color": {
+          "title": "Color",
+          "type": "string",
+          "pattern": "^[0-9a-f]{6}$",
+          "maxLength": 6
         },
         "positions": {
           "title": "Positions",
@@ -57875,6 +58444,11 @@
                 "ST",
                 "CS",
                 "SN",
+                "SMA 905",
+                "SMA 906",
+                "URM-P2",
+                "URM-P4",
+                "URM-P8",
                 "Splice"
               ]
             },
@@ -57911,10 +58485,21 @@
                 "st",
                 "cs",
                 "sn",
+                "sma-905",
+                "sma-906",
+                "urm-p2",
+                "urm-p4",
+                "urm-p8",
                 "splice"
               ]
             }
           }
+        },
+        "color": {
+          "title": "Color",
+          "type": "string",
+          "pattern": "^[0-9a-f]{6}$",
+          "maxLength": 6
         },
         "positions": {
           "title": "Positions",
@@ -58054,8 +58639,19 @@
             "st",
             "cs",
             "sn",
+            "sma-905",
+            "sma-906",
+            "urm-p2",
+            "urm-p4",
+            "urm-p8",
             "splice"
           ]
+        },
+        "color": {
+          "title": "Color",
+          "type": "string",
+          "pattern": "^[0-9a-f]{6}$",
+          "maxLength": 6
         },
         "positions": {
           "title": "Positions",
@@ -58633,14 +59229,14 @@
         "latitude": {
           "title": "Latitude",
           "description": "GPS coordinate (latitude)",
-          "type": "string",
+          "type": "number",
           "format": "decimal",
           "x-nullable": true
         },
         "longitude": {
           "title": "Longitude",
           "description": "GPS coordinate (longitude)",
-          "type": "string",
+          "type": "number",
           "format": "decimal",
           "x-nullable": true
         },
@@ -58818,14 +59414,14 @@
         "latitude": {
           "title": "Latitude",
           "description": "GPS coordinate (latitude)",
-          "type": "string",
+          "type": "number",
           "format": "decimal",
           "x-nullable": true
         },
         "longitude": {
           "title": "Longitude",
           "description": "GPS coordinate (longitude)",
-          "type": "string",
+          "type": "number",
           "format": "decimal",
           "x-nullable": true
         },
@@ -59423,12 +60019,6 @@
           "type": "string",
           "maxLength": 100,
           "minLength": 1
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true,
-          "minLength": 1
         }
       }
     },
@@ -59784,13 +60374,19 @@
           "description": "The class of the first link in a group will be used for the dropdown button",
           "type": "string",
           "enum": [
-            "default",
-            "primary",
-            "success",
-            "info",
-            "warning",
-            "danger",
-            "link"
+            "outline-dark",
+            "ghost-dark",
+            "blue",
+            "indigo",
+            "purple",
+            "pink",
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "teal",
+            "cyan",
+            "secondary"
           ]
         },
         "new_window": {
@@ -59841,7 +60437,7 @@
         },
         "template_code": {
           "title": "Template code",
-          "description": "The list of objects being exported is passed as a context variable named <code>queryset</code>.",
+          "description": "Jinja2 template code. The list of objects being exported is passed as a context variable named <code>queryset</code>.",
           "type": "string",
           "minLength": 1
         },
@@ -60436,7 +61032,7 @@
         },
         "additional_headers": {
           "title": "Additional headers",
-          "description": "User-supplied HTTP headers to be sent with the request in addition to the HTTP content type. Headers should be defined in the format <code>Name: Value</code>. Jinja2 template processing is support with the same context as the request body (below).",
+          "description": "User-supplied HTTP headers to be sent with the request in addition to the HTTP content type. Headers should be defined in the format <code>Name: Value</code>. Jinja2 template processing is supported with the same context as the request body (below).",
           "type": "string"
         },
         "body_template": {
@@ -60713,11 +61309,6 @@
           "type": "string",
           "maxLength": 21,
           "x-nullable": true
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
         },
         "prefix_count": {
           "title": "Prefix count",
@@ -61108,6 +61699,262 @@
       },
       "x-nullable": true
     },
+    "IPRange": {
+      "required": [
+        "start_address",
+        "end_address"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "family": {
+          "title": "Family",
+          "required": [
+            "label",
+            "value"
+          ],
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "enum": [
+                "IPv4",
+                "IPv6"
+              ]
+            },
+            "value": {
+              "type": "integer",
+              "enum": [
+                4,
+                6
+              ]
+            }
+          },
+          "readOnly": true
+        },
+        "start_address": {
+          "title": "Start address",
+          "description": "IPv4 or IPv6 address (with mask)",
+          "type": "string"
+        },
+        "end_address": {
+          "title": "End address",
+          "description": "IPv4 or IPv6 address (with mask)",
+          "type": "string"
+        },
+        "size": {
+          "title": "Size",
+          "type": "integer",
+          "readOnly": true
+        },
+        "vrf": {
+          "$ref": "#/definitions/NestedVRF"
+        },
+        "tenant": {
+          "$ref": "#/definitions/NestedTenant"
+        },
+        "status": {
+          "title": "Status",
+          "required": [
+            "label",
+            "value"
+          ],
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "enum": [
+                "Active",
+                "Reserved",
+                "Deprecated"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "enum": [
+                "active",
+                "reserved",
+                "deprecated"
+              ]
+            }
+          }
+        },
+        "role": {
+          "$ref": "#/definitions/NestedRole"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NestedTag"
+          }
+        },
+        "custom_fields": {
+          "title": "Custom fields",
+          "type": "object",
+          "default": {}
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "children": {
+          "title": "Children",
+          "type": "integer",
+          "readOnly": true
+        }
+      }
+    },
+    "WritableIPRange": {
+      "required": [
+        "start_address",
+        "end_address"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "family": {
+          "title": "Family",
+          "type": "string",
+          "readOnly": true
+        },
+        "start_address": {
+          "title": "Start address",
+          "description": "IPv4 or IPv6 address (with mask)",
+          "type": "string"
+        },
+        "end_address": {
+          "title": "End address",
+          "description": "IPv4 or IPv6 address (with mask)",
+          "type": "string"
+        },
+        "size": {
+          "title": "Size",
+          "type": "integer",
+          "readOnly": true
+        },
+        "vrf": {
+          "title": "VRF",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "tenant": {
+          "title": "Tenant",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "status": {
+          "title": "Status",
+          "description": "Operational status of this range",
+          "type": "string",
+          "enum": [
+            "active",
+            "reserved",
+            "deprecated"
+          ]
+        },
+        "role": {
+          "title": "Role",
+          "description": "The primary function of this range",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NestedTag"
+          }
+        },
+        "custom_fields": {
+          "title": "Custom fields",
+          "type": "object",
+          "default": {}
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date",
+          "readOnly": true
+        },
+        "last_updated": {
+          "title": "Last updated",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "children": {
+          "title": "Children",
+          "type": "integer",
+          "readOnly": true
+        }
+      }
+    },
+    "AvailableIP": {
+      "type": "object",
+      "properties": {
+        "family": {
+          "title": "Family",
+          "type": "integer",
+          "readOnly": true
+        },
+        "address": {
+          "title": "Address",
+          "type": "string",
+          "readOnly": true,
+          "minLength": 1
+        },
+        "vrf": {
+          "$ref": "#/definitions/NestedVRF"
+        }
+      }
+    },
     "Prefix": {
       "required": [
         "prefix"
@@ -61206,6 +62053,11 @@
         "is_pool": {
           "title": "Is a pool",
           "description": "All IP addresses within this prefix are considered usable",
+          "type": "boolean"
+        },
+        "mark_utilized": {
+          "title": "Mark utilized",
+          "description": "Treat as 100% utilized",
           "type": "boolean"
         },
         "description": {
@@ -61322,6 +62174,11 @@
           "description": "All IP addresses within this prefix are considered usable",
           "type": "boolean"
         },
+        "mark_utilized": {
+          "title": "Mark utilized",
+          "description": "Treat as 100% utilized",
+          "type": "boolean"
+        },
         "description": {
           "title": "Description",
           "type": "string",
@@ -61359,25 +62216,6 @@
           "title": "depth",
           "type": "integer",
           "readOnly": true
-        }
-      }
-    },
-    "AvailableIP": {
-      "type": "object",
-      "properties": {
-        "family": {
-          "title": "Family",
-          "type": "integer",
-          "readOnly": true
-        },
-        "address": {
-          "title": "Address",
-          "type": "string",
-          "readOnly": true,
-          "minLength": 1
-        },
-        "vrf": {
-          "$ref": "#/definitions/NestedVRF"
         }
       }
     },
@@ -62127,11 +62965,6 @@
             "$ref": "#/definitions/NestedTag"
           }
         },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
-        },
         "custom_fields": {
           "title": "Custom fields",
           "type": "object",
@@ -62230,11 +63063,6 @@
           "items": {
             "$ref": "#/definitions/NestedTag"
           }
-        },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -62359,11 +63187,6 @@
             "$ref": "#/definitions/NestedTag"
           }
         },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
-        },
         "custom_fields": {
           "title": "Custom fields",
           "type": "object",
@@ -62463,11 +63286,6 @@
             "$ref": "#/definitions/NestedTag"
           }
         },
-        "display_name": {
-          "title": "Display name",
-          "type": "string",
-          "readOnly": true
-        },
         "custom_fields": {
           "title": "Custom fields",
           "type": "object",
@@ -62493,293 +63311,6 @@
         "prefix_count": {
           "title": "Prefix count",
           "type": "integer",
-          "readOnly": true
-        }
-      }
-    },
-    "SecretRole": {
-      "required": [
-        "name",
-        "slug"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Id",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "display": {
-          "title": "Display",
-          "type": "string",
-          "readOnly": true
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 100,
-          "minLength": 1
-        },
-        "slug": {
-          "title": "Slug",
-          "type": "string",
-          "format": "slug",
-          "pattern": "^[-a-zA-Z0-9_]+$",
-          "maxLength": 100,
-          "minLength": 1
-        },
-        "description": {
-          "title": "Description",
-          "type": "string",
-          "maxLength": 200
-        },
-        "custom_fields": {
-          "title": "Custom fields",
-          "type": "object",
-          "default": {}
-        },
-        "created": {
-          "title": "Created",
-          "type": "string",
-          "format": "date",
-          "readOnly": true
-        },
-        "last_updated": {
-          "title": "Last updated",
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "secret_count": {
-          "title": "Secret count",
-          "type": "integer",
-          "readOnly": true
-        }
-      }
-    },
-    "NestedSecretRole": {
-      "required": [
-        "name",
-        "slug"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Id",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "display": {
-          "title": "Display",
-          "type": "string",
-          "readOnly": true
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 100,
-          "minLength": 1
-        },
-        "slug": {
-          "title": "Slug",
-          "type": "string",
-          "format": "slug",
-          "pattern": "^[-a-zA-Z0-9_]+$",
-          "maxLength": 100,
-          "minLength": 1
-        },
-        "secret_count": {
-          "title": "Secret count",
-          "type": "integer",
-          "readOnly": true
-        }
-      }
-    },
-    "Secret": {
-      "required": [
-        "assigned_object_type",
-        "assigned_object_id",
-        "role",
-        "plaintext"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Id",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "display": {
-          "title": "Display",
-          "type": "string",
-          "readOnly": true
-        },
-        "assigned_object_type": {
-          "title": "Assigned object type",
-          "type": "string"
-        },
-        "assigned_object_id": {
-          "title": "Assigned object id",
-          "type": "integer",
-          "maximum": 2147483647,
-          "minimum": 0
-        },
-        "assigned_object": {
-          "title": "Assigned object",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string",
-            "x-nullable": true
-          },
-          "readOnly": true
-        },
-        "role": {
-          "$ref": "#/definitions/NestedSecretRole"
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 100
-        },
-        "plaintext": {
-          "title": "Plaintext",
-          "type": "string",
-          "minLength": 1
-        },
-        "hash": {
-          "title": "Hash",
-          "type": "string",
-          "readOnly": true,
-          "minLength": 1
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/NestedTag"
-          }
-        },
-        "custom_fields": {
-          "title": "Custom fields",
-          "type": "object",
-          "default": {}
-        },
-        "created": {
-          "title": "Created",
-          "type": "string",
-          "format": "date",
-          "readOnly": true
-        },
-        "last_updated": {
-          "title": "Last updated",
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        }
-      }
-    },
-    "WritableSecret": {
-      "required": [
-        "assigned_object_type",
-        "assigned_object_id",
-        "role",
-        "plaintext"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Id",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "display": {
-          "title": "Display",
-          "type": "string",
-          "readOnly": true
-        },
-        "assigned_object_type": {
-          "title": "Assigned object type",
-          "type": "string"
-        },
-        "assigned_object_id": {
-          "title": "Assigned object id",
-          "type": "integer",
-          "maximum": 2147483647,
-          "minimum": 0
-        },
-        "assigned_object": {
-          "title": "Assigned object",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string",
-            "x-nullable": true
-          },
-          "readOnly": true
-        },
-        "role": {
-          "title": "Role",
-          "type": "integer"
-        },
-        "name": {
-          "title": "Name",
-          "type": "string",
-          "maxLength": 100
-        },
-        "plaintext": {
-          "title": "Plaintext",
-          "type": "string",
-          "minLength": 1
-        },
-        "hash": {
-          "title": "Hash",
-          "type": "string",
-          "readOnly": true,
-          "minLength": 1
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/NestedTag"
-          }
-        },
-        "custom_fields": {
-          "title": "Custom fields",
-          "type": "object",
-          "default": {}
-        },
-        "created": {
-          "title": "Created",
-          "type": "string",
-          "format": "date",
-          "readOnly": true
-        },
-        "last_updated": {
-          "title": "Last updated",
-          "type": "string",
-          "format": "date-time",
           "readOnly": true
         }
       }
@@ -63402,6 +63933,117 @@
           "description": "Queryset filter matching the applicable objects of the selected type(s)",
           "type": "string",
           "x-nullable": true
+        }
+      }
+    },
+    "Token": {
+      "required": [
+        "user"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "user": {
+          "$ref": "#/definitions/NestedUser"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "expires": {
+          "title": "Expires",
+          "type": "string",
+          "format": "date-time",
+          "x-nullable": true
+        },
+        "key": {
+          "title": "Key",
+          "type": "string",
+          "maxLength": 40,
+          "minLength": 40
+        },
+        "write_enabled": {
+          "title": "Write enabled",
+          "description": "Permit create/update/delete operations using this key",
+          "type": "boolean"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
+        }
+      }
+    },
+    "WritableToken": {
+      "required": [
+        "user"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "user": {
+          "title": "User",
+          "type": "integer"
+        },
+        "created": {
+          "title": "Created",
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "expires": {
+          "title": "Expires",
+          "type": "string",
+          "format": "date-time",
+          "x-nullable": true
+        },
+        "key": {
+          "title": "Key",
+          "type": "string",
+          "maxLength": 40,
+          "minLength": 40
+        },
+        "write_enabled": {
+          "title": "Write enabled",
+          "description": "Permit create/update/delete operations using this key",
+          "type": "boolean"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "maxLength": 200
         }
       }
     },
@@ -64259,8 +64901,9 @@
         },
         "vcpus": {
           "title": "VCPUs",
-          "type": "string",
+          "type": "number",
           "format": "decimal",
+          "minimum": 0.01,
           "x-nullable": true
         },
         "memory": {
@@ -64409,8 +65052,9 @@
         },
         "vcpus": {
           "title": "VCPUs",
-          "type": "string",
+          "type": "number",
           "format": "decimal",
+          "minimum": 0.01,
           "x-nullable": true,
           "x-omitempty": false
         },

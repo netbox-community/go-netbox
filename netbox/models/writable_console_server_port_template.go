@@ -74,7 +74,7 @@ type WritableConsoleServerPortTemplate struct {
 	Name *string `json:"name"`
 
 	// Type
-	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b other]
+	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
 	Type string `json:"type,omitempty"`
 
 	// Url
@@ -203,7 +203,7 @@ var writableConsoleServerPortTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -248,6 +248,9 @@ const (
 
 	// WritableConsoleServerPortTemplateTypeUsbDashMicroDashb captures enum value "usb-micro-b"
 	WritableConsoleServerPortTemplateTypeUsbDashMicroDashb string = "usb-micro-b"
+
+	// WritableConsoleServerPortTemplateTypeUsbDashMicroDashAb captures enum value "usb-micro-ab"
+	WritableConsoleServerPortTemplateTypeUsbDashMicroDashAb string = "usb-micro-ab"
 
 	// WritableConsoleServerPortTemplateTypeOther captures enum value "other"
 	WritableConsoleServerPortTemplateTypeOther string = "other"
