@@ -31,7 +31,7 @@ can pass `nil`:
 ```
 
 If you connect to netbox via HTTPS you have to create an HTTPS configured transport:
-```
+```golang
 package main
 
 import (
