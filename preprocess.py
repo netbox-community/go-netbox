@@ -97,7 +97,13 @@ logging.info(f"Added schema for 200 response of /status/ get")
 for prop, prop_spec in data["definitions"]["WritableCluster"]["properties"].items():
     if prop == "site":
         prop_spec["x-omitempty"] = False
-        logging.info(f"set x-nullable = false on WritableCluster.{prop}")
+        logging.info(f"set x-omitempty = false on WritableCluster.{prop}")
+
+# Remove omitempty for description attribute on tags
+for prop, prop_spec in data["definitions"]["Tag"]["properties"].items():
+    if prop == "description":
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on Tag.{prop}")
 
 # Remove maxcap from scope_id attribute in vlangroup
 del data["definitions"]["VLANGroup"]["properties"]["scope_id"]["maximum"]

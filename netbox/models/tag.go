@@ -42,7 +42,7 @@ type Tag struct {
 
 	// Description
 	// Max Length: 200
-	Description string `json:"description,omitempty"`
+	Description string `json:"description"`
 
 	// Display
 	// Read Only: true

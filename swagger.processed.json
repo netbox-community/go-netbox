@@ -60937,7 +60937,8 @@
         "description": {
           "title": "Description",
           "type": "string",
-          "maxLength": 200
+          "maxLength": 200,
+          "x-omitempty": false
         },
         "tagged_items": {
           "title": "Tagged items",
