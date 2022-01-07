@@ -220,6 +220,8 @@ func (m *InventoryItem) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -261,6 +263,8 @@ func (m *InventoryItem) validateManufacturer(formats strfmt.Registry) error {
 		if err := m.Manufacturer.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("manufacturer")
 			}
 			return err
 		}
@@ -324,6 +328,8 @@ func (m *InventoryItem) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -416,6 +422,8 @@ func (m *InventoryItem) contextValidateDevice(ctx context.Context, formats strfm
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -457,6 +465,8 @@ func (m *InventoryItem) contextValidateManufacturer(ctx context.Context, formats
 		if err := m.Manufacturer.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("manufacturer")
 			}
 			return err
 		}
@@ -473,6 +483,8 @@ func (m *InventoryItem) contextValidateTags(ctx context.Context, formats strfmt.
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

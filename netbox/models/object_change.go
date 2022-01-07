@@ -143,6 +143,8 @@ func (m *ObjectChange) validateAction(formats strfmt.Registry) error {
 		if err := m.Action.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("action")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("action")
 			}
 			return err
 		}
@@ -213,6 +215,8 @@ func (m *ObjectChange) validateUser(formats strfmt.Registry) error {
 		if err := m.User.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("user")
 			}
 			return err
 		}
@@ -297,6 +301,8 @@ func (m *ObjectChange) contextValidateAction(ctx context.Context, formats strfmt
 		if err := m.Action.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("action")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("action")
 			}
 			return err
 		}
@@ -388,6 +394,8 @@ func (m *ObjectChange) contextValidateUser(ctx context.Context, formats strfmt.R
 		if err := m.User.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("user")
 			}
 			return err
 		}

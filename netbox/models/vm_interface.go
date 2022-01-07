@@ -211,6 +211,8 @@ func (m *VMInterface) validateMode(formats strfmt.Registry) error {
 		if err := m.Mode.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("mode")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("mode")
 			}
 			return err
 		}
@@ -261,6 +263,8 @@ func (m *VMInterface) validateParent(formats strfmt.Registry) error {
 		if err := m.Parent.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent")
 			}
 			return err
 		}
@@ -287,6 +291,8 @@ func (m *VMInterface) validateTaggedVlans(formats strfmt.Registry) error {
 			if err := m.TaggedVlans[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -311,6 +317,8 @@ func (m *VMInterface) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -330,6 +338,8 @@ func (m *VMInterface) validateUntaggedVlan(formats strfmt.Registry) error {
 		if err := m.UntaggedVlan.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("untagged_vlan")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("untagged_vlan")
 			}
 			return err
 		}
@@ -360,6 +370,8 @@ func (m *VMInterface) validateVirtualMachine(formats strfmt.Registry) error {
 		if err := m.VirtualMachine.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_machine")
 			}
 			return err
 		}
@@ -477,6 +489,8 @@ func (m *VMInterface) contextValidateMode(ctx context.Context, formats strfmt.Re
 		if err := m.Mode.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("mode")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("mode")
 			}
 			return err
 		}
@@ -491,6 +505,8 @@ func (m *VMInterface) contextValidateParent(ctx context.Context, formats strfmt.
 		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent")
 			}
 			return err
 		}
@@ -507,6 +523,8 @@ func (m *VMInterface) contextValidateTaggedVlans(ctx context.Context, formats st
 			if err := m.TaggedVlans[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -525,6 +543,8 @@ func (m *VMInterface) contextValidateTags(ctx context.Context, formats strfmt.Re
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -541,6 +561,8 @@ func (m *VMInterface) contextValidateUntaggedVlan(ctx context.Context, formats s
 		if err := m.UntaggedVlan.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("untagged_vlan")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("untagged_vlan")
 			}
 			return err
 		}
@@ -564,6 +586,8 @@ func (m *VMInterface) contextValidateVirtualMachine(ctx context.Context, formats
 		if err := m.VirtualMachine.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_machine")
 			}
 			return err
 		}

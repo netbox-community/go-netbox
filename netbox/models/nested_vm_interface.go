@@ -117,6 +117,8 @@ func (m *NestedVMInterface) validateVirtualMachine(formats strfmt.Registry) erro
 		if err := m.VirtualMachine.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_machine")
 			}
 			return err
 		}
@@ -184,6 +186,8 @@ func (m *NestedVMInterface) contextValidateVirtualMachine(ctx context.Context, f
 		if err := m.VirtualMachine.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_machine")
 			}
 			return err
 		}

@@ -195,6 +195,8 @@ func (m *ConsoleServerPort) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -237,6 +239,8 @@ func (m *ConsoleServerPort) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -295,6 +299,8 @@ func (m *ConsoleServerPort) validateSpeed(formats strfmt.Registry) error {
 		if err := m.Speed.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("speed")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("speed")
 			}
 			return err
 		}
@@ -317,6 +323,8 @@ func (m *ConsoleServerPort) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -336,6 +344,8 @@ func (m *ConsoleServerPort) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -445,6 +455,8 @@ func (m *ConsoleServerPort) contextValidateCable(ctx context.Context, formats st
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -505,6 +517,8 @@ func (m *ConsoleServerPort) contextValidateDevice(ctx context.Context, formats s
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -546,6 +560,8 @@ func (m *ConsoleServerPort) contextValidateSpeed(ctx context.Context, formats st
 		if err := m.Speed.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("speed")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("speed")
 			}
 			return err
 		}
@@ -562,6 +578,8 @@ func (m *ConsoleServerPort) contextValidateTags(ctx context.Context, formats str
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -578,6 +596,8 @@ func (m *ConsoleServerPort) contextValidateType(ctx context.Context, formats str
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}

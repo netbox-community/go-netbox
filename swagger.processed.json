@@ -35734,7 +35734,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/AvailableIP"
+                "$ref": "#/definitions/IPAddress"
               }
             }
           },
@@ -36613,7 +36613,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/AvailableIP"
+                "$ref": "#/definitions/IPAddress"
               }
             }
           },
@@ -61458,10 +61458,6 @@
         "assigned_object": {
           "title": "Assigned object",
           "type": "object",
-          "additionalProperties": {
-            "type": "string",
-            "x-nullable": true
-          },
           "readOnly": true
         },
         "nat_inside": {

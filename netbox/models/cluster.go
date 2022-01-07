@@ -162,6 +162,8 @@ func (m *Cluster) validateGroup(formats strfmt.Registry) error {
 		if err := m.Group.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("group")
 			}
 			return err
 		}
@@ -208,6 +210,8 @@ func (m *Cluster) validateSite(formats strfmt.Registry) error {
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -230,6 +234,8 @@ func (m *Cluster) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -249,6 +255,8 @@ func (m *Cluster) validateTenant(formats strfmt.Registry) error {
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -267,6 +275,8 @@ func (m *Cluster) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -378,6 +388,8 @@ func (m *Cluster) contextValidateGroup(ctx context.Context, formats strfmt.Regis
 		if err := m.Group.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("group")
 			}
 			return err
 		}
@@ -410,6 +422,8 @@ func (m *Cluster) contextValidateSite(ctx context.Context, formats strfmt.Regist
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -426,6 +440,8 @@ func (m *Cluster) contextValidateTags(ctx context.Context, formats strfmt.Regist
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -442,6 +458,8 @@ func (m *Cluster) contextValidateTenant(ctx context.Context, formats strfmt.Regi
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -456,6 +474,8 @@ func (m *Cluster) contextValidateType(ctx context.Context, formats strfmt.Regist
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}

@@ -265,6 +265,8 @@ func (m *Circuit) validateProvider(formats strfmt.Registry) error {
 		if err := m.Provider.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("provider")
 			}
 			return err
 		}
@@ -282,6 +284,8 @@ func (m *Circuit) validateStatus(formats strfmt.Registry) error {
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -304,6 +308,8 @@ func (m *Circuit) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -323,6 +329,8 @@ func (m *Circuit) validateTenant(formats strfmt.Registry) error {
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -340,6 +348,8 @@ func (m *Circuit) validateTerminationa(formats strfmt.Registry) error {
 		if err := m.Terminationa.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("termination_a")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("termination_a")
 			}
 			return err
 		}
@@ -357,6 +367,8 @@ func (m *Circuit) validateTerminationz(formats strfmt.Registry) error {
 		if err := m.Terminationz.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("termination_z")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("termination_z")
 			}
 			return err
 		}
@@ -375,6 +387,8 @@ func (m *Circuit) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -495,6 +509,8 @@ func (m *Circuit) contextValidateProvider(ctx context.Context, formats strfmt.Re
 		if err := m.Provider.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("provider")
 			}
 			return err
 		}
@@ -509,6 +525,8 @@ func (m *Circuit) contextValidateStatus(ctx context.Context, formats strfmt.Regi
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -525,6 +543,8 @@ func (m *Circuit) contextValidateTags(ctx context.Context, formats strfmt.Regist
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -541,6 +561,8 @@ func (m *Circuit) contextValidateTenant(ctx context.Context, formats strfmt.Regi
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -555,6 +577,8 @@ func (m *Circuit) contextValidateTerminationa(ctx context.Context, formats strfm
 		if err := m.Terminationa.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("termination_a")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("termination_a")
 			}
 			return err
 		}
@@ -569,6 +593,8 @@ func (m *Circuit) contextValidateTerminationz(ctx context.Context, formats strfm
 		if err := m.Terminationz.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("termination_z")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("termination_z")
 			}
 			return err
 		}
@@ -583,6 +609,8 @@ func (m *Circuit) contextValidateType(ctx context.Context, formats strfmt.Regist
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}

@@ -183,6 +183,8 @@ func (m *Token) validateUser(formats strfmt.Registry) error {
 		if err := m.User.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("user")
 			}
 			return err
 		}
@@ -263,6 +265,8 @@ func (m *Token) contextValidateUser(ctx context.Context, formats strfmt.Registry
 		if err := m.User.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("user")
 			}
 			return err
 		}

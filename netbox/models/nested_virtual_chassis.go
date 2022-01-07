@@ -90,6 +90,8 @@ func (m *NestedVirtualChassis) validateMaster(formats strfmt.Registry) error {
 		if err := m.Master.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("master")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("master")
 			}
 			return err
 		}
@@ -168,6 +170,8 @@ func (m *NestedVirtualChassis) contextValidateMaster(ctx context.Context, format
 		if err := m.Master.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("master")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("master")
 			}
 			return err
 		}

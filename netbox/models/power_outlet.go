@@ -202,6 +202,8 @@ func (m *PowerOutlet) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -244,6 +246,8 @@ func (m *PowerOutlet) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -261,6 +265,8 @@ func (m *PowerOutlet) validateFeedLeg(formats strfmt.Registry) error {
 		if err := m.FeedLeg.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("feed_leg")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("feed_leg")
 			}
 			return err
 		}
@@ -319,6 +325,8 @@ func (m *PowerOutlet) validatePowerPort(formats strfmt.Registry) error {
 		if err := m.PowerPort.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("power_port")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("power_port")
 			}
 			return err
 		}
@@ -341,6 +349,8 @@ func (m *PowerOutlet) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -360,6 +370,8 @@ func (m *PowerOutlet) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -473,6 +485,8 @@ func (m *PowerOutlet) contextValidateCable(ctx context.Context, formats strfmt.R
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -533,6 +547,8 @@ func (m *PowerOutlet) contextValidateDevice(ctx context.Context, formats strfmt.
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -556,6 +572,8 @@ func (m *PowerOutlet) contextValidateFeedLeg(ctx context.Context, formats strfmt
 		if err := m.FeedLeg.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("feed_leg")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("feed_leg")
 			}
 			return err
 		}
@@ -588,6 +606,8 @@ func (m *PowerOutlet) contextValidatePowerPort(ctx context.Context, formats strf
 		if err := m.PowerPort.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("power_port")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("power_port")
 			}
 			return err
 		}
@@ -604,6 +624,8 @@ func (m *PowerOutlet) contextValidateTags(ctx context.Context, formats strfmt.Re
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -620,6 +642,8 @@ func (m *PowerOutlet) contextValidateType(ctx context.Context, formats strfmt.Re
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}

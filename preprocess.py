@@ -93,6 +93,26 @@ data["paths"]["/status/"]["get"]["responses"]["200"]["schema"] = {
 }
 logging.info(f"Added schema for 200 response of /status/ get")
 
+# change model IPAddress's assigned_object property from string to object otherwise it fails to unmarshall
+data["definitions"]["IPAddress"]["properties"]["assigned_object"] = {
+    "title": "Assigned object",
+    "type": "object",
+    "readOnly": True
+}
+logging.info(f"Fix 'error: json: cannot unmarshal number into Go struct field IPAddress.assigned_object of type \
+string' when creating available-ips")
+
+# Change model returned by paths /available-ips/ from AvailableIP to IPAddress.
+data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["responses"]["201"]["schema"]["items"] = {
+    "$ref": "#/definitions/IPAddress"
+}
+logging.info(f"Corrected reponse model when creating available-ips in an IP range")
+
+data["paths"]["/ipam/prefixes/{id}/available-ips/"]["post"]["responses"]["201"]["schema"]["items"] = {
+    "$ref": "#/definitions/IPAddress"
+}
+logging.info(f"Corrected reponse model when creating available-ips in a prefix")
+
 # Remove omitempty for site attribute on clusters
 for prop, prop_spec in data["definitions"]["WritableCluster"]["properties"].items():
     if prop == "site":

@@ -282,6 +282,8 @@ func (m *Device) validateCluster(formats strfmt.Registry) error {
 		if err := m.Cluster.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cluster")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cluster")
 			}
 			return err
 		}
@@ -312,6 +314,8 @@ func (m *Device) validateDeviceRole(formats strfmt.Registry) error {
 		if err := m.DeviceRole.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_role")
 			}
 			return err
 		}
@@ -330,6 +334,8 @@ func (m *Device) validateDeviceType(formats strfmt.Registry) error {
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -347,6 +353,8 @@ func (m *Device) validateFace(formats strfmt.Registry) error {
 		if err := m.Face.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("face")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("face")
 			}
 			return err
 		}
@@ -376,6 +384,8 @@ func (m *Device) validateLocation(formats strfmt.Registry) error {
 		if err := m.Location.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("location")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("location")
 			}
 			return err
 		}
@@ -405,6 +415,8 @@ func (m *Device) validateParentDevice(formats strfmt.Registry) error {
 		if err := m.ParentDevice.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent_device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent_device")
 			}
 			return err
 		}
@@ -422,6 +434,8 @@ func (m *Device) validatePlatform(formats strfmt.Registry) error {
 		if err := m.Platform.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("platform")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("platform")
 			}
 			return err
 		}
@@ -455,6 +469,8 @@ func (m *Device) validatePrimaryIP(formats strfmt.Registry) error {
 		if err := m.PrimaryIP.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip")
 			}
 			return err
 		}
@@ -472,6 +488,8 @@ func (m *Device) validatePrimaryIp4(formats strfmt.Registry) error {
 		if err := m.PrimaryIp4.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip4")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip4")
 			}
 			return err
 		}
@@ -489,6 +507,8 @@ func (m *Device) validatePrimaryIp6(formats strfmt.Registry) error {
 		if err := m.PrimaryIp6.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip6")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip6")
 			}
 			return err
 		}
@@ -506,6 +526,8 @@ func (m *Device) validateRack(formats strfmt.Registry) error {
 		if err := m.Rack.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rack")
 			}
 			return err
 		}
@@ -536,6 +558,8 @@ func (m *Device) validateSite(formats strfmt.Registry) error {
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -553,6 +577,8 @@ func (m *Device) validateStatus(formats strfmt.Registry) error {
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -575,6 +601,8 @@ func (m *Device) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -594,6 +622,8 @@ func (m *Device) validateTenant(formats strfmt.Registry) error {
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -655,6 +685,8 @@ func (m *Device) validateVirtualChassis(formats strfmt.Registry) error {
 		if err := m.VirtualChassis.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_chassis")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_chassis")
 			}
 			return err
 		}
@@ -763,6 +795,8 @@ func (m *Device) contextValidateCluster(ctx context.Context, formats strfmt.Regi
 		if err := m.Cluster.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cluster")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cluster")
 			}
 			return err
 		}
@@ -786,6 +820,8 @@ func (m *Device) contextValidateDeviceRole(ctx context.Context, formats strfmt.R
 		if err := m.DeviceRole.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_role")
 			}
 			return err
 		}
@@ -800,6 +836,8 @@ func (m *Device) contextValidateDeviceType(ctx context.Context, formats strfmt.R
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -823,6 +861,8 @@ func (m *Device) contextValidateFace(ctx context.Context, formats strfmt.Registr
 		if err := m.Face.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("face")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("face")
 			}
 			return err
 		}
@@ -855,6 +895,8 @@ func (m *Device) contextValidateLocation(ctx context.Context, formats strfmt.Reg
 		if err := m.Location.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("location")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("location")
 			}
 			return err
 		}
@@ -869,6 +911,8 @@ func (m *Device) contextValidateParentDevice(ctx context.Context, formats strfmt
 		if err := m.ParentDevice.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent_device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent_device")
 			}
 			return err
 		}
@@ -883,6 +927,8 @@ func (m *Device) contextValidatePlatform(ctx context.Context, formats strfmt.Reg
 		if err := m.Platform.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("platform")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("platform")
 			}
 			return err
 		}
@@ -897,6 +943,8 @@ func (m *Device) contextValidatePrimaryIP(ctx context.Context, formats strfmt.Re
 		if err := m.PrimaryIP.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip")
 			}
 			return err
 		}
@@ -911,6 +959,8 @@ func (m *Device) contextValidatePrimaryIp4(ctx context.Context, formats strfmt.R
 		if err := m.PrimaryIp4.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip4")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip4")
 			}
 			return err
 		}
@@ -925,6 +975,8 @@ func (m *Device) contextValidatePrimaryIp6(ctx context.Context, formats strfmt.R
 		if err := m.PrimaryIp6.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip6")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip6")
 			}
 			return err
 		}
@@ -939,6 +991,8 @@ func (m *Device) contextValidateRack(ctx context.Context, formats strfmt.Registr
 		if err := m.Rack.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rack")
 			}
 			return err
 		}
@@ -953,6 +1007,8 @@ func (m *Device) contextValidateSite(ctx context.Context, formats strfmt.Registr
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -967,6 +1023,8 @@ func (m *Device) contextValidateStatus(ctx context.Context, formats strfmt.Regis
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -983,6 +1041,8 @@ func (m *Device) contextValidateTags(ctx context.Context, formats strfmt.Registr
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -999,6 +1059,8 @@ func (m *Device) contextValidateTenant(ctx context.Context, formats strfmt.Regis
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -1022,6 +1084,8 @@ func (m *Device) contextValidateVirtualChassis(ctx context.Context, formats strf
 		if err := m.VirtualChassis.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_chassis")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_chassis")
 			}
 			return err
 		}
