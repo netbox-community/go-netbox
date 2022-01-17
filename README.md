@@ -31,6 +31,10 @@ Change ConfigContext type for VMs and Devices [#2](https://github.com/fbreckle/g
 
 Fix LocalConfigContext to support arbitrary JSON object [#4](https://github.com/fbreckle/go-netbox/pull/4)
 
+Changes to allow `available_ips` to be created. (2b418d0d6d13d1edd0320d9424096f8f7d2cbbec)
+1. model returned by paths /*/available-ips/ from AvailableIP to IPAddress
+2. model IPAddress's assigned_object property from string to object otherwise it fails to unmarshall
+
 
 Using the client
 ================
