@@ -57723,6 +57723,11 @@
         "prefix_length": {
           "title": "Prefix length",
           "type": "integer"
+        },
+        "custom_fields": {
+          "title": "Custom fields",
+          "type": "object",
+          "default": {}
         }
       }
     },

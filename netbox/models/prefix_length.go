@@ -34,6 +34,9 @@ import (
 // swagger:model PrefixLength
 type PrefixLength struct {
 
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Prefix length
 	// Required: true
 	PrefixLength *int64 `json:"prefix_length"`
