@@ -129,6 +129,14 @@ for prop, prop_spec in data["definitions"]["Tag"]["properties"].items():
 del data["definitions"]["VLANGroup"]["properties"]["scope_id"]["maximum"]
 logging.info(f"delete maximum of VLANGroup.scope_id")
 
+# Add custom fields to PrefixLength (https://github.com/fbreckle/go-netbox/pull/11)
+data["definitions"]["PrefixLength"]["custom_fields"] = {
+    "title": "Custom fields",
+    "type": "object",
+    "default": {},
+}
+
+
 # Write output file
 with open("swagger.processed.json", "w") as writefile:
     json.dump(data, writefile, indent=2)
