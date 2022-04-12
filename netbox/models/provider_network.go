@@ -183,8 +183,6 @@ func (m *ProviderNetwork) validateProvider(formats strfmt.Registry) error {
 		if err := m.Provider.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("provider")
 			}
 			return err
 		}
@@ -207,8 +205,6 @@ func (m *ProviderNetwork) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -311,8 +307,6 @@ func (m *ProviderNetwork) contextValidateProvider(ctx context.Context, formats s
 		if err := m.Provider.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("provider")
 			}
 			return err
 		}
@@ -329,8 +323,6 @@ func (m *ProviderNetwork) contextValidateTags(ctx context.Context, formats strfm
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

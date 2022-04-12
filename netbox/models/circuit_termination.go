@@ -175,8 +175,6 @@ func (m *CircuitTermination) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -195,8 +193,6 @@ func (m *CircuitTermination) validateCircuit(formats strfmt.Registry) error {
 		if err := m.Circuit.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("circuit")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("circuit")
 			}
 			return err
 		}
@@ -254,8 +250,6 @@ func (m *CircuitTermination) validateProviderNetwork(formats strfmt.Registry) er
 		if err := m.ProviderNetwork.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider_network")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("provider_network")
 			}
 			return err
 		}
@@ -273,8 +267,6 @@ func (m *CircuitTermination) validateSite(formats strfmt.Registry) error {
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -431,8 +423,6 @@ func (m *CircuitTermination) contextValidateCable(ctx context.Context, formats s
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -461,8 +451,6 @@ func (m *CircuitTermination) contextValidateCircuit(ctx context.Context, formats
 		if err := m.Circuit.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("circuit")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("circuit")
 			}
 			return err
 		}
@@ -495,8 +483,6 @@ func (m *CircuitTermination) contextValidateProviderNetwork(ctx context.Context,
 		if err := m.ProviderNetwork.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider_network")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("provider_network")
 			}
 			return err
 		}
@@ -511,8 +497,6 @@ func (m *CircuitTermination) contextValidateSite(ctx context.Context, formats st
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("site")
 			}
 			return err
 		}

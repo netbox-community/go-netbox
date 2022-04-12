@@ -228,8 +228,6 @@ func (o *DcimVirtualChassisListOKBody) validateResults(formats strfmt.Registry) 
 			if err := o.Results[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimVirtualChassisListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("dcimVirtualChassisListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -262,8 +260,6 @@ func (o *DcimVirtualChassisListOKBody) contextValidateResults(ctx context.Contex
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimVirtualChassisListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("dcimVirtualChassisListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

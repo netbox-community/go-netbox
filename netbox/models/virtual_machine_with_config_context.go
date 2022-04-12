@@ -212,8 +212,6 @@ func (m *VirtualMachineWithConfigContext) validateCluster(formats strfmt.Registr
 		if err := m.Cluster.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cluster")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cluster")
 			}
 			return err
 		}
@@ -304,8 +302,6 @@ func (m *VirtualMachineWithConfigContext) validatePlatform(formats strfmt.Regist
 		if err := m.Platform.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("platform")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("platform")
 			}
 			return err
 		}
@@ -323,8 +319,6 @@ func (m *VirtualMachineWithConfigContext) validatePrimaryIP(formats strfmt.Regis
 		if err := m.PrimaryIP.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("primary_ip")
 			}
 			return err
 		}
@@ -342,8 +336,6 @@ func (m *VirtualMachineWithConfigContext) validatePrimaryIp4(formats strfmt.Regi
 		if err := m.PrimaryIp4.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip4")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("primary_ip4")
 			}
 			return err
 		}
@@ -361,8 +353,6 @@ func (m *VirtualMachineWithConfigContext) validatePrimaryIp6(formats strfmt.Regi
 		if err := m.PrimaryIp6.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip6")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("primary_ip6")
 			}
 			return err
 		}
@@ -380,8 +370,6 @@ func (m *VirtualMachineWithConfigContext) validateRole(formats strfmt.Registry) 
 		if err := m.Role.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("role")
 			}
 			return err
 		}
@@ -399,8 +387,6 @@ func (m *VirtualMachineWithConfigContext) validateSite(formats strfmt.Registry) 
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -418,8 +404,6 @@ func (m *VirtualMachineWithConfigContext) validateStatus(formats strfmt.Registry
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -442,8 +426,6 @@ func (m *VirtualMachineWithConfigContext) validateTags(formats strfmt.Registry) 
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -463,8 +445,6 @@ func (m *VirtualMachineWithConfigContext) validateTenant(formats strfmt.Registry
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -577,8 +557,6 @@ func (m *VirtualMachineWithConfigContext) contextValidateCluster(ctx context.Con
 		if err := m.Cluster.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cluster")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cluster")
 			}
 			return err
 		}
@@ -634,8 +612,6 @@ func (m *VirtualMachineWithConfigContext) contextValidatePlatform(ctx context.Co
 		if err := m.Platform.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("platform")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("platform")
 			}
 			return err
 		}
@@ -650,8 +626,6 @@ func (m *VirtualMachineWithConfigContext) contextValidatePrimaryIP(ctx context.C
 		if err := m.PrimaryIP.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("primary_ip")
 			}
 			return err
 		}
@@ -666,8 +640,6 @@ func (m *VirtualMachineWithConfigContext) contextValidatePrimaryIp4(ctx context.
 		if err := m.PrimaryIp4.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip4")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("primary_ip4")
 			}
 			return err
 		}
@@ -682,8 +654,6 @@ func (m *VirtualMachineWithConfigContext) contextValidatePrimaryIp6(ctx context.
 		if err := m.PrimaryIp6.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip6")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("primary_ip6")
 			}
 			return err
 		}
@@ -698,8 +668,6 @@ func (m *VirtualMachineWithConfigContext) contextValidateRole(ctx context.Contex
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("role")
 			}
 			return err
 		}
@@ -714,8 +682,6 @@ func (m *VirtualMachineWithConfigContext) contextValidateSite(ctx context.Contex
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -730,8 +696,6 @@ func (m *VirtualMachineWithConfigContext) contextValidateStatus(ctx context.Cont
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -748,8 +712,6 @@ func (m *VirtualMachineWithConfigContext) contextValidateTags(ctx context.Contex
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -766,8 +728,6 @@ func (m *VirtualMachineWithConfigContext) contextValidateTenant(ctx context.Cont
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("tenant")
 			}
 			return err
 		}

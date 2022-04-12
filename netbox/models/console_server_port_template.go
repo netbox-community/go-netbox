@@ -158,8 +158,6 @@ func (m *ConsoleServerPortTemplate) validateDeviceType(formats strfmt.Registry) 
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -218,8 +216,6 @@ func (m *ConsoleServerPortTemplate) validateType(formats strfmt.Registry) error 
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -293,8 +289,6 @@ func (m *ConsoleServerPortTemplate) contextValidateDeviceType(ctx context.Contex
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -336,8 +330,6 @@ func (m *ConsoleServerPortTemplate) contextValidateType(ctx context.Context, for
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("type")
 			}
 			return err
 		}

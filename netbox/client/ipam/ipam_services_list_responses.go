@@ -228,8 +228,6 @@ func (o *IpamServicesListOKBody) validateResults(formats strfmt.Registry) error 
 			if err := o.Results[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamServicesListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("ipamServicesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -262,8 +260,6 @@ func (o *IpamServicesListOKBody) contextValidateResults(ctx context.Context, for
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamServicesListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("ipamServicesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

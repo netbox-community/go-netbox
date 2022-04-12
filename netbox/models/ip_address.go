@@ -260,8 +260,6 @@ func (m *IPAddress) validateFamily(formats strfmt.Registry) error {
 		if err := m.Family.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("family")
 			}
 			return err
 		}
@@ -291,8 +289,6 @@ func (m *IPAddress) validateNatInside(formats strfmt.Registry) error {
 		if err := m.NatInside.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("nat_inside")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("nat_inside")
 			}
 			return err
 		}
@@ -310,8 +306,6 @@ func (m *IPAddress) validateNatOutside(formats strfmt.Registry) error {
 		if err := m.NatOutside.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("nat_outside")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("nat_outside")
 			}
 			return err
 		}
@@ -329,8 +323,6 @@ func (m *IPAddress) validateRole(formats strfmt.Registry) error {
 		if err := m.Role.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("role")
 			}
 			return err
 		}
@@ -348,8 +340,6 @@ func (m *IPAddress) validateStatus(formats strfmt.Registry) error {
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -372,8 +362,6 @@ func (m *IPAddress) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -393,8 +381,6 @@ func (m *IPAddress) validateTenant(formats strfmt.Registry) error {
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -424,8 +410,6 @@ func (m *IPAddress) validateVrf(formats strfmt.Registry) error {
 		if err := m.Vrf.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("vrf")
 			}
 			return err
 		}
@@ -520,8 +504,6 @@ func (m *IPAddress) contextValidateFamily(ctx context.Context, formats strfmt.Re
 		if err := m.Family.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("family")
 			}
 			return err
 		}
@@ -554,8 +536,6 @@ func (m *IPAddress) contextValidateNatInside(ctx context.Context, formats strfmt
 		if err := m.NatInside.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("nat_inside")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("nat_inside")
 			}
 			return err
 		}
@@ -570,8 +550,6 @@ func (m *IPAddress) contextValidateNatOutside(ctx context.Context, formats strfm
 		if err := m.NatOutside.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("nat_outside")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("nat_outside")
 			}
 			return err
 		}
@@ -586,8 +564,6 @@ func (m *IPAddress) contextValidateRole(ctx context.Context, formats strfmt.Regi
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("role")
 			}
 			return err
 		}
@@ -602,8 +578,6 @@ func (m *IPAddress) contextValidateStatus(ctx context.Context, formats strfmt.Re
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -620,8 +594,6 @@ func (m *IPAddress) contextValidateTags(ctx context.Context, formats strfmt.Regi
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -638,8 +610,6 @@ func (m *IPAddress) contextValidateTenant(ctx context.Context, formats strfmt.Re
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -663,8 +633,6 @@ func (m *IPAddress) contextValidateVrf(ctx context.Context, formats strfmt.Regis
 		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("vrf")
 			}
 			return err
 		}

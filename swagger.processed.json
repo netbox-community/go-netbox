@@ -60248,7 +60248,8 @@
         "required": {
           "title": "Required",
           "description": "If true, this field is required when creating new objects or editing an existing object.",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "filter_logic": {
           "title": "Filter logic",

@@ -228,8 +228,6 @@ func (o *DcimConsoleServerPortTemplatesListOKBody) validateResults(formats strfm
 			if err := o.Results[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimConsoleServerPortTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("dcimConsoleServerPortTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -262,8 +260,6 @@ func (o *DcimConsoleServerPortTemplatesListOKBody) contextValidateResults(ctx co
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("dcimConsoleServerPortTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("dcimConsoleServerPortTemplatesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

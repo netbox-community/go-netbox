@@ -167,8 +167,6 @@ func (m *WritableCircuitTermination) validateCable(formats strfmt.Registry) erro
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -362,8 +360,6 @@ func (m *WritableCircuitTermination) contextValidateCable(ctx context.Context, f
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cable")
 			}
 			return err
 		}

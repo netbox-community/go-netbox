@@ -205,8 +205,6 @@ func (m *IPRange) validateFamily(formats strfmt.Registry) error {
 		if err := m.Family.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("family")
 			}
 			return err
 		}
@@ -236,8 +234,6 @@ func (m *IPRange) validateRole(formats strfmt.Registry) error {
 		if err := m.Role.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("role")
 			}
 			return err
 		}
@@ -264,8 +260,6 @@ func (m *IPRange) validateStatus(formats strfmt.Registry) error {
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -288,8 +282,6 @@ func (m *IPRange) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -309,8 +301,6 @@ func (m *IPRange) validateTenant(formats strfmt.Registry) error {
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -340,8 +330,6 @@ func (m *IPRange) validateVrf(formats strfmt.Registry) error {
 		if err := m.Vrf.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("vrf")
 			}
 			return err
 		}
@@ -445,8 +433,6 @@ func (m *IPRange) contextValidateFamily(ctx context.Context, formats strfmt.Regi
 		if err := m.Family.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("family")
 			}
 			return err
 		}
@@ -479,8 +465,6 @@ func (m *IPRange) contextValidateRole(ctx context.Context, formats strfmt.Regist
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("role")
 			}
 			return err
 		}
@@ -504,8 +488,6 @@ func (m *IPRange) contextValidateStatus(ctx context.Context, formats strfmt.Regi
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -522,8 +504,6 @@ func (m *IPRange) contextValidateTags(ctx context.Context, formats strfmt.Regist
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -540,8 +520,6 @@ func (m *IPRange) contextValidateTenant(ctx context.Context, formats strfmt.Regi
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -565,8 +543,6 @@ func (m *IPRange) contextValidateVrf(ctx context.Context, formats strfmt.Registr
 		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("vrf")
 			}
 			return err
 		}

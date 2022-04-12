@@ -246,8 +246,6 @@ func (m *PowerFeed) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -322,8 +320,6 @@ func (m *PowerFeed) validatePhase(formats strfmt.Registry) error {
 		if err := m.Phase.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("phase")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("phase")
 			}
 			return err
 		}
@@ -342,8 +338,6 @@ func (m *PowerFeed) validatePowerPanel(formats strfmt.Registry) error {
 		if err := m.PowerPanel.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("power_panel")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("power_panel")
 			}
 			return err
 		}
@@ -361,8 +355,6 @@ func (m *PowerFeed) validateRack(formats strfmt.Registry) error {
 		if err := m.Rack.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("rack")
 			}
 			return err
 		}
@@ -380,8 +372,6 @@ func (m *PowerFeed) validateStatus(formats strfmt.Registry) error {
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -399,8 +389,6 @@ func (m *PowerFeed) validateSupply(formats strfmt.Registry) error {
 		if err := m.Supply.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("supply")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("supply")
 			}
 			return err
 		}
@@ -423,8 +411,6 @@ func (m *PowerFeed) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -444,8 +430,6 @@ func (m *PowerFeed) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -583,8 +567,6 @@ func (m *PowerFeed) contextValidateCable(ctx context.Context, formats strfmt.Reg
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -672,8 +654,6 @@ func (m *PowerFeed) contextValidatePhase(ctx context.Context, formats strfmt.Reg
 		if err := m.Phase.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("phase")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("phase")
 			}
 			return err
 		}
@@ -688,8 +668,6 @@ func (m *PowerFeed) contextValidatePowerPanel(ctx context.Context, formats strfm
 		if err := m.PowerPanel.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("power_panel")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("power_panel")
 			}
 			return err
 		}
@@ -704,8 +682,6 @@ func (m *PowerFeed) contextValidateRack(ctx context.Context, formats strfmt.Regi
 		if err := m.Rack.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("rack")
 			}
 			return err
 		}
@@ -720,8 +696,6 @@ func (m *PowerFeed) contextValidateStatus(ctx context.Context, formats strfmt.Re
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -736,8 +710,6 @@ func (m *PowerFeed) contextValidateSupply(ctx context.Context, formats strfmt.Re
 		if err := m.Supply.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("supply")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("supply")
 			}
 			return err
 		}
@@ -754,8 +726,6 @@ func (m *PowerFeed) contextValidateTags(ctx context.Context, formats strfmt.Regi
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -772,8 +742,6 @@ func (m *PowerFeed) contextValidateType(ctx context.Context, formats strfmt.Regi
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("type")
 			}
 			return err
 		}

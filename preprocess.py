@@ -71,6 +71,8 @@ for prop, prop_spec in data["definitions"]["WritableIPAddress"]["properties"].it
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableIPAddress.{prop}")
 
+data["definitions"]["WritableCustomField"]["properties"]["required"]["x-omitempty"] = False
+
 # This implements https://github.com/fbreckle/go-netbox/commit/1363e14cfc7bce4bd3d5ee93c09ca70543c51279
 for prop, prop_spec in data["definitions"]["WritableVirtualMachineWithConfigContext"][
     "properties"
@@ -130,7 +132,7 @@ del data["definitions"]["VLANGroup"]["properties"]["scope_id"]["maximum"]
 logging.info(f"delete maximum of VLANGroup.scope_id")
 
 # Add custom fields to PrefixLength (https://github.com/fbreckle/go-netbox/pull/11)
-data["definitions"]["PrefixLength"]["custom_fields"] = {
+data["definitions"]["PrefixLength"]["properties"]["custom_fields"] = {
     "title": "Custom fields",
     "type": "object",
     "default": {},

@@ -123,8 +123,6 @@ func (m *VirtualChassis) validateMaster(formats strfmt.Registry) error {
 		if err := m.Master.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("master")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("master")
 			}
 			return err
 		}
@@ -164,8 +162,6 @@ func (m *VirtualChassis) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -246,8 +242,6 @@ func (m *VirtualChassis) contextValidateMaster(ctx context.Context, formats strf
 		if err := m.Master.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("master")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("master")
 			}
 			return err
 		}
@@ -273,8 +267,6 @@ func (m *VirtualChassis) contextValidateTags(ctx context.Context, formats strfmt
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

@@ -228,8 +228,6 @@ func (o *UsersGroupsListOKBody) validateResults(formats strfmt.Registry) error {
 			if err := o.Results[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("usersGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("usersGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -262,8 +260,6 @@ func (o *UsersGroupsListOKBody) contextValidateResults(ctx context.Context, form
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("usersGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("usersGroupsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

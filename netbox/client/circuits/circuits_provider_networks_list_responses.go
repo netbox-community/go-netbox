@@ -228,8 +228,6 @@ func (o *CircuitsProviderNetworksListOKBody) validateResults(formats strfmt.Regi
 			if err := o.Results[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("circuitsProviderNetworksListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("circuitsProviderNetworksListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -262,8 +260,6 @@ func (o *CircuitsProviderNetworksListOKBody) contextValidateResults(ctx context.
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("circuitsProviderNetworksListOK" + "." + "results" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("circuitsProviderNetworksListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

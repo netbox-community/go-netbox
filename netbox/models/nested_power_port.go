@@ -95,8 +95,6 @@ func (m *NestedPowerPort) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -179,8 +177,6 @@ func (m *NestedPowerPort) contextValidateDevice(ctx context.Context, formats str
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device")
 			}
 			return err
 		}

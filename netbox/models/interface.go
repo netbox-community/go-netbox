@@ -249,8 +249,6 @@ func (m *Interface) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -293,8 +291,6 @@ func (m *Interface) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -324,8 +320,6 @@ func (m *Interface) validateLag(formats strfmt.Registry) error {
 		if err := m.Lag.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("lag")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("lag")
 			}
 			return err
 		}
@@ -355,8 +349,6 @@ func (m *Interface) validateMode(formats strfmt.Registry) error {
 		if err := m.Mode.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("mode")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("mode")
 			}
 			return err
 		}
@@ -407,8 +399,6 @@ func (m *Interface) validateParent(formats strfmt.Registry) error {
 		if err := m.Parent.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("parent")
 			}
 			return err
 		}
@@ -435,8 +425,6 @@ func (m *Interface) validateTaggedVlans(formats strfmt.Registry) error {
 			if err := m.TaggedVlans[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -461,8 +449,6 @@ func (m *Interface) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -483,8 +469,6 @@ func (m *Interface) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -502,8 +486,6 @@ func (m *Interface) validateUntaggedVlan(formats strfmt.Registry) error {
 		if err := m.UntaggedVlan.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("untagged_vlan")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("untagged_vlan")
 			}
 			return err
 		}
@@ -633,8 +615,6 @@ func (m *Interface) contextValidateCable(ctx context.Context, formats strfmt.Reg
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -704,8 +684,6 @@ func (m *Interface) contextValidateDevice(ctx context.Context, formats strfmt.Re
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -738,8 +716,6 @@ func (m *Interface) contextValidateLag(ctx context.Context, formats strfmt.Regis
 		if err := m.Lag.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("lag")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("lag")
 			}
 			return err
 		}
@@ -763,8 +739,6 @@ func (m *Interface) contextValidateMode(ctx context.Context, formats strfmt.Regi
 		if err := m.Mode.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("mode")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("mode")
 			}
 			return err
 		}
@@ -779,8 +753,6 @@ func (m *Interface) contextValidateParent(ctx context.Context, formats strfmt.Re
 		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("parent")
 			}
 			return err
 		}
@@ -797,8 +769,6 @@ func (m *Interface) contextValidateTaggedVlans(ctx context.Context, formats strf
 			if err := m.TaggedVlans[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -817,8 +787,6 @@ func (m *Interface) contextValidateTags(ctx context.Context, formats strfmt.Regi
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -835,8 +803,6 @@ func (m *Interface) contextValidateType(ctx context.Context, formats strfmt.Regi
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -851,8 +817,6 @@ func (m *Interface) contextValidateUntaggedVlan(ctx context.Context, formats str
 		if err := m.UntaggedVlan.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("untagged_vlan")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("untagged_vlan")
 			}
 			return err
 		}

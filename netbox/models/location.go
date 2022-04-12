@@ -201,8 +201,6 @@ func (m *Location) validateParent(formats strfmt.Registry) error {
 		if err := m.Parent.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("parent")
 			}
 			return err
 		}
@@ -221,8 +219,6 @@ func (m *Location) validateSite(formats strfmt.Registry) error {
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -374,8 +370,6 @@ func (m *Location) contextValidateParent(ctx context.Context, formats strfmt.Reg
 		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("parent")
 			}
 			return err
 		}
@@ -399,8 +393,6 @@ func (m *Location) contextValidateSite(ctx context.Context, formats strfmt.Regis
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("site")
 			}
 			return err
 		}

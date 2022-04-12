@@ -84,7 +84,7 @@ type WritableCustomField struct {
 	// Required
 	//
 	// If true, this field is required when creating new objects or editing an existing object.
-	Required bool `json:"required,omitempty"`
+	Required bool `json:"required"`
 
 	// Type
 	// Enum: [text integer boolean date url select multiselect]

@@ -349,8 +349,6 @@ func (m *WritableDeviceWithConfigContext) validateParentDevice(formats strfmt.Re
 		if err := m.ParentDevice.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent_device")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("parent_device")
 			}
 			return err
 		}
@@ -467,8 +465,6 @@ func (m *WritableDeviceWithConfigContext) validateTags(formats strfmt.Registry) 
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -616,8 +612,6 @@ func (m *WritableDeviceWithConfigContext) contextValidateParentDevice(ctx contex
 		if err := m.ParentDevice.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent_device")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("parent_device")
 			}
 			return err
 		}
@@ -643,8 +637,6 @@ func (m *WritableDeviceWithConfigContext) contextValidateTags(ctx context.Contex
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

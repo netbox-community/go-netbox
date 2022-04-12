@@ -183,8 +183,6 @@ func (m *Aggregate) validateFamily(formats strfmt.Registry) error {
 		if err := m.Family.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("family")
 			}
 			return err
 		}
@@ -224,8 +222,6 @@ func (m *Aggregate) validateRir(formats strfmt.Registry) error {
 		if err := m.Rir.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rir")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("rir")
 			}
 			return err
 		}
@@ -248,8 +244,6 @@ func (m *Aggregate) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -269,8 +263,6 @@ func (m *Aggregate) validateTenant(formats strfmt.Registry) error {
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -361,8 +353,6 @@ func (m *Aggregate) contextValidateFamily(ctx context.Context, formats strfmt.Re
 		if err := m.Family.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("family")
 			}
 			return err
 		}
@@ -395,8 +385,6 @@ func (m *Aggregate) contextValidateRir(ctx context.Context, formats strfmt.Regis
 		if err := m.Rir.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rir")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("rir")
 			}
 			return err
 		}
@@ -413,8 +401,6 @@ func (m *Aggregate) contextValidateTags(ctx context.Context, formats strfmt.Regi
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -431,8 +417,6 @@ func (m *Aggregate) contextValidateTenant(ctx context.Context, formats strfmt.Re
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("tenant")
 			}
 			return err
 		}

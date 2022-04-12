@@ -232,8 +232,6 @@ func (m *CustomField) validateFilterLogic(formats strfmt.Registry) error {
 		if err := m.FilterLogic.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("filter_logic")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("filter_logic")
 			}
 			return err
 		}
@@ -281,8 +279,6 @@ func (m *CustomField) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -408,8 +404,6 @@ func (m *CustomField) contextValidateFilterLogic(ctx context.Context, formats st
 		if err := m.FilterLogic.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("filter_logic")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("filter_logic")
 			}
 			return err
 		}
@@ -433,8 +427,6 @@ func (m *CustomField) contextValidateType(ctx context.Context, formats strfmt.Re
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("type")
 			}
 			return err
 		}

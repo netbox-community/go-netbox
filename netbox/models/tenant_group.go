@@ -189,8 +189,6 @@ func (m *TenantGroup) validateParent(formats strfmt.Registry) error {
 		if err := m.Parent.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("parent")
 			}
 			return err
 		}
@@ -325,8 +323,6 @@ func (m *TenantGroup) contextValidateParent(ctx context.Context, formats strfmt.
 		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("parent")
 			}
 			return err
 		}

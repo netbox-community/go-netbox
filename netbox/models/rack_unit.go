@@ -90,8 +90,6 @@ func (m *RackUnit) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -109,8 +107,6 @@ func (m *RackUnit) validateFace(formats strfmt.Registry) error {
 		if err := m.Face.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("face")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("face")
 			}
 			return err
 		}
@@ -171,8 +167,6 @@ func (m *RackUnit) contextValidateDevice(ctx context.Context, formats strfmt.Reg
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -196,8 +190,6 @@ func (m *RackUnit) contextValidateFace(ctx context.Context, formats strfmt.Regis
 		if err := m.Face.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("face")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("face")
 			}
 			return err
 		}

@@ -111,8 +111,6 @@ func (m *PowerPanel) validateLocation(formats strfmt.Registry) error {
 		if err := m.Location.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("location")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("location")
 			}
 			return err
 		}
@@ -148,8 +146,6 @@ func (m *PowerPanel) validateSite(formats strfmt.Registry) error {
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -172,8 +168,6 @@ func (m *PowerPanel) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -258,8 +252,6 @@ func (m *PowerPanel) contextValidateLocation(ctx context.Context, formats strfmt
 		if err := m.Location.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("location")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("location")
 			}
 			return err
 		}
@@ -283,8 +275,6 @@ func (m *PowerPanel) contextValidateSite(ctx context.Context, formats strfmt.Reg
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -301,8 +291,6 @@ func (m *PowerPanel) contextValidateTags(ctx context.Context, formats strfmt.Reg
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
