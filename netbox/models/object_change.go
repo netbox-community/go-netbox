@@ -44,11 +44,11 @@ type ObjectChange struct {
 	// Serialize a nested representation of the changed object.
 	//
 	// Read Only: true
-	ChangedObject interface{} `json:"changed_object,omitempty"`
+	ChangedObject map[string]*string `json:"changed_object,omitempty"`
 
 	// Changed object id
 	// Required: true
-	// Maximum: 2.147483647e+09
+	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	ChangedObjectID *int64 `json:"changed_object_id"`
 
@@ -60,7 +60,7 @@ type ObjectChange struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -143,6 +143,8 @@ func (m *ObjectChange) validateAction(formats strfmt.Registry) error {
 		if err := m.Action.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("action")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("action")
 			}
 			return err
 		}
@@ -161,7 +163,7 @@ func (m *ObjectChange) validateChangedObjectID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("changed_object_id", "body", *m.ChangedObjectID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("changed_object_id", "body", *m.ChangedObjectID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 
@@ -213,6 +215,8 @@ func (m *ObjectChange) validateUser(formats strfmt.Registry) error {
 		if err := m.User.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("user")
 			}
 			return err
 		}
@@ -238,6 +242,10 @@ func (m *ObjectChange) ContextValidate(ctx context.Context, formats strfmt.Regis
 	var res []error
 
 	if err := m.contextValidateAction(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateChangedObject(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -293,10 +301,17 @@ func (m *ObjectChange) contextValidateAction(ctx context.Context, formats strfmt
 		if err := m.Action.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("action")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("action")
 			}
 			return err
 		}
 	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidateChangedObject(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }
@@ -379,6 +394,8 @@ func (m *ObjectChange) contextValidateUser(ctx context.Context, formats strfmt.R
 		if err := m.User.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("user")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("user")
 			}
 			return err
 		}

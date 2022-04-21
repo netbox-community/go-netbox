@@ -43,18 +43,6 @@ type RearPort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Cable peer
-	//
-	//
-	// Return the appropriate serializer for the cable termination model.
-	//
-	// Read Only: true
-	CablePeer interface{} `json:"cable_peer,omitempty"`
-
-	// Cable peer type
-	// Read Only: true
-	CablePeerType string `json:"cable_peer_type,omitempty"`
-
 	// Color
 	// Max Length: 6
 	// Pattern: ^[0-9a-f]{6}$
@@ -62,8 +50,8 @@ type RearPort struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -80,7 +68,7 @@ type RearPort struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -95,10 +83,25 @@ type RearPort struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Link peer
+	//
+	//
+	// Return the appropriate serializer for the link termination model.
+	//
+	// Read Only: true
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+
+	// Link peer type
+	// Read Only: true
+	LinkPeerType string `json:"link_peer_type,omitempty"`
+
 	// Mark connected
 	//
 	// Treat as if a cable is connected
 	MarkConnected bool `json:"mark_connected,omitempty"`
+
+	// module
+	Module *ComponentNestedModule `json:"module,omitempty"`
 
 	// Name
 	// Required: true
@@ -156,6 +159,10 @@ func (m *RearPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateModule(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -191,6 +198,8 @@ func (m *RearPort) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -220,7 +229,7 @@ func (m *RearPort) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -249,6 +258,8 @@ func (m *RearPort) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -276,6 +287,25 @@ func (m *RearPort) validateLastUpdated(formats strfmt.Registry) error {
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *RearPort) validateModule(formats strfmt.Registry) error {
+	if swag.IsZero(m.Module) { // not required
+		return nil
+	}
+
+	if m.Module != nil {
+		if err := m.Module.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -328,6 +358,8 @@ func (m *RearPort) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -348,6 +380,8 @@ func (m *RearPort) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -380,10 +414,6 @@ func (m *RearPort) ContextValidate(ctx context.Context, formats strfmt.Registry)
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -401,6 +431,18 @@ func (m *RearPort) ContextValidate(ctx context.Context, formats strfmt.Registry)
 	}
 
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateModule(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -437,6 +479,8 @@ func (m *RearPort) contextValidateCable(ctx context.Context, formats strfmt.Regi
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -445,18 +489,9 @@ func (m *RearPort) contextValidateCable(ctx context.Context, formats strfmt.Regi
 	return nil
 }
 
-func (m *RearPort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *RearPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -469,6 +504,8 @@ func (m *RearPort) contextValidateDevice(ctx context.Context, formats strfmt.Reg
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -504,6 +541,36 @@ func (m *RearPort) contextValidateLastUpdated(ctx context.Context, formats strfm
 	return nil
 }
 
+func (m *RearPort) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *RearPort) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *RearPort) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Module != nil {
+		if err := m.Module.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *RearPort) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Tags); i++ {
@@ -512,6 +579,8 @@ func (m *RearPort) contextValidateTags(ctx context.Context, formats strfmt.Regis
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -528,6 +597,8 @@ func (m *RearPort) contextValidateType(ctx context.Context, formats strfmt.Regis
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -570,12 +641,12 @@ type RearPortType struct {
 
 	// label
 	// Required: true
-	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST CS SN Splice]
+	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/PC LC/UPC LC/APC LSH LSH/PC LSH/UPC LSH/APC MPO MTRJ SC SC/PC SC/UPC SC/APC ST CS SN SMA 905 SMA 906 URM-P2 URM-P4 URM-P8 Splice]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
 	Value *string `json:"value"`
 }
 
@@ -601,7 +672,7 @@ var rearPortTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST","CS","SN","Splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/PC","LC/UPC","LC/APC","LSH","LSH/PC","LSH/UPC","LSH/APC","MPO","MTRJ","SC","SC/PC","SC/UPC","SC/APC","ST","CS","SN","SMA 905","SMA 906","URM-P2","URM-P4","URM-P8","Splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -671,11 +742,23 @@ const (
 	// RearPortTypeLabelLC captures enum value "LC"
 	RearPortTypeLabelLC string = "LC"
 
+	// RearPortTypeLabelLCPC captures enum value "LC/PC"
+	RearPortTypeLabelLCPC string = "LC/PC"
+
+	// RearPortTypeLabelLCUPC captures enum value "LC/UPC"
+	RearPortTypeLabelLCUPC string = "LC/UPC"
+
 	// RearPortTypeLabelLCAPC captures enum value "LC/APC"
 	RearPortTypeLabelLCAPC string = "LC/APC"
 
 	// RearPortTypeLabelLSH captures enum value "LSH"
 	RearPortTypeLabelLSH string = "LSH"
+
+	// RearPortTypeLabelLSHPC captures enum value "LSH/PC"
+	RearPortTypeLabelLSHPC string = "LSH/PC"
+
+	// RearPortTypeLabelLSHUPC captures enum value "LSH/UPC"
+	RearPortTypeLabelLSHUPC string = "LSH/UPC"
 
 	// RearPortTypeLabelLSHAPC captures enum value "LSH/APC"
 	RearPortTypeLabelLSHAPC string = "LSH/APC"
@@ -689,6 +772,12 @@ const (
 	// RearPortTypeLabelSC captures enum value "SC"
 	RearPortTypeLabelSC string = "SC"
 
+	// RearPortTypeLabelSCPC captures enum value "SC/PC"
+	RearPortTypeLabelSCPC string = "SC/PC"
+
+	// RearPortTypeLabelSCUPC captures enum value "SC/UPC"
+	RearPortTypeLabelSCUPC string = "SC/UPC"
+
 	// RearPortTypeLabelSCAPC captures enum value "SC/APC"
 	RearPortTypeLabelSCAPC string = "SC/APC"
 
@@ -700,6 +789,21 @@ const (
 
 	// RearPortTypeLabelSN captures enum value "SN"
 	RearPortTypeLabelSN string = "SN"
+
+	// RearPortTypeLabelSMA905 captures enum value "SMA 905"
+	RearPortTypeLabelSMA905 string = "SMA 905"
+
+	// RearPortTypeLabelSMA906 captures enum value "SMA 906"
+	RearPortTypeLabelSMA906 string = "SMA 906"
+
+	// RearPortTypeLabelURMDashP2 captures enum value "URM-P2"
+	RearPortTypeLabelURMDashP2 string = "URM-P2"
+
+	// RearPortTypeLabelURMDashP4 captures enum value "URM-P4"
+	RearPortTypeLabelURMDashP4 string = "URM-P4"
+
+	// RearPortTypeLabelURMDashP8 captures enum value "URM-P8"
+	RearPortTypeLabelURMDashP8 string = "URM-P8"
 
 	// RearPortTypeLabelSplice captures enum value "Splice"
 	RearPortTypeLabelSplice string = "Splice"
@@ -731,7 +835,7 @@ var rearPortTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -801,11 +905,23 @@ const (
 	// RearPortTypeValueLc captures enum value "lc"
 	RearPortTypeValueLc string = "lc"
 
+	// RearPortTypeValueLcDashPc captures enum value "lc-pc"
+	RearPortTypeValueLcDashPc string = "lc-pc"
+
+	// RearPortTypeValueLcDashUpc captures enum value "lc-upc"
+	RearPortTypeValueLcDashUpc string = "lc-upc"
+
 	// RearPortTypeValueLcDashApc captures enum value "lc-apc"
 	RearPortTypeValueLcDashApc string = "lc-apc"
 
 	// RearPortTypeValueLsh captures enum value "lsh"
 	RearPortTypeValueLsh string = "lsh"
+
+	// RearPortTypeValueLshDashPc captures enum value "lsh-pc"
+	RearPortTypeValueLshDashPc string = "lsh-pc"
+
+	// RearPortTypeValueLshDashUpc captures enum value "lsh-upc"
+	RearPortTypeValueLshDashUpc string = "lsh-upc"
 
 	// RearPortTypeValueLshDashApc captures enum value "lsh-apc"
 	RearPortTypeValueLshDashApc string = "lsh-apc"
@@ -819,6 +935,12 @@ const (
 	// RearPortTypeValueSc captures enum value "sc"
 	RearPortTypeValueSc string = "sc"
 
+	// RearPortTypeValueScDashPc captures enum value "sc-pc"
+	RearPortTypeValueScDashPc string = "sc-pc"
+
+	// RearPortTypeValueScDashUpc captures enum value "sc-upc"
+	RearPortTypeValueScDashUpc string = "sc-upc"
+
 	// RearPortTypeValueScDashApc captures enum value "sc-apc"
 	RearPortTypeValueScDashApc string = "sc-apc"
 
@@ -830,6 +952,21 @@ const (
 
 	// RearPortTypeValueSn captures enum value "sn"
 	RearPortTypeValueSn string = "sn"
+
+	// RearPortTypeValueSmaDash905 captures enum value "sma-905"
+	RearPortTypeValueSmaDash905 string = "sma-905"
+
+	// RearPortTypeValueSmaDash906 captures enum value "sma-906"
+	RearPortTypeValueSmaDash906 string = "sma-906"
+
+	// RearPortTypeValueUrmDashP2 captures enum value "urm-p2"
+	RearPortTypeValueUrmDashP2 string = "urm-p2"
+
+	// RearPortTypeValueUrmDashP4 captures enum value "urm-p4"
+	RearPortTypeValueUrmDashP4 string = "urm-p4"
+
+	// RearPortTypeValueUrmDashP8 captures enum value "urm-p8"
+	RearPortTypeValueUrmDashP8 string = "urm-p8"
 
 	// RearPortTypeValueSplice captures enum value "splice"
 	RearPortTypeValueSplice string = "splice"

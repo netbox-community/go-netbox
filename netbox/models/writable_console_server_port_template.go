@@ -37,8 +37,8 @@ type WritableConsoleServerPortTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -52,7 +52,7 @@ type WritableConsoleServerPortTemplate struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -74,7 +74,7 @@ type WritableConsoleServerPortTemplate struct {
 	Name *string `json:"name"`
 
 	// Type
-	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b other]
+	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 mini-din-8 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
 	Type string `json:"type,omitempty"`
 
 	// Url
@@ -130,7 +130,7 @@ func (m *WritableConsoleServerPortTemplate) validateCreated(formats strfmt.Regis
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -203,7 +203,7 @@ var writableConsoleServerPortTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","mini-din-8","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -228,6 +228,9 @@ const (
 	// WritableConsoleServerPortTemplateTypeRjDash45 captures enum value "rj-45"
 	WritableConsoleServerPortTemplateTypeRjDash45 string = "rj-45"
 
+	// WritableConsoleServerPortTemplateTypeMiniDashDinDash8 captures enum value "mini-din-8"
+	WritableConsoleServerPortTemplateTypeMiniDashDinDash8 string = "mini-din-8"
+
 	// WritableConsoleServerPortTemplateTypeUsbDasha captures enum value "usb-a"
 	WritableConsoleServerPortTemplateTypeUsbDasha string = "usb-a"
 
@@ -248,6 +251,9 @@ const (
 
 	// WritableConsoleServerPortTemplateTypeUsbDashMicroDashb captures enum value "usb-micro-b"
 	WritableConsoleServerPortTemplateTypeUsbDashMicroDashb string = "usb-micro-b"
+
+	// WritableConsoleServerPortTemplateTypeUsbDashMicroDashAb captures enum value "usb-micro-ab"
+	WritableConsoleServerPortTemplateTypeUsbDashMicroDashAb string = "usb-micro-ab"
 
 	// WritableConsoleServerPortTemplateTypeOther captures enum value "other"
 	WritableConsoleServerPortTemplateTypeOther string = "other"
@@ -318,7 +324,7 @@ func (m *WritableConsoleServerPortTemplate) ContextValidate(ctx context.Context,
 
 func (m *WritableConsoleServerPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 

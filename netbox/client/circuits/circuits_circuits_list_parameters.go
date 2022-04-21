@@ -78,9 +78,6 @@ type CircuitsCircuitsListParams struct {
 	// Cid.
 	Cid *string
 
-	// CidEmpty.
-	CidEmpty *string
-
 	// CidIc.
 	CidIc *string
 
@@ -126,6 +123,18 @@ type CircuitsCircuitsListParams struct {
 	// CommitRaten.
 	CommitRaten *string
 
+	// Contact.
+	Contact *string
+
+	// Contactn.
+	Contactn *string
+
+	// ContactRole.
+	ContactRole *string
+
+	// ContactRolen.
+	ContactRolen *string
+
 	// Created.
 	Created *string
 
@@ -134,6 +143,36 @@ type CircuitsCircuitsListParams struct {
 
 	// CreatedLte.
 	CreatedLte *string
+
+	// Description.
+	Description *string
+
+	// DescriptionIc.
+	DescriptionIc *string
+
+	// DescriptionIe.
+	DescriptionIe *string
+
+	// DescriptionIew.
+	DescriptionIew *string
+
+	// DescriptionIsw.
+	DescriptionIsw *string
+
+	// Descriptionn.
+	Descriptionn *string
+
+	// DescriptionNic.
+	DescriptionNic *string
+
+	// DescriptionNie.
+	DescriptionNie *string
+
+	// DescriptionNiew.
+	DescriptionNiew *string
+
+	// DescriptionNisw.
+	DescriptionNisw *string
 
 	// ID.
 	ID *string
@@ -361,17 +400,6 @@ func (o *CircuitsCircuitsListParams) SetCid(cid *string) {
 	o.Cid = cid
 }
 
-// WithCidEmpty adds the cidEmpty to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) WithCidEmpty(cidEmpty *string) *CircuitsCircuitsListParams {
-	o.SetCidEmpty(cidEmpty)
-	return o
-}
-
-// SetCidEmpty adds the cidEmpty to the circuits circuits list params
-func (o *CircuitsCircuitsListParams) SetCidEmpty(cidEmpty *string) {
-	o.CidEmpty = cidEmpty
-}
-
 // WithCidIc adds the cidIc to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) WithCidIc(cidIc *string) *CircuitsCircuitsListParams {
 	o.SetCidIc(cidIc)
@@ -537,6 +565,50 @@ func (o *CircuitsCircuitsListParams) SetCommitRaten(commitRaten *string) {
 	o.CommitRaten = commitRaten
 }
 
+// WithContact adds the contact to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithContact(contact *string) *CircuitsCircuitsListParams {
+	o.SetContact(contact)
+	return o
+}
+
+// SetContact adds the contact to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetContact(contact *string) {
+	o.Contact = contact
+}
+
+// WithContactn adds the contactn to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithContactn(contactn *string) *CircuitsCircuitsListParams {
+	o.SetContactn(contactn)
+	return o
+}
+
+// SetContactn adds the contactN to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetContactn(contactn *string) {
+	o.Contactn = contactn
+}
+
+// WithContactRole adds the contactRole to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithContactRole(contactRole *string) *CircuitsCircuitsListParams {
+	o.SetContactRole(contactRole)
+	return o
+}
+
+// SetContactRole adds the contactRole to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetContactRole(contactRole *string) {
+	o.ContactRole = contactRole
+}
+
+// WithContactRolen adds the contactRolen to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithContactRolen(contactRolen *string) *CircuitsCircuitsListParams {
+	o.SetContactRolen(contactRolen)
+	return o
+}
+
+// SetContactRolen adds the contactRoleN to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetContactRolen(contactRolen *string) {
+	o.ContactRolen = contactRolen
+}
+
 // WithCreated adds the created to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) WithCreated(created *string) *CircuitsCircuitsListParams {
 	o.SetCreated(created)
@@ -568,6 +640,116 @@ func (o *CircuitsCircuitsListParams) WithCreatedLte(createdLte *string) *Circuit
 // SetCreatedLte adds the createdLte to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithDescription adds the description to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescription(description *string) *CircuitsCircuitsListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
+// WithDescriptionIc adds the descriptionIc to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionIc(descriptionIc *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionIc(descriptionIc)
+	return o
+}
+
+// SetDescriptionIc adds the descriptionIc to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionIc(descriptionIc *string) {
+	o.DescriptionIc = descriptionIc
+}
+
+// WithDescriptionIe adds the descriptionIe to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionIe(descriptionIe *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionIe(descriptionIe)
+	return o
+}
+
+// SetDescriptionIe adds the descriptionIe to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionIe(descriptionIe *string) {
+	o.DescriptionIe = descriptionIe
+}
+
+// WithDescriptionIew adds the descriptionIew to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionIew(descriptionIew *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionIew(descriptionIew)
+	return o
+}
+
+// SetDescriptionIew adds the descriptionIew to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionIew(descriptionIew *string) {
+	o.DescriptionIew = descriptionIew
+}
+
+// WithDescriptionIsw adds the descriptionIsw to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionIsw(descriptionIsw *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionIsw(descriptionIsw)
+	return o
+}
+
+// SetDescriptionIsw adds the descriptionIsw to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionIsw(descriptionIsw *string) {
+	o.DescriptionIsw = descriptionIsw
+}
+
+// WithDescriptionn adds the descriptionn to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionn(descriptionn *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionn(descriptionn)
+	return o
+}
+
+// SetDescriptionn adds the descriptionN to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionn(descriptionn *string) {
+	o.Descriptionn = descriptionn
+}
+
+// WithDescriptionNic adds the descriptionNic to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionNic(descriptionNic *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionNic(descriptionNic)
+	return o
+}
+
+// SetDescriptionNic adds the descriptionNic to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionNic(descriptionNic *string) {
+	o.DescriptionNic = descriptionNic
+}
+
+// WithDescriptionNie adds the descriptionNie to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionNie(descriptionNie *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionNie(descriptionNie)
+	return o
+}
+
+// SetDescriptionNie adds the descriptionNie to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionNie(descriptionNie *string) {
+	o.DescriptionNie = descriptionNie
+}
+
+// WithDescriptionNiew adds the descriptionNiew to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionNiew(descriptionNiew *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionNiew(descriptionNiew)
+	return o
+}
+
+// SetDescriptionNiew adds the descriptionNiew to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionNiew(descriptionNiew *string) {
+	o.DescriptionNiew = descriptionNiew
+}
+
+// WithDescriptionNisw adds the descriptionNisw to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionNisw(descriptionNisw *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionNisw(descriptionNisw)
+	return o
+}
+
+// SetDescriptionNisw adds the descriptionNisw to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionNisw(descriptionNisw *string) {
+	o.DescriptionNisw = descriptionNisw
 }
 
 // WithID adds the id to the circuits circuits list params
@@ -1167,23 +1349,6 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.CidEmpty != nil {
-
-		// query param cid__empty
-		var qrCidEmpty string
-
-		if o.CidEmpty != nil {
-			qrCidEmpty = *o.CidEmpty
-		}
-		qCidEmpty := qrCidEmpty
-		if qCidEmpty != "" {
-
-			if err := r.SetQueryParam("cid__empty", qCidEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CidIc != nil {
 
 		// query param cid__ic
@@ -1439,6 +1604,74 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.Contact != nil {
+
+		// query param contact
+		var qrContact string
+
+		if o.Contact != nil {
+			qrContact = *o.Contact
+		}
+		qContact := qrContact
+		if qContact != "" {
+
+			if err := r.SetQueryParam("contact", qContact); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Contactn != nil {
+
+		// query param contact__n
+		var qrContactn string
+
+		if o.Contactn != nil {
+			qrContactn = *o.Contactn
+		}
+		qContactn := qrContactn
+		if qContactn != "" {
+
+			if err := r.SetQueryParam("contact__n", qContactn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactRole != nil {
+
+		// query param contact_role
+		var qrContactRole string
+
+		if o.ContactRole != nil {
+			qrContactRole = *o.ContactRole
+		}
+		qContactRole := qrContactRole
+		if qContactRole != "" {
+
+			if err := r.SetQueryParam("contact_role", qContactRole); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactRolen != nil {
+
+		// query param contact_role__n
+		var qrContactRolen string
+
+		if o.ContactRolen != nil {
+			qrContactRolen = *o.ContactRolen
+		}
+		qContactRolen := qrContactRolen
+		if qContactRolen != "" {
+
+			if err := r.SetQueryParam("contact_role__n", qContactRolen); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Created != nil {
 
 		// query param created
@@ -1485,6 +1718,176 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIc != nil {
+
+		// query param description__ic
+		var qrDescriptionIc string
+
+		if o.DescriptionIc != nil {
+			qrDescriptionIc = *o.DescriptionIc
+		}
+		qDescriptionIc := qrDescriptionIc
+		if qDescriptionIc != "" {
+
+			if err := r.SetQueryParam("description__ic", qDescriptionIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIe != nil {
+
+		// query param description__ie
+		var qrDescriptionIe string
+
+		if o.DescriptionIe != nil {
+			qrDescriptionIe = *o.DescriptionIe
+		}
+		qDescriptionIe := qrDescriptionIe
+		if qDescriptionIe != "" {
+
+			if err := r.SetQueryParam("description__ie", qDescriptionIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIew != nil {
+
+		// query param description__iew
+		var qrDescriptionIew string
+
+		if o.DescriptionIew != nil {
+			qrDescriptionIew = *o.DescriptionIew
+		}
+		qDescriptionIew := qrDescriptionIew
+		if qDescriptionIew != "" {
+
+			if err := r.SetQueryParam("description__iew", qDescriptionIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIsw != nil {
+
+		// query param description__isw
+		var qrDescriptionIsw string
+
+		if o.DescriptionIsw != nil {
+			qrDescriptionIsw = *o.DescriptionIsw
+		}
+		qDescriptionIsw := qrDescriptionIsw
+		if qDescriptionIsw != "" {
+
+			if err := r.SetQueryParam("description__isw", qDescriptionIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Descriptionn != nil {
+
+		// query param description__n
+		var qrDescriptionn string
+
+		if o.Descriptionn != nil {
+			qrDescriptionn = *o.Descriptionn
+		}
+		qDescriptionn := qrDescriptionn
+		if qDescriptionn != "" {
+
+			if err := r.SetQueryParam("description__n", qDescriptionn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNic != nil {
+
+		// query param description__nic
+		var qrDescriptionNic string
+
+		if o.DescriptionNic != nil {
+			qrDescriptionNic = *o.DescriptionNic
+		}
+		qDescriptionNic := qrDescriptionNic
+		if qDescriptionNic != "" {
+
+			if err := r.SetQueryParam("description__nic", qDescriptionNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNie != nil {
+
+		// query param description__nie
+		var qrDescriptionNie string
+
+		if o.DescriptionNie != nil {
+			qrDescriptionNie = *o.DescriptionNie
+		}
+		qDescriptionNie := qrDescriptionNie
+		if qDescriptionNie != "" {
+
+			if err := r.SetQueryParam("description__nie", qDescriptionNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNiew != nil {
+
+		// query param description__niew
+		var qrDescriptionNiew string
+
+		if o.DescriptionNiew != nil {
+			qrDescriptionNiew = *o.DescriptionNiew
+		}
+		qDescriptionNiew := qrDescriptionNiew
+		if qDescriptionNiew != "" {
+
+			if err := r.SetQueryParam("description__niew", qDescriptionNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNisw != nil {
+
+		// query param description__nisw
+		var qrDescriptionNisw string
+
+		if o.DescriptionNisw != nil {
+			qrDescriptionNisw = *o.DescriptionNisw
+		}
+		qDescriptionNisw := qrDescriptionNisw
+		if qDescriptionNisw != "" {
+
+			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
 				return err
 			}
 		}

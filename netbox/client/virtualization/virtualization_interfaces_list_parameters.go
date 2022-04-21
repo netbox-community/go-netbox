@@ -75,6 +75,12 @@ func NewVirtualizationInterfacesListParamsWithHTTPClient(client *http.Client) *V
 */
 type VirtualizationInterfacesListParams struct {
 
+	// BridgeID.
+	BridgeID *string
+
+	// BridgeIDn.
+	BridgeIDn *string
+
 	// Cluster.
 	Cluster *string
 
@@ -95,6 +101,36 @@ type VirtualizationInterfacesListParams struct {
 
 	// CreatedLte.
 	CreatedLte *string
+
+	// Description.
+	Description *string
+
+	// DescriptionIc.
+	DescriptionIc *string
+
+	// DescriptionIe.
+	DescriptionIe *string
+
+	// DescriptionIew.
+	DescriptionIew *string
+
+	// DescriptionIsw.
+	DescriptionIsw *string
+
+	// Descriptionn.
+	Descriptionn *string
+
+	// DescriptionNic.
+	DescriptionNic *string
+
+	// DescriptionNie.
+	DescriptionNie *string
+
+	// DescriptionNiew.
+	DescriptionNiew *string
+
+	// DescriptionNisw.
+	DescriptionNisw *string
 
 	// Enabled.
 	Enabled *string
@@ -183,9 +219,6 @@ type VirtualizationInterfacesListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -246,6 +279,18 @@ type VirtualizationInterfacesListParams struct {
 	// VirtualMachineIDn.
 	VirtualMachineIDn *string
 
+	// Vrf.
+	Vrf *string
+
+	// Vrfn.
+	Vrfn *string
+
+	// VrfID.
+	VrfID *string
+
+	// VrfIDn.
+	VrfIDn *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -297,6 +342,28 @@ func (o *VirtualizationInterfacesListParams) WithHTTPClient(client *http.Client)
 // SetHTTPClient adds the HTTPClient to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithBridgeID adds the bridgeID to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithBridgeID(bridgeID *string) *VirtualizationInterfacesListParams {
+	o.SetBridgeID(bridgeID)
+	return o
+}
+
+// SetBridgeID adds the bridgeId to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetBridgeID(bridgeID *string) {
+	o.BridgeID = bridgeID
+}
+
+// WithBridgeIDn adds the bridgeIDn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithBridgeIDn(bridgeIDn *string) *VirtualizationInterfacesListParams {
+	o.SetBridgeIDn(bridgeIDn)
+	return o
+}
+
+// SetBridgeIDn adds the bridgeIdN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetBridgeIDn(bridgeIDn *string) {
+	o.BridgeIDn = bridgeIDn
 }
 
 // WithCluster adds the cluster to the virtualization interfaces list params
@@ -374,6 +441,116 @@ func (o *VirtualizationInterfacesListParams) WithCreatedLte(createdLte *string) 
 // SetCreatedLte adds the createdLte to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithDescription adds the description to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescription(description *string) *VirtualizationInterfacesListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
+// WithDescriptionIc adds the descriptionIc to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescriptionIc(descriptionIc *string) *VirtualizationInterfacesListParams {
+	o.SetDescriptionIc(descriptionIc)
+	return o
+}
+
+// SetDescriptionIc adds the descriptionIc to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescriptionIc(descriptionIc *string) {
+	o.DescriptionIc = descriptionIc
+}
+
+// WithDescriptionIe adds the descriptionIe to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescriptionIe(descriptionIe *string) *VirtualizationInterfacesListParams {
+	o.SetDescriptionIe(descriptionIe)
+	return o
+}
+
+// SetDescriptionIe adds the descriptionIe to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescriptionIe(descriptionIe *string) {
+	o.DescriptionIe = descriptionIe
+}
+
+// WithDescriptionIew adds the descriptionIew to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescriptionIew(descriptionIew *string) *VirtualizationInterfacesListParams {
+	o.SetDescriptionIew(descriptionIew)
+	return o
+}
+
+// SetDescriptionIew adds the descriptionIew to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescriptionIew(descriptionIew *string) {
+	o.DescriptionIew = descriptionIew
+}
+
+// WithDescriptionIsw adds the descriptionIsw to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescriptionIsw(descriptionIsw *string) *VirtualizationInterfacesListParams {
+	o.SetDescriptionIsw(descriptionIsw)
+	return o
+}
+
+// SetDescriptionIsw adds the descriptionIsw to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescriptionIsw(descriptionIsw *string) {
+	o.DescriptionIsw = descriptionIsw
+}
+
+// WithDescriptionn adds the descriptionn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescriptionn(descriptionn *string) *VirtualizationInterfacesListParams {
+	o.SetDescriptionn(descriptionn)
+	return o
+}
+
+// SetDescriptionn adds the descriptionN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescriptionn(descriptionn *string) {
+	o.Descriptionn = descriptionn
+}
+
+// WithDescriptionNic adds the descriptionNic to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescriptionNic(descriptionNic *string) *VirtualizationInterfacesListParams {
+	o.SetDescriptionNic(descriptionNic)
+	return o
+}
+
+// SetDescriptionNic adds the descriptionNic to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescriptionNic(descriptionNic *string) {
+	o.DescriptionNic = descriptionNic
+}
+
+// WithDescriptionNie adds the descriptionNie to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescriptionNie(descriptionNie *string) *VirtualizationInterfacesListParams {
+	o.SetDescriptionNie(descriptionNie)
+	return o
+}
+
+// SetDescriptionNie adds the descriptionNie to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescriptionNie(descriptionNie *string) {
+	o.DescriptionNie = descriptionNie
+}
+
+// WithDescriptionNiew adds the descriptionNiew to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescriptionNiew(descriptionNiew *string) *VirtualizationInterfacesListParams {
+	o.SetDescriptionNiew(descriptionNiew)
+	return o
+}
+
+// SetDescriptionNiew adds the descriptionNiew to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescriptionNiew(descriptionNiew *string) {
+	o.DescriptionNiew = descriptionNiew
+}
+
+// WithDescriptionNisw adds the descriptionNisw to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithDescriptionNisw(descriptionNisw *string) *VirtualizationInterfacesListParams {
+	o.SetDescriptionNisw(descriptionNisw)
+	return o
+}
+
+// SetDescriptionNisw adds the descriptionNisw to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetDescriptionNisw(descriptionNisw *string) {
+	o.DescriptionNisw = descriptionNisw
 }
 
 // WithEnabled adds the enabled to the virtualization interfaces list params
@@ -684,17 +861,6 @@ func (o *VirtualizationInterfacesListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) WithNameEmpty(nameEmpty *string) *VirtualizationInterfacesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) WithNameIc(nameIc *string) *VirtualizationInterfacesListParams {
 	o.SetNameIc(nameIc)
@@ -904,6 +1070,50 @@ func (o *VirtualizationInterfacesListParams) SetVirtualMachineIDn(virtualMachine
 	o.VirtualMachineIDn = virtualMachineIDn
 }
 
+// WithVrf adds the vrf to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithVrf(vrf *string) *VirtualizationInterfacesListParams {
+	o.SetVrf(vrf)
+	return o
+}
+
+// SetVrf adds the vrf to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetVrf(vrf *string) {
+	o.Vrf = vrf
+}
+
+// WithVrfn adds the vrfn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithVrfn(vrfn *string) *VirtualizationInterfacesListParams {
+	o.SetVrfn(vrfn)
+	return o
+}
+
+// SetVrfn adds the vrfN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetVrfn(vrfn *string) {
+	o.Vrfn = vrfn
+}
+
+// WithVrfID adds the vrfID to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithVrfID(vrfID *string) *VirtualizationInterfacesListParams {
+	o.SetVrfID(vrfID)
+	return o
+}
+
+// SetVrfID adds the vrfId to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetVrfID(vrfID *string) {
+	o.VrfID = vrfID
+}
+
+// WithVrfIDn adds the vrfIDn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithVrfIDn(vrfIDn *string) *VirtualizationInterfacesListParams {
+	o.SetVrfIDn(vrfIDn)
+	return o
+}
+
+// SetVrfIDn adds the vrfIdN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetVrfIDn(vrfIDn *string) {
+	o.VrfIDn = vrfIDn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -911,6 +1121,40 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		return err
 	}
 	var res []error
+
+	if o.BridgeID != nil {
+
+		// query param bridge_id
+		var qrBridgeID string
+
+		if o.BridgeID != nil {
+			qrBridgeID = *o.BridgeID
+		}
+		qBridgeID := qrBridgeID
+		if qBridgeID != "" {
+
+			if err := r.SetQueryParam("bridge_id", qBridgeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.BridgeIDn != nil {
+
+		// query param bridge_id__n
+		var qrBridgeIDn string
+
+		if o.BridgeIDn != nil {
+			qrBridgeIDn = *o.BridgeIDn
+		}
+		qBridgeIDn := qrBridgeIDn
+		if qBridgeIDn != "" {
+
+			if err := r.SetQueryParam("bridge_id__n", qBridgeIDn); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.Cluster != nil {
 
@@ -1026,6 +1270,176 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIc != nil {
+
+		// query param description__ic
+		var qrDescriptionIc string
+
+		if o.DescriptionIc != nil {
+			qrDescriptionIc = *o.DescriptionIc
+		}
+		qDescriptionIc := qrDescriptionIc
+		if qDescriptionIc != "" {
+
+			if err := r.SetQueryParam("description__ic", qDescriptionIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIe != nil {
+
+		// query param description__ie
+		var qrDescriptionIe string
+
+		if o.DescriptionIe != nil {
+			qrDescriptionIe = *o.DescriptionIe
+		}
+		qDescriptionIe := qrDescriptionIe
+		if qDescriptionIe != "" {
+
+			if err := r.SetQueryParam("description__ie", qDescriptionIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIew != nil {
+
+		// query param description__iew
+		var qrDescriptionIew string
+
+		if o.DescriptionIew != nil {
+			qrDescriptionIew = *o.DescriptionIew
+		}
+		qDescriptionIew := qrDescriptionIew
+		if qDescriptionIew != "" {
+
+			if err := r.SetQueryParam("description__iew", qDescriptionIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIsw != nil {
+
+		// query param description__isw
+		var qrDescriptionIsw string
+
+		if o.DescriptionIsw != nil {
+			qrDescriptionIsw = *o.DescriptionIsw
+		}
+		qDescriptionIsw := qrDescriptionIsw
+		if qDescriptionIsw != "" {
+
+			if err := r.SetQueryParam("description__isw", qDescriptionIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Descriptionn != nil {
+
+		// query param description__n
+		var qrDescriptionn string
+
+		if o.Descriptionn != nil {
+			qrDescriptionn = *o.Descriptionn
+		}
+		qDescriptionn := qrDescriptionn
+		if qDescriptionn != "" {
+
+			if err := r.SetQueryParam("description__n", qDescriptionn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNic != nil {
+
+		// query param description__nic
+		var qrDescriptionNic string
+
+		if o.DescriptionNic != nil {
+			qrDescriptionNic = *o.DescriptionNic
+		}
+		qDescriptionNic := qrDescriptionNic
+		if qDescriptionNic != "" {
+
+			if err := r.SetQueryParam("description__nic", qDescriptionNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNie != nil {
+
+		// query param description__nie
+		var qrDescriptionNie string
+
+		if o.DescriptionNie != nil {
+			qrDescriptionNie = *o.DescriptionNie
+		}
+		qDescriptionNie := qrDescriptionNie
+		if qDescriptionNie != "" {
+
+			if err := r.SetQueryParam("description__nie", qDescriptionNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNiew != nil {
+
+		// query param description__niew
+		var qrDescriptionNiew string
+
+		if o.DescriptionNiew != nil {
+			qrDescriptionNiew = *o.DescriptionNiew
+		}
+		qDescriptionNiew := qrDescriptionNiew
+		if qDescriptionNiew != "" {
+
+			if err := r.SetQueryParam("description__niew", qDescriptionNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNisw != nil {
+
+		// query param description__nisw
+		var qrDescriptionNisw string
+
+		if o.DescriptionNisw != nil {
+			qrDescriptionNisw = *o.DescriptionNisw
+		}
+		qDescriptionNisw := qrDescriptionNisw
+		if qDescriptionNisw != "" {
+
+			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
 				return err
 			}
 		}
@@ -1507,23 +1921,6 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1842,6 +2239,74 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		if qVirtualMachineIDn != "" {
 
 			if err := r.SetQueryParam("virtual_machine_id__n", qVirtualMachineIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Vrf != nil {
+
+		// query param vrf
+		var qrVrf string
+
+		if o.Vrf != nil {
+			qrVrf = *o.Vrf
+		}
+		qVrf := qrVrf
+		if qVrf != "" {
+
+			if err := r.SetQueryParam("vrf", qVrf); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Vrfn != nil {
+
+		// query param vrf__n
+		var qrVrfn string
+
+		if o.Vrfn != nil {
+			qrVrfn = *o.Vrfn
+		}
+		qVrfn := qrVrfn
+		if qVrfn != "" {
+
+			if err := r.SetQueryParam("vrf__n", qVrfn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VrfID != nil {
+
+		// query param vrf_id
+		var qrVrfID string
+
+		if o.VrfID != nil {
+			qrVrfID = *o.VrfID
+		}
+		qVrfID := qrVrfID
+		if qVrfID != "" {
+
+			if err := r.SetQueryParam("vrf_id", qVrfID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VrfIDn != nil {
+
+		// query param vrf_id__n
+		var qrVrfIDn string
+
+		if o.VrfIDn != nil {
+			qrVrfIDn = *o.VrfIDn
+		}
+		qVrfIDn := qrVrfIDn
+		if qVrfIDn != "" {
+
+			if err := r.SetQueryParam("vrf_id__n", qVrfIDn); err != nil {
 				return err
 			}
 		}

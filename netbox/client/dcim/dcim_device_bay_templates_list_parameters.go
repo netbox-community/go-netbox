@@ -126,9 +126,6 @@ type DcimDeviceBayTemplatesListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -161,6 +158,9 @@ type DcimDeviceBayTemplatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	// Q.
+	Q *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -391,17 +391,6 @@ func (o *DcimDeviceBayTemplatesListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the dcim device bay templates list params
-func (o *DcimDeviceBayTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimDeviceBayTemplatesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim device bay templates list params
-func (o *DcimDeviceBayTemplatesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the dcim device bay templates list params
 func (o *DcimDeviceBayTemplatesListParams) WithNameIc(nameIc *string) *DcimDeviceBayTemplatesListParams {
 	o.SetNameIc(nameIc)
@@ -510,6 +499,17 @@ func (o *DcimDeviceBayTemplatesListParams) WithOffset(offset *int64) *DcimDevice
 // SetOffset adds the offset to the dcim device bay templates list params
 func (o *DcimDeviceBayTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithQ adds the q to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) WithQ(q *string) *DcimDeviceBayTemplatesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim device bay templates list params
+func (o *DcimDeviceBayTemplatesListParams) SetQ(q *string) {
+	o.Q = q
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -792,23 +792,6 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -974,6 +957,23 @@ func (o *DcimDeviceBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

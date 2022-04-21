@@ -64,7 +64,7 @@ func (a *Client) StatusList(params *StatusListParams, authInfo runtime.ClientAut
 		PathPattern:        "/status/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &StatusListReader{formats: a.formats},
 		AuthInfo:           authInfo,

@@ -93,6 +93,18 @@ type ExtrasConfigContextsListParams struct {
 	// ClusterIDn.
 	ClusterIDn *string
 
+	// ClusterType.
+	ClusterType *string
+
+	// ClusterTypen.
+	ClusterTypen *string
+
+	// ClusterTypeID.
+	ClusterTypeID *string
+
+	// ClusterTypeIDn.
+	ClusterTypeIDn *string
+
 	// Created.
 	Created *string
 
@@ -146,9 +158,6 @@ type ExtrasConfigContextsListParams struct {
 
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -251,6 +260,12 @@ type ExtrasConfigContextsListParams struct {
 
 	// Tagn.
 	Tagn *string
+
+	// TagID.
+	TagID *string
+
+	// TagIDn.
+	TagIDn *string
 
 	// Tenant.
 	Tenant *string
@@ -393,6 +408,50 @@ func (o *ExtrasConfigContextsListParams) WithClusterIDn(clusterIDn *string) *Ext
 // SetClusterIDn adds the clusterIdN to the extras config contexts list params
 func (o *ExtrasConfigContextsListParams) SetClusterIDn(clusterIDn *string) {
 	o.ClusterIDn = clusterIDn
+}
+
+// WithClusterType adds the clusterType to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithClusterType(clusterType *string) *ExtrasConfigContextsListParams {
+	o.SetClusterType(clusterType)
+	return o
+}
+
+// SetClusterType adds the clusterType to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetClusterType(clusterType *string) {
+	o.ClusterType = clusterType
+}
+
+// WithClusterTypen adds the clusterTypen to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithClusterTypen(clusterTypen *string) *ExtrasConfigContextsListParams {
+	o.SetClusterTypen(clusterTypen)
+	return o
+}
+
+// SetClusterTypen adds the clusterTypeN to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetClusterTypen(clusterTypen *string) {
+	o.ClusterTypen = clusterTypen
+}
+
+// WithClusterTypeID adds the clusterTypeID to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithClusterTypeID(clusterTypeID *string) *ExtrasConfigContextsListParams {
+	o.SetClusterTypeID(clusterTypeID)
+	return o
+}
+
+// SetClusterTypeID adds the clusterTypeId to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetClusterTypeID(clusterTypeID *string) {
+	o.ClusterTypeID = clusterTypeID
+}
+
+// WithClusterTypeIDn adds the clusterTypeIDn to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithClusterTypeIDn(clusterTypeIDn *string) *ExtrasConfigContextsListParams {
+	o.SetClusterTypeIDn(clusterTypeIDn)
+	return o
+}
+
+// SetClusterTypeIDn adds the clusterTypeIdN to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetClusterTypeIDn(clusterTypeIDn *string) {
+	o.ClusterTypeIDn = clusterTypeIDn
 }
 
 // WithCreated adds the created to the extras config contexts list params
@@ -580,17 +639,6 @@ func (o *ExtrasConfigContextsListParams) WithName(name *string) *ExtrasConfigCon
 // SetName adds the name to the extras config contexts list params
 func (o *ExtrasConfigContextsListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the extras config contexts list params
-func (o *ExtrasConfigContextsListParams) WithNameEmpty(nameEmpty *string) *ExtrasConfigContextsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the extras config contexts list params
-func (o *ExtrasConfigContextsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the extras config contexts list params
@@ -956,6 +1004,28 @@ func (o *ExtrasConfigContextsListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
 }
 
+// WithTagID adds the tagID to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithTagID(tagID *string) *ExtrasConfigContextsListParams {
+	o.SetTagID(tagID)
+	return o
+}
+
+// SetTagID adds the tagId to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetTagID(tagID *string) {
+	o.TagID = tagID
+}
+
+// WithTagIDn adds the tagIDn to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithTagIDn(tagIDn *string) *ExtrasConfigContextsListParams {
+	o.SetTagIDn(tagIDn)
+	return o
+}
+
+// SetTagIDn adds the tagIdN to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetTagIDn(tagIDn *string) {
+	o.TagIDn = tagIDn
+}
+
 // WithTenant adds the tenant to the extras config contexts list params
 func (o *ExtrasConfigContextsListParams) WithTenant(tenant *string) *ExtrasConfigContextsListParams {
 	o.SetTenant(tenant)
@@ -1149,6 +1219,74 @@ func (o *ExtrasConfigContextsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qClusterIDn != "" {
 
 			if err := r.SetQueryParam("cluster_id__n", qClusterIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ClusterType != nil {
+
+		// query param cluster_type
+		var qrClusterType string
+
+		if o.ClusterType != nil {
+			qrClusterType = *o.ClusterType
+		}
+		qClusterType := qrClusterType
+		if qClusterType != "" {
+
+			if err := r.SetQueryParam("cluster_type", qClusterType); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ClusterTypen != nil {
+
+		// query param cluster_type__n
+		var qrClusterTypen string
+
+		if o.ClusterTypen != nil {
+			qrClusterTypen = *o.ClusterTypen
+		}
+		qClusterTypen := qrClusterTypen
+		if qClusterTypen != "" {
+
+			if err := r.SetQueryParam("cluster_type__n", qClusterTypen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ClusterTypeID != nil {
+
+		// query param cluster_type_id
+		var qrClusterTypeID string
+
+		if o.ClusterTypeID != nil {
+			qrClusterTypeID = *o.ClusterTypeID
+		}
+		qClusterTypeID := qrClusterTypeID
+		if qClusterTypeID != "" {
+
+			if err := r.SetQueryParam("cluster_type_id", qClusterTypeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ClusterTypeIDn != nil {
+
+		// query param cluster_type_id__n
+		var qrClusterTypeIDn string
+
+		if o.ClusterTypeIDn != nil {
+			qrClusterTypeIDn = *o.ClusterTypeIDn
+		}
+		qClusterTypeIDn := qrClusterTypeIDn
+		if qClusterTypeIDn != "" {
+
+			if err := r.SetQueryParam("cluster_type_id__n", qClusterTypeIDn); err != nil {
 				return err
 			}
 		}
@@ -1438,23 +1576,6 @@ func (o *ExtrasConfigContextsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -2016,6 +2137,40 @@ func (o *ExtrasConfigContextsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qTagn != "" {
 
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TagID != nil {
+
+		// query param tag_id
+		var qrTagID string
+
+		if o.TagID != nil {
+			qrTagID = *o.TagID
+		}
+		qTagID := qrTagID
+		if qTagID != "" {
+
+			if err := r.SetQueryParam("tag_id", qTagID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TagIDn != nil {
+
+		// query param tag_id__n
+		var qrTagIDn string
+
+		if o.TagIDn != nil {
+			qrTagIDn = *o.TagIDn
+		}
+		qTagIDn := qrTagIDn
+		if qTagIDn != "" {
+
+			if err := r.SetQueryParam("tag_id__n", qTagIDn); err != nil {
 				return err
 			}
 		}

@@ -78,11 +78,11 @@ func NewIpamPrefixesAvailableIpsCreateParamsWithHTTPClient(client *http.Client) 
 type IpamPrefixesAvailableIpsCreateParams struct {
 
 	// Data.
-	Data []*models.AvailableIP
+	Data *models.WritableAvailableIP
 
 	/* ID.
 
-	   A unique integer value identifying this prefix.
+	   A unique integer value identifying this IP address.
 	*/
 	ID int64
 
@@ -140,13 +140,13 @@ func (o *IpamPrefixesAvailableIpsCreateParams) SetHTTPClient(client *http.Client
 }
 
 // WithData adds the data to the ipam prefixes available ips create params
-func (o *IpamPrefixesAvailableIpsCreateParams) WithData(data []*models.AvailableIP) *IpamPrefixesAvailableIpsCreateParams {
+func (o *IpamPrefixesAvailableIpsCreateParams) WithData(data *models.WritableAvailableIP) *IpamPrefixesAvailableIpsCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the ipam prefixes available ips create params
-func (o *IpamPrefixesAvailableIpsCreateParams) SetData(data []*models.AvailableIP) {
+func (o *IpamPrefixesAvailableIpsCreateParams) SetData(data *models.WritableAvailableIP) {
 	o.Data = data
 }
 

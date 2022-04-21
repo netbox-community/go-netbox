@@ -59,22 +59,20 @@ func NewIpamPrefixesAvailablePrefixesCreateCreated() *IpamPrefixesAvailablePrefi
 IpamPrefixesAvailablePrefixesCreateCreated ipam prefixes available prefixes create created
 */
 type IpamPrefixesAvailablePrefixesCreateCreated struct {
-	Payload *models.Prefix
+	Payload []*models.Prefix
 }
 
 func (o *IpamPrefixesAvailablePrefixesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesCreateCreated  %+v", 201, o.Payload)
 }
-func (o *IpamPrefixesAvailablePrefixesCreateCreated) GetPayload() *models.Prefix {
+func (o *IpamPrefixesAvailablePrefixesCreateCreated) GetPayload() []*models.Prefix {
 	return o.Payload
 }
 
 func (o *IpamPrefixesAvailablePrefixesCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.Prefix)
-
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -77,7 +77,7 @@ func NewCircuitsProvidersBulkPartialUpdateParamsWithHTTPClient(client *http.Clie
 type CircuitsProvidersBulkPartialUpdateParams struct {
 
 	// Data.
-	Data *models.Provider
+	Data *models.WritableProvider
 
 	timeout    time.Duration
 	Context    context.Context
@@ -133,13 +133,13 @@ func (o *CircuitsProvidersBulkPartialUpdateParams) SetHTTPClient(client *http.Cl
 }
 
 // WithData adds the data to the circuits providers bulk partial update params
-func (o *CircuitsProvidersBulkPartialUpdateParams) WithData(data *models.Provider) *CircuitsProvidersBulkPartialUpdateParams {
+func (o *CircuitsProvidersBulkPartialUpdateParams) WithData(data *models.WritableProvider) *CircuitsProvidersBulkPartialUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the circuits providers bulk partial update params
-func (o *CircuitsProvidersBulkPartialUpdateParams) SetData(data *models.Provider) {
+func (o *CircuitsProvidersBulkPartialUpdateParams) SetData(data *models.WritableProvider) {
 	o.Data = data
 }
 

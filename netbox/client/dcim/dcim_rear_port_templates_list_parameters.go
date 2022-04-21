@@ -78,9 +78,6 @@ type DcimRearPortTemplatesListParams struct {
 	// Color.
 	Color *string
 
-	// ColorEmpty.
-	ColorEmpty *string
-
 	// ColorIc.
 	ColorIc *string
 
@@ -156,11 +153,14 @@ type DcimRearPortTemplatesListParams struct {
 	*/
 	Limit *int64
 
+	// ModuletypeID.
+	ModuletypeID *string
+
+	// ModuletypeIDn.
+	ModuletypeIDn *string
+
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -212,6 +212,9 @@ type DcimRearPortTemplatesListParams struct {
 
 	// Positionsn.
 	Positionsn *string
+
+	// Q.
+	Q *string
 
 	// Type.
 	Type *string
@@ -281,17 +284,6 @@ func (o *DcimRearPortTemplatesListParams) WithColor(color *string) *DcimRearPort
 // SetColor adds the color to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) SetColor(color *string) {
 	o.Color = color
-}
-
-// WithColorEmpty adds the colorEmpty to the dcim rear port templates list params
-func (o *DcimRearPortTemplatesListParams) WithColorEmpty(colorEmpty *string) *DcimRearPortTemplatesListParams {
-	o.SetColorEmpty(colorEmpty)
-	return o
-}
-
-// SetColorEmpty adds the colorEmpty to the dcim rear port templates list params
-func (o *DcimRearPortTemplatesListParams) SetColorEmpty(colorEmpty *string) {
-	o.ColorEmpty = colorEmpty
 }
 
 // WithColorIc adds the colorIc to the dcim rear port templates list params
@@ -558,6 +550,28 @@ func (o *DcimRearPortTemplatesListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithModuletypeID adds the moduletypeID to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithModuletypeID(moduletypeID *string) *DcimRearPortTemplatesListParams {
+	o.SetModuletypeID(moduletypeID)
+	return o
+}
+
+// SetModuletypeID adds the moduletypeId to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetModuletypeID(moduletypeID *string) {
+	o.ModuletypeID = moduletypeID
+}
+
+// WithModuletypeIDn adds the moduletypeIDn to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithModuletypeIDn(moduletypeIDn *string) *DcimRearPortTemplatesListParams {
+	o.SetModuletypeIDn(moduletypeIDn)
+	return o
+}
+
+// SetModuletypeIDn adds the moduletypeIdN to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetModuletypeIDn(moduletypeIDn *string) {
+	o.ModuletypeIDn = moduletypeIDn
+}
+
 // WithName adds the name to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) WithName(name *string) *DcimRearPortTemplatesListParams {
 	o.SetName(name)
@@ -567,17 +581,6 @@ func (o *DcimRearPortTemplatesListParams) WithName(name *string) *DcimRearPortTe
 // SetName adds the name to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim rear port templates list params
-func (o *DcimRearPortTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimRearPortTemplatesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim rear port templates list params
-func (o *DcimRearPortTemplatesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim rear port templates list params
@@ -756,6 +759,17 @@ func (o *DcimRearPortTemplatesListParams) SetPositionsn(positionsn *string) {
 	o.Positionsn = positionsn
 }
 
+// WithQ adds the q to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithQ(q *string) *DcimRearPortTemplatesListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetQ(q *string) {
+	o.Q = q
+}
+
 // WithType adds the typeVar to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) WithType(typeVar *string) *DcimRearPortTemplatesListParams {
 	o.SetType(typeVar)
@@ -798,23 +812,6 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		if qColor != "" {
 
 			if err := r.SetQueryParam("color", qColor); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ColorEmpty != nil {
-
-		// query param color__empty
-		var qrColorEmpty string
-
-		if o.ColorEmpty != nil {
-			qrColorEmpty = *o.ColorEmpty
-		}
-		qColorEmpty := qrColorEmpty
-		if qColorEmpty != "" {
-
-			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
 				return err
 			}
 		}
@@ -1228,6 +1225,40 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		}
 	}
 
+	if o.ModuletypeID != nil {
+
+		// query param moduletype_id
+		var qrModuletypeID string
+
+		if o.ModuletypeID != nil {
+			qrModuletypeID = *o.ModuletypeID
+		}
+		qModuletypeID := qrModuletypeID
+		if qModuletypeID != "" {
+
+			if err := r.SetQueryParam("moduletype_id", qModuletypeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ModuletypeIDn != nil {
+
+		// query param moduletype_id__n
+		var qrModuletypeIDn string
+
+		if o.ModuletypeIDn != nil {
+			qrModuletypeIDn = *o.ModuletypeIDn
+		}
+		qModuletypeIDn := qrModuletypeIDn
+		if qModuletypeIDn != "" {
+
+			if err := r.SetQueryParam("moduletype_id__n", qModuletypeIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Name != nil {
 
 		// query param name
@@ -1240,23 +1271,6 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1529,6 +1543,23 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		if qPositionsn != "" {
 
 			if err := r.SetQueryParam("positions__n", qPositionsn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

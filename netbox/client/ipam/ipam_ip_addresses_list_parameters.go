@@ -93,9 +93,6 @@ type IpamIPAddressesListParams struct {
 	// Description.
 	Description *string
 
-	// DescriptionEmpty.
-	DescriptionEmpty *string
-
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -132,9 +129,6 @@ type IpamIPAddressesListParams struct {
 	// DNSName.
 	DNSName *string
 
-	// DNSNameEmpty.
-	DNSNameEmpty *string
-
 	// DNSNameIc.
 	DNSNameIc *string
 
@@ -164,6 +158,12 @@ type IpamIPAddressesListParams struct {
 
 	// Family.
 	Family *float64
+
+	// FhrpgroupID.
+	FhrpgroupID *string
+
+	// FhrpgroupIDn.
+	FhrpgroupIDn *string
 
 	// ID.
 	ID *string
@@ -422,17 +422,6 @@ func (o *IpamIPAddressesListParams) SetDescription(description *string) {
 	o.Description = description
 }
 
-// WithDescriptionEmpty adds the descriptionEmpty to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamIPAddressesListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
-}
-
 // WithDescriptionIc adds the descriptionIc to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithDescriptionIc(descriptionIc *string) *IpamIPAddressesListParams {
 	o.SetDescriptionIc(descriptionIc)
@@ -565,17 +554,6 @@ func (o *IpamIPAddressesListParams) SetDNSName(dNSName *string) {
 	o.DNSName = dNSName
 }
 
-// WithDNSNameEmpty adds the dNSNameEmpty to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) WithDNSNameEmpty(dNSNameEmpty *string) *IpamIPAddressesListParams {
-	o.SetDNSNameEmpty(dNSNameEmpty)
-	return o
-}
-
-// SetDNSNameEmpty adds the dnsNameEmpty to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) SetDNSNameEmpty(dNSNameEmpty *string) {
-	o.DNSNameEmpty = dNSNameEmpty
-}
-
 // WithDNSNameIc adds the dNSNameIc to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithDNSNameIc(dNSNameIc *string) *IpamIPAddressesListParams {
 	o.SetDNSNameIc(dNSNameIc)
@@ -684,6 +662,28 @@ func (o *IpamIPAddressesListParams) WithFamily(family *float64) *IpamIPAddresses
 // SetFamily adds the family to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetFamily(family *float64) {
 	o.Family = family
+}
+
+// WithFhrpgroupID adds the fhrpgroupID to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithFhrpgroupID(fhrpgroupID *string) *IpamIPAddressesListParams {
+	o.SetFhrpgroupID(fhrpgroupID)
+	return o
+}
+
+// SetFhrpgroupID adds the fhrpgroupId to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetFhrpgroupID(fhrpgroupID *string) {
+	o.FhrpgroupID = fhrpgroupID
+}
+
+// WithFhrpgroupIDn adds the fhrpgroupIDn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithFhrpgroupIDn(fhrpgroupIDn *string) *IpamIPAddressesListParams {
+	o.SetFhrpgroupIDn(fhrpgroupIDn)
+	return o
+}
+
+// SetFhrpgroupIDn adds the fhrpgroupIdN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetFhrpgroupIDn(fhrpgroupIDn *string) {
+	o.FhrpgroupIDn = fhrpgroupIDn
 }
 
 // WithID adds the id to the ipam ip addresses list params
@@ -1280,23 +1280,6 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.DescriptionIc != nil {
 
 		// query param description__ic
@@ -1501,23 +1484,6 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
-	if o.DNSNameEmpty != nil {
-
-		// query param dns_name__empty
-		var qrDNSNameEmpty string
-
-		if o.DNSNameEmpty != nil {
-			qrDNSNameEmpty = *o.DNSNameEmpty
-		}
-		qDNSNameEmpty := qrDNSNameEmpty
-		if qDNSNameEmpty != "" {
-
-			if err := r.SetQueryParam("dns_name__empty", qDNSNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.DNSNameIc != nil {
 
 		// query param dns_name__ic
@@ -1683,6 +1649,40 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qFamily != "" {
 
 			if err := r.SetQueryParam("family", qFamily); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.FhrpgroupID != nil {
+
+		// query param fhrpgroup_id
+		var qrFhrpgroupID string
+
+		if o.FhrpgroupID != nil {
+			qrFhrpgroupID = *o.FhrpgroupID
+		}
+		qFhrpgroupID := qrFhrpgroupID
+		if qFhrpgroupID != "" {
+
+			if err := r.SetQueryParam("fhrpgroup_id", qFhrpgroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.FhrpgroupIDn != nil {
+
+		// query param fhrpgroup_id__n
+		var qrFhrpgroupIDn string
+
+		if o.FhrpgroupIDn != nil {
+			qrFhrpgroupIDn = *o.FhrpgroupIDn
+		}
+		qFhrpgroupIDn := qrFhrpgroupIDn
+		if qFhrpgroupIDn != "" {
+
+			if err := r.SetQueryParam("fhrpgroup_id__n", qFhrpgroupIDn); err != nil {
 				return err
 			}
 		}

@@ -59,13 +59,13 @@ func NewIpamPrefixesAvailableIpsCreateCreated() *IpamPrefixesAvailableIpsCreateC
 IpamPrefixesAvailableIpsCreateCreated ipam prefixes available ips create created
 */
 type IpamPrefixesAvailableIpsCreateCreated struct {
-	Payload []*models.AvailableIP
+	Payload []*models.IPAddress
 }
 
 func (o *IpamPrefixesAvailableIpsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsCreateCreated  %+v", 201, o.Payload)
 }
-func (o *IpamPrefixesAvailableIpsCreateCreated) GetPayload() []*models.AvailableIP {
+func (o *IpamPrefixesAvailableIpsCreateCreated) GetPayload() []*models.IPAddress {
 	return o.Payload
 }
 

@@ -78,7 +78,7 @@ func NewCircuitsProvidersUpdateParamsWithHTTPClient(client *http.Client) *Circui
 type CircuitsProvidersUpdateParams struct {
 
 	// Data.
-	Data *models.Provider
+	Data *models.WritableProvider
 
 	/* ID.
 
@@ -140,13 +140,13 @@ func (o *CircuitsProvidersUpdateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the circuits providers update params
-func (o *CircuitsProvidersUpdateParams) WithData(data *models.Provider) *CircuitsProvidersUpdateParams {
+func (o *CircuitsProvidersUpdateParams) WithData(data *models.WritableProvider) *CircuitsProvidersUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the circuits providers update params
-func (o *CircuitsProvidersUpdateParams) SetData(data *models.Provider) {
+func (o *CircuitsProvidersUpdateParams) SetData(data *models.WritableProvider) {
 	o.Data = data
 }
 

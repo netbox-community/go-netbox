@@ -42,8 +42,8 @@ type WritableRearPortTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -57,7 +57,7 @@ type WritableRearPortTemplate struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -85,7 +85,7 @@ type WritableRearPortTemplate struct {
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
 	Type *string `json:"type"`
 
 	// Url
@@ -165,7 +165,7 @@ func (m *WritableRearPortTemplate) validateCreated(formats strfmt.Registry) erro
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -254,7 +254,7 @@ var writableRearPortTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -324,11 +324,23 @@ const (
 	// WritableRearPortTemplateTypeLc captures enum value "lc"
 	WritableRearPortTemplateTypeLc string = "lc"
 
+	// WritableRearPortTemplateTypeLcDashPc captures enum value "lc-pc"
+	WritableRearPortTemplateTypeLcDashPc string = "lc-pc"
+
+	// WritableRearPortTemplateTypeLcDashUpc captures enum value "lc-upc"
+	WritableRearPortTemplateTypeLcDashUpc string = "lc-upc"
+
 	// WritableRearPortTemplateTypeLcDashApc captures enum value "lc-apc"
 	WritableRearPortTemplateTypeLcDashApc string = "lc-apc"
 
 	// WritableRearPortTemplateTypeLsh captures enum value "lsh"
 	WritableRearPortTemplateTypeLsh string = "lsh"
+
+	// WritableRearPortTemplateTypeLshDashPc captures enum value "lsh-pc"
+	WritableRearPortTemplateTypeLshDashPc string = "lsh-pc"
+
+	// WritableRearPortTemplateTypeLshDashUpc captures enum value "lsh-upc"
+	WritableRearPortTemplateTypeLshDashUpc string = "lsh-upc"
 
 	// WritableRearPortTemplateTypeLshDashApc captures enum value "lsh-apc"
 	WritableRearPortTemplateTypeLshDashApc string = "lsh-apc"
@@ -342,6 +354,12 @@ const (
 	// WritableRearPortTemplateTypeSc captures enum value "sc"
 	WritableRearPortTemplateTypeSc string = "sc"
 
+	// WritableRearPortTemplateTypeScDashPc captures enum value "sc-pc"
+	WritableRearPortTemplateTypeScDashPc string = "sc-pc"
+
+	// WritableRearPortTemplateTypeScDashUpc captures enum value "sc-upc"
+	WritableRearPortTemplateTypeScDashUpc string = "sc-upc"
+
 	// WritableRearPortTemplateTypeScDashApc captures enum value "sc-apc"
 	WritableRearPortTemplateTypeScDashApc string = "sc-apc"
 
@@ -353,6 +371,21 @@ const (
 
 	// WritableRearPortTemplateTypeSn captures enum value "sn"
 	WritableRearPortTemplateTypeSn string = "sn"
+
+	// WritableRearPortTemplateTypeSmaDash905 captures enum value "sma-905"
+	WritableRearPortTemplateTypeSmaDash905 string = "sma-905"
+
+	// WritableRearPortTemplateTypeSmaDash906 captures enum value "sma-906"
+	WritableRearPortTemplateTypeSmaDash906 string = "sma-906"
+
+	// WritableRearPortTemplateTypeUrmDashP2 captures enum value "urm-p2"
+	WritableRearPortTemplateTypeUrmDashP2 string = "urm-p2"
+
+	// WritableRearPortTemplateTypeUrmDashP4 captures enum value "urm-p4"
+	WritableRearPortTemplateTypeUrmDashP4 string = "urm-p4"
+
+	// WritableRearPortTemplateTypeUrmDashP8 captures enum value "urm-p8"
+	WritableRearPortTemplateTypeUrmDashP8 string = "urm-p8"
 
 	// WritableRearPortTemplateTypeSplice captures enum value "splice"
 	WritableRearPortTemplateTypeSplice string = "splice"
@@ -424,7 +457,7 @@ func (m *WritableRearPortTemplate) ContextValidate(ctx context.Context, formats 
 
 func (m *WritableRearPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 

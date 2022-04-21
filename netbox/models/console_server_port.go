@@ -43,25 +43,13 @@ type ConsoleServerPort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Cable peer
-	//
-	//
-	// Return the appropriate serializer for the cable termination model.
-	//
-	// Read Only: true
-	CablePeer interface{} `json:"cable_peer,omitempty"`
-
-	// Cable peer type
-	// Read Only: true
-	CablePeerType string `json:"cable_peer_type,omitempty"`
-
 	// Connected endpoint
 	//
 	//
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint interface{} `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
 
 	// Connected endpoint reachable
 	// Read Only: true
@@ -73,8 +61,8 @@ type ConsoleServerPort struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -91,7 +79,7 @@ type ConsoleServerPort struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -106,10 +94,25 @@ type ConsoleServerPort struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Link peer
+	//
+	//
+	// Return the appropriate serializer for the link termination model.
+	//
+	// Read Only: true
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+
+	// Link peer type
+	// Read Only: true
+	LinkPeerType string `json:"link_peer_type,omitempty"`
+
 	// Mark connected
 	//
 	// Treat as if a cable is connected
 	MarkConnected bool `json:"mark_connected,omitempty"`
+
+	// module
+	Module *ComponentNestedModule `json:"module,omitempty"`
 
 	// Name
 	// Required: true
@@ -160,6 +163,10 @@ func (m *ConsoleServerPort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateModule(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -195,6 +202,8 @@ func (m *ConsoleServerPort) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -208,7 +217,7 @@ func (m *ConsoleServerPort) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -237,6 +246,8 @@ func (m *ConsoleServerPort) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -269,6 +280,25 @@ func (m *ConsoleServerPort) validateLastUpdated(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ConsoleServerPort) validateModule(formats strfmt.Registry) error {
+	if swag.IsZero(m.Module) { // not required
+		return nil
+	}
+
+	if m.Module != nil {
+		if err := m.Module.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *ConsoleServerPort) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
@@ -295,6 +325,8 @@ func (m *ConsoleServerPort) validateSpeed(formats strfmt.Registry) error {
 		if err := m.Speed.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("speed")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("speed")
 			}
 			return err
 		}
@@ -317,6 +349,8 @@ func (m *ConsoleServerPort) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -336,6 +370,8 @@ func (m *ConsoleServerPort) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -368,7 +404,7 @@ func (m *ConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -397,6 +433,18 @@ func (m *ConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.
 	}
 
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateModule(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -437,6 +485,8 @@ func (m *ConsoleServerPort) contextValidateCable(ctx context.Context, formats st
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -445,11 +495,7 @@ func (m *ConsoleServerPort) contextValidateCable(ctx context.Context, formats st
 	return nil
 }
 
-func (m *ConsoleServerPort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
-		return err
-	}
+func (m *ConsoleServerPort) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }
@@ -474,7 +520,7 @@ func (m *ConsoleServerPort) contextValidateConnectedEndpointType(ctx context.Con
 
 func (m *ConsoleServerPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -487,6 +533,8 @@ func (m *ConsoleServerPort) contextValidateDevice(ctx context.Context, formats s
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -522,12 +570,44 @@ func (m *ConsoleServerPort) contextValidateLastUpdated(ctx context.Context, form
 	return nil
 }
 
+func (m *ConsoleServerPort) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *ConsoleServerPort) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Module != nil {
+		if err := m.Module.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *ConsoleServerPort) contextValidateSpeed(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Speed != nil {
 		if err := m.Speed.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("speed")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("speed")
 			}
 			return err
 		}
@@ -544,6 +624,8 @@ func (m *ConsoleServerPort) contextValidateTags(ctx context.Context, formats str
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -560,6 +642,8 @@ func (m *ConsoleServerPort) contextValidateType(ctx context.Context, formats str
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -754,12 +838,12 @@ type ConsoleServerPortType struct {
 
 	// label
 	// Required: true
-	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B Other]
+	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 Mini-DIN 8 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B USB Micro AB Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b other]
+	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 mini-din-8 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
 	Value *string `json:"value"`
 }
 
@@ -785,7 +869,7 @@ var consoleServerPortTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","Mini-DIN 8","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","USB Micro AB","Other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -810,6 +894,9 @@ const (
 	// ConsoleServerPortTypeLabelRJDash45 captures enum value "RJ-45"
 	ConsoleServerPortTypeLabelRJDash45 string = "RJ-45"
 
+	// ConsoleServerPortTypeLabelMiniDashDIN8 captures enum value "Mini-DIN 8"
+	ConsoleServerPortTypeLabelMiniDashDIN8 string = "Mini-DIN 8"
+
 	// ConsoleServerPortTypeLabelUSBTypeA captures enum value "USB Type A"
 	ConsoleServerPortTypeLabelUSBTypeA string = "USB Type A"
 
@@ -830,6 +917,9 @@ const (
 
 	// ConsoleServerPortTypeLabelUSBMicroB captures enum value "USB Micro B"
 	ConsoleServerPortTypeLabelUSBMicroB string = "USB Micro B"
+
+	// ConsoleServerPortTypeLabelUSBMicroAB captures enum value "USB Micro AB"
+	ConsoleServerPortTypeLabelUSBMicroAB string = "USB Micro AB"
 
 	// ConsoleServerPortTypeLabelOther captures enum value "Other"
 	ConsoleServerPortTypeLabelOther string = "Other"
@@ -861,7 +951,7 @@ var consoleServerPortTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","mini-din-8","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -886,6 +976,9 @@ const (
 	// ConsoleServerPortTypeValueRjDash45 captures enum value "rj-45"
 	ConsoleServerPortTypeValueRjDash45 string = "rj-45"
 
+	// ConsoleServerPortTypeValueMiniDashDinDash8 captures enum value "mini-din-8"
+	ConsoleServerPortTypeValueMiniDashDinDash8 string = "mini-din-8"
+
 	// ConsoleServerPortTypeValueUsbDasha captures enum value "usb-a"
 	ConsoleServerPortTypeValueUsbDasha string = "usb-a"
 
@@ -906,6 +999,9 @@ const (
 
 	// ConsoleServerPortTypeValueUsbDashMicroDashb captures enum value "usb-micro-b"
 	ConsoleServerPortTypeValueUsbDashMicroDashb string = "usb-micro-b"
+
+	// ConsoleServerPortTypeValueUsbDashMicroDashAb captures enum value "usb-micro-ab"
+	ConsoleServerPortTypeValueUsbDashMicroDashAb string = "usb-micro-ab"
 
 	// ConsoleServerPortTypeValueOther captures enum value "other"
 	ConsoleServerPortTypeValueOther string = "other"

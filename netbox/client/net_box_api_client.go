@@ -33,6 +33,7 @@ import (
 	"github.com/netbox-community/go-netbox/netbox/client/tenancy"
 	"github.com/netbox-community/go-netbox/netbox/client/users"
 	"github.com/netbox-community/go-netbox/netbox/client/virtualization"
+	"github.com/netbox-community/go-netbox/netbox/client/wireless"
 )
 
 // Default net box API HTTP client.
@@ -41,14 +42,14 @@ var Default = NewHTTPClient(nil)
 const (
 	// DefaultHost is the default Host
 	// found in Meta (info) section of spec file
-	DefaultHost string = "localhost:8099"
+	DefaultHost string = "localhost"
 	// DefaultBasePath is the default BasePath
 	// found in Meta (info) section of spec file
 	DefaultBasePath string = "/api"
 )
 
 // DefaultSchemes are the default schemes found in Meta (info) section of spec file
-var DefaultSchemes = []string{"http"}
+var DefaultSchemes = []string{"https"}
 
 // NewHTTPClient creates a new net box API HTTP client.
 func NewHTTPClient(formats strfmt.Registry) *NetBoxAPI {
@@ -85,6 +86,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *NetBoxAPI 
 	cli.Tenancy = tenancy.New(transport, formats)
 	cli.Users = users.New(transport, formats)
 	cli.Virtualization = virtualization.New(transport, formats)
+	cli.Wireless = wireless.New(transport, formats)
 	return cli
 }
 
@@ -145,6 +147,8 @@ type NetBoxAPI struct {
 
 	Virtualization virtualization.ClientService
 
+	Wireless wireless.ClientService
+
 	Transport runtime.ClientTransport
 }
 
@@ -159,4 +163,5 @@ func (c *NetBoxAPI) SetTransport(transport runtime.ClientTransport) {
 	c.Tenancy.SetTransport(transport)
 	c.Users.SetTransport(transport)
 	c.Virtualization.SetTransport(transport)
+	c.Wireless.SetTransport(transport)
 }

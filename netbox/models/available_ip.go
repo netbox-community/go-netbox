@@ -86,6 +86,8 @@ func (m *AvailableIP) validateVrf(formats strfmt.Registry) error {
 		if err := m.Vrf.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vrf")
 			}
 			return err
 		}
@@ -140,6 +142,8 @@ func (m *AvailableIP) contextValidateVrf(ctx context.Context, formats strfmt.Reg
 		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vrf")
 			}
 			return err
 		}
