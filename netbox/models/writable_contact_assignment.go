@@ -23,6 +23,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -67,7 +68,7 @@ type WritableContactAssignment struct {
 
 	// Object id
 	// Required: true
-	// Maximum: 9.223372036854776e+18
+	// Maximum: math.MaxInt64
 	// Minimum: 0
 	ObjectID *int64 `json:"object_id"`
 
@@ -180,7 +181,7 @@ func (m *WritableContactAssignment) validateObjectID(formats strfmt.Registry) er
 		return err
 	}
 
-	if err := validate.MaximumInt("object_id", "body", *m.ObjectID, 9.223372036854776e+18, false); err != nil {
+	if err := validate.MaximumInt("object_id", "body", *m.ObjectID, math.MaxInt64, false); err != nil {
 		return err
 	}
 
