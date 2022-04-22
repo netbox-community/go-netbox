@@ -1,6 +1,6 @@
 module github.com/netbox-community/go-netbox
 
-go 1.16
+go 1.18
 
 require (
 	github.com/go-openapi/errors v0.20.1
