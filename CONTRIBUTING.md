@@ -1,7 +1,7 @@
 Contributing
 ============
 
-The `go-netbox` project makes use of the [GitHub Flow](https://guides.github.com/introduction/flow/)
+The `go-netbox` project makes use of the [GitHub Flow](https://docs.github.com/get-started/quickstart/github-flow)
 for contributions.
 
 If you'd like to contribute to the project, please
