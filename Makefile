@@ -1,9 +1,9 @@
 deps:
 	go mod download
-	GO111MODULE=off go get -u github.com/myitcv/gobin
+	go install github.com/go-swagger/go-swagger/cmd/swagger@latest
 
 generate: deps
-	gobin -m -run github.com/go-swagger/go-swagger/cmd/swagger generate client --copyright-file=copyright_header.txt
+	swagger generate client --target=./netbox --copyright-file=copyright_header.txt
 
 clean:
 	rm -rf netbox/client netbox/models
