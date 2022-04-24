@@ -182,6 +182,8 @@ func (o *ExtrasObjectChangesListOKBody) validateResults(formats strfmt.Registry)
 			if err := o.Results[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasObjectChangesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("extrasObjectChangesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -214,6 +216,8 @@ func (o *ExtrasObjectChangesListOKBody) contextValidateResults(ctx context.Conte
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("extrasObjectChangesListOK" + "." + "results" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("extrasObjectChangesListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

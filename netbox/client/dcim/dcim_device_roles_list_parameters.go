@@ -78,9 +78,6 @@ type DcimDeviceRolesListParams struct {
 	// Color.
 	Color *string
 
-	// ColorEmpty.
-	ColorEmpty *string
-
 	// ColorIc.
 	ColorIc *string
 
@@ -117,6 +114,36 @@ type DcimDeviceRolesListParams struct {
 	// CreatedLte.
 	CreatedLte *string
 
+	// Description.
+	Description *string
+
+	// DescriptionIc.
+	DescriptionIc *string
+
+	// DescriptionIe.
+	DescriptionIe *string
+
+	// DescriptionIew.
+	DescriptionIew *string
+
+	// DescriptionIsw.
+	DescriptionIsw *string
+
+	// Descriptionn.
+	Descriptionn *string
+
+	// DescriptionNic.
+	DescriptionNic *string
+
+	// DescriptionNie.
+	DescriptionNie *string
+
+	// DescriptionNiew.
+	DescriptionNiew *string
+
+	// DescriptionNisw.
+	DescriptionNisw *string
+
 	// ID.
 	ID *string
 
@@ -152,9 +179,6 @@ type DcimDeviceRolesListParams struct {
 
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -195,9 +219,6 @@ type DcimDeviceRolesListParams struct {
 	// Slug.
 	Slug *string
 
-	// SlugEmpty.
-	SlugEmpty *string
-
 	// SlugIc.
 	SlugIc *string
 
@@ -224,6 +245,12 @@ type DcimDeviceRolesListParams struct {
 
 	// SlugNisw.
 	SlugNisw *string
+
+	// Tag.
+	Tag *string
+
+	// Tagn.
+	Tagn *string
 
 	// VMRole.
 	VMRole *string
@@ -290,17 +317,6 @@ func (o *DcimDeviceRolesListParams) WithColor(color *string) *DcimDeviceRolesLis
 // SetColor adds the color to the dcim device roles list params
 func (o *DcimDeviceRolesListParams) SetColor(color *string) {
 	o.Color = color
-}
-
-// WithColorEmpty adds the colorEmpty to the dcim device roles list params
-func (o *DcimDeviceRolesListParams) WithColorEmpty(colorEmpty *string) *DcimDeviceRolesListParams {
-	o.SetColorEmpty(colorEmpty)
-	return o
-}
-
-// SetColorEmpty adds the colorEmpty to the dcim device roles list params
-func (o *DcimDeviceRolesListParams) SetColorEmpty(colorEmpty *string) {
-	o.ColorEmpty = colorEmpty
 }
 
 // WithColorIc adds the colorIc to the dcim device roles list params
@@ -435,6 +451,116 @@ func (o *DcimDeviceRolesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
 }
 
+// WithDescription adds the description to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescription(description *string) *DcimDeviceRolesListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
+// WithDescriptionIc adds the descriptionIc to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescriptionIc(descriptionIc *string) *DcimDeviceRolesListParams {
+	o.SetDescriptionIc(descriptionIc)
+	return o
+}
+
+// SetDescriptionIc adds the descriptionIc to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescriptionIc(descriptionIc *string) {
+	o.DescriptionIc = descriptionIc
+}
+
+// WithDescriptionIe adds the descriptionIe to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescriptionIe(descriptionIe *string) *DcimDeviceRolesListParams {
+	o.SetDescriptionIe(descriptionIe)
+	return o
+}
+
+// SetDescriptionIe adds the descriptionIe to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescriptionIe(descriptionIe *string) {
+	o.DescriptionIe = descriptionIe
+}
+
+// WithDescriptionIew adds the descriptionIew to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescriptionIew(descriptionIew *string) *DcimDeviceRolesListParams {
+	o.SetDescriptionIew(descriptionIew)
+	return o
+}
+
+// SetDescriptionIew adds the descriptionIew to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescriptionIew(descriptionIew *string) {
+	o.DescriptionIew = descriptionIew
+}
+
+// WithDescriptionIsw adds the descriptionIsw to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescriptionIsw(descriptionIsw *string) *DcimDeviceRolesListParams {
+	o.SetDescriptionIsw(descriptionIsw)
+	return o
+}
+
+// SetDescriptionIsw adds the descriptionIsw to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescriptionIsw(descriptionIsw *string) {
+	o.DescriptionIsw = descriptionIsw
+}
+
+// WithDescriptionn adds the descriptionn to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescriptionn(descriptionn *string) *DcimDeviceRolesListParams {
+	o.SetDescriptionn(descriptionn)
+	return o
+}
+
+// SetDescriptionn adds the descriptionN to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescriptionn(descriptionn *string) {
+	o.Descriptionn = descriptionn
+}
+
+// WithDescriptionNic adds the descriptionNic to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescriptionNic(descriptionNic *string) *DcimDeviceRolesListParams {
+	o.SetDescriptionNic(descriptionNic)
+	return o
+}
+
+// SetDescriptionNic adds the descriptionNic to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescriptionNic(descriptionNic *string) {
+	o.DescriptionNic = descriptionNic
+}
+
+// WithDescriptionNie adds the descriptionNie to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescriptionNie(descriptionNie *string) *DcimDeviceRolesListParams {
+	o.SetDescriptionNie(descriptionNie)
+	return o
+}
+
+// SetDescriptionNie adds the descriptionNie to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescriptionNie(descriptionNie *string) {
+	o.DescriptionNie = descriptionNie
+}
+
+// WithDescriptionNiew adds the descriptionNiew to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescriptionNiew(descriptionNiew *string) *DcimDeviceRolesListParams {
+	o.SetDescriptionNiew(descriptionNiew)
+	return o
+}
+
+// SetDescriptionNiew adds the descriptionNiew to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescriptionNiew(descriptionNiew *string) {
+	o.DescriptionNiew = descriptionNiew
+}
+
+// WithDescriptionNisw adds the descriptionNisw to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithDescriptionNisw(descriptionNisw *string) *DcimDeviceRolesListParams {
+	o.SetDescriptionNisw(descriptionNisw)
+	return o
+}
+
+// SetDescriptionNisw adds the descriptionNisw to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetDescriptionNisw(descriptionNisw *string) {
+	o.DescriptionNisw = descriptionNisw
+}
+
 // WithID adds the id to the dcim device roles list params
 func (o *DcimDeviceRolesListParams) WithID(id *string) *DcimDeviceRolesListParams {
 	o.SetID(id)
@@ -554,17 +680,6 @@ func (o *DcimDeviceRolesListParams) WithName(name *string) *DcimDeviceRolesListP
 // SetName adds the name to the dcim device roles list params
 func (o *DcimDeviceRolesListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim device roles list params
-func (o *DcimDeviceRolesListParams) WithNameEmpty(nameEmpty *string) *DcimDeviceRolesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim device roles list params
-func (o *DcimDeviceRolesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim device roles list params
@@ -699,17 +814,6 @@ func (o *DcimDeviceRolesListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
-// WithSlugEmpty adds the slugEmpty to the dcim device roles list params
-func (o *DcimDeviceRolesListParams) WithSlugEmpty(slugEmpty *string) *DcimDeviceRolesListParams {
-	o.SetSlugEmpty(slugEmpty)
-	return o
-}
-
-// SetSlugEmpty adds the slugEmpty to the dcim device roles list params
-func (o *DcimDeviceRolesListParams) SetSlugEmpty(slugEmpty *string) {
-	o.SlugEmpty = slugEmpty
-}
-
 // WithSlugIc adds the slugIc to the dcim device roles list params
 func (o *DcimDeviceRolesListParams) WithSlugIc(slugIc *string) *DcimDeviceRolesListParams {
 	o.SetSlugIc(slugIc)
@@ -809,6 +913,28 @@ func (o *DcimDeviceRolesListParams) SetSlugNisw(slugNisw *string) {
 	o.SlugNisw = slugNisw
 }
 
+// WithTag adds the tag to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithTag(tag *string) *DcimDeviceRolesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) WithTagn(tagn *string) *DcimDeviceRolesListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the dcim device roles list params
+func (o *DcimDeviceRolesListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WithVMRole adds the vMRole to the dcim device roles list params
 func (o *DcimDeviceRolesListParams) WithVMRole(vMRole *string) *DcimDeviceRolesListParams {
 	o.SetVMRole(vMRole)
@@ -840,23 +966,6 @@ func (o *DcimDeviceRolesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qColor != "" {
 
 			if err := r.SetQueryParam("color", qColor); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ColorEmpty != nil {
-
-		// query param color__empty
-		var qrColorEmpty string
-
-		if o.ColorEmpty != nil {
-			qrColorEmpty = *o.ColorEmpty
-		}
-		qColorEmpty := qrColorEmpty
-		if qColorEmpty != "" {
-
-			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
 				return err
 			}
 		}
@@ -1066,6 +1175,176 @@ func (o *DcimDeviceRolesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIc != nil {
+
+		// query param description__ic
+		var qrDescriptionIc string
+
+		if o.DescriptionIc != nil {
+			qrDescriptionIc = *o.DescriptionIc
+		}
+		qDescriptionIc := qrDescriptionIc
+		if qDescriptionIc != "" {
+
+			if err := r.SetQueryParam("description__ic", qDescriptionIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIe != nil {
+
+		// query param description__ie
+		var qrDescriptionIe string
+
+		if o.DescriptionIe != nil {
+			qrDescriptionIe = *o.DescriptionIe
+		}
+		qDescriptionIe := qrDescriptionIe
+		if qDescriptionIe != "" {
+
+			if err := r.SetQueryParam("description__ie", qDescriptionIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIew != nil {
+
+		// query param description__iew
+		var qrDescriptionIew string
+
+		if o.DescriptionIew != nil {
+			qrDescriptionIew = *o.DescriptionIew
+		}
+		qDescriptionIew := qrDescriptionIew
+		if qDescriptionIew != "" {
+
+			if err := r.SetQueryParam("description__iew", qDescriptionIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIsw != nil {
+
+		// query param description__isw
+		var qrDescriptionIsw string
+
+		if o.DescriptionIsw != nil {
+			qrDescriptionIsw = *o.DescriptionIsw
+		}
+		qDescriptionIsw := qrDescriptionIsw
+		if qDescriptionIsw != "" {
+
+			if err := r.SetQueryParam("description__isw", qDescriptionIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Descriptionn != nil {
+
+		// query param description__n
+		var qrDescriptionn string
+
+		if o.Descriptionn != nil {
+			qrDescriptionn = *o.Descriptionn
+		}
+		qDescriptionn := qrDescriptionn
+		if qDescriptionn != "" {
+
+			if err := r.SetQueryParam("description__n", qDescriptionn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNic != nil {
+
+		// query param description__nic
+		var qrDescriptionNic string
+
+		if o.DescriptionNic != nil {
+			qrDescriptionNic = *o.DescriptionNic
+		}
+		qDescriptionNic := qrDescriptionNic
+		if qDescriptionNic != "" {
+
+			if err := r.SetQueryParam("description__nic", qDescriptionNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNie != nil {
+
+		// query param description__nie
+		var qrDescriptionNie string
+
+		if o.DescriptionNie != nil {
+			qrDescriptionNie = *o.DescriptionNie
+		}
+		qDescriptionNie := qrDescriptionNie
+		if qDescriptionNie != "" {
+
+			if err := r.SetQueryParam("description__nie", qDescriptionNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNiew != nil {
+
+		// query param description__niew
+		var qrDescriptionNiew string
+
+		if o.DescriptionNiew != nil {
+			qrDescriptionNiew = *o.DescriptionNiew
+		}
+		qDescriptionNiew := qrDescriptionNiew
+		if qDescriptionNiew != "" {
+
+			if err := r.SetQueryParam("description__niew", qDescriptionNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNisw != nil {
+
+		// query param description__nisw
+		var qrDescriptionNisw string
+
+		if o.DescriptionNisw != nil {
+			qrDescriptionNisw = *o.DescriptionNisw
+		}
+		qDescriptionNisw := qrDescriptionNisw
+		if qDescriptionNisw != "" {
+
+			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -1248,23 +1527,6 @@ func (o *DcimDeviceRolesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1474,23 +1736,6 @@ func (o *DcimDeviceRolesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
-	if o.SlugEmpty != nil {
-
-		// query param slug__empty
-		var qrSlugEmpty string
-
-		if o.SlugEmpty != nil {
-			qrSlugEmpty = *o.SlugEmpty
-		}
-		qSlugEmpty := qrSlugEmpty
-		if qSlugEmpty != "" {
-
-			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.SlugIc != nil {
 
 		// query param slug__ic
@@ -1639,6 +1884,40 @@ func (o *DcimDeviceRolesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qSlugNisw != "" {
 
 			if err := r.SetQueryParam("slug__nisw", qSlugNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

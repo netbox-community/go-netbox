@@ -38,8 +38,8 @@ type Service struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -55,7 +55,7 @@ type Service struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -152,7 +152,7 @@ func (m *Service) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -180,6 +180,8 @@ func (m *Service) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -206,6 +208,8 @@ func (m *Service) validateIpaddresses(formats strfmt.Registry) error {
 			if err := m.Ipaddresses[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipaddresses" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ipaddresses" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -275,6 +279,8 @@ func (m *Service) validateProtocol(formats strfmt.Registry) error {
 		if err := m.Protocol.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("protocol")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("protocol")
 			}
 			return err
 		}
@@ -297,6 +303,8 @@ func (m *Service) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -328,6 +336,8 @@ func (m *Service) validateVirtualMachine(formats strfmt.Registry) error {
 		if err := m.VirtualMachine.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_machine")
 			}
 			return err
 		}
@@ -388,7 +398,7 @@ func (m *Service) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 
 func (m *Service) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -401,6 +411,8 @@ func (m *Service) contextValidateDevice(ctx context.Context, formats strfmt.Regi
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -435,6 +447,8 @@ func (m *Service) contextValidateIpaddresses(ctx context.Context, formats strfmt
 			if err := m.Ipaddresses[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipaddresses" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ipaddresses" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -460,6 +474,8 @@ func (m *Service) contextValidateProtocol(ctx context.Context, formats strfmt.Re
 		if err := m.Protocol.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("protocol")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("protocol")
 			}
 			return err
 		}
@@ -476,6 +492,8 @@ func (m *Service) contextValidateTags(ctx context.Context, formats strfmt.Regist
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -501,6 +519,8 @@ func (m *Service) contextValidateVirtualMachine(ctx context.Context, formats str
 		if err := m.VirtualMachine.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_machine")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_machine")
 			}
 			return err
 		}
@@ -534,12 +554,12 @@ type ServiceProtocol struct {
 
 	// label
 	// Required: true
-	// Enum: [TCP UDP]
+	// Enum: [TCP UDP SCTP]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [tcp udp]
+	// Enum: [tcp udp sctp]
 	Value *string `json:"value"`
 }
 
@@ -565,7 +585,7 @@ var serviceProtocolTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["TCP","UDP"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["TCP","UDP","SCTP"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -580,6 +600,9 @@ const (
 
 	// ServiceProtocolLabelUDP captures enum value "UDP"
 	ServiceProtocolLabelUDP string = "UDP"
+
+	// ServiceProtocolLabelSCTP captures enum value "SCTP"
+	ServiceProtocolLabelSCTP string = "SCTP"
 )
 
 // prop value enum
@@ -608,7 +631,7 @@ var serviceProtocolTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["tcp","udp"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["tcp","udp","sctp"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -623,6 +646,9 @@ const (
 
 	// ServiceProtocolValueUDP captures enum value "udp"
 	ServiceProtocolValueUDP string = "udp"
+
+	// ServiceProtocolValueSctp captures enum value "sctp"
+	ServiceProtocolValueSctp string = "sctp"
 )
 
 // prop value enum

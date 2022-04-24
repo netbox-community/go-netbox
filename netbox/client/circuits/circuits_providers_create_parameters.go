@@ -77,7 +77,7 @@ func NewCircuitsProvidersCreateParamsWithHTTPClient(client *http.Client) *Circui
 type CircuitsProvidersCreateParams struct {
 
 	// Data.
-	Data *models.Provider
+	Data *models.WritableProvider
 
 	timeout    time.Duration
 	Context    context.Context
@@ -133,13 +133,13 @@ func (o *CircuitsProvidersCreateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the circuits providers create params
-func (o *CircuitsProvidersCreateParams) WithData(data *models.Provider) *CircuitsProvidersCreateParams {
+func (o *CircuitsProvidersCreateParams) WithData(data *models.WritableProvider) *CircuitsProvidersCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the circuits providers create params
-func (o *CircuitsProvidersCreateParams) SetData(data *models.Provider) {
+func (o *CircuitsProvidersCreateParams) SetData(data *models.WritableProvider) {
 	o.Data = data
 }
 

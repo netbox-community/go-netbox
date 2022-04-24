@@ -40,8 +40,8 @@ type ProviderNetwork struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -54,7 +54,7 @@ type ProviderNetwork struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -72,6 +72,10 @@ type ProviderNetwork struct {
 	// provider
 	// Required: true
 	Provider *NestedProvider `json:"provider"`
+
+	// Service ID
+	// Max Length: 100
+	ServiceID string `json:"service_id,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags"`
@@ -106,6 +110,10 @@ func (m *ProviderNetwork) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateServiceID(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
@@ -125,7 +133,7 @@ func (m *ProviderNetwork) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -183,9 +191,23 @@ func (m *ProviderNetwork) validateProvider(formats strfmt.Registry) error {
 		if err := m.Provider.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("provider")
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *ProviderNetwork) validateServiceID(formats strfmt.Registry) error {
+	if swag.IsZero(m.ServiceID) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("service_id", "body", m.ServiceID, 100); err != nil {
+		return err
 	}
 
 	return nil
@@ -205,6 +227,8 @@ func (m *ProviderNetwork) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -267,7 +291,7 @@ func (m *ProviderNetwork) ContextValidate(ctx context.Context, formats strfmt.Re
 
 func (m *ProviderNetwork) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -307,6 +331,8 @@ func (m *ProviderNetwork) contextValidateProvider(ctx context.Context, formats s
 		if err := m.Provider.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("provider")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("provider")
 			}
 			return err
 		}
@@ -323,6 +349,8 @@ func (m *ProviderNetwork) contextValidateTags(ctx context.Context, formats strfm
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

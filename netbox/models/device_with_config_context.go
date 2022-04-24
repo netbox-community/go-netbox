@@ -36,6 +36,9 @@ import (
 // swagger:model DeviceWithConfigContext
 type DeviceWithConfigContext struct {
 
+	// airflow
+	Airflow *DeviceWithConfigContextAirflow `json:"airflow,omitempty"`
+
 	// Asset tag
 	//
 	// A unique tag used to identify this device
@@ -50,12 +53,12 @@ type DeviceWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext interface{} `json:"config_context,omitempty"`
+	ConfigContext map[string]*string `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -75,7 +78,7 @@ type DeviceWithConfigContext struct {
 	// face
 	Face *DeviceWithConfigContextFace `json:"face,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -91,8 +94,9 @@ type DeviceWithConfigContext struct {
 	Location *NestedLocation `json:"location,omitempty"`
 
 	// Name
+	// Required: true
 	// Max Length: 64
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name"`
 
 	// parent device
 	ParentDevice *NestedDevice `json:"parent_device,omitempty"`
@@ -101,9 +105,6 @@ type DeviceWithConfigContext struct {
 	Platform *NestedPlatform `json:"platform,omitempty"`
 
 	// Position (U)
-	//
-	// The lowest-numbered unit occupied by the device
-	// Maximum: 32767
 	// Minimum: 1
 	Position *int64 `json:"position,omitempty"`
 
@@ -158,6 +159,10 @@ type DeviceWithConfigContext struct {
 // Validate validates this device with config context
 func (m *DeviceWithConfigContext) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateAirflow(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateAssetTag(formats); err != nil {
 		res = append(res, err)
@@ -265,6 +270,25 @@ func (m *DeviceWithConfigContext) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *DeviceWithConfigContext) validateAirflow(formats strfmt.Registry) error {
+	if swag.IsZero(m.Airflow) { // not required
+		return nil
+	}
+
+	if m.Airflow != nil {
+		if err := m.Airflow.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("airflow")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("airflow")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *DeviceWithConfigContext) validateAssetTag(formats strfmt.Registry) error {
 	if swag.IsZero(m.AssetTag) { // not required
 		return nil
@@ -286,6 +310,8 @@ func (m *DeviceWithConfigContext) validateCluster(formats strfmt.Registry) error
 		if err := m.Cluster.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cluster")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cluster")
 			}
 			return err
 		}
@@ -299,7 +325,7 @@ func (m *DeviceWithConfigContext) validateCreated(formats strfmt.Registry) error
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -316,6 +342,8 @@ func (m *DeviceWithConfigContext) validateDeviceRole(formats strfmt.Registry) er
 		if err := m.DeviceRole.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_role")
 			}
 			return err
 		}
@@ -334,6 +362,8 @@ func (m *DeviceWithConfigContext) validateDeviceType(formats strfmt.Registry) er
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -351,6 +381,8 @@ func (m *DeviceWithConfigContext) validateFace(formats strfmt.Registry) error {
 		if err := m.Face.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("face")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("face")
 			}
 			return err
 		}
@@ -380,6 +412,8 @@ func (m *DeviceWithConfigContext) validateLocation(formats strfmt.Registry) erro
 		if err := m.Location.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("location")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("location")
 			}
 			return err
 		}
@@ -389,8 +423,9 @@ func (m *DeviceWithConfigContext) validateLocation(formats strfmt.Registry) erro
 }
 
 func (m *DeviceWithConfigContext) validateName(formats strfmt.Registry) error {
-	if swag.IsZero(m.Name) { // not required
-		return nil
+
+	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
@@ -409,6 +444,8 @@ func (m *DeviceWithConfigContext) validateParentDevice(formats strfmt.Registry) 
 		if err := m.ParentDevice.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent_device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent_device")
 			}
 			return err
 		}
@@ -426,6 +463,8 @@ func (m *DeviceWithConfigContext) validatePlatform(formats strfmt.Registry) erro
 		if err := m.Platform.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("platform")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("platform")
 			}
 			return err
 		}
@@ -443,10 +482,6 @@ func (m *DeviceWithConfigContext) validatePosition(formats strfmt.Registry) erro
 		return err
 	}
 
-	if err := validate.MaximumInt("position", "body", *m.Position, 32767, false); err != nil {
-		return err
-	}
-
 	return nil
 }
 
@@ -459,6 +494,8 @@ func (m *DeviceWithConfigContext) validatePrimaryIP(formats strfmt.Registry) err
 		if err := m.PrimaryIP.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip")
 			}
 			return err
 		}
@@ -476,6 +513,8 @@ func (m *DeviceWithConfigContext) validatePrimaryIp4(formats strfmt.Registry) er
 		if err := m.PrimaryIp4.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip4")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip4")
 			}
 			return err
 		}
@@ -493,6 +532,8 @@ func (m *DeviceWithConfigContext) validatePrimaryIp6(formats strfmt.Registry) er
 		if err := m.PrimaryIp6.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip6")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip6")
 			}
 			return err
 		}
@@ -510,6 +551,8 @@ func (m *DeviceWithConfigContext) validateRack(formats strfmt.Registry) error {
 		if err := m.Rack.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rack")
 			}
 			return err
 		}
@@ -540,6 +583,8 @@ func (m *DeviceWithConfigContext) validateSite(formats strfmt.Registry) error {
 		if err := m.Site.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -557,6 +602,8 @@ func (m *DeviceWithConfigContext) validateStatus(formats strfmt.Registry) error 
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -579,6 +626,8 @@ func (m *DeviceWithConfigContext) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -598,6 +647,8 @@ func (m *DeviceWithConfigContext) validateTenant(formats strfmt.Registry) error 
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -659,6 +710,8 @@ func (m *DeviceWithConfigContext) validateVirtualChassis(formats strfmt.Registry
 		if err := m.VirtualChassis.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_chassis")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_chassis")
 			}
 			return err
 		}
@@ -671,7 +724,15 @@ func (m *DeviceWithConfigContext) validateVirtualChassis(formats strfmt.Registry
 func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAirflow(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCluster(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -761,12 +822,14 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 	return nil
 }
 
-func (m *DeviceWithConfigContext) contextValidateCluster(ctx context.Context, formats strfmt.Registry) error {
+func (m *DeviceWithConfigContext) contextValidateAirflow(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.Cluster != nil {
-		if err := m.Cluster.ContextValidate(ctx, formats); err != nil {
+	if m.Airflow != nil {
+		if err := m.Airflow.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("cluster")
+				return ve.ValidateName("airflow")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("airflow")
 			}
 			return err
 		}
@@ -775,9 +838,30 @@ func (m *DeviceWithConfigContext) contextValidateCluster(ctx context.Context, fo
 	return nil
 }
 
+func (m *DeviceWithConfigContext) contextValidateCluster(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Cluster != nil {
+		if err := m.Cluster.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cluster")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cluster")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *DeviceWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 func (m *DeviceWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -790,6 +874,8 @@ func (m *DeviceWithConfigContext) contextValidateDeviceRole(ctx context.Context,
 		if err := m.DeviceRole.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_role")
 			}
 			return err
 		}
@@ -804,6 +890,8 @@ func (m *DeviceWithConfigContext) contextValidateDeviceType(ctx context.Context,
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -827,6 +915,8 @@ func (m *DeviceWithConfigContext) contextValidateFace(ctx context.Context, forma
 		if err := m.Face.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("face")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("face")
 			}
 			return err
 		}
@@ -859,6 +949,8 @@ func (m *DeviceWithConfigContext) contextValidateLocation(ctx context.Context, f
 		if err := m.Location.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("location")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("location")
 			}
 			return err
 		}
@@ -873,6 +965,8 @@ func (m *DeviceWithConfigContext) contextValidateParentDevice(ctx context.Contex
 		if err := m.ParentDevice.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent_device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent_device")
 			}
 			return err
 		}
@@ -887,6 +981,8 @@ func (m *DeviceWithConfigContext) contextValidatePlatform(ctx context.Context, f
 		if err := m.Platform.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("platform")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("platform")
 			}
 			return err
 		}
@@ -901,6 +997,8 @@ func (m *DeviceWithConfigContext) contextValidatePrimaryIP(ctx context.Context, 
 		if err := m.PrimaryIP.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip")
 			}
 			return err
 		}
@@ -915,6 +1013,8 @@ func (m *DeviceWithConfigContext) contextValidatePrimaryIp4(ctx context.Context,
 		if err := m.PrimaryIp4.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip4")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip4")
 			}
 			return err
 		}
@@ -929,6 +1029,8 @@ func (m *DeviceWithConfigContext) contextValidatePrimaryIp6(ctx context.Context,
 		if err := m.PrimaryIp6.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("primary_ip6")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("primary_ip6")
 			}
 			return err
 		}
@@ -943,6 +1045,8 @@ func (m *DeviceWithConfigContext) contextValidateRack(ctx context.Context, forma
 		if err := m.Rack.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rack")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rack")
 			}
 			return err
 		}
@@ -957,6 +1061,8 @@ func (m *DeviceWithConfigContext) contextValidateSite(ctx context.Context, forma
 		if err := m.Site.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("site")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("site")
 			}
 			return err
 		}
@@ -971,6 +1077,8 @@ func (m *DeviceWithConfigContext) contextValidateStatus(ctx context.Context, for
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -987,6 +1095,8 @@ func (m *DeviceWithConfigContext) contextValidateTags(ctx context.Context, forma
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -1003,6 +1113,8 @@ func (m *DeviceWithConfigContext) contextValidateTenant(ctx context.Context, for
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -1026,6 +1138,8 @@ func (m *DeviceWithConfigContext) contextValidateVirtualChassis(ctx context.Cont
 		if err := m.VirtualChassis.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("virtual_chassis")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("virtual_chassis")
 			}
 			return err
 		}
@@ -1045,6 +1159,173 @@ func (m *DeviceWithConfigContext) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *DeviceWithConfigContext) UnmarshalBinary(b []byte) error {
 	var res DeviceWithConfigContext
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// DeviceWithConfigContextAirflow Airflow
+//
+// swagger:model DeviceWithConfigContextAirflow
+type DeviceWithConfigContextAirflow struct {
+
+	// label
+	// Required: true
+	// Enum: [Front to rear Rear to front Left to right Right to left Side to rear Passive]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
+	Value *string `json:"value"`
+}
+
+// Validate validates this device with config context airflow
+func (m *DeviceWithConfigContextAirflow) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var deviceWithConfigContextAirflowTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Front to rear","Rear to front","Left to right","Right to left","Side to rear","Passive"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceWithConfigContextAirflowTypeLabelPropEnum = append(deviceWithConfigContextAirflowTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceWithConfigContextAirflowLabelFrontToRear captures enum value "Front to rear"
+	DeviceWithConfigContextAirflowLabelFrontToRear string = "Front to rear"
+
+	// DeviceWithConfigContextAirflowLabelRearToFront captures enum value "Rear to front"
+	DeviceWithConfigContextAirflowLabelRearToFront string = "Rear to front"
+
+	// DeviceWithConfigContextAirflowLabelLeftToRight captures enum value "Left to right"
+	DeviceWithConfigContextAirflowLabelLeftToRight string = "Left to right"
+
+	// DeviceWithConfigContextAirflowLabelRightToLeft captures enum value "Right to left"
+	DeviceWithConfigContextAirflowLabelRightToLeft string = "Right to left"
+
+	// DeviceWithConfigContextAirflowLabelSideToRear captures enum value "Side to rear"
+	DeviceWithConfigContextAirflowLabelSideToRear string = "Side to rear"
+
+	// DeviceWithConfigContextAirflowLabelPassive captures enum value "Passive"
+	DeviceWithConfigContextAirflowLabelPassive string = "Passive"
+)
+
+// prop value enum
+func (m *DeviceWithConfigContextAirflow) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, deviceWithConfigContextAirflowTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *DeviceWithConfigContextAirflow) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("airflow"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("airflow"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var deviceWithConfigContextAirflowTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceWithConfigContextAirflowTypeValuePropEnum = append(deviceWithConfigContextAirflowTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceWithConfigContextAirflowValueFrontDashToDashRear captures enum value "front-to-rear"
+	DeviceWithConfigContextAirflowValueFrontDashToDashRear string = "front-to-rear"
+
+	// DeviceWithConfigContextAirflowValueRearDashToDashFront captures enum value "rear-to-front"
+	DeviceWithConfigContextAirflowValueRearDashToDashFront string = "rear-to-front"
+
+	// DeviceWithConfigContextAirflowValueLeftDashToDashRight captures enum value "left-to-right"
+	DeviceWithConfigContextAirflowValueLeftDashToDashRight string = "left-to-right"
+
+	// DeviceWithConfigContextAirflowValueRightDashToDashLeft captures enum value "right-to-left"
+	DeviceWithConfigContextAirflowValueRightDashToDashLeft string = "right-to-left"
+
+	// DeviceWithConfigContextAirflowValueSideDashToDashRear captures enum value "side-to-rear"
+	DeviceWithConfigContextAirflowValueSideDashToDashRear string = "side-to-rear"
+
+	// DeviceWithConfigContextAirflowValuePassive captures enum value "passive"
+	DeviceWithConfigContextAirflowValuePassive string = "passive"
+)
+
+// prop value enum
+func (m *DeviceWithConfigContextAirflow) validateValueEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, deviceWithConfigContextAirflowTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *DeviceWithConfigContextAirflow) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("airflow"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("airflow"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this device with config context airflow based on context it is used
+func (m *DeviceWithConfigContextAirflow) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *DeviceWithConfigContextAirflow) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *DeviceWithConfigContextAirflow) UnmarshalBinary(b []byte) error {
+	var res DeviceWithConfigContextAirflow
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -63,6 +63,60 @@ type ClientService interface {
 
 	IpamAggregatesUpdate(params *IpamAggregatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAggregatesUpdateOK, error)
 
+	IpamAsnsBulkDelete(params *IpamAsnsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsBulkDeleteNoContent, error)
+
+	IpamAsnsBulkPartialUpdate(params *IpamAsnsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsBulkPartialUpdateOK, error)
+
+	IpamAsnsBulkUpdate(params *IpamAsnsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsBulkUpdateOK, error)
+
+	IpamAsnsCreate(params *IpamAsnsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsCreateCreated, error)
+
+	IpamAsnsDelete(params *IpamAsnsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsDeleteNoContent, error)
+
+	IpamAsnsList(params *IpamAsnsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsListOK, error)
+
+	IpamAsnsPartialUpdate(params *IpamAsnsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsPartialUpdateOK, error)
+
+	IpamAsnsRead(params *IpamAsnsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsReadOK, error)
+
+	IpamAsnsUpdate(params *IpamAsnsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsUpdateOK, error)
+
+	IpamFhrpGroupAssignmentsBulkDelete(params *IpamFhrpGroupAssignmentsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsBulkDeleteNoContent, error)
+
+	IpamFhrpGroupAssignmentsBulkPartialUpdate(params *IpamFhrpGroupAssignmentsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsBulkPartialUpdateOK, error)
+
+	IpamFhrpGroupAssignmentsBulkUpdate(params *IpamFhrpGroupAssignmentsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsBulkUpdateOK, error)
+
+	IpamFhrpGroupAssignmentsCreate(params *IpamFhrpGroupAssignmentsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsCreateCreated, error)
+
+	IpamFhrpGroupAssignmentsDelete(params *IpamFhrpGroupAssignmentsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsDeleteNoContent, error)
+
+	IpamFhrpGroupAssignmentsList(params *IpamFhrpGroupAssignmentsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsListOK, error)
+
+	IpamFhrpGroupAssignmentsPartialUpdate(params *IpamFhrpGroupAssignmentsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsPartialUpdateOK, error)
+
+	IpamFhrpGroupAssignmentsRead(params *IpamFhrpGroupAssignmentsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsReadOK, error)
+
+	IpamFhrpGroupAssignmentsUpdate(params *IpamFhrpGroupAssignmentsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsUpdateOK, error)
+
+	IpamFhrpGroupsBulkDelete(params *IpamFhrpGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsBulkDeleteNoContent, error)
+
+	IpamFhrpGroupsBulkPartialUpdate(params *IpamFhrpGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsBulkPartialUpdateOK, error)
+
+	IpamFhrpGroupsBulkUpdate(params *IpamFhrpGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsBulkUpdateOK, error)
+
+	IpamFhrpGroupsCreate(params *IpamFhrpGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsCreateCreated, error)
+
+	IpamFhrpGroupsDelete(params *IpamFhrpGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsDeleteNoContent, error)
+
+	IpamFhrpGroupsList(params *IpamFhrpGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsListOK, error)
+
+	IpamFhrpGroupsPartialUpdate(params *IpamFhrpGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsPartialUpdateOK, error)
+
+	IpamFhrpGroupsRead(params *IpamFhrpGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsReadOK, error)
+
+	IpamFhrpGroupsUpdate(params *IpamFhrpGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsUpdateOK, error)
+
 	IpamIPAddressesBulkDelete(params *IpamIPAddressesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPAddressesBulkDeleteNoContent, error)
 
 	IpamIPAddressesBulkPartialUpdate(params *IpamIPAddressesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPAddressesBulkPartialUpdateOK, error)
@@ -83,7 +137,7 @@ type ClientService interface {
 
 	IpamIPRangesAvailableIpsCreate(params *IpamIPRangesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsCreateCreated, error)
 
-	IpamIPRangesAvailableIpsRead(params *IpamIPRangesAvailableIpsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsReadOK, error)
+	IpamIPRangesAvailableIpsList(params *IpamIPRangesAvailableIpsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsListOK, error)
 
 	IpamIPRangesBulkDelete(params *IpamIPRangesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesBulkDeleteNoContent, error)
 
@@ -105,11 +159,11 @@ type ClientService interface {
 
 	IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsCreateCreated, error)
 
-	IpamPrefixesAvailableIpsRead(params *IpamPrefixesAvailableIpsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsReadOK, error)
+	IpamPrefixesAvailableIpsList(params *IpamPrefixesAvailableIpsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsListOK, error)
 
 	IpamPrefixesAvailablePrefixesCreate(params *IpamPrefixesAvailablePrefixesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailablePrefixesCreateCreated, error)
 
-	IpamPrefixesAvailablePrefixesRead(params *IpamPrefixesAvailablePrefixesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailablePrefixesReadOK, error)
+	IpamPrefixesAvailablePrefixesList(params *IpamPrefixesAvailablePrefixesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailablePrefixesListOK, error)
 
 	IpamPrefixesBulkDelete(params *IpamPrefixesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesBulkDeleteNoContent, error)
 
@@ -183,6 +237,24 @@ type ClientService interface {
 
 	IpamRouteTargetsUpdate(params *IpamRouteTargetsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamRouteTargetsUpdateOK, error)
 
+	IpamServiceTemplatesBulkDelete(params *IpamServiceTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesBulkDeleteNoContent, error)
+
+	IpamServiceTemplatesBulkPartialUpdate(params *IpamServiceTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesBulkPartialUpdateOK, error)
+
+	IpamServiceTemplatesBulkUpdate(params *IpamServiceTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesBulkUpdateOK, error)
+
+	IpamServiceTemplatesCreate(params *IpamServiceTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesCreateCreated, error)
+
+	IpamServiceTemplatesDelete(params *IpamServiceTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesDeleteNoContent, error)
+
+	IpamServiceTemplatesList(params *IpamServiceTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesListOK, error)
+
+	IpamServiceTemplatesPartialUpdate(params *IpamServiceTemplatesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesPartialUpdateOK, error)
+
+	IpamServiceTemplatesRead(params *IpamServiceTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesReadOK, error)
+
+	IpamServiceTemplatesUpdate(params *IpamServiceTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesUpdateOK, error)
+
 	IpamServicesBulkDelete(params *IpamServicesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServicesBulkDeleteNoContent, error)
 
 	IpamServicesBulkPartialUpdate(params *IpamServicesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServicesBulkPartialUpdateOK, error)
@@ -200,6 +272,10 @@ type ClientService interface {
 	IpamServicesRead(params *IpamServicesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServicesReadOK, error)
 
 	IpamServicesUpdate(params *IpamServicesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServicesUpdateOK, error)
+
+	IpamVlanGroupsAvailableVlansCreate(params *IpamVlanGroupsAvailableVlansCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlanGroupsAvailableVlansCreateCreated, error)
+
+	IpamVlanGroupsAvailableVlansList(params *IpamVlanGroupsAvailableVlansListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlanGroupsAvailableVlansListOK, error)
 
 	IpamVlanGroupsBulkDelete(params *IpamVlanGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlanGroupsBulkDeleteNoContent, error)
 
@@ -272,7 +348,7 @@ func (a *Client) IpamAggregatesBulkDelete(params *IpamAggregatesBulkDeleteParams
 		PathPattern:        "/ipam/aggregates/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamAggregatesBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -311,7 +387,7 @@ func (a *Client) IpamAggregatesBulkPartialUpdate(params *IpamAggregatesBulkParti
 		PathPattern:        "/ipam/aggregates/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamAggregatesBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -350,7 +426,7 @@ func (a *Client) IpamAggregatesBulkUpdate(params *IpamAggregatesBulkUpdateParams
 		PathPattern:        "/ipam/aggregates/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamAggregatesBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -389,7 +465,7 @@ func (a *Client) IpamAggregatesCreate(params *IpamAggregatesCreateParams, authIn
 		PathPattern:        "/ipam/aggregates/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamAggregatesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -428,7 +504,7 @@ func (a *Client) IpamAggregatesDelete(params *IpamAggregatesDeleteParams, authIn
 		PathPattern:        "/ipam/aggregates/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamAggregatesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -467,7 +543,7 @@ func (a *Client) IpamAggregatesList(params *IpamAggregatesListParams, authInfo r
 		PathPattern:        "/ipam/aggregates/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamAggregatesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -506,7 +582,7 @@ func (a *Client) IpamAggregatesPartialUpdate(params *IpamAggregatesPartialUpdate
 		PathPattern:        "/ipam/aggregates/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamAggregatesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -545,7 +621,7 @@ func (a *Client) IpamAggregatesRead(params *IpamAggregatesReadParams, authInfo r
 		PathPattern:        "/ipam/aggregates/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamAggregatesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -584,7 +660,7 @@ func (a *Client) IpamAggregatesUpdate(params *IpamAggregatesUpdateParams, authIn
 		PathPattern:        "/ipam/aggregates/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamAggregatesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -610,6 +686,1059 @@ func (a *Client) IpamAggregatesUpdate(params *IpamAggregatesUpdateParams, authIn
 }
 
 /*
+  IpamAsnsBulkDelete ipam asns bulk delete API
+*/
+func (a *Client) IpamAsnsBulkDelete(params *IpamAsnsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamAsnsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_asns_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/asns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamAsnsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamAsnsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_asns_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamAsnsBulkPartialUpdate ipam asns bulk partial update API
+*/
+func (a *Client) IpamAsnsBulkPartialUpdate(params *IpamAsnsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamAsnsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_asns_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/asns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamAsnsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamAsnsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_asns_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamAsnsBulkUpdate ipam asns bulk update API
+*/
+func (a *Client) IpamAsnsBulkUpdate(params *IpamAsnsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamAsnsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_asns_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/asns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamAsnsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamAsnsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_asns_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamAsnsCreate ipam asns create API
+*/
+func (a *Client) IpamAsnsCreate(params *IpamAsnsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamAsnsCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_asns_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/asns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamAsnsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamAsnsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_asns_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamAsnsDelete ipam asns delete API
+*/
+func (a *Client) IpamAsnsDelete(params *IpamAsnsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamAsnsDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_asns_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/asns/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamAsnsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamAsnsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_asns_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamAsnsList Overrides ListModelMixin to allow processing ExportTemplates.
+*/
+func (a *Client) IpamAsnsList(params *IpamAsnsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamAsnsListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_asns_list",
+		Method:             "GET",
+		PathPattern:        "/ipam/asns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamAsnsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamAsnsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_asns_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamAsnsPartialUpdate ipam asns partial update API
+*/
+func (a *Client) IpamAsnsPartialUpdate(params *IpamAsnsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamAsnsPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_asns_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/asns/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamAsnsPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamAsnsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_asns_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamAsnsRead ipam asns read API
+*/
+func (a *Client) IpamAsnsRead(params *IpamAsnsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamAsnsReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_asns_read",
+		Method:             "GET",
+		PathPattern:        "/ipam/asns/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamAsnsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamAsnsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_asns_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamAsnsUpdate ipam asns update API
+*/
+func (a *Client) IpamAsnsUpdate(params *IpamAsnsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamAsnsUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_asns_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/asns/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamAsnsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamAsnsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_asns_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupAssignmentsBulkDelete ipam fhrp group assignments bulk delete API
+*/
+func (a *Client) IpamFhrpGroupAssignmentsBulkDelete(params *IpamFhrpGroupAssignmentsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupAssignmentsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-group-assignments_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/fhrp-group-assignments/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupAssignmentsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupAssignmentsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-group-assignments_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupAssignmentsBulkPartialUpdate ipam fhrp group assignments bulk partial update API
+*/
+func (a *Client) IpamFhrpGroupAssignmentsBulkPartialUpdate(params *IpamFhrpGroupAssignmentsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupAssignmentsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-group-assignments_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/fhrp-group-assignments/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupAssignmentsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupAssignmentsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-group-assignments_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupAssignmentsBulkUpdate ipam fhrp group assignments bulk update API
+*/
+func (a *Client) IpamFhrpGroupAssignmentsBulkUpdate(params *IpamFhrpGroupAssignmentsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupAssignmentsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-group-assignments_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/fhrp-group-assignments/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupAssignmentsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupAssignmentsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-group-assignments_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupAssignmentsCreate ipam fhrp group assignments create API
+*/
+func (a *Client) IpamFhrpGroupAssignmentsCreate(params *IpamFhrpGroupAssignmentsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupAssignmentsCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-group-assignments_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/fhrp-group-assignments/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupAssignmentsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupAssignmentsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-group-assignments_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupAssignmentsDelete ipam fhrp group assignments delete API
+*/
+func (a *Client) IpamFhrpGroupAssignmentsDelete(params *IpamFhrpGroupAssignmentsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupAssignmentsDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-group-assignments_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/fhrp-group-assignments/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupAssignmentsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupAssignmentsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-group-assignments_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupAssignmentsList Overrides ListModelMixin to allow processing ExportTemplates.
+*/
+func (a *Client) IpamFhrpGroupAssignmentsList(params *IpamFhrpGroupAssignmentsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupAssignmentsListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-group-assignments_list",
+		Method:             "GET",
+		PathPattern:        "/ipam/fhrp-group-assignments/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupAssignmentsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupAssignmentsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-group-assignments_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupAssignmentsPartialUpdate ipam fhrp group assignments partial update API
+*/
+func (a *Client) IpamFhrpGroupAssignmentsPartialUpdate(params *IpamFhrpGroupAssignmentsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupAssignmentsPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-group-assignments_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/fhrp-group-assignments/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupAssignmentsPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupAssignmentsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-group-assignments_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupAssignmentsRead ipam fhrp group assignments read API
+*/
+func (a *Client) IpamFhrpGroupAssignmentsRead(params *IpamFhrpGroupAssignmentsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupAssignmentsReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-group-assignments_read",
+		Method:             "GET",
+		PathPattern:        "/ipam/fhrp-group-assignments/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupAssignmentsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupAssignmentsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-group-assignments_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupAssignmentsUpdate ipam fhrp group assignments update API
+*/
+func (a *Client) IpamFhrpGroupAssignmentsUpdate(params *IpamFhrpGroupAssignmentsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupAssignmentsUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-group-assignments_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/fhrp-group-assignments/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupAssignmentsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupAssignmentsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-group-assignments_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupsBulkDelete ipam fhrp groups bulk delete API
+*/
+func (a *Client) IpamFhrpGroupsBulkDelete(params *IpamFhrpGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-groups_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/fhrp-groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-groups_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupsBulkPartialUpdate ipam fhrp groups bulk partial update API
+*/
+func (a *Client) IpamFhrpGroupsBulkPartialUpdate(params *IpamFhrpGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-groups_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/fhrp-groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-groups_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupsBulkUpdate ipam fhrp groups bulk update API
+*/
+func (a *Client) IpamFhrpGroupsBulkUpdate(params *IpamFhrpGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-groups_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/fhrp-groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-groups_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupsCreate ipam fhrp groups create API
+*/
+func (a *Client) IpamFhrpGroupsCreate(params *IpamFhrpGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupsCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-groups_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/fhrp-groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-groups_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupsDelete ipam fhrp groups delete API
+*/
+func (a *Client) IpamFhrpGroupsDelete(params *IpamFhrpGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupsDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-groups_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/fhrp-groups/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-groups_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
+*/
+func (a *Client) IpamFhrpGroupsList(params *IpamFhrpGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupsListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-groups_list",
+		Method:             "GET",
+		PathPattern:        "/ipam/fhrp-groups/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-groups_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupsPartialUpdate ipam fhrp groups partial update API
+*/
+func (a *Client) IpamFhrpGroupsPartialUpdate(params *IpamFhrpGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupsPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-groups_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/fhrp-groups/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupsPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-groups_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupsRead ipam fhrp groups read API
+*/
+func (a *Client) IpamFhrpGroupsRead(params *IpamFhrpGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupsReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-groups_read",
+		Method:             "GET",
+		PathPattern:        "/ipam/fhrp-groups/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-groups_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamFhrpGroupsUpdate ipam fhrp groups update API
+*/
+func (a *Client) IpamFhrpGroupsUpdate(params *IpamFhrpGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamFhrpGroupsUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_fhrp-groups_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/fhrp-groups/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamFhrpGroupsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamFhrpGroupsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_fhrp-groups_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
   IpamIPAddressesBulkDelete ipam ip addresses bulk delete API
 */
 func (a *Client) IpamIPAddressesBulkDelete(params *IpamIPAddressesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPAddressesBulkDeleteNoContent, error) {
@@ -623,7 +1752,7 @@ func (a *Client) IpamIPAddressesBulkDelete(params *IpamIPAddressesBulkDeletePara
 		PathPattern:        "/ipam/ip-addresses/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPAddressesBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -662,7 +1791,7 @@ func (a *Client) IpamIPAddressesBulkPartialUpdate(params *IpamIPAddressesBulkPar
 		PathPattern:        "/ipam/ip-addresses/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPAddressesBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -701,7 +1830,7 @@ func (a *Client) IpamIPAddressesBulkUpdate(params *IpamIPAddressesBulkUpdatePara
 		PathPattern:        "/ipam/ip-addresses/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPAddressesBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -740,7 +1869,7 @@ func (a *Client) IpamIPAddressesCreate(params *IpamIPAddressesCreateParams, auth
 		PathPattern:        "/ipam/ip-addresses/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPAddressesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -779,7 +1908,7 @@ func (a *Client) IpamIPAddressesDelete(params *IpamIPAddressesDeleteParams, auth
 		PathPattern:        "/ipam/ip-addresses/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPAddressesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -818,7 +1947,7 @@ func (a *Client) IpamIPAddressesList(params *IpamIPAddressesListParams, authInfo
 		PathPattern:        "/ipam/ip-addresses/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPAddressesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -857,7 +1986,7 @@ func (a *Client) IpamIPAddressesPartialUpdate(params *IpamIPAddressesPartialUpda
 		PathPattern:        "/ipam/ip-addresses/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPAddressesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -896,7 +2025,7 @@ func (a *Client) IpamIPAddressesRead(params *IpamIPAddressesReadParams, authInfo
 		PathPattern:        "/ipam/ip-addresses/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPAddressesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -935,7 +2064,7 @@ func (a *Client) IpamIPAddressesUpdate(params *IpamIPAddressesUpdateParams, auth
 		PathPattern:        "/ipam/ip-addresses/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPAddressesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -961,12 +2090,7 @@ func (a *Client) IpamIPAddressesUpdate(params *IpamIPAddressesUpdateParams, auth
 }
 
 /*
-  IpamIPRangesAvailableIpsCreate A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of
-IPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be
-passed, however results will not be paginated.
-
-The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
-invoked in parallel, which results in a race condition where multiple insertions can occur.
+  IpamIPRangesAvailableIpsCreate ipam ip ranges available ips create API
 */
 func (a *Client) IpamIPRangesAvailableIpsCreate(params *IpamIPRangesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -979,7 +2103,7 @@ func (a *Client) IpamIPRangesAvailableIpsCreate(params *IpamIPRangesAvailableIps
 		PathPattern:        "/ipam/ip-ranges/{id}/available-ips/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesAvailableIpsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1005,27 +2129,22 @@ func (a *Client) IpamIPRangesAvailableIpsCreate(params *IpamIPRangesAvailableIps
 }
 
 /*
-  IpamIPRangesAvailableIpsRead A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of
-IPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be
-passed, however results will not be paginated.
-
-The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
-invoked in parallel, which results in a race condition where multiple insertions can occur.
+  IpamIPRangesAvailableIpsList ipam ip ranges available ips list API
 */
-func (a *Client) IpamIPRangesAvailableIpsRead(params *IpamIPRangesAvailableIpsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsReadOK, error) {
+func (a *Client) IpamIPRangesAvailableIpsList(params *IpamIPRangesAvailableIpsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesAvailableIpsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewIpamIPRangesAvailableIpsReadParams()
+		params = NewIpamIPRangesAvailableIpsListParams()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "ipam_ip-ranges_available-ips_read",
+		ID:                 "ipam_ip-ranges_available-ips_list",
 		Method:             "GET",
 		PathPattern:        "/ipam/ip-ranges/{id}/available-ips/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &IpamIPRangesAvailableIpsReadReader{formats: a.formats},
+		Reader:             &IpamIPRangesAvailableIpsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -1038,13 +2157,13 @@ func (a *Client) IpamIPRangesAvailableIpsRead(params *IpamIPRangesAvailableIpsRe
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*IpamIPRangesAvailableIpsReadOK)
+	success, ok := result.(*IpamIPRangesAvailableIpsListOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for ipam_ip-ranges_available-ips_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for ipam_ip-ranges_available-ips_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1062,7 +2181,7 @@ func (a *Client) IpamIPRangesBulkDelete(params *IpamIPRangesBulkDeleteParams, au
 		PathPattern:        "/ipam/ip-ranges/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1101,7 +2220,7 @@ func (a *Client) IpamIPRangesBulkPartialUpdate(params *IpamIPRangesBulkPartialUp
 		PathPattern:        "/ipam/ip-ranges/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1140,7 +2259,7 @@ func (a *Client) IpamIPRangesBulkUpdate(params *IpamIPRangesBulkUpdateParams, au
 		PathPattern:        "/ipam/ip-ranges/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1179,7 +2298,7 @@ func (a *Client) IpamIPRangesCreate(params *IpamIPRangesCreateParams, authInfo r
 		PathPattern:        "/ipam/ip-ranges/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1218,7 +2337,7 @@ func (a *Client) IpamIPRangesDelete(params *IpamIPRangesDeleteParams, authInfo r
 		PathPattern:        "/ipam/ip-ranges/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1257,7 +2376,7 @@ func (a *Client) IpamIPRangesList(params *IpamIPRangesListParams, authInfo runti
 		PathPattern:        "/ipam/ip-ranges/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1296,7 +2415,7 @@ func (a *Client) IpamIPRangesPartialUpdate(params *IpamIPRangesPartialUpdatePara
 		PathPattern:        "/ipam/ip-ranges/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1335,7 +2454,7 @@ func (a *Client) IpamIPRangesRead(params *IpamIPRangesReadParams, authInfo runti
 		PathPattern:        "/ipam/ip-ranges/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1374,7 +2493,7 @@ func (a *Client) IpamIPRangesUpdate(params *IpamIPRangesUpdateParams, authInfo r
 		PathPattern:        "/ipam/ip-ranges/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamIPRangesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1400,12 +2519,7 @@ func (a *Client) IpamIPRangesUpdate(params *IpamIPRangesUpdateParams, authInfo r
 }
 
 /*
-  IpamPrefixesAvailableIpsCreate A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of
-IPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be
-passed, however results will not be paginated.
-
-The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
-invoked in parallel, which results in a race condition where multiple insertions can occur.
+  IpamPrefixesAvailableIpsCreate ipam prefixes available ips create API
 */
 func (a *Client) IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -1418,7 +2532,7 @@ func (a *Client) IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIps
 		PathPattern:        "/ipam/prefixes/{id}/available-ips/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesAvailableIpsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1444,27 +2558,22 @@ func (a *Client) IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIps
 }
 
 /*
-  IpamPrefixesAvailableIpsRead A convenience method for returning available IP addresses within a Prefix or IPRange. By default, the number of
-IPs returned will be equivalent to PAGINATE_COUNT. An arbitrary limit (up to MAX_PAGE_SIZE, if set) may be
-passed, however results will not be paginated.
-
-The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
-invoked in parallel, which results in a race condition where multiple insertions can occur.
+  IpamPrefixesAvailableIpsList ipam prefixes available ips list API
 */
-func (a *Client) IpamPrefixesAvailableIpsRead(params *IpamPrefixesAvailableIpsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsReadOK, error) {
+func (a *Client) IpamPrefixesAvailableIpsList(params *IpamPrefixesAvailableIpsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewIpamPrefixesAvailableIpsReadParams()
+		params = NewIpamPrefixesAvailableIpsListParams()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "ipam_prefixes_available-ips_read",
+		ID:                 "ipam_prefixes_available-ips_list",
 		Method:             "GET",
 		PathPattern:        "/ipam/prefixes/{id}/available-ips/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &IpamPrefixesAvailableIpsReadReader{formats: a.formats},
+		Reader:             &IpamPrefixesAvailableIpsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -1477,21 +2586,18 @@ func (a *Client) IpamPrefixesAvailableIpsRead(params *IpamPrefixesAvailableIpsRe
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*IpamPrefixesAvailableIpsReadOK)
+	success, ok := result.(*IpamPrefixesAvailableIpsListOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for ipam_prefixes_available-ips_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for ipam_prefixes_available-ips_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-  IpamPrefixesAvailablePrefixesCreate as convenience method for returning available child prefixes within a parent
-
-  The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
-invoked in parallel, which results in a race condition where multiple insertions can occur.
+  IpamPrefixesAvailablePrefixesCreate ipam prefixes available prefixes create API
 */
 func (a *Client) IpamPrefixesAvailablePrefixesCreate(params *IpamPrefixesAvailablePrefixesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailablePrefixesCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -1504,7 +2610,7 @@ func (a *Client) IpamPrefixesAvailablePrefixesCreate(params *IpamPrefixesAvailab
 		PathPattern:        "/ipam/prefixes/{id}/available-prefixes/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesAvailablePrefixesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1530,25 +2636,22 @@ func (a *Client) IpamPrefixesAvailablePrefixesCreate(params *IpamPrefixesAvailab
 }
 
 /*
-  IpamPrefixesAvailablePrefixesRead as convenience method for returning available child prefixes within a parent
-
-  The advisory lock decorator uses a PostgreSQL advisory lock to prevent this API from being
-invoked in parallel, which results in a race condition where multiple insertions can occur.
+  IpamPrefixesAvailablePrefixesList ipam prefixes available prefixes list API
 */
-func (a *Client) IpamPrefixesAvailablePrefixesRead(params *IpamPrefixesAvailablePrefixesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailablePrefixesReadOK, error) {
+func (a *Client) IpamPrefixesAvailablePrefixesList(params *IpamPrefixesAvailablePrefixesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailablePrefixesListOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewIpamPrefixesAvailablePrefixesReadParams()
+		params = NewIpamPrefixesAvailablePrefixesListParams()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "ipam_prefixes_available-prefixes_read",
+		ID:                 "ipam_prefixes_available-prefixes_list",
 		Method:             "GET",
 		PathPattern:        "/ipam/prefixes/{id}/available-prefixes/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &IpamPrefixesAvailablePrefixesReadReader{formats: a.formats},
+		Reader:             &IpamPrefixesAvailablePrefixesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -1561,13 +2664,13 @@ func (a *Client) IpamPrefixesAvailablePrefixesRead(params *IpamPrefixesAvailable
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*IpamPrefixesAvailablePrefixesReadOK)
+	success, ok := result.(*IpamPrefixesAvailablePrefixesListOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for ipam_prefixes_available-prefixes_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for ipam_prefixes_available-prefixes_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1585,7 +2688,7 @@ func (a *Client) IpamPrefixesBulkDelete(params *IpamPrefixesBulkDeleteParams, au
 		PathPattern:        "/ipam/prefixes/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1624,7 +2727,7 @@ func (a *Client) IpamPrefixesBulkPartialUpdate(params *IpamPrefixesBulkPartialUp
 		PathPattern:        "/ipam/prefixes/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1663,7 +2766,7 @@ func (a *Client) IpamPrefixesBulkUpdate(params *IpamPrefixesBulkUpdateParams, au
 		PathPattern:        "/ipam/prefixes/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1702,7 +2805,7 @@ func (a *Client) IpamPrefixesCreate(params *IpamPrefixesCreateParams, authInfo r
 		PathPattern:        "/ipam/prefixes/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1741,7 +2844,7 @@ func (a *Client) IpamPrefixesDelete(params *IpamPrefixesDeleteParams, authInfo r
 		PathPattern:        "/ipam/prefixes/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1780,7 +2883,7 @@ func (a *Client) IpamPrefixesList(params *IpamPrefixesListParams, authInfo runti
 		PathPattern:        "/ipam/prefixes/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1819,7 +2922,7 @@ func (a *Client) IpamPrefixesPartialUpdate(params *IpamPrefixesPartialUpdatePara
 		PathPattern:        "/ipam/prefixes/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1858,7 +2961,7 @@ func (a *Client) IpamPrefixesRead(params *IpamPrefixesReadParams, authInfo runti
 		PathPattern:        "/ipam/prefixes/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1897,7 +3000,7 @@ func (a *Client) IpamPrefixesUpdate(params *IpamPrefixesUpdateParams, authInfo r
 		PathPattern:        "/ipam/prefixes/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamPrefixesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1936,7 +3039,7 @@ func (a *Client) IpamRirsBulkDelete(params *IpamRirsBulkDeleteParams, authInfo r
 		PathPattern:        "/ipam/rirs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRirsBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1975,7 +3078,7 @@ func (a *Client) IpamRirsBulkPartialUpdate(params *IpamRirsBulkPartialUpdatePara
 		PathPattern:        "/ipam/rirs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRirsBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2014,7 +3117,7 @@ func (a *Client) IpamRirsBulkUpdate(params *IpamRirsBulkUpdateParams, authInfo r
 		PathPattern:        "/ipam/rirs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRirsBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2053,7 +3156,7 @@ func (a *Client) IpamRirsCreate(params *IpamRirsCreateParams, authInfo runtime.C
 		PathPattern:        "/ipam/rirs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRirsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2092,7 +3195,7 @@ func (a *Client) IpamRirsDelete(params *IpamRirsDeleteParams, authInfo runtime.C
 		PathPattern:        "/ipam/rirs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRirsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2131,7 +3234,7 @@ func (a *Client) IpamRirsList(params *IpamRirsListParams, authInfo runtime.Clien
 		PathPattern:        "/ipam/rirs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRirsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2170,7 +3273,7 @@ func (a *Client) IpamRirsPartialUpdate(params *IpamRirsPartialUpdateParams, auth
 		PathPattern:        "/ipam/rirs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRirsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2209,7 +3312,7 @@ func (a *Client) IpamRirsRead(params *IpamRirsReadParams, authInfo runtime.Clien
 		PathPattern:        "/ipam/rirs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRirsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2248,7 +3351,7 @@ func (a *Client) IpamRirsUpdate(params *IpamRirsUpdateParams, authInfo runtime.C
 		PathPattern:        "/ipam/rirs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRirsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2287,7 +3390,7 @@ func (a *Client) IpamRolesBulkDelete(params *IpamRolesBulkDeleteParams, authInfo
 		PathPattern:        "/ipam/roles/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRolesBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2326,7 +3429,7 @@ func (a *Client) IpamRolesBulkPartialUpdate(params *IpamRolesBulkPartialUpdatePa
 		PathPattern:        "/ipam/roles/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRolesBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2365,7 +3468,7 @@ func (a *Client) IpamRolesBulkUpdate(params *IpamRolesBulkUpdateParams, authInfo
 		PathPattern:        "/ipam/roles/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRolesBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2404,7 +3507,7 @@ func (a *Client) IpamRolesCreate(params *IpamRolesCreateParams, authInfo runtime
 		PathPattern:        "/ipam/roles/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRolesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2443,7 +3546,7 @@ func (a *Client) IpamRolesDelete(params *IpamRolesDeleteParams, authInfo runtime
 		PathPattern:        "/ipam/roles/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRolesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2482,7 +3585,7 @@ func (a *Client) IpamRolesList(params *IpamRolesListParams, authInfo runtime.Cli
 		PathPattern:        "/ipam/roles/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRolesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2521,7 +3624,7 @@ func (a *Client) IpamRolesPartialUpdate(params *IpamRolesPartialUpdateParams, au
 		PathPattern:        "/ipam/roles/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRolesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2560,7 +3663,7 @@ func (a *Client) IpamRolesRead(params *IpamRolesReadParams, authInfo runtime.Cli
 		PathPattern:        "/ipam/roles/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRolesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2599,7 +3702,7 @@ func (a *Client) IpamRolesUpdate(params *IpamRolesUpdateParams, authInfo runtime
 		PathPattern:        "/ipam/roles/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRolesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2638,7 +3741,7 @@ func (a *Client) IpamRouteTargetsBulkDelete(params *IpamRouteTargetsBulkDeletePa
 		PathPattern:        "/ipam/route-targets/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRouteTargetsBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2677,7 +3780,7 @@ func (a *Client) IpamRouteTargetsBulkPartialUpdate(params *IpamRouteTargetsBulkP
 		PathPattern:        "/ipam/route-targets/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRouteTargetsBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2716,7 +3819,7 @@ func (a *Client) IpamRouteTargetsBulkUpdate(params *IpamRouteTargetsBulkUpdatePa
 		PathPattern:        "/ipam/route-targets/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRouteTargetsBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2755,7 +3858,7 @@ func (a *Client) IpamRouteTargetsCreate(params *IpamRouteTargetsCreateParams, au
 		PathPattern:        "/ipam/route-targets/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRouteTargetsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2794,7 +3897,7 @@ func (a *Client) IpamRouteTargetsDelete(params *IpamRouteTargetsDeleteParams, au
 		PathPattern:        "/ipam/route-targets/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRouteTargetsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2833,7 +3936,7 @@ func (a *Client) IpamRouteTargetsList(params *IpamRouteTargetsListParams, authIn
 		PathPattern:        "/ipam/route-targets/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRouteTargetsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2872,7 +3975,7 @@ func (a *Client) IpamRouteTargetsPartialUpdate(params *IpamRouteTargetsPartialUp
 		PathPattern:        "/ipam/route-targets/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRouteTargetsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2911,7 +4014,7 @@ func (a *Client) IpamRouteTargetsRead(params *IpamRouteTargetsReadParams, authIn
 		PathPattern:        "/ipam/route-targets/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRouteTargetsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2950,7 +4053,7 @@ func (a *Client) IpamRouteTargetsUpdate(params *IpamRouteTargetsUpdateParams, au
 		PathPattern:        "/ipam/route-targets/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamRouteTargetsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -2976,6 +4079,357 @@ func (a *Client) IpamRouteTargetsUpdate(params *IpamRouteTargetsUpdateParams, au
 }
 
 /*
+  IpamServiceTemplatesBulkDelete ipam service templates bulk delete API
+*/
+func (a *Client) IpamServiceTemplatesBulkDelete(params *IpamServiceTemplatesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamServiceTemplatesBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_service-templates_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/service-templates/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamServiceTemplatesBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamServiceTemplatesBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_service-templates_bulk_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamServiceTemplatesBulkPartialUpdate ipam service templates bulk partial update API
+*/
+func (a *Client) IpamServiceTemplatesBulkPartialUpdate(params *IpamServiceTemplatesBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamServiceTemplatesBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_service-templates_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/service-templates/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamServiceTemplatesBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamServiceTemplatesBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_service-templates_bulk_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamServiceTemplatesBulkUpdate ipam service templates bulk update API
+*/
+func (a *Client) IpamServiceTemplatesBulkUpdate(params *IpamServiceTemplatesBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamServiceTemplatesBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_service-templates_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/service-templates/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamServiceTemplatesBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamServiceTemplatesBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_service-templates_bulk_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamServiceTemplatesCreate ipam service templates create API
+*/
+func (a *Client) IpamServiceTemplatesCreate(params *IpamServiceTemplatesCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamServiceTemplatesCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_service-templates_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/service-templates/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamServiceTemplatesCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamServiceTemplatesCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_service-templates_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamServiceTemplatesDelete ipam service templates delete API
+*/
+func (a *Client) IpamServiceTemplatesDelete(params *IpamServiceTemplatesDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamServiceTemplatesDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_service-templates_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/service-templates/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamServiceTemplatesDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamServiceTemplatesDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_service-templates_delete: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamServiceTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+*/
+func (a *Client) IpamServiceTemplatesList(params *IpamServiceTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamServiceTemplatesListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_service-templates_list",
+		Method:             "GET",
+		PathPattern:        "/ipam/service-templates/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamServiceTemplatesListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamServiceTemplatesListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_service-templates_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamServiceTemplatesPartialUpdate ipam service templates partial update API
+*/
+func (a *Client) IpamServiceTemplatesPartialUpdate(params *IpamServiceTemplatesPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamServiceTemplatesPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_service-templates_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/service-templates/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamServiceTemplatesPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamServiceTemplatesPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_service-templates_partial_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamServiceTemplatesRead ipam service templates read API
+*/
+func (a *Client) IpamServiceTemplatesRead(params *IpamServiceTemplatesReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamServiceTemplatesReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_service-templates_read",
+		Method:             "GET",
+		PathPattern:        "/ipam/service-templates/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamServiceTemplatesReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamServiceTemplatesReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_service-templates_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamServiceTemplatesUpdate ipam service templates update API
+*/
+func (a *Client) IpamServiceTemplatesUpdate(params *IpamServiceTemplatesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamServiceTemplatesUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_service-templates_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/service-templates/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamServiceTemplatesUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamServiceTemplatesUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_service-templates_update: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
   IpamServicesBulkDelete ipam services bulk delete API
 */
 func (a *Client) IpamServicesBulkDelete(params *IpamServicesBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServicesBulkDeleteNoContent, error) {
@@ -2989,7 +4443,7 @@ func (a *Client) IpamServicesBulkDelete(params *IpamServicesBulkDeleteParams, au
 		PathPattern:        "/ipam/services/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamServicesBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3028,7 +4482,7 @@ func (a *Client) IpamServicesBulkPartialUpdate(params *IpamServicesBulkPartialUp
 		PathPattern:        "/ipam/services/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamServicesBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3067,7 +4521,7 @@ func (a *Client) IpamServicesBulkUpdate(params *IpamServicesBulkUpdateParams, au
 		PathPattern:        "/ipam/services/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamServicesBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3106,7 +4560,7 @@ func (a *Client) IpamServicesCreate(params *IpamServicesCreateParams, authInfo r
 		PathPattern:        "/ipam/services/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamServicesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3145,7 +4599,7 @@ func (a *Client) IpamServicesDelete(params *IpamServicesDeleteParams, authInfo r
 		PathPattern:        "/ipam/services/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamServicesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3184,7 +4638,7 @@ func (a *Client) IpamServicesList(params *IpamServicesListParams, authInfo runti
 		PathPattern:        "/ipam/services/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamServicesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3223,7 +4677,7 @@ func (a *Client) IpamServicesPartialUpdate(params *IpamServicesPartialUpdatePara
 		PathPattern:        "/ipam/services/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamServicesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3262,7 +4716,7 @@ func (a *Client) IpamServicesRead(params *IpamServicesReadParams, authInfo runti
 		PathPattern:        "/ipam/services/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamServicesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3301,7 +4755,7 @@ func (a *Client) IpamServicesUpdate(params *IpamServicesUpdateParams, authInfo r
 		PathPattern:        "/ipam/services/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamServicesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3327,6 +4781,84 @@ func (a *Client) IpamServicesUpdate(params *IpamServicesUpdateParams, authInfo r
 }
 
 /*
+  IpamVlanGroupsAvailableVlansCreate ipam vlan groups available vlans create API
+*/
+func (a *Client) IpamVlanGroupsAvailableVlansCreate(params *IpamVlanGroupsAvailableVlansCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlanGroupsAvailableVlansCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamVlanGroupsAvailableVlansCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_vlan-groups_available-vlans_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/vlan-groups/{id}/available-vlans/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamVlanGroupsAvailableVlansCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamVlanGroupsAvailableVlansCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_vlan-groups_available-vlans_create: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  IpamVlanGroupsAvailableVlansList ipam vlan groups available vlans list API
+*/
+func (a *Client) IpamVlanGroupsAvailableVlansList(params *IpamVlanGroupsAvailableVlansListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlanGroupsAvailableVlansListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamVlanGroupsAvailableVlansListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_vlan-groups_available-vlans_list",
+		Method:             "GET",
+		PathPattern:        "/ipam/vlan-groups/{id}/available-vlans/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &IpamVlanGroupsAvailableVlansListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamVlanGroupsAvailableVlansListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ipam_vlan-groups_available-vlans_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
   IpamVlanGroupsBulkDelete ipam vlan groups bulk delete API
 */
 func (a *Client) IpamVlanGroupsBulkDelete(params *IpamVlanGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlanGroupsBulkDeleteNoContent, error) {
@@ -3340,7 +4872,7 @@ func (a *Client) IpamVlanGroupsBulkDelete(params *IpamVlanGroupsBulkDeleteParams
 		PathPattern:        "/ipam/vlan-groups/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlanGroupsBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3379,7 +4911,7 @@ func (a *Client) IpamVlanGroupsBulkPartialUpdate(params *IpamVlanGroupsBulkParti
 		PathPattern:        "/ipam/vlan-groups/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlanGroupsBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3418,7 +4950,7 @@ func (a *Client) IpamVlanGroupsBulkUpdate(params *IpamVlanGroupsBulkUpdateParams
 		PathPattern:        "/ipam/vlan-groups/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlanGroupsBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3457,7 +4989,7 @@ func (a *Client) IpamVlanGroupsCreate(params *IpamVlanGroupsCreateParams, authIn
 		PathPattern:        "/ipam/vlan-groups/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlanGroupsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3496,7 +5028,7 @@ func (a *Client) IpamVlanGroupsDelete(params *IpamVlanGroupsDeleteParams, authIn
 		PathPattern:        "/ipam/vlan-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlanGroupsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3535,7 +5067,7 @@ func (a *Client) IpamVlanGroupsList(params *IpamVlanGroupsListParams, authInfo r
 		PathPattern:        "/ipam/vlan-groups/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlanGroupsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3574,7 +5106,7 @@ func (a *Client) IpamVlanGroupsPartialUpdate(params *IpamVlanGroupsPartialUpdate
 		PathPattern:        "/ipam/vlan-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlanGroupsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3613,7 +5145,7 @@ func (a *Client) IpamVlanGroupsRead(params *IpamVlanGroupsReadParams, authInfo r
 		PathPattern:        "/ipam/vlan-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlanGroupsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3652,7 +5184,7 @@ func (a *Client) IpamVlanGroupsUpdate(params *IpamVlanGroupsUpdateParams, authIn
 		PathPattern:        "/ipam/vlan-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlanGroupsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3691,7 +5223,7 @@ func (a *Client) IpamVlansBulkDelete(params *IpamVlansBulkDeleteParams, authInfo
 		PathPattern:        "/ipam/vlans/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlansBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3730,7 +5262,7 @@ func (a *Client) IpamVlansBulkPartialUpdate(params *IpamVlansBulkPartialUpdatePa
 		PathPattern:        "/ipam/vlans/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlansBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3769,7 +5301,7 @@ func (a *Client) IpamVlansBulkUpdate(params *IpamVlansBulkUpdateParams, authInfo
 		PathPattern:        "/ipam/vlans/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlansBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3808,7 +5340,7 @@ func (a *Client) IpamVlansCreate(params *IpamVlansCreateParams, authInfo runtime
 		PathPattern:        "/ipam/vlans/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlansCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3847,7 +5379,7 @@ func (a *Client) IpamVlansDelete(params *IpamVlansDeleteParams, authInfo runtime
 		PathPattern:        "/ipam/vlans/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlansDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3886,7 +5418,7 @@ func (a *Client) IpamVlansList(params *IpamVlansListParams, authInfo runtime.Cli
 		PathPattern:        "/ipam/vlans/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlansListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3925,7 +5457,7 @@ func (a *Client) IpamVlansPartialUpdate(params *IpamVlansPartialUpdateParams, au
 		PathPattern:        "/ipam/vlans/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlansPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -3964,7 +5496,7 @@ func (a *Client) IpamVlansRead(params *IpamVlansReadParams, authInfo runtime.Cli
 		PathPattern:        "/ipam/vlans/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlansReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4003,7 +5535,7 @@ func (a *Client) IpamVlansUpdate(params *IpamVlansUpdateParams, authInfo runtime
 		PathPattern:        "/ipam/vlans/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVlansUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4042,7 +5574,7 @@ func (a *Client) IpamVrfsBulkDelete(params *IpamVrfsBulkDeleteParams, authInfo r
 		PathPattern:        "/ipam/vrfs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVrfsBulkDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4081,7 +5613,7 @@ func (a *Client) IpamVrfsBulkPartialUpdate(params *IpamVrfsBulkPartialUpdatePara
 		PathPattern:        "/ipam/vrfs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVrfsBulkPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4120,7 +5652,7 @@ func (a *Client) IpamVrfsBulkUpdate(params *IpamVrfsBulkUpdateParams, authInfo r
 		PathPattern:        "/ipam/vrfs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVrfsBulkUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4159,7 +5691,7 @@ func (a *Client) IpamVrfsCreate(params *IpamVrfsCreateParams, authInfo runtime.C
 		PathPattern:        "/ipam/vrfs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVrfsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4198,7 +5730,7 @@ func (a *Client) IpamVrfsDelete(params *IpamVrfsDeleteParams, authInfo runtime.C
 		PathPattern:        "/ipam/vrfs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVrfsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4237,7 +5769,7 @@ func (a *Client) IpamVrfsList(params *IpamVrfsListParams, authInfo runtime.Clien
 		PathPattern:        "/ipam/vrfs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVrfsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4276,7 +5808,7 @@ func (a *Client) IpamVrfsPartialUpdate(params *IpamVrfsPartialUpdateParams, auth
 		PathPattern:        "/ipam/vrfs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVrfsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4315,7 +5847,7 @@ func (a *Client) IpamVrfsRead(params *IpamVrfsReadParams, authInfo runtime.Clien
 		PathPattern:        "/ipam/vrfs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVrfsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -4354,7 +5886,7 @@ func (a *Client) IpamVrfsUpdate(params *IpamVrfsUpdateParams, authInfo runtime.C
 		PathPattern:        "/ipam/vrfs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &IpamVrfsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,

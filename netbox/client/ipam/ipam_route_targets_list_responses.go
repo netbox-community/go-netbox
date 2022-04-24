@@ -182,6 +182,8 @@ func (o *IpamRouteTargetsListOKBody) validateResults(formats strfmt.Registry) er
 			if err := o.Results[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamRouteTargetsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ipamRouteTargetsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -214,6 +216,8 @@ func (o *IpamRouteTargetsListOKBody) contextValidateResults(ctx context.Context,
 			if err := o.Results[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ipamRouteTargetsListOK" + "." + "results" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ipamRouteTargetsListOK" + "." + "results" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

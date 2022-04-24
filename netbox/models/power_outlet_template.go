@@ -37,8 +37,8 @@ type PowerOutletTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -55,7 +55,7 @@ type PowerOutletTemplate struct {
 	// feed leg
 	FeedLeg *PowerOutletTemplateFeedLeg `json:"feed_leg,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -143,7 +143,7 @@ func (m *PowerOutletTemplate) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -172,6 +172,8 @@ func (m *PowerOutletTemplate) validateDeviceType(formats strfmt.Registry) error 
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -189,6 +191,8 @@ func (m *PowerOutletTemplate) validateFeedLeg(formats strfmt.Registry) error {
 		if err := m.FeedLeg.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("feed_leg")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("feed_leg")
 			}
 			return err
 		}
@@ -247,6 +251,8 @@ func (m *PowerOutletTemplate) validatePowerPort(formats strfmt.Registry) error {
 		if err := m.PowerPort.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("power_port")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("power_port")
 			}
 			return err
 		}
@@ -264,6 +270,8 @@ func (m *PowerOutletTemplate) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -332,7 +340,7 @@ func (m *PowerOutletTemplate) ContextValidate(ctx context.Context, formats strfm
 
 func (m *PowerOutletTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -345,6 +353,8 @@ func (m *PowerOutletTemplate) contextValidateDeviceType(ctx context.Context, for
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -368,6 +378,8 @@ func (m *PowerOutletTemplate) contextValidateFeedLeg(ctx context.Context, format
 		if err := m.FeedLeg.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("feed_leg")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("feed_leg")
 			}
 			return err
 		}
@@ -400,6 +412,8 @@ func (m *PowerOutletTemplate) contextValidatePowerPort(ctx context.Context, form
 		if err := m.PowerPort.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("power_port")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("power_port")
 			}
 			return err
 		}
@@ -414,6 +428,8 @@ func (m *PowerOutletTemplate) contextValidateType(ctx context.Context, formats s
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -605,12 +621,12 @@ type PowerOutletTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [C5 C7 C13 C15 C19 C21 P+N+E 4H P+N+E 6H P+N+E 9H 2P+E 4H 2P+E 6H 2P+E 9H 3P+E 4H 3P+E 6H 3P+E 9H 3P+N+E 4H 3P+N+E 6H 3P+N+E 9H NEMA 1-15R NEMA 5-15R NEMA 5-20R NEMA 5-30R NEMA 5-50R NEMA 6-15R NEMA 6-20R NEMA 6-30R NEMA 6-50R NEMA 10-30R NEMA 10-50R NEMA 14-20R NEMA 14-30R NEMA 14-50R NEMA 14-60R NEMA 15-15R NEMA 15-20R NEMA 15-30R NEMA 15-50R NEMA 15-60R NEMA L1-15R NEMA L5-15R NEMA L5-20R NEMA L5-30R NEMA L5-50R NEMA L6-15R NEMA L6-20R NEMA L6-30R NEMA L6-50R NEMA L10-30R NEMA L14-20R NEMA L14-30R NEMA L14-50R NEMA L14-60R NEMA L15-20R NEMA L15-30R NEMA L15-50R NEMA L15-60R NEMA L21-20R NEMA L21-30R CS6360C CS6364C CS8164C CS8264C CS8364C CS8464C ITA Type E (CEE7/5) ITA Type F (CEE7/3) ITA Type G (BS 1363) ITA Type H ITA Type I ITA Type J ITA Type K ITA Type L (CEI 23-50) ITA Type M (BS 546) ITA Type N ITA Type O USB Type A USB Micro B USB Type C DC Terminal HDOT Cx Saf-D-Grid Hardwired]
+	// Enum: [C5 C7 C13 C15 C19 C21 P+N+E 4H P+N+E 6H P+N+E 9H 2P+E 4H 2P+E 6H 2P+E 9H 3P+E 4H 3P+E 6H 3P+E 9H 3P+N+E 4H 3P+N+E 6H 3P+N+E 9H NEMA 1-15R NEMA 5-15R NEMA 5-20R NEMA 5-30R NEMA 5-50R NEMA 6-15R NEMA 6-20R NEMA 6-30R NEMA 6-50R NEMA 10-30R NEMA 10-50R NEMA 14-20R NEMA 14-30R NEMA 14-50R NEMA 14-60R NEMA 15-15R NEMA 15-20R NEMA 15-30R NEMA 15-50R NEMA 15-60R NEMA L1-15R NEMA L5-15R NEMA L5-20R NEMA L5-30R NEMA L5-50R NEMA L6-15R NEMA L6-20R NEMA L6-30R NEMA L6-50R NEMA L10-30R NEMA L14-20R NEMA L14-30R NEMA L14-50R NEMA L14-60R NEMA L15-20R NEMA L15-30R NEMA L15-50R NEMA L15-60R NEMA L21-20R NEMA L21-30R NEMA L22-30R CS6360C CS6364C CS8164C CS8264C CS8364C CS8464C ITA Type E (CEE 7/5) ITA Type F (CEE 7/3) ITA Type G (BS 1363) ITA Type H ITA Type I ITA Type J ITA Type K ITA Type L (CEI 23-50) ITA Type M (BS 546) ITA Type N ITA Type O ITA Multistandard USB Type A USB Micro B USB Type C DC Terminal HDOT Cx Saf-D-Grid Neutrik powerCON (20A) Neutrik powerCON (32A) Neutrik powerCON TRUE1 Neutrik powerCON TRUE1 TOP Hardwired]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [iec-60320-c5 iec-60320-c7 iec-60320-c13 iec-60320-c15 iec-60320-c19 iec-60320-c21 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-1-15r nema-5-15r nema-5-20r nema-5-30r nema-5-50r nema-6-15r nema-6-20r nema-6-30r nema-6-50r nema-10-30r nema-10-50r nema-14-20r nema-14-30r nema-14-50r nema-14-60r nema-15-15r nema-15-20r nema-15-30r nema-15-50r nema-15-60r nema-l1-15r nema-l5-15r nema-l5-20r nema-l5-30r nema-l5-50r nema-l6-15r nema-l6-20r nema-l6-30r nema-l6-50r nema-l10-30r nema-l14-20r nema-l14-30r nema-l14-50r nema-l14-60r nema-l15-20r nema-l15-30r nema-l15-50r nema-l15-60r nema-l21-20r nema-l21-30r CS6360C CS6364C CS8164C CS8264C CS8364C CS8464C ita-e ita-f ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o usb-a usb-micro-b usb-c dc-terminal hdot-cx saf-d-grid hardwired]
+	// Enum: [iec-60320-c5 iec-60320-c7 iec-60320-c13 iec-60320-c15 iec-60320-c19 iec-60320-c21 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-1-15r nema-5-15r nema-5-20r nema-5-30r nema-5-50r nema-6-15r nema-6-20r nema-6-30r nema-6-50r nema-10-30r nema-10-50r nema-14-20r nema-14-30r nema-14-50r nema-14-60r nema-15-15r nema-15-20r nema-15-30r nema-15-50r nema-15-60r nema-l1-15r nema-l5-15r nema-l5-20r nema-l5-30r nema-l5-50r nema-l6-15r nema-l6-20r nema-l6-30r nema-l6-50r nema-l10-30r nema-l14-20r nema-l14-30r nema-l14-50r nema-l14-60r nema-l15-20r nema-l15-30r nema-l15-50r nema-l15-60r nema-l21-20r nema-l21-30r nema-l22-30r CS6360C CS6364C CS8164C CS8264C CS8364C CS8464C ita-e ita-f ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o ita-multistandard usb-a usb-micro-b usb-c dc-terminal hdot-cx saf-d-grid neutrik-powercon-20a neutrik-powercon-32a neutrik-powercon-true1 neutrik-powercon-true1-top hardwired]
 	Value *string `json:"value"`
 }
 
@@ -636,7 +652,7 @@ var powerOutletTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["C5","C7","C13","C15","C19","C21","P+N+E 4H","P+N+E 6H","P+N+E 9H","2P+E 4H","2P+E 6H","2P+E 9H","3P+E 4H","3P+E 6H","3P+E 9H","3P+N+E 4H","3P+N+E 6H","3P+N+E 9H","NEMA 1-15R","NEMA 5-15R","NEMA 5-20R","NEMA 5-30R","NEMA 5-50R","NEMA 6-15R","NEMA 6-20R","NEMA 6-30R","NEMA 6-50R","NEMA 10-30R","NEMA 10-50R","NEMA 14-20R","NEMA 14-30R","NEMA 14-50R","NEMA 14-60R","NEMA 15-15R","NEMA 15-20R","NEMA 15-30R","NEMA 15-50R","NEMA 15-60R","NEMA L1-15R","NEMA L5-15R","NEMA L5-20R","NEMA L5-30R","NEMA L5-50R","NEMA L6-15R","NEMA L6-20R","NEMA L6-30R","NEMA L6-50R","NEMA L10-30R","NEMA L14-20R","NEMA L14-30R","NEMA L14-50R","NEMA L14-60R","NEMA L15-20R","NEMA L15-30R","NEMA L15-50R","NEMA L15-60R","NEMA L21-20R","NEMA L21-30R","CS6360C","CS6364C","CS8164C","CS8264C","CS8364C","CS8464C","ITA Type E (CEE7/5)","ITA Type F (CEE7/3)","ITA Type G (BS 1363)","ITA Type H","ITA Type I","ITA Type J","ITA Type K","ITA Type L (CEI 23-50)","ITA Type M (BS 546)","ITA Type N","ITA Type O","USB Type A","USB Micro B","USB Type C","DC Terminal","HDOT Cx","Saf-D-Grid","Hardwired"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["C5","C7","C13","C15","C19","C21","P+N+E 4H","P+N+E 6H","P+N+E 9H","2P+E 4H","2P+E 6H","2P+E 9H","3P+E 4H","3P+E 6H","3P+E 9H","3P+N+E 4H","3P+N+E 6H","3P+N+E 9H","NEMA 1-15R","NEMA 5-15R","NEMA 5-20R","NEMA 5-30R","NEMA 5-50R","NEMA 6-15R","NEMA 6-20R","NEMA 6-30R","NEMA 6-50R","NEMA 10-30R","NEMA 10-50R","NEMA 14-20R","NEMA 14-30R","NEMA 14-50R","NEMA 14-60R","NEMA 15-15R","NEMA 15-20R","NEMA 15-30R","NEMA 15-50R","NEMA 15-60R","NEMA L1-15R","NEMA L5-15R","NEMA L5-20R","NEMA L5-30R","NEMA L5-50R","NEMA L6-15R","NEMA L6-20R","NEMA L6-30R","NEMA L6-50R","NEMA L10-30R","NEMA L14-20R","NEMA L14-30R","NEMA L14-50R","NEMA L14-60R","NEMA L15-20R","NEMA L15-30R","NEMA L15-50R","NEMA L15-60R","NEMA L21-20R","NEMA L21-30R","NEMA L22-30R","CS6360C","CS6364C","CS8164C","CS8264C","CS8364C","CS8464C","ITA Type E (CEE 7/5)","ITA Type F (CEE 7/3)","ITA Type G (BS 1363)","ITA Type H","ITA Type I","ITA Type J","ITA Type K","ITA Type L (CEI 23-50)","ITA Type M (BS 546)","ITA Type N","ITA Type O","ITA Multistandard","USB Type A","USB Micro B","USB Type C","DC Terminal","HDOT Cx","Saf-D-Grid","Neutrik powerCON (20A)","Neutrik powerCON (32A)","Neutrik powerCON TRUE1","Neutrik powerCON TRUE1 TOP","Hardwired"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -820,6 +836,9 @@ const (
 	// PowerOutletTemplateTypeLabelNEMAL21Dash30R captures enum value "NEMA L21-30R"
 	PowerOutletTemplateTypeLabelNEMAL21Dash30R string = "NEMA L21-30R"
 
+	// PowerOutletTemplateTypeLabelNEMAL22Dash30R captures enum value "NEMA L22-30R"
+	PowerOutletTemplateTypeLabelNEMAL22Dash30R string = "NEMA L22-30R"
+
 	// PowerOutletTemplateTypeLabelCS6360C captures enum value "CS6360C"
 	PowerOutletTemplateTypeLabelCS6360C string = "CS6360C"
 
@@ -838,11 +857,11 @@ const (
 	// PowerOutletTemplateTypeLabelCS8464C captures enum value "CS8464C"
 	PowerOutletTemplateTypeLabelCS8464C string = "CS8464C"
 
-	// PowerOutletTemplateTypeLabelITATypeECEE75 captures enum value "ITA Type E (CEE7/5)"
-	PowerOutletTemplateTypeLabelITATypeECEE75 string = "ITA Type E (CEE7/5)"
+	// PowerOutletTemplateTypeLabelITATypeECEE75 captures enum value "ITA Type E (CEE 7/5)"
+	PowerOutletTemplateTypeLabelITATypeECEE75 string = "ITA Type E (CEE 7/5)"
 
-	// PowerOutletTemplateTypeLabelITATypeFCEE73 captures enum value "ITA Type F (CEE7/3)"
-	PowerOutletTemplateTypeLabelITATypeFCEE73 string = "ITA Type F (CEE7/3)"
+	// PowerOutletTemplateTypeLabelITATypeFCEE73 captures enum value "ITA Type F (CEE 7/3)"
+	PowerOutletTemplateTypeLabelITATypeFCEE73 string = "ITA Type F (CEE 7/3)"
 
 	// PowerOutletTemplateTypeLabelITATypeGBS1363 captures enum value "ITA Type G (BS 1363)"
 	PowerOutletTemplateTypeLabelITATypeGBS1363 string = "ITA Type G (BS 1363)"
@@ -871,6 +890,9 @@ const (
 	// PowerOutletTemplateTypeLabelITATypeO captures enum value "ITA Type O"
 	PowerOutletTemplateTypeLabelITATypeO string = "ITA Type O"
 
+	// PowerOutletTemplateTypeLabelITAMultistandard captures enum value "ITA Multistandard"
+	PowerOutletTemplateTypeLabelITAMultistandard string = "ITA Multistandard"
+
 	// PowerOutletTemplateTypeLabelUSBTypeA captures enum value "USB Type A"
 	PowerOutletTemplateTypeLabelUSBTypeA string = "USB Type A"
 
@@ -888,6 +910,18 @@ const (
 
 	// PowerOutletTemplateTypeLabelSafDashDDashGrid captures enum value "Saf-D-Grid"
 	PowerOutletTemplateTypeLabelSafDashDDashGrid string = "Saf-D-Grid"
+
+	// PowerOutletTemplateTypeLabelNeutrikPowerCON20A captures enum value "Neutrik powerCON (20A)"
+	PowerOutletTemplateTypeLabelNeutrikPowerCON20A string = "Neutrik powerCON (20A)"
+
+	// PowerOutletTemplateTypeLabelNeutrikPowerCON32A captures enum value "Neutrik powerCON (32A)"
+	PowerOutletTemplateTypeLabelNeutrikPowerCON32A string = "Neutrik powerCON (32A)"
+
+	// PowerOutletTemplateTypeLabelNeutrikPowerCONTRUE1 captures enum value "Neutrik powerCON TRUE1"
+	PowerOutletTemplateTypeLabelNeutrikPowerCONTRUE1 string = "Neutrik powerCON TRUE1"
+
+	// PowerOutletTemplateTypeLabelNeutrikPowerCONTRUE1TOP captures enum value "Neutrik powerCON TRUE1 TOP"
+	PowerOutletTemplateTypeLabelNeutrikPowerCONTRUE1TOP string = "Neutrik powerCON TRUE1 TOP"
 
 	// PowerOutletTemplateTypeLabelHardwired captures enum value "Hardwired"
 	PowerOutletTemplateTypeLabelHardwired string = "Hardwired"
@@ -919,7 +953,7 @@ var powerOutletTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["iec-60320-c5","iec-60320-c7","iec-60320-c13","iec-60320-c15","iec-60320-c19","iec-60320-c21","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-1-15r","nema-5-15r","nema-5-20r","nema-5-30r","nema-5-50r","nema-6-15r","nema-6-20r","nema-6-30r","nema-6-50r","nema-10-30r","nema-10-50r","nema-14-20r","nema-14-30r","nema-14-50r","nema-14-60r","nema-15-15r","nema-15-20r","nema-15-30r","nema-15-50r","nema-15-60r","nema-l1-15r","nema-l5-15r","nema-l5-20r","nema-l5-30r","nema-l5-50r","nema-l6-15r","nema-l6-20r","nema-l6-30r","nema-l6-50r","nema-l10-30r","nema-l14-20r","nema-l14-30r","nema-l14-50r","nema-l14-60r","nema-l15-20r","nema-l15-30r","nema-l15-50r","nema-l15-60r","nema-l21-20r","nema-l21-30r","CS6360C","CS6364C","CS8164C","CS8264C","CS8364C","CS8464C","ita-e","ita-f","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o","usb-a","usb-micro-b","usb-c","dc-terminal","hdot-cx","saf-d-grid","hardwired"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["iec-60320-c5","iec-60320-c7","iec-60320-c13","iec-60320-c15","iec-60320-c19","iec-60320-c21","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-1-15r","nema-5-15r","nema-5-20r","nema-5-30r","nema-5-50r","nema-6-15r","nema-6-20r","nema-6-30r","nema-6-50r","nema-10-30r","nema-10-50r","nema-14-20r","nema-14-30r","nema-14-50r","nema-14-60r","nema-15-15r","nema-15-20r","nema-15-30r","nema-15-50r","nema-15-60r","nema-l1-15r","nema-l5-15r","nema-l5-20r","nema-l5-30r","nema-l5-50r","nema-l6-15r","nema-l6-20r","nema-l6-30r","nema-l6-50r","nema-l10-30r","nema-l14-20r","nema-l14-30r","nema-l14-50r","nema-l14-60r","nema-l15-20r","nema-l15-30r","nema-l15-50r","nema-l15-60r","nema-l21-20r","nema-l21-30r","nema-l22-30r","CS6360C","CS6364C","CS8164C","CS8264C","CS8364C","CS8464C","ita-e","ita-f","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o","ita-multistandard","usb-a","usb-micro-b","usb-c","dc-terminal","hdot-cx","saf-d-grid","neutrik-powercon-20a","neutrik-powercon-32a","neutrik-powercon-true1","neutrik-powercon-true1-top","hardwired"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -1103,6 +1137,9 @@ const (
 	// PowerOutletTemplateTypeValueNemaDashL21Dash30r captures enum value "nema-l21-30r"
 	PowerOutletTemplateTypeValueNemaDashL21Dash30r string = "nema-l21-30r"
 
+	// PowerOutletTemplateTypeValueNemaDashL22Dash30r captures enum value "nema-l22-30r"
+	PowerOutletTemplateTypeValueNemaDashL22Dash30r string = "nema-l22-30r"
+
 	// PowerOutletTemplateTypeValueCS6360C captures enum value "CS6360C"
 	PowerOutletTemplateTypeValueCS6360C string = "CS6360C"
 
@@ -1154,6 +1191,9 @@ const (
 	// PowerOutletTemplateTypeValueItaDasho captures enum value "ita-o"
 	PowerOutletTemplateTypeValueItaDasho string = "ita-o"
 
+	// PowerOutletTemplateTypeValueItaDashMultistandard captures enum value "ita-multistandard"
+	PowerOutletTemplateTypeValueItaDashMultistandard string = "ita-multistandard"
+
 	// PowerOutletTemplateTypeValueUsbDasha captures enum value "usb-a"
 	PowerOutletTemplateTypeValueUsbDasha string = "usb-a"
 
@@ -1171,6 +1211,18 @@ const (
 
 	// PowerOutletTemplateTypeValueSafDashdDashGrid captures enum value "saf-d-grid"
 	PowerOutletTemplateTypeValueSafDashdDashGrid string = "saf-d-grid"
+
+	// PowerOutletTemplateTypeValueNeutrikDashPowerconDash20a captures enum value "neutrik-powercon-20a"
+	PowerOutletTemplateTypeValueNeutrikDashPowerconDash20a string = "neutrik-powercon-20a"
+
+	// PowerOutletTemplateTypeValueNeutrikDashPowerconDash32a captures enum value "neutrik-powercon-32a"
+	PowerOutletTemplateTypeValueNeutrikDashPowerconDash32a string = "neutrik-powercon-32a"
+
+	// PowerOutletTemplateTypeValueNeutrikDashPowerconDashTrue1 captures enum value "neutrik-powercon-true1"
+	PowerOutletTemplateTypeValueNeutrikDashPowerconDashTrue1 string = "neutrik-powercon-true1"
+
+	// PowerOutletTemplateTypeValueNeutrikDashPowerconDashTrue1DashTop captures enum value "neutrik-powercon-true1-top"
+	PowerOutletTemplateTypeValueNeutrikDashPowerconDashTrue1DashTop string = "neutrik-powercon-true1-top"
 
 	// PowerOutletTemplateTypeValueHardwired captures enum value "hardwired"
 	PowerOutletTemplateTypeValueHardwired string = "hardwired"

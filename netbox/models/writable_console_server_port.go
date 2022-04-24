@@ -43,25 +43,13 @@ type WritableConsoleServerPort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Cable peer
-	//
-	//
-	// Return the appropriate serializer for the cable termination model.
-	//
-	// Read Only: true
-	CablePeer interface{} `json:"cable_peer,omitempty"`
-
-	// Cable peer type
-	// Read Only: true
-	CablePeerType string `json:"cable_peer_type,omitempty"`
-
 	// Connected endpoint
 	//
 	//
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint interface{} `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
 
 	// Connected endpoint reachable
 	// Read Only: true
@@ -73,8 +61,8 @@ type WritableConsoleServerPort struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -91,7 +79,7 @@ type WritableConsoleServerPort struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -106,10 +94,25 @@ type WritableConsoleServerPort struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Link peer
+	//
+	//
+	// Return the appropriate serializer for the link termination model.
+	//
+	// Read Only: true
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+
+	// Link peer type
+	// Read Only: true
+	LinkPeerType string `json:"link_peer_type,omitempty"`
+
 	// Mark connected
 	//
 	// Treat as if a cable is connected
 	MarkConnected bool `json:"mark_connected,omitempty"`
+
+	// Module
+	Module *int64 `json:"module,omitempty"`
 
 	// Name
 	// Required: true
@@ -129,7 +132,7 @@ type WritableConsoleServerPort struct {
 	// Type
 	//
 	// Physical port type
-	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b other]
+	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 mini-din-8 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
 	Type string `json:"type,omitempty"`
 
 	// Url
@@ -201,6 +204,8 @@ func (m *WritableConsoleServerPort) validateCable(formats strfmt.Registry) error
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -214,7 +219,7 @@ func (m *WritableConsoleServerPort) validateCreated(formats strfmt.Registry) err
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -330,6 +335,8 @@ func (m *WritableConsoleServerPort) validateTags(formats strfmt.Registry) error 
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -344,7 +351,7 @@ var writableConsoleServerPortTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","mini-din-8","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -369,6 +376,9 @@ const (
 	// WritableConsoleServerPortTypeRjDash45 captures enum value "rj-45"
 	WritableConsoleServerPortTypeRjDash45 string = "rj-45"
 
+	// WritableConsoleServerPortTypeMiniDashDinDash8 captures enum value "mini-din-8"
+	WritableConsoleServerPortTypeMiniDashDinDash8 string = "mini-din-8"
+
 	// WritableConsoleServerPortTypeUsbDasha captures enum value "usb-a"
 	WritableConsoleServerPortTypeUsbDasha string = "usb-a"
 
@@ -389,6 +399,9 @@ const (
 
 	// WritableConsoleServerPortTypeUsbDashMicroDashb captures enum value "usb-micro-b"
 	WritableConsoleServerPortTypeUsbDashMicroDashb string = "usb-micro-b"
+
+	// WritableConsoleServerPortTypeUsbDashMicroDashAb captures enum value "usb-micro-ab"
+	WritableConsoleServerPortTypeUsbDashMicroDashAb string = "usb-micro-ab"
 
 	// WritableConsoleServerPortTypeOther captures enum value "other"
 	WritableConsoleServerPortTypeOther string = "other"
@@ -439,7 +452,7 @@ func (m *WritableConsoleServerPort) ContextValidate(ctx context.Context, formats
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -464,6 +477,14 @@ func (m *WritableConsoleServerPort) ContextValidate(ctx context.Context, formats
 	}
 
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -496,6 +517,8 @@ func (m *WritableConsoleServerPort) contextValidateCable(ctx context.Context, fo
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -504,11 +527,7 @@ func (m *WritableConsoleServerPort) contextValidateCable(ctx context.Context, fo
 	return nil
 }
 
-func (m *WritableConsoleServerPort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
-		return err
-	}
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }
@@ -533,7 +552,7 @@ func (m *WritableConsoleServerPort) contextValidateConnectedEndpointType(ctx con
 
 func (m *WritableConsoleServerPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -567,6 +586,20 @@ func (m *WritableConsoleServerPort) contextValidateLastUpdated(ctx context.Conte
 	return nil
 }
 
+func (m *WritableConsoleServerPort) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableConsoleServerPort) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Tags); i++ {
@@ -575,6 +608,8 @@ func (m *WritableConsoleServerPort) contextValidateTags(ctx context.Context, for
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

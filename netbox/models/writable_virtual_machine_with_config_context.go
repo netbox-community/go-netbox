@@ -45,12 +45,12 @@ type WritableVirtualMachineWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext interface{} `json:"config_context,omitempty"`
+	ConfigContext map[string]*string `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -64,7 +64,7 @@ type WritableVirtualMachineWithConfigContext struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -191,7 +191,7 @@ func (m *WritableVirtualMachineWithConfigContext) validateCreated(formats strfmt
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -327,6 +327,8 @@ func (m *WritableVirtualMachineWithConfigContext) validateTags(formats strfmt.Re
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -364,6 +366,10 @@ func (m *WritableVirtualMachineWithConfigContext) validateVcpus(formats strfmt.R
 // ContextValidate validate this writable virtual machine with config context based on the context it is used
 func (m *WritableVirtualMachineWithConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
@@ -403,9 +409,14 @@ func (m *WritableVirtualMachineWithConfigContext) ContextValidate(ctx context.Co
 	return nil
 }
 
+func (m *WritableVirtualMachineWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 func (m *WritableVirtualMachineWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -465,6 +476,8 @@ func (m *WritableVirtualMachineWithConfigContext) contextValidateTags(ctx contex
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

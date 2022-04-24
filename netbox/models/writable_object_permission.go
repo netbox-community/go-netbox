@@ -59,7 +59,7 @@ type WritableObjectPermission struct {
 	// Unique: true
 	Groups []int64 `json:"groups"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 

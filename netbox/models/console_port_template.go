@@ -37,8 +37,8 @@ type ConsolePortTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -52,7 +52,7 @@ type ConsolePortTemplate struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -129,7 +129,7 @@ func (m *ConsolePortTemplate) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -158,6 +158,8 @@ func (m *ConsolePortTemplate) validateDeviceType(formats strfmt.Registry) error 
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -216,6 +218,8 @@ func (m *ConsolePortTemplate) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -276,7 +280,7 @@ func (m *ConsolePortTemplate) ContextValidate(ctx context.Context, formats strfm
 
 func (m *ConsolePortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -289,6 +293,8 @@ func (m *ConsolePortTemplate) contextValidateDeviceType(ctx context.Context, for
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -330,6 +336,8 @@ func (m *ConsolePortTemplate) contextValidateType(ctx context.Context, formats s
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -372,12 +380,12 @@ type ConsolePortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B Other]
+	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 Mini-DIN 8 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B USB Micro AB Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b other]
+	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 mini-din-8 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
 	Value *string `json:"value"`
 }
 
@@ -403,7 +411,7 @@ var consolePortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","Mini-DIN 8","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","USB Micro AB","Other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -428,6 +436,9 @@ const (
 	// ConsolePortTemplateTypeLabelRJDash45 captures enum value "RJ-45"
 	ConsolePortTemplateTypeLabelRJDash45 string = "RJ-45"
 
+	// ConsolePortTemplateTypeLabelMiniDashDIN8 captures enum value "Mini-DIN 8"
+	ConsolePortTemplateTypeLabelMiniDashDIN8 string = "Mini-DIN 8"
+
 	// ConsolePortTemplateTypeLabelUSBTypeA captures enum value "USB Type A"
 	ConsolePortTemplateTypeLabelUSBTypeA string = "USB Type A"
 
@@ -448,6 +459,9 @@ const (
 
 	// ConsolePortTemplateTypeLabelUSBMicroB captures enum value "USB Micro B"
 	ConsolePortTemplateTypeLabelUSBMicroB string = "USB Micro B"
+
+	// ConsolePortTemplateTypeLabelUSBMicroAB captures enum value "USB Micro AB"
+	ConsolePortTemplateTypeLabelUSBMicroAB string = "USB Micro AB"
 
 	// ConsolePortTemplateTypeLabelOther captures enum value "Other"
 	ConsolePortTemplateTypeLabelOther string = "Other"
@@ -479,7 +493,7 @@ var consolePortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","mini-din-8","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -504,6 +518,9 @@ const (
 	// ConsolePortTemplateTypeValueRjDash45 captures enum value "rj-45"
 	ConsolePortTemplateTypeValueRjDash45 string = "rj-45"
 
+	// ConsolePortTemplateTypeValueMiniDashDinDash8 captures enum value "mini-din-8"
+	ConsolePortTemplateTypeValueMiniDashDinDash8 string = "mini-din-8"
+
 	// ConsolePortTemplateTypeValueUsbDasha captures enum value "usb-a"
 	ConsolePortTemplateTypeValueUsbDasha string = "usb-a"
 
@@ -524,6 +541,9 @@ const (
 
 	// ConsolePortTemplateTypeValueUsbDashMicroDashb captures enum value "usb-micro-b"
 	ConsolePortTemplateTypeValueUsbDashMicroDashb string = "usb-micro-b"
+
+	// ConsolePortTemplateTypeValueUsbDashMicroDashAb captures enum value "usb-micro-ab"
+	ConsolePortTemplateTypeValueUsbDashMicroDashAb string = "usb-micro-ab"
 
 	// ConsolePortTemplateTypeValueOther captures enum value "other"
 	ConsolePortTemplateTypeValueOther string = "other"

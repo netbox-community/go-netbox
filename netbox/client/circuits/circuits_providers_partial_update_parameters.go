@@ -78,7 +78,7 @@ func NewCircuitsProvidersPartialUpdateParamsWithHTTPClient(client *http.Client) 
 type CircuitsProvidersPartialUpdateParams struct {
 
 	// Data.
-	Data *models.Provider
+	Data *models.WritableProvider
 
 	/* ID.
 
@@ -140,13 +140,13 @@ func (o *CircuitsProvidersPartialUpdateParams) SetHTTPClient(client *http.Client
 }
 
 // WithData adds the data to the circuits providers partial update params
-func (o *CircuitsProvidersPartialUpdateParams) WithData(data *models.Provider) *CircuitsProvidersPartialUpdateParams {
+func (o *CircuitsProvidersPartialUpdateParams) WithData(data *models.WritableProvider) *CircuitsProvidersPartialUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the circuits providers partial update params
-func (o *CircuitsProvidersPartialUpdateParams) SetData(data *models.Provider) {
+func (o *CircuitsProvidersPartialUpdateParams) SetData(data *models.WritableProvider) {
 	o.Data = data
 }
 

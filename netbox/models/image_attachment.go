@@ -22,6 +22,7 @@ package models
 
 import (
 	"context"
+	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -47,7 +48,7 @@ type ImageAttachment struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -68,19 +69,24 @@ type ImageAttachment struct {
 	// Minimum: 0
 	ImageWidth *int64 `json:"image_width"`
 
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
 	// Name
 	// Max Length: 50
 	Name string `json:"name,omitempty"`
 
 	// Object id
 	// Required: true
-	// Maximum: 2.147483647e+09
+	// Maximum: math.MaxInt64
 	// Minimum: 0
 	ObjectID *int64 `json:"object_id"`
 
 	// Parent
 	// Read Only: true
-	Parent interface{} `json:"parent,omitempty"`
+	Parent map[string]*string `json:"parent,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -109,6 +115,10 @@ func (m *ImageAttachment) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateImageWidth(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -197,6 +207,18 @@ func (m *ImageAttachment) validateImageWidth(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ImageAttachment) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ImageAttachment) validateName(formats strfmt.Registry) error {
 	if swag.IsZero(m.Name) { // not required
 		return nil
@@ -219,7 +241,7 @@ func (m *ImageAttachment) validateObjectID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("object_id", "body", *m.ObjectID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("object_id", "body", *m.ObjectID, math.MaxInt64, false); err != nil {
 		return err
 	}
 
@@ -255,6 +277,14 @@ func (m *ImageAttachment) ContextValidate(ctx context.Context, formats strfmt.Re
 	}
 
 	if err := m.contextValidateImage(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateParent(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -300,6 +330,20 @@ func (m *ImageAttachment) contextValidateImage(ctx context.Context, formats strf
 	if err := validate.ReadOnly(ctx, "image", "body", strfmt.URI(m.Image)); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+func (m *ImageAttachment) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ImageAttachment) contextValidateParent(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

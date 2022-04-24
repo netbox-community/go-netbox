@@ -78,9 +78,6 @@ type DcimRackRolesListParams struct {
 	// Color.
 	Color *string
 
-	// ColorEmpty.
-	ColorEmpty *string
-
 	// ColorIc.
 	ColorIc *string
 
@@ -117,6 +114,36 @@ type DcimRackRolesListParams struct {
 	// CreatedLte.
 	CreatedLte *string
 
+	// Description.
+	Description *string
+
+	// DescriptionIc.
+	DescriptionIc *string
+
+	// DescriptionIe.
+	DescriptionIe *string
+
+	// DescriptionIew.
+	DescriptionIew *string
+
+	// DescriptionIsw.
+	DescriptionIsw *string
+
+	// Descriptionn.
+	Descriptionn *string
+
+	// DescriptionNic.
+	DescriptionNic *string
+
+	// DescriptionNie.
+	DescriptionNie *string
+
+	// DescriptionNiew.
+	DescriptionNiew *string
+
+	// DescriptionNisw.
+	DescriptionNisw *string
+
 	// ID.
 	ID *string
 
@@ -152,9 +179,6 @@ type DcimRackRolesListParams struct {
 
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -195,9 +219,6 @@ type DcimRackRolesListParams struct {
 	// Slug.
 	Slug *string
 
-	// SlugEmpty.
-	SlugEmpty *string
-
 	// SlugIc.
 	SlugIc *string
 
@@ -224,6 +245,12 @@ type DcimRackRolesListParams struct {
 
 	// SlugNisw.
 	SlugNisw *string
+
+	// Tag.
+	Tag *string
+
+	// Tagn.
+	Tagn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -287,17 +314,6 @@ func (o *DcimRackRolesListParams) WithColor(color *string) *DcimRackRolesListPar
 // SetColor adds the color to the dcim rack roles list params
 func (o *DcimRackRolesListParams) SetColor(color *string) {
 	o.Color = color
-}
-
-// WithColorEmpty adds the colorEmpty to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithColorEmpty(colorEmpty *string) *DcimRackRolesListParams {
-	o.SetColorEmpty(colorEmpty)
-	return o
-}
-
-// SetColorEmpty adds the colorEmpty to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetColorEmpty(colorEmpty *string) {
-	o.ColorEmpty = colorEmpty
 }
 
 // WithColorIc adds the colorIc to the dcim rack roles list params
@@ -432,6 +448,116 @@ func (o *DcimRackRolesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
 }
 
+// WithDescription adds the description to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescription(description *string) *DcimRackRolesListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
+// WithDescriptionIc adds the descriptionIc to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionIc(descriptionIc *string) *DcimRackRolesListParams {
+	o.SetDescriptionIc(descriptionIc)
+	return o
+}
+
+// SetDescriptionIc adds the descriptionIc to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionIc(descriptionIc *string) {
+	o.DescriptionIc = descriptionIc
+}
+
+// WithDescriptionIe adds the descriptionIe to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionIe(descriptionIe *string) *DcimRackRolesListParams {
+	o.SetDescriptionIe(descriptionIe)
+	return o
+}
+
+// SetDescriptionIe adds the descriptionIe to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionIe(descriptionIe *string) {
+	o.DescriptionIe = descriptionIe
+}
+
+// WithDescriptionIew adds the descriptionIew to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionIew(descriptionIew *string) *DcimRackRolesListParams {
+	o.SetDescriptionIew(descriptionIew)
+	return o
+}
+
+// SetDescriptionIew adds the descriptionIew to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionIew(descriptionIew *string) {
+	o.DescriptionIew = descriptionIew
+}
+
+// WithDescriptionIsw adds the descriptionIsw to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionIsw(descriptionIsw *string) *DcimRackRolesListParams {
+	o.SetDescriptionIsw(descriptionIsw)
+	return o
+}
+
+// SetDescriptionIsw adds the descriptionIsw to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionIsw(descriptionIsw *string) {
+	o.DescriptionIsw = descriptionIsw
+}
+
+// WithDescriptionn adds the descriptionn to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionn(descriptionn *string) *DcimRackRolesListParams {
+	o.SetDescriptionn(descriptionn)
+	return o
+}
+
+// SetDescriptionn adds the descriptionN to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionn(descriptionn *string) {
+	o.Descriptionn = descriptionn
+}
+
+// WithDescriptionNic adds the descriptionNic to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionNic(descriptionNic *string) *DcimRackRolesListParams {
+	o.SetDescriptionNic(descriptionNic)
+	return o
+}
+
+// SetDescriptionNic adds the descriptionNic to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionNic(descriptionNic *string) {
+	o.DescriptionNic = descriptionNic
+}
+
+// WithDescriptionNie adds the descriptionNie to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionNie(descriptionNie *string) *DcimRackRolesListParams {
+	o.SetDescriptionNie(descriptionNie)
+	return o
+}
+
+// SetDescriptionNie adds the descriptionNie to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionNie(descriptionNie *string) {
+	o.DescriptionNie = descriptionNie
+}
+
+// WithDescriptionNiew adds the descriptionNiew to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionNiew(descriptionNiew *string) *DcimRackRolesListParams {
+	o.SetDescriptionNiew(descriptionNiew)
+	return o
+}
+
+// SetDescriptionNiew adds the descriptionNiew to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionNiew(descriptionNiew *string) {
+	o.DescriptionNiew = descriptionNiew
+}
+
+// WithDescriptionNisw adds the descriptionNisw to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionNisw(descriptionNisw *string) *DcimRackRolesListParams {
+	o.SetDescriptionNisw(descriptionNisw)
+	return o
+}
+
+// SetDescriptionNisw adds the descriptionNisw to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionNisw(descriptionNisw *string) {
+	o.DescriptionNisw = descriptionNisw
+}
+
 // WithID adds the id to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithID(id *string) *DcimRackRolesListParams {
 	o.SetID(id)
@@ -551,17 +677,6 @@ func (o *DcimRackRolesListParams) WithName(name *string) *DcimRackRolesListParam
 // SetName adds the name to the dcim rack roles list params
 func (o *DcimRackRolesListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithNameEmpty(nameEmpty *string) *DcimRackRolesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim rack roles list params
@@ -696,17 +811,6 @@ func (o *DcimRackRolesListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
-// WithSlugEmpty adds the slugEmpty to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithSlugEmpty(slugEmpty *string) *DcimRackRolesListParams {
-	o.SetSlugEmpty(slugEmpty)
-	return o
-}
-
-// SetSlugEmpty adds the slugEmpty to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetSlugEmpty(slugEmpty *string) {
-	o.SlugEmpty = slugEmpty
-}
-
 // WithSlugIc adds the slugIc to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithSlugIc(slugIc *string) *DcimRackRolesListParams {
 	o.SetSlugIc(slugIc)
@@ -806,6 +910,28 @@ func (o *DcimRackRolesListParams) SetSlugNisw(slugNisw *string) {
 	o.SlugNisw = slugNisw
 }
 
+// WithTag adds the tag to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithTag(tag *string) *DcimRackRolesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithTagn(tagn *string) *DcimRackRolesListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -826,23 +952,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qColor != "" {
 
 			if err := r.SetQueryParam("color", qColor); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ColorEmpty != nil {
-
-		// query param color__empty
-		var qrColorEmpty string
-
-		if o.ColorEmpty != nil {
-			qrColorEmpty = *o.ColorEmpty
-		}
-		qColorEmpty := qrColorEmpty
-		if qColorEmpty != "" {
-
-			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
 				return err
 			}
 		}
@@ -1052,6 +1161,176 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIc != nil {
+
+		// query param description__ic
+		var qrDescriptionIc string
+
+		if o.DescriptionIc != nil {
+			qrDescriptionIc = *o.DescriptionIc
+		}
+		qDescriptionIc := qrDescriptionIc
+		if qDescriptionIc != "" {
+
+			if err := r.SetQueryParam("description__ic", qDescriptionIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIe != nil {
+
+		// query param description__ie
+		var qrDescriptionIe string
+
+		if o.DescriptionIe != nil {
+			qrDescriptionIe = *o.DescriptionIe
+		}
+		qDescriptionIe := qrDescriptionIe
+		if qDescriptionIe != "" {
+
+			if err := r.SetQueryParam("description__ie", qDescriptionIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIew != nil {
+
+		// query param description__iew
+		var qrDescriptionIew string
+
+		if o.DescriptionIew != nil {
+			qrDescriptionIew = *o.DescriptionIew
+		}
+		qDescriptionIew := qrDescriptionIew
+		if qDescriptionIew != "" {
+
+			if err := r.SetQueryParam("description__iew", qDescriptionIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIsw != nil {
+
+		// query param description__isw
+		var qrDescriptionIsw string
+
+		if o.DescriptionIsw != nil {
+			qrDescriptionIsw = *o.DescriptionIsw
+		}
+		qDescriptionIsw := qrDescriptionIsw
+		if qDescriptionIsw != "" {
+
+			if err := r.SetQueryParam("description__isw", qDescriptionIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Descriptionn != nil {
+
+		// query param description__n
+		var qrDescriptionn string
+
+		if o.Descriptionn != nil {
+			qrDescriptionn = *o.Descriptionn
+		}
+		qDescriptionn := qrDescriptionn
+		if qDescriptionn != "" {
+
+			if err := r.SetQueryParam("description__n", qDescriptionn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNic != nil {
+
+		// query param description__nic
+		var qrDescriptionNic string
+
+		if o.DescriptionNic != nil {
+			qrDescriptionNic = *o.DescriptionNic
+		}
+		qDescriptionNic := qrDescriptionNic
+		if qDescriptionNic != "" {
+
+			if err := r.SetQueryParam("description__nic", qDescriptionNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNie != nil {
+
+		// query param description__nie
+		var qrDescriptionNie string
+
+		if o.DescriptionNie != nil {
+			qrDescriptionNie = *o.DescriptionNie
+		}
+		qDescriptionNie := qrDescriptionNie
+		if qDescriptionNie != "" {
+
+			if err := r.SetQueryParam("description__nie", qDescriptionNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNiew != nil {
+
+		// query param description__niew
+		var qrDescriptionNiew string
+
+		if o.DescriptionNiew != nil {
+			qrDescriptionNiew = *o.DescriptionNiew
+		}
+		qDescriptionNiew := qrDescriptionNiew
+		if qDescriptionNiew != "" {
+
+			if err := r.SetQueryParam("description__niew", qDescriptionNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNisw != nil {
+
+		// query param description__nisw
+		var qrDescriptionNisw string
+
+		if o.DescriptionNisw != nil {
+			qrDescriptionNisw = *o.DescriptionNisw
+		}
+		qDescriptionNisw := qrDescriptionNisw
+		if qDescriptionNisw != "" {
+
+			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -1234,23 +1513,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1460,23 +1722,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
-	if o.SlugEmpty != nil {
-
-		// query param slug__empty
-		var qrSlugEmpty string
-
-		if o.SlugEmpty != nil {
-			qrSlugEmpty = *o.SlugEmpty
-		}
-		qSlugEmpty := qrSlugEmpty
-		if qSlugEmpty != "" {
-
-			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.SlugIc != nil {
 
 		// query param slug__ic
@@ -1625,6 +1870,40 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qSlugNisw != "" {
 
 			if err := r.SetQueryParam("slug__nisw", qSlugNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

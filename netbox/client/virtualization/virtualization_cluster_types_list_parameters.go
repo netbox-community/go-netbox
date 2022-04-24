@@ -87,9 +87,6 @@ type VirtualizationClusterTypesListParams struct {
 	// Description.
 	Description *string
 
-	// DescriptionEmpty.
-	DescriptionEmpty *string
-
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -153,9 +150,6 @@ type VirtualizationClusterTypesListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -195,9 +189,6 @@ type VirtualizationClusterTypesListParams struct {
 	// Slug.
 	Slug *string
 
-	// SlugEmpty.
-	SlugEmpty *string
-
 	// SlugIc.
 	SlugIc *string
 
@@ -224,6 +215,12 @@ type VirtualizationClusterTypesListParams struct {
 
 	// SlugNisw.
 	SlugNisw *string
+
+	// Tag.
+	Tag *string
+
+	// Tagn.
+	Tagn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -320,17 +317,6 @@ func (o *VirtualizationClusterTypesListParams) WithDescription(description *stri
 // SetDescription adds the description to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the virtualization cluster types list params
-func (o *VirtualizationClusterTypesListParams) WithDescriptionEmpty(descriptionEmpty *string) *VirtualizationClusterTypesListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the virtualization cluster types list params
-func (o *VirtualizationClusterTypesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the virtualization cluster types list params
@@ -553,17 +539,6 @@ func (o *VirtualizationClusterTypesListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the virtualization cluster types list params
-func (o *VirtualizationClusterTypesListParams) WithNameEmpty(nameEmpty *string) *VirtualizationClusterTypesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the virtualization cluster types list params
-func (o *VirtualizationClusterTypesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) WithNameIc(nameIc *string) *VirtualizationClusterTypesListParams {
 	o.SetNameIc(nameIc)
@@ -696,17 +671,6 @@ func (o *VirtualizationClusterTypesListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
-// WithSlugEmpty adds the slugEmpty to the virtualization cluster types list params
-func (o *VirtualizationClusterTypesListParams) WithSlugEmpty(slugEmpty *string) *VirtualizationClusterTypesListParams {
-	o.SetSlugEmpty(slugEmpty)
-	return o
-}
-
-// SetSlugEmpty adds the slugEmpty to the virtualization cluster types list params
-func (o *VirtualizationClusterTypesListParams) SetSlugEmpty(slugEmpty *string) {
-	o.SlugEmpty = slugEmpty
-}
-
 // WithSlugIc adds the slugIc to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) WithSlugIc(slugIc *string) *VirtualizationClusterTypesListParams {
 	o.SetSlugIc(slugIc)
@@ -806,6 +770,28 @@ func (o *VirtualizationClusterTypesListParams) SetSlugNisw(slugNisw *string) {
 	o.SlugNisw = slugNisw
 }
 
+// WithTag adds the tag to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithTag(tag *string) *VirtualizationClusterTypesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithTagn(tagn *string) *VirtualizationClusterTypesListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -877,23 +863,6 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1239,23 +1208,6 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1460,23 +1412,6 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		}
 	}
 
-	if o.SlugEmpty != nil {
-
-		// query param slug__empty
-		var qrSlugEmpty string
-
-		if o.SlugEmpty != nil {
-			qrSlugEmpty = *o.SlugEmpty
-		}
-		qSlugEmpty := qrSlugEmpty
-		if qSlugEmpty != "" {
-
-			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.SlugIc != nil {
 
 		// query param slug__ic
@@ -1625,6 +1560,40 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		if qSlugNisw != "" {
 
 			if err := r.SetQueryParam("slug__nisw", qSlugNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

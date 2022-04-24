@@ -87,9 +87,6 @@ type TenancyTenantGroupsListParams struct {
 	// Description.
 	Description *string
 
-	// DescriptionEmpty.
-	DescriptionEmpty *string
-
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -153,9 +150,6 @@ type TenancyTenantGroupsListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -207,9 +201,6 @@ type TenancyTenantGroupsListParams struct {
 	// Slug.
 	Slug *string
 
-	// SlugEmpty.
-	SlugEmpty *string
-
 	// SlugIc.
 	SlugIc *string
 
@@ -236,6 +227,12 @@ type TenancyTenantGroupsListParams struct {
 
 	// SlugNisw.
 	SlugNisw *string
+
+	// Tag.
+	Tag *string
+
+	// Tagn.
+	Tagn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -332,17 +329,6 @@ func (o *TenancyTenantGroupsListParams) WithDescription(description *string) *Te
 // SetDescription adds the description to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the tenancy tenant groups list params
-func (o *TenancyTenantGroupsListParams) WithDescriptionEmpty(descriptionEmpty *string) *TenancyTenantGroupsListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the tenancy tenant groups list params
-func (o *TenancyTenantGroupsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the tenancy tenant groups list params
@@ -565,17 +551,6 @@ func (o *TenancyTenantGroupsListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the tenancy tenant groups list params
-func (o *TenancyTenantGroupsListParams) WithNameEmpty(nameEmpty *string) *TenancyTenantGroupsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the tenancy tenant groups list params
-func (o *TenancyTenantGroupsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) WithNameIc(nameIc *string) *TenancyTenantGroupsListParams {
 	o.SetNameIc(nameIc)
@@ -752,17 +727,6 @@ func (o *TenancyTenantGroupsListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
-// WithSlugEmpty adds the slugEmpty to the tenancy tenant groups list params
-func (o *TenancyTenantGroupsListParams) WithSlugEmpty(slugEmpty *string) *TenancyTenantGroupsListParams {
-	o.SetSlugEmpty(slugEmpty)
-	return o
-}
-
-// SetSlugEmpty adds the slugEmpty to the tenancy tenant groups list params
-func (o *TenancyTenantGroupsListParams) SetSlugEmpty(slugEmpty *string) {
-	o.SlugEmpty = slugEmpty
-}
-
 // WithSlugIc adds the slugIc to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) WithSlugIc(slugIc *string) *TenancyTenantGroupsListParams {
 	o.SetSlugIc(slugIc)
@@ -862,6 +826,28 @@ func (o *TenancyTenantGroupsListParams) SetSlugNisw(slugNisw *string) {
 	o.SlugNisw = slugNisw
 }
 
+// WithTag adds the tag to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithTag(tag *string) *TenancyTenantGroupsListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithTagn(tagn *string) *TenancyTenantGroupsListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -933,23 +919,6 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1295,23 +1264,6 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1584,23 +1536,6 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		}
 	}
 
-	if o.SlugEmpty != nil {
-
-		// query param slug__empty
-		var qrSlugEmpty string
-
-		if o.SlugEmpty != nil {
-			qrSlugEmpty = *o.SlugEmpty
-		}
-		qSlugEmpty := qrSlugEmpty
-		if qSlugEmpty != "" {
-
-			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.SlugIc != nil {
 
 		// query param slug__ic
@@ -1749,6 +1684,40 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		if qSlugNisw != "" {
 
 			if err := r.SetQueryParam("slug__nisw", qSlugNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

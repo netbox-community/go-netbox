@@ -23,6 +23,8 @@ package models
 import (
 	"context"
 	"encoding/json"
+	"math"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -37,11 +39,11 @@ type WritableJournalEntry struct {
 
 	// Assigned object
 	// Read Only: true
-	AssignedObject interface{} `json:"assigned_object,omitempty"`
+	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
 
 	// Assigned object id
 	// Required: true
-	// Maximum: 2.147483647e+09
+	// Maximum: math.MaxInt64
 	// Minimum: 0
 	AssignedObjectID *int64 `json:"assigned_object_id"`
 
@@ -62,17 +64,23 @@ type WritableJournalEntry struct {
 	// Created by
 	CreatedBy *int64 `json:"created_by,omitempty"`
 
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
+
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Kind
 	// Enum: [info success warning danger]
 	Kind string `json:"kind,omitempty"`
+
+	// tags
+	Tags []*NestedTag `json:"tags"`
 
 	// Url
 	// Read Only: true
@@ -104,6 +112,10 @@ func (m *WritableJournalEntry) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateTags(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
@@ -124,7 +136,7 @@ func (m *WritableJournalEntry) validateAssignedObjectID(formats strfmt.Registry)
 		return err
 	}
 
-	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, math.MaxInt64, false); err != nil {
 		return err
 	}
 
@@ -213,6 +225,32 @@ func (m *WritableJournalEntry) validateKind(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableJournalEntry) validateTags(formats strfmt.Registry) error {
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *WritableJournalEntry) validateURL(formats strfmt.Registry) error {
 	if swag.IsZero(m.URL) { // not required
 		return nil
@@ -229,6 +267,10 @@ func (m *WritableJournalEntry) validateURL(formats strfmt.Registry) error {
 func (m *WritableJournalEntry) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAssignedObject(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -241,6 +283,10 @@ func (m *WritableJournalEntry) ContextValidate(ctx context.Context, formats strf
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateTags(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateURL(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -248,6 +294,11 @@ func (m *WritableJournalEntry) ContextValidate(ctx context.Context, formats strf
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableJournalEntry) contextValidateAssignedObject(ctx context.Context, formats strfmt.Registry) error {
+
 	return nil
 }
 
@@ -273,6 +324,26 @@ func (m *WritableJournalEntry) contextValidateID(ctx context.Context, formats st
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableJournalEntry) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

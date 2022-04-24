@@ -34,7 +34,11 @@ import (
 // swagger:model NestedVirtualChassis
 type NestedVirtualChassis struct {
 
-	// Id
+	// Display
+	// Read Only: true
+	Display string `json:"display,omitempty"`
+
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -90,6 +94,8 @@ func (m *NestedVirtualChassis) validateMaster(formats strfmt.Registry) error {
 		if err := m.Master.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("master")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("master")
 			}
 			return err
 		}
@@ -131,6 +137,10 @@ func (m *NestedVirtualChassis) validateURL(formats strfmt.Registry) error {
 func (m *NestedVirtualChassis) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateDisplay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -153,6 +163,15 @@ func (m *NestedVirtualChassis) ContextValidate(ctx context.Context, formats strf
 	return nil
 }
 
+func (m *NestedVirtualChassis) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *NestedVirtualChassis) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
@@ -168,6 +187,8 @@ func (m *NestedVirtualChassis) contextValidateMaster(ctx context.Context, format
 		if err := m.Master.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("master")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("master")
 			}
 			return err
 		}

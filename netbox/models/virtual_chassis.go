@@ -35,6 +35,11 @@ import (
 // swagger:model VirtualChassis
 type VirtualChassis struct {
 
+	// Created
+	// Read Only: true
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -46,9 +51,14 @@ type VirtualChassis struct {
 	// Max Length: 30
 	Domain string `json:"domain,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// master
 	Master *NestedDevice `json:"master,omitempty"`
@@ -76,7 +86,15 @@ type VirtualChassis struct {
 func (m *VirtualChassis) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDomain(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -102,12 +120,36 @@ func (m *VirtualChassis) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *VirtualChassis) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *VirtualChassis) validateDomain(formats strfmt.Registry) error {
 	if swag.IsZero(m.Domain) { // not required
 		return nil
 	}
 
 	if err := validate.MaxLength("domain", "body", m.Domain, 30); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualChassis) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -123,6 +165,8 @@ func (m *VirtualChassis) validateMaster(formats strfmt.Registry) error {
 		if err := m.Master.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("master")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("master")
 			}
 			return err
 		}
@@ -162,6 +206,8 @@ func (m *VirtualChassis) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -188,11 +234,19 @@ func (m *VirtualChassis) validateURL(formats strfmt.Registry) error {
 func (m *VirtualChassis) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -218,6 +272,15 @@ func (m *VirtualChassis) ContextValidate(ctx context.Context, formats strfmt.Reg
 	return nil
 }
 
+func (m *VirtualChassis) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *VirtualChassis) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
@@ -236,12 +299,23 @@ func (m *VirtualChassis) contextValidateID(ctx context.Context, formats strfmt.R
 	return nil
 }
 
+func (m *VirtualChassis) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *VirtualChassis) contextValidateMaster(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Master != nil {
 		if err := m.Master.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("master")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("master")
 			}
 			return err
 		}
@@ -267,6 +341,8 @@ func (m *VirtualChassis) contextValidateTags(ctx context.Context, formats strfmt
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
