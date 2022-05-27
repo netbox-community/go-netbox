@@ -87,9 +87,6 @@ type DcimDeviceBaysListParams struct {
 	// Description.
 	Description *string
 
-	// DescriptionEmpty.
-	DescriptionEmpty *string
-
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -150,9 +147,6 @@ type DcimDeviceBaysListParams struct {
 	// Label.
 	Label *string
 
-	// LabelEmpty.
-	LabelEmpty *string
-
 	// LabelIc.
 	LabelIc *string
 
@@ -209,9 +203,6 @@ type DcimDeviceBaysListParams struct {
 
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -290,6 +281,18 @@ type DcimDeviceBaysListParams struct {
 
 	// Tagn.
 	Tagn *string
+
+	// VirtualChassis.
+	VirtualChassis *string
+
+	// VirtualChassisn.
+	VirtualChassisn *string
+
+	// VirtualChassisID.
+	VirtualChassisID *string
+
+	// VirtualChassisIDn.
+	VirtualChassisIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -386,17 +389,6 @@ func (o *DcimDeviceBaysListParams) WithDescription(description *string) *DcimDev
 // SetDescription adds the description to the dcim device bays list params
 func (o *DcimDeviceBaysListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the dcim device bays list params
-func (o *DcimDeviceBaysListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimDeviceBaysListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the dcim device bays list params
-func (o *DcimDeviceBaysListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim device bays list params
@@ -619,17 +611,6 @@ func (o *DcimDeviceBaysListParams) SetLabel(label *string) {
 	o.Label = label
 }
 
-// WithLabelEmpty adds the labelEmpty to the dcim device bays list params
-func (o *DcimDeviceBaysListParams) WithLabelEmpty(labelEmpty *string) *DcimDeviceBaysListParams {
-	o.SetLabelEmpty(labelEmpty)
-	return o
-}
-
-// SetLabelEmpty adds the labelEmpty to the dcim device bays list params
-func (o *DcimDeviceBaysListParams) SetLabelEmpty(labelEmpty *string) {
-	o.LabelEmpty = labelEmpty
-}
-
 // WithLabelIc adds the labelIc to the dcim device bays list params
 func (o *DcimDeviceBaysListParams) WithLabelIc(labelIc *string) *DcimDeviceBaysListParams {
 	o.SetLabelIc(labelIc)
@@ -826,17 +807,6 @@ func (o *DcimDeviceBaysListParams) WithName(name *string) *DcimDeviceBaysListPar
 // SetName adds the name to the dcim device bays list params
 func (o *DcimDeviceBaysListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim device bays list params
-func (o *DcimDeviceBaysListParams) WithNameEmpty(nameEmpty *string) *DcimDeviceBaysListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim device bays list params
-func (o *DcimDeviceBaysListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim device bays list params
@@ -1114,6 +1084,50 @@ func (o *DcimDeviceBaysListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
 }
 
+// WithVirtualChassis adds the virtualChassis to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithVirtualChassis(virtualChassis *string) *DcimDeviceBaysListParams {
+	o.SetVirtualChassis(virtualChassis)
+	return o
+}
+
+// SetVirtualChassis adds the virtualChassis to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetVirtualChassis(virtualChassis *string) {
+	o.VirtualChassis = virtualChassis
+}
+
+// WithVirtualChassisn adds the virtualChassisn to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithVirtualChassisn(virtualChassisn *string) *DcimDeviceBaysListParams {
+	o.SetVirtualChassisn(virtualChassisn)
+	return o
+}
+
+// SetVirtualChassisn adds the virtualChassisN to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetVirtualChassisn(virtualChassisn *string) {
+	o.VirtualChassisn = virtualChassisn
+}
+
+// WithVirtualChassisID adds the virtualChassisID to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithVirtualChassisID(virtualChassisID *string) *DcimDeviceBaysListParams {
+	o.SetVirtualChassisID(virtualChassisID)
+	return o
+}
+
+// SetVirtualChassisID adds the virtualChassisId to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetVirtualChassisID(virtualChassisID *string) {
+	o.VirtualChassisID = virtualChassisID
+}
+
+// WithVirtualChassisIDn adds the virtualChassisIDn to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) WithVirtualChassisIDn(virtualChassisIDn *string) *DcimDeviceBaysListParams {
+	o.SetVirtualChassisIDn(virtualChassisIDn)
+	return o
+}
+
+// SetVirtualChassisIDn adds the virtualChassisIdN to the dcim device bays list params
+func (o *DcimDeviceBaysListParams) SetVirtualChassisIDn(virtualChassisIDn *string) {
+	o.VirtualChassisIDn = virtualChassisIDn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -1185,23 +1199,6 @@ func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1547,23 +1544,6 @@ func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.LabelEmpty != nil {
-
-		// query param label__empty
-		var qrLabelEmpty string
-
-		if o.LabelEmpty != nil {
-			qrLabelEmpty = *o.LabelEmpty
-		}
-		qLabelEmpty := qrLabelEmpty
-		if qLabelEmpty != "" {
-
-			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LabelIc != nil {
 
 		// query param label__ic
@@ -1865,23 +1845,6 @@ func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -2307,6 +2270,74 @@ func (o *DcimDeviceBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qTagn != "" {
 
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassis != nil {
+
+		// query param virtual_chassis
+		var qrVirtualChassis string
+
+		if o.VirtualChassis != nil {
+			qrVirtualChassis = *o.VirtualChassis
+		}
+		qVirtualChassis := qrVirtualChassis
+		if qVirtualChassis != "" {
+
+			if err := r.SetQueryParam("virtual_chassis", qVirtualChassis); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisn != nil {
+
+		// query param virtual_chassis__n
+		var qrVirtualChassisn string
+
+		if o.VirtualChassisn != nil {
+			qrVirtualChassisn = *o.VirtualChassisn
+		}
+		qVirtualChassisn := qrVirtualChassisn
+		if qVirtualChassisn != "" {
+
+			if err := r.SetQueryParam("virtual_chassis__n", qVirtualChassisn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisID != nil {
+
+		// query param virtual_chassis_id
+		var qrVirtualChassisID string
+
+		if o.VirtualChassisID != nil {
+			qrVirtualChassisID = *o.VirtualChassisID
+		}
+		qVirtualChassisID := qrVirtualChassisID
+		if qVirtualChassisID != "" {
+
+			if err := r.SetQueryParam("virtual_chassis_id", qVirtualChassisID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisIDn != nil {
+
+		// query param virtual_chassis_id__n
+		var qrVirtualChassisIDn string
+
+		if o.VirtualChassisIDn != nil {
+			qrVirtualChassisIDn = *o.VirtualChassisIDn
+		}
+		qVirtualChassisIDn := qrVirtualChassisIDn
+		if qVirtualChassisIDn != "" {
+
+			if err := r.SetQueryParam("virtual_chassis_id__n", qVirtualChassisIDn); err != nil {
 				return err
 			}
 		}

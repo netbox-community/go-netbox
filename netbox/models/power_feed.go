@@ -48,18 +48,6 @@ type PowerFeed struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Cable peer
-	//
-	//
-	// Return the appropriate serializer for the cable termination model.
-	//
-	// Read Only: true
-	CablePeer map[string]*string `json:"cable_peer,omitempty"`
-
-	// Cable peer type
-	// Read Only: true
-	CablePeerType string `json:"cable_peer_type,omitempty"`
-
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
@@ -81,8 +69,8 @@ type PowerFeed struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -91,7 +79,7 @@ type PowerFeed struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -99,6 +87,18 @@ type PowerFeed struct {
 	// Read Only: true
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Link peer
+	//
+	//
+	// Return the appropriate serializer for the link termination model.
+	//
+	// Read Only: true
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+
+	// Link peer type
+	// Read Only: true
+	LinkPeerType string `json:"link_peer_type,omitempty"`
 
 	// Mark connected
 	//
@@ -261,7 +261,7 @@ func (m *PowerFeed) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -494,14 +494,6 @@ func (m *PowerFeed) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -527,6 +519,14 @@ func (m *PowerFeed) ContextValidate(ctx context.Context, formats strfmt.Registry
 	}
 
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -593,20 +593,6 @@ func (m *PowerFeed) contextValidateCable(ctx context.Context, formats strfmt.Reg
 	return nil
 }
 
-func (m *PowerFeed) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
-func (m *PowerFeed) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *PowerFeed) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
@@ -632,7 +618,7 @@ func (m *PowerFeed) contextValidateConnectedEndpointType(ctx context.Context, fo
 
 func (m *PowerFeed) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -660,6 +646,20 @@ func (m *PowerFeed) contextValidateID(ctx context.Context, formats strfmt.Regist
 func (m *PowerFeed) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PowerFeed) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PowerFeed) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
 		return err
 	}
 

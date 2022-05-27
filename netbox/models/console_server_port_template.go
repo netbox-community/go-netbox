@@ -37,8 +37,8 @@ type ConsoleServerPortTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -52,7 +52,7 @@ type ConsoleServerPortTemplate struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -129,7 +129,7 @@ func (m *ConsoleServerPortTemplate) validateCreated(formats strfmt.Registry) err
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -280,7 +280,7 @@ func (m *ConsoleServerPortTemplate) ContextValidate(ctx context.Context, formats
 
 func (m *ConsoleServerPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -380,12 +380,12 @@ type ConsoleServerPortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B USB Micro AB Other]
+	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 Mini-DIN 8 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B USB Micro AB Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
+	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 mini-din-8 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
 	Value *string `json:"value"`
 }
 
@@ -411,7 +411,7 @@ var consoleServerPortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","USB Micro AB","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","Mini-DIN 8","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","USB Micro AB","Other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -435,6 +435,9 @@ const (
 
 	// ConsoleServerPortTemplateTypeLabelRJDash45 captures enum value "RJ-45"
 	ConsoleServerPortTemplateTypeLabelRJDash45 string = "RJ-45"
+
+	// ConsoleServerPortTemplateTypeLabelMiniDashDIN8 captures enum value "Mini-DIN 8"
+	ConsoleServerPortTemplateTypeLabelMiniDashDIN8 string = "Mini-DIN 8"
 
 	// ConsoleServerPortTemplateTypeLabelUSBTypeA captures enum value "USB Type A"
 	ConsoleServerPortTemplateTypeLabelUSBTypeA string = "USB Type A"
@@ -490,7 +493,7 @@ var consoleServerPortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","mini-din-8","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -514,6 +517,9 @@ const (
 
 	// ConsoleServerPortTemplateTypeValueRjDash45 captures enum value "rj-45"
 	ConsoleServerPortTemplateTypeValueRjDash45 string = "rj-45"
+
+	// ConsoleServerPortTemplateTypeValueMiniDashDinDash8 captures enum value "mini-din-8"
+	ConsoleServerPortTemplateTypeValueMiniDashDinDash8 string = "mini-din-8"
 
 	// ConsoleServerPortTemplateTypeValueUsbDasha captures enum value "usb-a"
 	ConsoleServerPortTemplateTypeValueUsbDasha string = "usb-a"

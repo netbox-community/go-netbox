@@ -41,6 +41,11 @@ type WritableCable struct {
 	// Pattern: ^[0-9a-f]{6}$
 	Color string `json:"color,omitempty"`
 
+	// Created
+	// Read Only: true
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
+
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
@@ -48,13 +53,18 @@ type WritableCable struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Label
 	// Max Length: 100
 	Label string `json:"label,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Length
 	Length *float64 `json:"length,omitempty"`
@@ -70,13 +80,16 @@ type WritableCable struct {
 	// tags
 	Tags []*NestedTag `json:"tags"`
 
+	// Tenant
+	Tenant *int64 `json:"tenant,omitempty"`
+
 	// Termination a
 	// Read Only: true
 	Terminationa map[string]*string `json:"termination_a,omitempty"`
 
 	// Termination a id
 	// Required: true
-	// Maximum: 2.147483647e+09
+	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	TerminationaID *int64 `json:"termination_a_id"`
 
@@ -90,7 +103,7 @@ type WritableCable struct {
 
 	// Termination b id
 	// Required: true
-	// Maximum: 2.147483647e+09
+	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	TerminationbID *int64 `json:"termination_b_id"`
 
@@ -116,7 +129,15 @@ func (m *WritableCable) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -178,12 +199,36 @@ func (m *WritableCable) validateColor(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableCable) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableCable) validateLabel(formats strfmt.Registry) error {
 	if swag.IsZero(m.Label) { // not required
 		return nil
 	}
 
 	if err := validate.MaxLength("label", "body", m.Label, 100); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCable) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -325,7 +370,7 @@ func (m *WritableCable) validateTerminationaID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("termination_a_id", "body", *m.TerminationaID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("termination_a_id", "body", *m.TerminationaID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 
@@ -351,7 +396,7 @@ func (m *WritableCable) validateTerminationbID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("termination_b_id", "body", *m.TerminationbID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("termination_b_id", "body", *m.TerminationbID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 
@@ -488,11 +533,19 @@ func (m *WritableCable) validateURL(formats strfmt.Registry) error {
 func (m *WritableCable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -518,6 +571,15 @@ func (m *WritableCable) ContextValidate(ctx context.Context, formats strfmt.Regi
 	return nil
 }
 
+func (m *WritableCable) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableCable) contextValidateDisplay(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
@@ -530,6 +592,15 @@ func (m *WritableCable) contextValidateDisplay(ctx context.Context, formats strf
 func (m *WritableCable) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCable) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

@@ -40,8 +40,8 @@ type WritableCluster struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -55,9 +55,10 @@ type WritableCluster struct {
 	Display string `json:"display,omitempty"`
 
 	// Group
-	Group *int64 `json:"group,omitempty"`
+	// Required: true
+	Group *int64 `json:"group"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -73,6 +74,7 @@ type WritableCluster struct {
 	Name *string `json:"name"`
 
 	// Site
+	// Required: true
 	Site *int64 `json:"site"`
 
 	// tags
@@ -103,11 +105,19 @@ func (m *WritableCluster) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateGroup(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSite(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -134,7 +144,16 @@ func (m *WritableCluster) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCluster) validateGroup(formats strfmt.Registry) error {
+
+	if err := validate.Required("group", "body", m.Group); err != nil {
 		return err
 	}
 
@@ -164,6 +183,15 @@ func (m *WritableCluster) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCluster) validateSite(formats strfmt.Registry) error {
+
+	if err := validate.Required("site", "body", m.Site); err != nil {
 		return err
 	}
 
@@ -261,7 +289,7 @@ func (m *WritableCluster) ContextValidate(ctx context.Context, formats strfmt.Re
 
 func (m *WritableCluster) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 

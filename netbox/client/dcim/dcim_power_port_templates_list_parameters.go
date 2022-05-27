@@ -159,11 +159,14 @@ type DcimPowerPortTemplatesListParams struct {
 	// MaximumDrawn.
 	MaximumDrawn *string
 
+	// ModuletypeID.
+	ModuletypeID *string
+
+	// ModuletypeIDn.
+	ModuletypeIDn *string
+
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -557,6 +560,28 @@ func (o *DcimPowerPortTemplatesListParams) SetMaximumDrawn(maximumDrawn *string)
 	o.MaximumDrawn = maximumDrawn
 }
 
+// WithModuletypeID adds the moduletypeID to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) WithModuletypeID(moduletypeID *string) *DcimPowerPortTemplatesListParams {
+	o.SetModuletypeID(moduletypeID)
+	return o
+}
+
+// SetModuletypeID adds the moduletypeId to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) SetModuletypeID(moduletypeID *string) {
+	o.ModuletypeID = moduletypeID
+}
+
+// WithModuletypeIDn adds the moduletypeIDn to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) WithModuletypeIDn(moduletypeIDn *string) *DcimPowerPortTemplatesListParams {
+	o.SetModuletypeIDn(moduletypeIDn)
+	return o
+}
+
+// SetModuletypeIDn adds the moduletypeIdN to the dcim power port templates list params
+func (o *DcimPowerPortTemplatesListParams) SetModuletypeIDn(moduletypeIDn *string) {
+	o.ModuletypeIDn = moduletypeIDn
+}
+
 // WithName adds the name to the dcim power port templates list params
 func (o *DcimPowerPortTemplatesListParams) WithName(name *string) *DcimPowerPortTemplatesListParams {
 	o.SetName(name)
@@ -566,17 +591,6 @@ func (o *DcimPowerPortTemplatesListParams) WithName(name *string) *DcimPowerPort
 // SetName adds the name to the dcim power port templates list params
 func (o *DcimPowerPortTemplatesListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim power port templates list params
-func (o *DcimPowerPortTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimPowerPortTemplatesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim power port templates list params
-func (o *DcimPowerPortTemplatesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim power port templates list params
@@ -1189,6 +1203,40 @@ func (o *DcimPowerPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.ModuletypeID != nil {
+
+		// query param moduletype_id
+		var qrModuletypeID string
+
+		if o.ModuletypeID != nil {
+			qrModuletypeID = *o.ModuletypeID
+		}
+		qModuletypeID := qrModuletypeID
+		if qModuletypeID != "" {
+
+			if err := r.SetQueryParam("moduletype_id", qModuletypeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ModuletypeIDn != nil {
+
+		// query param moduletype_id__n
+		var qrModuletypeIDn string
+
+		if o.ModuletypeIDn != nil {
+			qrModuletypeIDn = *o.ModuletypeIDn
+		}
+		qModuletypeIDn := qrModuletypeIDn
+		if qModuletypeIDn != "" {
+
+			if err := r.SetQueryParam("moduletype_id__n", qModuletypeIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Name != nil {
 
 		// query param name
@@ -1201,23 +1249,6 @@ func (o *DcimPowerPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

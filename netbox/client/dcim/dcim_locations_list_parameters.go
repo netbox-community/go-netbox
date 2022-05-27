@@ -75,6 +75,18 @@ func NewDcimLocationsListParamsWithHTTPClient(client *http.Client) *DcimLocation
 */
 type DcimLocationsListParams struct {
 
+	// Contact.
+	Contact *string
+
+	// Contactn.
+	Contactn *string
+
+	// ContactRole.
+	ContactRole *string
+
+	// ContactRolen.
+	ContactRolen *string
+
 	// Created.
 	Created *string
 
@@ -86,9 +98,6 @@ type DcimLocationsListParams struct {
 
 	// Description.
 	Description *string
-
-	// DescriptionEmpty.
-	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -152,9 +161,6 @@ type DcimLocationsListParams struct {
 
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -243,9 +249,6 @@ type DcimLocationsListParams struct {
 	// Slug.
 	Slug *string
 
-	// SlugEmpty.
-	SlugEmpty *string
-
 	// SlugIc.
 	SlugIc *string
 
@@ -272,6 +275,36 @@ type DcimLocationsListParams struct {
 
 	// SlugNisw.
 	SlugNisw *string
+
+	// Tag.
+	Tag *string
+
+	// Tagn.
+	Tagn *string
+
+	// Tenant.
+	Tenant *string
+
+	// Tenantn.
+	Tenantn *string
+
+	// TenantGroup.
+	TenantGroup *string
+
+	// TenantGroupn.
+	TenantGroupn *string
+
+	// TenantGroupID.
+	TenantGroupID *string
+
+	// TenantGroupIDn.
+	TenantGroupIDn *string
+
+	// TenantID.
+	TenantID *string
+
+	// TenantIDn.
+	TenantIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -326,6 +359,50 @@ func (o *DcimLocationsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithContact adds the contact to the dcim locations list params
+func (o *DcimLocationsListParams) WithContact(contact *string) *DcimLocationsListParams {
+	o.SetContact(contact)
+	return o
+}
+
+// SetContact adds the contact to the dcim locations list params
+func (o *DcimLocationsListParams) SetContact(contact *string) {
+	o.Contact = contact
+}
+
+// WithContactn adds the contactn to the dcim locations list params
+func (o *DcimLocationsListParams) WithContactn(contactn *string) *DcimLocationsListParams {
+	o.SetContactn(contactn)
+	return o
+}
+
+// SetContactn adds the contactN to the dcim locations list params
+func (o *DcimLocationsListParams) SetContactn(contactn *string) {
+	o.Contactn = contactn
+}
+
+// WithContactRole adds the contactRole to the dcim locations list params
+func (o *DcimLocationsListParams) WithContactRole(contactRole *string) *DcimLocationsListParams {
+	o.SetContactRole(contactRole)
+	return o
+}
+
+// SetContactRole adds the contactRole to the dcim locations list params
+func (o *DcimLocationsListParams) SetContactRole(contactRole *string) {
+	o.ContactRole = contactRole
+}
+
+// WithContactRolen adds the contactRolen to the dcim locations list params
+func (o *DcimLocationsListParams) WithContactRolen(contactRolen *string) *DcimLocationsListParams {
+	o.SetContactRolen(contactRolen)
+	return o
+}
+
+// SetContactRolen adds the contactRoleN to the dcim locations list params
+func (o *DcimLocationsListParams) SetContactRolen(contactRolen *string) {
+	o.ContactRolen = contactRolen
+}
+
 // WithCreated adds the created to the dcim locations list params
 func (o *DcimLocationsListParams) WithCreated(created *string) *DcimLocationsListParams {
 	o.SetCreated(created)
@@ -368,17 +445,6 @@ func (o *DcimLocationsListParams) WithDescription(description *string) *DcimLoca
 // SetDescription adds the description to the dcim locations list params
 func (o *DcimLocationsListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the dcim locations list params
-func (o *DcimLocationsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimLocationsListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the dcim locations list params
-func (o *DcimLocationsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim locations list params
@@ -599,17 +665,6 @@ func (o *DcimLocationsListParams) WithName(name *string) *DcimLocationsListParam
 // SetName adds the name to the dcim locations list params
 func (o *DcimLocationsListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim locations list params
-func (o *DcimLocationsListParams) WithNameEmpty(nameEmpty *string) *DcimLocationsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim locations list params
-func (o *DcimLocationsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim locations list params
@@ -920,17 +975,6 @@ func (o *DcimLocationsListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
-// WithSlugEmpty adds the slugEmpty to the dcim locations list params
-func (o *DcimLocationsListParams) WithSlugEmpty(slugEmpty *string) *DcimLocationsListParams {
-	o.SetSlugEmpty(slugEmpty)
-	return o
-}
-
-// SetSlugEmpty adds the slugEmpty to the dcim locations list params
-func (o *DcimLocationsListParams) SetSlugEmpty(slugEmpty *string) {
-	o.SlugEmpty = slugEmpty
-}
-
 // WithSlugIc adds the slugIc to the dcim locations list params
 func (o *DcimLocationsListParams) WithSlugIc(slugIc *string) *DcimLocationsListParams {
 	o.SetSlugIc(slugIc)
@@ -1030,6 +1074,116 @@ func (o *DcimLocationsListParams) SetSlugNisw(slugNisw *string) {
 	o.SlugNisw = slugNisw
 }
 
+// WithTag adds the tag to the dcim locations list params
+func (o *DcimLocationsListParams) WithTag(tag *string) *DcimLocationsListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the dcim locations list params
+func (o *DcimLocationsListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the dcim locations list params
+func (o *DcimLocationsListParams) WithTagn(tagn *string) *DcimLocationsListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the dcim locations list params
+func (o *DcimLocationsListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
+// WithTenant adds the tenant to the dcim locations list params
+func (o *DcimLocationsListParams) WithTenant(tenant *string) *DcimLocationsListParams {
+	o.SetTenant(tenant)
+	return o
+}
+
+// SetTenant adds the tenant to the dcim locations list params
+func (o *DcimLocationsListParams) SetTenant(tenant *string) {
+	o.Tenant = tenant
+}
+
+// WithTenantn adds the tenantn to the dcim locations list params
+func (o *DcimLocationsListParams) WithTenantn(tenantn *string) *DcimLocationsListParams {
+	o.SetTenantn(tenantn)
+	return o
+}
+
+// SetTenantn adds the tenantN to the dcim locations list params
+func (o *DcimLocationsListParams) SetTenantn(tenantn *string) {
+	o.Tenantn = tenantn
+}
+
+// WithTenantGroup adds the tenantGroup to the dcim locations list params
+func (o *DcimLocationsListParams) WithTenantGroup(tenantGroup *string) *DcimLocationsListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the dcim locations list params
+func (o *DcimLocationsListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupn adds the tenantGroupn to the dcim locations list params
+func (o *DcimLocationsListParams) WithTenantGroupn(tenantGroupn *string) *DcimLocationsListParams {
+	o.SetTenantGroupn(tenantGroupn)
+	return o
+}
+
+// SetTenantGroupn adds the tenantGroupN to the dcim locations list params
+func (o *DcimLocationsListParams) SetTenantGroupn(tenantGroupn *string) {
+	o.TenantGroupn = tenantGroupn
+}
+
+// WithTenantGroupID adds the tenantGroupID to the dcim locations list params
+func (o *DcimLocationsListParams) WithTenantGroupID(tenantGroupID *string) *DcimLocationsListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the dcim locations list params
+func (o *DcimLocationsListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
+}
+
+// WithTenantGroupIDn adds the tenantGroupIDn to the dcim locations list params
+func (o *DcimLocationsListParams) WithTenantGroupIDn(tenantGroupIDn *string) *DcimLocationsListParams {
+	o.SetTenantGroupIDn(tenantGroupIDn)
+	return o
+}
+
+// SetTenantGroupIDn adds the tenantGroupIdN to the dcim locations list params
+func (o *DcimLocationsListParams) SetTenantGroupIDn(tenantGroupIDn *string) {
+	o.TenantGroupIDn = tenantGroupIDn
+}
+
+// WithTenantID adds the tenantID to the dcim locations list params
+func (o *DcimLocationsListParams) WithTenantID(tenantID *string) *DcimLocationsListParams {
+	o.SetTenantID(tenantID)
+	return o
+}
+
+// SetTenantID adds the tenantId to the dcim locations list params
+func (o *DcimLocationsListParams) SetTenantID(tenantID *string) {
+	o.TenantID = tenantID
+}
+
+// WithTenantIDn adds the tenantIDn to the dcim locations list params
+func (o *DcimLocationsListParams) WithTenantIDn(tenantIDn *string) *DcimLocationsListParams {
+	o.SetTenantIDn(tenantIDn)
+	return o
+}
+
+// SetTenantIDn adds the tenantIdN to the dcim locations list params
+func (o *DcimLocationsListParams) SetTenantIDn(tenantIDn *string) {
+	o.TenantIDn = tenantIDn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimLocationsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -1037,6 +1191,74 @@ func (o *DcimLocationsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		return err
 	}
 	var res []error
+
+	if o.Contact != nil {
+
+		// query param contact
+		var qrContact string
+
+		if o.Contact != nil {
+			qrContact = *o.Contact
+		}
+		qContact := qrContact
+		if qContact != "" {
+
+			if err := r.SetQueryParam("contact", qContact); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Contactn != nil {
+
+		// query param contact__n
+		var qrContactn string
+
+		if o.Contactn != nil {
+			qrContactn = *o.Contactn
+		}
+		qContactn := qrContactn
+		if qContactn != "" {
+
+			if err := r.SetQueryParam("contact__n", qContactn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactRole != nil {
+
+		// query param contact_role
+		var qrContactRole string
+
+		if o.ContactRole != nil {
+			qrContactRole = *o.ContactRole
+		}
+		qContactRole := qrContactRole
+		if qContactRole != "" {
+
+			if err := r.SetQueryParam("contact_role", qContactRole); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactRolen != nil {
+
+		// query param contact_role__n
+		var qrContactRolen string
+
+		if o.ContactRolen != nil {
+			qrContactRolen = *o.ContactRolen
+		}
+		qContactRolen := qrContactRolen
+		if qContactRolen != "" {
+
+			if err := r.SetQueryParam("contact_role__n", qContactRolen); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.Created != nil {
 
@@ -1101,23 +1323,6 @@ func (o *DcimLocationsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1458,23 +1663,6 @@ func (o *DcimLocationsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1956,23 +2144,6 @@ func (o *DcimLocationsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
-	if o.SlugEmpty != nil {
-
-		// query param slug__empty
-		var qrSlugEmpty string
-
-		if o.SlugEmpty != nil {
-			qrSlugEmpty = *o.SlugEmpty
-		}
-		qSlugEmpty := qrSlugEmpty
-		if qSlugEmpty != "" {
-
-			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.SlugIc != nil {
 
 		// query param slug__ic
@@ -2121,6 +2292,176 @@ func (o *DcimLocationsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qSlugNisw != "" {
 
 			if err := r.SetQueryParam("slug__nisw", qSlugNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tenant != nil {
+
+		// query param tenant
+		var qrTenant string
+
+		if o.Tenant != nil {
+			qrTenant = *o.Tenant
+		}
+		qTenant := qrTenant
+		if qTenant != "" {
+
+			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tenantn != nil {
+
+		// query param tenant__n
+		var qrTenantn string
+
+		if o.Tenantn != nil {
+			qrTenantn = *o.Tenantn
+		}
+		qTenantn := qrTenantn
+		if qTenantn != "" {
+
+			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupn != nil {
+
+		// query param tenant_group__n
+		var qrTenantGroupn string
+
+		if o.TenantGroupn != nil {
+			qrTenantGroupn = *o.TenantGroupn
+		}
+		qTenantGroupn := qrTenantGroupn
+		if qTenantGroupn != "" {
+
+			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupIDn != nil {
+
+		// query param tenant_group_id__n
+		var qrTenantGroupIDn string
+
+		if o.TenantGroupIDn != nil {
+			qrTenantGroupIDn = *o.TenantGroupIDn
+		}
+		qTenantGroupIDn := qrTenantGroupIDn
+		if qTenantGroupIDn != "" {
+
+			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantID != nil {
+
+		// query param tenant_id
+		var qrTenantID string
+
+		if o.TenantID != nil {
+			qrTenantID = *o.TenantID
+		}
+		qTenantID := qrTenantID
+		if qTenantID != "" {
+
+			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantIDn != nil {
+
+		// query param tenant_id__n
+		var qrTenantIDn string
+
+		if o.TenantIDn != nil {
+			qrTenantIDn = *o.TenantIDn
+		}
+		qTenantIDn := qrTenantIDn
+		if qTenantIDn != "" {
+
+			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}

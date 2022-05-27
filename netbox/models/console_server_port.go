@@ -43,18 +43,6 @@ type ConsoleServerPort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Cable peer
-	//
-	//
-	// Return the appropriate serializer for the cable termination model.
-	//
-	// Read Only: true
-	CablePeer map[string]*string `json:"cable_peer,omitempty"`
-
-	// Cable peer type
-	// Read Only: true
-	CablePeerType string `json:"cable_peer_type,omitempty"`
-
 	// Connected endpoint
 	//
 	//
@@ -73,8 +61,8 @@ type ConsoleServerPort struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -91,7 +79,7 @@ type ConsoleServerPort struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -106,10 +94,25 @@ type ConsoleServerPort struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Link peer
+	//
+	//
+	// Return the appropriate serializer for the link termination model.
+	//
+	// Read Only: true
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+
+	// Link peer type
+	// Read Only: true
+	LinkPeerType string `json:"link_peer_type,omitempty"`
+
 	// Mark connected
 	//
 	// Treat as if a cable is connected
 	MarkConnected bool `json:"mark_connected,omitempty"`
+
+	// module
+	Module *ComponentNestedModule `json:"module,omitempty"`
 
 	// Name
 	// Required: true
@@ -157,6 +160,10 @@ func (m *ConsoleServerPort) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateModule(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -210,7 +217,7 @@ func (m *ConsoleServerPort) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -268,6 +275,23 @@ func (m *ConsoleServerPort) validateLastUpdated(formats strfmt.Registry) error {
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) validateModule(formats strfmt.Registry) error {
+	if swag.IsZero(m.Module) { // not required
+		return nil
+	}
+
+	if m.Module != nil {
+		if err := m.Module.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -378,14 +402,6 @@ func (m *ConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -415,6 +431,18 @@ func (m *ConsoleServerPort) ContextValidate(ctx context.Context, formats strfmt.
 	}
 
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateModule(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -465,20 +493,6 @@ func (m *ConsoleServerPort) contextValidateCable(ctx context.Context, formats st
 	return nil
 }
 
-func (m *ConsoleServerPort) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
-func (m *ConsoleServerPort) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *ConsoleServerPort) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
@@ -504,7 +518,7 @@ func (m *ConsoleServerPort) contextValidateConnectedEndpointType(ctx context.Con
 
 func (m *ConsoleServerPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -549,6 +563,34 @@ func (m *ConsoleServerPort) contextValidateLastUpdated(ctx context.Context, form
 
 	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *ConsoleServerPort) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPort) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Module != nil {
+		if err := m.Module.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -792,12 +834,12 @@ type ConsoleServerPortType struct {
 
 	// label
 	// Required: true
-	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B USB Micro AB Other]
+	// Enum: [DE-9 DB-25 RJ-11 RJ-12 RJ-45 Mini-DIN 8 USB Type A USB Type B USB Type C USB Mini A USB Mini B USB Micro A USB Micro B USB Micro AB Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
+	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 mini-din-8 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
 	Value *string `json:"value"`
 }
 
@@ -823,7 +865,7 @@ var consoleServerPortTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","USB Micro AB","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["DE-9","DB-25","RJ-11","RJ-12","RJ-45","Mini-DIN 8","USB Type A","USB Type B","USB Type C","USB Mini A","USB Mini B","USB Micro A","USB Micro B","USB Micro AB","Other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -847,6 +889,9 @@ const (
 
 	// ConsoleServerPortTypeLabelRJDash45 captures enum value "RJ-45"
 	ConsoleServerPortTypeLabelRJDash45 string = "RJ-45"
+
+	// ConsoleServerPortTypeLabelMiniDashDIN8 captures enum value "Mini-DIN 8"
+	ConsoleServerPortTypeLabelMiniDashDIN8 string = "Mini-DIN 8"
 
 	// ConsoleServerPortTypeLabelUSBTypeA captures enum value "USB Type A"
 	ConsoleServerPortTypeLabelUSBTypeA string = "USB Type A"
@@ -902,7 +947,7 @@ var consoleServerPortTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["de-9","db-25","rj-11","rj-12","rj-45","mini-din-8","usb-a","usb-b","usb-c","usb-mini-a","usb-mini-b","usb-micro-a","usb-micro-b","usb-micro-ab","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -926,6 +971,9 @@ const (
 
 	// ConsoleServerPortTypeValueRjDash45 captures enum value "rj-45"
 	ConsoleServerPortTypeValueRjDash45 string = "rj-45"
+
+	// ConsoleServerPortTypeValueMiniDashDinDash8 captures enum value "mini-din-8"
+	ConsoleServerPortTypeValueMiniDashDinDash8 string = "mini-din-8"
 
 	// ConsoleServerPortTypeValueUsbDasha captures enum value "usb-a"
 	ConsoleServerPortTypeValueUsbDasha string = "usb-a"

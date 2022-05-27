@@ -47,7 +47,7 @@ type IPAddress struct {
 	AssignedObject interface{} `json:"assigned_object,omitempty"`
 
 	// Assigned object id
-	// Maximum: 2.147483647e+09
+	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	AssignedObjectID *int64 `json:"assigned_object_id,omitempty"`
 
@@ -56,8 +56,8 @@ type IPAddress struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -74,13 +74,13 @@ type IPAddress struct {
 	//
 	// Hostname or FQDN (not case-sensitive)
 	// Max Length: 255
-	// Pattern: ^[0-9A-Za-z._-]+$
+	// Pattern: ^([0-9A-Za-z_-]+|\*)(\.[0-9A-Za-z_-]+)*\.?$
 	DNSName string `json:"dns_name,omitempty"`
 
 	// family
 	Family *IPAddressFamily `json:"family,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -204,7 +204,7 @@ func (m *IPAddress) validateAssignedObjectID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 
@@ -216,7 +216,7 @@ func (m *IPAddress) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -244,7 +244,7 @@ func (m *IPAddress) validateDNSName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.Pattern("dns_name", "body", m.DNSName, `^[0-9A-Za-z._-]+$`); err != nil {
+	if err := validate.Pattern("dns_name", "body", m.DNSName, `^([0-9A-Za-z_-]+|\*)(\.[0-9A-Za-z_-]+)*\.?$`); err != nil {
 		return err
 	}
 
@@ -498,7 +498,7 @@ func (m *IPAddress) ContextValidate(ctx context.Context, formats strfmt.Registry
 
 func (m *IPAddress) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -837,12 +837,12 @@ type IPAddressRole struct {
 
 	// label
 	// Required: true
-	// Enum: [Loopback Secondary Anycast VIP VRRP HSRP GLBP CARP]
+	// Enum: [Loopback Secondary Anycast VIP VRRP HSRP GLBP CARP r]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp]
+	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp g]
 	Value *string `json:"value"`
 }
 
@@ -868,7 +868,7 @@ var ipAddressRoleTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Loopback","Secondary","Anycast","VIP","VRRP","HSRP","GLBP","CARP"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Loopback","Secondary","Anycast","VIP","VRRP","HSRP","GLBP","CARP","r"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -901,6 +901,9 @@ const (
 
 	// IPAddressRoleLabelCARP captures enum value "CARP"
 	IPAddressRoleLabelCARP string = "CARP"
+
+	// IPAddressRoleLabelR captures enum value "r"
+	IPAddressRoleLabelR string = "r"
 )
 
 // prop value enum
@@ -929,7 +932,7 @@ var ipAddressRoleTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp","g"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -962,6 +965,9 @@ const (
 
 	// IPAddressRoleValueCarp captures enum value "carp"
 	IPAddressRoleValueCarp string = "carp"
+
+	// IPAddressRoleValueG captures enum value "g"
+	IPAddressRoleValueG string = "g"
 )
 
 // prop value enum

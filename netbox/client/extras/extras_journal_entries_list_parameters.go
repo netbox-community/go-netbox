@@ -174,6 +174,12 @@ type ExtrasJournalEntriesListParams struct {
 	// Q.
 	Q *string
 
+	// Tag.
+	Tag *string
+
+	// Tagn.
+	Tagn *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -566,6 +572,28 @@ func (o *ExtrasJournalEntriesListParams) WithQ(q *string) *ExtrasJournalEntriesL
 // SetQ adds the q to the extras journal entries list params
 func (o *ExtrasJournalEntriesListParams) SetQ(q *string) {
 	o.Q = q
+}
+
+// WithTag adds the tag to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) WithTag(tag *string) *ExtrasJournalEntriesListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) WithTagn(tagn *string) *ExtrasJournalEntriesListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -1098,6 +1126,40 @@ func (o *ExtrasJournalEntriesListParams) WriteToRequest(r runtime.ClientRequest,
 		if qQ != "" {
 
 			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

@@ -138,9 +138,6 @@ type ExtrasObjectChangesListParams struct {
 	// ObjectRepr.
 	ObjectRepr *string
 
-	// ObjectReprEmpty.
-	ObjectReprEmpty *string
-
 	// ObjectReprIc.
 	ObjectReprIc *string
 
@@ -197,9 +194,6 @@ type ExtrasObjectChangesListParams struct {
 
 	// UserName.
 	UserName *string
-
-	// UserNameEmpty.
-	UserNameEmpty *string
 
 	// UserNameIc.
 	UserNameIc *string
@@ -501,17 +495,6 @@ func (o *ExtrasObjectChangesListParams) SetObjectRepr(objectRepr *string) {
 	o.ObjectRepr = objectRepr
 }
 
-// WithObjectReprEmpty adds the objectReprEmpty to the extras object changes list params
-func (o *ExtrasObjectChangesListParams) WithObjectReprEmpty(objectReprEmpty *string) *ExtrasObjectChangesListParams {
-	o.SetObjectReprEmpty(objectReprEmpty)
-	return o
-}
-
-// SetObjectReprEmpty adds the objectReprEmpty to the extras object changes list params
-func (o *ExtrasObjectChangesListParams) SetObjectReprEmpty(objectReprEmpty *string) {
-	o.ObjectReprEmpty = objectReprEmpty
-}
-
 // WithObjectReprIc adds the objectReprIc to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) WithObjectReprIc(objectReprIc *string) *ExtrasObjectChangesListParams {
 	o.SetObjectReprIc(objectReprIc)
@@ -708,17 +691,6 @@ func (o *ExtrasObjectChangesListParams) WithUserName(userName *string) *ExtrasOb
 // SetUserName adds the userName to the extras object changes list params
 func (o *ExtrasObjectChangesListParams) SetUserName(userName *string) {
 	o.UserName = userName
-}
-
-// WithUserNameEmpty adds the userNameEmpty to the extras object changes list params
-func (o *ExtrasObjectChangesListParams) WithUserNameEmpty(userNameEmpty *string) *ExtrasObjectChangesListParams {
-	o.SetUserNameEmpty(userNameEmpty)
-	return o
-}
-
-// SetUserNameEmpty adds the userNameEmpty to the extras object changes list params
-func (o *ExtrasObjectChangesListParams) SetUserNameEmpty(userNameEmpty *string) {
-	o.UserNameEmpty = userNameEmpty
 }
 
 // WithUserNameIc adds the userNameIc to the extras object changes list params
@@ -1168,23 +1140,6 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 		}
 	}
 
-	if o.ObjectReprEmpty != nil {
-
-		// query param object_repr__empty
-		var qrObjectReprEmpty string
-
-		if o.ObjectReprEmpty != nil {
-			qrObjectReprEmpty = *o.ObjectReprEmpty
-		}
-		qObjectReprEmpty := qrObjectReprEmpty
-		if qObjectReprEmpty != "" {
-
-			if err := r.SetQueryParam("object_repr__empty", qObjectReprEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.ObjectReprIc != nil {
 
 		// query param object_repr__ic
@@ -1486,23 +1441,6 @@ func (o *ExtrasObjectChangesListParams) WriteToRequest(r runtime.ClientRequest, 
 		if qUserName != "" {
 
 			if err := r.SetQueryParam("user_name", qUserName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.UserNameEmpty != nil {
-
-		// query param user_name__empty
-		var qrUserNameEmpty string
-
-		if o.UserNameEmpty != nil {
-			qrUserNameEmpty = *o.UserNameEmpty
-		}
-		qUserNameEmpty := qrUserNameEmpty
-		if qUserNameEmpty != "" {
-
-			if err := r.SetQueryParam("user_name__empty", qUserNameEmpty); err != nil {
 				return err
 			}
 		}

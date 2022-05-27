@@ -48,7 +48,7 @@ type ObjectChange struct {
 
 	// Changed object id
 	// Required: true
-	// Maximum: 2.147483647e+09
+	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	ChangedObjectID *int64 `json:"changed_object_id"`
 
@@ -60,7 +60,7 @@ type ObjectChange struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -163,7 +163,7 @@ func (m *ObjectChange) validateChangedObjectID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("changed_object_id", "body", *m.ChangedObjectID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("changed_object_id", "body", *m.ChangedObjectID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 

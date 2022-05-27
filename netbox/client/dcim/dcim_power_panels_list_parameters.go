@@ -75,6 +75,18 @@ func NewDcimPowerPanelsListParamsWithHTTPClient(client *http.Client) *DcimPowerP
 */
 type DcimPowerPanelsListParams struct {
 
+	// Contact.
+	Contact *string
+
+	// Contactn.
+	Contactn *string
+
+	// ContactRole.
+	ContactRole *string
+
+	// ContactRolen.
+	ContactRolen *string
+
 	// Created.
 	Created *string
 
@@ -125,9 +137,6 @@ type DcimPowerPanelsListParams struct {
 
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -258,6 +267,50 @@ func (o *DcimPowerPanelsListParams) WithHTTPClient(client *http.Client) *DcimPow
 // SetHTTPClient adds the HTTPClient to the dcim power panels list params
 func (o *DcimPowerPanelsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithContact adds the contact to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithContact(contact *string) *DcimPowerPanelsListParams {
+	o.SetContact(contact)
+	return o
+}
+
+// SetContact adds the contact to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetContact(contact *string) {
+	o.Contact = contact
+}
+
+// WithContactn adds the contactn to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithContactn(contactn *string) *DcimPowerPanelsListParams {
+	o.SetContactn(contactn)
+	return o
+}
+
+// SetContactn adds the contactN to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetContactn(contactn *string) {
+	o.Contactn = contactn
+}
+
+// WithContactRole adds the contactRole to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithContactRole(contactRole *string) *DcimPowerPanelsListParams {
+	o.SetContactRole(contactRole)
+	return o
+}
+
+// SetContactRole adds the contactRole to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetContactRole(contactRole *string) {
+	o.ContactRole = contactRole
+}
+
+// WithContactRolen adds the contactRolen to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) WithContactRolen(contactRolen *string) *DcimPowerPanelsListParams {
+	o.SetContactRolen(contactRolen)
+	return o
+}
+
+// SetContactRolen adds the contactRoleN to the dcim power panels list params
+func (o *DcimPowerPanelsListParams) SetContactRolen(contactRolen *string) {
+	o.ContactRolen = contactRolen
 }
 
 // WithCreated adds the created to the dcim power panels list params
@@ -434,17 +487,6 @@ func (o *DcimPowerPanelsListParams) WithName(name *string) *DcimPowerPanelsListP
 // SetName adds the name to the dcim power panels list params
 func (o *DcimPowerPanelsListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim power panels list params
-func (o *DcimPowerPanelsListParams) WithNameEmpty(nameEmpty *string) *DcimPowerPanelsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim power panels list params
-func (o *DcimPowerPanelsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim power panels list params
@@ -730,6 +772,74 @@ func (o *DcimPowerPanelsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 	}
 	var res []error
 
+	if o.Contact != nil {
+
+		// query param contact
+		var qrContact string
+
+		if o.Contact != nil {
+			qrContact = *o.Contact
+		}
+		qContact := qrContact
+		if qContact != "" {
+
+			if err := r.SetQueryParam("contact", qContact); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Contactn != nil {
+
+		// query param contact__n
+		var qrContactn string
+
+		if o.Contactn != nil {
+			qrContactn = *o.Contactn
+		}
+		qContactn := qrContactn
+		if qContactn != "" {
+
+			if err := r.SetQueryParam("contact__n", qContactn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactRole != nil {
+
+		// query param contact_role
+		var qrContactRole string
+
+		if o.ContactRole != nil {
+			qrContactRole = *o.ContactRole
+		}
+		qContactRole := qrContactRole
+		if qContactRole != "" {
+
+			if err := r.SetQueryParam("contact_role", qContactRole); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactRolen != nil {
+
+		// query param contact_role__n
+		var qrContactRolen string
+
+		if o.ContactRolen != nil {
+			qrContactRolen = *o.ContactRolen
+		}
+		qContactRolen := qrContactRolen
+		if qContactRolen != "" {
+
+			if err := r.SetQueryParam("contact_role__n", qContactRolen); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Created != nil {
 
 		// query param created
@@ -997,23 +1107,6 @@ func (o *DcimPowerPanelsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

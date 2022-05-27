@@ -117,9 +117,6 @@ type DcimCablesListParams struct {
 	// Label.
 	Label *string
 
-	// LabelEmpty.
-	LabelEmpty *string
-
 	// LabelIc.
 	LabelIc *string
 
@@ -222,8 +219,26 @@ type DcimCablesListParams struct {
 	// Tenant.
 	Tenant *string
 
+	// Tenantn.
+	Tenantn *string
+
+	// TenantGroup.
+	TenantGroup *string
+
+	// TenantGroupn.
+	TenantGroupn *string
+
+	// TenantGroupID.
+	TenantGroupID *string
+
+	// TenantGroupIDn.
+	TenantGroupIDn *string
+
 	// TenantID.
 	TenantID *string
+
+	// TenantIDn.
+	TenantIDn *string
 
 	// TerminationaID.
 	TerminationaID *string
@@ -484,17 +499,6 @@ func (o *DcimCablesListParams) WithLabel(label *string) *DcimCablesListParams {
 // SetLabel adds the label to the dcim cables list params
 func (o *DcimCablesListParams) SetLabel(label *string) {
 	o.Label = label
-}
-
-// WithLabelEmpty adds the labelEmpty to the dcim cables list params
-func (o *DcimCablesListParams) WithLabelEmpty(labelEmpty *string) *DcimCablesListParams {
-	o.SetLabelEmpty(labelEmpty)
-	return o
-}
-
-// SetLabelEmpty adds the labelEmpty to the dcim cables list params
-func (o *DcimCablesListParams) SetLabelEmpty(labelEmpty *string) {
-	o.LabelEmpty = labelEmpty
 }
 
 // WithLabelIc adds the labelIc to the dcim cables list params
@@ -849,6 +853,61 @@ func (o *DcimCablesListParams) SetTenant(tenant *string) {
 	o.Tenant = tenant
 }
 
+// WithTenantn adds the tenantn to the dcim cables list params
+func (o *DcimCablesListParams) WithTenantn(tenantn *string) *DcimCablesListParams {
+	o.SetTenantn(tenantn)
+	return o
+}
+
+// SetTenantn adds the tenantN to the dcim cables list params
+func (o *DcimCablesListParams) SetTenantn(tenantn *string) {
+	o.Tenantn = tenantn
+}
+
+// WithTenantGroup adds the tenantGroup to the dcim cables list params
+func (o *DcimCablesListParams) WithTenantGroup(tenantGroup *string) *DcimCablesListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the dcim cables list params
+func (o *DcimCablesListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupn adds the tenantGroupn to the dcim cables list params
+func (o *DcimCablesListParams) WithTenantGroupn(tenantGroupn *string) *DcimCablesListParams {
+	o.SetTenantGroupn(tenantGroupn)
+	return o
+}
+
+// SetTenantGroupn adds the tenantGroupN to the dcim cables list params
+func (o *DcimCablesListParams) SetTenantGroupn(tenantGroupn *string) {
+	o.TenantGroupn = tenantGroupn
+}
+
+// WithTenantGroupID adds the tenantGroupID to the dcim cables list params
+func (o *DcimCablesListParams) WithTenantGroupID(tenantGroupID *string) *DcimCablesListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the dcim cables list params
+func (o *DcimCablesListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
+}
+
+// WithTenantGroupIDn adds the tenantGroupIDn to the dcim cables list params
+func (o *DcimCablesListParams) WithTenantGroupIDn(tenantGroupIDn *string) *DcimCablesListParams {
+	o.SetTenantGroupIDn(tenantGroupIDn)
+	return o
+}
+
+// SetTenantGroupIDn adds the tenantGroupIdN to the dcim cables list params
+func (o *DcimCablesListParams) SetTenantGroupIDn(tenantGroupIDn *string) {
+	o.TenantGroupIDn = tenantGroupIDn
+}
+
 // WithTenantID adds the tenantID to the dcim cables list params
 func (o *DcimCablesListParams) WithTenantID(tenantID *string) *DcimCablesListParams {
 	o.SetTenantID(tenantID)
@@ -858,6 +917,17 @@ func (o *DcimCablesListParams) WithTenantID(tenantID *string) *DcimCablesListPar
 // SetTenantID adds the tenantId to the dcim cables list params
 func (o *DcimCablesListParams) SetTenantID(tenantID *string) {
 	o.TenantID = tenantID
+}
+
+// WithTenantIDn adds the tenantIDn to the dcim cables list params
+func (o *DcimCablesListParams) WithTenantIDn(tenantIDn *string) *DcimCablesListParams {
+	o.SetTenantIDn(tenantIDn)
+	return o
+}
+
+// SetTenantIDn adds the tenantIdN to the dcim cables list params
+func (o *DcimCablesListParams) SetTenantIDn(tenantIDn *string) {
+	o.TenantIDn = tenantIDn
 }
 
 // WithTerminationaID adds the terminationaID to the dcim cables list params
@@ -1299,23 +1369,6 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qLabel != "" {
 
 			if err := r.SetQueryParam("label", qLabel); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LabelEmpty != nil {
-
-		// query param label__empty
-		var qrLabelEmpty string
-
-		if o.LabelEmpty != nil {
-			qrLabelEmpty = *o.LabelEmpty
-		}
-		qLabelEmpty := qrLabelEmpty
-		if qLabelEmpty != "" {
-
-			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
 				return err
 			}
 		}
@@ -1865,6 +1918,91 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.Tenantn != nil {
+
+		// query param tenant__n
+		var qrTenantn string
+
+		if o.Tenantn != nil {
+			qrTenantn = *o.Tenantn
+		}
+		qTenantn := qrTenantn
+		if qTenantn != "" {
+
+			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupn != nil {
+
+		// query param tenant_group__n
+		var qrTenantGroupn string
+
+		if o.TenantGroupn != nil {
+			qrTenantGroupn = *o.TenantGroupn
+		}
+		qTenantGroupn := qrTenantGroupn
+		if qTenantGroupn != "" {
+
+			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupIDn != nil {
+
+		// query param tenant_group_id__n
+		var qrTenantGroupIDn string
+
+		if o.TenantGroupIDn != nil {
+			qrTenantGroupIDn = *o.TenantGroupIDn
+		}
+		qTenantGroupIDn := qrTenantGroupIDn
+		if qTenantGroupIDn != "" {
+
+			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.TenantID != nil {
 
 		// query param tenant_id
@@ -1877,6 +2015,23 @@ func (o *DcimCablesListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qTenantID != "" {
 
 			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantIDn != nil {
+
+		// query param tenant_id__n
+		var qrTenantIDn string
+
+		if o.TenantIDn != nil {
+			qrTenantIDn = *o.TenantIDn
+		}
+		qTenantIDn := qrTenantIDn
+		if qTenantIDn != "" {
+
+			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}

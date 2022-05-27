@@ -39,14 +39,18 @@ type ConfigContext struct {
 	// Unique: true
 	ClusterGroups []*NestedClusterGroup `json:"cluster_groups"`
 
+	// cluster types
+	// Unique: true
+	ClusterTypes []*NestedClusterType `json:"cluster_types"`
+
 	// clusters
 	// Unique: true
 	Clusters []*NestedCluster `json:"clusters"`
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Data
 	// Required: true
@@ -64,7 +68,7 @@ type ConfigContext struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -130,6 +134,10 @@ func (m *ConfigContext) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateClusterGroups(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateClusterTypes(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -237,6 +245,34 @@ func (m *ConfigContext) validateClusterGroups(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *ConfigContext) validateClusterTypes(formats strfmt.Registry) error {
+	if swag.IsZero(m.ClusterTypes) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("cluster_types", "body", m.ClusterTypes); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.ClusterTypes); i++ {
+		if swag.IsZero(m.ClusterTypes[i]) { // not required
+			continue
+		}
+
+		if m.ClusterTypes[i] != nil {
+			if err := m.ClusterTypes[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("cluster_types" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *ConfigContext) validateClusters(formats strfmt.Registry) error {
 	if swag.IsZero(m.Clusters) { // not required
 		return nil
@@ -272,7 +308,7 @@ func (m *ConfigContext) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -625,6 +661,10 @@ func (m *ConfigContext) ContextValidate(ctx context.Context, formats strfmt.Regi
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateClusterTypes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateClusters(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -707,6 +747,24 @@ func (m *ConfigContext) contextValidateClusterGroups(ctx context.Context, format
 	return nil
 }
 
+func (m *ConfigContext) contextValidateClusterTypes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ClusterTypes); i++ {
+
+		if m.ClusterTypes[i] != nil {
+			if err := m.ClusterTypes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("cluster_types" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *ConfigContext) contextValidateClusters(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Clusters); i++ {
@@ -729,7 +787,7 @@ func (m *ConfigContext) contextValidateClusters(ctx context.Context, formats str
 
 func (m *ConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 

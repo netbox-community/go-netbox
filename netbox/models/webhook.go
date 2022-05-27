@@ -51,10 +51,20 @@ type Webhook struct {
 	// Max Length: 4096
 	CaFilePath *string `json:"ca_file_path,omitempty"`
 
+	// Conditions
+	//
+	// A set of conditions which determine whether the webhook will be generated.
+	Conditions *string `json:"conditions,omitempty"`
+
 	// content types
 	// Required: true
 	// Unique: true
 	ContentTypes []string `json:"content_types"`
+
+	// Created
+	// Read Only: true
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -74,9 +84,14 @@ type Webhook struct {
 	// Enum: [GET POST PUT PATCH DELETE]
 	HTTPMethod string `json:"http_method,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -86,7 +101,7 @@ type Webhook struct {
 
 	// URL
 	//
-	// A POST will be sent to this URL when the webhook is called.
+	// This URL will be called using the HTTP method defined when the webhook is called. Jinja2 template processing is supported with the same context as the request body.
 	// Required: true
 	// Max Length: 500
 	// Min Length: 1
@@ -136,11 +151,19 @@ func (m *Webhook) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateHTTPContentType(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateHTTPMethod(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -185,6 +208,18 @@ func (m *Webhook) validateContentTypes(formats strfmt.Registry) error {
 	}
 
 	if err := validate.UniqueItems("content_types", "body", m.ContentTypes); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Webhook) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -258,6 +293,18 @@ func (m *Webhook) validateHTTPMethod(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Webhook) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Webhook) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
@@ -320,11 +367,19 @@ func (m *Webhook) validateURL(formats strfmt.Registry) error {
 func (m *Webhook) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -335,6 +390,15 @@ func (m *Webhook) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Webhook) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -350,6 +414,15 @@ func (m *Webhook) contextValidateDisplay(ctx context.Context, formats strfmt.Reg
 func (m *Webhook) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Webhook) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

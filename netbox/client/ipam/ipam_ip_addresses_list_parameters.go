@@ -93,9 +93,6 @@ type IpamIPAddressesListParams struct {
 	// Description.
 	Description *string
 
-	// DescriptionEmpty.
-	DescriptionEmpty *string
-
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -131,9 +128,6 @@ type IpamIPAddressesListParams struct {
 
 	// DNSName.
 	DNSName *string
-
-	// DNSNameEmpty.
-	DNSNameEmpty *string
 
 	// DNSNameIc.
 	DNSNameIc *string
@@ -422,17 +416,6 @@ func (o *IpamIPAddressesListParams) SetDescription(description *string) {
 	o.Description = description
 }
 
-// WithDescriptionEmpty adds the descriptionEmpty to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamIPAddressesListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
-}
-
 // WithDescriptionIc adds the descriptionIc to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithDescriptionIc(descriptionIc *string) *IpamIPAddressesListParams {
 	o.SetDescriptionIc(descriptionIc)
@@ -563,17 +546,6 @@ func (o *IpamIPAddressesListParams) WithDNSName(dNSName *string) *IpamIPAddresse
 // SetDNSName adds the dnsName to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetDNSName(dNSName *string) {
 	o.DNSName = dNSName
-}
-
-// WithDNSNameEmpty adds the dNSNameEmpty to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) WithDNSNameEmpty(dNSNameEmpty *string) *IpamIPAddressesListParams {
-	o.SetDNSNameEmpty(dNSNameEmpty)
-	return o
-}
-
-// SetDNSNameEmpty adds the dnsNameEmpty to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) SetDNSNameEmpty(dNSNameEmpty *string) {
-	o.DNSNameEmpty = dNSNameEmpty
 }
 
 // WithDNSNameIc adds the dNSNameIc to the ipam ip addresses list params
@@ -1280,23 +1252,6 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.DescriptionIc != nil {
 
 		// query param description__ic
@@ -1496,23 +1451,6 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qDNSName != "" {
 
 			if err := r.SetQueryParam("dns_name", qDNSName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DNSNameEmpty != nil {
-
-		// query param dns_name__empty
-		var qrDNSNameEmpty string
-
-		if o.DNSNameEmpty != nil {
-			qrDNSNameEmpty = *o.DNSNameEmpty
-		}
-		qDNSNameEmpty := qrDNSNameEmpty
-		if qDNSNameEmpty != "" {
-
-			if err := r.SetQueryParam("dns_name__empty", qDNSNameEmpty); err != nil {
 				return err
 			}
 		}

@@ -123,6 +123,36 @@ type IpamPrefixesListParams struct {
 	// Depthn.
 	Depthn *string
 
+	// Description.
+	Description *string
+
+	// DescriptionIc.
+	DescriptionIc *string
+
+	// DescriptionIe.
+	DescriptionIe *string
+
+	// DescriptionIew.
+	DescriptionIew *string
+
+	// DescriptionIsw.
+	DescriptionIsw *string
+
+	// Descriptionn.
+	Descriptionn *string
+
+	// DescriptionNic.
+	DescriptionNic *string
+
+	// DescriptionNie.
+	DescriptionNie *string
+
+	// DescriptionNiew.
+	DescriptionNiew *string
+
+	// DescriptionNisw.
+	DescriptionNisw *string
+
 	// Family.
 	Family *float64
 
@@ -284,6 +314,21 @@ type IpamPrefixesListParams struct {
 
 	// VlanVid.
 	VlanVid *float64
+
+	// VlanVidGt.
+	VlanVidGt *float64
+
+	// VlanVidGte.
+	VlanVidGte *float64
+
+	// VlanVidLt.
+	VlanVidLt *float64
+
+	// VlanVidLte.
+	VlanVidLte *float64
+
+	// VlanVidn.
+	VlanVidn *float64
 
 	// Vrf.
 	Vrf *string
@@ -530,6 +575,116 @@ func (o *IpamPrefixesListParams) WithDepthn(depthn *string) *IpamPrefixesListPar
 // SetDepthn adds the depthN to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetDepthn(depthn *string) {
 	o.Depthn = depthn
+}
+
+// WithDescription adds the description to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescription(description *string) *IpamPrefixesListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
+// WithDescriptionIc adds the descriptionIc to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescriptionIc(descriptionIc *string) *IpamPrefixesListParams {
+	o.SetDescriptionIc(descriptionIc)
+	return o
+}
+
+// SetDescriptionIc adds the descriptionIc to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescriptionIc(descriptionIc *string) {
+	o.DescriptionIc = descriptionIc
+}
+
+// WithDescriptionIe adds the descriptionIe to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescriptionIe(descriptionIe *string) *IpamPrefixesListParams {
+	o.SetDescriptionIe(descriptionIe)
+	return o
+}
+
+// SetDescriptionIe adds the descriptionIe to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescriptionIe(descriptionIe *string) {
+	o.DescriptionIe = descriptionIe
+}
+
+// WithDescriptionIew adds the descriptionIew to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescriptionIew(descriptionIew *string) *IpamPrefixesListParams {
+	o.SetDescriptionIew(descriptionIew)
+	return o
+}
+
+// SetDescriptionIew adds the descriptionIew to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescriptionIew(descriptionIew *string) {
+	o.DescriptionIew = descriptionIew
+}
+
+// WithDescriptionIsw adds the descriptionIsw to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescriptionIsw(descriptionIsw *string) *IpamPrefixesListParams {
+	o.SetDescriptionIsw(descriptionIsw)
+	return o
+}
+
+// SetDescriptionIsw adds the descriptionIsw to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescriptionIsw(descriptionIsw *string) {
+	o.DescriptionIsw = descriptionIsw
+}
+
+// WithDescriptionn adds the descriptionn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescriptionn(descriptionn *string) *IpamPrefixesListParams {
+	o.SetDescriptionn(descriptionn)
+	return o
+}
+
+// SetDescriptionn adds the descriptionN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescriptionn(descriptionn *string) {
+	o.Descriptionn = descriptionn
+}
+
+// WithDescriptionNic adds the descriptionNic to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescriptionNic(descriptionNic *string) *IpamPrefixesListParams {
+	o.SetDescriptionNic(descriptionNic)
+	return o
+}
+
+// SetDescriptionNic adds the descriptionNic to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescriptionNic(descriptionNic *string) {
+	o.DescriptionNic = descriptionNic
+}
+
+// WithDescriptionNie adds the descriptionNie to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescriptionNie(descriptionNie *string) *IpamPrefixesListParams {
+	o.SetDescriptionNie(descriptionNie)
+	return o
+}
+
+// SetDescriptionNie adds the descriptionNie to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescriptionNie(descriptionNie *string) {
+	o.DescriptionNie = descriptionNie
+}
+
+// WithDescriptionNiew adds the descriptionNiew to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescriptionNiew(descriptionNiew *string) *IpamPrefixesListParams {
+	o.SetDescriptionNiew(descriptionNiew)
+	return o
+}
+
+// SetDescriptionNiew adds the descriptionNiew to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescriptionNiew(descriptionNiew *string) {
+	o.DescriptionNiew = descriptionNiew
+}
+
+// WithDescriptionNisw adds the descriptionNisw to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithDescriptionNisw(descriptionNisw *string) *IpamPrefixesListParams {
+	o.SetDescriptionNisw(descriptionNisw)
+	return o
+}
+
+// SetDescriptionNisw adds the descriptionNisw to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetDescriptionNisw(descriptionNisw *string) {
+	o.DescriptionNisw = descriptionNisw
 }
 
 // WithFamily adds the family to the ipam prefixes list params
@@ -1104,6 +1259,61 @@ func (o *IpamPrefixesListParams) SetVlanVid(vlanVid *float64) {
 	o.VlanVid = vlanVid
 }
 
+// WithVlanVidGt adds the vlanVidGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithVlanVidGt(vlanVidGt *float64) *IpamPrefixesListParams {
+	o.SetVlanVidGt(vlanVidGt)
+	return o
+}
+
+// SetVlanVidGt adds the vlanVidGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetVlanVidGt(vlanVidGt *float64) {
+	o.VlanVidGt = vlanVidGt
+}
+
+// WithVlanVidGte adds the vlanVidGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithVlanVidGte(vlanVidGte *float64) *IpamPrefixesListParams {
+	o.SetVlanVidGte(vlanVidGte)
+	return o
+}
+
+// SetVlanVidGte adds the vlanVidGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetVlanVidGte(vlanVidGte *float64) {
+	o.VlanVidGte = vlanVidGte
+}
+
+// WithVlanVidLt adds the vlanVidLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithVlanVidLt(vlanVidLt *float64) *IpamPrefixesListParams {
+	o.SetVlanVidLt(vlanVidLt)
+	return o
+}
+
+// SetVlanVidLt adds the vlanVidLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetVlanVidLt(vlanVidLt *float64) {
+	o.VlanVidLt = vlanVidLt
+}
+
+// WithVlanVidLte adds the vlanVidLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithVlanVidLte(vlanVidLte *float64) *IpamPrefixesListParams {
+	o.SetVlanVidLte(vlanVidLte)
+	return o
+}
+
+// SetVlanVidLte adds the vlanVidLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetVlanVidLte(vlanVidLte *float64) {
+	o.VlanVidLte = vlanVidLte
+}
+
+// WithVlanVidn adds the vlanVidn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithVlanVidn(vlanVidn *float64) *IpamPrefixesListParams {
+	o.SetVlanVidn(vlanVidn)
+	return o
+}
+
+// SetVlanVidn adds the vlanVidN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetVlanVidn(vlanVidn *float64) {
+	o.VlanVidn = vlanVidn
+}
+
 // WithVrf adds the vrf to the ipam prefixes list params
 func (o *IpamPrefixesListParams) WithVrf(vrf *string) *IpamPrefixesListParams {
 	o.SetVrf(vrf)
@@ -1445,6 +1655,176 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qDepthn != "" {
 
 			if err := r.SetQueryParam("depth__n", qDepthn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIc != nil {
+
+		// query param description__ic
+		var qrDescriptionIc string
+
+		if o.DescriptionIc != nil {
+			qrDescriptionIc = *o.DescriptionIc
+		}
+		qDescriptionIc := qrDescriptionIc
+		if qDescriptionIc != "" {
+
+			if err := r.SetQueryParam("description__ic", qDescriptionIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIe != nil {
+
+		// query param description__ie
+		var qrDescriptionIe string
+
+		if o.DescriptionIe != nil {
+			qrDescriptionIe = *o.DescriptionIe
+		}
+		qDescriptionIe := qrDescriptionIe
+		if qDescriptionIe != "" {
+
+			if err := r.SetQueryParam("description__ie", qDescriptionIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIew != nil {
+
+		// query param description__iew
+		var qrDescriptionIew string
+
+		if o.DescriptionIew != nil {
+			qrDescriptionIew = *o.DescriptionIew
+		}
+		qDescriptionIew := qrDescriptionIew
+		if qDescriptionIew != "" {
+
+			if err := r.SetQueryParam("description__iew", qDescriptionIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIsw != nil {
+
+		// query param description__isw
+		var qrDescriptionIsw string
+
+		if o.DescriptionIsw != nil {
+			qrDescriptionIsw = *o.DescriptionIsw
+		}
+		qDescriptionIsw := qrDescriptionIsw
+		if qDescriptionIsw != "" {
+
+			if err := r.SetQueryParam("description__isw", qDescriptionIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Descriptionn != nil {
+
+		// query param description__n
+		var qrDescriptionn string
+
+		if o.Descriptionn != nil {
+			qrDescriptionn = *o.Descriptionn
+		}
+		qDescriptionn := qrDescriptionn
+		if qDescriptionn != "" {
+
+			if err := r.SetQueryParam("description__n", qDescriptionn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNic != nil {
+
+		// query param description__nic
+		var qrDescriptionNic string
+
+		if o.DescriptionNic != nil {
+			qrDescriptionNic = *o.DescriptionNic
+		}
+		qDescriptionNic := qrDescriptionNic
+		if qDescriptionNic != "" {
+
+			if err := r.SetQueryParam("description__nic", qDescriptionNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNie != nil {
+
+		// query param description__nie
+		var qrDescriptionNie string
+
+		if o.DescriptionNie != nil {
+			qrDescriptionNie = *o.DescriptionNie
+		}
+		qDescriptionNie := qrDescriptionNie
+		if qDescriptionNie != "" {
+
+			if err := r.SetQueryParam("description__nie", qDescriptionNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNiew != nil {
+
+		// query param description__niew
+		var qrDescriptionNiew string
+
+		if o.DescriptionNiew != nil {
+			qrDescriptionNiew = *o.DescriptionNiew
+		}
+		qDescriptionNiew := qrDescriptionNiew
+		if qDescriptionNiew != "" {
+
+			if err := r.SetQueryParam("description__niew", qDescriptionNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNisw != nil {
+
+		// query param description__nisw
+		var qrDescriptionNisw string
+
+		if o.DescriptionNisw != nil {
+			qrDescriptionNisw = *o.DescriptionNisw
+		}
+		qDescriptionNisw := qrDescriptionNisw
+		if qDescriptionNisw != "" {
+
+			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
 				return err
 			}
 		}
@@ -2329,6 +2709,91 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qVlanVid != "" {
 
 			if err := r.SetQueryParam("vlan_vid", qVlanVid); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VlanVidGt != nil {
+
+		// query param vlan_vid__gt
+		var qrVlanVidGt float64
+
+		if o.VlanVidGt != nil {
+			qrVlanVidGt = *o.VlanVidGt
+		}
+		qVlanVidGt := swag.FormatFloat64(qrVlanVidGt)
+		if qVlanVidGt != "" {
+
+			if err := r.SetQueryParam("vlan_vid__gt", qVlanVidGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VlanVidGte != nil {
+
+		// query param vlan_vid__gte
+		var qrVlanVidGte float64
+
+		if o.VlanVidGte != nil {
+			qrVlanVidGte = *o.VlanVidGte
+		}
+		qVlanVidGte := swag.FormatFloat64(qrVlanVidGte)
+		if qVlanVidGte != "" {
+
+			if err := r.SetQueryParam("vlan_vid__gte", qVlanVidGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VlanVidLt != nil {
+
+		// query param vlan_vid__lt
+		var qrVlanVidLt float64
+
+		if o.VlanVidLt != nil {
+			qrVlanVidLt = *o.VlanVidLt
+		}
+		qVlanVidLt := swag.FormatFloat64(qrVlanVidLt)
+		if qVlanVidLt != "" {
+
+			if err := r.SetQueryParam("vlan_vid__lt", qVlanVidLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VlanVidLte != nil {
+
+		// query param vlan_vid__lte
+		var qrVlanVidLte float64
+
+		if o.VlanVidLte != nil {
+			qrVlanVidLte = *o.VlanVidLte
+		}
+		qVlanVidLte := swag.FormatFloat64(qrVlanVidLte)
+		if qVlanVidLte != "" {
+
+			if err := r.SetQueryParam("vlan_vid__lte", qVlanVidLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VlanVidn != nil {
+
+		// query param vlan_vid__n
+		var qrVlanVidn float64
+
+		if o.VlanVidn != nil {
+			qrVlanVidn = *o.VlanVidn
+		}
+		qVlanVidn := swag.FormatFloat64(qrVlanVidn)
+		if qVlanVidn != "" {
+
+			if err := r.SetQueryParam("vlan_vid__n", qVlanVidn); err != nil {
 				return err
 			}
 		}

@@ -49,6 +49,10 @@ type Provider struct {
 	// Minimum: 1
 	Asn *int64 `json:"asn,omitempty"`
 
+	// asns
+	// Unique: true
+	Asns []*NestedASN `json:"asns"`
+
 	// Circuit count
 	// Read Only: true
 	CircuitCount int64 `json:"circuit_count,omitempty"`
@@ -58,8 +62,8 @@ type Provider struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -68,7 +72,7 @@ type Provider struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -116,6 +120,10 @@ func (m *Provider) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateAsn(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateAsns(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -181,12 +189,40 @@ func (m *Provider) validateAsn(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Provider) validateAsns(formats strfmt.Registry) error {
+	if swag.IsZero(m.Asns) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("asns", "body", m.Asns); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.Asns); i++ {
+		if swag.IsZero(m.Asns[i]) { // not required
+			continue
+		}
+
+		if m.Asns[i] != nil {
+			if err := m.Asns[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("asns" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *Provider) validateCreated(formats strfmt.Registry) error {
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -301,6 +337,10 @@ func (m *Provider) validateURL(formats strfmt.Registry) error {
 func (m *Provider) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAsns(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCircuitCount(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -335,6 +375,24 @@ func (m *Provider) ContextValidate(ctx context.Context, formats strfmt.Registry)
 	return nil
 }
 
+func (m *Provider) contextValidateAsns(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Asns); i++ {
+
+		if m.Asns[i] != nil {
+			if err := m.Asns[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("asns" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *Provider) contextValidateCircuitCount(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "circuit_count", "body", int64(m.CircuitCount)); err != nil {
@@ -346,7 +404,7 @@ func (m *Provider) contextValidateCircuitCount(ctx context.Context, formats strf
 
 func (m *Provider) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 

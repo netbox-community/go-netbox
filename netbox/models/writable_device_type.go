@@ -36,13 +36,17 @@ import (
 // swagger:model WritableDeviceType
 type WritableDeviceType struct {
 
+	// Airflow
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
+	Airflow string `json:"airflow,omitempty"`
+
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -60,7 +64,7 @@ type WritableDeviceType struct {
 	// Format: uri
 	FrontImage strfmt.URI `json:"front_image,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -126,6 +130,10 @@ type WritableDeviceType struct {
 func (m *WritableDeviceType) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateAirflow(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
@@ -180,12 +188,66 @@ func (m *WritableDeviceType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var writableDeviceTypeTypeAirflowPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableDeviceTypeTypeAirflowPropEnum = append(writableDeviceTypeTypeAirflowPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableDeviceTypeAirflowFrontDashToDashRear captures enum value "front-to-rear"
+	WritableDeviceTypeAirflowFrontDashToDashRear string = "front-to-rear"
+
+	// WritableDeviceTypeAirflowRearDashToDashFront captures enum value "rear-to-front"
+	WritableDeviceTypeAirflowRearDashToDashFront string = "rear-to-front"
+
+	// WritableDeviceTypeAirflowLeftDashToDashRight captures enum value "left-to-right"
+	WritableDeviceTypeAirflowLeftDashToDashRight string = "left-to-right"
+
+	// WritableDeviceTypeAirflowRightDashToDashLeft captures enum value "right-to-left"
+	WritableDeviceTypeAirflowRightDashToDashLeft string = "right-to-left"
+
+	// WritableDeviceTypeAirflowSideDashToDashRear captures enum value "side-to-rear"
+	WritableDeviceTypeAirflowSideDashToDashRear string = "side-to-rear"
+
+	// WritableDeviceTypeAirflowPassive captures enum value "passive"
+	WritableDeviceTypeAirflowPassive string = "passive"
+)
+
+// prop value enum
+func (m *WritableDeviceType) validateAirflowEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableDeviceTypeTypeAirflowPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableDeviceType) validateAirflow(formats strfmt.Registry) error {
+	if swag.IsZero(m.Airflow) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateAirflowEnum("airflow", "body", m.Airflow); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableDeviceType) validateCreated(formats strfmt.Registry) error {
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -431,7 +493,7 @@ func (m *WritableDeviceType) ContextValidate(ctx context.Context, formats strfmt
 
 func (m *WritableDeviceType) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 

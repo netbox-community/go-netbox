@@ -75,11 +75,14 @@ func NewDcimDevicesListParamsWithHTTPClient(client *http.Client) *DcimDevicesLis
 */
 type DcimDevicesListParams struct {
 
+	// Airflow.
+	Airflow *string
+
+	// Airflown.
+	Airflown *string
+
 	// AssetTag.
 	AssetTag *string
-
-	// AssetTagEmpty.
-	AssetTagEmpty *string
 
 	// AssetTagIc.
 	AssetTagIc *string
@@ -119,6 +122,18 @@ type DcimDevicesListParams struct {
 
 	// ConsoleServerPorts.
 	ConsoleServerPorts *string
+
+	// Contact.
+	Contact *string
+
+	// Contactn.
+	Contactn *string
+
+	// ContactRole.
+	ContactRole *string
+
+	// ContactRolen.
+	ContactRolen *string
 
 	// Created.
 	Created *string
@@ -243,11 +258,11 @@ type DcimDevicesListParams struct {
 	// Modeln.
 	Modeln *string
 
+	// ModuleBays.
+	ModuleBays *string
+
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -281,6 +296,12 @@ type DcimDevicesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	// ParentDeviceID.
+	ParentDeviceID *string
+
+	// ParentDeviceIDn.
+	ParentDeviceIDn *string
 
 	// PassThroughPorts.
 	PassThroughPorts *string
@@ -515,6 +536,28 @@ func (o *DcimDevicesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithAirflow adds the airflow to the dcim devices list params
+func (o *DcimDevicesListParams) WithAirflow(airflow *string) *DcimDevicesListParams {
+	o.SetAirflow(airflow)
+	return o
+}
+
+// SetAirflow adds the airflow to the dcim devices list params
+func (o *DcimDevicesListParams) SetAirflow(airflow *string) {
+	o.Airflow = airflow
+}
+
+// WithAirflown adds the airflown to the dcim devices list params
+func (o *DcimDevicesListParams) WithAirflown(airflown *string) *DcimDevicesListParams {
+	o.SetAirflown(airflown)
+	return o
+}
+
+// SetAirflown adds the airflowN to the dcim devices list params
+func (o *DcimDevicesListParams) SetAirflown(airflown *string) {
+	o.Airflown = airflown
+}
+
 // WithAssetTag adds the assetTag to the dcim devices list params
 func (o *DcimDevicesListParams) WithAssetTag(assetTag *string) *DcimDevicesListParams {
 	o.SetAssetTag(assetTag)
@@ -524,17 +567,6 @@ func (o *DcimDevicesListParams) WithAssetTag(assetTag *string) *DcimDevicesListP
 // SetAssetTag adds the assetTag to the dcim devices list params
 func (o *DcimDevicesListParams) SetAssetTag(assetTag *string) {
 	o.AssetTag = assetTag
-}
-
-// WithAssetTagEmpty adds the assetTagEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) WithAssetTagEmpty(assetTagEmpty *string) *DcimDevicesListParams {
-	o.SetAssetTagEmpty(assetTagEmpty)
-	return o
-}
-
-// SetAssetTagEmpty adds the assetTagEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) SetAssetTagEmpty(assetTagEmpty *string) {
-	o.AssetTagEmpty = assetTagEmpty
 }
 
 // WithAssetTagIc adds the assetTagIc to the dcim devices list params
@@ -678,6 +710,50 @@ func (o *DcimDevicesListParams) WithConsoleServerPorts(consoleServerPorts *strin
 // SetConsoleServerPorts adds the consoleServerPorts to the dcim devices list params
 func (o *DcimDevicesListParams) SetConsoleServerPorts(consoleServerPorts *string) {
 	o.ConsoleServerPorts = consoleServerPorts
+}
+
+// WithContact adds the contact to the dcim devices list params
+func (o *DcimDevicesListParams) WithContact(contact *string) *DcimDevicesListParams {
+	o.SetContact(contact)
+	return o
+}
+
+// SetContact adds the contact to the dcim devices list params
+func (o *DcimDevicesListParams) SetContact(contact *string) {
+	o.Contact = contact
+}
+
+// WithContactn adds the contactn to the dcim devices list params
+func (o *DcimDevicesListParams) WithContactn(contactn *string) *DcimDevicesListParams {
+	o.SetContactn(contactn)
+	return o
+}
+
+// SetContactn adds the contactN to the dcim devices list params
+func (o *DcimDevicesListParams) SetContactn(contactn *string) {
+	o.Contactn = contactn
+}
+
+// WithContactRole adds the contactRole to the dcim devices list params
+func (o *DcimDevicesListParams) WithContactRole(contactRole *string) *DcimDevicesListParams {
+	o.SetContactRole(contactRole)
+	return o
+}
+
+// SetContactRole adds the contactRole to the dcim devices list params
+func (o *DcimDevicesListParams) SetContactRole(contactRole *string) {
+	o.ContactRole = contactRole
+}
+
+// WithContactRolen adds the contactRolen to the dcim devices list params
+func (o *DcimDevicesListParams) WithContactRolen(contactRolen *string) *DcimDevicesListParams {
+	o.SetContactRolen(contactRolen)
+	return o
+}
+
+// SetContactRolen adds the contactRoleN to the dcim devices list params
+func (o *DcimDevicesListParams) SetContactRolen(contactRolen *string) {
+	o.ContactRolen = contactRolen
 }
 
 // WithCreated adds the created to the dcim devices list params
@@ -1120,6 +1196,17 @@ func (o *DcimDevicesListParams) SetModeln(modeln *string) {
 	o.Modeln = modeln
 }
 
+// WithModuleBays adds the moduleBays to the dcim devices list params
+func (o *DcimDevicesListParams) WithModuleBays(moduleBays *string) *DcimDevicesListParams {
+	o.SetModuleBays(moduleBays)
+	return o
+}
+
+// SetModuleBays adds the moduleBays to the dcim devices list params
+func (o *DcimDevicesListParams) SetModuleBays(moduleBays *string) {
+	o.ModuleBays = moduleBays
+}
+
 // WithName adds the name to the dcim devices list params
 func (o *DcimDevicesListParams) WithName(name *string) *DcimDevicesListParams {
 	o.SetName(name)
@@ -1129,17 +1216,6 @@ func (o *DcimDevicesListParams) WithName(name *string) *DcimDevicesListParams {
 // SetName adds the name to the dcim devices list params
 func (o *DcimDevicesListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) WithNameEmpty(nameEmpty *string) *DcimDevicesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim devices list params
@@ -1250,6 +1326,28 @@ func (o *DcimDevicesListParams) WithOffset(offset *int64) *DcimDevicesListParams
 // SetOffset adds the offset to the dcim devices list params
 func (o *DcimDevicesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithParentDeviceID adds the parentDeviceID to the dcim devices list params
+func (o *DcimDevicesListParams) WithParentDeviceID(parentDeviceID *string) *DcimDevicesListParams {
+	o.SetParentDeviceID(parentDeviceID)
+	return o
+}
+
+// SetParentDeviceID adds the parentDeviceId to the dcim devices list params
+func (o *DcimDevicesListParams) SetParentDeviceID(parentDeviceID *string) {
+	o.ParentDeviceID = parentDeviceID
+}
+
+// WithParentDeviceIDn adds the parentDeviceIDn to the dcim devices list params
+func (o *DcimDevicesListParams) WithParentDeviceIDn(parentDeviceIDn *string) *DcimDevicesListParams {
+	o.SetParentDeviceIDn(parentDeviceIDn)
+	return o
+}
+
+// SetParentDeviceIDn adds the parentDeviceIdN to the dcim devices list params
+func (o *DcimDevicesListParams) SetParentDeviceIDn(parentDeviceIDn *string) {
+	o.ParentDeviceIDn = parentDeviceIDn
 }
 
 // WithPassThroughPorts adds the passThroughPorts to the dcim devices list params
@@ -1920,6 +2018,40 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	}
 	var res []error
 
+	if o.Airflow != nil {
+
+		// query param airflow
+		var qrAirflow string
+
+		if o.Airflow != nil {
+			qrAirflow = *o.Airflow
+		}
+		qAirflow := qrAirflow
+		if qAirflow != "" {
+
+			if err := r.SetQueryParam("airflow", qAirflow); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Airflown != nil {
+
+		// query param airflow__n
+		var qrAirflown string
+
+		if o.Airflown != nil {
+			qrAirflown = *o.Airflown
+		}
+		qAirflown := qrAirflown
+		if qAirflown != "" {
+
+			if err := r.SetQueryParam("airflow__n", qAirflown); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.AssetTag != nil {
 
 		// query param asset_tag
@@ -1932,23 +2064,6 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qAssetTag != "" {
 
 			if err := r.SetQueryParam("asset_tag", qAssetTag); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.AssetTagEmpty != nil {
-
-		// query param asset_tag__empty
-		var qrAssetTagEmpty string
-
-		if o.AssetTagEmpty != nil {
-			qrAssetTagEmpty = *o.AssetTagEmpty
-		}
-		qAssetTagEmpty := qrAssetTagEmpty
-		if qAssetTagEmpty != "" {
-
-			if err := r.SetQueryParam("asset_tag__empty", qAssetTagEmpty); err != nil {
 				return err
 			}
 		}
@@ -2170,6 +2285,74 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qConsoleServerPorts != "" {
 
 			if err := r.SetQueryParam("console_server_ports", qConsoleServerPorts); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Contact != nil {
+
+		// query param contact
+		var qrContact string
+
+		if o.Contact != nil {
+			qrContact = *o.Contact
+		}
+		qContact := qrContact
+		if qContact != "" {
+
+			if err := r.SetQueryParam("contact", qContact); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Contactn != nil {
+
+		// query param contact__n
+		var qrContactn string
+
+		if o.Contactn != nil {
+			qrContactn = *o.Contactn
+		}
+		qContactn := qrContactn
+		if qContactn != "" {
+
+			if err := r.SetQueryParam("contact__n", qContactn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactRole != nil {
+
+		// query param contact_role
+		var qrContactRole string
+
+		if o.ContactRole != nil {
+			qrContactRole = *o.ContactRole
+		}
+		qContactRole := qrContactRole
+		if qContactRole != "" {
+
+			if err := r.SetQueryParam("contact_role", qContactRole); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactRolen != nil {
+
+		// query param contact_role__n
+		var qrContactRolen string
+
+		if o.ContactRolen != nil {
+			qrContactRolen = *o.ContactRolen
+		}
+		qContactRolen := qrContactRolen
+		if qContactRolen != "" {
+
+			if err := r.SetQueryParam("contact_role__n", qContactRolen); err != nil {
 				return err
 			}
 		}
@@ -2855,6 +3038,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.ModuleBays != nil {
+
+		// query param module_bays
+		var qrModuleBays string
+
+		if o.ModuleBays != nil {
+			qrModuleBays = *o.ModuleBays
+		}
+		qModuleBays := qrModuleBays
+		if qModuleBays != "" {
+
+			if err := r.SetQueryParam("module_bays", qModuleBays); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Name != nil {
 
 		// query param name
@@ -2867,23 +3067,6 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -3054,6 +3237,40 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ParentDeviceID != nil {
+
+		// query param parent_device_id
+		var qrParentDeviceID string
+
+		if o.ParentDeviceID != nil {
+			qrParentDeviceID = *o.ParentDeviceID
+		}
+		qParentDeviceID := qrParentDeviceID
+		if qParentDeviceID != "" {
+
+			if err := r.SetQueryParam("parent_device_id", qParentDeviceID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ParentDeviceIDn != nil {
+
+		// query param parent_device_id__n
+		var qrParentDeviceIDn string
+
+		if o.ParentDeviceIDn != nil {
+			qrParentDeviceIDn = *o.ParentDeviceIDn
+		}
+		qParentDeviceIDn := qrParentDeviceIDn
+		if qParentDeviceIDn != "" {
+
+			if err := r.SetQueryParam("parent_device_id__n", qParentDeviceIDn); err != nil {
 				return err
 			}
 		}

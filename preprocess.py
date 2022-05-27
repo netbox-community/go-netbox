@@ -128,8 +128,9 @@ for prop, prop_spec in data["definitions"]["Tag"]["properties"].items():
         logging.info(f"set x-omitempty = false on Tag.{prop}")
 
 # Remove maxcap from scope_id attribute in vlangroup
-del data["definitions"]["VLANGroup"]["properties"]["scope_id"]["maximum"]
-logging.info(f"delete maximum of VLANGroup.scope_id")
+# seems obsolete for 3.2.x
+#del data["definitions"]["VLANGroup"]["properties"]["scope_id"]["maximum"]
+#logging.info(f"delete maximum of VLANGroup.scope_id")
 
 # Add custom fields to PrefixLength (https://github.com/fbreckle/go-netbox/pull/11)
 data["definitions"]["PrefixLength"]["properties"]["custom_fields"] = {

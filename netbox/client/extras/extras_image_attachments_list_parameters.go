@@ -117,9 +117,6 @@ type ExtrasImageAttachmentsListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -170,6 +167,9 @@ type ExtrasImageAttachmentsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	// Q.
+	Q *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -367,17 +367,6 @@ func (o *ExtrasImageAttachmentsListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the extras image attachments list params
-func (o *ExtrasImageAttachmentsListParams) WithNameEmpty(nameEmpty *string) *ExtrasImageAttachmentsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the extras image attachments list params
-func (o *ExtrasImageAttachmentsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the extras image attachments list params
 func (o *ExtrasImageAttachmentsListParams) WithNameIc(nameIc *string) *ExtrasImageAttachmentsListParams {
 	o.SetNameIc(nameIc)
@@ -552,6 +541,17 @@ func (o *ExtrasImageAttachmentsListParams) WithOffset(offset *int64) *ExtrasImag
 // SetOffset adds the offset to the extras image attachments list params
 func (o *ExtrasImageAttachmentsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithQ adds the q to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) WithQ(q *string) *ExtrasImageAttachmentsListParams {
+	o.SetQ(q)
+	return o
+}
+
+// SetQ adds the q to the extras image attachments list params
+func (o *ExtrasImageAttachmentsListParams) SetQ(q *string) {
+	o.Q = q
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -778,23 +778,6 @@ func (o *ExtrasImageAttachmentsListParams) WriteToRequest(r runtime.ClientReques
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1067,6 +1050,23 @@ func (o *ExtrasImageAttachmentsListParams) WriteToRequest(r runtime.ClientReques
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Q != nil {
+
+		// query param q
+		var qrQ string
+
+		if o.Q != nil {
+			qrQ = *o.Q
+		}
+		qQ := qrQ
+		if qQ != "" {
+
+			if err := r.SetQueryParam("q", qQ); err != nil {
 				return err
 			}
 		}

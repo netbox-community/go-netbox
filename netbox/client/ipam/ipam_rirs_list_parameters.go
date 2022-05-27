@@ -87,9 +87,6 @@ type IpamRirsListParams struct {
 	// Description.
 	Description *string
 
-	// DescriptionEmpty.
-	DescriptionEmpty *string
-
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -156,9 +153,6 @@ type IpamRirsListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -198,9 +192,6 @@ type IpamRirsListParams struct {
 	// Slug.
 	Slug *string
 
-	// SlugEmpty.
-	SlugEmpty *string
-
 	// SlugIc.
 	SlugIc *string
 
@@ -227,6 +218,12 @@ type IpamRirsListParams struct {
 
 	// SlugNisw.
 	SlugNisw *string
+
+	// Tag.
+	Tag *string
+
+	// Tagn.
+	Tagn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -323,17 +320,6 @@ func (o *IpamRirsListParams) WithDescription(description *string) *IpamRirsListP
 // SetDescription adds the description to the ipam rirs list params
 func (o *IpamRirsListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the ipam rirs list params
-func (o *IpamRirsListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamRirsListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the ipam rirs list params
-func (o *IpamRirsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the ipam rirs list params
@@ -567,17 +553,6 @@ func (o *IpamRirsListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the ipam rirs list params
-func (o *IpamRirsListParams) WithNameEmpty(nameEmpty *string) *IpamRirsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the ipam rirs list params
-func (o *IpamRirsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the ipam rirs list params
 func (o *IpamRirsListParams) WithNameIc(nameIc *string) *IpamRirsListParams {
 	o.SetNameIc(nameIc)
@@ -710,17 +685,6 @@ func (o *IpamRirsListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
-// WithSlugEmpty adds the slugEmpty to the ipam rirs list params
-func (o *IpamRirsListParams) WithSlugEmpty(slugEmpty *string) *IpamRirsListParams {
-	o.SetSlugEmpty(slugEmpty)
-	return o
-}
-
-// SetSlugEmpty adds the slugEmpty to the ipam rirs list params
-func (o *IpamRirsListParams) SetSlugEmpty(slugEmpty *string) {
-	o.SlugEmpty = slugEmpty
-}
-
 // WithSlugIc adds the slugIc to the ipam rirs list params
 func (o *IpamRirsListParams) WithSlugIc(slugIc *string) *IpamRirsListParams {
 	o.SetSlugIc(slugIc)
@@ -820,6 +784,28 @@ func (o *IpamRirsListParams) SetSlugNisw(slugNisw *string) {
 	o.SlugNisw = slugNisw
 }
 
+// WithTag adds the tag to the ipam rirs list params
+func (o *IpamRirsListParams) WithTag(tag *string) *IpamRirsListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the ipam rirs list params
+func (o *IpamRirsListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the ipam rirs list params
+func (o *IpamRirsListParams) WithTagn(tagn *string) *IpamRirsListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the ipam rirs list params
+func (o *IpamRirsListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -891,23 +877,6 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1270,23 +1239,6 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1491,23 +1443,6 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		}
 	}
 
-	if o.SlugEmpty != nil {
-
-		// query param slug__empty
-		var qrSlugEmpty string
-
-		if o.SlugEmpty != nil {
-			qrSlugEmpty = *o.SlugEmpty
-		}
-		qSlugEmpty := qrSlugEmpty
-		if qSlugEmpty != "" {
-
-			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.SlugIc != nil {
 
 		// query param slug__ic
@@ -1656,6 +1591,40 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		if qSlugNisw != "" {
 
 			if err := r.SetQueryParam("slug__nisw", qSlugNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

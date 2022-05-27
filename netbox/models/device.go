@@ -36,6 +36,9 @@ import (
 // swagger:model Device
 type Device struct {
 
+	// airflow
+	Airflow *DeviceAirflow `json:"airflow,omitempty"`
+
 	// Asset tag
 	//
 	// A unique tag used to identify this device
@@ -50,8 +53,8 @@ type Device struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -71,7 +74,7 @@ type Device struct {
 	// face
 	Face *DeviceFace `json:"face,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -87,8 +90,9 @@ type Device struct {
 	Location *NestedLocation `json:"location,omitempty"`
 
 	// Name
+	// Required: true
 	// Max Length: 64
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name"`
 
 	// parent device
 	ParentDevice *NestedDevice `json:"parent_device,omitempty"`
@@ -97,9 +101,6 @@ type Device struct {
 	Platform *NestedPlatform `json:"platform,omitempty"`
 
 	// Position (U)
-	//
-	// The lowest-numbered unit occupied by the device
-	// Maximum: 32767
 	// Minimum: 1
 	Position *int64 `json:"position,omitempty"`
 
@@ -154,6 +155,10 @@ type Device struct {
 // Validate validates this device
 func (m *Device) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateAirflow(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateAssetTag(formats); err != nil {
 		res = append(res, err)
@@ -261,6 +266,23 @@ func (m *Device) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Device) validateAirflow(formats strfmt.Registry) error {
+	if swag.IsZero(m.Airflow) { // not required
+		return nil
+	}
+
+	if m.Airflow != nil {
+		if err := m.Airflow.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("airflow")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Device) validateAssetTag(formats strfmt.Registry) error {
 	if swag.IsZero(m.AssetTag) { // not required
 		return nil
@@ -297,7 +319,7 @@ func (m *Device) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -395,8 +417,9 @@ func (m *Device) validateLocation(formats strfmt.Registry) error {
 }
 
 func (m *Device) validateName(formats strfmt.Registry) error {
-	if swag.IsZero(m.Name) { // not required
-		return nil
+
+	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
@@ -450,10 +473,6 @@ func (m *Device) validatePosition(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MinimumInt("position", "body", *m.Position, 1, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("position", "body", *m.Position, 32767, false); err != nil {
 		return err
 	}
 
@@ -699,6 +718,10 @@ func (m *Device) validateVirtualChassis(formats strfmt.Registry) error {
 func (m *Device) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAirflow(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCluster(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -789,6 +812,20 @@ func (m *Device) ContextValidate(ctx context.Context, formats strfmt.Registry) e
 	return nil
 }
 
+func (m *Device) contextValidateAirflow(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Airflow != nil {
+		if err := m.Airflow.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("airflow")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Device) contextValidateCluster(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Cluster != nil {
@@ -807,7 +844,7 @@ func (m *Device) contextValidateCluster(ctx context.Context, formats strfmt.Regi
 
 func (m *Device) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -1105,6 +1142,173 @@ func (m *Device) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Device) UnmarshalBinary(b []byte) error {
 	var res Device
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// DeviceAirflow Airflow
+//
+// swagger:model DeviceAirflow
+type DeviceAirflow struct {
+
+	// label
+	// Required: true
+	// Enum: [Front to rear Rear to front Left to right Right to left Side to rear Passive]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
+	Value *string `json:"value"`
+}
+
+// Validate validates this device airflow
+func (m *DeviceAirflow) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var deviceAirflowTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Front to rear","Rear to front","Left to right","Right to left","Side to rear","Passive"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceAirflowTypeLabelPropEnum = append(deviceAirflowTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceAirflowLabelFrontToRear captures enum value "Front to rear"
+	DeviceAirflowLabelFrontToRear string = "Front to rear"
+
+	// DeviceAirflowLabelRearToFront captures enum value "Rear to front"
+	DeviceAirflowLabelRearToFront string = "Rear to front"
+
+	// DeviceAirflowLabelLeftToRight captures enum value "Left to right"
+	DeviceAirflowLabelLeftToRight string = "Left to right"
+
+	// DeviceAirflowLabelRightToLeft captures enum value "Right to left"
+	DeviceAirflowLabelRightToLeft string = "Right to left"
+
+	// DeviceAirflowLabelSideToRear captures enum value "Side to rear"
+	DeviceAirflowLabelSideToRear string = "Side to rear"
+
+	// DeviceAirflowLabelPassive captures enum value "Passive"
+	DeviceAirflowLabelPassive string = "Passive"
+)
+
+// prop value enum
+func (m *DeviceAirflow) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, deviceAirflowTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *DeviceAirflow) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("airflow"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("airflow"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var deviceAirflowTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceAirflowTypeValuePropEnum = append(deviceAirflowTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceAirflowValueFrontDashToDashRear captures enum value "front-to-rear"
+	DeviceAirflowValueFrontDashToDashRear string = "front-to-rear"
+
+	// DeviceAirflowValueRearDashToDashFront captures enum value "rear-to-front"
+	DeviceAirflowValueRearDashToDashFront string = "rear-to-front"
+
+	// DeviceAirflowValueLeftDashToDashRight captures enum value "left-to-right"
+	DeviceAirflowValueLeftDashToDashRight string = "left-to-right"
+
+	// DeviceAirflowValueRightDashToDashLeft captures enum value "right-to-left"
+	DeviceAirflowValueRightDashToDashLeft string = "right-to-left"
+
+	// DeviceAirflowValueSideDashToDashRear captures enum value "side-to-rear"
+	DeviceAirflowValueSideDashToDashRear string = "side-to-rear"
+
+	// DeviceAirflowValuePassive captures enum value "passive"
+	DeviceAirflowValuePassive string = "passive"
+)
+
+// prop value enum
+func (m *DeviceAirflow) validateValueEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, deviceAirflowTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *DeviceAirflow) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("airflow"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("airflow"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this device airflow based on context it is used
+func (m *DeviceAirflow) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *DeviceAirflow) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *DeviceAirflow) UnmarshalBinary(b []byte) error {
+	var res DeviceAirflow
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

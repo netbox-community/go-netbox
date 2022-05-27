@@ -51,7 +51,7 @@ type Token struct {
 	// Format: date-time
 	Expires *strfmt.DateTime `json:"expires,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 

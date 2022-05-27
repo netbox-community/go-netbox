@@ -59,7 +59,7 @@ type ObjectPermission struct {
 	// Unique: true
 	Groups []*NestedGroup `json:"groups"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 

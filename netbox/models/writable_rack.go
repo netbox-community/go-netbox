@@ -47,8 +47,8 @@ type WritableRack struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -67,12 +67,10 @@ type WritableRack struct {
 	Display string `json:"display,omitempty"`
 
 	// Facility ID
-	//
-	// Locally-assigned identifier
 	// Max Length: 50
 	FacilityID *string `json:"facility_id,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -82,7 +80,8 @@ type WritableRack struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Location
-	Location *int64 `json:"location,omitempty"`
+	// Required: true
+	Location *int64 `json:"location"`
 
 	// Name
 	// Required: true
@@ -178,6 +177,10 @@ func (m *WritableRack) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateLocation(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -249,7 +252,7 @@ func (m *WritableRack) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -274,6 +277,15 @@ func (m *WritableRack) validateLastUpdated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableRack) validateLocation(formats strfmt.Registry) error {
+
+	if err := validate.Required("location", "body", m.Location); err != nil {
 		return err
 	}
 
@@ -625,7 +637,7 @@ func (m *WritableRack) ContextValidate(ctx context.Context, formats strfmt.Regis
 
 func (m *WritableRack) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
