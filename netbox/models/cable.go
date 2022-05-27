@@ -310,6 +310,8 @@ func (m *Cable) validateTenant(formats strfmt.Registry) error {
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -635,6 +637,8 @@ func (m *Cable) contextValidateTenant(ctx context.Context, formats strfmt.Regist
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}

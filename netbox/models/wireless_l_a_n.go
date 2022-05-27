@@ -155,6 +155,8 @@ func (m *WirelessLAN) validateAuthCipher(formats strfmt.Registry) error {
 		if err := m.AuthCipher.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_cipher")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("auth_cipher")
 			}
 			return err
 		}
@@ -184,6 +186,8 @@ func (m *WirelessLAN) validateAuthType(formats strfmt.Registry) error {
 		if err := m.AuthType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("auth_type")
 			}
 			return err
 		}
@@ -225,6 +229,8 @@ func (m *WirelessLAN) validateGroup(formats strfmt.Registry) error {
 		if err := m.Group.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("group")
 			}
 			return err
 		}
@@ -276,6 +282,8 @@ func (m *WirelessLAN) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -307,6 +315,8 @@ func (m *WirelessLAN) validateVlan(formats strfmt.Registry) error {
 		if err := m.Vlan.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vlan")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vlan")
 			}
 			return err
 		}
@@ -371,6 +381,8 @@ func (m *WirelessLAN) contextValidateAuthCipher(ctx context.Context, formats str
 		if err := m.AuthCipher.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_cipher")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("auth_cipher")
 			}
 			return err
 		}
@@ -385,6 +397,8 @@ func (m *WirelessLAN) contextValidateAuthType(ctx context.Context, formats strfm
 		if err := m.AuthType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("auth_type")
 			}
 			return err
 		}
@@ -417,6 +431,8 @@ func (m *WirelessLAN) contextValidateGroup(ctx context.Context, formats strfmt.R
 		if err := m.Group.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("group")
 			}
 			return err
 		}
@@ -451,6 +467,8 @@ func (m *WirelessLAN) contextValidateTags(ctx context.Context, formats strfmt.Re
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -476,6 +494,8 @@ func (m *WirelessLAN) contextValidateVlan(ctx context.Context, formats strfmt.Re
 		if err := m.Vlan.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vlan")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vlan")
 			}
 			return err
 		}

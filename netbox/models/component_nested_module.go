@@ -95,6 +95,8 @@ func (m *ComponentNestedModule) validateModuleBay(formats strfmt.Registry) error
 		if err := m.ModuleBay.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_bay")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_bay")
 			}
 			return err
 		}
@@ -165,6 +167,8 @@ func (m *ComponentNestedModule) contextValidateModuleBay(ctx context.Context, fo
 		if err := m.ModuleBay.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_bay")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_bay")
 			}
 			return err
 		}

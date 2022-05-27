@@ -92,6 +92,8 @@ func (m *NestedModule) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -109,6 +111,8 @@ func (m *NestedModule) validateModuleBay(formats strfmt.Registry) error {
 		if err := m.ModuleBay.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_bay")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_bay")
 			}
 			return err
 		}
@@ -126,6 +130,8 @@ func (m *NestedModule) validateModuleType(formats strfmt.Registry) error {
 		if err := m.ModuleType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_type")
 			}
 			return err
 		}
@@ -186,6 +192,8 @@ func (m *NestedModule) contextValidateDevice(ctx context.Context, formats strfmt
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -218,6 +226,8 @@ func (m *NestedModule) contextValidateModuleBay(ctx context.Context, formats str
 		if err := m.ModuleBay.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_bay")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_bay")
 			}
 			return err
 		}
@@ -232,6 +242,8 @@ func (m *NestedModule) contextValidateModuleType(ctx context.Context, formats st
 		if err := m.ModuleType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_type")
 			}
 			return err
 		}

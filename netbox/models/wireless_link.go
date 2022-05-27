@@ -162,6 +162,8 @@ func (m *WirelessLink) validateAuthCipher(formats strfmt.Registry) error {
 		if err := m.AuthCipher.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_cipher")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("auth_cipher")
 			}
 			return err
 		}
@@ -191,6 +193,8 @@ func (m *WirelessLink) validateAuthType(formats strfmt.Registry) error {
 		if err := m.AuthType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("auth_type")
 			}
 			return err
 		}
@@ -233,6 +237,8 @@ func (m *WirelessLink) validateInterfacea(formats strfmt.Registry) error {
 		if err := m.Interfacea.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("interface_a")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("interface_a")
 			}
 			return err
 		}
@@ -251,6 +257,8 @@ func (m *WirelessLink) validateInterfaceb(formats strfmt.Registry) error {
 		if err := m.Interfaceb.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("interface_b")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("interface_b")
 			}
 			return err
 		}
@@ -292,6 +300,8 @@ func (m *WirelessLink) validateStatus(formats strfmt.Registry) error {
 		if err := m.Status.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -314,6 +324,8 @@ func (m *WirelessLink) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -396,6 +408,8 @@ func (m *WirelessLink) contextValidateAuthCipher(ctx context.Context, formats st
 		if err := m.AuthCipher.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_cipher")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("auth_cipher")
 			}
 			return err
 		}
@@ -410,6 +424,8 @@ func (m *WirelessLink) contextValidateAuthType(ctx context.Context, formats strf
 		if err := m.AuthType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("auth_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("auth_type")
 			}
 			return err
 		}
@@ -451,6 +467,8 @@ func (m *WirelessLink) contextValidateInterfacea(ctx context.Context, formats st
 		if err := m.Interfacea.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("interface_a")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("interface_a")
 			}
 			return err
 		}
@@ -465,6 +483,8 @@ func (m *WirelessLink) contextValidateInterfaceb(ctx context.Context, formats st
 		if err := m.Interfaceb.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("interface_b")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("interface_b")
 			}
 			return err
 		}
@@ -488,6 +508,8 @@ func (m *WirelessLink) contextValidateStatus(ctx context.Context, formats strfmt
 		if err := m.Status.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -504,6 +526,8 @@ func (m *WirelessLink) contextValidateTags(ctx context.Context, formats strfmt.R
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

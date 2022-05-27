@@ -213,6 +213,8 @@ func (m *InventoryItemTemplate) validateDeviceType(formats strfmt.Registry) erro
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -254,6 +256,8 @@ func (m *InventoryItemTemplate) validateManufacturer(formats strfmt.Registry) er
 		if err := m.Manufacturer.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("manufacturer")
 			}
 			return err
 		}
@@ -300,6 +304,8 @@ func (m *InventoryItemTemplate) validateRole(formats strfmt.Registry) error {
 		if err := m.Role.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("role")
 			}
 			return err
 		}
@@ -399,6 +405,8 @@ func (m *InventoryItemTemplate) contextValidateDeviceType(ctx context.Context, f
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -440,6 +448,8 @@ func (m *InventoryItemTemplate) contextValidateManufacturer(ctx context.Context,
 		if err := m.Manufacturer.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("manufacturer")
 			}
 			return err
 		}
@@ -454,6 +464,8 @@ func (m *InventoryItemTemplate) contextValidateRole(ctx context.Context, formats
 		if err := m.Role.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("role")
 			}
 			return err
 		}

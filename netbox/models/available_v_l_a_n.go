@@ -65,6 +65,8 @@ func (m *AvailableVLAN) validateGroup(formats strfmt.Registry) error {
 		if err := m.Group.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("group")
 			}
 			return err
 		}
@@ -97,6 +99,8 @@ func (m *AvailableVLAN) contextValidateGroup(ctx context.Context, formats strfmt
 		if err := m.Group.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("group")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("group")
 			}
 			return err
 		}

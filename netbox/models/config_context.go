@@ -263,6 +263,8 @@ func (m *ConfigContext) validateClusterTypes(formats strfmt.Registry) error {
 			if err := m.ClusterTypes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("cluster_types" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("cluster_types" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -755,6 +757,8 @@ func (m *ConfigContext) contextValidateClusterTypes(ctx context.Context, formats
 			if err := m.ClusterTypes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("cluster_types" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("cluster_types" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

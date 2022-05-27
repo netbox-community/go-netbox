@@ -208,6 +208,8 @@ func (m *ServiceTemplate) validateProtocol(formats strfmt.Registry) error {
 		if err := m.Protocol.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("protocol")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("protocol")
 			}
 			return err
 		}
@@ -230,6 +232,8 @@ func (m *ServiceTemplate) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -332,6 +336,8 @@ func (m *ServiceTemplate) contextValidateProtocol(ctx context.Context, formats s
 		if err := m.Protocol.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("protocol")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("protocol")
 			}
 			return err
 		}
@@ -348,6 +354,8 @@ func (m *ServiceTemplate) contextValidateTags(ctx context.Context, formats strfm
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

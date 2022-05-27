@@ -279,6 +279,8 @@ func (m *DeviceWithConfigContext) validateAirflow(formats strfmt.Registry) error
 		if err := m.Airflow.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("airflow")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("airflow")
 			}
 			return err
 		}
@@ -826,6 +828,8 @@ func (m *DeviceWithConfigContext) contextValidateAirflow(ctx context.Context, fo
 		if err := m.Airflow.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("airflow")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("airflow")
 			}
 			return err
 		}

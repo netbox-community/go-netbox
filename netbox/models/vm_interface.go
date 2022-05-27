@@ -193,6 +193,8 @@ func (m *VMInterface) validateBridge(formats strfmt.Registry) error {
 		if err := m.Bridge.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("bridge")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("bridge")
 			}
 			return err
 		}
@@ -424,6 +426,8 @@ func (m *VMInterface) validateVrf(formats strfmt.Registry) error {
 		if err := m.Vrf.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vrf")
 			}
 			return err
 		}
@@ -508,6 +512,8 @@ func (m *VMInterface) contextValidateBridge(ctx context.Context, formats strfmt.
 		if err := m.Bridge.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("bridge")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("bridge")
 			}
 			return err
 		}
@@ -689,6 +695,8 @@ func (m *VMInterface) contextValidateVrf(ctx context.Context, formats strfmt.Reg
 		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("vrf")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vrf")
 			}
 			return err
 		}

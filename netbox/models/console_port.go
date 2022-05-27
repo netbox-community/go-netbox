@@ -289,6 +289,8 @@ func (m *ConsolePort) validateModule(formats strfmt.Registry) error {
 		if err := m.Module.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module")
 			}
 			return err
 		}
@@ -588,6 +590,8 @@ func (m *ConsolePort) contextValidateModule(ctx context.Context, formats strfmt.
 		if err := m.Module.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module")
 			}
 			return err
 		}

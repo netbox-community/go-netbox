@@ -170,6 +170,8 @@ func (m *Module) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -200,6 +202,8 @@ func (m *Module) validateModuleBay(formats strfmt.Registry) error {
 		if err := m.ModuleBay.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_bay")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_bay")
 			}
 			return err
 		}
@@ -218,6 +222,8 @@ func (m *Module) validateModuleType(formats strfmt.Registry) error {
 		if err := m.ModuleType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_type")
 			}
 			return err
 		}
@@ -252,6 +258,8 @@ func (m *Module) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -335,6 +343,8 @@ func (m *Module) contextValidateDevice(ctx context.Context, formats strfmt.Regis
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -376,6 +386,8 @@ func (m *Module) contextValidateModuleBay(ctx context.Context, formats strfmt.Re
 		if err := m.ModuleBay.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_bay")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_bay")
 			}
 			return err
 		}
@@ -390,6 +402,8 @@ func (m *Module) contextValidateModuleType(ctx context.Context, formats strfmt.R
 		if err := m.ModuleType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("module_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_type")
 			}
 			return err
 		}
@@ -406,6 +420,8 @@ func (m *Module) contextValidateTags(ctx context.Context, formats strfmt.Registr
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

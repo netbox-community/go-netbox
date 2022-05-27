@@ -88,6 +88,8 @@ func (m *NestedModuleType) validateManufacturer(formats strfmt.Registry) error {
 		if err := m.Manufacturer.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("manufacturer")
 			}
 			return err
 		}
@@ -175,6 +177,8 @@ func (m *NestedModuleType) contextValidateManufacturer(ctx context.Context, form
 		if err := m.Manufacturer.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("manufacturer")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("manufacturer")
 			}
 			return err
 		}
