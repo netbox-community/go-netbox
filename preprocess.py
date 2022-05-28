@@ -131,10 +131,15 @@ for prop, prop_spec in data["definitions"]["Tag"]["properties"].items():
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on Tag.{prop}")
 
-# Remove maxcap from scope_id attribute in vlangroup
-# seems obsolete for 3.2.x
-# del data["definitions"]["VLANGroup"]["properties"]["scope_id"]["maximum"]
-# logging.info(f"delete maximum of VLANGroup.scope_id")
+# Delete problematic maximums (might have to be replaced with a proper value)
+for definition, definition_spec in data["definitions"].items():
+    for prop, prop_spec in definition_spec["properties"].items():
+        if (
+            "maximum" in prop_spec.keys()
+            and prop_spec["maximum"] == 9223372036854776000
+        ):
+            del prop_spec["maximum"]
+            logging.info(f"deleted maximum of {definition}.{prop}")
 
 # Add custom fields to PrefixLength (https://github.com/fbreckle/go-netbox/pull/11)
 data["definitions"]["PrefixLength"]["properties"]["custom_fields"] = {
@@ -143,9 +148,19 @@ data["definitions"]["PrefixLength"]["properties"]["custom_fields"] = {
     "default": {},
 }
 
-# Restore old version of the available-ip endpoint
-print("Restore old version of the available ip endpoint")
+# Restore old version of the available-ip endpoints
+print("Restore old version of the prefixes available ip endpoint")
 data["paths"]["/ipam/prefixes/{id}/available-ips/"]["post"]["parameters"] = [
+    {
+        "name": "data",
+        "in": "body",
+        "required": True,
+        "schema": {"type": "array", "items": {"$ref": "#/definitions/AvailableIP"}},
+    }
+]
+
+print("Restore old version of the ip-ranges available ip endpoint")
+data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["parameters"] = [
     {
         "name": "data",
         "in": "body",

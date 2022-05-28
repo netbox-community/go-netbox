@@ -78,7 +78,7 @@ func NewIpamIPRangesAvailableIpsCreateParamsWithHTTPClient(client *http.Client) 
 type IpamIPRangesAvailableIpsCreateParams struct {
 
 	// Data.
-	Data *models.WritableAvailableIP
+	Data []*models.AvailableIP
 
 	/* ID.
 
@@ -140,13 +140,13 @@ func (o *IpamIPRangesAvailableIpsCreateParams) SetHTTPClient(client *http.Client
 }
 
 // WithData adds the data to the ipam ip ranges available ips create params
-func (o *IpamIPRangesAvailableIpsCreateParams) WithData(data *models.WritableAvailableIP) *IpamIPRangesAvailableIpsCreateParams {
+func (o *IpamIPRangesAvailableIpsCreateParams) WithData(data []*models.AvailableIP) *IpamIPRangesAvailableIpsCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the ipam ip ranges available ips create params
-func (o *IpamIPRangesAvailableIpsCreateParams) SetData(data *models.WritableAvailableIP) {
+func (o *IpamIPRangesAvailableIpsCreateParams) SetData(data []*models.AvailableIP) {
 	o.Data = data
 }
 
