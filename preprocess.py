@@ -71,7 +71,9 @@ for prop, prop_spec in data["definitions"]["WritableIPAddress"]["properties"].it
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableIPAddress.{prop}")
 
-data["definitions"]["WritableCustomField"]["properties"]["required"]["x-omitempty"] = False
+data["definitions"]["WritableCustomField"]["properties"]["required"][
+    "x-omitempty"
+] = False
 
 # This implements https://github.com/fbreckle/go-netbox/commit/1363e14cfc7bce4bd3d5ee93c09ca70543c51279
 for prop, prop_spec in data["definitions"]["WritableVirtualMachineWithConfigContext"][
@@ -99,20 +101,22 @@ logging.info(f"Added schema for 200 response of /status/ get")
 data["definitions"]["IPAddress"]["properties"]["assigned_object"] = {
     "title": "Assigned object",
     "type": "object",
-    "readOnly": True
+    "readOnly": True,
 }
-logging.info(f"Fix 'error: json: cannot unmarshal number into Go struct field IPAddress.assigned_object of type \
-string' when creating available-ips")
+logging.info(
+    f"Fix 'error: json: cannot unmarshal number into Go struct field IPAddress.assigned_object of type \
+string' when creating available-ips"
+)
 
 # Change model returned by paths /available-ips/ from AvailableIP to IPAddress.
-data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["responses"]["201"]["schema"]["items"] = {
-    "$ref": "#/definitions/IPAddress"
-}
+data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["responses"]["201"][
+    "schema"
+]["items"] = {"$ref": "#/definitions/IPAddress"}
 logging.info(f"Corrected reponse model when creating available-ips in an IP range")
 
-data["paths"]["/ipam/prefixes/{id}/available-ips/"]["post"]["responses"]["201"]["schema"]["items"] = {
-    "$ref": "#/definitions/IPAddress"
-}
+data["paths"]["/ipam/prefixes/{id}/available-ips/"]["post"]["responses"]["201"][
+    "schema"
+]["items"] = {"$ref": "#/definitions/IPAddress"}
 logging.info(f"Corrected reponse model when creating available-ips in a prefix")
 
 # Remove omitempty for site attribute on clusters
@@ -129,8 +133,8 @@ for prop, prop_spec in data["definitions"]["Tag"]["properties"].items():
 
 # Remove maxcap from scope_id attribute in vlangroup
 # seems obsolete for 3.2.x
-#del data["definitions"]["VLANGroup"]["properties"]["scope_id"]["maximum"]
-#logging.info(f"delete maximum of VLANGroup.scope_id")
+# del data["definitions"]["VLANGroup"]["properties"]["scope_id"]["maximum"]
+# logging.info(f"delete maximum of VLANGroup.scope_id")
 
 # Add custom fields to PrefixLength (https://github.com/fbreckle/go-netbox/pull/11)
 data["definitions"]["PrefixLength"]["properties"]["custom_fields"] = {
@@ -139,6 +143,16 @@ data["definitions"]["PrefixLength"]["properties"]["custom_fields"] = {
     "default": {},
 }
 
+# Restore old version of the available-ip endpoint
+print("Restore old version of the available ip endpoint")
+data["paths"]["/ipam/prefixes/{id}/available-ips/"]["post"]["parameters"] = [
+    {
+        "name": "data",
+        "in": "body",
+        "required": True,
+        "schema": {"type": "array", "items": {"$ref": "#/definitions/AvailableIP"}},
+    }
+]
 
 # Write output file
 with open("swagger.processed.json", "w") as writefile:
