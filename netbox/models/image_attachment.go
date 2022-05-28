@@ -79,7 +79,6 @@ type ImageAttachment struct {
 
 	// Object id
 	// Required: true
-	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	ObjectID *int64 `json:"object_id"`
 
@@ -237,10 +236,6 @@ func (m *ImageAttachment) validateObjectID(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MinimumInt("object_id", "body", *m.ObjectID, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("object_id", "body", *m.ObjectID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 

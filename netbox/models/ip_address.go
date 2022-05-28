@@ -47,7 +47,6 @@ type IPAddress struct {
 	AssignedObject interface{} `json:"assigned_object,omitempty"`
 
 	// Assigned object id
-	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	AssignedObjectID *int64 `json:"assigned_object_id,omitempty"`
 
@@ -201,10 +200,6 @@ func (m *IPAddress) validateAssignedObjectID(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MinimumInt("assigned_object_id", "body", *m.AssignedObjectID, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 

@@ -87,7 +87,6 @@ type Cable struct {
 
 	// Termination a id
 	// Required: true
-	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	TerminationaID *int64 `json:"termination_a_id"`
 
@@ -101,7 +100,6 @@ type Cable struct {
 
 	// Termination b id
 	// Required: true
-	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	TerminationbID *int64 `json:"termination_b_id"`
 
@@ -330,10 +328,6 @@ func (m *Cable) validateTerminationaID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("termination_a_id", "body", *m.TerminationaID, 9.223372036854776e+18, false); err != nil {
-		return err
-	}
-
 	return nil
 }
 
@@ -353,10 +347,6 @@ func (m *Cable) validateTerminationbID(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MinimumInt("termination_b_id", "body", *m.TerminationbID, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("termination_b_id", "body", *m.TerminationbID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 

@@ -42,7 +42,6 @@ type JournalEntry struct {
 
 	// Assigned object id
 	// Required: true
-	// Maximum: 9.223372036854776e+18
 	// Minimum: 0
 	AssignedObjectID *int64 `json:"assigned_object_id"`
 
@@ -131,10 +130,6 @@ func (m *JournalEntry) validateAssignedObjectID(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MinimumInt("assigned_object_id", "body", *m.AssignedObjectID, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 9.223372036854776e+18, false); err != nil {
 		return err
 	}
 
