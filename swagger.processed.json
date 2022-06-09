@@ -43807,10 +43807,7 @@
           "201": {
             "description": "",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Prefix"
-              }
+              "$ref": "#/definitions/Prefix"
             }
           },
           "default": {

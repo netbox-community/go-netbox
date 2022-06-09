@@ -149,7 +149,7 @@ data["definitions"]["PrefixLength"]["properties"]["custom_fields"] = {
 }
 
 # Restore old version of the available-ip endpoints
-print("Restore old version of the prefixes available ip endpoint")
+logging.info("Restore old version of the parameters of prefixes available ip endpoint")
 data["paths"]["/ipam/prefixes/{id}/available-ips/"]["post"]["parameters"] = [
     {
         "name": "data",
@@ -159,7 +159,7 @@ data["paths"]["/ipam/prefixes/{id}/available-ips/"]["post"]["parameters"] = [
     }
 ]
 
-print("Restore old version of the ip-ranges available ip endpoint")
+logging.info("Restore old version of the parameters of the ip-ranges available ip endpoint")
 data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["parameters"] = [
     {
         "name": "data",
@@ -168,6 +168,22 @@ data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["parameters"] = [
         "schema": {"type": "array", "items": {"$ref": "#/definitions/AvailableIP"}},
     }
 ]
+
+logging.info("Restore old version of the parameters of the ip-ranges available ip endpoint")
+data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["parameters"] = [
+    {
+        "name": "data",
+        "in": "body",
+        "required": True,
+        "schema": {"type": "array", "items": {"$ref": "#/definitions/AvailableIP"}},
+    }
+]
+
+logging.info("Restore old version of the response of the available ip endpoint")
+data["paths"]["/ipam/prefixes/{id}/available-prefixes/"]["post"]["responses"]["201"] = {
+    "description": "",
+    "schema": {"$ref": "#/definitions/Prefix"},
+}
 
 # Write output file
 with open("swagger.processed.json", "w") as writefile:
