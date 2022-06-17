@@ -93,6 +93,36 @@ type CircuitsCircuitTerminationsListParams struct {
 	// CreatedLte.
 	CreatedLte *string
 
+	// Description.
+	Description *string
+
+	// DescriptionIc.
+	DescriptionIc *string
+
+	// DescriptionIe.
+	DescriptionIe *string
+
+	// DescriptionIew.
+	DescriptionIew *string
+
+	// DescriptionIsw.
+	DescriptionIsw *string
+
+	// Descriptionn.
+	Descriptionn *string
+
+	// DescriptionNic.
+	DescriptionNic *string
+
+	// DescriptionNie.
+	DescriptionNie *string
+
+	// DescriptionNiew.
+	DescriptionNiew *string
+
+	// DescriptionNisw.
+	DescriptionNisw *string
+
 	// ID.
 	ID *string
 
@@ -197,9 +227,6 @@ type CircuitsCircuitTerminationsListParams struct {
 
 	// XconnectID.
 	XconnectID *string
-
-	// XconnectIDEmpty.
-	XconnectIDEmpty *string
 
 	// XconnectIDIc.
 	XconnectIDIc *string
@@ -345,6 +372,116 @@ func (o *CircuitsCircuitTerminationsListParams) WithCreatedLte(createdLte *strin
 // SetCreatedLte adds the createdLte to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithDescription adds the description to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescription(description *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescription(description)
+	return o
+}
+
+// SetDescription adds the description to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescription(description *string) {
+	o.Description = description
+}
+
+// WithDescriptionIc adds the descriptionIc to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionIc(descriptionIc *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionIc(descriptionIc)
+	return o
+}
+
+// SetDescriptionIc adds the descriptionIc to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionIc(descriptionIc *string) {
+	o.DescriptionIc = descriptionIc
+}
+
+// WithDescriptionIe adds the descriptionIe to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionIe(descriptionIe *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionIe(descriptionIe)
+	return o
+}
+
+// SetDescriptionIe adds the descriptionIe to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionIe(descriptionIe *string) {
+	o.DescriptionIe = descriptionIe
+}
+
+// WithDescriptionIew adds the descriptionIew to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionIew(descriptionIew *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionIew(descriptionIew)
+	return o
+}
+
+// SetDescriptionIew adds the descriptionIew to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionIew(descriptionIew *string) {
+	o.DescriptionIew = descriptionIew
+}
+
+// WithDescriptionIsw adds the descriptionIsw to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionIsw(descriptionIsw *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionIsw(descriptionIsw)
+	return o
+}
+
+// SetDescriptionIsw adds the descriptionIsw to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionIsw(descriptionIsw *string) {
+	o.DescriptionIsw = descriptionIsw
+}
+
+// WithDescriptionn adds the descriptionn to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionn(descriptionn *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionn(descriptionn)
+	return o
+}
+
+// SetDescriptionn adds the descriptionN to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionn(descriptionn *string) {
+	o.Descriptionn = descriptionn
+}
+
+// WithDescriptionNic adds the descriptionNic to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionNic(descriptionNic *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionNic(descriptionNic)
+	return o
+}
+
+// SetDescriptionNic adds the descriptionNic to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionNic(descriptionNic *string) {
+	o.DescriptionNic = descriptionNic
+}
+
+// WithDescriptionNie adds the descriptionNie to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionNie(descriptionNie *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionNie(descriptionNie)
+	return o
+}
+
+// SetDescriptionNie adds the descriptionNie to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionNie(descriptionNie *string) {
+	o.DescriptionNie = descriptionNie
+}
+
+// WithDescriptionNiew adds the descriptionNiew to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionNiew(descriptionNiew *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionNiew(descriptionNiew)
+	return o
+}
+
+// SetDescriptionNiew adds the descriptionNiew to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionNiew(descriptionNiew *string) {
+	o.DescriptionNiew = descriptionNiew
+}
+
+// WithDescriptionNisw adds the descriptionNisw to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionNisw(descriptionNisw *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionNisw(descriptionNisw)
+	return o
+}
+
+// SetDescriptionNisw adds the descriptionNisw to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionNisw(descriptionNisw *string) {
+	o.DescriptionNisw = descriptionNisw
 }
 
 // WithID adds the id to the circuits circuit terminations list params
@@ -710,17 +847,6 @@ func (o *CircuitsCircuitTerminationsListParams) SetXconnectID(xconnectID *string
 	o.XconnectID = xconnectID
 }
 
-// WithXconnectIDEmpty adds the xconnectIDEmpty to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) WithXconnectIDEmpty(xconnectIDEmpty *string) *CircuitsCircuitTerminationsListParams {
-	o.SetXconnectIDEmpty(xconnectIDEmpty)
-	return o
-}
-
-// SetXconnectIDEmpty adds the xconnectIdEmpty to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) SetXconnectIDEmpty(xconnectIDEmpty *string) {
-	o.XconnectIDEmpty = xconnectIDEmpty
-}
-
 // WithXconnectIDIc adds the xconnectIDIc to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithXconnectIDIc(xconnectIDIc *string) *CircuitsCircuitTerminationsListParams {
 	o.SetXconnectIDIc(xconnectIDIc)
@@ -925,6 +1051,176 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Description != nil {
+
+		// query param description
+		var qrDescription string
+
+		if o.Description != nil {
+			qrDescription = *o.Description
+		}
+		qDescription := qrDescription
+		if qDescription != "" {
+
+			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIc != nil {
+
+		// query param description__ic
+		var qrDescriptionIc string
+
+		if o.DescriptionIc != nil {
+			qrDescriptionIc = *o.DescriptionIc
+		}
+		qDescriptionIc := qrDescriptionIc
+		if qDescriptionIc != "" {
+
+			if err := r.SetQueryParam("description__ic", qDescriptionIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIe != nil {
+
+		// query param description__ie
+		var qrDescriptionIe string
+
+		if o.DescriptionIe != nil {
+			qrDescriptionIe = *o.DescriptionIe
+		}
+		qDescriptionIe := qrDescriptionIe
+		if qDescriptionIe != "" {
+
+			if err := r.SetQueryParam("description__ie", qDescriptionIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIew != nil {
+
+		// query param description__iew
+		var qrDescriptionIew string
+
+		if o.DescriptionIew != nil {
+			qrDescriptionIew = *o.DescriptionIew
+		}
+		qDescriptionIew := qrDescriptionIew
+		if qDescriptionIew != "" {
+
+			if err := r.SetQueryParam("description__iew", qDescriptionIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionIsw != nil {
+
+		// query param description__isw
+		var qrDescriptionIsw string
+
+		if o.DescriptionIsw != nil {
+			qrDescriptionIsw = *o.DescriptionIsw
+		}
+		qDescriptionIsw := qrDescriptionIsw
+		if qDescriptionIsw != "" {
+
+			if err := r.SetQueryParam("description__isw", qDescriptionIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Descriptionn != nil {
+
+		// query param description__n
+		var qrDescriptionn string
+
+		if o.Descriptionn != nil {
+			qrDescriptionn = *o.Descriptionn
+		}
+		qDescriptionn := qrDescriptionn
+		if qDescriptionn != "" {
+
+			if err := r.SetQueryParam("description__n", qDescriptionn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNic != nil {
+
+		// query param description__nic
+		var qrDescriptionNic string
+
+		if o.DescriptionNic != nil {
+			qrDescriptionNic = *o.DescriptionNic
+		}
+		qDescriptionNic := qrDescriptionNic
+		if qDescriptionNic != "" {
+
+			if err := r.SetQueryParam("description__nic", qDescriptionNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNie != nil {
+
+		// query param description__nie
+		var qrDescriptionNie string
+
+		if o.DescriptionNie != nil {
+			qrDescriptionNie = *o.DescriptionNie
+		}
+		qDescriptionNie := qrDescriptionNie
+		if qDescriptionNie != "" {
+
+			if err := r.SetQueryParam("description__nie", qDescriptionNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNiew != nil {
+
+		// query param description__niew
+		var qrDescriptionNiew string
+
+		if o.DescriptionNiew != nil {
+			qrDescriptionNiew = *o.DescriptionNiew
+		}
+		qDescriptionNiew := qrDescriptionNiew
+		if qDescriptionNiew != "" {
+
+			if err := r.SetQueryParam("description__niew", qDescriptionNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionNisw != nil {
+
+		// query param description__nisw
+		var qrDescriptionNisw string
+
+		if o.DescriptionNisw != nil {
+			qrDescriptionNisw = *o.DescriptionNisw
+		}
+		qDescriptionNisw := qrDescriptionNisw
+		if qDescriptionNisw != "" {
+
+			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
 				return err
 			}
 		}
@@ -1486,23 +1782,6 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		if qXconnectID != "" {
 
 			if err := r.SetQueryParam("xconnect_id", qXconnectID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.XconnectIDEmpty != nil {
-
-		// query param xconnect_id__empty
-		var qrXconnectIDEmpty string
-
-		if o.XconnectIDEmpty != nil {
-			qrXconnectIDEmpty = *o.XconnectIDEmpty
-		}
-		qXconnectIDEmpty := qrXconnectIDEmpty
-		if qXconnectIDEmpty != "" {
-
-			if err := r.SetQueryParam("xconnect_id__empty", qXconnectIDEmpty); err != nil {
 				return err
 			}
 		}

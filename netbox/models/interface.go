@@ -40,20 +40,11 @@ type Interface struct {
 	// Read Only: true
 	Occupied *bool `json:"_occupied,omitempty"`
 
+	// bridge
+	Bridge *NestedInterface `json:"bridge,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
-
-	// Cable peer
-	//
-	//
-	// Return the appropriate serializer for the cable termination model.
-	//
-	// Read Only: true
-	CablePeer map[string]*string `json:"cable_peer,omitempty"`
-
-	// Cable peer type
-	// Read Only: true
-	CablePeerType string `json:"cable_peer_type,omitempty"`
 
 	// Connected endpoint
 	//
@@ -71,14 +62,18 @@ type Interface struct {
 	// Read Only: true
 	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
+	// Count fhrp groups
+	// Read Only: true
+	CountFhrpGroups int64 `json:"count_fhrp_groups,omitempty"`
+
 	// Count ipaddresses
 	// Read Only: true
 	CountIpaddresses int64 `json:"count_ipaddresses,omitempty"`
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -95,10 +90,13 @@ type Interface struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
+	// duplex
+	Duplex *InterfaceDuplex `json:"duplex,omitempty"`
+
 	// Enabled
 	Enabled bool `json:"enabled,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -116,6 +114,18 @@ type Interface struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Link peer
+	//
+	//
+	// Return the appropriate serializer for the link termination model.
+	//
+	// Read Only: true
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+
+	// Link peer type
+	// Read Only: true
+	LinkPeerType string `json:"link_peer_type,omitempty"`
+
 	// MAC Address
 	MacAddress *string `json:"mac_address,omitempty"`
 
@@ -132,6 +142,9 @@ type Interface struct {
 	// mode
 	Mode *InterfaceMode `json:"mode,omitempty"`
 
+	// module
+	Module *ComponentNestedModule `json:"module,omitempty"`
+
 	// MTU
 	// Maximum: 65536
 	// Minimum: 1
@@ -146,12 +159,34 @@ type Interface struct {
 	// parent
 	Parent *NestedInterface `json:"parent,omitempty"`
 
+	// rf channel
+	RfChannel *InterfaceRfChannel `json:"rf_channel,omitempty"`
+
+	// Channel frequency (MHz)
+	RfChannelFrequency *float64 `json:"rf_channel_frequency,omitempty"`
+
+	// Channel width (MHz)
+	RfChannelWidth *float64 `json:"rf_channel_width,omitempty"`
+
+	// rf role
+	RfRole *InterfaceRfRole `json:"rf_role,omitempty"`
+
+	// Speed
+	// Maximum: 2.147483647e+09
+	// Minimum: 0
+	Speed *int64 `json:"speed,omitempty"`
+
 	// tagged vlans
 	// Unique: true
 	TaggedVlans []*NestedVLAN `json:"tagged_vlans"`
 
 	// tags
 	Tags []*NestedTag `json:"tags"`
+
+	// Transmit power (dBm)
+	// Maximum: 127
+	// Minimum: 0
+	TxPower *int64 `json:"tx_power,omitempty"`
 
 	// type
 	// Required: true
@@ -164,11 +199,30 @@ type Interface struct {
 	// Read Only: true
 	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
+
+	// vrf
+	Vrf *NestedVRF `json:"vrf,omitempty"`
+
+	// wireless lans
+	// Unique: true
+	WirelessLans []*NestedWirelessLAN `json:"wireless_lans"`
+
+	// wireless link
+	WirelessLink *NestedWirelessLink `json:"wireless_link,omitempty"`
+
+	// WWN
+	//
+	// 64-bit World Wide Name
+	Wwn *string `json:"wwn,omitempty"`
 }
 
 // Validate validates this interface
 func (m *Interface) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateBridge(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateCable(formats); err != nil {
 		res = append(res, err)
@@ -183,6 +237,10 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDevice(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDuplex(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -202,6 +260,10 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateModule(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateMtu(formats); err != nil {
 		res = append(res, err)
 	}
@@ -214,11 +276,27 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateRfChannel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRfRole(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSpeed(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTaggedVlans(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateTags(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTxPower(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -234,9 +312,40 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateVrf(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateWirelessLans(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateWirelessLink(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *Interface) validateBridge(formats strfmt.Registry) error {
+	if swag.IsZero(m.Bridge) { // not required
+		return nil
+	}
+
+	if m.Bridge != nil {
+		if err := m.Bridge.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("bridge")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("bridge")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -249,6 +358,8 @@ func (m *Interface) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -262,7 +373,7 @@ func (m *Interface) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -291,6 +402,27 @@ func (m *Interface) validateDevice(formats strfmt.Registry) error {
 		if err := m.Device.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) validateDuplex(formats strfmt.Registry) error {
+	if swag.IsZero(m.Duplex) { // not required
+		return nil
+	}
+
+	if m.Duplex != nil {
+		if err := m.Duplex.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("duplex")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("duplex")
 			}
 			return err
 		}
@@ -320,6 +452,8 @@ func (m *Interface) validateLag(formats strfmt.Registry) error {
 		if err := m.Lag.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("lag")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("lag")
 			}
 			return err
 		}
@@ -349,6 +483,27 @@ func (m *Interface) validateMode(formats strfmt.Registry) error {
 		if err := m.Mode.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("mode")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("mode")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) validateModule(formats strfmt.Registry) error {
+	if swag.IsZero(m.Module) { // not required
+		return nil
+	}
+
+	if m.Module != nil {
+		if err := m.Module.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module")
 			}
 			return err
 		}
@@ -399,9 +554,65 @@ func (m *Interface) validateParent(formats strfmt.Registry) error {
 		if err := m.Parent.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent")
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Interface) validateRfChannel(formats strfmt.Registry) error {
+	if swag.IsZero(m.RfChannel) { // not required
+		return nil
+	}
+
+	if m.RfChannel != nil {
+		if err := m.RfChannel.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("rf_channel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rf_channel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) validateRfRole(formats strfmt.Registry) error {
+	if swag.IsZero(m.RfRole) { // not required
+		return nil
+	}
+
+	if m.RfRole != nil {
+		if err := m.RfRole.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("rf_role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rf_role")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) validateSpeed(formats strfmt.Registry) error {
+	if swag.IsZero(m.Speed) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("speed", "body", *m.Speed, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("speed", "body", *m.Speed, 2.147483647e+09, false); err != nil {
+		return err
 	}
 
 	return nil
@@ -425,6 +636,8 @@ func (m *Interface) validateTaggedVlans(formats strfmt.Registry) error {
 			if err := m.TaggedVlans[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -449,11 +662,29 @@ func (m *Interface) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *Interface) validateTxPower(formats strfmt.Registry) error {
+	if swag.IsZero(m.TxPower) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("tx_power", "body", *m.TxPower, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("tx_power", "body", *m.TxPower, 127, false); err != nil {
+		return err
 	}
 
 	return nil
@@ -469,6 +700,8 @@ func (m *Interface) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -486,6 +719,8 @@ func (m *Interface) validateUntaggedVlan(formats strfmt.Registry) error {
 		if err := m.UntaggedVlan.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("untagged_vlan")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("untagged_vlan")
 			}
 			return err
 		}
@@ -506,6 +741,74 @@ func (m *Interface) validateURL(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Interface) validateVrf(formats strfmt.Registry) error {
+	if swag.IsZero(m.Vrf) { // not required
+		return nil
+	}
+
+	if m.Vrf != nil {
+		if err := m.Vrf.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vrf")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vrf")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) validateWirelessLans(formats strfmt.Registry) error {
+	if swag.IsZero(m.WirelessLans) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("wireless_lans", "body", m.WirelessLans); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.WirelessLans); i++ {
+		if swag.IsZero(m.WirelessLans[i]) { // not required
+			continue
+		}
+
+		if m.WirelessLans[i] != nil {
+			if err := m.WirelessLans[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("wireless_lans" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("wireless_lans" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Interface) validateWirelessLink(formats strfmt.Registry) error {
+	if swag.IsZero(m.WirelessLink) { // not required
+		return nil
+	}
+
+	if m.WirelessLink != nil {
+		if err := m.WirelessLink.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("wireless_link")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("wireless_link")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this interface based on the context it is used
 func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -514,15 +817,11 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateBridge(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCable(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -535,6 +834,10 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 	}
 
 	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCountFhrpGroups(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -554,6 +857,10 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateDuplex(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateID(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -566,11 +873,31 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateMode(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateModule(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateParent(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRfChannel(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRfRole(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -594,6 +921,18 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateVrf(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateWirelessLans(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateWirelessLink(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -609,12 +948,14 @@ func (m *Interface) contextValidateOccupied(ctx context.Context, formats strfmt.
 	return nil
 }
 
-func (m *Interface) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
+func (m *Interface) contextValidateBridge(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.Cable != nil {
-		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+	if m.Bridge != nil {
+		if err := m.Bridge.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("cable")
+				return ve.ValidateName("bridge")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("bridge")
 			}
 			return err
 		}
@@ -623,15 +964,17 @@ func (m *Interface) contextValidateCable(ctx context.Context, formats strfmt.Reg
 	return nil
 }
 
-func (m *Interface) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
+func (m *Interface) contextValidateCable(ctx context.Context, formats strfmt.Registry) error {
 
-	return nil
-}
-
-func (m *Interface) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
-		return err
+	if m.Cable != nil {
+		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -660,6 +1003,15 @@ func (m *Interface) contextValidateConnectedEndpointType(ctx context.Context, fo
 	return nil
 }
 
+func (m *Interface) contextValidateCountFhrpGroups(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "count_fhrp_groups", "body", int64(m.CountFhrpGroups)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Interface) contextValidateCountIpaddresses(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "count_ipaddresses", "body", int64(m.CountIpaddresses)); err != nil {
@@ -671,7 +1023,7 @@ func (m *Interface) contextValidateCountIpaddresses(ctx context.Context, formats
 
 func (m *Interface) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -684,6 +1036,8 @@ func (m *Interface) contextValidateDevice(ctx context.Context, formats strfmt.Re
 		if err := m.Device.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
 			}
 			return err
 		}
@@ -696,6 +1050,22 @@ func (m *Interface) contextValidateDisplay(ctx context.Context, formats strfmt.R
 
 	if err := validate.ReadOnly(ctx, "display", "body", string(m.Display)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateDuplex(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Duplex != nil {
+		if err := m.Duplex.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("duplex")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("duplex")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -716,6 +1086,8 @@ func (m *Interface) contextValidateLag(ctx context.Context, formats strfmt.Regis
 		if err := m.Lag.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("lag")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("lag")
 			}
 			return err
 		}
@@ -733,12 +1105,44 @@ func (m *Interface) contextValidateLastUpdated(ctx context.Context, formats strf
 	return nil
 }
 
+func (m *Interface) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *Interface) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Interface) contextValidateMode(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Mode != nil {
 		if err := m.Mode.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("mode")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("mode")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Module != nil {
+		if err := m.Module.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module")
 			}
 			return err
 		}
@@ -753,6 +1157,40 @@ func (m *Interface) contextValidateParent(ctx context.Context, formats strfmt.Re
 		if err := m.Parent.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateRfChannel(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.RfChannel != nil {
+		if err := m.RfChannel.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("rf_channel")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rf_channel")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateRfRole(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.RfRole != nil {
+		if err := m.RfRole.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("rf_role")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rf_role")
 			}
 			return err
 		}
@@ -769,6 +1207,8 @@ func (m *Interface) contextValidateTaggedVlans(ctx context.Context, formats strf
 			if err := m.TaggedVlans[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tagged_vlans" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -787,6 +1227,8 @@ func (m *Interface) contextValidateTags(ctx context.Context, formats strfmt.Regi
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -803,6 +1245,8 @@ func (m *Interface) contextValidateType(ctx context.Context, formats strfmt.Regi
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -817,6 +1261,8 @@ func (m *Interface) contextValidateUntaggedVlan(ctx context.Context, formats str
 		if err := m.UntaggedVlan.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("untagged_vlan")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("untagged_vlan")
 			}
 			return err
 		}
@@ -834,6 +1280,58 @@ func (m *Interface) contextValidateURL(ctx context.Context, formats strfmt.Regis
 	return nil
 }
 
+func (m *Interface) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Vrf != nil {
+		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vrf")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("vrf")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateWirelessLans(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.WirelessLans); i++ {
+
+		if m.WirelessLans[i] != nil {
+			if err := m.WirelessLans[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("wireless_lans" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("wireless_lans" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *Interface) contextValidateWirelessLink(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.WirelessLink != nil {
+		if err := m.WirelessLink.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("wireless_link")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("wireless_link")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // MarshalBinary interface implementation
 func (m *Interface) MarshalBinary() ([]byte, error) {
 	if m == nil {
@@ -845,6 +1343,155 @@ func (m *Interface) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Interface) UnmarshalBinary(b []byte) error {
 	var res Interface
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// InterfaceDuplex Duplex
+//
+// swagger:model InterfaceDuplex
+type InterfaceDuplex struct {
+
+	// label
+	// Required: true
+	// Enum: [Half Full Auto]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [half full auto]
+	Value *string `json:"value"`
+}
+
+// Validate validates this interface duplex
+func (m *InterfaceDuplex) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var interfaceDuplexTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Half","Full","Auto"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		interfaceDuplexTypeLabelPropEnum = append(interfaceDuplexTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// InterfaceDuplexLabelHalf captures enum value "Half"
+	InterfaceDuplexLabelHalf string = "Half"
+
+	// InterfaceDuplexLabelFull captures enum value "Full"
+	InterfaceDuplexLabelFull string = "Full"
+
+	// InterfaceDuplexLabelAuto captures enum value "Auto"
+	InterfaceDuplexLabelAuto string = "Auto"
+)
+
+// prop value enum
+func (m *InterfaceDuplex) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, interfaceDuplexTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *InterfaceDuplex) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("duplex"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("duplex"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var interfaceDuplexTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["half","full","auto"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		interfaceDuplexTypeValuePropEnum = append(interfaceDuplexTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// InterfaceDuplexValueHalf captures enum value "half"
+	InterfaceDuplexValueHalf string = "half"
+
+	// InterfaceDuplexValueFull captures enum value "full"
+	InterfaceDuplexValueFull string = "full"
+
+	// InterfaceDuplexValueAuto captures enum value "auto"
+	InterfaceDuplexValueAuto string = "auto"
+)
+
+// prop value enum
+func (m *InterfaceDuplex) validateValueEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, interfaceDuplexTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *InterfaceDuplex) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("duplex"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("duplex"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this interface duplex based on context it is used
+func (m *InterfaceDuplex) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *InterfaceDuplex) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *InterfaceDuplex) UnmarshalBinary(b []byte) error {
+	var res InterfaceDuplex
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -1001,6 +1648,1462 @@ func (m *InterfaceMode) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
+// InterfaceRfChannel Rf channel
+//
+// swagger:model InterfaceRfChannel
+type InterfaceRfChannel struct {
+
+	// label
+	// Required: true
+	// Enum: [1 (2412 MHz) 2 (2417 MHz) 3 (2422 MHz) 4 (2427 MHz) 5 (2432 MHz) 6 (2437 MHz) 7 (2442 MHz) 8 (2447 MHz) 9 (2452 MHz) 10 (2457 MHz) 11 (2462 MHz) 12 (2467 MHz) 13 (2472 MHz) 32 (5160/20 MHz) 34 (5170/40 MHz) 36 (5180/20 MHz) 38 (5190/40 MHz) 40 (5200/20 MHz) 42 (5210/80 MHz) 44 (5220/20 MHz) 46 (5230/40 MHz) 48 (5240/20 MHz) 50 (5250/160 MHz) 52 (5260/20 MHz) 54 (5270/40 MHz) 56 (5280/20 MHz) 58 (5290/80 MHz) 60 (5300/20 MHz) 62 (5310/40 MHz) 64 (5320/20 MHz) 100 (5500/20 MHz) 102 (5510/40 MHz) 104 (5520/20 MHz) 106 (5530/80 MHz) 108 (5540/20 MHz) 110 (5550/40 MHz) 112 (5560/20 MHz) 114 (5570/160 MHz) 116 (5580/20 MHz) 118 (5590/40 MHz) 120 (5600/20 MHz) 122 (5610/80 MHz) 124 (5620/20 MHz) 126 (5630/40 MHz) 128 (5640/20 MHz) 132 (5660/20 MHz) 134 (5670/40 MHz) 136 (5680/20 MHz) 138 (5690/80 MHz) 140 (5700/20 MHz) 142 (5710/40 MHz) 144 (5720/20 MHz) 149 (5745/20 MHz) 151 (5755/40 MHz) 153 (5765/20 MHz) 155 (5775/80 MHz) 157 (5785/20 MHz) 159 (5795/40 MHz) 161 (5805/20 MHz) 163 (5815/160 MHz) 165 (5825/20 MHz) 167 (5835/40 MHz) 169 (5845/20 MHz) 171 (5855/80 MHz) 173 (5865/20 MHz) 175 (5875/40 MHz) 177 (5885/20 MHz) 1 (5955/20 MHz) 3 (5965/40 MHz) 5 (5975/20 MHz) 7 (5985/80 MHz) 9 (5995/20 MHz) 11 (6005/40 MHz) 13 (6015/20 MHz) 15 (6025/160 MHz) 17 (6035/20 MHz) 19 (6045/40 MHz) 21 (6055/20 MHz) 23 (6065/80 MHz) 25 (6075/20 MHz) 27 (6085/40 MHz) 29 (6095/20 MHz) 31 (6105/320 MHz) 33 (6115/20 MHz) 35 (6125/40 MHz) 37 (6135/20 MHz) 39 (6145/80 MHz) 41 (6155/20 MHz) 43 (6165/40 MHz) 45 (6175/20 MHz) 47 (6185/160 MHz) 49 (6195/20 MHz) 51 (6205/40 MHz) 53 (6215/20 MHz) 55 (6225/80 MHz) 57 (6235/20 MHz) 59 (6245/40 MHz) 61 (6255/20 MHz) 65 (6275/20 MHz) 67 (6285/40 MHz) 69 (6295/20 MHz) 71 (6305/80 MHz) 73 (6315/20 MHz) 75 (6325/40 MHz) 77 (6335/20 MHz) 79 (6345/160 MHz) 81 (6355/20 MHz) 83 (6365/40 MHz) 85 (6375/20 MHz) 87 (6385/80 MHz) 89 (6395/20 MHz) 91 (6405/40 MHz) 93 (6415/20 MHz) 95 (6425/320 MHz) 97 (6435/20 MHz) 99 (6445/40 MHz) 101 (6455/20 MHz) 103 (6465/80 MHz) 105 (6475/20 MHz) 107 (6485/40 MHz) 109 (6495/20 MHz) 111 (6505/160 MHz) 113 (6515/20 MHz) 115 (6525/40 MHz) 117 (6535/20 MHz) 119 (6545/80 MHz) 121 (6555/20 MHz) 123 (6565/40 MHz) 125 (6575/20 MHz) 129 (6595/20 MHz) 131 (6605/40 MHz) 133 (6615/20 MHz) 135 (6625/80 MHz) 137 (6635/20 MHz) 139 (6645/40 MHz) 141 (6655/20 MHz) 143 (6665/160 MHz) 145 (6675/20 MHz) 147 (6685/40 MHz) 149 (6695/20 MHz) 151 (6705/80 MHz) 153 (6715/20 MHz) 155 (6725/40 MHz) 157 (6735/20 MHz) 159 (6745/320 MHz) 161 (6755/20 MHz) 163 (6765/40 MHz) 165 (6775/20 MHz) 167 (6785/80 MHz) 169 (6795/20 MHz) 171 (6805/40 MHz) 173 (6815/20 MHz) 175 (6825/160 MHz) 177 (6835/20 MHz) 179 (6845/40 MHz) 181 (6855/20 MHz) 183 (6865/80 MHz) 185 (6875/20 MHz) 187 (6885/40 MHz) 189 (6895/20 MHz) 193 (6915/20 MHz) 195 (6925/40 MHz) 197 (6935/20 MHz) 199 (6945/80 MHz) 201 (6955/20 MHz) 203 (6965/40 MHz) 205 (6975/20 MHz) 207 (6985/160 MHz) 209 (6995/20 MHz) 211 (7005/40 MHz) 213 (7015/20 MHz) 215 (7025/80 MHz) 217 (7035/20 MHz) 219 (7045/40 MHz) 221 (7055/20 MHz) 225 (7075/20 MHz) 227 (7085/40 MHz) 229 (7095/20 MHz) 233 (7115/20 MHz) 1 (58.32/2.16 GHz) 2 (60.48/2.16 GHz) 3 (62.64/2.16 GHz) 4 (64.80/2.16 GHz) 5 (66.96/2.16 GHz) 6 (69.12/2.16 GHz) 9 (59.40/4.32 GHz) 10 (61.56/4.32 GHz) 11 (63.72/4.32 GHz) 12 (65.88/4.32 GHz) 13 (68.04/4.32 GHz) 17 (60.48/6.48 GHz) 18 (62.64/6.48 GHz) 19 (64.80/6.48 GHz) 20 (66.96/6.48 GHz) 25 (61.56/8.64 GHz) 26 (63.72/8.64 GHz) 27 (65.88/8.64 GHz)]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [2.4g-1-2412-22 2.4g-2-2417-22 2.4g-3-2422-22 2.4g-4-2427-22 2.4g-5-2432-22 2.4g-6-2437-22 2.4g-7-2442-22 2.4g-8-2447-22 2.4g-9-2452-22 2.4g-10-2457-22 2.4g-11-2462-22 2.4g-12-2467-22 2.4g-13-2472-22 5g-32-5160-20 5g-34-5170-40 5g-36-5180-20 5g-38-5190-40 5g-40-5200-20 5g-42-5210-80 5g-44-5220-20 5g-46-5230-40 5g-48-5240-20 5g-50-5250-160 5g-52-5260-20 5g-54-5270-40 5g-56-5280-20 5g-58-5290-80 5g-60-5300-20 5g-62-5310-40 5g-64-5320-20 5g-100-5500-20 5g-102-5510-40 5g-104-5520-20 5g-106-5530-80 5g-108-5540-20 5g-110-5550-40 5g-112-5560-20 5g-114-5570-160 5g-116-5580-20 5g-118-5590-40 5g-120-5600-20 5g-122-5610-80 5g-124-5620-20 5g-126-5630-40 5g-128-5640-20 5g-132-5660-20 5g-134-5670-40 5g-136-5680-20 5g-138-5690-80 5g-140-5700-20 5g-142-5710-40 5g-144-5720-20 5g-149-5745-20 5g-151-5755-40 5g-153-5765-20 5g-155-5775-80 5g-157-5785-20 5g-159-5795-40 5g-161-5805-20 5g-163-5815-160 5g-165-5825-20 5g-167-5835-40 5g-169-5845-20 5g-171-5855-80 5g-173-5865-20 5g-175-5875-40 5g-177-5885-20 6g-1-5955-20 6g-3-5965-40 6g-5-5975-20 6g-7-5985-80 6g-9-5995-20 6g-11-6005-40 6g-13-6015-20 6g-15-6025-160 6g-17-6035-20 6g-19-6045-40 6g-21-6055-20 6g-23-6065-80 6g-25-6075-20 6g-27-6085-40 6g-29-6095-20 6g-31-6105-320 6g-33-6115-20 6g-35-6125-40 6g-37-6135-20 6g-39-6145-80 6g-41-6155-20 6g-43-6165-40 6g-45-6175-20 6g-47-6185-160 6g-49-6195-20 6g-51-6205-40 6g-53-6215-20 6g-55-6225-80 6g-57-6235-20 6g-59-6245-40 6g-61-6255-20 6g-65-6275-20 6g-67-6285-40 6g-69-6295-20 6g-71-6305-80 6g-73-6315-20 6g-75-6325-40 6g-77-6335-20 6g-79-6345-160 6g-81-6355-20 6g-83-6365-40 6g-85-6375-20 6g-87-6385-80 6g-89-6395-20 6g-91-6405-40 6g-93-6415-20 6g-95-6425-320 6g-97-6435-20 6g-99-6445-40 6g-101-6455-20 6g-103-6465-80 6g-105-6475-20 6g-107-6485-40 6g-109-6495-20 6g-111-6505-160 6g-113-6515-20 6g-115-6525-40 6g-117-6535-20 6g-119-6545-80 6g-121-6555-20 6g-123-6565-40 6g-125-6575-20 6g-129-6595-20 6g-131-6605-40 6g-133-6615-20 6g-135-6625-80 6g-137-6635-20 6g-139-6645-40 6g-141-6655-20 6g-143-6665-160 6g-145-6675-20 6g-147-6685-40 6g-149-6695-20 6g-151-6705-80 6g-153-6715-20 6g-155-6725-40 6g-157-6735-20 6g-159-6745-320 6g-161-6755-20 6g-163-6765-40 6g-165-6775-20 6g-167-6785-80 6g-169-6795-20 6g-171-6805-40 6g-173-6815-20 6g-175-6825-160 6g-177-6835-20 6g-179-6845-40 6g-181-6855-20 6g-183-6865-80 6g-185-6875-20 6g-187-6885-40 6g-189-6895-20 6g-193-6915-20 6g-195-6925-40 6g-197-6935-20 6g-199-6945-80 6g-201-6955-20 6g-203-6965-40 6g-205-6975-20 6g-207-6985-160 6g-209-6995-20 6g-211-7005-40 6g-213-7015-20 6g-215-7025-80 6g-217-7035-20 6g-219-7045-40 6g-221-7055-20 6g-225-7075-20 6g-227-7085-40 6g-229-7095-20 6g-233-7115-20 60g-1-58320-2160 60g-2-60480-2160 60g-3-62640-2160 60g-4-64800-2160 60g-5-66960-2160 60g-6-69120-2160 60g-9-59400-4320 60g-10-61560-4320 60g-11-63720-4320 60g-12-65880-4320 60g-13-68040-4320 60g-17-60480-6480 60g-18-62640-6480 60g-19-64800-6480 60g-20-66960-6480 60g-25-61560-6480 60g-26-63720-6480 60g-27-65880-6480]
+	Value *string `json:"value"`
+}
+
+// Validate validates this interface rf channel
+func (m *InterfaceRfChannel) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var interfaceRfChannelTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["1 (2412 MHz)","2 (2417 MHz)","3 (2422 MHz)","4 (2427 MHz)","5 (2432 MHz)","6 (2437 MHz)","7 (2442 MHz)","8 (2447 MHz)","9 (2452 MHz)","10 (2457 MHz)","11 (2462 MHz)","12 (2467 MHz)","13 (2472 MHz)","32 (5160/20 MHz)","34 (5170/40 MHz)","36 (5180/20 MHz)","38 (5190/40 MHz)","40 (5200/20 MHz)","42 (5210/80 MHz)","44 (5220/20 MHz)","46 (5230/40 MHz)","48 (5240/20 MHz)","50 (5250/160 MHz)","52 (5260/20 MHz)","54 (5270/40 MHz)","56 (5280/20 MHz)","58 (5290/80 MHz)","60 (5300/20 MHz)","62 (5310/40 MHz)","64 (5320/20 MHz)","100 (5500/20 MHz)","102 (5510/40 MHz)","104 (5520/20 MHz)","106 (5530/80 MHz)","108 (5540/20 MHz)","110 (5550/40 MHz)","112 (5560/20 MHz)","114 (5570/160 MHz)","116 (5580/20 MHz)","118 (5590/40 MHz)","120 (5600/20 MHz)","122 (5610/80 MHz)","124 (5620/20 MHz)","126 (5630/40 MHz)","128 (5640/20 MHz)","132 (5660/20 MHz)","134 (5670/40 MHz)","136 (5680/20 MHz)","138 (5690/80 MHz)","140 (5700/20 MHz)","142 (5710/40 MHz)","144 (5720/20 MHz)","149 (5745/20 MHz)","151 (5755/40 MHz)","153 (5765/20 MHz)","155 (5775/80 MHz)","157 (5785/20 MHz)","159 (5795/40 MHz)","161 (5805/20 MHz)","163 (5815/160 MHz)","165 (5825/20 MHz)","167 (5835/40 MHz)","169 (5845/20 MHz)","171 (5855/80 MHz)","173 (5865/20 MHz)","175 (5875/40 MHz)","177 (5885/20 MHz)","1 (5955/20 MHz)","3 (5965/40 MHz)","5 (5975/20 MHz)","7 (5985/80 MHz)","9 (5995/20 MHz)","11 (6005/40 MHz)","13 (6015/20 MHz)","15 (6025/160 MHz)","17 (6035/20 MHz)","19 (6045/40 MHz)","21 (6055/20 MHz)","23 (6065/80 MHz)","25 (6075/20 MHz)","27 (6085/40 MHz)","29 (6095/20 MHz)","31 (6105/320 MHz)","33 (6115/20 MHz)","35 (6125/40 MHz)","37 (6135/20 MHz)","39 (6145/80 MHz)","41 (6155/20 MHz)","43 (6165/40 MHz)","45 (6175/20 MHz)","47 (6185/160 MHz)","49 (6195/20 MHz)","51 (6205/40 MHz)","53 (6215/20 MHz)","55 (6225/80 MHz)","57 (6235/20 MHz)","59 (6245/40 MHz)","61 (6255/20 MHz)","65 (6275/20 MHz)","67 (6285/40 MHz)","69 (6295/20 MHz)","71 (6305/80 MHz)","73 (6315/20 MHz)","75 (6325/40 MHz)","77 (6335/20 MHz)","79 (6345/160 MHz)","81 (6355/20 MHz)","83 (6365/40 MHz)","85 (6375/20 MHz)","87 (6385/80 MHz)","89 (6395/20 MHz)","91 (6405/40 MHz)","93 (6415/20 MHz)","95 (6425/320 MHz)","97 (6435/20 MHz)","99 (6445/40 MHz)","101 (6455/20 MHz)","103 (6465/80 MHz)","105 (6475/20 MHz)","107 (6485/40 MHz)","109 (6495/20 MHz)","111 (6505/160 MHz)","113 (6515/20 MHz)","115 (6525/40 MHz)","117 (6535/20 MHz)","119 (6545/80 MHz)","121 (6555/20 MHz)","123 (6565/40 MHz)","125 (6575/20 MHz)","129 (6595/20 MHz)","131 (6605/40 MHz)","133 (6615/20 MHz)","135 (6625/80 MHz)","137 (6635/20 MHz)","139 (6645/40 MHz)","141 (6655/20 MHz)","143 (6665/160 MHz)","145 (6675/20 MHz)","147 (6685/40 MHz)","149 (6695/20 MHz)","151 (6705/80 MHz)","153 (6715/20 MHz)","155 (6725/40 MHz)","157 (6735/20 MHz)","159 (6745/320 MHz)","161 (6755/20 MHz)","163 (6765/40 MHz)","165 (6775/20 MHz)","167 (6785/80 MHz)","169 (6795/20 MHz)","171 (6805/40 MHz)","173 (6815/20 MHz)","175 (6825/160 MHz)","177 (6835/20 MHz)","179 (6845/40 MHz)","181 (6855/20 MHz)","183 (6865/80 MHz)","185 (6875/20 MHz)","187 (6885/40 MHz)","189 (6895/20 MHz)","193 (6915/20 MHz)","195 (6925/40 MHz)","197 (6935/20 MHz)","199 (6945/80 MHz)","201 (6955/20 MHz)","203 (6965/40 MHz)","205 (6975/20 MHz)","207 (6985/160 MHz)","209 (6995/20 MHz)","211 (7005/40 MHz)","213 (7015/20 MHz)","215 (7025/80 MHz)","217 (7035/20 MHz)","219 (7045/40 MHz)","221 (7055/20 MHz)","225 (7075/20 MHz)","227 (7085/40 MHz)","229 (7095/20 MHz)","233 (7115/20 MHz)","1 (58.32/2.16 GHz)","2 (60.48/2.16 GHz)","3 (62.64/2.16 GHz)","4 (64.80/2.16 GHz)","5 (66.96/2.16 GHz)","6 (69.12/2.16 GHz)","9 (59.40/4.32 GHz)","10 (61.56/4.32 GHz)","11 (63.72/4.32 GHz)","12 (65.88/4.32 GHz)","13 (68.04/4.32 GHz)","17 (60.48/6.48 GHz)","18 (62.64/6.48 GHz)","19 (64.80/6.48 GHz)","20 (66.96/6.48 GHz)","25 (61.56/8.64 GHz)","26 (63.72/8.64 GHz)","27 (65.88/8.64 GHz)"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		interfaceRfChannelTypeLabelPropEnum = append(interfaceRfChannelTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// InterfaceRfChannelLabelNr12412MHz captures enum value "1 (2412 MHz)"
+	InterfaceRfChannelLabelNr12412MHz string = "1 (2412 MHz)"
+
+	// InterfaceRfChannelLabelNr22417MHz captures enum value "2 (2417 MHz)"
+	InterfaceRfChannelLabelNr22417MHz string = "2 (2417 MHz)"
+
+	// InterfaceRfChannelLabelNr32422MHz captures enum value "3 (2422 MHz)"
+	InterfaceRfChannelLabelNr32422MHz string = "3 (2422 MHz)"
+
+	// InterfaceRfChannelLabelNr42427MHz captures enum value "4 (2427 MHz)"
+	InterfaceRfChannelLabelNr42427MHz string = "4 (2427 MHz)"
+
+	// InterfaceRfChannelLabelNr52432MHz captures enum value "5 (2432 MHz)"
+	InterfaceRfChannelLabelNr52432MHz string = "5 (2432 MHz)"
+
+	// InterfaceRfChannelLabelNr62437MHz captures enum value "6 (2437 MHz)"
+	InterfaceRfChannelLabelNr62437MHz string = "6 (2437 MHz)"
+
+	// InterfaceRfChannelLabelNr72442MHz captures enum value "7 (2442 MHz)"
+	InterfaceRfChannelLabelNr72442MHz string = "7 (2442 MHz)"
+
+	// InterfaceRfChannelLabelNr82447MHz captures enum value "8 (2447 MHz)"
+	InterfaceRfChannelLabelNr82447MHz string = "8 (2447 MHz)"
+
+	// InterfaceRfChannelLabelNr92452MHz captures enum value "9 (2452 MHz)"
+	InterfaceRfChannelLabelNr92452MHz string = "9 (2452 MHz)"
+
+	// InterfaceRfChannelLabelNr102457MHz captures enum value "10 (2457 MHz)"
+	InterfaceRfChannelLabelNr102457MHz string = "10 (2457 MHz)"
+
+	// InterfaceRfChannelLabelNr112462MHz captures enum value "11 (2462 MHz)"
+	InterfaceRfChannelLabelNr112462MHz string = "11 (2462 MHz)"
+
+	// InterfaceRfChannelLabelNr122467MHz captures enum value "12 (2467 MHz)"
+	InterfaceRfChannelLabelNr122467MHz string = "12 (2467 MHz)"
+
+	// InterfaceRfChannelLabelNr132472MHz captures enum value "13 (2472 MHz)"
+	InterfaceRfChannelLabelNr132472MHz string = "13 (2472 MHz)"
+
+	// InterfaceRfChannelLabelNr32516020MHz captures enum value "32 (5160/20 MHz)"
+	InterfaceRfChannelLabelNr32516020MHz string = "32 (5160/20 MHz)"
+
+	// InterfaceRfChannelLabelNr34517040MHz captures enum value "34 (5170/40 MHz)"
+	InterfaceRfChannelLabelNr34517040MHz string = "34 (5170/40 MHz)"
+
+	// InterfaceRfChannelLabelNr36518020MHz captures enum value "36 (5180/20 MHz)"
+	InterfaceRfChannelLabelNr36518020MHz string = "36 (5180/20 MHz)"
+
+	// InterfaceRfChannelLabelNr38519040MHz captures enum value "38 (5190/40 MHz)"
+	InterfaceRfChannelLabelNr38519040MHz string = "38 (5190/40 MHz)"
+
+	// InterfaceRfChannelLabelNr40520020MHz captures enum value "40 (5200/20 MHz)"
+	InterfaceRfChannelLabelNr40520020MHz string = "40 (5200/20 MHz)"
+
+	// InterfaceRfChannelLabelNr42521080MHz captures enum value "42 (5210/80 MHz)"
+	InterfaceRfChannelLabelNr42521080MHz string = "42 (5210/80 MHz)"
+
+	// InterfaceRfChannelLabelNr44522020MHz captures enum value "44 (5220/20 MHz)"
+	InterfaceRfChannelLabelNr44522020MHz string = "44 (5220/20 MHz)"
+
+	// InterfaceRfChannelLabelNr46523040MHz captures enum value "46 (5230/40 MHz)"
+	InterfaceRfChannelLabelNr46523040MHz string = "46 (5230/40 MHz)"
+
+	// InterfaceRfChannelLabelNr48524020MHz captures enum value "48 (5240/20 MHz)"
+	InterfaceRfChannelLabelNr48524020MHz string = "48 (5240/20 MHz)"
+
+	// InterfaceRfChannelLabelNr505250160MHz captures enum value "50 (5250/160 MHz)"
+	InterfaceRfChannelLabelNr505250160MHz string = "50 (5250/160 MHz)"
+
+	// InterfaceRfChannelLabelNr52526020MHz captures enum value "52 (5260/20 MHz)"
+	InterfaceRfChannelLabelNr52526020MHz string = "52 (5260/20 MHz)"
+
+	// InterfaceRfChannelLabelNr54527040MHz captures enum value "54 (5270/40 MHz)"
+	InterfaceRfChannelLabelNr54527040MHz string = "54 (5270/40 MHz)"
+
+	// InterfaceRfChannelLabelNr56528020MHz captures enum value "56 (5280/20 MHz)"
+	InterfaceRfChannelLabelNr56528020MHz string = "56 (5280/20 MHz)"
+
+	// InterfaceRfChannelLabelNr58529080MHz captures enum value "58 (5290/80 MHz)"
+	InterfaceRfChannelLabelNr58529080MHz string = "58 (5290/80 MHz)"
+
+	// InterfaceRfChannelLabelNr60530020MHz captures enum value "60 (5300/20 MHz)"
+	InterfaceRfChannelLabelNr60530020MHz string = "60 (5300/20 MHz)"
+
+	// InterfaceRfChannelLabelNr62531040MHz captures enum value "62 (5310/40 MHz)"
+	InterfaceRfChannelLabelNr62531040MHz string = "62 (5310/40 MHz)"
+
+	// InterfaceRfChannelLabelNr64532020MHz captures enum value "64 (5320/20 MHz)"
+	InterfaceRfChannelLabelNr64532020MHz string = "64 (5320/20 MHz)"
+
+	// InterfaceRfChannelLabelNr100550020MHz captures enum value "100 (5500/20 MHz)"
+	InterfaceRfChannelLabelNr100550020MHz string = "100 (5500/20 MHz)"
+
+	// InterfaceRfChannelLabelNr102551040MHz captures enum value "102 (5510/40 MHz)"
+	InterfaceRfChannelLabelNr102551040MHz string = "102 (5510/40 MHz)"
+
+	// InterfaceRfChannelLabelNr104552020MHz captures enum value "104 (5520/20 MHz)"
+	InterfaceRfChannelLabelNr104552020MHz string = "104 (5520/20 MHz)"
+
+	// InterfaceRfChannelLabelNr106553080MHz captures enum value "106 (5530/80 MHz)"
+	InterfaceRfChannelLabelNr106553080MHz string = "106 (5530/80 MHz)"
+
+	// InterfaceRfChannelLabelNr108554020MHz captures enum value "108 (5540/20 MHz)"
+	InterfaceRfChannelLabelNr108554020MHz string = "108 (5540/20 MHz)"
+
+	// InterfaceRfChannelLabelNr110555040MHz captures enum value "110 (5550/40 MHz)"
+	InterfaceRfChannelLabelNr110555040MHz string = "110 (5550/40 MHz)"
+
+	// InterfaceRfChannelLabelNr112556020MHz captures enum value "112 (5560/20 MHz)"
+	InterfaceRfChannelLabelNr112556020MHz string = "112 (5560/20 MHz)"
+
+	// InterfaceRfChannelLabelNr1145570160MHz captures enum value "114 (5570/160 MHz)"
+	InterfaceRfChannelLabelNr1145570160MHz string = "114 (5570/160 MHz)"
+
+	// InterfaceRfChannelLabelNr116558020MHz captures enum value "116 (5580/20 MHz)"
+	InterfaceRfChannelLabelNr116558020MHz string = "116 (5580/20 MHz)"
+
+	// InterfaceRfChannelLabelNr118559040MHz captures enum value "118 (5590/40 MHz)"
+	InterfaceRfChannelLabelNr118559040MHz string = "118 (5590/40 MHz)"
+
+	// InterfaceRfChannelLabelNr120560020MHz captures enum value "120 (5600/20 MHz)"
+	InterfaceRfChannelLabelNr120560020MHz string = "120 (5600/20 MHz)"
+
+	// InterfaceRfChannelLabelNr122561080MHz captures enum value "122 (5610/80 MHz)"
+	InterfaceRfChannelLabelNr122561080MHz string = "122 (5610/80 MHz)"
+
+	// InterfaceRfChannelLabelNr124562020MHz captures enum value "124 (5620/20 MHz)"
+	InterfaceRfChannelLabelNr124562020MHz string = "124 (5620/20 MHz)"
+
+	// InterfaceRfChannelLabelNr126563040MHz captures enum value "126 (5630/40 MHz)"
+	InterfaceRfChannelLabelNr126563040MHz string = "126 (5630/40 MHz)"
+
+	// InterfaceRfChannelLabelNr128564020MHz captures enum value "128 (5640/20 MHz)"
+	InterfaceRfChannelLabelNr128564020MHz string = "128 (5640/20 MHz)"
+
+	// InterfaceRfChannelLabelNr132566020MHz captures enum value "132 (5660/20 MHz)"
+	InterfaceRfChannelLabelNr132566020MHz string = "132 (5660/20 MHz)"
+
+	// InterfaceRfChannelLabelNr134567040MHz captures enum value "134 (5670/40 MHz)"
+	InterfaceRfChannelLabelNr134567040MHz string = "134 (5670/40 MHz)"
+
+	// InterfaceRfChannelLabelNr136568020MHz captures enum value "136 (5680/20 MHz)"
+	InterfaceRfChannelLabelNr136568020MHz string = "136 (5680/20 MHz)"
+
+	// InterfaceRfChannelLabelNr138569080MHz captures enum value "138 (5690/80 MHz)"
+	InterfaceRfChannelLabelNr138569080MHz string = "138 (5690/80 MHz)"
+
+	// InterfaceRfChannelLabelNr140570020MHz captures enum value "140 (5700/20 MHz)"
+	InterfaceRfChannelLabelNr140570020MHz string = "140 (5700/20 MHz)"
+
+	// InterfaceRfChannelLabelNr142571040MHz captures enum value "142 (5710/40 MHz)"
+	InterfaceRfChannelLabelNr142571040MHz string = "142 (5710/40 MHz)"
+
+	// InterfaceRfChannelLabelNr144572020MHz captures enum value "144 (5720/20 MHz)"
+	InterfaceRfChannelLabelNr144572020MHz string = "144 (5720/20 MHz)"
+
+	// InterfaceRfChannelLabelNr149574520MHz captures enum value "149 (5745/20 MHz)"
+	InterfaceRfChannelLabelNr149574520MHz string = "149 (5745/20 MHz)"
+
+	// InterfaceRfChannelLabelNr151575540MHz captures enum value "151 (5755/40 MHz)"
+	InterfaceRfChannelLabelNr151575540MHz string = "151 (5755/40 MHz)"
+
+	// InterfaceRfChannelLabelNr153576520MHz captures enum value "153 (5765/20 MHz)"
+	InterfaceRfChannelLabelNr153576520MHz string = "153 (5765/20 MHz)"
+
+	// InterfaceRfChannelLabelNr155577580MHz captures enum value "155 (5775/80 MHz)"
+	InterfaceRfChannelLabelNr155577580MHz string = "155 (5775/80 MHz)"
+
+	// InterfaceRfChannelLabelNr157578520MHz captures enum value "157 (5785/20 MHz)"
+	InterfaceRfChannelLabelNr157578520MHz string = "157 (5785/20 MHz)"
+
+	// InterfaceRfChannelLabelNr159579540MHz captures enum value "159 (5795/40 MHz)"
+	InterfaceRfChannelLabelNr159579540MHz string = "159 (5795/40 MHz)"
+
+	// InterfaceRfChannelLabelNr161580520MHz captures enum value "161 (5805/20 MHz)"
+	InterfaceRfChannelLabelNr161580520MHz string = "161 (5805/20 MHz)"
+
+	// InterfaceRfChannelLabelNr1635815160MHz captures enum value "163 (5815/160 MHz)"
+	InterfaceRfChannelLabelNr1635815160MHz string = "163 (5815/160 MHz)"
+
+	// InterfaceRfChannelLabelNr165582520MHz captures enum value "165 (5825/20 MHz)"
+	InterfaceRfChannelLabelNr165582520MHz string = "165 (5825/20 MHz)"
+
+	// InterfaceRfChannelLabelNr167583540MHz captures enum value "167 (5835/40 MHz)"
+	InterfaceRfChannelLabelNr167583540MHz string = "167 (5835/40 MHz)"
+
+	// InterfaceRfChannelLabelNr169584520MHz captures enum value "169 (5845/20 MHz)"
+	InterfaceRfChannelLabelNr169584520MHz string = "169 (5845/20 MHz)"
+
+	// InterfaceRfChannelLabelNr171585580MHz captures enum value "171 (5855/80 MHz)"
+	InterfaceRfChannelLabelNr171585580MHz string = "171 (5855/80 MHz)"
+
+	// InterfaceRfChannelLabelNr173586520MHz captures enum value "173 (5865/20 MHz)"
+	InterfaceRfChannelLabelNr173586520MHz string = "173 (5865/20 MHz)"
+
+	// InterfaceRfChannelLabelNr175587540MHz captures enum value "175 (5875/40 MHz)"
+	InterfaceRfChannelLabelNr175587540MHz string = "175 (5875/40 MHz)"
+
+	// InterfaceRfChannelLabelNr177588520MHz captures enum value "177 (5885/20 MHz)"
+	InterfaceRfChannelLabelNr177588520MHz string = "177 (5885/20 MHz)"
+
+	// InterfaceRfChannelLabelNr1595520MHz captures enum value "1 (5955/20 MHz)"
+	InterfaceRfChannelLabelNr1595520MHz string = "1 (5955/20 MHz)"
+
+	// InterfaceRfChannelLabelNr3596540MHz captures enum value "3 (5965/40 MHz)"
+	InterfaceRfChannelLabelNr3596540MHz string = "3 (5965/40 MHz)"
+
+	// InterfaceRfChannelLabelNr5597520MHz captures enum value "5 (5975/20 MHz)"
+	InterfaceRfChannelLabelNr5597520MHz string = "5 (5975/20 MHz)"
+
+	// InterfaceRfChannelLabelNr7598580MHz captures enum value "7 (5985/80 MHz)"
+	InterfaceRfChannelLabelNr7598580MHz string = "7 (5985/80 MHz)"
+
+	// InterfaceRfChannelLabelNr9599520MHz captures enum value "9 (5995/20 MHz)"
+	InterfaceRfChannelLabelNr9599520MHz string = "9 (5995/20 MHz)"
+
+	// InterfaceRfChannelLabelNr11600540MHz captures enum value "11 (6005/40 MHz)"
+	InterfaceRfChannelLabelNr11600540MHz string = "11 (6005/40 MHz)"
+
+	// InterfaceRfChannelLabelNr13601520MHz captures enum value "13 (6015/20 MHz)"
+	InterfaceRfChannelLabelNr13601520MHz string = "13 (6015/20 MHz)"
+
+	// InterfaceRfChannelLabelNr156025160MHz captures enum value "15 (6025/160 MHz)"
+	InterfaceRfChannelLabelNr156025160MHz string = "15 (6025/160 MHz)"
+
+	// InterfaceRfChannelLabelNr17603520MHz captures enum value "17 (6035/20 MHz)"
+	InterfaceRfChannelLabelNr17603520MHz string = "17 (6035/20 MHz)"
+
+	// InterfaceRfChannelLabelNr19604540MHz captures enum value "19 (6045/40 MHz)"
+	InterfaceRfChannelLabelNr19604540MHz string = "19 (6045/40 MHz)"
+
+	// InterfaceRfChannelLabelNr21605520MHz captures enum value "21 (6055/20 MHz)"
+	InterfaceRfChannelLabelNr21605520MHz string = "21 (6055/20 MHz)"
+
+	// InterfaceRfChannelLabelNr23606580MHz captures enum value "23 (6065/80 MHz)"
+	InterfaceRfChannelLabelNr23606580MHz string = "23 (6065/80 MHz)"
+
+	// InterfaceRfChannelLabelNr25607520MHz captures enum value "25 (6075/20 MHz)"
+	InterfaceRfChannelLabelNr25607520MHz string = "25 (6075/20 MHz)"
+
+	// InterfaceRfChannelLabelNr27608540MHz captures enum value "27 (6085/40 MHz)"
+	InterfaceRfChannelLabelNr27608540MHz string = "27 (6085/40 MHz)"
+
+	// InterfaceRfChannelLabelNr29609520MHz captures enum value "29 (6095/20 MHz)"
+	InterfaceRfChannelLabelNr29609520MHz string = "29 (6095/20 MHz)"
+
+	// InterfaceRfChannelLabelNr316105320MHz captures enum value "31 (6105/320 MHz)"
+	InterfaceRfChannelLabelNr316105320MHz string = "31 (6105/320 MHz)"
+
+	// InterfaceRfChannelLabelNr33611520MHz captures enum value "33 (6115/20 MHz)"
+	InterfaceRfChannelLabelNr33611520MHz string = "33 (6115/20 MHz)"
+
+	// InterfaceRfChannelLabelNr35612540MHz captures enum value "35 (6125/40 MHz)"
+	InterfaceRfChannelLabelNr35612540MHz string = "35 (6125/40 MHz)"
+
+	// InterfaceRfChannelLabelNr37613520MHz captures enum value "37 (6135/20 MHz)"
+	InterfaceRfChannelLabelNr37613520MHz string = "37 (6135/20 MHz)"
+
+	// InterfaceRfChannelLabelNr39614580MHz captures enum value "39 (6145/80 MHz)"
+	InterfaceRfChannelLabelNr39614580MHz string = "39 (6145/80 MHz)"
+
+	// InterfaceRfChannelLabelNr41615520MHz captures enum value "41 (6155/20 MHz)"
+	InterfaceRfChannelLabelNr41615520MHz string = "41 (6155/20 MHz)"
+
+	// InterfaceRfChannelLabelNr43616540MHz captures enum value "43 (6165/40 MHz)"
+	InterfaceRfChannelLabelNr43616540MHz string = "43 (6165/40 MHz)"
+
+	// InterfaceRfChannelLabelNr45617520MHz captures enum value "45 (6175/20 MHz)"
+	InterfaceRfChannelLabelNr45617520MHz string = "45 (6175/20 MHz)"
+
+	// InterfaceRfChannelLabelNr476185160MHz captures enum value "47 (6185/160 MHz)"
+	InterfaceRfChannelLabelNr476185160MHz string = "47 (6185/160 MHz)"
+
+	// InterfaceRfChannelLabelNr49619520MHz captures enum value "49 (6195/20 MHz)"
+	InterfaceRfChannelLabelNr49619520MHz string = "49 (6195/20 MHz)"
+
+	// InterfaceRfChannelLabelNr51620540MHz captures enum value "51 (6205/40 MHz)"
+	InterfaceRfChannelLabelNr51620540MHz string = "51 (6205/40 MHz)"
+
+	// InterfaceRfChannelLabelNr53621520MHz captures enum value "53 (6215/20 MHz)"
+	InterfaceRfChannelLabelNr53621520MHz string = "53 (6215/20 MHz)"
+
+	// InterfaceRfChannelLabelNr55622580MHz captures enum value "55 (6225/80 MHz)"
+	InterfaceRfChannelLabelNr55622580MHz string = "55 (6225/80 MHz)"
+
+	// InterfaceRfChannelLabelNr57623520MHz captures enum value "57 (6235/20 MHz)"
+	InterfaceRfChannelLabelNr57623520MHz string = "57 (6235/20 MHz)"
+
+	// InterfaceRfChannelLabelNr59624540MHz captures enum value "59 (6245/40 MHz)"
+	InterfaceRfChannelLabelNr59624540MHz string = "59 (6245/40 MHz)"
+
+	// InterfaceRfChannelLabelNr61625520MHz captures enum value "61 (6255/20 MHz)"
+	InterfaceRfChannelLabelNr61625520MHz string = "61 (6255/20 MHz)"
+
+	// InterfaceRfChannelLabelNr65627520MHz captures enum value "65 (6275/20 MHz)"
+	InterfaceRfChannelLabelNr65627520MHz string = "65 (6275/20 MHz)"
+
+	// InterfaceRfChannelLabelNr67628540MHz captures enum value "67 (6285/40 MHz)"
+	InterfaceRfChannelLabelNr67628540MHz string = "67 (6285/40 MHz)"
+
+	// InterfaceRfChannelLabelNr69629520MHz captures enum value "69 (6295/20 MHz)"
+	InterfaceRfChannelLabelNr69629520MHz string = "69 (6295/20 MHz)"
+
+	// InterfaceRfChannelLabelNr71630580MHz captures enum value "71 (6305/80 MHz)"
+	InterfaceRfChannelLabelNr71630580MHz string = "71 (6305/80 MHz)"
+
+	// InterfaceRfChannelLabelNr73631520MHz captures enum value "73 (6315/20 MHz)"
+	InterfaceRfChannelLabelNr73631520MHz string = "73 (6315/20 MHz)"
+
+	// InterfaceRfChannelLabelNr75632540MHz captures enum value "75 (6325/40 MHz)"
+	InterfaceRfChannelLabelNr75632540MHz string = "75 (6325/40 MHz)"
+
+	// InterfaceRfChannelLabelNr77633520MHz captures enum value "77 (6335/20 MHz)"
+	InterfaceRfChannelLabelNr77633520MHz string = "77 (6335/20 MHz)"
+
+	// InterfaceRfChannelLabelNr796345160MHz captures enum value "79 (6345/160 MHz)"
+	InterfaceRfChannelLabelNr796345160MHz string = "79 (6345/160 MHz)"
+
+	// InterfaceRfChannelLabelNr81635520MHz captures enum value "81 (6355/20 MHz)"
+	InterfaceRfChannelLabelNr81635520MHz string = "81 (6355/20 MHz)"
+
+	// InterfaceRfChannelLabelNr83636540MHz captures enum value "83 (6365/40 MHz)"
+	InterfaceRfChannelLabelNr83636540MHz string = "83 (6365/40 MHz)"
+
+	// InterfaceRfChannelLabelNr85637520MHz captures enum value "85 (6375/20 MHz)"
+	InterfaceRfChannelLabelNr85637520MHz string = "85 (6375/20 MHz)"
+
+	// InterfaceRfChannelLabelNr87638580MHz captures enum value "87 (6385/80 MHz)"
+	InterfaceRfChannelLabelNr87638580MHz string = "87 (6385/80 MHz)"
+
+	// InterfaceRfChannelLabelNr89639520MHz captures enum value "89 (6395/20 MHz)"
+	InterfaceRfChannelLabelNr89639520MHz string = "89 (6395/20 MHz)"
+
+	// InterfaceRfChannelLabelNr91640540MHz captures enum value "91 (6405/40 MHz)"
+	InterfaceRfChannelLabelNr91640540MHz string = "91 (6405/40 MHz)"
+
+	// InterfaceRfChannelLabelNr93641520MHz captures enum value "93 (6415/20 MHz)"
+	InterfaceRfChannelLabelNr93641520MHz string = "93 (6415/20 MHz)"
+
+	// InterfaceRfChannelLabelNr956425320MHz captures enum value "95 (6425/320 MHz)"
+	InterfaceRfChannelLabelNr956425320MHz string = "95 (6425/320 MHz)"
+
+	// InterfaceRfChannelLabelNr97643520MHz captures enum value "97 (6435/20 MHz)"
+	InterfaceRfChannelLabelNr97643520MHz string = "97 (6435/20 MHz)"
+
+	// InterfaceRfChannelLabelNr99644540MHz captures enum value "99 (6445/40 MHz)"
+	InterfaceRfChannelLabelNr99644540MHz string = "99 (6445/40 MHz)"
+
+	// InterfaceRfChannelLabelNr101645520MHz captures enum value "101 (6455/20 MHz)"
+	InterfaceRfChannelLabelNr101645520MHz string = "101 (6455/20 MHz)"
+
+	// InterfaceRfChannelLabelNr103646580MHz captures enum value "103 (6465/80 MHz)"
+	InterfaceRfChannelLabelNr103646580MHz string = "103 (6465/80 MHz)"
+
+	// InterfaceRfChannelLabelNr105647520MHz captures enum value "105 (6475/20 MHz)"
+	InterfaceRfChannelLabelNr105647520MHz string = "105 (6475/20 MHz)"
+
+	// InterfaceRfChannelLabelNr107648540MHz captures enum value "107 (6485/40 MHz)"
+	InterfaceRfChannelLabelNr107648540MHz string = "107 (6485/40 MHz)"
+
+	// InterfaceRfChannelLabelNr109649520MHz captures enum value "109 (6495/20 MHz)"
+	InterfaceRfChannelLabelNr109649520MHz string = "109 (6495/20 MHz)"
+
+	// InterfaceRfChannelLabelNr1116505160MHz captures enum value "111 (6505/160 MHz)"
+	InterfaceRfChannelLabelNr1116505160MHz string = "111 (6505/160 MHz)"
+
+	// InterfaceRfChannelLabelNr113651520MHz captures enum value "113 (6515/20 MHz)"
+	InterfaceRfChannelLabelNr113651520MHz string = "113 (6515/20 MHz)"
+
+	// InterfaceRfChannelLabelNr115652540MHz captures enum value "115 (6525/40 MHz)"
+	InterfaceRfChannelLabelNr115652540MHz string = "115 (6525/40 MHz)"
+
+	// InterfaceRfChannelLabelNr117653520MHz captures enum value "117 (6535/20 MHz)"
+	InterfaceRfChannelLabelNr117653520MHz string = "117 (6535/20 MHz)"
+
+	// InterfaceRfChannelLabelNr119654580MHz captures enum value "119 (6545/80 MHz)"
+	InterfaceRfChannelLabelNr119654580MHz string = "119 (6545/80 MHz)"
+
+	// InterfaceRfChannelLabelNr121655520MHz captures enum value "121 (6555/20 MHz)"
+	InterfaceRfChannelLabelNr121655520MHz string = "121 (6555/20 MHz)"
+
+	// InterfaceRfChannelLabelNr123656540MHz captures enum value "123 (6565/40 MHz)"
+	InterfaceRfChannelLabelNr123656540MHz string = "123 (6565/40 MHz)"
+
+	// InterfaceRfChannelLabelNr125657520MHz captures enum value "125 (6575/20 MHz)"
+	InterfaceRfChannelLabelNr125657520MHz string = "125 (6575/20 MHz)"
+
+	// InterfaceRfChannelLabelNr129659520MHz captures enum value "129 (6595/20 MHz)"
+	InterfaceRfChannelLabelNr129659520MHz string = "129 (6595/20 MHz)"
+
+	// InterfaceRfChannelLabelNr131660540MHz captures enum value "131 (6605/40 MHz)"
+	InterfaceRfChannelLabelNr131660540MHz string = "131 (6605/40 MHz)"
+
+	// InterfaceRfChannelLabelNr133661520MHz captures enum value "133 (6615/20 MHz)"
+	InterfaceRfChannelLabelNr133661520MHz string = "133 (6615/20 MHz)"
+
+	// InterfaceRfChannelLabelNr135662580MHz captures enum value "135 (6625/80 MHz)"
+	InterfaceRfChannelLabelNr135662580MHz string = "135 (6625/80 MHz)"
+
+	// InterfaceRfChannelLabelNr137663520MHz captures enum value "137 (6635/20 MHz)"
+	InterfaceRfChannelLabelNr137663520MHz string = "137 (6635/20 MHz)"
+
+	// InterfaceRfChannelLabelNr139664540MHz captures enum value "139 (6645/40 MHz)"
+	InterfaceRfChannelLabelNr139664540MHz string = "139 (6645/40 MHz)"
+
+	// InterfaceRfChannelLabelNr141665520MHz captures enum value "141 (6655/20 MHz)"
+	InterfaceRfChannelLabelNr141665520MHz string = "141 (6655/20 MHz)"
+
+	// InterfaceRfChannelLabelNr1436665160MHz captures enum value "143 (6665/160 MHz)"
+	InterfaceRfChannelLabelNr1436665160MHz string = "143 (6665/160 MHz)"
+
+	// InterfaceRfChannelLabelNr145667520MHz captures enum value "145 (6675/20 MHz)"
+	InterfaceRfChannelLabelNr145667520MHz string = "145 (6675/20 MHz)"
+
+	// InterfaceRfChannelLabelNr147668540MHz captures enum value "147 (6685/40 MHz)"
+	InterfaceRfChannelLabelNr147668540MHz string = "147 (6685/40 MHz)"
+
+	// InterfaceRfChannelLabelNr149669520MHz captures enum value "149 (6695/20 MHz)"
+	InterfaceRfChannelLabelNr149669520MHz string = "149 (6695/20 MHz)"
+
+	// InterfaceRfChannelLabelNr151670580MHz captures enum value "151 (6705/80 MHz)"
+	InterfaceRfChannelLabelNr151670580MHz string = "151 (6705/80 MHz)"
+
+	// InterfaceRfChannelLabelNr153671520MHz captures enum value "153 (6715/20 MHz)"
+	InterfaceRfChannelLabelNr153671520MHz string = "153 (6715/20 MHz)"
+
+	// InterfaceRfChannelLabelNr155672540MHz captures enum value "155 (6725/40 MHz)"
+	InterfaceRfChannelLabelNr155672540MHz string = "155 (6725/40 MHz)"
+
+	// InterfaceRfChannelLabelNr157673520MHz captures enum value "157 (6735/20 MHz)"
+	InterfaceRfChannelLabelNr157673520MHz string = "157 (6735/20 MHz)"
+
+	// InterfaceRfChannelLabelNr1596745320MHz captures enum value "159 (6745/320 MHz)"
+	InterfaceRfChannelLabelNr1596745320MHz string = "159 (6745/320 MHz)"
+
+	// InterfaceRfChannelLabelNr161675520MHz captures enum value "161 (6755/20 MHz)"
+	InterfaceRfChannelLabelNr161675520MHz string = "161 (6755/20 MHz)"
+
+	// InterfaceRfChannelLabelNr163676540MHz captures enum value "163 (6765/40 MHz)"
+	InterfaceRfChannelLabelNr163676540MHz string = "163 (6765/40 MHz)"
+
+	// InterfaceRfChannelLabelNr165677520MHz captures enum value "165 (6775/20 MHz)"
+	InterfaceRfChannelLabelNr165677520MHz string = "165 (6775/20 MHz)"
+
+	// InterfaceRfChannelLabelNr167678580MHz captures enum value "167 (6785/80 MHz)"
+	InterfaceRfChannelLabelNr167678580MHz string = "167 (6785/80 MHz)"
+
+	// InterfaceRfChannelLabelNr169679520MHz captures enum value "169 (6795/20 MHz)"
+	InterfaceRfChannelLabelNr169679520MHz string = "169 (6795/20 MHz)"
+
+	// InterfaceRfChannelLabelNr171680540MHz captures enum value "171 (6805/40 MHz)"
+	InterfaceRfChannelLabelNr171680540MHz string = "171 (6805/40 MHz)"
+
+	// InterfaceRfChannelLabelNr173681520MHz captures enum value "173 (6815/20 MHz)"
+	InterfaceRfChannelLabelNr173681520MHz string = "173 (6815/20 MHz)"
+
+	// InterfaceRfChannelLabelNr1756825160MHz captures enum value "175 (6825/160 MHz)"
+	InterfaceRfChannelLabelNr1756825160MHz string = "175 (6825/160 MHz)"
+
+	// InterfaceRfChannelLabelNr177683520MHz captures enum value "177 (6835/20 MHz)"
+	InterfaceRfChannelLabelNr177683520MHz string = "177 (6835/20 MHz)"
+
+	// InterfaceRfChannelLabelNr179684540MHz captures enum value "179 (6845/40 MHz)"
+	InterfaceRfChannelLabelNr179684540MHz string = "179 (6845/40 MHz)"
+
+	// InterfaceRfChannelLabelNr181685520MHz captures enum value "181 (6855/20 MHz)"
+	InterfaceRfChannelLabelNr181685520MHz string = "181 (6855/20 MHz)"
+
+	// InterfaceRfChannelLabelNr183686580MHz captures enum value "183 (6865/80 MHz)"
+	InterfaceRfChannelLabelNr183686580MHz string = "183 (6865/80 MHz)"
+
+	// InterfaceRfChannelLabelNr185687520MHz captures enum value "185 (6875/20 MHz)"
+	InterfaceRfChannelLabelNr185687520MHz string = "185 (6875/20 MHz)"
+
+	// InterfaceRfChannelLabelNr187688540MHz captures enum value "187 (6885/40 MHz)"
+	InterfaceRfChannelLabelNr187688540MHz string = "187 (6885/40 MHz)"
+
+	// InterfaceRfChannelLabelNr189689520MHz captures enum value "189 (6895/20 MHz)"
+	InterfaceRfChannelLabelNr189689520MHz string = "189 (6895/20 MHz)"
+
+	// InterfaceRfChannelLabelNr193691520MHz captures enum value "193 (6915/20 MHz)"
+	InterfaceRfChannelLabelNr193691520MHz string = "193 (6915/20 MHz)"
+
+	// InterfaceRfChannelLabelNr195692540MHz captures enum value "195 (6925/40 MHz)"
+	InterfaceRfChannelLabelNr195692540MHz string = "195 (6925/40 MHz)"
+
+	// InterfaceRfChannelLabelNr197693520MHz captures enum value "197 (6935/20 MHz)"
+	InterfaceRfChannelLabelNr197693520MHz string = "197 (6935/20 MHz)"
+
+	// InterfaceRfChannelLabelNr199694580MHz captures enum value "199 (6945/80 MHz)"
+	InterfaceRfChannelLabelNr199694580MHz string = "199 (6945/80 MHz)"
+
+	// InterfaceRfChannelLabelNr201695520MHz captures enum value "201 (6955/20 MHz)"
+	InterfaceRfChannelLabelNr201695520MHz string = "201 (6955/20 MHz)"
+
+	// InterfaceRfChannelLabelNr203696540MHz captures enum value "203 (6965/40 MHz)"
+	InterfaceRfChannelLabelNr203696540MHz string = "203 (6965/40 MHz)"
+
+	// InterfaceRfChannelLabelNr205697520MHz captures enum value "205 (6975/20 MHz)"
+	InterfaceRfChannelLabelNr205697520MHz string = "205 (6975/20 MHz)"
+
+	// InterfaceRfChannelLabelNr2076985160MHz captures enum value "207 (6985/160 MHz)"
+	InterfaceRfChannelLabelNr2076985160MHz string = "207 (6985/160 MHz)"
+
+	// InterfaceRfChannelLabelNr209699520MHz captures enum value "209 (6995/20 MHz)"
+	InterfaceRfChannelLabelNr209699520MHz string = "209 (6995/20 MHz)"
+
+	// InterfaceRfChannelLabelNr211700540MHz captures enum value "211 (7005/40 MHz)"
+	InterfaceRfChannelLabelNr211700540MHz string = "211 (7005/40 MHz)"
+
+	// InterfaceRfChannelLabelNr213701520MHz captures enum value "213 (7015/20 MHz)"
+	InterfaceRfChannelLabelNr213701520MHz string = "213 (7015/20 MHz)"
+
+	// InterfaceRfChannelLabelNr215702580MHz captures enum value "215 (7025/80 MHz)"
+	InterfaceRfChannelLabelNr215702580MHz string = "215 (7025/80 MHz)"
+
+	// InterfaceRfChannelLabelNr217703520MHz captures enum value "217 (7035/20 MHz)"
+	InterfaceRfChannelLabelNr217703520MHz string = "217 (7035/20 MHz)"
+
+	// InterfaceRfChannelLabelNr219704540MHz captures enum value "219 (7045/40 MHz)"
+	InterfaceRfChannelLabelNr219704540MHz string = "219 (7045/40 MHz)"
+
+	// InterfaceRfChannelLabelNr221705520MHz captures enum value "221 (7055/20 MHz)"
+	InterfaceRfChannelLabelNr221705520MHz string = "221 (7055/20 MHz)"
+
+	// InterfaceRfChannelLabelNr225707520MHz captures enum value "225 (7075/20 MHz)"
+	InterfaceRfChannelLabelNr225707520MHz string = "225 (7075/20 MHz)"
+
+	// InterfaceRfChannelLabelNr227708540MHz captures enum value "227 (7085/40 MHz)"
+	InterfaceRfChannelLabelNr227708540MHz string = "227 (7085/40 MHz)"
+
+	// InterfaceRfChannelLabelNr229709520MHz captures enum value "229 (7095/20 MHz)"
+	InterfaceRfChannelLabelNr229709520MHz string = "229 (7095/20 MHz)"
+
+	// InterfaceRfChannelLabelNr233711520MHz captures enum value "233 (7115/20 MHz)"
+	InterfaceRfChannelLabelNr233711520MHz string = "233 (7115/20 MHz)"
+
+	// InterfaceRfChannelLabelNr158Dot322Dot16GHz captures enum value "1 (58.32/2.16 GHz)"
+	InterfaceRfChannelLabelNr158Dot322Dot16GHz string = "1 (58.32/2.16 GHz)"
+
+	// InterfaceRfChannelLabelNr260Dot482Dot16GHz captures enum value "2 (60.48/2.16 GHz)"
+	InterfaceRfChannelLabelNr260Dot482Dot16GHz string = "2 (60.48/2.16 GHz)"
+
+	// InterfaceRfChannelLabelNr362Dot642Dot16GHz captures enum value "3 (62.64/2.16 GHz)"
+	InterfaceRfChannelLabelNr362Dot642Dot16GHz string = "3 (62.64/2.16 GHz)"
+
+	// InterfaceRfChannelLabelNr464Dot802Dot16GHz captures enum value "4 (64.80/2.16 GHz)"
+	InterfaceRfChannelLabelNr464Dot802Dot16GHz string = "4 (64.80/2.16 GHz)"
+
+	// InterfaceRfChannelLabelNr566Dot962Dot16GHz captures enum value "5 (66.96/2.16 GHz)"
+	InterfaceRfChannelLabelNr566Dot962Dot16GHz string = "5 (66.96/2.16 GHz)"
+
+	// InterfaceRfChannelLabelNr669Dot122Dot16GHz captures enum value "6 (69.12/2.16 GHz)"
+	InterfaceRfChannelLabelNr669Dot122Dot16GHz string = "6 (69.12/2.16 GHz)"
+
+	// InterfaceRfChannelLabelNr959Dot404Dot32GHz captures enum value "9 (59.40/4.32 GHz)"
+	InterfaceRfChannelLabelNr959Dot404Dot32GHz string = "9 (59.40/4.32 GHz)"
+
+	// InterfaceRfChannelLabelNr1061Dot564Dot32GHz captures enum value "10 (61.56/4.32 GHz)"
+	InterfaceRfChannelLabelNr1061Dot564Dot32GHz string = "10 (61.56/4.32 GHz)"
+
+	// InterfaceRfChannelLabelNr1163Dot724Dot32GHz captures enum value "11 (63.72/4.32 GHz)"
+	InterfaceRfChannelLabelNr1163Dot724Dot32GHz string = "11 (63.72/4.32 GHz)"
+
+	// InterfaceRfChannelLabelNr1265Dot884Dot32GHz captures enum value "12 (65.88/4.32 GHz)"
+	InterfaceRfChannelLabelNr1265Dot884Dot32GHz string = "12 (65.88/4.32 GHz)"
+
+	// InterfaceRfChannelLabelNr1368Dot044Dot32GHz captures enum value "13 (68.04/4.32 GHz)"
+	InterfaceRfChannelLabelNr1368Dot044Dot32GHz string = "13 (68.04/4.32 GHz)"
+
+	// InterfaceRfChannelLabelNr1760Dot486Dot48GHz captures enum value "17 (60.48/6.48 GHz)"
+	InterfaceRfChannelLabelNr1760Dot486Dot48GHz string = "17 (60.48/6.48 GHz)"
+
+	// InterfaceRfChannelLabelNr1862Dot646Dot48GHz captures enum value "18 (62.64/6.48 GHz)"
+	InterfaceRfChannelLabelNr1862Dot646Dot48GHz string = "18 (62.64/6.48 GHz)"
+
+	// InterfaceRfChannelLabelNr1964Dot806Dot48GHz captures enum value "19 (64.80/6.48 GHz)"
+	InterfaceRfChannelLabelNr1964Dot806Dot48GHz string = "19 (64.80/6.48 GHz)"
+
+	// InterfaceRfChannelLabelNr2066Dot966Dot48GHz captures enum value "20 (66.96/6.48 GHz)"
+	InterfaceRfChannelLabelNr2066Dot966Dot48GHz string = "20 (66.96/6.48 GHz)"
+
+	// InterfaceRfChannelLabelNr2561Dot568Dot64GHz captures enum value "25 (61.56/8.64 GHz)"
+	InterfaceRfChannelLabelNr2561Dot568Dot64GHz string = "25 (61.56/8.64 GHz)"
+
+	// InterfaceRfChannelLabelNr2663Dot728Dot64GHz captures enum value "26 (63.72/8.64 GHz)"
+	InterfaceRfChannelLabelNr2663Dot728Dot64GHz string = "26 (63.72/8.64 GHz)"
+
+	// InterfaceRfChannelLabelNr2765Dot888Dot64GHz captures enum value "27 (65.88/8.64 GHz)"
+	InterfaceRfChannelLabelNr2765Dot888Dot64GHz string = "27 (65.88/8.64 GHz)"
+)
+
+// prop value enum
+func (m *InterfaceRfChannel) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, interfaceRfChannelTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *InterfaceRfChannel) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("rf_channel"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("rf_channel"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var interfaceRfChannelTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["2.4g-1-2412-22","2.4g-2-2417-22","2.4g-3-2422-22","2.4g-4-2427-22","2.4g-5-2432-22","2.4g-6-2437-22","2.4g-7-2442-22","2.4g-8-2447-22","2.4g-9-2452-22","2.4g-10-2457-22","2.4g-11-2462-22","2.4g-12-2467-22","2.4g-13-2472-22","5g-32-5160-20","5g-34-5170-40","5g-36-5180-20","5g-38-5190-40","5g-40-5200-20","5g-42-5210-80","5g-44-5220-20","5g-46-5230-40","5g-48-5240-20","5g-50-5250-160","5g-52-5260-20","5g-54-5270-40","5g-56-5280-20","5g-58-5290-80","5g-60-5300-20","5g-62-5310-40","5g-64-5320-20","5g-100-5500-20","5g-102-5510-40","5g-104-5520-20","5g-106-5530-80","5g-108-5540-20","5g-110-5550-40","5g-112-5560-20","5g-114-5570-160","5g-116-5580-20","5g-118-5590-40","5g-120-5600-20","5g-122-5610-80","5g-124-5620-20","5g-126-5630-40","5g-128-5640-20","5g-132-5660-20","5g-134-5670-40","5g-136-5680-20","5g-138-5690-80","5g-140-5700-20","5g-142-5710-40","5g-144-5720-20","5g-149-5745-20","5g-151-5755-40","5g-153-5765-20","5g-155-5775-80","5g-157-5785-20","5g-159-5795-40","5g-161-5805-20","5g-163-5815-160","5g-165-5825-20","5g-167-5835-40","5g-169-5845-20","5g-171-5855-80","5g-173-5865-20","5g-175-5875-40","5g-177-5885-20","6g-1-5955-20","6g-3-5965-40","6g-5-5975-20","6g-7-5985-80","6g-9-5995-20","6g-11-6005-40","6g-13-6015-20","6g-15-6025-160","6g-17-6035-20","6g-19-6045-40","6g-21-6055-20","6g-23-6065-80","6g-25-6075-20","6g-27-6085-40","6g-29-6095-20","6g-31-6105-320","6g-33-6115-20","6g-35-6125-40","6g-37-6135-20","6g-39-6145-80","6g-41-6155-20","6g-43-6165-40","6g-45-6175-20","6g-47-6185-160","6g-49-6195-20","6g-51-6205-40","6g-53-6215-20","6g-55-6225-80","6g-57-6235-20","6g-59-6245-40","6g-61-6255-20","6g-65-6275-20","6g-67-6285-40","6g-69-6295-20","6g-71-6305-80","6g-73-6315-20","6g-75-6325-40","6g-77-6335-20","6g-79-6345-160","6g-81-6355-20","6g-83-6365-40","6g-85-6375-20","6g-87-6385-80","6g-89-6395-20","6g-91-6405-40","6g-93-6415-20","6g-95-6425-320","6g-97-6435-20","6g-99-6445-40","6g-101-6455-20","6g-103-6465-80","6g-105-6475-20","6g-107-6485-40","6g-109-6495-20","6g-111-6505-160","6g-113-6515-20","6g-115-6525-40","6g-117-6535-20","6g-119-6545-80","6g-121-6555-20","6g-123-6565-40","6g-125-6575-20","6g-129-6595-20","6g-131-6605-40","6g-133-6615-20","6g-135-6625-80","6g-137-6635-20","6g-139-6645-40","6g-141-6655-20","6g-143-6665-160","6g-145-6675-20","6g-147-6685-40","6g-149-6695-20","6g-151-6705-80","6g-153-6715-20","6g-155-6725-40","6g-157-6735-20","6g-159-6745-320","6g-161-6755-20","6g-163-6765-40","6g-165-6775-20","6g-167-6785-80","6g-169-6795-20","6g-171-6805-40","6g-173-6815-20","6g-175-6825-160","6g-177-6835-20","6g-179-6845-40","6g-181-6855-20","6g-183-6865-80","6g-185-6875-20","6g-187-6885-40","6g-189-6895-20","6g-193-6915-20","6g-195-6925-40","6g-197-6935-20","6g-199-6945-80","6g-201-6955-20","6g-203-6965-40","6g-205-6975-20","6g-207-6985-160","6g-209-6995-20","6g-211-7005-40","6g-213-7015-20","6g-215-7025-80","6g-217-7035-20","6g-219-7045-40","6g-221-7055-20","6g-225-7075-20","6g-227-7085-40","6g-229-7095-20","6g-233-7115-20","60g-1-58320-2160","60g-2-60480-2160","60g-3-62640-2160","60g-4-64800-2160","60g-5-66960-2160","60g-6-69120-2160","60g-9-59400-4320","60g-10-61560-4320","60g-11-63720-4320","60g-12-65880-4320","60g-13-68040-4320","60g-17-60480-6480","60g-18-62640-6480","60g-19-64800-6480","60g-20-66960-6480","60g-25-61560-6480","60g-26-63720-6480","60g-27-65880-6480"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		interfaceRfChannelTypeValuePropEnum = append(interfaceRfChannelTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// InterfaceRfChannelValueNr2Dot4gDash1Dash2412Dash22 captures enum value "2.4g-1-2412-22"
+	InterfaceRfChannelValueNr2Dot4gDash1Dash2412Dash22 string = "2.4g-1-2412-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash2Dash2417Dash22 captures enum value "2.4g-2-2417-22"
+	InterfaceRfChannelValueNr2Dot4gDash2Dash2417Dash22 string = "2.4g-2-2417-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash3Dash2422Dash22 captures enum value "2.4g-3-2422-22"
+	InterfaceRfChannelValueNr2Dot4gDash3Dash2422Dash22 string = "2.4g-3-2422-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash4Dash2427Dash22 captures enum value "2.4g-4-2427-22"
+	InterfaceRfChannelValueNr2Dot4gDash4Dash2427Dash22 string = "2.4g-4-2427-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash5Dash2432Dash22 captures enum value "2.4g-5-2432-22"
+	InterfaceRfChannelValueNr2Dot4gDash5Dash2432Dash22 string = "2.4g-5-2432-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash6Dash2437Dash22 captures enum value "2.4g-6-2437-22"
+	InterfaceRfChannelValueNr2Dot4gDash6Dash2437Dash22 string = "2.4g-6-2437-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash7Dash2442Dash22 captures enum value "2.4g-7-2442-22"
+	InterfaceRfChannelValueNr2Dot4gDash7Dash2442Dash22 string = "2.4g-7-2442-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash8Dash2447Dash22 captures enum value "2.4g-8-2447-22"
+	InterfaceRfChannelValueNr2Dot4gDash8Dash2447Dash22 string = "2.4g-8-2447-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash9Dash2452Dash22 captures enum value "2.4g-9-2452-22"
+	InterfaceRfChannelValueNr2Dot4gDash9Dash2452Dash22 string = "2.4g-9-2452-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash10Dash2457Dash22 captures enum value "2.4g-10-2457-22"
+	InterfaceRfChannelValueNr2Dot4gDash10Dash2457Dash22 string = "2.4g-10-2457-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash11Dash2462Dash22 captures enum value "2.4g-11-2462-22"
+	InterfaceRfChannelValueNr2Dot4gDash11Dash2462Dash22 string = "2.4g-11-2462-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash12Dash2467Dash22 captures enum value "2.4g-12-2467-22"
+	InterfaceRfChannelValueNr2Dot4gDash12Dash2467Dash22 string = "2.4g-12-2467-22"
+
+	// InterfaceRfChannelValueNr2Dot4gDash13Dash2472Dash22 captures enum value "2.4g-13-2472-22"
+	InterfaceRfChannelValueNr2Dot4gDash13Dash2472Dash22 string = "2.4g-13-2472-22"
+
+	// InterfaceRfChannelValueNr5gDash32Dash5160Dash20 captures enum value "5g-32-5160-20"
+	InterfaceRfChannelValueNr5gDash32Dash5160Dash20 string = "5g-32-5160-20"
+
+	// InterfaceRfChannelValueNr5gDash34Dash5170Dash40 captures enum value "5g-34-5170-40"
+	InterfaceRfChannelValueNr5gDash34Dash5170Dash40 string = "5g-34-5170-40"
+
+	// InterfaceRfChannelValueNr5gDash36Dash5180Dash20 captures enum value "5g-36-5180-20"
+	InterfaceRfChannelValueNr5gDash36Dash5180Dash20 string = "5g-36-5180-20"
+
+	// InterfaceRfChannelValueNr5gDash38Dash5190Dash40 captures enum value "5g-38-5190-40"
+	InterfaceRfChannelValueNr5gDash38Dash5190Dash40 string = "5g-38-5190-40"
+
+	// InterfaceRfChannelValueNr5gDash40Dash5200Dash20 captures enum value "5g-40-5200-20"
+	InterfaceRfChannelValueNr5gDash40Dash5200Dash20 string = "5g-40-5200-20"
+
+	// InterfaceRfChannelValueNr5gDash42Dash5210Dash80 captures enum value "5g-42-5210-80"
+	InterfaceRfChannelValueNr5gDash42Dash5210Dash80 string = "5g-42-5210-80"
+
+	// InterfaceRfChannelValueNr5gDash44Dash5220Dash20 captures enum value "5g-44-5220-20"
+	InterfaceRfChannelValueNr5gDash44Dash5220Dash20 string = "5g-44-5220-20"
+
+	// InterfaceRfChannelValueNr5gDash46Dash5230Dash40 captures enum value "5g-46-5230-40"
+	InterfaceRfChannelValueNr5gDash46Dash5230Dash40 string = "5g-46-5230-40"
+
+	// InterfaceRfChannelValueNr5gDash48Dash5240Dash20 captures enum value "5g-48-5240-20"
+	InterfaceRfChannelValueNr5gDash48Dash5240Dash20 string = "5g-48-5240-20"
+
+	// InterfaceRfChannelValueNr5gDash50Dash5250Dash160 captures enum value "5g-50-5250-160"
+	InterfaceRfChannelValueNr5gDash50Dash5250Dash160 string = "5g-50-5250-160"
+
+	// InterfaceRfChannelValueNr5gDash52Dash5260Dash20 captures enum value "5g-52-5260-20"
+	InterfaceRfChannelValueNr5gDash52Dash5260Dash20 string = "5g-52-5260-20"
+
+	// InterfaceRfChannelValueNr5gDash54Dash5270Dash40 captures enum value "5g-54-5270-40"
+	InterfaceRfChannelValueNr5gDash54Dash5270Dash40 string = "5g-54-5270-40"
+
+	// InterfaceRfChannelValueNr5gDash56Dash5280Dash20 captures enum value "5g-56-5280-20"
+	InterfaceRfChannelValueNr5gDash56Dash5280Dash20 string = "5g-56-5280-20"
+
+	// InterfaceRfChannelValueNr5gDash58Dash5290Dash80 captures enum value "5g-58-5290-80"
+	InterfaceRfChannelValueNr5gDash58Dash5290Dash80 string = "5g-58-5290-80"
+
+	// InterfaceRfChannelValueNr5gDash60Dash5300Dash20 captures enum value "5g-60-5300-20"
+	InterfaceRfChannelValueNr5gDash60Dash5300Dash20 string = "5g-60-5300-20"
+
+	// InterfaceRfChannelValueNr5gDash62Dash5310Dash40 captures enum value "5g-62-5310-40"
+	InterfaceRfChannelValueNr5gDash62Dash5310Dash40 string = "5g-62-5310-40"
+
+	// InterfaceRfChannelValueNr5gDash64Dash5320Dash20 captures enum value "5g-64-5320-20"
+	InterfaceRfChannelValueNr5gDash64Dash5320Dash20 string = "5g-64-5320-20"
+
+	// InterfaceRfChannelValueNr5gDash100Dash5500Dash20 captures enum value "5g-100-5500-20"
+	InterfaceRfChannelValueNr5gDash100Dash5500Dash20 string = "5g-100-5500-20"
+
+	// InterfaceRfChannelValueNr5gDash102Dash5510Dash40 captures enum value "5g-102-5510-40"
+	InterfaceRfChannelValueNr5gDash102Dash5510Dash40 string = "5g-102-5510-40"
+
+	// InterfaceRfChannelValueNr5gDash104Dash5520Dash20 captures enum value "5g-104-5520-20"
+	InterfaceRfChannelValueNr5gDash104Dash5520Dash20 string = "5g-104-5520-20"
+
+	// InterfaceRfChannelValueNr5gDash106Dash5530Dash80 captures enum value "5g-106-5530-80"
+	InterfaceRfChannelValueNr5gDash106Dash5530Dash80 string = "5g-106-5530-80"
+
+	// InterfaceRfChannelValueNr5gDash108Dash5540Dash20 captures enum value "5g-108-5540-20"
+	InterfaceRfChannelValueNr5gDash108Dash5540Dash20 string = "5g-108-5540-20"
+
+	// InterfaceRfChannelValueNr5gDash110Dash5550Dash40 captures enum value "5g-110-5550-40"
+	InterfaceRfChannelValueNr5gDash110Dash5550Dash40 string = "5g-110-5550-40"
+
+	// InterfaceRfChannelValueNr5gDash112Dash5560Dash20 captures enum value "5g-112-5560-20"
+	InterfaceRfChannelValueNr5gDash112Dash5560Dash20 string = "5g-112-5560-20"
+
+	// InterfaceRfChannelValueNr5gDash114Dash5570Dash160 captures enum value "5g-114-5570-160"
+	InterfaceRfChannelValueNr5gDash114Dash5570Dash160 string = "5g-114-5570-160"
+
+	// InterfaceRfChannelValueNr5gDash116Dash5580Dash20 captures enum value "5g-116-5580-20"
+	InterfaceRfChannelValueNr5gDash116Dash5580Dash20 string = "5g-116-5580-20"
+
+	// InterfaceRfChannelValueNr5gDash118Dash5590Dash40 captures enum value "5g-118-5590-40"
+	InterfaceRfChannelValueNr5gDash118Dash5590Dash40 string = "5g-118-5590-40"
+
+	// InterfaceRfChannelValueNr5gDash120Dash5600Dash20 captures enum value "5g-120-5600-20"
+	InterfaceRfChannelValueNr5gDash120Dash5600Dash20 string = "5g-120-5600-20"
+
+	// InterfaceRfChannelValueNr5gDash122Dash5610Dash80 captures enum value "5g-122-5610-80"
+	InterfaceRfChannelValueNr5gDash122Dash5610Dash80 string = "5g-122-5610-80"
+
+	// InterfaceRfChannelValueNr5gDash124Dash5620Dash20 captures enum value "5g-124-5620-20"
+	InterfaceRfChannelValueNr5gDash124Dash5620Dash20 string = "5g-124-5620-20"
+
+	// InterfaceRfChannelValueNr5gDash126Dash5630Dash40 captures enum value "5g-126-5630-40"
+	InterfaceRfChannelValueNr5gDash126Dash5630Dash40 string = "5g-126-5630-40"
+
+	// InterfaceRfChannelValueNr5gDash128Dash5640Dash20 captures enum value "5g-128-5640-20"
+	InterfaceRfChannelValueNr5gDash128Dash5640Dash20 string = "5g-128-5640-20"
+
+	// InterfaceRfChannelValueNr5gDash132Dash5660Dash20 captures enum value "5g-132-5660-20"
+	InterfaceRfChannelValueNr5gDash132Dash5660Dash20 string = "5g-132-5660-20"
+
+	// InterfaceRfChannelValueNr5gDash134Dash5670Dash40 captures enum value "5g-134-5670-40"
+	InterfaceRfChannelValueNr5gDash134Dash5670Dash40 string = "5g-134-5670-40"
+
+	// InterfaceRfChannelValueNr5gDash136Dash5680Dash20 captures enum value "5g-136-5680-20"
+	InterfaceRfChannelValueNr5gDash136Dash5680Dash20 string = "5g-136-5680-20"
+
+	// InterfaceRfChannelValueNr5gDash138Dash5690Dash80 captures enum value "5g-138-5690-80"
+	InterfaceRfChannelValueNr5gDash138Dash5690Dash80 string = "5g-138-5690-80"
+
+	// InterfaceRfChannelValueNr5gDash140Dash5700Dash20 captures enum value "5g-140-5700-20"
+	InterfaceRfChannelValueNr5gDash140Dash5700Dash20 string = "5g-140-5700-20"
+
+	// InterfaceRfChannelValueNr5gDash142Dash5710Dash40 captures enum value "5g-142-5710-40"
+	InterfaceRfChannelValueNr5gDash142Dash5710Dash40 string = "5g-142-5710-40"
+
+	// InterfaceRfChannelValueNr5gDash144Dash5720Dash20 captures enum value "5g-144-5720-20"
+	InterfaceRfChannelValueNr5gDash144Dash5720Dash20 string = "5g-144-5720-20"
+
+	// InterfaceRfChannelValueNr5gDash149Dash5745Dash20 captures enum value "5g-149-5745-20"
+	InterfaceRfChannelValueNr5gDash149Dash5745Dash20 string = "5g-149-5745-20"
+
+	// InterfaceRfChannelValueNr5gDash151Dash5755Dash40 captures enum value "5g-151-5755-40"
+	InterfaceRfChannelValueNr5gDash151Dash5755Dash40 string = "5g-151-5755-40"
+
+	// InterfaceRfChannelValueNr5gDash153Dash5765Dash20 captures enum value "5g-153-5765-20"
+	InterfaceRfChannelValueNr5gDash153Dash5765Dash20 string = "5g-153-5765-20"
+
+	// InterfaceRfChannelValueNr5gDash155Dash5775Dash80 captures enum value "5g-155-5775-80"
+	InterfaceRfChannelValueNr5gDash155Dash5775Dash80 string = "5g-155-5775-80"
+
+	// InterfaceRfChannelValueNr5gDash157Dash5785Dash20 captures enum value "5g-157-5785-20"
+	InterfaceRfChannelValueNr5gDash157Dash5785Dash20 string = "5g-157-5785-20"
+
+	// InterfaceRfChannelValueNr5gDash159Dash5795Dash40 captures enum value "5g-159-5795-40"
+	InterfaceRfChannelValueNr5gDash159Dash5795Dash40 string = "5g-159-5795-40"
+
+	// InterfaceRfChannelValueNr5gDash161Dash5805Dash20 captures enum value "5g-161-5805-20"
+	InterfaceRfChannelValueNr5gDash161Dash5805Dash20 string = "5g-161-5805-20"
+
+	// InterfaceRfChannelValueNr5gDash163Dash5815Dash160 captures enum value "5g-163-5815-160"
+	InterfaceRfChannelValueNr5gDash163Dash5815Dash160 string = "5g-163-5815-160"
+
+	// InterfaceRfChannelValueNr5gDash165Dash5825Dash20 captures enum value "5g-165-5825-20"
+	InterfaceRfChannelValueNr5gDash165Dash5825Dash20 string = "5g-165-5825-20"
+
+	// InterfaceRfChannelValueNr5gDash167Dash5835Dash40 captures enum value "5g-167-5835-40"
+	InterfaceRfChannelValueNr5gDash167Dash5835Dash40 string = "5g-167-5835-40"
+
+	// InterfaceRfChannelValueNr5gDash169Dash5845Dash20 captures enum value "5g-169-5845-20"
+	InterfaceRfChannelValueNr5gDash169Dash5845Dash20 string = "5g-169-5845-20"
+
+	// InterfaceRfChannelValueNr5gDash171Dash5855Dash80 captures enum value "5g-171-5855-80"
+	InterfaceRfChannelValueNr5gDash171Dash5855Dash80 string = "5g-171-5855-80"
+
+	// InterfaceRfChannelValueNr5gDash173Dash5865Dash20 captures enum value "5g-173-5865-20"
+	InterfaceRfChannelValueNr5gDash173Dash5865Dash20 string = "5g-173-5865-20"
+
+	// InterfaceRfChannelValueNr5gDash175Dash5875Dash40 captures enum value "5g-175-5875-40"
+	InterfaceRfChannelValueNr5gDash175Dash5875Dash40 string = "5g-175-5875-40"
+
+	// InterfaceRfChannelValueNr5gDash177Dash5885Dash20 captures enum value "5g-177-5885-20"
+	InterfaceRfChannelValueNr5gDash177Dash5885Dash20 string = "5g-177-5885-20"
+
+	// InterfaceRfChannelValueNr6gDash1Dash5955Dash20 captures enum value "6g-1-5955-20"
+	InterfaceRfChannelValueNr6gDash1Dash5955Dash20 string = "6g-1-5955-20"
+
+	// InterfaceRfChannelValueNr6gDash3Dash5965Dash40 captures enum value "6g-3-5965-40"
+	InterfaceRfChannelValueNr6gDash3Dash5965Dash40 string = "6g-3-5965-40"
+
+	// InterfaceRfChannelValueNr6gDash5Dash5975Dash20 captures enum value "6g-5-5975-20"
+	InterfaceRfChannelValueNr6gDash5Dash5975Dash20 string = "6g-5-5975-20"
+
+	// InterfaceRfChannelValueNr6gDash7Dash5985Dash80 captures enum value "6g-7-5985-80"
+	InterfaceRfChannelValueNr6gDash7Dash5985Dash80 string = "6g-7-5985-80"
+
+	// InterfaceRfChannelValueNr6gDash9Dash5995Dash20 captures enum value "6g-9-5995-20"
+	InterfaceRfChannelValueNr6gDash9Dash5995Dash20 string = "6g-9-5995-20"
+
+	// InterfaceRfChannelValueNr6gDash11Dash6005Dash40 captures enum value "6g-11-6005-40"
+	InterfaceRfChannelValueNr6gDash11Dash6005Dash40 string = "6g-11-6005-40"
+
+	// InterfaceRfChannelValueNr6gDash13Dash6015Dash20 captures enum value "6g-13-6015-20"
+	InterfaceRfChannelValueNr6gDash13Dash6015Dash20 string = "6g-13-6015-20"
+
+	// InterfaceRfChannelValueNr6gDash15Dash6025Dash160 captures enum value "6g-15-6025-160"
+	InterfaceRfChannelValueNr6gDash15Dash6025Dash160 string = "6g-15-6025-160"
+
+	// InterfaceRfChannelValueNr6gDash17Dash6035Dash20 captures enum value "6g-17-6035-20"
+	InterfaceRfChannelValueNr6gDash17Dash6035Dash20 string = "6g-17-6035-20"
+
+	// InterfaceRfChannelValueNr6gDash19Dash6045Dash40 captures enum value "6g-19-6045-40"
+	InterfaceRfChannelValueNr6gDash19Dash6045Dash40 string = "6g-19-6045-40"
+
+	// InterfaceRfChannelValueNr6gDash21Dash6055Dash20 captures enum value "6g-21-6055-20"
+	InterfaceRfChannelValueNr6gDash21Dash6055Dash20 string = "6g-21-6055-20"
+
+	// InterfaceRfChannelValueNr6gDash23Dash6065Dash80 captures enum value "6g-23-6065-80"
+	InterfaceRfChannelValueNr6gDash23Dash6065Dash80 string = "6g-23-6065-80"
+
+	// InterfaceRfChannelValueNr6gDash25Dash6075Dash20 captures enum value "6g-25-6075-20"
+	InterfaceRfChannelValueNr6gDash25Dash6075Dash20 string = "6g-25-6075-20"
+
+	// InterfaceRfChannelValueNr6gDash27Dash6085Dash40 captures enum value "6g-27-6085-40"
+	InterfaceRfChannelValueNr6gDash27Dash6085Dash40 string = "6g-27-6085-40"
+
+	// InterfaceRfChannelValueNr6gDash29Dash6095Dash20 captures enum value "6g-29-6095-20"
+	InterfaceRfChannelValueNr6gDash29Dash6095Dash20 string = "6g-29-6095-20"
+
+	// InterfaceRfChannelValueNr6gDash31Dash6105Dash320 captures enum value "6g-31-6105-320"
+	InterfaceRfChannelValueNr6gDash31Dash6105Dash320 string = "6g-31-6105-320"
+
+	// InterfaceRfChannelValueNr6gDash33Dash6115Dash20 captures enum value "6g-33-6115-20"
+	InterfaceRfChannelValueNr6gDash33Dash6115Dash20 string = "6g-33-6115-20"
+
+	// InterfaceRfChannelValueNr6gDash35Dash6125Dash40 captures enum value "6g-35-6125-40"
+	InterfaceRfChannelValueNr6gDash35Dash6125Dash40 string = "6g-35-6125-40"
+
+	// InterfaceRfChannelValueNr6gDash37Dash6135Dash20 captures enum value "6g-37-6135-20"
+	InterfaceRfChannelValueNr6gDash37Dash6135Dash20 string = "6g-37-6135-20"
+
+	// InterfaceRfChannelValueNr6gDash39Dash6145Dash80 captures enum value "6g-39-6145-80"
+	InterfaceRfChannelValueNr6gDash39Dash6145Dash80 string = "6g-39-6145-80"
+
+	// InterfaceRfChannelValueNr6gDash41Dash6155Dash20 captures enum value "6g-41-6155-20"
+	InterfaceRfChannelValueNr6gDash41Dash6155Dash20 string = "6g-41-6155-20"
+
+	// InterfaceRfChannelValueNr6gDash43Dash6165Dash40 captures enum value "6g-43-6165-40"
+	InterfaceRfChannelValueNr6gDash43Dash6165Dash40 string = "6g-43-6165-40"
+
+	// InterfaceRfChannelValueNr6gDash45Dash6175Dash20 captures enum value "6g-45-6175-20"
+	InterfaceRfChannelValueNr6gDash45Dash6175Dash20 string = "6g-45-6175-20"
+
+	// InterfaceRfChannelValueNr6gDash47Dash6185Dash160 captures enum value "6g-47-6185-160"
+	InterfaceRfChannelValueNr6gDash47Dash6185Dash160 string = "6g-47-6185-160"
+
+	// InterfaceRfChannelValueNr6gDash49Dash6195Dash20 captures enum value "6g-49-6195-20"
+	InterfaceRfChannelValueNr6gDash49Dash6195Dash20 string = "6g-49-6195-20"
+
+	// InterfaceRfChannelValueNr6gDash51Dash6205Dash40 captures enum value "6g-51-6205-40"
+	InterfaceRfChannelValueNr6gDash51Dash6205Dash40 string = "6g-51-6205-40"
+
+	// InterfaceRfChannelValueNr6gDash53Dash6215Dash20 captures enum value "6g-53-6215-20"
+	InterfaceRfChannelValueNr6gDash53Dash6215Dash20 string = "6g-53-6215-20"
+
+	// InterfaceRfChannelValueNr6gDash55Dash6225Dash80 captures enum value "6g-55-6225-80"
+	InterfaceRfChannelValueNr6gDash55Dash6225Dash80 string = "6g-55-6225-80"
+
+	// InterfaceRfChannelValueNr6gDash57Dash6235Dash20 captures enum value "6g-57-6235-20"
+	InterfaceRfChannelValueNr6gDash57Dash6235Dash20 string = "6g-57-6235-20"
+
+	// InterfaceRfChannelValueNr6gDash59Dash6245Dash40 captures enum value "6g-59-6245-40"
+	InterfaceRfChannelValueNr6gDash59Dash6245Dash40 string = "6g-59-6245-40"
+
+	// InterfaceRfChannelValueNr6gDash61Dash6255Dash20 captures enum value "6g-61-6255-20"
+	InterfaceRfChannelValueNr6gDash61Dash6255Dash20 string = "6g-61-6255-20"
+
+	// InterfaceRfChannelValueNr6gDash65Dash6275Dash20 captures enum value "6g-65-6275-20"
+	InterfaceRfChannelValueNr6gDash65Dash6275Dash20 string = "6g-65-6275-20"
+
+	// InterfaceRfChannelValueNr6gDash67Dash6285Dash40 captures enum value "6g-67-6285-40"
+	InterfaceRfChannelValueNr6gDash67Dash6285Dash40 string = "6g-67-6285-40"
+
+	// InterfaceRfChannelValueNr6gDash69Dash6295Dash20 captures enum value "6g-69-6295-20"
+	InterfaceRfChannelValueNr6gDash69Dash6295Dash20 string = "6g-69-6295-20"
+
+	// InterfaceRfChannelValueNr6gDash71Dash6305Dash80 captures enum value "6g-71-6305-80"
+	InterfaceRfChannelValueNr6gDash71Dash6305Dash80 string = "6g-71-6305-80"
+
+	// InterfaceRfChannelValueNr6gDash73Dash6315Dash20 captures enum value "6g-73-6315-20"
+	InterfaceRfChannelValueNr6gDash73Dash6315Dash20 string = "6g-73-6315-20"
+
+	// InterfaceRfChannelValueNr6gDash75Dash6325Dash40 captures enum value "6g-75-6325-40"
+	InterfaceRfChannelValueNr6gDash75Dash6325Dash40 string = "6g-75-6325-40"
+
+	// InterfaceRfChannelValueNr6gDash77Dash6335Dash20 captures enum value "6g-77-6335-20"
+	InterfaceRfChannelValueNr6gDash77Dash6335Dash20 string = "6g-77-6335-20"
+
+	// InterfaceRfChannelValueNr6gDash79Dash6345Dash160 captures enum value "6g-79-6345-160"
+	InterfaceRfChannelValueNr6gDash79Dash6345Dash160 string = "6g-79-6345-160"
+
+	// InterfaceRfChannelValueNr6gDash81Dash6355Dash20 captures enum value "6g-81-6355-20"
+	InterfaceRfChannelValueNr6gDash81Dash6355Dash20 string = "6g-81-6355-20"
+
+	// InterfaceRfChannelValueNr6gDash83Dash6365Dash40 captures enum value "6g-83-6365-40"
+	InterfaceRfChannelValueNr6gDash83Dash6365Dash40 string = "6g-83-6365-40"
+
+	// InterfaceRfChannelValueNr6gDash85Dash6375Dash20 captures enum value "6g-85-6375-20"
+	InterfaceRfChannelValueNr6gDash85Dash6375Dash20 string = "6g-85-6375-20"
+
+	// InterfaceRfChannelValueNr6gDash87Dash6385Dash80 captures enum value "6g-87-6385-80"
+	InterfaceRfChannelValueNr6gDash87Dash6385Dash80 string = "6g-87-6385-80"
+
+	// InterfaceRfChannelValueNr6gDash89Dash6395Dash20 captures enum value "6g-89-6395-20"
+	InterfaceRfChannelValueNr6gDash89Dash6395Dash20 string = "6g-89-6395-20"
+
+	// InterfaceRfChannelValueNr6gDash91Dash6405Dash40 captures enum value "6g-91-6405-40"
+	InterfaceRfChannelValueNr6gDash91Dash6405Dash40 string = "6g-91-6405-40"
+
+	// InterfaceRfChannelValueNr6gDash93Dash6415Dash20 captures enum value "6g-93-6415-20"
+	InterfaceRfChannelValueNr6gDash93Dash6415Dash20 string = "6g-93-6415-20"
+
+	// InterfaceRfChannelValueNr6gDash95Dash6425Dash320 captures enum value "6g-95-6425-320"
+	InterfaceRfChannelValueNr6gDash95Dash6425Dash320 string = "6g-95-6425-320"
+
+	// InterfaceRfChannelValueNr6gDash97Dash6435Dash20 captures enum value "6g-97-6435-20"
+	InterfaceRfChannelValueNr6gDash97Dash6435Dash20 string = "6g-97-6435-20"
+
+	// InterfaceRfChannelValueNr6gDash99Dash6445Dash40 captures enum value "6g-99-6445-40"
+	InterfaceRfChannelValueNr6gDash99Dash6445Dash40 string = "6g-99-6445-40"
+
+	// InterfaceRfChannelValueNr6gDash101Dash6455Dash20 captures enum value "6g-101-6455-20"
+	InterfaceRfChannelValueNr6gDash101Dash6455Dash20 string = "6g-101-6455-20"
+
+	// InterfaceRfChannelValueNr6gDash103Dash6465Dash80 captures enum value "6g-103-6465-80"
+	InterfaceRfChannelValueNr6gDash103Dash6465Dash80 string = "6g-103-6465-80"
+
+	// InterfaceRfChannelValueNr6gDash105Dash6475Dash20 captures enum value "6g-105-6475-20"
+	InterfaceRfChannelValueNr6gDash105Dash6475Dash20 string = "6g-105-6475-20"
+
+	// InterfaceRfChannelValueNr6gDash107Dash6485Dash40 captures enum value "6g-107-6485-40"
+	InterfaceRfChannelValueNr6gDash107Dash6485Dash40 string = "6g-107-6485-40"
+
+	// InterfaceRfChannelValueNr6gDash109Dash6495Dash20 captures enum value "6g-109-6495-20"
+	InterfaceRfChannelValueNr6gDash109Dash6495Dash20 string = "6g-109-6495-20"
+
+	// InterfaceRfChannelValueNr6gDash111Dash6505Dash160 captures enum value "6g-111-6505-160"
+	InterfaceRfChannelValueNr6gDash111Dash6505Dash160 string = "6g-111-6505-160"
+
+	// InterfaceRfChannelValueNr6gDash113Dash6515Dash20 captures enum value "6g-113-6515-20"
+	InterfaceRfChannelValueNr6gDash113Dash6515Dash20 string = "6g-113-6515-20"
+
+	// InterfaceRfChannelValueNr6gDash115Dash6525Dash40 captures enum value "6g-115-6525-40"
+	InterfaceRfChannelValueNr6gDash115Dash6525Dash40 string = "6g-115-6525-40"
+
+	// InterfaceRfChannelValueNr6gDash117Dash6535Dash20 captures enum value "6g-117-6535-20"
+	InterfaceRfChannelValueNr6gDash117Dash6535Dash20 string = "6g-117-6535-20"
+
+	// InterfaceRfChannelValueNr6gDash119Dash6545Dash80 captures enum value "6g-119-6545-80"
+	InterfaceRfChannelValueNr6gDash119Dash6545Dash80 string = "6g-119-6545-80"
+
+	// InterfaceRfChannelValueNr6gDash121Dash6555Dash20 captures enum value "6g-121-6555-20"
+	InterfaceRfChannelValueNr6gDash121Dash6555Dash20 string = "6g-121-6555-20"
+
+	// InterfaceRfChannelValueNr6gDash123Dash6565Dash40 captures enum value "6g-123-6565-40"
+	InterfaceRfChannelValueNr6gDash123Dash6565Dash40 string = "6g-123-6565-40"
+
+	// InterfaceRfChannelValueNr6gDash125Dash6575Dash20 captures enum value "6g-125-6575-20"
+	InterfaceRfChannelValueNr6gDash125Dash6575Dash20 string = "6g-125-6575-20"
+
+	// InterfaceRfChannelValueNr6gDash129Dash6595Dash20 captures enum value "6g-129-6595-20"
+	InterfaceRfChannelValueNr6gDash129Dash6595Dash20 string = "6g-129-6595-20"
+
+	// InterfaceRfChannelValueNr6gDash131Dash6605Dash40 captures enum value "6g-131-6605-40"
+	InterfaceRfChannelValueNr6gDash131Dash6605Dash40 string = "6g-131-6605-40"
+
+	// InterfaceRfChannelValueNr6gDash133Dash6615Dash20 captures enum value "6g-133-6615-20"
+	InterfaceRfChannelValueNr6gDash133Dash6615Dash20 string = "6g-133-6615-20"
+
+	// InterfaceRfChannelValueNr6gDash135Dash6625Dash80 captures enum value "6g-135-6625-80"
+	InterfaceRfChannelValueNr6gDash135Dash6625Dash80 string = "6g-135-6625-80"
+
+	// InterfaceRfChannelValueNr6gDash137Dash6635Dash20 captures enum value "6g-137-6635-20"
+	InterfaceRfChannelValueNr6gDash137Dash6635Dash20 string = "6g-137-6635-20"
+
+	// InterfaceRfChannelValueNr6gDash139Dash6645Dash40 captures enum value "6g-139-6645-40"
+	InterfaceRfChannelValueNr6gDash139Dash6645Dash40 string = "6g-139-6645-40"
+
+	// InterfaceRfChannelValueNr6gDash141Dash6655Dash20 captures enum value "6g-141-6655-20"
+	InterfaceRfChannelValueNr6gDash141Dash6655Dash20 string = "6g-141-6655-20"
+
+	// InterfaceRfChannelValueNr6gDash143Dash6665Dash160 captures enum value "6g-143-6665-160"
+	InterfaceRfChannelValueNr6gDash143Dash6665Dash160 string = "6g-143-6665-160"
+
+	// InterfaceRfChannelValueNr6gDash145Dash6675Dash20 captures enum value "6g-145-6675-20"
+	InterfaceRfChannelValueNr6gDash145Dash6675Dash20 string = "6g-145-6675-20"
+
+	// InterfaceRfChannelValueNr6gDash147Dash6685Dash40 captures enum value "6g-147-6685-40"
+	InterfaceRfChannelValueNr6gDash147Dash6685Dash40 string = "6g-147-6685-40"
+
+	// InterfaceRfChannelValueNr6gDash149Dash6695Dash20 captures enum value "6g-149-6695-20"
+	InterfaceRfChannelValueNr6gDash149Dash6695Dash20 string = "6g-149-6695-20"
+
+	// InterfaceRfChannelValueNr6gDash151Dash6705Dash80 captures enum value "6g-151-6705-80"
+	InterfaceRfChannelValueNr6gDash151Dash6705Dash80 string = "6g-151-6705-80"
+
+	// InterfaceRfChannelValueNr6gDash153Dash6715Dash20 captures enum value "6g-153-6715-20"
+	InterfaceRfChannelValueNr6gDash153Dash6715Dash20 string = "6g-153-6715-20"
+
+	// InterfaceRfChannelValueNr6gDash155Dash6725Dash40 captures enum value "6g-155-6725-40"
+	InterfaceRfChannelValueNr6gDash155Dash6725Dash40 string = "6g-155-6725-40"
+
+	// InterfaceRfChannelValueNr6gDash157Dash6735Dash20 captures enum value "6g-157-6735-20"
+	InterfaceRfChannelValueNr6gDash157Dash6735Dash20 string = "6g-157-6735-20"
+
+	// InterfaceRfChannelValueNr6gDash159Dash6745Dash320 captures enum value "6g-159-6745-320"
+	InterfaceRfChannelValueNr6gDash159Dash6745Dash320 string = "6g-159-6745-320"
+
+	// InterfaceRfChannelValueNr6gDash161Dash6755Dash20 captures enum value "6g-161-6755-20"
+	InterfaceRfChannelValueNr6gDash161Dash6755Dash20 string = "6g-161-6755-20"
+
+	// InterfaceRfChannelValueNr6gDash163Dash6765Dash40 captures enum value "6g-163-6765-40"
+	InterfaceRfChannelValueNr6gDash163Dash6765Dash40 string = "6g-163-6765-40"
+
+	// InterfaceRfChannelValueNr6gDash165Dash6775Dash20 captures enum value "6g-165-6775-20"
+	InterfaceRfChannelValueNr6gDash165Dash6775Dash20 string = "6g-165-6775-20"
+
+	// InterfaceRfChannelValueNr6gDash167Dash6785Dash80 captures enum value "6g-167-6785-80"
+	InterfaceRfChannelValueNr6gDash167Dash6785Dash80 string = "6g-167-6785-80"
+
+	// InterfaceRfChannelValueNr6gDash169Dash6795Dash20 captures enum value "6g-169-6795-20"
+	InterfaceRfChannelValueNr6gDash169Dash6795Dash20 string = "6g-169-6795-20"
+
+	// InterfaceRfChannelValueNr6gDash171Dash6805Dash40 captures enum value "6g-171-6805-40"
+	InterfaceRfChannelValueNr6gDash171Dash6805Dash40 string = "6g-171-6805-40"
+
+	// InterfaceRfChannelValueNr6gDash173Dash6815Dash20 captures enum value "6g-173-6815-20"
+	InterfaceRfChannelValueNr6gDash173Dash6815Dash20 string = "6g-173-6815-20"
+
+	// InterfaceRfChannelValueNr6gDash175Dash6825Dash160 captures enum value "6g-175-6825-160"
+	InterfaceRfChannelValueNr6gDash175Dash6825Dash160 string = "6g-175-6825-160"
+
+	// InterfaceRfChannelValueNr6gDash177Dash6835Dash20 captures enum value "6g-177-6835-20"
+	InterfaceRfChannelValueNr6gDash177Dash6835Dash20 string = "6g-177-6835-20"
+
+	// InterfaceRfChannelValueNr6gDash179Dash6845Dash40 captures enum value "6g-179-6845-40"
+	InterfaceRfChannelValueNr6gDash179Dash6845Dash40 string = "6g-179-6845-40"
+
+	// InterfaceRfChannelValueNr6gDash181Dash6855Dash20 captures enum value "6g-181-6855-20"
+	InterfaceRfChannelValueNr6gDash181Dash6855Dash20 string = "6g-181-6855-20"
+
+	// InterfaceRfChannelValueNr6gDash183Dash6865Dash80 captures enum value "6g-183-6865-80"
+	InterfaceRfChannelValueNr6gDash183Dash6865Dash80 string = "6g-183-6865-80"
+
+	// InterfaceRfChannelValueNr6gDash185Dash6875Dash20 captures enum value "6g-185-6875-20"
+	InterfaceRfChannelValueNr6gDash185Dash6875Dash20 string = "6g-185-6875-20"
+
+	// InterfaceRfChannelValueNr6gDash187Dash6885Dash40 captures enum value "6g-187-6885-40"
+	InterfaceRfChannelValueNr6gDash187Dash6885Dash40 string = "6g-187-6885-40"
+
+	// InterfaceRfChannelValueNr6gDash189Dash6895Dash20 captures enum value "6g-189-6895-20"
+	InterfaceRfChannelValueNr6gDash189Dash6895Dash20 string = "6g-189-6895-20"
+
+	// InterfaceRfChannelValueNr6gDash193Dash6915Dash20 captures enum value "6g-193-6915-20"
+	InterfaceRfChannelValueNr6gDash193Dash6915Dash20 string = "6g-193-6915-20"
+
+	// InterfaceRfChannelValueNr6gDash195Dash6925Dash40 captures enum value "6g-195-6925-40"
+	InterfaceRfChannelValueNr6gDash195Dash6925Dash40 string = "6g-195-6925-40"
+
+	// InterfaceRfChannelValueNr6gDash197Dash6935Dash20 captures enum value "6g-197-6935-20"
+	InterfaceRfChannelValueNr6gDash197Dash6935Dash20 string = "6g-197-6935-20"
+
+	// InterfaceRfChannelValueNr6gDash199Dash6945Dash80 captures enum value "6g-199-6945-80"
+	InterfaceRfChannelValueNr6gDash199Dash6945Dash80 string = "6g-199-6945-80"
+
+	// InterfaceRfChannelValueNr6gDash201Dash6955Dash20 captures enum value "6g-201-6955-20"
+	InterfaceRfChannelValueNr6gDash201Dash6955Dash20 string = "6g-201-6955-20"
+
+	// InterfaceRfChannelValueNr6gDash203Dash6965Dash40 captures enum value "6g-203-6965-40"
+	InterfaceRfChannelValueNr6gDash203Dash6965Dash40 string = "6g-203-6965-40"
+
+	// InterfaceRfChannelValueNr6gDash205Dash6975Dash20 captures enum value "6g-205-6975-20"
+	InterfaceRfChannelValueNr6gDash205Dash6975Dash20 string = "6g-205-6975-20"
+
+	// InterfaceRfChannelValueNr6gDash207Dash6985Dash160 captures enum value "6g-207-6985-160"
+	InterfaceRfChannelValueNr6gDash207Dash6985Dash160 string = "6g-207-6985-160"
+
+	// InterfaceRfChannelValueNr6gDash209Dash6995Dash20 captures enum value "6g-209-6995-20"
+	InterfaceRfChannelValueNr6gDash209Dash6995Dash20 string = "6g-209-6995-20"
+
+	// InterfaceRfChannelValueNr6gDash211Dash7005Dash40 captures enum value "6g-211-7005-40"
+	InterfaceRfChannelValueNr6gDash211Dash7005Dash40 string = "6g-211-7005-40"
+
+	// InterfaceRfChannelValueNr6gDash213Dash7015Dash20 captures enum value "6g-213-7015-20"
+	InterfaceRfChannelValueNr6gDash213Dash7015Dash20 string = "6g-213-7015-20"
+
+	// InterfaceRfChannelValueNr6gDash215Dash7025Dash80 captures enum value "6g-215-7025-80"
+	InterfaceRfChannelValueNr6gDash215Dash7025Dash80 string = "6g-215-7025-80"
+
+	// InterfaceRfChannelValueNr6gDash217Dash7035Dash20 captures enum value "6g-217-7035-20"
+	InterfaceRfChannelValueNr6gDash217Dash7035Dash20 string = "6g-217-7035-20"
+
+	// InterfaceRfChannelValueNr6gDash219Dash7045Dash40 captures enum value "6g-219-7045-40"
+	InterfaceRfChannelValueNr6gDash219Dash7045Dash40 string = "6g-219-7045-40"
+
+	// InterfaceRfChannelValueNr6gDash221Dash7055Dash20 captures enum value "6g-221-7055-20"
+	InterfaceRfChannelValueNr6gDash221Dash7055Dash20 string = "6g-221-7055-20"
+
+	// InterfaceRfChannelValueNr6gDash225Dash7075Dash20 captures enum value "6g-225-7075-20"
+	InterfaceRfChannelValueNr6gDash225Dash7075Dash20 string = "6g-225-7075-20"
+
+	// InterfaceRfChannelValueNr6gDash227Dash7085Dash40 captures enum value "6g-227-7085-40"
+	InterfaceRfChannelValueNr6gDash227Dash7085Dash40 string = "6g-227-7085-40"
+
+	// InterfaceRfChannelValueNr6gDash229Dash7095Dash20 captures enum value "6g-229-7095-20"
+	InterfaceRfChannelValueNr6gDash229Dash7095Dash20 string = "6g-229-7095-20"
+
+	// InterfaceRfChannelValueNr6gDash233Dash7115Dash20 captures enum value "6g-233-7115-20"
+	InterfaceRfChannelValueNr6gDash233Dash7115Dash20 string = "6g-233-7115-20"
+
+	// InterfaceRfChannelValueNr60gDash1Dash58320Dash2160 captures enum value "60g-1-58320-2160"
+	InterfaceRfChannelValueNr60gDash1Dash58320Dash2160 string = "60g-1-58320-2160"
+
+	// InterfaceRfChannelValueNr60gDash2Dash60480Dash2160 captures enum value "60g-2-60480-2160"
+	InterfaceRfChannelValueNr60gDash2Dash60480Dash2160 string = "60g-2-60480-2160"
+
+	// InterfaceRfChannelValueNr60gDash3Dash62640Dash2160 captures enum value "60g-3-62640-2160"
+	InterfaceRfChannelValueNr60gDash3Dash62640Dash2160 string = "60g-3-62640-2160"
+
+	// InterfaceRfChannelValueNr60gDash4Dash64800Dash2160 captures enum value "60g-4-64800-2160"
+	InterfaceRfChannelValueNr60gDash4Dash64800Dash2160 string = "60g-4-64800-2160"
+
+	// InterfaceRfChannelValueNr60gDash5Dash66960Dash2160 captures enum value "60g-5-66960-2160"
+	InterfaceRfChannelValueNr60gDash5Dash66960Dash2160 string = "60g-5-66960-2160"
+
+	// InterfaceRfChannelValueNr60gDash6Dash69120Dash2160 captures enum value "60g-6-69120-2160"
+	InterfaceRfChannelValueNr60gDash6Dash69120Dash2160 string = "60g-6-69120-2160"
+
+	// InterfaceRfChannelValueNr60gDash9Dash59400Dash4320 captures enum value "60g-9-59400-4320"
+	InterfaceRfChannelValueNr60gDash9Dash59400Dash4320 string = "60g-9-59400-4320"
+
+	// InterfaceRfChannelValueNr60gDash10Dash61560Dash4320 captures enum value "60g-10-61560-4320"
+	InterfaceRfChannelValueNr60gDash10Dash61560Dash4320 string = "60g-10-61560-4320"
+
+	// InterfaceRfChannelValueNr60gDash11Dash63720Dash4320 captures enum value "60g-11-63720-4320"
+	InterfaceRfChannelValueNr60gDash11Dash63720Dash4320 string = "60g-11-63720-4320"
+
+	// InterfaceRfChannelValueNr60gDash12Dash65880Dash4320 captures enum value "60g-12-65880-4320"
+	InterfaceRfChannelValueNr60gDash12Dash65880Dash4320 string = "60g-12-65880-4320"
+
+	// InterfaceRfChannelValueNr60gDash13Dash68040Dash4320 captures enum value "60g-13-68040-4320"
+	InterfaceRfChannelValueNr60gDash13Dash68040Dash4320 string = "60g-13-68040-4320"
+
+	// InterfaceRfChannelValueNr60gDash17Dash60480Dash6480 captures enum value "60g-17-60480-6480"
+	InterfaceRfChannelValueNr60gDash17Dash60480Dash6480 string = "60g-17-60480-6480"
+
+	// InterfaceRfChannelValueNr60gDash18Dash62640Dash6480 captures enum value "60g-18-62640-6480"
+	InterfaceRfChannelValueNr60gDash18Dash62640Dash6480 string = "60g-18-62640-6480"
+
+	// InterfaceRfChannelValueNr60gDash19Dash64800Dash6480 captures enum value "60g-19-64800-6480"
+	InterfaceRfChannelValueNr60gDash19Dash64800Dash6480 string = "60g-19-64800-6480"
+
+	// InterfaceRfChannelValueNr60gDash20Dash66960Dash6480 captures enum value "60g-20-66960-6480"
+	InterfaceRfChannelValueNr60gDash20Dash66960Dash6480 string = "60g-20-66960-6480"
+
+	// InterfaceRfChannelValueNr60gDash25Dash61560Dash6480 captures enum value "60g-25-61560-6480"
+	InterfaceRfChannelValueNr60gDash25Dash61560Dash6480 string = "60g-25-61560-6480"
+
+	// InterfaceRfChannelValueNr60gDash26Dash63720Dash6480 captures enum value "60g-26-63720-6480"
+	InterfaceRfChannelValueNr60gDash26Dash63720Dash6480 string = "60g-26-63720-6480"
+
+	// InterfaceRfChannelValueNr60gDash27Dash65880Dash6480 captures enum value "60g-27-65880-6480"
+	InterfaceRfChannelValueNr60gDash27Dash65880Dash6480 string = "60g-27-65880-6480"
+)
+
+// prop value enum
+func (m *InterfaceRfChannel) validateValueEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, interfaceRfChannelTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *InterfaceRfChannel) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("rf_channel"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("rf_channel"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this interface rf channel based on context it is used
+func (m *InterfaceRfChannel) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *InterfaceRfChannel) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *InterfaceRfChannel) UnmarshalBinary(b []byte) error {
+	var res InterfaceRfChannel
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// InterfaceRfRole Rf role
+//
+// swagger:model InterfaceRfRole
+type InterfaceRfRole struct {
+
+	// label
+	// Required: true
+	// Enum: [Access point Station]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [ap station]
+	Value *string `json:"value"`
+}
+
+// Validate validates this interface rf role
+func (m *InterfaceRfRole) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var interfaceRfRoleTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Access point","Station"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		interfaceRfRoleTypeLabelPropEnum = append(interfaceRfRoleTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// InterfaceRfRoleLabelAccessPoint captures enum value "Access point"
+	InterfaceRfRoleLabelAccessPoint string = "Access point"
+
+	// InterfaceRfRoleLabelStation captures enum value "Station"
+	InterfaceRfRoleLabelStation string = "Station"
+)
+
+// prop value enum
+func (m *InterfaceRfRole) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, interfaceRfRoleTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *InterfaceRfRole) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("rf_role"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("rf_role"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var interfaceRfRoleTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["ap","station"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		interfaceRfRoleTypeValuePropEnum = append(interfaceRfRoleTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// InterfaceRfRoleValueAp captures enum value "ap"
+	InterfaceRfRoleValueAp string = "ap"
+
+	// InterfaceRfRoleValueStation captures enum value "station"
+	InterfaceRfRoleValueStation string = "station"
+)
+
+// prop value enum
+func (m *InterfaceRfRole) validateValueEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, interfaceRfRoleTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *InterfaceRfRole) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("rf_role"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("rf_role"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this interface rf role based on context it is used
+func (m *InterfaceRfRole) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *InterfaceRfRole) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *InterfaceRfRole) UnmarshalBinary(b []byte) error {
+	var res InterfaceRfRole
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
 // InterfaceType Type
 //
 // swagger:model InterfaceType
@@ -1008,12 +3111,12 @@ type InterfaceType struct {
 
 	// label
 	// Required: true
-	// Enum: [Virtual Link Aggregation Group (LAG) 100BASE-TX (10/100ME) 1000BASE-T (1GE) 2.5GBASE-T (2.5GE) 5GBASE-T (5GE) 10GBASE-T (10GE) 10GBASE-CX4 (10GE) GBIC (1GE) SFP (1GE) SFP+ (10GE) XFP (10GE) XENPAK (10GE) X2 (10GE) SFP28 (25GE) SFP56 (50GE) QSFP+ (40GE) QSFP28 (50GE) CFP (100GE) CFP2 (100GE) CFP2 (200GE) CFP4 (100GE) Cisco CPAK (100GE) QSFP28 (100GE) QSFP56 (200GE) QSFP-DD (400GE) OSFP (400GE) IEEE 802.11a IEEE 802.11b/g IEEE 802.11n IEEE 802.11ac IEEE 802.11ad IEEE 802.11ax GSM CDMA LTE OC-3/STM-1 OC-12/STM-4 OC-48/STM-16 OC-192/STM-64 OC-768/STM-256 OC-1920/STM-640 OC-3840/STM-1234 SFP (1GFC) SFP (2GFC) SFP (4GFC) SFP+ (8GFC) SFP+ (16GFC) SFP28 (32GFC) QSFP+ (64GFC) QSFP28 (128GFC) SDR (2 Gbps) DDR (4 Gbps) QDR (8 Gbps) FDR10 (10 Gbps) FDR (13.5 Gbps) EDR (25 Gbps) HDR (50 Gbps) NDR (100 Gbps) XDR (250 Gbps) T1 (1.544 Mbps) E1 (2.048 Mbps) T3 (45 Mbps) E3 (34 Mbps) xDSL Cisco StackWise Cisco StackWise Plus Cisco FlexStack Cisco FlexStack Plus Juniper VCP Extreme SummitStack Extreme SummitStack-128 Extreme SummitStack-256 Extreme SummitStack-512 Other]
+	// Enum: [Virtual Bridge Link Aggregation Group (LAG) 100BASE-TX (10/100ME) 1000BASE-T (1GE) 2.5GBASE-T (2.5GE) 5GBASE-T (5GE) 10GBASE-T (10GE) 10GBASE-CX4 (10GE) GBIC (1GE) SFP (1GE) SFP+ (10GE) XFP (10GE) XENPAK (10GE) X2 (10GE) SFP28 (25GE) SFP56 (50GE) QSFP+ (40GE) QSFP28 (50GE) CFP (100GE) CFP2 (100GE) CFP2 (200GE) CFP4 (100GE) Cisco CPAK (100GE) QSFP28 (100GE) QSFP56 (200GE) QSFP-DD (400GE) OSFP (400GE) IEEE 802.11a IEEE 802.11b/g IEEE 802.11n IEEE 802.11ac IEEE 802.11ad IEEE 802.11ax IEEE 802.15.1 (Bluetooth) GSM CDMA LTE OC-3/STM-1 OC-12/STM-4 OC-48/STM-16 OC-192/STM-64 OC-768/STM-256 OC-1920/STM-640 OC-3840/STM-1234 SFP (1GFC) SFP (2GFC) SFP (4GFC) SFP+ (8GFC) SFP+ (16GFC) SFP28 (32GFC) QSFP+ (64GFC) QSFP28 (128GFC) SDR (2 Gbps) DDR (4 Gbps) QDR (8 Gbps) FDR10 (10 Gbps) FDR (13.5 Gbps) EDR (25 Gbps) HDR (50 Gbps) NDR (100 Gbps) XDR (250 Gbps) T1 (1.544 Mbps) E1 (2.048 Mbps) T3 (45 Mbps) E3 (34 Mbps) xDSL Cisco StackWise Cisco StackWise Plus Cisco FlexStack Cisco FlexStack Plus Cisco StackWise-80 Cisco StackWise-160 Cisco StackWise-320 Cisco StackWise-480 Juniper VCP Extreme SummitStack Extreme SummitStack-128 Extreme SummitStack-256 Extreme SummitStack-512 Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [virtual lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-sfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
+	// Enum: [virtual bridge lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax ieee802.15.1 gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-qsfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus cisco-stackwise-80 cisco-stackwise-160 cisco-stackwise-320 cisco-stackwise-480 juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
 	Value *string `json:"value"`
 }
 
@@ -1039,7 +3142,7 @@ var interfaceTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Virtual","Link Aggregation Group (LAG)","100BASE-TX (10/100ME)","1000BASE-T (1GE)","2.5GBASE-T (2.5GE)","5GBASE-T (5GE)","10GBASE-T (10GE)","10GBASE-CX4 (10GE)","GBIC (1GE)","SFP (1GE)","SFP+ (10GE)","XFP (10GE)","XENPAK (10GE)","X2 (10GE)","SFP28 (25GE)","SFP56 (50GE)","QSFP+ (40GE)","QSFP28 (50GE)","CFP (100GE)","CFP2 (100GE)","CFP2 (200GE)","CFP4 (100GE)","Cisco CPAK (100GE)","QSFP28 (100GE)","QSFP56 (200GE)","QSFP-DD (400GE)","OSFP (400GE)","IEEE 802.11a","IEEE 802.11b/g","IEEE 802.11n","IEEE 802.11ac","IEEE 802.11ad","IEEE 802.11ax","GSM","CDMA","LTE","OC-3/STM-1","OC-12/STM-4","OC-48/STM-16","OC-192/STM-64","OC-768/STM-256","OC-1920/STM-640","OC-3840/STM-1234","SFP (1GFC)","SFP (2GFC)","SFP (4GFC)","SFP+ (8GFC)","SFP+ (16GFC)","SFP28 (32GFC)","QSFP+ (64GFC)","QSFP28 (128GFC)","SDR (2 Gbps)","DDR (4 Gbps)","QDR (8 Gbps)","FDR10 (10 Gbps)","FDR (13.5 Gbps)","EDR (25 Gbps)","HDR (50 Gbps)","NDR (100 Gbps)","XDR (250 Gbps)","T1 (1.544 Mbps)","E1 (2.048 Mbps)","T3 (45 Mbps)","E3 (34 Mbps)","xDSL","Cisco StackWise","Cisco StackWise Plus","Cisco FlexStack","Cisco FlexStack Plus","Juniper VCP","Extreme SummitStack","Extreme SummitStack-128","Extreme SummitStack-256","Extreme SummitStack-512","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Virtual","Bridge","Link Aggregation Group (LAG)","100BASE-TX (10/100ME)","1000BASE-T (1GE)","2.5GBASE-T (2.5GE)","5GBASE-T (5GE)","10GBASE-T (10GE)","10GBASE-CX4 (10GE)","GBIC (1GE)","SFP (1GE)","SFP+ (10GE)","XFP (10GE)","XENPAK (10GE)","X2 (10GE)","SFP28 (25GE)","SFP56 (50GE)","QSFP+ (40GE)","QSFP28 (50GE)","CFP (100GE)","CFP2 (100GE)","CFP2 (200GE)","CFP4 (100GE)","Cisco CPAK (100GE)","QSFP28 (100GE)","QSFP56 (200GE)","QSFP-DD (400GE)","OSFP (400GE)","IEEE 802.11a","IEEE 802.11b/g","IEEE 802.11n","IEEE 802.11ac","IEEE 802.11ad","IEEE 802.11ax","IEEE 802.15.1 (Bluetooth)","GSM","CDMA","LTE","OC-3/STM-1","OC-12/STM-4","OC-48/STM-16","OC-192/STM-64","OC-768/STM-256","OC-1920/STM-640","OC-3840/STM-1234","SFP (1GFC)","SFP (2GFC)","SFP (4GFC)","SFP+ (8GFC)","SFP+ (16GFC)","SFP28 (32GFC)","QSFP+ (64GFC)","QSFP28 (128GFC)","SDR (2 Gbps)","DDR (4 Gbps)","QDR (8 Gbps)","FDR10 (10 Gbps)","FDR (13.5 Gbps)","EDR (25 Gbps)","HDR (50 Gbps)","NDR (100 Gbps)","XDR (250 Gbps)","T1 (1.544 Mbps)","E1 (2.048 Mbps)","T3 (45 Mbps)","E3 (34 Mbps)","xDSL","Cisco StackWise","Cisco StackWise Plus","Cisco FlexStack","Cisco FlexStack Plus","Cisco StackWise-80","Cisco StackWise-160","Cisco StackWise-320","Cisco StackWise-480","Juniper VCP","Extreme SummitStack","Extreme SummitStack-128","Extreme SummitStack-256","Extreme SummitStack-512","Other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -1051,6 +3154,9 @@ const (
 
 	// InterfaceTypeLabelVirtual captures enum value "Virtual"
 	InterfaceTypeLabelVirtual string = "Virtual"
+
+	// InterfaceTypeLabelBridge captures enum value "Bridge"
+	InterfaceTypeLabelBridge string = "Bridge"
 
 	// InterfaceTypeLabelLinkAggregationGroupLAG captures enum value "Link Aggregation Group (LAG)"
 	InterfaceTypeLabelLinkAggregationGroupLAG string = "Link Aggregation Group (LAG)"
@@ -1147,6 +3253,9 @@ const (
 
 	// InterfaceTypeLabelIEEE802Dot11ax captures enum value "IEEE 802.11ax"
 	InterfaceTypeLabelIEEE802Dot11ax string = "IEEE 802.11ax"
+
+	// InterfaceTypeLabelIEEE802Dot15Dot1Bluetooth captures enum value "IEEE 802.15.1 (Bluetooth)"
+	InterfaceTypeLabelIEEE802Dot15Dot1Bluetooth string = "IEEE 802.15.1 (Bluetooth)"
 
 	// InterfaceTypeLabelGSM captures enum value "GSM"
 	InterfaceTypeLabelGSM string = "GSM"
@@ -1256,6 +3365,18 @@ const (
 	// InterfaceTypeLabelCiscoFlexStackPlus captures enum value "Cisco FlexStack Plus"
 	InterfaceTypeLabelCiscoFlexStackPlus string = "Cisco FlexStack Plus"
 
+	// InterfaceTypeLabelCiscoStackWiseDash80 captures enum value "Cisco StackWise-80"
+	InterfaceTypeLabelCiscoStackWiseDash80 string = "Cisco StackWise-80"
+
+	// InterfaceTypeLabelCiscoStackWiseDash160 captures enum value "Cisco StackWise-160"
+	InterfaceTypeLabelCiscoStackWiseDash160 string = "Cisco StackWise-160"
+
+	// InterfaceTypeLabelCiscoStackWiseDash320 captures enum value "Cisco StackWise-320"
+	InterfaceTypeLabelCiscoStackWiseDash320 string = "Cisco StackWise-320"
+
+	// InterfaceTypeLabelCiscoStackWiseDash480 captures enum value "Cisco StackWise-480"
+	InterfaceTypeLabelCiscoStackWiseDash480 string = "Cisco StackWise-480"
+
 	// InterfaceTypeLabelJuniperVCP captures enum value "Juniper VCP"
 	InterfaceTypeLabelJuniperVCP string = "Juniper VCP"
 
@@ -1301,7 +3422,7 @@ var interfaceTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["virtual","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-sfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["virtual","bridge","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","ieee802.15.1","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-qsfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","cisco-stackwise-80","cisco-stackwise-160","cisco-stackwise-320","cisco-stackwise-480","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -1313,6 +3434,9 @@ const (
 
 	// InterfaceTypeValueVirtual captures enum value "virtual"
 	InterfaceTypeValueVirtual string = "virtual"
+
+	// InterfaceTypeValueBridge captures enum value "bridge"
+	InterfaceTypeValueBridge string = "bridge"
 
 	// InterfaceTypeValueLag captures enum value "lag"
 	InterfaceTypeValueLag string = "lag"
@@ -1410,6 +3534,9 @@ const (
 	// InterfaceTypeValueIeee802Dot11ax captures enum value "ieee802.11ax"
 	InterfaceTypeValueIeee802Dot11ax string = "ieee802.11ax"
 
+	// InterfaceTypeValueIeee802Dot15Dot1 captures enum value "ieee802.15.1"
+	InterfaceTypeValueIeee802Dot15Dot1 string = "ieee802.15.1"
+
 	// InterfaceTypeValueGsm captures enum value "gsm"
 	InterfaceTypeValueGsm string = "gsm"
 
@@ -1461,8 +3588,8 @@ const (
 	// InterfaceTypeValueNr64gfcDashQsfpp captures enum value "64gfc-qsfpp"
 	InterfaceTypeValueNr64gfcDashQsfpp string = "64gfc-qsfpp"
 
-	// InterfaceTypeValueNr128gfcDashSfp28 captures enum value "128gfc-sfp28"
-	InterfaceTypeValueNr128gfcDashSfp28 string = "128gfc-sfp28"
+	// InterfaceTypeValueNr128gfcDashQsfp28 captures enum value "128gfc-qsfp28"
+	InterfaceTypeValueNr128gfcDashQsfp28 string = "128gfc-qsfp28"
 
 	// InterfaceTypeValueInfinibandDashSdr captures enum value "infiniband-sdr"
 	InterfaceTypeValueInfinibandDashSdr string = "infiniband-sdr"
@@ -1517,6 +3644,18 @@ const (
 
 	// InterfaceTypeValueCiscoDashFlexstackDashPlus captures enum value "cisco-flexstack-plus"
 	InterfaceTypeValueCiscoDashFlexstackDashPlus string = "cisco-flexstack-plus"
+
+	// InterfaceTypeValueCiscoDashStackwiseDash80 captures enum value "cisco-stackwise-80"
+	InterfaceTypeValueCiscoDashStackwiseDash80 string = "cisco-stackwise-80"
+
+	// InterfaceTypeValueCiscoDashStackwiseDash160 captures enum value "cisco-stackwise-160"
+	InterfaceTypeValueCiscoDashStackwiseDash160 string = "cisco-stackwise-160"
+
+	// InterfaceTypeValueCiscoDashStackwiseDash320 captures enum value "cisco-stackwise-320"
+	InterfaceTypeValueCiscoDashStackwiseDash320 string = "cisco-stackwise-320"
+
+	// InterfaceTypeValueCiscoDashStackwiseDash480 captures enum value "cisco-stackwise-480"
+	InterfaceTypeValueCiscoDashStackwiseDash480 string = "cisco-stackwise-480"
 
 	// InterfaceTypeValueJuniperDashVcp captures enum value "juniper-vcp"
 	InterfaceTypeValueJuniperDashVcp string = "juniper-vcp"

@@ -47,7 +47,6 @@ type WritableIPAddress struct {
 	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
 
 	// Assigned object id
-	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	AssignedObjectID *int64 `json:"assigned_object_id"`
 
@@ -56,8 +55,8 @@ type WritableIPAddress struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -74,14 +73,14 @@ type WritableIPAddress struct {
 	//
 	// Hostname or FQDN (not case-sensitive)
 	// Max Length: 255
-	// Pattern: ^[0-9A-Za-z._-]+$
+	// Pattern: ^([0-9A-Za-z_-]+|\*)(\.[0-9A-Za-z_-]+)*\.?$
 	DNSName string `json:"dns_name,omitempty"`
 
 	// Family
 	// Read Only: true
 	Family string `json:"family,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -102,7 +101,7 @@ type WritableIPAddress struct {
 	// Role
 	//
 	// The functional role of this IP
-	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp]
+	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp g]
 	Role string `json:"role,omitempty"`
 
 	// Status
@@ -194,10 +193,6 @@ func (m *WritableIPAddress) validateAssignedObjectID(formats strfmt.Registry) er
 		return err
 	}
 
-	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
-		return err
-	}
-
 	return nil
 }
 
@@ -206,7 +201,7 @@ func (m *WritableIPAddress) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -234,7 +229,7 @@ func (m *WritableIPAddress) validateDNSName(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.Pattern("dns_name", "body", m.DNSName, `^[0-9A-Za-z._-]+$`); err != nil {
+	if err := validate.Pattern("dns_name", "body", m.DNSName, `^([0-9A-Za-z_-]+|\*)(\.[0-9A-Za-z_-]+)*\.?$`); err != nil {
 		return err
 	}
 
@@ -257,7 +252,7 @@ var writableIpAddressTypeRolePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp","g"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -290,6 +285,9 @@ const (
 
 	// WritableIPAddressRoleCarp captures enum value "carp"
 	WritableIPAddressRoleCarp string = "carp"
+
+	// WritableIPAddressRoleG captures enum value "g"
+	WritableIPAddressRoleG string = "g"
 )
 
 // prop value enum
@@ -378,6 +376,8 @@ func (m *WritableIPAddress) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -453,7 +453,7 @@ func (m *WritableIPAddress) contextValidateAssignedObject(ctx context.Context, f
 
 func (m *WritableIPAddress) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -513,6 +513,8 @@ func (m *WritableIPAddress) contextValidateTags(ctx context.Context, formats str
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

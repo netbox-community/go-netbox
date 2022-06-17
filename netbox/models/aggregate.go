@@ -38,8 +38,8 @@ type Aggregate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -59,7 +59,7 @@ type Aggregate struct {
 	// family
 	Family *AggregateFamily `json:"family,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -143,7 +143,7 @@ func (m *Aggregate) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -183,6 +183,8 @@ func (m *Aggregate) validateFamily(formats strfmt.Registry) error {
 		if err := m.Family.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("family")
 			}
 			return err
 		}
@@ -222,6 +224,8 @@ func (m *Aggregate) validateRir(formats strfmt.Registry) error {
 		if err := m.Rir.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rir")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rir")
 			}
 			return err
 		}
@@ -244,6 +248,8 @@ func (m *Aggregate) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -263,6 +269,8 @@ func (m *Aggregate) validateTenant(formats strfmt.Registry) error {
 		if err := m.Tenant.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}
@@ -331,7 +339,7 @@ func (m *Aggregate) ContextValidate(ctx context.Context, formats strfmt.Registry
 
 func (m *Aggregate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -353,6 +361,8 @@ func (m *Aggregate) contextValidateFamily(ctx context.Context, formats strfmt.Re
 		if err := m.Family.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("family")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("family")
 			}
 			return err
 		}
@@ -385,6 +395,8 @@ func (m *Aggregate) contextValidateRir(ctx context.Context, formats strfmt.Regis
 		if err := m.Rir.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("rir")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("rir")
 			}
 			return err
 		}
@@ -401,6 +413,8 @@ func (m *Aggregate) contextValidateTags(ctx context.Context, formats strfmt.Regi
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -417,6 +431,8 @@ func (m *Aggregate) contextValidateTenant(ctx context.Context, formats strfmt.Re
 		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
 			}
 			return err
 		}

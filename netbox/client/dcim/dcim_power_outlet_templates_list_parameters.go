@@ -129,11 +129,14 @@ type DcimPowerOutletTemplatesListParams struct {
 	*/
 	Limit *int64
 
+	// ModuletypeID.
+	ModuletypeID *string
+
+	// ModuletypeIDn.
+	ModuletypeIDn *string
+
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -417,6 +420,28 @@ func (o *DcimPowerOutletTemplatesListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithModuletypeID adds the moduletypeID to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) WithModuletypeID(moduletypeID *string) *DcimPowerOutletTemplatesListParams {
+	o.SetModuletypeID(moduletypeID)
+	return o
+}
+
+// SetModuletypeID adds the moduletypeId to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) SetModuletypeID(moduletypeID *string) {
+	o.ModuletypeID = moduletypeID
+}
+
+// WithModuletypeIDn adds the moduletypeIDn to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) WithModuletypeIDn(moduletypeIDn *string) *DcimPowerOutletTemplatesListParams {
+	o.SetModuletypeIDn(moduletypeIDn)
+	return o
+}
+
+// SetModuletypeIDn adds the moduletypeIdN to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) SetModuletypeIDn(moduletypeIDn *string) {
+	o.ModuletypeIDn = moduletypeIDn
+}
+
 // WithName adds the name to the dcim power outlet templates list params
 func (o *DcimPowerOutletTemplatesListParams) WithName(name *string) *DcimPowerOutletTemplatesListParams {
 	o.SetName(name)
@@ -426,17 +451,6 @@ func (o *DcimPowerOutletTemplatesListParams) WithName(name *string) *DcimPowerOu
 // SetName adds the name to the dcim power outlet templates list params
 func (o *DcimPowerOutletTemplatesListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim power outlet templates list params
-func (o *DcimPowerOutletTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimPowerOutletTemplatesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim power outlet templates list params
-func (o *DcimPowerOutletTemplatesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim power outlet templates list params
@@ -879,6 +893,40 @@ func (o *DcimPowerOutletTemplatesListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
+	if o.ModuletypeID != nil {
+
+		// query param moduletype_id
+		var qrModuletypeID string
+
+		if o.ModuletypeID != nil {
+			qrModuletypeID = *o.ModuletypeID
+		}
+		qModuletypeID := qrModuletypeID
+		if qModuletypeID != "" {
+
+			if err := r.SetQueryParam("moduletype_id", qModuletypeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ModuletypeIDn != nil {
+
+		// query param moduletype_id__n
+		var qrModuletypeIDn string
+
+		if o.ModuletypeIDn != nil {
+			qrModuletypeIDn = *o.ModuletypeIDn
+		}
+		qModuletypeIDn := qrModuletypeIDn
+		if qModuletypeIDn != "" {
+
+			if err := r.SetQueryParam("moduletype_id__n", qModuletypeIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Name != nil {
 
 		// query param name
@@ -891,23 +939,6 @@ func (o *DcimPowerOutletTemplatesListParams) WriteToRequest(r runtime.ClientRequ
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

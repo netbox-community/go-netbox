@@ -111,9 +111,6 @@ type DcimPowerPortsListParams struct {
 	// Description.
 	Description *string
 
-	// DescriptionEmpty.
-	DescriptionEmpty *string
-
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -173,9 +170,6 @@ type DcimPowerPortsListParams struct {
 
 	// Label.
 	Label *string
-
-	// LabelEmpty.
-	LabelEmpty *string
 
 	// LabelIc.
 	LabelIc *string
@@ -249,11 +243,14 @@ type DcimPowerPortsListParams struct {
 	// MaximumDrawn.
 	MaximumDrawn *string
 
+	// ModuleID.
+	ModuleID *string
+
+	// ModuleIDn.
+	ModuleIDn *string
+
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -338,6 +335,18 @@ type DcimPowerPortsListParams struct {
 
 	// Typen.
 	Typen *string
+
+	// VirtualChassis.
+	VirtualChassis *string
+
+	// VirtualChassisn.
+	VirtualChassisn *string
+
+	// VirtualChassisID.
+	VirtualChassisID *string
+
+	// VirtualChassisIDn.
+	VirtualChassisIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -522,17 +531,6 @@ func (o *DcimPowerPortsListParams) WithDescription(description *string) *DcimPow
 // SetDescription adds the description to the dcim power ports list params
 func (o *DcimPowerPortsListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the dcim power ports list params
-func (o *DcimPowerPortsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimPowerPortsListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the dcim power ports list params
-func (o *DcimPowerPortsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim power ports list params
@@ -753,17 +751,6 @@ func (o *DcimPowerPortsListParams) WithLabel(label *string) *DcimPowerPortsListP
 // SetLabel adds the label to the dcim power ports list params
 func (o *DcimPowerPortsListParams) SetLabel(label *string) {
 	o.Label = label
-}
-
-// WithLabelEmpty adds the labelEmpty to the dcim power ports list params
-func (o *DcimPowerPortsListParams) WithLabelEmpty(labelEmpty *string) *DcimPowerPortsListParams {
-	o.SetLabelEmpty(labelEmpty)
-	return o
-}
-
-// SetLabelEmpty adds the labelEmpty to the dcim power ports list params
-func (o *DcimPowerPortsListParams) SetLabelEmpty(labelEmpty *string) {
-	o.LabelEmpty = labelEmpty
 }
 
 // WithLabelIc adds the labelIc to the dcim power ports list params
@@ -1019,6 +1006,28 @@ func (o *DcimPowerPortsListParams) SetMaximumDrawn(maximumDrawn *string) {
 	o.MaximumDrawn = maximumDrawn
 }
 
+// WithModuleID adds the moduleID to the dcim power ports list params
+func (o *DcimPowerPortsListParams) WithModuleID(moduleID *string) *DcimPowerPortsListParams {
+	o.SetModuleID(moduleID)
+	return o
+}
+
+// SetModuleID adds the moduleId to the dcim power ports list params
+func (o *DcimPowerPortsListParams) SetModuleID(moduleID *string) {
+	o.ModuleID = moduleID
+}
+
+// WithModuleIDn adds the moduleIDn to the dcim power ports list params
+func (o *DcimPowerPortsListParams) WithModuleIDn(moduleIDn *string) *DcimPowerPortsListParams {
+	o.SetModuleIDn(moduleIDn)
+	return o
+}
+
+// SetModuleIDn adds the moduleIdN to the dcim power ports list params
+func (o *DcimPowerPortsListParams) SetModuleIDn(moduleIDn *string) {
+	o.ModuleIDn = moduleIDn
+}
+
 // WithName adds the name to the dcim power ports list params
 func (o *DcimPowerPortsListParams) WithName(name *string) *DcimPowerPortsListParams {
 	o.SetName(name)
@@ -1028,17 +1037,6 @@ func (o *DcimPowerPortsListParams) WithName(name *string) *DcimPowerPortsListPar
 // SetName adds the name to the dcim power ports list params
 func (o *DcimPowerPortsListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim power ports list params
-func (o *DcimPowerPortsListParams) WithNameEmpty(nameEmpty *string) *DcimPowerPortsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim power ports list params
-func (o *DcimPowerPortsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim power ports list params
@@ -1338,6 +1336,50 @@ func (o *DcimPowerPortsListParams) SetTypen(typen *string) {
 	o.Typen = typen
 }
 
+// WithVirtualChassis adds the virtualChassis to the dcim power ports list params
+func (o *DcimPowerPortsListParams) WithVirtualChassis(virtualChassis *string) *DcimPowerPortsListParams {
+	o.SetVirtualChassis(virtualChassis)
+	return o
+}
+
+// SetVirtualChassis adds the virtualChassis to the dcim power ports list params
+func (o *DcimPowerPortsListParams) SetVirtualChassis(virtualChassis *string) {
+	o.VirtualChassis = virtualChassis
+}
+
+// WithVirtualChassisn adds the virtualChassisn to the dcim power ports list params
+func (o *DcimPowerPortsListParams) WithVirtualChassisn(virtualChassisn *string) *DcimPowerPortsListParams {
+	o.SetVirtualChassisn(virtualChassisn)
+	return o
+}
+
+// SetVirtualChassisn adds the virtualChassisN to the dcim power ports list params
+func (o *DcimPowerPortsListParams) SetVirtualChassisn(virtualChassisn *string) {
+	o.VirtualChassisn = virtualChassisn
+}
+
+// WithVirtualChassisID adds the virtualChassisID to the dcim power ports list params
+func (o *DcimPowerPortsListParams) WithVirtualChassisID(virtualChassisID *string) *DcimPowerPortsListParams {
+	o.SetVirtualChassisID(virtualChassisID)
+	return o
+}
+
+// SetVirtualChassisID adds the virtualChassisId to the dcim power ports list params
+func (o *DcimPowerPortsListParams) SetVirtualChassisID(virtualChassisID *string) {
+	o.VirtualChassisID = virtualChassisID
+}
+
+// WithVirtualChassisIDn adds the virtualChassisIDn to the dcim power ports list params
+func (o *DcimPowerPortsListParams) WithVirtualChassisIDn(virtualChassisIDn *string) *DcimPowerPortsListParams {
+	o.SetVirtualChassisIDn(virtualChassisIDn)
+	return o
+}
+
+// SetVirtualChassisIDn adds the virtualChassisIdN to the dcim power ports list params
+func (o *DcimPowerPortsListParams) SetVirtualChassisIDn(virtualChassisIDn *string) {
+	o.VirtualChassisIDn = virtualChassisIDn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimPowerPortsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -1545,23 +1587,6 @@ func (o *DcimPowerPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1902,23 +1927,6 @@ func (o *DcimPowerPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLabel != "" {
 
 			if err := r.SetQueryParam("label", qLabel); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LabelEmpty != nil {
-
-		// query param label__empty
-		var qrLabelEmpty string
-
-		if o.LabelEmpty != nil {
-			qrLabelEmpty = *o.LabelEmpty
-		}
-		qLabelEmpty := qrLabelEmpty
-		if qLabelEmpty != "" {
-
-			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
 				return err
 			}
 		}
@@ -2315,6 +2323,40 @@ func (o *DcimPowerPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.ModuleID != nil {
+
+		// query param module_id
+		var qrModuleID string
+
+		if o.ModuleID != nil {
+			qrModuleID = *o.ModuleID
+		}
+		qModuleID := qrModuleID
+		if qModuleID != "" {
+
+			if err := r.SetQueryParam("module_id", qModuleID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ModuleIDn != nil {
+
+		// query param module_id__n
+		var qrModuleIDn string
+
+		if o.ModuleIDn != nil {
+			qrModuleIDn = *o.ModuleIDn
+		}
+		qModuleIDn := qrModuleIDn
+		if qModuleIDn != "" {
+
+			if err := r.SetQueryParam("module_id__n", qModuleIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Name != nil {
 
 		// query param name
@@ -2327,23 +2369,6 @@ func (o *DcimPowerPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -2803,6 +2828,74 @@ func (o *DcimPowerPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qTypen != "" {
 
 			if err := r.SetQueryParam("type__n", qTypen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassis != nil {
+
+		// query param virtual_chassis
+		var qrVirtualChassis string
+
+		if o.VirtualChassis != nil {
+			qrVirtualChassis = *o.VirtualChassis
+		}
+		qVirtualChassis := qrVirtualChassis
+		if qVirtualChassis != "" {
+
+			if err := r.SetQueryParam("virtual_chassis", qVirtualChassis); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisn != nil {
+
+		// query param virtual_chassis__n
+		var qrVirtualChassisn string
+
+		if o.VirtualChassisn != nil {
+			qrVirtualChassisn = *o.VirtualChassisn
+		}
+		qVirtualChassisn := qrVirtualChassisn
+		if qVirtualChassisn != "" {
+
+			if err := r.SetQueryParam("virtual_chassis__n", qVirtualChassisn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisID != nil {
+
+		// query param virtual_chassis_id
+		var qrVirtualChassisID string
+
+		if o.VirtualChassisID != nil {
+			qrVirtualChassisID = *o.VirtualChassisID
+		}
+		qVirtualChassisID := qrVirtualChassisID
+		if qVirtualChassisID != "" {
+
+			if err := r.SetQueryParam("virtual_chassis_id", qVirtualChassisID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisIDn != nil {
+
+		// query param virtual_chassis_id__n
+		var qrVirtualChassisIDn string
+
+		if o.VirtualChassisIDn != nil {
+			qrVirtualChassisIDn = *o.VirtualChassisIDn
+		}
+		qVirtualChassisIDn := qrVirtualChassisIDn
+		if qVirtualChassisIDn != "" {
+
+			if err := r.SetQueryParam("virtual_chassis_id__n", qVirtualChassisIDn); err != nil {
 				return err
 			}
 		}

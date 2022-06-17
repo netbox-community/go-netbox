@@ -82,7 +82,7 @@ type IpamPrefixesAvailableIpsCreateParams struct {
 
 	/* ID.
 
-	   A unique integer value identifying this prefix.
+	   A unique integer value identifying this IP address.
 	*/
 	ID int64
 

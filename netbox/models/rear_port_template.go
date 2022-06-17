@@ -42,8 +42,8 @@ type RearPortTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -57,7 +57,7 @@ type RearPortTemplate struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -164,7 +164,7 @@ func (m *RearPortTemplate) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -193,6 +193,8 @@ func (m *RearPortTemplate) validateDeviceType(formats strfmt.Registry) error {
 		if err := m.DeviceType.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -268,6 +270,8 @@ func (m *RearPortTemplate) validateType(formats strfmt.Registry) error {
 		if err := m.Type.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -328,7 +332,7 @@ func (m *RearPortTemplate) ContextValidate(ctx context.Context, formats strfmt.R
 
 func (m *RearPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -341,6 +345,8 @@ func (m *RearPortTemplate) contextValidateDeviceType(ctx context.Context, format
 		if err := m.DeviceType.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("device_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device_type")
 			}
 			return err
 		}
@@ -382,6 +388,8 @@ func (m *RearPortTemplate) contextValidateType(ctx context.Context, formats strf
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("type")
 			}
 			return err
 		}
@@ -424,12 +432,12 @@ type RearPortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/APC LSH LSH/APC MPO MTRJ SC SC/APC ST CS SN SMA 905 SMA 906 URM-P2 URM-P4 URM-P8 Splice]
+	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/PC LC/UPC LC/APC LSH LSH/PC LSH/UPC LSH/APC MPO MTRJ SC SC/PC SC/UPC SC/APC ST CS SN SMA 905 SMA 906 URM-P2 URM-P4 URM-P8 Splice]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-apc lsh lsh-apc mpo mtrj sc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
 	Value *string `json:"value"`
 }
 
@@ -455,7 +463,7 @@ var rearPortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/APC","LSH","LSH/APC","MPO","MTRJ","SC","SC/APC","ST","CS","SN","SMA 905","SMA 906","URM-P2","URM-P4","URM-P8","Splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/PC","LC/UPC","LC/APC","LSH","LSH/PC","LSH/UPC","LSH/APC","MPO","MTRJ","SC","SC/PC","SC/UPC","SC/APC","ST","CS","SN","SMA 905","SMA 906","URM-P2","URM-P4","URM-P8","Splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -525,11 +533,23 @@ const (
 	// RearPortTemplateTypeLabelLC captures enum value "LC"
 	RearPortTemplateTypeLabelLC string = "LC"
 
+	// RearPortTemplateTypeLabelLCPC captures enum value "LC/PC"
+	RearPortTemplateTypeLabelLCPC string = "LC/PC"
+
+	// RearPortTemplateTypeLabelLCUPC captures enum value "LC/UPC"
+	RearPortTemplateTypeLabelLCUPC string = "LC/UPC"
+
 	// RearPortTemplateTypeLabelLCAPC captures enum value "LC/APC"
 	RearPortTemplateTypeLabelLCAPC string = "LC/APC"
 
 	// RearPortTemplateTypeLabelLSH captures enum value "LSH"
 	RearPortTemplateTypeLabelLSH string = "LSH"
+
+	// RearPortTemplateTypeLabelLSHPC captures enum value "LSH/PC"
+	RearPortTemplateTypeLabelLSHPC string = "LSH/PC"
+
+	// RearPortTemplateTypeLabelLSHUPC captures enum value "LSH/UPC"
+	RearPortTemplateTypeLabelLSHUPC string = "LSH/UPC"
 
 	// RearPortTemplateTypeLabelLSHAPC captures enum value "LSH/APC"
 	RearPortTemplateTypeLabelLSHAPC string = "LSH/APC"
@@ -542,6 +562,12 @@ const (
 
 	// RearPortTemplateTypeLabelSC captures enum value "SC"
 	RearPortTemplateTypeLabelSC string = "SC"
+
+	// RearPortTemplateTypeLabelSCPC captures enum value "SC/PC"
+	RearPortTemplateTypeLabelSCPC string = "SC/PC"
+
+	// RearPortTemplateTypeLabelSCUPC captures enum value "SC/UPC"
+	RearPortTemplateTypeLabelSCUPC string = "SC/UPC"
 
 	// RearPortTemplateTypeLabelSCAPC captures enum value "SC/APC"
 	RearPortTemplateTypeLabelSCAPC string = "SC/APC"
@@ -600,7 +626,7 @@ var rearPortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-apc","lsh","lsh-apc","mpo","mtrj","sc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -670,11 +696,23 @@ const (
 	// RearPortTemplateTypeValueLc captures enum value "lc"
 	RearPortTemplateTypeValueLc string = "lc"
 
+	// RearPortTemplateTypeValueLcDashPc captures enum value "lc-pc"
+	RearPortTemplateTypeValueLcDashPc string = "lc-pc"
+
+	// RearPortTemplateTypeValueLcDashUpc captures enum value "lc-upc"
+	RearPortTemplateTypeValueLcDashUpc string = "lc-upc"
+
 	// RearPortTemplateTypeValueLcDashApc captures enum value "lc-apc"
 	RearPortTemplateTypeValueLcDashApc string = "lc-apc"
 
 	// RearPortTemplateTypeValueLsh captures enum value "lsh"
 	RearPortTemplateTypeValueLsh string = "lsh"
+
+	// RearPortTemplateTypeValueLshDashPc captures enum value "lsh-pc"
+	RearPortTemplateTypeValueLshDashPc string = "lsh-pc"
+
+	// RearPortTemplateTypeValueLshDashUpc captures enum value "lsh-upc"
+	RearPortTemplateTypeValueLshDashUpc string = "lsh-upc"
 
 	// RearPortTemplateTypeValueLshDashApc captures enum value "lsh-apc"
 	RearPortTemplateTypeValueLshDashApc string = "lsh-apc"
@@ -687,6 +725,12 @@ const (
 
 	// RearPortTemplateTypeValueSc captures enum value "sc"
 	RearPortTemplateTypeValueSc string = "sc"
+
+	// RearPortTemplateTypeValueScDashPc captures enum value "sc-pc"
+	RearPortTemplateTypeValueScDashPc string = "sc-pc"
+
+	// RearPortTemplateTypeValueScDashUpc captures enum value "sc-upc"
+	RearPortTemplateTypeValueScDashUpc string = "sc-upc"
 
 	// RearPortTemplateTypeValueScDashApc captures enum value "sc-apc"
 	RearPortTemplateTypeValueScDashApc string = "sc-apc"

@@ -40,20 +40,11 @@ type WritableInterface struct {
 	// Read Only: true
 	Occupied *bool `json:"_occupied,omitempty"`
 
+	// Bridge interface
+	Bridge *int64 `json:"bridge,omitempty"`
+
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
-
-	// Cable peer
-	//
-	//
-	// Return the appropriate serializer for the cable termination model.
-	//
-	// Read Only: true
-	CablePeer map[string]*string `json:"cable_peer,omitempty"`
-
-	// Cable peer type
-	// Read Only: true
-	CablePeerType string `json:"cable_peer_type,omitempty"`
 
 	// Connected endpoint
 	//
@@ -71,14 +62,18 @@ type WritableInterface struct {
 	// Read Only: true
 	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
+	// Count fhrp groups
+	// Read Only: true
+	CountFhrpGroups int64 `json:"count_fhrp_groups,omitempty"`
+
 	// Count ipaddresses
 	// Read Only: true
 	CountIpaddresses int64 `json:"count_ipaddresses,omitempty"`
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -95,10 +90,14 @@ type WritableInterface struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
+	// Duplex
+	// Enum: [half full auto]
+	Duplex *string `json:"duplex,omitempty"`
+
 	// Enabled
 	Enabled bool `json:"enabled,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -115,6 +114,18 @@ type WritableInterface struct {
 	// Read Only: true
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Link peer
+	//
+	//
+	// Return the appropriate serializer for the link termination model.
+	//
+	// Read Only: true
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+
+	// Link peer type
+	// Read Only: true
+	LinkPeerType string `json:"link_peer_type,omitempty"`
 
 	// MAC Address
 	MacAddress *string `json:"mac_address,omitempty"`
@@ -133,6 +144,9 @@ type WritableInterface struct {
 	// Enum: [access tagged tagged-all]
 	Mode string `json:"mode,omitempty"`
 
+	// Module
+	Module *int64 `json:"module,omitempty"`
+
 	// MTU
 	// Maximum: 65536
 	// Minimum: 1
@@ -147,6 +161,25 @@ type WritableInterface struct {
 	// Parent interface
 	Parent *int64 `json:"parent,omitempty"`
 
+	// Wireless channel
+	// Enum: [2.4g-1-2412-22 2.4g-2-2417-22 2.4g-3-2422-22 2.4g-4-2427-22 2.4g-5-2432-22 2.4g-6-2437-22 2.4g-7-2442-22 2.4g-8-2447-22 2.4g-9-2452-22 2.4g-10-2457-22 2.4g-11-2462-22 2.4g-12-2467-22 2.4g-13-2472-22 5g-32-5160-20 5g-34-5170-40 5g-36-5180-20 5g-38-5190-40 5g-40-5200-20 5g-42-5210-80 5g-44-5220-20 5g-46-5230-40 5g-48-5240-20 5g-50-5250-160 5g-52-5260-20 5g-54-5270-40 5g-56-5280-20 5g-58-5290-80 5g-60-5300-20 5g-62-5310-40 5g-64-5320-20 5g-100-5500-20 5g-102-5510-40 5g-104-5520-20 5g-106-5530-80 5g-108-5540-20 5g-110-5550-40 5g-112-5560-20 5g-114-5570-160 5g-116-5580-20 5g-118-5590-40 5g-120-5600-20 5g-122-5610-80 5g-124-5620-20 5g-126-5630-40 5g-128-5640-20 5g-132-5660-20 5g-134-5670-40 5g-136-5680-20 5g-138-5690-80 5g-140-5700-20 5g-142-5710-40 5g-144-5720-20 5g-149-5745-20 5g-151-5755-40 5g-153-5765-20 5g-155-5775-80 5g-157-5785-20 5g-159-5795-40 5g-161-5805-20 5g-163-5815-160 5g-165-5825-20 5g-167-5835-40 5g-169-5845-20 5g-171-5855-80 5g-173-5865-20 5g-175-5875-40 5g-177-5885-20 6g-1-5955-20 6g-3-5965-40 6g-5-5975-20 6g-7-5985-80 6g-9-5995-20 6g-11-6005-40 6g-13-6015-20 6g-15-6025-160 6g-17-6035-20 6g-19-6045-40 6g-21-6055-20 6g-23-6065-80 6g-25-6075-20 6g-27-6085-40 6g-29-6095-20 6g-31-6105-320 6g-33-6115-20 6g-35-6125-40 6g-37-6135-20 6g-39-6145-80 6g-41-6155-20 6g-43-6165-40 6g-45-6175-20 6g-47-6185-160 6g-49-6195-20 6g-51-6205-40 6g-53-6215-20 6g-55-6225-80 6g-57-6235-20 6g-59-6245-40 6g-61-6255-20 6g-65-6275-20 6g-67-6285-40 6g-69-6295-20 6g-71-6305-80 6g-73-6315-20 6g-75-6325-40 6g-77-6335-20 6g-79-6345-160 6g-81-6355-20 6g-83-6365-40 6g-85-6375-20 6g-87-6385-80 6g-89-6395-20 6g-91-6405-40 6g-93-6415-20 6g-95-6425-320 6g-97-6435-20 6g-99-6445-40 6g-101-6455-20 6g-103-6465-80 6g-105-6475-20 6g-107-6485-40 6g-109-6495-20 6g-111-6505-160 6g-113-6515-20 6g-115-6525-40 6g-117-6535-20 6g-119-6545-80 6g-121-6555-20 6g-123-6565-40 6g-125-6575-20 6g-129-6595-20 6g-131-6605-40 6g-133-6615-20 6g-135-6625-80 6g-137-6635-20 6g-139-6645-40 6g-141-6655-20 6g-143-6665-160 6g-145-6675-20 6g-147-6685-40 6g-149-6695-20 6g-151-6705-80 6g-153-6715-20 6g-155-6725-40 6g-157-6735-20 6g-159-6745-320 6g-161-6755-20 6g-163-6765-40 6g-165-6775-20 6g-167-6785-80 6g-169-6795-20 6g-171-6805-40 6g-173-6815-20 6g-175-6825-160 6g-177-6835-20 6g-179-6845-40 6g-181-6855-20 6g-183-6865-80 6g-185-6875-20 6g-187-6885-40 6g-189-6895-20 6g-193-6915-20 6g-195-6925-40 6g-197-6935-20 6g-199-6945-80 6g-201-6955-20 6g-203-6965-40 6g-205-6975-20 6g-207-6985-160 6g-209-6995-20 6g-211-7005-40 6g-213-7015-20 6g-215-7025-80 6g-217-7035-20 6g-219-7045-40 6g-221-7055-20 6g-225-7075-20 6g-227-7085-40 6g-229-7095-20 6g-233-7115-20 60g-1-58320-2160 60g-2-60480-2160 60g-3-62640-2160 60g-4-64800-2160 60g-5-66960-2160 60g-6-69120-2160 60g-9-59400-4320 60g-10-61560-4320 60g-11-63720-4320 60g-12-65880-4320 60g-13-68040-4320 60g-17-60480-6480 60g-18-62640-6480 60g-19-64800-6480 60g-20-66960-6480 60g-25-61560-6480 60g-26-63720-6480 60g-27-65880-6480]
+	RfChannel string `json:"rf_channel,omitempty"`
+
+	// Channel frequency (MHz)
+	RfChannelFrequency *float64 `json:"rf_channel_frequency,omitempty"`
+
+	// Channel width (MHz)
+	RfChannelWidth *float64 `json:"rf_channel_width,omitempty"`
+
+	// Wireless role
+	// Enum: [ap station]
+	RfRole string `json:"rf_role,omitempty"`
+
+	// Speed
+	// Maximum: 2.147483647e+09
+	// Minimum: 0
+	Speed *int64 `json:"speed,omitempty"`
+
 	// tagged vlans
 	// Unique: true
 	TaggedVlans []int64 `json:"tagged_vlans"`
@@ -154,9 +187,14 @@ type WritableInterface struct {
 	// tags
 	Tags []*NestedTag `json:"tags"`
 
+	// Transmit power (dBm)
+	// Maximum: 127
+	// Minimum: 0
+	TxPower *int64 `json:"tx_power,omitempty"`
+
 	// Type
 	// Required: true
-	// Enum: [virtual lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-sfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
+	// Enum: [virtual bridge lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax ieee802.15.1 gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-qsfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus cisco-stackwise-80 cisco-stackwise-160 cisco-stackwise-320 cisco-stackwise-480 juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
 	Type *string `json:"type"`
 
 	// Untagged VLAN
@@ -166,6 +204,21 @@ type WritableInterface struct {
 	// Read Only: true
 	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
+
+	// VRF
+	Vrf *int64 `json:"vrf,omitempty"`
+
+	// wireless lans
+	// Unique: true
+	WirelessLans []int64 `json:"wireless_lans"`
+
+	// Wireless link
+	WirelessLink *int64 `json:"wireless_link,omitempty"`
+
+	// WWN
+	//
+	// 64-bit World Wide Name
+	Wwn *string `json:"wwn,omitempty"`
 }
 
 // Validate validates this writable interface
@@ -185,6 +238,10 @@ func (m *WritableInterface) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDevice(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDuplex(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -208,6 +265,18 @@ func (m *WritableInterface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateRfChannel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRfRole(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSpeed(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTaggedVlans(formats); err != nil {
 		res = append(res, err)
 	}
@@ -216,11 +285,19 @@ func (m *WritableInterface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateTxPower(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateType(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateURL(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateWirelessLans(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -239,6 +316,8 @@ func (m *WritableInterface) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
@@ -252,7 +331,7 @@ func (m *WritableInterface) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -274,6 +353,51 @@ func (m *WritableInterface) validateDescription(formats strfmt.Registry) error {
 func (m *WritableInterface) validateDevice(formats strfmt.Registry) error {
 
 	if err := validate.Required("device", "body", m.Device); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var writableInterfaceTypeDuplexPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["half","full","auto"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableInterfaceTypeDuplexPropEnum = append(writableInterfaceTypeDuplexPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableInterfaceDuplexHalf captures enum value "half"
+	WritableInterfaceDuplexHalf string = "half"
+
+	// WritableInterfaceDuplexFull captures enum value "full"
+	WritableInterfaceDuplexFull string = "full"
+
+	// WritableInterfaceDuplexAuto captures enum value "auto"
+	WritableInterfaceDuplexAuto string = "auto"
+)
+
+// prop value enum
+func (m *WritableInterface) validateDuplexEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableInterfaceTypeDuplexPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableInterface) validateDuplex(formats strfmt.Registry) error {
+	if swag.IsZero(m.Duplex) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateDuplexEnum("duplex", "body", *m.Duplex); err != nil {
 		return err
 	}
 
@@ -382,6 +506,691 @@ func (m *WritableInterface) validateName(formats strfmt.Registry) error {
 	return nil
 }
 
+var writableInterfaceTypeRfChannelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["2.4g-1-2412-22","2.4g-2-2417-22","2.4g-3-2422-22","2.4g-4-2427-22","2.4g-5-2432-22","2.4g-6-2437-22","2.4g-7-2442-22","2.4g-8-2447-22","2.4g-9-2452-22","2.4g-10-2457-22","2.4g-11-2462-22","2.4g-12-2467-22","2.4g-13-2472-22","5g-32-5160-20","5g-34-5170-40","5g-36-5180-20","5g-38-5190-40","5g-40-5200-20","5g-42-5210-80","5g-44-5220-20","5g-46-5230-40","5g-48-5240-20","5g-50-5250-160","5g-52-5260-20","5g-54-5270-40","5g-56-5280-20","5g-58-5290-80","5g-60-5300-20","5g-62-5310-40","5g-64-5320-20","5g-100-5500-20","5g-102-5510-40","5g-104-5520-20","5g-106-5530-80","5g-108-5540-20","5g-110-5550-40","5g-112-5560-20","5g-114-5570-160","5g-116-5580-20","5g-118-5590-40","5g-120-5600-20","5g-122-5610-80","5g-124-5620-20","5g-126-5630-40","5g-128-5640-20","5g-132-5660-20","5g-134-5670-40","5g-136-5680-20","5g-138-5690-80","5g-140-5700-20","5g-142-5710-40","5g-144-5720-20","5g-149-5745-20","5g-151-5755-40","5g-153-5765-20","5g-155-5775-80","5g-157-5785-20","5g-159-5795-40","5g-161-5805-20","5g-163-5815-160","5g-165-5825-20","5g-167-5835-40","5g-169-5845-20","5g-171-5855-80","5g-173-5865-20","5g-175-5875-40","5g-177-5885-20","6g-1-5955-20","6g-3-5965-40","6g-5-5975-20","6g-7-5985-80","6g-9-5995-20","6g-11-6005-40","6g-13-6015-20","6g-15-6025-160","6g-17-6035-20","6g-19-6045-40","6g-21-6055-20","6g-23-6065-80","6g-25-6075-20","6g-27-6085-40","6g-29-6095-20","6g-31-6105-320","6g-33-6115-20","6g-35-6125-40","6g-37-6135-20","6g-39-6145-80","6g-41-6155-20","6g-43-6165-40","6g-45-6175-20","6g-47-6185-160","6g-49-6195-20","6g-51-6205-40","6g-53-6215-20","6g-55-6225-80","6g-57-6235-20","6g-59-6245-40","6g-61-6255-20","6g-65-6275-20","6g-67-6285-40","6g-69-6295-20","6g-71-6305-80","6g-73-6315-20","6g-75-6325-40","6g-77-6335-20","6g-79-6345-160","6g-81-6355-20","6g-83-6365-40","6g-85-6375-20","6g-87-6385-80","6g-89-6395-20","6g-91-6405-40","6g-93-6415-20","6g-95-6425-320","6g-97-6435-20","6g-99-6445-40","6g-101-6455-20","6g-103-6465-80","6g-105-6475-20","6g-107-6485-40","6g-109-6495-20","6g-111-6505-160","6g-113-6515-20","6g-115-6525-40","6g-117-6535-20","6g-119-6545-80","6g-121-6555-20","6g-123-6565-40","6g-125-6575-20","6g-129-6595-20","6g-131-6605-40","6g-133-6615-20","6g-135-6625-80","6g-137-6635-20","6g-139-6645-40","6g-141-6655-20","6g-143-6665-160","6g-145-6675-20","6g-147-6685-40","6g-149-6695-20","6g-151-6705-80","6g-153-6715-20","6g-155-6725-40","6g-157-6735-20","6g-159-6745-320","6g-161-6755-20","6g-163-6765-40","6g-165-6775-20","6g-167-6785-80","6g-169-6795-20","6g-171-6805-40","6g-173-6815-20","6g-175-6825-160","6g-177-6835-20","6g-179-6845-40","6g-181-6855-20","6g-183-6865-80","6g-185-6875-20","6g-187-6885-40","6g-189-6895-20","6g-193-6915-20","6g-195-6925-40","6g-197-6935-20","6g-199-6945-80","6g-201-6955-20","6g-203-6965-40","6g-205-6975-20","6g-207-6985-160","6g-209-6995-20","6g-211-7005-40","6g-213-7015-20","6g-215-7025-80","6g-217-7035-20","6g-219-7045-40","6g-221-7055-20","6g-225-7075-20","6g-227-7085-40","6g-229-7095-20","6g-233-7115-20","60g-1-58320-2160","60g-2-60480-2160","60g-3-62640-2160","60g-4-64800-2160","60g-5-66960-2160","60g-6-69120-2160","60g-9-59400-4320","60g-10-61560-4320","60g-11-63720-4320","60g-12-65880-4320","60g-13-68040-4320","60g-17-60480-6480","60g-18-62640-6480","60g-19-64800-6480","60g-20-66960-6480","60g-25-61560-6480","60g-26-63720-6480","60g-27-65880-6480"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableInterfaceTypeRfChannelPropEnum = append(writableInterfaceTypeRfChannelPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableInterfaceRfChannelNr2Dot4gDash1Dash2412Dash22 captures enum value "2.4g-1-2412-22"
+	WritableInterfaceRfChannelNr2Dot4gDash1Dash2412Dash22 string = "2.4g-1-2412-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash2Dash2417Dash22 captures enum value "2.4g-2-2417-22"
+	WritableInterfaceRfChannelNr2Dot4gDash2Dash2417Dash22 string = "2.4g-2-2417-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash3Dash2422Dash22 captures enum value "2.4g-3-2422-22"
+	WritableInterfaceRfChannelNr2Dot4gDash3Dash2422Dash22 string = "2.4g-3-2422-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash4Dash2427Dash22 captures enum value "2.4g-4-2427-22"
+	WritableInterfaceRfChannelNr2Dot4gDash4Dash2427Dash22 string = "2.4g-4-2427-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash5Dash2432Dash22 captures enum value "2.4g-5-2432-22"
+	WritableInterfaceRfChannelNr2Dot4gDash5Dash2432Dash22 string = "2.4g-5-2432-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash6Dash2437Dash22 captures enum value "2.4g-6-2437-22"
+	WritableInterfaceRfChannelNr2Dot4gDash6Dash2437Dash22 string = "2.4g-6-2437-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash7Dash2442Dash22 captures enum value "2.4g-7-2442-22"
+	WritableInterfaceRfChannelNr2Dot4gDash7Dash2442Dash22 string = "2.4g-7-2442-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash8Dash2447Dash22 captures enum value "2.4g-8-2447-22"
+	WritableInterfaceRfChannelNr2Dot4gDash8Dash2447Dash22 string = "2.4g-8-2447-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash9Dash2452Dash22 captures enum value "2.4g-9-2452-22"
+	WritableInterfaceRfChannelNr2Dot4gDash9Dash2452Dash22 string = "2.4g-9-2452-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash10Dash2457Dash22 captures enum value "2.4g-10-2457-22"
+	WritableInterfaceRfChannelNr2Dot4gDash10Dash2457Dash22 string = "2.4g-10-2457-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash11Dash2462Dash22 captures enum value "2.4g-11-2462-22"
+	WritableInterfaceRfChannelNr2Dot4gDash11Dash2462Dash22 string = "2.4g-11-2462-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash12Dash2467Dash22 captures enum value "2.4g-12-2467-22"
+	WritableInterfaceRfChannelNr2Dot4gDash12Dash2467Dash22 string = "2.4g-12-2467-22"
+
+	// WritableInterfaceRfChannelNr2Dot4gDash13Dash2472Dash22 captures enum value "2.4g-13-2472-22"
+	WritableInterfaceRfChannelNr2Dot4gDash13Dash2472Dash22 string = "2.4g-13-2472-22"
+
+	// WritableInterfaceRfChannelNr5gDash32Dash5160Dash20 captures enum value "5g-32-5160-20"
+	WritableInterfaceRfChannelNr5gDash32Dash5160Dash20 string = "5g-32-5160-20"
+
+	// WritableInterfaceRfChannelNr5gDash34Dash5170Dash40 captures enum value "5g-34-5170-40"
+	WritableInterfaceRfChannelNr5gDash34Dash5170Dash40 string = "5g-34-5170-40"
+
+	// WritableInterfaceRfChannelNr5gDash36Dash5180Dash20 captures enum value "5g-36-5180-20"
+	WritableInterfaceRfChannelNr5gDash36Dash5180Dash20 string = "5g-36-5180-20"
+
+	// WritableInterfaceRfChannelNr5gDash38Dash5190Dash40 captures enum value "5g-38-5190-40"
+	WritableInterfaceRfChannelNr5gDash38Dash5190Dash40 string = "5g-38-5190-40"
+
+	// WritableInterfaceRfChannelNr5gDash40Dash5200Dash20 captures enum value "5g-40-5200-20"
+	WritableInterfaceRfChannelNr5gDash40Dash5200Dash20 string = "5g-40-5200-20"
+
+	// WritableInterfaceRfChannelNr5gDash42Dash5210Dash80 captures enum value "5g-42-5210-80"
+	WritableInterfaceRfChannelNr5gDash42Dash5210Dash80 string = "5g-42-5210-80"
+
+	// WritableInterfaceRfChannelNr5gDash44Dash5220Dash20 captures enum value "5g-44-5220-20"
+	WritableInterfaceRfChannelNr5gDash44Dash5220Dash20 string = "5g-44-5220-20"
+
+	// WritableInterfaceRfChannelNr5gDash46Dash5230Dash40 captures enum value "5g-46-5230-40"
+	WritableInterfaceRfChannelNr5gDash46Dash5230Dash40 string = "5g-46-5230-40"
+
+	// WritableInterfaceRfChannelNr5gDash48Dash5240Dash20 captures enum value "5g-48-5240-20"
+	WritableInterfaceRfChannelNr5gDash48Dash5240Dash20 string = "5g-48-5240-20"
+
+	// WritableInterfaceRfChannelNr5gDash50Dash5250Dash160 captures enum value "5g-50-5250-160"
+	WritableInterfaceRfChannelNr5gDash50Dash5250Dash160 string = "5g-50-5250-160"
+
+	// WritableInterfaceRfChannelNr5gDash52Dash5260Dash20 captures enum value "5g-52-5260-20"
+	WritableInterfaceRfChannelNr5gDash52Dash5260Dash20 string = "5g-52-5260-20"
+
+	// WritableInterfaceRfChannelNr5gDash54Dash5270Dash40 captures enum value "5g-54-5270-40"
+	WritableInterfaceRfChannelNr5gDash54Dash5270Dash40 string = "5g-54-5270-40"
+
+	// WritableInterfaceRfChannelNr5gDash56Dash5280Dash20 captures enum value "5g-56-5280-20"
+	WritableInterfaceRfChannelNr5gDash56Dash5280Dash20 string = "5g-56-5280-20"
+
+	// WritableInterfaceRfChannelNr5gDash58Dash5290Dash80 captures enum value "5g-58-5290-80"
+	WritableInterfaceRfChannelNr5gDash58Dash5290Dash80 string = "5g-58-5290-80"
+
+	// WritableInterfaceRfChannelNr5gDash60Dash5300Dash20 captures enum value "5g-60-5300-20"
+	WritableInterfaceRfChannelNr5gDash60Dash5300Dash20 string = "5g-60-5300-20"
+
+	// WritableInterfaceRfChannelNr5gDash62Dash5310Dash40 captures enum value "5g-62-5310-40"
+	WritableInterfaceRfChannelNr5gDash62Dash5310Dash40 string = "5g-62-5310-40"
+
+	// WritableInterfaceRfChannelNr5gDash64Dash5320Dash20 captures enum value "5g-64-5320-20"
+	WritableInterfaceRfChannelNr5gDash64Dash5320Dash20 string = "5g-64-5320-20"
+
+	// WritableInterfaceRfChannelNr5gDash100Dash5500Dash20 captures enum value "5g-100-5500-20"
+	WritableInterfaceRfChannelNr5gDash100Dash5500Dash20 string = "5g-100-5500-20"
+
+	// WritableInterfaceRfChannelNr5gDash102Dash5510Dash40 captures enum value "5g-102-5510-40"
+	WritableInterfaceRfChannelNr5gDash102Dash5510Dash40 string = "5g-102-5510-40"
+
+	// WritableInterfaceRfChannelNr5gDash104Dash5520Dash20 captures enum value "5g-104-5520-20"
+	WritableInterfaceRfChannelNr5gDash104Dash5520Dash20 string = "5g-104-5520-20"
+
+	// WritableInterfaceRfChannelNr5gDash106Dash5530Dash80 captures enum value "5g-106-5530-80"
+	WritableInterfaceRfChannelNr5gDash106Dash5530Dash80 string = "5g-106-5530-80"
+
+	// WritableInterfaceRfChannelNr5gDash108Dash5540Dash20 captures enum value "5g-108-5540-20"
+	WritableInterfaceRfChannelNr5gDash108Dash5540Dash20 string = "5g-108-5540-20"
+
+	// WritableInterfaceRfChannelNr5gDash110Dash5550Dash40 captures enum value "5g-110-5550-40"
+	WritableInterfaceRfChannelNr5gDash110Dash5550Dash40 string = "5g-110-5550-40"
+
+	// WritableInterfaceRfChannelNr5gDash112Dash5560Dash20 captures enum value "5g-112-5560-20"
+	WritableInterfaceRfChannelNr5gDash112Dash5560Dash20 string = "5g-112-5560-20"
+
+	// WritableInterfaceRfChannelNr5gDash114Dash5570Dash160 captures enum value "5g-114-5570-160"
+	WritableInterfaceRfChannelNr5gDash114Dash5570Dash160 string = "5g-114-5570-160"
+
+	// WritableInterfaceRfChannelNr5gDash116Dash5580Dash20 captures enum value "5g-116-5580-20"
+	WritableInterfaceRfChannelNr5gDash116Dash5580Dash20 string = "5g-116-5580-20"
+
+	// WritableInterfaceRfChannelNr5gDash118Dash5590Dash40 captures enum value "5g-118-5590-40"
+	WritableInterfaceRfChannelNr5gDash118Dash5590Dash40 string = "5g-118-5590-40"
+
+	// WritableInterfaceRfChannelNr5gDash120Dash5600Dash20 captures enum value "5g-120-5600-20"
+	WritableInterfaceRfChannelNr5gDash120Dash5600Dash20 string = "5g-120-5600-20"
+
+	// WritableInterfaceRfChannelNr5gDash122Dash5610Dash80 captures enum value "5g-122-5610-80"
+	WritableInterfaceRfChannelNr5gDash122Dash5610Dash80 string = "5g-122-5610-80"
+
+	// WritableInterfaceRfChannelNr5gDash124Dash5620Dash20 captures enum value "5g-124-5620-20"
+	WritableInterfaceRfChannelNr5gDash124Dash5620Dash20 string = "5g-124-5620-20"
+
+	// WritableInterfaceRfChannelNr5gDash126Dash5630Dash40 captures enum value "5g-126-5630-40"
+	WritableInterfaceRfChannelNr5gDash126Dash5630Dash40 string = "5g-126-5630-40"
+
+	// WritableInterfaceRfChannelNr5gDash128Dash5640Dash20 captures enum value "5g-128-5640-20"
+	WritableInterfaceRfChannelNr5gDash128Dash5640Dash20 string = "5g-128-5640-20"
+
+	// WritableInterfaceRfChannelNr5gDash132Dash5660Dash20 captures enum value "5g-132-5660-20"
+	WritableInterfaceRfChannelNr5gDash132Dash5660Dash20 string = "5g-132-5660-20"
+
+	// WritableInterfaceRfChannelNr5gDash134Dash5670Dash40 captures enum value "5g-134-5670-40"
+	WritableInterfaceRfChannelNr5gDash134Dash5670Dash40 string = "5g-134-5670-40"
+
+	// WritableInterfaceRfChannelNr5gDash136Dash5680Dash20 captures enum value "5g-136-5680-20"
+	WritableInterfaceRfChannelNr5gDash136Dash5680Dash20 string = "5g-136-5680-20"
+
+	// WritableInterfaceRfChannelNr5gDash138Dash5690Dash80 captures enum value "5g-138-5690-80"
+	WritableInterfaceRfChannelNr5gDash138Dash5690Dash80 string = "5g-138-5690-80"
+
+	// WritableInterfaceRfChannelNr5gDash140Dash5700Dash20 captures enum value "5g-140-5700-20"
+	WritableInterfaceRfChannelNr5gDash140Dash5700Dash20 string = "5g-140-5700-20"
+
+	// WritableInterfaceRfChannelNr5gDash142Dash5710Dash40 captures enum value "5g-142-5710-40"
+	WritableInterfaceRfChannelNr5gDash142Dash5710Dash40 string = "5g-142-5710-40"
+
+	// WritableInterfaceRfChannelNr5gDash144Dash5720Dash20 captures enum value "5g-144-5720-20"
+	WritableInterfaceRfChannelNr5gDash144Dash5720Dash20 string = "5g-144-5720-20"
+
+	// WritableInterfaceRfChannelNr5gDash149Dash5745Dash20 captures enum value "5g-149-5745-20"
+	WritableInterfaceRfChannelNr5gDash149Dash5745Dash20 string = "5g-149-5745-20"
+
+	// WritableInterfaceRfChannelNr5gDash151Dash5755Dash40 captures enum value "5g-151-5755-40"
+	WritableInterfaceRfChannelNr5gDash151Dash5755Dash40 string = "5g-151-5755-40"
+
+	// WritableInterfaceRfChannelNr5gDash153Dash5765Dash20 captures enum value "5g-153-5765-20"
+	WritableInterfaceRfChannelNr5gDash153Dash5765Dash20 string = "5g-153-5765-20"
+
+	// WritableInterfaceRfChannelNr5gDash155Dash5775Dash80 captures enum value "5g-155-5775-80"
+	WritableInterfaceRfChannelNr5gDash155Dash5775Dash80 string = "5g-155-5775-80"
+
+	// WritableInterfaceRfChannelNr5gDash157Dash5785Dash20 captures enum value "5g-157-5785-20"
+	WritableInterfaceRfChannelNr5gDash157Dash5785Dash20 string = "5g-157-5785-20"
+
+	// WritableInterfaceRfChannelNr5gDash159Dash5795Dash40 captures enum value "5g-159-5795-40"
+	WritableInterfaceRfChannelNr5gDash159Dash5795Dash40 string = "5g-159-5795-40"
+
+	// WritableInterfaceRfChannelNr5gDash161Dash5805Dash20 captures enum value "5g-161-5805-20"
+	WritableInterfaceRfChannelNr5gDash161Dash5805Dash20 string = "5g-161-5805-20"
+
+	// WritableInterfaceRfChannelNr5gDash163Dash5815Dash160 captures enum value "5g-163-5815-160"
+	WritableInterfaceRfChannelNr5gDash163Dash5815Dash160 string = "5g-163-5815-160"
+
+	// WritableInterfaceRfChannelNr5gDash165Dash5825Dash20 captures enum value "5g-165-5825-20"
+	WritableInterfaceRfChannelNr5gDash165Dash5825Dash20 string = "5g-165-5825-20"
+
+	// WritableInterfaceRfChannelNr5gDash167Dash5835Dash40 captures enum value "5g-167-5835-40"
+	WritableInterfaceRfChannelNr5gDash167Dash5835Dash40 string = "5g-167-5835-40"
+
+	// WritableInterfaceRfChannelNr5gDash169Dash5845Dash20 captures enum value "5g-169-5845-20"
+	WritableInterfaceRfChannelNr5gDash169Dash5845Dash20 string = "5g-169-5845-20"
+
+	// WritableInterfaceRfChannelNr5gDash171Dash5855Dash80 captures enum value "5g-171-5855-80"
+	WritableInterfaceRfChannelNr5gDash171Dash5855Dash80 string = "5g-171-5855-80"
+
+	// WritableInterfaceRfChannelNr5gDash173Dash5865Dash20 captures enum value "5g-173-5865-20"
+	WritableInterfaceRfChannelNr5gDash173Dash5865Dash20 string = "5g-173-5865-20"
+
+	// WritableInterfaceRfChannelNr5gDash175Dash5875Dash40 captures enum value "5g-175-5875-40"
+	WritableInterfaceRfChannelNr5gDash175Dash5875Dash40 string = "5g-175-5875-40"
+
+	// WritableInterfaceRfChannelNr5gDash177Dash5885Dash20 captures enum value "5g-177-5885-20"
+	WritableInterfaceRfChannelNr5gDash177Dash5885Dash20 string = "5g-177-5885-20"
+
+	// WritableInterfaceRfChannelNr6gDash1Dash5955Dash20 captures enum value "6g-1-5955-20"
+	WritableInterfaceRfChannelNr6gDash1Dash5955Dash20 string = "6g-1-5955-20"
+
+	// WritableInterfaceRfChannelNr6gDash3Dash5965Dash40 captures enum value "6g-3-5965-40"
+	WritableInterfaceRfChannelNr6gDash3Dash5965Dash40 string = "6g-3-5965-40"
+
+	// WritableInterfaceRfChannelNr6gDash5Dash5975Dash20 captures enum value "6g-5-5975-20"
+	WritableInterfaceRfChannelNr6gDash5Dash5975Dash20 string = "6g-5-5975-20"
+
+	// WritableInterfaceRfChannelNr6gDash7Dash5985Dash80 captures enum value "6g-7-5985-80"
+	WritableInterfaceRfChannelNr6gDash7Dash5985Dash80 string = "6g-7-5985-80"
+
+	// WritableInterfaceRfChannelNr6gDash9Dash5995Dash20 captures enum value "6g-9-5995-20"
+	WritableInterfaceRfChannelNr6gDash9Dash5995Dash20 string = "6g-9-5995-20"
+
+	// WritableInterfaceRfChannelNr6gDash11Dash6005Dash40 captures enum value "6g-11-6005-40"
+	WritableInterfaceRfChannelNr6gDash11Dash6005Dash40 string = "6g-11-6005-40"
+
+	// WritableInterfaceRfChannelNr6gDash13Dash6015Dash20 captures enum value "6g-13-6015-20"
+	WritableInterfaceRfChannelNr6gDash13Dash6015Dash20 string = "6g-13-6015-20"
+
+	// WritableInterfaceRfChannelNr6gDash15Dash6025Dash160 captures enum value "6g-15-6025-160"
+	WritableInterfaceRfChannelNr6gDash15Dash6025Dash160 string = "6g-15-6025-160"
+
+	// WritableInterfaceRfChannelNr6gDash17Dash6035Dash20 captures enum value "6g-17-6035-20"
+	WritableInterfaceRfChannelNr6gDash17Dash6035Dash20 string = "6g-17-6035-20"
+
+	// WritableInterfaceRfChannelNr6gDash19Dash6045Dash40 captures enum value "6g-19-6045-40"
+	WritableInterfaceRfChannelNr6gDash19Dash6045Dash40 string = "6g-19-6045-40"
+
+	// WritableInterfaceRfChannelNr6gDash21Dash6055Dash20 captures enum value "6g-21-6055-20"
+	WritableInterfaceRfChannelNr6gDash21Dash6055Dash20 string = "6g-21-6055-20"
+
+	// WritableInterfaceRfChannelNr6gDash23Dash6065Dash80 captures enum value "6g-23-6065-80"
+	WritableInterfaceRfChannelNr6gDash23Dash6065Dash80 string = "6g-23-6065-80"
+
+	// WritableInterfaceRfChannelNr6gDash25Dash6075Dash20 captures enum value "6g-25-6075-20"
+	WritableInterfaceRfChannelNr6gDash25Dash6075Dash20 string = "6g-25-6075-20"
+
+	// WritableInterfaceRfChannelNr6gDash27Dash6085Dash40 captures enum value "6g-27-6085-40"
+	WritableInterfaceRfChannelNr6gDash27Dash6085Dash40 string = "6g-27-6085-40"
+
+	// WritableInterfaceRfChannelNr6gDash29Dash6095Dash20 captures enum value "6g-29-6095-20"
+	WritableInterfaceRfChannelNr6gDash29Dash6095Dash20 string = "6g-29-6095-20"
+
+	// WritableInterfaceRfChannelNr6gDash31Dash6105Dash320 captures enum value "6g-31-6105-320"
+	WritableInterfaceRfChannelNr6gDash31Dash6105Dash320 string = "6g-31-6105-320"
+
+	// WritableInterfaceRfChannelNr6gDash33Dash6115Dash20 captures enum value "6g-33-6115-20"
+	WritableInterfaceRfChannelNr6gDash33Dash6115Dash20 string = "6g-33-6115-20"
+
+	// WritableInterfaceRfChannelNr6gDash35Dash6125Dash40 captures enum value "6g-35-6125-40"
+	WritableInterfaceRfChannelNr6gDash35Dash6125Dash40 string = "6g-35-6125-40"
+
+	// WritableInterfaceRfChannelNr6gDash37Dash6135Dash20 captures enum value "6g-37-6135-20"
+	WritableInterfaceRfChannelNr6gDash37Dash6135Dash20 string = "6g-37-6135-20"
+
+	// WritableInterfaceRfChannelNr6gDash39Dash6145Dash80 captures enum value "6g-39-6145-80"
+	WritableInterfaceRfChannelNr6gDash39Dash6145Dash80 string = "6g-39-6145-80"
+
+	// WritableInterfaceRfChannelNr6gDash41Dash6155Dash20 captures enum value "6g-41-6155-20"
+	WritableInterfaceRfChannelNr6gDash41Dash6155Dash20 string = "6g-41-6155-20"
+
+	// WritableInterfaceRfChannelNr6gDash43Dash6165Dash40 captures enum value "6g-43-6165-40"
+	WritableInterfaceRfChannelNr6gDash43Dash6165Dash40 string = "6g-43-6165-40"
+
+	// WritableInterfaceRfChannelNr6gDash45Dash6175Dash20 captures enum value "6g-45-6175-20"
+	WritableInterfaceRfChannelNr6gDash45Dash6175Dash20 string = "6g-45-6175-20"
+
+	// WritableInterfaceRfChannelNr6gDash47Dash6185Dash160 captures enum value "6g-47-6185-160"
+	WritableInterfaceRfChannelNr6gDash47Dash6185Dash160 string = "6g-47-6185-160"
+
+	// WritableInterfaceRfChannelNr6gDash49Dash6195Dash20 captures enum value "6g-49-6195-20"
+	WritableInterfaceRfChannelNr6gDash49Dash6195Dash20 string = "6g-49-6195-20"
+
+	// WritableInterfaceRfChannelNr6gDash51Dash6205Dash40 captures enum value "6g-51-6205-40"
+	WritableInterfaceRfChannelNr6gDash51Dash6205Dash40 string = "6g-51-6205-40"
+
+	// WritableInterfaceRfChannelNr6gDash53Dash6215Dash20 captures enum value "6g-53-6215-20"
+	WritableInterfaceRfChannelNr6gDash53Dash6215Dash20 string = "6g-53-6215-20"
+
+	// WritableInterfaceRfChannelNr6gDash55Dash6225Dash80 captures enum value "6g-55-6225-80"
+	WritableInterfaceRfChannelNr6gDash55Dash6225Dash80 string = "6g-55-6225-80"
+
+	// WritableInterfaceRfChannelNr6gDash57Dash6235Dash20 captures enum value "6g-57-6235-20"
+	WritableInterfaceRfChannelNr6gDash57Dash6235Dash20 string = "6g-57-6235-20"
+
+	// WritableInterfaceRfChannelNr6gDash59Dash6245Dash40 captures enum value "6g-59-6245-40"
+	WritableInterfaceRfChannelNr6gDash59Dash6245Dash40 string = "6g-59-6245-40"
+
+	// WritableInterfaceRfChannelNr6gDash61Dash6255Dash20 captures enum value "6g-61-6255-20"
+	WritableInterfaceRfChannelNr6gDash61Dash6255Dash20 string = "6g-61-6255-20"
+
+	// WritableInterfaceRfChannelNr6gDash65Dash6275Dash20 captures enum value "6g-65-6275-20"
+	WritableInterfaceRfChannelNr6gDash65Dash6275Dash20 string = "6g-65-6275-20"
+
+	// WritableInterfaceRfChannelNr6gDash67Dash6285Dash40 captures enum value "6g-67-6285-40"
+	WritableInterfaceRfChannelNr6gDash67Dash6285Dash40 string = "6g-67-6285-40"
+
+	// WritableInterfaceRfChannelNr6gDash69Dash6295Dash20 captures enum value "6g-69-6295-20"
+	WritableInterfaceRfChannelNr6gDash69Dash6295Dash20 string = "6g-69-6295-20"
+
+	// WritableInterfaceRfChannelNr6gDash71Dash6305Dash80 captures enum value "6g-71-6305-80"
+	WritableInterfaceRfChannelNr6gDash71Dash6305Dash80 string = "6g-71-6305-80"
+
+	// WritableInterfaceRfChannelNr6gDash73Dash6315Dash20 captures enum value "6g-73-6315-20"
+	WritableInterfaceRfChannelNr6gDash73Dash6315Dash20 string = "6g-73-6315-20"
+
+	// WritableInterfaceRfChannelNr6gDash75Dash6325Dash40 captures enum value "6g-75-6325-40"
+	WritableInterfaceRfChannelNr6gDash75Dash6325Dash40 string = "6g-75-6325-40"
+
+	// WritableInterfaceRfChannelNr6gDash77Dash6335Dash20 captures enum value "6g-77-6335-20"
+	WritableInterfaceRfChannelNr6gDash77Dash6335Dash20 string = "6g-77-6335-20"
+
+	// WritableInterfaceRfChannelNr6gDash79Dash6345Dash160 captures enum value "6g-79-6345-160"
+	WritableInterfaceRfChannelNr6gDash79Dash6345Dash160 string = "6g-79-6345-160"
+
+	// WritableInterfaceRfChannelNr6gDash81Dash6355Dash20 captures enum value "6g-81-6355-20"
+	WritableInterfaceRfChannelNr6gDash81Dash6355Dash20 string = "6g-81-6355-20"
+
+	// WritableInterfaceRfChannelNr6gDash83Dash6365Dash40 captures enum value "6g-83-6365-40"
+	WritableInterfaceRfChannelNr6gDash83Dash6365Dash40 string = "6g-83-6365-40"
+
+	// WritableInterfaceRfChannelNr6gDash85Dash6375Dash20 captures enum value "6g-85-6375-20"
+	WritableInterfaceRfChannelNr6gDash85Dash6375Dash20 string = "6g-85-6375-20"
+
+	// WritableInterfaceRfChannelNr6gDash87Dash6385Dash80 captures enum value "6g-87-6385-80"
+	WritableInterfaceRfChannelNr6gDash87Dash6385Dash80 string = "6g-87-6385-80"
+
+	// WritableInterfaceRfChannelNr6gDash89Dash6395Dash20 captures enum value "6g-89-6395-20"
+	WritableInterfaceRfChannelNr6gDash89Dash6395Dash20 string = "6g-89-6395-20"
+
+	// WritableInterfaceRfChannelNr6gDash91Dash6405Dash40 captures enum value "6g-91-6405-40"
+	WritableInterfaceRfChannelNr6gDash91Dash6405Dash40 string = "6g-91-6405-40"
+
+	// WritableInterfaceRfChannelNr6gDash93Dash6415Dash20 captures enum value "6g-93-6415-20"
+	WritableInterfaceRfChannelNr6gDash93Dash6415Dash20 string = "6g-93-6415-20"
+
+	// WritableInterfaceRfChannelNr6gDash95Dash6425Dash320 captures enum value "6g-95-6425-320"
+	WritableInterfaceRfChannelNr6gDash95Dash6425Dash320 string = "6g-95-6425-320"
+
+	// WritableInterfaceRfChannelNr6gDash97Dash6435Dash20 captures enum value "6g-97-6435-20"
+	WritableInterfaceRfChannelNr6gDash97Dash6435Dash20 string = "6g-97-6435-20"
+
+	// WritableInterfaceRfChannelNr6gDash99Dash6445Dash40 captures enum value "6g-99-6445-40"
+	WritableInterfaceRfChannelNr6gDash99Dash6445Dash40 string = "6g-99-6445-40"
+
+	// WritableInterfaceRfChannelNr6gDash101Dash6455Dash20 captures enum value "6g-101-6455-20"
+	WritableInterfaceRfChannelNr6gDash101Dash6455Dash20 string = "6g-101-6455-20"
+
+	// WritableInterfaceRfChannelNr6gDash103Dash6465Dash80 captures enum value "6g-103-6465-80"
+	WritableInterfaceRfChannelNr6gDash103Dash6465Dash80 string = "6g-103-6465-80"
+
+	// WritableInterfaceRfChannelNr6gDash105Dash6475Dash20 captures enum value "6g-105-6475-20"
+	WritableInterfaceRfChannelNr6gDash105Dash6475Dash20 string = "6g-105-6475-20"
+
+	// WritableInterfaceRfChannelNr6gDash107Dash6485Dash40 captures enum value "6g-107-6485-40"
+	WritableInterfaceRfChannelNr6gDash107Dash6485Dash40 string = "6g-107-6485-40"
+
+	// WritableInterfaceRfChannelNr6gDash109Dash6495Dash20 captures enum value "6g-109-6495-20"
+	WritableInterfaceRfChannelNr6gDash109Dash6495Dash20 string = "6g-109-6495-20"
+
+	// WritableInterfaceRfChannelNr6gDash111Dash6505Dash160 captures enum value "6g-111-6505-160"
+	WritableInterfaceRfChannelNr6gDash111Dash6505Dash160 string = "6g-111-6505-160"
+
+	// WritableInterfaceRfChannelNr6gDash113Dash6515Dash20 captures enum value "6g-113-6515-20"
+	WritableInterfaceRfChannelNr6gDash113Dash6515Dash20 string = "6g-113-6515-20"
+
+	// WritableInterfaceRfChannelNr6gDash115Dash6525Dash40 captures enum value "6g-115-6525-40"
+	WritableInterfaceRfChannelNr6gDash115Dash6525Dash40 string = "6g-115-6525-40"
+
+	// WritableInterfaceRfChannelNr6gDash117Dash6535Dash20 captures enum value "6g-117-6535-20"
+	WritableInterfaceRfChannelNr6gDash117Dash6535Dash20 string = "6g-117-6535-20"
+
+	// WritableInterfaceRfChannelNr6gDash119Dash6545Dash80 captures enum value "6g-119-6545-80"
+	WritableInterfaceRfChannelNr6gDash119Dash6545Dash80 string = "6g-119-6545-80"
+
+	// WritableInterfaceRfChannelNr6gDash121Dash6555Dash20 captures enum value "6g-121-6555-20"
+	WritableInterfaceRfChannelNr6gDash121Dash6555Dash20 string = "6g-121-6555-20"
+
+	// WritableInterfaceRfChannelNr6gDash123Dash6565Dash40 captures enum value "6g-123-6565-40"
+	WritableInterfaceRfChannelNr6gDash123Dash6565Dash40 string = "6g-123-6565-40"
+
+	// WritableInterfaceRfChannelNr6gDash125Dash6575Dash20 captures enum value "6g-125-6575-20"
+	WritableInterfaceRfChannelNr6gDash125Dash6575Dash20 string = "6g-125-6575-20"
+
+	// WritableInterfaceRfChannelNr6gDash129Dash6595Dash20 captures enum value "6g-129-6595-20"
+	WritableInterfaceRfChannelNr6gDash129Dash6595Dash20 string = "6g-129-6595-20"
+
+	// WritableInterfaceRfChannelNr6gDash131Dash6605Dash40 captures enum value "6g-131-6605-40"
+	WritableInterfaceRfChannelNr6gDash131Dash6605Dash40 string = "6g-131-6605-40"
+
+	// WritableInterfaceRfChannelNr6gDash133Dash6615Dash20 captures enum value "6g-133-6615-20"
+	WritableInterfaceRfChannelNr6gDash133Dash6615Dash20 string = "6g-133-6615-20"
+
+	// WritableInterfaceRfChannelNr6gDash135Dash6625Dash80 captures enum value "6g-135-6625-80"
+	WritableInterfaceRfChannelNr6gDash135Dash6625Dash80 string = "6g-135-6625-80"
+
+	// WritableInterfaceRfChannelNr6gDash137Dash6635Dash20 captures enum value "6g-137-6635-20"
+	WritableInterfaceRfChannelNr6gDash137Dash6635Dash20 string = "6g-137-6635-20"
+
+	// WritableInterfaceRfChannelNr6gDash139Dash6645Dash40 captures enum value "6g-139-6645-40"
+	WritableInterfaceRfChannelNr6gDash139Dash6645Dash40 string = "6g-139-6645-40"
+
+	// WritableInterfaceRfChannelNr6gDash141Dash6655Dash20 captures enum value "6g-141-6655-20"
+	WritableInterfaceRfChannelNr6gDash141Dash6655Dash20 string = "6g-141-6655-20"
+
+	// WritableInterfaceRfChannelNr6gDash143Dash6665Dash160 captures enum value "6g-143-6665-160"
+	WritableInterfaceRfChannelNr6gDash143Dash6665Dash160 string = "6g-143-6665-160"
+
+	// WritableInterfaceRfChannelNr6gDash145Dash6675Dash20 captures enum value "6g-145-6675-20"
+	WritableInterfaceRfChannelNr6gDash145Dash6675Dash20 string = "6g-145-6675-20"
+
+	// WritableInterfaceRfChannelNr6gDash147Dash6685Dash40 captures enum value "6g-147-6685-40"
+	WritableInterfaceRfChannelNr6gDash147Dash6685Dash40 string = "6g-147-6685-40"
+
+	// WritableInterfaceRfChannelNr6gDash149Dash6695Dash20 captures enum value "6g-149-6695-20"
+	WritableInterfaceRfChannelNr6gDash149Dash6695Dash20 string = "6g-149-6695-20"
+
+	// WritableInterfaceRfChannelNr6gDash151Dash6705Dash80 captures enum value "6g-151-6705-80"
+	WritableInterfaceRfChannelNr6gDash151Dash6705Dash80 string = "6g-151-6705-80"
+
+	// WritableInterfaceRfChannelNr6gDash153Dash6715Dash20 captures enum value "6g-153-6715-20"
+	WritableInterfaceRfChannelNr6gDash153Dash6715Dash20 string = "6g-153-6715-20"
+
+	// WritableInterfaceRfChannelNr6gDash155Dash6725Dash40 captures enum value "6g-155-6725-40"
+	WritableInterfaceRfChannelNr6gDash155Dash6725Dash40 string = "6g-155-6725-40"
+
+	// WritableInterfaceRfChannelNr6gDash157Dash6735Dash20 captures enum value "6g-157-6735-20"
+	WritableInterfaceRfChannelNr6gDash157Dash6735Dash20 string = "6g-157-6735-20"
+
+	// WritableInterfaceRfChannelNr6gDash159Dash6745Dash320 captures enum value "6g-159-6745-320"
+	WritableInterfaceRfChannelNr6gDash159Dash6745Dash320 string = "6g-159-6745-320"
+
+	// WritableInterfaceRfChannelNr6gDash161Dash6755Dash20 captures enum value "6g-161-6755-20"
+	WritableInterfaceRfChannelNr6gDash161Dash6755Dash20 string = "6g-161-6755-20"
+
+	// WritableInterfaceRfChannelNr6gDash163Dash6765Dash40 captures enum value "6g-163-6765-40"
+	WritableInterfaceRfChannelNr6gDash163Dash6765Dash40 string = "6g-163-6765-40"
+
+	// WritableInterfaceRfChannelNr6gDash165Dash6775Dash20 captures enum value "6g-165-6775-20"
+	WritableInterfaceRfChannelNr6gDash165Dash6775Dash20 string = "6g-165-6775-20"
+
+	// WritableInterfaceRfChannelNr6gDash167Dash6785Dash80 captures enum value "6g-167-6785-80"
+	WritableInterfaceRfChannelNr6gDash167Dash6785Dash80 string = "6g-167-6785-80"
+
+	// WritableInterfaceRfChannelNr6gDash169Dash6795Dash20 captures enum value "6g-169-6795-20"
+	WritableInterfaceRfChannelNr6gDash169Dash6795Dash20 string = "6g-169-6795-20"
+
+	// WritableInterfaceRfChannelNr6gDash171Dash6805Dash40 captures enum value "6g-171-6805-40"
+	WritableInterfaceRfChannelNr6gDash171Dash6805Dash40 string = "6g-171-6805-40"
+
+	// WritableInterfaceRfChannelNr6gDash173Dash6815Dash20 captures enum value "6g-173-6815-20"
+	WritableInterfaceRfChannelNr6gDash173Dash6815Dash20 string = "6g-173-6815-20"
+
+	// WritableInterfaceRfChannelNr6gDash175Dash6825Dash160 captures enum value "6g-175-6825-160"
+	WritableInterfaceRfChannelNr6gDash175Dash6825Dash160 string = "6g-175-6825-160"
+
+	// WritableInterfaceRfChannelNr6gDash177Dash6835Dash20 captures enum value "6g-177-6835-20"
+	WritableInterfaceRfChannelNr6gDash177Dash6835Dash20 string = "6g-177-6835-20"
+
+	// WritableInterfaceRfChannelNr6gDash179Dash6845Dash40 captures enum value "6g-179-6845-40"
+	WritableInterfaceRfChannelNr6gDash179Dash6845Dash40 string = "6g-179-6845-40"
+
+	// WritableInterfaceRfChannelNr6gDash181Dash6855Dash20 captures enum value "6g-181-6855-20"
+	WritableInterfaceRfChannelNr6gDash181Dash6855Dash20 string = "6g-181-6855-20"
+
+	// WritableInterfaceRfChannelNr6gDash183Dash6865Dash80 captures enum value "6g-183-6865-80"
+	WritableInterfaceRfChannelNr6gDash183Dash6865Dash80 string = "6g-183-6865-80"
+
+	// WritableInterfaceRfChannelNr6gDash185Dash6875Dash20 captures enum value "6g-185-6875-20"
+	WritableInterfaceRfChannelNr6gDash185Dash6875Dash20 string = "6g-185-6875-20"
+
+	// WritableInterfaceRfChannelNr6gDash187Dash6885Dash40 captures enum value "6g-187-6885-40"
+	WritableInterfaceRfChannelNr6gDash187Dash6885Dash40 string = "6g-187-6885-40"
+
+	// WritableInterfaceRfChannelNr6gDash189Dash6895Dash20 captures enum value "6g-189-6895-20"
+	WritableInterfaceRfChannelNr6gDash189Dash6895Dash20 string = "6g-189-6895-20"
+
+	// WritableInterfaceRfChannelNr6gDash193Dash6915Dash20 captures enum value "6g-193-6915-20"
+	WritableInterfaceRfChannelNr6gDash193Dash6915Dash20 string = "6g-193-6915-20"
+
+	// WritableInterfaceRfChannelNr6gDash195Dash6925Dash40 captures enum value "6g-195-6925-40"
+	WritableInterfaceRfChannelNr6gDash195Dash6925Dash40 string = "6g-195-6925-40"
+
+	// WritableInterfaceRfChannelNr6gDash197Dash6935Dash20 captures enum value "6g-197-6935-20"
+	WritableInterfaceRfChannelNr6gDash197Dash6935Dash20 string = "6g-197-6935-20"
+
+	// WritableInterfaceRfChannelNr6gDash199Dash6945Dash80 captures enum value "6g-199-6945-80"
+	WritableInterfaceRfChannelNr6gDash199Dash6945Dash80 string = "6g-199-6945-80"
+
+	// WritableInterfaceRfChannelNr6gDash201Dash6955Dash20 captures enum value "6g-201-6955-20"
+	WritableInterfaceRfChannelNr6gDash201Dash6955Dash20 string = "6g-201-6955-20"
+
+	// WritableInterfaceRfChannelNr6gDash203Dash6965Dash40 captures enum value "6g-203-6965-40"
+	WritableInterfaceRfChannelNr6gDash203Dash6965Dash40 string = "6g-203-6965-40"
+
+	// WritableInterfaceRfChannelNr6gDash205Dash6975Dash20 captures enum value "6g-205-6975-20"
+	WritableInterfaceRfChannelNr6gDash205Dash6975Dash20 string = "6g-205-6975-20"
+
+	// WritableInterfaceRfChannelNr6gDash207Dash6985Dash160 captures enum value "6g-207-6985-160"
+	WritableInterfaceRfChannelNr6gDash207Dash6985Dash160 string = "6g-207-6985-160"
+
+	// WritableInterfaceRfChannelNr6gDash209Dash6995Dash20 captures enum value "6g-209-6995-20"
+	WritableInterfaceRfChannelNr6gDash209Dash6995Dash20 string = "6g-209-6995-20"
+
+	// WritableInterfaceRfChannelNr6gDash211Dash7005Dash40 captures enum value "6g-211-7005-40"
+	WritableInterfaceRfChannelNr6gDash211Dash7005Dash40 string = "6g-211-7005-40"
+
+	// WritableInterfaceRfChannelNr6gDash213Dash7015Dash20 captures enum value "6g-213-7015-20"
+	WritableInterfaceRfChannelNr6gDash213Dash7015Dash20 string = "6g-213-7015-20"
+
+	// WritableInterfaceRfChannelNr6gDash215Dash7025Dash80 captures enum value "6g-215-7025-80"
+	WritableInterfaceRfChannelNr6gDash215Dash7025Dash80 string = "6g-215-7025-80"
+
+	// WritableInterfaceRfChannelNr6gDash217Dash7035Dash20 captures enum value "6g-217-7035-20"
+	WritableInterfaceRfChannelNr6gDash217Dash7035Dash20 string = "6g-217-7035-20"
+
+	// WritableInterfaceRfChannelNr6gDash219Dash7045Dash40 captures enum value "6g-219-7045-40"
+	WritableInterfaceRfChannelNr6gDash219Dash7045Dash40 string = "6g-219-7045-40"
+
+	// WritableInterfaceRfChannelNr6gDash221Dash7055Dash20 captures enum value "6g-221-7055-20"
+	WritableInterfaceRfChannelNr6gDash221Dash7055Dash20 string = "6g-221-7055-20"
+
+	// WritableInterfaceRfChannelNr6gDash225Dash7075Dash20 captures enum value "6g-225-7075-20"
+	WritableInterfaceRfChannelNr6gDash225Dash7075Dash20 string = "6g-225-7075-20"
+
+	// WritableInterfaceRfChannelNr6gDash227Dash7085Dash40 captures enum value "6g-227-7085-40"
+	WritableInterfaceRfChannelNr6gDash227Dash7085Dash40 string = "6g-227-7085-40"
+
+	// WritableInterfaceRfChannelNr6gDash229Dash7095Dash20 captures enum value "6g-229-7095-20"
+	WritableInterfaceRfChannelNr6gDash229Dash7095Dash20 string = "6g-229-7095-20"
+
+	// WritableInterfaceRfChannelNr6gDash233Dash7115Dash20 captures enum value "6g-233-7115-20"
+	WritableInterfaceRfChannelNr6gDash233Dash7115Dash20 string = "6g-233-7115-20"
+
+	// WritableInterfaceRfChannelNr60gDash1Dash58320Dash2160 captures enum value "60g-1-58320-2160"
+	WritableInterfaceRfChannelNr60gDash1Dash58320Dash2160 string = "60g-1-58320-2160"
+
+	// WritableInterfaceRfChannelNr60gDash2Dash60480Dash2160 captures enum value "60g-2-60480-2160"
+	WritableInterfaceRfChannelNr60gDash2Dash60480Dash2160 string = "60g-2-60480-2160"
+
+	// WritableInterfaceRfChannelNr60gDash3Dash62640Dash2160 captures enum value "60g-3-62640-2160"
+	WritableInterfaceRfChannelNr60gDash3Dash62640Dash2160 string = "60g-3-62640-2160"
+
+	// WritableInterfaceRfChannelNr60gDash4Dash64800Dash2160 captures enum value "60g-4-64800-2160"
+	WritableInterfaceRfChannelNr60gDash4Dash64800Dash2160 string = "60g-4-64800-2160"
+
+	// WritableInterfaceRfChannelNr60gDash5Dash66960Dash2160 captures enum value "60g-5-66960-2160"
+	WritableInterfaceRfChannelNr60gDash5Dash66960Dash2160 string = "60g-5-66960-2160"
+
+	// WritableInterfaceRfChannelNr60gDash6Dash69120Dash2160 captures enum value "60g-6-69120-2160"
+	WritableInterfaceRfChannelNr60gDash6Dash69120Dash2160 string = "60g-6-69120-2160"
+
+	// WritableInterfaceRfChannelNr60gDash9Dash59400Dash4320 captures enum value "60g-9-59400-4320"
+	WritableInterfaceRfChannelNr60gDash9Dash59400Dash4320 string = "60g-9-59400-4320"
+
+	// WritableInterfaceRfChannelNr60gDash10Dash61560Dash4320 captures enum value "60g-10-61560-4320"
+	WritableInterfaceRfChannelNr60gDash10Dash61560Dash4320 string = "60g-10-61560-4320"
+
+	// WritableInterfaceRfChannelNr60gDash11Dash63720Dash4320 captures enum value "60g-11-63720-4320"
+	WritableInterfaceRfChannelNr60gDash11Dash63720Dash4320 string = "60g-11-63720-4320"
+
+	// WritableInterfaceRfChannelNr60gDash12Dash65880Dash4320 captures enum value "60g-12-65880-4320"
+	WritableInterfaceRfChannelNr60gDash12Dash65880Dash4320 string = "60g-12-65880-4320"
+
+	// WritableInterfaceRfChannelNr60gDash13Dash68040Dash4320 captures enum value "60g-13-68040-4320"
+	WritableInterfaceRfChannelNr60gDash13Dash68040Dash4320 string = "60g-13-68040-4320"
+
+	// WritableInterfaceRfChannelNr60gDash17Dash60480Dash6480 captures enum value "60g-17-60480-6480"
+	WritableInterfaceRfChannelNr60gDash17Dash60480Dash6480 string = "60g-17-60480-6480"
+
+	// WritableInterfaceRfChannelNr60gDash18Dash62640Dash6480 captures enum value "60g-18-62640-6480"
+	WritableInterfaceRfChannelNr60gDash18Dash62640Dash6480 string = "60g-18-62640-6480"
+
+	// WritableInterfaceRfChannelNr60gDash19Dash64800Dash6480 captures enum value "60g-19-64800-6480"
+	WritableInterfaceRfChannelNr60gDash19Dash64800Dash6480 string = "60g-19-64800-6480"
+
+	// WritableInterfaceRfChannelNr60gDash20Dash66960Dash6480 captures enum value "60g-20-66960-6480"
+	WritableInterfaceRfChannelNr60gDash20Dash66960Dash6480 string = "60g-20-66960-6480"
+
+	// WritableInterfaceRfChannelNr60gDash25Dash61560Dash6480 captures enum value "60g-25-61560-6480"
+	WritableInterfaceRfChannelNr60gDash25Dash61560Dash6480 string = "60g-25-61560-6480"
+
+	// WritableInterfaceRfChannelNr60gDash26Dash63720Dash6480 captures enum value "60g-26-63720-6480"
+	WritableInterfaceRfChannelNr60gDash26Dash63720Dash6480 string = "60g-26-63720-6480"
+
+	// WritableInterfaceRfChannelNr60gDash27Dash65880Dash6480 captures enum value "60g-27-65880-6480"
+	WritableInterfaceRfChannelNr60gDash27Dash65880Dash6480 string = "60g-27-65880-6480"
+)
+
+// prop value enum
+func (m *WritableInterface) validateRfChannelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableInterfaceTypeRfChannelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableInterface) validateRfChannel(formats strfmt.Registry) error {
+	if swag.IsZero(m.RfChannel) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateRfChannelEnum("rf_channel", "body", m.RfChannel); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var writableInterfaceTypeRfRolePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["ap","station"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableInterfaceTypeRfRolePropEnum = append(writableInterfaceTypeRfRolePropEnum, v)
+	}
+}
+
+const (
+
+	// WritableInterfaceRfRoleAp captures enum value "ap"
+	WritableInterfaceRfRoleAp string = "ap"
+
+	// WritableInterfaceRfRoleStation captures enum value "station"
+	WritableInterfaceRfRoleStation string = "station"
+)
+
+// prop value enum
+func (m *WritableInterface) validateRfRoleEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableInterfaceTypeRfRolePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableInterface) validateRfRole(formats strfmt.Registry) error {
+	if swag.IsZero(m.RfRole) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateRfRoleEnum("rf_role", "body", m.RfRole); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableInterface) validateSpeed(formats strfmt.Registry) error {
+	if swag.IsZero(m.Speed) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("speed", "body", *m.Speed, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("speed", "body", *m.Speed, 2.147483647e+09, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableInterface) validateTaggedVlans(formats strfmt.Registry) error {
 	if swag.IsZero(m.TaggedVlans) { // not required
 		return nil
@@ -408,6 +1217,8 @@ func (m *WritableInterface) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -418,11 +1229,27 @@ func (m *WritableInterface) validateTags(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableInterface) validateTxPower(formats strfmt.Registry) error {
+	if swag.IsZero(m.TxPower) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("tx_power", "body", *m.TxPower, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("tx_power", "body", *m.TxPower, 127, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 var writableInterfaceTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["virtual","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-sfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["virtual","bridge","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","ieee802.15.1","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-qsfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","cisco-stackwise-80","cisco-stackwise-160","cisco-stackwise-320","cisco-stackwise-480","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -434,6 +1261,9 @@ const (
 
 	// WritableInterfaceTypeVirtual captures enum value "virtual"
 	WritableInterfaceTypeVirtual string = "virtual"
+
+	// WritableInterfaceTypeBridge captures enum value "bridge"
+	WritableInterfaceTypeBridge string = "bridge"
 
 	// WritableInterfaceTypeLag captures enum value "lag"
 	WritableInterfaceTypeLag string = "lag"
@@ -531,6 +1361,9 @@ const (
 	// WritableInterfaceTypeIeee802Dot11ax captures enum value "ieee802.11ax"
 	WritableInterfaceTypeIeee802Dot11ax string = "ieee802.11ax"
 
+	// WritableInterfaceTypeIeee802Dot15Dot1 captures enum value "ieee802.15.1"
+	WritableInterfaceTypeIeee802Dot15Dot1 string = "ieee802.15.1"
+
 	// WritableInterfaceTypeGsm captures enum value "gsm"
 	WritableInterfaceTypeGsm string = "gsm"
 
@@ -582,8 +1415,8 @@ const (
 	// WritableInterfaceTypeNr64gfcDashQsfpp captures enum value "64gfc-qsfpp"
 	WritableInterfaceTypeNr64gfcDashQsfpp string = "64gfc-qsfpp"
 
-	// WritableInterfaceTypeNr128gfcDashSfp28 captures enum value "128gfc-sfp28"
-	WritableInterfaceTypeNr128gfcDashSfp28 string = "128gfc-sfp28"
+	// WritableInterfaceTypeNr128gfcDashQsfp28 captures enum value "128gfc-qsfp28"
+	WritableInterfaceTypeNr128gfcDashQsfp28 string = "128gfc-qsfp28"
 
 	// WritableInterfaceTypeInfinibandDashSdr captures enum value "infiniband-sdr"
 	WritableInterfaceTypeInfinibandDashSdr string = "infiniband-sdr"
@@ -639,6 +1472,18 @@ const (
 	// WritableInterfaceTypeCiscoDashFlexstackDashPlus captures enum value "cisco-flexstack-plus"
 	WritableInterfaceTypeCiscoDashFlexstackDashPlus string = "cisco-flexstack-plus"
 
+	// WritableInterfaceTypeCiscoDashStackwiseDash80 captures enum value "cisco-stackwise-80"
+	WritableInterfaceTypeCiscoDashStackwiseDash80 string = "cisco-stackwise-80"
+
+	// WritableInterfaceTypeCiscoDashStackwiseDash160 captures enum value "cisco-stackwise-160"
+	WritableInterfaceTypeCiscoDashStackwiseDash160 string = "cisco-stackwise-160"
+
+	// WritableInterfaceTypeCiscoDashStackwiseDash320 captures enum value "cisco-stackwise-320"
+	WritableInterfaceTypeCiscoDashStackwiseDash320 string = "cisco-stackwise-320"
+
+	// WritableInterfaceTypeCiscoDashStackwiseDash480 captures enum value "cisco-stackwise-480"
+	WritableInterfaceTypeCiscoDashStackwiseDash480 string = "cisco-stackwise-480"
+
 	// WritableInterfaceTypeJuniperDashVcp captures enum value "juniper-vcp"
 	WritableInterfaceTypeJuniperDashVcp string = "juniper-vcp"
 
@@ -692,6 +1537,18 @@ func (m *WritableInterface) validateURL(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableInterface) validateWirelessLans(formats strfmt.Registry) error {
+	if swag.IsZero(m.WirelessLans) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("wireless_lans", "body", m.WirelessLans); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this writable interface based on the context it is used
 func (m *WritableInterface) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -704,14 +1561,6 @@ func (m *WritableInterface) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCablePeer(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateCablePeerType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -721,6 +1570,10 @@ func (m *WritableInterface) ContextValidate(ctx context.Context, formats strfmt.
 	}
 
 	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCountFhrpGroups(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -741,6 +1594,14 @@ func (m *WritableInterface) ContextValidate(ctx context.Context, formats strfmt.
 	}
 
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -773,23 +1634,11 @@ func (m *WritableInterface) contextValidateCable(ctx context.Context, formats st
 		if err := m.Cable.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("cable")
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-func (m *WritableInterface) contextValidateCablePeer(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
-func (m *WritableInterface) contextValidateCablePeerType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "cable_peer_type", "body", string(m.CablePeerType)); err != nil {
-		return err
 	}
 
 	return nil
@@ -818,6 +1667,15 @@ func (m *WritableInterface) contextValidateConnectedEndpointType(ctx context.Con
 	return nil
 }
 
+func (m *WritableInterface) contextValidateCountFhrpGroups(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "count_fhrp_groups", "body", int64(m.CountFhrpGroups)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableInterface) contextValidateCountIpaddresses(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "count_ipaddresses", "body", int64(m.CountIpaddresses)); err != nil {
@@ -829,7 +1687,7 @@ func (m *WritableInterface) contextValidateCountIpaddresses(ctx context.Context,
 
 func (m *WritableInterface) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -863,6 +1721,20 @@ func (m *WritableInterface) contextValidateLastUpdated(ctx context.Context, form
 	return nil
 }
 
+func (m *WritableInterface) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *WritableInterface) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableInterface) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Tags); i++ {
@@ -871,6 +1743,8 @@ func (m *WritableInterface) contextValidateTags(ctx context.Context, formats str
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

@@ -75,6 +75,12 @@ func NewDcimInterfacesListParamsWithHTTPClient(client *http.Client) *DcimInterfa
 */
 type DcimInterfacesListParams struct {
 
+	// BridgeID.
+	BridgeID *string
+
+	// BridgeIDn.
+	BridgeIDn *string
+
 	// Cabled.
 	Cabled *string
 
@@ -92,9 +98,6 @@ type DcimInterfacesListParams struct {
 
 	// Description.
 	Description *string
-
-	// DescriptionEmpty.
-	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -129,6 +132,12 @@ type DcimInterfacesListParams struct {
 	// DeviceID.
 	DeviceID *string
 
+	// Duplex.
+	Duplex *string
+
+	// Duplexn.
+	Duplexn *string
+
 	// Enabled.
 	Enabled *string
 
@@ -155,9 +164,6 @@ type DcimInterfacesListParams struct {
 
 	// Label.
 	Label *string
-
-	// LabelEmpty.
-	LabelEmpty *string
 
 	// LabelIc.
 	LabelIc *string
@@ -258,6 +264,12 @@ type DcimInterfacesListParams struct {
 	// Moden.
 	Moden *string
 
+	// ModuleID.
+	ModuleID *string
+
+	// ModuleIDn.
+	ModuleIDn *string
+
 	// Mtu.
 	Mtu *string
 
@@ -278,9 +290,6 @@ type DcimInterfacesListParams struct {
 
 	// Name.
 	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -336,6 +345,54 @@ type DcimInterfacesListParams struct {
 	// RegionIDn.
 	RegionIDn *string
 
+	// RfChannel.
+	RfChannel *string
+
+	// RfChanneln.
+	RfChanneln *string
+
+	// RfChannelFrequency.
+	RfChannelFrequency *string
+
+	// RfChannelFrequencyGt.
+	RfChannelFrequencyGt *string
+
+	// RfChannelFrequencyGte.
+	RfChannelFrequencyGte *string
+
+	// RfChannelFrequencyLt.
+	RfChannelFrequencyLt *string
+
+	// RfChannelFrequencyLte.
+	RfChannelFrequencyLte *string
+
+	// RfChannelFrequencyn.
+	RfChannelFrequencyn *string
+
+	// RfChannelWidth.
+	RfChannelWidth *string
+
+	// RfChannelWidthGt.
+	RfChannelWidthGt *string
+
+	// RfChannelWidthGte.
+	RfChannelWidthGte *string
+
+	// RfChannelWidthLt.
+	RfChannelWidthLt *string
+
+	// RfChannelWidthLte.
+	RfChannelWidthLte *string
+
+	// RfChannelWidthn.
+	RfChannelWidthn *string
+
+	// RfRole.
+	RfRole *string
+
+	// RfRolen.
+	RfRolen *string
+
 	// Site.
 	Site *string
 
@@ -360,11 +417,47 @@ type DcimInterfacesListParams struct {
 	// SiteIDn.
 	SiteIDn *string
 
+	// Speed.
+	Speed *string
+
+	// SpeedGt.
+	SpeedGt *string
+
+	// SpeedGte.
+	SpeedGte *string
+
+	// SpeedLt.
+	SpeedLt *string
+
+	// SpeedLte.
+	SpeedLte *string
+
+	// Speedn.
+	Speedn *string
+
 	// Tag.
 	Tag *string
 
 	// Tagn.
 	Tagn *string
+
+	// TxPower.
+	TxPower *string
+
+	// TxPowerGt.
+	TxPowerGt *string
+
+	// TxPowerGte.
+	TxPowerGte *string
+
+	// TxPowerLt.
+	TxPowerLt *string
+
+	// TxPowerLte.
+	TxPowerLte *string
+
+	// TxPowern.
+	TxPowern *string
 
 	// Type.
 	Type *string
@@ -372,11 +465,65 @@ type DcimInterfacesListParams struct {
 	// Typen.
 	Typen *string
 
+	// VirtualChassis.
+	VirtualChassis *string
+
+	// VirtualChassisn.
+	VirtualChassisn *string
+
+	// VirtualChassisID.
+	VirtualChassisID *string
+
+	// VirtualChassisIDn.
+	VirtualChassisIDn *string
+
 	// Vlan.
 	Vlan *string
 
 	// VlanID.
 	VlanID *string
+
+	// Vrf.
+	Vrf *string
+
+	// Vrfn.
+	Vrfn *string
+
+	// VrfID.
+	VrfID *string
+
+	// VrfIDn.
+	VrfIDn *string
+
+	// Wwn.
+	Wwn *string
+
+	// WwnIc.
+	WwnIc *string
+
+	// WwnIe.
+	WwnIe *string
+
+	// WwnIew.
+	WwnIew *string
+
+	// WwnIsw.
+	WwnIsw *string
+
+	// Wwnn.
+	Wwnn *string
+
+	// WwnNic.
+	WwnNic *string
+
+	// WwnNie.
+	WwnNie *string
+
+	// WwnNiew.
+	WwnNiew *string
+
+	// WwnNisw.
+	WwnNisw *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -429,6 +576,28 @@ func (o *DcimInterfacesListParams) WithHTTPClient(client *http.Client) *DcimInte
 // SetHTTPClient adds the HTTPClient to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithBridgeID adds the bridgeID to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithBridgeID(bridgeID *string) *DcimInterfacesListParams {
+	o.SetBridgeID(bridgeID)
+	return o
+}
+
+// SetBridgeID adds the bridgeId to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetBridgeID(bridgeID *string) {
+	o.BridgeID = bridgeID
+}
+
+// WithBridgeIDn adds the bridgeIDn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithBridgeIDn(bridgeIDn *string) *DcimInterfacesListParams {
+	o.SetBridgeIDn(bridgeIDn)
+	return o
+}
+
+// SetBridgeIDn adds the bridgeIdN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetBridgeIDn(bridgeIDn *string) {
+	o.BridgeIDn = bridgeIDn
 }
 
 // WithCabled adds the cabled to the dcim interfaces list params
@@ -495,17 +664,6 @@ func (o *DcimInterfacesListParams) WithDescription(description *string) *DcimInt
 // SetDescription adds the description to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the dcim interfaces list params
-func (o *DcimInterfacesListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimInterfacesListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the dcim interfaces list params
-func (o *DcimInterfacesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim interfaces list params
@@ -629,6 +787,28 @@ func (o *DcimInterfacesListParams) SetDeviceID(deviceID *string) {
 	o.DeviceID = deviceID
 }
 
+// WithDuplex adds the duplex to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithDuplex(duplex *string) *DcimInterfacesListParams {
+	o.SetDuplex(duplex)
+	return o
+}
+
+// SetDuplex adds the duplex to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetDuplex(duplex *string) {
+	o.Duplex = duplex
+}
+
+// WithDuplexn adds the duplexn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithDuplexn(duplexn *string) *DcimInterfacesListParams {
+	o.SetDuplexn(duplexn)
+	return o
+}
+
+// SetDuplexn adds the duplexN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetDuplexn(duplexn *string) {
+	o.Duplexn = duplexn
+}
+
 // WithEnabled adds the enabled to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithEnabled(enabled *string) *DcimInterfacesListParams {
 	o.SetEnabled(enabled)
@@ -726,17 +906,6 @@ func (o *DcimInterfacesListParams) WithLabel(label *string) *DcimInterfacesListP
 // SetLabel adds the label to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetLabel(label *string) {
 	o.Label = label
-}
-
-// WithLabelEmpty adds the labelEmpty to the dcim interfaces list params
-func (o *DcimInterfacesListParams) WithLabelEmpty(labelEmpty *string) *DcimInterfacesListParams {
-	o.SetLabelEmpty(labelEmpty)
-	return o
-}
-
-// SetLabelEmpty adds the labelEmpty to the dcim interfaces list params
-func (o *DcimInterfacesListParams) SetLabelEmpty(labelEmpty *string) {
-	o.LabelEmpty = labelEmpty
 }
 
 // WithLabelIc adds the labelIc to the dcim interfaces list params
@@ -1091,6 +1260,28 @@ func (o *DcimInterfacesListParams) SetModen(moden *string) {
 	o.Moden = moden
 }
 
+// WithModuleID adds the moduleID to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithModuleID(moduleID *string) *DcimInterfacesListParams {
+	o.SetModuleID(moduleID)
+	return o
+}
+
+// SetModuleID adds the moduleId to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetModuleID(moduleID *string) {
+	o.ModuleID = moduleID
+}
+
+// WithModuleIDn adds the moduleIDn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithModuleIDn(moduleIDn *string) *DcimInterfacesListParams {
+	o.SetModuleIDn(moduleIDn)
+	return o
+}
+
+// SetModuleIDn adds the moduleIdN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetModuleIDn(moduleIDn *string) {
+	o.ModuleIDn = moduleIDn
+}
+
 // WithMtu adds the mtu to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithMtu(mtu *string) *DcimInterfacesListParams {
 	o.SetMtu(mtu)
@@ -1166,17 +1357,6 @@ func (o *DcimInterfacesListParams) WithName(name *string) *DcimInterfacesListPar
 // SetName adds the name to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetName(name *string) {
 	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the dcim interfaces list params
-func (o *DcimInterfacesListParams) WithNameEmpty(nameEmpty *string) *DcimInterfacesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim interfaces list params
-func (o *DcimInterfacesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim interfaces list params
@@ -1366,6 +1546,182 @@ func (o *DcimInterfacesListParams) SetRegionIDn(regionIDn *string) {
 	o.RegionIDn = regionIDn
 }
 
+// WithRfChannel adds the rfChannel to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannel(rfChannel *string) *DcimInterfacesListParams {
+	o.SetRfChannel(rfChannel)
+	return o
+}
+
+// SetRfChannel adds the rfChannel to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannel(rfChannel *string) {
+	o.RfChannel = rfChannel
+}
+
+// WithRfChanneln adds the rfChanneln to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChanneln(rfChanneln *string) *DcimInterfacesListParams {
+	o.SetRfChanneln(rfChanneln)
+	return o
+}
+
+// SetRfChanneln adds the rfChannelN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChanneln(rfChanneln *string) {
+	o.RfChanneln = rfChanneln
+}
+
+// WithRfChannelFrequency adds the rfChannelFrequency to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelFrequency(rfChannelFrequency *string) *DcimInterfacesListParams {
+	o.SetRfChannelFrequency(rfChannelFrequency)
+	return o
+}
+
+// SetRfChannelFrequency adds the rfChannelFrequency to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelFrequency(rfChannelFrequency *string) {
+	o.RfChannelFrequency = rfChannelFrequency
+}
+
+// WithRfChannelFrequencyGt adds the rfChannelFrequencyGt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelFrequencyGt(rfChannelFrequencyGt *string) *DcimInterfacesListParams {
+	o.SetRfChannelFrequencyGt(rfChannelFrequencyGt)
+	return o
+}
+
+// SetRfChannelFrequencyGt adds the rfChannelFrequencyGt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelFrequencyGt(rfChannelFrequencyGt *string) {
+	o.RfChannelFrequencyGt = rfChannelFrequencyGt
+}
+
+// WithRfChannelFrequencyGte adds the rfChannelFrequencyGte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelFrequencyGte(rfChannelFrequencyGte *string) *DcimInterfacesListParams {
+	o.SetRfChannelFrequencyGte(rfChannelFrequencyGte)
+	return o
+}
+
+// SetRfChannelFrequencyGte adds the rfChannelFrequencyGte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelFrequencyGte(rfChannelFrequencyGte *string) {
+	o.RfChannelFrequencyGte = rfChannelFrequencyGte
+}
+
+// WithRfChannelFrequencyLt adds the rfChannelFrequencyLt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelFrequencyLt(rfChannelFrequencyLt *string) *DcimInterfacesListParams {
+	o.SetRfChannelFrequencyLt(rfChannelFrequencyLt)
+	return o
+}
+
+// SetRfChannelFrequencyLt adds the rfChannelFrequencyLt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelFrequencyLt(rfChannelFrequencyLt *string) {
+	o.RfChannelFrequencyLt = rfChannelFrequencyLt
+}
+
+// WithRfChannelFrequencyLte adds the rfChannelFrequencyLte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelFrequencyLte(rfChannelFrequencyLte *string) *DcimInterfacesListParams {
+	o.SetRfChannelFrequencyLte(rfChannelFrequencyLte)
+	return o
+}
+
+// SetRfChannelFrequencyLte adds the rfChannelFrequencyLte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelFrequencyLte(rfChannelFrequencyLte *string) {
+	o.RfChannelFrequencyLte = rfChannelFrequencyLte
+}
+
+// WithRfChannelFrequencyn adds the rfChannelFrequencyn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelFrequencyn(rfChannelFrequencyn *string) *DcimInterfacesListParams {
+	o.SetRfChannelFrequencyn(rfChannelFrequencyn)
+	return o
+}
+
+// SetRfChannelFrequencyn adds the rfChannelFrequencyN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelFrequencyn(rfChannelFrequencyn *string) {
+	o.RfChannelFrequencyn = rfChannelFrequencyn
+}
+
+// WithRfChannelWidth adds the rfChannelWidth to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelWidth(rfChannelWidth *string) *DcimInterfacesListParams {
+	o.SetRfChannelWidth(rfChannelWidth)
+	return o
+}
+
+// SetRfChannelWidth adds the rfChannelWidth to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelWidth(rfChannelWidth *string) {
+	o.RfChannelWidth = rfChannelWidth
+}
+
+// WithRfChannelWidthGt adds the rfChannelWidthGt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelWidthGt(rfChannelWidthGt *string) *DcimInterfacesListParams {
+	o.SetRfChannelWidthGt(rfChannelWidthGt)
+	return o
+}
+
+// SetRfChannelWidthGt adds the rfChannelWidthGt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelWidthGt(rfChannelWidthGt *string) {
+	o.RfChannelWidthGt = rfChannelWidthGt
+}
+
+// WithRfChannelWidthGte adds the rfChannelWidthGte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelWidthGte(rfChannelWidthGte *string) *DcimInterfacesListParams {
+	o.SetRfChannelWidthGte(rfChannelWidthGte)
+	return o
+}
+
+// SetRfChannelWidthGte adds the rfChannelWidthGte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelWidthGte(rfChannelWidthGte *string) {
+	o.RfChannelWidthGte = rfChannelWidthGte
+}
+
+// WithRfChannelWidthLt adds the rfChannelWidthLt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelWidthLt(rfChannelWidthLt *string) *DcimInterfacesListParams {
+	o.SetRfChannelWidthLt(rfChannelWidthLt)
+	return o
+}
+
+// SetRfChannelWidthLt adds the rfChannelWidthLt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelWidthLt(rfChannelWidthLt *string) {
+	o.RfChannelWidthLt = rfChannelWidthLt
+}
+
+// WithRfChannelWidthLte adds the rfChannelWidthLte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelWidthLte(rfChannelWidthLte *string) *DcimInterfacesListParams {
+	o.SetRfChannelWidthLte(rfChannelWidthLte)
+	return o
+}
+
+// SetRfChannelWidthLte adds the rfChannelWidthLte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelWidthLte(rfChannelWidthLte *string) {
+	o.RfChannelWidthLte = rfChannelWidthLte
+}
+
+// WithRfChannelWidthn adds the rfChannelWidthn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfChannelWidthn(rfChannelWidthn *string) *DcimInterfacesListParams {
+	o.SetRfChannelWidthn(rfChannelWidthn)
+	return o
+}
+
+// SetRfChannelWidthn adds the rfChannelWidthN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfChannelWidthn(rfChannelWidthn *string) {
+	o.RfChannelWidthn = rfChannelWidthn
+}
+
+// WithRfRole adds the rfRole to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfRole(rfRole *string) *DcimInterfacesListParams {
+	o.SetRfRole(rfRole)
+	return o
+}
+
+// SetRfRole adds the rfRole to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfRole(rfRole *string) {
+	o.RfRole = rfRole
+}
+
+// WithRfRolen adds the rfRolen to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithRfRolen(rfRolen *string) *DcimInterfacesListParams {
+	o.SetRfRolen(rfRolen)
+	return o
+}
+
+// SetRfRolen adds the rfRoleN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetRfRolen(rfRolen *string) {
+	o.RfRolen = rfRolen
+}
+
 // WithSite adds the site to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithSite(site *string) *DcimInterfacesListParams {
 	o.SetSite(site)
@@ -1454,6 +1810,72 @@ func (o *DcimInterfacesListParams) SetSiteIDn(siteIDn *string) {
 	o.SiteIDn = siteIDn
 }
 
+// WithSpeed adds the speed to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithSpeed(speed *string) *DcimInterfacesListParams {
+	o.SetSpeed(speed)
+	return o
+}
+
+// SetSpeed adds the speed to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetSpeed(speed *string) {
+	o.Speed = speed
+}
+
+// WithSpeedGt adds the speedGt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithSpeedGt(speedGt *string) *DcimInterfacesListParams {
+	o.SetSpeedGt(speedGt)
+	return o
+}
+
+// SetSpeedGt adds the speedGt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetSpeedGt(speedGt *string) {
+	o.SpeedGt = speedGt
+}
+
+// WithSpeedGte adds the speedGte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithSpeedGte(speedGte *string) *DcimInterfacesListParams {
+	o.SetSpeedGte(speedGte)
+	return o
+}
+
+// SetSpeedGte adds the speedGte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetSpeedGte(speedGte *string) {
+	o.SpeedGte = speedGte
+}
+
+// WithSpeedLt adds the speedLt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithSpeedLt(speedLt *string) *DcimInterfacesListParams {
+	o.SetSpeedLt(speedLt)
+	return o
+}
+
+// SetSpeedLt adds the speedLt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetSpeedLt(speedLt *string) {
+	o.SpeedLt = speedLt
+}
+
+// WithSpeedLte adds the speedLte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithSpeedLte(speedLte *string) *DcimInterfacesListParams {
+	o.SetSpeedLte(speedLte)
+	return o
+}
+
+// SetSpeedLte adds the speedLte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetSpeedLte(speedLte *string) {
+	o.SpeedLte = speedLte
+}
+
+// WithSpeedn adds the speedn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithSpeedn(speedn *string) *DcimInterfacesListParams {
+	o.SetSpeedn(speedn)
+	return o
+}
+
+// SetSpeedn adds the speedN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetSpeedn(speedn *string) {
+	o.Speedn = speedn
+}
+
 // WithTag adds the tag to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithTag(tag *string) *DcimInterfacesListParams {
 	o.SetTag(tag)
@@ -1474,6 +1896,72 @@ func (o *DcimInterfacesListParams) WithTagn(tagn *string) *DcimInterfacesListPar
 // SetTagn adds the tagN to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
+}
+
+// WithTxPower adds the txPower to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithTxPower(txPower *string) *DcimInterfacesListParams {
+	o.SetTxPower(txPower)
+	return o
+}
+
+// SetTxPower adds the txPower to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetTxPower(txPower *string) {
+	o.TxPower = txPower
+}
+
+// WithTxPowerGt adds the txPowerGt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithTxPowerGt(txPowerGt *string) *DcimInterfacesListParams {
+	o.SetTxPowerGt(txPowerGt)
+	return o
+}
+
+// SetTxPowerGt adds the txPowerGt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetTxPowerGt(txPowerGt *string) {
+	o.TxPowerGt = txPowerGt
+}
+
+// WithTxPowerGte adds the txPowerGte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithTxPowerGte(txPowerGte *string) *DcimInterfacesListParams {
+	o.SetTxPowerGte(txPowerGte)
+	return o
+}
+
+// SetTxPowerGte adds the txPowerGte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetTxPowerGte(txPowerGte *string) {
+	o.TxPowerGte = txPowerGte
+}
+
+// WithTxPowerLt adds the txPowerLt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithTxPowerLt(txPowerLt *string) *DcimInterfacesListParams {
+	o.SetTxPowerLt(txPowerLt)
+	return o
+}
+
+// SetTxPowerLt adds the txPowerLt to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetTxPowerLt(txPowerLt *string) {
+	o.TxPowerLt = txPowerLt
+}
+
+// WithTxPowerLte adds the txPowerLte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithTxPowerLte(txPowerLte *string) *DcimInterfacesListParams {
+	o.SetTxPowerLte(txPowerLte)
+	return o
+}
+
+// SetTxPowerLte adds the txPowerLte to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetTxPowerLte(txPowerLte *string) {
+	o.TxPowerLte = txPowerLte
+}
+
+// WithTxPowern adds the txPowern to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithTxPowern(txPowern *string) *DcimInterfacesListParams {
+	o.SetTxPowern(txPowern)
+	return o
+}
+
+// SetTxPowern adds the txPowerN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetTxPowern(txPowern *string) {
+	o.TxPowern = txPowern
 }
 
 // WithType adds the typeVar to the dcim interfaces list params
@@ -1498,6 +1986,50 @@ func (o *DcimInterfacesListParams) SetTypen(typen *string) {
 	o.Typen = typen
 }
 
+// WithVirtualChassis adds the virtualChassis to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVirtualChassis(virtualChassis *string) *DcimInterfacesListParams {
+	o.SetVirtualChassis(virtualChassis)
+	return o
+}
+
+// SetVirtualChassis adds the virtualChassis to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVirtualChassis(virtualChassis *string) {
+	o.VirtualChassis = virtualChassis
+}
+
+// WithVirtualChassisn adds the virtualChassisn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVirtualChassisn(virtualChassisn *string) *DcimInterfacesListParams {
+	o.SetVirtualChassisn(virtualChassisn)
+	return o
+}
+
+// SetVirtualChassisn adds the virtualChassisN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVirtualChassisn(virtualChassisn *string) {
+	o.VirtualChassisn = virtualChassisn
+}
+
+// WithVirtualChassisID adds the virtualChassisID to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVirtualChassisID(virtualChassisID *string) *DcimInterfacesListParams {
+	o.SetVirtualChassisID(virtualChassisID)
+	return o
+}
+
+// SetVirtualChassisID adds the virtualChassisId to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVirtualChassisID(virtualChassisID *string) {
+	o.VirtualChassisID = virtualChassisID
+}
+
+// WithVirtualChassisIDn adds the virtualChassisIDn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVirtualChassisIDn(virtualChassisIDn *string) *DcimInterfacesListParams {
+	o.SetVirtualChassisIDn(virtualChassisIDn)
+	return o
+}
+
+// SetVirtualChassisIDn adds the virtualChassisIdN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVirtualChassisIDn(virtualChassisIDn *string) {
+	o.VirtualChassisIDn = virtualChassisIDn
+}
+
 // WithVlan adds the vlan to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithVlan(vlan *string) *DcimInterfacesListParams {
 	o.SetVlan(vlan)
@@ -1520,6 +2052,160 @@ func (o *DcimInterfacesListParams) SetVlanID(vlanID *string) {
 	o.VlanID = vlanID
 }
 
+// WithVrf adds the vrf to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVrf(vrf *string) *DcimInterfacesListParams {
+	o.SetVrf(vrf)
+	return o
+}
+
+// SetVrf adds the vrf to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVrf(vrf *string) {
+	o.Vrf = vrf
+}
+
+// WithVrfn adds the vrfn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVrfn(vrfn *string) *DcimInterfacesListParams {
+	o.SetVrfn(vrfn)
+	return o
+}
+
+// SetVrfn adds the vrfN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVrfn(vrfn *string) {
+	o.Vrfn = vrfn
+}
+
+// WithVrfID adds the vrfID to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVrfID(vrfID *string) *DcimInterfacesListParams {
+	o.SetVrfID(vrfID)
+	return o
+}
+
+// SetVrfID adds the vrfId to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVrfID(vrfID *string) {
+	o.VrfID = vrfID
+}
+
+// WithVrfIDn adds the vrfIDn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVrfIDn(vrfIDn *string) *DcimInterfacesListParams {
+	o.SetVrfIDn(vrfIDn)
+	return o
+}
+
+// SetVrfIDn adds the vrfIdN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVrfIDn(vrfIDn *string) {
+	o.VrfIDn = vrfIDn
+}
+
+// WithWwn adds the wwn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwn(wwn *string) *DcimInterfacesListParams {
+	o.SetWwn(wwn)
+	return o
+}
+
+// SetWwn adds the wwn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwn(wwn *string) {
+	o.Wwn = wwn
+}
+
+// WithWwnIc adds the wwnIc to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwnIc(wwnIc *string) *DcimInterfacesListParams {
+	o.SetWwnIc(wwnIc)
+	return o
+}
+
+// SetWwnIc adds the wwnIc to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwnIc(wwnIc *string) {
+	o.WwnIc = wwnIc
+}
+
+// WithWwnIe adds the wwnIe to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwnIe(wwnIe *string) *DcimInterfacesListParams {
+	o.SetWwnIe(wwnIe)
+	return o
+}
+
+// SetWwnIe adds the wwnIe to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwnIe(wwnIe *string) {
+	o.WwnIe = wwnIe
+}
+
+// WithWwnIew adds the wwnIew to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwnIew(wwnIew *string) *DcimInterfacesListParams {
+	o.SetWwnIew(wwnIew)
+	return o
+}
+
+// SetWwnIew adds the wwnIew to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwnIew(wwnIew *string) {
+	o.WwnIew = wwnIew
+}
+
+// WithWwnIsw adds the wwnIsw to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwnIsw(wwnIsw *string) *DcimInterfacesListParams {
+	o.SetWwnIsw(wwnIsw)
+	return o
+}
+
+// SetWwnIsw adds the wwnIsw to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwnIsw(wwnIsw *string) {
+	o.WwnIsw = wwnIsw
+}
+
+// WithWwnn adds the wwnn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwnn(wwnn *string) *DcimInterfacesListParams {
+	o.SetWwnn(wwnn)
+	return o
+}
+
+// SetWwnn adds the wwnN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwnn(wwnn *string) {
+	o.Wwnn = wwnn
+}
+
+// WithWwnNic adds the wwnNic to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwnNic(wwnNic *string) *DcimInterfacesListParams {
+	o.SetWwnNic(wwnNic)
+	return o
+}
+
+// SetWwnNic adds the wwnNic to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwnNic(wwnNic *string) {
+	o.WwnNic = wwnNic
+}
+
+// WithWwnNie adds the wwnNie to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwnNie(wwnNie *string) *DcimInterfacesListParams {
+	o.SetWwnNie(wwnNie)
+	return o
+}
+
+// SetWwnNie adds the wwnNie to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwnNie(wwnNie *string) {
+	o.WwnNie = wwnNie
+}
+
+// WithWwnNiew adds the wwnNiew to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwnNiew(wwnNiew *string) *DcimInterfacesListParams {
+	o.SetWwnNiew(wwnNiew)
+	return o
+}
+
+// SetWwnNiew adds the wwnNiew to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwnNiew(wwnNiew *string) {
+	o.WwnNiew = wwnNiew
+}
+
+// WithWwnNisw adds the wwnNisw to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithWwnNisw(wwnNisw *string) *DcimInterfacesListParams {
+	o.SetWwnNisw(wwnNisw)
+	return o
+}
+
+// SetWwnNisw adds the wwnNisw to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetWwnNisw(wwnNisw *string) {
+	o.WwnNisw = wwnNisw
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -1527,6 +2213,40 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		return err
 	}
 	var res []error
+
+	if o.BridgeID != nil {
+
+		// query param bridge_id
+		var qrBridgeID string
+
+		if o.BridgeID != nil {
+			qrBridgeID = *o.BridgeID
+		}
+		qBridgeID := qrBridgeID
+		if qBridgeID != "" {
+
+			if err := r.SetQueryParam("bridge_id", qBridgeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.BridgeIDn != nil {
+
+		// query param bridge_id__n
+		var qrBridgeIDn string
+
+		if o.BridgeIDn != nil {
+			qrBridgeIDn = *o.BridgeIDn
+		}
+		qBridgeIDn := qrBridgeIDn
+		if qBridgeIDn != "" {
+
+			if err := r.SetQueryParam("bridge_id__n", qBridgeIDn); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.Cabled != nil {
 
@@ -1625,23 +2345,6 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1834,6 +2537,40 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.Duplex != nil {
+
+		// query param duplex
+		var qrDuplex string
+
+		if o.Duplex != nil {
+			qrDuplex = *o.Duplex
+		}
+		qDuplex := qrDuplex
+		if qDuplex != "" {
+
+			if err := r.SetQueryParam("duplex", qDuplex); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Duplexn != nil {
+
+		// query param duplex__n
+		var qrDuplexn string
+
+		if o.Duplexn != nil {
+			qrDuplexn = *o.Duplexn
+		}
+		qDuplexn := qrDuplexn
+		if qDuplexn != "" {
+
+			if err := r.SetQueryParam("duplex__n", qDuplexn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Enabled != nil {
 
 		// query param enabled
@@ -1982,23 +2719,6 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLabel != "" {
 
 			if err := r.SetQueryParam("label", qLabel); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LabelEmpty != nil {
-
-		// query param label__empty
-		var qrLabelEmpty string
-
-		if o.LabelEmpty != nil {
-			qrLabelEmpty = *o.LabelEmpty
-		}
-		qLabelEmpty := qrLabelEmpty
-		if qLabelEmpty != "" {
-
-			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
 				return err
 			}
 		}
@@ -2548,6 +3268,40 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.ModuleID != nil {
+
+		// query param module_id
+		var qrModuleID string
+
+		if o.ModuleID != nil {
+			qrModuleID = *o.ModuleID
+		}
+		qModuleID := qrModuleID
+		if qModuleID != "" {
+
+			if err := r.SetQueryParam("module_id", qModuleID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ModuleIDn != nil {
+
+		// query param module_id__n
+		var qrModuleIDn string
+
+		if o.ModuleIDn != nil {
+			qrModuleIDn = *o.ModuleIDn
+		}
+		qModuleIDn := qrModuleIDn
+		if qModuleIDn != "" {
+
+			if err := r.SetQueryParam("module_id__n", qModuleIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Mtu != nil {
 
 		// query param mtu
@@ -2662,23 +3416,6 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -2973,6 +3710,278 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.RfChannel != nil {
+
+		// query param rf_channel
+		var qrRfChannel string
+
+		if o.RfChannel != nil {
+			qrRfChannel = *o.RfChannel
+		}
+		qRfChannel := qrRfChannel
+		if qRfChannel != "" {
+
+			if err := r.SetQueryParam("rf_channel", qRfChannel); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChanneln != nil {
+
+		// query param rf_channel__n
+		var qrRfChanneln string
+
+		if o.RfChanneln != nil {
+			qrRfChanneln = *o.RfChanneln
+		}
+		qRfChanneln := qrRfChanneln
+		if qRfChanneln != "" {
+
+			if err := r.SetQueryParam("rf_channel__n", qRfChanneln); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelFrequency != nil {
+
+		// query param rf_channel_frequency
+		var qrRfChannelFrequency string
+
+		if o.RfChannelFrequency != nil {
+			qrRfChannelFrequency = *o.RfChannelFrequency
+		}
+		qRfChannelFrequency := qrRfChannelFrequency
+		if qRfChannelFrequency != "" {
+
+			if err := r.SetQueryParam("rf_channel_frequency", qRfChannelFrequency); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelFrequencyGt != nil {
+
+		// query param rf_channel_frequency__gt
+		var qrRfChannelFrequencyGt string
+
+		if o.RfChannelFrequencyGt != nil {
+			qrRfChannelFrequencyGt = *o.RfChannelFrequencyGt
+		}
+		qRfChannelFrequencyGt := qrRfChannelFrequencyGt
+		if qRfChannelFrequencyGt != "" {
+
+			if err := r.SetQueryParam("rf_channel_frequency__gt", qRfChannelFrequencyGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelFrequencyGte != nil {
+
+		// query param rf_channel_frequency__gte
+		var qrRfChannelFrequencyGte string
+
+		if o.RfChannelFrequencyGte != nil {
+			qrRfChannelFrequencyGte = *o.RfChannelFrequencyGte
+		}
+		qRfChannelFrequencyGte := qrRfChannelFrequencyGte
+		if qRfChannelFrequencyGte != "" {
+
+			if err := r.SetQueryParam("rf_channel_frequency__gte", qRfChannelFrequencyGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelFrequencyLt != nil {
+
+		// query param rf_channel_frequency__lt
+		var qrRfChannelFrequencyLt string
+
+		if o.RfChannelFrequencyLt != nil {
+			qrRfChannelFrequencyLt = *o.RfChannelFrequencyLt
+		}
+		qRfChannelFrequencyLt := qrRfChannelFrequencyLt
+		if qRfChannelFrequencyLt != "" {
+
+			if err := r.SetQueryParam("rf_channel_frequency__lt", qRfChannelFrequencyLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelFrequencyLte != nil {
+
+		// query param rf_channel_frequency__lte
+		var qrRfChannelFrequencyLte string
+
+		if o.RfChannelFrequencyLte != nil {
+			qrRfChannelFrequencyLte = *o.RfChannelFrequencyLte
+		}
+		qRfChannelFrequencyLte := qrRfChannelFrequencyLte
+		if qRfChannelFrequencyLte != "" {
+
+			if err := r.SetQueryParam("rf_channel_frequency__lte", qRfChannelFrequencyLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelFrequencyn != nil {
+
+		// query param rf_channel_frequency__n
+		var qrRfChannelFrequencyn string
+
+		if o.RfChannelFrequencyn != nil {
+			qrRfChannelFrequencyn = *o.RfChannelFrequencyn
+		}
+		qRfChannelFrequencyn := qrRfChannelFrequencyn
+		if qRfChannelFrequencyn != "" {
+
+			if err := r.SetQueryParam("rf_channel_frequency__n", qRfChannelFrequencyn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelWidth != nil {
+
+		// query param rf_channel_width
+		var qrRfChannelWidth string
+
+		if o.RfChannelWidth != nil {
+			qrRfChannelWidth = *o.RfChannelWidth
+		}
+		qRfChannelWidth := qrRfChannelWidth
+		if qRfChannelWidth != "" {
+
+			if err := r.SetQueryParam("rf_channel_width", qRfChannelWidth); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelWidthGt != nil {
+
+		// query param rf_channel_width__gt
+		var qrRfChannelWidthGt string
+
+		if o.RfChannelWidthGt != nil {
+			qrRfChannelWidthGt = *o.RfChannelWidthGt
+		}
+		qRfChannelWidthGt := qrRfChannelWidthGt
+		if qRfChannelWidthGt != "" {
+
+			if err := r.SetQueryParam("rf_channel_width__gt", qRfChannelWidthGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelWidthGte != nil {
+
+		// query param rf_channel_width__gte
+		var qrRfChannelWidthGte string
+
+		if o.RfChannelWidthGte != nil {
+			qrRfChannelWidthGte = *o.RfChannelWidthGte
+		}
+		qRfChannelWidthGte := qrRfChannelWidthGte
+		if qRfChannelWidthGte != "" {
+
+			if err := r.SetQueryParam("rf_channel_width__gte", qRfChannelWidthGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelWidthLt != nil {
+
+		// query param rf_channel_width__lt
+		var qrRfChannelWidthLt string
+
+		if o.RfChannelWidthLt != nil {
+			qrRfChannelWidthLt = *o.RfChannelWidthLt
+		}
+		qRfChannelWidthLt := qrRfChannelWidthLt
+		if qRfChannelWidthLt != "" {
+
+			if err := r.SetQueryParam("rf_channel_width__lt", qRfChannelWidthLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelWidthLte != nil {
+
+		// query param rf_channel_width__lte
+		var qrRfChannelWidthLte string
+
+		if o.RfChannelWidthLte != nil {
+			qrRfChannelWidthLte = *o.RfChannelWidthLte
+		}
+		qRfChannelWidthLte := qrRfChannelWidthLte
+		if qRfChannelWidthLte != "" {
+
+			if err := r.SetQueryParam("rf_channel_width__lte", qRfChannelWidthLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfChannelWidthn != nil {
+
+		// query param rf_channel_width__n
+		var qrRfChannelWidthn string
+
+		if o.RfChannelWidthn != nil {
+			qrRfChannelWidthn = *o.RfChannelWidthn
+		}
+		qRfChannelWidthn := qrRfChannelWidthn
+		if qRfChannelWidthn != "" {
+
+			if err := r.SetQueryParam("rf_channel_width__n", qRfChannelWidthn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfRole != nil {
+
+		// query param rf_role
+		var qrRfRole string
+
+		if o.RfRole != nil {
+			qrRfRole = *o.RfRole
+		}
+		qRfRole := qrRfRole
+		if qRfRole != "" {
+
+			if err := r.SetQueryParam("rf_role", qRfRole); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RfRolen != nil {
+
+		// query param rf_role__n
+		var qrRfRolen string
+
+		if o.RfRolen != nil {
+			qrRfRolen = *o.RfRolen
+		}
+		qRfRolen := qrRfRolen
+		if qRfRolen != "" {
+
+			if err := r.SetQueryParam("rf_role__n", qRfRolen); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Site != nil {
 
 		// query param site
@@ -3109,6 +4118,108 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.Speed != nil {
+
+		// query param speed
+		var qrSpeed string
+
+		if o.Speed != nil {
+			qrSpeed = *o.Speed
+		}
+		qSpeed := qrSpeed
+		if qSpeed != "" {
+
+			if err := r.SetQueryParam("speed", qSpeed); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SpeedGt != nil {
+
+		// query param speed__gt
+		var qrSpeedGt string
+
+		if o.SpeedGt != nil {
+			qrSpeedGt = *o.SpeedGt
+		}
+		qSpeedGt := qrSpeedGt
+		if qSpeedGt != "" {
+
+			if err := r.SetQueryParam("speed__gt", qSpeedGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SpeedGte != nil {
+
+		// query param speed__gte
+		var qrSpeedGte string
+
+		if o.SpeedGte != nil {
+			qrSpeedGte = *o.SpeedGte
+		}
+		qSpeedGte := qrSpeedGte
+		if qSpeedGte != "" {
+
+			if err := r.SetQueryParam("speed__gte", qSpeedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SpeedLt != nil {
+
+		// query param speed__lt
+		var qrSpeedLt string
+
+		if o.SpeedLt != nil {
+			qrSpeedLt = *o.SpeedLt
+		}
+		qSpeedLt := qrSpeedLt
+		if qSpeedLt != "" {
+
+			if err := r.SetQueryParam("speed__lt", qSpeedLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SpeedLte != nil {
+
+		// query param speed__lte
+		var qrSpeedLte string
+
+		if o.SpeedLte != nil {
+			qrSpeedLte = *o.SpeedLte
+		}
+		qSpeedLte := qrSpeedLte
+		if qSpeedLte != "" {
+
+			if err := r.SetQueryParam("speed__lte", qSpeedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Speedn != nil {
+
+		// query param speed__n
+		var qrSpeedn string
+
+		if o.Speedn != nil {
+			qrSpeedn = *o.Speedn
+		}
+		qSpeedn := qrSpeedn
+		if qSpeedn != "" {
+
+			if err := r.SetQueryParam("speed__n", qSpeedn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Tag != nil {
 
 		// query param tag
@@ -3138,6 +4249,108 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qTagn != "" {
 
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TxPower != nil {
+
+		// query param tx_power
+		var qrTxPower string
+
+		if o.TxPower != nil {
+			qrTxPower = *o.TxPower
+		}
+		qTxPower := qrTxPower
+		if qTxPower != "" {
+
+			if err := r.SetQueryParam("tx_power", qTxPower); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TxPowerGt != nil {
+
+		// query param tx_power__gt
+		var qrTxPowerGt string
+
+		if o.TxPowerGt != nil {
+			qrTxPowerGt = *o.TxPowerGt
+		}
+		qTxPowerGt := qrTxPowerGt
+		if qTxPowerGt != "" {
+
+			if err := r.SetQueryParam("tx_power__gt", qTxPowerGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TxPowerGte != nil {
+
+		// query param tx_power__gte
+		var qrTxPowerGte string
+
+		if o.TxPowerGte != nil {
+			qrTxPowerGte = *o.TxPowerGte
+		}
+		qTxPowerGte := qrTxPowerGte
+		if qTxPowerGte != "" {
+
+			if err := r.SetQueryParam("tx_power__gte", qTxPowerGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TxPowerLt != nil {
+
+		// query param tx_power__lt
+		var qrTxPowerLt string
+
+		if o.TxPowerLt != nil {
+			qrTxPowerLt = *o.TxPowerLt
+		}
+		qTxPowerLt := qrTxPowerLt
+		if qTxPowerLt != "" {
+
+			if err := r.SetQueryParam("tx_power__lt", qTxPowerLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TxPowerLte != nil {
+
+		// query param tx_power__lte
+		var qrTxPowerLte string
+
+		if o.TxPowerLte != nil {
+			qrTxPowerLte = *o.TxPowerLte
+		}
+		qTxPowerLte := qrTxPowerLte
+		if qTxPowerLte != "" {
+
+			if err := r.SetQueryParam("tx_power__lte", qTxPowerLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TxPowern != nil {
+
+		// query param tx_power__n
+		var qrTxPowern string
+
+		if o.TxPowern != nil {
+			qrTxPowern = *o.TxPowern
+		}
+		qTxPowern := qrTxPowern
+		if qTxPowern != "" {
+
+			if err := r.SetQueryParam("tx_power__n", qTxPowern); err != nil {
 				return err
 			}
 		}
@@ -3177,6 +4390,74 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.VirtualChassis != nil {
+
+		// query param virtual_chassis
+		var qrVirtualChassis string
+
+		if o.VirtualChassis != nil {
+			qrVirtualChassis = *o.VirtualChassis
+		}
+		qVirtualChassis := qrVirtualChassis
+		if qVirtualChassis != "" {
+
+			if err := r.SetQueryParam("virtual_chassis", qVirtualChassis); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisn != nil {
+
+		// query param virtual_chassis__n
+		var qrVirtualChassisn string
+
+		if o.VirtualChassisn != nil {
+			qrVirtualChassisn = *o.VirtualChassisn
+		}
+		qVirtualChassisn := qrVirtualChassisn
+		if qVirtualChassisn != "" {
+
+			if err := r.SetQueryParam("virtual_chassis__n", qVirtualChassisn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisID != nil {
+
+		// query param virtual_chassis_id
+		var qrVirtualChassisID string
+
+		if o.VirtualChassisID != nil {
+			qrVirtualChassisID = *o.VirtualChassisID
+		}
+		qVirtualChassisID := qrVirtualChassisID
+		if qVirtualChassisID != "" {
+
+			if err := r.SetQueryParam("virtual_chassis_id", qVirtualChassisID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisIDn != nil {
+
+		// query param virtual_chassis_id__n
+		var qrVirtualChassisIDn string
+
+		if o.VirtualChassisIDn != nil {
+			qrVirtualChassisIDn = *o.VirtualChassisIDn
+		}
+		qVirtualChassisIDn := qrVirtualChassisIDn
+		if qVirtualChassisIDn != "" {
+
+			if err := r.SetQueryParam("virtual_chassis_id__n", qVirtualChassisIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Vlan != nil {
 
 		// query param vlan
@@ -3206,6 +4487,244 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qVlanID != "" {
 
 			if err := r.SetQueryParam("vlan_id", qVlanID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Vrf != nil {
+
+		// query param vrf
+		var qrVrf string
+
+		if o.Vrf != nil {
+			qrVrf = *o.Vrf
+		}
+		qVrf := qrVrf
+		if qVrf != "" {
+
+			if err := r.SetQueryParam("vrf", qVrf); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Vrfn != nil {
+
+		// query param vrf__n
+		var qrVrfn string
+
+		if o.Vrfn != nil {
+			qrVrfn = *o.Vrfn
+		}
+		qVrfn := qrVrfn
+		if qVrfn != "" {
+
+			if err := r.SetQueryParam("vrf__n", qVrfn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VrfID != nil {
+
+		// query param vrf_id
+		var qrVrfID string
+
+		if o.VrfID != nil {
+			qrVrfID = *o.VrfID
+		}
+		qVrfID := qrVrfID
+		if qVrfID != "" {
+
+			if err := r.SetQueryParam("vrf_id", qVrfID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VrfIDn != nil {
+
+		// query param vrf_id__n
+		var qrVrfIDn string
+
+		if o.VrfIDn != nil {
+			qrVrfIDn = *o.VrfIDn
+		}
+		qVrfIDn := qrVrfIDn
+		if qVrfIDn != "" {
+
+			if err := r.SetQueryParam("vrf_id__n", qVrfIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Wwn != nil {
+
+		// query param wwn
+		var qrWwn string
+
+		if o.Wwn != nil {
+			qrWwn = *o.Wwn
+		}
+		qWwn := qrWwn
+		if qWwn != "" {
+
+			if err := r.SetQueryParam("wwn", qWwn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WwnIc != nil {
+
+		// query param wwn__ic
+		var qrWwnIc string
+
+		if o.WwnIc != nil {
+			qrWwnIc = *o.WwnIc
+		}
+		qWwnIc := qrWwnIc
+		if qWwnIc != "" {
+
+			if err := r.SetQueryParam("wwn__ic", qWwnIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WwnIe != nil {
+
+		// query param wwn__ie
+		var qrWwnIe string
+
+		if o.WwnIe != nil {
+			qrWwnIe = *o.WwnIe
+		}
+		qWwnIe := qrWwnIe
+		if qWwnIe != "" {
+
+			if err := r.SetQueryParam("wwn__ie", qWwnIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WwnIew != nil {
+
+		// query param wwn__iew
+		var qrWwnIew string
+
+		if o.WwnIew != nil {
+			qrWwnIew = *o.WwnIew
+		}
+		qWwnIew := qrWwnIew
+		if qWwnIew != "" {
+
+			if err := r.SetQueryParam("wwn__iew", qWwnIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WwnIsw != nil {
+
+		// query param wwn__isw
+		var qrWwnIsw string
+
+		if o.WwnIsw != nil {
+			qrWwnIsw = *o.WwnIsw
+		}
+		qWwnIsw := qrWwnIsw
+		if qWwnIsw != "" {
+
+			if err := r.SetQueryParam("wwn__isw", qWwnIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Wwnn != nil {
+
+		// query param wwn__n
+		var qrWwnn string
+
+		if o.Wwnn != nil {
+			qrWwnn = *o.Wwnn
+		}
+		qWwnn := qrWwnn
+		if qWwnn != "" {
+
+			if err := r.SetQueryParam("wwn__n", qWwnn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WwnNic != nil {
+
+		// query param wwn__nic
+		var qrWwnNic string
+
+		if o.WwnNic != nil {
+			qrWwnNic = *o.WwnNic
+		}
+		qWwnNic := qrWwnNic
+		if qWwnNic != "" {
+
+			if err := r.SetQueryParam("wwn__nic", qWwnNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WwnNie != nil {
+
+		// query param wwn__nie
+		var qrWwnNie string
+
+		if o.WwnNie != nil {
+			qrWwnNie = *o.WwnNie
+		}
+		qWwnNie := qrWwnNie
+		if qWwnNie != "" {
+
+			if err := r.SetQueryParam("wwn__nie", qWwnNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WwnNiew != nil {
+
+		// query param wwn__niew
+		var qrWwnNiew string
+
+		if o.WwnNiew != nil {
+			qrWwnNiew = *o.WwnNiew
+		}
+		qWwnNiew := qrWwnNiew
+		if qWwnNiew != "" {
+
+			if err := r.SetQueryParam("wwn__niew", qWwnNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WwnNisw != nil {
+
+		// query param wwn__nisw
+		var qrWwnNisw string
+
+		if o.WwnNisw != nil {
+			qrWwnNisw = *o.WwnNisw
+		}
+		qWwnNisw := qrWwnNisw
+		if qWwnNisw != "" {
+
+			if err := r.SetQueryParam("wwn__nisw", qWwnNisw); err != nil {
 				return err
 			}
 		}

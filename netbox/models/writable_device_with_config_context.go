@@ -36,6 +36,10 @@ import (
 // swagger:model WritableDeviceWithConfigContext
 type WritableDeviceWithConfigContext struct {
 
+	// Airflow
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
+	Airflow string `json:"airflow,omitempty"`
+
 	// Asset tag
 	//
 	// A unique tag used to identify this device
@@ -54,8 +58,8 @@ type WritableDeviceWithConfigContext struct {
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -73,10 +77,11 @@ type WritableDeviceWithConfigContext struct {
 	Display string `json:"display,omitempty"`
 
 	// Rack face
+	// Required: true
 	// Enum: [front rear]
-	Face string `json:"face,omitempty"`
+	Face *string `json:"face"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -92,8 +97,9 @@ type WritableDeviceWithConfigContext struct {
 	Location *int64 `json:"location,omitempty"`
 
 	// Name
+	// Required: true
 	// Max Length: 64
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name"`
 
 	// parent device
 	ParentDevice *NestedDevice `json:"parent_device,omitempty"`
@@ -102,9 +108,6 @@ type WritableDeviceWithConfigContext struct {
 	Platform *int64 `json:"platform,omitempty"`
 
 	// Position (U)
-	//
-	// The lowest-numbered unit occupied by the device
-	// Maximum: 32767
 	// Minimum: 1
 	Position *int64 `json:"position,omitempty"`
 
@@ -119,7 +122,8 @@ type WritableDeviceWithConfigContext struct {
 	PrimaryIp6 *int64 `json:"primary_ip6,omitempty"`
 
 	// Rack
-	Rack *int64 `json:"rack,omitempty"`
+	// Required: true
+	Rack *int64 `json:"rack"`
 
 	// Serial number
 	// Max Length: 50
@@ -137,7 +141,8 @@ type WritableDeviceWithConfigContext struct {
 	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
-	Tenant *int64 `json:"tenant,omitempty"`
+	// Required: true
+	Tenant *int64 `json:"tenant"`
 
 	// Url
 	// Read Only: true
@@ -155,12 +160,17 @@ type WritableDeviceWithConfigContext struct {
 	VcPriority *int64 `json:"vc_priority,omitempty"`
 
 	// Virtual chassis
-	VirtualChassis *int64 `json:"virtual_chassis,omitempty"`
+	// Required: true
+	VirtualChassis *int64 `json:"virtual_chassis"`
 }
 
 // Validate validates this writable device with config context
 func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateAirflow(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateAssetTag(formats); err != nil {
 		res = append(res, err)
@@ -198,6 +208,10 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 		res = append(res, err)
 	}
 
+	if err := m.validateRack(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSerial(formats); err != nil {
 		res = append(res, err)
 	}
@@ -214,6 +228,10 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 		res = append(res, err)
 	}
 
+	if err := m.validateTenant(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
@@ -226,9 +244,67 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 		res = append(res, err)
 	}
 
+	if err := m.validateVirtualChassis(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+var writableDeviceWithConfigContextTypeAirflowPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableDeviceWithConfigContextTypeAirflowPropEnum = append(writableDeviceWithConfigContextTypeAirflowPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableDeviceWithConfigContextAirflowFrontDashToDashRear captures enum value "front-to-rear"
+	WritableDeviceWithConfigContextAirflowFrontDashToDashRear string = "front-to-rear"
+
+	// WritableDeviceWithConfigContextAirflowRearDashToDashFront captures enum value "rear-to-front"
+	WritableDeviceWithConfigContextAirflowRearDashToDashFront string = "rear-to-front"
+
+	// WritableDeviceWithConfigContextAirflowLeftDashToDashRight captures enum value "left-to-right"
+	WritableDeviceWithConfigContextAirflowLeftDashToDashRight string = "left-to-right"
+
+	// WritableDeviceWithConfigContextAirflowRightDashToDashLeft captures enum value "right-to-left"
+	WritableDeviceWithConfigContextAirflowRightDashToDashLeft string = "right-to-left"
+
+	// WritableDeviceWithConfigContextAirflowSideDashToDashRear captures enum value "side-to-rear"
+	WritableDeviceWithConfigContextAirflowSideDashToDashRear string = "side-to-rear"
+
+	// WritableDeviceWithConfigContextAirflowPassive captures enum value "passive"
+	WritableDeviceWithConfigContextAirflowPassive string = "passive"
+)
+
+// prop value enum
+func (m *WritableDeviceWithConfigContext) validateAirflowEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableDeviceWithConfigContextTypeAirflowPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) validateAirflow(formats strfmt.Registry) error {
+	if swag.IsZero(m.Airflow) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateAirflowEnum("airflow", "body", m.Airflow); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -249,7 +325,7 @@ func (m *WritableDeviceWithConfigContext) validateCreated(formats strfmt.Registr
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -304,12 +380,13 @@ func (m *WritableDeviceWithConfigContext) validateFaceEnum(path, location string
 }
 
 func (m *WritableDeviceWithConfigContext) validateFace(formats strfmt.Registry) error {
-	if swag.IsZero(m.Face) { // not required
-		return nil
+
+	if err := validate.Required("face", "body", m.Face); err != nil {
+		return err
 	}
 
 	// value enum
-	if err := m.validateFaceEnum("face", "body", m.Face); err != nil {
+	if err := m.validateFaceEnum("face", "body", *m.Face); err != nil {
 		return err
 	}
 
@@ -329,8 +406,9 @@ func (m *WritableDeviceWithConfigContext) validateLastUpdated(formats strfmt.Reg
 }
 
 func (m *WritableDeviceWithConfigContext) validateName(formats strfmt.Registry) error {
-	if swag.IsZero(m.Name) { // not required
-		return nil
+
+	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
@@ -349,6 +427,8 @@ func (m *WritableDeviceWithConfigContext) validateParentDevice(formats strfmt.Re
 		if err := m.ParentDevice.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent_device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent_device")
 			}
 			return err
 		}
@@ -366,7 +446,12 @@ func (m *WritableDeviceWithConfigContext) validatePosition(formats strfmt.Regist
 		return err
 	}
 
-	if err := validate.MaximumInt("position", "body", *m.Position, 32767, false); err != nil {
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) validateRack(formats strfmt.Registry) error {
+
+	if err := validate.Required("rack", "body", m.Rack); err != nil {
 		return err
 	}
 
@@ -465,11 +550,22 @@ func (m *WritableDeviceWithConfigContext) validateTags(formats strfmt.Registry) 
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) validateTenant(formats strfmt.Registry) error {
+
+	if err := validate.Required("tenant", "body", m.Tenant); err != nil {
+		return err
 	}
 
 	return nil
@@ -513,6 +609,15 @@ func (m *WritableDeviceWithConfigContext) validateVcPriority(formats strfmt.Regi
 	}
 
 	if err := validate.MaximumInt("vc_priority", "body", *m.VcPriority, 255, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) validateVirtualChassis(formats strfmt.Registry) error {
+
+	if err := validate.Required("virtual_chassis", "body", m.VirtualChassis); err != nil {
 		return err
 	}
 
@@ -572,7 +677,7 @@ func (m *WritableDeviceWithConfigContext) contextValidateConfigContext(ctx conte
 
 func (m *WritableDeviceWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -612,6 +717,8 @@ func (m *WritableDeviceWithConfigContext) contextValidateParentDevice(ctx contex
 		if err := m.ParentDevice.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("parent_device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("parent_device")
 			}
 			return err
 		}
@@ -637,6 +744,8 @@ func (m *WritableDeviceWithConfigContext) contextValidateTags(ctx context.Contex
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

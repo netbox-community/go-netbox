@@ -23,6 +23,8 @@ tbd. In the meanwhile, look at branches and tags.
 Changes in this fork
 ====================
 
+NOTE: The list of changes is becoming too inconvenient to list here. See `preprocess.py` for all changes. The list below is incomplete!
+
 Change `models.ip_address.AssignedObject` type to prevent json marshalling errors since [this change](https://github.com/netbox-community/netbox/pull/4781)
 
 Add `x-omitempty: false` to some attributes, allowing them to be set to their empty value. [issue](https://github.com/netbox-community/go-netbox/issues/107)
@@ -33,7 +35,7 @@ Fix LocalConfigContext to support arbitrary JSON object [#4](https://github.com/
 
 Changes to allow `available_ips` to be created. (2b418d0d6d13d1edd0320d9424096f8f7d2cbbec)
 1. model returned by paths /*/available-ips/ from AvailableIP to IPAddress
-2. model IPAddress's assigned_object property from string to object otherwise it fails to unmarshall
+2. model IPAddress's assigned_object property from string to object otherwise it fails to unmarshal
 
 
 Using the client

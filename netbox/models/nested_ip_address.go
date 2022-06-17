@@ -48,7 +48,7 @@ type NestedIPAddress struct {
 	// Read Only: true
 	Family int64 `json:"family,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 

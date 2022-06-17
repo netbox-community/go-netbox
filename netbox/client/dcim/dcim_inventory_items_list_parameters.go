@@ -78,9 +78,6 @@ type DcimInventoryItemsListParams struct {
 	// AssetTag.
 	AssetTag *string
 
-	// AssetTagEmpty.
-	AssetTagEmpty *string
-
 	// AssetTagIc.
 	AssetTagIc *string
 
@@ -107,6 +104,30 @@ type DcimInventoryItemsListParams struct {
 
 	// AssetTagNisw.
 	AssetTagNisw *string
+
+	// ComponentID.
+	ComponentID *string
+
+	// ComponentIDGt.
+	ComponentIDGt *string
+
+	// ComponentIDGte.
+	ComponentIDGte *string
+
+	// ComponentIDLt.
+	ComponentIDLt *string
+
+	// ComponentIDLte.
+	ComponentIDLte *string
+
+	// ComponentIDn.
+	ComponentIDn *string
+
+	// ComponentType.
+	ComponentType *string
+
+	// ComponentTypen.
+	ComponentTypen *string
 
 	// Created.
 	Created *string
@@ -152,9 +173,6 @@ type DcimInventoryItemsListParams struct {
 
 	// Label.
 	Label *string
-
-	// LabelEmpty.
-	LabelEmpty *string
 
 	// LabelIc.
 	LabelIc *string
@@ -225,9 +243,6 @@ type DcimInventoryItemsListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -269,9 +284,6 @@ type DcimInventoryItemsListParams struct {
 
 	// PartID.
 	PartID *string
-
-	// PartIDEmpty.
-	PartIDEmpty *string
 
 	// PartIDIc.
 	PartIDIc *string
@@ -315,6 +327,18 @@ type DcimInventoryItemsListParams struct {
 	// RegionIDn.
 	RegionIDn *string
 
+	// Role.
+	Role *string
+
+	// Rolen.
+	Rolen *string
+
+	// RoleID.
+	RoleID *string
+
+	// RoleIDn.
+	RoleIDn *string
+
 	// Serial.
 	Serial *string
 
@@ -347,6 +371,18 @@ type DcimInventoryItemsListParams struct {
 
 	// Tagn.
 	Tagn *string
+
+	// VirtualChassis.
+	VirtualChassis *string
+
+	// VirtualChassisn.
+	VirtualChassisn *string
+
+	// VirtualChassisID.
+	VirtualChassisID *string
+
+	// VirtualChassisIDn.
+	VirtualChassisIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -410,17 +446,6 @@ func (o *DcimInventoryItemsListParams) WithAssetTag(assetTag *string) *DcimInven
 // SetAssetTag adds the assetTag to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetAssetTag(assetTag *string) {
 	o.AssetTag = assetTag
-}
-
-// WithAssetTagEmpty adds the assetTagEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithAssetTagEmpty(assetTagEmpty *string) *DcimInventoryItemsListParams {
-	o.SetAssetTagEmpty(assetTagEmpty)
-	return o
-}
-
-// SetAssetTagEmpty adds the assetTagEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetAssetTagEmpty(assetTagEmpty *string) {
-	o.AssetTagEmpty = assetTagEmpty
 }
 
 // WithAssetTagIc adds the assetTagIc to the dcim inventory items list params
@@ -520,6 +545,94 @@ func (o *DcimInventoryItemsListParams) WithAssetTagNisw(assetTagNisw *string) *D
 // SetAssetTagNisw adds the assetTagNisw to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetAssetTagNisw(assetTagNisw *string) {
 	o.AssetTagNisw = assetTagNisw
+}
+
+// WithComponentID adds the componentID to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithComponentID(componentID *string) *DcimInventoryItemsListParams {
+	o.SetComponentID(componentID)
+	return o
+}
+
+// SetComponentID adds the componentId to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetComponentID(componentID *string) {
+	o.ComponentID = componentID
+}
+
+// WithComponentIDGt adds the componentIDGt to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithComponentIDGt(componentIDGt *string) *DcimInventoryItemsListParams {
+	o.SetComponentIDGt(componentIDGt)
+	return o
+}
+
+// SetComponentIDGt adds the componentIdGt to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetComponentIDGt(componentIDGt *string) {
+	o.ComponentIDGt = componentIDGt
+}
+
+// WithComponentIDGte adds the componentIDGte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithComponentIDGte(componentIDGte *string) *DcimInventoryItemsListParams {
+	o.SetComponentIDGte(componentIDGte)
+	return o
+}
+
+// SetComponentIDGte adds the componentIdGte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetComponentIDGte(componentIDGte *string) {
+	o.ComponentIDGte = componentIDGte
+}
+
+// WithComponentIDLt adds the componentIDLt to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithComponentIDLt(componentIDLt *string) *DcimInventoryItemsListParams {
+	o.SetComponentIDLt(componentIDLt)
+	return o
+}
+
+// SetComponentIDLt adds the componentIdLt to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetComponentIDLt(componentIDLt *string) {
+	o.ComponentIDLt = componentIDLt
+}
+
+// WithComponentIDLte adds the componentIDLte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithComponentIDLte(componentIDLte *string) *DcimInventoryItemsListParams {
+	o.SetComponentIDLte(componentIDLte)
+	return o
+}
+
+// SetComponentIDLte adds the componentIdLte to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetComponentIDLte(componentIDLte *string) {
+	o.ComponentIDLte = componentIDLte
+}
+
+// WithComponentIDn adds the componentIDn to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithComponentIDn(componentIDn *string) *DcimInventoryItemsListParams {
+	o.SetComponentIDn(componentIDn)
+	return o
+}
+
+// SetComponentIDn adds the componentIdN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetComponentIDn(componentIDn *string) {
+	o.ComponentIDn = componentIDn
+}
+
+// WithComponentType adds the componentType to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithComponentType(componentType *string) *DcimInventoryItemsListParams {
+	o.SetComponentType(componentType)
+	return o
+}
+
+// SetComponentType adds the componentType to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetComponentType(componentType *string) {
+	o.ComponentType = componentType
+}
+
+// WithComponentTypen adds the componentTypen to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithComponentTypen(componentTypen *string) *DcimInventoryItemsListParams {
+	o.SetComponentTypen(componentTypen)
+	return o
+}
+
+// SetComponentTypen adds the componentTypeN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetComponentTypen(componentTypen *string) {
+	o.ComponentTypen = componentTypen
 }
 
 // WithCreated adds the created to the dcim inventory items list params
@@ -685,17 +798,6 @@ func (o *DcimInventoryItemsListParams) WithLabel(label *string) *DcimInventoryIt
 // SetLabel adds the label to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetLabel(label *string) {
 	o.Label = label
-}
-
-// WithLabelEmpty adds the labelEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithLabelEmpty(labelEmpty *string) *DcimInventoryItemsListParams {
-	o.SetLabelEmpty(labelEmpty)
-	return o
-}
-
-// SetLabelEmpty adds the labelEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetLabelEmpty(labelEmpty *string) {
-	o.LabelEmpty = labelEmpty
 }
 
 // WithLabelIc adds the labelIc to the dcim inventory items list params
@@ -940,17 +1042,6 @@ func (o *DcimInventoryItemsListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithNameEmpty(nameEmpty *string) *DcimInventoryItemsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithNameIc(nameIc *string) *DcimInventoryItemsListParams {
 	o.SetNameIc(nameIc)
@@ -1092,17 +1183,6 @@ func (o *DcimInventoryItemsListParams) WithPartID(partID *string) *DcimInventory
 // SetPartID adds the partId to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetPartID(partID *string) {
 	o.PartID = partID
-}
-
-// WithPartIDEmpty adds the partIDEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithPartIDEmpty(partIDEmpty *string) *DcimInventoryItemsListParams {
-	o.SetPartIDEmpty(partIDEmpty)
-	return o
-}
-
-// SetPartIDEmpty adds the partIdEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetPartIDEmpty(partIDEmpty *string) {
-	o.PartIDEmpty = partIDEmpty
 }
 
 // WithPartIDIc adds the partIDIc to the dcim inventory items list params
@@ -1259,6 +1339,50 @@ func (o *DcimInventoryItemsListParams) SetRegionIDn(regionIDn *string) {
 	o.RegionIDn = regionIDn
 }
 
+// WithRole adds the role to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithRole(role *string) *DcimInventoryItemsListParams {
+	o.SetRole(role)
+	return o
+}
+
+// SetRole adds the role to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetRole(role *string) {
+	o.Role = role
+}
+
+// WithRolen adds the rolen to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithRolen(rolen *string) *DcimInventoryItemsListParams {
+	o.SetRolen(rolen)
+	return o
+}
+
+// SetRolen adds the roleN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetRolen(rolen *string) {
+	o.Rolen = rolen
+}
+
+// WithRoleID adds the roleID to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithRoleID(roleID *string) *DcimInventoryItemsListParams {
+	o.SetRoleID(roleID)
+	return o
+}
+
+// SetRoleID adds the roleId to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetRoleID(roleID *string) {
+	o.RoleID = roleID
+}
+
+// WithRoleIDn adds the roleIDn to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithRoleIDn(roleIDn *string) *DcimInventoryItemsListParams {
+	o.SetRoleIDn(roleIDn)
+	return o
+}
+
+// SetRoleIDn adds the roleIdN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetRoleIDn(roleIDn *string) {
+	o.RoleIDn = roleIDn
+}
+
 // WithSerial adds the serial to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithSerial(serial *string) *DcimInventoryItemsListParams {
 	o.SetSerial(serial)
@@ -1380,6 +1504,50 @@ func (o *DcimInventoryItemsListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
 }
 
+// WithVirtualChassis adds the virtualChassis to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithVirtualChassis(virtualChassis *string) *DcimInventoryItemsListParams {
+	o.SetVirtualChassis(virtualChassis)
+	return o
+}
+
+// SetVirtualChassis adds the virtualChassis to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetVirtualChassis(virtualChassis *string) {
+	o.VirtualChassis = virtualChassis
+}
+
+// WithVirtualChassisn adds the virtualChassisn to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithVirtualChassisn(virtualChassisn *string) *DcimInventoryItemsListParams {
+	o.SetVirtualChassisn(virtualChassisn)
+	return o
+}
+
+// SetVirtualChassisn adds the virtualChassisN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetVirtualChassisn(virtualChassisn *string) {
+	o.VirtualChassisn = virtualChassisn
+}
+
+// WithVirtualChassisID adds the virtualChassisID to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithVirtualChassisID(virtualChassisID *string) *DcimInventoryItemsListParams {
+	o.SetVirtualChassisID(virtualChassisID)
+	return o
+}
+
+// SetVirtualChassisID adds the virtualChassisId to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetVirtualChassisID(virtualChassisID *string) {
+	o.VirtualChassisID = virtualChassisID
+}
+
+// WithVirtualChassisIDn adds the virtualChassisIDn to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithVirtualChassisIDn(virtualChassisIDn *string) *DcimInventoryItemsListParams {
+	o.SetVirtualChassisIDn(virtualChassisIDn)
+	return o
+}
+
+// SetVirtualChassisIDn adds the virtualChassisIdN to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetVirtualChassisIDn(virtualChassisIDn *string) {
+	o.VirtualChassisIDn = virtualChassisIDn
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -1400,23 +1568,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qAssetTag != "" {
 
 			if err := r.SetQueryParam("asset_tag", qAssetTag); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.AssetTagEmpty != nil {
-
-		// query param asset_tag__empty
-		var qrAssetTagEmpty string
-
-		if o.AssetTagEmpty != nil {
-			qrAssetTagEmpty = *o.AssetTagEmpty
-		}
-		qAssetTagEmpty := qrAssetTagEmpty
-		if qAssetTagEmpty != "" {
-
-			if err := r.SetQueryParam("asset_tag__empty", qAssetTagEmpty); err != nil {
 				return err
 			}
 		}
@@ -1570,6 +1721,142 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qAssetTagNisw != "" {
 
 			if err := r.SetQueryParam("asset_tag__nisw", qAssetTagNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ComponentID != nil {
+
+		// query param component_id
+		var qrComponentID string
+
+		if o.ComponentID != nil {
+			qrComponentID = *o.ComponentID
+		}
+		qComponentID := qrComponentID
+		if qComponentID != "" {
+
+			if err := r.SetQueryParam("component_id", qComponentID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ComponentIDGt != nil {
+
+		// query param component_id__gt
+		var qrComponentIDGt string
+
+		if o.ComponentIDGt != nil {
+			qrComponentIDGt = *o.ComponentIDGt
+		}
+		qComponentIDGt := qrComponentIDGt
+		if qComponentIDGt != "" {
+
+			if err := r.SetQueryParam("component_id__gt", qComponentIDGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ComponentIDGte != nil {
+
+		// query param component_id__gte
+		var qrComponentIDGte string
+
+		if o.ComponentIDGte != nil {
+			qrComponentIDGte = *o.ComponentIDGte
+		}
+		qComponentIDGte := qrComponentIDGte
+		if qComponentIDGte != "" {
+
+			if err := r.SetQueryParam("component_id__gte", qComponentIDGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ComponentIDLt != nil {
+
+		// query param component_id__lt
+		var qrComponentIDLt string
+
+		if o.ComponentIDLt != nil {
+			qrComponentIDLt = *o.ComponentIDLt
+		}
+		qComponentIDLt := qrComponentIDLt
+		if qComponentIDLt != "" {
+
+			if err := r.SetQueryParam("component_id__lt", qComponentIDLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ComponentIDLte != nil {
+
+		// query param component_id__lte
+		var qrComponentIDLte string
+
+		if o.ComponentIDLte != nil {
+			qrComponentIDLte = *o.ComponentIDLte
+		}
+		qComponentIDLte := qrComponentIDLte
+		if qComponentIDLte != "" {
+
+			if err := r.SetQueryParam("component_id__lte", qComponentIDLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ComponentIDn != nil {
+
+		// query param component_id__n
+		var qrComponentIDn string
+
+		if o.ComponentIDn != nil {
+			qrComponentIDn = *o.ComponentIDn
+		}
+		qComponentIDn := qrComponentIDn
+		if qComponentIDn != "" {
+
+			if err := r.SetQueryParam("component_id__n", qComponentIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ComponentType != nil {
+
+		// query param component_type
+		var qrComponentType string
+
+		if o.ComponentType != nil {
+			qrComponentType = *o.ComponentType
+		}
+		qComponentType := qrComponentType
+		if qComponentType != "" {
+
+			if err := r.SetQueryParam("component_type", qComponentType); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ComponentTypen != nil {
+
+		// query param component_type__n
+		var qrComponentTypen string
+
+		if o.ComponentTypen != nil {
+			qrComponentTypen = *o.ComponentTypen
+		}
+		qComponentTypen := qrComponentTypen
+		if qComponentTypen != "" {
+
+			if err := r.SetQueryParam("component_type__n", qComponentTypen); err != nil {
 				return err
 			}
 		}
@@ -1825,23 +2112,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qLabel != "" {
 
 			if err := r.SetQueryParam("label", qLabel); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LabelEmpty != nil {
-
-		// query param label__empty
-		var qrLabelEmpty string
-
-		if o.LabelEmpty != nil {
-			qrLabelEmpty = *o.LabelEmpty
-		}
-		qLabelEmpty := qrLabelEmpty
-		if qLabelEmpty != "" {
-
-			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
 				return err
 			}
 		}
@@ -2221,23 +2491,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -2454,23 +2707,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qPartID != "" {
 
 			if err := r.SetQueryParam("part_id", qPartID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.PartIDEmpty != nil {
-
-		// query param part_id__empty
-		var qrPartIDEmpty string
-
-		if o.PartIDEmpty != nil {
-			qrPartIDEmpty = *o.PartIDEmpty
-		}
-		qPartIDEmpty := qrPartIDEmpty
-		if qPartIDEmpty != "" {
-
-			if err := r.SetQueryParam("part_id__empty", qPartIDEmpty); err != nil {
 				return err
 			}
 		}
@@ -2714,6 +2950,74 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
+	if o.Role != nil {
+
+		// query param role
+		var qrRole string
+
+		if o.Role != nil {
+			qrRole = *o.Role
+		}
+		qRole := qrRole
+		if qRole != "" {
+
+			if err := r.SetQueryParam("role", qRole); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Rolen != nil {
+
+		// query param role__n
+		var qrRolen string
+
+		if o.Rolen != nil {
+			qrRolen = *o.Rolen
+		}
+		qRolen := qrRolen
+		if qRolen != "" {
+
+			if err := r.SetQueryParam("role__n", qRolen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RoleID != nil {
+
+		// query param role_id
+		var qrRoleID string
+
+		if o.RoleID != nil {
+			qrRoleID = *o.RoleID
+		}
+		qRoleID := qrRoleID
+		if qRoleID != "" {
+
+			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RoleIDn != nil {
+
+		// query param role_id__n
+		var qrRoleIDn string
+
+		if o.RoleIDn != nil {
+			qrRoleIDn = *o.RoleIDn
+		}
+		qRoleIDn := qrRoleIDn
+		if qRoleIDn != "" {
+
+			if err := r.SetQueryParam("role_id__n", qRoleIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Serial != nil {
 
 		// query param serial
@@ -2896,6 +3200,74 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qTagn != "" {
 
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassis != nil {
+
+		// query param virtual_chassis
+		var qrVirtualChassis string
+
+		if o.VirtualChassis != nil {
+			qrVirtualChassis = *o.VirtualChassis
+		}
+		qVirtualChassis := qrVirtualChassis
+		if qVirtualChassis != "" {
+
+			if err := r.SetQueryParam("virtual_chassis", qVirtualChassis); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisn != nil {
+
+		// query param virtual_chassis__n
+		var qrVirtualChassisn string
+
+		if o.VirtualChassisn != nil {
+			qrVirtualChassisn = *o.VirtualChassisn
+		}
+		qVirtualChassisn := qrVirtualChassisn
+		if qVirtualChassisn != "" {
+
+			if err := r.SetQueryParam("virtual_chassis__n", qVirtualChassisn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisID != nil {
+
+		// query param virtual_chassis_id
+		var qrVirtualChassisID string
+
+		if o.VirtualChassisID != nil {
+			qrVirtualChassisID = *o.VirtualChassisID
+		}
+		qVirtualChassisID := qrVirtualChassisID
+		if qVirtualChassisID != "" {
+
+			if err := r.SetQueryParam("virtual_chassis_id", qVirtualChassisID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualChassisIDn != nil {
+
+		// query param virtual_chassis_id__n
+		var qrVirtualChassisIDn string
+
+		if o.VirtualChassisIDn != nil {
+			qrVirtualChassisIDn = *o.VirtualChassisIDn
+		}
+		qVirtualChassisIDn := qrVirtualChassisIDn
+		if qVirtualChassisIDn != "" {
+
+			if err := r.SetQueryParam("virtual_chassis_id__n", qVirtualChassisIDn); err != nil {
 				return err
 			}
 		}

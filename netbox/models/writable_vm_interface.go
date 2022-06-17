@@ -36,14 +36,21 @@ import (
 // swagger:model WritableVMInterface
 type WritableVMInterface struct {
 
+	// Bridge interface
+	Bridge *int64 `json:"bridge,omitempty"`
+
+	// Count fhrp groups
+	// Read Only: true
+	CountFhrpGroups int64 `json:"count_fhrp_groups,omitempty"`
+
 	// Count ipaddresses
 	// Read Only: true
 	CountIpaddresses int64 `json:"count_ipaddresses,omitempty"`
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -59,7 +66,7 @@ type WritableVMInterface struct {
 	// Enabled
 	Enabled bool `json:"enabled,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -107,6 +114,9 @@ type WritableVMInterface struct {
 	// Virtual machine
 	// Required: true
 	VirtualMachine *int64 `json:"virtual_machine"`
+
+	// VRF
+	Vrf *int64 `json:"vrf,omitempty"`
 }
 
 // Validate validates this writable VM interface
@@ -164,7 +174,7 @@ func (m *WritableVMInterface) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -299,6 +309,8 @@ func (m *WritableVMInterface) validateTags(formats strfmt.Registry) error {
 			if err := m.Tags[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -334,6 +346,10 @@ func (m *WritableVMInterface) validateVirtualMachine(formats strfmt.Registry) er
 func (m *WritableVMInterface) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCountFhrpGroups(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCountIpaddresses(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -368,6 +384,15 @@ func (m *WritableVMInterface) ContextValidate(ctx context.Context, formats strfm
 	return nil
 }
 
+func (m *WritableVMInterface) contextValidateCountFhrpGroups(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "count_fhrp_groups", "body", int64(m.CountFhrpGroups)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableVMInterface) contextValidateCountIpaddresses(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "count_ipaddresses", "body", int64(m.CountIpaddresses)); err != nil {
@@ -379,7 +404,7 @@ func (m *WritableVMInterface) contextValidateCountIpaddresses(ctx context.Contex
 
 func (m *WritableVMInterface) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -421,6 +446,8 @@ func (m *WritableVMInterface) contextValidateTags(ctx context.Context, formats s
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

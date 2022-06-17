@@ -39,14 +39,18 @@ type ConfigContext struct {
 	// Unique: true
 	ClusterGroups []*NestedClusterGroup `json:"cluster_groups"`
 
+	// cluster types
+	// Unique: true
+	ClusterTypes []*NestedClusterType `json:"cluster_types"`
+
 	// clusters
 	// Unique: true
 	Clusters []*NestedCluster `json:"clusters"`
 
 	// Created
 	// Read Only: true
-	// Format: date
-	Created strfmt.Date `json:"created,omitempty"`
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Data
 	// Required: true
@@ -64,7 +68,7 @@ type ConfigContext struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -130,6 +134,10 @@ func (m *ConfigContext) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateClusterGroups(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateClusterTypes(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -225,6 +233,38 @@ func (m *ConfigContext) validateClusterGroups(formats strfmt.Registry) error {
 			if err := m.ClusterGroups[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("cluster_groups" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("cluster_groups" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *ConfigContext) validateClusterTypes(formats strfmt.Registry) error {
+	if swag.IsZero(m.ClusterTypes) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("cluster_types", "body", m.ClusterTypes); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.ClusterTypes); i++ {
+		if swag.IsZero(m.ClusterTypes[i]) { // not required
+			continue
+		}
+
+		if m.ClusterTypes[i] != nil {
+			if err := m.ClusterTypes[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("cluster_types" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("cluster_types" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -253,6 +293,8 @@ func (m *ConfigContext) validateClusters(formats strfmt.Registry) error {
 			if err := m.Clusters[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("clusters" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("clusters" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -268,7 +310,7 @@ func (m *ConfigContext) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -314,6 +356,8 @@ func (m *ConfigContext) validateDeviceTypes(formats strfmt.Registry) error {
 			if err := m.DeviceTypes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("device_types" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("device_types" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -371,6 +415,8 @@ func (m *ConfigContext) validatePlatforms(formats strfmt.Registry) error {
 			if err := m.Platforms[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("platforms" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("platforms" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -399,6 +445,8 @@ func (m *ConfigContext) validateRegions(formats strfmt.Registry) error {
 			if err := m.Regions[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("regions" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("regions" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -427,6 +475,8 @@ func (m *ConfigContext) validateRoles(formats strfmt.Registry) error {
 			if err := m.Roles[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("roles" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("roles" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -455,6 +505,8 @@ func (m *ConfigContext) validateSiteGroups(formats strfmt.Registry) error {
 			if err := m.SiteGroups[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("site_groups" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("site_groups" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -483,6 +535,8 @@ func (m *ConfigContext) validateSites(formats strfmt.Registry) error {
 			if err := m.Sites[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("sites" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("sites" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -531,6 +585,8 @@ func (m *ConfigContext) validateTenantGroups(formats strfmt.Registry) error {
 			if err := m.TenantGroups[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tenant_groups" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tenant_groups" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -559,6 +615,8 @@ func (m *ConfigContext) validateTenants(formats strfmt.Registry) error {
 			if err := m.Tenants[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tenants" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tenants" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -602,6 +660,10 @@ func (m *ConfigContext) ContextValidate(ctx context.Context, formats strfmt.Regi
 	var res []error
 
 	if err := m.contextValidateClusterGroups(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateClusterTypes(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -675,6 +737,28 @@ func (m *ConfigContext) contextValidateClusterGroups(ctx context.Context, format
 			if err := m.ClusterGroups[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("cluster_groups" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("cluster_groups" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *ConfigContext) contextValidateClusterTypes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ClusterTypes); i++ {
+
+		if m.ClusterTypes[i] != nil {
+			if err := m.ClusterTypes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("cluster_types" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("cluster_types" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -693,6 +777,8 @@ func (m *ConfigContext) contextValidateClusters(ctx context.Context, formats str
 			if err := m.Clusters[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("clusters" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("clusters" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -705,7 +791,7 @@ func (m *ConfigContext) contextValidateClusters(ctx context.Context, formats str
 
 func (m *ConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
 	}
 
@@ -720,6 +806,8 @@ func (m *ConfigContext) contextValidateDeviceTypes(ctx context.Context, formats 
 			if err := m.DeviceTypes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("device_types" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("device_types" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -765,6 +853,8 @@ func (m *ConfigContext) contextValidatePlatforms(ctx context.Context, formats st
 			if err := m.Platforms[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("platforms" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("platforms" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -783,6 +873,8 @@ func (m *ConfigContext) contextValidateRegions(ctx context.Context, formats strf
 			if err := m.Regions[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("regions" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("regions" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -801,6 +893,8 @@ func (m *ConfigContext) contextValidateRoles(ctx context.Context, formats strfmt
 			if err := m.Roles[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("roles" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("roles" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -819,6 +913,8 @@ func (m *ConfigContext) contextValidateSiteGroups(ctx context.Context, formats s
 			if err := m.SiteGroups[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("site_groups" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("site_groups" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -837,6 +933,8 @@ func (m *ConfigContext) contextValidateSites(ctx context.Context, formats strfmt
 			if err := m.Sites[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("sites" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("sites" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -855,6 +953,8 @@ func (m *ConfigContext) contextValidateTenantGroups(ctx context.Context, formats
 			if err := m.TenantGroups[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tenant_groups" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tenant_groups" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -873,6 +973,8 @@ func (m *ConfigContext) contextValidateTenants(ctx context.Context, formats strf
 			if err := m.Tenants[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("tenants" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tenants" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

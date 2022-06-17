@@ -38,16 +38,24 @@ type CustomLink struct {
 	// Button class
 	//
 	// The class of the first link in a group will be used for the dropdown button
-	// Enum: [outline-dark ghost-dark blue indigo purple pink red orange yellow green teal cyan secondary]
+	// Enum: [outline-dark blue indigo purple pink red orange yellow green teal cyan gray black white ghost-dark]
 	ButtonClass string `json:"button_class,omitempty"`
 
 	// Content type
 	// Required: true
 	ContentType *string `json:"content_type"`
 
+	// Created
+	// Read Only: true
+	// Format: date-time
+	Created strfmt.DateTime `json:"created,omitempty"`
+
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
+
+	// Enabled
+	Enabled bool `json:"enabled,omitempty"`
 
 	// Group name
 	//
@@ -55,9 +63,14 @@ type CustomLink struct {
 	// Max Length: 50
 	GroupName string `json:"group_name,omitempty"`
 
-	// Id
+	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
+
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Link text
 	//
@@ -109,7 +122,15 @@ func (m *CustomLink) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateGroupName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -143,7 +164,7 @@ var customLinkTypeButtonClassPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["outline-dark","ghost-dark","blue","indigo","purple","pink","red","orange","yellow","green","teal","cyan","secondary"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["outline-dark","blue","indigo","purple","pink","red","orange","yellow","green","teal","cyan","gray","black","white","ghost-dark"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -155,9 +176,6 @@ const (
 
 	// CustomLinkButtonClassOutlineDashDark captures enum value "outline-dark"
 	CustomLinkButtonClassOutlineDashDark string = "outline-dark"
-
-	// CustomLinkButtonClassGhostDashDark captures enum value "ghost-dark"
-	CustomLinkButtonClassGhostDashDark string = "ghost-dark"
 
 	// CustomLinkButtonClassBlue captures enum value "blue"
 	CustomLinkButtonClassBlue string = "blue"
@@ -189,8 +207,17 @@ const (
 	// CustomLinkButtonClassCyan captures enum value "cyan"
 	CustomLinkButtonClassCyan string = "cyan"
 
-	// CustomLinkButtonClassSecondary captures enum value "secondary"
-	CustomLinkButtonClassSecondary string = "secondary"
+	// CustomLinkButtonClassGray captures enum value "gray"
+	CustomLinkButtonClassGray string = "gray"
+
+	// CustomLinkButtonClassBlack captures enum value "black"
+	CustomLinkButtonClassBlack string = "black"
+
+	// CustomLinkButtonClassWhite captures enum value "white"
+	CustomLinkButtonClassWhite string = "white"
+
+	// CustomLinkButtonClassGhostDashDark captures enum value "ghost-dark"
+	CustomLinkButtonClassGhostDashDark string = "ghost-dark"
 )
 
 // prop value enum
@@ -223,12 +250,36 @@ func (m *CustomLink) validateContentType(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *CustomLink) validateCreated(formats strfmt.Registry) error {
+	if swag.IsZero(m.Created) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *CustomLink) validateGroupName(formats strfmt.Registry) error {
 	if swag.IsZero(m.GroupName) { // not required
 		return nil
 	}
 
 	if err := validate.MaxLength("group_name", "body", m.GroupName, 50); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CustomLink) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -318,11 +369,19 @@ func (m *CustomLink) validateWeight(formats strfmt.Registry) error {
 func (m *CustomLink) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -333,6 +392,15 @@ func (m *CustomLink) ContextValidate(ctx context.Context, formats strfmt.Registr
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *CustomLink) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -348,6 +416,15 @@ func (m *CustomLink) contextValidateDisplay(ctx context.Context, formats strfmt.
 func (m *CustomLink) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *CustomLink) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

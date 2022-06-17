@@ -82,7 +82,7 @@ type IpamIPRangesAvailableIpsCreateParams struct {
 
 	/* ID.
 
-	   A unique integer value identifying this IP range.
+	   A unique integer value identifying this IP address.
 	*/
 	ID int64
 
