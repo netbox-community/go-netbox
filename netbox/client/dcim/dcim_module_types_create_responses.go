@@ -45,7 +45,14 @@ func (o *DcimModuleTypesCreateReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimModuleTypesCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimModuleTypesCreateCreated) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimModuleTypesCreateDefault creates a DcimModuleTypesCreateDefault with default headers values
+func NewDcimModuleTypesCreateDefault(code int) *DcimModuleTypesCreateDefault {
+	return &DcimModuleTypesCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimModuleTypesCreateDefault describes a response with status code -1, with default header values.
+
+DcimModuleTypesCreateDefault dcim module types create default
+*/
+type DcimModuleTypesCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim module types create default response
+func (o *DcimModuleTypesCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimModuleTypesCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /dcim/module-types/][%d] dcim_module-types_create default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimModuleTypesCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimModuleTypesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

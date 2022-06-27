@@ -22,6 +22,7 @@ package extras
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *ExtrasExportTemplatesBulkDeleteReader) ReadResponse(response runtime.Cl
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasExportTemplatesBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *ExtrasExportTemplatesBulkDeleteNoContent) Error() string {
 }
 
 func (o *ExtrasExportTemplatesBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewExtrasExportTemplatesBulkDeleteDefault creates a ExtrasExportTemplatesBulkDeleteDefault with default headers values
+func NewExtrasExportTemplatesBulkDeleteDefault(code int) *ExtrasExportTemplatesBulkDeleteDefault {
+	return &ExtrasExportTemplatesBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasExportTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
+
+ExtrasExportTemplatesBulkDeleteDefault extras export templates bulk delete default
+*/
+type ExtrasExportTemplatesBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras export templates bulk delete default response
+func (o *ExtrasExportTemplatesBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasExportTemplatesBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /extras/export-templates/][%d] extras_export-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasExportTemplatesBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasExportTemplatesBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

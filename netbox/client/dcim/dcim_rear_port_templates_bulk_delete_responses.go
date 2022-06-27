@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimRearPortTemplatesBulkDeleteReader) ReadResponse(response runtime.Cl
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimRearPortTemplatesBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimRearPortTemplatesBulkDeleteNoContent) Error() string {
 }
 
 func (o *DcimRearPortTemplatesBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimRearPortTemplatesBulkDeleteDefault creates a DcimRearPortTemplatesBulkDeleteDefault with default headers values
+func NewDcimRearPortTemplatesBulkDeleteDefault(code int) *DcimRearPortTemplatesBulkDeleteDefault {
+	return &DcimRearPortTemplatesBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimRearPortTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
+
+DcimRearPortTemplatesBulkDeleteDefault dcim rear port templates bulk delete default
+*/
+type DcimRearPortTemplatesBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rear port templates bulk delete default response
+func (o *DcimRearPortTemplatesBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRearPortTemplatesBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/rear-port-templates/][%d] dcim_rear-port-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimRearPortTemplatesBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRearPortTemplatesBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

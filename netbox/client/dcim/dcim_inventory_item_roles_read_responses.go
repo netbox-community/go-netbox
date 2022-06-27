@@ -45,7 +45,14 @@ func (o *DcimInventoryItemRolesReadReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimInventoryItemRolesReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimInventoryItemRolesReadOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimInventoryItemRolesReadDefault creates a DcimInventoryItemRolesReadDefault with default headers values
+func NewDcimInventoryItemRolesReadDefault(code int) *DcimInventoryItemRolesReadDefault {
+	return &DcimInventoryItemRolesReadDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimInventoryItemRolesReadDefault describes a response with status code -1, with default header values.
+
+DcimInventoryItemRolesReadDefault dcim inventory item roles read default
+*/
+type DcimInventoryItemRolesReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim inventory item roles read default response
+func (o *DcimInventoryItemRolesReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimInventoryItemRolesReadDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_read default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimInventoryItemRolesReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimInventoryItemRolesReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

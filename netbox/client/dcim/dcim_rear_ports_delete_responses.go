@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimRearPortsDeleteReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimRearPortsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimRearPortsDeleteNoContent) Error() string {
 }
 
 func (o *DcimRearPortsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimRearPortsDeleteDefault creates a DcimRearPortsDeleteDefault with default headers values
+func NewDcimRearPortsDeleteDefault(code int) *DcimRearPortsDeleteDefault {
+	return &DcimRearPortsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimRearPortsDeleteDefault describes a response with status code -1, with default header values.
+
+DcimRearPortsDeleteDefault dcim rear ports delete default
+*/
+type DcimRearPortsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rear ports delete default response
+func (o *DcimRearPortsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRearPortsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/rear-ports/{id}/][%d] dcim_rear-ports_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimRearPortsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRearPortsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

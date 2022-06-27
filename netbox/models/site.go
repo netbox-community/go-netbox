@@ -38,7 +38,7 @@ type Site struct {
 
 	// asns
 	// Unique: true
-	Asns []*NestedASN `json:"asns"`
+	Asns []*NestedASN `json:"asns,omitempty"`
 
 	// Circuit count
 	// Read Only: true
@@ -131,7 +131,7 @@ type Site struct {
 	Status *SiteStatus `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`

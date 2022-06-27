@@ -81,7 +81,7 @@ type WritableTenantGroup struct {
 	Slug *string `json:"slug"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Tenant count
 	// Read Only: true

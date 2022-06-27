@@ -50,7 +50,14 @@ func (o *IpamPrefixesListReader) ReadResponse(response runtime.ClientResponse, c
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamPrefixesListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *IpamPrefixesListOK) readResponse(response runtime.ClientResponse, consu
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamPrefixesListDefault creates a IpamPrefixesListDefault with default headers values
+func NewIpamPrefixesListDefault(code int) *IpamPrefixesListDefault {
+	return &IpamPrefixesListDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamPrefixesListDefault describes a response with status code -1, with default header values.
+
+IpamPrefixesListDefault ipam prefixes list default
+*/
+type IpamPrefixesListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam prefixes list default response
+func (o *IpamPrefixesListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamPrefixesListDefault) Error() string {
+	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipam_prefixes_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamPrefixesListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamPrefixesListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

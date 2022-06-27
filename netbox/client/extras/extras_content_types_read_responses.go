@@ -45,7 +45,14 @@ func (o *ExtrasContentTypesReadReader) ReadResponse(response runtime.ClientRespo
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasContentTypesReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *ExtrasContentTypesReadOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasContentTypesReadDefault creates a ExtrasContentTypesReadDefault with default headers values
+func NewExtrasContentTypesReadDefault(code int) *ExtrasContentTypesReadDefault {
+	return &ExtrasContentTypesReadDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasContentTypesReadDefault describes a response with status code -1, with default header values.
+
+ExtrasContentTypesReadDefault extras content types read default
+*/
+type ExtrasContentTypesReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras content types read default response
+func (o *ExtrasContentTypesReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasContentTypesReadDefault) Error() string {
+	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extras_content-types_read default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasContentTypesReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasContentTypesReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

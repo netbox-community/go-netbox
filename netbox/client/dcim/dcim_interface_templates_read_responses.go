@@ -45,7 +45,14 @@ func (o *DcimInterfaceTemplatesReadReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimInterfaceTemplatesReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimInterfaceTemplatesReadOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimInterfaceTemplatesReadDefault creates a DcimInterfaceTemplatesReadDefault with default headers values
+func NewDcimInterfaceTemplatesReadDefault(code int) *DcimInterfaceTemplatesReadDefault {
+	return &DcimInterfaceTemplatesReadDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimInterfaceTemplatesReadDefault describes a response with status code -1, with default header values.
+
+DcimInterfaceTemplatesReadDefault dcim interface templates read default
+*/
+type DcimInterfaceTemplatesReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim interface templates read default response
+func (o *DcimInterfaceTemplatesReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimInterfaceTemplatesReadDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcim_interface-templates_read default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimInterfaceTemplatesReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimInterfaceTemplatesReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

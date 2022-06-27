@@ -81,7 +81,7 @@ type WirelessLAN struct {
 	Ssid *string `json:"ssid"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true

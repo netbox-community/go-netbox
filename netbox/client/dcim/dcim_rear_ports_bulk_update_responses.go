@@ -45,7 +45,14 @@ func (o *DcimRearPortsBulkUpdateReader) ReadResponse(response runtime.ClientResp
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimRearPortsBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimRearPortsBulkUpdateOK) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRearPortsBulkUpdateDefault creates a DcimRearPortsBulkUpdateDefault with default headers values
+func NewDcimRearPortsBulkUpdateDefault(code int) *DcimRearPortsBulkUpdateDefault {
+	return &DcimRearPortsBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimRearPortsBulkUpdateDefault describes a response with status code -1, with default header values.
+
+DcimRearPortsBulkUpdateDefault dcim rear ports bulk update default
+*/
+type DcimRearPortsBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rear ports bulk update default response
+func (o *DcimRearPortsBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRearPortsBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/rear-ports/][%d] dcim_rear-ports_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimRearPortsBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRearPortsBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -23,7 +23,6 @@ package models
 import (
 	"context"
 	"encoding/json"
-	"math"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -79,7 +78,7 @@ type WritableCable struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`
@@ -90,7 +89,7 @@ type WritableCable struct {
 
 	// Termination a id
 	// Required: true
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	TerminationaID *int64 `json:"termination_a_id"`
 
@@ -104,7 +103,7 @@ type WritableCable struct {
 
 	// Termination b id
 	// Required: true
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	TerminationbID *int64 `json:"termination_b_id"`
 
@@ -371,7 +370,7 @@ func (m *WritableCable) validateTerminationaID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("termination_a_id", "body", *m.TerminationaID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("termination_a_id", "body", *m.TerminationaID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -397,7 +396,7 @@ func (m *WritableCable) validateTerminationbID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("termination_b_id", "body", *m.TerminationbID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("termination_b_id", "body", *m.TerminationbID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 

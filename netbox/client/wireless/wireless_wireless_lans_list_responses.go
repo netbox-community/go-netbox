@@ -50,7 +50,14 @@ func (o *WirelessWirelessLansListReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewWirelessWirelessLansListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *WirelessWirelessLansListOK) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewWirelessWirelessLansListDefault creates a WirelessWirelessLansListDefault with default headers values
+func NewWirelessWirelessLansListDefault(code int) *WirelessWirelessLansListDefault {
+	return &WirelessWirelessLansListDefault{
+		_statusCode: code,
+	}
+}
+
+/* WirelessWirelessLansListDefault describes a response with status code -1, with default header values.
+
+WirelessWirelessLansListDefault wireless wireless lans list default
+*/
+type WirelessWirelessLansListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the wireless wireless lans list default response
+func (o *WirelessWirelessLansListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *WirelessWirelessLansListDefault) Error() string {
+	return fmt.Sprintf("[GET /wireless/wireless-lans/][%d] wireless_wireless-lans_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *WirelessWirelessLansListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *WirelessWirelessLansListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

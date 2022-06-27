@@ -119,7 +119,7 @@ type FrontPort struct {
 	RearPortPosition int64 `json:"rear_port_position,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// type
 	// Required: true

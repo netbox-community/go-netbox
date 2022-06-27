@@ -45,7 +45,14 @@ func (o *DcimSitesBulkPartialUpdateReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimSitesBulkPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimSitesBulkPartialUpdateOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimSitesBulkPartialUpdateDefault creates a DcimSitesBulkPartialUpdateDefault with default headers values
+func NewDcimSitesBulkPartialUpdateDefault(code int) *DcimSitesBulkPartialUpdateDefault {
+	return &DcimSitesBulkPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimSitesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+
+DcimSitesBulkPartialUpdateDefault dcim sites bulk partial update default
+*/
+type DcimSitesBulkPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim sites bulk partial update default response
+func (o *DcimSitesBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimSitesBulkPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/sites/][%d] dcim_sites_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimSitesBulkPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimSitesBulkPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

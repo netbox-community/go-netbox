@@ -113,7 +113,7 @@ type WritableDeviceType struct {
 	SubdeviceRole string `json:"subdevice_role,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Height (U)
 	// Maximum: 32767

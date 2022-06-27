@@ -108,7 +108,7 @@ type WritableConfigContext struct {
 
 	// tags
 	// Unique: true
-	Tags []string `json:"tags"`
+	Tags []string `json:"tags,omitempty"`
 
 	// tenant groups
 	// Unique: true

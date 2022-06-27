@@ -23,7 +23,6 @@ package models
 import (
 	"context"
 	"encoding/json"
-	"math"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -48,7 +47,7 @@ type WritableIPAddress struct {
 	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
 
 	// Assigned object id
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	AssignedObjectID *int64 `json:"assigned_object_id,omitempty"`
 
@@ -113,7 +112,7 @@ type WritableIPAddress struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`
@@ -195,7 +194,7 @@ func (m *WritableIPAddress) validateAssignedObjectID(formats strfmt.Registry) er
 		return err
 	}
 
-	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 

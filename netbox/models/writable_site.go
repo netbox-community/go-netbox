@@ -38,7 +38,7 @@ type WritableSite struct {
 
 	// asns
 	// Unique: true
-	Asns []int64 `json:"asns"`
+	Asns []int64 `json:"asns,omitempty"`
 
 	// Circuit count
 	// Read Only: true
@@ -132,7 +132,7 @@ type WritableSite struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`

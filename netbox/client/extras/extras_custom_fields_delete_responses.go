@@ -22,6 +22,7 @@ package extras
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *ExtrasCustomFieldsDeleteReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasCustomFieldsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *ExtrasCustomFieldsDeleteNoContent) Error() string {
 }
 
 func (o *ExtrasCustomFieldsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewExtrasCustomFieldsDeleteDefault creates a ExtrasCustomFieldsDeleteDefault with default headers values
+func NewExtrasCustomFieldsDeleteDefault(code int) *ExtrasCustomFieldsDeleteDefault {
+	return &ExtrasCustomFieldsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasCustomFieldsDeleteDefault describes a response with status code -1, with default header values.
+
+ExtrasCustomFieldsDeleteDefault extras custom fields delete default
+*/
+type ExtrasCustomFieldsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras custom fields delete default response
+func (o *ExtrasCustomFieldsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasCustomFieldsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extras_custom-fields_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasCustomFieldsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasCustomFieldsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

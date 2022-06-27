@@ -50,7 +50,14 @@ func (o *WirelessWirelessLanGroupsListReader) ReadResponse(response runtime.Clie
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewWirelessWirelessLanGroupsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *WirelessWirelessLanGroupsListOK) readResponse(response runtime.ClientRe
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewWirelessWirelessLanGroupsListDefault creates a WirelessWirelessLanGroupsListDefault with default headers values
+func NewWirelessWirelessLanGroupsListDefault(code int) *WirelessWirelessLanGroupsListDefault {
+	return &WirelessWirelessLanGroupsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* WirelessWirelessLanGroupsListDefault describes a response with status code -1, with default header values.
+
+WirelessWirelessLanGroupsListDefault wireless wireless lan groups list default
+*/
+type WirelessWirelessLanGroupsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the wireless wireless lan groups list default response
+func (o *WirelessWirelessLanGroupsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *WirelessWirelessLanGroupsListDefault) Error() string {
+	return fmt.Sprintf("[GET /wireless/wireless-lan-groups/][%d] wireless_wireless-lan-groups_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *WirelessWirelessLanGroupsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *WirelessWirelessLanGroupsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimModuleTypesDeleteReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimModuleTypesDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimModuleTypesDeleteNoContent) Error() string {
 }
 
 func (o *DcimModuleTypesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimModuleTypesDeleteDefault creates a DcimModuleTypesDeleteDefault with default headers values
+func NewDcimModuleTypesDeleteDefault(code int) *DcimModuleTypesDeleteDefault {
+	return &DcimModuleTypesDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimModuleTypesDeleteDefault describes a response with status code -1, with default header values.
+
+DcimModuleTypesDeleteDefault dcim module types delete default
+*/
+type DcimModuleTypesDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim module types delete default response
+func (o *DcimModuleTypesDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimModuleTypesDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/module-types/{id}/][%d] dcim_module-types_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimModuleTypesDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimModuleTypesDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

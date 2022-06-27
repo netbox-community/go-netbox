@@ -50,7 +50,14 @@ func (o *DcimModuleBayTemplatesListReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimModuleBayTemplatesListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *DcimModuleBayTemplatesListOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimModuleBayTemplatesListDefault creates a DcimModuleBayTemplatesListDefault with default headers values
+func NewDcimModuleBayTemplatesListDefault(code int) *DcimModuleBayTemplatesListDefault {
+	return &DcimModuleBayTemplatesListDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimModuleBayTemplatesListDefault describes a response with status code -1, with default header values.
+
+DcimModuleBayTemplatesListDefault dcim module bay templates list default
+*/
+type DcimModuleBayTemplatesListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim module bay templates list default response
+func (o *DcimModuleBayTemplatesListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimModuleBayTemplatesListDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/module-bay-templates/][%d] dcim_module-bay-templates_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimModuleBayTemplatesListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimModuleBayTemplatesListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

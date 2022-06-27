@@ -50,7 +50,14 @@ func (o *CircuitsCircuitsListReader) ReadResponse(response runtime.ClientRespons
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewCircuitsCircuitsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *CircuitsCircuitsListOK) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCircuitsCircuitsListDefault creates a CircuitsCircuitsListDefault with default headers values
+func NewCircuitsCircuitsListDefault(code int) *CircuitsCircuitsListDefault {
+	return &CircuitsCircuitsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* CircuitsCircuitsListDefault describes a response with status code -1, with default header values.
+
+CircuitsCircuitsListDefault circuits circuits list default
+*/
+type CircuitsCircuitsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits circuits list default response
+func (o *CircuitsCircuitsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsCircuitsListDefault) Error() string {
+	return fmt.Sprintf("[GET /circuits/circuits/][%d] circuits_circuits_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *CircuitsCircuitsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsCircuitsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

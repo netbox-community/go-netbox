@@ -50,7 +50,14 @@ func (o *IpamAsnsListReader) ReadResponse(response runtime.ClientResponse, consu
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamAsnsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *IpamAsnsListOK) readResponse(response runtime.ClientResponse, consumer 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamAsnsListDefault creates a IpamAsnsListDefault with default headers values
+func NewIpamAsnsListDefault(code int) *IpamAsnsListDefault {
+	return &IpamAsnsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamAsnsListDefault describes a response with status code -1, with default header values.
+
+IpamAsnsListDefault ipam asns list default
+*/
+type IpamAsnsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam asns list default response
+func (o *IpamAsnsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamAsnsListDefault) Error() string {
+	return fmt.Sprintf("[GET /ipam/asns/][%d] ipam_asns_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamAsnsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamAsnsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

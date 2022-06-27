@@ -22,6 +22,7 @@ package extras
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *ExtrasJournalEntriesBulkDeleteReader) ReadResponse(response runtime.Cli
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasJournalEntriesBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *ExtrasJournalEntriesBulkDeleteNoContent) Error() string {
 }
 
 func (o *ExtrasJournalEntriesBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewExtrasJournalEntriesBulkDeleteDefault creates a ExtrasJournalEntriesBulkDeleteDefault with default headers values
+func NewExtrasJournalEntriesBulkDeleteDefault(code int) *ExtrasJournalEntriesBulkDeleteDefault {
+	return &ExtrasJournalEntriesBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasJournalEntriesBulkDeleteDefault describes a response with status code -1, with default header values.
+
+ExtrasJournalEntriesBulkDeleteDefault extras journal entries bulk delete default
+*/
+type ExtrasJournalEntriesBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras journal entries bulk delete default response
+func (o *ExtrasJournalEntriesBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasJournalEntriesBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /extras/journal-entries/][%d] extras_journal-entries_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasJournalEntriesBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasJournalEntriesBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

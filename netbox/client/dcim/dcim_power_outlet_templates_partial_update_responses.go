@@ -45,7 +45,14 @@ func (o *DcimPowerOutletTemplatesPartialUpdateReader) ReadResponse(response runt
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerOutletTemplatesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimPowerOutletTemplatesPartialUpdateOK) readResponse(response runtime.
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerOutletTemplatesPartialUpdateDefault creates a DcimPowerOutletTemplatesPartialUpdateDefault with default headers values
+func NewDcimPowerOutletTemplatesPartialUpdateDefault(code int) *DcimPowerOutletTemplatesPartialUpdateDefault {
+	return &DcimPowerOutletTemplatesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerOutletTemplatesPartialUpdateDefault describes a response with status code -1, with default header values.
+
+DcimPowerOutletTemplatesPartialUpdateDefault dcim power outlet templates partial update default
+*/
+type DcimPowerOutletTemplatesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power outlet templates partial update default response
+func (o *DcimPowerOutletTemplatesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerOutletTemplatesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerOutletTemplatesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerOutletTemplatesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -22,6 +22,7 @@ package circuits
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *CircuitsProviderNetworksDeleteReader) ReadResponse(response runtime.Cli
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewCircuitsProviderNetworksDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *CircuitsProviderNetworksDeleteNoContent) Error() string {
 }
 
 func (o *CircuitsProviderNetworksDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewCircuitsProviderNetworksDeleteDefault creates a CircuitsProviderNetworksDeleteDefault with default headers values
+func NewCircuitsProviderNetworksDeleteDefault(code int) *CircuitsProviderNetworksDeleteDefault {
+	return &CircuitsProviderNetworksDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* CircuitsProviderNetworksDeleteDefault describes a response with status code -1, with default header values.
+
+CircuitsProviderNetworksDeleteDefault circuits provider networks delete default
+*/
+type CircuitsProviderNetworksDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits provider networks delete default response
+func (o *CircuitsProviderNetworksDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsProviderNetworksDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuits_provider-networks_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *CircuitsProviderNetworksDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsProviderNetworksDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

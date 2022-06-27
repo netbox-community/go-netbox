@@ -45,7 +45,14 @@ func (o *VirtualizationClustersBulkUpdateReader) ReadResponse(response runtime.C
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewVirtualizationClustersBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *VirtualizationClustersBulkUpdateOK) readResponse(response runtime.Clien
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationClustersBulkUpdateDefault creates a VirtualizationClustersBulkUpdateDefault with default headers values
+func NewVirtualizationClustersBulkUpdateDefault(code int) *VirtualizationClustersBulkUpdateDefault {
+	return &VirtualizationClustersBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* VirtualizationClustersBulkUpdateDefault describes a response with status code -1, with default header values.
+
+VirtualizationClustersBulkUpdateDefault virtualization clusters bulk update default
+*/
+type VirtualizationClustersBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization clusters bulk update default response
+func (o *VirtualizationClustersBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationClustersBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /virtualization/clusters/][%d] virtualization_clusters_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *VirtualizationClustersBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationClustersBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

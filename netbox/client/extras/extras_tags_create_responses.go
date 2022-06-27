@@ -45,7 +45,14 @@ func (o *ExtrasTagsCreateReader) ReadResponse(response runtime.ClientResponse, c
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasTagsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *ExtrasTagsCreateCreated) readResponse(response runtime.ClientResponse, 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasTagsCreateDefault creates a ExtrasTagsCreateDefault with default headers values
+func NewExtrasTagsCreateDefault(code int) *ExtrasTagsCreateDefault {
+	return &ExtrasTagsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasTagsCreateDefault describes a response with status code -1, with default header values.
+
+ExtrasTagsCreateDefault extras tags create default
+*/
+type ExtrasTagsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras tags create default response
+func (o *ExtrasTagsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasTagsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /extras/tags/][%d] extras_tags_create default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasTagsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasTagsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

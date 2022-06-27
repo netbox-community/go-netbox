@@ -51,7 +51,7 @@ type WritableProvider struct {
 
 	// asns
 	// Unique: true
-	Asns []int64 `json:"asns"`
+	Asns []int64 `json:"asns,omitempty"`
 
 	// Circuit count
 	// Read Only: true
@@ -103,7 +103,7 @@ type WritableProvider struct {
 	Slug *string `json:"slug"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true

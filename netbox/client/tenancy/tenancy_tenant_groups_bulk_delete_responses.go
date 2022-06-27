@@ -22,6 +22,7 @@ package tenancy
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *TenancyTenantGroupsBulkDeleteReader) ReadResponse(response runtime.Clie
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewTenancyTenantGroupsBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *TenancyTenantGroupsBulkDeleteNoContent) Error() string {
 }
 
 func (o *TenancyTenantGroupsBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewTenancyTenantGroupsBulkDeleteDefault creates a TenancyTenantGroupsBulkDeleteDefault with default headers values
+func NewTenancyTenantGroupsBulkDeleteDefault(code int) *TenancyTenantGroupsBulkDeleteDefault {
+	return &TenancyTenantGroupsBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* TenancyTenantGroupsBulkDeleteDefault describes a response with status code -1, with default header values.
+
+TenancyTenantGroupsBulkDeleteDefault tenancy tenant groups bulk delete default
+*/
+type TenancyTenantGroupsBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the tenancy tenant groups bulk delete default response
+func (o *TenancyTenantGroupsBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *TenancyTenantGroupsBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /tenancy/tenant-groups/][%d] tenancy_tenant-groups_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *TenancyTenantGroupsBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *TenancyTenantGroupsBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

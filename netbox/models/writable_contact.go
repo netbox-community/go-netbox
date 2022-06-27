@@ -88,7 +88,7 @@ type WritableContact struct {
 	Phone string `json:"phone,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Title
 	// Max Length: 100

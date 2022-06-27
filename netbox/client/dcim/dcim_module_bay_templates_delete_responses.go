@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimModuleBayTemplatesDeleteReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimModuleBayTemplatesDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimModuleBayTemplatesDeleteNoContent) Error() string {
 }
 
 func (o *DcimModuleBayTemplatesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimModuleBayTemplatesDeleteDefault creates a DcimModuleBayTemplatesDeleteDefault with default headers values
+func NewDcimModuleBayTemplatesDeleteDefault(code int) *DcimModuleBayTemplatesDeleteDefault {
+	return &DcimModuleBayTemplatesDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimModuleBayTemplatesDeleteDefault describes a response with status code -1, with default header values.
+
+DcimModuleBayTemplatesDeleteDefault dcim module bay templates delete default
+*/
+type DcimModuleBayTemplatesDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim module bay templates delete default response
+func (o *DcimModuleBayTemplatesDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimModuleBayTemplatesDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimModuleBayTemplatesDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimModuleBayTemplatesDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

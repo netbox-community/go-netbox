@@ -45,7 +45,14 @@ func (o *DcimVirtualChassisReadReader) ReadResponse(response runtime.ClientRespo
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimVirtualChassisReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimVirtualChassisReadOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimVirtualChassisReadDefault creates a DcimVirtualChassisReadDefault with default headers values
+func NewDcimVirtualChassisReadDefault(code int) *DcimVirtualChassisReadDefault {
+	return &DcimVirtualChassisReadDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimVirtualChassisReadDefault describes a response with status code -1, with default header values.
+
+DcimVirtualChassisReadDefault dcim virtual chassis read default
+*/
+type DcimVirtualChassisReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim virtual chassis read default response
+func (o *DcimVirtualChassisReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimVirtualChassisReadDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/{id}/][%d] dcim_virtual-chassis_read default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimVirtualChassisReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimVirtualChassisReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

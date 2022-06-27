@@ -45,7 +45,14 @@ func (o *DcimDeviceTypesUpdateReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimDeviceTypesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimDeviceTypesUpdateOK) readResponse(response runtime.ClientResponse, 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimDeviceTypesUpdateDefault creates a DcimDeviceTypesUpdateDefault with default headers values
+func NewDcimDeviceTypesUpdateDefault(code int) *DcimDeviceTypesUpdateDefault {
+	return &DcimDeviceTypesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimDeviceTypesUpdateDefault describes a response with status code -1, with default header values.
+
+DcimDeviceTypesUpdateDefault dcim device types update default
+*/
+type DcimDeviceTypesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim device types update default response
+func (o *DcimDeviceTypesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimDeviceTypesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/device-types/{id}/][%d] dcim_device-types_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimDeviceTypesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimDeviceTypesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -50,7 +50,14 @@ func (o *DcimCablesListReader) ReadResponse(response runtime.ClientResponse, con
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimCablesListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *DcimCablesListOK) readResponse(response runtime.ClientResponse, consume
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimCablesListDefault creates a DcimCablesListDefault with default headers values
+func NewDcimCablesListDefault(code int) *DcimCablesListDefault {
+	return &DcimCablesListDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimCablesListDefault describes a response with status code -1, with default header values.
+
+DcimCablesListDefault dcim cables list default
+*/
+type DcimCablesListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim cables list default response
+func (o *DcimCablesListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimCablesListDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/cables/][%d] dcim_cables_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimCablesListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimCablesListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

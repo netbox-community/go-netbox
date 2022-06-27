@@ -45,7 +45,14 @@ func (o *IpamServiceTemplatesUpdateReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamServiceTemplatesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *IpamServiceTemplatesUpdateOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamServiceTemplatesUpdateDefault creates a IpamServiceTemplatesUpdateDefault with default headers values
+func NewIpamServiceTemplatesUpdateDefault(code int) *IpamServiceTemplatesUpdateDefault {
+	return &IpamServiceTemplatesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamServiceTemplatesUpdateDefault describes a response with status code -1, with default header values.
+
+IpamServiceTemplatesUpdateDefault ipam service templates update default
+*/
+type IpamServiceTemplatesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam service templates update default response
+func (o *IpamServiceTemplatesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamServiceTemplatesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /ipam/service-templates/{id}/][%d] ipam_service-templates_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamServiceTemplatesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamServiceTemplatesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

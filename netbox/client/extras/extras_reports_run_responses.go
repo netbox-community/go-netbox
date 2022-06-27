@@ -22,6 +22,7 @@ package extras
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *ExtrasReportsRunReader) ReadResponse(response runtime.ClientResponse, c
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasReportsRunDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *ExtrasReportsRunCreated) Error() string {
 }
 
 func (o *ExtrasReportsRunCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewExtrasReportsRunDefault creates a ExtrasReportsRunDefault with default headers values
+func NewExtrasReportsRunDefault(code int) *ExtrasReportsRunDefault {
+	return &ExtrasReportsRunDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasReportsRunDefault describes a response with status code -1, with default header values.
+
+ExtrasReportsRunDefault extras reports run default
+*/
+type ExtrasReportsRunDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras reports run default response
+func (o *ExtrasReportsRunDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasReportsRunDefault) Error() string {
+	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extras_reports_run default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasReportsRunDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasReportsRunDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

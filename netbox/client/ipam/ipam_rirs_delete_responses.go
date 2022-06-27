@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *IpamRirsDeleteReader) ReadResponse(response runtime.ClientResponse, con
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamRirsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *IpamRirsDeleteNoContent) Error() string {
 }
 
 func (o *IpamRirsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewIpamRirsDeleteDefault creates a IpamRirsDeleteDefault with default headers values
+func NewIpamRirsDeleteDefault(code int) *IpamRirsDeleteDefault {
+	return &IpamRirsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamRirsDeleteDefault describes a response with status code -1, with default header values.
+
+IpamRirsDeleteDefault ipam rirs delete default
+*/
+type IpamRirsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam rirs delete default response
+func (o *IpamRirsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamRirsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/rirs/{id}/][%d] ipam_rirs_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamRirsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamRirsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

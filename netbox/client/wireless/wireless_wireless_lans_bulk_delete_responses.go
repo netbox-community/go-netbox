@@ -22,6 +22,7 @@ package wireless
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *WirelessWirelessLansBulkDeleteReader) ReadResponse(response runtime.Cli
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewWirelessWirelessLansBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *WirelessWirelessLansBulkDeleteNoContent) Error() string {
 }
 
 func (o *WirelessWirelessLansBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewWirelessWirelessLansBulkDeleteDefault creates a WirelessWirelessLansBulkDeleteDefault with default headers values
+func NewWirelessWirelessLansBulkDeleteDefault(code int) *WirelessWirelessLansBulkDeleteDefault {
+	return &WirelessWirelessLansBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* WirelessWirelessLansBulkDeleteDefault describes a response with status code -1, with default header values.
+
+WirelessWirelessLansBulkDeleteDefault wireless wireless lans bulk delete default
+*/
+type WirelessWirelessLansBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the wireless wireless lans bulk delete default response
+func (o *WirelessWirelessLansBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *WirelessWirelessLansBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /wireless/wireless-lans/][%d] wireless_wireless-lans_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *WirelessWirelessLansBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *WirelessWirelessLansBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

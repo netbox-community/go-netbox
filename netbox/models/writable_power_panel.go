@@ -74,7 +74,7 @@ type WritablePowerPanel struct {
 	Site *int64 `json:"site"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true

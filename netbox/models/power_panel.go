@@ -74,7 +74,7 @@ type PowerPanel struct {
 	Site *NestedSite `json:"site"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true

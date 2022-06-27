@@ -181,7 +181,7 @@ type Interface struct {
 	TaggedVlans []*NestedVLAN `json:"tagged_vlans"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Transmit power (dBm)
 	// Maximum: 127

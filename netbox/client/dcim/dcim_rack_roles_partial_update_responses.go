@@ -45,7 +45,14 @@ func (o *DcimRackRolesPartialUpdateReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimRackRolesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimRackRolesPartialUpdateOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRackRolesPartialUpdateDefault creates a DcimRackRolesPartialUpdateDefault with default headers values
+func NewDcimRackRolesPartialUpdateDefault(code int) *DcimRackRolesPartialUpdateDefault {
+	return &DcimRackRolesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimRackRolesPartialUpdateDefault describes a response with status code -1, with default header values.
+
+DcimRackRolesPartialUpdateDefault dcim rack roles partial update default
+*/
+type DcimRackRolesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rack roles partial update default response
+func (o *DcimRackRolesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRackRolesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/rack-roles/{id}/][%d] dcim_rack-roles_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimRackRolesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRackRolesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

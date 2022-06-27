@@ -50,7 +50,14 @@ func (o *IpamVlanGroupsListReader) ReadResponse(response runtime.ClientResponse,
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamVlanGroupsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *IpamVlanGroupsListOK) readResponse(response runtime.ClientResponse, con
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamVlanGroupsListDefault creates a IpamVlanGroupsListDefault with default headers values
+func NewIpamVlanGroupsListDefault(code int) *IpamVlanGroupsListDefault {
+	return &IpamVlanGroupsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamVlanGroupsListDefault describes a response with status code -1, with default header values.
+
+IpamVlanGroupsListDefault ipam vlan groups list default
+*/
+type IpamVlanGroupsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam vlan groups list default response
+func (o *IpamVlanGroupsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamVlanGroupsListDefault) Error() string {
+	return fmt.Sprintf("[GET /ipam/vlan-groups/][%d] ipam_vlan-groups_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamVlanGroupsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamVlanGroupsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

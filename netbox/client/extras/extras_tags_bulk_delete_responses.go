@@ -22,6 +22,7 @@ package extras
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *ExtrasTagsBulkDeleteReader) ReadResponse(response runtime.ClientRespons
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasTagsBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *ExtrasTagsBulkDeleteNoContent) Error() string {
 }
 
 func (o *ExtrasTagsBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewExtrasTagsBulkDeleteDefault creates a ExtrasTagsBulkDeleteDefault with default headers values
+func NewExtrasTagsBulkDeleteDefault(code int) *ExtrasTagsBulkDeleteDefault {
+	return &ExtrasTagsBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasTagsBulkDeleteDefault describes a response with status code -1, with default header values.
+
+ExtrasTagsBulkDeleteDefault extras tags bulk delete default
+*/
+type ExtrasTagsBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras tags bulk delete default response
+func (o *ExtrasTagsBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasTagsBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /extras/tags/][%d] extras_tags_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasTagsBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasTagsBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

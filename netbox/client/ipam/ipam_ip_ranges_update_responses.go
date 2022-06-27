@@ -45,7 +45,14 @@ func (o *IpamIPRangesUpdateReader) ReadResponse(response runtime.ClientResponse,
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamIPRangesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *IpamIPRangesUpdateOK) readResponse(response runtime.ClientResponse, con
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamIPRangesUpdateDefault creates a IpamIPRangesUpdateDefault with default headers values
+func NewIpamIPRangesUpdateDefault(code int) *IpamIPRangesUpdateDefault {
+	return &IpamIPRangesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamIPRangesUpdateDefault describes a response with status code -1, with default header values.
+
+IpamIPRangesUpdateDefault ipam ip ranges update default
+*/
+type IpamIPRangesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam ip ranges update default response
+func (o *IpamIPRangesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamIPRangesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /ipam/ip-ranges/{id}/][%d] ipam_ip-ranges_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamIPRangesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamIPRangesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

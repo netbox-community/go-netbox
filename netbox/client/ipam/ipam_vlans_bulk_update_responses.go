@@ -45,7 +45,14 @@ func (o *IpamVlansBulkUpdateReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamVlansBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *IpamVlansBulkUpdateOK) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamVlansBulkUpdateDefault creates a IpamVlansBulkUpdateDefault with default headers values
+func NewIpamVlansBulkUpdateDefault(code int) *IpamVlansBulkUpdateDefault {
+	return &IpamVlansBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamVlansBulkUpdateDefault describes a response with status code -1, with default header values.
+
+IpamVlansBulkUpdateDefault ipam vlans bulk update default
+*/
+type IpamVlansBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam vlans bulk update default response
+func (o *IpamVlansBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamVlansBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /ipam/vlans/][%d] ipam_vlans_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamVlansBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamVlansBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

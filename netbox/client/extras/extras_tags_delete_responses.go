@@ -22,6 +22,7 @@ package extras
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *ExtrasTagsDeleteReader) ReadResponse(response runtime.ClientResponse, c
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasTagsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *ExtrasTagsDeleteNoContent) Error() string {
 }
 
 func (o *ExtrasTagsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewExtrasTagsDeleteDefault creates a ExtrasTagsDeleteDefault with default headers values
+func NewExtrasTagsDeleteDefault(code int) *ExtrasTagsDeleteDefault {
+	return &ExtrasTagsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasTagsDeleteDefault describes a response with status code -1, with default header values.
+
+ExtrasTagsDeleteDefault extras tags delete default
+*/
+type ExtrasTagsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras tags delete default response
+func (o *ExtrasTagsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasTagsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extras_tags_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasTagsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasTagsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

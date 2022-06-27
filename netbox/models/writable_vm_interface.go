@@ -101,7 +101,7 @@ type WritableVMInterface struct {
 	TaggedVlans []int64 `json:"tagged_vlans"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Untagged VLAN
 	UntaggedVlan *int64 `json:"untagged_vlan,omitempty"`

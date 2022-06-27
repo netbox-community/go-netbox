@@ -50,7 +50,14 @@ func (o *IpamServicesListReader) ReadResponse(response runtime.ClientResponse, c
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamServicesListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *IpamServicesListOK) readResponse(response runtime.ClientResponse, consu
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamServicesListDefault creates a IpamServicesListDefault with default headers values
+func NewIpamServicesListDefault(code int) *IpamServicesListDefault {
+	return &IpamServicesListDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamServicesListDefault describes a response with status code -1, with default header values.
+
+IpamServicesListDefault ipam services list default
+*/
+type IpamServicesListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam services list default response
+func (o *IpamServicesListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamServicesListDefault) Error() string {
+	return fmt.Sprintf("[GET /ipam/services/][%d] ipam_services_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamServicesListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamServicesListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

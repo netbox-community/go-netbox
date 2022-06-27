@@ -45,7 +45,14 @@ func (o *DcimPlatformsCreateReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPlatformsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimPlatformsCreateCreated) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPlatformsCreateDefault creates a DcimPlatformsCreateDefault with default headers values
+func NewDcimPlatformsCreateDefault(code int) *DcimPlatformsCreateDefault {
+	return &DcimPlatformsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPlatformsCreateDefault describes a response with status code -1, with default header values.
+
+DcimPlatformsCreateDefault dcim platforms create default
+*/
+type DcimPlatformsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim platforms create default response
+func (o *DcimPlatformsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPlatformsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /dcim/platforms/][%d] dcim_platforms_create default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPlatformsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPlatformsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

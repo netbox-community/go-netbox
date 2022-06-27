@@ -45,7 +45,14 @@ func (o *DcimPowerPortsBulkUpdateReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerPortsBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimPowerPortsBulkUpdateOK) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerPortsBulkUpdateDefault creates a DcimPowerPortsBulkUpdateDefault with default headers values
+func NewDcimPowerPortsBulkUpdateDefault(code int) *DcimPowerPortsBulkUpdateDefault {
+	return &DcimPowerPortsBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerPortsBulkUpdateDefault describes a response with status code -1, with default header values.
+
+DcimPowerPortsBulkUpdateDefault dcim power ports bulk update default
+*/
+type DcimPowerPortsBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power ports bulk update default response
+func (o *DcimPowerPortsBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerPortsBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/power-ports/][%d] dcim_power-ports_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerPortsBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerPortsBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

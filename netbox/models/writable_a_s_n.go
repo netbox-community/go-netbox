@@ -81,7 +81,7 @@ type WritableASN struct {
 	SiteCount int64 `json:"site_count,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`

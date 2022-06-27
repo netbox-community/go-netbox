@@ -45,7 +45,14 @@ func (o *DcimPowerOutletTemplatesUpdateReader) ReadResponse(response runtime.Cli
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerOutletTemplatesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimPowerOutletTemplatesUpdateOK) readResponse(response runtime.ClientR
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerOutletTemplatesUpdateDefault creates a DcimPowerOutletTemplatesUpdateDefault with default headers values
+func NewDcimPowerOutletTemplatesUpdateDefault(code int) *DcimPowerOutletTemplatesUpdateDefault {
+	return &DcimPowerOutletTemplatesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerOutletTemplatesUpdateDefault describes a response with status code -1, with default header values.
+
+DcimPowerOutletTemplatesUpdateDefault dcim power outlet templates update default
+*/
+type DcimPowerOutletTemplatesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power outlet templates update default response
+func (o *DcimPowerOutletTemplatesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerOutletTemplatesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerOutletTemplatesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerOutletTemplatesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

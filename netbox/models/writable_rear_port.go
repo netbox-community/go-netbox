@@ -115,7 +115,7 @@ type WritableRearPort struct {
 	Positions int64 `json:"positions,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Type
 	// Required: true

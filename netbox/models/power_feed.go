@@ -135,7 +135,7 @@ type PowerFeed struct {
 	Supply *PowerFeedSupply `json:"supply,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// type
 	Type *PowerFeedType `json:"type,omitempty"`

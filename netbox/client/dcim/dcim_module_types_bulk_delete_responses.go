@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimModuleTypesBulkDeleteReader) ReadResponse(response runtime.ClientRe
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimModuleTypesBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimModuleTypesBulkDeleteNoContent) Error() string {
 }
 
 func (o *DcimModuleTypesBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimModuleTypesBulkDeleteDefault creates a DcimModuleTypesBulkDeleteDefault with default headers values
+func NewDcimModuleTypesBulkDeleteDefault(code int) *DcimModuleTypesBulkDeleteDefault {
+	return &DcimModuleTypesBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimModuleTypesBulkDeleteDefault describes a response with status code -1, with default header values.
+
+DcimModuleTypesBulkDeleteDefault dcim module types bulk delete default
+*/
+type DcimModuleTypesBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim module types bulk delete default response
+func (o *DcimModuleTypesBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimModuleTypesBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/module-types/][%d] dcim_module-types_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimModuleTypesBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimModuleTypesBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

@@ -45,7 +45,14 @@ func (o *VirtualizationClusterTypesCreateReader) ReadResponse(response runtime.C
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewVirtualizationClusterTypesCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *VirtualizationClusterTypesCreateCreated) readResponse(response runtime.
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationClusterTypesCreateDefault creates a VirtualizationClusterTypesCreateDefault with default headers values
+func NewVirtualizationClusterTypesCreateDefault(code int) *VirtualizationClusterTypesCreateDefault {
+	return &VirtualizationClusterTypesCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/* VirtualizationClusterTypesCreateDefault describes a response with status code -1, with default header values.
+
+VirtualizationClusterTypesCreateDefault virtualization cluster types create default
+*/
+type VirtualizationClusterTypesCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization cluster types create default response
+func (o *VirtualizationClusterTypesCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationClusterTypesCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /virtualization/cluster-types/][%d] virtualization_cluster-types_create default  %+v", o._statusCode, o.Payload)
+}
+func (o *VirtualizationClusterTypesCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationClusterTypesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

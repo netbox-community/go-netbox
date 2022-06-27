@@ -23,7 +23,6 @@ package models
 import (
 	"context"
 	"encoding/json"
-	"math"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -43,7 +42,7 @@ type JournalEntry struct {
 
 	// Assigned object id
 	// Required: true
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	AssignedObjectID *int64 `json:"assigned_object_id"`
 
@@ -79,7 +78,7 @@ type JournalEntry struct {
 	Kind *JournalEntryKind `json:"kind,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -135,7 +134,7 @@ func (m *JournalEntry) validateAssignedObjectID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 

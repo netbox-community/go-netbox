@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimRegionsDeleteReader) ReadResponse(response runtime.ClientResponse, 
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimRegionsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimRegionsDeleteNoContent) Error() string {
 }
 
 func (o *DcimRegionsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimRegionsDeleteDefault creates a DcimRegionsDeleteDefault with default headers values
+func NewDcimRegionsDeleteDefault(code int) *DcimRegionsDeleteDefault {
+	return &DcimRegionsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimRegionsDeleteDefault describes a response with status code -1, with default header values.
+
+DcimRegionsDeleteDefault dcim regions delete default
+*/
+type DcimRegionsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim regions delete default response
+func (o *DcimRegionsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRegionsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/regions/{id}/][%d] dcim_regions_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimRegionsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRegionsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

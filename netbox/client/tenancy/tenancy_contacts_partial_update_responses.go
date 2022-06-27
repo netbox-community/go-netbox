@@ -45,7 +45,14 @@ func (o *TenancyContactsPartialUpdateReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewTenancyContactsPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *TenancyContactsPartialUpdateOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTenancyContactsPartialUpdateDefault creates a TenancyContactsPartialUpdateDefault with default headers values
+func NewTenancyContactsPartialUpdateDefault(code int) *TenancyContactsPartialUpdateDefault {
+	return &TenancyContactsPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* TenancyContactsPartialUpdateDefault describes a response with status code -1, with default header values.
+
+TenancyContactsPartialUpdateDefault tenancy contacts partial update default
+*/
+type TenancyContactsPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the tenancy contacts partial update default response
+func (o *TenancyContactsPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *TenancyContactsPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /tenancy/contacts/{id}/][%d] tenancy_contacts_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *TenancyContactsPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *TenancyContactsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

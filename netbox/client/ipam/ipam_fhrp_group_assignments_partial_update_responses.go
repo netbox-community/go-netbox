@@ -45,7 +45,14 @@ func (o *IpamFhrpGroupAssignmentsPartialUpdateReader) ReadResponse(response runt
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamFhrpGroupAssignmentsPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) readResponse(response runtime.
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamFhrpGroupAssignmentsPartialUpdateDefault creates a IpamFhrpGroupAssignmentsPartialUpdateDefault with default headers values
+func NewIpamFhrpGroupAssignmentsPartialUpdateDefault(code int) *IpamFhrpGroupAssignmentsPartialUpdateDefault {
+	return &IpamFhrpGroupAssignmentsPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamFhrpGroupAssignmentsPartialUpdateDefault describes a response with status code -1, with default header values.
+
+IpamFhrpGroupAssignmentsPartialUpdateDefault ipam fhrp group assignments partial update default
+*/
+type IpamFhrpGroupAssignmentsPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam fhrp group assignments partial update default response
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

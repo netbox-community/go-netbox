@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimPowerOutletTemplatesBulkDeleteReader) ReadResponse(response runtime
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerOutletTemplatesBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimPowerOutletTemplatesBulkDeleteNoContent) Error() string {
 }
 
 func (o *DcimPowerOutletTemplatesBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimPowerOutletTemplatesBulkDeleteDefault creates a DcimPowerOutletTemplatesBulkDeleteDefault with default headers values
+func NewDcimPowerOutletTemplatesBulkDeleteDefault(code int) *DcimPowerOutletTemplatesBulkDeleteDefault {
+	return &DcimPowerOutletTemplatesBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerOutletTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
+
+DcimPowerOutletTemplatesBulkDeleteDefault dcim power outlet templates bulk delete default
+*/
+type DcimPowerOutletTemplatesBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power outlet templates bulk delete default response
+func (o *DcimPowerOutletTemplatesBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerOutletTemplatesBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerOutletTemplatesBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerOutletTemplatesBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

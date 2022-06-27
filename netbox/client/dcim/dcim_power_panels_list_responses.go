@@ -50,7 +50,14 @@ func (o *DcimPowerPanelsListReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerPanelsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *DcimPowerPanelsListOK) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerPanelsListDefault creates a DcimPowerPanelsListDefault with default headers values
+func NewDcimPowerPanelsListDefault(code int) *DcimPowerPanelsListDefault {
+	return &DcimPowerPanelsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerPanelsListDefault describes a response with status code -1, with default header values.
+
+DcimPowerPanelsListDefault dcim power panels list default
+*/
+type DcimPowerPanelsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power panels list default response
+func (o *DcimPowerPanelsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerPanelsListDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/power-panels/][%d] dcim_power-panels_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerPanelsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerPanelsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

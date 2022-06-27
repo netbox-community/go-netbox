@@ -76,7 +76,7 @@ type WritableModuleType struct {
 	PartNumber string `json:"part_number,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true

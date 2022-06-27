@@ -45,7 +45,14 @@ func (o *DcimPowerOutletsTraceReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerOutletsTraceDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimPowerOutletsTraceOK) readResponse(response runtime.ClientResponse, 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerOutletsTraceDefault creates a DcimPowerOutletsTraceDefault with default headers values
+func NewDcimPowerOutletsTraceDefault(code int) *DcimPowerOutletsTraceDefault {
+	return &DcimPowerOutletsTraceDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerOutletsTraceDefault describes a response with status code -1, with default header values.
+
+DcimPowerOutletsTraceDefault dcim power outlets trace default
+*/
+type DcimPowerOutletsTraceDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power outlets trace default response
+func (o *DcimPowerOutletsTraceDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerOutletsTraceDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/trace/][%d] dcim_power-outlets_trace default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerOutletsTraceDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerOutletsTraceDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

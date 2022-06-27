@@ -45,7 +45,14 @@ func (o *CircuitsCircuitTerminationsPathsReader) ReadResponse(response runtime.C
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewCircuitsCircuitTerminationsPathsDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *CircuitsCircuitTerminationsPathsOK) readResponse(response runtime.Clien
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCircuitsCircuitTerminationsPathsDefault creates a CircuitsCircuitTerminationsPathsDefault with default headers values
+func NewCircuitsCircuitTerminationsPathsDefault(code int) *CircuitsCircuitTerminationsPathsDefault {
+	return &CircuitsCircuitTerminationsPathsDefault{
+		_statusCode: code,
+	}
+}
+
+/* CircuitsCircuitTerminationsPathsDefault describes a response with status code -1, with default header values.
+
+CircuitsCircuitTerminationsPathsDefault circuits circuit terminations paths default
+*/
+type CircuitsCircuitTerminationsPathsDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits circuit terminations paths default response
+func (o *CircuitsCircuitTerminationsPathsDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsCircuitTerminationsPathsDefault) Error() string {
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuits_circuit-terminations_paths default  %+v", o._statusCode, o.Payload)
+}
+func (o *CircuitsCircuitTerminationsPathsDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsCircuitTerminationsPathsDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

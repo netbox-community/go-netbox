@@ -45,7 +45,14 @@ func (o *IpamVlanGroupsBulkUpdateReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamVlanGroupsBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *IpamVlanGroupsBulkUpdateOK) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamVlanGroupsBulkUpdateDefault creates a IpamVlanGroupsBulkUpdateDefault with default headers values
+func NewIpamVlanGroupsBulkUpdateDefault(code int) *IpamVlanGroupsBulkUpdateDefault {
+	return &IpamVlanGroupsBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamVlanGroupsBulkUpdateDefault describes a response with status code -1, with default header values.
+
+IpamVlanGroupsBulkUpdateDefault ipam vlan groups bulk update default
+*/
+type IpamVlanGroupsBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam vlan groups bulk update default response
+func (o *IpamVlanGroupsBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamVlanGroupsBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /ipam/vlan-groups/][%d] ipam_vlan-groups_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamVlanGroupsBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamVlanGroupsBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

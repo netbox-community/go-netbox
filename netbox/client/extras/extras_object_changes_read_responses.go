@@ -45,7 +45,14 @@ func (o *ExtrasObjectChangesReadReader) ReadResponse(response runtime.ClientResp
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasObjectChangesReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *ExtrasObjectChangesReadOK) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasObjectChangesReadDefault creates a ExtrasObjectChangesReadDefault with default headers values
+func NewExtrasObjectChangesReadDefault(code int) *ExtrasObjectChangesReadDefault {
+	return &ExtrasObjectChangesReadDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasObjectChangesReadDefault describes a response with status code -1, with default header values.
+
+ExtrasObjectChangesReadDefault extras object changes read default
+*/
+type ExtrasObjectChangesReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras object changes read default response
+func (o *ExtrasObjectChangesReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasObjectChangesReadDefault) Error() string {
+	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extras_object-changes_read default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasObjectChangesReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasObjectChangesReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -45,7 +45,14 @@ func (o *DcimConsolePortsBulkUpdateReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimConsolePortsBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimConsolePortsBulkUpdateOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimConsolePortsBulkUpdateDefault creates a DcimConsolePortsBulkUpdateDefault with default headers values
+func NewDcimConsolePortsBulkUpdateDefault(code int) *DcimConsolePortsBulkUpdateDefault {
+	return &DcimConsolePortsBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimConsolePortsBulkUpdateDefault describes a response with status code -1, with default header values.
+
+DcimConsolePortsBulkUpdateDefault dcim console ports bulk update default
+*/
+type DcimConsolePortsBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim console ports bulk update default response
+func (o *DcimConsolePortsBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimConsolePortsBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/console-ports/][%d] dcim_console-ports_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimConsolePortsBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimConsolePortsBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

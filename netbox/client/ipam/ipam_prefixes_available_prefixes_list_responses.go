@@ -45,7 +45,14 @@ func (o *IpamPrefixesAvailablePrefixesListReader) ReadResponse(response runtime.
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamPrefixesAvailablePrefixesListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -70,6 +77,45 @@ func (o *IpamPrefixesAvailablePrefixesListOK) GetPayload() []*models.AvailablePr
 }
 
 func (o *IpamPrefixesAvailablePrefixesListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamPrefixesAvailablePrefixesListDefault creates a IpamPrefixesAvailablePrefixesListDefault with default headers values
+func NewIpamPrefixesAvailablePrefixesListDefault(code int) *IpamPrefixesAvailablePrefixesListDefault {
+	return &IpamPrefixesAvailablePrefixesListDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamPrefixesAvailablePrefixesListDefault describes a response with status code -1, with default header values.
+
+IpamPrefixesAvailablePrefixesListDefault ipam prefixes available prefixes list default
+*/
+type IpamPrefixesAvailablePrefixesListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam prefixes available prefixes list default response
+func (o *IpamPrefixesAvailablePrefixesListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamPrefixesAvailablePrefixesListDefault) Error() string {
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamPrefixesAvailablePrefixesListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamPrefixesAvailablePrefixesListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {

@@ -22,6 +22,7 @@ package wireless
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *WirelessWirelessLinksBulkDeleteReader) ReadResponse(response runtime.Cl
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewWirelessWirelessLinksBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *WirelessWirelessLinksBulkDeleteNoContent) Error() string {
 }
 
 func (o *WirelessWirelessLinksBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewWirelessWirelessLinksBulkDeleteDefault creates a WirelessWirelessLinksBulkDeleteDefault with default headers values
+func NewWirelessWirelessLinksBulkDeleteDefault(code int) *WirelessWirelessLinksBulkDeleteDefault {
+	return &WirelessWirelessLinksBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* WirelessWirelessLinksBulkDeleteDefault describes a response with status code -1, with default header values.
+
+WirelessWirelessLinksBulkDeleteDefault wireless wireless links bulk delete default
+*/
+type WirelessWirelessLinksBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the wireless wireless links bulk delete default response
+func (o *WirelessWirelessLinksBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *WirelessWirelessLinksBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /wireless/wireless-links/][%d] wireless_wireless-links_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *WirelessWirelessLinksBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *WirelessWirelessLinksBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

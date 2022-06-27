@@ -45,7 +45,14 @@ func (o *WirelessWirelessLinksPartialUpdateReader) ReadResponse(response runtime
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewWirelessWirelessLinksPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *WirelessWirelessLinksPartialUpdateOK) readResponse(response runtime.Cli
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewWirelessWirelessLinksPartialUpdateDefault creates a WirelessWirelessLinksPartialUpdateDefault with default headers values
+func NewWirelessWirelessLinksPartialUpdateDefault(code int) *WirelessWirelessLinksPartialUpdateDefault {
+	return &WirelessWirelessLinksPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* WirelessWirelessLinksPartialUpdateDefault describes a response with status code -1, with default header values.
+
+WirelessWirelessLinksPartialUpdateDefault wireless wireless links partial update default
+*/
+type WirelessWirelessLinksPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the wireless wireless links partial update default response
+func (o *WirelessWirelessLinksPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *WirelessWirelessLinksPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /wireless/wireless-links/{id}/][%d] wireless_wireless-links_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *WirelessWirelessLinksPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *WirelessWirelessLinksPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

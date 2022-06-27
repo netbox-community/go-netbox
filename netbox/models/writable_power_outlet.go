@@ -130,7 +130,7 @@ type WritablePowerOutlet struct {
 	PowerPort *int64 `json:"power_port,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Type
 	//

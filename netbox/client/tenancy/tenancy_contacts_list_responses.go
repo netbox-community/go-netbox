@@ -50,7 +50,14 @@ func (o *TenancyContactsListReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewTenancyContactsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *TenancyContactsListOK) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTenancyContactsListDefault creates a TenancyContactsListDefault with default headers values
+func NewTenancyContactsListDefault(code int) *TenancyContactsListDefault {
+	return &TenancyContactsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* TenancyContactsListDefault describes a response with status code -1, with default header values.
+
+TenancyContactsListDefault tenancy contacts list default
+*/
+type TenancyContactsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the tenancy contacts list default response
+func (o *TenancyContactsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *TenancyContactsListDefault) Error() string {
+	return fmt.Sprintf("[GET /tenancy/contacts/][%d] tenancy_contacts_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *TenancyContactsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *TenancyContactsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

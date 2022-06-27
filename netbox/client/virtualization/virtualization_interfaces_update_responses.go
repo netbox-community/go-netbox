@@ -45,7 +45,14 @@ func (o *VirtualizationInterfacesUpdateReader) ReadResponse(response runtime.Cli
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewVirtualizationInterfacesUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *VirtualizationInterfacesUpdateOK) readResponse(response runtime.ClientR
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewVirtualizationInterfacesUpdateDefault creates a VirtualizationInterfacesUpdateDefault with default headers values
+func NewVirtualizationInterfacesUpdateDefault(code int) *VirtualizationInterfacesUpdateDefault {
+	return &VirtualizationInterfacesUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* VirtualizationInterfacesUpdateDefault describes a response with status code -1, with default header values.
+
+VirtualizationInterfacesUpdateDefault virtualization interfaces update default
+*/
+type VirtualizationInterfacesUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization interfaces update default response
+func (o *VirtualizationInterfacesUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationInterfacesUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualization_interfaces_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *VirtualizationInterfacesUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationInterfacesUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 
