@@ -45,7 +45,14 @@ func (o *DcimDeviceTypesCreateReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimDeviceTypesCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimDeviceTypesCreateCreated) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimDeviceTypesCreateDefault creates a DcimDeviceTypesCreateDefault with default headers values
+func NewDcimDeviceTypesCreateDefault(code int) *DcimDeviceTypesCreateDefault {
+	return &DcimDeviceTypesCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimDeviceTypesCreateDefault describes a response with status code -1, with default header values.
+
+DcimDeviceTypesCreateDefault dcim device types create default
+*/
+type DcimDeviceTypesCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim device types create default response
+func (o *DcimDeviceTypesCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimDeviceTypesCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /dcim/device-types/][%d] dcim_device-types_create default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimDeviceTypesCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimDeviceTypesCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

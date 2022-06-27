@@ -93,7 +93,7 @@ type WritableLocation struct {
 	Slug *string `json:"slug"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`

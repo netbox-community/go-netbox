@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *IpamFhrpGroupsBulkDeleteReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamFhrpGroupsBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *IpamFhrpGroupsBulkDeleteNoContent) Error() string {
 }
 
 func (o *IpamFhrpGroupsBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewIpamFhrpGroupsBulkDeleteDefault creates a IpamFhrpGroupsBulkDeleteDefault with default headers values
+func NewIpamFhrpGroupsBulkDeleteDefault(code int) *IpamFhrpGroupsBulkDeleteDefault {
+	return &IpamFhrpGroupsBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamFhrpGroupsBulkDeleteDefault describes a response with status code -1, with default header values.
+
+IpamFhrpGroupsBulkDeleteDefault ipam fhrp groups bulk delete default
+*/
+type IpamFhrpGroupsBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam fhrp groups bulk delete default response
+func (o *IpamFhrpGroupsBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamFhrpGroupsBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/fhrp-groups/][%d] ipam_fhrp-groups_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamFhrpGroupsBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamFhrpGroupsBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

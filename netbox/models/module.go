@@ -82,7 +82,7 @@ type Module struct {
 	Serial string `json:"serial,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true

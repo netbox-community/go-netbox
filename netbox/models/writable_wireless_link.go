@@ -90,7 +90,7 @@ type WritableWirelessLink struct {
 	Status string `json:"status,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true

@@ -45,7 +45,14 @@ func (o *DcimDeviceBaysBulkPartialUpdateReader) ReadResponse(response runtime.Cl
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimDeviceBaysBulkPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimDeviceBaysBulkPartialUpdateOK) readResponse(response runtime.Client
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimDeviceBaysBulkPartialUpdateDefault creates a DcimDeviceBaysBulkPartialUpdateDefault with default headers values
+func NewDcimDeviceBaysBulkPartialUpdateDefault(code int) *DcimDeviceBaysBulkPartialUpdateDefault {
+	return &DcimDeviceBaysBulkPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimDeviceBaysBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+
+DcimDeviceBaysBulkPartialUpdateDefault dcim device bays bulk partial update default
+*/
+type DcimDeviceBaysBulkPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim device bays bulk partial update default response
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/device-bays/][%d] dcim_device-bays_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

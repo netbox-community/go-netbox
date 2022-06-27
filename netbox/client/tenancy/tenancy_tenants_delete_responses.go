@@ -22,6 +22,7 @@ package tenancy
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *TenancyTenantsDeleteReader) ReadResponse(response runtime.ClientRespons
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewTenancyTenantsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *TenancyTenantsDeleteNoContent) Error() string {
 }
 
 func (o *TenancyTenantsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewTenancyTenantsDeleteDefault creates a TenancyTenantsDeleteDefault with default headers values
+func NewTenancyTenantsDeleteDefault(code int) *TenancyTenantsDeleteDefault {
+	return &TenancyTenantsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* TenancyTenantsDeleteDefault describes a response with status code -1, with default header values.
+
+TenancyTenantsDeleteDefault tenancy tenants delete default
+*/
+type TenancyTenantsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the tenancy tenants delete default response
+func (o *TenancyTenantsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *TenancyTenantsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /tenancy/tenants/{id}/][%d] tenancy_tenants_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *TenancyTenantsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *TenancyTenantsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

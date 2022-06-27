@@ -45,7 +45,14 @@ func (o *DcimFrontPortsPathsReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimFrontPortsPathsDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimFrontPortsPathsOK) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimFrontPortsPathsDefault creates a DcimFrontPortsPathsDefault with default headers values
+func NewDcimFrontPortsPathsDefault(code int) *DcimFrontPortsPathsDefault {
+	return &DcimFrontPortsPathsDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimFrontPortsPathsDefault describes a response with status code -1, with default header values.
+
+DcimFrontPortsPathsDefault dcim front ports paths default
+*/
+type DcimFrontPortsPathsDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim front ports paths default response
+func (o *DcimFrontPortsPathsDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimFrontPortsPathsDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/front-ports/{id}/paths/][%d] dcim_front-ports_paths default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimFrontPortsPathsDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimFrontPortsPathsDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

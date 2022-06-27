@@ -45,7 +45,14 @@ func (o *DcimFrontPortTemplatesBulkPartialUpdateReader) ReadResponse(response ru
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimFrontPortTemplatesBulkPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimFrontPortTemplatesBulkPartialUpdateOK) readResponse(response runtim
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimFrontPortTemplatesBulkPartialUpdateDefault creates a DcimFrontPortTemplatesBulkPartialUpdateDefault with default headers values
+func NewDcimFrontPortTemplatesBulkPartialUpdateDefault(code int) *DcimFrontPortTemplatesBulkPartialUpdateDefault {
+	return &DcimFrontPortTemplatesBulkPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimFrontPortTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+
+DcimFrontPortTemplatesBulkPartialUpdateDefault dcim front port templates bulk partial update default
+*/
+type DcimFrontPortTemplatesBulkPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim front port templates bulk partial update default response
+func (o *DcimFrontPortTemplatesBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimFrontPortTemplatesBulkPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/front-port-templates/][%d] dcim_front-port-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimFrontPortTemplatesBulkPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimFrontPortTemplatesBulkPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

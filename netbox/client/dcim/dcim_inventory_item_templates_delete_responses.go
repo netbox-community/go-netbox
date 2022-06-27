@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimInventoryItemTemplatesDeleteReader) ReadResponse(response runtime.C
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimInventoryItemTemplatesDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimInventoryItemTemplatesDeleteNoContent) Error() string {
 }
 
 func (o *DcimInventoryItemTemplatesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimInventoryItemTemplatesDeleteDefault creates a DcimInventoryItemTemplatesDeleteDefault with default headers values
+func NewDcimInventoryItemTemplatesDeleteDefault(code int) *DcimInventoryItemTemplatesDeleteDefault {
+	return &DcimInventoryItemTemplatesDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimInventoryItemTemplatesDeleteDefault describes a response with status code -1, with default header values.
+
+DcimInventoryItemTemplatesDeleteDefault dcim inventory item templates delete default
+*/
+type DcimInventoryItemTemplatesDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim inventory item templates delete default response
+func (o *DcimInventoryItemTemplatesDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimInventoryItemTemplatesDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/{id}/][%d] dcim_inventory-item-templates_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimInventoryItemTemplatesDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimInventoryItemTemplatesDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

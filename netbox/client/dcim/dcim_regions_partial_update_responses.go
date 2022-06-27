@@ -45,7 +45,14 @@ func (o *DcimRegionsPartialUpdateReader) ReadResponse(response runtime.ClientRes
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimRegionsPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimRegionsPartialUpdateOK) readResponse(response runtime.ClientRespons
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRegionsPartialUpdateDefault creates a DcimRegionsPartialUpdateDefault with default headers values
+func NewDcimRegionsPartialUpdateDefault(code int) *DcimRegionsPartialUpdateDefault {
+	return &DcimRegionsPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimRegionsPartialUpdateDefault describes a response with status code -1, with default header values.
+
+DcimRegionsPartialUpdateDefault dcim regions partial update default
+*/
+type DcimRegionsPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim regions partial update default response
+func (o *DcimRegionsPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRegionsPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/regions/{id}/][%d] dcim_regions_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimRegionsPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRegionsPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

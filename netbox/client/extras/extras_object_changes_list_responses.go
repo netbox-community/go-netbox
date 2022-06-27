@@ -50,7 +50,14 @@ func (o *ExtrasObjectChangesListReader) ReadResponse(response runtime.ClientResp
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasObjectChangesListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *ExtrasObjectChangesListOK) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasObjectChangesListDefault creates a ExtrasObjectChangesListDefault with default headers values
+func NewExtrasObjectChangesListDefault(code int) *ExtrasObjectChangesListDefault {
+	return &ExtrasObjectChangesListDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasObjectChangesListDefault describes a response with status code -1, with default header values.
+
+ExtrasObjectChangesListDefault extras object changes list default
+*/
+type ExtrasObjectChangesListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras object changes list default response
+func (o *ExtrasObjectChangesListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasObjectChangesListDefault) Error() string {
+	return fmt.Sprintf("[GET /extras/object-changes/][%d] extras_object-changes_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasObjectChangesListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasObjectChangesListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

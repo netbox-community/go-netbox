@@ -50,7 +50,14 @@ func (o *CircuitsProviderNetworksListReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewCircuitsProviderNetworksListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *CircuitsProviderNetworksListOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCircuitsProviderNetworksListDefault creates a CircuitsProviderNetworksListDefault with default headers values
+func NewCircuitsProviderNetworksListDefault(code int) *CircuitsProviderNetworksListDefault {
+	return &CircuitsProviderNetworksListDefault{
+		_statusCode: code,
+	}
+}
+
+/* CircuitsProviderNetworksListDefault describes a response with status code -1, with default header values.
+
+CircuitsProviderNetworksListDefault circuits provider networks list default
+*/
+type CircuitsProviderNetworksListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits provider networks list default response
+func (o *CircuitsProviderNetworksListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsProviderNetworksListDefault) Error() string {
+	return fmt.Sprintf("[GET /circuits/provider-networks/][%d] circuits_provider-networks_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *CircuitsProviderNetworksListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsProviderNetworksListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

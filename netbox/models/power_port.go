@@ -135,7 +135,7 @@ type PowerPort struct {
 	Name *string `json:"name"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// type
 	Type *PowerPortType `json:"type,omitempty"`

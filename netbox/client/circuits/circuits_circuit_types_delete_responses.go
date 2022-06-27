@@ -22,6 +22,7 @@ package circuits
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *CircuitsCircuitTypesDeleteReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewCircuitsCircuitTypesDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *CircuitsCircuitTypesDeleteNoContent) Error() string {
 }
 
 func (o *CircuitsCircuitTypesDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewCircuitsCircuitTypesDeleteDefault creates a CircuitsCircuitTypesDeleteDefault with default headers values
+func NewCircuitsCircuitTypesDeleteDefault(code int) *CircuitsCircuitTypesDeleteDefault {
+	return &CircuitsCircuitTypesDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* CircuitsCircuitTypesDeleteDefault describes a response with status code -1, with default header values.
+
+CircuitsCircuitTypesDeleteDefault circuits circuit types delete default
+*/
+type CircuitsCircuitTypesDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits circuit types delete default response
+func (o *CircuitsCircuitTypesDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsCircuitTypesDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /circuits/circuit-types/{id}/][%d] circuits_circuit-types_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *CircuitsCircuitTypesDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsCircuitTypesDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

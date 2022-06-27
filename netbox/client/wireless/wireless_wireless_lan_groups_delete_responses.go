@@ -22,6 +22,7 @@ package wireless
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *WirelessWirelessLanGroupsDeleteReader) ReadResponse(response runtime.Cl
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewWirelessWirelessLanGroupsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *WirelessWirelessLanGroupsDeleteNoContent) Error() string {
 }
 
 func (o *WirelessWirelessLanGroupsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewWirelessWirelessLanGroupsDeleteDefault creates a WirelessWirelessLanGroupsDeleteDefault with default headers values
+func NewWirelessWirelessLanGroupsDeleteDefault(code int) *WirelessWirelessLanGroupsDeleteDefault {
+	return &WirelessWirelessLanGroupsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* WirelessWirelessLanGroupsDeleteDefault describes a response with status code -1, with default header values.
+
+WirelessWirelessLanGroupsDeleteDefault wireless wireless lan groups delete default
+*/
+type WirelessWirelessLanGroupsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the wireless wireless lan groups delete default response
+func (o *WirelessWirelessLanGroupsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *WirelessWirelessLanGroupsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *WirelessWirelessLanGroupsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *WirelessWirelessLanGroupsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

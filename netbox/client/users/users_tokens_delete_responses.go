@@ -22,6 +22,7 @@ package users
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *UsersTokensDeleteReader) ReadResponse(response runtime.ClientResponse, 
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewUsersTokensDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *UsersTokensDeleteNoContent) Error() string {
 }
 
 func (o *UsersTokensDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewUsersTokensDeleteDefault creates a UsersTokensDeleteDefault with default headers values
+func NewUsersTokensDeleteDefault(code int) *UsersTokensDeleteDefault {
+	return &UsersTokensDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* UsersTokensDeleteDefault describes a response with status code -1, with default header values.
+
+UsersTokensDeleteDefault users tokens delete default
+*/
+type UsersTokensDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the users tokens delete default response
+func (o *UsersTokensDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *UsersTokensDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /users/tokens/{id}/][%d] users_tokens_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *UsersTokensDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *UsersTokensDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

@@ -22,7 +22,6 @@ package models
 
 import (
 	"context"
-	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -80,7 +79,7 @@ type ImageAttachment struct {
 
 	// Object id
 	// Required: true
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	ObjectID *int64 `json:"object_id"`
 
@@ -241,7 +240,7 @@ func (m *ImageAttachment) validateObjectID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("object_id", "body", *m.ObjectID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("object_id", "body", *m.ObjectID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 

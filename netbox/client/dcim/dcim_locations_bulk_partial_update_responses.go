@@ -45,7 +45,14 @@ func (o *DcimLocationsBulkPartialUpdateReader) ReadResponse(response runtime.Cli
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimLocationsBulkPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimLocationsBulkPartialUpdateOK) readResponse(response runtime.ClientR
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimLocationsBulkPartialUpdateDefault creates a DcimLocationsBulkPartialUpdateDefault with default headers values
+func NewDcimLocationsBulkPartialUpdateDefault(code int) *DcimLocationsBulkPartialUpdateDefault {
+	return &DcimLocationsBulkPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimLocationsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+
+DcimLocationsBulkPartialUpdateDefault dcim locations bulk partial update default
+*/
+type DcimLocationsBulkPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim locations bulk partial update default response
+func (o *DcimLocationsBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimLocationsBulkPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/locations/][%d] dcim_locations_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimLocationsBulkPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimLocationsBulkPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

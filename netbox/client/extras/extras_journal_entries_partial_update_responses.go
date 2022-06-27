@@ -45,7 +45,14 @@ func (o *ExtrasJournalEntriesPartialUpdateReader) ReadResponse(response runtime.
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasJournalEntriesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *ExtrasJournalEntriesPartialUpdateOK) readResponse(response runtime.Clie
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewExtrasJournalEntriesPartialUpdateDefault creates a ExtrasJournalEntriesPartialUpdateDefault with default headers values
+func NewExtrasJournalEntriesPartialUpdateDefault(code int) *ExtrasJournalEntriesPartialUpdateDefault {
+	return &ExtrasJournalEntriesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasJournalEntriesPartialUpdateDefault describes a response with status code -1, with default header values.
+
+ExtrasJournalEntriesPartialUpdateDefault extras journal entries partial update default
+*/
+type ExtrasJournalEntriesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras journal entries partial update default response
+func (o *ExtrasJournalEntriesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasJournalEntriesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extras_journal-entries_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasJournalEntriesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasJournalEntriesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

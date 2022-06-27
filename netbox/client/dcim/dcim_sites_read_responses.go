@@ -45,7 +45,14 @@ func (o *DcimSitesReadReader) ReadResponse(response runtime.ClientResponse, cons
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimSitesReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimSitesReadOK) readResponse(response runtime.ClientResponse, consumer
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimSitesReadDefault creates a DcimSitesReadDefault with default headers values
+func NewDcimSitesReadDefault(code int) *DcimSitesReadDefault {
+	return &DcimSitesReadDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimSitesReadDefault describes a response with status code -1, with default header values.
+
+DcimSitesReadDefault dcim sites read default
+*/
+type DcimSitesReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim sites read default response
+func (o *DcimSitesReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimSitesReadDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/sites/{id}/][%d] dcim_sites_read default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimSitesReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimSitesReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

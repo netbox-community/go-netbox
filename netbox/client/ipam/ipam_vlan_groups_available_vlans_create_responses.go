@@ -45,7 +45,14 @@ func (o *IpamVlanGroupsAvailableVlansCreateReader) ReadResponse(response runtime
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamVlanGroupsAvailableVlansCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -70,6 +77,45 @@ func (o *IpamVlanGroupsAvailableVlansCreateCreated) GetPayload() []*models.VLAN 
 }
 
 func (o *IpamVlanGroupsAvailableVlansCreateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamVlanGroupsAvailableVlansCreateDefault creates a IpamVlanGroupsAvailableVlansCreateDefault with default headers values
+func NewIpamVlanGroupsAvailableVlansCreateDefault(code int) *IpamVlanGroupsAvailableVlansCreateDefault {
+	return &IpamVlanGroupsAvailableVlansCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamVlanGroupsAvailableVlansCreateDefault describes a response with status code -1, with default header values.
+
+IpamVlanGroupsAvailableVlansCreateDefault ipam vlan groups available vlans create default
+*/
+type IpamVlanGroupsAvailableVlansCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam vlan groups available vlans create default response
+func (o *IpamVlanGroupsAvailableVlansCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamVlanGroupsAvailableVlansCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /ipam/vlan-groups/{id}/available-vlans/][%d] ipam_vlan-groups_available-vlans_create default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamVlanGroupsAvailableVlansCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamVlanGroupsAvailableVlansCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {

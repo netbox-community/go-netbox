@@ -45,7 +45,14 @@ func (o *DcimRearPortTemplatesBulkPartialUpdateReader) ReadResponse(response run
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimRearPortTemplatesBulkPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimRearPortTemplatesBulkPartialUpdateOK) readResponse(response runtime
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimRearPortTemplatesBulkPartialUpdateDefault creates a DcimRearPortTemplatesBulkPartialUpdateDefault with default headers values
+func NewDcimRearPortTemplatesBulkPartialUpdateDefault(code int) *DcimRearPortTemplatesBulkPartialUpdateDefault {
+	return &DcimRearPortTemplatesBulkPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimRearPortTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+
+DcimRearPortTemplatesBulkPartialUpdateDefault dcim rear port templates bulk partial update default
+*/
+type DcimRearPortTemplatesBulkPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim rear port templates bulk partial update default response
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/][%d] dcim_rear-port-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

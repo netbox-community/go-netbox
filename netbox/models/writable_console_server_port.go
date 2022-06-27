@@ -127,7 +127,7 @@ type WritableConsoleServerPort struct {
 	Speed *int64 `json:"speed,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Type
 	//

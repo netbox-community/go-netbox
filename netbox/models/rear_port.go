@@ -115,7 +115,7 @@ type RearPort struct {
 	Positions int64 `json:"positions,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// type
 	// Required: true

@@ -22,6 +22,7 @@ package ipam
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *IpamVlansBulkDeleteReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamVlansBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *IpamVlansBulkDeleteNoContent) Error() string {
 }
 
 func (o *IpamVlansBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewIpamVlansBulkDeleteDefault creates a IpamVlansBulkDeleteDefault with default headers values
+func NewIpamVlansBulkDeleteDefault(code int) *IpamVlansBulkDeleteDefault {
+	return &IpamVlansBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamVlansBulkDeleteDefault describes a response with status code -1, with default header values.
+
+IpamVlansBulkDeleteDefault ipam vlans bulk delete default
+*/
+type IpamVlansBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam vlans bulk delete default response
+func (o *IpamVlansBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamVlansBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/vlans/][%d] ipam_vlans_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamVlansBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamVlansBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

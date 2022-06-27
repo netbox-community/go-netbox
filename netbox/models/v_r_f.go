@@ -94,7 +94,7 @@ type VRF struct {
 	Rd *string `json:"rd,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`

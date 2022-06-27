@@ -51,7 +51,7 @@ type Provider struct {
 
 	// asns
 	// Unique: true
-	Asns []*NestedASN `json:"asns"`
+	Asns []*NestedASN `json:"asns,omitempty"`
 
 	// Circuit count
 	// Read Only: true
@@ -103,7 +103,7 @@ type Provider struct {
 	Slug *string `json:"slug"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true

@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimLocationsDeleteReader) ReadResponse(response runtime.ClientResponse
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimLocationsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimLocationsDeleteNoContent) Error() string {
 }
 
 func (o *DcimLocationsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimLocationsDeleteDefault creates a DcimLocationsDeleteDefault with default headers values
+func NewDcimLocationsDeleteDefault(code int) *DcimLocationsDeleteDefault {
+	return &DcimLocationsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimLocationsDeleteDefault describes a response with status code -1, with default header values.
+
+DcimLocationsDeleteDefault dcim locations delete default
+*/
+type DcimLocationsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim locations delete default response
+func (o *DcimLocationsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimLocationsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/locations/{id}/][%d] dcim_locations_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimLocationsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimLocationsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

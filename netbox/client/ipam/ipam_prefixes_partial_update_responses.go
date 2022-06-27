@@ -45,7 +45,14 @@ func (o *IpamPrefixesPartialUpdateReader) ReadResponse(response runtime.ClientRe
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamPrefixesPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *IpamPrefixesPartialUpdateOK) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamPrefixesPartialUpdateDefault creates a IpamPrefixesPartialUpdateDefault with default headers values
+func NewIpamPrefixesPartialUpdateDefault(code int) *IpamPrefixesPartialUpdateDefault {
+	return &IpamPrefixesPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamPrefixesPartialUpdateDefault describes a response with status code -1, with default header values.
+
+IpamPrefixesPartialUpdateDefault ipam prefixes partial update default
+*/
+type IpamPrefixesPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam prefixes partial update default response
+func (o *IpamPrefixesPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamPrefixesPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /ipam/prefixes/{id}/][%d] ipam_prefixes_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamPrefixesPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamPrefixesPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

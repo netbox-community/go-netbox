@@ -50,7 +50,14 @@ func (o *IpamFhrpGroupAssignmentsListReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamFhrpGroupAssignmentsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *IpamFhrpGroupAssignmentsListOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamFhrpGroupAssignmentsListDefault creates a IpamFhrpGroupAssignmentsListDefault with default headers values
+func NewIpamFhrpGroupAssignmentsListDefault(code int) *IpamFhrpGroupAssignmentsListDefault {
+	return &IpamFhrpGroupAssignmentsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamFhrpGroupAssignmentsListDefault describes a response with status code -1, with default header values.
+
+IpamFhrpGroupAssignmentsListDefault ipam fhrp group assignments list default
+*/
+type IpamFhrpGroupAssignmentsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam fhrp group assignments list default response
+func (o *IpamFhrpGroupAssignmentsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamFhrpGroupAssignmentsListDefault) Error() string {
+	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/][%d] ipam_fhrp-group-assignments_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamFhrpGroupAssignmentsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamFhrpGroupAssignmentsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

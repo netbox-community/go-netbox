@@ -50,7 +50,14 @@ func (o *TenancyTenantGroupsListReader) ReadResponse(response runtime.ClientResp
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewTenancyTenantGroupsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *TenancyTenantGroupsListOK) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTenancyTenantGroupsListDefault creates a TenancyTenantGroupsListDefault with default headers values
+func NewTenancyTenantGroupsListDefault(code int) *TenancyTenantGroupsListDefault {
+	return &TenancyTenantGroupsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* TenancyTenantGroupsListDefault describes a response with status code -1, with default header values.
+
+TenancyTenantGroupsListDefault tenancy tenant groups list default
+*/
+type TenancyTenantGroupsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the tenancy tenant groups list default response
+func (o *TenancyTenantGroupsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *TenancyTenantGroupsListDefault) Error() string {
+	return fmt.Sprintf("[GET /tenancy/tenant-groups/][%d] tenancy_tenant-groups_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *TenancyTenantGroupsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *TenancyTenantGroupsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

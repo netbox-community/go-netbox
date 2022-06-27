@@ -138,7 +138,7 @@ type WritablePowerFeed struct {
 	Supply string `json:"supply,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Type
 	// Enum: [primary redundant]

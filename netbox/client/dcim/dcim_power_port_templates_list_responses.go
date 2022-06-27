@@ -50,7 +50,14 @@ func (o *DcimPowerPortTemplatesListReader) ReadResponse(response runtime.ClientR
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerPortTemplatesListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *DcimPowerPortTemplatesListOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerPortTemplatesListDefault creates a DcimPowerPortTemplatesListDefault with default headers values
+func NewDcimPowerPortTemplatesListDefault(code int) *DcimPowerPortTemplatesListDefault {
+	return &DcimPowerPortTemplatesListDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerPortTemplatesListDefault describes a response with status code -1, with default header values.
+
+DcimPowerPortTemplatesListDefault dcim power port templates list default
+*/
+type DcimPowerPortTemplatesListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power port templates list default response
+func (o *DcimPowerPortTemplatesListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerPortTemplatesListDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/power-port-templates/][%d] dcim_power-port-templates_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerPortTemplatesListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerPortTemplatesListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

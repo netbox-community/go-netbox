@@ -185,7 +185,7 @@ type WritableInterface struct {
 	TaggedVlans []int64 `json:"tagged_vlans"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Transmit power (dBm)
 	// Maximum: 127

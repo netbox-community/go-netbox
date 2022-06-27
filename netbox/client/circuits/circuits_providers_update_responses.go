@@ -45,7 +45,14 @@ func (o *CircuitsProvidersUpdateReader) ReadResponse(response runtime.ClientResp
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewCircuitsProvidersUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *CircuitsProvidersUpdateOK) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCircuitsProvidersUpdateDefault creates a CircuitsProvidersUpdateDefault with default headers values
+func NewCircuitsProvidersUpdateDefault(code int) *CircuitsProvidersUpdateDefault {
+	return &CircuitsProvidersUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* CircuitsProvidersUpdateDefault describes a response with status code -1, with default header values.
+
+CircuitsProvidersUpdateDefault circuits providers update default
+*/
+type CircuitsProvidersUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits providers update default response
+func (o *CircuitsProvidersUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsProvidersUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /circuits/providers/{id}/][%d] circuits_providers_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *CircuitsProvidersUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsProvidersUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

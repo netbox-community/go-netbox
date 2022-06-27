@@ -67,7 +67,7 @@ type RackReservation struct {
 	Rack *NestedRack `json:"rack"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`

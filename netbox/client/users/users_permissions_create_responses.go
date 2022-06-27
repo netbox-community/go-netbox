@@ -45,7 +45,14 @@ func (o *UsersPermissionsCreateReader) ReadResponse(response runtime.ClientRespo
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewUsersPermissionsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *UsersPermissionsCreateCreated) readResponse(response runtime.ClientResp
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewUsersPermissionsCreateDefault creates a UsersPermissionsCreateDefault with default headers values
+func NewUsersPermissionsCreateDefault(code int) *UsersPermissionsCreateDefault {
+	return &UsersPermissionsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/* UsersPermissionsCreateDefault describes a response with status code -1, with default header values.
+
+UsersPermissionsCreateDefault users permissions create default
+*/
+type UsersPermissionsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the users permissions create default response
+func (o *UsersPermissionsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *UsersPermissionsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /users/permissions/][%d] users_permissions_create default  %+v", o._statusCode, o.Payload)
+}
+func (o *UsersPermissionsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *UsersPermissionsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

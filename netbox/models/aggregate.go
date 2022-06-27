@@ -77,7 +77,7 @@ type Aggregate struct {
 	Rir *NestedRIR `json:"rir"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// tenant
 	Tenant *NestedTenant `json:"tenant,omitempty"`

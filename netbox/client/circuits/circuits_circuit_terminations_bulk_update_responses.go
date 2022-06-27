@@ -45,7 +45,14 @@ func (o *CircuitsCircuitTerminationsBulkUpdateReader) ReadResponse(response runt
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewCircuitsCircuitTerminationsBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *CircuitsCircuitTerminationsBulkUpdateOK) readResponse(response runtime.
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCircuitsCircuitTerminationsBulkUpdateDefault creates a CircuitsCircuitTerminationsBulkUpdateDefault with default headers values
+func NewCircuitsCircuitTerminationsBulkUpdateDefault(code int) *CircuitsCircuitTerminationsBulkUpdateDefault {
+	return &CircuitsCircuitTerminationsBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* CircuitsCircuitTerminationsBulkUpdateDefault describes a response with status code -1, with default header values.
+
+CircuitsCircuitTerminationsBulkUpdateDefault circuits circuit terminations bulk update default
+*/
+type CircuitsCircuitTerminationsBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits circuit terminations bulk update default response
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /circuits/circuit-terminations/][%d] circuits_circuit-terminations_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

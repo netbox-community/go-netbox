@@ -22,6 +22,7 @@ package extras
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *ExtrasImageAttachmentsDeleteReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewExtrasImageAttachmentsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *ExtrasImageAttachmentsDeleteNoContent) Error() string {
 }
 
 func (o *ExtrasImageAttachmentsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewExtrasImageAttachmentsDeleteDefault creates a ExtrasImageAttachmentsDeleteDefault with default headers values
+func NewExtrasImageAttachmentsDeleteDefault(code int) *ExtrasImageAttachmentsDeleteDefault {
+	return &ExtrasImageAttachmentsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* ExtrasImageAttachmentsDeleteDefault describes a response with status code -1, with default header values.
+
+ExtrasImageAttachmentsDeleteDefault extras image attachments delete default
+*/
+type ExtrasImageAttachmentsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the extras image attachments delete default response
+func (o *ExtrasImageAttachmentsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *ExtrasImageAttachmentsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /extras/image-attachments/{id}/][%d] extras_image-attachments_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *ExtrasImageAttachmentsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *ExtrasImageAttachmentsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

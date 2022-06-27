@@ -50,7 +50,14 @@ func (o *TenancyContactAssignmentsListReader) ReadResponse(response runtime.Clie
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewTenancyContactAssignmentsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *TenancyContactAssignmentsListOK) readResponse(response runtime.ClientRe
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTenancyContactAssignmentsListDefault creates a TenancyContactAssignmentsListDefault with default headers values
+func NewTenancyContactAssignmentsListDefault(code int) *TenancyContactAssignmentsListDefault {
+	return &TenancyContactAssignmentsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* TenancyContactAssignmentsListDefault describes a response with status code -1, with default header values.
+
+TenancyContactAssignmentsListDefault tenancy contact assignments list default
+*/
+type TenancyContactAssignmentsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the tenancy contact assignments list default response
+func (o *TenancyContactAssignmentsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *TenancyContactAssignmentsListDefault) Error() string {
+	return fmt.Sprintf("[GET /tenancy/contact-assignments/][%d] tenancy_contact-assignments_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *TenancyContactAssignmentsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *TenancyContactAssignmentsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

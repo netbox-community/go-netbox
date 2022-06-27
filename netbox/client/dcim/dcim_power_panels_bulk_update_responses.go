@@ -45,7 +45,14 @@ func (o *DcimPowerPanelsBulkUpdateReader) ReadResponse(response runtime.ClientRe
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerPanelsBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimPowerPanelsBulkUpdateOK) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerPanelsBulkUpdateDefault creates a DcimPowerPanelsBulkUpdateDefault with default headers values
+func NewDcimPowerPanelsBulkUpdateDefault(code int) *DcimPowerPanelsBulkUpdateDefault {
+	return &DcimPowerPanelsBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerPanelsBulkUpdateDefault describes a response with status code -1, with default header values.
+
+DcimPowerPanelsBulkUpdateDefault dcim power panels bulk update default
+*/
+type DcimPowerPanelsBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power panels bulk update default response
+func (o *DcimPowerPanelsBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerPanelsBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/power-panels/][%d] dcim_power-panels_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerPanelsBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerPanelsBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -45,7 +45,14 @@ func (o *UsersUsersBulkPartialUpdateReader) ReadResponse(response runtime.Client
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewUsersUsersBulkPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *UsersUsersBulkPartialUpdateOK) readResponse(response runtime.ClientResp
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewUsersUsersBulkPartialUpdateDefault creates a UsersUsersBulkPartialUpdateDefault with default headers values
+func NewUsersUsersBulkPartialUpdateDefault(code int) *UsersUsersBulkPartialUpdateDefault {
+	return &UsersUsersBulkPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* UsersUsersBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+
+UsersUsersBulkPartialUpdateDefault users users bulk partial update default
+*/
+type UsersUsersBulkPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the users users bulk partial update default response
+func (o *UsersUsersBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *UsersUsersBulkPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /users/users/][%d] users_users_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *UsersUsersBulkPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *UsersUsersBulkPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

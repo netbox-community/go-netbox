@@ -22,6 +22,7 @@ package dcim
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *DcimInventoryItemRolesBulkDeleteReader) ReadResponse(response runtime.C
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimInventoryItemRolesBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *DcimInventoryItemRolesBulkDeleteNoContent) Error() string {
 }
 
 func (o *DcimInventoryItemRolesBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewDcimInventoryItemRolesBulkDeleteDefault creates a DcimInventoryItemRolesBulkDeleteDefault with default headers values
+func NewDcimInventoryItemRolesBulkDeleteDefault(code int) *DcimInventoryItemRolesBulkDeleteDefault {
+	return &DcimInventoryItemRolesBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimInventoryItemRolesBulkDeleteDefault describes a response with status code -1, with default header values.
+
+DcimInventoryItemRolesBulkDeleteDefault dcim inventory item roles bulk delete default
+*/
+type DcimInventoryItemRolesBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim inventory item roles bulk delete default response
+func (o *DcimInventoryItemRolesBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimInventoryItemRolesBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimInventoryItemRolesBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimInventoryItemRolesBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

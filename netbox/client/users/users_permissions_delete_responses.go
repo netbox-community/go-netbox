@@ -22,6 +22,7 @@ package users
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *UsersPermissionsDeleteReader) ReadResponse(response runtime.ClientRespo
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewUsersPermissionsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *UsersPermissionsDeleteNoContent) Error() string {
 }
 
 func (o *UsersPermissionsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewUsersPermissionsDeleteDefault creates a UsersPermissionsDeleteDefault with default headers values
+func NewUsersPermissionsDeleteDefault(code int) *UsersPermissionsDeleteDefault {
+	return &UsersPermissionsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* UsersPermissionsDeleteDefault describes a response with status code -1, with default header values.
+
+UsersPermissionsDeleteDefault users permissions delete default
+*/
+type UsersPermissionsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the users permissions delete default response
+func (o *UsersPermissionsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *UsersPermissionsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /users/permissions/{id}/][%d] users_permissions_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *UsersPermissionsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *UsersPermissionsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

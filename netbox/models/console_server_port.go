@@ -124,7 +124,7 @@ type ConsoleServerPort struct {
 	Speed *ConsoleServerPortSpeed `json:"speed,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// type
 	Type *ConsoleServerPortType `json:"type,omitempty"`

@@ -127,7 +127,7 @@ type PowerOutlet struct {
 	PowerPort *NestedPowerPort `json:"power_port,omitempty"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// type
 	Type *PowerOutletType `json:"type,omitempty"`

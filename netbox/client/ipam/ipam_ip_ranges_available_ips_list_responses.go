@@ -45,7 +45,14 @@ func (o *IpamIPRangesAvailableIpsListReader) ReadResponse(response runtime.Clien
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamIPRangesAvailableIpsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -70,6 +77,45 @@ func (o *IpamIPRangesAvailableIpsListOK) GetPayload() []*models.AvailableIP {
 }
 
 func (o *IpamIPRangesAvailableIpsListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamIPRangesAvailableIpsListDefault creates a IpamIPRangesAvailableIpsListDefault with default headers values
+func NewIpamIPRangesAvailableIpsListDefault(code int) *IpamIPRangesAvailableIpsListDefault {
+	return &IpamIPRangesAvailableIpsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamIPRangesAvailableIpsListDefault describes a response with status code -1, with default header values.
+
+IpamIPRangesAvailableIpsListDefault ipam ip ranges available ips list default
+*/
+type IpamIPRangesAvailableIpsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam ip ranges available ips list default response
+func (o *IpamIPRangesAvailableIpsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamIPRangesAvailableIpsListDefault) Error() string {
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipam_ip-ranges_available-ips_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamIPRangesAvailableIpsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamIPRangesAvailableIpsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {

@@ -22,7 +22,6 @@ package models
 
 import (
 	"context"
-	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -44,7 +43,7 @@ type InventoryItemTemplate struct {
 	Component map[string]*string `json:"component,omitempty"`
 
 	// Component id
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	ComponentID *int64 `json:"component_id,omitempty"`
 
@@ -173,7 +172,7 @@ func (m *InventoryItemTemplate) validateComponentID(formats strfmt.Registry) err
 		return err
 	}
 
-	if err := validate.MaximumInt("component_id", "body", *m.ComponentID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("component_id", "body", *m.ComponentID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 

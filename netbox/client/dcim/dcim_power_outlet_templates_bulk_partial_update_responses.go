@@ -45,7 +45,14 @@ func (o *DcimPowerOutletTemplatesBulkPartialUpdateReader) ReadResponse(response 
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerOutletTemplatesBulkPartialUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimPowerOutletTemplatesBulkPartialUpdateOK) readResponse(response runt
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerOutletTemplatesBulkPartialUpdateDefault creates a DcimPowerOutletTemplatesBulkPartialUpdateDefault with default headers values
+func NewDcimPowerOutletTemplatesBulkPartialUpdateDefault(code int) *DcimPowerOutletTemplatesBulkPartialUpdateDefault {
+	return &DcimPowerOutletTemplatesBulkPartialUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerOutletTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+
+DcimPowerOutletTemplatesBulkPartialUpdateDefault dcim power outlet templates bulk partial update default
+*/
+type DcimPowerOutletTemplatesBulkPartialUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power outlet templates bulk partial update default response
+func (o *DcimPowerOutletTemplatesBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerOutletTemplatesBulkPartialUpdateDefault) Error() string {
+	return fmt.Sprintf("[PATCH /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerOutletTemplatesBulkPartialUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerOutletTemplatesBulkPartialUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

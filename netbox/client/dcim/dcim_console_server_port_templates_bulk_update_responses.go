@@ -45,7 +45,14 @@ func (o *DcimConsoleServerPortTemplatesBulkUpdateReader) ReadResponse(response r
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimConsoleServerPortTemplatesBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimConsoleServerPortTemplatesBulkUpdateOK) readResponse(response runti
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimConsoleServerPortTemplatesBulkUpdateDefault creates a DcimConsoleServerPortTemplatesBulkUpdateDefault with default headers values
+func NewDcimConsoleServerPortTemplatesBulkUpdateDefault(code int) *DcimConsoleServerPortTemplatesBulkUpdateDefault {
+	return &DcimConsoleServerPortTemplatesBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimConsoleServerPortTemplatesBulkUpdateDefault describes a response with status code -1, with default header values.
+
+DcimConsoleServerPortTemplatesBulkUpdateDefault dcim console server port templates bulk update default
+*/
+type DcimConsoleServerPortTemplatesBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim console server port templates bulk update default response
+func (o *DcimConsoleServerPortTemplatesBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimConsoleServerPortTemplatesBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimConsoleServerPortTemplatesBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimConsoleServerPortTemplatesBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

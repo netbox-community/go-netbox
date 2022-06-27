@@ -22,6 +22,7 @@ package virtualization
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *VirtualizationClusterGroupsDeleteReader) ReadResponse(response runtime.
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewVirtualizationClusterGroupsDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *VirtualizationClusterGroupsDeleteNoContent) Error() string {
 }
 
 func (o *VirtualizationClusterGroupsDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewVirtualizationClusterGroupsDeleteDefault creates a VirtualizationClusterGroupsDeleteDefault with default headers values
+func NewVirtualizationClusterGroupsDeleteDefault(code int) *VirtualizationClusterGroupsDeleteDefault {
+	return &VirtualizationClusterGroupsDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* VirtualizationClusterGroupsDeleteDefault describes a response with status code -1, with default header values.
+
+VirtualizationClusterGroupsDeleteDefault virtualization cluster groups delete default
+*/
+type VirtualizationClusterGroupsDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the virtualization cluster groups delete default response
+func (o *VirtualizationClusterGroupsDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *VirtualizationClusterGroupsDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *VirtualizationClusterGroupsDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *VirtualizationClusterGroupsDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

@@ -86,7 +86,7 @@ type WritableContactGroup struct {
 	Slug *string `json:"slug"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Url
 	// Read Only: true

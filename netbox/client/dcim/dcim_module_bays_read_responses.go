@@ -45,7 +45,14 @@ func (o *DcimModuleBaysReadReader) ReadResponse(response runtime.ClientResponse,
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimModuleBaysReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimModuleBaysReadOK) readResponse(response runtime.ClientResponse, con
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimModuleBaysReadDefault creates a DcimModuleBaysReadDefault with default headers values
+func NewDcimModuleBaysReadDefault(code int) *DcimModuleBaysReadDefault {
+	return &DcimModuleBaysReadDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimModuleBaysReadDefault describes a response with status code -1, with default header values.
+
+DcimModuleBaysReadDefault dcim module bays read default
+*/
+type DcimModuleBaysReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim module bays read default response
+func (o *DcimModuleBaysReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimModuleBaysReadDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/module-bays/{id}/][%d] dcim_module-bays_read default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimModuleBaysReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimModuleBaysReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

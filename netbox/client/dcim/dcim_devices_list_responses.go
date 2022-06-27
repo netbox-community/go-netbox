@@ -50,7 +50,14 @@ func (o *DcimDevicesListReader) ReadResponse(response runtime.ClientResponse, co
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimDevicesListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *DcimDevicesListOK) readResponse(response runtime.ClientResponse, consum
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimDevicesListDefault creates a DcimDevicesListDefault with default headers values
+func NewDcimDevicesListDefault(code int) *DcimDevicesListDefault {
+	return &DcimDevicesListDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimDevicesListDefault describes a response with status code -1, with default header values.
+
+DcimDevicesListDefault dcim devices list default
+*/
+type DcimDevicesListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim devices list default response
+func (o *DcimDevicesListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimDevicesListDefault) Error() string {
+	return fmt.Sprintf("[GET /dcim/devices/][%d] dcim_devices_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimDevicesListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimDevicesListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

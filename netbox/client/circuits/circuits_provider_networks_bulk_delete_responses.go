@@ -22,6 +22,7 @@ package circuits
 
 import (
 	"fmt"
+	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -42,7 +43,14 @@ func (o *CircuitsProviderNetworksBulkDeleteReader) ReadResponse(response runtime
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewCircuitsProviderNetworksBulkDeleteDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -63,6 +71,45 @@ func (o *CircuitsProviderNetworksBulkDeleteNoContent) Error() string {
 }
 
 func (o *CircuitsProviderNetworksBulkDeleteNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	return nil
+}
+
+// NewCircuitsProviderNetworksBulkDeleteDefault creates a CircuitsProviderNetworksBulkDeleteDefault with default headers values
+func NewCircuitsProviderNetworksBulkDeleteDefault(code int) *CircuitsProviderNetworksBulkDeleteDefault {
+	return &CircuitsProviderNetworksBulkDeleteDefault{
+		_statusCode: code,
+	}
+}
+
+/* CircuitsProviderNetworksBulkDeleteDefault describes a response with status code -1, with default header values.
+
+CircuitsProviderNetworksBulkDeleteDefault circuits provider networks bulk delete default
+*/
+type CircuitsProviderNetworksBulkDeleteDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits provider networks bulk delete default response
+func (o *CircuitsProviderNetworksBulkDeleteDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsProviderNetworksBulkDeleteDefault) Error() string {
+	return fmt.Sprintf("[DELETE /circuits/provider-networks/][%d] circuits_provider-networks_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+func (o *CircuitsProviderNetworksBulkDeleteDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsProviderNetworksBulkDeleteDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
 
 	return nil
 }

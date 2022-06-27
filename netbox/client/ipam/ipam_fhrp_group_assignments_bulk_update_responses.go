@@ -45,7 +45,14 @@ func (o *IpamFhrpGroupAssignmentsBulkUpdateReader) ReadResponse(response runtime
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamFhrpGroupAssignmentsBulkUpdateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *IpamFhrpGroupAssignmentsBulkUpdateOK) readResponse(response runtime.Cli
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamFhrpGroupAssignmentsBulkUpdateDefault creates a IpamFhrpGroupAssignmentsBulkUpdateDefault with default headers values
+func NewIpamFhrpGroupAssignmentsBulkUpdateDefault(code int) *IpamFhrpGroupAssignmentsBulkUpdateDefault {
+	return &IpamFhrpGroupAssignmentsBulkUpdateDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamFhrpGroupAssignmentsBulkUpdateDefault describes a response with status code -1, with default header values.
+
+IpamFhrpGroupAssignmentsBulkUpdateDefault ipam fhrp group assignments bulk update default
+*/
+type IpamFhrpGroupAssignmentsBulkUpdateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam fhrp group assignments bulk update default response
+func (o *IpamFhrpGroupAssignmentsBulkUpdateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamFhrpGroupAssignmentsBulkUpdateDefault) Error() string {
+	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/][%d] ipam_fhrp-group-assignments_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamFhrpGroupAssignmentsBulkUpdateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamFhrpGroupAssignmentsBulkUpdateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

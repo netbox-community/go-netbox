@@ -45,7 +45,14 @@ func (o *DcimPowerPortsCreateReader) ReadResponse(response runtime.ClientRespons
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewDcimPowerPortsCreateDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *DcimPowerPortsCreateCreated) readResponse(response runtime.ClientRespon
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDcimPowerPortsCreateDefault creates a DcimPowerPortsCreateDefault with default headers values
+func NewDcimPowerPortsCreateDefault(code int) *DcimPowerPortsCreateDefault {
+	return &DcimPowerPortsCreateDefault{
+		_statusCode: code,
+	}
+}
+
+/* DcimPowerPortsCreateDefault describes a response with status code -1, with default header values.
+
+DcimPowerPortsCreateDefault dcim power ports create default
+*/
+type DcimPowerPortsCreateDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the dcim power ports create default response
+func (o *DcimPowerPortsCreateDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *DcimPowerPortsCreateDefault) Error() string {
+	return fmt.Sprintf("[POST /dcim/power-ports/][%d] dcim_power-ports_create default  %+v", o._statusCode, o.Payload)
+}
+func (o *DcimPowerPortsCreateDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *DcimPowerPortsCreateDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

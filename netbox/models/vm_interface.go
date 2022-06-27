@@ -100,7 +100,7 @@ type VMInterface struct {
 	TaggedVlans []*NestedVLAN `json:"tagged_vlans"`
 
 	// tags
-	Tags []*NestedTag `json:"tags"`
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// untagged vlan
 	UntaggedVlan *NestedVLAN `json:"untagged_vlan,omitempty"`

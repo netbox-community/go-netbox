@@ -50,7 +50,14 @@ func (o *IpamRouteTargetsListReader) ReadResponse(response runtime.ClientRespons
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewIpamRouteTargetsListDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -80,6 +87,45 @@ func (o *IpamRouteTargetsListOK) readResponse(response runtime.ClientResponse, c
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewIpamRouteTargetsListDefault creates a IpamRouteTargetsListDefault with default headers values
+func NewIpamRouteTargetsListDefault(code int) *IpamRouteTargetsListDefault {
+	return &IpamRouteTargetsListDefault{
+		_statusCode: code,
+	}
+}
+
+/* IpamRouteTargetsListDefault describes a response with status code -1, with default header values.
+
+IpamRouteTargetsListDefault ipam route targets list default
+*/
+type IpamRouteTargetsListDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the ipam route targets list default response
+func (o *IpamRouteTargetsListDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *IpamRouteTargetsListDefault) Error() string {
+	return fmt.Sprintf("[GET /ipam/route-targets/][%d] ipam_route-targets_list default  %+v", o._statusCode, o.Payload)
+}
+func (o *IpamRouteTargetsListDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *IpamRouteTargetsListDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

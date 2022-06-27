@@ -45,7 +45,14 @@ func (o *CircuitsProvidersReadReader) ReadResponse(response runtime.ClientRespon
 		}
 		return result, nil
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		result := NewCircuitsProvidersReadDefault(response.Code())
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		if response.Code()/100 == 2 {
+			return result, nil
+		}
+		return nil, result
 	}
 }
 
@@ -75,6 +82,45 @@ func (o *CircuitsProvidersReadOK) readResponse(response runtime.ClientResponse, 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCircuitsProvidersReadDefault creates a CircuitsProvidersReadDefault with default headers values
+func NewCircuitsProvidersReadDefault(code int) *CircuitsProvidersReadDefault {
+	return &CircuitsProvidersReadDefault{
+		_statusCode: code,
+	}
+}
+
+/* CircuitsProvidersReadDefault describes a response with status code -1, with default header values.
+
+CircuitsProvidersReadDefault circuits providers read default
+*/
+type CircuitsProvidersReadDefault struct {
+	_statusCode int
+
+	Payload interface{}
+}
+
+// Code gets the status code for the circuits providers read default response
+func (o *CircuitsProvidersReadDefault) Code() int {
+	return o._statusCode
+}
+
+func (o *CircuitsProvidersReadDefault) Error() string {
+	return fmt.Sprintf("[GET /circuits/providers/{id}/][%d] circuits_providers_read default  %+v", o._statusCode, o.Payload)
+}
+func (o *CircuitsProvidersReadDefault) GetPayload() interface{} {
+	return o.Payload
+}
+
+func (o *CircuitsProvidersReadDefault) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	// response payload
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 
