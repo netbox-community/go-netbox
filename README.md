@@ -23,7 +23,7 @@ tbd. In the meanwhile, look at branches and tags.
 Changes in this fork
 ====================
 
-NOTE: The list of changes is becoming too inconvenient to list here. See `preprocess.py` for all changes. The list below is incomplete!
+NOTE: The list of changes is becoming too inconvenient to list here. See `preprocess.py` for all changes. The list below is incomplete or wrong!
 
 Change `models.ip_address.AssignedObject` type to prevent json marshalling errors since [this change](https://github.com/netbox-community/netbox/pull/4781)
 

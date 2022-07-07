@@ -191,7 +191,3 @@ with open("swagger.processed.json", "w") as writefile:
 
 
 print("Swaggerfile preprocession complete")
-print("Do not forget to apply the IP Address change at")
-print(
-    "* https://github.com/fbreckle/go-netbox/commit/1363e14cfc7bce4bd3d5ee93c09ca70543c51279#diff-9688c8954edccf890a0b6a8e1bea4d9f81083d0fe1214be0fea2514c0ed3f651 *"
-)
