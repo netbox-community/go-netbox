@@ -72,6 +72,10 @@ type WritableRearPortTemplate struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Module type
+	// Required: true
+	ModuleType *int64 `json:"module_type"`
+
 	// Name
 	// Required: true
 	// Max Length: 64
@@ -85,7 +89,7 @@ type WritableRearPortTemplate struct {
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice other]
 	Type *string `json:"type"`
 
 	// Url
@@ -119,6 +123,10 @@ func (m *WritableRearPortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateModuleType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -217,6 +225,15 @@ func (m *WritableRearPortTemplate) validateLastUpdated(formats strfmt.Registry) 
 	return nil
 }
 
+func (m *WritableRearPortTemplate) validateModuleType(formats strfmt.Registry) error {
+
+	if err := validate.Required("module_type", "body", m.ModuleType); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableRearPortTemplate) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
@@ -254,7 +271,7 @@ var writableRearPortTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -389,6 +406,9 @@ const (
 
 	// WritableRearPortTemplateTypeSplice captures enum value "splice"
 	WritableRearPortTemplateTypeSplice string = "splice"
+
+	// WritableRearPortTemplateTypeOther captures enum value "other"
+	WritableRearPortTemplateTypeOther string = "other"
 )
 
 // prop value enum

@@ -45,8 +45,7 @@ type ConsoleServerPortTemplate struct {
 	Description string `json:"description,omitempty"`
 
 	// device type
-	// Required: true
-	DeviceType *NestedDeviceType `json:"device_type"`
+	DeviceType *NestedDeviceType `json:"device_type,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -66,6 +65,9 @@ type ConsoleServerPortTemplate struct {
 	// Read Only: true
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// module type
+	ModuleType *NestedModuleType `json:"module_type,omitempty"`
 
 	// Name
 	// Required: true
@@ -103,6 +105,10 @@ func (m *ConsoleServerPortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateModuleType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -149,9 +155,8 @@ func (m *ConsoleServerPortTemplate) validateDescription(formats strfmt.Registry)
 }
 
 func (m *ConsoleServerPortTemplate) validateDeviceType(formats strfmt.Registry) error {
-
-	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
-		return err
+	if swag.IsZero(m.DeviceType) { // not required
+		return nil
 	}
 
 	if m.DeviceType != nil {
@@ -187,6 +192,25 @@ func (m *ConsoleServerPortTemplate) validateLastUpdated(formats strfmt.Registry)
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) validateModuleType(formats strfmt.Registry) error {
+	if swag.IsZero(m.ModuleType) { // not required
+		return nil
+	}
+
+	if m.ModuleType != nil {
+		if err := m.ModuleType.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_type")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -264,6 +288,10 @@ func (m *ConsoleServerPortTemplate) ContextValidate(ctx context.Context, formats
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateModuleType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -325,6 +353,22 @@ func (m *ConsoleServerPortTemplate) contextValidateLastUpdated(ctx context.Conte
 
 	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ConsoleServerPortTemplate) contextValidateModuleType(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.ModuleType != nil {
+		if err := m.ModuleType.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("module_type")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("module_type")
+			}
+			return err
+		}
 	}
 
 	return nil

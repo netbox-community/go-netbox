@@ -832,12 +832,12 @@ type IPAddressRole struct {
 
 	// label
 	// Required: true
-	// Enum: [Loopback Secondary Anycast VIP VRRP HSRP GLBP CARP r]
+	// Enum: [Loopback Secondary Anycast VIP VRRP HSRP GLBP CARP]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp g]
+	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp]
 	Value *string `json:"value"`
 }
 
@@ -863,7 +863,7 @@ var ipAddressRoleTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Loopback","Secondary","Anycast","VIP","VRRP","HSRP","GLBP","CARP","r"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Loopback","Secondary","Anycast","VIP","VRRP","HSRP","GLBP","CARP"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -896,9 +896,6 @@ const (
 
 	// IPAddressRoleLabelCARP captures enum value "CARP"
 	IPAddressRoleLabelCARP string = "CARP"
-
-	// IPAddressRoleLabelR captures enum value "r"
-	IPAddressRoleLabelR string = "r"
 )
 
 // prop value enum
@@ -927,7 +924,7 @@ var ipAddressRoleTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp","g"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -960,9 +957,6 @@ const (
 
 	// IPAddressRoleValueCarp captures enum value "carp"
 	IPAddressRoleValueCarp string = "carp"
-
-	// IPAddressRoleValueG captures enum value "g"
-	IPAddressRoleValueG string = "g"
 )
 
 // prop value enum

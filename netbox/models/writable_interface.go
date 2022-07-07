@@ -175,7 +175,7 @@ type WritableInterface struct {
 	// Enum: [ap station]
 	RfRole string `json:"rf_role,omitempty"`
 
-	// Speed
+	// Speed (Kbps)
 	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	Speed *int64 `json:"speed,omitempty"`

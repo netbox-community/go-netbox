@@ -37,7 +37,7 @@ import (
 type WritableDeviceWithConfigContext struct {
 
 	// Airflow
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
 	Airflow string `json:"airflow,omitempty"`
 
 	// Asset tag
@@ -258,7 +258,7 @@ var writableDeviceWithConfigContextTypeAirflowPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -285,6 +285,9 @@ const (
 
 	// WritableDeviceWithConfigContextAirflowPassive captures enum value "passive"
 	WritableDeviceWithConfigContextAirflowPassive string = "passive"
+
+	// WritableDeviceWithConfigContextAirflowMixed captures enum value "mixed"
+	WritableDeviceWithConfigContextAirflowMixed string = "mixed"
 )
 
 // prop value enum

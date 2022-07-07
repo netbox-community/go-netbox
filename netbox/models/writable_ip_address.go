@@ -101,7 +101,7 @@ type WritableIPAddress struct {
 	// Role
 	//
 	// The functional role of this IP
-	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp g]
+	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp]
 	Role string `json:"role,omitempty"`
 
 	// Status
@@ -252,7 +252,7 @@ var writableIpAddressTypeRolePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp","g"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["loopback","secondary","anycast","vip","vrrp","hsrp","glbp","carp"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -285,9 +285,6 @@ const (
 
 	// WritableIPAddressRoleCarp captures enum value "carp"
 	WritableIPAddressRoleCarp string = "carp"
-
-	// WritableIPAddressRoleG captures enum value "g"
-	WritableIPAddressRoleG string = "g"
 )
 
 // prop value enum

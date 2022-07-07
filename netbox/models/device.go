@@ -1160,12 +1160,12 @@ type DeviceAirflow struct {
 
 	// label
 	// Required: true
-	// Enum: [Front to rear Rear to front Left to right Right to left Side to rear Passive]
+	// Enum: [Front to rear Rear to front Left to right Right to left Side to rear Passive Mixed]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
 	Value *string `json:"value"`
 }
 
@@ -1191,7 +1191,7 @@ var deviceAirflowTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Front to rear","Rear to front","Left to right","Right to left","Side to rear","Passive"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Front to rear","Rear to front","Left to right","Right to left","Side to rear","Passive","Mixed"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -1218,6 +1218,9 @@ const (
 
 	// DeviceAirflowLabelPassive captures enum value "Passive"
 	DeviceAirflowLabelPassive string = "Passive"
+
+	// DeviceAirflowLabelMixed captures enum value "Mixed"
+	DeviceAirflowLabelMixed string = "Mixed"
 )
 
 // prop value enum
@@ -1246,7 +1249,7 @@ var deviceAirflowTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -1273,6 +1276,9 @@ const (
 
 	// DeviceAirflowValuePassive captures enum value "passive"
 	DeviceAirflowValuePassive string = "passive"
+
+	// DeviceAirflowValueMixed captures enum value "mixed"
+	DeviceAirflowValueMixed string = "mixed"
 )
 
 // prop value enum

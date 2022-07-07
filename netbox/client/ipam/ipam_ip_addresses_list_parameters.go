@@ -159,6 +159,12 @@ type IpamIPAddressesListParams struct {
 	// Family.
 	Family *float64
 
+	// FhrpgroupID.
+	FhrpgroupID *string
+
+	// FhrpgroupIDn.
+	FhrpgroupIDn *string
+
 	// ID.
 	ID *string
 
@@ -656,6 +662,28 @@ func (o *IpamIPAddressesListParams) WithFamily(family *float64) *IpamIPAddresses
 // SetFamily adds the family to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetFamily(family *float64) {
 	o.Family = family
+}
+
+// WithFhrpgroupID adds the fhrpgroupID to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithFhrpgroupID(fhrpgroupID *string) *IpamIPAddressesListParams {
+	o.SetFhrpgroupID(fhrpgroupID)
+	return o
+}
+
+// SetFhrpgroupID adds the fhrpgroupId to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetFhrpgroupID(fhrpgroupID *string) {
+	o.FhrpgroupID = fhrpgroupID
+}
+
+// WithFhrpgroupIDn adds the fhrpgroupIDn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithFhrpgroupIDn(fhrpgroupIDn *string) *IpamIPAddressesListParams {
+	o.SetFhrpgroupIDn(fhrpgroupIDn)
+	return o
+}
+
+// SetFhrpgroupIDn adds the fhrpgroupIdN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetFhrpgroupIDn(fhrpgroupIDn *string) {
+	o.FhrpgroupIDn = fhrpgroupIDn
 }
 
 // WithID adds the id to the ipam ip addresses list params
@@ -1621,6 +1649,40 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qFamily != "" {
 
 			if err := r.SetQueryParam("family", qFamily); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.FhrpgroupID != nil {
+
+		// query param fhrpgroup_id
+		var qrFhrpgroupID string
+
+		if o.FhrpgroupID != nil {
+			qrFhrpgroupID = *o.FhrpgroupID
+		}
+		qFhrpgroupID := qrFhrpgroupID
+		if qFhrpgroupID != "" {
+
+			if err := r.SetQueryParam("fhrpgroup_id", qFhrpgroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.FhrpgroupIDn != nil {
+
+		// query param fhrpgroup_id__n
+		var qrFhrpgroupIDn string
+
+		if o.FhrpgroupIDn != nil {
+			qrFhrpgroupIDn = *o.FhrpgroupIDn
+		}
+		qFhrpgroupIDn := qrFhrpgroupIDn
+		if qFhrpgroupIDn != "" {
+
+			if err := r.SetQueryParam("fhrpgroup_id__n", qFhrpgroupIDn); err != nil {
 				return err
 			}
 		}

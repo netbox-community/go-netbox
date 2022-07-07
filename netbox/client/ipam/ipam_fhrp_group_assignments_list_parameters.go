@@ -84,6 +84,12 @@ type IpamFhrpGroupAssignmentsListParams struct {
 	// CreatedLte.
 	CreatedLte *string
 
+	// Device.
+	Device *string
+
+	// DeviceID.
+	DeviceID *string
+
 	// GroupID.
 	GroupID *string
 
@@ -171,6 +177,12 @@ type IpamFhrpGroupAssignmentsListParams struct {
 	// Priorityn.
 	Priorityn *string
 
+	// VirtualMachine.
+	VirtualMachine *string
+
+	// VirtualMachineID.
+	VirtualMachineID *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -255,6 +267,28 @@ func (o *IpamFhrpGroupAssignmentsListParams) WithCreatedLte(createdLte *string) 
 // SetCreatedLte adds the createdLte to the ipam fhrp group assignments list params
 func (o *IpamFhrpGroupAssignmentsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithDevice adds the device to the ipam fhrp group assignments list params
+func (o *IpamFhrpGroupAssignmentsListParams) WithDevice(device *string) *IpamFhrpGroupAssignmentsListParams {
+	o.SetDevice(device)
+	return o
+}
+
+// SetDevice adds the device to the ipam fhrp group assignments list params
+func (o *IpamFhrpGroupAssignmentsListParams) SetDevice(device *string) {
+	o.Device = device
+}
+
+// WithDeviceID adds the deviceID to the ipam fhrp group assignments list params
+func (o *IpamFhrpGroupAssignmentsListParams) WithDeviceID(deviceID *string) *IpamFhrpGroupAssignmentsListParams {
+	o.SetDeviceID(deviceID)
+	return o
+}
+
+// SetDeviceID adds the deviceId to the ipam fhrp group assignments list params
+func (o *IpamFhrpGroupAssignmentsListParams) SetDeviceID(deviceID *string) {
+	o.DeviceID = deviceID
 }
 
 // WithGroupID adds the groupID to the ipam fhrp group assignments list params
@@ -554,6 +588,28 @@ func (o *IpamFhrpGroupAssignmentsListParams) SetPriorityn(priorityn *string) {
 	o.Priorityn = priorityn
 }
 
+// WithVirtualMachine adds the virtualMachine to the ipam fhrp group assignments list params
+func (o *IpamFhrpGroupAssignmentsListParams) WithVirtualMachine(virtualMachine *string) *IpamFhrpGroupAssignmentsListParams {
+	o.SetVirtualMachine(virtualMachine)
+	return o
+}
+
+// SetVirtualMachine adds the virtualMachine to the ipam fhrp group assignments list params
+func (o *IpamFhrpGroupAssignmentsListParams) SetVirtualMachine(virtualMachine *string) {
+	o.VirtualMachine = virtualMachine
+}
+
+// WithVirtualMachineID adds the virtualMachineID to the ipam fhrp group assignments list params
+func (o *IpamFhrpGroupAssignmentsListParams) WithVirtualMachineID(virtualMachineID *string) *IpamFhrpGroupAssignmentsListParams {
+	o.SetVirtualMachineID(virtualMachineID)
+	return o
+}
+
+// SetVirtualMachineID adds the virtualMachineId to the ipam fhrp group assignments list params
+func (o *IpamFhrpGroupAssignmentsListParams) SetVirtualMachineID(virtualMachineID *string) {
+	o.VirtualMachineID = virtualMachineID
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *IpamFhrpGroupAssignmentsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -608,6 +664,40 @@ func (o *IpamFhrpGroupAssignmentsListParams) WriteToRequest(r runtime.ClientRequ
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Device != nil {
+
+		// query param device
+		var qrDevice string
+
+		if o.Device != nil {
+			qrDevice = *o.Device
+		}
+		qDevice := qrDevice
+		if qDevice != "" {
+
+			if err := r.SetQueryParam("device", qDevice); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DeviceID != nil {
+
+		// query param device_id
+		var qrDeviceID string
+
+		if o.DeviceID != nil {
+			qrDeviceID = *o.DeviceID
+		}
+		qDeviceID := qrDeviceID
+		if qDeviceID != "" {
+
+			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
 				return err
 			}
 		}
@@ -1067,6 +1157,40 @@ func (o *IpamFhrpGroupAssignmentsListParams) WriteToRequest(r runtime.ClientRequ
 		if qPriorityn != "" {
 
 			if err := r.SetQueryParam("priority__n", qPriorityn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualMachine != nil {
+
+		// query param virtual_machine
+		var qrVirtualMachine string
+
+		if o.VirtualMachine != nil {
+			qrVirtualMachine = *o.VirtualMachine
+		}
+		qVirtualMachine := qrVirtualMachine
+		if qVirtualMachine != "" {
+
+			if err := r.SetQueryParam("virtual_machine", qVirtualMachine); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VirtualMachineID != nil {
+
+		// query param virtual_machine_id
+		var qrVirtualMachineID string
+
+		if o.VirtualMachineID != nil {
+			qrVirtualMachineID = *o.VirtualMachineID
+		}
+		qVirtualMachineID := qrVirtualMachineID
+		if qVirtualMachineID != "" {
+
+			if err := r.SetQueryParam("virtual_machine_id", qVirtualMachineID); err != nil {
 				return err
 			}
 		}

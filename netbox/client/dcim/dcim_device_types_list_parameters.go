@@ -120,6 +120,9 @@ type DcimDeviceTypesListParams struct {
 	// Interfaces.
 	Interfaces *string
 
+	// InventoryItems.
+	InventoryItems *string
+
 	// IsFullDepth.
 	IsFullDepth *string
 
@@ -507,6 +510,17 @@ func (o *DcimDeviceTypesListParams) WithInterfaces(interfaces *string) *DcimDevi
 // SetInterfaces adds the interfaces to the dcim device types list params
 func (o *DcimDeviceTypesListParams) SetInterfaces(interfaces *string) {
 	o.Interfaces = interfaces
+}
+
+// WithInventoryItems adds the inventoryItems to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithInventoryItems(inventoryItems *string) *DcimDeviceTypesListParams {
+	o.SetInventoryItems(inventoryItems)
+	return o
+}
+
+// SetInventoryItems adds the inventoryItems to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetInventoryItems(inventoryItems *string) {
+	o.InventoryItems = inventoryItems
 }
 
 // WithIsFullDepth adds the isFullDepth to the dcim device types list params
@@ -1372,6 +1386,23 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qInterfaces != "" {
 
 			if err := r.SetQueryParam("interfaces", qInterfaces); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.InventoryItems != nil {
+
+		// query param inventory_items
+		var qrInventoryItems string
+
+		if o.InventoryItems != nil {
+			qrInventoryItems = *o.InventoryItems
+		}
+		qInventoryItems := qrInventoryItems
+		if qInventoryItems != "" {
+
+			if err := r.SetQueryParam("inventory_items", qInventoryItems); err != nil {
 				return err
 			}
 		}

@@ -1380,6 +1380,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "provider_id",
             "in": "query",
             "description": "",
@@ -1738,6 +1745,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -2750,6 +2764,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "region_id",
             "in": "query",
             "description": "",
@@ -3073,6 +3094,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -4587,56 +4615,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -4728,6 +4707,55 @@
           },
           {
             "name": "module_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -4979,13 +5007,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -5071,6 +5092,13 @@
           },
           {
             "name": "module_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -5816,56 +5844,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -5957,6 +5936,55 @@
           },
           {
             "name": "module_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -6208,13 +6236,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -6300,6 +6321,13 @@
           },
           {
             "name": "module_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -7017,56 +7045,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -7151,6 +7130,55 @@
           },
           {
             "name": "virtual_chassis",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -7381,13 +7409,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -7466,6 +7487,13 @@
           },
           {
             "name": "virtual_chassis__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -8520,6 +8548,13 @@
             "type": "string"
           },
           {
+            "name": "inventory_items",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "id__n",
             "in": "query",
             "description": "",
@@ -9205,6 +9240,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "local_context_data",
             "in": "query",
             "description": "",
@@ -9766,6 +9808,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -10798,56 +10847,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -10939,6 +10939,55 @@
           },
           {
             "name": "module_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -11246,13 +11295,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -11338,6 +11380,13 @@
           },
           {
             "name": "module_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -12153,56 +12202,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -12294,6 +12294,55 @@
           },
           {
             "name": "module_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -12790,13 +12839,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -12868,6 +12910,13 @@
           },
           {
             "name": "module_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -14613,56 +14662,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -14747,6 +14747,55 @@
           },
           {
             "name": "virtual_chassis",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -15096,13 +15145,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -15181,6 +15223,13 @@
           },
           {
             "name": "virtual_chassis__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -15571,6 +15620,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "created",
             "in": "query",
             "description": "",
@@ -15943,6 +15999,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -16347,6 +16410,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "id__n",
             "in": "query",
             "description": "",
@@ -16586,6 +16656,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -17269,56 +17346,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -17403,6 +17431,55 @@
           },
           {
             "name": "virtual_chassis",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -17633,13 +17710,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -17718,6 +17788,13 @@
           },
           {
             "name": "virtual_chassis__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -20951,56 +21028,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -21092,6 +21120,55 @@
           },
           {
             "name": "module_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -21350,13 +21427,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -21442,6 +21512,13 @@
           },
           {
             "name": "module_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -21803,6 +21880,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "region_id",
             "in": "query",
             "description": "",
@@ -21965,6 +22049,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -22823,56 +22914,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -22964,6 +23006,55 @@
           },
           {
             "name": "module_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -23285,13 +23376,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -23377,6 +23461,13 @@
           },
           {
             "name": "module_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -23773,6 +23864,34 @@
             "type": "string"
           },
           {
+            "name": "region_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "region",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "site_group_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "site_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "location_id",
             "in": "query",
             "description": "",
@@ -23949,6 +24068,34 @@
           },
           {
             "name": "site__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "region_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "region__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "site_group_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "site_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -25003,6 +25150,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "region_id",
             "in": "query",
             "description": "",
@@ -25480,6 +25634,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -26516,56 +26677,7 @@
             "type": "string"
           },
           {
-            "name": "created",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "created__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__gte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "last_updated__lte",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "q",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -26657,6 +26769,55 @@
           },
           {
             "name": "module_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__gte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last_updated__lte",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
             "in": "query",
             "description": "",
             "required": false,
@@ -26999,13 +27160,6 @@
             "type": "string"
           },
           {
-            "name": "tag__n",
-            "in": "query",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "region_id__n",
             "in": "query",
             "description": "",
@@ -27091,6 +27245,13 @@
           },
           {
             "name": "module_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -27459,6 +27620,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "parent_id",
             "in": "query",
             "description": "",
@@ -27712,6 +27880,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -28067,6 +28242,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "parent_id",
             "in": "query",
             "description": "",
@@ -28320,6 +28502,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -28718,6 +28907,13 @@
           },
           {
             "name": "contact_role",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group",
             "in": "query",
             "description": "",
             "required": false,
@@ -29173,6 +29369,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -36771,6 +36974,34 @@
             "type": "string"
           },
           {
+            "name": "device",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "device_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "virtual_machine",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "virtual_machine_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "id__n",
             "in": "query",
             "description": "",
@@ -37833,6 +38064,13 @@
             "type": "string"
           },
           {
+            "name": "fhrpgroup_id",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "assigned_to_interface",
             "in": "query",
             "description": "",
@@ -38086,6 +38324,13 @@
           },
           {
             "name": "vminterface_id__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fhrpgroup_id__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -47893,6 +48138,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "group_id",
             "in": "query",
             "description": "",
@@ -48146,6 +48398,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -50566,6 +50825,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "id__n",
             "in": "query",
             "description": "",
@@ -50805,6 +51071,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -51712,6 +51985,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "region_id",
             "in": "query",
             "description": "",
@@ -51923,6 +52203,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -53089,6 +53376,13 @@
             "type": "string"
           },
           {
+            "name": "contact_group",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "local_context_data",
             "in": "query",
             "description": "",
@@ -53475,6 +53769,13 @@
           },
           {
             "name": "contact_role__n",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "contact_group__n",
             "in": "query",
             "description": "",
             "required": false,
@@ -58020,7 +58321,8 @@
                 "Left to right",
                 "Right to left",
                 "Side to rear",
-                "Passive"
+                "Passive",
+                "Mixed"
               ]
             },
             "value": {
@@ -58031,7 +58333,8 @@
                 "left-to-right",
                 "right-to-left",
                 "side-to-rear",
-                "passive"
+                "passive",
+                "mixed"
               ]
             }
           }
@@ -58099,9 +58402,42 @@
         }
       }
     },
+    "NestedModuleType": {
+      "required": [
+        "model"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "integer",
+          "readOnly": true
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "format": "uri",
+          "readOnly": true
+        },
+        "display": {
+          "title": "Display",
+          "type": "string",
+          "readOnly": true
+        },
+        "manufacturer": {
+          "$ref": "#/definitions/NestedManufacturer"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 1
+        }
+      },
+      "x-nullable": true
+    },
     "ConsolePortTemplate": {
       "required": [
-        "device_type",
         "name"
       ],
       "type": "object",
@@ -58124,6 +58460,9 @@
         },
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
+        },
+        "module_type": {
+          "$ref": "#/definitions/NestedModuleType"
         },
         "name": {
           "title": "Name",
@@ -58209,6 +58548,7 @@
     "WritableConsolePortTemplate": {
       "required": [
         "device_type",
+        "module_type",
         "name"
       ],
       "type": "object",
@@ -58231,6 +58571,11 @@
         },
         "device_type": {
           "title": "Device type",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "module_type": {
+          "title": "Module type",
           "type": "integer",
           "x-nullable": true
         },
@@ -58716,7 +59061,6 @@
     },
     "ConsoleServerPortTemplate": {
       "required": [
-        "device_type",
         "name"
       ],
       "type": "object",
@@ -58739,6 +59083,9 @@
         },
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
+        },
+        "module_type": {
+          "$ref": "#/definitions/NestedModuleType"
         },
         "name": {
           "title": "Name",
@@ -58824,6 +59171,7 @@
     "WritableConsoleServerPortTemplate": {
       "required": [
         "device_type",
+        "module_type",
         "name"
       ],
       "type": "object",
@@ -58846,6 +59194,11 @@
         },
         "device_type": {
           "title": "Device type",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "module_type": {
+          "title": "Module type",
           "type": "integer",
           "x-nullable": true
         },
@@ -59714,7 +60067,8 @@
                 "Left to right",
                 "Right to left",
                 "Side to rear",
-                "Passive"
+                "Passive",
+                "Mixed"
               ]
             },
             "value": {
@@ -59725,7 +60079,8 @@
                 "left-to-right",
                 "right-to-left",
                 "side-to-rear",
-                "passive"
+                "passive",
+                "mixed"
               ]
             }
           }
@@ -59853,7 +60208,8 @@
             "left-to-right",
             "right-to-left",
             "side-to-rear",
-            "passive"
+            "passive",
+            "mixed"
           ]
         },
         "front_image": {
@@ -60049,7 +60405,8 @@
                 "Left to right",
                 "Right to left",
                 "Side to rear",
-                "Passive"
+                "Passive",
+                "Mixed"
               ]
             },
             "value": {
@@ -60060,7 +60417,8 @@
                 "left-to-right",
                 "right-to-left",
                 "side-to-rear",
-                "passive"
+                "passive",
+                "mixed"
               ]
             }
           }
@@ -60255,7 +60613,8 @@
             "left-to-right",
             "right-to-left",
             "side-to-rear",
-            "passive"
+            "passive",
+            "mixed"
           ]
         },
         "primary_ip": {
@@ -60388,7 +60747,6 @@
     },
     "FrontPortTemplate": {
       "required": [
-        "device_type",
         "name",
         "type",
         "rear_port"
@@ -60413,6 +60771,9 @@
         },
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
+        },
+        "module_type": {
+          "$ref": "#/definitions/NestedModuleType"
         },
         "name": {
           "title": "Name",
@@ -60478,7 +60839,8 @@
                 "URM-P2",
                 "URM-P4",
                 "URM-P8",
-                "Splice"
+                "Splice",
+                "Other"
               ]
             },
             "value": {
@@ -60525,7 +60887,8 @@
                 "urm-p2",
                 "urm-p4",
                 "urm-p8",
-                "splice"
+                "splice",
+                "other"
               ]
             }
           }
@@ -60568,6 +60931,7 @@
     "WritableFrontPortTemplate": {
       "required": [
         "device_type",
+        "module_type",
         "name",
         "type",
         "rear_port"
@@ -60592,6 +60956,11 @@
         },
         "device_type": {
           "title": "Device type",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "module_type": {
+          "title": "Module type",
           "type": "integer",
           "x-nullable": true
         },
@@ -60652,7 +61021,8 @@
             "urm-p2",
             "urm-p4",
             "urm-p8",
-            "splice"
+            "splice",
+            "other"
           ]
         },
         "color": {
@@ -60822,7 +61192,8 @@
                 "URM-P2",
                 "URM-P4",
                 "URM-P8",
-                "Splice"
+                "Splice",
+                "Other"
               ]
             },
             "value": {
@@ -60869,7 +61240,8 @@
                 "urm-p2",
                 "urm-p4",
                 "urm-p8",
-                "splice"
+                "splice",
+                "other"
               ]
             }
           }
@@ -61039,7 +61411,8 @@
             "urm-p2",
             "urm-p4",
             "urm-p8",
-            "splice"
+            "splice",
+            "other"
           ]
         },
         "color": {
@@ -61119,7 +61492,6 @@
     },
     "InterfaceTemplate": {
       "required": [
-        "device_type",
         "name",
         "type"
       ],
@@ -61143,6 +61515,9 @@
         },
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
+        },
+        "module_type": {
+          "$ref": "#/definitions/NestedModuleType"
         },
         "name": {
           "title": "Name",
@@ -61364,6 +61739,7 @@
     "WritableInterfaceTemplate": {
       "required": [
         "device_type",
+        "module_type",
         "name",
         "type"
       ],
@@ -61387,6 +61763,11 @@
         },
         "device_type": {
           "title": "Device type",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "module_type": {
+          "title": "Module type",
           "type": "integer",
           "x-nullable": true
         },
@@ -61943,7 +62324,7 @@
           "x-nullable": true
         },
         "speed": {
-          "title": "Speed",
+          "title": "Speed (Kbps)",
           "type": "integer",
           "maximum": 2147483647,
           "minimum": 0,
@@ -62744,7 +63125,7 @@
           "x-nullable": true
         },
         "speed": {
-          "title": "Speed",
+          "title": "Speed (Kbps)",
           "type": "integer",
           "maximum": 2147483647,
           "minimum": 0,
@@ -64401,39 +64782,6 @@
         }
       }
     },
-    "NestedModuleType": {
-      "required": [
-        "model"
-      ],
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "ID",
-          "type": "integer",
-          "readOnly": true
-        },
-        "url": {
-          "title": "Url",
-          "type": "string",
-          "format": "uri",
-          "readOnly": true
-        },
-        "display": {
-          "title": "Display",
-          "type": "string",
-          "readOnly": true
-        },
-        "manufacturer": {
-          "$ref": "#/definitions/NestedManufacturer"
-        },
-        "model": {
-          "title": "Model",
-          "type": "string",
-          "maxLength": 100,
-          "minLength": 1
-        }
-      }
-    },
     "NestedModule": {
       "type": "object",
       "properties": {
@@ -65318,7 +65666,6 @@
     },
     "PowerOutletTemplate": {
       "required": [
-        "device_type",
         "name"
       ],
       "type": "object",
@@ -65341,6 +65688,9 @@
         },
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
+        },
+        "module_type": {
+          "$ref": "#/definitions/NestedModuleType"
         },
         "name": {
           "title": "Name",
@@ -65448,7 +65798,13 @@
                 "DC Terminal",
                 "HDOT Cx",
                 "Saf-D-Grid",
-                "Hardwired"
+                "Neutrik powerCON (20A)",
+                "Neutrik powerCON (32A)",
+                "Neutrik powerCON TRUE1",
+                "Neutrik powerCON TRUE1 TOP",
+                "Ubiquiti SmartPower",
+                "Hardwired",
+                "Other"
               ]
             },
             "value": {
@@ -65537,7 +65893,13 @@
                 "dc-terminal",
                 "hdot-cx",
                 "saf-d-grid",
-                "hardwired"
+                "neutrik-powercon-20a",
+                "neutrik-powercon-32a",
+                "neutrik-powercon-true1",
+                "neutrik-powercon-true1-top",
+                "ubiquiti-smartpower",
+                "hardwired",
+                "other"
               ]
             }
           }
@@ -65593,6 +65955,7 @@
     "WritablePowerOutletTemplate": {
       "required": [
         "device_type",
+        "module_type",
         "name"
       ],
       "type": "object",
@@ -65615,6 +65978,11 @@
         },
         "device_type": {
           "title": "Device type",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "module_type": {
+          "title": "Module type",
           "type": "integer",
           "x-nullable": true
         },
@@ -65717,7 +66085,13 @@
             "dc-terminal",
             "hdot-cx",
             "saf-d-grid",
-            "hardwired"
+            "neutrik-powercon-20a",
+            "neutrik-powercon-32a",
+            "neutrik-powercon-true1",
+            "neutrik-powercon-true1-top",
+            "ubiquiti-smartpower",
+            "hardwired",
+            "other"
           ]
         },
         "power_port": {
@@ -65933,7 +66307,13 @@
                 "DC Terminal",
                 "HDOT Cx",
                 "Saf-D-Grid",
-                "Hardwired"
+                "Neutrik powerCON (20A)",
+                "Neutrik powerCON (32A)",
+                "Neutrik powerCON TRUE1",
+                "Neutrik powerCON TRUE1 TOP",
+                "Ubiquiti SmartPower",
+                "Hardwired",
+                "Other"
               ]
             },
             "value": {
@@ -66022,7 +66402,13 @@
                 "dc-terminal",
                 "hdot-cx",
                 "saf-d-grid",
-                "hardwired"
+                "neutrik-powercon-20a",
+                "neutrik-powercon-32a",
+                "neutrik-powercon-true1",
+                "neutrik-powercon-true1-top",
+                "ubiquiti-smartpower",
+                "hardwired",
+                "other"
               ]
             }
           }
@@ -66266,7 +66652,13 @@
             "dc-terminal",
             "hdot-cx",
             "saf-d-grid",
-            "hardwired"
+            "neutrik-powercon-20a",
+            "neutrik-powercon-32a",
+            "neutrik-powercon-true1",
+            "neutrik-powercon-true1-top",
+            "ubiquiti-smartpower",
+            "hardwired",
+            "other"
           ]
         },
         "power_port": {
@@ -66497,7 +66889,6 @@
     },
     "PowerPortTemplate": {
       "required": [
-        "device_type",
         "name"
       ],
       "type": "object",
@@ -66520,6 +66911,9 @@
         },
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
+        },
+        "module_type": {
+          "$ref": "#/definitions/NestedModuleType"
         },
         "name": {
           "title": "Name",
@@ -66634,7 +67028,13 @@
                 "USB 3.0 Micro B",
                 "DC Terminal",
                 "Saf-D-Grid",
-                "Hardwired"
+                "Neutrik powerCON (20A)",
+                "Neutrik powerCON (32A)",
+                "Neutrik powerCON TRUE1",
+                "Neutrik powerCON TRUE1 TOP",
+                "Ubiquiti SmartPower",
+                "Hardwired",
+                "Other"
               ]
             },
             "value": {
@@ -66730,7 +67130,13 @@
                 "usb-3-micro-b",
                 "dc-terminal",
                 "saf-d-grid",
-                "hardwired"
+                "neutrik-powercon-20",
+                "neutrik-powercon-32",
+                "neutrik-powercon-true1",
+                "neutrik-powercon-true1-top",
+                "ubiquiti-smartpower",
+                "hardwired",
+                "other"
               ]
             }
           }
@@ -66773,6 +67179,7 @@
     "WritablePowerPortTemplate": {
       "required": [
         "device_type",
+        "module_type",
         "name"
       ],
       "type": "object",
@@ -66795,6 +67202,11 @@
         },
         "device_type": {
           "title": "Device type",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "module_type": {
+          "title": "Module type",
           "type": "integer",
           "x-nullable": true
         },
@@ -66904,7 +67316,13 @@
             "usb-3-micro-b",
             "dc-terminal",
             "saf-d-grid",
-            "hardwired"
+            "neutrik-powercon-20",
+            "neutrik-powercon-32",
+            "neutrik-powercon-true1",
+            "neutrik-powercon-true1-top",
+            "ubiquiti-smartpower",
+            "hardwired",
+            "other"
           ]
         },
         "maximum_draw": {
@@ -67084,7 +67502,13 @@
                 "USB 3.0 Micro B",
                 "DC Terminal",
                 "Saf-D-Grid",
-                "Hardwired"
+                "Neutrik powerCON (20A)",
+                "Neutrik powerCON (32A)",
+                "Neutrik powerCON TRUE1",
+                "Neutrik powerCON TRUE1 TOP",
+                "Ubiquiti SmartPower",
+                "Hardwired",
+                "Other"
               ]
             },
             "value": {
@@ -67180,7 +67604,13 @@
                 "usb-3-micro-b",
                 "dc-terminal",
                 "saf-d-grid",
-                "hardwired"
+                "neutrik-powercon-20",
+                "neutrik-powercon-32",
+                "neutrik-powercon-true1",
+                "neutrik-powercon-true1-top",
+                "ubiquiti-smartpower",
+                "hardwired",
+                "other"
               ]
             }
           }
@@ -67418,7 +67848,13 @@
             "usb-3-micro-b",
             "dc-terminal",
             "saf-d-grid",
-            "hardwired"
+            "neutrik-powercon-20",
+            "neutrik-powercon-32",
+            "neutrik-powercon-true1",
+            "neutrik-powercon-true1-top",
+            "ubiquiti-smartpower",
+            "hardwired",
+            "other"
           ]
         },
         "maximum_draw": {
@@ -68293,7 +68729,6 @@
     },
     "RearPortTemplate": {
       "required": [
-        "device_type",
         "name",
         "type"
       ],
@@ -68317,6 +68752,9 @@
         },
         "device_type": {
           "$ref": "#/definitions/NestedDeviceType"
+        },
+        "module_type": {
+          "$ref": "#/definitions/NestedModuleType"
         },
         "name": {
           "title": "Name",
@@ -68382,7 +68820,8 @@
                 "URM-P2",
                 "URM-P4",
                 "URM-P8",
-                "Splice"
+                "Splice",
+                "Other"
               ]
             },
             "value": {
@@ -68429,7 +68868,8 @@
                 "urm-p2",
                 "urm-p4",
                 "urm-p8",
-                "splice"
+                "splice",
+                "other"
               ]
             }
           }
@@ -68468,6 +68908,7 @@
     "WritableRearPortTemplate": {
       "required": [
         "device_type",
+        "module_type",
         "name",
         "type"
       ],
@@ -68491,6 +68932,11 @@
         },
         "device_type": {
           "title": "Device type",
+          "type": "integer",
+          "x-nullable": true
+        },
+        "module_type": {
+          "title": "Module type",
           "type": "integer",
           "x-nullable": true
         },
@@ -68551,7 +68997,8 @@
             "urm-p2",
             "urm-p4",
             "urm-p8",
-            "splice"
+            "splice",
+            "other"
           ]
         },
         "color": {
@@ -68679,7 +69126,8 @@
                 "URM-P2",
                 "URM-P4",
                 "URM-P8",
-                "Splice"
+                "Splice",
+                "Other"
               ]
             },
             "value": {
@@ -68726,7 +69174,8 @@
                 "urm-p2",
                 "urm-p4",
                 "urm-p8",
-                "splice"
+                "splice",
+                "other"
               ]
             }
           }
@@ -68891,7 +69340,8 @@
             "urm-p2",
             "urm-p4",
             "urm-p8",
-            "splice"
+            "splice",
+            "other"
           ]
         },
         "color": {
@@ -72272,8 +72722,7 @@
                 "VRRP",
                 "HSRP",
                 "GLBP",
-                "CARP",
-                "r"
+                "CARP"
               ]
             },
             "value": {
@@ -72286,8 +72735,7 @@
                 "vrrp",
                 "hsrp",
                 "glbp",
-                "carp",
-                "g"
+                "carp"
               ]
             }
           }
@@ -72422,8 +72870,7 @@
             "vrrp",
             "hsrp",
             "glbp",
-            "carp",
-            "g"
+            "carp"
           ]
         },
         "assigned_object_type": {

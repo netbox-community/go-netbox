@@ -67,6 +67,10 @@ type WritableConsolePortTemplate struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Module type
+	// Required: true
+	ModuleType *int64 `json:"module_type"`
+
 	// Name
 	// Required: true
 	// Max Length: 64
@@ -104,6 +108,10 @@ func (m *WritableConsolePortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateModuleType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -176,6 +184,15 @@ func (m *WritableConsolePortTemplate) validateLastUpdated(formats strfmt.Registr
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsolePortTemplate) validateModuleType(formats strfmt.Registry) error {
+
+	if err := validate.Required("module_type", "body", m.ModuleType); err != nil {
 		return err
 	}
 

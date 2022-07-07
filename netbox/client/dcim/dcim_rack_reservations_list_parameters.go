@@ -174,11 +174,35 @@ type DcimRackReservationsListParams struct {
 	// RackIDn.
 	RackIDn *string
 
+	// Region.
+	Region *string
+
+	// Regionn.
+	Regionn *string
+
+	// RegionID.
+	RegionID *string
+
+	// RegionIDn.
+	RegionIDn *string
+
 	// Site.
 	Site *string
 
 	// Siten.
 	Siten *string
+
+	// SiteGroup.
+	SiteGroup *string
+
+	// SiteGroupn.
+	SiteGroupn *string
+
+	// SiteGroupID.
+	SiteGroupID *string
+
+	// SiteGroupIDn.
+	SiteGroupIDn *string
 
 	// SiteID.
 	SiteID *string
@@ -622,6 +646,50 @@ func (o *DcimRackReservationsListParams) SetRackIDn(rackIDn *string) {
 	o.RackIDn = rackIDn
 }
 
+// WithRegion adds the region to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithRegion(region *string) *DcimRackReservationsListParams {
+	o.SetRegion(region)
+	return o
+}
+
+// SetRegion adds the region to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetRegion(region *string) {
+	o.Region = region
+}
+
+// WithRegionn adds the regionn to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithRegionn(regionn *string) *DcimRackReservationsListParams {
+	o.SetRegionn(regionn)
+	return o
+}
+
+// SetRegionn adds the regionN to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetRegionn(regionn *string) {
+	o.Regionn = regionn
+}
+
+// WithRegionID adds the regionID to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithRegionID(regionID *string) *DcimRackReservationsListParams {
+	o.SetRegionID(regionID)
+	return o
+}
+
+// SetRegionID adds the regionId to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetRegionID(regionID *string) {
+	o.RegionID = regionID
+}
+
+// WithRegionIDn adds the regionIDn to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithRegionIDn(regionIDn *string) *DcimRackReservationsListParams {
+	o.SetRegionIDn(regionIDn)
+	return o
+}
+
+// SetRegionIDn adds the regionIdN to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetRegionIDn(regionIDn *string) {
+	o.RegionIDn = regionIDn
+}
+
 // WithSite adds the site to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) WithSite(site *string) *DcimRackReservationsListParams {
 	o.SetSite(site)
@@ -642,6 +710,50 @@ func (o *DcimRackReservationsListParams) WithSiten(siten *string) *DcimRackReser
 // SetSiten adds the siteN to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) SetSiten(siten *string) {
 	o.Siten = siten
+}
+
+// WithSiteGroup adds the siteGroup to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithSiteGroup(siteGroup *string) *DcimRackReservationsListParams {
+	o.SetSiteGroup(siteGroup)
+	return o
+}
+
+// SetSiteGroup adds the siteGroup to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetSiteGroup(siteGroup *string) {
+	o.SiteGroup = siteGroup
+}
+
+// WithSiteGroupn adds the siteGroupn to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithSiteGroupn(siteGroupn *string) *DcimRackReservationsListParams {
+	o.SetSiteGroupn(siteGroupn)
+	return o
+}
+
+// SetSiteGroupn adds the siteGroupN to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetSiteGroupn(siteGroupn *string) {
+	o.SiteGroupn = siteGroupn
+}
+
+// WithSiteGroupID adds the siteGroupID to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithSiteGroupID(siteGroupID *string) *DcimRackReservationsListParams {
+	o.SetSiteGroupID(siteGroupID)
+	return o
+}
+
+// SetSiteGroupID adds the siteGroupId to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetSiteGroupID(siteGroupID *string) {
+	o.SiteGroupID = siteGroupID
+}
+
+// WithSiteGroupIDn adds the siteGroupIDn to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithSiteGroupIDn(siteGroupIDn *string) *DcimRackReservationsListParams {
+	o.SetSiteGroupIDn(siteGroupIDn)
+	return o
+}
+
+// SetSiteGroupIDn adds the siteGroupIdN to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetSiteGroupIDn(siteGroupIDn *string) {
+	o.SiteGroupIDn = siteGroupIDn
 }
 
 // WithSiteID adds the siteID to the dcim rack reservations list params
@@ -1355,6 +1467,74 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.Region != nil {
+
+		// query param region
+		var qrRegion string
+
+		if o.Region != nil {
+			qrRegion = *o.Region
+		}
+		qRegion := qrRegion
+		if qRegion != "" {
+
+			if err := r.SetQueryParam("region", qRegion); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Regionn != nil {
+
+		// query param region__n
+		var qrRegionn string
+
+		if o.Regionn != nil {
+			qrRegionn = *o.Regionn
+		}
+		qRegionn := qrRegionn
+		if qRegionn != "" {
+
+			if err := r.SetQueryParam("region__n", qRegionn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RegionID != nil {
+
+		// query param region_id
+		var qrRegionID string
+
+		if o.RegionID != nil {
+			qrRegionID = *o.RegionID
+		}
+		qRegionID := qrRegionID
+		if qRegionID != "" {
+
+			if err := r.SetQueryParam("region_id", qRegionID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RegionIDn != nil {
+
+		// query param region_id__n
+		var qrRegionIDn string
+
+		if o.RegionIDn != nil {
+			qrRegionIDn = *o.RegionIDn
+		}
+		qRegionIDn := qrRegionIDn
+		if qRegionIDn != "" {
+
+			if err := r.SetQueryParam("region_id__n", qRegionIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Site != nil {
 
 		// query param site
@@ -1384,6 +1564,74 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qSiten != "" {
 
 			if err := r.SetQueryParam("site__n", qSiten); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroup != nil {
+
+		// query param site_group
+		var qrSiteGroup string
+
+		if o.SiteGroup != nil {
+			qrSiteGroup = *o.SiteGroup
+		}
+		qSiteGroup := qrSiteGroup
+		if qSiteGroup != "" {
+
+			if err := r.SetQueryParam("site_group", qSiteGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupn != nil {
+
+		// query param site_group__n
+		var qrSiteGroupn string
+
+		if o.SiteGroupn != nil {
+			qrSiteGroupn = *o.SiteGroupn
+		}
+		qSiteGroupn := qrSiteGroupn
+		if qSiteGroupn != "" {
+
+			if err := r.SetQueryParam("site_group__n", qSiteGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupID != nil {
+
+		// query param site_group_id
+		var qrSiteGroupID string
+
+		if o.SiteGroupID != nil {
+			qrSiteGroupID = *o.SiteGroupID
+		}
+		qSiteGroupID := qrSiteGroupID
+		if qSiteGroupID != "" {
+
+			if err := r.SetQueryParam("site_group_id", qSiteGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SiteGroupIDn != nil {
+
+		// query param site_group_id__n
+		var qrSiteGroupIDn string
+
+		if o.SiteGroupIDn != nil {
+			qrSiteGroupIDn = *o.SiteGroupIDn
+		}
+		qSiteGroupIDn := qrSiteGroupIDn
+		if qSiteGroupIDn != "" {
+
+			if err := r.SetQueryParam("site_group_id__n", qSiteGroupIDn); err != nil {
 				return err
 			}
 		}

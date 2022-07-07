@@ -81,6 +81,12 @@ type DcimManufacturersListParams struct {
 	// Contactn.
 	Contactn *string
 
+	// ContactGroup.
+	ContactGroup *string
+
+	// ContactGroupn.
+	ContactGroupn *string
+
 	// ContactRole.
 	ContactRole *string
 
@@ -307,6 +313,28 @@ func (o *DcimManufacturersListParams) WithContactn(contactn *string) *DcimManufa
 // SetContactn adds the contactN to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) SetContactn(contactn *string) {
 	o.Contactn = contactn
+}
+
+// WithContactGroup adds the contactGroup to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithContactGroup(contactGroup *string) *DcimManufacturersListParams {
+	o.SetContactGroup(contactGroup)
+	return o
+}
+
+// SetContactGroup adds the contactGroup to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetContactGroup(contactGroup *string) {
+	o.ContactGroup = contactGroup
+}
+
+// WithContactGroupn adds the contactGroupn to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) WithContactGroupn(contactGroupn *string) *DcimManufacturersListParams {
+	o.SetContactGroupn(contactGroupn)
+	return o
+}
+
+// SetContactGroupn adds the contactGroupN to the dcim manufacturers list params
+func (o *DcimManufacturersListParams) SetContactGroupn(contactGroupn *string) {
+	o.ContactGroupn = contactGroupn
 }
 
 // WithContactRole adds the contactRole to the dcim manufacturers list params
@@ -885,6 +913,40 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qContactn != "" {
 
 			if err := r.SetQueryParam("contact__n", qContactn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactGroup != nil {
+
+		// query param contact_group
+		var qrContactGroup string
+
+		if o.ContactGroup != nil {
+			qrContactGroup = *o.ContactGroup
+		}
+		qContactGroup := qrContactGroup
+		if qContactGroup != "" {
+
+			if err := r.SetQueryParam("contact_group", qContactGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactGroupn != nil {
+
+		// query param contact_group__n
+		var qrContactGroupn string
+
+		if o.ContactGroupn != nil {
+			qrContactGroupn = *o.ContactGroupn
+		}
+		qContactGroupn := qrContactGroupn
+		if qContactGroupn != "" {
+
+			if err := r.SetQueryParam("contact_group__n", qContactGroupn); err != nil {
 				return err
 			}
 		}

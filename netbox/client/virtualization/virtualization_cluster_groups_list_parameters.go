@@ -81,6 +81,12 @@ type VirtualizationClusterGroupsListParams struct {
 	// Contactn.
 	Contactn *string
 
+	// ContactGroup.
+	ContactGroup *string
+
+	// ContactGroupn.
+	ContactGroupn *string
+
 	// ContactRole.
 	ContactRole *string
 
@@ -307,6 +313,28 @@ func (o *VirtualizationClusterGroupsListParams) WithContactn(contactn *string) *
 // SetContactn adds the contactN to the virtualization cluster groups list params
 func (o *VirtualizationClusterGroupsListParams) SetContactn(contactn *string) {
 	o.Contactn = contactn
+}
+
+// WithContactGroup adds the contactGroup to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) WithContactGroup(contactGroup *string) *VirtualizationClusterGroupsListParams {
+	o.SetContactGroup(contactGroup)
+	return o
+}
+
+// SetContactGroup adds the contactGroup to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) SetContactGroup(contactGroup *string) {
+	o.ContactGroup = contactGroup
+}
+
+// WithContactGroupn adds the contactGroupn to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) WithContactGroupn(contactGroupn *string) *VirtualizationClusterGroupsListParams {
+	o.SetContactGroupn(contactGroupn)
+	return o
+}
+
+// SetContactGroupn adds the contactGroupN to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) SetContactGroupn(contactGroupn *string) {
+	o.ContactGroupn = contactGroupn
 }
 
 // WithContactRole adds the contactRole to the virtualization cluster groups list params
@@ -885,6 +913,40 @@ func (o *VirtualizationClusterGroupsListParams) WriteToRequest(r runtime.ClientR
 		if qContactn != "" {
 
 			if err := r.SetQueryParam("contact__n", qContactn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactGroup != nil {
+
+		// query param contact_group
+		var qrContactGroup string
+
+		if o.ContactGroup != nil {
+			qrContactGroup = *o.ContactGroup
+		}
+		qContactGroup := qrContactGroup
+		if qContactGroup != "" {
+
+			if err := r.SetQueryParam("contact_group", qContactGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactGroupn != nil {
+
+		// query param contact_group__n
+		var qrContactGroupn string
+
+		if o.ContactGroupn != nil {
+			qrContactGroupn = *o.ContactGroupn
+		}
+		qContactGroupn := qrContactGroupn
+		if qContactGroupn != "" {
+
+			if err := r.SetQueryParam("contact_group__n", qContactGroupn); err != nil {
 				return err
 			}
 		}
