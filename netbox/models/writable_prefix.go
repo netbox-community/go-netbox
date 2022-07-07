@@ -81,7 +81,7 @@ type WritablePrefix struct {
 	// Mark utilized
 	//
 	// Treat as 100% utilized
-	MarkUtilized bool `json:"mark_utilized,omitempty"`
+	MarkUtilized bool `json:"mark_utilized"`
 
 	// Prefix
 	//

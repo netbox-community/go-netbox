@@ -131,6 +131,13 @@ for prop, prop_spec in data["definitions"]["Tag"]["properties"].items():
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on Tag.{prop}")
 
+# Add omitempty = false for prefix mark_utilized
+for prop, prop_spec in data["definitions"]["WritablePrefix"]["properties"].items():
+    if prop == "mark_utilized":
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on WritablePrefix.{prop}")
+
+
 # Delete problematic maximums (might have to be replaced with a proper value)
 for definition, definition_spec in data["definitions"].items():
     for prop, prop_spec in definition_spec["properties"].items():

@@ -79080,7 +79080,8 @@
         "mark_utilized": {
           "title": "Mark utilized",
           "description": "Treat as 100% utilized",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
