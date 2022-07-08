@@ -79075,7 +79075,8 @@
         "is_pool": {
           "title": "Is a pool",
           "description": "All IP addresses within this prefix are considered usable",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "mark_utilized": {
           "title": "Mark utilized",

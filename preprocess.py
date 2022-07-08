@@ -131,6 +131,12 @@ for prop, prop_spec in data["definitions"]["Tag"]["properties"].items():
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on Tag.{prop}")
 
+# Add omitempty = false for prefix mark_utilized and is_pool
+for prop, prop_spec in data["definitions"]["WritablePrefix"]["properties"].items():
+    if prop in ["mark_utilized", "is_pool"]:
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on WritablePrefix.{prop}")
+
 # Add omitempty = false for prefix mark_utilized
 for prop, prop_spec in data["definitions"]["WritablePrefix"]["properties"].items():
     if prop == "mark_utilized":
