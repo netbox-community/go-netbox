@@ -166,7 +166,9 @@ data["paths"]["/ipam/prefixes/{id}/available-ips/"]["post"]["parameters"] = [
     }
 ]
 
-logging.info("Restore old version of the parameters of the ip-ranges available ip endpoint")
+logging.info(
+    "Restore old version of the parameters of the ip-ranges available ip endpoint"
+)
 data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["parameters"] = [
     {
         "name": "data",
@@ -176,7 +178,9 @@ data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["parameters"] = [
     }
 ]
 
-logging.info("Restore old version of the parameters of the ip-ranges available ip endpoint")
+logging.info(
+    "Restore old version of the parameters of the ip-ranges available ip endpoint"
+)
 data["paths"]["/ipam/ip-ranges/{id}/available-ips/"]["post"]["parameters"] = [
     {
         "name": "data",
