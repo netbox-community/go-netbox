@@ -143,6 +143,11 @@ for prop, prop_spec in data["definitions"]["WritablePrefix"]["properties"].items
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritablePrefix.{prop}")
 
+# Add omitempty = false for ipaddress role
+for prop, prop_spec in data["definitions"]["WritableIPAddress"]["properties"].items():
+    if prop == "role":
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on WritableIPAddress.{prop}")
 
 # Delete problematic maximums (might have to be replaced with a proper value)
 for definition, definition_spec in data["definitions"].items():

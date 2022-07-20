@@ -102,7 +102,7 @@ type WritableIPAddress struct {
 	//
 	// The functional role of this IP
 	// Enum: [loopback secondary anycast vip vrrp hsrp glbp carp]
-	Role string `json:"role,omitempty"`
+	Role string `json:"role"`
 
 	// Status
 	//

@@ -78463,7 +78463,8 @@
             "hsrp",
             "glbp",
             "carp"
-          ]
+          ],
+          "x-omitempty": false
         },
         "assigned_object_type": {
           "title": "Assigned object type",
