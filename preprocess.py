@@ -32,29 +32,29 @@ for path, path_spec in data["paths"].items():
 
 # Second, fix the config contexts and local context data to our needs
 # This implements https://github.com/fbreckle/go-netbox/commit/987669a91daf2d04a155feaf032a24ed684169b7 and https://github.com/fbreckle/go-netbox/commit/030637bab4bb25cec173035cd2d4a78fb3f47053
-for definition, definition_spec in data["definitions"].items():
-    for prop, prop_spec in definition_spec["properties"].items():
-        # for config_context, change additionalProperties.type from string to object
-        if prop == "config_context":
-            if prop_spec["additionalProperties"]["type"] == "string":
-                logging.debug(
-                    f"{definition}.{prop}.additionalProperties.type == string"
-                )
-                logging.debug("before: " + str(prop_spec))
-                prop_spec["additionalProperties"] = {"type": "object"}
-                logging.debug("after: " + str(prop_spec))
-                logging.info(f"fixed {definition}.{prop}")
-
-        # for local_context_data, change type from string to object
-        # and add additionalProperties with type object
-        if prop == "local_context_data":
-            if prop_spec["type"] == "string":
-                logging.debug(f"{definition}.{prop}.type == string")
-                logging.debug("before: " + str(prop_spec))
-                prop_spec["type"] = "object"
-                prop_spec["additionalProperties"] = {"type": "object"}
-                logging.debug("after: " + str(prop_spec))
-                logging.info(f"fixed {definition}.{prop}")
+#for definition, definition_spec in data["definitions"].items():
+#    for prop, prop_spec in definition_spec["properties"].items():
+#        # for config_context, change additionalProperties.type from string to object
+#        if prop == "config_context":
+#            if prop_spec["additionalProperties"]["type"] == "string":
+#                logging.debug(
+#                    f"{definition}.{prop}.additionalProperties.type == string"
+#                )
+#                logging.debug("before: " + str(prop_spec))
+#                prop_spec["additionalProperties"] = {"type": "object"}
+#                logging.debug("after: " + str(prop_spec))
+#                logging.info(f"fixed {definition}.{prop}")
+#
+#        # for local_context_data, change type from string to object
+#        # and add additionalProperties with type object
+#        if prop == "local_context_data":
+#            if prop_spec["type"] == "string":
+#                logging.debug(f"{definition}.{prop}.type == string")
+#                logging.debug("before: " + str(prop_spec))
+#                prop_spec["type"] = "object"
+#                prop_spec["additionalProperties"] = {"type": "object"}
+#                logging.debug("after: " + str(prop_spec))
+#                logging.info(f"fixed {definition}.{prop}")
 
 
 # Third, allow unsetting some optional attributes
