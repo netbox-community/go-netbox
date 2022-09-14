@@ -96,6 +96,12 @@ type ExtrasContentTypesListParams struct {
 	*/
 	Offset *int64
 
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
+
 	// Q.
 	Q *string
 
@@ -207,6 +213,17 @@ func (o *ExtrasContentTypesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithOrdering adds the ordering to the extras content types list params
+func (o *ExtrasContentTypesListParams) WithOrdering(ordering *string) *ExtrasContentTypesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the extras content types list params
+func (o *ExtrasContentTypesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
+}
+
 // WithQ adds the q to the extras content types list params
 func (o *ExtrasContentTypesListParams) WithQ(q *string) *ExtrasContentTypesListParams {
 	o.SetQ(q)
@@ -306,6 +323,23 @@ func (o *ExtrasContentTypesListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

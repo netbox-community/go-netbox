@@ -54,7 +54,7 @@ type Webhook struct {
 	// Conditions
 	//
 	// A set of conditions which determine whether the webhook will be generated.
-	Conditions *string `json:"conditions,omitempty"`
+	Conditions interface{} `json:"conditions,omitempty"`
 
 	// content types
 	// Required: true

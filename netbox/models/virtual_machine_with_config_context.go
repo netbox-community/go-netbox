@@ -37,15 +37,14 @@ import (
 type VirtualMachineWithConfigContext struct {
 
 	// cluster
-	// Required: true
-	Cluster *NestedCluster `json:"cluster"`
+	Cluster *NestedCluster `json:"cluster,omitempty"`
 
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
 	// Config context
 	// Read Only: true
-	ConfigContext map[string]interface{} `json:"config_context,omitempty"`
+	ConfigContext interface{} `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -54,6 +53,9 @@ type VirtualMachineWithConfigContext struct {
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// device
+	Device *NestedDevice `json:"device,omitempty"`
 
 	// Disk (GB)
 	// Maximum: 2.147483647e+09
@@ -74,7 +76,7 @@ type VirtualMachineWithConfigContext struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
-	LocalContextData map[string]interface{} `json:"local_context_data,omitempty"`
+	LocalContextData interface{} `json:"local_context_data,omitempty"`
 
 	// Memory (MB)
 	// Maximum: 2.147483647e+09
@@ -133,6 +135,10 @@ func (m *VirtualMachineWithConfigContext) Validate(formats strfmt.Registry) erro
 	}
 
 	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDevice(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -203,9 +209,8 @@ func (m *VirtualMachineWithConfigContext) Validate(formats strfmt.Registry) erro
 }
 
 func (m *VirtualMachineWithConfigContext) validateCluster(formats strfmt.Registry) error {
-
-	if err := validate.Required("cluster", "body", m.Cluster); err != nil {
-		return err
+	if swag.IsZero(m.Cluster) { // not required
+		return nil
 	}
 
 	if m.Cluster != nil {
@@ -229,6 +234,25 @@ func (m *VirtualMachineWithConfigContext) validateCreated(formats strfmt.Registr
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) validateDevice(formats strfmt.Registry) error {
+	if swag.IsZero(m.Device) { // not required
+		return nil
+	}
+
+	if m.Device != nil {
+		if err := m.Device.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -505,11 +529,11 @@ func (m *VirtualMachineWithConfigContext) ContextValidate(ctx context.Context, f
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
+	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCreated(ctx, formats); err != nil {
+	if err := m.contextValidateDevice(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -587,15 +611,26 @@ func (m *VirtualMachineWithConfigContext) contextValidateCluster(ctx context.Con
 	return nil
 }
 
-func (m *VirtualMachineWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
 func (m *VirtualMachineWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualMachineWithConfigContext) contextValidateDevice(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Device != nil {
+		if err := m.Device.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("device")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("device")
+			}
+			return err
+		}
 	}
 
 	return nil

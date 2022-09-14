@@ -59,6 +59,9 @@ type ModuleBay struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// installed module
+	InstalledModule *ModuleBayNestedModule `json:"installed_module,omitempty"`
+
 	// Label
 	//
 	// Physical label
@@ -104,6 +107,10 @@ func (m *ModuleBay) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDevice(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateInstalledModule(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -173,6 +180,25 @@ func (m *ModuleBay) validateDevice(formats strfmt.Registry) error {
 				return ve.ValidateName("device")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("device")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *ModuleBay) validateInstalledModule(formats strfmt.Registry) error {
+	if swag.IsZero(m.InstalledModule) { // not required
+		return nil
+	}
+
+	if m.InstalledModule != nil {
+		if err := m.InstalledModule.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("installed_module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("installed_module")
 			}
 			return err
 		}
@@ -292,6 +318,10 @@ func (m *ModuleBay) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateInstalledModule(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -348,6 +378,22 @@ func (m *ModuleBay) contextValidateID(ctx context.Context, formats strfmt.Regist
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ModuleBay) contextValidateInstalledModule(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.InstalledModule != nil {
+		if err := m.InstalledModule.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("installed_module")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("installed_module")
+			}
+			return err
+		}
 	}
 
 	return nil

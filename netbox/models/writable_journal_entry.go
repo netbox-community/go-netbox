@@ -38,7 +38,7 @@ type WritableJournalEntry struct {
 
 	// Assigned object
 	// Read Only: true
-	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
+	AssignedObject interface{} `json:"assigned_object,omitempty"`
 
 	// Assigned object id
 	// Required: true
@@ -77,6 +77,11 @@ type WritableJournalEntry struct {
 	// Enum: [info success warning danger]
 	Kind string `json:"kind,omitempty"`
 
+	// Last updated
+	// Read Only: true
+	// Format: date-time
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
 	// tags
 	Tags []*NestedTag `json:"tags"`
 
@@ -107,6 +112,10 @@ func (m *WritableJournalEntry) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateKind(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -219,6 +228,18 @@ func (m *WritableJournalEntry) validateKind(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableJournalEntry) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableJournalEntry) validateTags(formats strfmt.Registry) error {
 	if swag.IsZero(m.Tags) { // not required
 		return nil
@@ -261,10 +282,6 @@ func (m *WritableJournalEntry) validateURL(formats strfmt.Registry) error {
 func (m *WritableJournalEntry) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateAssignedObject(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -274,6 +291,10 @@ func (m *WritableJournalEntry) ContextValidate(ctx context.Context, formats strf
 	}
 
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -288,11 +309,6 @@ func (m *WritableJournalEntry) ContextValidate(ctx context.Context, formats strf
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *WritableJournalEntry) contextValidateAssignedObject(ctx context.Context, formats strfmt.Registry) error {
-
 	return nil
 }
 
@@ -317,6 +333,15 @@ func (m *WritableJournalEntry) contextValidateDisplay(ctx context.Context, forma
 func (m *WritableJournalEntry) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableJournalEntry) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

@@ -76,7 +76,6 @@ type CustomLink struct {
 	//
 	// Jinja2 template code for link text
 	// Required: true
-	// Max Length: 500
 	// Min Length: 1
 	LinkText *string `json:"link_text"`
 
@@ -84,7 +83,6 @@ type CustomLink struct {
 	//
 	// Jinja2 template code for link URL
 	// Required: true
-	// Max Length: 500
 	// Min Length: 1
 	LinkURL *string `json:"link_url"`
 
@@ -296,10 +294,6 @@ func (m *CustomLink) validateLinkText(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("link_text", "body", *m.LinkText, 500); err != nil {
-		return err
-	}
-
 	return nil
 }
 
@@ -310,10 +304,6 @@ func (m *CustomLink) validateLinkURL(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MinLength("link_url", "body", *m.LinkURL, 1); err != nil {
-		return err
-	}
-
-	if err := validate.MaxLength("link_url", "body", *m.LinkURL, 500); err != nil {
 		return err
 	}
 

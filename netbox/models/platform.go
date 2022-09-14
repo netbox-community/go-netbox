@@ -76,7 +76,7 @@ type Platform struct {
 	// NAPALM arguments
 	//
 	// Additional arguments to pass when initiating the NAPALM driver (JSON format)
-	NapalmArgs *string `json:"napalm_args,omitempty"`
+	NapalmArgs interface{} `json:"napalm_args,omitempty"`
 
 	// NAPALM driver
 	//

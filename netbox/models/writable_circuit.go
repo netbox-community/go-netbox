@@ -70,7 +70,7 @@ type WritableCircuit struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
-	// Date installed
+	// Installed
 	// Format: date
 	InstallDate *strfmt.Date `json:"install_date,omitempty"`
 
@@ -96,6 +96,10 @@ type WritableCircuit struct {
 	// Termination a
 	// Read Only: true
 	Terminationa int64 `json:"termination_a,omitempty"`
+
+	// Terminates
+	// Format: date
+	TerminationDate *strfmt.Date `json:"termination_date,omitempty"`
 
 	// Termination z
 	// Read Only: true
@@ -148,6 +152,10 @@ func (m *WritableCircuit) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTags(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTerminationDate(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -330,6 +338,18 @@ func (m *WritableCircuit) validateTags(formats strfmt.Registry) error {
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *WritableCircuit) validateTerminationDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.TerminationDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("termination_date", "body", "date", m.TerminationDate.String(), formats); err != nil {
+		return err
 	}
 
 	return nil

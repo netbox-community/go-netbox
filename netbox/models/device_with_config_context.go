@@ -53,7 +53,7 @@ type DeviceWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext map[string]interface{} `json:"config_context,omitempty"`
+	ConfigContext interface{} `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -88,7 +88,7 @@ type DeviceWithConfigContext struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
-	LocalContextData map[string]interface{} `json:"local_context_data,omitempty"`
+	LocalContextData interface{} `json:"local_context_data,omitempty"`
 
 	// location
 	Location *NestedLocation `json:"location,omitempty"`
@@ -105,8 +105,8 @@ type DeviceWithConfigContext struct {
 	Platform *NestedPlatform `json:"platform,omitempty"`
 
 	// Position (U)
-	// Minimum: 1
-	Position *int64 `json:"position,omitempty"`
+	// Minimum: 0.5
+	Position *float64 `json:"position,omitempty"`
 
 	// primary ip
 	PrimaryIP *NestedIPAddress `json:"primary_ip,omitempty"`
@@ -478,7 +478,7 @@ func (m *DeviceWithConfigContext) validatePosition(formats strfmt.Registry) erro
 		return nil
 	}
 
-	if err := validate.MinimumInt("position", "body", *m.Position, 1, false); err != nil {
+	if err := validate.Minimum("position", "body", *m.Position, 0.5, false); err != nil {
 		return err
 	}
 
@@ -732,10 +732,6 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -850,11 +846,6 @@ func (m *DeviceWithConfigContext) contextValidateCluster(ctx context.Context, fo
 			return err
 		}
 	}
-
-	return nil
-}
-
-func (m *DeviceWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

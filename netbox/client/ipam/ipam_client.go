@@ -155,6 +155,42 @@ type ClientService interface {
 
 	IpamIPRangesUpdate(params *IpamIPRangesUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesUpdateOK, error)
 
+	IpamL2vpnTerminationsBulkDelete(params *IpamL2vpnTerminationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsBulkDeleteNoContent, error)
+
+	IpamL2vpnTerminationsBulkPartialUpdate(params *IpamL2vpnTerminationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsBulkPartialUpdateOK, error)
+
+	IpamL2vpnTerminationsBulkUpdate(params *IpamL2vpnTerminationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsBulkUpdateOK, error)
+
+	IpamL2vpnTerminationsCreate(params *IpamL2vpnTerminationsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsCreateCreated, error)
+
+	IpamL2vpnTerminationsDelete(params *IpamL2vpnTerminationsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsDeleteNoContent, error)
+
+	IpamL2vpnTerminationsList(params *IpamL2vpnTerminationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsListOK, error)
+
+	IpamL2vpnTerminationsPartialUpdate(params *IpamL2vpnTerminationsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsPartialUpdateOK, error)
+
+	IpamL2vpnTerminationsRead(params *IpamL2vpnTerminationsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsReadOK, error)
+
+	IpamL2vpnTerminationsUpdate(params *IpamL2vpnTerminationsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsUpdateOK, error)
+
+	IpamL2vpnsBulkDelete(params *IpamL2vpnsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsBulkDeleteNoContent, error)
+
+	IpamL2vpnsBulkPartialUpdate(params *IpamL2vpnsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsBulkPartialUpdateOK, error)
+
+	IpamL2vpnsBulkUpdate(params *IpamL2vpnsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsBulkUpdateOK, error)
+
+	IpamL2vpnsCreate(params *IpamL2vpnsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsCreateCreated, error)
+
+	IpamL2vpnsDelete(params *IpamL2vpnsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsDeleteNoContent, error)
+
+	IpamL2vpnsList(params *IpamL2vpnsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsListOK, error)
+
+	IpamL2vpnsPartialUpdate(params *IpamL2vpnsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsPartialUpdateOK, error)
+
+	IpamL2vpnsRead(params *IpamL2vpnsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsReadOK, error)
+
+	IpamL2vpnsUpdate(params *IpamL2vpnsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsUpdateOK, error)
+
 	IpamPrefixesAvailableIpsCreate(params *IpamPrefixesAvailableIpsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsCreateCreated, error)
 
 	IpamPrefixesAvailableIpsList(params *IpamPrefixesAvailableIpsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesAvailableIpsListOK, error)
@@ -2457,6 +2493,690 @@ func (a *Client) IpamIPRangesUpdate(params *IpamIPRangesUpdateParams, authInfo r
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*IpamIPRangesUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnTerminationsBulkDelete ipam l2vpn terminations bulk delete API
+*/
+func (a *Client) IpamL2vpnTerminationsBulkDelete(params *IpamL2vpnTerminationsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnTerminationsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpn-terminations_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/l2vpn-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnTerminationsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnTerminationsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnTerminationsBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnTerminationsBulkPartialUpdate ipam l2vpn terminations bulk partial update API
+*/
+func (a *Client) IpamL2vpnTerminationsBulkPartialUpdate(params *IpamL2vpnTerminationsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnTerminationsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpn-terminations_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/l2vpn-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnTerminationsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnTerminationsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnTerminationsBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnTerminationsBulkUpdate ipam l2vpn terminations bulk update API
+*/
+func (a *Client) IpamL2vpnTerminationsBulkUpdate(params *IpamL2vpnTerminationsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnTerminationsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpn-terminations_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/l2vpn-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnTerminationsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnTerminationsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnTerminationsBulkUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnTerminationsCreate ipam l2vpn terminations create API
+*/
+func (a *Client) IpamL2vpnTerminationsCreate(params *IpamL2vpnTerminationsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnTerminationsCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpn-terminations_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/l2vpn-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnTerminationsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnTerminationsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnTerminationsCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnTerminationsDelete ipam l2vpn terminations delete API
+*/
+func (a *Client) IpamL2vpnTerminationsDelete(params *IpamL2vpnTerminationsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnTerminationsDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpn-terminations_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/l2vpn-terminations/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnTerminationsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnTerminationsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnTerminationsDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnTerminationsList Overrides ListModelMixin to allow processing ExportTemplates.
+*/
+func (a *Client) IpamL2vpnTerminationsList(params *IpamL2vpnTerminationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnTerminationsListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpn-terminations_list",
+		Method:             "GET",
+		PathPattern:        "/ipam/l2vpn-terminations/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnTerminationsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnTerminationsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnTerminationsListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnTerminationsPartialUpdate ipam l2vpn terminations partial update API
+*/
+func (a *Client) IpamL2vpnTerminationsPartialUpdate(params *IpamL2vpnTerminationsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnTerminationsPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpn-terminations_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/l2vpn-terminations/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnTerminationsPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnTerminationsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnTerminationsPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnTerminationsRead ipam l2vpn terminations read API
+*/
+func (a *Client) IpamL2vpnTerminationsRead(params *IpamL2vpnTerminationsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnTerminationsReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpn-terminations_read",
+		Method:             "GET",
+		PathPattern:        "/ipam/l2vpn-terminations/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnTerminationsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnTerminationsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnTerminationsReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnTerminationsUpdate ipam l2vpn terminations update API
+*/
+func (a *Client) IpamL2vpnTerminationsUpdate(params *IpamL2vpnTerminationsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnTerminationsUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpn-terminations_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/l2vpn-terminations/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnTerminationsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnTerminationsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnTerminationsUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnsBulkDelete ipam l2vpns bulk delete API
+*/
+func (a *Client) IpamL2vpnsBulkDelete(params *IpamL2vpnsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpns_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/l2vpns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnsBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnsBulkPartialUpdate ipam l2vpns bulk partial update API
+*/
+func (a *Client) IpamL2vpnsBulkPartialUpdate(params *IpamL2vpnsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpns_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/l2vpns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnsBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnsBulkUpdate ipam l2vpns bulk update API
+*/
+func (a *Client) IpamL2vpnsBulkUpdate(params *IpamL2vpnsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpns_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/l2vpns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnsBulkUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnsCreate ipam l2vpns create API
+*/
+func (a *Client) IpamL2vpnsCreate(params *IpamL2vpnsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnsCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpns_create",
+		Method:             "POST",
+		PathPattern:        "/ipam/l2vpns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnsCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnsDelete ipam l2vpns delete API
+*/
+func (a *Client) IpamL2vpnsDelete(params *IpamL2vpnsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnsDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpns_delete",
+		Method:             "DELETE",
+		PathPattern:        "/ipam/l2vpns/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnsDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnsList Overrides ListModelMixin to allow processing ExportTemplates.
+*/
+func (a *Client) IpamL2vpnsList(params *IpamL2vpnsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnsListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpns_list",
+		Method:             "GET",
+		PathPattern:        "/ipam/l2vpns/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnsListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnsPartialUpdate ipam l2vpns partial update API
+*/
+func (a *Client) IpamL2vpnsPartialUpdate(params *IpamL2vpnsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnsPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpns_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/ipam/l2vpns/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnsPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnsPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnsRead ipam l2vpns read API
+*/
+func (a *Client) IpamL2vpnsRead(params *IpamL2vpnsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnsReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpns_read",
+		Method:             "GET",
+		PathPattern:        "/ipam/l2vpns/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnsReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+  IpamL2vpnsUpdate ipam l2vpns update API
+*/
+func (a *Client) IpamL2vpnsUpdate(params *IpamL2vpnsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewIpamL2vpnsUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "ipam_l2vpns_update",
+		Method:             "PUT",
+		PathPattern:        "/ipam/l2vpns/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &IpamL2vpnsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*IpamL2vpnsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*IpamL2vpnsUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

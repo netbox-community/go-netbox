@@ -70,6 +70,10 @@ type ConsoleServerPortTemplate struct {
 	ModuleType *NestedModuleType `json:"module_type,omitempty"`
 
 	// Name
+	//
+	//
+	// {module} is accepted as a substitution for the module bay position when attached to a module type.
+	//
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1

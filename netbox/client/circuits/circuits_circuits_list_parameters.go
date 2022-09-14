@@ -144,11 +144,20 @@ type CircuitsCircuitsListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// Description.
 	Description *string
@@ -219,11 +228,20 @@ type CircuitsCircuitsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -236,6 +254,12 @@ type CircuitsCircuitsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Provider.
 	Provider *string
@@ -329,6 +353,24 @@ type CircuitsCircuitsListParams struct {
 
 	// TenantIDn.
 	TenantIDn *string
+
+	// TerminationDate.
+	TerminationDate *string
+
+	// TerminationDateGt.
+	TerminationDateGt *string
+
+	// TerminationDateGte.
+	TerminationDateGte *string
+
+	// TerminationDateLt.
+	TerminationDateLt *string
+
+	// TerminationDateLte.
+	TerminationDateLte *string
+
+	// TerminationDaten.
+	TerminationDaten *string
 
 	// Type.
 	Type *string
@@ -648,6 +690,17 @@ func (o *CircuitsCircuitsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithCreatedGt(createdGt *string) *CircuitsCircuitsListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) WithCreatedGte(createdGte *string) *CircuitsCircuitsListParams {
 	o.SetCreatedGte(createdGte)
@@ -659,6 +712,17 @@ func (o *CircuitsCircuitsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithCreatedLt(createdLt *string) *CircuitsCircuitsListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) WithCreatedLte(createdLte *string) *CircuitsCircuitsListParams {
 	o.SetCreatedLte(createdLte)
@@ -668,6 +732,17 @@ func (o *CircuitsCircuitsListParams) WithCreatedLte(createdLte *string) *Circuit
 // SetCreatedLte adds the createdLte to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithCreatedn(createdn *string) *CircuitsCircuitsListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the circuits circuits list params
@@ -923,6 +998,17 @@ func (o *CircuitsCircuitsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *CircuitsCircuitsListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *CircuitsCircuitsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -934,6 +1020,17 @@ func (o *CircuitsCircuitsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *CircuitsCircuitsListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *CircuitsCircuitsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -943,6 +1040,17 @@ func (o *CircuitsCircuitsListParams) WithLastUpdatedLte(lastUpdatedLte *string) 
 // SetLastUpdatedLte adds the lastUpdatedLte to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithLastUpdatedn(lastUpdatedn *string) *CircuitsCircuitsListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the circuits circuits list params
@@ -965,6 +1073,17 @@ func (o *CircuitsCircuitsListParams) WithOffset(offset *int64) *CircuitsCircuits
 // SetOffset adds the offset to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithOrdering(ordering *string) *CircuitsCircuitsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithProvider adds the provider to the circuits circuits list params
@@ -1306,6 +1425,72 @@ func (o *CircuitsCircuitsListParams) WithTenantIDn(tenantIDn *string) *CircuitsC
 // SetTenantIDn adds the tenantIdN to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) SetTenantIDn(tenantIDn *string) {
 	o.TenantIDn = tenantIDn
+}
+
+// WithTerminationDate adds the terminationDate to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithTerminationDate(terminationDate *string) *CircuitsCircuitsListParams {
+	o.SetTerminationDate(terminationDate)
+	return o
+}
+
+// SetTerminationDate adds the terminationDate to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetTerminationDate(terminationDate *string) {
+	o.TerminationDate = terminationDate
+}
+
+// WithTerminationDateGt adds the terminationDateGt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithTerminationDateGt(terminationDateGt *string) *CircuitsCircuitsListParams {
+	o.SetTerminationDateGt(terminationDateGt)
+	return o
+}
+
+// SetTerminationDateGt adds the terminationDateGt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetTerminationDateGt(terminationDateGt *string) {
+	o.TerminationDateGt = terminationDateGt
+}
+
+// WithTerminationDateGte adds the terminationDateGte to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithTerminationDateGte(terminationDateGte *string) *CircuitsCircuitsListParams {
+	o.SetTerminationDateGte(terminationDateGte)
+	return o
+}
+
+// SetTerminationDateGte adds the terminationDateGte to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetTerminationDateGte(terminationDateGte *string) {
+	o.TerminationDateGte = terminationDateGte
+}
+
+// WithTerminationDateLt adds the terminationDateLt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithTerminationDateLt(terminationDateLt *string) *CircuitsCircuitsListParams {
+	o.SetTerminationDateLt(terminationDateLt)
+	return o
+}
+
+// SetTerminationDateLt adds the terminationDateLt to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetTerminationDateLt(terminationDateLt *string) {
+	o.TerminationDateLt = terminationDateLt
+}
+
+// WithTerminationDateLte adds the terminationDateLte to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithTerminationDateLte(terminationDateLte *string) *CircuitsCircuitsListParams {
+	o.SetTerminationDateLte(terminationDateLte)
+	return o
+}
+
+// SetTerminationDateLte adds the terminationDateLte to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetTerminationDateLte(terminationDateLte *string) {
+	o.TerminationDateLte = terminationDateLte
+}
+
+// WithTerminationDaten adds the terminationDaten to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithTerminationDaten(terminationDaten *string) *CircuitsCircuitsListParams {
+	o.SetTerminationDaten(terminationDaten)
+	return o
+}
+
+// SetTerminationDaten adds the terminationDateN to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetTerminationDaten(terminationDaten *string) {
+	o.TerminationDaten = terminationDaten
 }
 
 // WithType adds the typeVar to the circuits circuits list params
@@ -1751,6 +1936,23 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1768,6 +1970,23 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1780,6 +1999,23 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -2176,6 +2412,23 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -2193,6 +2446,23 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -2205,6 +2475,23 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -2239,6 +2526,23 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}
@@ -2766,6 +3070,108 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qTenantIDn != "" {
 
 			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationDate != nil {
+
+		// query param termination_date
+		var qrTerminationDate string
+
+		if o.TerminationDate != nil {
+			qrTerminationDate = *o.TerminationDate
+		}
+		qTerminationDate := qrTerminationDate
+		if qTerminationDate != "" {
+
+			if err := r.SetQueryParam("termination_date", qTerminationDate); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationDateGt != nil {
+
+		// query param termination_date__gt
+		var qrTerminationDateGt string
+
+		if o.TerminationDateGt != nil {
+			qrTerminationDateGt = *o.TerminationDateGt
+		}
+		qTerminationDateGt := qrTerminationDateGt
+		if qTerminationDateGt != "" {
+
+			if err := r.SetQueryParam("termination_date__gt", qTerminationDateGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationDateGte != nil {
+
+		// query param termination_date__gte
+		var qrTerminationDateGte string
+
+		if o.TerminationDateGte != nil {
+			qrTerminationDateGte = *o.TerminationDateGte
+		}
+		qTerminationDateGte := qrTerminationDateGte
+		if qTerminationDateGte != "" {
+
+			if err := r.SetQueryParam("termination_date__gte", qTerminationDateGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationDateLt != nil {
+
+		// query param termination_date__lt
+		var qrTerminationDateLt string
+
+		if o.TerminationDateLt != nil {
+			qrTerminationDateLt = *o.TerminationDateLt
+		}
+		qTerminationDateLt := qrTerminationDateLt
+		if qTerminationDateLt != "" {
+
+			if err := r.SetQueryParam("termination_date__lt", qTerminationDateLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationDateLte != nil {
+
+		// query param termination_date__lte
+		var qrTerminationDateLte string
+
+		if o.TerminationDateLte != nil {
+			qrTerminationDateLte = *o.TerminationDateLte
+		}
+		qTerminationDateLte := qrTerminationDateLte
+		if qTerminationDateLte != "" {
+
+			if err := r.SetQueryParam("termination_date__lte", qTerminationDateLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TerminationDaten != nil {
+
+		// query param termination_date__n
+		var qrTerminationDaten string
+
+		if o.TerminationDaten != nil {
+			qrTerminationDaten = *o.TerminationDaten
+		}
+		qTerminationDaten := qrTerminationDaten
+		if qTerminationDaten != "" {
+
+			if err := r.SetQueryParam("termination_date__n", qTerminationDaten); err != nil {
 				return err
 			}
 		}

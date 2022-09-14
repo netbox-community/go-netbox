@@ -70,6 +70,10 @@ type WritableVMInterface struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// L2vpn termination
+	// Read Only: true
+	L2vpnTermination string `json:"l2vpn_termination,omitempty"`
+
 	// Last updated
 	// Read Only: true
 	// Format: date-time
@@ -366,6 +370,10 @@ func (m *WritableVMInterface) ContextValidate(ctx context.Context, formats strfm
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateL2vpnTermination(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -423,6 +431,15 @@ func (m *WritableVMInterface) contextValidateDisplay(ctx context.Context, format
 func (m *WritableVMInterface) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVMInterface) contextValidateL2vpnTermination(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "l2vpn_termination", "body", string(m.L2vpnTermination)); err != nil {
 		return err
 	}
 

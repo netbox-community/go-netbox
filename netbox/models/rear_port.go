@@ -43,6 +43,11 @@ type RearPort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
+	// Cable end
+	// Read Only: true
+	// Min Length: 1
+	CableEnd string `json:"cable_end,omitempty"`
+
 	// Color
 	// Max Length: 6
 	// Pattern: ^[0-9a-f]{6}$
@@ -83,17 +88,15 @@ type RearPort struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
-	// Link peer
-	//
 	//
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+	LinkPeers []*string `json:"link_peers"`
 
-	// Link peer type
+	// Link peers type
 	// Read Only: true
-	LinkPeerType string `json:"link_peer_type,omitempty"`
+	LinkPeersType string `json:"link_peers_type,omitempty"`
 
 	// Mark connected
 	//
@@ -132,6 +135,10 @@ func (m *RearPort) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCable(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCableEnd(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -203,6 +210,18 @@ func (m *RearPort) validateCable(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *RearPort) validateCableEnd(formats strfmt.Registry) error {
+	if swag.IsZero(m.CableEnd) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("cable_end", "body", m.CableEnd, 1); err != nil {
+		return err
 	}
 
 	return nil
@@ -414,6 +433,10 @@ func (m *RearPort) ContextValidate(ctx context.Context, formats strfmt.Registry)
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateCableEnd(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -434,11 +457,11 @@ func (m *RearPort) ContextValidate(ctx context.Context, formats strfmt.Registry)
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeers(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeersType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -484,6 +507,15 @@ func (m *RearPort) contextValidateCable(ctx context.Context, formats strfmt.Regi
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *RearPort) contextValidateCableEnd(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_end", "body", string(m.CableEnd)); err != nil {
+		return err
 	}
 
 	return nil
@@ -541,14 +573,18 @@ func (m *RearPort) contextValidateLastUpdated(ctx context.Context, formats strfm
 	return nil
 }
 
-func (m *RearPort) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+func (m *RearPort) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+		return err
+	}
 
 	return nil
 }
 
-func (m *RearPort) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+func (m *RearPort) contextValidateLinkPeersType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers_type", "body", string(m.LinkPeersType)); err != nil {
 		return err
 	}
 

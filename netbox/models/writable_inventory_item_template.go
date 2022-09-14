@@ -40,7 +40,7 @@ type WritableInventoryItemTemplate struct {
 
 	// Component
 	// Read Only: true
-	Component map[string]*string `json:"component,omitempty"`
+	Component interface{} `json:"component,omitempty"`
 
 	// Component id
 	// Minimum: 0
@@ -85,6 +85,10 @@ type WritableInventoryItemTemplate struct {
 	Manufacturer *int64 `json:"manufacturer,omitempty"`
 
 	// Name
+	//
+	//
+	// {module} is accepted as a substitution for the module bay position when attached to a module type.
+	//
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1
@@ -272,10 +276,6 @@ func (m *WritableInventoryItemTemplate) ContextValidate(ctx context.Context, for
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateComponent(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -307,11 +307,6 @@ func (m *WritableInventoryItemTemplate) contextValidateDepth(ctx context.Context
 	if err := validate.ReadOnly(ctx, "_depth", "body", int64(m.Depth)); err != nil {
 		return err
 	}
-
-	return nil
-}
-
-func (m *WritableInventoryItemTemplate) contextValidateComponent(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

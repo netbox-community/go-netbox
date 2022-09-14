@@ -92,7 +92,8 @@ type IPAddress struct {
 	NatInside *NestedIPAddress `json:"nat_inside,omitempty"`
 
 	// nat outside
-	NatOutside *NestedIPAddress `json:"nat_outside,omitempty"`
+	// Read Only: true
+	NatOutside []*NestedIPAddress `json:"nat_outside"`
 
 	// role
 	Role *IPAddressRole `json:"role,omitempty"`
@@ -301,15 +302,22 @@ func (m *IPAddress) validateNatOutside(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if m.NatOutside != nil {
-		if err := m.NatOutside.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("nat_outside")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("nat_outside")
-			}
-			return err
+	for i := 0; i < len(m.NatOutside); i++ {
+		if swag.IsZero(m.NatOutside[i]) { // not required
+			continue
 		}
+
+		if m.NatOutside[i] != nil {
+			if err := m.NatOutside[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("nat_outside" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("nat_outside" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -561,15 +569,23 @@ func (m *IPAddress) contextValidateNatInside(ctx context.Context, formats strfmt
 
 func (m *IPAddress) contextValidateNatOutside(ctx context.Context, formats strfmt.Registry) error {
 
-	if m.NatOutside != nil {
-		if err := m.NatOutside.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("nat_outside")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("nat_outside")
+	if err := validate.ReadOnly(ctx, "nat_outside", "body", []*NestedIPAddress(m.NatOutside)); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.NatOutside); i++ {
+
+		if m.NatOutside[i] != nil {
+			if err := m.NatOutside[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("nat_outside" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("nat_outside" + "." + strconv.Itoa(i))
+				}
+				return err
 			}
-			return err
 		}
+
 	}
 
 	return nil

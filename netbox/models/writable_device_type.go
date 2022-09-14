@@ -115,10 +115,9 @@ type WritableDeviceType struct {
 	// tags
 	Tags []*NestedTag `json:"tags"`
 
-	// Height (U)
-	// Maximum: 32767
+	// Position (U)
 	// Minimum: 0
-	UHeight *int64 `json:"u_height,omitempty"`
+	UHeight *float64 `json:"u_height,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -425,11 +424,7 @@ func (m *WritableDeviceType) validateUHeight(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MinimumInt("u_height", "body", *m.UHeight, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("u_height", "body", *m.UHeight, 32767, false); err != nil {
+	if err := validate.Minimum("u_height", "body", *m.UHeight, 0, false); err != nil {
 		return err
 	}
 
