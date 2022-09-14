@@ -32,7 +32,7 @@ for path, path_spec in data["paths"].items():
 
 # Second, fix the config contexts and local context data to our needs
 # This implements https://github.com/fbreckle/go-netbox/commit/987669a91daf2d04a155feaf032a24ed684169b7 and https://github.com/fbreckle/go-netbox/commit/030637bab4bb25cec173035cd2d4a78fb3f47053
-#for definition, definition_spec in data["definitions"].items():
+# for definition, definition_spec in data["definitions"].items():
 #    for prop, prop_spec in definition_spec["properties"].items():
 #        # for config_context, change additionalProperties.type from string to object
 #        if prop == "config_context":
@@ -158,6 +158,12 @@ for definition, definition_spec in data["definitions"].items():
         ):
             del prop_spec["maximum"]
             logging.info(f"deleted maximum of {definition}.{prop}")
+        if (
+            "minimum" in prop_spec.keys()
+            and prop_spec["minimum"] == -9223372036854776000
+        ):
+            del prop_spec["minimum"]
+            logging.info(f"deleted minimum of {definition}.{prop}")
 
 # Add custom fields to PrefixLength (https://github.com/fbreckle/go-netbox/pull/11)
 data["definitions"]["PrefixLength"]["properties"]["custom_fields"] = {

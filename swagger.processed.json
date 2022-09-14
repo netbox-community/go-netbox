@@ -74636,7 +74636,6 @@
         "identifier": {
           "title": "Identifier",
           "type": "integer",
-          "minimum": -9223372036854776000,
           "x-nullable": true
         },
         "name": {
@@ -86350,7 +86349,6 @@
         "identifier": {
           "title": "Identifier",
           "type": "integer",
-          "minimum": -9223372036854776000,
           "x-nullable": true
         },
         "name": {
@@ -86485,7 +86483,6 @@
         "identifier": {
           "title": "Identifier",
           "type": "integer",
-          "minimum": -9223372036854776000,
           "x-nullable": true
         },
         "name": {

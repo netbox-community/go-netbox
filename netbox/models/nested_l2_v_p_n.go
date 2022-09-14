@@ -44,7 +44,6 @@ type NestedL2VPN struct {
 	ID int64 `json:"id,omitempty"`
 
 	// Identifier
-	// Minimum: -9.223372036854776e+18
 	Identifier *int64 `json:"identifier,omitempty"`
 
 	// Name
@@ -75,10 +74,6 @@ type NestedL2VPN struct {
 func (m *NestedL2VPN) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateIdentifier(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -98,18 +93,6 @@ func (m *NestedL2VPN) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *NestedL2VPN) validateIdentifier(formats strfmt.Registry) error {
-	if swag.IsZero(m.Identifier) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("identifier", "body", *m.Identifier, -9.223372036854776e+18, false); err != nil {
-		return err
-	}
-
 	return nil
 }
 
