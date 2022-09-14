@@ -54,7 +54,7 @@ type WritableConfigContext struct {
 
 	// Data
 	// Required: true
-	Data *string `json:"data"`
+	Data interface{} `json:"data"`
 
 	// Description
 	// Max Length: 200
@@ -79,6 +79,10 @@ type WritableConfigContext struct {
 	// Read Only: true
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// locations
+	// Unique: true
+	Locations []int64 `json:"locations"`
 
 	// Name
 	// Required: true
@@ -162,6 +166,10 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLocations(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -265,8 +273,8 @@ func (m *WritableConfigContext) validateCreated(formats strfmt.Registry) error {
 
 func (m *WritableConfigContext) validateData(formats strfmt.Registry) error {
 
-	if err := validate.Required("data", "body", m.Data); err != nil {
-		return err
+	if m.Data == nil {
+		return errors.Required("data", "body", nil)
 	}
 
 	return nil
@@ -302,6 +310,18 @@ func (m *WritableConfigContext) validateLastUpdated(formats strfmt.Registry) err
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConfigContext) validateLocations(formats strfmt.Registry) error {
+	if swag.IsZero(m.Locations) { // not required
+		return nil
+	}
+
+	if err := validate.UniqueItems("locations", "body", m.Locations); err != nil {
 		return err
 	}
 
@@ -396,7 +416,7 @@ func (m *WritableConfigContext) validateTags(formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Tags); i++ {
 
-		if err := validate.Pattern("tags"+"."+strconv.Itoa(i), "body", m.Tags[i], `^[-a-zA-Z0-9_]+$`); err != nil {
+		if err := validate.Pattern("tags"+"."+strconv.Itoa(i), "body", m.Tags[i], `^[-\w]+$`); err != nil {
 			return err
 		}
 

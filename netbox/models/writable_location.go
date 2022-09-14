@@ -22,6 +22,7 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -92,6 +93,10 @@ type WritableLocation struct {
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 
+	// Status
+	// Enum: [planned staging active decommissioning retired]
+	Status string `json:"status,omitempty"`
+
 	// tags
 	Tags []*NestedTag `json:"tags"`
 
@@ -129,6 +134,10 @@ func (m *WritableLocation) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSlug(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -223,6 +232,57 @@ func (m *WritableLocation) validateSlug(formats strfmt.Registry) error {
 	}
 
 	if err := validate.Pattern("slug", "body", *m.Slug, `^[-a-zA-Z0-9_]+$`); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var writableLocationTypeStatusPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["planned","staging","active","decommissioning","retired"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableLocationTypeStatusPropEnum = append(writableLocationTypeStatusPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableLocationStatusPlanned captures enum value "planned"
+	WritableLocationStatusPlanned string = "planned"
+
+	// WritableLocationStatusStaging captures enum value "staging"
+	WritableLocationStatusStaging string = "staging"
+
+	// WritableLocationStatusActive captures enum value "active"
+	WritableLocationStatusActive string = "active"
+
+	// WritableLocationStatusDecommissioning captures enum value "decommissioning"
+	WritableLocationStatusDecommissioning string = "decommissioning"
+
+	// WritableLocationStatusRetired captures enum value "retired"
+	WritableLocationStatusRetired string = "retired"
+)
+
+// prop value enum
+func (m *WritableLocation) validateStatusEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableLocationTypeStatusPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableLocation) validateStatus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
 	}
 

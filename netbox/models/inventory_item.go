@@ -47,7 +47,7 @@ type InventoryItem struct {
 
 	// Component
 	// Read Only: true
-	Component map[string]*string `json:"component,omitempty"`
+	Component interface{} `json:"component,omitempty"`
 
 	// Component id
 	// Minimum: 0
@@ -413,10 +413,6 @@ func (m *InventoryItem) ContextValidate(ctx context.Context, formats strfmt.Regi
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateComponent(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -464,11 +460,6 @@ func (m *InventoryItem) contextValidateDepth(ctx context.Context, formats strfmt
 	if err := validate.ReadOnly(ctx, "_depth", "body", int64(m.Depth)); err != nil {
 		return err
 	}
-
-	return nil
-}
-
-func (m *InventoryItem) contextValidateComponent(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

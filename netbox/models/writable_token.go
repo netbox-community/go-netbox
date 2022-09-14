@@ -34,6 +34,9 @@ import (
 // swagger:model WritableToken
 type WritableToken struct {
 
+	// allowed ips
+	AllowedIps []IPNetwork `json:"allowed_ips"`
+
 	// Created
 	// Read Only: true
 	// Format: date-time
@@ -59,6 +62,10 @@ type WritableToken struct {
 	// Max Length: 40
 	// Min Length: 40
 	Key string `json:"key,omitempty"`
+
+	// Last used
+	// Format: date-time
+	LastUsed *strfmt.DateTime `json:"last_used,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -92,6 +99,10 @@ func (m *WritableToken) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateKey(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLastUsed(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -155,6 +166,18 @@ func (m *WritableToken) validateKey(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("key", "body", m.Key, 40); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableToken) validateLastUsed(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUsed) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("last_used", "body", "date-time", m.LastUsed.String(), formats); err != nil {
 		return err
 	}
 

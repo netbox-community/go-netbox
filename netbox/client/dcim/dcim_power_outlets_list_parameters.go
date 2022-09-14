@@ -75,6 +75,12 @@ func NewDcimPowerOutletsListParamsWithHTTPClient(client *http.Client) *DcimPower
 */
 type DcimPowerOutletsListParams struct {
 
+	// CableEnd.
+	CableEnd *string
+
+	// CableEndn.
+	CableEndn *string
+
 	// Cabled.
 	Cabled *string
 
@@ -84,11 +90,20 @@ type DcimPowerOutletsListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// Description.
 	Description *string
@@ -189,11 +204,20 @@ type DcimPowerOutletsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -255,8 +279,26 @@ type DcimPowerOutletsListParams struct {
 	*/
 	Offset *int64
 
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
+
 	// Q.
 	Q *string
+
+	// Rack.
+	Rack *string
+
+	// Rackn.
+	Rackn *string
+
+	// RackID.
+	RackID *string
+
+	// RackIDn.
+	RackIDn *string
 
 	// Region.
 	Region *string
@@ -371,6 +413,28 @@ func (o *DcimPowerOutletsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithCableEnd adds the cableEnd to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithCableEnd(cableEnd *string) *DcimPowerOutletsListParams {
+	o.SetCableEnd(cableEnd)
+	return o
+}
+
+// SetCableEnd adds the cableEnd to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetCableEnd(cableEnd *string) {
+	o.CableEnd = cableEnd
+}
+
+// WithCableEndn adds the cableEndn to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithCableEndn(cableEndn *string) *DcimPowerOutletsListParams {
+	o.SetCableEndn(cableEndn)
+	return o
+}
+
+// SetCableEndn adds the cableEndN to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetCableEndn(cableEndn *string) {
+	o.CableEndn = cableEndn
+}
+
 // WithCabled adds the cabled to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithCabled(cabled *string) *DcimPowerOutletsListParams {
 	o.SetCabled(cabled)
@@ -404,6 +468,17 @@ func (o *DcimPowerOutletsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithCreatedGt(createdGt *string) *DcimPowerOutletsListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithCreatedGte(createdGte *string) *DcimPowerOutletsListParams {
 	o.SetCreatedGte(createdGte)
@@ -415,6 +490,17 @@ func (o *DcimPowerOutletsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithCreatedLt(createdLt *string) *DcimPowerOutletsListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithCreatedLte(createdLte *string) *DcimPowerOutletsListParams {
 	o.SetCreatedLte(createdLte)
@@ -424,6 +510,17 @@ func (o *DcimPowerOutletsListParams) WithCreatedLte(createdLte *string) *DcimPow
 // SetCreatedLte adds the createdLte to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithCreatedn(createdn *string) *DcimPowerOutletsListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the dcim power outlets list params
@@ -789,6 +886,17 @@ func (o *DcimPowerOutletsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimPowerOutletsListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimPowerOutletsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -800,6 +908,17 @@ func (o *DcimPowerOutletsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimPowerOutletsListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimPowerOutletsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -809,6 +928,17 @@ func (o *DcimPowerOutletsListParams) WithLastUpdatedLte(lastUpdatedLte *string) 
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimPowerOutletsListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim power outlets list params
@@ -1009,6 +1139,17 @@ func (o *DcimPowerOutletsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithOrdering adds the ordering to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithOrdering(ordering *string) *DcimPowerOutletsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
+}
+
 // WithQ adds the q to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithQ(q *string) *DcimPowerOutletsListParams {
 	o.SetQ(q)
@@ -1018,6 +1159,50 @@ func (o *DcimPowerOutletsListParams) WithQ(q *string) *DcimPowerOutletsListParam
 // SetQ adds the q to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) SetQ(q *string) {
 	o.Q = q
+}
+
+// WithRack adds the rack to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithRack(rack *string) *DcimPowerOutletsListParams {
+	o.SetRack(rack)
+	return o
+}
+
+// SetRack adds the rack to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetRack(rack *string) {
+	o.Rack = rack
+}
+
+// WithRackn adds the rackn to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithRackn(rackn *string) *DcimPowerOutletsListParams {
+	o.SetRackn(rackn)
+	return o
+}
+
+// SetRackn adds the rackN to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetRackn(rackn *string) {
+	o.Rackn = rackn
+}
+
+// WithRackID adds the rackID to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithRackID(rackID *string) *DcimPowerOutletsListParams {
+	o.SetRackID(rackID)
+	return o
+}
+
+// SetRackID adds the rackId to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetRackID(rackID *string) {
+	o.RackID = rackID
+}
+
+// WithRackIDn adds the rackIDn to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithRackIDn(rackIDn *string) *DcimPowerOutletsListParams {
+	o.SetRackIDn(rackIDn)
+	return o
+}
+
+// SetRackIDn adds the rackIdN to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetRackIDn(rackIDn *string) {
+	o.RackIDn = rackIDn
 }
 
 // WithRegion adds the region to the dcim power outlets list params
@@ -1248,6 +1433,40 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 	}
 	var res []error
 
+	if o.CableEnd != nil {
+
+		// query param cable_end
+		var qrCableEnd string
+
+		if o.CableEnd != nil {
+			qrCableEnd = *o.CableEnd
+		}
+		qCableEnd := qrCableEnd
+		if qCableEnd != "" {
+
+			if err := r.SetQueryParam("cable_end", qCableEnd); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CableEndn != nil {
+
+		// query param cable_end__n
+		var qrCableEndn string
+
+		if o.CableEndn != nil {
+			qrCableEndn = *o.CableEndn
+		}
+		qCableEndn := qrCableEndn
+		if qCableEndn != "" {
+
+			if err := r.SetQueryParam("cable_end__n", qCableEndn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Cabled != nil {
 
 		// query param cabled
@@ -1299,6 +1518,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1316,6 +1552,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1328,6 +1581,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1894,6 +2164,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1911,6 +2198,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1923,6 +2227,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -2234,6 +2555,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Q != nil {
 
 		// query param q
@@ -2246,6 +2584,74 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qQ != "" {
 
 			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Rack != nil {
+
+		// query param rack
+		var qrRack string
+
+		if o.Rack != nil {
+			qrRack = *o.Rack
+		}
+		qRack := qrRack
+		if qRack != "" {
+
+			if err := r.SetQueryParam("rack", qRack); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Rackn != nil {
+
+		// query param rack__n
+		var qrRackn string
+
+		if o.Rackn != nil {
+			qrRackn = *o.Rackn
+		}
+		qRackn := qrRackn
+		if qRackn != "" {
+
+			if err := r.SetQueryParam("rack__n", qRackn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RackID != nil {
+
+		// query param rack_id
+		var qrRackID string
+
+		if o.RackID != nil {
+			qrRackID = *o.RackID
+		}
+		qRackID := qrRackID
+		if qRackID != "" {
+
+			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RackIDn != nil {
+
+		// query param rack_id__n
+		var qrRackIDn string
+
+		if o.RackIDn != nil {
+			qrRackIDn = *o.RackIDn
+		}
+		qRackIDn := qrRackIDn
+		if qRackIDn != "" {
+
+			if err := r.SetQueryParam("rack_id__n", qRackIDn); err != nil {
 				return err
 			}
 		}

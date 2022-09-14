@@ -192,6 +192,12 @@ type UsersPermissionsListParams struct {
 	*/
 	Offset *int64
 
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
+
 	// Q.
 	Q *string
 
@@ -665,6 +671,17 @@ func (o *UsersPermissionsListParams) WithOffset(offset *int64) *UsersPermissions
 // SetOffset adds the offset to the users permissions list params
 func (o *UsersPermissionsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the users permissions list params
+func (o *UsersPermissionsListParams) WithOrdering(ordering *string) *UsersPermissionsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the users permissions list params
+func (o *UsersPermissionsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithQ adds the q to the users permissions list params
@@ -1354,6 +1371,23 @@ func (o *UsersPermissionsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

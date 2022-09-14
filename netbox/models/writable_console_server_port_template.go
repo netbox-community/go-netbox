@@ -72,6 +72,10 @@ type WritableConsoleServerPortTemplate struct {
 	ModuleType *int64 `json:"module_type"`
 
 	// Name
+	//
+	//
+	// {module} is accepted as a substitution for the module bay position when attached to a module type.
+	//
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1

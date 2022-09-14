@@ -93,6 +93,12 @@ type DcimPowerFeedsListParams struct {
 	// Amperagen.
 	Amperagen *string
 
+	// CableEnd.
+	CableEnd *string
+
+	// CableEndn.
+	CableEndn *string
+
 	// Cabled.
 	Cabled *string
 
@@ -102,11 +108,20 @@ type DcimPowerFeedsListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// ID.
 	ID *string
@@ -129,11 +144,20 @@ type DcimPowerFeedsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -194,6 +218,12 @@ type DcimPowerFeedsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Phase.
 	Phase *string
@@ -413,6 +443,28 @@ func (o *DcimPowerFeedsListParams) SetAmperagen(amperagen *string) {
 	o.Amperagen = amperagen
 }
 
+// WithCableEnd adds the cableEnd to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithCableEnd(cableEnd *string) *DcimPowerFeedsListParams {
+	o.SetCableEnd(cableEnd)
+	return o
+}
+
+// SetCableEnd adds the cableEnd to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetCableEnd(cableEnd *string) {
+	o.CableEnd = cableEnd
+}
+
+// WithCableEndn adds the cableEndn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithCableEndn(cableEndn *string) *DcimPowerFeedsListParams {
+	o.SetCableEndn(cableEndn)
+	return o
+}
+
+// SetCableEndn adds the cableEndN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetCableEndn(cableEndn *string) {
+	o.CableEndn = cableEndn
+}
+
 // WithCabled adds the cabled to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithCabled(cabled *string) *DcimPowerFeedsListParams {
 	o.SetCabled(cabled)
@@ -446,6 +498,17 @@ func (o *DcimPowerFeedsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithCreatedGt(createdGt *string) *DcimPowerFeedsListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithCreatedGte(createdGte *string) *DcimPowerFeedsListParams {
 	o.SetCreatedGte(createdGte)
@@ -457,6 +520,17 @@ func (o *DcimPowerFeedsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithCreatedLt(createdLt *string) *DcimPowerFeedsListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithCreatedLte(createdLte *string) *DcimPowerFeedsListParams {
 	o.SetCreatedLte(createdLte)
@@ -466,6 +540,17 @@ func (o *DcimPowerFeedsListParams) WithCreatedLte(createdLte *string) *DcimPower
 // SetCreatedLte adds the createdLte to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithCreatedn(createdn *string) *DcimPowerFeedsListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithID adds the id to the dcim power feeds list params
@@ -545,6 +630,17 @@ func (o *DcimPowerFeedsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimPowerFeedsListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimPowerFeedsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -556,6 +652,17 @@ func (o *DcimPowerFeedsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimPowerFeedsListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimPowerFeedsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -565,6 +672,17 @@ func (o *DcimPowerFeedsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *D
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimPowerFeedsListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim power feeds list params
@@ -763,6 +881,17 @@ func (o *DcimPowerFeedsListParams) WithOffset(offset *int64) *DcimPowerFeedsList
 // SetOffset adds the offset to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithOrdering(ordering *string) *DcimPowerFeedsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithPhase adds the phase to the dcim power feeds list params
@@ -1238,6 +1367,40 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.CableEnd != nil {
+
+		// query param cable_end
+		var qrCableEnd string
+
+		if o.CableEnd != nil {
+			qrCableEnd = *o.CableEnd
+		}
+		qCableEnd := qrCableEnd
+		if qCableEnd != "" {
+
+			if err := r.SetQueryParam("cable_end", qCableEnd); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CableEndn != nil {
+
+		// query param cable_end__n
+		var qrCableEndn string
+
+		if o.CableEndn != nil {
+			qrCableEndn = *o.CableEndn
+		}
+		qCableEndn := qrCableEndn
+		if qCableEndn != "" {
+
+			if err := r.SetQueryParam("cable_end__n", qCableEndn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Cabled != nil {
 
 		// query param cabled
@@ -1289,6 +1452,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1306,6 +1486,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1318,6 +1515,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1442,6 +1656,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1459,6 +1690,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1471,6 +1719,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1777,6 +2042,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

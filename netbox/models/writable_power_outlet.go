@@ -43,21 +43,24 @@ type WritablePowerOutlet struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Connected endpoint
-	//
+	// Cable end
+	// Read Only: true
+	// Min Length: 1
+	CableEnd string `json:"cable_end,omitempty"`
+
 	//
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
+	ConnectedEndpoints []*string `json:"connected_endpoints"`
 
-	// Connected endpoint reachable
+	// Connected endpoints reachable
 	// Read Only: true
-	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
+	ConnectedEndpointsReachable *bool `json:"connected_endpoints_reachable,omitempty"`
 
-	// Connected endpoint type
+	// Connected endpoints type
 	// Read Only: true
-	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
+	ConnectedEndpointsType string `json:"connected_endpoints_type,omitempty"`
 
 	// Created
 	// Read Only: true
@@ -100,17 +103,15 @@ type WritablePowerOutlet struct {
 	// Format: date-time
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
-	// Link peer
-	//
 	//
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+	LinkPeers []*string `json:"link_peers"`
 
-	// Link peer type
+	// Link peers type
 	// Read Only: true
-	LinkPeerType string `json:"link_peer_type,omitempty"`
+	LinkPeersType string `json:"link_peers_type,omitempty"`
 
 	// Mark connected
 	//
@@ -149,6 +150,10 @@ func (m *WritablePowerOutlet) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCable(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCableEnd(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -212,6 +217,18 @@ func (m *WritablePowerOutlet) validateCable(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *WritablePowerOutlet) validateCableEnd(formats strfmt.Registry) error {
+	if swag.IsZero(m.CableEnd) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("cable_end", "body", m.CableEnd, 1); err != nil {
+		return err
 	}
 
 	return nil
@@ -692,15 +709,19 @@ func (m *WritablePowerOutlet) ContextValidate(ctx context.Context, formats strfm
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
+	if err := m.contextValidateCableEnd(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpoints(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpointsReachable(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateConnectedEndpointsType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -720,11 +741,11 @@ func (m *WritablePowerOutlet) ContextValidate(ctx context.Context, formats strfm
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeers(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeersType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -767,23 +788,36 @@ func (m *WritablePowerOutlet) contextValidateCable(ctx context.Context, formats 
 	return nil
 }
 
-func (m *WritablePowerOutlet) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritablePowerOutlet) contextValidateCableEnd(ctx context.Context, formats strfmt.Registry) error {
 
-	return nil
-}
-
-func (m *WritablePowerOutlet) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
+	if err := validate.ReadOnly(ctx, "cable_end", "body", string(m.CableEnd)); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *WritablePowerOutlet) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritablePowerOutlet) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
+	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerOutlet) contextValidateConnectedEndpointsReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoints_reachable", "body", m.ConnectedEndpointsReachable); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerOutlet) contextValidateConnectedEndpointsType(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoints_type", "body", string(m.ConnectedEndpointsType)); err != nil {
 		return err
 	}
 
@@ -826,14 +860,18 @@ func (m *WritablePowerOutlet) contextValidateLastUpdated(ctx context.Context, fo
 	return nil
 }
 
-func (m *WritablePowerOutlet) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritablePowerOutlet) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+		return err
+	}
 
 	return nil
 }
 
-func (m *WritablePowerOutlet) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritablePowerOutlet) contextValidateLinkPeersType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers_type", "body", string(m.LinkPeersType)); err != nil {
 		return err
 	}
 

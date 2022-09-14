@@ -53,7 +53,7 @@ type WritableFHRPGroupAssignment struct {
 
 	// Interface
 	// Read Only: true
-	Interface map[string]*string `json:"interface,omitempty"`
+	Interface interface{} `json:"interface,omitempty"`
 
 	// Interface id
 	// Required: true
@@ -219,10 +219,6 @@ func (m *WritableFHRPGroupAssignment) ContextValidate(ctx context.Context, forma
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateInterface(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -260,11 +256,6 @@ func (m *WritableFHRPGroupAssignment) contextValidateID(ctx context.Context, for
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
 		return err
 	}
-
-	return nil
-}
-
-func (m *WritableFHRPGroupAssignment) contextValidateInterface(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -84,7 +84,7 @@ type Device struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
-	LocalContextData map[string]interface{} `json:"local_context_data,omitempty"`
+	LocalContextData interface{} `json:"local_context_data,omitempty"`
 
 	// location
 	Location *NestedLocation `json:"location,omitempty"`
@@ -101,8 +101,8 @@ type Device struct {
 	Platform *NestedPlatform `json:"platform,omitempty"`
 
 	// Position (U)
-	// Minimum: 1
-	Position *int64 `json:"position,omitempty"`
+	// Minimum: 0.5
+	Position *float64 `json:"position,omitempty"`
 
 	// primary ip
 	PrimaryIP *NestedIPAddress `json:"primary_ip,omitempty"`
@@ -474,7 +474,7 @@ func (m *Device) validatePosition(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MinimumInt("position", "body", *m.Position, 1, false); err != nil {
+	if err := validate.Minimum("position", "body", *m.Position, 0.5, false); err != nil {
 		return err
 	}
 

@@ -63,7 +63,7 @@ type WritableContactAssignment struct {
 
 	// Object
 	// Read Only: true
-	Object map[string]*string `json:"object,omitempty"`
+	Object interface{} `json:"object,omitempty"`
 
 	// Object id
 	// Required: true
@@ -272,10 +272,6 @@ func (m *WritableContactAssignment) ContextValidate(ctx context.Context, formats
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateObject(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateURL(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -318,11 +314,6 @@ func (m *WritableContactAssignment) contextValidateLastUpdated(ctx context.Conte
 	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
-
-	return nil
-}
-
-func (m *WritableContactAssignment) contextValidateObject(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

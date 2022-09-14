@@ -70,7 +70,7 @@ type Circuit struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
-	// Date installed
+	// Installed
 	// Format: date
 	InstallDate *strfmt.Date `json:"install_date,omitempty"`
 
@@ -94,6 +94,10 @@ type Circuit struct {
 
 	// termination a
 	Terminationa *CircuitCircuitTermination `json:"termination_a,omitempty"`
+
+	// Terminates
+	// Format: date
+	TerminationDate *strfmt.Date `json:"termination_date,omitempty"`
 
 	// termination z
 	Terminationz *CircuitCircuitTermination `json:"termination_z,omitempty"`
@@ -153,6 +157,10 @@ func (m *Circuit) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTerminationa(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTerminationDate(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -353,6 +361,18 @@ func (m *Circuit) validateTerminationa(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *Circuit) validateTerminationDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.TerminationDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("termination_date", "body", "date", m.TerminationDate.String(), formats); err != nil {
+		return err
 	}
 
 	return nil

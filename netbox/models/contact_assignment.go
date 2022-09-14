@@ -63,7 +63,7 @@ type ContactAssignment struct {
 
 	// Object
 	// Read Only: true
-	Object map[string]*string `json:"object,omitempty"`
+	Object interface{} `json:"object,omitempty"`
 
 	// Object id
 	// Required: true
@@ -264,10 +264,6 @@ func (m *ContactAssignment) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateObject(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidatePriority(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -334,11 +330,6 @@ func (m *ContactAssignment) contextValidateLastUpdated(ctx context.Context, form
 	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
-
-	return nil
-}
-
-func (m *ContactAssignment) contextValidateObject(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

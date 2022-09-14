@@ -44,7 +44,7 @@ type WritableWirelessLink struct {
 	// Max Length: 64
 	AuthPsk string `json:"auth_psk,omitempty"`
 
-	// Auth type
+	// Auth Type
 	// Enum: [open wep wpa-personal wpa-enterprise]
 	AuthType string `json:"auth_type,omitempty"`
 
@@ -68,11 +68,11 @@ type WritableWirelessLink struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
-	// Interface a
+	// Interface A
 	// Required: true
 	Interfacea *int64 `json:"interface_a"`
 
-	// Interface b
+	// Interface B
 	// Required: true
 	Interfaceb *int64 `json:"interface_b"`
 
@@ -91,6 +91,9 @@ type WritableWirelessLink struct {
 
 	// tags
 	Tags []*NestedTag `json:"tags"`
+
+	// Tenant
+	Tenant *int64 `json:"tenant,omitempty"`
 
 	// Url
 	// Read Only: true
