@@ -61,7 +61,6 @@ type WritableL2VPN struct {
 	ID int64 `json:"id,omitempty"`
 
 	// Identifier
-	// Minimum: -9.223372036854776e+18
 	Identifier *int64 `json:"identifier,omitempty"`
 
 	// import targets
@@ -116,10 +115,6 @@ func (m *WritableL2VPN) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateExportTargets(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateIdentifier(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -187,18 +182,6 @@ func (m *WritableL2VPN) validateExportTargets(formats strfmt.Registry) error {
 	}
 
 	if err := validate.UniqueItems("export_targets", "body", m.ExportTargets); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableL2VPN) validateIdentifier(formats strfmt.Registry) error {
-	if swag.IsZero(m.Identifier) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("identifier", "body", *m.Identifier, -9.223372036854776e+18, false); err != nil {
 		return err
 	}
 
