@@ -1,6 +1,6 @@
 module github.com/fbreckle/go-netbox
 
-go 1.18
+go 1.19
 
 require (
 	github.com/go-openapi/errors v0.19.6
