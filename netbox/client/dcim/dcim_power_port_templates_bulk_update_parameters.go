@@ -69,10 +69,12 @@ func NewDcimPowerPortTemplatesBulkUpdateParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* DcimPowerPortTemplatesBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim power port templates bulk update operation.
+/*
+DcimPowerPortTemplatesBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power port templates bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerPortTemplatesBulkUpdateParams struct {
 

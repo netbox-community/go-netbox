@@ -68,10 +68,12 @@ func NewCircuitsProviderNetworksDeleteParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* CircuitsProviderNetworksDeleteParams contains all the parameters to send to the API endpoint
-   for the circuits provider networks delete operation.
+/*
+CircuitsProviderNetworksDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits provider networks delete operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsProviderNetworksDeleteParams struct {
 

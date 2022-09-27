@@ -69,10 +69,12 @@ func NewTenancyContactGroupsCreateParamsWithHTTPClient(client *http.Client) *Ten
 	}
 }
 
-/* TenancyContactGroupsCreateParams contains all the parameters to send to the API endpoint
-   for the tenancy contact groups create operation.
+/*
+TenancyContactGroupsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact groups create operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactGroupsCreateParams struct {
 

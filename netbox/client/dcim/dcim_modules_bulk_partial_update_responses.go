@@ -61,7 +61,8 @@ func NewDcimModulesBulkPartialUpdateOK() *DcimModulesBulkPartialUpdateOK {
 	return &DcimModulesBulkPartialUpdateOK{}
 }
 
-/* DcimModulesBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimModulesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimModulesBulkPartialUpdateOK dcim modules bulk partial update o k
 */
@@ -69,9 +70,39 @@ type DcimModulesBulkPartialUpdateOK struct {
 	Payload *models.Module
 }
 
+// IsSuccess returns true when this dcim modules bulk partial update o k response has a 2xx status code
+func (o *DcimModulesBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim modules bulk partial update o k response has a 3xx status code
+func (o *DcimModulesBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim modules bulk partial update o k response has a 4xx status code
+func (o *DcimModulesBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim modules bulk partial update o k response has a 5xx status code
+func (o *DcimModulesBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim modules bulk partial update o k response a status code equal to that given
+func (o *DcimModulesBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimModulesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/modules/][%d] dcimModulesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimModulesBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/modules/][%d] dcimModulesBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimModulesBulkPartialUpdateOK) GetPayload() *models.Module {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimModulesBulkPartialUpdateDefault(code int) *DcimModulesBulkPartialUpd
 	}
 }
 
-/* DcimModulesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimModulesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimModulesBulkPartialUpdateDefault dcim modules bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimModulesBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim modules bulk partial update default response has a 2xx status code
+func (o *DcimModulesBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim modules bulk partial update default response has a 3xx status code
+func (o *DcimModulesBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim modules bulk partial update default response has a 4xx status code
+func (o *DcimModulesBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim modules bulk partial update default response has a 5xx status code
+func (o *DcimModulesBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim modules bulk partial update default response a status code equal to that given
+func (o *DcimModulesBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimModulesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/modules/][%d] dcim_modules_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimModulesBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/modules/][%d] dcim_modules_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimModulesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

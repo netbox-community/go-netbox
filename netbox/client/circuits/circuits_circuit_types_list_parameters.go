@@ -68,10 +68,12 @@ func NewCircuitsCircuitTypesListParamsWithHTTPClient(client *http.Client) *Circu
 	}
 }
 
-/* CircuitsCircuitTypesListParams contains all the parameters to send to the API endpoint
-   for the circuits circuit types list operation.
+/*
+CircuitsCircuitTypesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits circuit types list operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsCircuitTypesListParams struct {
 

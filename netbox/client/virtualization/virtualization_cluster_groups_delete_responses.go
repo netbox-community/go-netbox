@@ -59,14 +59,44 @@ func NewVirtualizationClusterGroupsDeleteNoContent() *VirtualizationClusterGroup
 	return &VirtualizationClusterGroupsDeleteNoContent{}
 }
 
-/* VirtualizationClusterGroupsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+VirtualizationClusterGroupsDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationClusterGroupsDeleteNoContent virtualization cluster groups delete no content
 */
 type VirtualizationClusterGroupsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this virtualization cluster groups delete no content response has a 2xx status code
+func (o *VirtualizationClusterGroupsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization cluster groups delete no content response has a 3xx status code
+func (o *VirtualizationClusterGroupsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization cluster groups delete no content response has a 4xx status code
+func (o *VirtualizationClusterGroupsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization cluster groups delete no content response has a 5xx status code
+func (o *VirtualizationClusterGroupsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization cluster groups delete no content response a status code equal to that given
+func (o *VirtualizationClusterGroupsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *VirtualizationClusterGroupsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsDeleteNoContent ", 204)
+}
+
+func (o *VirtualizationClusterGroupsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewVirtualizationClusterGroupsDeleteDefault(code int) *VirtualizationCluste
 	}
 }
 
-/* VirtualizationClusterGroupsDeleteDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationClusterGroupsDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterGroupsDeleteDefault virtualization cluster groups delete default
 */
@@ -97,9 +128,39 @@ func (o *VirtualizationClusterGroupsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization cluster groups delete default response has a 2xx status code
+func (o *VirtualizationClusterGroupsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization cluster groups delete default response has a 3xx status code
+func (o *VirtualizationClusterGroupsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization cluster groups delete default response has a 4xx status code
+func (o *VirtualizationClusterGroupsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization cluster groups delete default response has a 5xx status code
+func (o *VirtualizationClusterGroupsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization cluster groups delete default response a status code equal to that given
+func (o *VirtualizationClusterGroupsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationClusterGroupsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationClusterGroupsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /virtualization/cluster-groups/{id}/][%d] virtualization_cluster-groups_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationClusterGroupsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

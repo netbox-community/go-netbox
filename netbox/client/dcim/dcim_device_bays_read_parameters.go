@@ -68,10 +68,12 @@ func NewDcimDeviceBaysReadParamsWithHTTPClient(client *http.Client) *DcimDeviceB
 	}
 }
 
-/* DcimDeviceBaysReadParams contains all the parameters to send to the API endpoint
-   for the dcim device bays read operation.
+/*
+DcimDeviceBaysReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim device bays read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimDeviceBaysReadParams struct {
 

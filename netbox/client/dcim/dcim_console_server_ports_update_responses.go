@@ -61,7 +61,8 @@ func NewDcimConsoleServerPortsUpdateOK() *DcimConsoleServerPortsUpdateOK {
 	return &DcimConsoleServerPortsUpdateOK{}
 }
 
-/* DcimConsoleServerPortsUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimConsoleServerPortsUpdateOK describes a response with status code 200, with default header values.
 
 DcimConsoleServerPortsUpdateOK dcim console server ports update o k
 */
@@ -69,9 +70,39 @@ type DcimConsoleServerPortsUpdateOK struct {
 	Payload *models.ConsoleServerPort
 }
 
+// IsSuccess returns true when this dcim console server ports update o k response has a 2xx status code
+func (o *DcimConsoleServerPortsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console server ports update o k response has a 3xx status code
+func (o *DcimConsoleServerPortsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console server ports update o k response has a 4xx status code
+func (o *DcimConsoleServerPortsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console server ports update o k response has a 5xx status code
+func (o *DcimConsoleServerPortsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console server ports update o k response a status code equal to that given
+func (o *DcimConsoleServerPortsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimConsoleServerPortsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/console-server-ports/{id}/][%d] dcimConsoleServerPortsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimConsoleServerPortsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/console-server-ports/{id}/][%d] dcimConsoleServerPortsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimConsoleServerPortsUpdateOK) GetPayload() *models.ConsoleServerPort {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimConsoleServerPortsUpdateDefault(code int) *DcimConsoleServerPortsUpd
 	}
 }
 
-/* DcimConsoleServerPortsUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimConsoleServerPortsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortsUpdateDefault dcim console server ports update default
 */
@@ -110,9 +142,39 @@ func (o *DcimConsoleServerPortsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console server ports update default response has a 2xx status code
+func (o *DcimConsoleServerPortsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console server ports update default response has a 3xx status code
+func (o *DcimConsoleServerPortsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console server ports update default response has a 4xx status code
+func (o *DcimConsoleServerPortsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console server ports update default response has a 5xx status code
+func (o *DcimConsoleServerPortsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console server ports update default response a status code equal to that given
+func (o *DcimConsoleServerPortsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsoleServerPortsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/console-server-ports/{id}/][%d] dcim_console-server-ports_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsoleServerPortsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/console-server-ports/{id}/][%d] dcim_console-server-ports_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsoleServerPortsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

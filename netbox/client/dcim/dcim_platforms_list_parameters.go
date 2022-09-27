@@ -68,10 +68,12 @@ func NewDcimPlatformsListParamsWithHTTPClient(client *http.Client) *DcimPlatform
 	}
 }
 
-/* DcimPlatformsListParams contains all the parameters to send to the API endpoint
-   for the dcim platforms list operation.
+/*
+DcimPlatformsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim platforms list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPlatformsListParams struct {
 

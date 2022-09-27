@@ -70,10 +70,12 @@ func NewExtrasCustomFieldsUpdateParamsWithHTTPClient(client *http.Client) *Extra
 	}
 }
 
-/* ExtrasCustomFieldsUpdateParams contains all the parameters to send to the API endpoint
-   for the extras custom fields update operation.
+/*
+ExtrasCustomFieldsUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras custom fields update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasCustomFieldsUpdateParams struct {
 

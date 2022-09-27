@@ -67,10 +67,12 @@ func NewUsersTokensBulkDeleteParamsWithHTTPClient(client *http.Client) *UsersTok
 	}
 }
 
-/* UsersTokensBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the users tokens bulk delete operation.
+/*
+UsersTokensBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users tokens bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersTokensBulkDeleteParams struct {
 	timeout    time.Duration

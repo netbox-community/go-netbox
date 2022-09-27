@@ -61,7 +61,8 @@ func NewCircuitsProvidersUpdateOK() *CircuitsProvidersUpdateOK {
 	return &CircuitsProvidersUpdateOK{}
 }
 
-/* CircuitsProvidersUpdateOK describes a response with status code 200, with default header values.
+/*
+CircuitsProvidersUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsProvidersUpdateOK circuits providers update o k
 */
@@ -69,9 +70,39 @@ type CircuitsProvidersUpdateOK struct {
 	Payload *models.Provider
 }
 
+// IsSuccess returns true when this circuits providers update o k response has a 2xx status code
+func (o *CircuitsProvidersUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits providers update o k response has a 3xx status code
+func (o *CircuitsProvidersUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits providers update o k response has a 4xx status code
+func (o *CircuitsProvidersUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits providers update o k response has a 5xx status code
+func (o *CircuitsProvidersUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits providers update o k response a status code equal to that given
+func (o *CircuitsProvidersUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsProvidersUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /circuits/providers/{id}/][%d] circuitsProvidersUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsProvidersUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /circuits/providers/{id}/][%d] circuitsProvidersUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsProvidersUpdateOK) GetPayload() *models.Provider {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsProvidersUpdateDefault(code int) *CircuitsProvidersUpdateDefault
 	}
 }
 
-/* CircuitsProvidersUpdateDefault describes a response with status code -1, with default header values.
+/*
+CircuitsProvidersUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersUpdateDefault circuits providers update default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsProvidersUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits providers update default response has a 2xx status code
+func (o *CircuitsProvidersUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits providers update default response has a 3xx status code
+func (o *CircuitsProvidersUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits providers update default response has a 4xx status code
+func (o *CircuitsProvidersUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits providers update default response has a 5xx status code
+func (o *CircuitsProvidersUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits providers update default response a status code equal to that given
+func (o *CircuitsProvidersUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsProvidersUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /circuits/providers/{id}/][%d] circuits_providers_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsProvidersUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /circuits/providers/{id}/][%d] circuits_providers_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsProvidersUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

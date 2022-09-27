@@ -68,10 +68,12 @@ func NewExtrasContentTypesListParamsWithHTTPClient(client *http.Client) *ExtrasC
 	}
 }
 
-/* ExtrasContentTypesListParams contains all the parameters to send to the API endpoint
-   for the extras content types list operation.
+/*
+ExtrasContentTypesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras content types list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasContentTypesListParams struct {
 

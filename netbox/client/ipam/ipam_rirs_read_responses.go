@@ -61,7 +61,8 @@ func NewIpamRirsReadOK() *IpamRirsReadOK {
 	return &IpamRirsReadOK{}
 }
 
-/* IpamRirsReadOK describes a response with status code 200, with default header values.
+/*
+IpamRirsReadOK describes a response with status code 200, with default header values.
 
 IpamRirsReadOK ipam rirs read o k
 */
@@ -69,9 +70,39 @@ type IpamRirsReadOK struct {
 	Payload *models.RIR
 }
 
+// IsSuccess returns true when this ipam rirs read o k response has a 2xx status code
+func (o *IpamRirsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam rirs read o k response has a 3xx status code
+func (o *IpamRirsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam rirs read o k response has a 4xx status code
+func (o *IpamRirsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam rirs read o k response has a 5xx status code
+func (o *IpamRirsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam rirs read o k response a status code equal to that given
+func (o *IpamRirsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamRirsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/rirs/{id}/][%d] ipamRirsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamRirsReadOK) String() string {
+	return fmt.Sprintf("[GET /ipam/rirs/{id}/][%d] ipamRirsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamRirsReadOK) GetPayload() *models.RIR {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamRirsReadDefault(code int) *IpamRirsReadDefault {
 	}
 }
 
-/* IpamRirsReadDefault describes a response with status code -1, with default header values.
+/*
+IpamRirsReadDefault describes a response with status code -1, with default header values.
 
 IpamRirsReadDefault ipam rirs read default
 */
@@ -110,9 +142,39 @@ func (o *IpamRirsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam rirs read default response has a 2xx status code
+func (o *IpamRirsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam rirs read default response has a 3xx status code
+func (o *IpamRirsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam rirs read default response has a 4xx status code
+func (o *IpamRirsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam rirs read default response has a 5xx status code
+func (o *IpamRirsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam rirs read default response a status code equal to that given
+func (o *IpamRirsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamRirsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/rirs/{id}/][%d] ipam_rirs_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamRirsReadDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/rirs/{id}/][%d] ipam_rirs_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamRirsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

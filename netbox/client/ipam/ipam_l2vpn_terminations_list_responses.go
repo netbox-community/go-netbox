@@ -66,7 +66,8 @@ func NewIpamL2vpnTerminationsListOK() *IpamL2vpnTerminationsListOK {
 	return &IpamL2vpnTerminationsListOK{}
 }
 
-/* IpamL2vpnTerminationsListOK describes a response with status code 200, with default header values.
+/*
+IpamL2vpnTerminationsListOK describes a response with status code 200, with default header values.
 
 IpamL2vpnTerminationsListOK ipam l2vpn terminations list o k
 */
@@ -74,9 +75,39 @@ type IpamL2vpnTerminationsListOK struct {
 	Payload *IpamL2vpnTerminationsListOKBody
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations list o k response has a 2xx status code
+func (o *IpamL2vpnTerminationsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations list o k response has a 3xx status code
+func (o *IpamL2vpnTerminationsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam l2vpn terminations list o k response has a 4xx status code
+func (o *IpamL2vpnTerminationsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam l2vpn terminations list o k response has a 5xx status code
+func (o *IpamL2vpnTerminationsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam l2vpn terminations list o k response a status code equal to that given
+func (o *IpamL2vpnTerminationsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamL2vpnTerminationsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsListOK) GetPayload() *IpamL2vpnTerminationsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewIpamL2vpnTerminationsListDefault(code int) *IpamL2vpnTerminationsListDef
 	}
 }
 
-/* IpamL2vpnTerminationsListDefault describes a response with status code -1, with default header values.
+/*
+IpamL2vpnTerminationsListDefault describes a response with status code -1, with default header values.
 
 IpamL2vpnTerminationsListDefault ipam l2vpn terminations list default
 */
@@ -115,9 +147,39 @@ func (o *IpamL2vpnTerminationsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations list default response has a 2xx status code
+func (o *IpamL2vpnTerminationsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations list default response has a 3xx status code
+func (o *IpamL2vpnTerminationsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam l2vpn terminations list default response has a 4xx status code
+func (o *IpamL2vpnTerminationsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam l2vpn terminations list default response has a 5xx status code
+func (o *IpamL2vpnTerminationsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam l2vpn terminations list default response a status code equal to that given
+func (o *IpamL2vpnTerminationsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamL2vpnTerminationsListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *IpamL2vpnTerminationsListDefault) readResponse(response runtime.ClientR
 	return nil
 }
 
-/*IpamL2vpnTerminationsListOKBody ipam l2vpn terminations list o k body
+/*
+IpamL2vpnTerminationsListOKBody ipam l2vpn terminations list o k body
 swagger:model IpamL2vpnTerminationsListOKBody
 */
 type IpamL2vpnTerminationsListOKBody struct {

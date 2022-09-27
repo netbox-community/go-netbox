@@ -68,10 +68,12 @@ func NewUsersGroupsListParamsWithHTTPClient(client *http.Client) *UsersGroupsLis
 	}
 }
 
-/* UsersGroupsListParams contains all the parameters to send to the API endpoint
-   for the users groups list operation.
+/*
+UsersGroupsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users groups list operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersGroupsListParams struct {
 

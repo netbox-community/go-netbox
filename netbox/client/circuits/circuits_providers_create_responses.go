@@ -61,7 +61,8 @@ func NewCircuitsProvidersCreateCreated() *CircuitsProvidersCreateCreated {
 	return &CircuitsProvidersCreateCreated{}
 }
 
-/* CircuitsProvidersCreateCreated describes a response with status code 201, with default header values.
+/*
+CircuitsProvidersCreateCreated describes a response with status code 201, with default header values.
 
 CircuitsProvidersCreateCreated circuits providers create created
 */
@@ -69,9 +70,39 @@ type CircuitsProvidersCreateCreated struct {
 	Payload *models.Provider
 }
 
+// IsSuccess returns true when this circuits providers create created response has a 2xx status code
+func (o *CircuitsProvidersCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits providers create created response has a 3xx status code
+func (o *CircuitsProvidersCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits providers create created response has a 4xx status code
+func (o *CircuitsProvidersCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits providers create created response has a 5xx status code
+func (o *CircuitsProvidersCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits providers create created response a status code equal to that given
+func (o *CircuitsProvidersCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *CircuitsProvidersCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /circuits/providers/][%d] circuitsProvidersCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *CircuitsProvidersCreateCreated) String() string {
+	return fmt.Sprintf("[POST /circuits/providers/][%d] circuitsProvidersCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *CircuitsProvidersCreateCreated) GetPayload() *models.Provider {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsProvidersCreateDefault(code int) *CircuitsProvidersCreateDefault
 	}
 }
 
-/* CircuitsProvidersCreateDefault describes a response with status code -1, with default header values.
+/*
+CircuitsProvidersCreateDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersCreateDefault circuits providers create default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsProvidersCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits providers create default response has a 2xx status code
+func (o *CircuitsProvidersCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits providers create default response has a 3xx status code
+func (o *CircuitsProvidersCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits providers create default response has a 4xx status code
+func (o *CircuitsProvidersCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits providers create default response has a 5xx status code
+func (o *CircuitsProvidersCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits providers create default response a status code equal to that given
+func (o *CircuitsProvidersCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsProvidersCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /circuits/providers/][%d] circuits_providers_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsProvidersCreateDefault) String() string {
+	return fmt.Sprintf("[POST /circuits/providers/][%d] circuits_providers_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsProvidersCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -70,10 +70,12 @@ func NewIpamL2vpnsUpdateParamsWithHTTPClient(client *http.Client) *IpamL2vpnsUpd
 	}
 }
 
-/* IpamL2vpnsUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam l2vpns update operation.
+/*
+IpamL2vpnsUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam l2vpns update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamL2vpnsUpdateParams struct {
 

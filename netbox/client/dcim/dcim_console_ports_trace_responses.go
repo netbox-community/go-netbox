@@ -61,7 +61,8 @@ func NewDcimConsolePortsTraceOK() *DcimConsolePortsTraceOK {
 	return &DcimConsolePortsTraceOK{}
 }
 
-/* DcimConsolePortsTraceOK describes a response with status code 200, with default header values.
+/*
+DcimConsolePortsTraceOK describes a response with status code 200, with default header values.
 
 DcimConsolePortsTraceOK dcim console ports trace o k
 */
@@ -69,9 +70,39 @@ type DcimConsolePortsTraceOK struct {
 	Payload *models.ConsolePort
 }
 
+// IsSuccess returns true when this dcim console ports trace o k response has a 2xx status code
+func (o *DcimConsolePortsTraceOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console ports trace o k response has a 3xx status code
+func (o *DcimConsolePortsTraceOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console ports trace o k response has a 4xx status code
+func (o *DcimConsolePortsTraceOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console ports trace o k response has a 5xx status code
+func (o *DcimConsolePortsTraceOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console ports trace o k response a status code equal to that given
+func (o *DcimConsolePortsTraceOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimConsolePortsTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-ports/{id}/trace/][%d] dcimConsolePortsTraceOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimConsolePortsTraceOK) String() string {
+	return fmt.Sprintf("[GET /dcim/console-ports/{id}/trace/][%d] dcimConsolePortsTraceOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimConsolePortsTraceOK) GetPayload() *models.ConsolePort {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimConsolePortsTraceDefault(code int) *DcimConsolePortsTraceDefault {
 	}
 }
 
-/* DcimConsolePortsTraceDefault describes a response with status code -1, with default header values.
+/*
+DcimConsolePortsTraceDefault describes a response with status code -1, with default header values.
 
 DcimConsolePortsTraceDefault dcim console ports trace default
 */
@@ -110,9 +142,39 @@ func (o *DcimConsolePortsTraceDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console ports trace default response has a 2xx status code
+func (o *DcimConsolePortsTraceDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console ports trace default response has a 3xx status code
+func (o *DcimConsolePortsTraceDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console ports trace default response has a 4xx status code
+func (o *DcimConsolePortsTraceDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console ports trace default response has a 5xx status code
+func (o *DcimConsolePortsTraceDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console ports trace default response a status code equal to that given
+func (o *DcimConsolePortsTraceDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsolePortsTraceDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-ports/{id}/trace/][%d] dcim_console-ports_trace default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsolePortsTraceDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/console-ports/{id}/trace/][%d] dcim_console-ports_trace default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsolePortsTraceDefault) GetPayload() interface{} {
 	return o.Payload
 }

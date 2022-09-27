@@ -69,10 +69,12 @@ func NewDcimLocationsCreateParamsWithHTTPClient(client *http.Client) *DcimLocati
 	}
 }
 
-/* DcimLocationsCreateParams contains all the parameters to send to the API endpoint
-   for the dcim locations create operation.
+/*
+DcimLocationsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim locations create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimLocationsCreateParams struct {
 

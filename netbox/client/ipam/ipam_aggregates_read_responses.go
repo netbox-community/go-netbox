@@ -61,7 +61,8 @@ func NewIpamAggregatesReadOK() *IpamAggregatesReadOK {
 	return &IpamAggregatesReadOK{}
 }
 
-/* IpamAggregatesReadOK describes a response with status code 200, with default header values.
+/*
+IpamAggregatesReadOK describes a response with status code 200, with default header values.
 
 IpamAggregatesReadOK ipam aggregates read o k
 */
@@ -69,9 +70,39 @@ type IpamAggregatesReadOK struct {
 	Payload *models.Aggregate
 }
 
+// IsSuccess returns true when this ipam aggregates read o k response has a 2xx status code
+func (o *IpamAggregatesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam aggregates read o k response has a 3xx status code
+func (o *IpamAggregatesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam aggregates read o k response has a 4xx status code
+func (o *IpamAggregatesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam aggregates read o k response has a 5xx status code
+func (o *IpamAggregatesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam aggregates read o k response a status code equal to that given
+func (o *IpamAggregatesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamAggregatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipamAggregatesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamAggregatesReadOK) String() string {
+	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipamAggregatesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamAggregatesReadOK) GetPayload() *models.Aggregate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamAggregatesReadDefault(code int) *IpamAggregatesReadDefault {
 	}
 }
 
-/* IpamAggregatesReadDefault describes a response with status code -1, with default header values.
+/*
+IpamAggregatesReadDefault describes a response with status code -1, with default header values.
 
 IpamAggregatesReadDefault ipam aggregates read default
 */
@@ -110,9 +142,39 @@ func (o *IpamAggregatesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam aggregates read default response has a 2xx status code
+func (o *IpamAggregatesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam aggregates read default response has a 3xx status code
+func (o *IpamAggregatesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam aggregates read default response has a 4xx status code
+func (o *IpamAggregatesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam aggregates read default response has a 5xx status code
+func (o *IpamAggregatesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam aggregates read default response a status code equal to that given
+func (o *IpamAggregatesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamAggregatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipam_aggregates_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamAggregatesReadDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/aggregates/{id}/][%d] ipam_aggregates_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamAggregatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

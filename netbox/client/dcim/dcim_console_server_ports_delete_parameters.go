@@ -68,10 +68,12 @@ func NewDcimConsoleServerPortsDeleteParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimConsoleServerPortsDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim console server ports delete operation.
+/*
+DcimConsoleServerPortsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim console server ports delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimConsoleServerPortsDeleteParams struct {
 

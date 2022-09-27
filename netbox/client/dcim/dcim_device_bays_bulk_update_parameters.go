@@ -69,10 +69,12 @@ func NewDcimDeviceBaysBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimD
 	}
 }
 
-/* DcimDeviceBaysBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim device bays bulk update operation.
+/*
+DcimDeviceBaysBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim device bays bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimDeviceBaysBulkUpdateParams struct {
 

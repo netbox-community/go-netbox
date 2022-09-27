@@ -61,7 +61,8 @@ func NewTenancyContactRolesPartialUpdateOK() *TenancyContactRolesPartialUpdateOK
 	return &TenancyContactRolesPartialUpdateOK{}
 }
 
-/* TenancyContactRolesPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+TenancyContactRolesPartialUpdateOK describes a response with status code 200, with default header values.
 
 TenancyContactRolesPartialUpdateOK tenancy contact roles partial update o k
 */
@@ -69,9 +70,39 @@ type TenancyContactRolesPartialUpdateOK struct {
 	Payload *models.ContactRole
 }
 
+// IsSuccess returns true when this tenancy contact roles partial update o k response has a 2xx status code
+func (o *TenancyContactRolesPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contact roles partial update o k response has a 3xx status code
+func (o *TenancyContactRolesPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contact roles partial update o k response has a 4xx status code
+func (o *TenancyContactRolesPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contact roles partial update o k response has a 5xx status code
+func (o *TenancyContactRolesPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contact roles partial update o k response a status code equal to that given
+func (o *TenancyContactRolesPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyContactRolesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/contact-roles/{id}/][%d] tenancyContactRolesPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyContactRolesPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /tenancy/contact-roles/{id}/][%d] tenancyContactRolesPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyContactRolesPartialUpdateOK) GetPayload() *models.ContactRole {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewTenancyContactRolesPartialUpdateDefault(code int) *TenancyContactRolesPa
 	}
 }
 
-/* TenancyContactRolesPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactRolesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 TenancyContactRolesPartialUpdateDefault tenancy contact roles partial update default
 */
@@ -110,9 +142,39 @@ func (o *TenancyContactRolesPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contact roles partial update default response has a 2xx status code
+func (o *TenancyContactRolesPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contact roles partial update default response has a 3xx status code
+func (o *TenancyContactRolesPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contact roles partial update default response has a 4xx status code
+func (o *TenancyContactRolesPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contact roles partial update default response has a 5xx status code
+func (o *TenancyContactRolesPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contact roles partial update default response a status code equal to that given
+func (o *TenancyContactRolesPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactRolesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/contact-roles/{id}/][%d] tenancy_contact-roles_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactRolesPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /tenancy/contact-roles/{id}/][%d] tenancy_contact-roles_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactRolesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

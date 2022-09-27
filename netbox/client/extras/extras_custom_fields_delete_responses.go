@@ -59,14 +59,44 @@ func NewExtrasCustomFieldsDeleteNoContent() *ExtrasCustomFieldsDeleteNoContent {
 	return &ExtrasCustomFieldsDeleteNoContent{}
 }
 
-/* ExtrasCustomFieldsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+ExtrasCustomFieldsDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasCustomFieldsDeleteNoContent extras custom fields delete no content
 */
 type ExtrasCustomFieldsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this extras custom fields delete no content response has a 2xx status code
+func (o *ExtrasCustomFieldsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras custom fields delete no content response has a 3xx status code
+func (o *ExtrasCustomFieldsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras custom fields delete no content response has a 4xx status code
+func (o *ExtrasCustomFieldsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras custom fields delete no content response has a 5xx status code
+func (o *ExtrasCustomFieldsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras custom fields delete no content response a status code equal to that given
+func (o *ExtrasCustomFieldsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *ExtrasCustomFieldsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extrasCustomFieldsDeleteNoContent ", 204)
+}
+
+func (o *ExtrasCustomFieldsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extrasCustomFieldsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasCustomFieldsDeleteDefault(code int) *ExtrasCustomFieldsDeleteDefau
 	}
 }
 
-/* ExtrasCustomFieldsDeleteDefault describes a response with status code -1, with default header values.
+/*
+ExtrasCustomFieldsDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsDeleteDefault extras custom fields delete default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasCustomFieldsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras custom fields delete default response has a 2xx status code
+func (o *ExtrasCustomFieldsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras custom fields delete default response has a 3xx status code
+func (o *ExtrasCustomFieldsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras custom fields delete default response has a 4xx status code
+func (o *ExtrasCustomFieldsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras custom fields delete default response has a 5xx status code
+func (o *ExtrasCustomFieldsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras custom fields delete default response a status code equal to that given
+func (o *ExtrasCustomFieldsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasCustomFieldsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extras_custom-fields_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasCustomFieldsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /extras/custom-fields/{id}/][%d] extras_custom-fields_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasCustomFieldsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -69,10 +69,12 @@ func NewDcimSitesBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimSitesB
 	}
 }
 
-/* DcimSitesBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim sites bulk update operation.
+/*
+DcimSitesBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim sites bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimSitesBulkUpdateParams struct {
 

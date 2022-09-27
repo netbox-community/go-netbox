@@ -69,10 +69,12 @@ func NewDcimRacksCreateParamsWithHTTPClient(client *http.Client) *DcimRacksCreat
 	}
 }
 
-/* DcimRacksCreateParams contains all the parameters to send to the API endpoint
-   for the dcim racks create operation.
+/*
+DcimRacksCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim racks create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRacksCreateParams struct {
 

@@ -61,7 +61,8 @@ func NewDcimManufacturersUpdateOK() *DcimManufacturersUpdateOK {
 	return &DcimManufacturersUpdateOK{}
 }
 
-/* DcimManufacturersUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimManufacturersUpdateOK describes a response with status code 200, with default header values.
 
 DcimManufacturersUpdateOK dcim manufacturers update o k
 */
@@ -69,9 +70,39 @@ type DcimManufacturersUpdateOK struct {
 	Payload *models.Manufacturer
 }
 
+// IsSuccess returns true when this dcim manufacturers update o k response has a 2xx status code
+func (o *DcimManufacturersUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim manufacturers update o k response has a 3xx status code
+func (o *DcimManufacturersUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim manufacturers update o k response has a 4xx status code
+func (o *DcimManufacturersUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim manufacturers update o k response has a 5xx status code
+func (o *DcimManufacturersUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim manufacturers update o k response a status code equal to that given
+func (o *DcimManufacturersUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimManufacturersUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/manufacturers/{id}/][%d] dcimManufacturersUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimManufacturersUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/manufacturers/{id}/][%d] dcimManufacturersUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimManufacturersUpdateOK) GetPayload() *models.Manufacturer {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimManufacturersUpdateDefault(code int) *DcimManufacturersUpdateDefault
 	}
 }
 
-/* DcimManufacturersUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimManufacturersUpdateDefault describes a response with status code -1, with default header values.
 
 DcimManufacturersUpdateDefault dcim manufacturers update default
 */
@@ -110,9 +142,39 @@ func (o *DcimManufacturersUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim manufacturers update default response has a 2xx status code
+func (o *DcimManufacturersUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim manufacturers update default response has a 3xx status code
+func (o *DcimManufacturersUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim manufacturers update default response has a 4xx status code
+func (o *DcimManufacturersUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim manufacturers update default response has a 5xx status code
+func (o *DcimManufacturersUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim manufacturers update default response a status code equal to that given
+func (o *DcimManufacturersUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimManufacturersUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/manufacturers/{id}/][%d] dcim_manufacturers_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimManufacturersUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/manufacturers/{id}/][%d] dcim_manufacturers_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimManufacturersUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

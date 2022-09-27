@@ -67,10 +67,12 @@ func NewTenancyTenantGroupsBulkDeleteParamsWithHTTPClient(client *http.Client) *
 	}
 }
 
-/* TenancyTenantGroupsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the tenancy tenant groups bulk delete operation.
+/*
+TenancyTenantGroupsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy tenant groups bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyTenantGroupsBulkDeleteParams struct {
 	timeout    time.Duration

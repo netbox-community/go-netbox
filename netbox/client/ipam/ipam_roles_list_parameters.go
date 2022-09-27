@@ -68,10 +68,12 @@ func NewIpamRolesListParamsWithHTTPClient(client *http.Client) *IpamRolesListPar
 	}
 }
 
-/* IpamRolesListParams contains all the parameters to send to the API endpoint
-   for the ipam roles list operation.
+/*
+IpamRolesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam roles list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamRolesListParams struct {
 

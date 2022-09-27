@@ -69,10 +69,12 @@ func NewDcimInventoryItemsBulkUpdateParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimInventoryItemsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim inventory items bulk update operation.
+/*
+DcimInventoryItemsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim inventory items bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInventoryItemsBulkUpdateParams struct {
 

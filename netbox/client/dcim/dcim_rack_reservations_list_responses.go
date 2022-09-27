@@ -66,7 +66,8 @@ func NewDcimRackReservationsListOK() *DcimRackReservationsListOK {
 	return &DcimRackReservationsListOK{}
 }
 
-/* DcimRackReservationsListOK describes a response with status code 200, with default header values.
+/*
+DcimRackReservationsListOK describes a response with status code 200, with default header values.
 
 DcimRackReservationsListOK dcim rack reservations list o k
 */
@@ -74,9 +75,39 @@ type DcimRackReservationsListOK struct {
 	Payload *DcimRackReservationsListOKBody
 }
 
+// IsSuccess returns true when this dcim rack reservations list o k response has a 2xx status code
+func (o *DcimRackReservationsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rack reservations list o k response has a 3xx status code
+func (o *DcimRackReservationsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rack reservations list o k response has a 4xx status code
+func (o *DcimRackReservationsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rack reservations list o k response has a 5xx status code
+func (o *DcimRackReservationsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rack reservations list o k response a status code equal to that given
+func (o *DcimRackReservationsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRackReservationsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcimRackReservationsListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRackReservationsListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcimRackReservationsListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRackReservationsListOK) GetPayload() *DcimRackReservationsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimRackReservationsListDefault(code int) *DcimRackReservationsListDefau
 	}
 }
 
-/* DcimRackReservationsListDefault describes a response with status code -1, with default header values.
+/*
+DcimRackReservationsListDefault describes a response with status code -1, with default header values.
 
 DcimRackReservationsListDefault dcim rack reservations list default
 */
@@ -115,9 +147,39 @@ func (o *DcimRackReservationsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rack reservations list default response has a 2xx status code
+func (o *DcimRackReservationsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rack reservations list default response has a 3xx status code
+func (o *DcimRackReservationsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rack reservations list default response has a 4xx status code
+func (o *DcimRackReservationsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rack reservations list default response has a 5xx status code
+func (o *DcimRackReservationsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rack reservations list default response a status code equal to that given
+func (o *DcimRackReservationsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRackReservationsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcim_rack-reservations_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRackReservationsListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/rack-reservations/][%d] dcim_rack-reservations_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRackReservationsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimRackReservationsListDefault) readResponse(response runtime.ClientRe
 	return nil
 }
 
-/*DcimRackReservationsListOKBody dcim rack reservations list o k body
+/*
+DcimRackReservationsListOKBody dcim rack reservations list o k body
 swagger:model DcimRackReservationsListOKBody
 */
 type DcimRackReservationsListOKBody struct {

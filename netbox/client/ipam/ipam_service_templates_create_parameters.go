@@ -69,10 +69,12 @@ func NewIpamServiceTemplatesCreateParamsWithHTTPClient(client *http.Client) *Ipa
 	}
 }
 
-/* IpamServiceTemplatesCreateParams contains all the parameters to send to the API endpoint
-   for the ipam service templates create operation.
+/*
+IpamServiceTemplatesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam service templates create operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamServiceTemplatesCreateParams struct {
 

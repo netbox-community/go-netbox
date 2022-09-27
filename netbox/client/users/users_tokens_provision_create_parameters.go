@@ -67,10 +67,12 @@ func NewUsersTokensProvisionCreateParamsWithHTTPClient(client *http.Client) *Use
 	}
 }
 
-/* UsersTokensProvisionCreateParams contains all the parameters to send to the API endpoint
-   for the users tokens provision create operation.
+/*
+UsersTokensProvisionCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users tokens provision create operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersTokensProvisionCreateParams struct {
 	timeout    time.Duration

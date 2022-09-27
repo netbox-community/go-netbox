@@ -59,14 +59,44 @@ func NewIpamServicesDeleteNoContent() *IpamServicesDeleteNoContent {
 	return &IpamServicesDeleteNoContent{}
 }
 
-/* IpamServicesDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamServicesDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamServicesDeleteNoContent ipam services delete no content
 */
 type IpamServicesDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam services delete no content response has a 2xx status code
+func (o *IpamServicesDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam services delete no content response has a 3xx status code
+func (o *IpamServicesDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam services delete no content response has a 4xx status code
+func (o *IpamServicesDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam services delete no content response has a 5xx status code
+func (o *IpamServicesDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam services delete no content response a status code equal to that given
+func (o *IpamServicesDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamServicesDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/services/{id}/][%d] ipamServicesDeleteNoContent ", 204)
+}
+
+func (o *IpamServicesDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/services/{id}/][%d] ipamServicesDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamServicesDeleteDefault(code int) *IpamServicesDeleteDefault {
 	}
 }
 
-/* IpamServicesDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamServicesDeleteDefault describes a response with status code -1, with default header values.
 
 IpamServicesDeleteDefault ipam services delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamServicesDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam services delete default response has a 2xx status code
+func (o *IpamServicesDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam services delete default response has a 3xx status code
+func (o *IpamServicesDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam services delete default response has a 4xx status code
+func (o *IpamServicesDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam services delete default response has a 5xx status code
+func (o *IpamServicesDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam services delete default response a status code equal to that given
+func (o *IpamServicesDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamServicesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/services/{id}/][%d] ipam_services_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamServicesDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/services/{id}/][%d] ipam_services_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamServicesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

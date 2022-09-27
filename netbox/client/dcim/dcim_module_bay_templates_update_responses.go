@@ -61,7 +61,8 @@ func NewDcimModuleBayTemplatesUpdateOK() *DcimModuleBayTemplatesUpdateOK {
 	return &DcimModuleBayTemplatesUpdateOK{}
 }
 
-/* DcimModuleBayTemplatesUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimModuleBayTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 DcimModuleBayTemplatesUpdateOK dcim module bay templates update o k
 */
@@ -69,9 +70,39 @@ type DcimModuleBayTemplatesUpdateOK struct {
 	Payload *models.ModuleBayTemplate
 }
 
+// IsSuccess returns true when this dcim module bay templates update o k response has a 2xx status code
+func (o *DcimModuleBayTemplatesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim module bay templates update o k response has a 3xx status code
+func (o *DcimModuleBayTemplatesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim module bay templates update o k response has a 4xx status code
+func (o *DcimModuleBayTemplatesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim module bay templates update o k response has a 5xx status code
+func (o *DcimModuleBayTemplatesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim module bay templates update o k response a status code equal to that given
+func (o *DcimModuleBayTemplatesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimModuleBayTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimModuleBayTemplatesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/module-bay-templates/{id}/][%d] dcimModuleBayTemplatesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimModuleBayTemplatesUpdateOK) GetPayload() *models.ModuleBayTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimModuleBayTemplatesUpdateDefault(code int) *DcimModuleBayTemplatesUpd
 	}
 }
 
-/* DcimModuleBayTemplatesUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimModuleBayTemplatesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimModuleBayTemplatesUpdateDefault dcim module bay templates update default
 */
@@ -110,9 +142,39 @@ func (o *DcimModuleBayTemplatesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim module bay templates update default response has a 2xx status code
+func (o *DcimModuleBayTemplatesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim module bay templates update default response has a 3xx status code
+func (o *DcimModuleBayTemplatesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim module bay templates update default response has a 4xx status code
+func (o *DcimModuleBayTemplatesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim module bay templates update default response has a 5xx status code
+func (o *DcimModuleBayTemplatesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim module bay templates update default response a status code equal to that given
+func (o *DcimModuleBayTemplatesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimModuleBayTemplatesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimModuleBayTemplatesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/module-bay-templates/{id}/][%d] dcim_module-bay-templates_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimModuleBayTemplatesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

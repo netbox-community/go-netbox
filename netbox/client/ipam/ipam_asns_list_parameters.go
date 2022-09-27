@@ -68,10 +68,12 @@ func NewIpamAsnsListParamsWithHTTPClient(client *http.Client) *IpamAsnsListParam
 	}
 }
 
-/* IpamAsnsListParams contains all the parameters to send to the API endpoint
-   for the ipam asns list operation.
+/*
+IpamAsnsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam asns list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAsnsListParams struct {
 

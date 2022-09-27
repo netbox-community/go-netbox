@@ -67,10 +67,12 @@ func NewDcimCableTerminationsBulkDeleteParamsWithHTTPClient(client *http.Client)
 	}
 }
 
-/* DcimCableTerminationsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim cable terminations bulk delete operation.
+/*
+DcimCableTerminationsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim cable terminations bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimCableTerminationsBulkDeleteParams struct {
 	timeout    time.Duration

@@ -68,10 +68,12 @@ func NewIpamAggregatesListParamsWithHTTPClient(client *http.Client) *IpamAggrega
 	}
 }
 
-/* IpamAggregatesListParams contains all the parameters to send to the API endpoint
-   for the ipam aggregates list operation.
+/*
+IpamAggregatesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam aggregates list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAggregatesListParams struct {
 

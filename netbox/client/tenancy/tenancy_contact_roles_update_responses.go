@@ -61,7 +61,8 @@ func NewTenancyContactRolesUpdateOK() *TenancyContactRolesUpdateOK {
 	return &TenancyContactRolesUpdateOK{}
 }
 
-/* TenancyContactRolesUpdateOK describes a response with status code 200, with default header values.
+/*
+TenancyContactRolesUpdateOK describes a response with status code 200, with default header values.
 
 TenancyContactRolesUpdateOK tenancy contact roles update o k
 */
@@ -69,9 +70,39 @@ type TenancyContactRolesUpdateOK struct {
 	Payload *models.ContactRole
 }
 
+// IsSuccess returns true when this tenancy contact roles update o k response has a 2xx status code
+func (o *TenancyContactRolesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contact roles update o k response has a 3xx status code
+func (o *TenancyContactRolesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contact roles update o k response has a 4xx status code
+func (o *TenancyContactRolesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contact roles update o k response has a 5xx status code
+func (o *TenancyContactRolesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contact roles update o k response a status code equal to that given
+func (o *TenancyContactRolesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyContactRolesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/contact-roles/{id}/][%d] tenancyContactRolesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyContactRolesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /tenancy/contact-roles/{id}/][%d] tenancyContactRolesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyContactRolesUpdateOK) GetPayload() *models.ContactRole {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewTenancyContactRolesUpdateDefault(code int) *TenancyContactRolesUpdateDef
 	}
 }
 
-/* TenancyContactRolesUpdateDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactRolesUpdateDefault describes a response with status code -1, with default header values.
 
 TenancyContactRolesUpdateDefault tenancy contact roles update default
 */
@@ -110,9 +142,39 @@ func (o *TenancyContactRolesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contact roles update default response has a 2xx status code
+func (o *TenancyContactRolesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contact roles update default response has a 3xx status code
+func (o *TenancyContactRolesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contact roles update default response has a 4xx status code
+func (o *TenancyContactRolesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contact roles update default response has a 5xx status code
+func (o *TenancyContactRolesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contact roles update default response a status code equal to that given
+func (o *TenancyContactRolesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactRolesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/contact-roles/{id}/][%d] tenancy_contact-roles_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactRolesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /tenancy/contact-roles/{id}/][%d] tenancy_contact-roles_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactRolesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

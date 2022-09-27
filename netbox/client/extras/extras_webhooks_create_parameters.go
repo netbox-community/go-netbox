@@ -69,10 +69,12 @@ func NewExtrasWebhooksCreateParamsWithHTTPClient(client *http.Client) *ExtrasWeb
 	}
 }
 
-/* ExtrasWebhooksCreateParams contains all the parameters to send to the API endpoint
-   for the extras webhooks create operation.
+/*
+ExtrasWebhooksCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras webhooks create operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasWebhooksCreateParams struct {
 

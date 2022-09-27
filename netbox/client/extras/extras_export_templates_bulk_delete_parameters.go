@@ -67,10 +67,12 @@ func NewExtrasExportTemplatesBulkDeleteParamsWithHTTPClient(client *http.Client)
 	}
 }
 
-/* ExtrasExportTemplatesBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the extras export templates bulk delete operation.
+/*
+ExtrasExportTemplatesBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras export templates bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasExportTemplatesBulkDeleteParams struct {
 	timeout    time.Duration

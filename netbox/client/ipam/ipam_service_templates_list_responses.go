@@ -66,7 +66,8 @@ func NewIpamServiceTemplatesListOK() *IpamServiceTemplatesListOK {
 	return &IpamServiceTemplatesListOK{}
 }
 
-/* IpamServiceTemplatesListOK describes a response with status code 200, with default header values.
+/*
+IpamServiceTemplatesListOK describes a response with status code 200, with default header values.
 
 IpamServiceTemplatesListOK ipam service templates list o k
 */
@@ -74,9 +75,39 @@ type IpamServiceTemplatesListOK struct {
 	Payload *IpamServiceTemplatesListOKBody
 }
 
+// IsSuccess returns true when this ipam service templates list o k response has a 2xx status code
+func (o *IpamServiceTemplatesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam service templates list o k response has a 3xx status code
+func (o *IpamServiceTemplatesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam service templates list o k response has a 4xx status code
+func (o *IpamServiceTemplatesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam service templates list o k response has a 5xx status code
+func (o *IpamServiceTemplatesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam service templates list o k response a status code equal to that given
+func (o *IpamServiceTemplatesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamServiceTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/service-templates/][%d] ipamServiceTemplatesListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamServiceTemplatesListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/service-templates/][%d] ipamServiceTemplatesListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamServiceTemplatesListOK) GetPayload() *IpamServiceTemplatesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewIpamServiceTemplatesListDefault(code int) *IpamServiceTemplatesListDefau
 	}
 }
 
-/* IpamServiceTemplatesListDefault describes a response with status code -1, with default header values.
+/*
+IpamServiceTemplatesListDefault describes a response with status code -1, with default header values.
 
 IpamServiceTemplatesListDefault ipam service templates list default
 */
@@ -115,9 +147,39 @@ func (o *IpamServiceTemplatesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam service templates list default response has a 2xx status code
+func (o *IpamServiceTemplatesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam service templates list default response has a 3xx status code
+func (o *IpamServiceTemplatesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam service templates list default response has a 4xx status code
+func (o *IpamServiceTemplatesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam service templates list default response has a 5xx status code
+func (o *IpamServiceTemplatesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam service templates list default response a status code equal to that given
+func (o *IpamServiceTemplatesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamServiceTemplatesListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/service-templates/][%d] ipam_service-templates_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamServiceTemplatesListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/service-templates/][%d] ipam_service-templates_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamServiceTemplatesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *IpamServiceTemplatesListDefault) readResponse(response runtime.ClientRe
 	return nil
 }
 
-/*IpamServiceTemplatesListOKBody ipam service templates list o k body
+/*
+IpamServiceTemplatesListOKBody ipam service templates list o k body
 swagger:model IpamServiceTemplatesListOKBody
 */
 type IpamServiceTemplatesListOKBody struct {

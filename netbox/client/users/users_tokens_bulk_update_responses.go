@@ -61,7 +61,8 @@ func NewUsersTokensBulkUpdateOK() *UsersTokensBulkUpdateOK {
 	return &UsersTokensBulkUpdateOK{}
 }
 
-/* UsersTokensBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+UsersTokensBulkUpdateOK describes a response with status code 200, with default header values.
 
 UsersTokensBulkUpdateOK users tokens bulk update o k
 */
@@ -69,9 +70,39 @@ type UsersTokensBulkUpdateOK struct {
 	Payload *models.Token
 }
 
+// IsSuccess returns true when this users tokens bulk update o k response has a 2xx status code
+func (o *UsersTokensBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users tokens bulk update o k response has a 3xx status code
+func (o *UsersTokensBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users tokens bulk update o k response has a 4xx status code
+func (o *UsersTokensBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users tokens bulk update o k response has a 5xx status code
+func (o *UsersTokensBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users tokens bulk update o k response a status code equal to that given
+func (o *UsersTokensBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersTokensBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/tokens/][%d] usersTokensBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersTokensBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /users/tokens/][%d] usersTokensBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersTokensBulkUpdateOK) GetPayload() *models.Token {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersTokensBulkUpdateDefault(code int) *UsersTokensBulkUpdateDefault {
 	}
 }
 
-/* UsersTokensBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+UsersTokensBulkUpdateDefault describes a response with status code -1, with default header values.
 
 UsersTokensBulkUpdateDefault users tokens bulk update default
 */
@@ -110,9 +142,39 @@ func (o *UsersTokensBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users tokens bulk update default response has a 2xx status code
+func (o *UsersTokensBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users tokens bulk update default response has a 3xx status code
+func (o *UsersTokensBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users tokens bulk update default response has a 4xx status code
+func (o *UsersTokensBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users tokens bulk update default response has a 5xx status code
+func (o *UsersTokensBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users tokens bulk update default response a status code equal to that given
+func (o *UsersTokensBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersTokensBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /users/tokens/][%d] users_tokens_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersTokensBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /users/tokens/][%d] users_tokens_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersTokensBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

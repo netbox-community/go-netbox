@@ -68,10 +68,12 @@ func NewDcimDeviceBayTemplatesDeleteParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimDeviceBayTemplatesDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim device bay templates delete operation.
+/*
+DcimDeviceBayTemplatesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim device bay templates delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimDeviceBayTemplatesDeleteParams struct {
 

@@ -68,10 +68,12 @@ func NewDcimConsolePortTemplatesListParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimConsolePortTemplatesListParams contains all the parameters to send to the API endpoint
-   for the dcim console port templates list operation.
+/*
+DcimConsolePortTemplatesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim console port templates list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimConsolePortTemplatesListParams struct {
 

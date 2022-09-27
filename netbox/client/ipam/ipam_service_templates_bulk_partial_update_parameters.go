@@ -69,10 +69,12 @@ func NewIpamServiceTemplatesBulkPartialUpdateParamsWithHTTPClient(client *http.C
 	}
 }
 
-/* IpamServiceTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam service templates bulk partial update operation.
+/*
+IpamServiceTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam service templates bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamServiceTemplatesBulkPartialUpdateParams struct {
 

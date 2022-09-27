@@ -69,10 +69,12 @@ func NewDcimInventoryItemRolesCreateParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimInventoryItemRolesCreateParams contains all the parameters to send to the API endpoint
-   for the dcim inventory item roles create operation.
+/*
+DcimInventoryItemRolesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim inventory item roles create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInventoryItemRolesCreateParams struct {
 

@@ -61,7 +61,8 @@ func NewDcimConsolePortTemplatesReadOK() *DcimConsolePortTemplatesReadOK {
 	return &DcimConsolePortTemplatesReadOK{}
 }
 
-/* DcimConsolePortTemplatesReadOK describes a response with status code 200, with default header values.
+/*
+DcimConsolePortTemplatesReadOK describes a response with status code 200, with default header values.
 
 DcimConsolePortTemplatesReadOK dcim console port templates read o k
 */
@@ -69,9 +70,39 @@ type DcimConsolePortTemplatesReadOK struct {
 	Payload *models.ConsolePortTemplate
 }
 
+// IsSuccess returns true when this dcim console port templates read o k response has a 2xx status code
+func (o *DcimConsolePortTemplatesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console port templates read o k response has a 3xx status code
+func (o *DcimConsolePortTemplatesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console port templates read o k response has a 4xx status code
+func (o *DcimConsolePortTemplatesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console port templates read o k response has a 5xx status code
+func (o *DcimConsolePortTemplatesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console port templates read o k response a status code equal to that given
+func (o *DcimConsolePortTemplatesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimConsolePortTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimConsolePortTemplatesReadOK) String() string {
+	return fmt.Sprintf("[GET /dcim/console-port-templates/{id}/][%d] dcimConsolePortTemplatesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimConsolePortTemplatesReadOK) GetPayload() *models.ConsolePortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimConsolePortTemplatesReadDefault(code int) *DcimConsolePortTemplatesR
 	}
 }
 
-/* DcimConsolePortTemplatesReadDefault describes a response with status code -1, with default header values.
+/*
+DcimConsolePortTemplatesReadDefault describes a response with status code -1, with default header values.
 
 DcimConsolePortTemplatesReadDefault dcim console port templates read default
 */
@@ -110,9 +142,39 @@ func (o *DcimConsolePortTemplatesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console port templates read default response has a 2xx status code
+func (o *DcimConsolePortTemplatesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console port templates read default response has a 3xx status code
+func (o *DcimConsolePortTemplatesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console port templates read default response has a 4xx status code
+func (o *DcimConsolePortTemplatesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console port templates read default response has a 5xx status code
+func (o *DcimConsolePortTemplatesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console port templates read default response a status code equal to that given
+func (o *DcimConsolePortTemplatesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsolePortTemplatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsolePortTemplatesReadDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/console-port-templates/{id}/][%d] dcim_console-port-templates_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsolePortTemplatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

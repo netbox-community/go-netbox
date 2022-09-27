@@ -68,10 +68,12 @@ func NewVirtualizationClustersListParamsWithHTTPClient(client *http.Client) *Vir
 	}
 }
 
-/* VirtualizationClustersListParams contains all the parameters to send to the API endpoint
-   for the virtualization clusters list operation.
+/*
+VirtualizationClustersListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization clusters list operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationClustersListParams struct {
 

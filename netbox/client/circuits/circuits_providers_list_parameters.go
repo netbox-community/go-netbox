@@ -68,10 +68,12 @@ func NewCircuitsProvidersListParamsWithHTTPClient(client *http.Client) *Circuits
 	}
 }
 
-/* CircuitsProvidersListParams contains all the parameters to send to the API endpoint
-   for the circuits providers list operation.
+/*
+CircuitsProvidersListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits providers list operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsProvidersListParams struct {
 

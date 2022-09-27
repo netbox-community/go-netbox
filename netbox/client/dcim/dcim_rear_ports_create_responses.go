@@ -61,7 +61,8 @@ func NewDcimRearPortsCreateCreated() *DcimRearPortsCreateCreated {
 	return &DcimRearPortsCreateCreated{}
 }
 
-/* DcimRearPortsCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimRearPortsCreateCreated describes a response with status code 201, with default header values.
 
 DcimRearPortsCreateCreated dcim rear ports create created
 */
@@ -69,9 +70,39 @@ type DcimRearPortsCreateCreated struct {
 	Payload *models.RearPort
 }
 
+// IsSuccess returns true when this dcim rear ports create created response has a 2xx status code
+func (o *DcimRearPortsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rear ports create created response has a 3xx status code
+func (o *DcimRearPortsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rear ports create created response has a 4xx status code
+func (o *DcimRearPortsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rear ports create created response has a 5xx status code
+func (o *DcimRearPortsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rear ports create created response a status code equal to that given
+func (o *DcimRearPortsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimRearPortsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/rear-ports/][%d] dcimRearPortsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimRearPortsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/rear-ports/][%d] dcimRearPortsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimRearPortsCreateCreated) GetPayload() *models.RearPort {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRearPortsCreateDefault(code int) *DcimRearPortsCreateDefault {
 	}
 }
 
-/* DcimRearPortsCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimRearPortsCreateDefault describes a response with status code -1, with default header values.
 
 DcimRearPortsCreateDefault dcim rear ports create default
 */
@@ -110,9 +142,39 @@ func (o *DcimRearPortsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rear ports create default response has a 2xx status code
+func (o *DcimRearPortsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rear ports create default response has a 3xx status code
+func (o *DcimRearPortsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rear ports create default response has a 4xx status code
+func (o *DcimRearPortsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rear ports create default response has a 5xx status code
+func (o *DcimRearPortsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rear ports create default response a status code equal to that given
+func (o *DcimRearPortsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRearPortsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/rear-ports/][%d] dcim_rear-ports_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRearPortsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/rear-ports/][%d] dcim_rear-ports_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRearPortsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

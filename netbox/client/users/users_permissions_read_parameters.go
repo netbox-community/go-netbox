@@ -68,10 +68,12 @@ func NewUsersPermissionsReadParamsWithHTTPClient(client *http.Client) *UsersPerm
 	}
 }
 
-/* UsersPermissionsReadParams contains all the parameters to send to the API endpoint
-   for the users permissions read operation.
+/*
+UsersPermissionsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users permissions read operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersPermissionsReadParams struct {
 

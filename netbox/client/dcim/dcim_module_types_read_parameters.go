@@ -68,10 +68,12 @@ func NewDcimModuleTypesReadParamsWithHTTPClient(client *http.Client) *DcimModule
 	}
 }
 
-/* DcimModuleTypesReadParams contains all the parameters to send to the API endpoint
-   for the dcim module types read operation.
+/*
+DcimModuleTypesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module types read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleTypesReadParams struct {
 

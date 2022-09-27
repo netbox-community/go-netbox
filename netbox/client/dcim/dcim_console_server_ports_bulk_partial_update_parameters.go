@@ -69,10 +69,12 @@ func NewDcimConsoleServerPortsBulkPartialUpdateParamsWithHTTPClient(client *http
 	}
 }
 
-/* DcimConsoleServerPortsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim console server ports bulk partial update operation.
+/*
+DcimConsoleServerPortsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim console server ports bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimConsoleServerPortsBulkPartialUpdateParams struct {
 

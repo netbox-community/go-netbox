@@ -68,10 +68,12 @@ func NewDcimModuleTypesListParamsWithHTTPClient(client *http.Client) *DcimModule
 	}
 }
 
-/* DcimModuleTypesListParams contains all the parameters to send to the API endpoint
-   for the dcim module types list operation.
+/*
+DcimModuleTypesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module types list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleTypesListParams struct {
 

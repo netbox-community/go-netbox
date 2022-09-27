@@ -61,7 +61,8 @@ func NewUsersUsersReadOK() *UsersUsersReadOK {
 	return &UsersUsersReadOK{}
 }
 
-/* UsersUsersReadOK describes a response with status code 200, with default header values.
+/*
+UsersUsersReadOK describes a response with status code 200, with default header values.
 
 UsersUsersReadOK users users read o k
 */
@@ -69,9 +70,39 @@ type UsersUsersReadOK struct {
 	Payload *models.User
 }
 
+// IsSuccess returns true when this users users read o k response has a 2xx status code
+func (o *UsersUsersReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users users read o k response has a 3xx status code
+func (o *UsersUsersReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users users read o k response has a 4xx status code
+func (o *UsersUsersReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users users read o k response has a 5xx status code
+func (o *UsersUsersReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users users read o k response a status code equal to that given
+func (o *UsersUsersReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersUsersReadOK) Error() string {
 	return fmt.Sprintf("[GET /users/users/{id}/][%d] usersUsersReadOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersUsersReadOK) String() string {
+	return fmt.Sprintf("[GET /users/users/{id}/][%d] usersUsersReadOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersUsersReadOK) GetPayload() *models.User {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersUsersReadDefault(code int) *UsersUsersReadDefault {
 	}
 }
 
-/* UsersUsersReadDefault describes a response with status code -1, with default header values.
+/*
+UsersUsersReadDefault describes a response with status code -1, with default header values.
 
 UsersUsersReadDefault users users read default
 */
@@ -110,9 +142,39 @@ func (o *UsersUsersReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users users read default response has a 2xx status code
+func (o *UsersUsersReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users users read default response has a 3xx status code
+func (o *UsersUsersReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users users read default response has a 4xx status code
+func (o *UsersUsersReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users users read default response has a 5xx status code
+func (o *UsersUsersReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users users read default response a status code equal to that given
+func (o *UsersUsersReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersUsersReadDefault) Error() string {
 	return fmt.Sprintf("[GET /users/users/{id}/][%d] users_users_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersUsersReadDefault) String() string {
+	return fmt.Sprintf("[GET /users/users/{id}/][%d] users_users_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersUsersReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewUsersTokensCreateCreated() *UsersTokensCreateCreated {
 	return &UsersTokensCreateCreated{}
 }
 
-/* UsersTokensCreateCreated describes a response with status code 201, with default header values.
+/*
+UsersTokensCreateCreated describes a response with status code 201, with default header values.
 
 UsersTokensCreateCreated users tokens create created
 */
@@ -69,9 +70,39 @@ type UsersTokensCreateCreated struct {
 	Payload *models.Token
 }
 
+// IsSuccess returns true when this users tokens create created response has a 2xx status code
+func (o *UsersTokensCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users tokens create created response has a 3xx status code
+func (o *UsersTokensCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users tokens create created response has a 4xx status code
+func (o *UsersTokensCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users tokens create created response has a 5xx status code
+func (o *UsersTokensCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users tokens create created response a status code equal to that given
+func (o *UsersTokensCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *UsersTokensCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /users/tokens/][%d] usersTokensCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *UsersTokensCreateCreated) String() string {
+	return fmt.Sprintf("[POST /users/tokens/][%d] usersTokensCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *UsersTokensCreateCreated) GetPayload() *models.Token {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersTokensCreateDefault(code int) *UsersTokensCreateDefault {
 	}
 }
 
-/* UsersTokensCreateDefault describes a response with status code -1, with default header values.
+/*
+UsersTokensCreateDefault describes a response with status code -1, with default header values.
 
 UsersTokensCreateDefault users tokens create default
 */
@@ -110,9 +142,39 @@ func (o *UsersTokensCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users tokens create default response has a 2xx status code
+func (o *UsersTokensCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users tokens create default response has a 3xx status code
+func (o *UsersTokensCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users tokens create default response has a 4xx status code
+func (o *UsersTokensCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users tokens create default response has a 5xx status code
+func (o *UsersTokensCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users tokens create default response a status code equal to that given
+func (o *UsersTokensCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersTokensCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /users/tokens/][%d] users_tokens_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersTokensCreateDefault) String() string {
+	return fmt.Sprintf("[POST /users/tokens/][%d] users_tokens_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersTokensCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,14 +59,44 @@ func NewDcimConsoleServerPortTemplatesDeleteNoContent() *DcimConsoleServerPortTe
 	return &DcimConsoleServerPortTemplatesDeleteNoContent{}
 }
 
-/* DcimConsoleServerPortTemplatesDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimConsoleServerPortTemplatesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimConsoleServerPortTemplatesDeleteNoContent dcim console server port templates delete no content
 */
 type DcimConsoleServerPortTemplatesDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim console server port templates delete no content response has a 2xx status code
+func (o *DcimConsoleServerPortTemplatesDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console server port templates delete no content response has a 3xx status code
+func (o *DcimConsoleServerPortTemplatesDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console server port templates delete no content response has a 4xx status code
+func (o *DcimConsoleServerPortTemplatesDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console server port templates delete no content response has a 5xx status code
+func (o *DcimConsoleServerPortTemplatesDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console server port templates delete no content response a status code equal to that given
+func (o *DcimConsoleServerPortTemplatesDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimConsoleServerPortTemplatesDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesDeleteNoContent ", 204)
+}
+
+func (o *DcimConsoleServerPortTemplatesDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcimConsoleServerPortTemplatesDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimConsoleServerPortTemplatesDeleteDefault(code int) *DcimConsoleServer
 	}
 }
 
-/* DcimConsoleServerPortTemplatesDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimConsoleServerPortTemplatesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortTemplatesDeleteDefault dcim console server port templates delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimConsoleServerPortTemplatesDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console server port templates delete default response has a 2xx status code
+func (o *DcimConsoleServerPortTemplatesDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console server port templates delete default response has a 3xx status code
+func (o *DcimConsoleServerPortTemplatesDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console server port templates delete default response has a 4xx status code
+func (o *DcimConsoleServerPortTemplatesDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console server port templates delete default response has a 5xx status code
+func (o *DcimConsoleServerPortTemplatesDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console server port templates delete default response a status code equal to that given
+func (o *DcimConsoleServerPortTemplatesDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsoleServerPortTemplatesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsoleServerPortTemplatesDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/console-server-port-templates/{id}/][%d] dcim_console-server-port-templates_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsoleServerPortTemplatesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

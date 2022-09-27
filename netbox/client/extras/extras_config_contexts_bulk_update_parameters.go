@@ -69,10 +69,12 @@ func NewExtrasConfigContextsBulkUpdateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* ExtrasConfigContextsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the extras config contexts bulk update operation.
+/*
+ExtrasConfigContextsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras config contexts bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsBulkUpdateParams struct {
 

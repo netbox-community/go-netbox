@@ -68,10 +68,12 @@ func NewIpamFhrpGroupsDeleteParamsWithHTTPClient(client *http.Client) *IpamFhrpG
 	}
 }
 
-/* IpamFhrpGroupsDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp groups delete operation.
+/*
+IpamFhrpGroupsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp groups delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupsDeleteParams struct {
 

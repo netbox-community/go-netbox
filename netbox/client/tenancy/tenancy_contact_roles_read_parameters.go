@@ -68,10 +68,12 @@ func NewTenancyContactRolesReadParamsWithHTTPClient(client *http.Client) *Tenanc
 	}
 }
 
-/* TenancyContactRolesReadParams contains all the parameters to send to the API endpoint
-   for the tenancy contact roles read operation.
+/*
+TenancyContactRolesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact roles read operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactRolesReadParams struct {
 

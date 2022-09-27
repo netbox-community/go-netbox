@@ -66,7 +66,8 @@ func NewIpamServicesListOK() *IpamServicesListOK {
 	return &IpamServicesListOK{}
 }
 
-/* IpamServicesListOK describes a response with status code 200, with default header values.
+/*
+IpamServicesListOK describes a response with status code 200, with default header values.
 
 IpamServicesListOK ipam services list o k
 */
@@ -74,9 +75,39 @@ type IpamServicesListOK struct {
 	Payload *IpamServicesListOKBody
 }
 
+// IsSuccess returns true when this ipam services list o k response has a 2xx status code
+func (o *IpamServicesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam services list o k response has a 3xx status code
+func (o *IpamServicesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam services list o k response has a 4xx status code
+func (o *IpamServicesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam services list o k response has a 5xx status code
+func (o *IpamServicesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam services list o k response a status code equal to that given
+func (o *IpamServicesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamServicesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/services/][%d] ipamServicesListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamServicesListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/services/][%d] ipamServicesListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamServicesListOK) GetPayload() *IpamServicesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewIpamServicesListDefault(code int) *IpamServicesListDefault {
 	}
 }
 
-/* IpamServicesListDefault describes a response with status code -1, with default header values.
+/*
+IpamServicesListDefault describes a response with status code -1, with default header values.
 
 IpamServicesListDefault ipam services list default
 */
@@ -115,9 +147,39 @@ func (o *IpamServicesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam services list default response has a 2xx status code
+func (o *IpamServicesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam services list default response has a 3xx status code
+func (o *IpamServicesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam services list default response has a 4xx status code
+func (o *IpamServicesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam services list default response has a 5xx status code
+func (o *IpamServicesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam services list default response a status code equal to that given
+func (o *IpamServicesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamServicesListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/services/][%d] ipam_services_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamServicesListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/services/][%d] ipam_services_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamServicesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *IpamServicesListDefault) readResponse(response runtime.ClientResponse, 
 	return nil
 }
 
-/*IpamServicesListOKBody ipam services list o k body
+/*
+IpamServicesListOKBody ipam services list o k body
 swagger:model IpamServicesListOKBody
 */
 type IpamServicesListOKBody struct {

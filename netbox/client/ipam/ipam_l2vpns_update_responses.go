@@ -61,7 +61,8 @@ func NewIpamL2vpnsUpdateOK() *IpamL2vpnsUpdateOK {
 	return &IpamL2vpnsUpdateOK{}
 }
 
-/* IpamL2vpnsUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamL2vpnsUpdateOK describes a response with status code 200, with default header values.
 
 IpamL2vpnsUpdateOK ipam l2vpns update o k
 */
@@ -69,9 +70,39 @@ type IpamL2vpnsUpdateOK struct {
 	Payload *models.L2VPN
 }
 
+// IsSuccess returns true when this ipam l2vpns update o k response has a 2xx status code
+func (o *IpamL2vpnsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam l2vpns update o k response has a 3xx status code
+func (o *IpamL2vpnsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam l2vpns update o k response has a 4xx status code
+func (o *IpamL2vpnsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam l2vpns update o k response has a 5xx status code
+func (o *IpamL2vpnsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam l2vpns update o k response a status code equal to that given
+func (o *IpamL2vpnsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamL2vpnsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/l2vpns/{id}/][%d] ipamL2vpnsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamL2vpnsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /ipam/l2vpns/{id}/][%d] ipamL2vpnsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamL2vpnsUpdateOK) GetPayload() *models.L2VPN {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamL2vpnsUpdateDefault(code int) *IpamL2vpnsUpdateDefault {
 	}
 }
 
-/* IpamL2vpnsUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamL2vpnsUpdateDefault describes a response with status code -1, with default header values.
 
 IpamL2vpnsUpdateDefault ipam l2vpns update default
 */
@@ -110,9 +142,39 @@ func (o *IpamL2vpnsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam l2vpns update default response has a 2xx status code
+func (o *IpamL2vpnsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam l2vpns update default response has a 3xx status code
+func (o *IpamL2vpnsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam l2vpns update default response has a 4xx status code
+func (o *IpamL2vpnsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam l2vpns update default response has a 5xx status code
+func (o *IpamL2vpnsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam l2vpns update default response a status code equal to that given
+func (o *IpamL2vpnsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamL2vpnsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/l2vpns/{id}/][%d] ipam_l2vpns_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamL2vpnsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /ipam/l2vpns/{id}/][%d] ipam_l2vpns_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamL2vpnsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

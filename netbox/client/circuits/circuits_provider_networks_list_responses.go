@@ -66,7 +66,8 @@ func NewCircuitsProviderNetworksListOK() *CircuitsProviderNetworksListOK {
 	return &CircuitsProviderNetworksListOK{}
 }
 
-/* CircuitsProviderNetworksListOK describes a response with status code 200, with default header values.
+/*
+CircuitsProviderNetworksListOK describes a response with status code 200, with default header values.
 
 CircuitsProviderNetworksListOK circuits provider networks list o k
 */
@@ -74,9 +75,39 @@ type CircuitsProviderNetworksListOK struct {
 	Payload *CircuitsProviderNetworksListOKBody
 }
 
+// IsSuccess returns true when this circuits provider networks list o k response has a 2xx status code
+func (o *CircuitsProviderNetworksListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits provider networks list o k response has a 3xx status code
+func (o *CircuitsProviderNetworksListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits provider networks list o k response has a 4xx status code
+func (o *CircuitsProviderNetworksListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits provider networks list o k response has a 5xx status code
+func (o *CircuitsProviderNetworksListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits provider networks list o k response a status code equal to that given
+func (o *CircuitsProviderNetworksListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsProviderNetworksListOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/provider-networks/][%d] circuitsProviderNetworksListOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsProviderNetworksListOK) String() string {
+	return fmt.Sprintf("[GET /circuits/provider-networks/][%d] circuitsProviderNetworksListOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsProviderNetworksListOK) GetPayload() *CircuitsProviderNetworksListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewCircuitsProviderNetworksListDefault(code int) *CircuitsProviderNetworksL
 	}
 }
 
-/* CircuitsProviderNetworksListDefault describes a response with status code -1, with default header values.
+/*
+CircuitsProviderNetworksListDefault describes a response with status code -1, with default header values.
 
 CircuitsProviderNetworksListDefault circuits provider networks list default
 */
@@ -115,9 +147,39 @@ func (o *CircuitsProviderNetworksListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits provider networks list default response has a 2xx status code
+func (o *CircuitsProviderNetworksListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits provider networks list default response has a 3xx status code
+func (o *CircuitsProviderNetworksListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits provider networks list default response has a 4xx status code
+func (o *CircuitsProviderNetworksListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits provider networks list default response has a 5xx status code
+func (o *CircuitsProviderNetworksListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits provider networks list default response a status code equal to that given
+func (o *CircuitsProviderNetworksListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsProviderNetworksListDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/provider-networks/][%d] circuits_provider-networks_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsProviderNetworksListDefault) String() string {
+	return fmt.Sprintf("[GET /circuits/provider-networks/][%d] circuits_provider-networks_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsProviderNetworksListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *CircuitsProviderNetworksListDefault) readResponse(response runtime.Clie
 	return nil
 }
 
-/*CircuitsProviderNetworksListOKBody circuits provider networks list o k body
+/*
+CircuitsProviderNetworksListOKBody circuits provider networks list o k body
 swagger:model CircuitsProviderNetworksListOKBody
 */
 type CircuitsProviderNetworksListOKBody struct {

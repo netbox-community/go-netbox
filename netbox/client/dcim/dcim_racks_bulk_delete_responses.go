@@ -59,14 +59,44 @@ func NewDcimRacksBulkDeleteNoContent() *DcimRacksBulkDeleteNoContent {
 	return &DcimRacksBulkDeleteNoContent{}
 }
 
-/* DcimRacksBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimRacksBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimRacksBulkDeleteNoContent dcim racks bulk delete no content
 */
 type DcimRacksBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim racks bulk delete no content response has a 2xx status code
+func (o *DcimRacksBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim racks bulk delete no content response has a 3xx status code
+func (o *DcimRacksBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim racks bulk delete no content response has a 4xx status code
+func (o *DcimRacksBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim racks bulk delete no content response has a 5xx status code
+func (o *DcimRacksBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim racks bulk delete no content response a status code equal to that given
+func (o *DcimRacksBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimRacksBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/racks/][%d] dcimRacksBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimRacksBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/racks/][%d] dcimRacksBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimRacksBulkDeleteDefault(code int) *DcimRacksBulkDeleteDefault {
 	}
 }
 
-/* DcimRacksBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimRacksBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimRacksBulkDeleteDefault dcim racks bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimRacksBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim racks bulk delete default response has a 2xx status code
+func (o *DcimRacksBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim racks bulk delete default response has a 3xx status code
+func (o *DcimRacksBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim racks bulk delete default response has a 4xx status code
+func (o *DcimRacksBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim racks bulk delete default response has a 5xx status code
+func (o *DcimRacksBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim racks bulk delete default response a status code equal to that given
+func (o *DcimRacksBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRacksBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/racks/][%d] dcim_racks_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRacksBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/racks/][%d] dcim_racks_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRacksBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

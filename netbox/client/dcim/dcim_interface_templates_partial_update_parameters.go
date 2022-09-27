@@ -70,10 +70,12 @@ func NewDcimInterfaceTemplatesPartialUpdateParamsWithHTTPClient(client *http.Cli
 	}
 }
 
-/* DcimInterfaceTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim interface templates partial update operation.
+/*
+DcimInterfaceTemplatesPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim interface templates partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInterfaceTemplatesPartialUpdateParams struct {
 

@@ -67,10 +67,12 @@ func NewDcimPowerPortsBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimP
 	}
 }
 
-/* DcimPowerPortsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim power ports bulk delete operation.
+/*
+DcimPowerPortsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power ports bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerPortsBulkDeleteParams struct {
 	timeout    time.Duration

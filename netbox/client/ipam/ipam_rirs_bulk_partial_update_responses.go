@@ -61,7 +61,8 @@ func NewIpamRirsBulkPartialUpdateOK() *IpamRirsBulkPartialUpdateOK {
 	return &IpamRirsBulkPartialUpdateOK{}
 }
 
-/* IpamRirsBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamRirsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamRirsBulkPartialUpdateOK ipam rirs bulk partial update o k
 */
@@ -69,9 +70,39 @@ type IpamRirsBulkPartialUpdateOK struct {
 	Payload *models.RIR
 }
 
+// IsSuccess returns true when this ipam rirs bulk partial update o k response has a 2xx status code
+func (o *IpamRirsBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam rirs bulk partial update o k response has a 3xx status code
+func (o *IpamRirsBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam rirs bulk partial update o k response has a 4xx status code
+func (o *IpamRirsBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam rirs bulk partial update o k response has a 5xx status code
+func (o *IpamRirsBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam rirs bulk partial update o k response a status code equal to that given
+func (o *IpamRirsBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamRirsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/rirs/][%d] ipamRirsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamRirsBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /ipam/rirs/][%d] ipamRirsBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamRirsBulkPartialUpdateOK) GetPayload() *models.RIR {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamRirsBulkPartialUpdateDefault(code int) *IpamRirsBulkPartialUpdateDef
 	}
 }
 
-/* IpamRirsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamRirsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRirsBulkPartialUpdateDefault ipam rirs bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *IpamRirsBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam rirs bulk partial update default response has a 2xx status code
+func (o *IpamRirsBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam rirs bulk partial update default response has a 3xx status code
+func (o *IpamRirsBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam rirs bulk partial update default response has a 4xx status code
+func (o *IpamRirsBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam rirs bulk partial update default response has a 5xx status code
+func (o *IpamRirsBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam rirs bulk partial update default response a status code equal to that given
+func (o *IpamRirsBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamRirsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/rirs/][%d] ipam_rirs_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamRirsBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /ipam/rirs/][%d] ipam_rirs_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamRirsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

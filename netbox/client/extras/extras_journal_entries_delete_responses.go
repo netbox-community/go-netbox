@@ -59,14 +59,44 @@ func NewExtrasJournalEntriesDeleteNoContent() *ExtrasJournalEntriesDeleteNoConte
 	return &ExtrasJournalEntriesDeleteNoContent{}
 }
 
-/* ExtrasJournalEntriesDeleteNoContent describes a response with status code 204, with default header values.
+/*
+ExtrasJournalEntriesDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasJournalEntriesDeleteNoContent extras journal entries delete no content
 */
 type ExtrasJournalEntriesDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this extras journal entries delete no content response has a 2xx status code
+func (o *ExtrasJournalEntriesDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras journal entries delete no content response has a 3xx status code
+func (o *ExtrasJournalEntriesDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras journal entries delete no content response has a 4xx status code
+func (o *ExtrasJournalEntriesDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras journal entries delete no content response has a 5xx status code
+func (o *ExtrasJournalEntriesDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras journal entries delete no content response a status code equal to that given
+func (o *ExtrasJournalEntriesDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *ExtrasJournalEntriesDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extrasJournalEntriesDeleteNoContent ", 204)
+}
+
+func (o *ExtrasJournalEntriesDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extrasJournalEntriesDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasJournalEntriesDeleteDefault(code int) *ExtrasJournalEntriesDeleteD
 	}
 }
 
-/* ExtrasJournalEntriesDeleteDefault describes a response with status code -1, with default header values.
+/*
+ExtrasJournalEntriesDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasJournalEntriesDeleteDefault extras journal entries delete default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasJournalEntriesDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras journal entries delete default response has a 2xx status code
+func (o *ExtrasJournalEntriesDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras journal entries delete default response has a 3xx status code
+func (o *ExtrasJournalEntriesDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras journal entries delete default response has a 4xx status code
+func (o *ExtrasJournalEntriesDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras journal entries delete default response has a 5xx status code
+func (o *ExtrasJournalEntriesDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras journal entries delete default response a status code equal to that given
+func (o *ExtrasJournalEntriesDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasJournalEntriesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extras_journal-entries_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasJournalEntriesDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /extras/journal-entries/{id}/][%d] extras_journal-entries_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasJournalEntriesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

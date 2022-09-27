@@ -61,7 +61,8 @@ func NewDcimRearPortTemplatesBulkPartialUpdateOK() *DcimRearPortTemplatesBulkPar
 	return &DcimRearPortTemplatesBulkPartialUpdateOK{}
 }
 
-/* DcimRearPortTemplatesBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimRearPortTemplatesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimRearPortTemplatesBulkPartialUpdateOK dcim rear port templates bulk partial update o k
 */
@@ -69,9 +70,39 @@ type DcimRearPortTemplatesBulkPartialUpdateOK struct {
 	Payload *models.RearPortTemplate
 }
 
+// IsSuccess returns true when this dcim rear port templates bulk partial update o k response has a 2xx status code
+func (o *DcimRearPortTemplatesBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rear port templates bulk partial update o k response has a 3xx status code
+func (o *DcimRearPortTemplatesBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rear port templates bulk partial update o k response has a 4xx status code
+func (o *DcimRearPortTemplatesBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rear port templates bulk partial update o k response has a 5xx status code
+func (o *DcimRearPortTemplatesBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rear port templates bulk partial update o k response a status code equal to that given
+func (o *DcimRearPortTemplatesBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRearPortTemplatesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/][%d] dcimRearPortTemplatesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRearPortTemplatesBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/][%d] dcimRearPortTemplatesBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRearPortTemplatesBulkPartialUpdateOK) GetPayload() *models.RearPortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRearPortTemplatesBulkPartialUpdateDefault(code int) *DcimRearPortTem
 	}
 }
 
-/* DcimRearPortTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimRearPortTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRearPortTemplatesBulkPartialUpdateDefault dcim rear port templates bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rear port templates bulk partial update default response has a 2xx status code
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rear port templates bulk partial update default response has a 3xx status code
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rear port templates bulk partial update default response has a 4xx status code
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rear port templates bulk partial update default response has a 5xx status code
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rear port templates bulk partial update default response a status code equal to that given
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/][%d] dcim_rear-port-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/rear-port-templates/][%d] dcim_rear-port-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRearPortTemplatesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

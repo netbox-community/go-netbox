@@ -59,14 +59,44 @@ func NewUsersTokensBulkDeleteNoContent() *UsersTokensBulkDeleteNoContent {
 	return &UsersTokensBulkDeleteNoContent{}
 }
 
-/* UsersTokensBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+UsersTokensBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 UsersTokensBulkDeleteNoContent users tokens bulk delete no content
 */
 type UsersTokensBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this users tokens bulk delete no content response has a 2xx status code
+func (o *UsersTokensBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users tokens bulk delete no content response has a 3xx status code
+func (o *UsersTokensBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users tokens bulk delete no content response has a 4xx status code
+func (o *UsersTokensBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users tokens bulk delete no content response has a 5xx status code
+func (o *UsersTokensBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users tokens bulk delete no content response a status code equal to that given
+func (o *UsersTokensBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *UsersTokensBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /users/tokens/][%d] usersTokensBulkDeleteNoContent ", 204)
+}
+
+func (o *UsersTokensBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /users/tokens/][%d] usersTokensBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewUsersTokensBulkDeleteDefault(code int) *UsersTokensBulkDeleteDefault {
 	}
 }
 
-/* UsersTokensBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+UsersTokensBulkDeleteDefault describes a response with status code -1, with default header values.
 
 UsersTokensBulkDeleteDefault users tokens bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *UsersTokensBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users tokens bulk delete default response has a 2xx status code
+func (o *UsersTokensBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users tokens bulk delete default response has a 3xx status code
+func (o *UsersTokensBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users tokens bulk delete default response has a 4xx status code
+func (o *UsersTokensBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users tokens bulk delete default response has a 5xx status code
+func (o *UsersTokensBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users tokens bulk delete default response a status code equal to that given
+func (o *UsersTokensBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersTokensBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /users/tokens/][%d] users_tokens_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersTokensBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /users/tokens/][%d] users_tokens_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersTokensBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

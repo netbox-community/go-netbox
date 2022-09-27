@@ -66,7 +66,8 @@ func NewDcimInterfaceTemplatesListOK() *DcimInterfaceTemplatesListOK {
 	return &DcimInterfaceTemplatesListOK{}
 }
 
-/* DcimInterfaceTemplatesListOK describes a response with status code 200, with default header values.
+/*
+DcimInterfaceTemplatesListOK describes a response with status code 200, with default header values.
 
 DcimInterfaceTemplatesListOK dcim interface templates list o k
 */
@@ -74,9 +75,39 @@ type DcimInterfaceTemplatesListOK struct {
 	Payload *DcimInterfaceTemplatesListOKBody
 }
 
+// IsSuccess returns true when this dcim interface templates list o k response has a 2xx status code
+func (o *DcimInterfaceTemplatesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim interface templates list o k response has a 3xx status code
+func (o *DcimInterfaceTemplatesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim interface templates list o k response has a 4xx status code
+func (o *DcimInterfaceTemplatesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim interface templates list o k response has a 5xx status code
+func (o *DcimInterfaceTemplatesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim interface templates list o k response a status code equal to that given
+func (o *DcimInterfaceTemplatesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimInterfaceTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcimInterfaceTemplatesListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimInterfaceTemplatesListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcimInterfaceTemplatesListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimInterfaceTemplatesListOK) GetPayload() *DcimInterfaceTemplatesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimInterfaceTemplatesListDefault(code int) *DcimInterfaceTemplatesListD
 	}
 }
 
-/* DcimInterfaceTemplatesListDefault describes a response with status code -1, with default header values.
+/*
+DcimInterfaceTemplatesListDefault describes a response with status code -1, with default header values.
 
 DcimInterfaceTemplatesListDefault dcim interface templates list default
 */
@@ -115,9 +147,39 @@ func (o *DcimInterfaceTemplatesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim interface templates list default response has a 2xx status code
+func (o *DcimInterfaceTemplatesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim interface templates list default response has a 3xx status code
+func (o *DcimInterfaceTemplatesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim interface templates list default response has a 4xx status code
+func (o *DcimInterfaceTemplatesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim interface templates list default response has a 5xx status code
+func (o *DcimInterfaceTemplatesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim interface templates list default response a status code equal to that given
+func (o *DcimInterfaceTemplatesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInterfaceTemplatesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcim_interface-templates_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInterfaceTemplatesListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/interface-templates/][%d] dcim_interface-templates_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInterfaceTemplatesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimInterfaceTemplatesListDefault) readResponse(response runtime.Client
 	return nil
 }
 
-/*DcimInterfaceTemplatesListOKBody dcim interface templates list o k body
+/*
+DcimInterfaceTemplatesListOKBody dcim interface templates list o k body
 swagger:model DcimInterfaceTemplatesListOKBody
 */
 type DcimInterfaceTemplatesListOKBody struct {

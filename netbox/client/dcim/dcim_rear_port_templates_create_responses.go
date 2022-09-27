@@ -61,7 +61,8 @@ func NewDcimRearPortTemplatesCreateCreated() *DcimRearPortTemplatesCreateCreated
 	return &DcimRearPortTemplatesCreateCreated{}
 }
 
-/* DcimRearPortTemplatesCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimRearPortTemplatesCreateCreated describes a response with status code 201, with default header values.
 
 DcimRearPortTemplatesCreateCreated dcim rear port templates create created
 */
@@ -69,9 +70,39 @@ type DcimRearPortTemplatesCreateCreated struct {
 	Payload *models.RearPortTemplate
 }
 
+// IsSuccess returns true when this dcim rear port templates create created response has a 2xx status code
+func (o *DcimRearPortTemplatesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rear port templates create created response has a 3xx status code
+func (o *DcimRearPortTemplatesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rear port templates create created response has a 4xx status code
+func (o *DcimRearPortTemplatesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rear port templates create created response has a 5xx status code
+func (o *DcimRearPortTemplatesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rear port templates create created response a status code equal to that given
+func (o *DcimRearPortTemplatesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimRearPortTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/rear-port-templates/][%d] dcimRearPortTemplatesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimRearPortTemplatesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/rear-port-templates/][%d] dcimRearPortTemplatesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimRearPortTemplatesCreateCreated) GetPayload() *models.RearPortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRearPortTemplatesCreateDefault(code int) *DcimRearPortTemplatesCreat
 	}
 }
 
-/* DcimRearPortTemplatesCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimRearPortTemplatesCreateDefault describes a response with status code -1, with default header values.
 
 DcimRearPortTemplatesCreateDefault dcim rear port templates create default
 */
@@ -110,9 +142,39 @@ func (o *DcimRearPortTemplatesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rear port templates create default response has a 2xx status code
+func (o *DcimRearPortTemplatesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rear port templates create default response has a 3xx status code
+func (o *DcimRearPortTemplatesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rear port templates create default response has a 4xx status code
+func (o *DcimRearPortTemplatesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rear port templates create default response has a 5xx status code
+func (o *DcimRearPortTemplatesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rear port templates create default response a status code equal to that given
+func (o *DcimRearPortTemplatesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRearPortTemplatesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/rear-port-templates/][%d] dcim_rear-port-templates_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRearPortTemplatesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/rear-port-templates/][%d] dcim_rear-port-templates_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRearPortTemplatesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

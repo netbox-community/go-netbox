@@ -66,7 +66,8 @@ func NewIpamPrefixesListOK() *IpamPrefixesListOK {
 	return &IpamPrefixesListOK{}
 }
 
-/* IpamPrefixesListOK describes a response with status code 200, with default header values.
+/*
+IpamPrefixesListOK describes a response with status code 200, with default header values.
 
 IpamPrefixesListOK ipam prefixes list o k
 */
@@ -74,9 +75,39 @@ type IpamPrefixesListOK struct {
 	Payload *IpamPrefixesListOKBody
 }
 
+// IsSuccess returns true when this ipam prefixes list o k response has a 2xx status code
+func (o *IpamPrefixesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam prefixes list o k response has a 3xx status code
+func (o *IpamPrefixesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam prefixes list o k response has a 4xx status code
+func (o *IpamPrefixesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam prefixes list o k response has a 5xx status code
+func (o *IpamPrefixesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam prefixes list o k response a status code equal to that given
+func (o *IpamPrefixesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamPrefixesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipamPrefixesListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamPrefixesListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipamPrefixesListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamPrefixesListOK) GetPayload() *IpamPrefixesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewIpamPrefixesListDefault(code int) *IpamPrefixesListDefault {
 	}
 }
 
-/* IpamPrefixesListDefault describes a response with status code -1, with default header values.
+/*
+IpamPrefixesListDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesListDefault ipam prefixes list default
 */
@@ -115,9 +147,39 @@ func (o *IpamPrefixesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam prefixes list default response has a 2xx status code
+func (o *IpamPrefixesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam prefixes list default response has a 3xx status code
+func (o *IpamPrefixesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam prefixes list default response has a 4xx status code
+func (o *IpamPrefixesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam prefixes list default response has a 5xx status code
+func (o *IpamPrefixesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam prefixes list default response a status code equal to that given
+func (o *IpamPrefixesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamPrefixesListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipam_prefixes_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamPrefixesListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipam_prefixes_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamPrefixesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *IpamPrefixesListDefault) readResponse(response runtime.ClientResponse, 
 	return nil
 }
 
-/*IpamPrefixesListOKBody ipam prefixes list o k body
+/*
+IpamPrefixesListOKBody ipam prefixes list o k body
 swagger:model IpamPrefixesListOKBody
 */
 type IpamPrefixesListOKBody struct {

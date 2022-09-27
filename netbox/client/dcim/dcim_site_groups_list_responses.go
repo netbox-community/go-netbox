@@ -66,7 +66,8 @@ func NewDcimSiteGroupsListOK() *DcimSiteGroupsListOK {
 	return &DcimSiteGroupsListOK{}
 }
 
-/* DcimSiteGroupsListOK describes a response with status code 200, with default header values.
+/*
+DcimSiteGroupsListOK describes a response with status code 200, with default header values.
 
 DcimSiteGroupsListOK dcim site groups list o k
 */
@@ -74,9 +75,39 @@ type DcimSiteGroupsListOK struct {
 	Payload *DcimSiteGroupsListOKBody
 }
 
+// IsSuccess returns true when this dcim site groups list o k response has a 2xx status code
+func (o *DcimSiteGroupsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim site groups list o k response has a 3xx status code
+func (o *DcimSiteGroupsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim site groups list o k response has a 4xx status code
+func (o *DcimSiteGroupsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim site groups list o k response has a 5xx status code
+func (o *DcimSiteGroupsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim site groups list o k response a status code equal to that given
+func (o *DcimSiteGroupsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimSiteGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/site-groups/][%d] dcimSiteGroupsListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimSiteGroupsListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/site-groups/][%d] dcimSiteGroupsListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimSiteGroupsListOK) GetPayload() *DcimSiteGroupsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimSiteGroupsListDefault(code int) *DcimSiteGroupsListDefault {
 	}
 }
 
-/* DcimSiteGroupsListDefault describes a response with status code -1, with default header values.
+/*
+DcimSiteGroupsListDefault describes a response with status code -1, with default header values.
 
 DcimSiteGroupsListDefault dcim site groups list default
 */
@@ -115,9 +147,39 @@ func (o *DcimSiteGroupsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim site groups list default response has a 2xx status code
+func (o *DcimSiteGroupsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim site groups list default response has a 3xx status code
+func (o *DcimSiteGroupsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim site groups list default response has a 4xx status code
+func (o *DcimSiteGroupsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim site groups list default response has a 5xx status code
+func (o *DcimSiteGroupsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim site groups list default response a status code equal to that given
+func (o *DcimSiteGroupsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimSiteGroupsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/site-groups/][%d] dcim_site-groups_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimSiteGroupsListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/site-groups/][%d] dcim_site-groups_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimSiteGroupsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimSiteGroupsListDefault) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-/*DcimSiteGroupsListOKBody dcim site groups list o k body
+/*
+DcimSiteGroupsListOKBody dcim site groups list o k body
 swagger:model DcimSiteGroupsListOKBody
 */
 type DcimSiteGroupsListOKBody struct {

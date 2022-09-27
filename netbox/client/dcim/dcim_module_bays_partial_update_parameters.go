@@ -70,10 +70,12 @@ func NewDcimModuleBaysPartialUpdateParamsWithHTTPClient(client *http.Client) *Dc
 	}
 }
 
-/* DcimModuleBaysPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim module bays partial update operation.
+/*
+DcimModuleBaysPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module bays partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleBaysPartialUpdateParams struct {
 

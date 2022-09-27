@@ -70,10 +70,12 @@ func NewIpamPrefixesPartialUpdateParamsWithHTTPClient(client *http.Client) *Ipam
 	}
 }
 
-/* IpamPrefixesPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam prefixes partial update operation.
+/*
+IpamPrefixesPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam prefixes partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamPrefixesPartialUpdateParams struct {
 

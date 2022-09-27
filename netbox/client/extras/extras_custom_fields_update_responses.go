@@ -61,7 +61,8 @@ func NewExtrasCustomFieldsUpdateOK() *ExtrasCustomFieldsUpdateOK {
 	return &ExtrasCustomFieldsUpdateOK{}
 }
 
-/* ExtrasCustomFieldsUpdateOK describes a response with status code 200, with default header values.
+/*
+ExtrasCustomFieldsUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasCustomFieldsUpdateOK extras custom fields update o k
 */
@@ -69,9 +70,39 @@ type ExtrasCustomFieldsUpdateOK struct {
 	Payload *models.CustomField
 }
 
+// IsSuccess returns true when this extras custom fields update o k response has a 2xx status code
+func (o *ExtrasCustomFieldsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras custom fields update o k response has a 3xx status code
+func (o *ExtrasCustomFieldsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras custom fields update o k response has a 4xx status code
+func (o *ExtrasCustomFieldsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras custom fields update o k response has a 5xx status code
+func (o *ExtrasCustomFieldsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras custom fields update o k response a status code equal to that given
+func (o *ExtrasCustomFieldsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasCustomFieldsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extrasCustomFieldsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasCustomFieldsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extrasCustomFieldsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasCustomFieldsUpdateOK) GetPayload() *models.CustomField {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasCustomFieldsUpdateDefault(code int) *ExtrasCustomFieldsUpdateDefau
 	}
 }
 
-/* ExtrasCustomFieldsUpdateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasCustomFieldsUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsUpdateDefault extras custom fields update default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasCustomFieldsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras custom fields update default response has a 2xx status code
+func (o *ExtrasCustomFieldsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras custom fields update default response has a 3xx status code
+func (o *ExtrasCustomFieldsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras custom fields update default response has a 4xx status code
+func (o *ExtrasCustomFieldsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras custom fields update default response has a 5xx status code
+func (o *ExtrasCustomFieldsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras custom fields update default response a status code equal to that given
+func (o *ExtrasCustomFieldsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasCustomFieldsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extras_custom-fields_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasCustomFieldsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /extras/custom-fields/{id}/][%d] extras_custom-fields_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasCustomFieldsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

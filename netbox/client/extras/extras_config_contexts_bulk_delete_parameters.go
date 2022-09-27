@@ -67,10 +67,12 @@ func NewExtrasConfigContextsBulkDeleteParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* ExtrasConfigContextsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the extras config contexts bulk delete operation.
+/*
+ExtrasConfigContextsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras config contexts bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsBulkDeleteParams struct {
 	timeout    time.Duration

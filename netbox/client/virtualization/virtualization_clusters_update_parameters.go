@@ -70,10 +70,12 @@ func NewVirtualizationClustersUpdateParamsWithHTTPClient(client *http.Client) *V
 	}
 }
 
-/* VirtualizationClustersUpdateParams contains all the parameters to send to the API endpoint
-   for the virtualization clusters update operation.
+/*
+VirtualizationClustersUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization clusters update operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationClustersUpdateParams struct {
 

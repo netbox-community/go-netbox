@@ -59,14 +59,44 @@ func NewDcimPowerPanelsDeleteNoContent() *DcimPowerPanelsDeleteNoContent {
 	return &DcimPowerPanelsDeleteNoContent{}
 }
 
-/* DcimPowerPanelsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimPowerPanelsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimPowerPanelsDeleteNoContent dcim power panels delete no content
 */
 type DcimPowerPanelsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim power panels delete no content response has a 2xx status code
+func (o *DcimPowerPanelsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power panels delete no content response has a 3xx status code
+func (o *DcimPowerPanelsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power panels delete no content response has a 4xx status code
+func (o *DcimPowerPanelsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power panels delete no content response has a 5xx status code
+func (o *DcimPowerPanelsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power panels delete no content response a status code equal to that given
+func (o *DcimPowerPanelsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimPowerPanelsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/power-panels/{id}/][%d] dcimPowerPanelsDeleteNoContent ", 204)
+}
+
+func (o *DcimPowerPanelsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/power-panels/{id}/][%d] dcimPowerPanelsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimPowerPanelsDeleteDefault(code int) *DcimPowerPanelsDeleteDefault {
 	}
 }
 
-/* DcimPowerPanelsDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerPanelsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimPowerPanelsDeleteDefault dcim power panels delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimPowerPanelsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power panels delete default response has a 2xx status code
+func (o *DcimPowerPanelsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power panels delete default response has a 3xx status code
+func (o *DcimPowerPanelsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power panels delete default response has a 4xx status code
+func (o *DcimPowerPanelsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power panels delete default response has a 5xx status code
+func (o *DcimPowerPanelsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power panels delete default response a status code equal to that given
+func (o *DcimPowerPanelsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerPanelsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/power-panels/{id}/][%d] dcim_power-panels_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerPanelsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/power-panels/{id}/][%d] dcim_power-panels_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerPanelsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

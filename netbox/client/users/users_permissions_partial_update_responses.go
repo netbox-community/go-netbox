@@ -61,7 +61,8 @@ func NewUsersPermissionsPartialUpdateOK() *UsersPermissionsPartialUpdateOK {
 	return &UsersPermissionsPartialUpdateOK{}
 }
 
-/* UsersPermissionsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+UsersPermissionsPartialUpdateOK describes a response with status code 200, with default header values.
 
 UsersPermissionsPartialUpdateOK users permissions partial update o k
 */
@@ -69,9 +70,39 @@ type UsersPermissionsPartialUpdateOK struct {
 	Payload *models.ObjectPermission
 }
 
+// IsSuccess returns true when this users permissions partial update o k response has a 2xx status code
+func (o *UsersPermissionsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users permissions partial update o k response has a 3xx status code
+func (o *UsersPermissionsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users permissions partial update o k response has a 4xx status code
+func (o *UsersPermissionsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users permissions partial update o k response has a 5xx status code
+func (o *UsersPermissionsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users permissions partial update o k response a status code equal to that given
+func (o *UsersPermissionsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersPermissionsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /users/permissions/{id}/][%d] usersPermissionsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersPermissionsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /users/permissions/{id}/][%d] usersPermissionsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersPermissionsPartialUpdateOK) GetPayload() *models.ObjectPermission {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersPermissionsPartialUpdateDefault(code int) *UsersPermissionsPartialU
 	}
 }
 
-/* UsersPermissionsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+UsersPermissionsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 UsersPermissionsPartialUpdateDefault users permissions partial update default
 */
@@ -110,9 +142,39 @@ func (o *UsersPermissionsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users permissions partial update default response has a 2xx status code
+func (o *UsersPermissionsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users permissions partial update default response has a 3xx status code
+func (o *UsersPermissionsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users permissions partial update default response has a 4xx status code
+func (o *UsersPermissionsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users permissions partial update default response has a 5xx status code
+func (o *UsersPermissionsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users permissions partial update default response a status code equal to that given
+func (o *UsersPermissionsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersPermissionsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /users/permissions/{id}/][%d] users_permissions_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersPermissionsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /users/permissions/{id}/][%d] users_permissions_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersPermissionsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

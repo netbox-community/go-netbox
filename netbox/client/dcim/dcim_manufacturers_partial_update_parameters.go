@@ -70,10 +70,12 @@ func NewDcimManufacturersPartialUpdateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* DcimManufacturersPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim manufacturers partial update operation.
+/*
+DcimManufacturersPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim manufacturers partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimManufacturersPartialUpdateParams struct {
 

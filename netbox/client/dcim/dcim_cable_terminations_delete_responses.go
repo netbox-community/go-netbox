@@ -59,14 +59,44 @@ func NewDcimCableTerminationsDeleteNoContent() *DcimCableTerminationsDeleteNoCon
 	return &DcimCableTerminationsDeleteNoContent{}
 }
 
-/* DcimCableTerminationsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimCableTerminationsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimCableTerminationsDeleteNoContent dcim cable terminations delete no content
 */
 type DcimCableTerminationsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim cable terminations delete no content response has a 2xx status code
+func (o *DcimCableTerminationsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim cable terminations delete no content response has a 3xx status code
+func (o *DcimCableTerminationsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim cable terminations delete no content response has a 4xx status code
+func (o *DcimCableTerminationsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim cable terminations delete no content response has a 5xx status code
+func (o *DcimCableTerminationsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim cable terminations delete no content response a status code equal to that given
+func (o *DcimCableTerminationsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimCableTerminationsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsDeleteNoContent ", 204)
+}
+
+func (o *DcimCableTerminationsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimCableTerminationsDeleteDefault(code int) *DcimCableTerminationsDelet
 	}
 }
 
-/* DcimCableTerminationsDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimCableTerminationsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimCableTerminationsDeleteDefault dcim cable terminations delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimCableTerminationsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim cable terminations delete default response has a 2xx status code
+func (o *DcimCableTerminationsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim cable terminations delete default response has a 3xx status code
+func (o *DcimCableTerminationsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim cable terminations delete default response has a 4xx status code
+func (o *DcimCableTerminationsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim cable terminations delete default response has a 5xx status code
+func (o *DcimCableTerminationsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim cable terminations delete default response a status code equal to that given
+func (o *DcimCableTerminationsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimCableTerminationsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimCableTerminationsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimCableTerminationsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

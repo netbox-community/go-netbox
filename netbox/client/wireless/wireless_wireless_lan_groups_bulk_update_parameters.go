@@ -69,10 +69,12 @@ func NewWirelessWirelessLanGroupsBulkUpdateParamsWithHTTPClient(client *http.Cli
 	}
 }
 
-/* WirelessWirelessLanGroupsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the wireless wireless lan groups bulk update operation.
+/*
+WirelessWirelessLanGroupsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless lan groups bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLanGroupsBulkUpdateParams struct {
 

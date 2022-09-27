@@ -68,10 +68,12 @@ func NewExtrasConfigContextsListParamsWithHTTPClient(client *http.Client) *Extra
 	}
 }
 
-/* ExtrasConfigContextsListParams contains all the parameters to send to the API endpoint
-   for the extras config contexts list operation.
+/*
+ExtrasConfigContextsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras config contexts list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsListParams struct {
 

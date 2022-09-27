@@ -70,10 +70,12 @@ func NewDcimPowerPortsPartialUpdateParamsWithHTTPClient(client *http.Client) *Dc
 	}
 }
 
-/* DcimPowerPortsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim power ports partial update operation.
+/*
+DcimPowerPortsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power ports partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerPortsPartialUpdateParams struct {
 

@@ -68,10 +68,12 @@ func NewTenancyContactRolesListParamsWithHTTPClient(client *http.Client) *Tenanc
 	}
 }
 
-/* TenancyContactRolesListParams contains all the parameters to send to the API endpoint
-   for the tenancy contact roles list operation.
+/*
+TenancyContactRolesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact roles list operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactRolesListParams struct {
 

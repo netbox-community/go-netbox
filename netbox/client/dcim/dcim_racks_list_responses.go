@@ -66,7 +66,8 @@ func NewDcimRacksListOK() *DcimRacksListOK {
 	return &DcimRacksListOK{}
 }
 
-/* DcimRacksListOK describes a response with status code 200, with default header values.
+/*
+DcimRacksListOK describes a response with status code 200, with default header values.
 
 DcimRacksListOK dcim racks list o k
 */
@@ -74,9 +75,39 @@ type DcimRacksListOK struct {
 	Payload *DcimRacksListOKBody
 }
 
+// IsSuccess returns true when this dcim racks list o k response has a 2xx status code
+func (o *DcimRacksListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim racks list o k response has a 3xx status code
+func (o *DcimRacksListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim racks list o k response has a 4xx status code
+func (o *DcimRacksListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim racks list o k response has a 5xx status code
+func (o *DcimRacksListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim racks list o k response a status code equal to that given
+func (o *DcimRacksListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRacksListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/racks/][%d] dcimRacksListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRacksListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/racks/][%d] dcimRacksListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRacksListOK) GetPayload() *DcimRacksListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimRacksListDefault(code int) *DcimRacksListDefault {
 	}
 }
 
-/* DcimRacksListDefault describes a response with status code -1, with default header values.
+/*
+DcimRacksListDefault describes a response with status code -1, with default header values.
 
 DcimRacksListDefault dcim racks list default
 */
@@ -115,9 +147,39 @@ func (o *DcimRacksListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim racks list default response has a 2xx status code
+func (o *DcimRacksListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim racks list default response has a 3xx status code
+func (o *DcimRacksListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim racks list default response has a 4xx status code
+func (o *DcimRacksListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim racks list default response has a 5xx status code
+func (o *DcimRacksListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim racks list default response a status code equal to that given
+func (o *DcimRacksListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRacksListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/racks/][%d] dcim_racks_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRacksListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/racks/][%d] dcim_racks_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRacksListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimRacksListDefault) readResponse(response runtime.ClientResponse, con
 	return nil
 }
 
-/*DcimRacksListOKBody dcim racks list o k body
+/*
+DcimRacksListOKBody dcim racks list o k body
 swagger:model DcimRacksListOKBody
 */
 type DcimRacksListOKBody struct {

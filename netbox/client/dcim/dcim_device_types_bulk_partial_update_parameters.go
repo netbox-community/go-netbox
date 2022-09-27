@@ -69,10 +69,12 @@ func NewDcimDeviceTypesBulkPartialUpdateParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* DcimDeviceTypesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim device types bulk partial update operation.
+/*
+DcimDeviceTypesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim device types bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimDeviceTypesBulkPartialUpdateParams struct {
 

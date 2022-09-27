@@ -69,10 +69,12 @@ func NewIpamPrefixesBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamPre
 	}
 }
 
-/* IpamPrefixesBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam prefixes bulk update operation.
+/*
+IpamPrefixesBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam prefixes bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamPrefixesBulkUpdateParams struct {
 

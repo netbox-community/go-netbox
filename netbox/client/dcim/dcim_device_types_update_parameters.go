@@ -70,10 +70,12 @@ func NewDcimDeviceTypesUpdateParamsWithHTTPClient(client *http.Client) *DcimDevi
 	}
 }
 
-/* DcimDeviceTypesUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim device types update operation.
+/*
+DcimDeviceTypesUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim device types update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimDeviceTypesUpdateParams struct {
 

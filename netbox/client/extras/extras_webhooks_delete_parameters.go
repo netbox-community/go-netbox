@@ -68,10 +68,12 @@ func NewExtrasWebhooksDeleteParamsWithHTTPClient(client *http.Client) *ExtrasWeb
 	}
 }
 
-/* ExtrasWebhooksDeleteParams contains all the parameters to send to the API endpoint
-   for the extras webhooks delete operation.
+/*
+ExtrasWebhooksDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras webhooks delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasWebhooksDeleteParams struct {
 

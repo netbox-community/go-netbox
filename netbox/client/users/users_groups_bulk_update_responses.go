@@ -61,7 +61,8 @@ func NewUsersGroupsBulkUpdateOK() *UsersGroupsBulkUpdateOK {
 	return &UsersGroupsBulkUpdateOK{}
 }
 
-/* UsersGroupsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+UsersGroupsBulkUpdateOK describes a response with status code 200, with default header values.
 
 UsersGroupsBulkUpdateOK users groups bulk update o k
 */
@@ -69,9 +70,39 @@ type UsersGroupsBulkUpdateOK struct {
 	Payload *models.Group
 }
 
+// IsSuccess returns true when this users groups bulk update o k response has a 2xx status code
+func (o *UsersGroupsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users groups bulk update o k response has a 3xx status code
+func (o *UsersGroupsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users groups bulk update o k response has a 4xx status code
+func (o *UsersGroupsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users groups bulk update o k response has a 5xx status code
+func (o *UsersGroupsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users groups bulk update o k response a status code equal to that given
+func (o *UsersGroupsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersGroupsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/groups/][%d] usersGroupsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersGroupsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /users/groups/][%d] usersGroupsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersGroupsBulkUpdateOK) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersGroupsBulkUpdateDefault(code int) *UsersGroupsBulkUpdateDefault {
 	}
 }
 
-/* UsersGroupsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+UsersGroupsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 UsersGroupsBulkUpdateDefault users groups bulk update default
 */
@@ -110,9 +142,39 @@ func (o *UsersGroupsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users groups bulk update default response has a 2xx status code
+func (o *UsersGroupsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users groups bulk update default response has a 3xx status code
+func (o *UsersGroupsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users groups bulk update default response has a 4xx status code
+func (o *UsersGroupsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users groups bulk update default response has a 5xx status code
+func (o *UsersGroupsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users groups bulk update default response a status code equal to that given
+func (o *UsersGroupsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersGroupsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /users/groups/][%d] users_groups_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersGroupsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /users/groups/][%d] users_groups_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersGroupsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -70,10 +70,12 @@ func NewIpamL2vpnTerminationsPartialUpdateParamsWithHTTPClient(client *http.Clie
 	}
 }
 
-/* IpamL2vpnTerminationsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam l2vpn terminations partial update operation.
+/*
+IpamL2vpnTerminationsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam l2vpn terminations partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamL2vpnTerminationsPartialUpdateParams struct {
 

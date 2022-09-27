@@ -59,14 +59,44 @@ func NewCircuitsProviderNetworksDeleteNoContent() *CircuitsProviderNetworksDelet
 	return &CircuitsProviderNetworksDeleteNoContent{}
 }
 
-/* CircuitsProviderNetworksDeleteNoContent describes a response with status code 204, with default header values.
+/*
+CircuitsProviderNetworksDeleteNoContent describes a response with status code 204, with default header values.
 
 CircuitsProviderNetworksDeleteNoContent circuits provider networks delete no content
 */
 type CircuitsProviderNetworksDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this circuits provider networks delete no content response has a 2xx status code
+func (o *CircuitsProviderNetworksDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits provider networks delete no content response has a 3xx status code
+func (o *CircuitsProviderNetworksDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits provider networks delete no content response has a 4xx status code
+func (o *CircuitsProviderNetworksDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits provider networks delete no content response has a 5xx status code
+func (o *CircuitsProviderNetworksDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits provider networks delete no content response a status code equal to that given
+func (o *CircuitsProviderNetworksDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *CircuitsProviderNetworksDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksDeleteNoContent ", 204)
+}
+
+func (o *CircuitsProviderNetworksDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewCircuitsProviderNetworksDeleteDefault(code int) *CircuitsProviderNetwork
 	}
 }
 
-/* CircuitsProviderNetworksDeleteDefault describes a response with status code -1, with default header values.
+/*
+CircuitsProviderNetworksDeleteDefault describes a response with status code -1, with default header values.
 
 CircuitsProviderNetworksDeleteDefault circuits provider networks delete default
 */
@@ -97,9 +128,39 @@ func (o *CircuitsProviderNetworksDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits provider networks delete default response has a 2xx status code
+func (o *CircuitsProviderNetworksDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits provider networks delete default response has a 3xx status code
+func (o *CircuitsProviderNetworksDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits provider networks delete default response has a 4xx status code
+func (o *CircuitsProviderNetworksDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits provider networks delete default response has a 5xx status code
+func (o *CircuitsProviderNetworksDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits provider networks delete default response a status code equal to that given
+func (o *CircuitsProviderNetworksDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsProviderNetworksDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuits_provider-networks_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsProviderNetworksDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /circuits/provider-networks/{id}/][%d] circuits_provider-networks_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsProviderNetworksDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

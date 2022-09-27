@@ -66,7 +66,8 @@ func NewVirtualizationVirtualMachinesListOK() *VirtualizationVirtualMachinesList
 	return &VirtualizationVirtualMachinesListOK{}
 }
 
-/* VirtualizationVirtualMachinesListOK describes a response with status code 200, with default header values.
+/*
+VirtualizationVirtualMachinesListOK describes a response with status code 200, with default header values.
 
 VirtualizationVirtualMachinesListOK virtualization virtual machines list o k
 */
@@ -74,9 +75,39 @@ type VirtualizationVirtualMachinesListOK struct {
 	Payload *VirtualizationVirtualMachinesListOKBody
 }
 
+// IsSuccess returns true when this virtualization virtual machines list o k response has a 2xx status code
+func (o *VirtualizationVirtualMachinesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization virtual machines list o k response has a 3xx status code
+func (o *VirtualizationVirtualMachinesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization virtual machines list o k response has a 4xx status code
+func (o *VirtualizationVirtualMachinesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization virtual machines list o k response has a 5xx status code
+func (o *VirtualizationVirtualMachinesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization virtual machines list o k response a status code equal to that given
+func (o *VirtualizationVirtualMachinesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VirtualizationVirtualMachinesListOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesListOK  %+v", 200, o.Payload)
 }
+
+func (o *VirtualizationVirtualMachinesListOK) String() string {
+	return fmt.Sprintf("[GET /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesListOK  %+v", 200, o.Payload)
+}
+
 func (o *VirtualizationVirtualMachinesListOK) GetPayload() *VirtualizationVirtualMachinesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewVirtualizationVirtualMachinesListDefault(code int) *VirtualizationVirtua
 	}
 }
 
-/* VirtualizationVirtualMachinesListDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationVirtualMachinesListDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesListDefault virtualization virtual machines list default
 */
@@ -115,9 +147,39 @@ func (o *VirtualizationVirtualMachinesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization virtual machines list default response has a 2xx status code
+func (o *VirtualizationVirtualMachinesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization virtual machines list default response has a 3xx status code
+func (o *VirtualizationVirtualMachinesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization virtual machines list default response has a 4xx status code
+func (o *VirtualizationVirtualMachinesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization virtual machines list default response has a 5xx status code
+func (o *VirtualizationVirtualMachinesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization virtual machines list default response a status code equal to that given
+func (o *VirtualizationVirtualMachinesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationVirtualMachinesListDefault) Error() string {
 	return fmt.Sprintf("[GET /virtualization/virtual-machines/][%d] virtualization_virtual-machines_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationVirtualMachinesListDefault) String() string {
+	return fmt.Sprintf("[GET /virtualization/virtual-machines/][%d] virtualization_virtual-machines_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationVirtualMachinesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *VirtualizationVirtualMachinesListDefault) readResponse(response runtime
 	return nil
 }
 
-/*VirtualizationVirtualMachinesListOKBody virtualization virtual machines list o k body
+/*
+VirtualizationVirtualMachinesListOKBody virtualization virtual machines list o k body
 swagger:model VirtualizationVirtualMachinesListOKBody
 */
 type VirtualizationVirtualMachinesListOKBody struct {

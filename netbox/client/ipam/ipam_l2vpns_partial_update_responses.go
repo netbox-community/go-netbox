@@ -61,7 +61,8 @@ func NewIpamL2vpnsPartialUpdateOK() *IpamL2vpnsPartialUpdateOK {
 	return &IpamL2vpnsPartialUpdateOK{}
 }
 
-/* IpamL2vpnsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamL2vpnsPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamL2vpnsPartialUpdateOK ipam l2vpns partial update o k
 */
@@ -69,9 +70,39 @@ type IpamL2vpnsPartialUpdateOK struct {
 	Payload *models.L2VPN
 }
 
+// IsSuccess returns true when this ipam l2vpns partial update o k response has a 2xx status code
+func (o *IpamL2vpnsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam l2vpns partial update o k response has a 3xx status code
+func (o *IpamL2vpnsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam l2vpns partial update o k response has a 4xx status code
+func (o *IpamL2vpnsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam l2vpns partial update o k response has a 5xx status code
+func (o *IpamL2vpnsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam l2vpns partial update o k response a status code equal to that given
+func (o *IpamL2vpnsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamL2vpnsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipamL2vpnsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamL2vpnsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipamL2vpnsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamL2vpnsPartialUpdateOK) GetPayload() *models.L2VPN {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamL2vpnsPartialUpdateDefault(code int) *IpamL2vpnsPartialUpdateDefault
 	}
 }
 
-/* IpamL2vpnsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamL2vpnsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamL2vpnsPartialUpdateDefault ipam l2vpns partial update default
 */
@@ -110,9 +142,39 @@ func (o *IpamL2vpnsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam l2vpns partial update default response has a 2xx status code
+func (o *IpamL2vpnsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam l2vpns partial update default response has a 3xx status code
+func (o *IpamL2vpnsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam l2vpns partial update default response has a 4xx status code
+func (o *IpamL2vpnsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam l2vpns partial update default response has a 5xx status code
+func (o *IpamL2vpnsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam l2vpns partial update default response a status code equal to that given
+func (o *IpamL2vpnsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamL2vpnsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipam_l2vpns_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamL2vpnsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /ipam/l2vpns/{id}/][%d] ipam_l2vpns_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamL2vpnsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

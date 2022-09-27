@@ -61,7 +61,8 @@ func NewDcimDeviceRolesCreateCreated() *DcimDeviceRolesCreateCreated {
 	return &DcimDeviceRolesCreateCreated{}
 }
 
-/* DcimDeviceRolesCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimDeviceRolesCreateCreated describes a response with status code 201, with default header values.
 
 DcimDeviceRolesCreateCreated dcim device roles create created
 */
@@ -69,9 +70,39 @@ type DcimDeviceRolesCreateCreated struct {
 	Payload *models.DeviceRole
 }
 
+// IsSuccess returns true when this dcim device roles create created response has a 2xx status code
+func (o *DcimDeviceRolesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim device roles create created response has a 3xx status code
+func (o *DcimDeviceRolesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim device roles create created response has a 4xx status code
+func (o *DcimDeviceRolesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim device roles create created response has a 5xx status code
+func (o *DcimDeviceRolesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim device roles create created response a status code equal to that given
+func (o *DcimDeviceRolesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimDeviceRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcimDeviceRolesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimDeviceRolesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcimDeviceRolesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimDeviceRolesCreateCreated) GetPayload() *models.DeviceRole {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimDeviceRolesCreateDefault(code int) *DcimDeviceRolesCreateDefault {
 	}
 }
 
-/* DcimDeviceRolesCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimDeviceRolesCreateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceRolesCreateDefault dcim device roles create default
 */
@@ -110,9 +142,39 @@ func (o *DcimDeviceRolesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim device roles create default response has a 2xx status code
+func (o *DcimDeviceRolesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim device roles create default response has a 3xx status code
+func (o *DcimDeviceRolesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim device roles create default response has a 4xx status code
+func (o *DcimDeviceRolesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim device roles create default response has a 5xx status code
+func (o *DcimDeviceRolesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim device roles create default response a status code equal to that given
+func (o *DcimDeviceRolesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimDeviceRolesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcim_device-roles_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimDeviceRolesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcim_device-roles_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimDeviceRolesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewDcimInterfaceTemplatesCreateCreated() *DcimInterfaceTemplatesCreateCreat
 	return &DcimInterfaceTemplatesCreateCreated{}
 }
 
-/* DcimInterfaceTemplatesCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimInterfaceTemplatesCreateCreated describes a response with status code 201, with default header values.
 
 DcimInterfaceTemplatesCreateCreated dcim interface templates create created
 */
@@ -69,9 +70,39 @@ type DcimInterfaceTemplatesCreateCreated struct {
 	Payload *models.InterfaceTemplate
 }
 
+// IsSuccess returns true when this dcim interface templates create created response has a 2xx status code
+func (o *DcimInterfaceTemplatesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim interface templates create created response has a 3xx status code
+func (o *DcimInterfaceTemplatesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim interface templates create created response has a 4xx status code
+func (o *DcimInterfaceTemplatesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim interface templates create created response has a 5xx status code
+func (o *DcimInterfaceTemplatesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim interface templates create created response a status code equal to that given
+func (o *DcimInterfaceTemplatesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimInterfaceTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/interface-templates/][%d] dcimInterfaceTemplatesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimInterfaceTemplatesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/interface-templates/][%d] dcimInterfaceTemplatesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimInterfaceTemplatesCreateCreated) GetPayload() *models.InterfaceTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInterfaceTemplatesCreateDefault(code int) *DcimInterfaceTemplatesCre
 	}
 }
 
-/* DcimInterfaceTemplatesCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimInterfaceTemplatesCreateDefault describes a response with status code -1, with default header values.
 
 DcimInterfaceTemplatesCreateDefault dcim interface templates create default
 */
@@ -110,9 +142,39 @@ func (o *DcimInterfaceTemplatesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim interface templates create default response has a 2xx status code
+func (o *DcimInterfaceTemplatesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim interface templates create default response has a 3xx status code
+func (o *DcimInterfaceTemplatesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim interface templates create default response has a 4xx status code
+func (o *DcimInterfaceTemplatesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim interface templates create default response has a 5xx status code
+func (o *DcimInterfaceTemplatesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim interface templates create default response a status code equal to that given
+func (o *DcimInterfaceTemplatesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInterfaceTemplatesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/interface-templates/][%d] dcim_interface-templates_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInterfaceTemplatesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/interface-templates/][%d] dcim_interface-templates_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInterfaceTemplatesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

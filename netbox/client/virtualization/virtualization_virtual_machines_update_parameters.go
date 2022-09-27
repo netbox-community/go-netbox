@@ -70,10 +70,12 @@ func NewVirtualizationVirtualMachinesUpdateParamsWithHTTPClient(client *http.Cli
 	}
 }
 
-/* VirtualizationVirtualMachinesUpdateParams contains all the parameters to send to the API endpoint
-   for the virtualization virtual machines update operation.
+/*
+VirtualizationVirtualMachinesUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization virtual machines update operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationVirtualMachinesUpdateParams struct {
 

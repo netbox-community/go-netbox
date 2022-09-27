@@ -67,10 +67,12 @@ func NewExtrasImageAttachmentsBulkDeleteParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* ExtrasImageAttachmentsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the extras image attachments bulk delete operation.
+/*
+ExtrasImageAttachmentsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras image attachments bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasImageAttachmentsBulkDeleteParams struct {
 	timeout    time.Duration

@@ -69,10 +69,12 @@ func NewCircuitsProviderNetworksBulkPartialUpdateParamsWithHTTPClient(client *ht
 	}
 }
 
-/* CircuitsProviderNetworksBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the circuits provider networks bulk partial update operation.
+/*
+CircuitsProviderNetworksBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits provider networks bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsProviderNetworksBulkPartialUpdateParams struct {
 

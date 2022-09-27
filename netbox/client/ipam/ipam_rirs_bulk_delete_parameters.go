@@ -67,10 +67,12 @@ func NewIpamRirsBulkDeleteParamsWithHTTPClient(client *http.Client) *IpamRirsBul
 	}
 }
 
-/* IpamRirsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam rirs bulk delete operation.
+/*
+IpamRirsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam rirs bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamRirsBulkDeleteParams struct {
 	timeout    time.Duration

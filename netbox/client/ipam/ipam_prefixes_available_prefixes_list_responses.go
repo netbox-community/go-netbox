@@ -61,7 +61,8 @@ func NewIpamPrefixesAvailablePrefixesListOK() *IpamPrefixesAvailablePrefixesList
 	return &IpamPrefixesAvailablePrefixesListOK{}
 }
 
-/* IpamPrefixesAvailablePrefixesListOK describes a response with status code 200, with default header values.
+/*
+IpamPrefixesAvailablePrefixesListOK describes a response with status code 200, with default header values.
 
 IpamPrefixesAvailablePrefixesListOK ipam prefixes available prefixes list o k
 */
@@ -69,9 +70,39 @@ type IpamPrefixesAvailablePrefixesListOK struct {
 	Payload []*models.AvailablePrefix
 }
 
+// IsSuccess returns true when this ipam prefixes available prefixes list o k response has a 2xx status code
+func (o *IpamPrefixesAvailablePrefixesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam prefixes available prefixes list o k response has a 3xx status code
+func (o *IpamPrefixesAvailablePrefixesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam prefixes available prefixes list o k response has a 4xx status code
+func (o *IpamPrefixesAvailablePrefixesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam prefixes available prefixes list o k response has a 5xx status code
+func (o *IpamPrefixesAvailablePrefixesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam prefixes available prefixes list o k response a status code equal to that given
+func (o *IpamPrefixesAvailablePrefixesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamPrefixesAvailablePrefixesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamPrefixesAvailablePrefixesListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamPrefixesAvailablePrefixesListOK) GetPayload() []*models.AvailablePrefix {
 	return o.Payload
 }
@@ -93,7 +124,8 @@ func NewIpamPrefixesAvailablePrefixesListDefault(code int) *IpamPrefixesAvailabl
 	}
 }
 
-/* IpamPrefixesAvailablePrefixesListDefault describes a response with status code -1, with default header values.
+/*
+IpamPrefixesAvailablePrefixesListDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesAvailablePrefixesListDefault ipam prefixes available prefixes list default
 */
@@ -108,9 +140,39 @@ func (o *IpamPrefixesAvailablePrefixesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam prefixes available prefixes list default response has a 2xx status code
+func (o *IpamPrefixesAvailablePrefixesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam prefixes available prefixes list default response has a 3xx status code
+func (o *IpamPrefixesAvailablePrefixesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam prefixes available prefixes list default response has a 4xx status code
+func (o *IpamPrefixesAvailablePrefixesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam prefixes available prefixes list default response has a 5xx status code
+func (o *IpamPrefixesAvailablePrefixesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam prefixes available prefixes list default response a status code equal to that given
+func (o *IpamPrefixesAvailablePrefixesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamPrefixesAvailablePrefixesListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamPrefixesAvailablePrefixesListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamPrefixesAvailablePrefixesListDefault) GetPayload() interface{} {
 	return o.Payload
 }

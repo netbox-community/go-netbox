@@ -61,7 +61,8 @@ func NewDcimInventoryItemsCreateCreated() *DcimInventoryItemsCreateCreated {
 	return &DcimInventoryItemsCreateCreated{}
 }
 
-/* DcimInventoryItemsCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimInventoryItemsCreateCreated describes a response with status code 201, with default header values.
 
 DcimInventoryItemsCreateCreated dcim inventory items create created
 */
@@ -69,9 +70,39 @@ type DcimInventoryItemsCreateCreated struct {
 	Payload *models.InventoryItem
 }
 
+// IsSuccess returns true when this dcim inventory items create created response has a 2xx status code
+func (o *DcimInventoryItemsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory items create created response has a 3xx status code
+func (o *DcimInventoryItemsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory items create created response has a 4xx status code
+func (o *DcimInventoryItemsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory items create created response has a 5xx status code
+func (o *DcimInventoryItemsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory items create created response a status code equal to that given
+func (o *DcimInventoryItemsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimInventoryItemsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcimInventoryItemsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimInventoryItemsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcimInventoryItemsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimInventoryItemsCreateCreated) GetPayload() *models.InventoryItem {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInventoryItemsCreateDefault(code int) *DcimInventoryItemsCreateDefau
 	}
 }
 
-/* DcimInventoryItemsCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemsCreateDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemsCreateDefault dcim inventory items create default
 */
@@ -110,9 +142,39 @@ func (o *DcimInventoryItemsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory items create default response has a 2xx status code
+func (o *DcimInventoryItemsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory items create default response has a 3xx status code
+func (o *DcimInventoryItemsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory items create default response has a 4xx status code
+func (o *DcimInventoryItemsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory items create default response has a 5xx status code
+func (o *DcimInventoryItemsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory items create default response a status code equal to that given
+func (o *DcimInventoryItemsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcim_inventory-items_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/inventory-items/][%d] dcim_inventory-items_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewDcimRackReservationsPartialUpdateOK() *DcimRackReservationsPartialUpdate
 	return &DcimRackReservationsPartialUpdateOK{}
 }
 
-/* DcimRackReservationsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimRackReservationsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimRackReservationsPartialUpdateOK dcim rack reservations partial update o k
 */
@@ -69,9 +70,39 @@ type DcimRackReservationsPartialUpdateOK struct {
 	Payload *models.RackReservation
 }
 
+// IsSuccess returns true when this dcim rack reservations partial update o k response has a 2xx status code
+func (o *DcimRackReservationsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rack reservations partial update o k response has a 3xx status code
+func (o *DcimRackReservationsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rack reservations partial update o k response has a 4xx status code
+func (o *DcimRackReservationsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rack reservations partial update o k response has a 5xx status code
+func (o *DcimRackReservationsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rack reservations partial update o k response a status code equal to that given
+func (o *DcimRackReservationsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRackReservationsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcimRackReservationsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRackReservationsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcimRackReservationsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRackReservationsPartialUpdateOK) GetPayload() *models.RackReservation {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRackReservationsPartialUpdateDefault(code int) *DcimRackReservations
 	}
 }
 
-/* DcimRackReservationsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimRackReservationsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRackReservationsPartialUpdateDefault dcim rack reservations partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimRackReservationsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rack reservations partial update default response has a 2xx status code
+func (o *DcimRackReservationsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rack reservations partial update default response has a 3xx status code
+func (o *DcimRackReservationsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rack reservations partial update default response has a 4xx status code
+func (o *DcimRackReservationsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rack reservations partial update default response has a 5xx status code
+func (o *DcimRackReservationsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rack reservations partial update default response a status code equal to that given
+func (o *DcimRackReservationsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRackReservationsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRackReservationsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/rack-reservations/{id}/][%d] dcim_rack-reservations_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRackReservationsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

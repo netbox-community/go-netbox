@@ -61,7 +61,8 @@ func NewDcimFrontPortTemplatesBulkUpdateOK() *DcimFrontPortTemplatesBulkUpdateOK
 	return &DcimFrontPortTemplatesBulkUpdateOK{}
 }
 
-/* DcimFrontPortTemplatesBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimFrontPortTemplatesBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimFrontPortTemplatesBulkUpdateOK dcim front port templates bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimFrontPortTemplatesBulkUpdateOK struct {
 	Payload *models.FrontPortTemplate
 }
 
+// IsSuccess returns true when this dcim front port templates bulk update o k response has a 2xx status code
+func (o *DcimFrontPortTemplatesBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim front port templates bulk update o k response has a 3xx status code
+func (o *DcimFrontPortTemplatesBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim front port templates bulk update o k response has a 4xx status code
+func (o *DcimFrontPortTemplatesBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim front port templates bulk update o k response has a 5xx status code
+func (o *DcimFrontPortTemplatesBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim front port templates bulk update o k response a status code equal to that given
+func (o *DcimFrontPortTemplatesBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimFrontPortTemplatesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/front-port-templates/][%d] dcimFrontPortTemplatesBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimFrontPortTemplatesBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/front-port-templates/][%d] dcimFrontPortTemplatesBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimFrontPortTemplatesBulkUpdateOK) GetPayload() *models.FrontPortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimFrontPortTemplatesBulkUpdateDefault(code int) *DcimFrontPortTemplate
 	}
 }
 
-/* DcimFrontPortTemplatesBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimFrontPortTemplatesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimFrontPortTemplatesBulkUpdateDefault dcim front port templates bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimFrontPortTemplatesBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim front port templates bulk update default response has a 2xx status code
+func (o *DcimFrontPortTemplatesBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim front port templates bulk update default response has a 3xx status code
+func (o *DcimFrontPortTemplatesBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim front port templates bulk update default response has a 4xx status code
+func (o *DcimFrontPortTemplatesBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim front port templates bulk update default response has a 5xx status code
+func (o *DcimFrontPortTemplatesBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim front port templates bulk update default response a status code equal to that given
+func (o *DcimFrontPortTemplatesBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimFrontPortTemplatesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/front-port-templates/][%d] dcim_front-port-templates_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimFrontPortTemplatesBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/front-port-templates/][%d] dcim_front-port-templates_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimFrontPortTemplatesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

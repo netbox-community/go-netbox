@@ -69,10 +69,12 @@ func NewDcimInterfaceTemplatesCreateParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimInterfaceTemplatesCreateParams contains all the parameters to send to the API endpoint
-   for the dcim interface templates create operation.
+/*
+DcimInterfaceTemplatesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim interface templates create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInterfaceTemplatesCreateParams struct {
 

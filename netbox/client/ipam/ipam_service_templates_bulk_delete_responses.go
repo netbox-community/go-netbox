@@ -59,14 +59,44 @@ func NewIpamServiceTemplatesBulkDeleteNoContent() *IpamServiceTemplatesBulkDelet
 	return &IpamServiceTemplatesBulkDeleteNoContent{}
 }
 
-/* IpamServiceTemplatesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamServiceTemplatesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamServiceTemplatesBulkDeleteNoContent ipam service templates bulk delete no content
 */
 type IpamServiceTemplatesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam service templates bulk delete no content response has a 2xx status code
+func (o *IpamServiceTemplatesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam service templates bulk delete no content response has a 3xx status code
+func (o *IpamServiceTemplatesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam service templates bulk delete no content response has a 4xx status code
+func (o *IpamServiceTemplatesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam service templates bulk delete no content response has a 5xx status code
+func (o *IpamServiceTemplatesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam service templates bulk delete no content response a status code equal to that given
+func (o *IpamServiceTemplatesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamServiceTemplatesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/service-templates/][%d] ipamServiceTemplatesBulkDeleteNoContent ", 204)
+}
+
+func (o *IpamServiceTemplatesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/service-templates/][%d] ipamServiceTemplatesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamServiceTemplatesBulkDeleteDefault(code int) *IpamServiceTemplatesBul
 	}
 }
 
-/* IpamServiceTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamServiceTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamServiceTemplatesBulkDeleteDefault ipam service templates bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamServiceTemplatesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam service templates bulk delete default response has a 2xx status code
+func (o *IpamServiceTemplatesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam service templates bulk delete default response has a 3xx status code
+func (o *IpamServiceTemplatesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam service templates bulk delete default response has a 4xx status code
+func (o *IpamServiceTemplatesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam service templates bulk delete default response has a 5xx status code
+func (o *IpamServiceTemplatesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam service templates bulk delete default response a status code equal to that given
+func (o *IpamServiceTemplatesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamServiceTemplatesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/service-templates/][%d] ipam_service-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamServiceTemplatesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/service-templates/][%d] ipam_service-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamServiceTemplatesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

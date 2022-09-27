@@ -61,7 +61,8 @@ func NewIpamIPRangesUpdateOK() *IpamIPRangesUpdateOK {
 	return &IpamIPRangesUpdateOK{}
 }
 
-/* IpamIPRangesUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamIPRangesUpdateOK describes a response with status code 200, with default header values.
 
 IpamIPRangesUpdateOK ipam Ip ranges update o k
 */
@@ -69,9 +70,39 @@ type IpamIPRangesUpdateOK struct {
 	Payload *models.IPRange
 }
 
+// IsSuccess returns true when this ipam Ip ranges update o k response has a 2xx status code
+func (o *IpamIPRangesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam Ip ranges update o k response has a 3xx status code
+func (o *IpamIPRangesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam Ip ranges update o k response has a 4xx status code
+func (o *IpamIPRangesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam Ip ranges update o k response has a 5xx status code
+func (o *IpamIPRangesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam Ip ranges update o k response a status code equal to that given
+func (o *IpamIPRangesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamIPRangesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/ip-ranges/{id}/][%d] ipamIpRangesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamIPRangesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /ipam/ip-ranges/{id}/][%d] ipamIpRangesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamIPRangesUpdateOK) GetPayload() *models.IPRange {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamIPRangesUpdateDefault(code int) *IpamIPRangesUpdateDefault {
 	}
 }
 
-/* IpamIPRangesUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamIPRangesUpdateDefault describes a response with status code -1, with default header values.
 
 IpamIPRangesUpdateDefault ipam ip ranges update default
 */
@@ -110,9 +142,39 @@ func (o *IpamIPRangesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam ip ranges update default response has a 2xx status code
+func (o *IpamIPRangesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam ip ranges update default response has a 3xx status code
+func (o *IpamIPRangesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam ip ranges update default response has a 4xx status code
+func (o *IpamIPRangesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam ip ranges update default response has a 5xx status code
+func (o *IpamIPRangesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam ip ranges update default response a status code equal to that given
+func (o *IpamIPRangesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamIPRangesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/ip-ranges/{id}/][%d] ipam_ip-ranges_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamIPRangesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /ipam/ip-ranges/{id}/][%d] ipam_ip-ranges_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamIPRangesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

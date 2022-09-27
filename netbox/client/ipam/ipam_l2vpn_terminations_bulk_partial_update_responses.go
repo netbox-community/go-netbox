@@ -61,7 +61,8 @@ func NewIpamL2vpnTerminationsBulkPartialUpdateOK() *IpamL2vpnTerminationsBulkPar
 	return &IpamL2vpnTerminationsBulkPartialUpdateOK{}
 }
 
-/* IpamL2vpnTerminationsBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamL2vpnTerminationsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamL2vpnTerminationsBulkPartialUpdateOK ipam l2vpn terminations bulk partial update o k
 */
@@ -69,9 +70,39 @@ type IpamL2vpnTerminationsBulkPartialUpdateOK struct {
 	Payload *models.L2VPNTermination
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations bulk partial update o k response has a 2xx status code
+func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations bulk partial update o k response has a 3xx status code
+func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam l2vpn terminations bulk partial update o k response has a 4xx status code
+func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam l2vpn terminations bulk partial update o k response has a 5xx status code
+func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam l2vpn terminations bulk partial update o k response a status code equal to that given
+func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) GetPayload() *models.L2VPNTermination {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamL2vpnTerminationsBulkPartialUpdateDefault(code int) *IpamL2vpnTermin
 	}
 }
 
-/* IpamL2vpnTerminationsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamL2vpnTerminationsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamL2vpnTerminationsBulkPartialUpdateDefault ipam l2vpn terminations bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations bulk partial update default response has a 2xx status code
+func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations bulk partial update default response has a 3xx status code
+func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam l2vpn terminations bulk partial update default response has a 4xx status code
+func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam l2vpn terminations bulk partial update default response has a 5xx status code
+func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam l2vpn terminations bulk partial update default response a status code equal to that given
+func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

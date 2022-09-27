@@ -59,14 +59,44 @@ func NewDcimRackReservationsBulkDeleteNoContent() *DcimRackReservationsBulkDelet
 	return &DcimRackReservationsBulkDeleteNoContent{}
 }
 
-/* DcimRackReservationsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimRackReservationsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimRackReservationsBulkDeleteNoContent dcim rack reservations bulk delete no content
 */
 type DcimRackReservationsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim rack reservations bulk delete no content response has a 2xx status code
+func (o *DcimRackReservationsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rack reservations bulk delete no content response has a 3xx status code
+func (o *DcimRackReservationsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rack reservations bulk delete no content response has a 4xx status code
+func (o *DcimRackReservationsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rack reservations bulk delete no content response has a 5xx status code
+func (o *DcimRackReservationsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rack reservations bulk delete no content response a status code equal to that given
+func (o *DcimRackReservationsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimRackReservationsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/rack-reservations/][%d] dcimRackReservationsBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimRackReservationsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/rack-reservations/][%d] dcimRackReservationsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimRackReservationsBulkDeleteDefault(code int) *DcimRackReservationsBul
 	}
 }
 
-/* DcimRackReservationsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimRackReservationsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimRackReservationsBulkDeleteDefault dcim rack reservations bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimRackReservationsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rack reservations bulk delete default response has a 2xx status code
+func (o *DcimRackReservationsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rack reservations bulk delete default response has a 3xx status code
+func (o *DcimRackReservationsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rack reservations bulk delete default response has a 4xx status code
+func (o *DcimRackReservationsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rack reservations bulk delete default response has a 5xx status code
+func (o *DcimRackReservationsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rack reservations bulk delete default response a status code equal to that given
+func (o *DcimRackReservationsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRackReservationsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/rack-reservations/][%d] dcim_rack-reservations_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRackReservationsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/rack-reservations/][%d] dcim_rack-reservations_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRackReservationsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

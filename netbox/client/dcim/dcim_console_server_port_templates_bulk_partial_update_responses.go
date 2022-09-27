@@ -61,7 +61,8 @@ func NewDcimConsoleServerPortTemplatesBulkPartialUpdateOK() *DcimConsoleServerPo
 	return &DcimConsoleServerPortTemplatesBulkPartialUpdateOK{}
 }
 
-/* DcimConsoleServerPortTemplatesBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimConsoleServerPortTemplatesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimConsoleServerPortTemplatesBulkPartialUpdateOK dcim console server port templates bulk partial update o k
 */
@@ -69,9 +70,39 @@ type DcimConsoleServerPortTemplatesBulkPartialUpdateOK struct {
 	Payload *models.ConsoleServerPortTemplate
 }
 
+// IsSuccess returns true when this dcim console server port templates bulk partial update o k response has a 2xx status code
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console server port templates bulk partial update o k response has a 3xx status code
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console server port templates bulk partial update o k response has a 4xx status code
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console server port templates bulk partial update o k response has a 5xx status code
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console server port templates bulk partial update o k response a status code equal to that given
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateOK) GetPayload() *models.ConsoleServerPortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimConsoleServerPortTemplatesBulkPartialUpdateDefault(code int) *DcimCo
 	}
 }
 
-/* DcimConsoleServerPortTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimConsoleServerPortTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortTemplatesBulkPartialUpdateDefault dcim console server port templates bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console server port templates bulk partial update default response has a 2xx status code
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console server port templates bulk partial update default response has a 3xx status code
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console server port templates bulk partial update default response has a 4xx status code
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console server port templates bulk partial update default response has a 5xx status code
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console server port templates bulk partial update default response a status code equal to that given
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/console-server-port-templates/][%d] dcim_console-server-port-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsoleServerPortTemplatesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

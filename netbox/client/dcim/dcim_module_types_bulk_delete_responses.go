@@ -59,14 +59,44 @@ func NewDcimModuleTypesBulkDeleteNoContent() *DcimModuleTypesBulkDeleteNoContent
 	return &DcimModuleTypesBulkDeleteNoContent{}
 }
 
-/* DcimModuleTypesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimModuleTypesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimModuleTypesBulkDeleteNoContent dcim module types bulk delete no content
 */
 type DcimModuleTypesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim module types bulk delete no content response has a 2xx status code
+func (o *DcimModuleTypesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim module types bulk delete no content response has a 3xx status code
+func (o *DcimModuleTypesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim module types bulk delete no content response has a 4xx status code
+func (o *DcimModuleTypesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim module types bulk delete no content response has a 5xx status code
+func (o *DcimModuleTypesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim module types bulk delete no content response a status code equal to that given
+func (o *DcimModuleTypesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimModuleTypesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/module-types/][%d] dcimModuleTypesBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimModuleTypesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/module-types/][%d] dcimModuleTypesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimModuleTypesBulkDeleteDefault(code int) *DcimModuleTypesBulkDeleteDef
 	}
 }
 
-/* DcimModuleTypesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimModuleTypesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimModuleTypesBulkDeleteDefault dcim module types bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimModuleTypesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim module types bulk delete default response has a 2xx status code
+func (o *DcimModuleTypesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim module types bulk delete default response has a 3xx status code
+func (o *DcimModuleTypesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim module types bulk delete default response has a 4xx status code
+func (o *DcimModuleTypesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim module types bulk delete default response has a 5xx status code
+func (o *DcimModuleTypesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim module types bulk delete default response a status code equal to that given
+func (o *DcimModuleTypesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimModuleTypesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/module-types/][%d] dcim_module-types_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimModuleTypesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/module-types/][%d] dcim_module-types_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimModuleTypesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

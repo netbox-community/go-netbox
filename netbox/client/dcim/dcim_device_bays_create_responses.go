@@ -61,7 +61,8 @@ func NewDcimDeviceBaysCreateCreated() *DcimDeviceBaysCreateCreated {
 	return &DcimDeviceBaysCreateCreated{}
 }
 
-/* DcimDeviceBaysCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimDeviceBaysCreateCreated describes a response with status code 201, with default header values.
 
 DcimDeviceBaysCreateCreated dcim device bays create created
 */
@@ -69,9 +70,39 @@ type DcimDeviceBaysCreateCreated struct {
 	Payload *models.DeviceBay
 }
 
+// IsSuccess returns true when this dcim device bays create created response has a 2xx status code
+func (o *DcimDeviceBaysCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim device bays create created response has a 3xx status code
+func (o *DcimDeviceBaysCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim device bays create created response has a 4xx status code
+func (o *DcimDeviceBaysCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim device bays create created response has a 5xx status code
+func (o *DcimDeviceBaysCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim device bays create created response a status code equal to that given
+func (o *DcimDeviceBaysCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimDeviceBaysCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-bays/][%d] dcimDeviceBaysCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimDeviceBaysCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/device-bays/][%d] dcimDeviceBaysCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimDeviceBaysCreateCreated) GetPayload() *models.DeviceBay {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimDeviceBaysCreateDefault(code int) *DcimDeviceBaysCreateDefault {
 	}
 }
 
-/* DcimDeviceBaysCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimDeviceBaysCreateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceBaysCreateDefault dcim device bays create default
 */
@@ -110,9 +142,39 @@ func (o *DcimDeviceBaysCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim device bays create default response has a 2xx status code
+func (o *DcimDeviceBaysCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim device bays create default response has a 3xx status code
+func (o *DcimDeviceBaysCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim device bays create default response has a 4xx status code
+func (o *DcimDeviceBaysCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim device bays create default response has a 5xx status code
+func (o *DcimDeviceBaysCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim device bays create default response a status code equal to that given
+func (o *DcimDeviceBaysCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimDeviceBaysCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-bays/][%d] dcim_device-bays_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimDeviceBaysCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/device-bays/][%d] dcim_device-bays_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimDeviceBaysCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

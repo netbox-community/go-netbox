@@ -61,7 +61,8 @@ func NewDcimRegionsPartialUpdateOK() *DcimRegionsPartialUpdateOK {
 	return &DcimRegionsPartialUpdateOK{}
 }
 
-/* DcimRegionsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimRegionsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimRegionsPartialUpdateOK dcim regions partial update o k
 */
@@ -69,9 +70,39 @@ type DcimRegionsPartialUpdateOK struct {
 	Payload *models.Region
 }
 
+// IsSuccess returns true when this dcim regions partial update o k response has a 2xx status code
+func (o *DcimRegionsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim regions partial update o k response has a 3xx status code
+func (o *DcimRegionsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim regions partial update o k response has a 4xx status code
+func (o *DcimRegionsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim regions partial update o k response has a 5xx status code
+func (o *DcimRegionsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim regions partial update o k response a status code equal to that given
+func (o *DcimRegionsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRegionsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/regions/{id}/][%d] dcimRegionsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRegionsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/regions/{id}/][%d] dcimRegionsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRegionsPartialUpdateOK) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRegionsPartialUpdateDefault(code int) *DcimRegionsPartialUpdateDefau
 	}
 }
 
-/* DcimRegionsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimRegionsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRegionsPartialUpdateDefault dcim regions partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimRegionsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim regions partial update default response has a 2xx status code
+func (o *DcimRegionsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim regions partial update default response has a 3xx status code
+func (o *DcimRegionsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim regions partial update default response has a 4xx status code
+func (o *DcimRegionsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim regions partial update default response has a 5xx status code
+func (o *DcimRegionsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim regions partial update default response a status code equal to that given
+func (o *DcimRegionsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRegionsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/regions/{id}/][%d] dcim_regions_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRegionsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/regions/{id}/][%d] dcim_regions_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRegionsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

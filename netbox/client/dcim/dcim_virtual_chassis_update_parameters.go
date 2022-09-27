@@ -70,10 +70,12 @@ func NewDcimVirtualChassisUpdateParamsWithHTTPClient(client *http.Client) *DcimV
 	}
 }
 
-/* DcimVirtualChassisUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim virtual chassis update operation.
+/*
+DcimVirtualChassisUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim virtual chassis update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimVirtualChassisUpdateParams struct {
 

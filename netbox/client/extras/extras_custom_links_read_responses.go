@@ -61,7 +61,8 @@ func NewExtrasCustomLinksReadOK() *ExtrasCustomLinksReadOK {
 	return &ExtrasCustomLinksReadOK{}
 }
 
-/* ExtrasCustomLinksReadOK describes a response with status code 200, with default header values.
+/*
+ExtrasCustomLinksReadOK describes a response with status code 200, with default header values.
 
 ExtrasCustomLinksReadOK extras custom links read o k
 */
@@ -69,9 +70,39 @@ type ExtrasCustomLinksReadOK struct {
 	Payload *models.CustomLink
 }
 
+// IsSuccess returns true when this extras custom links read o k response has a 2xx status code
+func (o *ExtrasCustomLinksReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras custom links read o k response has a 3xx status code
+func (o *ExtrasCustomLinksReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras custom links read o k response has a 4xx status code
+func (o *ExtrasCustomLinksReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras custom links read o k response has a 5xx status code
+func (o *ExtrasCustomLinksReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras custom links read o k response a status code equal to that given
+func (o *ExtrasCustomLinksReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasCustomLinksReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-links/{id}/][%d] extrasCustomLinksReadOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasCustomLinksReadOK) String() string {
+	return fmt.Sprintf("[GET /extras/custom-links/{id}/][%d] extrasCustomLinksReadOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasCustomLinksReadOK) GetPayload() *models.CustomLink {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasCustomLinksReadDefault(code int) *ExtrasCustomLinksReadDefault {
 	}
 }
 
-/* ExtrasCustomLinksReadDefault describes a response with status code -1, with default header values.
+/*
+ExtrasCustomLinksReadDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomLinksReadDefault extras custom links read default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasCustomLinksReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras custom links read default response has a 2xx status code
+func (o *ExtrasCustomLinksReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras custom links read default response has a 3xx status code
+func (o *ExtrasCustomLinksReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras custom links read default response has a 4xx status code
+func (o *ExtrasCustomLinksReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras custom links read default response has a 5xx status code
+func (o *ExtrasCustomLinksReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras custom links read default response a status code equal to that given
+func (o *ExtrasCustomLinksReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasCustomLinksReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-links/{id}/][%d] extras_custom-links_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasCustomLinksReadDefault) String() string {
+	return fmt.Sprintf("[GET /extras/custom-links/{id}/][%d] extras_custom-links_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasCustomLinksReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

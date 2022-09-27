@@ -70,10 +70,12 @@ func NewIpamFhrpGroupsUpdateParamsWithHTTPClient(client *http.Client) *IpamFhrpG
 	}
 }
 
-/* IpamFhrpGroupsUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp groups update operation.
+/*
+IpamFhrpGroupsUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp groups update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupsUpdateParams struct {
 

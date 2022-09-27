@@ -61,7 +61,8 @@ func NewDcimPowerPanelsBulkPartialUpdateOK() *DcimPowerPanelsBulkPartialUpdateOK
 	return &DcimPowerPanelsBulkPartialUpdateOK{}
 }
 
-/* DcimPowerPanelsBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimPowerPanelsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPanelsBulkPartialUpdateOK dcim power panels bulk partial update o k
 */
@@ -69,9 +70,39 @@ type DcimPowerPanelsBulkPartialUpdateOK struct {
 	Payload *models.PowerPanel
 }
 
+// IsSuccess returns true when this dcim power panels bulk partial update o k response has a 2xx status code
+func (o *DcimPowerPanelsBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power panels bulk partial update o k response has a 3xx status code
+func (o *DcimPowerPanelsBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power panels bulk partial update o k response has a 4xx status code
+func (o *DcimPowerPanelsBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power panels bulk partial update o k response has a 5xx status code
+func (o *DcimPowerPanelsBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power panels bulk partial update o k response a status code equal to that given
+func (o *DcimPowerPanelsBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerPanelsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-panels/][%d] dcimPowerPanelsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerPanelsBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/power-panels/][%d] dcimPowerPanelsBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerPanelsBulkPartialUpdateOK) GetPayload() *models.PowerPanel {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerPanelsBulkPartialUpdateDefault(code int) *DcimPowerPanelsBulkPa
 	}
 }
 
-/* DcimPowerPanelsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerPanelsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPanelsBulkPartialUpdateDefault dcim power panels bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerPanelsBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power panels bulk partial update default response has a 2xx status code
+func (o *DcimPowerPanelsBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power panels bulk partial update default response has a 3xx status code
+func (o *DcimPowerPanelsBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power panels bulk partial update default response has a 4xx status code
+func (o *DcimPowerPanelsBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power panels bulk partial update default response has a 5xx status code
+func (o *DcimPowerPanelsBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power panels bulk partial update default response a status code equal to that given
+func (o *DcimPowerPanelsBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerPanelsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-panels/][%d] dcim_power-panels_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerPanelsBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/power-panels/][%d] dcim_power-panels_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerPanelsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewIpamFhrpGroupAssignmentsUpdateOK() *IpamFhrpGroupAssignmentsUpdateOK {
 	return &IpamFhrpGroupAssignmentsUpdateOK{}
 }
 
-/* IpamFhrpGroupAssignmentsUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamFhrpGroupAssignmentsUpdateOK describes a response with status code 200, with default header values.
 
 IpamFhrpGroupAssignmentsUpdateOK ipam fhrp group assignments update o k
 */
@@ -69,9 +70,39 @@ type IpamFhrpGroupAssignmentsUpdateOK struct {
 	Payload *models.FHRPGroupAssignment
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments update o k response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments update o k response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam fhrp group assignments update o k response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam fhrp group assignments update o k response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam fhrp group assignments update o k response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamFhrpGroupAssignmentsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamFhrpGroupAssignmentsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamFhrpGroupAssignmentsUpdateOK) GetPayload() *models.FHRPGroupAssignment {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamFhrpGroupAssignmentsUpdateDefault(code int) *IpamFhrpGroupAssignment
 	}
 }
 
-/* IpamFhrpGroupAssignmentsUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamFhrpGroupAssignmentsUpdateDefault describes a response with status code -1, with default header values.
 
 IpamFhrpGroupAssignmentsUpdateDefault ipam fhrp group assignments update default
 */
@@ -110,9 +142,39 @@ func (o *IpamFhrpGroupAssignmentsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments update default response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments update default response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam fhrp group assignments update default response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam fhrp group assignments update default response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam fhrp group assignments update default response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamFhrpGroupAssignmentsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamFhrpGroupAssignmentsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamFhrpGroupAssignmentsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -67,10 +67,12 @@ func NewDcimRearPortTemplatesBulkDeleteParamsWithHTTPClient(client *http.Client)
 	}
 }
 
-/* DcimRearPortTemplatesBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim rear port templates bulk delete operation.
+/*
+DcimRearPortTemplatesBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rear port templates bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRearPortTemplatesBulkDeleteParams struct {
 	timeout    time.Duration

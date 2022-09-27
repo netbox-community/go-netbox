@@ -61,7 +61,8 @@ func NewWirelessWirelessLanGroupsBulkUpdateOK() *WirelessWirelessLanGroupsBulkUp
 	return &WirelessWirelessLanGroupsBulkUpdateOK{}
 }
 
-/* WirelessWirelessLanGroupsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+WirelessWirelessLanGroupsBulkUpdateOK describes a response with status code 200, with default header values.
 
 WirelessWirelessLanGroupsBulkUpdateOK wireless wireless lan groups bulk update o k
 */
@@ -69,9 +70,39 @@ type WirelessWirelessLanGroupsBulkUpdateOK struct {
 	Payload *models.WirelessLANGroup
 }
 
+// IsSuccess returns true when this wireless wireless lan groups bulk update o k response has a 2xx status code
+func (o *WirelessWirelessLanGroupsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this wireless wireless lan groups bulk update o k response has a 3xx status code
+func (o *WirelessWirelessLanGroupsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this wireless wireless lan groups bulk update o k response has a 4xx status code
+func (o *WirelessWirelessLanGroupsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this wireless wireless lan groups bulk update o k response has a 5xx status code
+func (o *WirelessWirelessLanGroupsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this wireless wireless lan groups bulk update o k response a status code equal to that given
+func (o *WirelessWirelessLanGroupsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *WirelessWirelessLanGroupsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /wireless/wireless-lan-groups/][%d] wirelessWirelessLanGroupsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *WirelessWirelessLanGroupsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /wireless/wireless-lan-groups/][%d] wirelessWirelessLanGroupsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *WirelessWirelessLanGroupsBulkUpdateOK) GetPayload() *models.WirelessLANGroup {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewWirelessWirelessLanGroupsBulkUpdateDefault(code int) *WirelessWirelessLa
 	}
 }
 
-/* WirelessWirelessLanGroupsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+WirelessWirelessLanGroupsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 WirelessWirelessLanGroupsBulkUpdateDefault wireless wireless lan groups bulk update default
 */
@@ -110,9 +142,39 @@ func (o *WirelessWirelessLanGroupsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this wireless wireless lan groups bulk update default response has a 2xx status code
+func (o *WirelessWirelessLanGroupsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this wireless wireless lan groups bulk update default response has a 3xx status code
+func (o *WirelessWirelessLanGroupsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this wireless wireless lan groups bulk update default response has a 4xx status code
+func (o *WirelessWirelessLanGroupsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this wireless wireless lan groups bulk update default response has a 5xx status code
+func (o *WirelessWirelessLanGroupsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this wireless wireless lan groups bulk update default response a status code equal to that given
+func (o *WirelessWirelessLanGroupsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *WirelessWirelessLanGroupsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /wireless/wireless-lan-groups/][%d] wireless_wireless-lan-groups_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *WirelessWirelessLanGroupsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /wireless/wireless-lan-groups/][%d] wireless_wireless-lan-groups_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *WirelessWirelessLanGroupsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

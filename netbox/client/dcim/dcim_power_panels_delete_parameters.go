@@ -68,10 +68,12 @@ func NewDcimPowerPanelsDeleteParamsWithHTTPClient(client *http.Client) *DcimPowe
 	}
 }
 
-/* DcimPowerPanelsDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim power panels delete operation.
+/*
+DcimPowerPanelsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power panels delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerPanelsDeleteParams struct {
 

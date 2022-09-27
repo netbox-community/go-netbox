@@ -70,10 +70,12 @@ func NewExtrasJournalEntriesPartialUpdateParamsWithHTTPClient(client *http.Clien
 	}
 }
 
-/* ExtrasJournalEntriesPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the extras journal entries partial update operation.
+/*
+ExtrasJournalEntriesPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras journal entries partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasJournalEntriesPartialUpdateParams struct {
 

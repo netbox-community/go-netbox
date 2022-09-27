@@ -61,7 +61,8 @@ func NewDcimModulesReadOK() *DcimModulesReadOK {
 	return &DcimModulesReadOK{}
 }
 
-/* DcimModulesReadOK describes a response with status code 200, with default header values.
+/*
+DcimModulesReadOK describes a response with status code 200, with default header values.
 
 DcimModulesReadOK dcim modules read o k
 */
@@ -69,9 +70,39 @@ type DcimModulesReadOK struct {
 	Payload *models.Module
 }
 
+// IsSuccess returns true when this dcim modules read o k response has a 2xx status code
+func (o *DcimModulesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim modules read o k response has a 3xx status code
+func (o *DcimModulesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim modules read o k response has a 4xx status code
+func (o *DcimModulesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim modules read o k response has a 5xx status code
+func (o *DcimModulesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim modules read o k response a status code equal to that given
+func (o *DcimModulesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimModulesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/modules/{id}/][%d] dcimModulesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimModulesReadOK) String() string {
+	return fmt.Sprintf("[GET /dcim/modules/{id}/][%d] dcimModulesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimModulesReadOK) GetPayload() *models.Module {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimModulesReadDefault(code int) *DcimModulesReadDefault {
 	}
 }
 
-/* DcimModulesReadDefault describes a response with status code -1, with default header values.
+/*
+DcimModulesReadDefault describes a response with status code -1, with default header values.
 
 DcimModulesReadDefault dcim modules read default
 */
@@ -110,9 +142,39 @@ func (o *DcimModulesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim modules read default response has a 2xx status code
+func (o *DcimModulesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim modules read default response has a 3xx status code
+func (o *DcimModulesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim modules read default response has a 4xx status code
+func (o *DcimModulesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim modules read default response has a 5xx status code
+func (o *DcimModulesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim modules read default response a status code equal to that given
+func (o *DcimModulesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimModulesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/modules/{id}/][%d] dcim_modules_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimModulesReadDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/modules/{id}/][%d] dcim_modules_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimModulesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

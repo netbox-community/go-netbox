@@ -68,10 +68,12 @@ func NewTenancyContactGroupsDeleteParamsWithHTTPClient(client *http.Client) *Ten
 	}
 }
 
-/* TenancyContactGroupsDeleteParams contains all the parameters to send to the API endpoint
-   for the tenancy contact groups delete operation.
+/*
+TenancyContactGroupsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact groups delete operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactGroupsDeleteParams struct {
 

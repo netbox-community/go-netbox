@@ -66,7 +66,8 @@ func NewTenancyContactGroupsListOK() *TenancyContactGroupsListOK {
 	return &TenancyContactGroupsListOK{}
 }
 
-/* TenancyContactGroupsListOK describes a response with status code 200, with default header values.
+/*
+TenancyContactGroupsListOK describes a response with status code 200, with default header values.
 
 TenancyContactGroupsListOK tenancy contact groups list o k
 */
@@ -74,9 +75,39 @@ type TenancyContactGroupsListOK struct {
 	Payload *TenancyContactGroupsListOKBody
 }
 
+// IsSuccess returns true when this tenancy contact groups list o k response has a 2xx status code
+func (o *TenancyContactGroupsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contact groups list o k response has a 3xx status code
+func (o *TenancyContactGroupsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contact groups list o k response has a 4xx status code
+func (o *TenancyContactGroupsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contact groups list o k response has a 5xx status code
+func (o *TenancyContactGroupsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contact groups list o k response a status code equal to that given
+func (o *TenancyContactGroupsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyContactGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/contact-groups/][%d] tenancyContactGroupsListOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyContactGroupsListOK) String() string {
+	return fmt.Sprintf("[GET /tenancy/contact-groups/][%d] tenancyContactGroupsListOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyContactGroupsListOK) GetPayload() *TenancyContactGroupsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewTenancyContactGroupsListDefault(code int) *TenancyContactGroupsListDefau
 	}
 }
 
-/* TenancyContactGroupsListDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactGroupsListDefault describes a response with status code -1, with default header values.
 
 TenancyContactGroupsListDefault tenancy contact groups list default
 */
@@ -115,9 +147,39 @@ func (o *TenancyContactGroupsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contact groups list default response has a 2xx status code
+func (o *TenancyContactGroupsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contact groups list default response has a 3xx status code
+func (o *TenancyContactGroupsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contact groups list default response has a 4xx status code
+func (o *TenancyContactGroupsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contact groups list default response has a 5xx status code
+func (o *TenancyContactGroupsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contact groups list default response a status code equal to that given
+func (o *TenancyContactGroupsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactGroupsListDefault) Error() string {
 	return fmt.Sprintf("[GET /tenancy/contact-groups/][%d] tenancy_contact-groups_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactGroupsListDefault) String() string {
+	return fmt.Sprintf("[GET /tenancy/contact-groups/][%d] tenancy_contact-groups_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactGroupsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *TenancyContactGroupsListDefault) readResponse(response runtime.ClientRe
 	return nil
 }
 
-/*TenancyContactGroupsListOKBody tenancy contact groups list o k body
+/*
+TenancyContactGroupsListOKBody tenancy contact groups list o k body
 swagger:model TenancyContactGroupsListOKBody
 */
 type TenancyContactGroupsListOKBody struct {

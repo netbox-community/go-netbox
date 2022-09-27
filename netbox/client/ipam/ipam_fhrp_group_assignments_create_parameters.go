@@ -69,10 +69,12 @@ func NewIpamFhrpGroupAssignmentsCreateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* IpamFhrpGroupAssignmentsCreateParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp group assignments create operation.
+/*
+IpamFhrpGroupAssignmentsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp group assignments create operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupAssignmentsCreateParams struct {
 

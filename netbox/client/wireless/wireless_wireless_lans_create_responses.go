@@ -61,7 +61,8 @@ func NewWirelessWirelessLansCreateCreated() *WirelessWirelessLansCreateCreated {
 	return &WirelessWirelessLansCreateCreated{}
 }
 
-/* WirelessWirelessLansCreateCreated describes a response with status code 201, with default header values.
+/*
+WirelessWirelessLansCreateCreated describes a response with status code 201, with default header values.
 
 WirelessWirelessLansCreateCreated wireless wireless lans create created
 */
@@ -69,9 +70,39 @@ type WirelessWirelessLansCreateCreated struct {
 	Payload *models.WirelessLAN
 }
 
+// IsSuccess returns true when this wireless wireless lans create created response has a 2xx status code
+func (o *WirelessWirelessLansCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this wireless wireless lans create created response has a 3xx status code
+func (o *WirelessWirelessLansCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this wireless wireless lans create created response has a 4xx status code
+func (o *WirelessWirelessLansCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this wireless wireless lans create created response has a 5xx status code
+func (o *WirelessWirelessLansCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this wireless wireless lans create created response a status code equal to that given
+func (o *WirelessWirelessLansCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *WirelessWirelessLansCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wirelessWirelessLansCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *WirelessWirelessLansCreateCreated) String() string {
+	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wirelessWirelessLansCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *WirelessWirelessLansCreateCreated) GetPayload() *models.WirelessLAN {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewWirelessWirelessLansCreateDefault(code int) *WirelessWirelessLansCreateD
 	}
 }
 
-/* WirelessWirelessLansCreateDefault describes a response with status code -1, with default header values.
+/*
+WirelessWirelessLansCreateDefault describes a response with status code -1, with default header values.
 
 WirelessWirelessLansCreateDefault wireless wireless lans create default
 */
@@ -110,9 +142,39 @@ func (o *WirelessWirelessLansCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this wireless wireless lans create default response has a 2xx status code
+func (o *WirelessWirelessLansCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this wireless wireless lans create default response has a 3xx status code
+func (o *WirelessWirelessLansCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this wireless wireless lans create default response has a 4xx status code
+func (o *WirelessWirelessLansCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this wireless wireless lans create default response has a 5xx status code
+func (o *WirelessWirelessLansCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this wireless wireless lans create default response a status code equal to that given
+func (o *WirelessWirelessLansCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *WirelessWirelessLansCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wireless_wireless-lans_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *WirelessWirelessLansCreateDefault) String() string {
+	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wireless_wireless-lans_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *WirelessWirelessLansCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

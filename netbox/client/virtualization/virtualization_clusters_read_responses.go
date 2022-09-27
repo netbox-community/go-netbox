@@ -61,7 +61,8 @@ func NewVirtualizationClustersReadOK() *VirtualizationClustersReadOK {
 	return &VirtualizationClustersReadOK{}
 }
 
-/* VirtualizationClustersReadOK describes a response with status code 200, with default header values.
+/*
+VirtualizationClustersReadOK describes a response with status code 200, with default header values.
 
 VirtualizationClustersReadOK virtualization clusters read o k
 */
@@ -69,9 +70,39 @@ type VirtualizationClustersReadOK struct {
 	Payload *models.Cluster
 }
 
+// IsSuccess returns true when this virtualization clusters read o k response has a 2xx status code
+func (o *VirtualizationClustersReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization clusters read o k response has a 3xx status code
+func (o *VirtualizationClustersReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization clusters read o k response has a 4xx status code
+func (o *VirtualizationClustersReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization clusters read o k response has a 5xx status code
+func (o *VirtualizationClustersReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization clusters read o k response a status code equal to that given
+func (o *VirtualizationClustersReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VirtualizationClustersReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualizationClustersReadOK  %+v", 200, o.Payload)
 }
+
+func (o *VirtualizationClustersReadOK) String() string {
+	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualizationClustersReadOK  %+v", 200, o.Payload)
+}
+
 func (o *VirtualizationClustersReadOK) GetPayload() *models.Cluster {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationClustersReadDefault(code int) *VirtualizationClustersReadD
 	}
 }
 
-/* VirtualizationClustersReadDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationClustersReadDefault describes a response with status code -1, with default header values.
 
 VirtualizationClustersReadDefault virtualization clusters read default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationClustersReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization clusters read default response has a 2xx status code
+func (o *VirtualizationClustersReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization clusters read default response has a 3xx status code
+func (o *VirtualizationClustersReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization clusters read default response has a 4xx status code
+func (o *VirtualizationClustersReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization clusters read default response has a 5xx status code
+func (o *VirtualizationClustersReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization clusters read default response a status code equal to that given
+func (o *VirtualizationClustersReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationClustersReadDefault) Error() string {
 	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualization_clusters_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationClustersReadDefault) String() string {
+	return fmt.Sprintf("[GET /virtualization/clusters/{id}/][%d] virtualization_clusters_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationClustersReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

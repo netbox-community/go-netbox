@@ -69,10 +69,12 @@ func NewTenancyContactAssignmentsBulkPartialUpdateParamsWithHTTPClient(client *h
 	}
 }
 
-/* TenancyContactAssignmentsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the tenancy contact assignments bulk partial update operation.
+/*
+TenancyContactAssignmentsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact assignments bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactAssignmentsBulkPartialUpdateParams struct {
 

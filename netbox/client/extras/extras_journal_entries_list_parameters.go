@@ -68,10 +68,12 @@ func NewExtrasJournalEntriesListParamsWithHTTPClient(client *http.Client) *Extra
 	}
 }
 
-/* ExtrasJournalEntriesListParams contains all the parameters to send to the API endpoint
-   for the extras journal entries list operation.
+/*
+ExtrasJournalEntriesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras journal entries list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasJournalEntriesListParams struct {
 

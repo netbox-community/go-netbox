@@ -68,10 +68,12 @@ func NewDcimCablesListParamsWithHTTPClient(client *http.Client) *DcimCablesListP
 	}
 }
 
-/* DcimCablesListParams contains all the parameters to send to the API endpoint
-   for the dcim cables list operation.
+/*
+DcimCablesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim cables list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimCablesListParams struct {
 

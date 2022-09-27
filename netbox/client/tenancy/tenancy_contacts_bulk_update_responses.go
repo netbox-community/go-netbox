@@ -61,7 +61,8 @@ func NewTenancyContactsBulkUpdateOK() *TenancyContactsBulkUpdateOK {
 	return &TenancyContactsBulkUpdateOK{}
 }
 
-/* TenancyContactsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+TenancyContactsBulkUpdateOK describes a response with status code 200, with default header values.
 
 TenancyContactsBulkUpdateOK tenancy contacts bulk update o k
 */
@@ -69,9 +70,39 @@ type TenancyContactsBulkUpdateOK struct {
 	Payload *models.Contact
 }
 
+// IsSuccess returns true when this tenancy contacts bulk update o k response has a 2xx status code
+func (o *TenancyContactsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contacts bulk update o k response has a 3xx status code
+func (o *TenancyContactsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contacts bulk update o k response has a 4xx status code
+func (o *TenancyContactsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contacts bulk update o k response has a 5xx status code
+func (o *TenancyContactsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contacts bulk update o k response a status code equal to that given
+func (o *TenancyContactsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyContactsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/contacts/][%d] tenancyContactsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyContactsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /tenancy/contacts/][%d] tenancyContactsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyContactsBulkUpdateOK) GetPayload() *models.Contact {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewTenancyContactsBulkUpdateDefault(code int) *TenancyContactsBulkUpdateDef
 	}
 }
 
-/* TenancyContactsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 TenancyContactsBulkUpdateDefault tenancy contacts bulk update default
 */
@@ -110,9 +142,39 @@ func (o *TenancyContactsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contacts bulk update default response has a 2xx status code
+func (o *TenancyContactsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contacts bulk update default response has a 3xx status code
+func (o *TenancyContactsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contacts bulk update default response has a 4xx status code
+func (o *TenancyContactsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contacts bulk update default response has a 5xx status code
+func (o *TenancyContactsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contacts bulk update default response a status code equal to that given
+func (o *TenancyContactsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/contacts/][%d] tenancy_contacts_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /tenancy/contacts/][%d] tenancy_contacts_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

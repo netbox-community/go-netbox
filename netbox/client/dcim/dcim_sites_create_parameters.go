@@ -69,10 +69,12 @@ func NewDcimSitesCreateParamsWithHTTPClient(client *http.Client) *DcimSitesCreat
 	}
 }
 
-/* DcimSitesCreateParams contains all the parameters to send to the API endpoint
-   for the dcim sites create operation.
+/*
+DcimSitesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim sites create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimSitesCreateParams struct {
 

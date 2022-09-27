@@ -61,7 +61,8 @@ func NewCircuitsCircuitsBulkPartialUpdateOK() *CircuitsCircuitsBulkPartialUpdate
 	return &CircuitsCircuitsBulkPartialUpdateOK{}
 }
 
-/* CircuitsCircuitsBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+CircuitsCircuitsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitsBulkPartialUpdateOK circuits circuits bulk partial update o k
 */
@@ -69,9 +70,39 @@ type CircuitsCircuitsBulkPartialUpdateOK struct {
 	Payload *models.Circuit
 }
 
+// IsSuccess returns true when this circuits circuits bulk partial update o k response has a 2xx status code
+func (o *CircuitsCircuitsBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuits bulk partial update o k response has a 3xx status code
+func (o *CircuitsCircuitsBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuits bulk partial update o k response has a 4xx status code
+func (o *CircuitsCircuitsBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuits bulk partial update o k response has a 5xx status code
+func (o *CircuitsCircuitsBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuits bulk partial update o k response a status code equal to that given
+func (o *CircuitsCircuitsBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsCircuitsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/circuits/][%d] circuitsCircuitsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsCircuitsBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /circuits/circuits/][%d] circuitsCircuitsBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsCircuitsBulkPartialUpdateOK) GetPayload() *models.Circuit {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsCircuitsBulkPartialUpdateDefault(code int) *CircuitsCircuitsBulk
 	}
 }
 
-/* CircuitsCircuitsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitsBulkPartialUpdateDefault circuits circuits bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsCircuitsBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuits bulk partial update default response has a 2xx status code
+func (o *CircuitsCircuitsBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuits bulk partial update default response has a 3xx status code
+func (o *CircuitsCircuitsBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuits bulk partial update default response has a 4xx status code
+func (o *CircuitsCircuitsBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuits bulk partial update default response has a 5xx status code
+func (o *CircuitsCircuitsBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuits bulk partial update default response a status code equal to that given
+func (o *CircuitsCircuitsBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/circuits/][%d] circuits_circuits_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitsBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /circuits/circuits/][%d] circuits_circuits_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

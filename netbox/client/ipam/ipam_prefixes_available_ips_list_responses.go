@@ -61,7 +61,8 @@ func NewIpamPrefixesAvailableIpsListOK() *IpamPrefixesAvailableIpsListOK {
 	return &IpamPrefixesAvailableIpsListOK{}
 }
 
-/* IpamPrefixesAvailableIpsListOK describes a response with status code 200, with default header values.
+/*
+IpamPrefixesAvailableIpsListOK describes a response with status code 200, with default header values.
 
 IpamPrefixesAvailableIpsListOK ipam prefixes available ips list o k
 */
@@ -69,9 +70,39 @@ type IpamPrefixesAvailableIpsListOK struct {
 	Payload []*models.AvailableIP
 }
 
+// IsSuccess returns true when this ipam prefixes available ips list o k response has a 2xx status code
+func (o *IpamPrefixesAvailableIpsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam prefixes available ips list o k response has a 3xx status code
+func (o *IpamPrefixesAvailableIpsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam prefixes available ips list o k response has a 4xx status code
+func (o *IpamPrefixesAvailableIpsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam prefixes available ips list o k response has a 5xx status code
+func (o *IpamPrefixesAvailableIpsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam prefixes available ips list o k response a status code equal to that given
+func (o *IpamPrefixesAvailableIpsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamPrefixesAvailableIpsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamPrefixesAvailableIpsListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamPrefixesAvailableIpsListOK) GetPayload() []*models.AvailableIP {
 	return o.Payload
 }
@@ -93,7 +124,8 @@ func NewIpamPrefixesAvailableIpsListDefault(code int) *IpamPrefixesAvailableIpsL
 	}
 }
 
-/* IpamPrefixesAvailableIpsListDefault describes a response with status code -1, with default header values.
+/*
+IpamPrefixesAvailableIpsListDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesAvailableIpsListDefault ipam prefixes available ips list default
 */
@@ -108,9 +140,39 @@ func (o *IpamPrefixesAvailableIpsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam prefixes available ips list default response has a 2xx status code
+func (o *IpamPrefixesAvailableIpsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam prefixes available ips list default response has a 3xx status code
+func (o *IpamPrefixesAvailableIpsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam prefixes available ips list default response has a 4xx status code
+func (o *IpamPrefixesAvailableIpsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam prefixes available ips list default response has a 5xx status code
+func (o *IpamPrefixesAvailableIpsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam prefixes available ips list default response a status code equal to that given
+func (o *IpamPrefixesAvailableIpsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamPrefixesAvailableIpsListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-ips/][%d] ipam_prefixes_available-ips_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamPrefixesAvailableIpsListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-ips/][%d] ipam_prefixes_available-ips_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamPrefixesAvailableIpsListDefault) GetPayload() interface{} {
 	return o.Payload
 }

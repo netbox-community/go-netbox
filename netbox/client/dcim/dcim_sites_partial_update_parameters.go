@@ -70,10 +70,12 @@ func NewDcimSitesPartialUpdateParamsWithHTTPClient(client *http.Client) *DcimSit
 	}
 }
 
-/* DcimSitesPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim sites partial update operation.
+/*
+DcimSitesPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim sites partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimSitesPartialUpdateParams struct {
 

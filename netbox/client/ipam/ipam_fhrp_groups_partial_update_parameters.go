@@ -70,10 +70,12 @@ func NewIpamFhrpGroupsPartialUpdateParamsWithHTTPClient(client *http.Client) *Ip
 	}
 }
 
-/* IpamFhrpGroupsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp groups partial update operation.
+/*
+IpamFhrpGroupsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp groups partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupsPartialUpdateParams struct {
 

@@ -67,10 +67,12 @@ func NewExtrasReportsRunParamsWithHTTPClient(client *http.Client) *ExtrasReports
 	}
 }
 
-/* ExtrasReportsRunParams contains all the parameters to send to the API endpoint
-   for the extras reports run operation.
+/*
+ExtrasReportsRunParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras reports run operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasReportsRunParams struct {
 

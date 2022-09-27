@@ -67,10 +67,12 @@ func NewIpamL2vpnTerminationsBulkDeleteParamsWithHTTPClient(client *http.Client)
 	}
 }
 
-/* IpamL2vpnTerminationsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam l2vpn terminations bulk delete operation.
+/*
+IpamL2vpnTerminationsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam l2vpn terminations bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamL2vpnTerminationsBulkDeleteParams struct {
 	timeout    time.Duration

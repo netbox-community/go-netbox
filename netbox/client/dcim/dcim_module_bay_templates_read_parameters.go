@@ -68,10 +68,12 @@ func NewDcimModuleBayTemplatesReadParamsWithHTTPClient(client *http.Client) *Dci
 	}
 }
 
-/* DcimModuleBayTemplatesReadParams contains all the parameters to send to the API endpoint
-   for the dcim module bay templates read operation.
+/*
+DcimModuleBayTemplatesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module bay templates read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleBayTemplatesReadParams struct {
 

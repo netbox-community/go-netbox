@@ -59,14 +59,44 @@ func NewExtrasConfigContextsBulkDeleteNoContent() *ExtrasConfigContextsBulkDelet
 	return &ExtrasConfigContextsBulkDeleteNoContent{}
 }
 
-/* ExtrasConfigContextsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+ExtrasConfigContextsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasConfigContextsBulkDeleteNoContent extras config contexts bulk delete no content
 */
 type ExtrasConfigContextsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this extras config contexts bulk delete no content response has a 2xx status code
+func (o *ExtrasConfigContextsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras config contexts bulk delete no content response has a 3xx status code
+func (o *ExtrasConfigContextsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras config contexts bulk delete no content response has a 4xx status code
+func (o *ExtrasConfigContextsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras config contexts bulk delete no content response has a 5xx status code
+func (o *ExtrasConfigContextsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras config contexts bulk delete no content response a status code equal to that given
+func (o *ExtrasConfigContextsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *ExtrasConfigContextsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /extras/config-contexts/][%d] extrasConfigContextsBulkDeleteNoContent ", 204)
+}
+
+func (o *ExtrasConfigContextsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /extras/config-contexts/][%d] extrasConfigContextsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasConfigContextsBulkDeleteDefault(code int) *ExtrasConfigContextsBul
 	}
 }
 
-/* ExtrasConfigContextsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+ExtrasConfigContextsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasConfigContextsBulkDeleteDefault extras config contexts bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasConfigContextsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras config contexts bulk delete default response has a 2xx status code
+func (o *ExtrasConfigContextsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras config contexts bulk delete default response has a 3xx status code
+func (o *ExtrasConfigContextsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras config contexts bulk delete default response has a 4xx status code
+func (o *ExtrasConfigContextsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras config contexts bulk delete default response has a 5xx status code
+func (o *ExtrasConfigContextsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras config contexts bulk delete default response a status code equal to that given
+func (o *ExtrasConfigContextsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasConfigContextsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/config-contexts/][%d] extras_config-contexts_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasConfigContextsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /extras/config-contexts/][%d] extras_config-contexts_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasConfigContextsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewIpamAggregatesPartialUpdateOK() *IpamAggregatesPartialUpdateOK {
 	return &IpamAggregatesPartialUpdateOK{}
 }
 
-/* IpamAggregatesPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamAggregatesPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamAggregatesPartialUpdateOK ipam aggregates partial update o k
 */
@@ -69,9 +70,39 @@ type IpamAggregatesPartialUpdateOK struct {
 	Payload *models.Aggregate
 }
 
+// IsSuccess returns true when this ipam aggregates partial update o k response has a 2xx status code
+func (o *IpamAggregatesPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam aggregates partial update o k response has a 3xx status code
+func (o *IpamAggregatesPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam aggregates partial update o k response has a 4xx status code
+func (o *IpamAggregatesPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam aggregates partial update o k response has a 5xx status code
+func (o *IpamAggregatesPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam aggregates partial update o k response a status code equal to that given
+func (o *IpamAggregatesPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamAggregatesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/aggregates/{id}/][%d] ipamAggregatesPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamAggregatesPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /ipam/aggregates/{id}/][%d] ipamAggregatesPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamAggregatesPartialUpdateOK) GetPayload() *models.Aggregate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamAggregatesPartialUpdateDefault(code int) *IpamAggregatesPartialUpdat
 	}
 }
 
-/* IpamAggregatesPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamAggregatesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamAggregatesPartialUpdateDefault ipam aggregates partial update default
 */
@@ -110,9 +142,39 @@ func (o *IpamAggregatesPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam aggregates partial update default response has a 2xx status code
+func (o *IpamAggregatesPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam aggregates partial update default response has a 3xx status code
+func (o *IpamAggregatesPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam aggregates partial update default response has a 4xx status code
+func (o *IpamAggregatesPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam aggregates partial update default response has a 5xx status code
+func (o *IpamAggregatesPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam aggregates partial update default response a status code equal to that given
+func (o *IpamAggregatesPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamAggregatesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/aggregates/{id}/][%d] ipam_aggregates_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamAggregatesPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /ipam/aggregates/{id}/][%d] ipam_aggregates_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamAggregatesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

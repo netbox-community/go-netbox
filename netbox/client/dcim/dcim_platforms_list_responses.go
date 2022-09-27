@@ -66,7 +66,8 @@ func NewDcimPlatformsListOK() *DcimPlatformsListOK {
 	return &DcimPlatformsListOK{}
 }
 
-/* DcimPlatformsListOK describes a response with status code 200, with default header values.
+/*
+DcimPlatformsListOK describes a response with status code 200, with default header values.
 
 DcimPlatformsListOK dcim platforms list o k
 */
@@ -74,9 +75,39 @@ type DcimPlatformsListOK struct {
 	Payload *DcimPlatformsListOKBody
 }
 
+// IsSuccess returns true when this dcim platforms list o k response has a 2xx status code
+func (o *DcimPlatformsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim platforms list o k response has a 3xx status code
+func (o *DcimPlatformsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim platforms list o k response has a 4xx status code
+func (o *DcimPlatformsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim platforms list o k response has a 5xx status code
+func (o *DcimPlatformsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim platforms list o k response a status code equal to that given
+func (o *DcimPlatformsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPlatformsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcimPlatformsListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPlatformsListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcimPlatformsListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPlatformsListOK) GetPayload() *DcimPlatformsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimPlatformsListDefault(code int) *DcimPlatformsListDefault {
 	}
 }
 
-/* DcimPlatformsListDefault describes a response with status code -1, with default header values.
+/*
+DcimPlatformsListDefault describes a response with status code -1, with default header values.
 
 DcimPlatformsListDefault dcim platforms list default
 */
@@ -115,9 +147,39 @@ func (o *DcimPlatformsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim platforms list default response has a 2xx status code
+func (o *DcimPlatformsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim platforms list default response has a 3xx status code
+func (o *DcimPlatformsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim platforms list default response has a 4xx status code
+func (o *DcimPlatformsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim platforms list default response has a 5xx status code
+func (o *DcimPlatformsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim platforms list default response a status code equal to that given
+func (o *DcimPlatformsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPlatformsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcim_platforms_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPlatformsListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/platforms/][%d] dcim_platforms_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPlatformsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimPlatformsListDefault) readResponse(response runtime.ClientResponse,
 	return nil
 }
 
-/*DcimPlatformsListOKBody dcim platforms list o k body
+/*
+DcimPlatformsListOKBody dcim platforms list o k body
 swagger:model DcimPlatformsListOKBody
 */
 type DcimPlatformsListOKBody struct {

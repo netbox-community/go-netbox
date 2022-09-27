@@ -69,10 +69,12 @@ func NewIpamL2vpnsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *Ip
 	}
 }
 
-/* IpamL2vpnsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam l2vpns bulk partial update operation.
+/*
+IpamL2vpnsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam l2vpns bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamL2vpnsBulkPartialUpdateParams struct {
 

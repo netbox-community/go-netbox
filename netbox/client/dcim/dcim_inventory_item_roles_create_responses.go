@@ -61,7 +61,8 @@ func NewDcimInventoryItemRolesCreateCreated() *DcimInventoryItemRolesCreateCreat
 	return &DcimInventoryItemRolesCreateCreated{}
 }
 
-/* DcimInventoryItemRolesCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimInventoryItemRolesCreateCreated describes a response with status code 201, with default header values.
 
 DcimInventoryItemRolesCreateCreated dcim inventory item roles create created
 */
@@ -69,9 +70,39 @@ type DcimInventoryItemRolesCreateCreated struct {
 	Payload *models.InventoryItemRole
 }
 
+// IsSuccess returns true when this dcim inventory item roles create created response has a 2xx status code
+func (o *DcimInventoryItemRolesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory item roles create created response has a 3xx status code
+func (o *DcimInventoryItemRolesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory item roles create created response has a 4xx status code
+func (o *DcimInventoryItemRolesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory item roles create created response has a 5xx status code
+func (o *DcimInventoryItemRolesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory item roles create created response a status code equal to that given
+func (o *DcimInventoryItemRolesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimInventoryItemRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimInventoryItemRolesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimInventoryItemRolesCreateCreated) GetPayload() *models.InventoryItemRole {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInventoryItemRolesCreateDefault(code int) *DcimInventoryItemRolesCre
 	}
 }
 
-/* DcimInventoryItemRolesCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemRolesCreateDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemRolesCreateDefault dcim inventory item roles create default
 */
@@ -110,9 +142,39 @@ func (o *DcimInventoryItemRolesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory item roles create default response has a 2xx status code
+func (o *DcimInventoryItemRolesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory item roles create default response has a 3xx status code
+func (o *DcimInventoryItemRolesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory item roles create default response has a 4xx status code
+func (o *DcimInventoryItemRolesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory item roles create default response has a 5xx status code
+func (o *DcimInventoryItemRolesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory item roles create default response a status code equal to that given
+func (o *DcimInventoryItemRolesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemRolesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemRolesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemRolesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewDcimCableTerminationsUpdateOK() *DcimCableTerminationsUpdateOK {
 	return &DcimCableTerminationsUpdateOK{}
 }
 
-/* DcimCableTerminationsUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimCableTerminationsUpdateOK describes a response with status code 200, with default header values.
 
 DcimCableTerminationsUpdateOK dcim cable terminations update o k
 */
@@ -69,9 +70,39 @@ type DcimCableTerminationsUpdateOK struct {
 	Payload *models.CableTermination
 }
 
+// IsSuccess returns true when this dcim cable terminations update o k response has a 2xx status code
+func (o *DcimCableTerminationsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim cable terminations update o k response has a 3xx status code
+func (o *DcimCableTerminationsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim cable terminations update o k response has a 4xx status code
+func (o *DcimCableTerminationsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim cable terminations update o k response has a 5xx status code
+func (o *DcimCableTerminationsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim cable terminations update o k response a status code equal to that given
+func (o *DcimCableTerminationsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimCableTerminationsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimCableTerminationsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimCableTerminationsUpdateOK) GetPayload() *models.CableTermination {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimCableTerminationsUpdateDefault(code int) *DcimCableTerminationsUpdat
 	}
 }
 
-/* DcimCableTerminationsUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimCableTerminationsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimCableTerminationsUpdateDefault dcim cable terminations update default
 */
@@ -110,9 +142,39 @@ func (o *DcimCableTerminationsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim cable terminations update default response has a 2xx status code
+func (o *DcimCableTerminationsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim cable terminations update default response has a 3xx status code
+func (o *DcimCableTerminationsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim cable terminations update default response has a 4xx status code
+func (o *DcimCableTerminationsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim cable terminations update default response has a 5xx status code
+func (o *DcimCableTerminationsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim cable terminations update default response a status code equal to that given
+func (o *DcimCableTerminationsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimCableTerminationsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimCableTerminationsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimCableTerminationsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

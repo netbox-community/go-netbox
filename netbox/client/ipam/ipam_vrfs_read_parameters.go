@@ -68,10 +68,12 @@ func NewIpamVrfsReadParamsWithHTTPClient(client *http.Client) *IpamVrfsReadParam
 	}
 }
 
-/* IpamVrfsReadParams contains all the parameters to send to the API endpoint
-   for the ipam vrfs read operation.
+/*
+IpamVrfsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vrfs read operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVrfsReadParams struct {
 

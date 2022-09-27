@@ -70,10 +70,12 @@ func NewIpamRolesUpdateParamsWithHTTPClient(client *http.Client) *IpamRolesUpdat
 	}
 }
 
-/* IpamRolesUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam roles update operation.
+/*
+IpamRolesUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam roles update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamRolesUpdateParams struct {
 

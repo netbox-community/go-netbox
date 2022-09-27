@@ -61,7 +61,8 @@ func NewVirtualizationInterfacesCreateCreated() *VirtualizationInterfacesCreateC
 	return &VirtualizationInterfacesCreateCreated{}
 }
 
-/* VirtualizationInterfacesCreateCreated describes a response with status code 201, with default header values.
+/*
+VirtualizationInterfacesCreateCreated describes a response with status code 201, with default header values.
 
 VirtualizationInterfacesCreateCreated virtualization interfaces create created
 */
@@ -69,9 +70,39 @@ type VirtualizationInterfacesCreateCreated struct {
 	Payload *models.VMInterface
 }
 
+// IsSuccess returns true when this virtualization interfaces create created response has a 2xx status code
+func (o *VirtualizationInterfacesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization interfaces create created response has a 3xx status code
+func (o *VirtualizationInterfacesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization interfaces create created response has a 4xx status code
+func (o *VirtualizationInterfacesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization interfaces create created response has a 5xx status code
+func (o *VirtualizationInterfacesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization interfaces create created response a status code equal to that given
+func (o *VirtualizationInterfacesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *VirtualizationInterfacesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualizationInterfacesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *VirtualizationInterfacesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualizationInterfacesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *VirtualizationInterfacesCreateCreated) GetPayload() *models.VMInterface {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationInterfacesCreateDefault(code int) *VirtualizationInterface
 	}
 }
 
-/* VirtualizationInterfacesCreateDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationInterfacesCreateDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesCreateDefault virtualization interfaces create default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationInterfacesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization interfaces create default response has a 2xx status code
+func (o *VirtualizationInterfacesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization interfaces create default response has a 3xx status code
+func (o *VirtualizationInterfacesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization interfaces create default response has a 4xx status code
+func (o *VirtualizationInterfacesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization interfaces create default response has a 5xx status code
+func (o *VirtualizationInterfacesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization interfaces create default response a status code equal to that given
+func (o *VirtualizationInterfacesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationInterfacesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualization_interfaces_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationInterfacesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /virtualization/interfaces/][%d] virtualization_interfaces_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationInterfacesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

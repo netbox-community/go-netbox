@@ -68,10 +68,12 @@ func NewExtrasImageAttachmentsDeleteParamsWithHTTPClient(client *http.Client) *E
 	}
 }
 
-/* ExtrasImageAttachmentsDeleteParams contains all the parameters to send to the API endpoint
-   for the extras image attachments delete operation.
+/*
+ExtrasImageAttachmentsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras image attachments delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasImageAttachmentsDeleteParams struct {
 

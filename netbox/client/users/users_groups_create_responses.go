@@ -61,7 +61,8 @@ func NewUsersGroupsCreateCreated() *UsersGroupsCreateCreated {
 	return &UsersGroupsCreateCreated{}
 }
 
-/* UsersGroupsCreateCreated describes a response with status code 201, with default header values.
+/*
+UsersGroupsCreateCreated describes a response with status code 201, with default header values.
 
 UsersGroupsCreateCreated users groups create created
 */
@@ -69,9 +70,39 @@ type UsersGroupsCreateCreated struct {
 	Payload *models.Group
 }
 
+// IsSuccess returns true when this users groups create created response has a 2xx status code
+func (o *UsersGroupsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users groups create created response has a 3xx status code
+func (o *UsersGroupsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users groups create created response has a 4xx status code
+func (o *UsersGroupsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users groups create created response has a 5xx status code
+func (o *UsersGroupsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users groups create created response a status code equal to that given
+func (o *UsersGroupsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *UsersGroupsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /users/groups/][%d] usersGroupsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *UsersGroupsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /users/groups/][%d] usersGroupsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *UsersGroupsCreateCreated) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersGroupsCreateDefault(code int) *UsersGroupsCreateDefault {
 	}
 }
 
-/* UsersGroupsCreateDefault describes a response with status code -1, with default header values.
+/*
+UsersGroupsCreateDefault describes a response with status code -1, with default header values.
 
 UsersGroupsCreateDefault users groups create default
 */
@@ -110,9 +142,39 @@ func (o *UsersGroupsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users groups create default response has a 2xx status code
+func (o *UsersGroupsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users groups create default response has a 3xx status code
+func (o *UsersGroupsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users groups create default response has a 4xx status code
+func (o *UsersGroupsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users groups create default response has a 5xx status code
+func (o *UsersGroupsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users groups create default response a status code equal to that given
+func (o *UsersGroupsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersGroupsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /users/groups/][%d] users_groups_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersGroupsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /users/groups/][%d] users_groups_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersGroupsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

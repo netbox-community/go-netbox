@@ -68,10 +68,12 @@ func NewIpamL2vpnsDeleteParamsWithHTTPClient(client *http.Client) *IpamL2vpnsDel
 	}
 }
 
-/* IpamL2vpnsDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam l2vpns delete operation.
+/*
+IpamL2vpnsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam l2vpns delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamL2vpnsDeleteParams struct {
 

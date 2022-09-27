@@ -69,10 +69,12 @@ func NewIpamIPRangesBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamIPR
 	}
 }
 
-/* IpamIPRangesBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam ip ranges bulk update operation.
+/*
+IpamIPRangesBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam ip ranges bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamIPRangesBulkUpdateParams struct {
 

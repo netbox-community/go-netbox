@@ -61,7 +61,8 @@ func NewExtrasWebhooksCreateCreated() *ExtrasWebhooksCreateCreated {
 	return &ExtrasWebhooksCreateCreated{}
 }
 
-/* ExtrasWebhooksCreateCreated describes a response with status code 201, with default header values.
+/*
+ExtrasWebhooksCreateCreated describes a response with status code 201, with default header values.
 
 ExtrasWebhooksCreateCreated extras webhooks create created
 */
@@ -69,9 +70,39 @@ type ExtrasWebhooksCreateCreated struct {
 	Payload *models.Webhook
 }
 
+// IsSuccess returns true when this extras webhooks create created response has a 2xx status code
+func (o *ExtrasWebhooksCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras webhooks create created response has a 3xx status code
+func (o *ExtrasWebhooksCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras webhooks create created response has a 4xx status code
+func (o *ExtrasWebhooksCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras webhooks create created response has a 5xx status code
+func (o *ExtrasWebhooksCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras webhooks create created response a status code equal to that given
+func (o *ExtrasWebhooksCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *ExtrasWebhooksCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/webhooks/][%d] extrasWebhooksCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *ExtrasWebhooksCreateCreated) String() string {
+	return fmt.Sprintf("[POST /extras/webhooks/][%d] extrasWebhooksCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *ExtrasWebhooksCreateCreated) GetPayload() *models.Webhook {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasWebhooksCreateDefault(code int) *ExtrasWebhooksCreateDefault {
 	}
 }
 
-/* ExtrasWebhooksCreateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasWebhooksCreateDefault describes a response with status code -1, with default header values.
 
 ExtrasWebhooksCreateDefault extras webhooks create default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasWebhooksCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras webhooks create default response has a 2xx status code
+func (o *ExtrasWebhooksCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras webhooks create default response has a 3xx status code
+func (o *ExtrasWebhooksCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras webhooks create default response has a 4xx status code
+func (o *ExtrasWebhooksCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras webhooks create default response has a 5xx status code
+func (o *ExtrasWebhooksCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras webhooks create default response a status code equal to that given
+func (o *ExtrasWebhooksCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasWebhooksCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/webhooks/][%d] extras_webhooks_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasWebhooksCreateDefault) String() string {
+	return fmt.Sprintf("[POST /extras/webhooks/][%d] extras_webhooks_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasWebhooksCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

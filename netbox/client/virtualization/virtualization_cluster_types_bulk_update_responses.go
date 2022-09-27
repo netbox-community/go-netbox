@@ -61,7 +61,8 @@ func NewVirtualizationClusterTypesBulkUpdateOK() *VirtualizationClusterTypesBulk
 	return &VirtualizationClusterTypesBulkUpdateOK{}
 }
 
-/* VirtualizationClusterTypesBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+VirtualizationClusterTypesBulkUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClusterTypesBulkUpdateOK virtualization cluster types bulk update o k
 */
@@ -69,9 +70,39 @@ type VirtualizationClusterTypesBulkUpdateOK struct {
 	Payload *models.ClusterType
 }
 
+// IsSuccess returns true when this virtualization cluster types bulk update o k response has a 2xx status code
+func (o *VirtualizationClusterTypesBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization cluster types bulk update o k response has a 3xx status code
+func (o *VirtualizationClusterTypesBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization cluster types bulk update o k response has a 4xx status code
+func (o *VirtualizationClusterTypesBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization cluster types bulk update o k response has a 5xx status code
+func (o *VirtualizationClusterTypesBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization cluster types bulk update o k response a status code equal to that given
+func (o *VirtualizationClusterTypesBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VirtualizationClusterTypesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/cluster-types/][%d] virtualizationClusterTypesBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *VirtualizationClusterTypesBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /virtualization/cluster-types/][%d] virtualizationClusterTypesBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *VirtualizationClusterTypesBulkUpdateOK) GetPayload() *models.ClusterType {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationClusterTypesBulkUpdateDefault(code int) *VirtualizationClu
 	}
 }
 
-/* VirtualizationClusterTypesBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationClusterTypesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterTypesBulkUpdateDefault virtualization cluster types bulk update default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationClusterTypesBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization cluster types bulk update default response has a 2xx status code
+func (o *VirtualizationClusterTypesBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization cluster types bulk update default response has a 3xx status code
+func (o *VirtualizationClusterTypesBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization cluster types bulk update default response has a 4xx status code
+func (o *VirtualizationClusterTypesBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization cluster types bulk update default response has a 5xx status code
+func (o *VirtualizationClusterTypesBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization cluster types bulk update default response a status code equal to that given
+func (o *VirtualizationClusterTypesBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationClusterTypesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/cluster-types/][%d] virtualization_cluster-types_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationClusterTypesBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /virtualization/cluster-types/][%d] virtualization_cluster-types_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationClusterTypesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

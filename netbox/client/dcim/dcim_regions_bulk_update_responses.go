@@ -61,7 +61,8 @@ func NewDcimRegionsBulkUpdateOK() *DcimRegionsBulkUpdateOK {
 	return &DcimRegionsBulkUpdateOK{}
 }
 
-/* DcimRegionsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimRegionsBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimRegionsBulkUpdateOK dcim regions bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimRegionsBulkUpdateOK struct {
 	Payload *models.Region
 }
 
+// IsSuccess returns true when this dcim regions bulk update o k response has a 2xx status code
+func (o *DcimRegionsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim regions bulk update o k response has a 3xx status code
+func (o *DcimRegionsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim regions bulk update o k response has a 4xx status code
+func (o *DcimRegionsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim regions bulk update o k response has a 5xx status code
+func (o *DcimRegionsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim regions bulk update o k response a status code equal to that given
+func (o *DcimRegionsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRegionsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/regions/][%d] dcimRegionsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRegionsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/regions/][%d] dcimRegionsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRegionsBulkUpdateOK) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRegionsBulkUpdateDefault(code int) *DcimRegionsBulkUpdateDefault {
 	}
 }
 
-/* DcimRegionsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimRegionsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRegionsBulkUpdateDefault dcim regions bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimRegionsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim regions bulk update default response has a 2xx status code
+func (o *DcimRegionsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim regions bulk update default response has a 3xx status code
+func (o *DcimRegionsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim regions bulk update default response has a 4xx status code
+func (o *DcimRegionsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim regions bulk update default response has a 5xx status code
+func (o *DcimRegionsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim regions bulk update default response a status code equal to that given
+func (o *DcimRegionsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRegionsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/regions/][%d] dcim_regions_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRegionsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/regions/][%d] dcim_regions_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRegionsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

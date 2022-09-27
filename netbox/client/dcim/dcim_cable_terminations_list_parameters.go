@@ -68,10 +68,12 @@ func NewDcimCableTerminationsListParamsWithHTTPClient(client *http.Client) *Dcim
 	}
 }
 
-/* DcimCableTerminationsListParams contains all the parameters to send to the API endpoint
-   for the dcim cable terminations list operation.
+/*
+DcimCableTerminationsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim cable terminations list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimCableTerminationsListParams struct {
 

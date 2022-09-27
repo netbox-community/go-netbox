@@ -68,10 +68,12 @@ func NewExtrasJobResultsListParamsWithHTTPClient(client *http.Client) *ExtrasJob
 	}
 }
 
-/* ExtrasJobResultsListParams contains all the parameters to send to the API endpoint
-   for the extras job results list operation.
+/*
+ExtrasJobResultsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras job results list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasJobResultsListParams struct {
 

@@ -68,10 +68,12 @@ func NewCircuitsCircuitsReadParamsWithHTTPClient(client *http.Client) *CircuitsC
 	}
 }
 
-/* CircuitsCircuitsReadParams contains all the parameters to send to the API endpoint
-   for the circuits circuits read operation.
+/*
+CircuitsCircuitsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits circuits read operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsCircuitsReadParams struct {
 

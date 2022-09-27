@@ -69,10 +69,12 @@ func NewWirelessWirelessLansCreateParamsWithHTTPClient(client *http.Client) *Wir
 	}
 }
 
-/* WirelessWirelessLansCreateParams contains all the parameters to send to the API endpoint
-   for the wireless wireless lans create operation.
+/*
+WirelessWirelessLansCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless lans create operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLansCreateParams struct {
 

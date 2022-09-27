@@ -59,14 +59,44 @@ func NewDcimPowerOutletTemplatesDeleteNoContent() *DcimPowerOutletTemplatesDelet
 	return &DcimPowerOutletTemplatesDeleteNoContent{}
 }
 
-/* DcimPowerOutletTemplatesDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimPowerOutletTemplatesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimPowerOutletTemplatesDeleteNoContent dcim power outlet templates delete no content
 */
 type DcimPowerOutletTemplatesDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim power outlet templates delete no content response has a 2xx status code
+func (o *DcimPowerOutletTemplatesDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power outlet templates delete no content response has a 3xx status code
+func (o *DcimPowerOutletTemplatesDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power outlet templates delete no content response has a 4xx status code
+func (o *DcimPowerOutletTemplatesDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power outlet templates delete no content response has a 5xx status code
+func (o *DcimPowerOutletTemplatesDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power outlet templates delete no content response a status code equal to that given
+func (o *DcimPowerOutletTemplatesDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimPowerOutletTemplatesDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesDeleteNoContent ", 204)
+}
+
+func (o *DcimPowerOutletTemplatesDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimPowerOutletTemplatesDeleteDefault(code int) *DcimPowerOutletTemplate
 	}
 }
 
-/* DcimPowerOutletTemplatesDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerOutletTemplatesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletTemplatesDeleteDefault dcim power outlet templates delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimPowerOutletTemplatesDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power outlet templates delete default response has a 2xx status code
+func (o *DcimPowerOutletTemplatesDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power outlet templates delete default response has a 3xx status code
+func (o *DcimPowerOutletTemplatesDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power outlet templates delete default response has a 4xx status code
+func (o *DcimPowerOutletTemplatesDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power outlet templates delete default response has a 5xx status code
+func (o *DcimPowerOutletTemplatesDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power outlet templates delete default response a status code equal to that given
+func (o *DcimPowerOutletTemplatesDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerOutletTemplatesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerOutletTemplatesDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerOutletTemplatesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewIpamAsnsCreateCreated() *IpamAsnsCreateCreated {
 	return &IpamAsnsCreateCreated{}
 }
 
-/* IpamAsnsCreateCreated describes a response with status code 201, with default header values.
+/*
+IpamAsnsCreateCreated describes a response with status code 201, with default header values.
 
 IpamAsnsCreateCreated ipam asns create created
 */
@@ -69,9 +70,39 @@ type IpamAsnsCreateCreated struct {
 	Payload *models.ASN
 }
 
+// IsSuccess returns true when this ipam asns create created response has a 2xx status code
+func (o *IpamAsnsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam asns create created response has a 3xx status code
+func (o *IpamAsnsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam asns create created response has a 4xx status code
+func (o *IpamAsnsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam asns create created response has a 5xx status code
+func (o *IpamAsnsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam asns create created response a status code equal to that given
+func (o *IpamAsnsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *IpamAsnsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/asns/][%d] ipamAsnsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *IpamAsnsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /ipam/asns/][%d] ipamAsnsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *IpamAsnsCreateCreated) GetPayload() *models.ASN {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamAsnsCreateDefault(code int) *IpamAsnsCreateDefault {
 	}
 }
 
-/* IpamAsnsCreateDefault describes a response with status code -1, with default header values.
+/*
+IpamAsnsCreateDefault describes a response with status code -1, with default header values.
 
 IpamAsnsCreateDefault ipam asns create default
 */
@@ -110,9 +142,39 @@ func (o *IpamAsnsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam asns create default response has a 2xx status code
+func (o *IpamAsnsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam asns create default response has a 3xx status code
+func (o *IpamAsnsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam asns create default response has a 4xx status code
+func (o *IpamAsnsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam asns create default response has a 5xx status code
+func (o *IpamAsnsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam asns create default response a status code equal to that given
+func (o *IpamAsnsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamAsnsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/asns/][%d] ipam_asns_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamAsnsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /ipam/asns/][%d] ipam_asns_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamAsnsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

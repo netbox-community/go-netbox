@@ -61,7 +61,8 @@ func NewIpamL2vpnTerminationsReadOK() *IpamL2vpnTerminationsReadOK {
 	return &IpamL2vpnTerminationsReadOK{}
 }
 
-/* IpamL2vpnTerminationsReadOK describes a response with status code 200, with default header values.
+/*
+IpamL2vpnTerminationsReadOK describes a response with status code 200, with default header values.
 
 IpamL2vpnTerminationsReadOK ipam l2vpn terminations read o k
 */
@@ -69,9 +70,39 @@ type IpamL2vpnTerminationsReadOK struct {
 	Payload *models.L2VPNTermination
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations read o k response has a 2xx status code
+func (o *IpamL2vpnTerminationsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations read o k response has a 3xx status code
+func (o *IpamL2vpnTerminationsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam l2vpn terminations read o k response has a 4xx status code
+func (o *IpamL2vpnTerminationsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam l2vpn terminations read o k response has a 5xx status code
+func (o *IpamL2vpnTerminationsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam l2vpn terminations read o k response a status code equal to that given
+func (o *IpamL2vpnTerminationsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamL2vpnTerminationsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsReadOK) String() string {
+	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsReadOK) GetPayload() *models.L2VPNTermination {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamL2vpnTerminationsReadDefault(code int) *IpamL2vpnTerminationsReadDef
 	}
 }
 
-/* IpamL2vpnTerminationsReadDefault describes a response with status code -1, with default header values.
+/*
+IpamL2vpnTerminationsReadDefault describes a response with status code -1, with default header values.
 
 IpamL2vpnTerminationsReadDefault ipam l2vpn terminations read default
 */
@@ -110,9 +142,39 @@ func (o *IpamL2vpnTerminationsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations read default response has a 2xx status code
+func (o *IpamL2vpnTerminationsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations read default response has a 3xx status code
+func (o *IpamL2vpnTerminationsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam l2vpn terminations read default response has a 4xx status code
+func (o *IpamL2vpnTerminationsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam l2vpn terminations read default response has a 5xx status code
+func (o *IpamL2vpnTerminationsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam l2vpn terminations read default response a status code equal to that given
+func (o *IpamL2vpnTerminationsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamL2vpnTerminationsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/{id}/][%d] ipam_l2vpn-terminations_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsReadDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/{id}/][%d] ipam_l2vpn-terminations_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

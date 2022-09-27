@@ -67,10 +67,12 @@ func NewIpamVlansBulkDeleteParamsWithHTTPClient(client *http.Client) *IpamVlansB
 	}
 }
 
-/* IpamVlansBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam vlans bulk delete operation.
+/*
+IpamVlansBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vlans bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVlansBulkDeleteParams struct {
 	timeout    time.Duration

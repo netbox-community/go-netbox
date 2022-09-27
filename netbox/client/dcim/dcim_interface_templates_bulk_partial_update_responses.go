@@ -61,7 +61,8 @@ func NewDcimInterfaceTemplatesBulkPartialUpdateOK() *DcimInterfaceTemplatesBulkP
 	return &DcimInterfaceTemplatesBulkPartialUpdateOK{}
 }
 
-/* DcimInterfaceTemplatesBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimInterfaceTemplatesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimInterfaceTemplatesBulkPartialUpdateOK dcim interface templates bulk partial update o k
 */
@@ -69,9 +70,39 @@ type DcimInterfaceTemplatesBulkPartialUpdateOK struct {
 	Payload *models.InterfaceTemplate
 }
 
+// IsSuccess returns true when this dcim interface templates bulk partial update o k response has a 2xx status code
+func (o *DcimInterfaceTemplatesBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim interface templates bulk partial update o k response has a 3xx status code
+func (o *DcimInterfaceTemplatesBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim interface templates bulk partial update o k response has a 4xx status code
+func (o *DcimInterfaceTemplatesBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim interface templates bulk partial update o k response has a 5xx status code
+func (o *DcimInterfaceTemplatesBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim interface templates bulk partial update o k response a status code equal to that given
+func (o *DcimInterfaceTemplatesBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimInterfaceTemplatesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/interface-templates/][%d] dcimInterfaceTemplatesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimInterfaceTemplatesBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/interface-templates/][%d] dcimInterfaceTemplatesBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimInterfaceTemplatesBulkPartialUpdateOK) GetPayload() *models.InterfaceTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInterfaceTemplatesBulkPartialUpdateDefault(code int) *DcimInterfaceT
 	}
 }
 
-/* DcimInterfaceTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimInterfaceTemplatesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInterfaceTemplatesBulkPartialUpdateDefault dcim interface templates bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimInterfaceTemplatesBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim interface templates bulk partial update default response has a 2xx status code
+func (o *DcimInterfaceTemplatesBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim interface templates bulk partial update default response has a 3xx status code
+func (o *DcimInterfaceTemplatesBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim interface templates bulk partial update default response has a 4xx status code
+func (o *DcimInterfaceTemplatesBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim interface templates bulk partial update default response has a 5xx status code
+func (o *DcimInterfaceTemplatesBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim interface templates bulk partial update default response a status code equal to that given
+func (o *DcimInterfaceTemplatesBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInterfaceTemplatesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/interface-templates/][%d] dcim_interface-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInterfaceTemplatesBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/interface-templates/][%d] dcim_interface-templates_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInterfaceTemplatesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

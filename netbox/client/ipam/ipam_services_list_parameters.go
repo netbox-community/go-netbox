@@ -68,10 +68,12 @@ func NewIpamServicesListParamsWithHTTPClient(client *http.Client) *IpamServicesL
 	}
 }
 
-/* IpamServicesListParams contains all the parameters to send to the API endpoint
-   for the ipam services list operation.
+/*
+IpamServicesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam services list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamServicesListParams struct {
 

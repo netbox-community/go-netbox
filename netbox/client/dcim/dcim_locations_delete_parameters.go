@@ -68,10 +68,12 @@ func NewDcimLocationsDeleteParamsWithHTTPClient(client *http.Client) *DcimLocati
 	}
 }
 
-/* DcimLocationsDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim locations delete operation.
+/*
+DcimLocationsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim locations delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimLocationsDeleteParams struct {
 

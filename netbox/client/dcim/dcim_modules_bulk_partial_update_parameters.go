@@ -69,10 +69,12 @@ func NewDcimModulesBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimModulesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim modules bulk partial update operation.
+/*
+DcimModulesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim modules bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModulesBulkPartialUpdateParams struct {
 

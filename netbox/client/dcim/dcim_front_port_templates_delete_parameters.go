@@ -68,10 +68,12 @@ func NewDcimFrontPortTemplatesDeleteParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimFrontPortTemplatesDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim front port templates delete operation.
+/*
+DcimFrontPortTemplatesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim front port templates delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimFrontPortTemplatesDeleteParams struct {
 

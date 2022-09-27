@@ -66,7 +66,8 @@ func NewIpamFhrpGroupsListOK() *IpamFhrpGroupsListOK {
 	return &IpamFhrpGroupsListOK{}
 }
 
-/* IpamFhrpGroupsListOK describes a response with status code 200, with default header values.
+/*
+IpamFhrpGroupsListOK describes a response with status code 200, with default header values.
 
 IpamFhrpGroupsListOK ipam fhrp groups list o k
 */
@@ -74,9 +75,39 @@ type IpamFhrpGroupsListOK struct {
 	Payload *IpamFhrpGroupsListOKBody
 }
 
+// IsSuccess returns true when this ipam fhrp groups list o k response has a 2xx status code
+func (o *IpamFhrpGroupsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam fhrp groups list o k response has a 3xx status code
+func (o *IpamFhrpGroupsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam fhrp groups list o k response has a 4xx status code
+func (o *IpamFhrpGroupsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam fhrp groups list o k response has a 5xx status code
+func (o *IpamFhrpGroupsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam fhrp groups list o k response a status code equal to that given
+func (o *IpamFhrpGroupsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamFhrpGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipamFhrpGroupsListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamFhrpGroupsListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipamFhrpGroupsListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamFhrpGroupsListOK) GetPayload() *IpamFhrpGroupsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewIpamFhrpGroupsListDefault(code int) *IpamFhrpGroupsListDefault {
 	}
 }
 
-/* IpamFhrpGroupsListDefault describes a response with status code -1, with default header values.
+/*
+IpamFhrpGroupsListDefault describes a response with status code -1, with default header values.
 
 IpamFhrpGroupsListDefault ipam fhrp groups list default
 */
@@ -115,9 +147,39 @@ func (o *IpamFhrpGroupsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam fhrp groups list default response has a 2xx status code
+func (o *IpamFhrpGroupsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam fhrp groups list default response has a 3xx status code
+func (o *IpamFhrpGroupsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam fhrp groups list default response has a 4xx status code
+func (o *IpamFhrpGroupsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam fhrp groups list default response has a 5xx status code
+func (o *IpamFhrpGroupsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam fhrp groups list default response a status code equal to that given
+func (o *IpamFhrpGroupsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamFhrpGroupsListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipam_fhrp-groups_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamFhrpGroupsListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/fhrp-groups/][%d] ipam_fhrp-groups_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamFhrpGroupsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *IpamFhrpGroupsListDefault) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-/*IpamFhrpGroupsListOKBody ipam fhrp groups list o k body
+/*
+IpamFhrpGroupsListOKBody ipam fhrp groups list o k body
 swagger:model IpamFhrpGroupsListOKBody
 */
 type IpamFhrpGroupsListOKBody struct {

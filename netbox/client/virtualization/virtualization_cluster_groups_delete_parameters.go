@@ -68,10 +68,12 @@ func NewVirtualizationClusterGroupsDeleteParamsWithHTTPClient(client *http.Clien
 	}
 }
 
-/* VirtualizationClusterGroupsDeleteParams contains all the parameters to send to the API endpoint
-   for the virtualization cluster groups delete operation.
+/*
+VirtualizationClusterGroupsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization cluster groups delete operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationClusterGroupsDeleteParams struct {
 

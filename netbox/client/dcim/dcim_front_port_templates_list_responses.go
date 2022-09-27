@@ -66,7 +66,8 @@ func NewDcimFrontPortTemplatesListOK() *DcimFrontPortTemplatesListOK {
 	return &DcimFrontPortTemplatesListOK{}
 }
 
-/* DcimFrontPortTemplatesListOK describes a response with status code 200, with default header values.
+/*
+DcimFrontPortTemplatesListOK describes a response with status code 200, with default header values.
 
 DcimFrontPortTemplatesListOK dcim front port templates list o k
 */
@@ -74,9 +75,39 @@ type DcimFrontPortTemplatesListOK struct {
 	Payload *DcimFrontPortTemplatesListOKBody
 }
 
+// IsSuccess returns true when this dcim front port templates list o k response has a 2xx status code
+func (o *DcimFrontPortTemplatesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim front port templates list o k response has a 3xx status code
+func (o *DcimFrontPortTemplatesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim front port templates list o k response has a 4xx status code
+func (o *DcimFrontPortTemplatesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim front port templates list o k response has a 5xx status code
+func (o *DcimFrontPortTemplatesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim front port templates list o k response a status code equal to that given
+func (o *DcimFrontPortTemplatesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimFrontPortTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcimFrontPortTemplatesListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimFrontPortTemplatesListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcimFrontPortTemplatesListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimFrontPortTemplatesListOK) GetPayload() *DcimFrontPortTemplatesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimFrontPortTemplatesListDefault(code int) *DcimFrontPortTemplatesListD
 	}
 }
 
-/* DcimFrontPortTemplatesListDefault describes a response with status code -1, with default header values.
+/*
+DcimFrontPortTemplatesListDefault describes a response with status code -1, with default header values.
 
 DcimFrontPortTemplatesListDefault dcim front port templates list default
 */
@@ -115,9 +147,39 @@ func (o *DcimFrontPortTemplatesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim front port templates list default response has a 2xx status code
+func (o *DcimFrontPortTemplatesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim front port templates list default response has a 3xx status code
+func (o *DcimFrontPortTemplatesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim front port templates list default response has a 4xx status code
+func (o *DcimFrontPortTemplatesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim front port templates list default response has a 5xx status code
+func (o *DcimFrontPortTemplatesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim front port templates list default response a status code equal to that given
+func (o *DcimFrontPortTemplatesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimFrontPortTemplatesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcim_front-port-templates_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimFrontPortTemplatesListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/front-port-templates/][%d] dcim_front-port-templates_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimFrontPortTemplatesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimFrontPortTemplatesListDefault) readResponse(response runtime.Client
 	return nil
 }
 
-/*DcimFrontPortTemplatesListOKBody dcim front port templates list o k body
+/*
+DcimFrontPortTemplatesListOKBody dcim front port templates list o k body
 swagger:model DcimFrontPortTemplatesListOKBody
 */
 type DcimFrontPortTemplatesListOKBody struct {

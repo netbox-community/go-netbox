@@ -68,10 +68,12 @@ func NewDcimRackReservationsListParamsWithHTTPClient(client *http.Client) *DcimR
 	}
 }
 
-/* DcimRackReservationsListParams contains all the parameters to send to the API endpoint
-   for the dcim rack reservations list operation.
+/*
+DcimRackReservationsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rack reservations list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRackReservationsListParams struct {
 

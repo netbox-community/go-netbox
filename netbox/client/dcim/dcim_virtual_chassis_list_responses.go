@@ -66,7 +66,8 @@ func NewDcimVirtualChassisListOK() *DcimVirtualChassisListOK {
 	return &DcimVirtualChassisListOK{}
 }
 
-/* DcimVirtualChassisListOK describes a response with status code 200, with default header values.
+/*
+DcimVirtualChassisListOK describes a response with status code 200, with default header values.
 
 DcimVirtualChassisListOK dcim virtual chassis list o k
 */
@@ -74,9 +75,39 @@ type DcimVirtualChassisListOK struct {
 	Payload *DcimVirtualChassisListOKBody
 }
 
+// IsSuccess returns true when this dcim virtual chassis list o k response has a 2xx status code
+func (o *DcimVirtualChassisListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim virtual chassis list o k response has a 3xx status code
+func (o *DcimVirtualChassisListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim virtual chassis list o k response has a 4xx status code
+func (o *DcimVirtualChassisListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim virtual chassis list o k response has a 5xx status code
+func (o *DcimVirtualChassisListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim virtual chassis list o k response a status code equal to that given
+func (o *DcimVirtualChassisListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimVirtualChassisListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcimVirtualChassisListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimVirtualChassisListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcimVirtualChassisListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimVirtualChassisListOK) GetPayload() *DcimVirtualChassisListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimVirtualChassisListDefault(code int) *DcimVirtualChassisListDefault {
 	}
 }
 
-/* DcimVirtualChassisListDefault describes a response with status code -1, with default header values.
+/*
+DcimVirtualChassisListDefault describes a response with status code -1, with default header values.
 
 DcimVirtualChassisListDefault dcim virtual chassis list default
 */
@@ -115,9 +147,39 @@ func (o *DcimVirtualChassisListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim virtual chassis list default response has a 2xx status code
+func (o *DcimVirtualChassisListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim virtual chassis list default response has a 3xx status code
+func (o *DcimVirtualChassisListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim virtual chassis list default response has a 4xx status code
+func (o *DcimVirtualChassisListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim virtual chassis list default response has a 5xx status code
+func (o *DcimVirtualChassisListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim virtual chassis list default response a status code equal to that given
+func (o *DcimVirtualChassisListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimVirtualChassisListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcim_virtual-chassis_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimVirtualChassisListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/virtual-chassis/][%d] dcim_virtual-chassis_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimVirtualChassisListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimVirtualChassisListDefault) readResponse(response runtime.ClientResp
 	return nil
 }
 
-/*DcimVirtualChassisListOKBody dcim virtual chassis list o k body
+/*
+DcimVirtualChassisListOKBody dcim virtual chassis list o k body
 swagger:model DcimVirtualChassisListOKBody
 */
 type DcimVirtualChassisListOKBody struct {

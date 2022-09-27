@@ -61,7 +61,8 @@ func NewIpamL2vpnsCreateCreated() *IpamL2vpnsCreateCreated {
 	return &IpamL2vpnsCreateCreated{}
 }
 
-/* IpamL2vpnsCreateCreated describes a response with status code 201, with default header values.
+/*
+IpamL2vpnsCreateCreated describes a response with status code 201, with default header values.
 
 IpamL2vpnsCreateCreated ipam l2vpns create created
 */
@@ -69,9 +70,39 @@ type IpamL2vpnsCreateCreated struct {
 	Payload *models.L2VPN
 }
 
+// IsSuccess returns true when this ipam l2vpns create created response has a 2xx status code
+func (o *IpamL2vpnsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam l2vpns create created response has a 3xx status code
+func (o *IpamL2vpnsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam l2vpns create created response has a 4xx status code
+func (o *IpamL2vpnsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam l2vpns create created response has a 5xx status code
+func (o *IpamL2vpnsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam l2vpns create created response a status code equal to that given
+func (o *IpamL2vpnsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *IpamL2vpnsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/l2vpns/][%d] ipamL2vpnsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *IpamL2vpnsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /ipam/l2vpns/][%d] ipamL2vpnsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *IpamL2vpnsCreateCreated) GetPayload() *models.L2VPN {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamL2vpnsCreateDefault(code int) *IpamL2vpnsCreateDefault {
 	}
 }
 
-/* IpamL2vpnsCreateDefault describes a response with status code -1, with default header values.
+/*
+IpamL2vpnsCreateDefault describes a response with status code -1, with default header values.
 
 IpamL2vpnsCreateDefault ipam l2vpns create default
 */
@@ -110,9 +142,39 @@ func (o *IpamL2vpnsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam l2vpns create default response has a 2xx status code
+func (o *IpamL2vpnsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam l2vpns create default response has a 3xx status code
+func (o *IpamL2vpnsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam l2vpns create default response has a 4xx status code
+func (o *IpamL2vpnsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam l2vpns create default response has a 5xx status code
+func (o *IpamL2vpnsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam l2vpns create default response a status code equal to that given
+func (o *IpamL2vpnsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamL2vpnsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/l2vpns/][%d] ipam_l2vpns_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamL2vpnsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /ipam/l2vpns/][%d] ipam_l2vpns_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamL2vpnsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

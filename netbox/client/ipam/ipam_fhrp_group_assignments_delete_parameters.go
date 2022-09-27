@@ -68,10 +68,12 @@ func NewIpamFhrpGroupAssignmentsDeleteParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* IpamFhrpGroupAssignmentsDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp group assignments delete operation.
+/*
+IpamFhrpGroupAssignmentsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp group assignments delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupAssignmentsDeleteParams struct {
 

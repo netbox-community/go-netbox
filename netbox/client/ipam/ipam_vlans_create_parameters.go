@@ -69,10 +69,12 @@ func NewIpamVlansCreateParamsWithHTTPClient(client *http.Client) *IpamVlansCreat
 	}
 }
 
-/* IpamVlansCreateParams contains all the parameters to send to the API endpoint
-   for the ipam vlans create operation.
+/*
+IpamVlansCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vlans create operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVlansCreateParams struct {
 

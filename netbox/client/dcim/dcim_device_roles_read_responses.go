@@ -61,7 +61,8 @@ func NewDcimDeviceRolesReadOK() *DcimDeviceRolesReadOK {
 	return &DcimDeviceRolesReadOK{}
 }
 
-/* DcimDeviceRolesReadOK describes a response with status code 200, with default header values.
+/*
+DcimDeviceRolesReadOK describes a response with status code 200, with default header values.
 
 DcimDeviceRolesReadOK dcim device roles read o k
 */
@@ -69,9 +70,39 @@ type DcimDeviceRolesReadOK struct {
 	Payload *models.DeviceRole
 }
 
+// IsSuccess returns true when this dcim device roles read o k response has a 2xx status code
+func (o *DcimDeviceRolesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim device roles read o k response has a 3xx status code
+func (o *DcimDeviceRolesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim device roles read o k response has a 4xx status code
+func (o *DcimDeviceRolesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim device roles read o k response has a 5xx status code
+func (o *DcimDeviceRolesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim device roles read o k response a status code equal to that given
+func (o *DcimDeviceRolesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimDeviceRolesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcimDeviceRolesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimDeviceRolesReadOK) String() string {
+	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcimDeviceRolesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimDeviceRolesReadOK) GetPayload() *models.DeviceRole {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimDeviceRolesReadDefault(code int) *DcimDeviceRolesReadDefault {
 	}
 }
 
-/* DcimDeviceRolesReadDefault describes a response with status code -1, with default header values.
+/*
+DcimDeviceRolesReadDefault describes a response with status code -1, with default header values.
 
 DcimDeviceRolesReadDefault dcim device roles read default
 */
@@ -110,9 +142,39 @@ func (o *DcimDeviceRolesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim device roles read default response has a 2xx status code
+func (o *DcimDeviceRolesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim device roles read default response has a 3xx status code
+func (o *DcimDeviceRolesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim device roles read default response has a 4xx status code
+func (o *DcimDeviceRolesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim device roles read default response has a 5xx status code
+func (o *DcimDeviceRolesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim device roles read default response a status code equal to that given
+func (o *DcimDeviceRolesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimDeviceRolesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcim_device-roles_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimDeviceRolesReadDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/device-roles/{id}/][%d] dcim_device-roles_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimDeviceRolesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

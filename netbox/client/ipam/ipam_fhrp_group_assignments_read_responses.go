@@ -61,7 +61,8 @@ func NewIpamFhrpGroupAssignmentsReadOK() *IpamFhrpGroupAssignmentsReadOK {
 	return &IpamFhrpGroupAssignmentsReadOK{}
 }
 
-/* IpamFhrpGroupAssignmentsReadOK describes a response with status code 200, with default header values.
+/*
+IpamFhrpGroupAssignmentsReadOK describes a response with status code 200, with default header values.
 
 IpamFhrpGroupAssignmentsReadOK ipam fhrp group assignments read o k
 */
@@ -69,9 +70,39 @@ type IpamFhrpGroupAssignmentsReadOK struct {
 	Payload *models.FHRPGroupAssignment
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments read o k response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments read o k response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam fhrp group assignments read o k response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam fhrp group assignments read o k response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam fhrp group assignments read o k response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamFhrpGroupAssignmentsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamFhrpGroupAssignmentsReadOK) String() string {
+	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamFhrpGroupAssignmentsReadOK) GetPayload() *models.FHRPGroupAssignment {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamFhrpGroupAssignmentsReadDefault(code int) *IpamFhrpGroupAssignmentsR
 	}
 }
 
-/* IpamFhrpGroupAssignmentsReadDefault describes a response with status code -1, with default header values.
+/*
+IpamFhrpGroupAssignmentsReadDefault describes a response with status code -1, with default header values.
 
 IpamFhrpGroupAssignmentsReadDefault ipam fhrp group assignments read default
 */
@@ -110,9 +142,39 @@ func (o *IpamFhrpGroupAssignmentsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments read default response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments read default response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam fhrp group assignments read default response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam fhrp group assignments read default response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam fhrp group assignments read default response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamFhrpGroupAssignmentsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamFhrpGroupAssignmentsReadDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamFhrpGroupAssignmentsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

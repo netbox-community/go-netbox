@@ -70,10 +70,12 @@ func NewCircuitsProvidersUpdateParamsWithHTTPClient(client *http.Client) *Circui
 	}
 }
 
-/* CircuitsProvidersUpdateParams contains all the parameters to send to the API endpoint
-   for the circuits providers update operation.
+/*
+CircuitsProvidersUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits providers update operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsProvidersUpdateParams struct {
 

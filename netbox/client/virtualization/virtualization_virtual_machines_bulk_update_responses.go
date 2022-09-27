@@ -61,7 +61,8 @@ func NewVirtualizationVirtualMachinesBulkUpdateOK() *VirtualizationVirtualMachin
 	return &VirtualizationVirtualMachinesBulkUpdateOK{}
 }
 
-/* VirtualizationVirtualMachinesBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+VirtualizationVirtualMachinesBulkUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationVirtualMachinesBulkUpdateOK virtualization virtual machines bulk update o k
 */
@@ -69,9 +70,39 @@ type VirtualizationVirtualMachinesBulkUpdateOK struct {
 	Payload *models.VirtualMachineWithConfigContext
 }
 
+// IsSuccess returns true when this virtualization virtual machines bulk update o k response has a 2xx status code
+func (o *VirtualizationVirtualMachinesBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization virtual machines bulk update o k response has a 3xx status code
+func (o *VirtualizationVirtualMachinesBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization virtual machines bulk update o k response has a 4xx status code
+func (o *VirtualizationVirtualMachinesBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization virtual machines bulk update o k response has a 5xx status code
+func (o *VirtualizationVirtualMachinesBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization virtual machines bulk update o k response a status code equal to that given
+func (o *VirtualizationVirtualMachinesBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VirtualizationVirtualMachinesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *VirtualizationVirtualMachinesBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *VirtualizationVirtualMachinesBulkUpdateOK) GetPayload() *models.VirtualMachineWithConfigContext {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationVirtualMachinesBulkUpdateDefault(code int) *Virtualization
 	}
 }
 
-/* VirtualizationVirtualMachinesBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationVirtualMachinesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesBulkUpdateDefault virtualization virtual machines bulk update default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationVirtualMachinesBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization virtual machines bulk update default response has a 2xx status code
+func (o *VirtualizationVirtualMachinesBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization virtual machines bulk update default response has a 3xx status code
+func (o *VirtualizationVirtualMachinesBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization virtual machines bulk update default response has a 4xx status code
+func (o *VirtualizationVirtualMachinesBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization virtual machines bulk update default response has a 5xx status code
+func (o *VirtualizationVirtualMachinesBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization virtual machines bulk update default response a status code equal to that given
+func (o *VirtualizationVirtualMachinesBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationVirtualMachinesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/virtual-machines/][%d] virtualization_virtual-machines_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationVirtualMachinesBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /virtualization/virtual-machines/][%d] virtualization_virtual-machines_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationVirtualMachinesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

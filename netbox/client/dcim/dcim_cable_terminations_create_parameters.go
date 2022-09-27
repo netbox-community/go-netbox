@@ -69,10 +69,12 @@ func NewDcimCableTerminationsCreateParamsWithHTTPClient(client *http.Client) *Dc
 	}
 }
 
-/* DcimCableTerminationsCreateParams contains all the parameters to send to the API endpoint
-   for the dcim cable terminations create operation.
+/*
+DcimCableTerminationsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim cable terminations create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimCableTerminationsCreateParams struct {
 

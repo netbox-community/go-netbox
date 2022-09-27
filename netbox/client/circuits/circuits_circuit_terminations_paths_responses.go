@@ -61,7 +61,8 @@ func NewCircuitsCircuitTerminationsPathsOK() *CircuitsCircuitTerminationsPathsOK
 	return &CircuitsCircuitTerminationsPathsOK{}
 }
 
-/* CircuitsCircuitTerminationsPathsOK describes a response with status code 200, with default header values.
+/*
+CircuitsCircuitTerminationsPathsOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTerminationsPathsOK circuits circuit terminations paths o k
 */
@@ -69,9 +70,39 @@ type CircuitsCircuitTerminationsPathsOK struct {
 	Payload *models.CircuitTermination
 }
 
+// IsSuccess returns true when this circuits circuit terminations paths o k response has a 2xx status code
+func (o *CircuitsCircuitTerminationsPathsOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuit terminations paths o k response has a 3xx status code
+func (o *CircuitsCircuitTerminationsPathsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuit terminations paths o k response has a 4xx status code
+func (o *CircuitsCircuitTerminationsPathsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuit terminations paths o k response has a 5xx status code
+func (o *CircuitsCircuitTerminationsPathsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuit terminations paths o k response a status code equal to that given
+func (o *CircuitsCircuitTerminationsPathsOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsCircuitTerminationsPathsOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuitsCircuitTerminationsPathsOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsCircuitTerminationsPathsOK) String() string {
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuitsCircuitTerminationsPathsOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsCircuitTerminationsPathsOK) GetPayload() *models.CircuitTermination {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsCircuitTerminationsPathsDefault(code int) *CircuitsCircuitTermin
 	}
 }
 
-/* CircuitsCircuitTerminationsPathsDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitTerminationsPathsDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsPathsDefault circuits circuit terminations paths default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsCircuitTerminationsPathsDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuit terminations paths default response has a 2xx status code
+func (o *CircuitsCircuitTerminationsPathsDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuit terminations paths default response has a 3xx status code
+func (o *CircuitsCircuitTerminationsPathsDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuit terminations paths default response has a 4xx status code
+func (o *CircuitsCircuitTerminationsPathsDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuit terminations paths default response has a 5xx status code
+func (o *CircuitsCircuitTerminationsPathsDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuit terminations paths default response a status code equal to that given
+func (o *CircuitsCircuitTerminationsPathsDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitTerminationsPathsDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuits_circuit-terminations_paths default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitTerminationsPathsDefault) String() string {
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/paths/][%d] circuits_circuit-terminations_paths default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitTerminationsPathsDefault) GetPayload() interface{} {
 	return o.Payload
 }

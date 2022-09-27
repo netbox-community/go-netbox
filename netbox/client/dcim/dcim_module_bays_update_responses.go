@@ -61,7 +61,8 @@ func NewDcimModuleBaysUpdateOK() *DcimModuleBaysUpdateOK {
 	return &DcimModuleBaysUpdateOK{}
 }
 
-/* DcimModuleBaysUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimModuleBaysUpdateOK describes a response with status code 200, with default header values.
 
 DcimModuleBaysUpdateOK dcim module bays update o k
 */
@@ -69,9 +70,39 @@ type DcimModuleBaysUpdateOK struct {
 	Payload *models.ModuleBay
 }
 
+// IsSuccess returns true when this dcim module bays update o k response has a 2xx status code
+func (o *DcimModuleBaysUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim module bays update o k response has a 3xx status code
+func (o *DcimModuleBaysUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim module bays update o k response has a 4xx status code
+func (o *DcimModuleBaysUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim module bays update o k response has a 5xx status code
+func (o *DcimModuleBaysUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim module bays update o k response a status code equal to that given
+func (o *DcimModuleBaysUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimModuleBaysUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcimModuleBaysUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimModuleBaysUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcimModuleBaysUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimModuleBaysUpdateOK) GetPayload() *models.ModuleBay {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimModuleBaysUpdateDefault(code int) *DcimModuleBaysUpdateDefault {
 	}
 }
 
-/* DcimModuleBaysUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimModuleBaysUpdateDefault describes a response with status code -1, with default header values.
 
 DcimModuleBaysUpdateDefault dcim module bays update default
 */
@@ -110,9 +142,39 @@ func (o *DcimModuleBaysUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim module bays update default response has a 2xx status code
+func (o *DcimModuleBaysUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim module bays update default response has a 3xx status code
+func (o *DcimModuleBaysUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim module bays update default response has a 4xx status code
+func (o *DcimModuleBaysUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim module bays update default response has a 5xx status code
+func (o *DcimModuleBaysUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim module bays update default response a status code equal to that given
+func (o *DcimModuleBaysUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimModuleBaysUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcim_module-bays_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimModuleBaysUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/module-bays/{id}/][%d] dcim_module-bays_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimModuleBaysUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

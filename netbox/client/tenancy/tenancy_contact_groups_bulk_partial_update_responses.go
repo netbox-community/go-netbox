@@ -61,7 +61,8 @@ func NewTenancyContactGroupsBulkPartialUpdateOK() *TenancyContactGroupsBulkParti
 	return &TenancyContactGroupsBulkPartialUpdateOK{}
 }
 
-/* TenancyContactGroupsBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+TenancyContactGroupsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 TenancyContactGroupsBulkPartialUpdateOK tenancy contact groups bulk partial update o k
 */
@@ -69,9 +70,39 @@ type TenancyContactGroupsBulkPartialUpdateOK struct {
 	Payload *models.ContactGroup
 }
 
+// IsSuccess returns true when this tenancy contact groups bulk partial update o k response has a 2xx status code
+func (o *TenancyContactGroupsBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contact groups bulk partial update o k response has a 3xx status code
+func (o *TenancyContactGroupsBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contact groups bulk partial update o k response has a 4xx status code
+func (o *TenancyContactGroupsBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contact groups bulk partial update o k response has a 5xx status code
+func (o *TenancyContactGroupsBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contact groups bulk partial update o k response a status code equal to that given
+func (o *TenancyContactGroupsBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyContactGroupsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/contact-groups/][%d] tenancyContactGroupsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyContactGroupsBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /tenancy/contact-groups/][%d] tenancyContactGroupsBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyContactGroupsBulkPartialUpdateOK) GetPayload() *models.ContactGroup {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewTenancyContactGroupsBulkPartialUpdateDefault(code int) *TenancyContactGr
 	}
 }
 
-/* TenancyContactGroupsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactGroupsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 TenancyContactGroupsBulkPartialUpdateDefault tenancy contact groups bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *TenancyContactGroupsBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contact groups bulk partial update default response has a 2xx status code
+func (o *TenancyContactGroupsBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contact groups bulk partial update default response has a 3xx status code
+func (o *TenancyContactGroupsBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contact groups bulk partial update default response has a 4xx status code
+func (o *TenancyContactGroupsBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contact groups bulk partial update default response has a 5xx status code
+func (o *TenancyContactGroupsBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contact groups bulk partial update default response a status code equal to that given
+func (o *TenancyContactGroupsBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactGroupsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/contact-groups/][%d] tenancy_contact-groups_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactGroupsBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /tenancy/contact-groups/][%d] tenancy_contact-groups_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactGroupsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

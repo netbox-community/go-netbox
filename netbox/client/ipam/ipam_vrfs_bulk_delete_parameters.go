@@ -67,10 +67,12 @@ func NewIpamVrfsBulkDeleteParamsWithHTTPClient(client *http.Client) *IpamVrfsBul
 	}
 }
 
-/* IpamVrfsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam vrfs bulk delete operation.
+/*
+IpamVrfsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vrfs bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVrfsBulkDeleteParams struct {
 	timeout    time.Duration

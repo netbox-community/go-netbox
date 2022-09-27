@@ -68,10 +68,12 @@ func NewIpamVrfsListParamsWithHTTPClient(client *http.Client) *IpamVrfsListParam
 	}
 }
 
-/* IpamVrfsListParams contains all the parameters to send to the API endpoint
-   for the ipam vrfs list operation.
+/*
+IpamVrfsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vrfs list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVrfsListParams struct {
 

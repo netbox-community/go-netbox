@@ -69,10 +69,12 @@ func NewDcimLocationsBulkPartialUpdateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* DcimLocationsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim locations bulk partial update operation.
+/*
+DcimLocationsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim locations bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimLocationsBulkPartialUpdateParams struct {
 

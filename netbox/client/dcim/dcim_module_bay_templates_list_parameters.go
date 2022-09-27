@@ -68,10 +68,12 @@ func NewDcimModuleBayTemplatesListParamsWithHTTPClient(client *http.Client) *Dci
 	}
 }
 
-/* DcimModuleBayTemplatesListParams contains all the parameters to send to the API endpoint
-   for the dcim module bay templates list operation.
+/*
+DcimModuleBayTemplatesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module bay templates list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleBayTemplatesListParams struct {
 

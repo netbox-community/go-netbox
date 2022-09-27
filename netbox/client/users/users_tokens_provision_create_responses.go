@@ -59,14 +59,44 @@ func NewUsersTokensProvisionCreateCreated() *UsersTokensProvisionCreateCreated {
 	return &UsersTokensProvisionCreateCreated{}
 }
 
-/* UsersTokensProvisionCreateCreated describes a response with status code 201, with default header values.
+/*
+UsersTokensProvisionCreateCreated describes a response with status code 201, with default header values.
 
 UsersTokensProvisionCreateCreated users tokens provision create created
 */
 type UsersTokensProvisionCreateCreated struct {
 }
 
+// IsSuccess returns true when this users tokens provision create created response has a 2xx status code
+func (o *UsersTokensProvisionCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users tokens provision create created response has a 3xx status code
+func (o *UsersTokensProvisionCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users tokens provision create created response has a 4xx status code
+func (o *UsersTokensProvisionCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users tokens provision create created response has a 5xx status code
+func (o *UsersTokensProvisionCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users tokens provision create created response a status code equal to that given
+func (o *UsersTokensProvisionCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *UsersTokensProvisionCreateCreated) Error() string {
+	return fmt.Sprintf("[POST /users/tokens/provision/][%d] usersTokensProvisionCreateCreated ", 201)
+}
+
+func (o *UsersTokensProvisionCreateCreated) String() string {
 	return fmt.Sprintf("[POST /users/tokens/provision/][%d] usersTokensProvisionCreateCreated ", 201)
 }
 
@@ -82,7 +112,8 @@ func NewUsersTokensProvisionCreateDefault(code int) *UsersTokensProvisionCreateD
 	}
 }
 
-/* UsersTokensProvisionCreateDefault describes a response with status code -1, with default header values.
+/*
+UsersTokensProvisionCreateDefault describes a response with status code -1, with default header values.
 
 UsersTokensProvisionCreateDefault users tokens provision create default
 */
@@ -97,9 +128,39 @@ func (o *UsersTokensProvisionCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users tokens provision create default response has a 2xx status code
+func (o *UsersTokensProvisionCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users tokens provision create default response has a 3xx status code
+func (o *UsersTokensProvisionCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users tokens provision create default response has a 4xx status code
+func (o *UsersTokensProvisionCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users tokens provision create default response has a 5xx status code
+func (o *UsersTokensProvisionCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users tokens provision create default response a status code equal to that given
+func (o *UsersTokensProvisionCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersTokensProvisionCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /users/tokens/provision/][%d] users_tokens_provision_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersTokensProvisionCreateDefault) String() string {
+	return fmt.Sprintf("[POST /users/tokens/provision/][%d] users_tokens_provision_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersTokensProvisionCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

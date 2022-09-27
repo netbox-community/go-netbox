@@ -59,14 +59,44 @@ func NewIpamL2vpnTerminationsBulkDeleteNoContent() *IpamL2vpnTerminationsBulkDel
 	return &IpamL2vpnTerminationsBulkDeleteNoContent{}
 }
 
-/* IpamL2vpnTerminationsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamL2vpnTerminationsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamL2vpnTerminationsBulkDeleteNoContent ipam l2vpn terminations bulk delete no content
 */
 type IpamL2vpnTerminationsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations bulk delete no content response has a 2xx status code
+func (o *IpamL2vpnTerminationsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations bulk delete no content response has a 3xx status code
+func (o *IpamL2vpnTerminationsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam l2vpn terminations bulk delete no content response has a 4xx status code
+func (o *IpamL2vpnTerminationsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam l2vpn terminations bulk delete no content response has a 5xx status code
+func (o *IpamL2vpnTerminationsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam l2vpn terminations bulk delete no content response a status code equal to that given
+func (o *IpamL2vpnTerminationsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamL2vpnTerminationsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsBulkDeleteNoContent ", 204)
+}
+
+func (o *IpamL2vpnTerminationsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamL2vpnTerminationsBulkDeleteDefault(code int) *IpamL2vpnTerminationsB
 	}
 }
 
-/* IpamL2vpnTerminationsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamL2vpnTerminationsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamL2vpnTerminationsBulkDeleteDefault ipam l2vpn terminations bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamL2vpnTerminationsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations bulk delete default response has a 2xx status code
+func (o *IpamL2vpnTerminationsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations bulk delete default response has a 3xx status code
+func (o *IpamL2vpnTerminationsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam l2vpn terminations bulk delete default response has a 4xx status code
+func (o *IpamL2vpnTerminationsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam l2vpn terminations bulk delete default response has a 5xx status code
+func (o *IpamL2vpnTerminationsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam l2vpn terminations bulk delete default response a status code equal to that given
+func (o *IpamL2vpnTerminationsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamL2vpnTerminationsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

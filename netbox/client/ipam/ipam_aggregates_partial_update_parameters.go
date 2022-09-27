@@ -70,10 +70,12 @@ func NewIpamAggregatesPartialUpdateParamsWithHTTPClient(client *http.Client) *Ip
 	}
 }
 
-/* IpamAggregatesPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam aggregates partial update operation.
+/*
+IpamAggregatesPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam aggregates partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAggregatesPartialUpdateParams struct {
 

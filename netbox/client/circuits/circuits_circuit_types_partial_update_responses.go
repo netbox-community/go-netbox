@@ -61,7 +61,8 @@ func NewCircuitsCircuitTypesPartialUpdateOK() *CircuitsCircuitTypesPartialUpdate
 	return &CircuitsCircuitTypesPartialUpdateOK{}
 }
 
-/* CircuitsCircuitTypesPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+CircuitsCircuitTypesPartialUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTypesPartialUpdateOK circuits circuit types partial update o k
 */
@@ -69,9 +70,39 @@ type CircuitsCircuitTypesPartialUpdateOK struct {
 	Payload *models.CircuitType
 }
 
+// IsSuccess returns true when this circuits circuit types partial update o k response has a 2xx status code
+func (o *CircuitsCircuitTypesPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuit types partial update o k response has a 3xx status code
+func (o *CircuitsCircuitTypesPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuit types partial update o k response has a 4xx status code
+func (o *CircuitsCircuitTypesPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuit types partial update o k response has a 5xx status code
+func (o *CircuitsCircuitTypesPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuit types partial update o k response a status code equal to that given
+func (o *CircuitsCircuitTypesPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsCircuitTypesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/circuit-types/{id}/][%d] circuitsCircuitTypesPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsCircuitTypesPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /circuits/circuit-types/{id}/][%d] circuitsCircuitTypesPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsCircuitTypesPartialUpdateOK) GetPayload() *models.CircuitType {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsCircuitTypesPartialUpdateDefault(code int) *CircuitsCircuitTypes
 	}
 }
 
-/* CircuitsCircuitTypesPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitTypesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTypesPartialUpdateDefault circuits circuit types partial update default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsCircuitTypesPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuit types partial update default response has a 2xx status code
+func (o *CircuitsCircuitTypesPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuit types partial update default response has a 3xx status code
+func (o *CircuitsCircuitTypesPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuit types partial update default response has a 4xx status code
+func (o *CircuitsCircuitTypesPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuit types partial update default response has a 5xx status code
+func (o *CircuitsCircuitTypesPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuit types partial update default response a status code equal to that given
+func (o *CircuitsCircuitTypesPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitTypesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/circuit-types/{id}/][%d] circuits_circuit-types_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitTypesPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /circuits/circuit-types/{id}/][%d] circuits_circuit-types_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitTypesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

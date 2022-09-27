@@ -66,7 +66,8 @@ func NewExtrasCustomLinksListOK() *ExtrasCustomLinksListOK {
 	return &ExtrasCustomLinksListOK{}
 }
 
-/* ExtrasCustomLinksListOK describes a response with status code 200, with default header values.
+/*
+ExtrasCustomLinksListOK describes a response with status code 200, with default header values.
 
 ExtrasCustomLinksListOK extras custom links list o k
 */
@@ -74,9 +75,39 @@ type ExtrasCustomLinksListOK struct {
 	Payload *ExtrasCustomLinksListOKBody
 }
 
+// IsSuccess returns true when this extras custom links list o k response has a 2xx status code
+func (o *ExtrasCustomLinksListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras custom links list o k response has a 3xx status code
+func (o *ExtrasCustomLinksListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras custom links list o k response has a 4xx status code
+func (o *ExtrasCustomLinksListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras custom links list o k response has a 5xx status code
+func (o *ExtrasCustomLinksListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras custom links list o k response a status code equal to that given
+func (o *ExtrasCustomLinksListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasCustomLinksListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-links/][%d] extrasCustomLinksListOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasCustomLinksListOK) String() string {
+	return fmt.Sprintf("[GET /extras/custom-links/][%d] extrasCustomLinksListOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasCustomLinksListOK) GetPayload() *ExtrasCustomLinksListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewExtrasCustomLinksListDefault(code int) *ExtrasCustomLinksListDefault {
 	}
 }
 
-/* ExtrasCustomLinksListDefault describes a response with status code -1, with default header values.
+/*
+ExtrasCustomLinksListDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomLinksListDefault extras custom links list default
 */
@@ -115,9 +147,39 @@ func (o *ExtrasCustomLinksListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras custom links list default response has a 2xx status code
+func (o *ExtrasCustomLinksListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras custom links list default response has a 3xx status code
+func (o *ExtrasCustomLinksListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras custom links list default response has a 4xx status code
+func (o *ExtrasCustomLinksListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras custom links list default response has a 5xx status code
+func (o *ExtrasCustomLinksListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras custom links list default response a status code equal to that given
+func (o *ExtrasCustomLinksListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasCustomLinksListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-links/][%d] extras_custom-links_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasCustomLinksListDefault) String() string {
+	return fmt.Sprintf("[GET /extras/custom-links/][%d] extras_custom-links_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasCustomLinksListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *ExtrasCustomLinksListDefault) readResponse(response runtime.ClientRespo
 	return nil
 }
 
-/*ExtrasCustomLinksListOKBody extras custom links list o k body
+/*
+ExtrasCustomLinksListOKBody extras custom links list o k body
 swagger:model ExtrasCustomLinksListOKBody
 */
 type ExtrasCustomLinksListOKBody struct {

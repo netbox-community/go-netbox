@@ -69,10 +69,12 @@ func NewUsersTokensCreateParamsWithHTTPClient(client *http.Client) *UsersTokensC
 	}
 }
 
-/* UsersTokensCreateParams contains all the parameters to send to the API endpoint
-   for the users tokens create operation.
+/*
+UsersTokensCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users tokens create operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersTokensCreateParams struct {
 

@@ -70,10 +70,12 @@ func NewTenancyTenantsPartialUpdateParamsWithHTTPClient(client *http.Client) *Te
 	}
 }
 
-/* TenancyTenantsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the tenancy tenants partial update operation.
+/*
+TenancyTenantsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy tenants partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyTenantsPartialUpdateParams struct {
 

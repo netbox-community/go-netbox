@@ -67,10 +67,12 @@ func NewDcimRacksBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimRacksB
 	}
 }
 
-/* DcimRacksBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim racks bulk delete operation.
+/*
+DcimRacksBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim racks bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRacksBulkDeleteParams struct {
 	timeout    time.Duration

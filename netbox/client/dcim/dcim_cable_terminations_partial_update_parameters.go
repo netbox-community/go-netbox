@@ -70,10 +70,12 @@ func NewDcimCableTerminationsPartialUpdateParamsWithHTTPClient(client *http.Clie
 	}
 }
 
-/* DcimCableTerminationsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim cable terminations partial update operation.
+/*
+DcimCableTerminationsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim cable terminations partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimCableTerminationsPartialUpdateParams struct {
 

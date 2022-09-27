@@ -61,7 +61,8 @@ func NewIpamRouteTargetsBulkUpdateOK() *IpamRouteTargetsBulkUpdateOK {
 	return &IpamRouteTargetsBulkUpdateOK{}
 }
 
-/* IpamRouteTargetsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamRouteTargetsBulkUpdateOK describes a response with status code 200, with default header values.
 
 IpamRouteTargetsBulkUpdateOK ipam route targets bulk update o k
 */
@@ -69,9 +70,39 @@ type IpamRouteTargetsBulkUpdateOK struct {
 	Payload *models.RouteTarget
 }
 
+// IsSuccess returns true when this ipam route targets bulk update o k response has a 2xx status code
+func (o *IpamRouteTargetsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam route targets bulk update o k response has a 3xx status code
+func (o *IpamRouteTargetsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam route targets bulk update o k response has a 4xx status code
+func (o *IpamRouteTargetsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam route targets bulk update o k response has a 5xx status code
+func (o *IpamRouteTargetsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam route targets bulk update o k response a status code equal to that given
+func (o *IpamRouteTargetsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamRouteTargetsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/route-targets/][%d] ipamRouteTargetsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamRouteTargetsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /ipam/route-targets/][%d] ipamRouteTargetsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamRouteTargetsBulkUpdateOK) GetPayload() *models.RouteTarget {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamRouteTargetsBulkUpdateDefault(code int) *IpamRouteTargetsBulkUpdateD
 	}
 }
 
-/* IpamRouteTargetsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamRouteTargetsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsBulkUpdateDefault ipam route targets bulk update default
 */
@@ -110,9 +142,39 @@ func (o *IpamRouteTargetsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam route targets bulk update default response has a 2xx status code
+func (o *IpamRouteTargetsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam route targets bulk update default response has a 3xx status code
+func (o *IpamRouteTargetsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam route targets bulk update default response has a 4xx status code
+func (o *IpamRouteTargetsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam route targets bulk update default response has a 5xx status code
+func (o *IpamRouteTargetsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam route targets bulk update default response a status code equal to that given
+func (o *IpamRouteTargetsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamRouteTargetsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/route-targets/][%d] ipam_route-targets_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamRouteTargetsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /ipam/route-targets/][%d] ipam_route-targets_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamRouteTargetsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

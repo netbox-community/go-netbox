@@ -61,7 +61,8 @@ func NewIpamVrfsReadOK() *IpamVrfsReadOK {
 	return &IpamVrfsReadOK{}
 }
 
-/* IpamVrfsReadOK describes a response with status code 200, with default header values.
+/*
+IpamVrfsReadOK describes a response with status code 200, with default header values.
 
 IpamVrfsReadOK ipam vrfs read o k
 */
@@ -69,9 +70,39 @@ type IpamVrfsReadOK struct {
 	Payload *models.VRF
 }
 
+// IsSuccess returns true when this ipam vrfs read o k response has a 2xx status code
+func (o *IpamVrfsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam vrfs read o k response has a 3xx status code
+func (o *IpamVrfsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam vrfs read o k response has a 4xx status code
+func (o *IpamVrfsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam vrfs read o k response has a 5xx status code
+func (o *IpamVrfsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam vrfs read o k response a status code equal to that given
+func (o *IpamVrfsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamVrfsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipamVrfsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamVrfsReadOK) String() string {
+	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipamVrfsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamVrfsReadOK) GetPayload() *models.VRF {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamVrfsReadDefault(code int) *IpamVrfsReadDefault {
 	}
 }
 
-/* IpamVrfsReadDefault describes a response with status code -1, with default header values.
+/*
+IpamVrfsReadDefault describes a response with status code -1, with default header values.
 
 IpamVrfsReadDefault ipam vrfs read default
 */
@@ -110,9 +142,39 @@ func (o *IpamVrfsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam vrfs read default response has a 2xx status code
+func (o *IpamVrfsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam vrfs read default response has a 3xx status code
+func (o *IpamVrfsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam vrfs read default response has a 4xx status code
+func (o *IpamVrfsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam vrfs read default response has a 5xx status code
+func (o *IpamVrfsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam vrfs read default response a status code equal to that given
+func (o *IpamVrfsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamVrfsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipam_vrfs_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamVrfsReadDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/vrfs/{id}/][%d] ipam_vrfs_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamVrfsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

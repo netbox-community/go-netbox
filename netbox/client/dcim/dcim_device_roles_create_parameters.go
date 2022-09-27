@@ -69,10 +69,12 @@ func NewDcimDeviceRolesCreateParamsWithHTTPClient(client *http.Client) *DcimDevi
 	}
 }
 
-/* DcimDeviceRolesCreateParams contains all the parameters to send to the API endpoint
-   for the dcim device roles create operation.
+/*
+DcimDeviceRolesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim device roles create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimDeviceRolesCreateParams struct {
 

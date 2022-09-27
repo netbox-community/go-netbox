@@ -61,7 +61,8 @@ func NewDcimInventoryItemsBulkPartialUpdateOK() *DcimInventoryItemsBulkPartialUp
 	return &DcimInventoryItemsBulkPartialUpdateOK{}
 }
 
-/* DcimInventoryItemsBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimInventoryItemsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimInventoryItemsBulkPartialUpdateOK dcim inventory items bulk partial update o k
 */
@@ -69,9 +70,39 @@ type DcimInventoryItemsBulkPartialUpdateOK struct {
 	Payload *models.InventoryItem
 }
 
+// IsSuccess returns true when this dcim inventory items bulk partial update o k response has a 2xx status code
+func (o *DcimInventoryItemsBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory items bulk partial update o k response has a 3xx status code
+func (o *DcimInventoryItemsBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory items bulk partial update o k response has a 4xx status code
+func (o *DcimInventoryItemsBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory items bulk partial update o k response has a 5xx status code
+func (o *DcimInventoryItemsBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory items bulk partial update o k response a status code equal to that given
+func (o *DcimInventoryItemsBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimInventoryItemsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/inventory-items/][%d] dcimInventoryItemsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimInventoryItemsBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/inventory-items/][%d] dcimInventoryItemsBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimInventoryItemsBulkPartialUpdateOK) GetPayload() *models.InventoryItem {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInventoryItemsBulkPartialUpdateDefault(code int) *DcimInventoryItems
 	}
 }
 
-/* DcimInventoryItemsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemsBulkPartialUpdateDefault dcim inventory items bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimInventoryItemsBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory items bulk partial update default response has a 2xx status code
+func (o *DcimInventoryItemsBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory items bulk partial update default response has a 3xx status code
+func (o *DcimInventoryItemsBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory items bulk partial update default response has a 4xx status code
+func (o *DcimInventoryItemsBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory items bulk partial update default response has a 5xx status code
+func (o *DcimInventoryItemsBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory items bulk partial update default response a status code equal to that given
+func (o *DcimInventoryItemsBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/inventory-items/][%d] dcim_inventory-items_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemsBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/inventory-items/][%d] dcim_inventory-items_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

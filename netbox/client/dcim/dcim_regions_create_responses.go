@@ -61,7 +61,8 @@ func NewDcimRegionsCreateCreated() *DcimRegionsCreateCreated {
 	return &DcimRegionsCreateCreated{}
 }
 
-/* DcimRegionsCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimRegionsCreateCreated describes a response with status code 201, with default header values.
 
 DcimRegionsCreateCreated dcim regions create created
 */
@@ -69,9 +70,39 @@ type DcimRegionsCreateCreated struct {
 	Payload *models.Region
 }
 
+// IsSuccess returns true when this dcim regions create created response has a 2xx status code
+func (o *DcimRegionsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim regions create created response has a 3xx status code
+func (o *DcimRegionsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim regions create created response has a 4xx status code
+func (o *DcimRegionsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim regions create created response has a 5xx status code
+func (o *DcimRegionsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim regions create created response a status code equal to that given
+func (o *DcimRegionsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimRegionsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/regions/][%d] dcimRegionsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimRegionsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/regions/][%d] dcimRegionsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimRegionsCreateCreated) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRegionsCreateDefault(code int) *DcimRegionsCreateDefault {
 	}
 }
 
-/* DcimRegionsCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimRegionsCreateDefault describes a response with status code -1, with default header values.
 
 DcimRegionsCreateDefault dcim regions create default
 */
@@ -110,9 +142,39 @@ func (o *DcimRegionsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim regions create default response has a 2xx status code
+func (o *DcimRegionsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim regions create default response has a 3xx status code
+func (o *DcimRegionsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim regions create default response has a 4xx status code
+func (o *DcimRegionsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim regions create default response has a 5xx status code
+func (o *DcimRegionsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim regions create default response a status code equal to that given
+func (o *DcimRegionsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRegionsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/regions/][%d] dcim_regions_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRegionsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/regions/][%d] dcim_regions_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRegionsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

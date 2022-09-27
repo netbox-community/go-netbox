@@ -69,10 +69,12 @@ func NewDcimPowerPanelsBulkUpdateParamsWithHTTPClient(client *http.Client) *Dcim
 	}
 }
 
-/* DcimPowerPanelsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim power panels bulk update operation.
+/*
+DcimPowerPanelsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power panels bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerPanelsBulkUpdateParams struct {
 

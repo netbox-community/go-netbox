@@ -61,7 +61,8 @@ func NewCircuitsProviderNetworksCreateCreated() *CircuitsProviderNetworksCreateC
 	return &CircuitsProviderNetworksCreateCreated{}
 }
 
-/* CircuitsProviderNetworksCreateCreated describes a response with status code 201, with default header values.
+/*
+CircuitsProviderNetworksCreateCreated describes a response with status code 201, with default header values.
 
 CircuitsProviderNetworksCreateCreated circuits provider networks create created
 */
@@ -69,9 +70,39 @@ type CircuitsProviderNetworksCreateCreated struct {
 	Payload *models.ProviderNetwork
 }
 
+// IsSuccess returns true when this circuits provider networks create created response has a 2xx status code
+func (o *CircuitsProviderNetworksCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits provider networks create created response has a 3xx status code
+func (o *CircuitsProviderNetworksCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits provider networks create created response has a 4xx status code
+func (o *CircuitsProviderNetworksCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits provider networks create created response has a 5xx status code
+func (o *CircuitsProviderNetworksCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits provider networks create created response a status code equal to that given
+func (o *CircuitsProviderNetworksCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *CircuitsProviderNetworksCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /circuits/provider-networks/][%d] circuitsProviderNetworksCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *CircuitsProviderNetworksCreateCreated) String() string {
+	return fmt.Sprintf("[POST /circuits/provider-networks/][%d] circuitsProviderNetworksCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *CircuitsProviderNetworksCreateCreated) GetPayload() *models.ProviderNetwork {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsProviderNetworksCreateDefault(code int) *CircuitsProviderNetwork
 	}
 }
 
-/* CircuitsProviderNetworksCreateDefault describes a response with status code -1, with default header values.
+/*
+CircuitsProviderNetworksCreateDefault describes a response with status code -1, with default header values.
 
 CircuitsProviderNetworksCreateDefault circuits provider networks create default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsProviderNetworksCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits provider networks create default response has a 2xx status code
+func (o *CircuitsProviderNetworksCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits provider networks create default response has a 3xx status code
+func (o *CircuitsProviderNetworksCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits provider networks create default response has a 4xx status code
+func (o *CircuitsProviderNetworksCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits provider networks create default response has a 5xx status code
+func (o *CircuitsProviderNetworksCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits provider networks create default response a status code equal to that given
+func (o *CircuitsProviderNetworksCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsProviderNetworksCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /circuits/provider-networks/][%d] circuits_provider-networks_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsProviderNetworksCreateDefault) String() string {
+	return fmt.Sprintf("[POST /circuits/provider-networks/][%d] circuits_provider-networks_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsProviderNetworksCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

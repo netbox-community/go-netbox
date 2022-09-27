@@ -68,10 +68,12 @@ func NewWirelessWirelessLanGroupsListParamsWithHTTPClient(client *http.Client) *
 	}
 }
 
-/* WirelessWirelessLanGroupsListParams contains all the parameters to send to the API endpoint
-   for the wireless wireless lan groups list operation.
+/*
+WirelessWirelessLanGroupsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless lan groups list operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLanGroupsListParams struct {
 

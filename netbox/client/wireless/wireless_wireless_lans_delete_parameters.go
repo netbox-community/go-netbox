@@ -68,10 +68,12 @@ func NewWirelessWirelessLansDeleteParamsWithHTTPClient(client *http.Client) *Wir
 	}
 }
 
-/* WirelessWirelessLansDeleteParams contains all the parameters to send to the API endpoint
-   for the wireless wireless lans delete operation.
+/*
+WirelessWirelessLansDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless lans delete operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLansDeleteParams struct {
 

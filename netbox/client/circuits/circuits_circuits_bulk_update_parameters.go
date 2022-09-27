@@ -69,10 +69,12 @@ func NewCircuitsCircuitsBulkUpdateParamsWithHTTPClient(client *http.Client) *Cir
 	}
 }
 
-/* CircuitsCircuitsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the circuits circuits bulk update operation.
+/*
+CircuitsCircuitsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits circuits bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsCircuitsBulkUpdateParams struct {
 

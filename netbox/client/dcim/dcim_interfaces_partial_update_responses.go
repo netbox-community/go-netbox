@@ -61,7 +61,8 @@ func NewDcimInterfacesPartialUpdateOK() *DcimInterfacesPartialUpdateOK {
 	return &DcimInterfacesPartialUpdateOK{}
 }
 
-/* DcimInterfacesPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimInterfacesPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimInterfacesPartialUpdateOK dcim interfaces partial update o k
 */
@@ -69,9 +70,39 @@ type DcimInterfacesPartialUpdateOK struct {
 	Payload *models.Interface
 }
 
+// IsSuccess returns true when this dcim interfaces partial update o k response has a 2xx status code
+func (o *DcimInterfacesPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim interfaces partial update o k response has a 3xx status code
+func (o *DcimInterfacesPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim interfaces partial update o k response has a 4xx status code
+func (o *DcimInterfacesPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim interfaces partial update o k response has a 5xx status code
+func (o *DcimInterfacesPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim interfaces partial update o k response a status code equal to that given
+func (o *DcimInterfacesPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimInterfacesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcimInterfacesPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimInterfacesPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcimInterfacesPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimInterfacesPartialUpdateOK) GetPayload() *models.Interface {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInterfacesPartialUpdateDefault(code int) *DcimInterfacesPartialUpdat
 	}
 }
 
-/* DcimInterfacesPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimInterfacesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInterfacesPartialUpdateDefault dcim interfaces partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimInterfacesPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim interfaces partial update default response has a 2xx status code
+func (o *DcimInterfacesPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim interfaces partial update default response has a 3xx status code
+func (o *DcimInterfacesPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim interfaces partial update default response has a 4xx status code
+func (o *DcimInterfacesPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim interfaces partial update default response has a 5xx status code
+func (o *DcimInterfacesPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim interfaces partial update default response a status code equal to that given
+func (o *DcimInterfacesPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInterfacesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcim_interfaces_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInterfacesPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/interfaces/{id}/][%d] dcim_interfaces_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInterfacesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

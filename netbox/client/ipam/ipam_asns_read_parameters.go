@@ -68,10 +68,12 @@ func NewIpamAsnsReadParamsWithHTTPClient(client *http.Client) *IpamAsnsReadParam
 	}
 }
 
-/* IpamAsnsReadParams contains all the parameters to send to the API endpoint
-   for the ipam asns read operation.
+/*
+IpamAsnsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam asns read operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAsnsReadParams struct {
 

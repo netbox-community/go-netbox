@@ -66,7 +66,8 @@ func NewExtrasExportTemplatesListOK() *ExtrasExportTemplatesListOK {
 	return &ExtrasExportTemplatesListOK{}
 }
 
-/* ExtrasExportTemplatesListOK describes a response with status code 200, with default header values.
+/*
+ExtrasExportTemplatesListOK describes a response with status code 200, with default header values.
 
 ExtrasExportTemplatesListOK extras export templates list o k
 */
@@ -74,9 +75,39 @@ type ExtrasExportTemplatesListOK struct {
 	Payload *ExtrasExportTemplatesListOKBody
 }
 
+// IsSuccess returns true when this extras export templates list o k response has a 2xx status code
+func (o *ExtrasExportTemplatesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras export templates list o k response has a 3xx status code
+func (o *ExtrasExportTemplatesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras export templates list o k response has a 4xx status code
+func (o *ExtrasExportTemplatesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras export templates list o k response has a 5xx status code
+func (o *ExtrasExportTemplatesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras export templates list o k response a status code equal to that given
+func (o *ExtrasExportTemplatesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasExportTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/export-templates/][%d] extrasExportTemplatesListOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasExportTemplatesListOK) String() string {
+	return fmt.Sprintf("[GET /extras/export-templates/][%d] extrasExportTemplatesListOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasExportTemplatesListOK) GetPayload() *ExtrasExportTemplatesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewExtrasExportTemplatesListDefault(code int) *ExtrasExportTemplatesListDef
 	}
 }
 
-/* ExtrasExportTemplatesListDefault describes a response with status code -1, with default header values.
+/*
+ExtrasExportTemplatesListDefault describes a response with status code -1, with default header values.
 
 ExtrasExportTemplatesListDefault extras export templates list default
 */
@@ -115,9 +147,39 @@ func (o *ExtrasExportTemplatesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras export templates list default response has a 2xx status code
+func (o *ExtrasExportTemplatesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras export templates list default response has a 3xx status code
+func (o *ExtrasExportTemplatesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras export templates list default response has a 4xx status code
+func (o *ExtrasExportTemplatesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras export templates list default response has a 5xx status code
+func (o *ExtrasExportTemplatesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras export templates list default response a status code equal to that given
+func (o *ExtrasExportTemplatesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasExportTemplatesListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/export-templates/][%d] extras_export-templates_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasExportTemplatesListDefault) String() string {
+	return fmt.Sprintf("[GET /extras/export-templates/][%d] extras_export-templates_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasExportTemplatesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *ExtrasExportTemplatesListDefault) readResponse(response runtime.ClientR
 	return nil
 }
 
-/*ExtrasExportTemplatesListOKBody extras export templates list o k body
+/*
+ExtrasExportTemplatesListOKBody extras export templates list o k body
 swagger:model ExtrasExportTemplatesListOKBody
 */
 type ExtrasExportTemplatesListOKBody struct {

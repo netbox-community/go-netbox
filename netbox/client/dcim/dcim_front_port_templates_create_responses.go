@@ -61,7 +61,8 @@ func NewDcimFrontPortTemplatesCreateCreated() *DcimFrontPortTemplatesCreateCreat
 	return &DcimFrontPortTemplatesCreateCreated{}
 }
 
-/* DcimFrontPortTemplatesCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimFrontPortTemplatesCreateCreated describes a response with status code 201, with default header values.
 
 DcimFrontPortTemplatesCreateCreated dcim front port templates create created
 */
@@ -69,9 +70,39 @@ type DcimFrontPortTemplatesCreateCreated struct {
 	Payload *models.FrontPortTemplate
 }
 
+// IsSuccess returns true when this dcim front port templates create created response has a 2xx status code
+func (o *DcimFrontPortTemplatesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim front port templates create created response has a 3xx status code
+func (o *DcimFrontPortTemplatesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim front port templates create created response has a 4xx status code
+func (o *DcimFrontPortTemplatesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim front port templates create created response has a 5xx status code
+func (o *DcimFrontPortTemplatesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim front port templates create created response a status code equal to that given
+func (o *DcimFrontPortTemplatesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimFrontPortTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/front-port-templates/][%d] dcimFrontPortTemplatesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimFrontPortTemplatesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/front-port-templates/][%d] dcimFrontPortTemplatesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimFrontPortTemplatesCreateCreated) GetPayload() *models.FrontPortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimFrontPortTemplatesCreateDefault(code int) *DcimFrontPortTemplatesCre
 	}
 }
 
-/* DcimFrontPortTemplatesCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimFrontPortTemplatesCreateDefault describes a response with status code -1, with default header values.
 
 DcimFrontPortTemplatesCreateDefault dcim front port templates create default
 */
@@ -110,9 +142,39 @@ func (o *DcimFrontPortTemplatesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim front port templates create default response has a 2xx status code
+func (o *DcimFrontPortTemplatesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim front port templates create default response has a 3xx status code
+func (o *DcimFrontPortTemplatesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim front port templates create default response has a 4xx status code
+func (o *DcimFrontPortTemplatesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim front port templates create default response has a 5xx status code
+func (o *DcimFrontPortTemplatesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim front port templates create default response a status code equal to that given
+func (o *DcimFrontPortTemplatesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimFrontPortTemplatesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/front-port-templates/][%d] dcim_front-port-templates_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimFrontPortTemplatesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/front-port-templates/][%d] dcim_front-port-templates_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimFrontPortTemplatesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

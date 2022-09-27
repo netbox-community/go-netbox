@@ -68,10 +68,12 @@ func NewUsersPermissionsListParamsWithHTTPClient(client *http.Client) *UsersPerm
 	}
 }
 
-/* UsersPermissionsListParams contains all the parameters to send to the API endpoint
-   for the users permissions list operation.
+/*
+UsersPermissionsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users permissions list operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersPermissionsListParams struct {
 

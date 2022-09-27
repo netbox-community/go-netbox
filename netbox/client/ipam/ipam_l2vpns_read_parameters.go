@@ -68,10 +68,12 @@ func NewIpamL2vpnsReadParamsWithHTTPClient(client *http.Client) *IpamL2vpnsReadP
 	}
 }
 
-/* IpamL2vpnsReadParams contains all the parameters to send to the API endpoint
-   for the ipam l2vpns read operation.
+/*
+IpamL2vpnsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam l2vpns read operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamL2vpnsReadParams struct {
 

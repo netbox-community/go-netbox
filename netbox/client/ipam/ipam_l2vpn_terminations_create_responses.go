@@ -61,7 +61,8 @@ func NewIpamL2vpnTerminationsCreateCreated() *IpamL2vpnTerminationsCreateCreated
 	return &IpamL2vpnTerminationsCreateCreated{}
 }
 
-/* IpamL2vpnTerminationsCreateCreated describes a response with status code 201, with default header values.
+/*
+IpamL2vpnTerminationsCreateCreated describes a response with status code 201, with default header values.
 
 IpamL2vpnTerminationsCreateCreated ipam l2vpn terminations create created
 */
@@ -69,9 +70,39 @@ type IpamL2vpnTerminationsCreateCreated struct {
 	Payload *models.L2VPNTermination
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations create created response has a 2xx status code
+func (o *IpamL2vpnTerminationsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations create created response has a 3xx status code
+func (o *IpamL2vpnTerminationsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam l2vpn terminations create created response has a 4xx status code
+func (o *IpamL2vpnTerminationsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam l2vpn terminations create created response has a 5xx status code
+func (o *IpamL2vpnTerminationsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam l2vpn terminations create created response a status code equal to that given
+func (o *IpamL2vpnTerminationsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *IpamL2vpnTerminationsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsCreateCreated) GetPayload() *models.L2VPNTermination {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamL2vpnTerminationsCreateDefault(code int) *IpamL2vpnTerminationsCreat
 	}
 }
 
-/* IpamL2vpnTerminationsCreateDefault describes a response with status code -1, with default header values.
+/*
+IpamL2vpnTerminationsCreateDefault describes a response with status code -1, with default header values.
 
 IpamL2vpnTerminationsCreateDefault ipam l2vpn terminations create default
 */
@@ -110,9 +142,39 @@ func (o *IpamL2vpnTerminationsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations create default response has a 2xx status code
+func (o *IpamL2vpnTerminationsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations create default response has a 3xx status code
+func (o *IpamL2vpnTerminationsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam l2vpn terminations create default response has a 4xx status code
+func (o *IpamL2vpnTerminationsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam l2vpn terminations create default response has a 5xx status code
+func (o *IpamL2vpnTerminationsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam l2vpn terminations create default response a status code equal to that given
+func (o *IpamL2vpnTerminationsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamL2vpnTerminationsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipam_l2vpn-terminations_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

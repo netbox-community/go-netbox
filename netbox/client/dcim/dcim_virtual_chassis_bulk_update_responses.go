@@ -61,7 +61,8 @@ func NewDcimVirtualChassisBulkUpdateOK() *DcimVirtualChassisBulkUpdateOK {
 	return &DcimVirtualChassisBulkUpdateOK{}
 }
 
-/* DcimVirtualChassisBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimVirtualChassisBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimVirtualChassisBulkUpdateOK dcim virtual chassis bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimVirtualChassisBulkUpdateOK struct {
 	Payload *models.VirtualChassis
 }
 
+// IsSuccess returns true when this dcim virtual chassis bulk update o k response has a 2xx status code
+func (o *DcimVirtualChassisBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim virtual chassis bulk update o k response has a 3xx status code
+func (o *DcimVirtualChassisBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim virtual chassis bulk update o k response has a 4xx status code
+func (o *DcimVirtualChassisBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim virtual chassis bulk update o k response has a 5xx status code
+func (o *DcimVirtualChassisBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim virtual chassis bulk update o k response a status code equal to that given
+func (o *DcimVirtualChassisBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimVirtualChassisBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/virtual-chassis/][%d] dcimVirtualChassisBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimVirtualChassisBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/virtual-chassis/][%d] dcimVirtualChassisBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimVirtualChassisBulkUpdateOK) GetPayload() *models.VirtualChassis {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimVirtualChassisBulkUpdateDefault(code int) *DcimVirtualChassisBulkUpd
 	}
 }
 
-/* DcimVirtualChassisBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimVirtualChassisBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimVirtualChassisBulkUpdateDefault dcim virtual chassis bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimVirtualChassisBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim virtual chassis bulk update default response has a 2xx status code
+func (o *DcimVirtualChassisBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim virtual chassis bulk update default response has a 3xx status code
+func (o *DcimVirtualChassisBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim virtual chassis bulk update default response has a 4xx status code
+func (o *DcimVirtualChassisBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim virtual chassis bulk update default response has a 5xx status code
+func (o *DcimVirtualChassisBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim virtual chassis bulk update default response a status code equal to that given
+func (o *DcimVirtualChassisBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimVirtualChassisBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/virtual-chassis/][%d] dcim_virtual-chassis_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimVirtualChassisBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/virtual-chassis/][%d] dcim_virtual-chassis_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimVirtualChassisBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

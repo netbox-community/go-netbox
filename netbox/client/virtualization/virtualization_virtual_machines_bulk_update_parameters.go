@@ -69,10 +69,12 @@ func NewVirtualizationVirtualMachinesBulkUpdateParamsWithHTTPClient(client *http
 	}
 }
 
-/* VirtualizationVirtualMachinesBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the virtualization virtual machines bulk update operation.
+/*
+VirtualizationVirtualMachinesBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization virtual machines bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationVirtualMachinesBulkUpdateParams struct {
 

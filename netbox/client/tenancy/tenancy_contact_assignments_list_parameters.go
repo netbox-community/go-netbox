@@ -68,10 +68,12 @@ func NewTenancyContactAssignmentsListParamsWithHTTPClient(client *http.Client) *
 	}
 }
 
-/* TenancyContactAssignmentsListParams contains all the parameters to send to the API endpoint
-   for the tenancy contact assignments list operation.
+/*
+TenancyContactAssignmentsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact assignments list operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactAssignmentsListParams struct {
 

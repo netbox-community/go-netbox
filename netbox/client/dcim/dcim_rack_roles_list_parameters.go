@@ -68,10 +68,12 @@ func NewDcimRackRolesListParamsWithHTTPClient(client *http.Client) *DcimRackRole
 	}
 }
 
-/* DcimRackRolesListParams contains all the parameters to send to the API endpoint
-   for the dcim rack roles list operation.
+/*
+DcimRackRolesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rack roles list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRackRolesListParams struct {
 

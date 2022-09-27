@@ -61,7 +61,8 @@ func NewDcimModulesUpdateOK() *DcimModulesUpdateOK {
 	return &DcimModulesUpdateOK{}
 }
 
-/* DcimModulesUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimModulesUpdateOK describes a response with status code 200, with default header values.
 
 DcimModulesUpdateOK dcim modules update o k
 */
@@ -69,9 +70,39 @@ type DcimModulesUpdateOK struct {
 	Payload *models.Module
 }
 
+// IsSuccess returns true when this dcim modules update o k response has a 2xx status code
+func (o *DcimModulesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim modules update o k response has a 3xx status code
+func (o *DcimModulesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim modules update o k response has a 4xx status code
+func (o *DcimModulesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim modules update o k response has a 5xx status code
+func (o *DcimModulesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim modules update o k response a status code equal to that given
+func (o *DcimModulesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimModulesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/modules/{id}/][%d] dcimModulesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimModulesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/modules/{id}/][%d] dcimModulesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimModulesUpdateOK) GetPayload() *models.Module {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimModulesUpdateDefault(code int) *DcimModulesUpdateDefault {
 	}
 }
 
-/* DcimModulesUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimModulesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimModulesUpdateDefault dcim modules update default
 */
@@ -110,9 +142,39 @@ func (o *DcimModulesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim modules update default response has a 2xx status code
+func (o *DcimModulesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim modules update default response has a 3xx status code
+func (o *DcimModulesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim modules update default response has a 4xx status code
+func (o *DcimModulesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim modules update default response has a 5xx status code
+func (o *DcimModulesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim modules update default response a status code equal to that given
+func (o *DcimModulesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimModulesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/modules/{id}/][%d] dcim_modules_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimModulesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/modules/{id}/][%d] dcim_modules_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimModulesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

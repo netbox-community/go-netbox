@@ -70,10 +70,12 @@ func NewTenancyTenantGroupsUpdateParamsWithHTTPClient(client *http.Client) *Tena
 	}
 }
 
-/* TenancyTenantGroupsUpdateParams contains all the parameters to send to the API endpoint
-   for the tenancy tenant groups update operation.
+/*
+TenancyTenantGroupsUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy tenant groups update operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyTenantGroupsUpdateParams struct {
 

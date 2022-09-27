@@ -61,7 +61,8 @@ func NewUsersUsersCreateCreated() *UsersUsersCreateCreated {
 	return &UsersUsersCreateCreated{}
 }
 
-/* UsersUsersCreateCreated describes a response with status code 201, with default header values.
+/*
+UsersUsersCreateCreated describes a response with status code 201, with default header values.
 
 UsersUsersCreateCreated users users create created
 */
@@ -69,9 +70,39 @@ type UsersUsersCreateCreated struct {
 	Payload *models.User
 }
 
+// IsSuccess returns true when this users users create created response has a 2xx status code
+func (o *UsersUsersCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users users create created response has a 3xx status code
+func (o *UsersUsersCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users users create created response has a 4xx status code
+func (o *UsersUsersCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users users create created response has a 5xx status code
+func (o *UsersUsersCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users users create created response a status code equal to that given
+func (o *UsersUsersCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *UsersUsersCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /users/users/][%d] usersUsersCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *UsersUsersCreateCreated) String() string {
+	return fmt.Sprintf("[POST /users/users/][%d] usersUsersCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *UsersUsersCreateCreated) GetPayload() *models.User {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersUsersCreateDefault(code int) *UsersUsersCreateDefault {
 	}
 }
 
-/* UsersUsersCreateDefault describes a response with status code -1, with default header values.
+/*
+UsersUsersCreateDefault describes a response with status code -1, with default header values.
 
 UsersUsersCreateDefault users users create default
 */
@@ -110,9 +142,39 @@ func (o *UsersUsersCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users users create default response has a 2xx status code
+func (o *UsersUsersCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users users create default response has a 3xx status code
+func (o *UsersUsersCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users users create default response has a 4xx status code
+func (o *UsersUsersCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users users create default response has a 5xx status code
+func (o *UsersUsersCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users users create default response a status code equal to that given
+func (o *UsersUsersCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersUsersCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /users/users/][%d] users_users_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersUsersCreateDefault) String() string {
+	return fmt.Sprintf("[POST /users/users/][%d] users_users_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersUsersCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

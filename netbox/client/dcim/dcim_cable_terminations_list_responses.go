@@ -66,7 +66,8 @@ func NewDcimCableTerminationsListOK() *DcimCableTerminationsListOK {
 	return &DcimCableTerminationsListOK{}
 }
 
-/* DcimCableTerminationsListOK describes a response with status code 200, with default header values.
+/*
+DcimCableTerminationsListOK describes a response with status code 200, with default header values.
 
 DcimCableTerminationsListOK dcim cable terminations list o k
 */
@@ -74,9 +75,39 @@ type DcimCableTerminationsListOK struct {
 	Payload *DcimCableTerminationsListOKBody
 }
 
+// IsSuccess returns true when this dcim cable terminations list o k response has a 2xx status code
+func (o *DcimCableTerminationsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim cable terminations list o k response has a 3xx status code
+func (o *DcimCableTerminationsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim cable terminations list o k response has a 4xx status code
+func (o *DcimCableTerminationsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim cable terminations list o k response has a 5xx status code
+func (o *DcimCableTerminationsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim cable terminations list o k response a status code equal to that given
+func (o *DcimCableTerminationsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimCableTerminationsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcimCableTerminationsListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimCableTerminationsListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcimCableTerminationsListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimCableTerminationsListOK) GetPayload() *DcimCableTerminationsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimCableTerminationsListDefault(code int) *DcimCableTerminationsListDef
 	}
 }
 
-/* DcimCableTerminationsListDefault describes a response with status code -1, with default header values.
+/*
+DcimCableTerminationsListDefault describes a response with status code -1, with default header values.
 
 DcimCableTerminationsListDefault dcim cable terminations list default
 */
@@ -115,9 +147,39 @@ func (o *DcimCableTerminationsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim cable terminations list default response has a 2xx status code
+func (o *DcimCableTerminationsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim cable terminations list default response has a 3xx status code
+func (o *DcimCableTerminationsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim cable terminations list default response has a 4xx status code
+func (o *DcimCableTerminationsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim cable terminations list default response has a 5xx status code
+func (o *DcimCableTerminationsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim cable terminations list default response a status code equal to that given
+func (o *DcimCableTerminationsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimCableTerminationsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcim_cable-terminations_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimCableTerminationsListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/cable-terminations/][%d] dcim_cable-terminations_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimCableTerminationsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimCableTerminationsListDefault) readResponse(response runtime.ClientR
 	return nil
 }
 
-/*DcimCableTerminationsListOKBody dcim cable terminations list o k body
+/*
+DcimCableTerminationsListOKBody dcim cable terminations list o k body
 swagger:model DcimCableTerminationsListOKBody
 */
 type DcimCableTerminationsListOKBody struct {

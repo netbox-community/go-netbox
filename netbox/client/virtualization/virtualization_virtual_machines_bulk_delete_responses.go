@@ -59,14 +59,44 @@ func NewVirtualizationVirtualMachinesBulkDeleteNoContent() *VirtualizationVirtua
 	return &VirtualizationVirtualMachinesBulkDeleteNoContent{}
 }
 
-/* VirtualizationVirtualMachinesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+VirtualizationVirtualMachinesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationVirtualMachinesBulkDeleteNoContent virtualization virtual machines bulk delete no content
 */
 type VirtualizationVirtualMachinesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this virtualization virtual machines bulk delete no content response has a 2xx status code
+func (o *VirtualizationVirtualMachinesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization virtual machines bulk delete no content response has a 3xx status code
+func (o *VirtualizationVirtualMachinesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization virtual machines bulk delete no content response has a 4xx status code
+func (o *VirtualizationVirtualMachinesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization virtual machines bulk delete no content response has a 5xx status code
+func (o *VirtualizationVirtualMachinesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization virtual machines bulk delete no content response a status code equal to that given
+func (o *VirtualizationVirtualMachinesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *VirtualizationVirtualMachinesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesBulkDeleteNoContent ", 204)
+}
+
+func (o *VirtualizationVirtualMachinesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewVirtualizationVirtualMachinesBulkDeleteDefault(code int) *Virtualization
 	}
 }
 
-/* VirtualizationVirtualMachinesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationVirtualMachinesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesBulkDeleteDefault virtualization virtual machines bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *VirtualizationVirtualMachinesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization virtual machines bulk delete default response has a 2xx status code
+func (o *VirtualizationVirtualMachinesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization virtual machines bulk delete default response has a 3xx status code
+func (o *VirtualizationVirtualMachinesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization virtual machines bulk delete default response has a 4xx status code
+func (o *VirtualizationVirtualMachinesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization virtual machines bulk delete default response has a 5xx status code
+func (o *VirtualizationVirtualMachinesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization virtual machines bulk delete default response a status code equal to that given
+func (o *VirtualizationVirtualMachinesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationVirtualMachinesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/][%d] virtualization_virtual-machines_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationVirtualMachinesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/][%d] virtualization_virtual-machines_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationVirtualMachinesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

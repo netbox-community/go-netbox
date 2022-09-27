@@ -69,10 +69,12 @@ func NewDcimCableTerminationsBulkUpdateParamsWithHTTPClient(client *http.Client)
 	}
 }
 
-/* DcimCableTerminationsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim cable terminations bulk update operation.
+/*
+DcimCableTerminationsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim cable terminations bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimCableTerminationsBulkUpdateParams struct {
 

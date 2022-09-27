@@ -68,10 +68,12 @@ func NewDcimLocationsListParamsWithHTTPClient(client *http.Client) *DcimLocation
 	}
 }
 
-/* DcimLocationsListParams contains all the parameters to send to the API endpoint
-   for the dcim locations list operation.
+/*
+DcimLocationsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim locations list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimLocationsListParams struct {
 

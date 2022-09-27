@@ -59,14 +59,44 @@ func NewIpamL2vpnTerminationsDeleteNoContent() *IpamL2vpnTerminationsDeleteNoCon
 	return &IpamL2vpnTerminationsDeleteNoContent{}
 }
 
-/* IpamL2vpnTerminationsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamL2vpnTerminationsDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamL2vpnTerminationsDeleteNoContent ipam l2vpn terminations delete no content
 */
 type IpamL2vpnTerminationsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations delete no content response has a 2xx status code
+func (o *IpamL2vpnTerminationsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations delete no content response has a 3xx status code
+func (o *IpamL2vpnTerminationsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam l2vpn terminations delete no content response has a 4xx status code
+func (o *IpamL2vpnTerminationsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam l2vpn terminations delete no content response has a 5xx status code
+func (o *IpamL2vpnTerminationsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam l2vpn terminations delete no content response a status code equal to that given
+func (o *IpamL2vpnTerminationsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamL2vpnTerminationsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsDeleteNoContent ", 204)
+}
+
+func (o *IpamL2vpnTerminationsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamL2vpnTerminationsDeleteDefault(code int) *IpamL2vpnTerminationsDelet
 	}
 }
 
-/* IpamL2vpnTerminationsDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamL2vpnTerminationsDeleteDefault describes a response with status code -1, with default header values.
 
 IpamL2vpnTerminationsDeleteDefault ipam l2vpn terminations delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamL2vpnTerminationsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam l2vpn terminations delete default response has a 2xx status code
+func (o *IpamL2vpnTerminationsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam l2vpn terminations delete default response has a 3xx status code
+func (o *IpamL2vpnTerminationsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam l2vpn terminations delete default response has a 4xx status code
+func (o *IpamL2vpnTerminationsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam l2vpn terminations delete default response has a 5xx status code
+func (o *IpamL2vpnTerminationsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam l2vpn terminations delete default response a status code equal to that given
+func (o *IpamL2vpnTerminationsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamL2vpnTerminationsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/l2vpn-terminations/{id}/][%d] ipam_l2vpn-terminations_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamL2vpnTerminationsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/l2vpn-terminations/{id}/][%d] ipam_l2vpn-terminations_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamL2vpnTerminationsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

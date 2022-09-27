@@ -61,7 +61,8 @@ func NewDcimInventoryItemTemplatesBulkUpdateOK() *DcimInventoryItemTemplatesBulk
 	return &DcimInventoryItemTemplatesBulkUpdateOK{}
 }
 
-/* DcimInventoryItemTemplatesBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimInventoryItemTemplatesBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimInventoryItemTemplatesBulkUpdateOK dcim inventory item templates bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimInventoryItemTemplatesBulkUpdateOK struct {
 	Payload *models.InventoryItemTemplate
 }
 
+// IsSuccess returns true when this dcim inventory item templates bulk update o k response has a 2xx status code
+func (o *DcimInventoryItemTemplatesBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory item templates bulk update o k response has a 3xx status code
+func (o *DcimInventoryItemTemplatesBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory item templates bulk update o k response has a 4xx status code
+func (o *DcimInventoryItemTemplatesBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory item templates bulk update o k response has a 5xx status code
+func (o *DcimInventoryItemTemplatesBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory item templates bulk update o k response a status code equal to that given
+func (o *DcimInventoryItemTemplatesBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimInventoryItemTemplatesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/inventory-item-templates/][%d] dcimInventoryItemTemplatesBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimInventoryItemTemplatesBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/inventory-item-templates/][%d] dcimInventoryItemTemplatesBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimInventoryItemTemplatesBulkUpdateOK) GetPayload() *models.InventoryItemTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInventoryItemTemplatesBulkUpdateDefault(code int) *DcimInventoryItem
 	}
 }
 
-/* DcimInventoryItemTemplatesBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemTemplatesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemTemplatesBulkUpdateDefault dcim inventory item templates bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimInventoryItemTemplatesBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory item templates bulk update default response has a 2xx status code
+func (o *DcimInventoryItemTemplatesBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory item templates bulk update default response has a 3xx status code
+func (o *DcimInventoryItemTemplatesBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory item templates bulk update default response has a 4xx status code
+func (o *DcimInventoryItemTemplatesBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory item templates bulk update default response has a 5xx status code
+func (o *DcimInventoryItemTemplatesBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory item templates bulk update default response a status code equal to that given
+func (o *DcimInventoryItemTemplatesBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemTemplatesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/inventory-item-templates/][%d] dcim_inventory-item-templates_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemTemplatesBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/inventory-item-templates/][%d] dcim_inventory-item-templates_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemTemplatesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

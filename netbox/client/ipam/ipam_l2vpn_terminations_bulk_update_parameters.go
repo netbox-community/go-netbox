@@ -69,10 +69,12 @@ func NewIpamL2vpnTerminationsBulkUpdateParamsWithHTTPClient(client *http.Client)
 	}
 }
 
-/* IpamL2vpnTerminationsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam l2vpn terminations bulk update operation.
+/*
+IpamL2vpnTerminationsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam l2vpn terminations bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamL2vpnTerminationsBulkUpdateParams struct {
 

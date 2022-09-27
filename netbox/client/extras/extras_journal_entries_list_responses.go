@@ -66,7 +66,8 @@ func NewExtrasJournalEntriesListOK() *ExtrasJournalEntriesListOK {
 	return &ExtrasJournalEntriesListOK{}
 }
 
-/* ExtrasJournalEntriesListOK describes a response with status code 200, with default header values.
+/*
+ExtrasJournalEntriesListOK describes a response with status code 200, with default header values.
 
 ExtrasJournalEntriesListOK extras journal entries list o k
 */
@@ -74,9 +75,39 @@ type ExtrasJournalEntriesListOK struct {
 	Payload *ExtrasJournalEntriesListOKBody
 }
 
+// IsSuccess returns true when this extras journal entries list o k response has a 2xx status code
+func (o *ExtrasJournalEntriesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras journal entries list o k response has a 3xx status code
+func (o *ExtrasJournalEntriesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras journal entries list o k response has a 4xx status code
+func (o *ExtrasJournalEntriesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras journal entries list o k response has a 5xx status code
+func (o *ExtrasJournalEntriesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras journal entries list o k response a status code equal to that given
+func (o *ExtrasJournalEntriesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasJournalEntriesListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extrasJournalEntriesListOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasJournalEntriesListOK) String() string {
+	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extrasJournalEntriesListOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasJournalEntriesListOK) GetPayload() *ExtrasJournalEntriesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewExtrasJournalEntriesListDefault(code int) *ExtrasJournalEntriesListDefau
 	}
 }
 
-/* ExtrasJournalEntriesListDefault describes a response with status code -1, with default header values.
+/*
+ExtrasJournalEntriesListDefault describes a response with status code -1, with default header values.
 
 ExtrasJournalEntriesListDefault extras journal entries list default
 */
@@ -115,9 +147,39 @@ func (o *ExtrasJournalEntriesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras journal entries list default response has a 2xx status code
+func (o *ExtrasJournalEntriesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras journal entries list default response has a 3xx status code
+func (o *ExtrasJournalEntriesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras journal entries list default response has a 4xx status code
+func (o *ExtrasJournalEntriesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras journal entries list default response has a 5xx status code
+func (o *ExtrasJournalEntriesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras journal entries list default response a status code equal to that given
+func (o *ExtrasJournalEntriesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasJournalEntriesListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extras_journal-entries_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasJournalEntriesListDefault) String() string {
+	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extras_journal-entries_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasJournalEntriesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *ExtrasJournalEntriesListDefault) readResponse(response runtime.ClientRe
 	return nil
 }
 
-/*ExtrasJournalEntriesListOKBody extras journal entries list o k body
+/*
+ExtrasJournalEntriesListOKBody extras journal entries list o k body
 swagger:model ExtrasJournalEntriesListOKBody
 */
 type ExtrasJournalEntriesListOKBody struct {

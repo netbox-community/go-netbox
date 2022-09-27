@@ -68,10 +68,12 @@ func NewDcimConsolePortTemplatesReadParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimConsolePortTemplatesReadParams contains all the parameters to send to the API endpoint
-   for the dcim console port templates read operation.
+/*
+DcimConsolePortTemplatesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim console port templates read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimConsolePortTemplatesReadParams struct {
 

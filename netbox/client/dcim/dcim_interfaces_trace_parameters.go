@@ -68,10 +68,12 @@ func NewDcimInterfacesTraceParamsWithHTTPClient(client *http.Client) *DcimInterf
 	}
 }
 
-/* DcimInterfacesTraceParams contains all the parameters to send to the API endpoint
-   for the dcim interfaces trace operation.
+/*
+DcimInterfacesTraceParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim interfaces trace operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInterfacesTraceParams struct {
 

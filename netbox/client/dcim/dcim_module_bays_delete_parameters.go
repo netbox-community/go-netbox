@@ -68,10 +68,12 @@ func NewDcimModuleBaysDeleteParamsWithHTTPClient(client *http.Client) *DcimModul
 	}
 }
 
-/* DcimModuleBaysDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim module bays delete operation.
+/*
+DcimModuleBaysDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module bays delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleBaysDeleteParams struct {
 

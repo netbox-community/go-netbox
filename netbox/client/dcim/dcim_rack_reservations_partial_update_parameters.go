@@ -70,10 +70,12 @@ func NewDcimRackReservationsPartialUpdateParamsWithHTTPClient(client *http.Clien
 	}
 }
 
-/* DcimRackReservationsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim rack reservations partial update operation.
+/*
+DcimRackReservationsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rack reservations partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRackReservationsPartialUpdateParams struct {
 

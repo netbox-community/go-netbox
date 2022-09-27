@@ -66,7 +66,8 @@ func NewExtrasContentTypesListOK() *ExtrasContentTypesListOK {
 	return &ExtrasContentTypesListOK{}
 }
 
-/* ExtrasContentTypesListOK describes a response with status code 200, with default header values.
+/*
+ExtrasContentTypesListOK describes a response with status code 200, with default header values.
 
 ExtrasContentTypesListOK extras content types list o k
 */
@@ -74,9 +75,39 @@ type ExtrasContentTypesListOK struct {
 	Payload *ExtrasContentTypesListOKBody
 }
 
+// IsSuccess returns true when this extras content types list o k response has a 2xx status code
+func (o *ExtrasContentTypesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras content types list o k response has a 3xx status code
+func (o *ExtrasContentTypesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras content types list o k response has a 4xx status code
+func (o *ExtrasContentTypesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras content types list o k response has a 5xx status code
+func (o *ExtrasContentTypesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras content types list o k response a status code equal to that given
+func (o *ExtrasContentTypesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasContentTypesListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/content-types/][%d] extrasContentTypesListOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasContentTypesListOK) String() string {
+	return fmt.Sprintf("[GET /extras/content-types/][%d] extrasContentTypesListOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasContentTypesListOK) GetPayload() *ExtrasContentTypesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewExtrasContentTypesListDefault(code int) *ExtrasContentTypesListDefault {
 	}
 }
 
-/* ExtrasContentTypesListDefault describes a response with status code -1, with default header values.
+/*
+ExtrasContentTypesListDefault describes a response with status code -1, with default header values.
 
 ExtrasContentTypesListDefault extras content types list default
 */
@@ -115,9 +147,39 @@ func (o *ExtrasContentTypesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras content types list default response has a 2xx status code
+func (o *ExtrasContentTypesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras content types list default response has a 3xx status code
+func (o *ExtrasContentTypesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras content types list default response has a 4xx status code
+func (o *ExtrasContentTypesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras content types list default response has a 5xx status code
+func (o *ExtrasContentTypesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras content types list default response a status code equal to that given
+func (o *ExtrasContentTypesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasContentTypesListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/content-types/][%d] extras_content-types_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasContentTypesListDefault) String() string {
+	return fmt.Sprintf("[GET /extras/content-types/][%d] extras_content-types_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasContentTypesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *ExtrasContentTypesListDefault) readResponse(response runtime.ClientResp
 	return nil
 }
 
-/*ExtrasContentTypesListOKBody extras content types list o k body
+/*
+ExtrasContentTypesListOKBody extras content types list o k body
 swagger:model ExtrasContentTypesListOKBody
 */
 type ExtrasContentTypesListOKBody struct {

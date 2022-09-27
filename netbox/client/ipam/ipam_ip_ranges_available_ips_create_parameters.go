@@ -70,10 +70,12 @@ func NewIpamIPRangesAvailableIpsCreateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* IpamIPRangesAvailableIpsCreateParams contains all the parameters to send to the API endpoint
-   for the ipam ip ranges available ips create operation.
+/*
+IpamIPRangesAvailableIpsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam ip ranges available ips create operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamIPRangesAvailableIpsCreateParams struct {
 

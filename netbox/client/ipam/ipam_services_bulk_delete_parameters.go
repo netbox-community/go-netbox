@@ -67,10 +67,12 @@ func NewIpamServicesBulkDeleteParamsWithHTTPClient(client *http.Client) *IpamSer
 	}
 }
 
-/* IpamServicesBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam services bulk delete operation.
+/*
+IpamServicesBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam services bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamServicesBulkDeleteParams struct {
 	timeout    time.Duration

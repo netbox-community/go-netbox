@@ -70,10 +70,12 @@ func NewDcimRearPortsPartialUpdateParamsWithHTTPClient(client *http.Client) *Dci
 	}
 }
 
-/* DcimRearPortsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim rear ports partial update operation.
+/*
+DcimRearPortsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rear ports partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRearPortsPartialUpdateParams struct {
 

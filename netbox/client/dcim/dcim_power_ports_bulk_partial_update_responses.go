@@ -61,7 +61,8 @@ func NewDcimPowerPortsBulkPartialUpdateOK() *DcimPowerPortsBulkPartialUpdateOK {
 	return &DcimPowerPortsBulkPartialUpdateOK{}
 }
 
-/* DcimPowerPortsBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimPowerPortsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPortsBulkPartialUpdateOK dcim power ports bulk partial update o k
 */
@@ -69,9 +70,39 @@ type DcimPowerPortsBulkPartialUpdateOK struct {
 	Payload *models.PowerPort
 }
 
+// IsSuccess returns true when this dcim power ports bulk partial update o k response has a 2xx status code
+func (o *DcimPowerPortsBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power ports bulk partial update o k response has a 3xx status code
+func (o *DcimPowerPortsBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power ports bulk partial update o k response has a 4xx status code
+func (o *DcimPowerPortsBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power ports bulk partial update o k response has a 5xx status code
+func (o *DcimPowerPortsBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power ports bulk partial update o k response a status code equal to that given
+func (o *DcimPowerPortsBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerPortsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-ports/][%d] dcimPowerPortsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerPortsBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/power-ports/][%d] dcimPowerPortsBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerPortsBulkPartialUpdateOK) GetPayload() *models.PowerPort {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerPortsBulkPartialUpdateDefault(code int) *DcimPowerPortsBulkPart
 	}
 }
 
-/* DcimPowerPortsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerPortsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortsBulkPartialUpdateDefault dcim power ports bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerPortsBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power ports bulk partial update default response has a 2xx status code
+func (o *DcimPowerPortsBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power ports bulk partial update default response has a 3xx status code
+func (o *DcimPowerPortsBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power ports bulk partial update default response has a 4xx status code
+func (o *DcimPowerPortsBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power ports bulk partial update default response has a 5xx status code
+func (o *DcimPowerPortsBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power ports bulk partial update default response a status code equal to that given
+func (o *DcimPowerPortsBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerPortsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-ports/][%d] dcim_power-ports_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerPortsBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/power-ports/][%d] dcim_power-ports_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerPortsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

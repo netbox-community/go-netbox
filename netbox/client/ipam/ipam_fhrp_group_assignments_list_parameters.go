@@ -68,10 +68,12 @@ func NewIpamFhrpGroupAssignmentsListParamsWithHTTPClient(client *http.Client) *I
 	}
 }
 
-/* IpamFhrpGroupAssignmentsListParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp group assignments list operation.
+/*
+IpamFhrpGroupAssignmentsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp group assignments list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupAssignmentsListParams struct {
 

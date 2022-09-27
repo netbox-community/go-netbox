@@ -69,10 +69,12 @@ func NewDcimModuleBayTemplatesCreateParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimModuleBayTemplatesCreateParams contains all the parameters to send to the API endpoint
-   for the dcim module bay templates create operation.
+/*
+DcimModuleBayTemplatesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module bay templates create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleBayTemplatesCreateParams struct {
 

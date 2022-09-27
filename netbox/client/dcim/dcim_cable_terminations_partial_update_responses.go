@@ -61,7 +61,8 @@ func NewDcimCableTerminationsPartialUpdateOK() *DcimCableTerminationsPartialUpda
 	return &DcimCableTerminationsPartialUpdateOK{}
 }
 
-/* DcimCableTerminationsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimCableTerminationsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimCableTerminationsPartialUpdateOK dcim cable terminations partial update o k
 */
@@ -69,9 +70,39 @@ type DcimCableTerminationsPartialUpdateOK struct {
 	Payload *models.CableTermination
 }
 
+// IsSuccess returns true when this dcim cable terminations partial update o k response has a 2xx status code
+func (o *DcimCableTerminationsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim cable terminations partial update o k response has a 3xx status code
+func (o *DcimCableTerminationsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim cable terminations partial update o k response has a 4xx status code
+func (o *DcimCableTerminationsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim cable terminations partial update o k response has a 5xx status code
+func (o *DcimCableTerminationsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim cable terminations partial update o k response a status code equal to that given
+func (o *DcimCableTerminationsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimCableTerminationsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimCableTerminationsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/cable-terminations/{id}/][%d] dcimCableTerminationsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimCableTerminationsPartialUpdateOK) GetPayload() *models.CableTermination {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimCableTerminationsPartialUpdateDefault(code int) *DcimCableTerminatio
 	}
 }
 
-/* DcimCableTerminationsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimCableTerminationsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimCableTerminationsPartialUpdateDefault dcim cable terminations partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimCableTerminationsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim cable terminations partial update default response has a 2xx status code
+func (o *DcimCableTerminationsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim cable terminations partial update default response has a 3xx status code
+func (o *DcimCableTerminationsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim cable terminations partial update default response has a 4xx status code
+func (o *DcimCableTerminationsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim cable terminations partial update default response has a 5xx status code
+func (o *DcimCableTerminationsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim cable terminations partial update default response a status code equal to that given
+func (o *DcimCableTerminationsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimCableTerminationsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimCableTerminationsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/cable-terminations/{id}/][%d] dcim_cable-terminations_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimCableTerminationsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

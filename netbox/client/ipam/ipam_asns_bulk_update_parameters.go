@@ -69,10 +69,12 @@ func NewIpamAsnsBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamAsnsBul
 	}
 }
 
-/* IpamAsnsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam asns bulk update operation.
+/*
+IpamAsnsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam asns bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAsnsBulkUpdateParams struct {
 

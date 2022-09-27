@@ -61,7 +61,8 @@ func NewWirelessWirelessLansBulkUpdateOK() *WirelessWirelessLansBulkUpdateOK {
 	return &WirelessWirelessLansBulkUpdateOK{}
 }
 
-/* WirelessWirelessLansBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+WirelessWirelessLansBulkUpdateOK describes a response with status code 200, with default header values.
 
 WirelessWirelessLansBulkUpdateOK wireless wireless lans bulk update o k
 */
@@ -69,9 +70,39 @@ type WirelessWirelessLansBulkUpdateOK struct {
 	Payload *models.WirelessLAN
 }
 
+// IsSuccess returns true when this wireless wireless lans bulk update o k response has a 2xx status code
+func (o *WirelessWirelessLansBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this wireless wireless lans bulk update o k response has a 3xx status code
+func (o *WirelessWirelessLansBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this wireless wireless lans bulk update o k response has a 4xx status code
+func (o *WirelessWirelessLansBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this wireless wireless lans bulk update o k response has a 5xx status code
+func (o *WirelessWirelessLansBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this wireless wireless lans bulk update o k response a status code equal to that given
+func (o *WirelessWirelessLansBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *WirelessWirelessLansBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /wireless/wireless-lans/][%d] wirelessWirelessLansBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *WirelessWirelessLansBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /wireless/wireless-lans/][%d] wirelessWirelessLansBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *WirelessWirelessLansBulkUpdateOK) GetPayload() *models.WirelessLAN {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewWirelessWirelessLansBulkUpdateDefault(code int) *WirelessWirelessLansBul
 	}
 }
 
-/* WirelessWirelessLansBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+WirelessWirelessLansBulkUpdateDefault describes a response with status code -1, with default header values.
 
 WirelessWirelessLansBulkUpdateDefault wireless wireless lans bulk update default
 */
@@ -110,9 +142,39 @@ func (o *WirelessWirelessLansBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this wireless wireless lans bulk update default response has a 2xx status code
+func (o *WirelessWirelessLansBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this wireless wireless lans bulk update default response has a 3xx status code
+func (o *WirelessWirelessLansBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this wireless wireless lans bulk update default response has a 4xx status code
+func (o *WirelessWirelessLansBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this wireless wireless lans bulk update default response has a 5xx status code
+func (o *WirelessWirelessLansBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this wireless wireless lans bulk update default response a status code equal to that given
+func (o *WirelessWirelessLansBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *WirelessWirelessLansBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /wireless/wireless-lans/][%d] wireless_wireless-lans_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *WirelessWirelessLansBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /wireless/wireless-lans/][%d] wireless_wireless-lans_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *WirelessWirelessLansBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -68,10 +68,12 @@ func NewDcimPowerPortsListParamsWithHTTPClient(client *http.Client) *DcimPowerPo
 	}
 }
 
-/* DcimPowerPortsListParams contains all the parameters to send to the API endpoint
-   for the dcim power ports list operation.
+/*
+DcimPowerPortsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power ports list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerPortsListParams struct {
 

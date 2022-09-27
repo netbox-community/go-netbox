@@ -66,7 +66,8 @@ func NewDcimRegionsListOK() *DcimRegionsListOK {
 	return &DcimRegionsListOK{}
 }
 
-/* DcimRegionsListOK describes a response with status code 200, with default header values.
+/*
+DcimRegionsListOK describes a response with status code 200, with default header values.
 
 DcimRegionsListOK dcim regions list o k
 */
@@ -74,9 +75,39 @@ type DcimRegionsListOK struct {
 	Payload *DcimRegionsListOKBody
 }
 
+// IsSuccess returns true when this dcim regions list o k response has a 2xx status code
+func (o *DcimRegionsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim regions list o k response has a 3xx status code
+func (o *DcimRegionsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim regions list o k response has a 4xx status code
+func (o *DcimRegionsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim regions list o k response has a 5xx status code
+func (o *DcimRegionsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim regions list o k response a status code equal to that given
+func (o *DcimRegionsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRegionsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/regions/][%d] dcimRegionsListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRegionsListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/regions/][%d] dcimRegionsListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRegionsListOK) GetPayload() *DcimRegionsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimRegionsListDefault(code int) *DcimRegionsListDefault {
 	}
 }
 
-/* DcimRegionsListDefault describes a response with status code -1, with default header values.
+/*
+DcimRegionsListDefault describes a response with status code -1, with default header values.
 
 DcimRegionsListDefault dcim regions list default
 */
@@ -115,9 +147,39 @@ func (o *DcimRegionsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim regions list default response has a 2xx status code
+func (o *DcimRegionsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim regions list default response has a 3xx status code
+func (o *DcimRegionsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim regions list default response has a 4xx status code
+func (o *DcimRegionsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim regions list default response has a 5xx status code
+func (o *DcimRegionsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim regions list default response a status code equal to that given
+func (o *DcimRegionsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRegionsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/regions/][%d] dcim_regions_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRegionsListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/regions/][%d] dcim_regions_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRegionsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimRegionsListDefault) readResponse(response runtime.ClientResponse, c
 	return nil
 }
 
-/*DcimRegionsListOKBody dcim regions list o k body
+/*
+DcimRegionsListOKBody dcim regions list o k body
 swagger:model DcimRegionsListOKBody
 */
 type DcimRegionsListOKBody struct {

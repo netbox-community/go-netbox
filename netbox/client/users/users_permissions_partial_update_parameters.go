@@ -70,10 +70,12 @@ func NewUsersPermissionsPartialUpdateParamsWithHTTPClient(client *http.Client) *
 	}
 }
 
-/* UsersPermissionsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the users permissions partial update operation.
+/*
+UsersPermissionsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users permissions partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersPermissionsPartialUpdateParams struct {
 

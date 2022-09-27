@@ -61,7 +61,8 @@ func NewExtrasCustomFieldsCreateCreated() *ExtrasCustomFieldsCreateCreated {
 	return &ExtrasCustomFieldsCreateCreated{}
 }
 
-/* ExtrasCustomFieldsCreateCreated describes a response with status code 201, with default header values.
+/*
+ExtrasCustomFieldsCreateCreated describes a response with status code 201, with default header values.
 
 ExtrasCustomFieldsCreateCreated extras custom fields create created
 */
@@ -69,9 +70,39 @@ type ExtrasCustomFieldsCreateCreated struct {
 	Payload *models.CustomField
 }
 
+// IsSuccess returns true when this extras custom fields create created response has a 2xx status code
+func (o *ExtrasCustomFieldsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras custom fields create created response has a 3xx status code
+func (o *ExtrasCustomFieldsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras custom fields create created response has a 4xx status code
+func (o *ExtrasCustomFieldsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras custom fields create created response has a 5xx status code
+func (o *ExtrasCustomFieldsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras custom fields create created response a status code equal to that given
+func (o *ExtrasCustomFieldsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *ExtrasCustomFieldsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extrasCustomFieldsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *ExtrasCustomFieldsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extrasCustomFieldsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *ExtrasCustomFieldsCreateCreated) GetPayload() *models.CustomField {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasCustomFieldsCreateDefault(code int) *ExtrasCustomFieldsCreateDefau
 	}
 }
 
-/* ExtrasCustomFieldsCreateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasCustomFieldsCreateDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsCreateDefault extras custom fields create default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasCustomFieldsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras custom fields create default response has a 2xx status code
+func (o *ExtrasCustomFieldsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras custom fields create default response has a 3xx status code
+func (o *ExtrasCustomFieldsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras custom fields create default response has a 4xx status code
+func (o *ExtrasCustomFieldsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras custom fields create default response has a 5xx status code
+func (o *ExtrasCustomFieldsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras custom fields create default response a status code equal to that given
+func (o *ExtrasCustomFieldsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasCustomFieldsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extras_custom-fields_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasCustomFieldsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /extras/custom-fields/][%d] extras_custom-fields_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasCustomFieldsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

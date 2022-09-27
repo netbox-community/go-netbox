@@ -61,7 +61,8 @@ func NewDcimPowerPortTemplatesUpdateOK() *DcimPowerPortTemplatesUpdateOK {
 	return &DcimPowerPortTemplatesUpdateOK{}
 }
 
-/* DcimPowerPortTemplatesUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimPowerPortTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerPortTemplatesUpdateOK dcim power port templates update o k
 */
@@ -69,9 +70,39 @@ type DcimPowerPortTemplatesUpdateOK struct {
 	Payload *models.PowerPortTemplate
 }
 
+// IsSuccess returns true when this dcim power port templates update o k response has a 2xx status code
+func (o *DcimPowerPortTemplatesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power port templates update o k response has a 3xx status code
+func (o *DcimPowerPortTemplatesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power port templates update o k response has a 4xx status code
+func (o *DcimPowerPortTemplatesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power port templates update o k response has a 5xx status code
+func (o *DcimPowerPortTemplatesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power port templates update o k response a status code equal to that given
+func (o *DcimPowerPortTemplatesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerPortTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerPortTemplatesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerPortTemplatesUpdateOK) GetPayload() *models.PowerPortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerPortTemplatesUpdateDefault(code int) *DcimPowerPortTemplatesUpd
 	}
 }
 
-/* DcimPowerPortTemplatesUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerPortTemplatesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortTemplatesUpdateDefault dcim power port templates update default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerPortTemplatesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power port templates update default response has a 2xx status code
+func (o *DcimPowerPortTemplatesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power port templates update default response has a 3xx status code
+func (o *DcimPowerPortTemplatesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power port templates update default response has a 4xx status code
+func (o *DcimPowerPortTemplatesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power port templates update default response has a 5xx status code
+func (o *DcimPowerPortTemplatesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power port templates update default response a status code equal to that given
+func (o *DcimPowerPortTemplatesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerPortTemplatesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerPortTemplatesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerPortTemplatesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

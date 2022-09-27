@@ -70,10 +70,12 @@ func NewWirelessWirelessLansUpdateParamsWithHTTPClient(client *http.Client) *Wir
 	}
 }
 
-/* WirelessWirelessLansUpdateParams contains all the parameters to send to the API endpoint
-   for the wireless wireless lans update operation.
+/*
+WirelessWirelessLansUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless lans update operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLansUpdateParams struct {
 

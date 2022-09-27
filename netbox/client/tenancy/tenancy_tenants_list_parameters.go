@@ -68,10 +68,12 @@ func NewTenancyTenantsListParamsWithHTTPClient(client *http.Client) *TenancyTena
 	}
 }
 
-/* TenancyTenantsListParams contains all the parameters to send to the API endpoint
-   for the tenancy tenants list operation.
+/*
+TenancyTenantsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy tenants list operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyTenantsListParams struct {
 

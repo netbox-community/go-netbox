@@ -59,14 +59,44 @@ func NewDcimInventoryItemsBulkDeleteNoContent() *DcimInventoryItemsBulkDeleteNoC
 	return &DcimInventoryItemsBulkDeleteNoContent{}
 }
 
-/* DcimInventoryItemsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimInventoryItemsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimInventoryItemsBulkDeleteNoContent dcim inventory items bulk delete no content
 */
 type DcimInventoryItemsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim inventory items bulk delete no content response has a 2xx status code
+func (o *DcimInventoryItemsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory items bulk delete no content response has a 3xx status code
+func (o *DcimInventoryItemsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory items bulk delete no content response has a 4xx status code
+func (o *DcimInventoryItemsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory items bulk delete no content response has a 5xx status code
+func (o *DcimInventoryItemsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory items bulk delete no content response a status code equal to that given
+func (o *DcimInventoryItemsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimInventoryItemsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/inventory-items/][%d] dcimInventoryItemsBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimInventoryItemsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/inventory-items/][%d] dcimInventoryItemsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimInventoryItemsBulkDeleteDefault(code int) *DcimInventoryItemsBulkDel
 	}
 }
 
-/* DcimInventoryItemsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemsBulkDeleteDefault dcim inventory items bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimInventoryItemsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory items bulk delete default response has a 2xx status code
+func (o *DcimInventoryItemsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory items bulk delete default response has a 3xx status code
+func (o *DcimInventoryItemsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory items bulk delete default response has a 4xx status code
+func (o *DcimInventoryItemsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory items bulk delete default response has a 5xx status code
+func (o *DcimInventoryItemsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory items bulk delete default response a status code equal to that given
+func (o *DcimInventoryItemsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/inventory-items/][%d] dcim_inventory-items_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/inventory-items/][%d] dcim_inventory-items_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

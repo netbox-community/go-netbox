@@ -68,10 +68,12 @@ func NewExtrasWebhooksListParamsWithHTTPClient(client *http.Client) *ExtrasWebho
 	}
 }
 
-/* ExtrasWebhooksListParams contains all the parameters to send to the API endpoint
-   for the extras webhooks list operation.
+/*
+ExtrasWebhooksListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras webhooks list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasWebhooksListParams struct {
 

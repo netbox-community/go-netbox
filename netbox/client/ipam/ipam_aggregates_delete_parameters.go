@@ -68,10 +68,12 @@ func NewIpamAggregatesDeleteParamsWithHTTPClient(client *http.Client) *IpamAggre
 	}
 }
 
-/* IpamAggregatesDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam aggregates delete operation.
+/*
+IpamAggregatesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam aggregates delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAggregatesDeleteParams struct {
 

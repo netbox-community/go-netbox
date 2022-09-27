@@ -69,10 +69,12 @@ func NewDcimDeviceBayTemplatesCreateParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimDeviceBayTemplatesCreateParams contains all the parameters to send to the API endpoint
-   for the dcim device bay templates create operation.
+/*
+DcimDeviceBayTemplatesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim device bay templates create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimDeviceBayTemplatesCreateParams struct {
 

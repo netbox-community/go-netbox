@@ -68,10 +68,12 @@ func NewDcimRackRolesReadParamsWithHTTPClient(client *http.Client) *DcimRackRole
 	}
 }
 
-/* DcimRackRolesReadParams contains all the parameters to send to the API endpoint
-   for the dcim rack roles read operation.
+/*
+DcimRackRolesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rack roles read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRackRolesReadParams struct {
 

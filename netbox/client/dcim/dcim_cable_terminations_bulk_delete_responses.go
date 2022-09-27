@@ -59,14 +59,44 @@ func NewDcimCableTerminationsBulkDeleteNoContent() *DcimCableTerminationsBulkDel
 	return &DcimCableTerminationsBulkDeleteNoContent{}
 }
 
-/* DcimCableTerminationsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimCableTerminationsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimCableTerminationsBulkDeleteNoContent dcim cable terminations bulk delete no content
 */
 type DcimCableTerminationsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim cable terminations bulk delete no content response has a 2xx status code
+func (o *DcimCableTerminationsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim cable terminations bulk delete no content response has a 3xx status code
+func (o *DcimCableTerminationsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim cable terminations bulk delete no content response has a 4xx status code
+func (o *DcimCableTerminationsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim cable terminations bulk delete no content response has a 5xx status code
+func (o *DcimCableTerminationsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim cable terminations bulk delete no content response a status code equal to that given
+func (o *DcimCableTerminationsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimCableTerminationsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/cable-terminations/][%d] dcimCableTerminationsBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimCableTerminationsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/cable-terminations/][%d] dcimCableTerminationsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimCableTerminationsBulkDeleteDefault(code int) *DcimCableTerminationsB
 	}
 }
 
-/* DcimCableTerminationsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimCableTerminationsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimCableTerminationsBulkDeleteDefault dcim cable terminations bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimCableTerminationsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim cable terminations bulk delete default response has a 2xx status code
+func (o *DcimCableTerminationsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim cable terminations bulk delete default response has a 3xx status code
+func (o *DcimCableTerminationsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim cable terminations bulk delete default response has a 4xx status code
+func (o *DcimCableTerminationsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim cable terminations bulk delete default response has a 5xx status code
+func (o *DcimCableTerminationsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim cable terminations bulk delete default response a status code equal to that given
+func (o *DcimCableTerminationsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimCableTerminationsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/cable-terminations/][%d] dcim_cable-terminations_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimCableTerminationsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/cable-terminations/][%d] dcim_cable-terminations_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimCableTerminationsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

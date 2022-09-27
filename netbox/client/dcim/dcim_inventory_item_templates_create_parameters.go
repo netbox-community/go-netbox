@@ -69,10 +69,12 @@ func NewDcimInventoryItemTemplatesCreateParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* DcimInventoryItemTemplatesCreateParams contains all the parameters to send to the API endpoint
-   for the dcim inventory item templates create operation.
+/*
+DcimInventoryItemTemplatesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim inventory item templates create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInventoryItemTemplatesCreateParams struct {
 

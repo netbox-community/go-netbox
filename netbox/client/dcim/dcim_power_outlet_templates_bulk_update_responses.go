@@ -61,7 +61,8 @@ func NewDcimPowerOutletTemplatesBulkUpdateOK() *DcimPowerOutletTemplatesBulkUpda
 	return &DcimPowerOutletTemplatesBulkUpdateOK{}
 }
 
-/* DcimPowerOutletTemplatesBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimPowerOutletTemplatesBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletTemplatesBulkUpdateOK dcim power outlet templates bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimPowerOutletTemplatesBulkUpdateOK struct {
 	Payload *models.PowerOutletTemplate
 }
 
+// IsSuccess returns true when this dcim power outlet templates bulk update o k response has a 2xx status code
+func (o *DcimPowerOutletTemplatesBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power outlet templates bulk update o k response has a 3xx status code
+func (o *DcimPowerOutletTemplatesBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power outlet templates bulk update o k response has a 4xx status code
+func (o *DcimPowerOutletTemplatesBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power outlet templates bulk update o k response has a 5xx status code
+func (o *DcimPowerOutletTemplatesBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power outlet templates bulk update o k response a status code equal to that given
+func (o *DcimPowerOutletTemplatesBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerOutletTemplatesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlet-templates/][%d] dcimPowerOutletTemplatesBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerOutletTemplatesBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/power-outlet-templates/][%d] dcimPowerOutletTemplatesBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerOutletTemplatesBulkUpdateOK) GetPayload() *models.PowerOutletTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerOutletTemplatesBulkUpdateDefault(code int) *DcimPowerOutletTemp
 	}
 }
 
-/* DcimPowerOutletTemplatesBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerOutletTemplatesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletTemplatesBulkUpdateDefault dcim power outlet templates bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerOutletTemplatesBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power outlet templates bulk update default response has a 2xx status code
+func (o *DcimPowerOutletTemplatesBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power outlet templates bulk update default response has a 3xx status code
+func (o *DcimPowerOutletTemplatesBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power outlet templates bulk update default response has a 4xx status code
+func (o *DcimPowerOutletTemplatesBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power outlet templates bulk update default response has a 5xx status code
+func (o *DcimPowerOutletTemplatesBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power outlet templates bulk update default response a status code equal to that given
+func (o *DcimPowerOutletTemplatesBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerOutletTemplatesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerOutletTemplatesBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerOutletTemplatesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

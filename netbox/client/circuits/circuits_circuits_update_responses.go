@@ -61,7 +61,8 @@ func NewCircuitsCircuitsUpdateOK() *CircuitsCircuitsUpdateOK {
 	return &CircuitsCircuitsUpdateOK{}
 }
 
-/* CircuitsCircuitsUpdateOK describes a response with status code 200, with default header values.
+/*
+CircuitsCircuitsUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitsUpdateOK circuits circuits update o k
 */
@@ -69,9 +70,39 @@ type CircuitsCircuitsUpdateOK struct {
 	Payload *models.Circuit
 }
 
+// IsSuccess returns true when this circuits circuits update o k response has a 2xx status code
+func (o *CircuitsCircuitsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuits update o k response has a 3xx status code
+func (o *CircuitsCircuitsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuits update o k response has a 4xx status code
+func (o *CircuitsCircuitsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuits update o k response has a 5xx status code
+func (o *CircuitsCircuitsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuits update o k response a status code equal to that given
+func (o *CircuitsCircuitsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsCircuitsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /circuits/circuits/{id}/][%d] circuitsCircuitsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsCircuitsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /circuits/circuits/{id}/][%d] circuitsCircuitsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsCircuitsUpdateOK) GetPayload() *models.Circuit {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsCircuitsUpdateDefault(code int) *CircuitsCircuitsUpdateDefault {
 	}
 }
 
-/* CircuitsCircuitsUpdateDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitsUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitsUpdateDefault circuits circuits update default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsCircuitsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuits update default response has a 2xx status code
+func (o *CircuitsCircuitsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuits update default response has a 3xx status code
+func (o *CircuitsCircuitsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuits update default response has a 4xx status code
+func (o *CircuitsCircuitsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuits update default response has a 5xx status code
+func (o *CircuitsCircuitsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuits update default response a status code equal to that given
+func (o *CircuitsCircuitsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /circuits/circuits/{id}/][%d] circuits_circuits_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /circuits/circuits/{id}/][%d] circuits_circuits_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }
