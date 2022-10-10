@@ -86746,7 +86746,8 @@
         "site": {
           "title": "Site",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "vrf": {
           "title": "VRF",
@@ -86761,7 +86762,8 @@
         "vlan": {
           "title": "VLAN",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "status": {
           "title": "Status",
