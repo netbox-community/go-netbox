@@ -95,6 +95,7 @@ To regenerate the client with a new or different swagger schema, first clean the
 swagger.json and finally re-generate:
 ```
 make clean
-cp new_swagger_file.json swagger.json
+./scripts/swagger_modifier.py new_swagger_file.json
+mv swagger_transformed.json swagger.json
 make generate
 ```
