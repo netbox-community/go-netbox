@@ -124,15 +124,17 @@ def complete_data(input_file, log):
                             def_properties[def_property].update(
                                 modify_properties[prop])
 
-            # The maximum value (9223372036854775807) set here lead to an error
-            # cannot use 9.223372036854776e+18 (untyped float constant 9.22337e+18) as int64 value in argument to validate.MaximumInt (truncated) # noqa E501
-            # There's issue opened on this https://github.com/go-swagger/go-swagger/issues/2755 # noqa E501
             for p in def_properties:
-                if 'maximum' in def_properties[p]:
-                    if def_properties[p]['maximum'] == 9223372036854775807:
-                        log.info('Changing value for {}'.format(p))
-                        def_properties[p]['maximum'] = 2147483647
-
+                # The maximum value (9223372036854775807) set here lead to an error
+                # cannot use 9.223372036854776e+18 (untyped float constant 9.22337e+18) as int64 value in argument to validate.MaximumInt (truncated) # noqa E501
+                # There's issue opened on this https://github.com/go-swagger/go-swagger/issues/2755 # noqa E501
+                if def_properties[p].get('maximum', 0) == 9223372036854775807:
+                    log.info('Changing maximum value for {}'.format(p))
+                    def_properties[p]['maximum'] = 2147483647
+                # The minimum value also has same issue.
+                if def_properties[p].get('minimum', 0) == -9223372036854775808:
+                    log.info('Changing minimum value for {}'.format(p))
+                    def_properties[p]['minimum'] = -2147483648
     return (data)
 
 
