@@ -67,10 +67,12 @@ func NewTenancyContactAssignmentsBulkDeleteParamsWithHTTPClient(client *http.Cli
 	}
 }
 
-/* TenancyContactAssignmentsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the tenancy contact assignments bulk delete operation.
+/*
+TenancyContactAssignmentsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact assignments bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactAssignmentsBulkDeleteParams struct {
 	timeout    time.Duration

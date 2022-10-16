@@ -59,14 +59,44 @@ func NewExtrasTagsBulkDeleteNoContent() *ExtrasTagsBulkDeleteNoContent {
 	return &ExtrasTagsBulkDeleteNoContent{}
 }
 
-/* ExtrasTagsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+ExtrasTagsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasTagsBulkDeleteNoContent extras tags bulk delete no content
 */
 type ExtrasTagsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this extras tags bulk delete no content response has a 2xx status code
+func (o *ExtrasTagsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras tags bulk delete no content response has a 3xx status code
+func (o *ExtrasTagsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras tags bulk delete no content response has a 4xx status code
+func (o *ExtrasTagsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras tags bulk delete no content response has a 5xx status code
+func (o *ExtrasTagsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras tags bulk delete no content response a status code equal to that given
+func (o *ExtrasTagsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *ExtrasTagsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /extras/tags/][%d] extrasTagsBulkDeleteNoContent ", 204)
+}
+
+func (o *ExtrasTagsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /extras/tags/][%d] extrasTagsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasTagsBulkDeleteDefault(code int) *ExtrasTagsBulkDeleteDefault {
 	}
 }
 
-/* ExtrasTagsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+ExtrasTagsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasTagsBulkDeleteDefault extras tags bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasTagsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras tags bulk delete default response has a 2xx status code
+func (o *ExtrasTagsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras tags bulk delete default response has a 3xx status code
+func (o *ExtrasTagsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras tags bulk delete default response has a 4xx status code
+func (o *ExtrasTagsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras tags bulk delete default response has a 5xx status code
+func (o *ExtrasTagsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras tags bulk delete default response a status code equal to that given
+func (o *ExtrasTagsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasTagsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/tags/][%d] extras_tags_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasTagsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /extras/tags/][%d] extras_tags_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasTagsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

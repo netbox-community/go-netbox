@@ -59,14 +59,44 @@ func NewTenancyContactGroupsBulkDeleteNoContent() *TenancyContactGroupsBulkDelet
 	return &TenancyContactGroupsBulkDeleteNoContent{}
 }
 
-/* TenancyContactGroupsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+TenancyContactGroupsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 TenancyContactGroupsBulkDeleteNoContent tenancy contact groups bulk delete no content
 */
 type TenancyContactGroupsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this tenancy contact groups bulk delete no content response has a 2xx status code
+func (o *TenancyContactGroupsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contact groups bulk delete no content response has a 3xx status code
+func (o *TenancyContactGroupsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contact groups bulk delete no content response has a 4xx status code
+func (o *TenancyContactGroupsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contact groups bulk delete no content response has a 5xx status code
+func (o *TenancyContactGroupsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contact groups bulk delete no content response a status code equal to that given
+func (o *TenancyContactGroupsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *TenancyContactGroupsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /tenancy/contact-groups/][%d] tenancyContactGroupsBulkDeleteNoContent ", 204)
+}
+
+func (o *TenancyContactGroupsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /tenancy/contact-groups/][%d] tenancyContactGroupsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewTenancyContactGroupsBulkDeleteDefault(code int) *TenancyContactGroupsBul
 	}
 }
 
-/* TenancyContactGroupsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactGroupsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 TenancyContactGroupsBulkDeleteDefault tenancy contact groups bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *TenancyContactGroupsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contact groups bulk delete default response has a 2xx status code
+func (o *TenancyContactGroupsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contact groups bulk delete default response has a 3xx status code
+func (o *TenancyContactGroupsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contact groups bulk delete default response has a 4xx status code
+func (o *TenancyContactGroupsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contact groups bulk delete default response has a 5xx status code
+func (o *TenancyContactGroupsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contact groups bulk delete default response a status code equal to that given
+func (o *TenancyContactGroupsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactGroupsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /tenancy/contact-groups/][%d] tenancy_contact-groups_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactGroupsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /tenancy/contact-groups/][%d] tenancy_contact-groups_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactGroupsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

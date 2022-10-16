@@ -59,14 +59,44 @@ func NewWirelessWirelessLansBulkDeleteNoContent() *WirelessWirelessLansBulkDelet
 	return &WirelessWirelessLansBulkDeleteNoContent{}
 }
 
-/* WirelessWirelessLansBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+WirelessWirelessLansBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 WirelessWirelessLansBulkDeleteNoContent wireless wireless lans bulk delete no content
 */
 type WirelessWirelessLansBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this wireless wireless lans bulk delete no content response has a 2xx status code
+func (o *WirelessWirelessLansBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this wireless wireless lans bulk delete no content response has a 3xx status code
+func (o *WirelessWirelessLansBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this wireless wireless lans bulk delete no content response has a 4xx status code
+func (o *WirelessWirelessLansBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this wireless wireless lans bulk delete no content response has a 5xx status code
+func (o *WirelessWirelessLansBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this wireless wireless lans bulk delete no content response a status code equal to that given
+func (o *WirelessWirelessLansBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *WirelessWirelessLansBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /wireless/wireless-lans/][%d] wirelessWirelessLansBulkDeleteNoContent ", 204)
+}
+
+func (o *WirelessWirelessLansBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /wireless/wireless-lans/][%d] wirelessWirelessLansBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewWirelessWirelessLansBulkDeleteDefault(code int) *WirelessWirelessLansBul
 	}
 }
 
-/* WirelessWirelessLansBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+WirelessWirelessLansBulkDeleteDefault describes a response with status code -1, with default header values.
 
 WirelessWirelessLansBulkDeleteDefault wireless wireless lans bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *WirelessWirelessLansBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this wireless wireless lans bulk delete default response has a 2xx status code
+func (o *WirelessWirelessLansBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this wireless wireless lans bulk delete default response has a 3xx status code
+func (o *WirelessWirelessLansBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this wireless wireless lans bulk delete default response has a 4xx status code
+func (o *WirelessWirelessLansBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this wireless wireless lans bulk delete default response has a 5xx status code
+func (o *WirelessWirelessLansBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this wireless wireless lans bulk delete default response a status code equal to that given
+func (o *WirelessWirelessLansBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *WirelessWirelessLansBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /wireless/wireless-lans/][%d] wireless_wireless-lans_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *WirelessWirelessLansBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /wireless/wireless-lans/][%d] wireless_wireless-lans_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *WirelessWirelessLansBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -68,10 +68,12 @@ func NewWirelessWirelessLansListParamsWithHTTPClient(client *http.Client) *Wirel
 	}
 }
 
-/* WirelessWirelessLansListParams contains all the parameters to send to the API endpoint
-   for the wireless wireless lans list operation.
+/*
+WirelessWirelessLansListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless lans list operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLansListParams struct {
 
@@ -83,9 +85,6 @@ type WirelessWirelessLansListParams struct {
 
 	// AuthPsk.
 	AuthPsk *string
-
-	// AuthPskEmpty.
-	AuthPskEmpty *string
 
 	// AuthPskIc.
 	AuthPskIc *string
@@ -123,17 +122,23 @@ type WirelessWirelessLansListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
+
+	// CreatedLt.
+	CreatedLt *string
 
 	// CreatedLte.
 	CreatedLte *string
 
+	// Createdn.
+	Createdn *string
+
 	// Description.
 	Description *string
-
-	// DescriptionEmpty.
-	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -195,11 +200,20 @@ type WirelessWirelessLansListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -213,14 +227,17 @@ type WirelessWirelessLansListParams struct {
 	*/
 	Offset *int64
 
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
+
 	// Q.
 	Q *string
 
 	// Ssid.
 	Ssid *string
-
-	// SsidEmpty.
-	SsidEmpty *string
 
 	// SsidIc.
 	SsidIc *string
@@ -254,6 +271,30 @@ type WirelessWirelessLansListParams struct {
 
 	// Tagn.
 	Tagn *string
+
+	// Tenant.
+	Tenant *string
+
+	// Tenantn.
+	Tenantn *string
+
+	// TenantGroup.
+	TenantGroup *string
+
+	// TenantGroupn.
+	TenantGroupn *string
+
+	// TenantGroupID.
+	TenantGroupID *string
+
+	// TenantGroupIDn.
+	TenantGroupIDn *string
+
+	// TenantID.
+	TenantID *string
+
+	// TenantIDn.
+	TenantIDn *string
 
 	// VlanID.
 	VlanID *string
@@ -345,17 +386,6 @@ func (o *WirelessWirelessLansListParams) WithAuthPsk(authPsk *string) *WirelessW
 // SetAuthPsk adds the authPsk to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) SetAuthPsk(authPsk *string) {
 	o.AuthPsk = authPsk
-}
-
-// WithAuthPskEmpty adds the authPskEmpty to the wireless wireless lans list params
-func (o *WirelessWirelessLansListParams) WithAuthPskEmpty(authPskEmpty *string) *WirelessWirelessLansListParams {
-	o.SetAuthPskEmpty(authPskEmpty)
-	return o
-}
-
-// SetAuthPskEmpty adds the authPskEmpty to the wireless wireless lans list params
-func (o *WirelessWirelessLansListParams) SetAuthPskEmpty(authPskEmpty *string) {
-	o.AuthPskEmpty = authPskEmpty
 }
 
 // WithAuthPskIc adds the authPskIc to the wireless wireless lans list params
@@ -490,6 +520,17 @@ func (o *WirelessWirelessLansListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithCreatedGt(createdGt *string) *WirelessWirelessLansListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) WithCreatedGte(createdGte *string) *WirelessWirelessLansListParams {
 	o.SetCreatedGte(createdGte)
@@ -499,6 +540,17 @@ func (o *WirelessWirelessLansListParams) WithCreatedGte(createdGte *string) *Wir
 // SetCreatedGte adds the createdGte to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
+}
+
+// WithCreatedLt adds the createdLt to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithCreatedLt(createdLt *string) *WirelessWirelessLansListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
 }
 
 // WithCreatedLte adds the createdLte to the wireless wireless lans list params
@@ -512,6 +564,17 @@ func (o *WirelessWirelessLansListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
 }
 
+// WithCreatedn adds the createdn to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithCreatedn(createdn *string) *WirelessWirelessLansListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
+}
+
 // WithDescription adds the description to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) WithDescription(description *string) *WirelessWirelessLansListParams {
 	o.SetDescription(description)
@@ -521,17 +584,6 @@ func (o *WirelessWirelessLansListParams) WithDescription(description *string) *W
 // SetDescription adds the description to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the wireless wireless lans list params
-func (o *WirelessWirelessLansListParams) WithDescriptionEmpty(descriptionEmpty *string) *WirelessWirelessLansListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the wireless wireless lans list params
-func (o *WirelessWirelessLansListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the wireless wireless lans list params
@@ -754,6 +806,17 @@ func (o *WirelessWirelessLansListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithLastUpdatedGt(lastUpdatedGt *string) *WirelessWirelessLansListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) WithLastUpdatedGte(lastUpdatedGte *string) *WirelessWirelessLansListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -765,6 +828,17 @@ func (o *WirelessWirelessLansListParams) SetLastUpdatedGte(lastUpdatedGte *strin
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithLastUpdatedLt(lastUpdatedLt *string) *WirelessWirelessLansListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) WithLastUpdatedLte(lastUpdatedLte *string) *WirelessWirelessLansListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -774,6 +848,17 @@ func (o *WirelessWirelessLansListParams) WithLastUpdatedLte(lastUpdatedLte *stri
 // SetLastUpdatedLte adds the lastUpdatedLte to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithLastUpdatedn(lastUpdatedn *string) *WirelessWirelessLansListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the wireless wireless lans list params
@@ -798,6 +883,17 @@ func (o *WirelessWirelessLansListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithOrdering adds the ordering to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithOrdering(ordering *string) *WirelessWirelessLansListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
+}
+
 // WithQ adds the q to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) WithQ(q *string) *WirelessWirelessLansListParams {
 	o.SetQ(q)
@@ -818,17 +914,6 @@ func (o *WirelessWirelessLansListParams) WithSsid(ssid *string) *WirelessWireles
 // SetSsid adds the ssid to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) SetSsid(ssid *string) {
 	o.Ssid = ssid
-}
-
-// WithSsidEmpty adds the ssidEmpty to the wireless wireless lans list params
-func (o *WirelessWirelessLansListParams) WithSsidEmpty(ssidEmpty *string) *WirelessWirelessLansListParams {
-	o.SetSsidEmpty(ssidEmpty)
-	return o
-}
-
-// SetSsidEmpty adds the ssidEmpty to the wireless wireless lans list params
-func (o *WirelessWirelessLansListParams) SetSsidEmpty(ssidEmpty *string) {
-	o.SsidEmpty = ssidEmpty
 }
 
 // WithSsidIc adds the ssidIc to the wireless wireless lans list params
@@ -952,6 +1037,94 @@ func (o *WirelessWirelessLansListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
 }
 
+// WithTenant adds the tenant to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithTenant(tenant *string) *WirelessWirelessLansListParams {
+	o.SetTenant(tenant)
+	return o
+}
+
+// SetTenant adds the tenant to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetTenant(tenant *string) {
+	o.Tenant = tenant
+}
+
+// WithTenantn adds the tenantn to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithTenantn(tenantn *string) *WirelessWirelessLansListParams {
+	o.SetTenantn(tenantn)
+	return o
+}
+
+// SetTenantn adds the tenantN to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetTenantn(tenantn *string) {
+	o.Tenantn = tenantn
+}
+
+// WithTenantGroup adds the tenantGroup to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithTenantGroup(tenantGroup *string) *WirelessWirelessLansListParams {
+	o.SetTenantGroup(tenantGroup)
+	return o
+}
+
+// SetTenantGroup adds the tenantGroup to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetTenantGroup(tenantGroup *string) {
+	o.TenantGroup = tenantGroup
+}
+
+// WithTenantGroupn adds the tenantGroupn to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithTenantGroupn(tenantGroupn *string) *WirelessWirelessLansListParams {
+	o.SetTenantGroupn(tenantGroupn)
+	return o
+}
+
+// SetTenantGroupn adds the tenantGroupN to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetTenantGroupn(tenantGroupn *string) {
+	o.TenantGroupn = tenantGroupn
+}
+
+// WithTenantGroupID adds the tenantGroupID to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithTenantGroupID(tenantGroupID *string) *WirelessWirelessLansListParams {
+	o.SetTenantGroupID(tenantGroupID)
+	return o
+}
+
+// SetTenantGroupID adds the tenantGroupId to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetTenantGroupID(tenantGroupID *string) {
+	o.TenantGroupID = tenantGroupID
+}
+
+// WithTenantGroupIDn adds the tenantGroupIDn to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithTenantGroupIDn(tenantGroupIDn *string) *WirelessWirelessLansListParams {
+	o.SetTenantGroupIDn(tenantGroupIDn)
+	return o
+}
+
+// SetTenantGroupIDn adds the tenantGroupIdN to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetTenantGroupIDn(tenantGroupIDn *string) {
+	o.TenantGroupIDn = tenantGroupIDn
+}
+
+// WithTenantID adds the tenantID to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithTenantID(tenantID *string) *WirelessWirelessLansListParams {
+	o.SetTenantID(tenantID)
+	return o
+}
+
+// SetTenantID adds the tenantId to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetTenantID(tenantID *string) {
+	o.TenantID = tenantID
+}
+
+// WithTenantIDn adds the tenantIDn to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) WithTenantIDn(tenantIDn *string) *WirelessWirelessLansListParams {
+	o.SetTenantIDn(tenantIDn)
+	return o
+}
+
+// SetTenantIDn adds the tenantIdN to the wireless wireless lans list params
+func (o *WirelessWirelessLansListParams) SetTenantIDn(tenantIDn *string) {
+	o.TenantIDn = tenantIDn
+}
+
 // WithVlanID adds the vlanID to the wireless wireless lans list params
 func (o *WirelessWirelessLansListParams) WithVlanID(vlanID *string) *WirelessWirelessLansListParams {
 	o.SetVlanID(vlanID)
@@ -1028,23 +1201,6 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		if qAuthPsk != "" {
 
 			if err := r.SetQueryParam("auth_psk", qAuthPsk); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.AuthPskEmpty != nil {
-
-		// query param auth_psk__empty
-		var qrAuthPskEmpty string
-
-		if o.AuthPskEmpty != nil {
-			qrAuthPskEmpty = *o.AuthPskEmpty
-		}
-		qAuthPskEmpty := qrAuthPskEmpty
-		if qAuthPskEmpty != "" {
-
-			if err := r.SetQueryParam("auth_psk__empty", qAuthPskEmpty); err != nil {
 				return err
 			}
 		}
@@ -1254,6 +1410,23 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1266,6 +1439,23 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		if qCreatedGte != "" {
 
 			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
 				return err
 			}
 		}
@@ -1288,6 +1478,23 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Description != nil {
 
 		// query param description
@@ -1300,23 +1507,6 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1662,6 +1852,23 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1679,6 +1886,23 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1691,6 +1915,23 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1730,6 +1971,23 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Q != nil {
 
 		// query param q
@@ -1759,23 +2017,6 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		if qSsid != "" {
 
 			if err := r.SetQueryParam("ssid", qSsid); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SsidEmpty != nil {
-
-		// query param ssid__empty
-		var qrSsidEmpty string
-
-		if o.SsidEmpty != nil {
-			qrSsidEmpty = *o.SsidEmpty
-		}
-		qSsidEmpty := qrSsidEmpty
-		if qSsidEmpty != "" {
-
-			if err := r.SetQueryParam("ssid__empty", qSsidEmpty); err != nil {
 				return err
 			}
 		}
@@ -1963,6 +2204,142 @@ func (o *WirelessWirelessLansListParams) WriteToRequest(r runtime.ClientRequest,
 		if qTagn != "" {
 
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tenant != nil {
+
+		// query param tenant
+		var qrTenant string
+
+		if o.Tenant != nil {
+			qrTenant = *o.Tenant
+		}
+		qTenant := qrTenant
+		if qTenant != "" {
+
+			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tenantn != nil {
+
+		// query param tenant__n
+		var qrTenantn string
+
+		if o.Tenantn != nil {
+			qrTenantn = *o.Tenantn
+		}
+		qTenantn := qrTenantn
+		if qTenantn != "" {
+
+			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroup != nil {
+
+		// query param tenant_group
+		var qrTenantGroup string
+
+		if o.TenantGroup != nil {
+			qrTenantGroup = *o.TenantGroup
+		}
+		qTenantGroup := qrTenantGroup
+		if qTenantGroup != "" {
+
+			if err := r.SetQueryParam("tenant_group", qTenantGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupn != nil {
+
+		// query param tenant_group__n
+		var qrTenantGroupn string
+
+		if o.TenantGroupn != nil {
+			qrTenantGroupn = *o.TenantGroupn
+		}
+		qTenantGroupn := qrTenantGroupn
+		if qTenantGroupn != "" {
+
+			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupID != nil {
+
+		// query param tenant_group_id
+		var qrTenantGroupID string
+
+		if o.TenantGroupID != nil {
+			qrTenantGroupID = *o.TenantGroupID
+		}
+		qTenantGroupID := qrTenantGroupID
+		if qTenantGroupID != "" {
+
+			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantGroupIDn != nil {
+
+		// query param tenant_group_id__n
+		var qrTenantGroupIDn string
+
+		if o.TenantGroupIDn != nil {
+			qrTenantGroupIDn = *o.TenantGroupIDn
+		}
+		qTenantGroupIDn := qrTenantGroupIDn
+		if qTenantGroupIDn != "" {
+
+			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantID != nil {
+
+		// query param tenant_id
+		var qrTenantID string
+
+		if o.TenantID != nil {
+			qrTenantID = *o.TenantID
+		}
+		qTenantID := qrTenantID
+		if qTenantID != "" {
+
+			if err := r.SetQueryParam("tenant_id", qTenantID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TenantIDn != nil {
+
+		// query param tenant_id__n
+		var qrTenantIDn string
+
+		if o.TenantIDn != nil {
+			qrTenantIDn = *o.TenantIDn
+		}
+		qTenantIDn := qrTenantIDn
+		if qTenantIDn != "" {
+
+			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
 				return err
 			}
 		}

@@ -59,14 +59,44 @@ func NewUsersConfigListOK() *UsersConfigListOK {
 	return &UsersConfigListOK{}
 }
 
-/* UsersConfigListOK describes a response with status code 200, with default header values.
+/*
+UsersConfigListOK describes a response with status code 200, with default header values.
 
 UsersConfigListOK users config list o k
 */
 type UsersConfigListOK struct {
 }
 
+// IsSuccess returns true when this users config list o k response has a 2xx status code
+func (o *UsersConfigListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users config list o k response has a 3xx status code
+func (o *UsersConfigListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users config list o k response has a 4xx status code
+func (o *UsersConfigListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users config list o k response has a 5xx status code
+func (o *UsersConfigListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users config list o k response a status code equal to that given
+func (o *UsersConfigListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersConfigListOK) Error() string {
+	return fmt.Sprintf("[GET /users/config/][%d] usersConfigListOK ", 200)
+}
+
+func (o *UsersConfigListOK) String() string {
 	return fmt.Sprintf("[GET /users/config/][%d] usersConfigListOK ", 200)
 }
 
@@ -82,7 +112,8 @@ func NewUsersConfigListDefault(code int) *UsersConfigListDefault {
 	}
 }
 
-/* UsersConfigListDefault describes a response with status code -1, with default header values.
+/*
+UsersConfigListDefault describes a response with status code -1, with default header values.
 
 UsersConfigListDefault users config list default
 */
@@ -97,9 +128,39 @@ func (o *UsersConfigListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users config list default response has a 2xx status code
+func (o *UsersConfigListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users config list default response has a 3xx status code
+func (o *UsersConfigListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users config list default response has a 4xx status code
+func (o *UsersConfigListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users config list default response has a 5xx status code
+func (o *UsersConfigListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users config list default response a status code equal to that given
+func (o *UsersConfigListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersConfigListDefault) Error() string {
 	return fmt.Sprintf("[GET /users/config/][%d] users_config_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersConfigListDefault) String() string {
+	return fmt.Sprintf("[GET /users/config/][%d] users_config_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersConfigListDefault) GetPayload() interface{} {
 	return o.Payload
 }

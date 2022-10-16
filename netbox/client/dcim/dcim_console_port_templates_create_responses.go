@@ -61,7 +61,8 @@ func NewDcimConsolePortTemplatesCreateCreated() *DcimConsolePortTemplatesCreateC
 	return &DcimConsolePortTemplatesCreateCreated{}
 }
 
-/* DcimConsolePortTemplatesCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimConsolePortTemplatesCreateCreated describes a response with status code 201, with default header values.
 
 DcimConsolePortTemplatesCreateCreated dcim console port templates create created
 */
@@ -69,9 +70,39 @@ type DcimConsolePortTemplatesCreateCreated struct {
 	Payload *models.ConsolePortTemplate
 }
 
+// IsSuccess returns true when this dcim console port templates create created response has a 2xx status code
+func (o *DcimConsolePortTemplatesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console port templates create created response has a 3xx status code
+func (o *DcimConsolePortTemplatesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console port templates create created response has a 4xx status code
+func (o *DcimConsolePortTemplatesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console port templates create created response has a 5xx status code
+func (o *DcimConsolePortTemplatesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console port templates create created response a status code equal to that given
+func (o *DcimConsolePortTemplatesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimConsolePortTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcimConsolePortTemplatesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimConsolePortTemplatesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcimConsolePortTemplatesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimConsolePortTemplatesCreateCreated) GetPayload() *models.ConsolePortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimConsolePortTemplatesCreateDefault(code int) *DcimConsolePortTemplate
 	}
 }
 
-/* DcimConsolePortTemplatesCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimConsolePortTemplatesCreateDefault describes a response with status code -1, with default header values.
 
 DcimConsolePortTemplatesCreateDefault dcim console port templates create default
 */
@@ -110,9 +142,39 @@ func (o *DcimConsolePortTemplatesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console port templates create default response has a 2xx status code
+func (o *DcimConsolePortTemplatesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console port templates create default response has a 3xx status code
+func (o *DcimConsolePortTemplatesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console port templates create default response has a 4xx status code
+func (o *DcimConsolePortTemplatesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console port templates create default response has a 5xx status code
+func (o *DcimConsolePortTemplatesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console port templates create default response a status code equal to that given
+func (o *DcimConsolePortTemplatesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsolePortTemplatesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcim_console-port-templates_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsolePortTemplatesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcim_console-port-templates_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsolePortTemplatesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

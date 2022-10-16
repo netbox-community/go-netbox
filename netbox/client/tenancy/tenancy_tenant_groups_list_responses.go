@@ -66,7 +66,8 @@ func NewTenancyTenantGroupsListOK() *TenancyTenantGroupsListOK {
 	return &TenancyTenantGroupsListOK{}
 }
 
-/* TenancyTenantGroupsListOK describes a response with status code 200, with default header values.
+/*
+TenancyTenantGroupsListOK describes a response with status code 200, with default header values.
 
 TenancyTenantGroupsListOK tenancy tenant groups list o k
 */
@@ -74,9 +75,39 @@ type TenancyTenantGroupsListOK struct {
 	Payload *TenancyTenantGroupsListOKBody
 }
 
+// IsSuccess returns true when this tenancy tenant groups list o k response has a 2xx status code
+func (o *TenancyTenantGroupsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy tenant groups list o k response has a 3xx status code
+func (o *TenancyTenantGroupsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy tenant groups list o k response has a 4xx status code
+func (o *TenancyTenantGroupsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy tenant groups list o k response has a 5xx status code
+func (o *TenancyTenantGroupsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy tenant groups list o k response a status code equal to that given
+func (o *TenancyTenantGroupsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyTenantGroupsListOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenant-groups/][%d] tenancyTenantGroupsListOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyTenantGroupsListOK) String() string {
+	return fmt.Sprintf("[GET /tenancy/tenant-groups/][%d] tenancyTenantGroupsListOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyTenantGroupsListOK) GetPayload() *TenancyTenantGroupsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewTenancyTenantGroupsListDefault(code int) *TenancyTenantGroupsListDefault
 	}
 }
 
-/* TenancyTenantGroupsListDefault describes a response with status code -1, with default header values.
+/*
+TenancyTenantGroupsListDefault describes a response with status code -1, with default header values.
 
 TenancyTenantGroupsListDefault tenancy tenant groups list default
 */
@@ -115,9 +147,39 @@ func (o *TenancyTenantGroupsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy tenant groups list default response has a 2xx status code
+func (o *TenancyTenantGroupsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy tenant groups list default response has a 3xx status code
+func (o *TenancyTenantGroupsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy tenant groups list default response has a 4xx status code
+func (o *TenancyTenantGroupsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy tenant groups list default response has a 5xx status code
+func (o *TenancyTenantGroupsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy tenant groups list default response a status code equal to that given
+func (o *TenancyTenantGroupsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyTenantGroupsListDefault) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenant-groups/][%d] tenancy_tenant-groups_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyTenantGroupsListDefault) String() string {
+	return fmt.Sprintf("[GET /tenancy/tenant-groups/][%d] tenancy_tenant-groups_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyTenantGroupsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *TenancyTenantGroupsListDefault) readResponse(response runtime.ClientRes
 	return nil
 }
 
-/*TenancyTenantGroupsListOKBody tenancy tenant groups list o k body
+/*
+TenancyTenantGroupsListOKBody tenancy tenant groups list o k body
 swagger:model TenancyTenantGroupsListOKBody
 */
 type TenancyTenantGroupsListOKBody struct {

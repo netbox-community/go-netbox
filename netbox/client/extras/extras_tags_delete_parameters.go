@@ -68,10 +68,12 @@ func NewExtrasTagsDeleteParamsWithHTTPClient(client *http.Client) *ExtrasTagsDel
 	}
 }
 
-/* ExtrasTagsDeleteParams contains all the parameters to send to the API endpoint
-   for the extras tags delete operation.
+/*
+ExtrasTagsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras tags delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasTagsDeleteParams struct {
 

@@ -67,10 +67,12 @@ func NewExtrasJournalEntriesBulkDeleteParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* ExtrasJournalEntriesBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the extras journal entries bulk delete operation.
+/*
+ExtrasJournalEntriesBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras journal entries bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasJournalEntriesBulkDeleteParams struct {
 	timeout    time.Duration

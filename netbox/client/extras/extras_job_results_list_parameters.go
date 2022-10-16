@@ -68,10 +68,12 @@ func NewExtrasJobResultsListParamsWithHTTPClient(client *http.Client) *ExtrasJob
 	}
 }
 
-/* ExtrasJobResultsListParams contains all the parameters to send to the API endpoint
-   for the extras job results list operation.
+/*
+ExtrasJobResultsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras job results list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasJobResultsListParams struct {
 
@@ -146,6 +148,12 @@ type ExtrasJobResultsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Q.
 	Q *string
@@ -455,6 +463,17 @@ func (o *ExtrasJobResultsListParams) WithOffset(offset *int64) *ExtrasJobResults
 // SetOffset adds the offset to the extras job results list params
 func (o *ExtrasJobResultsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithOrdering(ordering *string) *ExtrasJobResultsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithQ adds the q to the extras job results list params
@@ -889,6 +908,23 @@ func (o *ExtrasJobResultsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

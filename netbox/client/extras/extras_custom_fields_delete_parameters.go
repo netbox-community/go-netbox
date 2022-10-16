@@ -68,10 +68,12 @@ func NewExtrasCustomFieldsDeleteParamsWithHTTPClient(client *http.Client) *Extra
 	}
 }
 
-/* ExtrasCustomFieldsDeleteParams contains all the parameters to send to the API endpoint
-   for the extras custom fields delete operation.
+/*
+ExtrasCustomFieldsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras custom fields delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasCustomFieldsDeleteParams struct {
 

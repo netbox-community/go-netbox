@@ -59,14 +59,44 @@ func NewIpamVrfsBulkDeleteNoContent() *IpamVrfsBulkDeleteNoContent {
 	return &IpamVrfsBulkDeleteNoContent{}
 }
 
-/* IpamVrfsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamVrfsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamVrfsBulkDeleteNoContent ipam vrfs bulk delete no content
 */
 type IpamVrfsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam vrfs bulk delete no content response has a 2xx status code
+func (o *IpamVrfsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam vrfs bulk delete no content response has a 3xx status code
+func (o *IpamVrfsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam vrfs bulk delete no content response has a 4xx status code
+func (o *IpamVrfsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam vrfs bulk delete no content response has a 5xx status code
+func (o *IpamVrfsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam vrfs bulk delete no content response a status code equal to that given
+func (o *IpamVrfsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamVrfsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/vrfs/][%d] ipamVrfsBulkDeleteNoContent ", 204)
+}
+
+func (o *IpamVrfsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/vrfs/][%d] ipamVrfsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamVrfsBulkDeleteDefault(code int) *IpamVrfsBulkDeleteDefault {
 	}
 }
 
-/* IpamVrfsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamVrfsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamVrfsBulkDeleteDefault ipam vrfs bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamVrfsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam vrfs bulk delete default response has a 2xx status code
+func (o *IpamVrfsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam vrfs bulk delete default response has a 3xx status code
+func (o *IpamVrfsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam vrfs bulk delete default response has a 4xx status code
+func (o *IpamVrfsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam vrfs bulk delete default response has a 5xx status code
+func (o *IpamVrfsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam vrfs bulk delete default response a status code equal to that given
+func (o *IpamVrfsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamVrfsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/vrfs/][%d] ipam_vrfs_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamVrfsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/vrfs/][%d] ipam_vrfs_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamVrfsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

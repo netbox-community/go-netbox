@@ -70,10 +70,12 @@ func NewIpamAsnsUpdateParamsWithHTTPClient(client *http.Client) *IpamAsnsUpdateP
 	}
 }
 
-/* IpamAsnsUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam asns update operation.
+/*
+IpamAsnsUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam asns update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAsnsUpdateParams struct {
 

@@ -61,7 +61,8 @@ func NewIpamServiceTemplatesUpdateOK() *IpamServiceTemplatesUpdateOK {
 	return &IpamServiceTemplatesUpdateOK{}
 }
 
-/* IpamServiceTemplatesUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamServiceTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 IpamServiceTemplatesUpdateOK ipam service templates update o k
 */
@@ -69,9 +70,39 @@ type IpamServiceTemplatesUpdateOK struct {
 	Payload *models.ServiceTemplate
 }
 
+// IsSuccess returns true when this ipam service templates update o k response has a 2xx status code
+func (o *IpamServiceTemplatesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam service templates update o k response has a 3xx status code
+func (o *IpamServiceTemplatesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam service templates update o k response has a 4xx status code
+func (o *IpamServiceTemplatesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam service templates update o k response has a 5xx status code
+func (o *IpamServiceTemplatesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam service templates update o k response a status code equal to that given
+func (o *IpamServiceTemplatesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamServiceTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/service-templates/{id}/][%d] ipamServiceTemplatesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamServiceTemplatesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /ipam/service-templates/{id}/][%d] ipamServiceTemplatesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamServiceTemplatesUpdateOK) GetPayload() *models.ServiceTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamServiceTemplatesUpdateDefault(code int) *IpamServiceTemplatesUpdateD
 	}
 }
 
-/* IpamServiceTemplatesUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamServiceTemplatesUpdateDefault describes a response with status code -1, with default header values.
 
 IpamServiceTemplatesUpdateDefault ipam service templates update default
 */
@@ -110,9 +142,39 @@ func (o *IpamServiceTemplatesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam service templates update default response has a 2xx status code
+func (o *IpamServiceTemplatesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam service templates update default response has a 3xx status code
+func (o *IpamServiceTemplatesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam service templates update default response has a 4xx status code
+func (o *IpamServiceTemplatesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam service templates update default response has a 5xx status code
+func (o *IpamServiceTemplatesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam service templates update default response a status code equal to that given
+func (o *IpamServiceTemplatesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamServiceTemplatesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/service-templates/{id}/][%d] ipam_service-templates_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamServiceTemplatesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /ipam/service-templates/{id}/][%d] ipam_service-templates_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamServiceTemplatesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

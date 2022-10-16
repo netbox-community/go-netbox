@@ -61,7 +61,8 @@ func NewIpamRouteTargetsPartialUpdateOK() *IpamRouteTargetsPartialUpdateOK {
 	return &IpamRouteTargetsPartialUpdateOK{}
 }
 
-/* IpamRouteTargetsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamRouteTargetsPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamRouteTargetsPartialUpdateOK ipam route targets partial update o k
 */
@@ -69,9 +70,39 @@ type IpamRouteTargetsPartialUpdateOK struct {
 	Payload *models.RouteTarget
 }
 
+// IsSuccess returns true when this ipam route targets partial update o k response has a 2xx status code
+func (o *IpamRouteTargetsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam route targets partial update o k response has a 3xx status code
+func (o *IpamRouteTargetsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam route targets partial update o k response has a 4xx status code
+func (o *IpamRouteTargetsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam route targets partial update o k response has a 5xx status code
+func (o *IpamRouteTargetsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam route targets partial update o k response a status code equal to that given
+func (o *IpamRouteTargetsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamRouteTargetsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipamRouteTargetsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamRouteTargetsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipamRouteTargetsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamRouteTargetsPartialUpdateOK) GetPayload() *models.RouteTarget {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamRouteTargetsPartialUpdateDefault(code int) *IpamRouteTargetsPartialU
 	}
 }
 
-/* IpamRouteTargetsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamRouteTargetsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsPartialUpdateDefault ipam route targets partial update default
 */
@@ -110,9 +142,39 @@ func (o *IpamRouteTargetsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam route targets partial update default response has a 2xx status code
+func (o *IpamRouteTargetsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam route targets partial update default response has a 3xx status code
+func (o *IpamRouteTargetsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam route targets partial update default response has a 4xx status code
+func (o *IpamRouteTargetsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam route targets partial update default response has a 5xx status code
+func (o *IpamRouteTargetsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam route targets partial update default response a status code equal to that given
+func (o *IpamRouteTargetsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamRouteTargetsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipam_route-targets_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamRouteTargetsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /ipam/route-targets/{id}/][%d] ipam_route-targets_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamRouteTargetsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

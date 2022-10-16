@@ -68,10 +68,12 @@ func NewCircuitsCircuitTerminationsPathsParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* CircuitsCircuitTerminationsPathsParams contains all the parameters to send to the API endpoint
-   for the circuits circuit terminations paths operation.
+/*
+CircuitsCircuitTerminationsPathsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits circuit terminations paths operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsCircuitTerminationsPathsParams struct {
 

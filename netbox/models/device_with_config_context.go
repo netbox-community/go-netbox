@@ -53,12 +53,12 @@ type DeviceWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext map[string]*string `json:"config_context,omitempty"`
+	ConfigContext interface{} `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -85,10 +85,10 @@ type DeviceWithConfigContext struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
-	LocalContextData *string `json:"local_context_data,omitempty"`
+	LocalContextData interface{} `json:"local_context_data,omitempty"`
 
 	// location
 	Location *NestedLocation `json:"location,omitempty"`
@@ -105,8 +105,8 @@ type DeviceWithConfigContext struct {
 	Platform *NestedPlatform `json:"platform,omitempty"`
 
 	// Position (U)
-	// Minimum: 1
-	Position *int64 `json:"position,omitempty"`
+	// Minimum: 0.5
+	Position *float64 `json:"position,omitempty"`
 
 	// primary ip
 	PrimaryIP *NestedIPAddress `json:"primary_ip,omitempty"`
@@ -478,7 +478,7 @@ func (m *DeviceWithConfigContext) validatePosition(formats strfmt.Registry) erro
 		return nil
 	}
 
-	if err := validate.MinimumInt("position", "body", *m.Position, 1, false); err != nil {
+	if err := validate.Minimum("position", "body", *m.Position, 0.5, false); err != nil {
 		return err
 	}
 
@@ -732,10 +732,6 @@ func (m *DeviceWithConfigContext) ContextValidate(ctx context.Context, formats s
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -854,14 +850,9 @@ func (m *DeviceWithConfigContext) contextValidateCluster(ctx context.Context, fo
 	return nil
 }
 
-func (m *DeviceWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
 func (m *DeviceWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -936,7 +927,7 @@ func (m *DeviceWithConfigContext) contextValidateID(ctx context.Context, formats
 
 func (m *DeviceWithConfigContext) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 
@@ -1173,12 +1164,12 @@ type DeviceWithConfigContextAirflow struct {
 
 	// label
 	// Required: true
-	// Enum: [Front to rear Rear to front Left to right Right to left Side to rear Passive]
+	// Enum: [Front to rear Rear to front Left to right Right to left Side to rear Passive Mixed]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
 	Value *string `json:"value"`
 }
 
@@ -1204,7 +1195,7 @@ var deviceWithConfigContextAirflowTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Front to rear","Rear to front","Left to right","Right to left","Side to rear","Passive"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Front to rear","Rear to front","Left to right","Right to left","Side to rear","Passive","Mixed"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -1231,6 +1222,9 @@ const (
 
 	// DeviceWithConfigContextAirflowLabelPassive captures enum value "Passive"
 	DeviceWithConfigContextAirflowLabelPassive string = "Passive"
+
+	// DeviceWithConfigContextAirflowLabelMixed captures enum value "Mixed"
+	DeviceWithConfigContextAirflowLabelMixed string = "Mixed"
 )
 
 // prop value enum
@@ -1259,7 +1253,7 @@ var deviceWithConfigContextAirflowTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -1286,6 +1280,9 @@ const (
 
 	// DeviceWithConfigContextAirflowValuePassive captures enum value "passive"
 	DeviceWithConfigContextAirflowValuePassive string = "passive"
+
+	// DeviceWithConfigContextAirflowValueMixed captures enum value "mixed"
+	DeviceWithConfigContextAirflowValueMixed string = "mixed"
 )
 
 // prop value enum

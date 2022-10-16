@@ -47,7 +47,7 @@ type RackUnit struct {
 
 	// Id
 	// Read Only: true
-	ID int64 `json:"id,omitempty"`
+	ID float64 `json:"id,omitempty"`
 
 	// Name
 	// Read Only: true
@@ -208,7 +208,7 @@ func (m *RackUnit) contextValidateFace(ctx context.Context, formats strfmt.Regis
 
 func (m *RackUnit) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+	if err := validate.ReadOnly(ctx, "id", "body", float64(m.ID)); err != nil {
 		return err
 	}
 

@@ -68,10 +68,12 @@ func NewTenancyContactRolesDeleteParamsWithHTTPClient(client *http.Client) *Tena
 	}
 }
 
-/* TenancyContactRolesDeleteParams contains all the parameters to send to the API endpoint
-   for the tenancy contact roles delete operation.
+/*
+TenancyContactRolesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact roles delete operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactRolesDeleteParams struct {
 

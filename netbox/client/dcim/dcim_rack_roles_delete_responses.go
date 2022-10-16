@@ -59,14 +59,44 @@ func NewDcimRackRolesDeleteNoContent() *DcimRackRolesDeleteNoContent {
 	return &DcimRackRolesDeleteNoContent{}
 }
 
-/* DcimRackRolesDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimRackRolesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimRackRolesDeleteNoContent dcim rack roles delete no content
 */
 type DcimRackRolesDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim rack roles delete no content response has a 2xx status code
+func (o *DcimRackRolesDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rack roles delete no content response has a 3xx status code
+func (o *DcimRackRolesDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rack roles delete no content response has a 4xx status code
+func (o *DcimRackRolesDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rack roles delete no content response has a 5xx status code
+func (o *DcimRackRolesDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rack roles delete no content response a status code equal to that given
+func (o *DcimRackRolesDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimRackRolesDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcimRackRolesDeleteNoContent ", 204)
+}
+
+func (o *DcimRackRolesDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcimRackRolesDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimRackRolesDeleteDefault(code int) *DcimRackRolesDeleteDefault {
 	}
 }
 
-/* DcimRackRolesDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimRackRolesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimRackRolesDeleteDefault dcim rack roles delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimRackRolesDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rack roles delete default response has a 2xx status code
+func (o *DcimRackRolesDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rack roles delete default response has a 3xx status code
+func (o *DcimRackRolesDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rack roles delete default response has a 4xx status code
+func (o *DcimRackRolesDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rack roles delete default response has a 5xx status code
+func (o *DcimRackRolesDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rack roles delete default response a status code equal to that given
+func (o *DcimRackRolesDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRackRolesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcim_rack-roles_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRackRolesDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/rack-roles/{id}/][%d] dcim_rack-roles_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRackRolesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

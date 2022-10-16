@@ -61,7 +61,8 @@ func NewDcimDeviceBaysBulkPartialUpdateOK() *DcimDeviceBaysBulkPartialUpdateOK {
 	return &DcimDeviceBaysBulkPartialUpdateOK{}
 }
 
-/* DcimDeviceBaysBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimDeviceBaysBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimDeviceBaysBulkPartialUpdateOK dcim device bays bulk partial update o k
 */
@@ -69,9 +70,39 @@ type DcimDeviceBaysBulkPartialUpdateOK struct {
 	Payload *models.DeviceBay
 }
 
+// IsSuccess returns true when this dcim device bays bulk partial update o k response has a 2xx status code
+func (o *DcimDeviceBaysBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim device bays bulk partial update o k response has a 3xx status code
+func (o *DcimDeviceBaysBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim device bays bulk partial update o k response has a 4xx status code
+func (o *DcimDeviceBaysBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim device bays bulk partial update o k response has a 5xx status code
+func (o *DcimDeviceBaysBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim device bays bulk partial update o k response a status code equal to that given
+func (o *DcimDeviceBaysBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimDeviceBaysBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-bays/][%d] dcimDeviceBaysBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimDeviceBaysBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/device-bays/][%d] dcimDeviceBaysBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimDeviceBaysBulkPartialUpdateOK) GetPayload() *models.DeviceBay {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimDeviceBaysBulkPartialUpdateDefault(code int) *DcimDeviceBaysBulkPart
 	}
 }
 
-/* DcimDeviceBaysBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimDeviceBaysBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceBaysBulkPartialUpdateDefault dcim device bays bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimDeviceBaysBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim device bays bulk partial update default response has a 2xx status code
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim device bays bulk partial update default response has a 3xx status code
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim device bays bulk partial update default response has a 4xx status code
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim device bays bulk partial update default response has a 5xx status code
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim device bays bulk partial update default response a status code equal to that given
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimDeviceBaysBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-bays/][%d] dcim_device-bays_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimDeviceBaysBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/device-bays/][%d] dcim_device-bays_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimDeviceBaysBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

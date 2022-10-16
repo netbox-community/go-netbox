@@ -39,7 +39,7 @@ type VLAN struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -59,10 +59,13 @@ type VLAN struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// l2vpn termination
+	L2vpnTermination *NestedL2VPNTermination `json:"l2vpn_termination,omitempty"`
+
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -114,6 +117,10 @@ func (m *VLAN) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateGroup(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateL2vpnTermination(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -194,6 +201,25 @@ func (m *VLAN) validateGroup(formats strfmt.Registry) error {
 				return ve.ValidateName("group")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("group")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *VLAN) validateL2vpnTermination(formats strfmt.Registry) error {
+	if swag.IsZero(m.L2vpnTermination) { // not required
+		return nil
+	}
+
+	if m.L2vpnTermination != nil {
+		if err := m.L2vpnTermination.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("l2vpn_termination")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("l2vpn_termination")
 			}
 			return err
 		}
@@ -382,6 +408,10 @@ func (m *VLAN) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateL2vpnTermination(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -422,7 +452,7 @@ func (m *VLAN) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 
 func (m *VLAN) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -463,9 +493,25 @@ func (m *VLAN) contextValidateID(ctx context.Context, formats strfmt.Registry) e
 	return nil
 }
 
+func (m *VLAN) contextValidateL2vpnTermination(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.L2vpnTermination != nil {
+		if err := m.L2vpnTermination.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("l2vpn_termination")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("l2vpn_termination")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *VLAN) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

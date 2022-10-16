@@ -38,7 +38,7 @@ type WritableConsolePortTemplate struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -65,9 +65,17 @@ type WritableConsolePortTemplate struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Module type
+	// Required: true
+	ModuleType *int64 `json:"module_type"`
 
 	// Name
+	//
+	//
+	// {module} is accepted as a substitution for the module bay position when attached to a module type.
+	//
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1
@@ -104,6 +112,10 @@ func (m *WritableConsolePortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateModuleType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -176,6 +188,15 @@ func (m *WritableConsolePortTemplate) validateLastUpdated(formats strfmt.Registr
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableConsolePortTemplate) validateModuleType(formats strfmt.Registry) error {
+
+	if err := validate.Required("module_type", "body", m.ModuleType); err != nil {
 		return err
 	}
 
@@ -324,7 +345,7 @@ func (m *WritableConsolePortTemplate) ContextValidate(ctx context.Context, forma
 
 func (m *WritableConsolePortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -351,7 +372,7 @@ func (m *WritableConsolePortTemplate) contextValidateID(ctx context.Context, for
 
 func (m *WritableConsolePortTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

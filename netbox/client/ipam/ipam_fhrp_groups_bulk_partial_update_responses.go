@@ -61,7 +61,8 @@ func NewIpamFhrpGroupsBulkPartialUpdateOK() *IpamFhrpGroupsBulkPartialUpdateOK {
 	return &IpamFhrpGroupsBulkPartialUpdateOK{}
 }
 
-/* IpamFhrpGroupsBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamFhrpGroupsBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamFhrpGroupsBulkPartialUpdateOK ipam fhrp groups bulk partial update o k
 */
@@ -69,9 +70,39 @@ type IpamFhrpGroupsBulkPartialUpdateOK struct {
 	Payload *models.FHRPGroup
 }
 
+// IsSuccess returns true when this ipam fhrp groups bulk partial update o k response has a 2xx status code
+func (o *IpamFhrpGroupsBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam fhrp groups bulk partial update o k response has a 3xx status code
+func (o *IpamFhrpGroupsBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam fhrp groups bulk partial update o k response has a 4xx status code
+func (o *IpamFhrpGroupsBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam fhrp groups bulk partial update o k response has a 5xx status code
+func (o *IpamFhrpGroupsBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam fhrp groups bulk partial update o k response a status code equal to that given
+func (o *IpamFhrpGroupsBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamFhrpGroupsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/][%d] ipamFhrpGroupsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamFhrpGroupsBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/][%d] ipamFhrpGroupsBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamFhrpGroupsBulkPartialUpdateOK) GetPayload() *models.FHRPGroup {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamFhrpGroupsBulkPartialUpdateDefault(code int) *IpamFhrpGroupsBulkPart
 	}
 }
 
-/* IpamFhrpGroupsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamFhrpGroupsBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamFhrpGroupsBulkPartialUpdateDefault ipam fhrp groups bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *IpamFhrpGroupsBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam fhrp groups bulk partial update default response has a 2xx status code
+func (o *IpamFhrpGroupsBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam fhrp groups bulk partial update default response has a 3xx status code
+func (o *IpamFhrpGroupsBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam fhrp groups bulk partial update default response has a 4xx status code
+func (o *IpamFhrpGroupsBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam fhrp groups bulk partial update default response has a 5xx status code
+func (o *IpamFhrpGroupsBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam fhrp groups bulk partial update default response a status code equal to that given
+func (o *IpamFhrpGroupsBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamFhrpGroupsBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/][%d] ipam_fhrp-groups_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamFhrpGroupsBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /ipam/fhrp-groups/][%d] ipam_fhrp-groups_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamFhrpGroupsBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

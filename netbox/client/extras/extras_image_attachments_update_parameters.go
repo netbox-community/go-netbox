@@ -70,10 +70,12 @@ func NewExtrasImageAttachmentsUpdateParamsWithHTTPClient(client *http.Client) *E
 	}
 }
 
-/* ExtrasImageAttachmentsUpdateParams contains all the parameters to send to the API endpoint
-   for the extras image attachments update operation.
+/*
+ExtrasImageAttachmentsUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras image attachments update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasImageAttachmentsUpdateParams struct {
 

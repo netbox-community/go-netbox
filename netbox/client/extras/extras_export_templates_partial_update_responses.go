@@ -61,7 +61,8 @@ func NewExtrasExportTemplatesPartialUpdateOK() *ExtrasExportTemplatesPartialUpda
 	return &ExtrasExportTemplatesPartialUpdateOK{}
 }
 
-/* ExtrasExportTemplatesPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+ExtrasExportTemplatesPartialUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasExportTemplatesPartialUpdateOK extras export templates partial update o k
 */
@@ -69,9 +70,39 @@ type ExtrasExportTemplatesPartialUpdateOK struct {
 	Payload *models.ExportTemplate
 }
 
+// IsSuccess returns true when this extras export templates partial update o k response has a 2xx status code
+func (o *ExtrasExportTemplatesPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras export templates partial update o k response has a 3xx status code
+func (o *ExtrasExportTemplatesPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras export templates partial update o k response has a 4xx status code
+func (o *ExtrasExportTemplatesPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras export templates partial update o k response has a 5xx status code
+func (o *ExtrasExportTemplatesPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras export templates partial update o k response a status code equal to that given
+func (o *ExtrasExportTemplatesPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasExportTemplatesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/export-templates/{id}/][%d] extrasExportTemplatesPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasExportTemplatesPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /extras/export-templates/{id}/][%d] extrasExportTemplatesPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasExportTemplatesPartialUpdateOK) GetPayload() *models.ExportTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasExportTemplatesPartialUpdateDefault(code int) *ExtrasExportTemplat
 	}
 }
 
-/* ExtrasExportTemplatesPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasExportTemplatesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasExportTemplatesPartialUpdateDefault extras export templates partial update default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasExportTemplatesPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras export templates partial update default response has a 2xx status code
+func (o *ExtrasExportTemplatesPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras export templates partial update default response has a 3xx status code
+func (o *ExtrasExportTemplatesPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras export templates partial update default response has a 4xx status code
+func (o *ExtrasExportTemplatesPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras export templates partial update default response has a 5xx status code
+func (o *ExtrasExportTemplatesPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras export templates partial update default response a status code equal to that given
+func (o *ExtrasExportTemplatesPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasExportTemplatesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /extras/export-templates/{id}/][%d] extras_export-templates_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasExportTemplatesPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /extras/export-templates/{id}/][%d] extras_export-templates_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasExportTemplatesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

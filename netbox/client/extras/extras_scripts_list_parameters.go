@@ -67,10 +67,12 @@ func NewExtrasScriptsListParamsWithHTTPClient(client *http.Client) *ExtrasScript
 	}
 }
 
-/* ExtrasScriptsListParams contains all the parameters to send to the API endpoint
-   for the extras scripts list operation.
+/*
+ExtrasScriptsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras scripts list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasScriptsListParams struct {
 	timeout    time.Duration

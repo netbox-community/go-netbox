@@ -69,10 +69,12 @@ func NewExtrasTagsCreateParamsWithHTTPClient(client *http.Client) *ExtrasTagsCre
 	}
 }
 
-/* ExtrasTagsCreateParams contains all the parameters to send to the API endpoint
-   for the extras tags create operation.
+/*
+ExtrasTagsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras tags create operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasTagsCreateParams struct {
 

@@ -68,10 +68,12 @@ func NewExtrasCustomLinksReadParamsWithHTTPClient(client *http.Client) *ExtrasCu
 	}
 }
 
-/* ExtrasCustomLinksReadParams contains all the parameters to send to the API endpoint
-   for the extras custom links read operation.
+/*
+ExtrasCustomLinksReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras custom links read operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasCustomLinksReadParams struct {
 

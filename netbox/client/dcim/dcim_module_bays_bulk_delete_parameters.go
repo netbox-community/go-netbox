@@ -67,10 +67,12 @@ func NewDcimModuleBaysBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimM
 	}
 }
 
-/* DcimModuleBaysBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim module bays bulk delete operation.
+/*
+DcimModuleBaysBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module bays bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleBaysBulkDeleteParams struct {
 	timeout    time.Duration

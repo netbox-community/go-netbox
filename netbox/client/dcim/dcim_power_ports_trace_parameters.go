@@ -68,10 +68,12 @@ func NewDcimPowerPortsTraceParamsWithHTTPClient(client *http.Client) *DcimPowerP
 	}
 }
 
-/* DcimPowerPortsTraceParams contains all the parameters to send to the API endpoint
-   for the dcim power ports trace operation.
+/*
+DcimPowerPortsTraceParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power ports trace operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerPortsTraceParams struct {
 

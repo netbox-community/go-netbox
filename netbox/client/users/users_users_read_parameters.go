@@ -68,10 +68,12 @@ func NewUsersUsersReadParamsWithHTTPClient(client *http.Client) *UsersUsersReadP
 	}
 }
 
-/* UsersUsersReadParams contains all the parameters to send to the API endpoint
-   for the users users read operation.
+/*
+UsersUsersReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users users read operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersUsersReadParams struct {
 

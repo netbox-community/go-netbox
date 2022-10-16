@@ -68,10 +68,12 @@ func NewExtrasConfigContextsDeleteParamsWithHTTPClient(client *http.Client) *Ext
 	}
 }
 
-/* ExtrasConfigContextsDeleteParams contains all the parameters to send to the API endpoint
-   for the extras config contexts delete operation.
+/*
+ExtrasConfigContextsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras config contexts delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsDeleteParams struct {
 

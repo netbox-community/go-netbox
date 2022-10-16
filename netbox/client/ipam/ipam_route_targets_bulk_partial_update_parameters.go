@@ -69,10 +69,12 @@ func NewIpamRouteTargetsBulkPartialUpdateParamsWithHTTPClient(client *http.Clien
 	}
 }
 
-/* IpamRouteTargetsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam route targets bulk partial update operation.
+/*
+IpamRouteTargetsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam route targets bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamRouteTargetsBulkPartialUpdateParams struct {
 

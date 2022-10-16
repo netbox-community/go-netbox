@@ -70,10 +70,12 @@ func NewTenancyContactRolesUpdateParamsWithHTTPClient(client *http.Client) *Tena
 	}
 }
 
-/* TenancyContactRolesUpdateParams contains all the parameters to send to the API endpoint
-   for the tenancy contact roles update operation.
+/*
+TenancyContactRolesUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact roles update operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactRolesUpdateParams struct {
 

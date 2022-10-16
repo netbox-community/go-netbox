@@ -68,10 +68,12 @@ func NewWirelessWirelessLansReadParamsWithHTTPClient(client *http.Client) *Wirel
 	}
 }
 
-/* WirelessWirelessLansReadParams contains all the parameters to send to the API endpoint
-   for the wireless wireless lans read operation.
+/*
+WirelessWirelessLansReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless lans read operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLansReadParams struct {
 

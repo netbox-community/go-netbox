@@ -44,14 +44,14 @@ type WritableWirelessLAN struct {
 	// Max Length: 64
 	AuthPsk string `json:"auth_psk,omitempty"`
 
-	// Auth type
+	// Auth Type
 	// Enum: [open wep wpa-personal wpa-enterprise]
 	AuthType string `json:"auth_type,omitempty"`
 
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -74,7 +74,7 @@ type WritableWirelessLAN struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// SSID
 	// Required: true
@@ -84,6 +84,9 @@ type WritableWirelessLAN struct {
 
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
+
+	// Tenant
+	Tenant *int64 `json:"tenant,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -372,7 +375,7 @@ func (m *WritableWirelessLAN) ContextValidate(ctx context.Context, formats strfm
 
 func (m *WritableWirelessLAN) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -399,7 +402,7 @@ func (m *WritableWirelessLAN) contextValidateID(ctx context.Context, formats str
 
 func (m *WritableWirelessLAN) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

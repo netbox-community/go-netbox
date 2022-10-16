@@ -53,7 +53,7 @@ type Circuit struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -70,14 +70,14 @@ type Circuit struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
-	// Date installed
+	// Installed
 	// Format: date
 	InstallDate *strfmt.Date `json:"install_date,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// provider
 	// Required: true
@@ -94,6 +94,10 @@ type Circuit struct {
 
 	// termination a
 	Terminationa *CircuitCircuitTermination `json:"termination_a,omitempty"`
+
+	// Terminates
+	// Format: date
+	TerminationDate *strfmt.Date `json:"termination_date,omitempty"`
 
 	// termination z
 	Terminationz *CircuitCircuitTermination `json:"termination_z,omitempty"`
@@ -153,6 +157,10 @@ func (m *Circuit) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTerminationa(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTerminationDate(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -358,6 +366,18 @@ func (m *Circuit) validateTerminationa(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Circuit) validateTerminationDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.TerminationDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("termination_date", "body", "date", m.TerminationDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *Circuit) validateTerminationz(formats strfmt.Registry) error {
 	if swag.IsZero(m.Terminationz) { // not required
 		return nil
@@ -469,7 +489,7 @@ func (m *Circuit) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 
 func (m *Circuit) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -496,7 +516,7 @@ func (m *Circuit) contextValidateID(ctx context.Context, formats strfmt.Registry
 
 func (m *Circuit) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

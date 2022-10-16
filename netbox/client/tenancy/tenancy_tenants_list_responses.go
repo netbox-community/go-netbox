@@ -66,7 +66,8 @@ func NewTenancyTenantsListOK() *TenancyTenantsListOK {
 	return &TenancyTenantsListOK{}
 }
 
-/* TenancyTenantsListOK describes a response with status code 200, with default header values.
+/*
+TenancyTenantsListOK describes a response with status code 200, with default header values.
 
 TenancyTenantsListOK tenancy tenants list o k
 */
@@ -74,9 +75,39 @@ type TenancyTenantsListOK struct {
 	Payload *TenancyTenantsListOKBody
 }
 
+// IsSuccess returns true when this tenancy tenants list o k response has a 2xx status code
+func (o *TenancyTenantsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy tenants list o k response has a 3xx status code
+func (o *TenancyTenantsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy tenants list o k response has a 4xx status code
+func (o *TenancyTenantsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy tenants list o k response has a 5xx status code
+func (o *TenancyTenantsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy tenants list o k response a status code equal to that given
+func (o *TenancyTenantsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyTenantsListOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancyTenantsListOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyTenantsListOK) String() string {
+	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancyTenantsListOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyTenantsListOK) GetPayload() *TenancyTenantsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewTenancyTenantsListDefault(code int) *TenancyTenantsListDefault {
 	}
 }
 
-/* TenancyTenantsListDefault describes a response with status code -1, with default header values.
+/*
+TenancyTenantsListDefault describes a response with status code -1, with default header values.
 
 TenancyTenantsListDefault tenancy tenants list default
 */
@@ -115,9 +147,39 @@ func (o *TenancyTenantsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy tenants list default response has a 2xx status code
+func (o *TenancyTenantsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy tenants list default response has a 3xx status code
+func (o *TenancyTenantsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy tenants list default response has a 4xx status code
+func (o *TenancyTenantsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy tenants list default response has a 5xx status code
+func (o *TenancyTenantsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy tenants list default response a status code equal to that given
+func (o *TenancyTenantsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyTenantsListDefault) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancy_tenants_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyTenantsListDefault) String() string {
+	return fmt.Sprintf("[GET /tenancy/tenants/][%d] tenancy_tenants_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyTenantsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *TenancyTenantsListDefault) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-/*TenancyTenantsListOKBody tenancy tenants list o k body
+/*
+TenancyTenantsListOKBody tenancy tenants list o k body
 swagger:model TenancyTenantsListOKBody
 */
 type TenancyTenantsListOKBody struct {

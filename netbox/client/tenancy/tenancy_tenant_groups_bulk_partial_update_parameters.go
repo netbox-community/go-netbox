@@ -69,10 +69,12 @@ func NewTenancyTenantGroupsBulkPartialUpdateParamsWithHTTPClient(client *http.Cl
 	}
 }
 
-/* TenancyTenantGroupsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the tenancy tenant groups bulk partial update operation.
+/*
+TenancyTenantGroupsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy tenant groups bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyTenantGroupsBulkPartialUpdateParams struct {
 

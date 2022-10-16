@@ -61,7 +61,8 @@ func NewVirtualizationInterfacesBulkPartialUpdateOK() *VirtualizationInterfacesB
 	return &VirtualizationInterfacesBulkPartialUpdateOK{}
 }
 
-/* VirtualizationInterfacesBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+VirtualizationInterfacesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationInterfacesBulkPartialUpdateOK virtualization interfaces bulk partial update o k
 */
@@ -69,9 +70,39 @@ type VirtualizationInterfacesBulkPartialUpdateOK struct {
 	Payload *models.VMInterface
 }
 
+// IsSuccess returns true when this virtualization interfaces bulk partial update o k response has a 2xx status code
+func (o *VirtualizationInterfacesBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization interfaces bulk partial update o k response has a 3xx status code
+func (o *VirtualizationInterfacesBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization interfaces bulk partial update o k response has a 4xx status code
+func (o *VirtualizationInterfacesBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization interfaces bulk partial update o k response has a 5xx status code
+func (o *VirtualizationInterfacesBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization interfaces bulk partial update o k response a status code equal to that given
+func (o *VirtualizationInterfacesBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VirtualizationInterfacesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/interfaces/][%d] virtualizationInterfacesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *VirtualizationInterfacesBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /virtualization/interfaces/][%d] virtualizationInterfacesBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *VirtualizationInterfacesBulkPartialUpdateOK) GetPayload() *models.VMInterface {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationInterfacesBulkPartialUpdateDefault(code int) *Virtualizati
 	}
 }
 
-/* VirtualizationInterfacesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationInterfacesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesBulkPartialUpdateDefault virtualization interfaces bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationInterfacesBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization interfaces bulk partial update default response has a 2xx status code
+func (o *VirtualizationInterfacesBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization interfaces bulk partial update default response has a 3xx status code
+func (o *VirtualizationInterfacesBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization interfaces bulk partial update default response has a 4xx status code
+func (o *VirtualizationInterfacesBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization interfaces bulk partial update default response has a 5xx status code
+func (o *VirtualizationInterfacesBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization interfaces bulk partial update default response a status code equal to that given
+func (o *VirtualizationInterfacesBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationInterfacesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/interfaces/][%d] virtualization_interfaces_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationInterfacesBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /virtualization/interfaces/][%d] virtualization_interfaces_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationInterfacesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

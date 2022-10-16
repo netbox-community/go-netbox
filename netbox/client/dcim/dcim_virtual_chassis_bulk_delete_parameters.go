@@ -67,10 +67,12 @@ func NewDcimVirtualChassisBulkDeleteParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimVirtualChassisBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim virtual chassis bulk delete operation.
+/*
+DcimVirtualChassisBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim virtual chassis bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimVirtualChassisBulkDeleteParams struct {
 	timeout    time.Duration

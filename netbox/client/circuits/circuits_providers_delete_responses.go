@@ -59,14 +59,44 @@ func NewCircuitsProvidersDeleteNoContent() *CircuitsProvidersDeleteNoContent {
 	return &CircuitsProvidersDeleteNoContent{}
 }
 
-/* CircuitsProvidersDeleteNoContent describes a response with status code 204, with default header values.
+/*
+CircuitsProvidersDeleteNoContent describes a response with status code 204, with default header values.
 
 CircuitsProvidersDeleteNoContent circuits providers delete no content
 */
 type CircuitsProvidersDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this circuits providers delete no content response has a 2xx status code
+func (o *CircuitsProvidersDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits providers delete no content response has a 3xx status code
+func (o *CircuitsProvidersDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits providers delete no content response has a 4xx status code
+func (o *CircuitsProvidersDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits providers delete no content response has a 5xx status code
+func (o *CircuitsProvidersDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits providers delete no content response a status code equal to that given
+func (o *CircuitsProvidersDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *CircuitsProvidersDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /circuits/providers/{id}/][%d] circuitsProvidersDeleteNoContent ", 204)
+}
+
+func (o *CircuitsProvidersDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /circuits/providers/{id}/][%d] circuitsProvidersDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewCircuitsProvidersDeleteDefault(code int) *CircuitsProvidersDeleteDefault
 	}
 }
 
-/* CircuitsProvidersDeleteDefault describes a response with status code -1, with default header values.
+/*
+CircuitsProvidersDeleteDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersDeleteDefault circuits providers delete default
 */
@@ -97,9 +128,39 @@ func (o *CircuitsProvidersDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits providers delete default response has a 2xx status code
+func (o *CircuitsProvidersDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits providers delete default response has a 3xx status code
+func (o *CircuitsProvidersDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits providers delete default response has a 4xx status code
+func (o *CircuitsProvidersDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits providers delete default response has a 5xx status code
+func (o *CircuitsProvidersDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits providers delete default response a status code equal to that given
+func (o *CircuitsProvidersDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsProvidersDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /circuits/providers/{id}/][%d] circuits_providers_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsProvidersDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /circuits/providers/{id}/][%d] circuits_providers_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsProvidersDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

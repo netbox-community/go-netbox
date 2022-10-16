@@ -59,14 +59,44 @@ func NewDcimModuleBayTemplatesBulkDeleteNoContent() *DcimModuleBayTemplatesBulkD
 	return &DcimModuleBayTemplatesBulkDeleteNoContent{}
 }
 
-/* DcimModuleBayTemplatesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimModuleBayTemplatesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimModuleBayTemplatesBulkDeleteNoContent dcim module bay templates bulk delete no content
 */
 type DcimModuleBayTemplatesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim module bay templates bulk delete no content response has a 2xx status code
+func (o *DcimModuleBayTemplatesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim module bay templates bulk delete no content response has a 3xx status code
+func (o *DcimModuleBayTemplatesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim module bay templates bulk delete no content response has a 4xx status code
+func (o *DcimModuleBayTemplatesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim module bay templates bulk delete no content response has a 5xx status code
+func (o *DcimModuleBayTemplatesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim module bay templates bulk delete no content response a status code equal to that given
+func (o *DcimModuleBayTemplatesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimModuleBayTemplatesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/][%d] dcimModuleBayTemplatesBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimModuleBayTemplatesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/][%d] dcimModuleBayTemplatesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimModuleBayTemplatesBulkDeleteDefault(code int) *DcimModuleBayTemplate
 	}
 }
 
-/* DcimModuleBayTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimModuleBayTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimModuleBayTemplatesBulkDeleteDefault dcim module bay templates bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimModuleBayTemplatesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim module bay templates bulk delete default response has a 2xx status code
+func (o *DcimModuleBayTemplatesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim module bay templates bulk delete default response has a 3xx status code
+func (o *DcimModuleBayTemplatesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim module bay templates bulk delete default response has a 4xx status code
+func (o *DcimModuleBayTemplatesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim module bay templates bulk delete default response has a 5xx status code
+func (o *DcimModuleBayTemplatesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim module bay templates bulk delete default response a status code equal to that given
+func (o *DcimModuleBayTemplatesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimModuleBayTemplatesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/][%d] dcim_module-bay-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimModuleBayTemplatesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/module-bay-templates/][%d] dcim_module-bay-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimModuleBayTemplatesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

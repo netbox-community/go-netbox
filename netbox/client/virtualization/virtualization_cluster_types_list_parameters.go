@@ -68,21 +68,32 @@ func NewVirtualizationClusterTypesListParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* VirtualizationClusterTypesListParams contains all the parameters to send to the API endpoint
-   for the virtualization cluster types list operation.
+/*
+VirtualizationClusterTypesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization cluster types list operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationClusterTypesListParams struct {
 
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// Description.
 	Description *string
@@ -135,11 +146,20 @@ type VirtualizationClusterTypesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -182,6 +202,12 @@ type VirtualizationClusterTypesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Q.
 	Q *string
@@ -286,6 +312,17 @@ func (o *VirtualizationClusterTypesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithCreatedGt(createdGt *string) *VirtualizationClusterTypesListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) WithCreatedGte(createdGte *string) *VirtualizationClusterTypesListParams {
 	o.SetCreatedGte(createdGte)
@@ -297,6 +334,17 @@ func (o *VirtualizationClusterTypesListParams) SetCreatedGte(createdGte *string)
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithCreatedLt(createdLt *string) *VirtualizationClusterTypesListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) WithCreatedLte(createdLte *string) *VirtualizationClusterTypesListParams {
 	o.SetCreatedLte(createdLte)
@@ -306,6 +354,17 @@ func (o *VirtualizationClusterTypesListParams) WithCreatedLte(createdLte *string
 // SetCreatedLte adds the createdLte to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithCreatedn(createdn *string) *VirtualizationClusterTypesListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the virtualization cluster types list params
@@ -495,6 +554,17 @@ func (o *VirtualizationClusterTypesListParams) SetLastUpdated(lastUpdated *strin
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *VirtualizationClusterTypesListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *VirtualizationClusterTypesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -506,6 +576,17 @@ func (o *VirtualizationClusterTypesListParams) SetLastUpdatedGte(lastUpdatedGte 
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *VirtualizationClusterTypesListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *VirtualizationClusterTypesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -515,6 +596,17 @@ func (o *VirtualizationClusterTypesListParams) WithLastUpdatedLte(lastUpdatedLte
 // SetLastUpdatedLte adds the lastUpdatedLte to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithLastUpdatedn(lastUpdatedn *string) *VirtualizationClusterTypesListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the virtualization cluster types list params
@@ -647,6 +739,17 @@ func (o *VirtualizationClusterTypesListParams) WithOffset(offset *int64) *Virtua
 // SetOffset adds the offset to the virtualization cluster types list params
 func (o *VirtualizationClusterTypesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) WithOrdering(ordering *string) *VirtualizationClusterTypesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the virtualization cluster types list params
+func (o *VirtualizationClusterTypesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithQ adds the q to the virtualization cluster types list params
@@ -817,6 +920,23 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -834,6 +954,23 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -846,6 +983,23 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1140,6 +1294,23 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1157,6 +1328,23 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1169,6 +1357,23 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1373,6 +1578,23 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

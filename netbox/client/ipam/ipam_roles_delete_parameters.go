@@ -68,10 +68,12 @@ func NewIpamRolesDeleteParamsWithHTTPClient(client *http.Client) *IpamRolesDelet
 	}
 }
 
-/* IpamRolesDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam roles delete operation.
+/*
+IpamRolesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam roles delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamRolesDeleteParams struct {
 

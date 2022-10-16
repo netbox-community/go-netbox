@@ -69,10 +69,12 @@ func NewExtrasCustomLinksCreateParamsWithHTTPClient(client *http.Client) *Extras
 	}
 }
 
-/* ExtrasCustomLinksCreateParams contains all the parameters to send to the API endpoint
-   for the extras custom links create operation.
+/*
+ExtrasCustomLinksCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras custom links create operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasCustomLinksCreateParams struct {
 

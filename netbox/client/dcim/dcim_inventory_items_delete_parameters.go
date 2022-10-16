@@ -68,10 +68,12 @@ func NewDcimInventoryItemsDeleteParamsWithHTTPClient(client *http.Client) *DcimI
 	}
 }
 
-/* DcimInventoryItemsDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim inventory items delete operation.
+/*
+DcimInventoryItemsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim inventory items delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInventoryItemsDeleteParams struct {
 

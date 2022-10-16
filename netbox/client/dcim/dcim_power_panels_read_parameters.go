@@ -68,10 +68,12 @@ func NewDcimPowerPanelsReadParamsWithHTTPClient(client *http.Client) *DcimPowerP
 	}
 }
 
-/* DcimPowerPanelsReadParams contains all the parameters to send to the API endpoint
-   for the dcim power panels read operation.
+/*
+DcimPowerPanelsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power panels read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerPanelsReadParams struct {
 

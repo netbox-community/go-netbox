@@ -61,7 +61,8 @@ func NewIpamVlansReadOK() *IpamVlansReadOK {
 	return &IpamVlansReadOK{}
 }
 
-/* IpamVlansReadOK describes a response with status code 200, with default header values.
+/*
+IpamVlansReadOK describes a response with status code 200, with default header values.
 
 IpamVlansReadOK ipam vlans read o k
 */
@@ -69,9 +70,39 @@ type IpamVlansReadOK struct {
 	Payload *models.VLAN
 }
 
+// IsSuccess returns true when this ipam vlans read o k response has a 2xx status code
+func (o *IpamVlansReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam vlans read o k response has a 3xx status code
+func (o *IpamVlansReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam vlans read o k response has a 4xx status code
+func (o *IpamVlansReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam vlans read o k response has a 5xx status code
+func (o *IpamVlansReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam vlans read o k response a status code equal to that given
+func (o *IpamVlansReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamVlansReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipamVlansReadOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamVlansReadOK) String() string {
+	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipamVlansReadOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamVlansReadOK) GetPayload() *models.VLAN {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamVlansReadDefault(code int) *IpamVlansReadDefault {
 	}
 }
 
-/* IpamVlansReadDefault describes a response with status code -1, with default header values.
+/*
+IpamVlansReadDefault describes a response with status code -1, with default header values.
 
 IpamVlansReadDefault ipam vlans read default
 */
@@ -110,9 +142,39 @@ func (o *IpamVlansReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam vlans read default response has a 2xx status code
+func (o *IpamVlansReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam vlans read default response has a 3xx status code
+func (o *IpamVlansReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam vlans read default response has a 4xx status code
+func (o *IpamVlansReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam vlans read default response has a 5xx status code
+func (o *IpamVlansReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam vlans read default response a status code equal to that given
+func (o *IpamVlansReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamVlansReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipam_vlans_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamVlansReadDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipam_vlans_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamVlansReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

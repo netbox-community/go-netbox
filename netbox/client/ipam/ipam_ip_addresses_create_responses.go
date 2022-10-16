@@ -61,7 +61,8 @@ func NewIpamIPAddressesCreateCreated() *IpamIPAddressesCreateCreated {
 	return &IpamIPAddressesCreateCreated{}
 }
 
-/* IpamIPAddressesCreateCreated describes a response with status code 201, with default header values.
+/*
+IpamIPAddressesCreateCreated describes a response with status code 201, with default header values.
 
 IpamIPAddressesCreateCreated ipam Ip addresses create created
 */
@@ -69,9 +70,39 @@ type IpamIPAddressesCreateCreated struct {
 	Payload *models.IPAddress
 }
 
+// IsSuccess returns true when this ipam Ip addresses create created response has a 2xx status code
+func (o *IpamIPAddressesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam Ip addresses create created response has a 3xx status code
+func (o *IpamIPAddressesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam Ip addresses create created response has a 4xx status code
+func (o *IpamIPAddressesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam Ip addresses create created response has a 5xx status code
+func (o *IpamIPAddressesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam Ip addresses create created response a status code equal to that given
+func (o *IpamIPAddressesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *IpamIPAddressesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipamIpAddressesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *IpamIPAddressesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipamIpAddressesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *IpamIPAddressesCreateCreated) GetPayload() *models.IPAddress {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamIPAddressesCreateDefault(code int) *IpamIPAddressesCreateDefault {
 	}
 }
 
-/* IpamIPAddressesCreateDefault describes a response with status code -1, with default header values.
+/*
+IpamIPAddressesCreateDefault describes a response with status code -1, with default header values.
 
 IpamIPAddressesCreateDefault ipam ip addresses create default
 */
@@ -110,9 +142,39 @@ func (o *IpamIPAddressesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam ip addresses create default response has a 2xx status code
+func (o *IpamIPAddressesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam ip addresses create default response has a 3xx status code
+func (o *IpamIPAddressesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam ip addresses create default response has a 4xx status code
+func (o *IpamIPAddressesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam ip addresses create default response has a 5xx status code
+func (o *IpamIPAddressesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam ip addresses create default response a status code equal to that given
+func (o *IpamIPAddressesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamIPAddressesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipam_ip-addresses_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamIPAddressesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipam_ip-addresses_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamIPAddressesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

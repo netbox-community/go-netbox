@@ -68,10 +68,12 @@ func NewDcimInventoryItemRolesListParamsWithHTTPClient(client *http.Client) *Dci
 	}
 }
 
-/* DcimInventoryItemRolesListParams contains all the parameters to send to the API endpoint
-   for the dcim inventory item roles list operation.
+/*
+DcimInventoryItemRolesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim inventory item roles list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInventoryItemRolesListParams struct {
 
@@ -108,11 +110,20 @@ type DcimInventoryItemRolesListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// ID.
 	ID *string
@@ -135,11 +146,20 @@ type DcimInventoryItemRolesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -182,6 +202,12 @@ type DcimInventoryItemRolesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Q.
 	Q *string
@@ -396,6 +422,17 @@ func (o *DcimInventoryItemRolesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) WithCreatedGt(createdGt *string) *DcimInventoryItemRolesListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) WithCreatedGte(createdGte *string) *DcimInventoryItemRolesListParams {
 	o.SetCreatedGte(createdGte)
@@ -407,6 +444,17 @@ func (o *DcimInventoryItemRolesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) WithCreatedLt(createdLt *string) *DcimInventoryItemRolesListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) WithCreatedLte(createdLte *string) *DcimInventoryItemRolesListParams {
 	o.SetCreatedLte(createdLte)
@@ -416,6 +464,17 @@ func (o *DcimInventoryItemRolesListParams) WithCreatedLte(createdLte *string) *D
 // SetCreatedLte adds the createdLte to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) WithCreatedn(createdn *string) *DcimInventoryItemRolesListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithID adds the id to the dcim inventory item roles list params
@@ -495,6 +554,17 @@ func (o *DcimInventoryItemRolesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimInventoryItemRolesListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimInventoryItemRolesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -506,6 +576,17 @@ func (o *DcimInventoryItemRolesListParams) SetLastUpdatedGte(lastUpdatedGte *str
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimInventoryItemRolesListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimInventoryItemRolesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -515,6 +596,17 @@ func (o *DcimInventoryItemRolesListParams) WithLastUpdatedLte(lastUpdatedLte *st
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimInventoryItemRolesListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim inventory item roles list params
@@ -647,6 +739,17 @@ func (o *DcimInventoryItemRolesListParams) WithOffset(offset *int64) *DcimInvent
 // SetOffset adds the offset to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) WithOrdering(ordering *string) *DcimInventoryItemRolesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim inventory item roles list params
+func (o *DcimInventoryItemRolesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithQ adds the q to the dcim inventory item roles list params
@@ -987,6 +1090,23 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1004,6 +1124,23 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1016,6 +1153,23 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1140,6 +1294,23 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1157,6 +1328,23 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1169,6 +1357,23 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1373,6 +1578,23 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

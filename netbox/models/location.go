@@ -22,6 +22,7 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -42,7 +43,7 @@ type Location struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -66,7 +67,7 @@ type Location struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -91,6 +92,9 @@ type Location struct {
 	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
+
+	// status
+	Status *LocationStatus `json:"status,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
@@ -133,6 +137,10 @@ func (m *Location) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSlug(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -267,6 +275,25 @@ func (m *Location) validateSlug(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Location) validateStatus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
+
+	if m.Status != nil {
+		if err := m.Status.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Location) validateTags(formats strfmt.Registry) error {
 	if swag.IsZero(m.Tags) { // not required
 		return nil
@@ -364,6 +391,10 @@ func (m *Location) ContextValidate(ctx context.Context, formats strfmt.Registry)
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateTags(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -393,7 +424,7 @@ func (m *Location) contextValidateDepth(ctx context.Context, formats strfmt.Regi
 
 func (m *Location) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -429,7 +460,7 @@ func (m *Location) contextValidateID(ctx context.Context, formats strfmt.Registr
 
 func (m *Location) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 
@@ -469,6 +500,22 @@ func (m *Location) contextValidateSite(ctx context.Context, formats strfmt.Regis
 				return ve.ValidateName("site")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("site")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Location) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Status != nil {
+		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -533,6 +580,167 @@ func (m *Location) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Location) UnmarshalBinary(b []byte) error {
 	var res Location
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// LocationStatus Status
+//
+// swagger:model LocationStatus
+type LocationStatus struct {
+
+	// label
+	// Required: true
+	// Enum: [Planned Staging Active Decommissioning Retired]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [planned staging active decommissioning retired]
+	Value *string `json:"value"`
+}
+
+// Validate validates this location status
+func (m *LocationStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var locationStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Planned","Staging","Active","Decommissioning","Retired"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		locationStatusTypeLabelPropEnum = append(locationStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// LocationStatusLabelPlanned captures enum value "Planned"
+	LocationStatusLabelPlanned string = "Planned"
+
+	// LocationStatusLabelStaging captures enum value "Staging"
+	LocationStatusLabelStaging string = "Staging"
+
+	// LocationStatusLabelActive captures enum value "Active"
+	LocationStatusLabelActive string = "Active"
+
+	// LocationStatusLabelDecommissioning captures enum value "Decommissioning"
+	LocationStatusLabelDecommissioning string = "Decommissioning"
+
+	// LocationStatusLabelRetired captures enum value "Retired"
+	LocationStatusLabelRetired string = "Retired"
+)
+
+// prop value enum
+func (m *LocationStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, locationStatusTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *LocationStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var locationStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["planned","staging","active","decommissioning","retired"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		locationStatusTypeValuePropEnum = append(locationStatusTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// LocationStatusValuePlanned captures enum value "planned"
+	LocationStatusValuePlanned string = "planned"
+
+	// LocationStatusValueStaging captures enum value "staging"
+	LocationStatusValueStaging string = "staging"
+
+	// LocationStatusValueActive captures enum value "active"
+	LocationStatusValueActive string = "active"
+
+	// LocationStatusValueDecommissioning captures enum value "decommissioning"
+	LocationStatusValueDecommissioning string = "decommissioning"
+
+	// LocationStatusValueRetired captures enum value "retired"
+	LocationStatusValueRetired string = "retired"
+)
+
+// prop value enum
+func (m *LocationStatus) validateValueEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, locationStatusTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *LocationStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this location status based on context it is used
+func (m *LocationStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *LocationStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *LocationStatus) UnmarshalBinary(b []byte) error {
+	var res LocationStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

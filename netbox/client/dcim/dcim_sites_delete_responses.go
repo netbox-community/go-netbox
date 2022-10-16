@@ -59,14 +59,44 @@ func NewDcimSitesDeleteNoContent() *DcimSitesDeleteNoContent {
 	return &DcimSitesDeleteNoContent{}
 }
 
-/* DcimSitesDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimSitesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimSitesDeleteNoContent dcim sites delete no content
 */
 type DcimSitesDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim sites delete no content response has a 2xx status code
+func (o *DcimSitesDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim sites delete no content response has a 3xx status code
+func (o *DcimSitesDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim sites delete no content response has a 4xx status code
+func (o *DcimSitesDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim sites delete no content response has a 5xx status code
+func (o *DcimSitesDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim sites delete no content response a status code equal to that given
+func (o *DcimSitesDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimSitesDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/sites/{id}/][%d] dcimSitesDeleteNoContent ", 204)
+}
+
+func (o *DcimSitesDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/sites/{id}/][%d] dcimSitesDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimSitesDeleteDefault(code int) *DcimSitesDeleteDefault {
 	}
 }
 
-/* DcimSitesDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimSitesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimSitesDeleteDefault dcim sites delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimSitesDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim sites delete default response has a 2xx status code
+func (o *DcimSitesDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim sites delete default response has a 3xx status code
+func (o *DcimSitesDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim sites delete default response has a 4xx status code
+func (o *DcimSitesDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim sites delete default response has a 5xx status code
+func (o *DcimSitesDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim sites delete default response a status code equal to that given
+func (o *DcimSitesDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimSitesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/sites/{id}/][%d] dcim_sites_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimSitesDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/sites/{id}/][%d] dcim_sites_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimSitesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

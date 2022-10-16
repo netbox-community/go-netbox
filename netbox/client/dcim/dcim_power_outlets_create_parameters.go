@@ -69,10 +69,12 @@ func NewDcimPowerOutletsCreateParamsWithHTTPClient(client *http.Client) *DcimPow
 	}
 }
 
-/* DcimPowerOutletsCreateParams contains all the parameters to send to the API endpoint
-   for the dcim power outlets create operation.
+/*
+DcimPowerOutletsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power outlets create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerOutletsCreateParams struct {
 

@@ -59,14 +59,44 @@ func NewDcimModulesDeleteNoContent() *DcimModulesDeleteNoContent {
 	return &DcimModulesDeleteNoContent{}
 }
 
-/* DcimModulesDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimModulesDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimModulesDeleteNoContent dcim modules delete no content
 */
 type DcimModulesDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim modules delete no content response has a 2xx status code
+func (o *DcimModulesDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim modules delete no content response has a 3xx status code
+func (o *DcimModulesDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim modules delete no content response has a 4xx status code
+func (o *DcimModulesDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim modules delete no content response has a 5xx status code
+func (o *DcimModulesDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim modules delete no content response a status code equal to that given
+func (o *DcimModulesDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimModulesDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/modules/{id}/][%d] dcimModulesDeleteNoContent ", 204)
+}
+
+func (o *DcimModulesDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/modules/{id}/][%d] dcimModulesDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimModulesDeleteDefault(code int) *DcimModulesDeleteDefault {
 	}
 }
 
-/* DcimModulesDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimModulesDeleteDefault describes a response with status code -1, with default header values.
 
 DcimModulesDeleteDefault dcim modules delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimModulesDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim modules delete default response has a 2xx status code
+func (o *DcimModulesDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim modules delete default response has a 3xx status code
+func (o *DcimModulesDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim modules delete default response has a 4xx status code
+func (o *DcimModulesDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim modules delete default response has a 5xx status code
+func (o *DcimModulesDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim modules delete default response a status code equal to that given
+func (o *DcimModulesDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimModulesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/modules/{id}/][%d] dcim_modules_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimModulesDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/modules/{id}/][%d] dcim_modules_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimModulesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

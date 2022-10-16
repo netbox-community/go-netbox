@@ -69,10 +69,12 @@ func NewVirtualizationInterfacesCreateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* VirtualizationInterfacesCreateParams contains all the parameters to send to the API endpoint
-   for the virtualization interfaces create operation.
+/*
+VirtualizationInterfacesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization interfaces create operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationInterfacesCreateParams struct {
 

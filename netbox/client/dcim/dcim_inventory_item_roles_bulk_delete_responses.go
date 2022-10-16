@@ -59,14 +59,44 @@ func NewDcimInventoryItemRolesBulkDeleteNoContent() *DcimInventoryItemRolesBulkD
 	return &DcimInventoryItemRolesBulkDeleteNoContent{}
 }
 
-/* DcimInventoryItemRolesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimInventoryItemRolesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimInventoryItemRolesBulkDeleteNoContent dcim inventory item roles bulk delete no content
 */
 type DcimInventoryItemRolesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim inventory item roles bulk delete no content response has a 2xx status code
+func (o *DcimInventoryItemRolesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory item roles bulk delete no content response has a 3xx status code
+func (o *DcimInventoryItemRolesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory item roles bulk delete no content response has a 4xx status code
+func (o *DcimInventoryItemRolesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory item roles bulk delete no content response has a 5xx status code
+func (o *DcimInventoryItemRolesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory item roles bulk delete no content response a status code equal to that given
+func (o *DcimInventoryItemRolesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimInventoryItemRolesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimInventoryItemRolesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimInventoryItemRolesBulkDeleteDefault(code int) *DcimInventoryItemRole
 	}
 }
 
-/* DcimInventoryItemRolesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemRolesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemRolesBulkDeleteDefault dcim inventory item roles bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimInventoryItemRolesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory item roles bulk delete default response has a 2xx status code
+func (o *DcimInventoryItemRolesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory item roles bulk delete default response has a 3xx status code
+func (o *DcimInventoryItemRolesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory item roles bulk delete default response has a 4xx status code
+func (o *DcimInventoryItemRolesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory item roles bulk delete default response has a 5xx status code
+func (o *DcimInventoryItemRolesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory item roles bulk delete default response a status code equal to that given
+func (o *DcimInventoryItemRolesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemRolesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemRolesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemRolesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

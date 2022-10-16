@@ -68,10 +68,12 @@ func NewIpamPrefixesAvailableIpsListParamsWithHTTPClient(client *http.Client) *I
 	}
 }
 
-/* IpamPrefixesAvailableIpsListParams contains all the parameters to send to the API endpoint
-   for the ipam prefixes available ips list operation.
+/*
+IpamPrefixesAvailableIpsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam prefixes available ips list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamPrefixesAvailableIpsListParams struct {
 

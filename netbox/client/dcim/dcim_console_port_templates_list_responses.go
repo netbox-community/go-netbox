@@ -66,7 +66,8 @@ func NewDcimConsolePortTemplatesListOK() *DcimConsolePortTemplatesListOK {
 	return &DcimConsolePortTemplatesListOK{}
 }
 
-/* DcimConsolePortTemplatesListOK describes a response with status code 200, with default header values.
+/*
+DcimConsolePortTemplatesListOK describes a response with status code 200, with default header values.
 
 DcimConsolePortTemplatesListOK dcim console port templates list o k
 */
@@ -74,9 +75,39 @@ type DcimConsolePortTemplatesListOK struct {
 	Payload *DcimConsolePortTemplatesListOKBody
 }
 
+// IsSuccess returns true when this dcim console port templates list o k response has a 2xx status code
+func (o *DcimConsolePortTemplatesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console port templates list o k response has a 3xx status code
+func (o *DcimConsolePortTemplatesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console port templates list o k response has a 4xx status code
+func (o *DcimConsolePortTemplatesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console port templates list o k response has a 5xx status code
+func (o *DcimConsolePortTemplatesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console port templates list o k response a status code equal to that given
+func (o *DcimConsolePortTemplatesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimConsolePortTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-port-templates/][%d] dcimConsolePortTemplatesListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimConsolePortTemplatesListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/console-port-templates/][%d] dcimConsolePortTemplatesListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimConsolePortTemplatesListOK) GetPayload() *DcimConsolePortTemplatesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimConsolePortTemplatesListDefault(code int) *DcimConsolePortTemplatesL
 	}
 }
 
-/* DcimConsolePortTemplatesListDefault describes a response with status code -1, with default header values.
+/*
+DcimConsolePortTemplatesListDefault describes a response with status code -1, with default header values.
 
 DcimConsolePortTemplatesListDefault dcim console port templates list default
 */
@@ -115,9 +147,39 @@ func (o *DcimConsolePortTemplatesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console port templates list default response has a 2xx status code
+func (o *DcimConsolePortTemplatesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console port templates list default response has a 3xx status code
+func (o *DcimConsolePortTemplatesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console port templates list default response has a 4xx status code
+func (o *DcimConsolePortTemplatesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console port templates list default response has a 5xx status code
+func (o *DcimConsolePortTemplatesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console port templates list default response a status code equal to that given
+func (o *DcimConsolePortTemplatesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsolePortTemplatesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-port-templates/][%d] dcim_console-port-templates_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsolePortTemplatesListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/console-port-templates/][%d] dcim_console-port-templates_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsolePortTemplatesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimConsolePortTemplatesListDefault) readResponse(response runtime.Clie
 	return nil
 }
 
-/*DcimConsolePortTemplatesListOKBody dcim console port templates list o k body
+/*
+DcimConsolePortTemplatesListOKBody dcim console port templates list o k body
 swagger:model DcimConsolePortTemplatesListOKBody
 */
 type DcimConsolePortTemplatesListOKBody struct {

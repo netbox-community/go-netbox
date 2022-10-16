@@ -68,10 +68,12 @@ func NewIpamRouteTargetsDeleteParamsWithHTTPClient(client *http.Client) *IpamRou
 	}
 }
 
-/* IpamRouteTargetsDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam route targets delete operation.
+/*
+IpamRouteTargetsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam route targets delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamRouteTargetsDeleteParams struct {
 

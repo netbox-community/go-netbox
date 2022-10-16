@@ -69,10 +69,12 @@ func NewIpamFhrpGroupAssignmentsBulkUpdateParamsWithHTTPClient(client *http.Clie
 	}
 }
 
-/* IpamFhrpGroupAssignmentsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp group assignments bulk update operation.
+/*
+IpamFhrpGroupAssignmentsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp group assignments bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupAssignmentsBulkUpdateParams struct {
 

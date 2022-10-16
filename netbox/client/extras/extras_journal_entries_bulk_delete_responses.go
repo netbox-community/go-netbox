@@ -59,14 +59,44 @@ func NewExtrasJournalEntriesBulkDeleteNoContent() *ExtrasJournalEntriesBulkDelet
 	return &ExtrasJournalEntriesBulkDeleteNoContent{}
 }
 
-/* ExtrasJournalEntriesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+ExtrasJournalEntriesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasJournalEntriesBulkDeleteNoContent extras journal entries bulk delete no content
 */
 type ExtrasJournalEntriesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this extras journal entries bulk delete no content response has a 2xx status code
+func (o *ExtrasJournalEntriesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras journal entries bulk delete no content response has a 3xx status code
+func (o *ExtrasJournalEntriesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras journal entries bulk delete no content response has a 4xx status code
+func (o *ExtrasJournalEntriesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras journal entries bulk delete no content response has a 5xx status code
+func (o *ExtrasJournalEntriesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras journal entries bulk delete no content response a status code equal to that given
+func (o *ExtrasJournalEntriesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *ExtrasJournalEntriesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /extras/journal-entries/][%d] extrasJournalEntriesBulkDeleteNoContent ", 204)
+}
+
+func (o *ExtrasJournalEntriesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /extras/journal-entries/][%d] extrasJournalEntriesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasJournalEntriesBulkDeleteDefault(code int) *ExtrasJournalEntriesBul
 	}
 }
 
-/* ExtrasJournalEntriesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+ExtrasJournalEntriesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasJournalEntriesBulkDeleteDefault extras journal entries bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasJournalEntriesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras journal entries bulk delete default response has a 2xx status code
+func (o *ExtrasJournalEntriesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras journal entries bulk delete default response has a 3xx status code
+func (o *ExtrasJournalEntriesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras journal entries bulk delete default response has a 4xx status code
+func (o *ExtrasJournalEntriesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras journal entries bulk delete default response has a 5xx status code
+func (o *ExtrasJournalEntriesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras journal entries bulk delete default response a status code equal to that given
+func (o *ExtrasJournalEntriesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasJournalEntriesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/journal-entries/][%d] extras_journal-entries_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasJournalEntriesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /extras/journal-entries/][%d] extras_journal-entries_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasJournalEntriesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -66,7 +66,8 @@ func NewCircuitsCircuitTerminationsListOK() *CircuitsCircuitTerminationsListOK {
 	return &CircuitsCircuitTerminationsListOK{}
 }
 
-/* CircuitsCircuitTerminationsListOK describes a response with status code 200, with default header values.
+/*
+CircuitsCircuitTerminationsListOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTerminationsListOK circuits circuit terminations list o k
 */
@@ -74,9 +75,39 @@ type CircuitsCircuitTerminationsListOK struct {
 	Payload *CircuitsCircuitTerminationsListOKBody
 }
 
+// IsSuccess returns true when this circuits circuit terminations list o k response has a 2xx status code
+func (o *CircuitsCircuitTerminationsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuit terminations list o k response has a 3xx status code
+func (o *CircuitsCircuitTerminationsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuit terminations list o k response has a 4xx status code
+func (o *CircuitsCircuitTerminationsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuit terminations list o k response has a 5xx status code
+func (o *CircuitsCircuitTerminationsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuit terminations list o k response a status code equal to that given
+func (o *CircuitsCircuitTerminationsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsCircuitTerminationsListOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsListOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsCircuitTerminationsListOK) String() string {
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsListOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsCircuitTerminationsListOK) GetPayload() *CircuitsCircuitTerminationsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewCircuitsCircuitTerminationsListDefault(code int) *CircuitsCircuitTermina
 	}
 }
 
-/* CircuitsCircuitTerminationsListDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitTerminationsListDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsListDefault circuits circuit terminations list default
 */
@@ -115,9 +147,39 @@ func (o *CircuitsCircuitTerminationsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuit terminations list default response has a 2xx status code
+func (o *CircuitsCircuitTerminationsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuit terminations list default response has a 3xx status code
+func (o *CircuitsCircuitTerminationsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuit terminations list default response has a 4xx status code
+func (o *CircuitsCircuitTerminationsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuit terminations list default response has a 5xx status code
+func (o *CircuitsCircuitTerminationsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuit terminations list default response a status code equal to that given
+func (o *CircuitsCircuitTerminationsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitTerminationsListDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuits_circuit-terminations_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitTerminationsListDefault) String() string {
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/][%d] circuits_circuit-terminations_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitTerminationsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *CircuitsCircuitTerminationsListDefault) readResponse(response runtime.C
 	return nil
 }
 
-/*CircuitsCircuitTerminationsListOKBody circuits circuit terminations list o k body
+/*
+CircuitsCircuitTerminationsListOKBody circuits circuit terminations list o k body
 swagger:model CircuitsCircuitTerminationsListOKBody
 */
 type CircuitsCircuitTerminationsListOKBody struct {

@@ -61,7 +61,8 @@ func NewDcimSitesUpdateOK() *DcimSitesUpdateOK {
 	return &DcimSitesUpdateOK{}
 }
 
-/* DcimSitesUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimSitesUpdateOK describes a response with status code 200, with default header values.
 
 DcimSitesUpdateOK dcim sites update o k
 */
@@ -69,9 +70,39 @@ type DcimSitesUpdateOK struct {
 	Payload *models.Site
 }
 
+// IsSuccess returns true when this dcim sites update o k response has a 2xx status code
+func (o *DcimSitesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim sites update o k response has a 3xx status code
+func (o *DcimSitesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim sites update o k response has a 4xx status code
+func (o *DcimSitesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim sites update o k response has a 5xx status code
+func (o *DcimSitesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim sites update o k response a status code equal to that given
+func (o *DcimSitesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimSitesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/sites/{id}/][%d] dcimSitesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimSitesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/sites/{id}/][%d] dcimSitesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimSitesUpdateOK) GetPayload() *models.Site {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimSitesUpdateDefault(code int) *DcimSitesUpdateDefault {
 	}
 }
 
-/* DcimSitesUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimSitesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimSitesUpdateDefault dcim sites update default
 */
@@ -110,9 +142,39 @@ func (o *DcimSitesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim sites update default response has a 2xx status code
+func (o *DcimSitesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim sites update default response has a 3xx status code
+func (o *DcimSitesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim sites update default response has a 4xx status code
+func (o *DcimSitesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim sites update default response has a 5xx status code
+func (o *DcimSitesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim sites update default response a status code equal to that given
+func (o *DcimSitesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimSitesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/sites/{id}/][%d] dcim_sites_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimSitesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/sites/{id}/][%d] dcim_sites_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimSitesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewIpamRolesPartialUpdateOK() *IpamRolesPartialUpdateOK {
 	return &IpamRolesPartialUpdateOK{}
 }
 
-/* IpamRolesPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamRolesPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamRolesPartialUpdateOK ipam roles partial update o k
 */
@@ -69,9 +70,39 @@ type IpamRolesPartialUpdateOK struct {
 	Payload *models.Role
 }
 
+// IsSuccess returns true when this ipam roles partial update o k response has a 2xx status code
+func (o *IpamRolesPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam roles partial update o k response has a 3xx status code
+func (o *IpamRolesPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam roles partial update o k response has a 4xx status code
+func (o *IpamRolesPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam roles partial update o k response has a 5xx status code
+func (o *IpamRolesPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam roles partial update o k response a status code equal to that given
+func (o *IpamRolesPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamRolesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/roles/{id}/][%d] ipamRolesPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamRolesPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /ipam/roles/{id}/][%d] ipamRolesPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamRolesPartialUpdateOK) GetPayload() *models.Role {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamRolesPartialUpdateDefault(code int) *IpamRolesPartialUpdateDefault {
 	}
 }
 
-/* IpamRolesPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamRolesPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamRolesPartialUpdateDefault ipam roles partial update default
 */
@@ -110,9 +142,39 @@ func (o *IpamRolesPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam roles partial update default response has a 2xx status code
+func (o *IpamRolesPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam roles partial update default response has a 3xx status code
+func (o *IpamRolesPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam roles partial update default response has a 4xx status code
+func (o *IpamRolesPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam roles partial update default response has a 5xx status code
+func (o *IpamRolesPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam roles partial update default response a status code equal to that given
+func (o *IpamRolesPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamRolesPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/roles/{id}/][%d] ipam_roles_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamRolesPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /ipam/roles/{id}/][%d] ipam_roles_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamRolesPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

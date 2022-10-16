@@ -70,10 +70,12 @@ func NewIpamPrefixesAvailableIpsCreateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* IpamPrefixesAvailableIpsCreateParams contains all the parameters to send to the API endpoint
-   for the ipam prefixes available ips create operation.
+/*
+IpamPrefixesAvailableIpsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam prefixes available ips create operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamPrefixesAvailableIpsCreateParams struct {
 

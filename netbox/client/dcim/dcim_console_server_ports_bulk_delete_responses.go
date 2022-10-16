@@ -59,14 +59,44 @@ func NewDcimConsoleServerPortsBulkDeleteNoContent() *DcimConsoleServerPortsBulkD
 	return &DcimConsoleServerPortsBulkDeleteNoContent{}
 }
 
-/* DcimConsoleServerPortsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimConsoleServerPortsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimConsoleServerPortsBulkDeleteNoContent dcim console server ports bulk delete no content
 */
 type DcimConsoleServerPortsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim console server ports bulk delete no content response has a 2xx status code
+func (o *DcimConsoleServerPortsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console server ports bulk delete no content response has a 3xx status code
+func (o *DcimConsoleServerPortsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console server ports bulk delete no content response has a 4xx status code
+func (o *DcimConsoleServerPortsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console server ports bulk delete no content response has a 5xx status code
+func (o *DcimConsoleServerPortsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console server ports bulk delete no content response a status code equal to that given
+func (o *DcimConsoleServerPortsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimConsoleServerPortsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/console-server-ports/][%d] dcimConsoleServerPortsBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimConsoleServerPortsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/console-server-ports/][%d] dcimConsoleServerPortsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimConsoleServerPortsBulkDeleteDefault(code int) *DcimConsoleServerPort
 	}
 }
 
-/* DcimConsoleServerPortsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimConsoleServerPortsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortsBulkDeleteDefault dcim console server ports bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimConsoleServerPortsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console server ports bulk delete default response has a 2xx status code
+func (o *DcimConsoleServerPortsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console server ports bulk delete default response has a 3xx status code
+func (o *DcimConsoleServerPortsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console server ports bulk delete default response has a 4xx status code
+func (o *DcimConsoleServerPortsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console server ports bulk delete default response has a 5xx status code
+func (o *DcimConsoleServerPortsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console server ports bulk delete default response a status code equal to that given
+func (o *DcimConsoleServerPortsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsoleServerPortsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/console-server-ports/][%d] dcim_console-server-ports_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsoleServerPortsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/console-server-ports/][%d] dcim_console-server-ports_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsoleServerPortsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewDcimRackRolesBulkPartialUpdateOK() *DcimRackRolesBulkPartialUpdateOK {
 	return &DcimRackRolesBulkPartialUpdateOK{}
 }
 
-/* DcimRackRolesBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimRackRolesBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimRackRolesBulkPartialUpdateOK dcim rack roles bulk partial update o k
 */
@@ -69,9 +70,39 @@ type DcimRackRolesBulkPartialUpdateOK struct {
 	Payload *models.RackRole
 }
 
+// IsSuccess returns true when this dcim rack roles bulk partial update o k response has a 2xx status code
+func (o *DcimRackRolesBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rack roles bulk partial update o k response has a 3xx status code
+func (o *DcimRackRolesBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rack roles bulk partial update o k response has a 4xx status code
+func (o *DcimRackRolesBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rack roles bulk partial update o k response has a 5xx status code
+func (o *DcimRackRolesBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rack roles bulk partial update o k response a status code equal to that given
+func (o *DcimRackRolesBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRackRolesBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/rack-roles/][%d] dcimRackRolesBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRackRolesBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/rack-roles/][%d] dcimRackRolesBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRackRolesBulkPartialUpdateOK) GetPayload() *models.RackRole {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRackRolesBulkPartialUpdateDefault(code int) *DcimRackRolesBulkPartia
 	}
 }
 
-/* DcimRackRolesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimRackRolesBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRackRolesBulkPartialUpdateDefault dcim rack roles bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimRackRolesBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rack roles bulk partial update default response has a 2xx status code
+func (o *DcimRackRolesBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rack roles bulk partial update default response has a 3xx status code
+func (o *DcimRackRolesBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rack roles bulk partial update default response has a 4xx status code
+func (o *DcimRackRolesBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rack roles bulk partial update default response has a 5xx status code
+func (o *DcimRackRolesBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rack roles bulk partial update default response a status code equal to that given
+func (o *DcimRackRolesBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRackRolesBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/rack-roles/][%d] dcim_rack-roles_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRackRolesBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/rack-roles/][%d] dcim_rack-roles_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRackRolesBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

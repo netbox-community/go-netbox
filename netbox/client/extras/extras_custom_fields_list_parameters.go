@@ -68,12 +68,32 @@ func NewExtrasCustomFieldsListParamsWithHTTPClient(client *http.Client) *ExtrasC
 	}
 }
 
-/* ExtrasCustomFieldsListParams contains all the parameters to send to the API endpoint
-   for the extras custom fields list operation.
+/*
+ExtrasCustomFieldsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras custom fields list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasCustomFieldsListParams struct {
+
+	// ContentTypeID.
+	ContentTypeID *string
+
+	// ContentTypeIDGt.
+	ContentTypeIDGt *string
+
+	// ContentTypeIDGte.
+	ContentTypeIDGte *string
+
+	// ContentTypeIDLt.
+	ContentTypeIDLt *string
+
+	// ContentTypeIDLte.
+	ContentTypeIDLte *string
+
+	// ContentTypeIDn.
+	ContentTypeIDn *string
 
 	// ContentTypes.
 	ContentTypes *string
@@ -141,6 +161,36 @@ type ExtrasCustomFieldsListParams struct {
 	// FilterLogicn.
 	FilterLogicn *string
 
+	// GroupName.
+	GroupName *string
+
+	// GroupNameIc.
+	GroupNameIc *string
+
+	// GroupNameIe.
+	GroupNameIe *string
+
+	// GroupNameIew.
+	GroupNameIew *string
+
+	// GroupNameIsw.
+	GroupNameIsw *string
+
+	// GroupNamen.
+	GroupNamen *string
+
+	// GroupNameNic.
+	GroupNameNic *string
+
+	// GroupNameNie.
+	GroupNameNie *string
+
+	// GroupNameNiew.
+	GroupNameNiew *string
+
+	// GroupNameNisw.
+	GroupNameNisw *string
+
 	// ID.
 	ID *string
 
@@ -201,11 +251,29 @@ type ExtrasCustomFieldsListParams struct {
 	*/
 	Offset *int64
 
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
+
 	// Q.
 	Q *string
 
 	// Required.
 	Required *string
+
+	// Type.
+	Type *string
+
+	// Typen.
+	Typen *string
+
+	// UIVisibility.
+	UIVisibility *string
+
+	// UIVisibilityn.
+	UIVisibilityn *string
 
 	// Weight.
 	Weight *string
@@ -276,6 +344,72 @@ func (o *ExtrasCustomFieldsListParams) WithHTTPClient(client *http.Client) *Extr
 // SetHTTPClient adds the HTTPClient to the extras custom fields list params
 func (o *ExtrasCustomFieldsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithContentTypeID adds the contentTypeID to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithContentTypeID(contentTypeID *string) *ExtrasCustomFieldsListParams {
+	o.SetContentTypeID(contentTypeID)
+	return o
+}
+
+// SetContentTypeID adds the contentTypeId to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetContentTypeID(contentTypeID *string) {
+	o.ContentTypeID = contentTypeID
+}
+
+// WithContentTypeIDGt adds the contentTypeIDGt to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithContentTypeIDGt(contentTypeIDGt *string) *ExtrasCustomFieldsListParams {
+	o.SetContentTypeIDGt(contentTypeIDGt)
+	return o
+}
+
+// SetContentTypeIDGt adds the contentTypeIdGt to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetContentTypeIDGt(contentTypeIDGt *string) {
+	o.ContentTypeIDGt = contentTypeIDGt
+}
+
+// WithContentTypeIDGte adds the contentTypeIDGte to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithContentTypeIDGte(contentTypeIDGte *string) *ExtrasCustomFieldsListParams {
+	o.SetContentTypeIDGte(contentTypeIDGte)
+	return o
+}
+
+// SetContentTypeIDGte adds the contentTypeIdGte to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetContentTypeIDGte(contentTypeIDGte *string) {
+	o.ContentTypeIDGte = contentTypeIDGte
+}
+
+// WithContentTypeIDLt adds the contentTypeIDLt to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithContentTypeIDLt(contentTypeIDLt *string) *ExtrasCustomFieldsListParams {
+	o.SetContentTypeIDLt(contentTypeIDLt)
+	return o
+}
+
+// SetContentTypeIDLt adds the contentTypeIdLt to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetContentTypeIDLt(contentTypeIDLt *string) {
+	o.ContentTypeIDLt = contentTypeIDLt
+}
+
+// WithContentTypeIDLte adds the contentTypeIDLte to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithContentTypeIDLte(contentTypeIDLte *string) *ExtrasCustomFieldsListParams {
+	o.SetContentTypeIDLte(contentTypeIDLte)
+	return o
+}
+
+// SetContentTypeIDLte adds the contentTypeIdLte to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetContentTypeIDLte(contentTypeIDLte *string) {
+	o.ContentTypeIDLte = contentTypeIDLte
+}
+
+// WithContentTypeIDn adds the contentTypeIDn to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithContentTypeIDn(contentTypeIDn *string) *ExtrasCustomFieldsListParams {
+	o.SetContentTypeIDn(contentTypeIDn)
+	return o
+}
+
+// SetContentTypeIDn adds the contentTypeIdN to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetContentTypeIDn(contentTypeIDn *string) {
+	o.ContentTypeIDn = contentTypeIDn
 }
 
 // WithContentTypes adds the contentTypes to the extras custom fields list params
@@ -520,6 +654,116 @@ func (o *ExtrasCustomFieldsListParams) SetFilterLogicn(filterLogicn *string) {
 	o.FilterLogicn = filterLogicn
 }
 
+// WithGroupName adds the groupName to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupName(groupName *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupName(groupName)
+	return o
+}
+
+// SetGroupName adds the groupName to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupName(groupName *string) {
+	o.GroupName = groupName
+}
+
+// WithGroupNameIc adds the groupNameIc to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNameIc(groupNameIc *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNameIc(groupNameIc)
+	return o
+}
+
+// SetGroupNameIc adds the groupNameIc to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNameIc(groupNameIc *string) {
+	o.GroupNameIc = groupNameIc
+}
+
+// WithGroupNameIe adds the groupNameIe to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNameIe(groupNameIe *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNameIe(groupNameIe)
+	return o
+}
+
+// SetGroupNameIe adds the groupNameIe to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNameIe(groupNameIe *string) {
+	o.GroupNameIe = groupNameIe
+}
+
+// WithGroupNameIew adds the groupNameIew to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNameIew(groupNameIew *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNameIew(groupNameIew)
+	return o
+}
+
+// SetGroupNameIew adds the groupNameIew to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNameIew(groupNameIew *string) {
+	o.GroupNameIew = groupNameIew
+}
+
+// WithGroupNameIsw adds the groupNameIsw to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNameIsw(groupNameIsw *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNameIsw(groupNameIsw)
+	return o
+}
+
+// SetGroupNameIsw adds the groupNameIsw to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNameIsw(groupNameIsw *string) {
+	o.GroupNameIsw = groupNameIsw
+}
+
+// WithGroupNamen adds the groupNamen to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNamen(groupNamen *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNamen(groupNamen)
+	return o
+}
+
+// SetGroupNamen adds the groupNameN to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNamen(groupNamen *string) {
+	o.GroupNamen = groupNamen
+}
+
+// WithGroupNameNic adds the groupNameNic to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNameNic(groupNameNic *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNameNic(groupNameNic)
+	return o
+}
+
+// SetGroupNameNic adds the groupNameNic to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNameNic(groupNameNic *string) {
+	o.GroupNameNic = groupNameNic
+}
+
+// WithGroupNameNie adds the groupNameNie to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNameNie(groupNameNie *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNameNie(groupNameNie)
+	return o
+}
+
+// SetGroupNameNie adds the groupNameNie to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNameNie(groupNameNie *string) {
+	o.GroupNameNie = groupNameNie
+}
+
+// WithGroupNameNiew adds the groupNameNiew to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNameNiew(groupNameNiew *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNameNiew(groupNameNiew)
+	return o
+}
+
+// SetGroupNameNiew adds the groupNameNiew to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNameNiew(groupNameNiew *string) {
+	o.GroupNameNiew = groupNameNiew
+}
+
+// WithGroupNameNisw adds the groupNameNisw to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNameNisw(groupNameNisw *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNameNisw(groupNameNisw)
+	return o
+}
+
+// SetGroupNameNisw adds the groupNameNisw to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNameNisw(groupNameNisw *string) {
+	o.GroupNameNisw = groupNameNisw
+}
+
 // WithID adds the id to the extras custom fields list params
 func (o *ExtrasCustomFieldsListParams) WithID(id *string) *ExtrasCustomFieldsListParams {
 	o.SetID(id)
@@ -718,6 +962,17 @@ func (o *ExtrasCustomFieldsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithOrdering adds the ordering to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithOrdering(ordering *string) *ExtrasCustomFieldsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
+}
+
 // WithQ adds the q to the extras custom fields list params
 func (o *ExtrasCustomFieldsListParams) WithQ(q *string) *ExtrasCustomFieldsListParams {
 	o.SetQ(q)
@@ -738,6 +993,50 @@ func (o *ExtrasCustomFieldsListParams) WithRequired(required *string) *ExtrasCus
 // SetRequired adds the required to the extras custom fields list params
 func (o *ExtrasCustomFieldsListParams) SetRequired(required *string) {
 	o.Required = required
+}
+
+// WithType adds the typeVar to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithType(typeVar *string) *ExtrasCustomFieldsListParams {
+	o.SetType(typeVar)
+	return o
+}
+
+// SetType adds the type to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetType(typeVar *string) {
+	o.Type = typeVar
+}
+
+// WithTypen adds the typen to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithTypen(typen *string) *ExtrasCustomFieldsListParams {
+	o.SetTypen(typen)
+	return o
+}
+
+// SetTypen adds the typeN to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetTypen(typen *string) {
+	o.Typen = typen
+}
+
+// WithUIVisibility adds the uIVisibility to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithUIVisibility(uIVisibility *string) *ExtrasCustomFieldsListParams {
+	o.SetUIVisibility(uIVisibility)
+	return o
+}
+
+// SetUIVisibility adds the uiVisibility to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetUIVisibility(uIVisibility *string) {
+	o.UIVisibility = uIVisibility
+}
+
+// WithUIVisibilityn adds the uIVisibilityn to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithUIVisibilityn(uIVisibilityn *string) *ExtrasCustomFieldsListParams {
+	o.SetUIVisibilityn(uIVisibilityn)
+	return o
+}
+
+// SetUIVisibilityn adds the uiVisibilityN to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetUIVisibilityn(uIVisibilityn *string) {
+	o.UIVisibilityn = uIVisibilityn
 }
 
 // WithWeight adds the weight to the extras custom fields list params
@@ -813,6 +1112,108 @@ func (o *ExtrasCustomFieldsListParams) WriteToRequest(r runtime.ClientRequest, r
 		return err
 	}
 	var res []error
+
+	if o.ContentTypeID != nil {
+
+		// query param content_type_id
+		var qrContentTypeID string
+
+		if o.ContentTypeID != nil {
+			qrContentTypeID = *o.ContentTypeID
+		}
+		qContentTypeID := qrContentTypeID
+		if qContentTypeID != "" {
+
+			if err := r.SetQueryParam("content_type_id", qContentTypeID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDGt != nil {
+
+		// query param content_type_id__gt
+		var qrContentTypeIDGt string
+
+		if o.ContentTypeIDGt != nil {
+			qrContentTypeIDGt = *o.ContentTypeIDGt
+		}
+		qContentTypeIDGt := qrContentTypeIDGt
+		if qContentTypeIDGt != "" {
+
+			if err := r.SetQueryParam("content_type_id__gt", qContentTypeIDGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDGte != nil {
+
+		// query param content_type_id__gte
+		var qrContentTypeIDGte string
+
+		if o.ContentTypeIDGte != nil {
+			qrContentTypeIDGte = *o.ContentTypeIDGte
+		}
+		qContentTypeIDGte := qrContentTypeIDGte
+		if qContentTypeIDGte != "" {
+
+			if err := r.SetQueryParam("content_type_id__gte", qContentTypeIDGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDLt != nil {
+
+		// query param content_type_id__lt
+		var qrContentTypeIDLt string
+
+		if o.ContentTypeIDLt != nil {
+			qrContentTypeIDLt = *o.ContentTypeIDLt
+		}
+		qContentTypeIDLt := qrContentTypeIDLt
+		if qContentTypeIDLt != "" {
+
+			if err := r.SetQueryParam("content_type_id__lt", qContentTypeIDLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDLte != nil {
+
+		// query param content_type_id__lte
+		var qrContentTypeIDLte string
+
+		if o.ContentTypeIDLte != nil {
+			qrContentTypeIDLte = *o.ContentTypeIDLte
+		}
+		qContentTypeIDLte := qrContentTypeIDLte
+		if qContentTypeIDLte != "" {
+
+			if err := r.SetQueryParam("content_type_id__lte", qContentTypeIDLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDn != nil {
+
+		// query param content_type_id__n
+		var qrContentTypeIDn string
+
+		if o.ContentTypeIDn != nil {
+			qrContentTypeIDn = *o.ContentTypeIDn
+		}
+		qContentTypeIDn := qrContentTypeIDn
+		if qContentTypeIDn != "" {
+
+			if err := r.SetQueryParam("content_type_id__n", qContentTypeIDn); err != nil {
+				return err
+			}
+		}
+	}
 
 	if o.ContentTypes != nil {
 
@@ -1188,6 +1589,176 @@ func (o *ExtrasCustomFieldsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
+	if o.GroupName != nil {
+
+		// query param group_name
+		var qrGroupName string
+
+		if o.GroupName != nil {
+			qrGroupName = *o.GroupName
+		}
+		qGroupName := qrGroupName
+		if qGroupName != "" {
+
+			if err := r.SetQueryParam("group_name", qGroupName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNameIc != nil {
+
+		// query param group_name__ic
+		var qrGroupNameIc string
+
+		if o.GroupNameIc != nil {
+			qrGroupNameIc = *o.GroupNameIc
+		}
+		qGroupNameIc := qrGroupNameIc
+		if qGroupNameIc != "" {
+
+			if err := r.SetQueryParam("group_name__ic", qGroupNameIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNameIe != nil {
+
+		// query param group_name__ie
+		var qrGroupNameIe string
+
+		if o.GroupNameIe != nil {
+			qrGroupNameIe = *o.GroupNameIe
+		}
+		qGroupNameIe := qrGroupNameIe
+		if qGroupNameIe != "" {
+
+			if err := r.SetQueryParam("group_name__ie", qGroupNameIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNameIew != nil {
+
+		// query param group_name__iew
+		var qrGroupNameIew string
+
+		if o.GroupNameIew != nil {
+			qrGroupNameIew = *o.GroupNameIew
+		}
+		qGroupNameIew := qrGroupNameIew
+		if qGroupNameIew != "" {
+
+			if err := r.SetQueryParam("group_name__iew", qGroupNameIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNameIsw != nil {
+
+		// query param group_name__isw
+		var qrGroupNameIsw string
+
+		if o.GroupNameIsw != nil {
+			qrGroupNameIsw = *o.GroupNameIsw
+		}
+		qGroupNameIsw := qrGroupNameIsw
+		if qGroupNameIsw != "" {
+
+			if err := r.SetQueryParam("group_name__isw", qGroupNameIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNamen != nil {
+
+		// query param group_name__n
+		var qrGroupNamen string
+
+		if o.GroupNamen != nil {
+			qrGroupNamen = *o.GroupNamen
+		}
+		qGroupNamen := qrGroupNamen
+		if qGroupNamen != "" {
+
+			if err := r.SetQueryParam("group_name__n", qGroupNamen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNameNic != nil {
+
+		// query param group_name__nic
+		var qrGroupNameNic string
+
+		if o.GroupNameNic != nil {
+			qrGroupNameNic = *o.GroupNameNic
+		}
+		qGroupNameNic := qrGroupNameNic
+		if qGroupNameNic != "" {
+
+			if err := r.SetQueryParam("group_name__nic", qGroupNameNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNameNie != nil {
+
+		// query param group_name__nie
+		var qrGroupNameNie string
+
+		if o.GroupNameNie != nil {
+			qrGroupNameNie = *o.GroupNameNie
+		}
+		qGroupNameNie := qrGroupNameNie
+		if qGroupNameNie != "" {
+
+			if err := r.SetQueryParam("group_name__nie", qGroupNameNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNameNiew != nil {
+
+		// query param group_name__niew
+		var qrGroupNameNiew string
+
+		if o.GroupNameNiew != nil {
+			qrGroupNameNiew = *o.GroupNameNiew
+		}
+		qGroupNameNiew := qrGroupNameNiew
+		if qGroupNameNiew != "" {
+
+			if err := r.SetQueryParam("group_name__niew", qGroupNameNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNameNisw != nil {
+
+		// query param group_name__nisw
+		var qrGroupNameNisw string
+
+		if o.GroupNameNisw != nil {
+			qrGroupNameNisw = *o.GroupNameNisw
+		}
+		qGroupNameNisw := qrGroupNameNisw
+		if qGroupNameNisw != "" {
+
+			if err := r.SetQueryParam("group_name__nisw", qGroupNameNisw); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ID != nil {
 
 		// query param id
@@ -1494,6 +2065,23 @@ func (o *ExtrasCustomFieldsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Q != nil {
 
 		// query param q
@@ -1523,6 +2111,74 @@ func (o *ExtrasCustomFieldsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qRequired != "" {
 
 			if err := r.SetQueryParam("required", qRequired); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Type != nil {
+
+		// query param type
+		var qrType string
+
+		if o.Type != nil {
+			qrType = *o.Type
+		}
+		qType := qrType
+		if qType != "" {
+
+			if err := r.SetQueryParam("type", qType); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Typen != nil {
+
+		// query param type__n
+		var qrTypen string
+
+		if o.Typen != nil {
+			qrTypen = *o.Typen
+		}
+		qTypen := qrTypen
+		if qTypen != "" {
+
+			if err := r.SetQueryParam("type__n", qTypen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.UIVisibility != nil {
+
+		// query param ui_visibility
+		var qrUIVisibility string
+
+		if o.UIVisibility != nil {
+			qrUIVisibility = *o.UIVisibility
+		}
+		qUIVisibility := qrUIVisibility
+		if qUIVisibility != "" {
+
+			if err := r.SetQueryParam("ui_visibility", qUIVisibility); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.UIVisibilityn != nil {
+
+		// query param ui_visibility__n
+		var qrUIVisibilityn string
+
+		if o.UIVisibilityn != nil {
+			qrUIVisibilityn = *o.UIVisibilityn
+		}
+		qUIVisibilityn := qrUIVisibilityn
+		if qUIVisibilityn != "" {
+
+			if err := r.SetQueryParam("ui_visibility__n", qUIVisibilityn); err != nil {
 				return err
 			}
 		}

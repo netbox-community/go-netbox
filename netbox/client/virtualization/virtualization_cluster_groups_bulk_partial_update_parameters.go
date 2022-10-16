@@ -69,10 +69,12 @@ func NewVirtualizationClusterGroupsBulkPartialUpdateParamsWithHTTPClient(client 
 	}
 }
 
-/* VirtualizationClusterGroupsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the virtualization cluster groups bulk partial update operation.
+/*
+VirtualizationClusterGroupsBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization cluster groups bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationClusterGroupsBulkPartialUpdateParams struct {
 

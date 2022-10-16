@@ -68,10 +68,12 @@ func NewDcimInterfacesDeleteParamsWithHTTPClient(client *http.Client) *DcimInter
 	}
 }
 
-/* DcimInterfacesDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim interfaces delete operation.
+/*
+DcimInterfacesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim interfaces delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInterfacesDeleteParams struct {
 

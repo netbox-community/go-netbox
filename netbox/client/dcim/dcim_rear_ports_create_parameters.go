@@ -69,10 +69,12 @@ func NewDcimRearPortsCreateParamsWithHTTPClient(client *http.Client) *DcimRearPo
 	}
 }
 
-/* DcimRearPortsCreateParams contains all the parameters to send to the API endpoint
-   for the dcim rear ports create operation.
+/*
+DcimRearPortsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rear ports create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRearPortsCreateParams struct {
 

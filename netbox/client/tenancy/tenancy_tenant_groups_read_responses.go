@@ -61,7 +61,8 @@ func NewTenancyTenantGroupsReadOK() *TenancyTenantGroupsReadOK {
 	return &TenancyTenantGroupsReadOK{}
 }
 
-/* TenancyTenantGroupsReadOK describes a response with status code 200, with default header values.
+/*
+TenancyTenantGroupsReadOK describes a response with status code 200, with default header values.
 
 TenancyTenantGroupsReadOK tenancy tenant groups read o k
 */
@@ -69,9 +70,39 @@ type TenancyTenantGroupsReadOK struct {
 	Payload *models.TenantGroup
 }
 
+// IsSuccess returns true when this tenancy tenant groups read o k response has a 2xx status code
+func (o *TenancyTenantGroupsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy tenant groups read o k response has a 3xx status code
+func (o *TenancyTenantGroupsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy tenant groups read o k response has a 4xx status code
+func (o *TenancyTenantGroupsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy tenant groups read o k response has a 5xx status code
+func (o *TenancyTenantGroupsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy tenant groups read o k response a status code equal to that given
+func (o *TenancyTenantGroupsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyTenantGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyTenantGroupsReadOK) String() string {
+	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyTenantGroupsReadOK) GetPayload() *models.TenantGroup {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewTenancyTenantGroupsReadDefault(code int) *TenancyTenantGroupsReadDefault
 	}
 }
 
-/* TenancyTenantGroupsReadDefault describes a response with status code -1, with default header values.
+/*
+TenancyTenantGroupsReadDefault describes a response with status code -1, with default header values.
 
 TenancyTenantGroupsReadDefault tenancy tenant groups read default
 */
@@ -110,9 +142,39 @@ func (o *TenancyTenantGroupsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy tenant groups read default response has a 2xx status code
+func (o *TenancyTenantGroupsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy tenant groups read default response has a 3xx status code
+func (o *TenancyTenantGroupsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy tenant groups read default response has a 4xx status code
+func (o *TenancyTenantGroupsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy tenant groups read default response has a 5xx status code
+func (o *TenancyTenantGroupsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy tenant groups read default response a status code equal to that given
+func (o *TenancyTenantGroupsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyTenantGroupsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyTenantGroupsReadDefault) String() string {
+	return fmt.Sprintf("[GET /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyTenantGroupsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

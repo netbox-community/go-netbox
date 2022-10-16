@@ -61,7 +61,8 @@ func NewExtrasConfigContextsBulkUpdateOK() *ExtrasConfigContextsBulkUpdateOK {
 	return &ExtrasConfigContextsBulkUpdateOK{}
 }
 
-/* ExtrasConfigContextsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+ExtrasConfigContextsBulkUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasConfigContextsBulkUpdateOK extras config contexts bulk update o k
 */
@@ -69,9 +70,39 @@ type ExtrasConfigContextsBulkUpdateOK struct {
 	Payload *models.ConfigContext
 }
 
+// IsSuccess returns true when this extras config contexts bulk update o k response has a 2xx status code
+func (o *ExtrasConfigContextsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras config contexts bulk update o k response has a 3xx status code
+func (o *ExtrasConfigContextsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras config contexts bulk update o k response has a 4xx status code
+func (o *ExtrasConfigContextsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras config contexts bulk update o k response has a 5xx status code
+func (o *ExtrasConfigContextsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras config contexts bulk update o k response a status code equal to that given
+func (o *ExtrasConfigContextsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasConfigContextsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/config-contexts/][%d] extrasConfigContextsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasConfigContextsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /extras/config-contexts/][%d] extrasConfigContextsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasConfigContextsBulkUpdateOK) GetPayload() *models.ConfigContext {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasConfigContextsBulkUpdateDefault(code int) *ExtrasConfigContextsBul
 	}
 }
 
-/* ExtrasConfigContextsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasConfigContextsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasConfigContextsBulkUpdateDefault extras config contexts bulk update default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasConfigContextsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras config contexts bulk update default response has a 2xx status code
+func (o *ExtrasConfigContextsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras config contexts bulk update default response has a 3xx status code
+func (o *ExtrasConfigContextsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras config contexts bulk update default response has a 4xx status code
+func (o *ExtrasConfigContextsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras config contexts bulk update default response has a 5xx status code
+func (o *ExtrasConfigContextsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras config contexts bulk update default response a status code equal to that given
+func (o *ExtrasConfigContextsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasConfigContextsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/config-contexts/][%d] extras_config-contexts_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasConfigContextsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /extras/config-contexts/][%d] extras_config-contexts_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasConfigContextsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

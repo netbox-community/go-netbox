@@ -37,7 +37,7 @@ import (
 type WritableDeviceWithConfigContext struct {
 
 	// Airflow
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
 	Airflow string `json:"airflow,omitempty"`
 
 	// Asset tag
@@ -54,12 +54,12 @@ type WritableDeviceWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext map[string]*string `json:"config_context,omitempty"`
+	ConfigContext interface{} `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -88,10 +88,10 @@ type WritableDeviceWithConfigContext struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
-	LocalContextData *string `json:"local_context_data,omitempty"`
+	LocalContextData interface{} `json:"local_context_data,omitempty"`
 
 	// Location
 	Location *int64 `json:"location,omitempty"`
@@ -108,8 +108,8 @@ type WritableDeviceWithConfigContext struct {
 	Platform *int64 `json:"platform,omitempty"`
 
 	// Position (U)
-	// Minimum: 1
-	Position *int64 `json:"position,omitempty"`
+	// Minimum: 0.5
+	Position *float64 `json:"position,omitempty"`
 
 	// Primary ip
 	// Read Only: true
@@ -258,7 +258,7 @@ var writableDeviceWithConfigContextTypeAirflowPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -285,6 +285,9 @@ const (
 
 	// WritableDeviceWithConfigContextAirflowPassive captures enum value "passive"
 	WritableDeviceWithConfigContextAirflowPassive string = "passive"
+
+	// WritableDeviceWithConfigContextAirflowMixed captures enum value "mixed"
+	WritableDeviceWithConfigContextAirflowMixed string = "mixed"
 )
 
 // prop value enum
@@ -442,7 +445,7 @@ func (m *WritableDeviceWithConfigContext) validatePosition(formats strfmt.Regist
 		return nil
 	}
 
-	if err := validate.MinimumInt("position", "body", *m.Position, 1, false); err != nil {
+	if err := validate.Minimum("position", "body", *m.Position, 0.5, false); err != nil {
 		return err
 	}
 
@@ -628,10 +631,6 @@ func (m *WritableDeviceWithConfigContext) validateVirtualChassis(formats strfmt.
 func (m *WritableDeviceWithConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -670,14 +669,9 @@ func (m *WritableDeviceWithConfigContext) ContextValidate(ctx context.Context, f
 	return nil
 }
 
-func (m *WritableDeviceWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
 func (m *WritableDeviceWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -704,7 +698,7 @@ func (m *WritableDeviceWithConfigContext) contextValidateID(ctx context.Context,
 
 func (m *WritableDeviceWithConfigContext) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

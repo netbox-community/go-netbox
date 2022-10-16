@@ -69,10 +69,12 @@ func NewDcimRearPortsBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimRe
 	}
 }
 
-/* DcimRearPortsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim rear ports bulk update operation.
+/*
+DcimRearPortsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rear ports bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRearPortsBulkUpdateParams struct {
 

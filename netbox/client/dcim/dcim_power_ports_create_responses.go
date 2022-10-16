@@ -61,7 +61,8 @@ func NewDcimPowerPortsCreateCreated() *DcimPowerPortsCreateCreated {
 	return &DcimPowerPortsCreateCreated{}
 }
 
-/* DcimPowerPortsCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimPowerPortsCreateCreated describes a response with status code 201, with default header values.
 
 DcimPowerPortsCreateCreated dcim power ports create created
 */
@@ -69,9 +70,39 @@ type DcimPowerPortsCreateCreated struct {
 	Payload *models.PowerPort
 }
 
+// IsSuccess returns true when this dcim power ports create created response has a 2xx status code
+func (o *DcimPowerPortsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power ports create created response has a 3xx status code
+func (o *DcimPowerPortsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power ports create created response has a 4xx status code
+func (o *DcimPowerPortsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power ports create created response has a 5xx status code
+func (o *DcimPowerPortsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power ports create created response a status code equal to that given
+func (o *DcimPowerPortsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimPowerPortsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-ports/][%d] dcimPowerPortsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimPowerPortsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/power-ports/][%d] dcimPowerPortsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimPowerPortsCreateCreated) GetPayload() *models.PowerPort {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerPortsCreateDefault(code int) *DcimPowerPortsCreateDefault {
 	}
 }
 
-/* DcimPowerPortsCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerPortsCreateDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortsCreateDefault dcim power ports create default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerPortsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power ports create default response has a 2xx status code
+func (o *DcimPowerPortsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power ports create default response has a 3xx status code
+func (o *DcimPowerPortsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power ports create default response has a 4xx status code
+func (o *DcimPowerPortsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power ports create default response has a 5xx status code
+func (o *DcimPowerPortsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power ports create default response a status code equal to that given
+func (o *DcimPowerPortsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerPortsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-ports/][%d] dcim_power-ports_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerPortsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/power-ports/][%d] dcim_power-ports_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerPortsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

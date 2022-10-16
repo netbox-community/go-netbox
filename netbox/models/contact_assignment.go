@@ -46,7 +46,7 @@ type ContactAssignment struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -59,11 +59,11 @@ type ContactAssignment struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Object
 	// Read Only: true
-	Object map[string]*string `json:"object,omitempty"`
+	Object interface{} `json:"object,omitempty"`
 
 	// Object id
 	// Required: true
@@ -269,10 +269,6 @@ func (m *ContactAssignment) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateObject(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidatePriority(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -309,7 +305,7 @@ func (m *ContactAssignment) contextValidateContact(ctx context.Context, formats 
 
 func (m *ContactAssignment) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -336,14 +332,9 @@ func (m *ContactAssignment) contextValidateID(ctx context.Context, formats strfm
 
 func (m *ContactAssignment) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
-
-	return nil
-}
-
-func (m *ContactAssignment) contextValidateObject(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

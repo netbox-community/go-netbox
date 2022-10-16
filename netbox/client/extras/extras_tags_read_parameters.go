@@ -68,10 +68,12 @@ func NewExtrasTagsReadParamsWithHTTPClient(client *http.Client) *ExtrasTagsReadP
 	}
 }
 
-/* ExtrasTagsReadParams contains all the parameters to send to the API endpoint
-   for the extras tags read operation.
+/*
+ExtrasTagsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras tags read operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasTagsReadParams struct {
 

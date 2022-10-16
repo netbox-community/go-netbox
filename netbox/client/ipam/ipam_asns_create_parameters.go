@@ -69,10 +69,12 @@ func NewIpamAsnsCreateParamsWithHTTPClient(client *http.Client) *IpamAsnsCreateP
 	}
 }
 
-/* IpamAsnsCreateParams contains all the parameters to send to the API endpoint
-   for the ipam asns create operation.
+/*
+IpamAsnsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam asns create operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAsnsCreateParams struct {
 

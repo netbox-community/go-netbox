@@ -59,14 +59,44 @@ func NewStatusListOK() *StatusListOK {
 	return &StatusListOK{}
 }
 
-/* StatusListOK describes a response with status code 200, with default header values.
+/*
+StatusListOK describes a response with status code 200, with default header values.
 
 StatusListOK status list o k
 */
 type StatusListOK struct {
 }
 
+// IsSuccess returns true when this status list o k response has a 2xx status code
+func (o *StatusListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this status list o k response has a 3xx status code
+func (o *StatusListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this status list o k response has a 4xx status code
+func (o *StatusListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this status list o k response has a 5xx status code
+func (o *StatusListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this status list o k response a status code equal to that given
+func (o *StatusListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *StatusListOK) Error() string {
+	return fmt.Sprintf("[GET /status/][%d] statusListOK ", 200)
+}
+
+func (o *StatusListOK) String() string {
 	return fmt.Sprintf("[GET /status/][%d] statusListOK ", 200)
 }
 
@@ -82,7 +112,8 @@ func NewStatusListDefault(code int) *StatusListDefault {
 	}
 }
 
-/* StatusListDefault describes a response with status code -1, with default header values.
+/*
+StatusListDefault describes a response with status code -1, with default header values.
 
 StatusListDefault status list default
 */
@@ -97,9 +128,39 @@ func (o *StatusListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this status list default response has a 2xx status code
+func (o *StatusListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this status list default response has a 3xx status code
+func (o *StatusListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this status list default response has a 4xx status code
+func (o *StatusListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this status list default response has a 5xx status code
+func (o *StatusListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this status list default response a status code equal to that given
+func (o *StatusListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *StatusListDefault) Error() string {
 	return fmt.Sprintf("[GET /status/][%d] status_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *StatusListDefault) String() string {
+	return fmt.Sprintf("[GET /status/][%d] status_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *StatusListDefault) GetPayload() interface{} {
 	return o.Payload
 }

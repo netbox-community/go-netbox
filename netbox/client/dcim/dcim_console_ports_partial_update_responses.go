@@ -61,7 +61,8 @@ func NewDcimConsolePortsPartialUpdateOK() *DcimConsolePortsPartialUpdateOK {
 	return &DcimConsolePortsPartialUpdateOK{}
 }
 
-/* DcimConsolePortsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimConsolePortsPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimConsolePortsPartialUpdateOK dcim console ports partial update o k
 */
@@ -69,9 +70,39 @@ type DcimConsolePortsPartialUpdateOK struct {
 	Payload *models.ConsolePort
 }
 
+// IsSuccess returns true when this dcim console ports partial update o k response has a 2xx status code
+func (o *DcimConsolePortsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console ports partial update o k response has a 3xx status code
+func (o *DcimConsolePortsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console ports partial update o k response has a 4xx status code
+func (o *DcimConsolePortsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console ports partial update o k response has a 5xx status code
+func (o *DcimConsolePortsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console ports partial update o k response a status code equal to that given
+func (o *DcimConsolePortsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimConsolePortsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/console-ports/{id}/][%d] dcimConsolePortsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimConsolePortsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/console-ports/{id}/][%d] dcimConsolePortsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimConsolePortsPartialUpdateOK) GetPayload() *models.ConsolePort {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimConsolePortsPartialUpdateDefault(code int) *DcimConsolePortsPartialU
 	}
 }
 
-/* DcimConsolePortsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimConsolePortsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimConsolePortsPartialUpdateDefault dcim console ports partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimConsolePortsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console ports partial update default response has a 2xx status code
+func (o *DcimConsolePortsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console ports partial update default response has a 3xx status code
+func (o *DcimConsolePortsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console ports partial update default response has a 4xx status code
+func (o *DcimConsolePortsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console ports partial update default response has a 5xx status code
+func (o *DcimConsolePortsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console ports partial update default response a status code equal to that given
+func (o *DcimConsolePortsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsolePortsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/console-ports/{id}/][%d] dcim_console-ports_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsolePortsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/console-ports/{id}/][%d] dcim_console-ports_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsolePortsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

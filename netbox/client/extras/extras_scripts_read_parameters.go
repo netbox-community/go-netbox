@@ -67,10 +67,12 @@ func NewExtrasScriptsReadParamsWithHTTPClient(client *http.Client) *ExtrasScript
 	}
 }
 
-/* ExtrasScriptsReadParams contains all the parameters to send to the API endpoint
-   for the extras scripts read operation.
+/*
+ExtrasScriptsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras scripts read operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasScriptsReadParams struct {
 

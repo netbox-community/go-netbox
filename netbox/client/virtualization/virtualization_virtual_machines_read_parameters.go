@@ -68,10 +68,12 @@ func NewVirtualizationVirtualMachinesReadParamsWithHTTPClient(client *http.Clien
 	}
 }
 
-/* VirtualizationVirtualMachinesReadParams contains all the parameters to send to the API endpoint
-   for the virtualization virtual machines read operation.
+/*
+VirtualizationVirtualMachinesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization virtual machines read operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationVirtualMachinesReadParams struct {
 

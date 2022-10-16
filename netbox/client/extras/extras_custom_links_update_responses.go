@@ -61,7 +61,8 @@ func NewExtrasCustomLinksUpdateOK() *ExtrasCustomLinksUpdateOK {
 	return &ExtrasCustomLinksUpdateOK{}
 }
 
-/* ExtrasCustomLinksUpdateOK describes a response with status code 200, with default header values.
+/*
+ExtrasCustomLinksUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasCustomLinksUpdateOK extras custom links update o k
 */
@@ -69,9 +70,39 @@ type ExtrasCustomLinksUpdateOK struct {
 	Payload *models.CustomLink
 }
 
+// IsSuccess returns true when this extras custom links update o k response has a 2xx status code
+func (o *ExtrasCustomLinksUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras custom links update o k response has a 3xx status code
+func (o *ExtrasCustomLinksUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras custom links update o k response has a 4xx status code
+func (o *ExtrasCustomLinksUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras custom links update o k response has a 5xx status code
+func (o *ExtrasCustomLinksUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras custom links update o k response a status code equal to that given
+func (o *ExtrasCustomLinksUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasCustomLinksUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extrasCustomLinksUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasCustomLinksUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extrasCustomLinksUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasCustomLinksUpdateOK) GetPayload() *models.CustomLink {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasCustomLinksUpdateDefault(code int) *ExtrasCustomLinksUpdateDefault
 	}
 }
 
-/* ExtrasCustomLinksUpdateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasCustomLinksUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomLinksUpdateDefault extras custom links update default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasCustomLinksUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras custom links update default response has a 2xx status code
+func (o *ExtrasCustomLinksUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras custom links update default response has a 3xx status code
+func (o *ExtrasCustomLinksUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras custom links update default response has a 4xx status code
+func (o *ExtrasCustomLinksUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras custom links update default response has a 5xx status code
+func (o *ExtrasCustomLinksUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras custom links update default response a status code equal to that given
+func (o *ExtrasCustomLinksUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasCustomLinksUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extras_custom-links_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasCustomLinksUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /extras/custom-links/{id}/][%d] extras_custom-links_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasCustomLinksUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -68,10 +68,12 @@ func NewDcimPowerFeedsReadParamsWithHTTPClient(client *http.Client) *DcimPowerFe
 	}
 }
 
-/* DcimPowerFeedsReadParams contains all the parameters to send to the API endpoint
-   for the dcim power feeds read operation.
+/*
+DcimPowerFeedsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power feeds read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerFeedsReadParams struct {
 

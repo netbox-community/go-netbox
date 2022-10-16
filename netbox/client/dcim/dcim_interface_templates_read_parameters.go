@@ -68,10 +68,12 @@ func NewDcimInterfaceTemplatesReadParamsWithHTTPClient(client *http.Client) *Dci
 	}
 }
 
-/* DcimInterfaceTemplatesReadParams contains all the parameters to send to the API endpoint
-   for the dcim interface templates read operation.
+/*
+DcimInterfaceTemplatesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim interface templates read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInterfaceTemplatesReadParams struct {
 

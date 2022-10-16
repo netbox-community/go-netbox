@@ -68,10 +68,12 @@ func NewVirtualizationVirtualMachinesDeleteParamsWithHTTPClient(client *http.Cli
 	}
 }
 
-/* VirtualizationVirtualMachinesDeleteParams contains all the parameters to send to the API endpoint
-   for the virtualization virtual machines delete operation.
+/*
+VirtualizationVirtualMachinesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization virtual machines delete operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationVirtualMachinesDeleteParams struct {
 

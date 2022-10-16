@@ -67,10 +67,12 @@ func NewExtrasReportsListParamsWithHTTPClient(client *http.Client) *ExtrasReport
 	}
 }
 
-/* ExtrasReportsListParams contains all the parameters to send to the API endpoint
-   for the extras reports list operation.
+/*
+ExtrasReportsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras reports list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasReportsListParams struct {
 	timeout    time.Duration

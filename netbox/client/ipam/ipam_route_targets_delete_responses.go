@@ -59,14 +59,44 @@ func NewIpamRouteTargetsDeleteNoContent() *IpamRouteTargetsDeleteNoContent {
 	return &IpamRouteTargetsDeleteNoContent{}
 }
 
-/* IpamRouteTargetsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamRouteTargetsDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamRouteTargetsDeleteNoContent ipam route targets delete no content
 */
 type IpamRouteTargetsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam route targets delete no content response has a 2xx status code
+func (o *IpamRouteTargetsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam route targets delete no content response has a 3xx status code
+func (o *IpamRouteTargetsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam route targets delete no content response has a 4xx status code
+func (o *IpamRouteTargetsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam route targets delete no content response has a 5xx status code
+func (o *IpamRouteTargetsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam route targets delete no content response a status code equal to that given
+func (o *IpamRouteTargetsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamRouteTargetsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipamRouteTargetsDeleteNoContent ", 204)
+}
+
+func (o *IpamRouteTargetsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipamRouteTargetsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamRouteTargetsDeleteDefault(code int) *IpamRouteTargetsDeleteDefault {
 	}
 }
 
-/* IpamRouteTargetsDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamRouteTargetsDeleteDefault describes a response with status code -1, with default header values.
 
 IpamRouteTargetsDeleteDefault ipam route targets delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamRouteTargetsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam route targets delete default response has a 2xx status code
+func (o *IpamRouteTargetsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam route targets delete default response has a 3xx status code
+func (o *IpamRouteTargetsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam route targets delete default response has a 4xx status code
+func (o *IpamRouteTargetsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam route targets delete default response has a 5xx status code
+func (o *IpamRouteTargetsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam route targets delete default response a status code equal to that given
+func (o *IpamRouteTargetsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamRouteTargetsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipam_route-targets_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamRouteTargetsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/route-targets/{id}/][%d] ipam_route-targets_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamRouteTargetsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

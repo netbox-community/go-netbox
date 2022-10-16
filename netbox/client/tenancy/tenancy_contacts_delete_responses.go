@@ -59,14 +59,44 @@ func NewTenancyContactsDeleteNoContent() *TenancyContactsDeleteNoContent {
 	return &TenancyContactsDeleteNoContent{}
 }
 
-/* TenancyContactsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+TenancyContactsDeleteNoContent describes a response with status code 204, with default header values.
 
 TenancyContactsDeleteNoContent tenancy contacts delete no content
 */
 type TenancyContactsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this tenancy contacts delete no content response has a 2xx status code
+func (o *TenancyContactsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contacts delete no content response has a 3xx status code
+func (o *TenancyContactsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contacts delete no content response has a 4xx status code
+func (o *TenancyContactsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contacts delete no content response has a 5xx status code
+func (o *TenancyContactsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contacts delete no content response a status code equal to that given
+func (o *TenancyContactsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *TenancyContactsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /tenancy/contacts/{id}/][%d] tenancyContactsDeleteNoContent ", 204)
+}
+
+func (o *TenancyContactsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /tenancy/contacts/{id}/][%d] tenancyContactsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewTenancyContactsDeleteDefault(code int) *TenancyContactsDeleteDefault {
 	}
 }
 
-/* TenancyContactsDeleteDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactsDeleteDefault describes a response with status code -1, with default header values.
 
 TenancyContactsDeleteDefault tenancy contacts delete default
 */
@@ -97,9 +128,39 @@ func (o *TenancyContactsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contacts delete default response has a 2xx status code
+func (o *TenancyContactsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contacts delete default response has a 3xx status code
+func (o *TenancyContactsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contacts delete default response has a 4xx status code
+func (o *TenancyContactsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contacts delete default response has a 5xx status code
+func (o *TenancyContactsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contacts delete default response a status code equal to that given
+func (o *TenancyContactsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /tenancy/contacts/{id}/][%d] tenancy_contacts_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /tenancy/contacts/{id}/][%d] tenancy_contacts_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

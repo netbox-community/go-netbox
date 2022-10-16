@@ -66,7 +66,8 @@ func NewDcimManufacturersListOK() *DcimManufacturersListOK {
 	return &DcimManufacturersListOK{}
 }
 
-/* DcimManufacturersListOK describes a response with status code 200, with default header values.
+/*
+DcimManufacturersListOK describes a response with status code 200, with default header values.
 
 DcimManufacturersListOK dcim manufacturers list o k
 */
@@ -74,9 +75,39 @@ type DcimManufacturersListOK struct {
 	Payload *DcimManufacturersListOKBody
 }
 
+// IsSuccess returns true when this dcim manufacturers list o k response has a 2xx status code
+func (o *DcimManufacturersListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim manufacturers list o k response has a 3xx status code
+func (o *DcimManufacturersListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim manufacturers list o k response has a 4xx status code
+func (o *DcimManufacturersListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim manufacturers list o k response has a 5xx status code
+func (o *DcimManufacturersListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim manufacturers list o k response a status code equal to that given
+func (o *DcimManufacturersListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimManufacturersListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcimManufacturersListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimManufacturersListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcimManufacturersListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimManufacturersListOK) GetPayload() *DcimManufacturersListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimManufacturersListDefault(code int) *DcimManufacturersListDefault {
 	}
 }
 
-/* DcimManufacturersListDefault describes a response with status code -1, with default header values.
+/*
+DcimManufacturersListDefault describes a response with status code -1, with default header values.
 
 DcimManufacturersListDefault dcim manufacturers list default
 */
@@ -115,9 +147,39 @@ func (o *DcimManufacturersListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim manufacturers list default response has a 2xx status code
+func (o *DcimManufacturersListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim manufacturers list default response has a 3xx status code
+func (o *DcimManufacturersListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim manufacturers list default response has a 4xx status code
+func (o *DcimManufacturersListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim manufacturers list default response has a 5xx status code
+func (o *DcimManufacturersListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim manufacturers list default response a status code equal to that given
+func (o *DcimManufacturersListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimManufacturersListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcim_manufacturers_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimManufacturersListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcim_manufacturers_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimManufacturersListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimManufacturersListDefault) readResponse(response runtime.ClientRespo
 	return nil
 }
 
-/*DcimManufacturersListOKBody dcim manufacturers list o k body
+/*
+DcimManufacturersListOKBody dcim manufacturers list o k body
 swagger:model DcimManufacturersListOKBody
 */
 type DcimManufacturersListOKBody struct {

@@ -59,14 +59,44 @@ func NewIpamFhrpGroupAssignmentsDeleteNoContent() *IpamFhrpGroupAssignmentsDelet
 	return &IpamFhrpGroupAssignmentsDeleteNoContent{}
 }
 
-/* IpamFhrpGroupAssignmentsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamFhrpGroupAssignmentsDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamFhrpGroupAssignmentsDeleteNoContent ipam fhrp group assignments delete no content
 */
 type IpamFhrpGroupAssignmentsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments delete no content response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments delete no content response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam fhrp group assignments delete no content response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam fhrp group assignments delete no content response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam fhrp group assignments delete no content response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamFhrpGroupAssignmentsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsDeleteNoContent ", 204)
+}
+
+func (o *IpamFhrpGroupAssignmentsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamFhrpGroupAssignmentsDeleteDefault(code int) *IpamFhrpGroupAssignment
 	}
 }
 
-/* IpamFhrpGroupAssignmentsDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamFhrpGroupAssignmentsDeleteDefault describes a response with status code -1, with default header values.
 
 IpamFhrpGroupAssignmentsDeleteDefault ipam fhrp group assignments delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamFhrpGroupAssignmentsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments delete default response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments delete default response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam fhrp group assignments delete default response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam fhrp group assignments delete default response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam fhrp group assignments delete default response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamFhrpGroupAssignmentsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamFhrpGroupAssignmentsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamFhrpGroupAssignmentsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

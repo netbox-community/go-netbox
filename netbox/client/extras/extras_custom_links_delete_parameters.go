@@ -68,10 +68,12 @@ func NewExtrasCustomLinksDeleteParamsWithHTTPClient(client *http.Client) *Extras
 	}
 }
 
-/* ExtrasCustomLinksDeleteParams contains all the parameters to send to the API endpoint
-   for the extras custom links delete operation.
+/*
+ExtrasCustomLinksDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras custom links delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasCustomLinksDeleteParams struct {
 

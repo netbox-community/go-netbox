@@ -68,10 +68,12 @@ func NewIpamAsnsDeleteParamsWithHTTPClient(client *http.Client) *IpamAsnsDeleteP
 	}
 }
 
-/* IpamAsnsDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam asns delete operation.
+/*
+IpamAsnsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam asns delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAsnsDeleteParams struct {
 

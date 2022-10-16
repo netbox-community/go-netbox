@@ -69,10 +69,12 @@ func NewDcimPowerPortTemplatesCreateParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimPowerPortTemplatesCreateParams contains all the parameters to send to the API endpoint
-   for the dcim power port templates create operation.
+/*
+DcimPowerPortTemplatesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power port templates create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerPortTemplatesCreateParams struct {
 

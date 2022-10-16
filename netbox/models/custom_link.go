@@ -48,7 +48,7 @@ type CustomLink struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -70,13 +70,12 @@ type CustomLink struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Link text
 	//
 	// Jinja2 template code for link text
 	// Required: true
-	// Max Length: 500
 	// Min Length: 1
 	LinkText *string `json:"link_text"`
 
@@ -84,7 +83,6 @@ type CustomLink struct {
 	//
 	// Jinja2 template code for link URL
 	// Required: true
-	// Max Length: 500
 	// Min Length: 1
 	LinkURL *string `json:"link_url"`
 
@@ -296,10 +294,6 @@ func (m *CustomLink) validateLinkText(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaxLength("link_text", "body", *m.LinkText, 500); err != nil {
-		return err
-	}
-
 	return nil
 }
 
@@ -310,10 +304,6 @@ func (m *CustomLink) validateLinkURL(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MinLength("link_url", "body", *m.LinkURL, 1); err != nil {
-		return err
-	}
-
-	if err := validate.MaxLength("link_url", "body", *m.LinkURL, 500); err != nil {
 		return err
 	}
 
@@ -397,7 +387,7 @@ func (m *CustomLink) ContextValidate(ctx context.Context, formats strfmt.Registr
 
 func (m *CustomLink) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -424,7 +414,7 @@ func (m *CustomLink) contextValidateID(ctx context.Context, formats strfmt.Regis
 
 func (m *CustomLink) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

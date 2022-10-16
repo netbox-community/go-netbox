@@ -36,6 +36,12 @@ import (
 // swagger:model WritableCable
 type WritableCable struct {
 
+	// a terminations
+	ATerminations []*GenericObject `json:"a_terminations"`
+
+	// b terminations
+	BTerminations []*GenericObject `json:"b_terminations"`
+
 	// Color
 	// Max Length: 6
 	// Pattern: ^[0-9a-f]{6}$
@@ -44,7 +50,7 @@ type WritableCable struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -64,7 +70,7 @@ type WritableCable struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Length
 	Length *float64 `json:"length,omitempty"`
@@ -83,34 +89,6 @@ type WritableCable struct {
 	// Tenant
 	Tenant *int64 `json:"tenant,omitempty"`
 
-	// Termination a
-	// Read Only: true
-	Terminationa map[string]*string `json:"termination_a,omitempty"`
-
-	// Termination a id
-	// Required: true
-	// Maximum: 2.147483647e+09
-	// Minimum: 0
-	TerminationaID *int64 `json:"termination_a_id"`
-
-	// Termination a type
-	// Required: true
-	TerminationaType *string `json:"termination_a_type"`
-
-	// Termination b
-	// Read Only: true
-	Terminationb map[string]*string `json:"termination_b,omitempty"`
-
-	// Termination b id
-	// Required: true
-	// Maximum: 2.147483647e+09
-	// Minimum: 0
-	TerminationbID *int64 `json:"termination_b_id"`
-
-	// Termination b type
-	// Required: true
-	TerminationbType *string `json:"termination_b_type"`
-
 	// Type
 	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 cat7a cat8 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 mmf-om5 smf smf-os1 smf-os2 aoc power]
 	Type string `json:"type,omitempty"`
@@ -124,6 +102,14 @@ type WritableCable struct {
 // Validate validates this writable cable
 func (m *WritableCable) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateATerminations(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateBTerminations(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateColor(formats); err != nil {
 		res = append(res, err)
@@ -153,22 +139,6 @@ func (m *WritableCable) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateTerminationaID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTerminationaType(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTerminationbID(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTerminationbType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateType(formats); err != nil {
 		res = append(res, err)
 	}
@@ -180,6 +150,58 @@ func (m *WritableCable) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *WritableCable) validateATerminations(formats strfmt.Registry) error {
+	if swag.IsZero(m.ATerminations) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.ATerminations); i++ {
+		if swag.IsZero(m.ATerminations[i]) { // not required
+			continue
+		}
+
+		if m.ATerminations[i] != nil {
+			if err := m.ATerminations[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("a_terminations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("a_terminations" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableCable) validateBTerminations(formats strfmt.Registry) error {
+	if swag.IsZero(m.BTerminations) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.BTerminations); i++ {
+		if swag.IsZero(m.BTerminations[i]) { // not required
+			continue
+		}
+
+		if m.BTerminations[i] != nil {
+			if err := m.BTerminations[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("b_terminations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("b_terminations" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 
@@ -360,58 +382,6 @@ func (m *WritableCable) validateTags(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableCable) validateTerminationaID(formats strfmt.Registry) error {
-
-	if err := validate.Required("termination_a_id", "body", m.TerminationaID); err != nil {
-		return err
-	}
-
-	if err := validate.MinimumInt("termination_a_id", "body", *m.TerminationaID, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("termination_a_id", "body", *m.TerminationaID, 2.147483647e+09, false); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableCable) validateTerminationaType(formats strfmt.Registry) error {
-
-	if err := validate.Required("termination_a_type", "body", m.TerminationaType); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableCable) validateTerminationbID(formats strfmt.Registry) error {
-
-	if err := validate.Required("termination_b_id", "body", m.TerminationbID); err != nil {
-		return err
-	}
-
-	if err := validate.MinimumInt("termination_b_id", "body", *m.TerminationbID, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("termination_b_id", "body", *m.TerminationbID, 2.147483647e+09, false); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableCable) validateTerminationbType(formats strfmt.Registry) error {
-
-	if err := validate.Required("termination_b_type", "body", m.TerminationbType); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 var writableCableTypeTypePropEnum []interface{}
 
 func init() {
@@ -533,6 +503,14 @@ func (m *WritableCable) validateURL(formats strfmt.Registry) error {
 func (m *WritableCable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateATerminations(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateBTerminations(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -553,14 +531,6 @@ func (m *WritableCable) ContextValidate(ctx context.Context, formats strfmt.Regi
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateTerminationa(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateTerminationb(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateURL(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -571,9 +541,49 @@ func (m *WritableCable) ContextValidate(ctx context.Context, formats strfmt.Regi
 	return nil
 }
 
+func (m *WritableCable) contextValidateATerminations(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ATerminations); i++ {
+
+		if m.ATerminations[i] != nil {
+			if err := m.ATerminations[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("a_terminations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("a_terminations" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *WritableCable) contextValidateBTerminations(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.BTerminations); i++ {
+
+		if m.BTerminations[i] != nil {
+			if err := m.BTerminations[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("b_terminations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("b_terminations" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
 func (m *WritableCable) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -600,7 +610,7 @@ func (m *WritableCable) contextValidateID(ctx context.Context, formats strfmt.Re
 
 func (m *WritableCable) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 
@@ -623,16 +633,6 @@ func (m *WritableCable) contextValidateTags(ctx context.Context, formats strfmt.
 		}
 
 	}
-
-	return nil
-}
-
-func (m *WritableCable) contextValidateTerminationa(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
-func (m *WritableCable) contextValidateTerminationb(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

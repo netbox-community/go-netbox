@@ -61,7 +61,8 @@ func NewExtrasConfigContextsPartialUpdateOK() *ExtrasConfigContextsPartialUpdate
 	return &ExtrasConfigContextsPartialUpdateOK{}
 }
 
-/* ExtrasConfigContextsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+ExtrasConfigContextsPartialUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasConfigContextsPartialUpdateOK extras config contexts partial update o k
 */
@@ -69,9 +70,39 @@ type ExtrasConfigContextsPartialUpdateOK struct {
 	Payload *models.ConfigContext
 }
 
+// IsSuccess returns true when this extras config contexts partial update o k response has a 2xx status code
+func (o *ExtrasConfigContextsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras config contexts partial update o k response has a 3xx status code
+func (o *ExtrasConfigContextsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras config contexts partial update o k response has a 4xx status code
+func (o *ExtrasConfigContextsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras config contexts partial update o k response has a 5xx status code
+func (o *ExtrasConfigContextsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras config contexts partial update o k response a status code equal to that given
+func (o *ExtrasConfigContextsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasConfigContextsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extrasConfigContextsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasConfigContextsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extrasConfigContextsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasConfigContextsPartialUpdateOK) GetPayload() *models.ConfigContext {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasConfigContextsPartialUpdateDefault(code int) *ExtrasConfigContexts
 	}
 }
 
-/* ExtrasConfigContextsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasConfigContextsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasConfigContextsPartialUpdateDefault extras config contexts partial update default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasConfigContextsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras config contexts partial update default response has a 2xx status code
+func (o *ExtrasConfigContextsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras config contexts partial update default response has a 3xx status code
+func (o *ExtrasConfigContextsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras config contexts partial update default response has a 4xx status code
+func (o *ExtrasConfigContextsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras config contexts partial update default response has a 5xx status code
+func (o *ExtrasConfigContextsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras config contexts partial update default response a status code equal to that given
+func (o *ExtrasConfigContextsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasConfigContextsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extras_config-contexts_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasConfigContextsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /extras/config-contexts/{id}/][%d] extras_config-contexts_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasConfigContextsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -47,7 +47,7 @@ type WritableCustomField struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Data type
 	// Read Only: true
@@ -56,7 +56,7 @@ type WritableCustomField struct {
 	// Default
 	//
 	// Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. "Foo").
-	Default *string `json:"default,omitempty"`
+	Default interface{} `json:"default,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -72,6 +72,12 @@ type WritableCustomField struct {
 	// Enum: [disabled loose exact]
 	FilterLogic string `json:"filter_logic,omitempty"`
 
+	// Group name
+	//
+	// Custom fields within the same group will be displayed together
+	// Max Length: 50
+	GroupName string `json:"group_name,omitempty"`
+
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
@@ -85,7 +91,7 @@ type WritableCustomField struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	//
@@ -109,6 +115,12 @@ type WritableCustomField struct {
 	// The type of data this custom field holds
 	// Enum: [text longtext integer boolean date url json select multiselect object multiobject]
 	Type string `json:"type,omitempty"`
+
+	// UI visibility
+	//
+	// Specifies the visibility of custom field in the UI
+	// Enum: [read-write read-only hidden]
+	UIVisibility string `json:"ui_visibility,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -167,6 +179,10 @@ func (m *WritableCustomField) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateGroupName(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLabel(formats); err != nil {
 		res = append(res, err)
 	}
@@ -180,6 +196,10 @@ func (m *WritableCustomField) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUIVisibility(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -311,6 +331,18 @@ func (m *WritableCustomField) validateFilterLogic(formats strfmt.Registry) error
 	return nil
 }
 
+func (m *WritableCustomField) validateGroupName(formats strfmt.Registry) error {
+	if swag.IsZero(m.GroupName) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("group_name", "body", m.GroupName, 50); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableCustomField) validateLabel(formats strfmt.Registry) error {
 	if swag.IsZero(m.Label) { // not required
 		return nil
@@ -425,6 +457,51 @@ func (m *WritableCustomField) validateType(formats strfmt.Registry) error {
 	return nil
 }
 
+var writableCustomFieldTypeUIVisibilityPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["read-write","read-only","hidden"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableCustomFieldTypeUIVisibilityPropEnum = append(writableCustomFieldTypeUIVisibilityPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableCustomFieldUIVisibilityReadDashWrite captures enum value "read-write"
+	WritableCustomFieldUIVisibilityReadDashWrite string = "read-write"
+
+	// WritableCustomFieldUIVisibilityReadDashOnly captures enum value "read-only"
+	WritableCustomFieldUIVisibilityReadDashOnly string = "read-only"
+
+	// WritableCustomFieldUIVisibilityHidden captures enum value "hidden"
+	WritableCustomFieldUIVisibilityHidden string = "hidden"
+)
+
+// prop value enum
+func (m *WritableCustomField) validateUIVisibilityEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableCustomFieldTypeUIVisibilityPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableCustomField) validateUIVisibility(formats strfmt.Registry) error {
+	if swag.IsZero(m.UIVisibility) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateUIVisibilityEnum("ui_visibility", "body", m.UIVisibility); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableCustomField) validateURL(formats strfmt.Registry) error {
 	if swag.IsZero(m.URL) { // not required
 		return nil
@@ -533,7 +610,7 @@ func (m *WritableCustomField) ContextValidate(ctx context.Context, formats strfm
 
 func (m *WritableCustomField) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -569,7 +646,7 @@ func (m *WritableCustomField) contextValidateID(ctx context.Context, formats str
 
 func (m *WritableCustomField) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

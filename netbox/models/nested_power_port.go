@@ -36,7 +36,7 @@ type NestedPowerPort struct {
 
 	// occupied
 	// Read Only: true
-	Occupied string `json:"_occupied,omitempty"`
+	Occupied *bool `json:"_occupied,omitempty"`
 
 	// Cable
 	Cable *int64 `json:"cable,omitempty"`
@@ -166,7 +166,7 @@ func (m *NestedPowerPort) ContextValidate(ctx context.Context, formats strfmt.Re
 
 func (m *NestedPowerPort) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "_occupied", "body", string(m.Occupied)); err != nil {
+	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
 		return err
 	}
 

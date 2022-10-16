@@ -68,10 +68,12 @@ func NewTenancyTenantGroupsReadParamsWithHTTPClient(client *http.Client) *Tenanc
 	}
 }
 
-/* TenancyTenantGroupsReadParams contains all the parameters to send to the API endpoint
-   for the tenancy tenant groups read operation.
+/*
+TenancyTenantGroupsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy tenant groups read operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyTenantGroupsReadParams struct {
 

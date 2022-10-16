@@ -67,10 +67,12 @@ func NewStatusListParamsWithHTTPClient(client *http.Client) *StatusListParams {
 	}
 }
 
-/* StatusListParams contains all the parameters to send to the API endpoint
-   for the status list operation.
+/*
+StatusListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the status list operation.
+
+	Typically these are written to a http.Request.
 */
 type StatusListParams struct {
 	timeout    time.Duration

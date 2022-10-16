@@ -69,10 +69,12 @@ func NewExtrasExportTemplatesCreateParamsWithHTTPClient(client *http.Client) *Ex
 	}
 }
 
-/* ExtrasExportTemplatesCreateParams contains all the parameters to send to the API endpoint
-   for the extras export templates create operation.
+/*
+ExtrasExportTemplatesCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras export templates create operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasExportTemplatesCreateParams struct {
 

@@ -67,10 +67,12 @@ func NewDcimLocationsBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimLo
 	}
 }
 
-/* DcimLocationsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim locations bulk delete operation.
+/*
+DcimLocationsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim locations bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimLocationsBulkDeleteParams struct {
 	timeout    time.Duration

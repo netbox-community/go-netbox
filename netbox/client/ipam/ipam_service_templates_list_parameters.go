@@ -68,21 +68,32 @@ func NewIpamServiceTemplatesListParamsWithHTTPClient(client *http.Client) *IpamS
 	}
 }
 
-/* IpamServiceTemplatesListParams contains all the parameters to send to the API endpoint
-   for the ipam service templates list operation.
+/*
+IpamServiceTemplatesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam service templates list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamServiceTemplatesListParams struct {
 
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// ID.
 	ID *string
@@ -105,11 +116,20 @@ type IpamServiceTemplatesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -152,6 +172,12 @@ type IpamServiceTemplatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Port.
 	Port *float64
@@ -235,6 +261,17 @@ func (o *IpamServiceTemplatesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) WithCreatedGt(createdGt *string) *IpamServiceTemplatesListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the ipam service templates list params
 func (o *IpamServiceTemplatesListParams) WithCreatedGte(createdGte *string) *IpamServiceTemplatesListParams {
 	o.SetCreatedGte(createdGte)
@@ -246,6 +283,17 @@ func (o *IpamServiceTemplatesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) WithCreatedLt(createdLt *string) *IpamServiceTemplatesListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the ipam service templates list params
 func (o *IpamServiceTemplatesListParams) WithCreatedLte(createdLte *string) *IpamServiceTemplatesListParams {
 	o.SetCreatedLte(createdLte)
@@ -255,6 +303,17 @@ func (o *IpamServiceTemplatesListParams) WithCreatedLte(createdLte *string) *Ipa
 // SetCreatedLte adds the createdLte to the ipam service templates list params
 func (o *IpamServiceTemplatesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) WithCreatedn(createdn *string) *IpamServiceTemplatesListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithID adds the id to the ipam service templates list params
@@ -334,6 +393,17 @@ func (o *IpamServiceTemplatesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *IpamServiceTemplatesListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the ipam service templates list params
 func (o *IpamServiceTemplatesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *IpamServiceTemplatesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -345,6 +415,17 @@ func (o *IpamServiceTemplatesListParams) SetLastUpdatedGte(lastUpdatedGte *strin
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *IpamServiceTemplatesListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the ipam service templates list params
 func (o *IpamServiceTemplatesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamServiceTemplatesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -354,6 +435,17 @@ func (o *IpamServiceTemplatesListParams) WithLastUpdatedLte(lastUpdatedLte *stri
 // SetLastUpdatedLte adds the lastUpdatedLte to the ipam service templates list params
 func (o *IpamServiceTemplatesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) WithLastUpdatedn(lastUpdatedn *string) *IpamServiceTemplatesListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the ipam service templates list params
@@ -488,6 +580,17 @@ func (o *IpamServiceTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithOrdering adds the ordering to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) WithOrdering(ordering *string) *IpamServiceTemplatesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the ipam service templates list params
+func (o *IpamServiceTemplatesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
+}
+
 // WithPort adds the port to the ipam service templates list params
 func (o *IpamServiceTemplatesListParams) WithPort(port *float64) *IpamServiceTemplatesListParams {
 	o.SetPort(port)
@@ -579,6 +682,23 @@ func (o *IpamServiceTemplatesListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -596,6 +716,23 @@ func (o *IpamServiceTemplatesListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -608,6 +745,23 @@ func (o *IpamServiceTemplatesListParams) WriteToRequest(r runtime.ClientRequest,
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -732,6 +886,23 @@ func (o *IpamServiceTemplatesListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -749,6 +920,23 @@ func (o *IpamServiceTemplatesListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -761,6 +949,23 @@ func (o *IpamServiceTemplatesListParams) WriteToRequest(r runtime.ClientRequest,
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -965,6 +1170,23 @@ func (o *IpamServiceTemplatesListParams) WriteToRequest(r runtime.ClientRequest,
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

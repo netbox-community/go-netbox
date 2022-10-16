@@ -59,14 +59,44 @@ func NewExtrasScriptsListOK() *ExtrasScriptsListOK {
 	return &ExtrasScriptsListOK{}
 }
 
-/* ExtrasScriptsListOK describes a response with status code 200, with default header values.
+/*
+ExtrasScriptsListOK describes a response with status code 200, with default header values.
 
 ExtrasScriptsListOK extras scripts list o k
 */
 type ExtrasScriptsListOK struct {
 }
 
+// IsSuccess returns true when this extras scripts list o k response has a 2xx status code
+func (o *ExtrasScriptsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras scripts list o k response has a 3xx status code
+func (o *ExtrasScriptsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras scripts list o k response has a 4xx status code
+func (o *ExtrasScriptsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras scripts list o k response has a 5xx status code
+func (o *ExtrasScriptsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras scripts list o k response a status code equal to that given
+func (o *ExtrasScriptsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasScriptsListOK) Error() string {
+	return fmt.Sprintf("[GET /extras/scripts/][%d] extrasScriptsListOK ", 200)
+}
+
+func (o *ExtrasScriptsListOK) String() string {
 	return fmt.Sprintf("[GET /extras/scripts/][%d] extrasScriptsListOK ", 200)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasScriptsListDefault(code int) *ExtrasScriptsListDefault {
 	}
 }
 
-/* ExtrasScriptsListDefault describes a response with status code -1, with default header values.
+/*
+ExtrasScriptsListDefault describes a response with status code -1, with default header values.
 
 ExtrasScriptsListDefault extras scripts list default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasScriptsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras scripts list default response has a 2xx status code
+func (o *ExtrasScriptsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras scripts list default response has a 3xx status code
+func (o *ExtrasScriptsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras scripts list default response has a 4xx status code
+func (o *ExtrasScriptsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras scripts list default response has a 5xx status code
+func (o *ExtrasScriptsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras scripts list default response a status code equal to that given
+func (o *ExtrasScriptsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasScriptsListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/scripts/][%d] extras_scripts_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasScriptsListDefault) String() string {
+	return fmt.Sprintf("[GET /extras/scripts/][%d] extras_scripts_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasScriptsListDefault) GetPayload() interface{} {
 	return o.Payload
 }

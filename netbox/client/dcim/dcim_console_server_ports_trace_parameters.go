@@ -68,10 +68,12 @@ func NewDcimConsoleServerPortsTraceParamsWithHTTPClient(client *http.Client) *Dc
 	}
 }
 
-/* DcimConsoleServerPortsTraceParams contains all the parameters to send to the API endpoint
-   for the dcim console server ports trace operation.
+/*
+DcimConsoleServerPortsTraceParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim console server ports trace operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimConsoleServerPortsTraceParams struct {
 

@@ -61,7 +61,8 @@ func NewCircuitsCircuitTerminationsReadOK() *CircuitsCircuitTerminationsReadOK {
 	return &CircuitsCircuitTerminationsReadOK{}
 }
 
-/* CircuitsCircuitTerminationsReadOK describes a response with status code 200, with default header values.
+/*
+CircuitsCircuitTerminationsReadOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTerminationsReadOK circuits circuit terminations read o k
 */
@@ -69,9 +70,39 @@ type CircuitsCircuitTerminationsReadOK struct {
 	Payload *models.CircuitTermination
 }
 
+// IsSuccess returns true when this circuits circuit terminations read o k response has a 2xx status code
+func (o *CircuitsCircuitTerminationsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuit terminations read o k response has a 3xx status code
+func (o *CircuitsCircuitTerminationsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuit terminations read o k response has a 4xx status code
+func (o *CircuitsCircuitTerminationsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuit terminations read o k response has a 5xx status code
+func (o *CircuitsCircuitTerminationsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuit terminations read o k response a status code equal to that given
+func (o *CircuitsCircuitTerminationsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsCircuitTerminationsReadOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsCircuitTerminationsReadOK) String() string {
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/][%d] circuitsCircuitTerminationsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsCircuitTerminationsReadOK) GetPayload() *models.CircuitTermination {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsCircuitTerminationsReadDefault(code int) *CircuitsCircuitTermina
 	}
 }
 
-/* CircuitsCircuitTerminationsReadDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitTerminationsReadDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsReadDefault circuits circuit terminations read default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsCircuitTerminationsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuit terminations read default response has a 2xx status code
+func (o *CircuitsCircuitTerminationsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuit terminations read default response has a 3xx status code
+func (o *CircuitsCircuitTerminationsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuit terminations read default response has a 4xx status code
+func (o *CircuitsCircuitTerminationsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuit terminations read default response has a 5xx status code
+func (o *CircuitsCircuitTerminationsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuit terminations read default response a status code equal to that given
+func (o *CircuitsCircuitTerminationsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitTerminationsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitTerminationsReadDefault) String() string {
+	return fmt.Sprintf("[GET /circuits/circuit-terminations/{id}/][%d] circuits_circuit-terminations_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitTerminationsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

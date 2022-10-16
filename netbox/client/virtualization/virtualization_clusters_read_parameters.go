@@ -68,10 +68,12 @@ func NewVirtualizationClustersReadParamsWithHTTPClient(client *http.Client) *Vir
 	}
 }
 
-/* VirtualizationClustersReadParams contains all the parameters to send to the API endpoint
-   for the virtualization clusters read operation.
+/*
+VirtualizationClustersReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization clusters read operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationClustersReadParams struct {
 

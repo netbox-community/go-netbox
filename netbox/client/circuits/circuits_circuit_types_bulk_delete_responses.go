@@ -59,14 +59,44 @@ func NewCircuitsCircuitTypesBulkDeleteNoContent() *CircuitsCircuitTypesBulkDelet
 	return &CircuitsCircuitTypesBulkDeleteNoContent{}
 }
 
-/* CircuitsCircuitTypesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+CircuitsCircuitTypesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 CircuitsCircuitTypesBulkDeleteNoContent circuits circuit types bulk delete no content
 */
 type CircuitsCircuitTypesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this circuits circuit types bulk delete no content response has a 2xx status code
+func (o *CircuitsCircuitTypesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuit types bulk delete no content response has a 3xx status code
+func (o *CircuitsCircuitTypesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuit types bulk delete no content response has a 4xx status code
+func (o *CircuitsCircuitTypesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuit types bulk delete no content response has a 5xx status code
+func (o *CircuitsCircuitTypesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuit types bulk delete no content response a status code equal to that given
+func (o *CircuitsCircuitTypesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *CircuitsCircuitTypesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /circuits/circuit-types/][%d] circuitsCircuitTypesBulkDeleteNoContent ", 204)
+}
+
+func (o *CircuitsCircuitTypesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /circuits/circuit-types/][%d] circuitsCircuitTypesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewCircuitsCircuitTypesBulkDeleteDefault(code int) *CircuitsCircuitTypesBul
 	}
 }
 
-/* CircuitsCircuitTypesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitTypesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTypesBulkDeleteDefault circuits circuit types bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *CircuitsCircuitTypesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuit types bulk delete default response has a 2xx status code
+func (o *CircuitsCircuitTypesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuit types bulk delete default response has a 3xx status code
+func (o *CircuitsCircuitTypesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuit types bulk delete default response has a 4xx status code
+func (o *CircuitsCircuitTypesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuit types bulk delete default response has a 5xx status code
+func (o *CircuitsCircuitTypesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuit types bulk delete default response a status code equal to that given
+func (o *CircuitsCircuitTypesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitTypesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /circuits/circuit-types/][%d] circuits_circuit-types_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitTypesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /circuits/circuit-types/][%d] circuits_circuit-types_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitTypesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

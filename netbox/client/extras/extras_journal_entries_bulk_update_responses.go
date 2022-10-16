@@ -61,7 +61,8 @@ func NewExtrasJournalEntriesBulkUpdateOK() *ExtrasJournalEntriesBulkUpdateOK {
 	return &ExtrasJournalEntriesBulkUpdateOK{}
 }
 
-/* ExtrasJournalEntriesBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+ExtrasJournalEntriesBulkUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasJournalEntriesBulkUpdateOK extras journal entries bulk update o k
 */
@@ -69,9 +70,39 @@ type ExtrasJournalEntriesBulkUpdateOK struct {
 	Payload *models.JournalEntry
 }
 
+// IsSuccess returns true when this extras journal entries bulk update o k response has a 2xx status code
+func (o *ExtrasJournalEntriesBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras journal entries bulk update o k response has a 3xx status code
+func (o *ExtrasJournalEntriesBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras journal entries bulk update o k response has a 4xx status code
+func (o *ExtrasJournalEntriesBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras journal entries bulk update o k response has a 5xx status code
+func (o *ExtrasJournalEntriesBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras journal entries bulk update o k response a status code equal to that given
+func (o *ExtrasJournalEntriesBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasJournalEntriesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/journal-entries/][%d] extrasJournalEntriesBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasJournalEntriesBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /extras/journal-entries/][%d] extrasJournalEntriesBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasJournalEntriesBulkUpdateOK) GetPayload() *models.JournalEntry {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasJournalEntriesBulkUpdateDefault(code int) *ExtrasJournalEntriesBul
 	}
 }
 
-/* ExtrasJournalEntriesBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasJournalEntriesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasJournalEntriesBulkUpdateDefault extras journal entries bulk update default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasJournalEntriesBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras journal entries bulk update default response has a 2xx status code
+func (o *ExtrasJournalEntriesBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras journal entries bulk update default response has a 3xx status code
+func (o *ExtrasJournalEntriesBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras journal entries bulk update default response has a 4xx status code
+func (o *ExtrasJournalEntriesBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras journal entries bulk update default response has a 5xx status code
+func (o *ExtrasJournalEntriesBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras journal entries bulk update default response a status code equal to that given
+func (o *ExtrasJournalEntriesBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasJournalEntriesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/journal-entries/][%d] extras_journal-entries_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasJournalEntriesBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /extras/journal-entries/][%d] extras_journal-entries_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasJournalEntriesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

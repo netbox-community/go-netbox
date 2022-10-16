@@ -70,10 +70,12 @@ func NewExtrasTagsPartialUpdateParamsWithHTTPClient(client *http.Client) *Extras
 	}
 }
 
-/* ExtrasTagsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the extras tags partial update operation.
+/*
+ExtrasTagsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras tags partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasTagsPartialUpdateParams struct {
 

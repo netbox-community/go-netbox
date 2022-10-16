@@ -68,10 +68,12 @@ func NewDcimPowerOutletsDeleteParamsWithHTTPClient(client *http.Client) *DcimPow
 	}
 }
 
-/* DcimPowerOutletsDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim power outlets delete operation.
+/*
+DcimPowerOutletsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power outlets delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerOutletsDeleteParams struct {
 

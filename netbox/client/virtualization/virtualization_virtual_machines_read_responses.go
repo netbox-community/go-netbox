@@ -61,7 +61,8 @@ func NewVirtualizationVirtualMachinesReadOK() *VirtualizationVirtualMachinesRead
 	return &VirtualizationVirtualMachinesReadOK{}
 }
 
-/* VirtualizationVirtualMachinesReadOK describes a response with status code 200, with default header values.
+/*
+VirtualizationVirtualMachinesReadOK describes a response with status code 200, with default header values.
 
 VirtualizationVirtualMachinesReadOK virtualization virtual machines read o k
 */
@@ -69,9 +70,39 @@ type VirtualizationVirtualMachinesReadOK struct {
 	Payload *models.VirtualMachineWithConfigContext
 }
 
+// IsSuccess returns true when this virtualization virtual machines read o k response has a 2xx status code
+func (o *VirtualizationVirtualMachinesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization virtual machines read o k response has a 3xx status code
+func (o *VirtualizationVirtualMachinesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization virtual machines read o k response has a 4xx status code
+func (o *VirtualizationVirtualMachinesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization virtual machines read o k response has a 5xx status code
+func (o *VirtualizationVirtualMachinesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization virtual machines read o k response a status code equal to that given
+func (o *VirtualizationVirtualMachinesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VirtualizationVirtualMachinesReadOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *VirtualizationVirtualMachinesReadOK) String() string {
+	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *VirtualizationVirtualMachinesReadOK) GetPayload() *models.VirtualMachineWithConfigContext {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationVirtualMachinesReadDefault(code int) *VirtualizationVirtua
 	}
 }
 
-/* VirtualizationVirtualMachinesReadDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationVirtualMachinesReadDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesReadDefault virtualization virtual machines read default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationVirtualMachinesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization virtual machines read default response has a 2xx status code
+func (o *VirtualizationVirtualMachinesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization virtual machines read default response has a 3xx status code
+func (o *VirtualizationVirtualMachinesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization virtual machines read default response has a 4xx status code
+func (o *VirtualizationVirtualMachinesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization virtual machines read default response has a 5xx status code
+func (o *VirtualizationVirtualMachinesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization virtual machines read default response a status code equal to that given
+func (o *VirtualizationVirtualMachinesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationVirtualMachinesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationVirtualMachinesReadDefault) String() string {
+	return fmt.Sprintf("[GET /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationVirtualMachinesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

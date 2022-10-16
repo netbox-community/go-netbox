@@ -68,10 +68,12 @@ func NewIpamRirsDeleteParamsWithHTTPClient(client *http.Client) *IpamRirsDeleteP
 	}
 }
 
-/* IpamRirsDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam rirs delete operation.
+/*
+IpamRirsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam rirs delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamRirsDeleteParams struct {
 

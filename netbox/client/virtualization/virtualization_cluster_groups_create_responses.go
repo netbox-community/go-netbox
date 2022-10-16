@@ -61,7 +61,8 @@ func NewVirtualizationClusterGroupsCreateCreated() *VirtualizationClusterGroupsC
 	return &VirtualizationClusterGroupsCreateCreated{}
 }
 
-/* VirtualizationClusterGroupsCreateCreated describes a response with status code 201, with default header values.
+/*
+VirtualizationClusterGroupsCreateCreated describes a response with status code 201, with default header values.
 
 VirtualizationClusterGroupsCreateCreated virtualization cluster groups create created
 */
@@ -69,9 +70,39 @@ type VirtualizationClusterGroupsCreateCreated struct {
 	Payload *models.ClusterGroup
 }
 
+// IsSuccess returns true when this virtualization cluster groups create created response has a 2xx status code
+func (o *VirtualizationClusterGroupsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization cluster groups create created response has a 3xx status code
+func (o *VirtualizationClusterGroupsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization cluster groups create created response has a 4xx status code
+func (o *VirtualizationClusterGroupsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization cluster groups create created response has a 5xx status code
+func (o *VirtualizationClusterGroupsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization cluster groups create created response a status code equal to that given
+func (o *VirtualizationClusterGroupsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *VirtualizationClusterGroupsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualizationClusterGroupsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *VirtualizationClusterGroupsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualizationClusterGroupsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *VirtualizationClusterGroupsCreateCreated) GetPayload() *models.ClusterGroup {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationClusterGroupsCreateDefault(code int) *VirtualizationCluste
 	}
 }
 
-/* VirtualizationClusterGroupsCreateDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationClusterGroupsCreateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterGroupsCreateDefault virtualization cluster groups create default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationClusterGroupsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization cluster groups create default response has a 2xx status code
+func (o *VirtualizationClusterGroupsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization cluster groups create default response has a 3xx status code
+func (o *VirtualizationClusterGroupsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization cluster groups create default response has a 4xx status code
+func (o *VirtualizationClusterGroupsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization cluster groups create default response has a 5xx status code
+func (o *VirtualizationClusterGroupsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization cluster groups create default response a status code equal to that given
+func (o *VirtualizationClusterGroupsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationClusterGroupsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualization_cluster-groups_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationClusterGroupsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /virtualization/cluster-groups/][%d] virtualization_cluster-groups_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationClusterGroupsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

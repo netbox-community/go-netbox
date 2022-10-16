@@ -68,10 +68,12 @@ func NewDcimRackReservationsDeleteParamsWithHTTPClient(client *http.Client) *Dci
 	}
 }
 
-/* DcimRackReservationsDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim rack reservations delete operation.
+/*
+DcimRackReservationsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rack reservations delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRackReservationsDeleteParams struct {
 

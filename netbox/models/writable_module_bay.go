@@ -38,7 +38,7 @@ type WritableModuleBay struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -59,6 +59,10 @@ type WritableModuleBay struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// Installed module
+	// Required: true
+	InstalledModule *int64 `json:"installed_module"`
+
 	// Label
 	//
 	// Physical label
@@ -68,7 +72,7 @@ type WritableModuleBay struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -104,6 +108,10 @@ func (m *WritableModuleBay) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDevice(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateInstalledModule(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -164,6 +172,15 @@ func (m *WritableModuleBay) validateDescription(formats strfmt.Registry) error {
 func (m *WritableModuleBay) validateDevice(formats strfmt.Registry) error {
 
 	if err := validate.Required("device", "body", m.Device); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableModuleBay) validateInstalledModule(formats strfmt.Registry) error {
+
+	if err := validate.Required("installed_module", "body", m.InstalledModule); err != nil {
 		return err
 	}
 
@@ -297,7 +314,7 @@ func (m *WritableModuleBay) ContextValidate(ctx context.Context, formats strfmt.
 
 func (m *WritableModuleBay) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -324,7 +341,7 @@ func (m *WritableModuleBay) contextValidateID(ctx context.Context, formats strfm
 
 func (m *WritableModuleBay) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

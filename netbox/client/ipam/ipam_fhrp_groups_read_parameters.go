@@ -68,10 +68,12 @@ func NewIpamFhrpGroupsReadParamsWithHTTPClient(client *http.Client) *IpamFhrpGro
 	}
 }
 
-/* IpamFhrpGroupsReadParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp groups read operation.
+/*
+IpamFhrpGroupsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp groups read operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupsReadParams struct {
 

@@ -66,7 +66,8 @@ func NewDcimModuleBayTemplatesListOK() *DcimModuleBayTemplatesListOK {
 	return &DcimModuleBayTemplatesListOK{}
 }
 
-/* DcimModuleBayTemplatesListOK describes a response with status code 200, with default header values.
+/*
+DcimModuleBayTemplatesListOK describes a response with status code 200, with default header values.
 
 DcimModuleBayTemplatesListOK dcim module bay templates list o k
 */
@@ -74,9 +75,39 @@ type DcimModuleBayTemplatesListOK struct {
 	Payload *DcimModuleBayTemplatesListOKBody
 }
 
+// IsSuccess returns true when this dcim module bay templates list o k response has a 2xx status code
+func (o *DcimModuleBayTemplatesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim module bay templates list o k response has a 3xx status code
+func (o *DcimModuleBayTemplatesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim module bay templates list o k response has a 4xx status code
+func (o *DcimModuleBayTemplatesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim module bay templates list o k response has a 5xx status code
+func (o *DcimModuleBayTemplatesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim module bay templates list o k response a status code equal to that given
+func (o *DcimModuleBayTemplatesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimModuleBayTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/module-bay-templates/][%d] dcimModuleBayTemplatesListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimModuleBayTemplatesListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/module-bay-templates/][%d] dcimModuleBayTemplatesListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimModuleBayTemplatesListOK) GetPayload() *DcimModuleBayTemplatesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimModuleBayTemplatesListDefault(code int) *DcimModuleBayTemplatesListD
 	}
 }
 
-/* DcimModuleBayTemplatesListDefault describes a response with status code -1, with default header values.
+/*
+DcimModuleBayTemplatesListDefault describes a response with status code -1, with default header values.
 
 DcimModuleBayTemplatesListDefault dcim module bay templates list default
 */
@@ -115,9 +147,39 @@ func (o *DcimModuleBayTemplatesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim module bay templates list default response has a 2xx status code
+func (o *DcimModuleBayTemplatesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim module bay templates list default response has a 3xx status code
+func (o *DcimModuleBayTemplatesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim module bay templates list default response has a 4xx status code
+func (o *DcimModuleBayTemplatesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim module bay templates list default response has a 5xx status code
+func (o *DcimModuleBayTemplatesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim module bay templates list default response a status code equal to that given
+func (o *DcimModuleBayTemplatesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimModuleBayTemplatesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/module-bay-templates/][%d] dcim_module-bay-templates_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimModuleBayTemplatesListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/module-bay-templates/][%d] dcim_module-bay-templates_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimModuleBayTemplatesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimModuleBayTemplatesListDefault) readResponse(response runtime.Client
 	return nil
 }
 
-/*DcimModuleBayTemplatesListOKBody dcim module bay templates list o k body
+/*
+DcimModuleBayTemplatesListOKBody dcim module bay templates list o k body
 swagger:model DcimModuleBayTemplatesListOKBody
 */
 type DcimModuleBayTemplatesListOKBody struct {

@@ -68,10 +68,12 @@ func NewDcimSiteGroupsReadParamsWithHTTPClient(client *http.Client) *DcimSiteGro
 	}
 }
 
-/* DcimSiteGroupsReadParams contains all the parameters to send to the API endpoint
-   for the dcim site groups read operation.
+/*
+DcimSiteGroupsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim site groups read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimSiteGroupsReadParams struct {
 

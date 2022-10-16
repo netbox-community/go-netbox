@@ -68,10 +68,12 @@ func NewDcimDevicesNapalmParamsWithHTTPClient(client *http.Client) *DcimDevicesN
 	}
 }
 
-/* DcimDevicesNapalmParams contains all the parameters to send to the API endpoint
-   for the dcim devices napalm operation.
+/*
+DcimDevicesNapalmParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim devices napalm operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimDevicesNapalmParams struct {
 

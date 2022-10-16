@@ -61,7 +61,8 @@ func NewUsersTokensUpdateOK() *UsersTokensUpdateOK {
 	return &UsersTokensUpdateOK{}
 }
 
-/* UsersTokensUpdateOK describes a response with status code 200, with default header values.
+/*
+UsersTokensUpdateOK describes a response with status code 200, with default header values.
 
 UsersTokensUpdateOK users tokens update o k
 */
@@ -69,9 +70,39 @@ type UsersTokensUpdateOK struct {
 	Payload *models.Token
 }
 
+// IsSuccess returns true when this users tokens update o k response has a 2xx status code
+func (o *UsersTokensUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users tokens update o k response has a 3xx status code
+func (o *UsersTokensUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users tokens update o k response has a 4xx status code
+func (o *UsersTokensUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users tokens update o k response has a 5xx status code
+func (o *UsersTokensUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users tokens update o k response a status code equal to that given
+func (o *UsersTokensUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersTokensUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] usersTokensUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersTokensUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] usersTokensUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersTokensUpdateOK) GetPayload() *models.Token {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersTokensUpdateDefault(code int) *UsersTokensUpdateDefault {
 	}
 }
 
-/* UsersTokensUpdateDefault describes a response with status code -1, with default header values.
+/*
+UsersTokensUpdateDefault describes a response with status code -1, with default header values.
 
 UsersTokensUpdateDefault users tokens update default
 */
@@ -110,9 +142,39 @@ func (o *UsersTokensUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users tokens update default response has a 2xx status code
+func (o *UsersTokensUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users tokens update default response has a 3xx status code
+func (o *UsersTokensUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users tokens update default response has a 4xx status code
+func (o *UsersTokensUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users tokens update default response has a 5xx status code
+func (o *UsersTokensUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users tokens update default response a status code equal to that given
+func (o *UsersTokensUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersTokensUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] users_tokens_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersTokensUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] users_tokens_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersTokensUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -67,10 +67,12 @@ func NewDcimSiteGroupsBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimS
 	}
 }
 
-/* DcimSiteGroupsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim site groups bulk delete operation.
+/*
+DcimSiteGroupsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim site groups bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimSiteGroupsBulkDeleteParams struct {
 	timeout    time.Duration

@@ -59,14 +59,44 @@ func NewDcimInventoryItemsDeleteNoContent() *DcimInventoryItemsDeleteNoContent {
 	return &DcimInventoryItemsDeleteNoContent{}
 }
 
-/* DcimInventoryItemsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimInventoryItemsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimInventoryItemsDeleteNoContent dcim inventory items delete no content
 */
 type DcimInventoryItemsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim inventory items delete no content response has a 2xx status code
+func (o *DcimInventoryItemsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory items delete no content response has a 3xx status code
+func (o *DcimInventoryItemsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory items delete no content response has a 4xx status code
+func (o *DcimInventoryItemsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory items delete no content response has a 5xx status code
+func (o *DcimInventoryItemsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory items delete no content response a status code equal to that given
+func (o *DcimInventoryItemsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimInventoryItemsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/inventory-items/{id}/][%d] dcimInventoryItemsDeleteNoContent ", 204)
+}
+
+func (o *DcimInventoryItemsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/inventory-items/{id}/][%d] dcimInventoryItemsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimInventoryItemsDeleteDefault(code int) *DcimInventoryItemsDeleteDefau
 	}
 }
 
-/* DcimInventoryItemsDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemsDeleteDefault dcim inventory items delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimInventoryItemsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory items delete default response has a 2xx status code
+func (o *DcimInventoryItemsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory items delete default response has a 3xx status code
+func (o *DcimInventoryItemsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory items delete default response has a 4xx status code
+func (o *DcimInventoryItemsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory items delete default response has a 5xx status code
+func (o *DcimInventoryItemsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory items delete default response a status code equal to that given
+func (o *DcimInventoryItemsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/inventory-items/{id}/][%d] dcim_inventory-items_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/inventory-items/{id}/][%d] dcim_inventory-items_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

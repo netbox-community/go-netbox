@@ -59,14 +59,44 @@ func NewWirelessWirelessLanGroupsDeleteNoContent() *WirelessWirelessLanGroupsDel
 	return &WirelessWirelessLanGroupsDeleteNoContent{}
 }
 
-/* WirelessWirelessLanGroupsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+WirelessWirelessLanGroupsDeleteNoContent describes a response with status code 204, with default header values.
 
 WirelessWirelessLanGroupsDeleteNoContent wireless wireless lan groups delete no content
 */
 type WirelessWirelessLanGroupsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this wireless wireless lan groups delete no content response has a 2xx status code
+func (o *WirelessWirelessLanGroupsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this wireless wireless lan groups delete no content response has a 3xx status code
+func (o *WirelessWirelessLanGroupsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this wireless wireless lan groups delete no content response has a 4xx status code
+func (o *WirelessWirelessLanGroupsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this wireless wireless lan groups delete no content response has a 5xx status code
+func (o *WirelessWirelessLanGroupsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this wireless wireless lan groups delete no content response a status code equal to that given
+func (o *WirelessWirelessLanGroupsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *WirelessWirelessLanGroupsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsDeleteNoContent ", 204)
+}
+
+func (o *WirelessWirelessLanGroupsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wirelessWirelessLanGroupsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewWirelessWirelessLanGroupsDeleteDefault(code int) *WirelessWirelessLanGro
 	}
 }
 
-/* WirelessWirelessLanGroupsDeleteDefault describes a response with status code -1, with default header values.
+/*
+WirelessWirelessLanGroupsDeleteDefault describes a response with status code -1, with default header values.
 
 WirelessWirelessLanGroupsDeleteDefault wireless wireless lan groups delete default
 */
@@ -97,9 +128,39 @@ func (o *WirelessWirelessLanGroupsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this wireless wireless lan groups delete default response has a 2xx status code
+func (o *WirelessWirelessLanGroupsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this wireless wireless lan groups delete default response has a 3xx status code
+func (o *WirelessWirelessLanGroupsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this wireless wireless lan groups delete default response has a 4xx status code
+func (o *WirelessWirelessLanGroupsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this wireless wireless lan groups delete default response has a 5xx status code
+func (o *WirelessWirelessLanGroupsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this wireless wireless lan groups delete default response a status code equal to that given
+func (o *WirelessWirelessLanGroupsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *WirelessWirelessLanGroupsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *WirelessWirelessLanGroupsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /wireless/wireless-lan-groups/{id}/][%d] wireless_wireless-lan-groups_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *WirelessWirelessLanGroupsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

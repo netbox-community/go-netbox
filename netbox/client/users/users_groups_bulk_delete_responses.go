@@ -59,14 +59,44 @@ func NewUsersGroupsBulkDeleteNoContent() *UsersGroupsBulkDeleteNoContent {
 	return &UsersGroupsBulkDeleteNoContent{}
 }
 
-/* UsersGroupsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+UsersGroupsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 UsersGroupsBulkDeleteNoContent users groups bulk delete no content
 */
 type UsersGroupsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this users groups bulk delete no content response has a 2xx status code
+func (o *UsersGroupsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users groups bulk delete no content response has a 3xx status code
+func (o *UsersGroupsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users groups bulk delete no content response has a 4xx status code
+func (o *UsersGroupsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users groups bulk delete no content response has a 5xx status code
+func (o *UsersGroupsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users groups bulk delete no content response a status code equal to that given
+func (o *UsersGroupsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *UsersGroupsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /users/groups/][%d] usersGroupsBulkDeleteNoContent ", 204)
+}
+
+func (o *UsersGroupsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /users/groups/][%d] usersGroupsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewUsersGroupsBulkDeleteDefault(code int) *UsersGroupsBulkDeleteDefault {
 	}
 }
 
-/* UsersGroupsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+UsersGroupsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 UsersGroupsBulkDeleteDefault users groups bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *UsersGroupsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users groups bulk delete default response has a 2xx status code
+func (o *UsersGroupsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users groups bulk delete default response has a 3xx status code
+func (o *UsersGroupsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users groups bulk delete default response has a 4xx status code
+func (o *UsersGroupsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users groups bulk delete default response has a 5xx status code
+func (o *UsersGroupsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users groups bulk delete default response a status code equal to that given
+func (o *UsersGroupsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersGroupsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /users/groups/][%d] users_groups_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersGroupsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /users/groups/][%d] users_groups_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersGroupsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

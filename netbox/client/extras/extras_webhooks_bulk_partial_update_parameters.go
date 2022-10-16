@@ -69,10 +69,12 @@ func NewExtrasWebhooksBulkPartialUpdateParamsWithHTTPClient(client *http.Client)
 	}
 }
 
-/* ExtrasWebhooksBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the extras webhooks bulk partial update operation.
+/*
+ExtrasWebhooksBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras webhooks bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasWebhooksBulkPartialUpdateParams struct {
 

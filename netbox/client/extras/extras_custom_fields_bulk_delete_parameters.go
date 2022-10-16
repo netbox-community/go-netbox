@@ -67,10 +67,12 @@ func NewExtrasCustomFieldsBulkDeleteParamsWithHTTPClient(client *http.Client) *E
 	}
 }
 
-/* ExtrasCustomFieldsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the extras custom fields bulk delete operation.
+/*
+ExtrasCustomFieldsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras custom fields bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasCustomFieldsBulkDeleteParams struct {
 	timeout    time.Duration

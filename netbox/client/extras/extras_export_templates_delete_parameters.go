@@ -68,10 +68,12 @@ func NewExtrasExportTemplatesDeleteParamsWithHTTPClient(client *http.Client) *Ex
 	}
 }
 
-/* ExtrasExportTemplatesDeleteParams contains all the parameters to send to the API endpoint
-   for the extras export templates delete operation.
+/*
+ExtrasExportTemplatesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras export templates delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasExportTemplatesDeleteParams struct {
 

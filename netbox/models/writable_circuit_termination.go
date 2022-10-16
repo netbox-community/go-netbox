@@ -23,6 +23,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	"strconv"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -42,6 +43,11 @@ type WritableCircuitTermination struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
+	// Cable end
+	// Read Only: true
+	// Min Length: 1
+	CableEnd string `json:"cable_end,omitempty"`
+
 	// Circuit
 	// Required: true
 	Circuit *int64 `json:"circuit"`
@@ -49,7 +55,10 @@ type WritableCircuitTermination struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
+
+	// Custom fields
+	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -66,19 +75,17 @@ type WritableCircuitTermination struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
-	// Link peer
-	//
 	//
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+	LinkPeers []*string `json:"link_peers"`
 
-	// Link peer type
+	// Link peers type
 	// Read Only: true
-	LinkPeerType string `json:"link_peer_type,omitempty"`
+	LinkPeersType string `json:"link_peers_type,omitempty"`
 
 	// Mark connected
 	//
@@ -99,6 +106,9 @@ type WritableCircuitTermination struct {
 
 	// Site
 	Site *int64 `json:"site,omitempty"`
+
+	// tags
+	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Termination
 	// Required: true
@@ -130,6 +140,10 @@ func (m *WritableCircuitTermination) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateCableEnd(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateCircuit(formats); err != nil {
 		res = append(res, err)
 	}
@@ -151,6 +165,10 @@ func (m *WritableCircuitTermination) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validatePpInfo(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -190,6 +208,18 @@ func (m *WritableCircuitTermination) validateCable(formats strfmt.Registry) erro
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) validateCableEnd(formats strfmt.Registry) error {
+	if swag.IsZero(m.CableEnd) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("cable_end", "body", m.CableEnd, 1); err != nil {
+		return err
 	}
 
 	return nil
@@ -263,6 +293,32 @@ func (m *WritableCircuitTermination) validatePpInfo(formats strfmt.Registry) err
 
 	if err := validate.MaxLength("pp_info", "body", m.PpInfo, 100); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) validateTags(formats strfmt.Registry) error {
+	if swag.IsZero(m.Tags) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Tags); i++ {
+		if swag.IsZero(m.Tags[i]) { // not required
+			continue
+		}
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -363,6 +419,10 @@ func (m *WritableCircuitTermination) ContextValidate(ctx context.Context, format
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateCableEnd(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -379,11 +439,15 @@ func (m *WritableCircuitTermination) ContextValidate(ctx context.Context, format
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeers(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeersType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTags(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -422,9 +486,18 @@ func (m *WritableCircuitTermination) contextValidateCable(ctx context.Context, f
 	return nil
 }
 
+func (m *WritableCircuitTermination) contextValidateCableEnd(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_end", "body", string(m.CableEnd)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableCircuitTermination) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -451,22 +524,46 @@ func (m *WritableCircuitTermination) contextValidateID(ctx context.Context, form
 
 func (m *WritableCircuitTermination) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *WritableCircuitTermination) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritableCircuitTermination) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+		return err
+	}
 
 	return nil
 }
 
-func (m *WritableCircuitTermination) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritableCircuitTermination) contextValidateLinkPeersType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers_type", "body", string(m.LinkPeersType)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCircuitTermination) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Tags); i++ {
+
+		if m.Tags[i] != nil {
+			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

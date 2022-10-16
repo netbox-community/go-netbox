@@ -66,7 +66,8 @@ func NewDcimRackRolesListOK() *DcimRackRolesListOK {
 	return &DcimRackRolesListOK{}
 }
 
-/* DcimRackRolesListOK describes a response with status code 200, with default header values.
+/*
+DcimRackRolesListOK describes a response with status code 200, with default header values.
 
 DcimRackRolesListOK dcim rack roles list o k
 */
@@ -74,9 +75,39 @@ type DcimRackRolesListOK struct {
 	Payload *DcimRackRolesListOKBody
 }
 
+// IsSuccess returns true when this dcim rack roles list o k response has a 2xx status code
+func (o *DcimRackRolesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rack roles list o k response has a 3xx status code
+func (o *DcimRackRolesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rack roles list o k response has a 4xx status code
+func (o *DcimRackRolesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rack roles list o k response has a 5xx status code
+func (o *DcimRackRolesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rack roles list o k response a status code equal to that given
+func (o *DcimRackRolesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRackRolesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-roles/][%d] dcimRackRolesListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRackRolesListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/rack-roles/][%d] dcimRackRolesListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRackRolesListOK) GetPayload() *DcimRackRolesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimRackRolesListDefault(code int) *DcimRackRolesListDefault {
 	}
 }
 
-/* DcimRackRolesListDefault describes a response with status code -1, with default header values.
+/*
+DcimRackRolesListDefault describes a response with status code -1, with default header values.
 
 DcimRackRolesListDefault dcim rack roles list default
 */
@@ -115,9 +147,39 @@ func (o *DcimRackRolesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rack roles list default response has a 2xx status code
+func (o *DcimRackRolesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rack roles list default response has a 3xx status code
+func (o *DcimRackRolesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rack roles list default response has a 4xx status code
+func (o *DcimRackRolesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rack roles list default response has a 5xx status code
+func (o *DcimRackRolesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rack roles list default response a status code equal to that given
+func (o *DcimRackRolesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRackRolesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-roles/][%d] dcim_rack-roles_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRackRolesListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/rack-roles/][%d] dcim_rack-roles_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRackRolesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimRackRolesListDefault) readResponse(response runtime.ClientResponse,
 	return nil
 }
 
-/*DcimRackRolesListOKBody dcim rack roles list o k body
+/*
+DcimRackRolesListOKBody dcim rack roles list o k body
 swagger:model DcimRackRolesListOKBody
 */
 type DcimRackRolesListOKBody struct {

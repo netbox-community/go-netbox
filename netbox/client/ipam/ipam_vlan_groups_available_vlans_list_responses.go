@@ -61,7 +61,8 @@ func NewIpamVlanGroupsAvailableVlansListOK() *IpamVlanGroupsAvailableVlansListOK
 	return &IpamVlanGroupsAvailableVlansListOK{}
 }
 
-/* IpamVlanGroupsAvailableVlansListOK describes a response with status code 200, with default header values.
+/*
+IpamVlanGroupsAvailableVlansListOK describes a response with status code 200, with default header values.
 
 IpamVlanGroupsAvailableVlansListOK ipam vlan groups available vlans list o k
 */
@@ -69,9 +70,39 @@ type IpamVlanGroupsAvailableVlansListOK struct {
 	Payload []*models.AvailableVLAN
 }
 
+// IsSuccess returns true when this ipam vlan groups available vlans list o k response has a 2xx status code
+func (o *IpamVlanGroupsAvailableVlansListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam vlan groups available vlans list o k response has a 3xx status code
+func (o *IpamVlanGroupsAvailableVlansListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam vlan groups available vlans list o k response has a 4xx status code
+func (o *IpamVlanGroupsAvailableVlansListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam vlan groups available vlans list o k response has a 5xx status code
+func (o *IpamVlanGroupsAvailableVlansListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam vlan groups available vlans list o k response a status code equal to that given
+func (o *IpamVlanGroupsAvailableVlansListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamVlanGroupsAvailableVlansListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipamVlanGroupsAvailableVlansListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamVlanGroupsAvailableVlansListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipamVlanGroupsAvailableVlansListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamVlanGroupsAvailableVlansListOK) GetPayload() []*models.AvailableVLAN {
 	return o.Payload
 }
@@ -93,7 +124,8 @@ func NewIpamVlanGroupsAvailableVlansListDefault(code int) *IpamVlanGroupsAvailab
 	}
 }
 
-/* IpamVlanGroupsAvailableVlansListDefault describes a response with status code -1, with default header values.
+/*
+IpamVlanGroupsAvailableVlansListDefault describes a response with status code -1, with default header values.
 
 IpamVlanGroupsAvailableVlansListDefault ipam vlan groups available vlans list default
 */
@@ -108,9 +140,39 @@ func (o *IpamVlanGroupsAvailableVlansListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam vlan groups available vlans list default response has a 2xx status code
+func (o *IpamVlanGroupsAvailableVlansListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam vlan groups available vlans list default response has a 3xx status code
+func (o *IpamVlanGroupsAvailableVlansListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam vlan groups available vlans list default response has a 4xx status code
+func (o *IpamVlanGroupsAvailableVlansListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam vlan groups available vlans list default response has a 5xx status code
+func (o *IpamVlanGroupsAvailableVlansListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam vlan groups available vlans list default response a status code equal to that given
+func (o *IpamVlanGroupsAvailableVlansListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamVlanGroupsAvailableVlansListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipam_vlan-groups_available-vlans_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamVlanGroupsAvailableVlansListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/available-vlans/][%d] ipam_vlan-groups_available-vlans_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamVlanGroupsAvailableVlansListDefault) GetPayload() interface{} {
 	return o.Payload
 }

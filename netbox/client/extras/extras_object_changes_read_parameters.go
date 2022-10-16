@@ -68,10 +68,12 @@ func NewExtrasObjectChangesReadParamsWithHTTPClient(client *http.Client) *Extras
 	}
 }
 
-/* ExtrasObjectChangesReadParams contains all the parameters to send to the API endpoint
-   for the extras object changes read operation.
+/*
+ExtrasObjectChangesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras object changes read operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasObjectChangesReadParams struct {
 

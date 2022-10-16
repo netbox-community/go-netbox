@@ -67,10 +67,12 @@ func NewUsersUsersBulkDeleteParamsWithHTTPClient(client *http.Client) *UsersUser
 	}
 }
 
-/* UsersUsersBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the users users bulk delete operation.
+/*
+UsersUsersBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users users bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersUsersBulkDeleteParams struct {
 	timeout    time.Duration

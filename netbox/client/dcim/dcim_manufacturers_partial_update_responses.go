@@ -61,7 +61,8 @@ func NewDcimManufacturersPartialUpdateOK() *DcimManufacturersPartialUpdateOK {
 	return &DcimManufacturersPartialUpdateOK{}
 }
 
-/* DcimManufacturersPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimManufacturersPartialUpdateOK describes a response with status code 200, with default header values.
 
 DcimManufacturersPartialUpdateOK dcim manufacturers partial update o k
 */
@@ -69,9 +70,39 @@ type DcimManufacturersPartialUpdateOK struct {
 	Payload *models.Manufacturer
 }
 
+// IsSuccess returns true when this dcim manufacturers partial update o k response has a 2xx status code
+func (o *DcimManufacturersPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim manufacturers partial update o k response has a 3xx status code
+func (o *DcimManufacturersPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim manufacturers partial update o k response has a 4xx status code
+func (o *DcimManufacturersPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim manufacturers partial update o k response has a 5xx status code
+func (o *DcimManufacturersPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim manufacturers partial update o k response a status code equal to that given
+func (o *DcimManufacturersPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimManufacturersPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/manufacturers/{id}/][%d] dcimManufacturersPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimManufacturersPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /dcim/manufacturers/{id}/][%d] dcimManufacturersPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimManufacturersPartialUpdateOK) GetPayload() *models.Manufacturer {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimManufacturersPartialUpdateDefault(code int) *DcimManufacturersPartia
 	}
 }
 
-/* DcimManufacturersPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimManufacturersPartialUpdateDefault describes a response with status code -1, with default header values.
 
 DcimManufacturersPartialUpdateDefault dcim manufacturers partial update default
 */
@@ -110,9 +142,39 @@ func (o *DcimManufacturersPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim manufacturers partial update default response has a 2xx status code
+func (o *DcimManufacturersPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim manufacturers partial update default response has a 3xx status code
+func (o *DcimManufacturersPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim manufacturers partial update default response has a 4xx status code
+func (o *DcimManufacturersPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim manufacturers partial update default response has a 5xx status code
+func (o *DcimManufacturersPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim manufacturers partial update default response a status code equal to that given
+func (o *DcimManufacturersPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimManufacturersPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/manufacturers/{id}/][%d] dcim_manufacturers_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimManufacturersPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /dcim/manufacturers/{id}/][%d] dcim_manufacturers_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimManufacturersPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -68,10 +68,12 @@ func NewDcimDevicesListParamsWithHTTPClient(client *http.Client) *DcimDevicesLis
 	}
 }
 
-/* DcimDevicesListParams contains all the parameters to send to the API endpoint
-   for the dcim devices list operation.
+/*
+DcimDevicesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim devices list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimDevicesListParams struct {
 
@@ -129,6 +131,12 @@ type DcimDevicesListParams struct {
 	// Contactn.
 	Contactn *string
 
+	// ContactGroup.
+	ContactGroup *string
+
+	// ContactGroupn.
+	ContactGroupn *string
+
 	// ContactRole.
 	ContactRole *string
 
@@ -138,11 +146,20 @@ type DcimDevicesListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// DeviceBays.
 	DeviceBays *string
@@ -189,11 +206,20 @@ type DcimDevicesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -297,6 +323,12 @@ type DcimDevicesListParams struct {
 	*/
 	Offset *int64
 
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
+
 	// ParentDeviceID.
 	ParentDeviceID *string
 
@@ -377,6 +409,33 @@ type DcimDevicesListParams struct {
 
 	// Serial.
 	Serial *string
+
+	// SerialIc.
+	SerialIc *string
+
+	// SerialIe.
+	SerialIe *string
+
+	// SerialIew.
+	SerialIew *string
+
+	// SerialIsw.
+	SerialIsw *string
+
+	// Serialn.
+	Serialn *string
+
+	// SerialNic.
+	SerialNic *string
+
+	// SerialNie.
+	SerialNie *string
+
+	// SerialNiew.
+	SerialNiew *string
+
+	// SerialNisw.
+	SerialNisw *string
 
 	// Site.
 	Site *string
@@ -734,6 +793,28 @@ func (o *DcimDevicesListParams) SetContactn(contactn *string) {
 	o.Contactn = contactn
 }
 
+// WithContactGroup adds the contactGroup to the dcim devices list params
+func (o *DcimDevicesListParams) WithContactGroup(contactGroup *string) *DcimDevicesListParams {
+	o.SetContactGroup(contactGroup)
+	return o
+}
+
+// SetContactGroup adds the contactGroup to the dcim devices list params
+func (o *DcimDevicesListParams) SetContactGroup(contactGroup *string) {
+	o.ContactGroup = contactGroup
+}
+
+// WithContactGroupn adds the contactGroupn to the dcim devices list params
+func (o *DcimDevicesListParams) WithContactGroupn(contactGroupn *string) *DcimDevicesListParams {
+	o.SetContactGroupn(contactGroupn)
+	return o
+}
+
+// SetContactGroupn adds the contactGroupN to the dcim devices list params
+func (o *DcimDevicesListParams) SetContactGroupn(contactGroupn *string) {
+	o.ContactGroupn = contactGroupn
+}
+
 // WithContactRole adds the contactRole to the dcim devices list params
 func (o *DcimDevicesListParams) WithContactRole(contactRole *string) *DcimDevicesListParams {
 	o.SetContactRole(contactRole)
@@ -767,6 +848,17 @@ func (o *DcimDevicesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim devices list params
+func (o *DcimDevicesListParams) WithCreatedGt(createdGt *string) *DcimDevicesListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim devices list params
+func (o *DcimDevicesListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim devices list params
 func (o *DcimDevicesListParams) WithCreatedGte(createdGte *string) *DcimDevicesListParams {
 	o.SetCreatedGte(createdGte)
@@ -778,6 +870,17 @@ func (o *DcimDevicesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim devices list params
+func (o *DcimDevicesListParams) WithCreatedLt(createdLt *string) *DcimDevicesListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim devices list params
+func (o *DcimDevicesListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim devices list params
 func (o *DcimDevicesListParams) WithCreatedLte(createdLte *string) *DcimDevicesListParams {
 	o.SetCreatedLte(createdLte)
@@ -787,6 +890,17 @@ func (o *DcimDevicesListParams) WithCreatedLte(createdLte *string) *DcimDevicesL
 // SetCreatedLte adds the createdLte to the dcim devices list params
 func (o *DcimDevicesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim devices list params
+func (o *DcimDevicesListParams) WithCreatedn(createdn *string) *DcimDevicesListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim devices list params
+func (o *DcimDevicesListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDeviceBays adds the deviceBays to the dcim devices list params
@@ -954,6 +1068,17 @@ func (o *DcimDevicesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim devices list params
+func (o *DcimDevicesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimDevicesListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim devices list params
+func (o *DcimDevicesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim devices list params
 func (o *DcimDevicesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimDevicesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -965,6 +1090,17 @@ func (o *DcimDevicesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim devices list params
+func (o *DcimDevicesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimDevicesListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim devices list params
+func (o *DcimDevicesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim devices list params
 func (o *DcimDevicesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimDevicesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -974,6 +1110,17 @@ func (o *DcimDevicesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *Dcim
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim devices list params
 func (o *DcimDevicesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim devices list params
+func (o *DcimDevicesListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimDevicesListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim devices list params
+func (o *DcimDevicesListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim devices list params
@@ -1328,6 +1475,17 @@ func (o *DcimDevicesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithOrdering adds the ordering to the dcim devices list params
+func (o *DcimDevicesListParams) WithOrdering(ordering *string) *DcimDevicesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim devices list params
+func (o *DcimDevicesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
+}
+
 // WithParentDeviceID adds the parentDeviceID to the dcim devices list params
 func (o *DcimDevicesListParams) WithParentDeviceID(parentDeviceID *string) *DcimDevicesListParams {
 	o.SetParentDeviceID(parentDeviceID)
@@ -1623,6 +1781,105 @@ func (o *DcimDevicesListParams) WithSerial(serial *string) *DcimDevicesListParam
 // SetSerial adds the serial to the dcim devices list params
 func (o *DcimDevicesListParams) SetSerial(serial *string) {
 	o.Serial = serial
+}
+
+// WithSerialIc adds the serialIc to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialIc(serialIc *string) *DcimDevicesListParams {
+	o.SetSerialIc(serialIc)
+	return o
+}
+
+// SetSerialIc adds the serialIc to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialIc(serialIc *string) {
+	o.SerialIc = serialIc
+}
+
+// WithSerialIe adds the serialIe to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialIe(serialIe *string) *DcimDevicesListParams {
+	o.SetSerialIe(serialIe)
+	return o
+}
+
+// SetSerialIe adds the serialIe to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialIe(serialIe *string) {
+	o.SerialIe = serialIe
+}
+
+// WithSerialIew adds the serialIew to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialIew(serialIew *string) *DcimDevicesListParams {
+	o.SetSerialIew(serialIew)
+	return o
+}
+
+// SetSerialIew adds the serialIew to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialIew(serialIew *string) {
+	o.SerialIew = serialIew
+}
+
+// WithSerialIsw adds the serialIsw to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialIsw(serialIsw *string) *DcimDevicesListParams {
+	o.SetSerialIsw(serialIsw)
+	return o
+}
+
+// SetSerialIsw adds the serialIsw to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialIsw(serialIsw *string) {
+	o.SerialIsw = serialIsw
+}
+
+// WithSerialn adds the serialn to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialn(serialn *string) *DcimDevicesListParams {
+	o.SetSerialn(serialn)
+	return o
+}
+
+// SetSerialn adds the serialN to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialn(serialn *string) {
+	o.Serialn = serialn
+}
+
+// WithSerialNic adds the serialNic to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialNic(serialNic *string) *DcimDevicesListParams {
+	o.SetSerialNic(serialNic)
+	return o
+}
+
+// SetSerialNic adds the serialNic to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialNic(serialNic *string) {
+	o.SerialNic = serialNic
+}
+
+// WithSerialNie adds the serialNie to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialNie(serialNie *string) *DcimDevicesListParams {
+	o.SetSerialNie(serialNie)
+	return o
+}
+
+// SetSerialNie adds the serialNie to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialNie(serialNie *string) {
+	o.SerialNie = serialNie
+}
+
+// WithSerialNiew adds the serialNiew to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialNiew(serialNiew *string) *DcimDevicesListParams {
+	o.SetSerialNiew(serialNiew)
+	return o
+}
+
+// SetSerialNiew adds the serialNiew to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialNiew(serialNiew *string) {
+	o.SerialNiew = serialNiew
+}
+
+// WithSerialNisw adds the serialNisw to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialNisw(serialNisw *string) *DcimDevicesListParams {
+	o.SetSerialNisw(serialNisw)
+	return o
+}
+
+// SetSerialNisw adds the serialNisw to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialNisw(serialNisw *string) {
+	o.SerialNisw = serialNisw
 }
 
 // WithSite adds the site to the dcim devices list params
@@ -2324,6 +2581,40 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.ContactGroup != nil {
+
+		// query param contact_group
+		var qrContactGroup string
+
+		if o.ContactGroup != nil {
+			qrContactGroup = *o.ContactGroup
+		}
+		qContactGroup := qrContactGroup
+		if qContactGroup != "" {
+
+			if err := r.SetQueryParam("contact_group", qContactGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactGroupn != nil {
+
+		// query param contact_group__n
+		var qrContactGroupn string
+
+		if o.ContactGroupn != nil {
+			qrContactGroupn = *o.ContactGroupn
+		}
+		qContactGroupn := qrContactGroupn
+		if qContactGroupn != "" {
+
+			if err := r.SetQueryParam("contact_group__n", qContactGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ContactRole != nil {
 
 		// query param contact_role
@@ -2375,6 +2666,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -2392,6 +2700,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -2404,6 +2729,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -2664,6 +3006,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -2681,6 +3040,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -2693,6 +3069,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -3242,6 +3635,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ParentDeviceID != nil {
 
 		// query param parent_device_id
@@ -3696,6 +4106,159 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qSerial != "" {
 
 			if err := r.SetQueryParam("serial", qSerial); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialIc != nil {
+
+		// query param serial__ic
+		var qrSerialIc string
+
+		if o.SerialIc != nil {
+			qrSerialIc = *o.SerialIc
+		}
+		qSerialIc := qrSerialIc
+		if qSerialIc != "" {
+
+			if err := r.SetQueryParam("serial__ic", qSerialIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialIe != nil {
+
+		// query param serial__ie
+		var qrSerialIe string
+
+		if o.SerialIe != nil {
+			qrSerialIe = *o.SerialIe
+		}
+		qSerialIe := qrSerialIe
+		if qSerialIe != "" {
+
+			if err := r.SetQueryParam("serial__ie", qSerialIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialIew != nil {
+
+		// query param serial__iew
+		var qrSerialIew string
+
+		if o.SerialIew != nil {
+			qrSerialIew = *o.SerialIew
+		}
+		qSerialIew := qrSerialIew
+		if qSerialIew != "" {
+
+			if err := r.SetQueryParam("serial__iew", qSerialIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialIsw != nil {
+
+		// query param serial__isw
+		var qrSerialIsw string
+
+		if o.SerialIsw != nil {
+			qrSerialIsw = *o.SerialIsw
+		}
+		qSerialIsw := qrSerialIsw
+		if qSerialIsw != "" {
+
+			if err := r.SetQueryParam("serial__isw", qSerialIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Serialn != nil {
+
+		// query param serial__n
+		var qrSerialn string
+
+		if o.Serialn != nil {
+			qrSerialn = *o.Serialn
+		}
+		qSerialn := qrSerialn
+		if qSerialn != "" {
+
+			if err := r.SetQueryParam("serial__n", qSerialn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialNic != nil {
+
+		// query param serial__nic
+		var qrSerialNic string
+
+		if o.SerialNic != nil {
+			qrSerialNic = *o.SerialNic
+		}
+		qSerialNic := qrSerialNic
+		if qSerialNic != "" {
+
+			if err := r.SetQueryParam("serial__nic", qSerialNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialNie != nil {
+
+		// query param serial__nie
+		var qrSerialNie string
+
+		if o.SerialNie != nil {
+			qrSerialNie = *o.SerialNie
+		}
+		qSerialNie := qrSerialNie
+		if qSerialNie != "" {
+
+			if err := r.SetQueryParam("serial__nie", qSerialNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialNiew != nil {
+
+		// query param serial__niew
+		var qrSerialNiew string
+
+		if o.SerialNiew != nil {
+			qrSerialNiew = *o.SerialNiew
+		}
+		qSerialNiew := qrSerialNiew
+		if qSerialNiew != "" {
+
+			if err := r.SetQueryParam("serial__niew", qSerialNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialNisw != nil {
+
+		// query param serial__nisw
+		var qrSerialNisw string
+
+		if o.SerialNisw != nil {
+			qrSerialNisw = *o.SerialNisw
+		}
+		qSerialNisw := qrSerialNisw
+		if qSerialNisw != "" {
+
+			if err := r.SetQueryParam("serial__nisw", qSerialNisw); err != nil {
 				return err
 			}
 		}

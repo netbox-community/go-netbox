@@ -61,7 +61,8 @@ func NewDcimPowerOutletsTraceOK() *DcimPowerOutletsTraceOK {
 	return &DcimPowerOutletsTraceOK{}
 }
 
-/* DcimPowerOutletsTraceOK describes a response with status code 200, with default header values.
+/*
+DcimPowerOutletsTraceOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletsTraceOK dcim power outlets trace o k
 */
@@ -69,9 +70,39 @@ type DcimPowerOutletsTraceOK struct {
 	Payload *models.PowerOutlet
 }
 
+// IsSuccess returns true when this dcim power outlets trace o k response has a 2xx status code
+func (o *DcimPowerOutletsTraceOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power outlets trace o k response has a 3xx status code
+func (o *DcimPowerOutletsTraceOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power outlets trace o k response has a 4xx status code
+func (o *DcimPowerOutletsTraceOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power outlets trace o k response has a 5xx status code
+func (o *DcimPowerOutletsTraceOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power outlets trace o k response a status code equal to that given
+func (o *DcimPowerOutletsTraceOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerOutletsTraceOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/trace/][%d] dcimPowerOutletsTraceOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerOutletsTraceOK) String() string {
+	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/trace/][%d] dcimPowerOutletsTraceOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerOutletsTraceOK) GetPayload() *models.PowerOutlet {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerOutletsTraceDefault(code int) *DcimPowerOutletsTraceDefault {
 	}
 }
 
-/* DcimPowerOutletsTraceDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerOutletsTraceDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletsTraceDefault dcim power outlets trace default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerOutletsTraceDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power outlets trace default response has a 2xx status code
+func (o *DcimPowerOutletsTraceDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power outlets trace default response has a 3xx status code
+func (o *DcimPowerOutletsTraceDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power outlets trace default response has a 4xx status code
+func (o *DcimPowerOutletsTraceDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power outlets trace default response has a 5xx status code
+func (o *DcimPowerOutletsTraceDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power outlets trace default response a status code equal to that given
+func (o *DcimPowerOutletsTraceDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerOutletsTraceDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/trace/][%d] dcim_power-outlets_trace default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerOutletsTraceDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/power-outlets/{id}/trace/][%d] dcim_power-outlets_trace default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerOutletsTraceDefault) GetPayload() interface{} {
 	return o.Payload
 }

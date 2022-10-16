@@ -61,7 +61,8 @@ func NewDcimPowerFeedsBulkUpdateOK() *DcimPowerFeedsBulkUpdateOK {
 	return &DcimPowerFeedsBulkUpdateOK{}
 }
 
-/* DcimPowerFeedsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimPowerFeedsBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerFeedsBulkUpdateOK dcim power feeds bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimPowerFeedsBulkUpdateOK struct {
 	Payload *models.PowerFeed
 }
 
+// IsSuccess returns true when this dcim power feeds bulk update o k response has a 2xx status code
+func (o *DcimPowerFeedsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power feeds bulk update o k response has a 3xx status code
+func (o *DcimPowerFeedsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power feeds bulk update o k response has a 4xx status code
+func (o *DcimPowerFeedsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power feeds bulk update o k response has a 5xx status code
+func (o *DcimPowerFeedsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power feeds bulk update o k response a status code equal to that given
+func (o *DcimPowerFeedsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerFeedsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-feeds/][%d] dcimPowerFeedsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerFeedsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/power-feeds/][%d] dcimPowerFeedsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerFeedsBulkUpdateOK) GetPayload() *models.PowerFeed {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerFeedsBulkUpdateDefault(code int) *DcimPowerFeedsBulkUpdateDefau
 	}
 }
 
-/* DcimPowerFeedsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerFeedsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsBulkUpdateDefault dcim power feeds bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerFeedsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power feeds bulk update default response has a 2xx status code
+func (o *DcimPowerFeedsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power feeds bulk update default response has a 3xx status code
+func (o *DcimPowerFeedsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power feeds bulk update default response has a 4xx status code
+func (o *DcimPowerFeedsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power feeds bulk update default response has a 5xx status code
+func (o *DcimPowerFeedsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power feeds bulk update default response a status code equal to that given
+func (o *DcimPowerFeedsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerFeedsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-feeds/][%d] dcim_power-feeds_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerFeedsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/power-feeds/][%d] dcim_power-feeds_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerFeedsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

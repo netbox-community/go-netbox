@@ -68,21 +68,32 @@ func NewDcimModuleBayTemplatesListParamsWithHTTPClient(client *http.Client) *Dci
 	}
 }
 
-/* DcimModuleBayTemplatesListParams contains all the parameters to send to the API endpoint
-   for the dcim module bay templates list operation.
+/*
+DcimModuleBayTemplatesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module bay templates list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleBayTemplatesListParams struct {
 
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// DevicetypeID.
 	DevicetypeID *string
@@ -111,11 +122,20 @@ type DcimModuleBayTemplatesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -158,6 +178,12 @@ type DcimModuleBayTemplatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Q.
 	Q *string
@@ -226,6 +252,17 @@ func (o *DcimModuleBayTemplatesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) WithCreatedGt(createdGt *string) *DcimModuleBayTemplatesListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim module bay templates list params
 func (o *DcimModuleBayTemplatesListParams) WithCreatedGte(createdGte *string) *DcimModuleBayTemplatesListParams {
 	o.SetCreatedGte(createdGte)
@@ -237,6 +274,17 @@ func (o *DcimModuleBayTemplatesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) WithCreatedLt(createdLt *string) *DcimModuleBayTemplatesListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim module bay templates list params
 func (o *DcimModuleBayTemplatesListParams) WithCreatedLte(createdLte *string) *DcimModuleBayTemplatesListParams {
 	o.SetCreatedLte(createdLte)
@@ -246,6 +294,17 @@ func (o *DcimModuleBayTemplatesListParams) WithCreatedLte(createdLte *string) *D
 // SetCreatedLte adds the createdLte to the dcim module bay templates list params
 func (o *DcimModuleBayTemplatesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) WithCreatedn(createdn *string) *DcimModuleBayTemplatesListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDevicetypeID adds the devicetypeID to the dcim module bay templates list params
@@ -347,6 +406,17 @@ func (o *DcimModuleBayTemplatesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimModuleBayTemplatesListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim module bay templates list params
 func (o *DcimModuleBayTemplatesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimModuleBayTemplatesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -358,6 +428,17 @@ func (o *DcimModuleBayTemplatesListParams) SetLastUpdatedGte(lastUpdatedGte *str
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimModuleBayTemplatesListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim module bay templates list params
 func (o *DcimModuleBayTemplatesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimModuleBayTemplatesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -367,6 +448,17 @@ func (o *DcimModuleBayTemplatesListParams) WithLastUpdatedLte(lastUpdatedLte *st
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim module bay templates list params
 func (o *DcimModuleBayTemplatesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimModuleBayTemplatesListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim module bay templates list params
@@ -501,6 +593,17 @@ func (o *DcimModuleBayTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithOrdering adds the ordering to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) WithOrdering(ordering *string) *DcimModuleBayTemplatesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim module bay templates list params
+func (o *DcimModuleBayTemplatesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
+}
+
 // WithQ adds the q to the dcim module bay templates list params
 func (o *DcimModuleBayTemplatesListParams) WithQ(q *string) *DcimModuleBayTemplatesListParams {
 	o.SetQ(q)
@@ -537,6 +640,23 @@ func (o *DcimModuleBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -554,6 +674,23 @@ func (o *DcimModuleBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -566,6 +703,23 @@ func (o *DcimModuleBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -724,6 +878,23 @@ func (o *DcimModuleBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -741,6 +912,23 @@ func (o *DcimModuleBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -753,6 +941,23 @@ func (o *DcimModuleBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -957,6 +1162,23 @@ func (o *DcimModuleBayTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

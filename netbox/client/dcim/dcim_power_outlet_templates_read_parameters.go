@@ -68,10 +68,12 @@ func NewDcimPowerOutletTemplatesReadParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimPowerOutletTemplatesReadParams contains all the parameters to send to the API endpoint
-   for the dcim power outlet templates read operation.
+/*
+DcimPowerOutletTemplatesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power outlet templates read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerOutletTemplatesReadParams struct {
 

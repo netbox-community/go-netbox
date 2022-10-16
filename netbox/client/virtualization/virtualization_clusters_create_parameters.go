@@ -69,10 +69,12 @@ func NewVirtualizationClustersCreateParamsWithHTTPClient(client *http.Client) *V
 	}
 }
 
-/* VirtualizationClustersCreateParams contains all the parameters to send to the API endpoint
-   for the virtualization clusters create operation.
+/*
+VirtualizationClustersCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization clusters create operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationClustersCreateParams struct {
 

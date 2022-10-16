@@ -68,21 +68,32 @@ func NewDcimModuleBaysListParamsWithHTTPClient(client *http.Client) *DcimModuleB
 	}
 }
 
-/* DcimModuleBaysListParams contains all the parameters to send to the API endpoint
-   for the dcim module bays list operation.
+/*
+DcimModuleBaysListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module bays list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleBaysListParams struct {
 
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// Description.
 	Description *string
@@ -177,11 +188,20 @@ type DcimModuleBaysListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -237,8 +257,26 @@ type DcimModuleBaysListParams struct {
 	*/
 	Offset *int64
 
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
+
 	// Q.
 	Q *string
+
+	// Rack.
+	Rack *string
+
+	// Rackn.
+	Rackn *string
+
+	// RackID.
+	RackID *string
+
+	// RackIDn.
+	RackIDn *string
 
 	// Region.
 	Region *string
@@ -358,6 +396,17 @@ func (o *DcimModuleBaysListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithCreatedGt(createdGt *string) *DcimModuleBaysListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim module bays list params
 func (o *DcimModuleBaysListParams) WithCreatedGte(createdGte *string) *DcimModuleBaysListParams {
 	o.SetCreatedGte(createdGte)
@@ -369,6 +418,17 @@ func (o *DcimModuleBaysListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithCreatedLt(createdLt *string) *DcimModuleBaysListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim module bays list params
 func (o *DcimModuleBaysListParams) WithCreatedLte(createdLte *string) *DcimModuleBaysListParams {
 	o.SetCreatedLte(createdLte)
@@ -378,6 +438,17 @@ func (o *DcimModuleBaysListParams) WithCreatedLte(createdLte *string) *DcimModul
 // SetCreatedLte adds the createdLte to the dcim module bays list params
 func (o *DcimModuleBaysListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithCreatedn(createdn *string) *DcimModuleBaysListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the dcim module bays list params
@@ -721,6 +792,17 @@ func (o *DcimModuleBaysListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimModuleBaysListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim module bays list params
 func (o *DcimModuleBaysListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimModuleBaysListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -732,6 +814,17 @@ func (o *DcimModuleBaysListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimModuleBaysListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim module bays list params
 func (o *DcimModuleBaysListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimModuleBaysListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -741,6 +834,17 @@ func (o *DcimModuleBaysListParams) WithLastUpdatedLte(lastUpdatedLte *string) *D
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim module bays list params
 func (o *DcimModuleBaysListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimModuleBaysListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim module bays list params
@@ -919,6 +1023,17 @@ func (o *DcimModuleBaysListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithOrdering adds the ordering to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithOrdering(ordering *string) *DcimModuleBaysListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
+}
+
 // WithQ adds the q to the dcim module bays list params
 func (o *DcimModuleBaysListParams) WithQ(q *string) *DcimModuleBaysListParams {
 	o.SetQ(q)
@@ -928,6 +1043,50 @@ func (o *DcimModuleBaysListParams) WithQ(q *string) *DcimModuleBaysListParams {
 // SetQ adds the q to the dcim module bays list params
 func (o *DcimModuleBaysListParams) SetQ(q *string) {
 	o.Q = q
+}
+
+// WithRack adds the rack to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithRack(rack *string) *DcimModuleBaysListParams {
+	o.SetRack(rack)
+	return o
+}
+
+// SetRack adds the rack to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetRack(rack *string) {
+	o.Rack = rack
+}
+
+// WithRackn adds the rackn to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithRackn(rackn *string) *DcimModuleBaysListParams {
+	o.SetRackn(rackn)
+	return o
+}
+
+// SetRackn adds the rackN to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetRackn(rackn *string) {
+	o.Rackn = rackn
+}
+
+// WithRackID adds the rackID to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithRackID(rackID *string) *DcimModuleBaysListParams {
+	o.SetRackID(rackID)
+	return o
+}
+
+// SetRackID adds the rackId to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetRackID(rackID *string) {
+	o.RackID = rackID
+}
+
+// WithRackIDn adds the rackIDn to the dcim module bays list params
+func (o *DcimModuleBaysListParams) WithRackIDn(rackIDn *string) *DcimModuleBaysListParams {
+	o.SetRackIDn(rackIDn)
+	return o
+}
+
+// SetRackIDn adds the rackIdN to the dcim module bays list params
+func (o *DcimModuleBaysListParams) SetRackIDn(rackIDn *string) {
+	o.RackIDn = rackIDn
 }
 
 // WithRegion adds the region to the dcim module bays list params
@@ -1153,6 +1312,23 @@ func (o *DcimModuleBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1170,6 +1346,23 @@ func (o *DcimModuleBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1182,6 +1375,23 @@ func (o *DcimModuleBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1714,6 +1924,23 @@ func (o *DcimModuleBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1731,6 +1958,23 @@ func (o *DcimModuleBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1743,6 +1987,23 @@ func (o *DcimModuleBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -2020,6 +2281,23 @@ func (o *DcimModuleBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Q != nil {
 
 		// query param q
@@ -2032,6 +2310,74 @@ func (o *DcimModuleBaysListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qQ != "" {
 
 			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Rack != nil {
+
+		// query param rack
+		var qrRack string
+
+		if o.Rack != nil {
+			qrRack = *o.Rack
+		}
+		qRack := qrRack
+		if qRack != "" {
+
+			if err := r.SetQueryParam("rack", qRack); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Rackn != nil {
+
+		// query param rack__n
+		var qrRackn string
+
+		if o.Rackn != nil {
+			qrRackn = *o.Rackn
+		}
+		qRackn := qrRackn
+		if qRackn != "" {
+
+			if err := r.SetQueryParam("rack__n", qRackn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RackID != nil {
+
+		// query param rack_id
+		var qrRackID string
+
+		if o.RackID != nil {
+			qrRackID = *o.RackID
+		}
+		qRackID := qrRackID
+		if qRackID != "" {
+
+			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RackIDn != nil {
+
+		// query param rack_id__n
+		var qrRackIDn string
+
+		if o.RackIDn != nil {
+			qrRackIDn = *o.RackIDn
+		}
+		qRackIDn := qrRackIDn
+		if qRackIDn != "" {
+
+			if err := r.SetQueryParam("rack_id__n", qRackIDn); err != nil {
 				return err
 			}
 		}

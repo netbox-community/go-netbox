@@ -61,7 +61,8 @@ func NewDcimDeviceBayTemplatesBulkUpdateOK() *DcimDeviceBayTemplatesBulkUpdateOK
 	return &DcimDeviceBayTemplatesBulkUpdateOK{}
 }
 
-/* DcimDeviceBayTemplatesBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimDeviceBayTemplatesBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimDeviceBayTemplatesBulkUpdateOK dcim device bay templates bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimDeviceBayTemplatesBulkUpdateOK struct {
 	Payload *models.DeviceBayTemplate
 }
 
+// IsSuccess returns true when this dcim device bay templates bulk update o k response has a 2xx status code
+func (o *DcimDeviceBayTemplatesBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim device bay templates bulk update o k response has a 3xx status code
+func (o *DcimDeviceBayTemplatesBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim device bay templates bulk update o k response has a 4xx status code
+func (o *DcimDeviceBayTemplatesBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim device bay templates bulk update o k response has a 5xx status code
+func (o *DcimDeviceBayTemplatesBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim device bay templates bulk update o k response a status code equal to that given
+func (o *DcimDeviceBayTemplatesBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimDeviceBayTemplatesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimDeviceBayTemplatesBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimDeviceBayTemplatesBulkUpdateOK) GetPayload() *models.DeviceBayTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimDeviceBayTemplatesBulkUpdateDefault(code int) *DcimDeviceBayTemplate
 	}
 }
 
-/* DcimDeviceBayTemplatesBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimDeviceBayTemplatesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimDeviceBayTemplatesBulkUpdateDefault dcim device bay templates bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimDeviceBayTemplatesBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim device bay templates bulk update default response has a 2xx status code
+func (o *DcimDeviceBayTemplatesBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim device bay templates bulk update default response has a 3xx status code
+func (o *DcimDeviceBayTemplatesBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim device bay templates bulk update default response has a 4xx status code
+func (o *DcimDeviceBayTemplatesBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim device bay templates bulk update default response has a 5xx status code
+func (o *DcimDeviceBayTemplatesBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim device bay templates bulk update default response a status code equal to that given
+func (o *DcimDeviceBayTemplatesBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimDeviceBayTemplatesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/device-bay-templates/][%d] dcim_device-bay-templates_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimDeviceBayTemplatesBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/device-bay-templates/][%d] dcim_device-bay-templates_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimDeviceBayTemplatesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

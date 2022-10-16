@@ -69,10 +69,12 @@ func NewTenancyContactsCreateParamsWithHTTPClient(client *http.Client) *TenancyC
 	}
 }
 
-/* TenancyContactsCreateParams contains all the parameters to send to the API endpoint
-   for the tenancy contacts create operation.
+/*
+TenancyContactsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contacts create operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactsCreateParams struct {
 

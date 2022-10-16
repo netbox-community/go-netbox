@@ -38,7 +38,7 @@ type VLANGroup struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -58,7 +58,7 @@ type VLANGroup struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Maximum VLAN ID
 	//
@@ -82,7 +82,7 @@ type VLANGroup struct {
 
 	// Scope
 	// Read Only: true
-	Scope string `json:"scope,omitempty"`
+	Scope interface{} `json:"scope,omitempty"`
 
 	// Scope id
 	ScopeID *int64 `json:"scope_id,omitempty"`
@@ -320,10 +320,6 @@ func (m *VLANGroup) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateScope(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateTags(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -344,7 +340,7 @@ func (m *VLANGroup) ContextValidate(ctx context.Context, formats strfmt.Registry
 
 func (m *VLANGroup) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -371,16 +367,7 @@ func (m *VLANGroup) contextValidateID(ctx context.Context, formats strfmt.Regist
 
 func (m *VLANGroup) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *VLANGroup) contextValidateScope(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "scope", "body", string(m.Scope)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

@@ -69,10 +69,12 @@ func NewExtrasJournalEntriesBulkUpdateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* ExtrasJournalEntriesBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the extras journal entries bulk update operation.
+/*
+ExtrasJournalEntriesBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras journal entries bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasJournalEntriesBulkUpdateParams struct {
 

@@ -68,10 +68,12 @@ func NewDcimModulesListParamsWithHTTPClient(client *http.Client) *DcimModulesLis
 	}
 }
 
-/* DcimModulesListParams contains all the parameters to send to the API endpoint
-   for the dcim modules list operation.
+/*
+DcimModulesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim modules list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModulesListParams struct {
 
@@ -108,11 +110,20 @@ type DcimModulesListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// DeviceID.
 	DeviceID *string
@@ -141,11 +152,20 @@ type DcimModulesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -165,6 +185,12 @@ type DcimModulesListParams struct {
 	// ManufacturerIDn.
 	ManufacturerIDn *string
 
+	// ModuleBayID.
+	ModuleBayID *string
+
+	// ModuleBayIDn.
+	ModuleBayIDn *string
+
 	// ModuleType.
 	ModuleType *string
 
@@ -182,6 +208,12 @@ type DcimModulesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Q.
 	Q *string
@@ -396,6 +428,17 @@ func (o *DcimModulesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim modules list params
+func (o *DcimModulesListParams) WithCreatedGt(createdGt *string) *DcimModulesListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim modules list params
+func (o *DcimModulesListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim modules list params
 func (o *DcimModulesListParams) WithCreatedGte(createdGte *string) *DcimModulesListParams {
 	o.SetCreatedGte(createdGte)
@@ -407,6 +450,17 @@ func (o *DcimModulesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim modules list params
+func (o *DcimModulesListParams) WithCreatedLt(createdLt *string) *DcimModulesListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim modules list params
+func (o *DcimModulesListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim modules list params
 func (o *DcimModulesListParams) WithCreatedLte(createdLte *string) *DcimModulesListParams {
 	o.SetCreatedLte(createdLte)
@@ -416,6 +470,17 @@ func (o *DcimModulesListParams) WithCreatedLte(createdLte *string) *DcimModulesL
 // SetCreatedLte adds the createdLte to the dcim modules list params
 func (o *DcimModulesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim modules list params
+func (o *DcimModulesListParams) WithCreatedn(createdn *string) *DcimModulesListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim modules list params
+func (o *DcimModulesListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDeviceID adds the deviceID to the dcim modules list params
@@ -517,6 +582,17 @@ func (o *DcimModulesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim modules list params
+func (o *DcimModulesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimModulesListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim modules list params
+func (o *DcimModulesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim modules list params
 func (o *DcimModulesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimModulesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -528,6 +604,17 @@ func (o *DcimModulesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim modules list params
+func (o *DcimModulesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimModulesListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim modules list params
+func (o *DcimModulesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim modules list params
 func (o *DcimModulesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimModulesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -537,6 +624,17 @@ func (o *DcimModulesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *Dcim
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim modules list params
 func (o *DcimModulesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim modules list params
+func (o *DcimModulesListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimModulesListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim modules list params
+func (o *DcimModulesListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim modules list params
@@ -594,6 +692,28 @@ func (o *DcimModulesListParams) SetManufacturerIDn(manufacturerIDn *string) {
 	o.ManufacturerIDn = manufacturerIDn
 }
 
+// WithModuleBayID adds the moduleBayID to the dcim modules list params
+func (o *DcimModulesListParams) WithModuleBayID(moduleBayID *string) *DcimModulesListParams {
+	o.SetModuleBayID(moduleBayID)
+	return o
+}
+
+// SetModuleBayID adds the moduleBayId to the dcim modules list params
+func (o *DcimModulesListParams) SetModuleBayID(moduleBayID *string) {
+	o.ModuleBayID = moduleBayID
+}
+
+// WithModuleBayIDn adds the moduleBayIDn to the dcim modules list params
+func (o *DcimModulesListParams) WithModuleBayIDn(moduleBayIDn *string) *DcimModulesListParams {
+	o.SetModuleBayIDn(moduleBayIDn)
+	return o
+}
+
+// SetModuleBayIDn adds the moduleBayIdN to the dcim modules list params
+func (o *DcimModulesListParams) SetModuleBayIDn(moduleBayIDn *string) {
+	o.ModuleBayIDn = moduleBayIDn
+}
+
 // WithModuleType adds the moduleType to the dcim modules list params
 func (o *DcimModulesListParams) WithModuleType(moduleType *string) *DcimModulesListParams {
 	o.SetModuleType(moduleType)
@@ -647,6 +767,17 @@ func (o *DcimModulesListParams) WithOffset(offset *int64) *DcimModulesListParams
 // SetOffset adds the offset to the dcim modules list params
 func (o *DcimModulesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the dcim modules list params
+func (o *DcimModulesListParams) WithOrdering(ordering *string) *DcimModulesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim modules list params
+func (o *DcimModulesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithQ adds the q to the dcim modules list params
@@ -987,6 +1118,23 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1004,6 +1152,23 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1016,6 +1181,23 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1174,6 +1356,23 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1191,6 +1390,23 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1203,6 +1419,23 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1293,6 +1526,40 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.ModuleBayID != nil {
+
+		// query param module_bay_id
+		var qrModuleBayID string
+
+		if o.ModuleBayID != nil {
+			qrModuleBayID = *o.ModuleBayID
+		}
+		qModuleBayID := qrModuleBayID
+		if qModuleBayID != "" {
+
+			if err := r.SetQueryParam("module_bay_id", qModuleBayID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ModuleBayIDn != nil {
+
+		// query param module_bay_id__n
+		var qrModuleBayIDn string
+
+		if o.ModuleBayIDn != nil {
+			qrModuleBayIDn = *o.ModuleBayIDn
+		}
+		qModuleBayIDn := qrModuleBayIDn
+		if qModuleBayIDn != "" {
+
+			if err := r.SetQueryParam("module_bay_id__n", qModuleBayIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ModuleType != nil {
 
 		// query param module_type
@@ -1373,6 +1640,23 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

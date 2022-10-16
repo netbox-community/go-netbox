@@ -59,14 +59,44 @@ func NewCircuitsCircuitTerminationsBulkDeleteNoContent() *CircuitsCircuitTermina
 	return &CircuitsCircuitTerminationsBulkDeleteNoContent{}
 }
 
-/* CircuitsCircuitTerminationsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+CircuitsCircuitTerminationsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 CircuitsCircuitTerminationsBulkDeleteNoContent circuits circuit terminations bulk delete no content
 */
 type CircuitsCircuitTerminationsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this circuits circuit terminations bulk delete no content response has a 2xx status code
+func (o *CircuitsCircuitTerminationsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuit terminations bulk delete no content response has a 3xx status code
+func (o *CircuitsCircuitTerminationsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuit terminations bulk delete no content response has a 4xx status code
+func (o *CircuitsCircuitTerminationsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuit terminations bulk delete no content response has a 5xx status code
+func (o *CircuitsCircuitTerminationsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuit terminations bulk delete no content response a status code equal to that given
+func (o *CircuitsCircuitTerminationsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *CircuitsCircuitTerminationsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsBulkDeleteNoContent ", 204)
+}
+
+func (o *CircuitsCircuitTerminationsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewCircuitsCircuitTerminationsBulkDeleteDefault(code int) *CircuitsCircuitT
 	}
 }
 
-/* CircuitsCircuitTerminationsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitTerminationsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsBulkDeleteDefault circuits circuit terminations bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *CircuitsCircuitTerminationsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuit terminations bulk delete default response has a 2xx status code
+func (o *CircuitsCircuitTerminationsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuit terminations bulk delete default response has a 3xx status code
+func (o *CircuitsCircuitTerminationsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuit terminations bulk delete default response has a 4xx status code
+func (o *CircuitsCircuitTerminationsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuit terminations bulk delete default response has a 5xx status code
+func (o *CircuitsCircuitTerminationsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuit terminations bulk delete default response a status code equal to that given
+func (o *CircuitsCircuitTerminationsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitTerminationsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/][%d] circuits_circuit-terminations_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitTerminationsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /circuits/circuit-terminations/][%d] circuits_circuit-terminations_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitTerminationsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

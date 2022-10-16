@@ -68,10 +68,12 @@ func NewIpamVlansDeleteParamsWithHTTPClient(client *http.Client) *IpamVlansDelet
 	}
 }
 
-/* IpamVlansDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam vlans delete operation.
+/*
+IpamVlansDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vlans delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVlansDeleteParams struct {
 

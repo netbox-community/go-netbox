@@ -68,10 +68,12 @@ func NewExtrasConfigContextsReadParamsWithHTTPClient(client *http.Client) *Extra
 	}
 }
 
-/* ExtrasConfigContextsReadParams contains all the parameters to send to the API endpoint
-   for the extras config contexts read operation.
+/*
+ExtrasConfigContextsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras config contexts read operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasConfigContextsReadParams struct {
 

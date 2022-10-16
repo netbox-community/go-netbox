@@ -61,7 +61,8 @@ func NewIpamServiceTemplatesReadOK() *IpamServiceTemplatesReadOK {
 	return &IpamServiceTemplatesReadOK{}
 }
 
-/* IpamServiceTemplatesReadOK describes a response with status code 200, with default header values.
+/*
+IpamServiceTemplatesReadOK describes a response with status code 200, with default header values.
 
 IpamServiceTemplatesReadOK ipam service templates read o k
 */
@@ -69,9 +70,39 @@ type IpamServiceTemplatesReadOK struct {
 	Payload *models.ServiceTemplate
 }
 
+// IsSuccess returns true when this ipam service templates read o k response has a 2xx status code
+func (o *IpamServiceTemplatesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam service templates read o k response has a 3xx status code
+func (o *IpamServiceTemplatesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam service templates read o k response has a 4xx status code
+func (o *IpamServiceTemplatesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam service templates read o k response has a 5xx status code
+func (o *IpamServiceTemplatesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam service templates read o k response a status code equal to that given
+func (o *IpamServiceTemplatesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamServiceTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/service-templates/{id}/][%d] ipamServiceTemplatesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamServiceTemplatesReadOK) String() string {
+	return fmt.Sprintf("[GET /ipam/service-templates/{id}/][%d] ipamServiceTemplatesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamServiceTemplatesReadOK) GetPayload() *models.ServiceTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamServiceTemplatesReadDefault(code int) *IpamServiceTemplatesReadDefau
 	}
 }
 
-/* IpamServiceTemplatesReadDefault describes a response with status code -1, with default header values.
+/*
+IpamServiceTemplatesReadDefault describes a response with status code -1, with default header values.
 
 IpamServiceTemplatesReadDefault ipam service templates read default
 */
@@ -110,9 +142,39 @@ func (o *IpamServiceTemplatesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam service templates read default response has a 2xx status code
+func (o *IpamServiceTemplatesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam service templates read default response has a 3xx status code
+func (o *IpamServiceTemplatesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam service templates read default response has a 4xx status code
+func (o *IpamServiceTemplatesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam service templates read default response has a 5xx status code
+func (o *IpamServiceTemplatesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam service templates read default response a status code equal to that given
+func (o *IpamServiceTemplatesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamServiceTemplatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/service-templates/{id}/][%d] ipam_service-templates_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamServiceTemplatesReadDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/service-templates/{id}/][%d] ipam_service-templates_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamServiceTemplatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

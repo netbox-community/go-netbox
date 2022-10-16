@@ -69,10 +69,12 @@ func NewDcimPowerFeedsBulkUpdateParamsWithHTTPClient(client *http.Client) *DcimP
 	}
 }
 
-/* DcimPowerFeedsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim power feeds bulk update operation.
+/*
+DcimPowerFeedsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power feeds bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerFeedsBulkUpdateParams struct {
 

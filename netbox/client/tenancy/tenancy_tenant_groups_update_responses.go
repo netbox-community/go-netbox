@@ -61,7 +61,8 @@ func NewTenancyTenantGroupsUpdateOK() *TenancyTenantGroupsUpdateOK {
 	return &TenancyTenantGroupsUpdateOK{}
 }
 
-/* TenancyTenantGroupsUpdateOK describes a response with status code 200, with default header values.
+/*
+TenancyTenantGroupsUpdateOK describes a response with status code 200, with default header values.
 
 TenancyTenantGroupsUpdateOK tenancy tenant groups update o k
 */
@@ -69,9 +70,39 @@ type TenancyTenantGroupsUpdateOK struct {
 	Payload *models.TenantGroup
 }
 
+// IsSuccess returns true when this tenancy tenant groups update o k response has a 2xx status code
+func (o *TenancyTenantGroupsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy tenant groups update o k response has a 3xx status code
+func (o *TenancyTenantGroupsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy tenant groups update o k response has a 4xx status code
+func (o *TenancyTenantGroupsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy tenant groups update o k response has a 5xx status code
+func (o *TenancyTenantGroupsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy tenant groups update o k response a status code equal to that given
+func (o *TenancyTenantGroupsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyTenantGroupsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyTenantGroupsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /tenancy/tenant-groups/{id}/][%d] tenancyTenantGroupsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyTenantGroupsUpdateOK) GetPayload() *models.TenantGroup {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewTenancyTenantGroupsUpdateDefault(code int) *TenancyTenantGroupsUpdateDef
 	}
 }
 
-/* TenancyTenantGroupsUpdateDefault describes a response with status code -1, with default header values.
+/*
+TenancyTenantGroupsUpdateDefault describes a response with status code -1, with default header values.
 
 TenancyTenantGroupsUpdateDefault tenancy tenant groups update default
 */
@@ -110,9 +142,39 @@ func (o *TenancyTenantGroupsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy tenant groups update default response has a 2xx status code
+func (o *TenancyTenantGroupsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy tenant groups update default response has a 3xx status code
+func (o *TenancyTenantGroupsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy tenant groups update default response has a 4xx status code
+func (o *TenancyTenantGroupsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy tenant groups update default response has a 5xx status code
+func (o *TenancyTenantGroupsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy tenant groups update default response a status code equal to that given
+func (o *TenancyTenantGroupsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyTenantGroupsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyTenantGroupsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /tenancy/tenant-groups/{id}/][%d] tenancy_tenant-groups_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyTenantGroupsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

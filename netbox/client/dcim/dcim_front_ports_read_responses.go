@@ -61,7 +61,8 @@ func NewDcimFrontPortsReadOK() *DcimFrontPortsReadOK {
 	return &DcimFrontPortsReadOK{}
 }
 
-/* DcimFrontPortsReadOK describes a response with status code 200, with default header values.
+/*
+DcimFrontPortsReadOK describes a response with status code 200, with default header values.
 
 DcimFrontPortsReadOK dcim front ports read o k
 */
@@ -69,9 +70,39 @@ type DcimFrontPortsReadOK struct {
 	Payload *models.FrontPort
 }
 
+// IsSuccess returns true when this dcim front ports read o k response has a 2xx status code
+func (o *DcimFrontPortsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim front ports read o k response has a 3xx status code
+func (o *DcimFrontPortsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim front ports read o k response has a 4xx status code
+func (o *DcimFrontPortsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim front ports read o k response has a 5xx status code
+func (o *DcimFrontPortsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim front ports read o k response a status code equal to that given
+func (o *DcimFrontPortsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimFrontPortsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/front-ports/{id}/][%d] dcimFrontPortsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimFrontPortsReadOK) String() string {
+	return fmt.Sprintf("[GET /dcim/front-ports/{id}/][%d] dcimFrontPortsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimFrontPortsReadOK) GetPayload() *models.FrontPort {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimFrontPortsReadDefault(code int) *DcimFrontPortsReadDefault {
 	}
 }
 
-/* DcimFrontPortsReadDefault describes a response with status code -1, with default header values.
+/*
+DcimFrontPortsReadDefault describes a response with status code -1, with default header values.
 
 DcimFrontPortsReadDefault dcim front ports read default
 */
@@ -110,9 +142,39 @@ func (o *DcimFrontPortsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim front ports read default response has a 2xx status code
+func (o *DcimFrontPortsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim front ports read default response has a 3xx status code
+func (o *DcimFrontPortsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim front ports read default response has a 4xx status code
+func (o *DcimFrontPortsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim front ports read default response has a 5xx status code
+func (o *DcimFrontPortsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim front ports read default response a status code equal to that given
+func (o *DcimFrontPortsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimFrontPortsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/front-ports/{id}/][%d] dcim_front-ports_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimFrontPortsReadDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/front-ports/{id}/][%d] dcim_front-ports_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimFrontPortsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -66,7 +66,8 @@ func NewDcimCablesListOK() *DcimCablesListOK {
 	return &DcimCablesListOK{}
 }
 
-/* DcimCablesListOK describes a response with status code 200, with default header values.
+/*
+DcimCablesListOK describes a response with status code 200, with default header values.
 
 DcimCablesListOK dcim cables list o k
 */
@@ -74,9 +75,39 @@ type DcimCablesListOK struct {
 	Payload *DcimCablesListOKBody
 }
 
+// IsSuccess returns true when this dcim cables list o k response has a 2xx status code
+func (o *DcimCablesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim cables list o k response has a 3xx status code
+func (o *DcimCablesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim cables list o k response has a 4xx status code
+func (o *DcimCablesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim cables list o k response has a 5xx status code
+func (o *DcimCablesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim cables list o k response a status code equal to that given
+func (o *DcimCablesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimCablesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/cables/][%d] dcimCablesListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimCablesListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/cables/][%d] dcimCablesListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimCablesListOK) GetPayload() *DcimCablesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimCablesListDefault(code int) *DcimCablesListDefault {
 	}
 }
 
-/* DcimCablesListDefault describes a response with status code -1, with default header values.
+/*
+DcimCablesListDefault describes a response with status code -1, with default header values.
 
 DcimCablesListDefault dcim cables list default
 */
@@ -115,9 +147,39 @@ func (o *DcimCablesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim cables list default response has a 2xx status code
+func (o *DcimCablesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim cables list default response has a 3xx status code
+func (o *DcimCablesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim cables list default response has a 4xx status code
+func (o *DcimCablesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim cables list default response has a 5xx status code
+func (o *DcimCablesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim cables list default response a status code equal to that given
+func (o *DcimCablesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimCablesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/cables/][%d] dcim_cables_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimCablesListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/cables/][%d] dcim_cables_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimCablesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimCablesListDefault) readResponse(response runtime.ClientResponse, co
 	return nil
 }
 
-/*DcimCablesListOKBody dcim cables list o k body
+/*
+DcimCablesListOKBody dcim cables list o k body
 swagger:model DcimCablesListOKBody
 */
 type DcimCablesListOKBody struct {

@@ -61,7 +61,8 @@ func NewWirelessWirelessLansReadOK() *WirelessWirelessLansReadOK {
 	return &WirelessWirelessLansReadOK{}
 }
 
-/* WirelessWirelessLansReadOK describes a response with status code 200, with default header values.
+/*
+WirelessWirelessLansReadOK describes a response with status code 200, with default header values.
 
 WirelessWirelessLansReadOK wireless wireless lans read o k
 */
@@ -69,9 +70,39 @@ type WirelessWirelessLansReadOK struct {
 	Payload *models.WirelessLAN
 }
 
+// IsSuccess returns true when this wireless wireless lans read o k response has a 2xx status code
+func (o *WirelessWirelessLansReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this wireless wireless lans read o k response has a 3xx status code
+func (o *WirelessWirelessLansReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this wireless wireless lans read o k response has a 4xx status code
+func (o *WirelessWirelessLansReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this wireless wireless lans read o k response has a 5xx status code
+func (o *WirelessWirelessLansReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this wireless wireless lans read o k response a status code equal to that given
+func (o *WirelessWirelessLansReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *WirelessWirelessLansReadOK) Error() string {
 	return fmt.Sprintf("[GET /wireless/wireless-lans/{id}/][%d] wirelessWirelessLansReadOK  %+v", 200, o.Payload)
 }
+
+func (o *WirelessWirelessLansReadOK) String() string {
+	return fmt.Sprintf("[GET /wireless/wireless-lans/{id}/][%d] wirelessWirelessLansReadOK  %+v", 200, o.Payload)
+}
+
 func (o *WirelessWirelessLansReadOK) GetPayload() *models.WirelessLAN {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewWirelessWirelessLansReadDefault(code int) *WirelessWirelessLansReadDefau
 	}
 }
 
-/* WirelessWirelessLansReadDefault describes a response with status code -1, with default header values.
+/*
+WirelessWirelessLansReadDefault describes a response with status code -1, with default header values.
 
 WirelessWirelessLansReadDefault wireless wireless lans read default
 */
@@ -110,9 +142,39 @@ func (o *WirelessWirelessLansReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this wireless wireless lans read default response has a 2xx status code
+func (o *WirelessWirelessLansReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this wireless wireless lans read default response has a 3xx status code
+func (o *WirelessWirelessLansReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this wireless wireless lans read default response has a 4xx status code
+func (o *WirelessWirelessLansReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this wireless wireless lans read default response has a 5xx status code
+func (o *WirelessWirelessLansReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this wireless wireless lans read default response a status code equal to that given
+func (o *WirelessWirelessLansReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *WirelessWirelessLansReadDefault) Error() string {
 	return fmt.Sprintf("[GET /wireless/wireless-lans/{id}/][%d] wireless_wireless-lans_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *WirelessWirelessLansReadDefault) String() string {
+	return fmt.Sprintf("[GET /wireless/wireless-lans/{id}/][%d] wireless_wireless-lans_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *WirelessWirelessLansReadDefault) GetPayload() interface{} {
 	return o.Payload
 }
