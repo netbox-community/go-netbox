@@ -95,7 +95,7 @@ type WritablePrefix struct {
 	Role *int64 `json:"role,omitempty"`
 
 	// Site
-	Site *int64 `json:"site,omitempty"`
+	Site *int64 `json:"site"`
 
 	// Status
 	//
@@ -115,7 +115,7 @@ type WritablePrefix struct {
 	URL strfmt.URI `json:"url,omitempty"`
 
 	// VLAN
-	Vlan *int64 `json:"vlan,omitempty"`
+	Vlan *int64 `json:"vlan"`
 
 	// VRF
 	Vrf *int64 `json:"vrf,omitempty"`
