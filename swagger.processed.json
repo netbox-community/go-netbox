@@ -86752,12 +86752,14 @@
         "vrf": {
           "title": "VRF",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "tenant": {
           "title": "Tenant",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "vlan": {
           "title": "VLAN",
@@ -86780,7 +86782,8 @@
           "title": "Role",
           "description": "The primary function of this prefix",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "is_pool": {
           "title": "Is a pool",

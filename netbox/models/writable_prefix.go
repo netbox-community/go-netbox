@@ -92,7 +92,7 @@ type WritablePrefix struct {
 	// Role
 	//
 	// The primary function of this prefix
-	Role *int64 `json:"role,omitempty"`
+	Role *int64 `json:"role"`
 
 	// Site
 	Site *int64 `json:"site"`
@@ -107,7 +107,7 @@ type WritablePrefix struct {
 	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
-	Tenant *int64 `json:"tenant,omitempty"`
+	Tenant *int64 `json:"tenant"`
 
 	// Url
 	// Read Only: true
@@ -118,7 +118,7 @@ type WritablePrefix struct {
 	Vlan *int64 `json:"vlan"`
 
 	// VRF
-	Vrf *int64 `json:"vrf,omitempty"`
+	Vrf *int64 `json:"vrf"`
 }
 
 // Validate validates this writable prefix
