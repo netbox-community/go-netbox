@@ -61,7 +61,8 @@ func NewVirtualizationClustersCreateCreated() *VirtualizationClustersCreateCreat
 	return &VirtualizationClustersCreateCreated{}
 }
 
-/* VirtualizationClustersCreateCreated describes a response with status code 201, with default header values.
+/*
+VirtualizationClustersCreateCreated describes a response with status code 201, with default header values.
 
 VirtualizationClustersCreateCreated virtualization clusters create created
 */
@@ -69,9 +70,39 @@ type VirtualizationClustersCreateCreated struct {
 	Payload *models.Cluster
 }
 
+// IsSuccess returns true when this virtualization clusters create created response has a 2xx status code
+func (o *VirtualizationClustersCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization clusters create created response has a 3xx status code
+func (o *VirtualizationClustersCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization clusters create created response has a 4xx status code
+func (o *VirtualizationClustersCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization clusters create created response has a 5xx status code
+func (o *VirtualizationClustersCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization clusters create created response a status code equal to that given
+func (o *VirtualizationClustersCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *VirtualizationClustersCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualizationClustersCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *VirtualizationClustersCreateCreated) String() string {
+	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualizationClustersCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *VirtualizationClustersCreateCreated) GetPayload() *models.Cluster {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationClustersCreateDefault(code int) *VirtualizationClustersCre
 	}
 }
 
-/* VirtualizationClustersCreateDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationClustersCreateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClustersCreateDefault virtualization clusters create default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationClustersCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization clusters create default response has a 2xx status code
+func (o *VirtualizationClustersCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization clusters create default response has a 3xx status code
+func (o *VirtualizationClustersCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization clusters create default response has a 4xx status code
+func (o *VirtualizationClustersCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization clusters create default response has a 5xx status code
+func (o *VirtualizationClustersCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization clusters create default response a status code equal to that given
+func (o *VirtualizationClustersCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationClustersCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualization_clusters_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationClustersCreateDefault) String() string {
+	return fmt.Sprintf("[POST /virtualization/clusters/][%d] virtualization_clusters_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationClustersCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

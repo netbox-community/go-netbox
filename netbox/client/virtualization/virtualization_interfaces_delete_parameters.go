@@ -68,10 +68,12 @@ func NewVirtualizationInterfacesDeleteParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* VirtualizationInterfacesDeleteParams contains all the parameters to send to the API endpoint
-   for the virtualization interfaces delete operation.
+/*
+VirtualizationInterfacesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization interfaces delete operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationInterfacesDeleteParams struct {
 

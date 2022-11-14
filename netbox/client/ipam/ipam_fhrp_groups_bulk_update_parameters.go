@@ -69,10 +69,12 @@ func NewIpamFhrpGroupsBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamF
 	}
 }
 
-/* IpamFhrpGroupsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp groups bulk update operation.
+/*
+IpamFhrpGroupsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp groups bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupsBulkUpdateParams struct {
 

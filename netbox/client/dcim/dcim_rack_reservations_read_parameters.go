@@ -68,10 +68,12 @@ func NewDcimRackReservationsReadParamsWithHTTPClient(client *http.Client) *DcimR
 	}
 }
 
-/* DcimRackReservationsReadParams contains all the parameters to send to the API endpoint
-   for the dcim rack reservations read operation.
+/*
+DcimRackReservationsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rack reservations read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRackReservationsReadParams struct {
 

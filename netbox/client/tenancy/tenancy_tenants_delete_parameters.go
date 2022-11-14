@@ -68,10 +68,12 @@ func NewTenancyTenantsDeleteParamsWithHTTPClient(client *http.Client) *TenancyTe
 	}
 }
 
-/* TenancyTenantsDeleteParams contains all the parameters to send to the API endpoint
-   for the tenancy tenants delete operation.
+/*
+TenancyTenantsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy tenants delete operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyTenantsDeleteParams struct {
 

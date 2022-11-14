@@ -59,14 +59,44 @@ func NewExtrasImageAttachmentsDeleteNoContent() *ExtrasImageAttachmentsDeleteNoC
 	return &ExtrasImageAttachmentsDeleteNoContent{}
 }
 
-/* ExtrasImageAttachmentsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+ExtrasImageAttachmentsDeleteNoContent describes a response with status code 204, with default header values.
 
 ExtrasImageAttachmentsDeleteNoContent extras image attachments delete no content
 */
 type ExtrasImageAttachmentsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this extras image attachments delete no content response has a 2xx status code
+func (o *ExtrasImageAttachmentsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras image attachments delete no content response has a 3xx status code
+func (o *ExtrasImageAttachmentsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras image attachments delete no content response has a 4xx status code
+func (o *ExtrasImageAttachmentsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras image attachments delete no content response has a 5xx status code
+func (o *ExtrasImageAttachmentsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras image attachments delete no content response a status code equal to that given
+func (o *ExtrasImageAttachmentsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *ExtrasImageAttachmentsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /extras/image-attachments/{id}/][%d] extrasImageAttachmentsDeleteNoContent ", 204)
+}
+
+func (o *ExtrasImageAttachmentsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /extras/image-attachments/{id}/][%d] extrasImageAttachmentsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasImageAttachmentsDeleteDefault(code int) *ExtrasImageAttachmentsDel
 	}
 }
 
-/* ExtrasImageAttachmentsDeleteDefault describes a response with status code -1, with default header values.
+/*
+ExtrasImageAttachmentsDeleteDefault describes a response with status code -1, with default header values.
 
 ExtrasImageAttachmentsDeleteDefault extras image attachments delete default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasImageAttachmentsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras image attachments delete default response has a 2xx status code
+func (o *ExtrasImageAttachmentsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras image attachments delete default response has a 3xx status code
+func (o *ExtrasImageAttachmentsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras image attachments delete default response has a 4xx status code
+func (o *ExtrasImageAttachmentsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras image attachments delete default response has a 5xx status code
+func (o *ExtrasImageAttachmentsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras image attachments delete default response a status code equal to that given
+func (o *ExtrasImageAttachmentsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasImageAttachmentsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /extras/image-attachments/{id}/][%d] extras_image-attachments_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasImageAttachmentsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /extras/image-attachments/{id}/][%d] extras_image-attachments_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasImageAttachmentsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

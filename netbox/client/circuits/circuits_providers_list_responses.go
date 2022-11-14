@@ -66,7 +66,8 @@ func NewCircuitsProvidersListOK() *CircuitsProvidersListOK {
 	return &CircuitsProvidersListOK{}
 }
 
-/* CircuitsProvidersListOK describes a response with status code 200, with default header values.
+/*
+CircuitsProvidersListOK describes a response with status code 200, with default header values.
 
 CircuitsProvidersListOK circuits providers list o k
 */
@@ -74,9 +75,39 @@ type CircuitsProvidersListOK struct {
 	Payload *CircuitsProvidersListOKBody
 }
 
+// IsSuccess returns true when this circuits providers list o k response has a 2xx status code
+func (o *CircuitsProvidersListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits providers list o k response has a 3xx status code
+func (o *CircuitsProvidersListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits providers list o k response has a 4xx status code
+func (o *CircuitsProvidersListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits providers list o k response has a 5xx status code
+func (o *CircuitsProvidersListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits providers list o k response a status code equal to that given
+func (o *CircuitsProvidersListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsProvidersListOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/providers/][%d] circuitsProvidersListOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsProvidersListOK) String() string {
+	return fmt.Sprintf("[GET /circuits/providers/][%d] circuitsProvidersListOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsProvidersListOK) GetPayload() *CircuitsProvidersListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewCircuitsProvidersListDefault(code int) *CircuitsProvidersListDefault {
 	}
 }
 
-/* CircuitsProvidersListDefault describes a response with status code -1, with default header values.
+/*
+CircuitsProvidersListDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersListDefault circuits providers list default
 */
@@ -115,9 +147,39 @@ func (o *CircuitsProvidersListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits providers list default response has a 2xx status code
+func (o *CircuitsProvidersListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits providers list default response has a 3xx status code
+func (o *CircuitsProvidersListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits providers list default response has a 4xx status code
+func (o *CircuitsProvidersListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits providers list default response has a 5xx status code
+func (o *CircuitsProvidersListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits providers list default response a status code equal to that given
+func (o *CircuitsProvidersListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsProvidersListDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/providers/][%d] circuits_providers_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsProvidersListDefault) String() string {
+	return fmt.Sprintf("[GET /circuits/providers/][%d] circuits_providers_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsProvidersListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *CircuitsProvidersListDefault) readResponse(response runtime.ClientRespo
 	return nil
 }
 
-/*CircuitsProvidersListOKBody circuits providers list o k body
+/*
+CircuitsProvidersListOKBody circuits providers list o k body
 swagger:model CircuitsProvidersListOKBody
 */
 type CircuitsProvidersListOKBody struct {

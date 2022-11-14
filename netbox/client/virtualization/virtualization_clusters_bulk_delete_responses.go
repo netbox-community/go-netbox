@@ -59,14 +59,44 @@ func NewVirtualizationClustersBulkDeleteNoContent() *VirtualizationClustersBulkD
 	return &VirtualizationClustersBulkDeleteNoContent{}
 }
 
-/* VirtualizationClustersBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+VirtualizationClustersBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationClustersBulkDeleteNoContent virtualization clusters bulk delete no content
 */
 type VirtualizationClustersBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this virtualization clusters bulk delete no content response has a 2xx status code
+func (o *VirtualizationClustersBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization clusters bulk delete no content response has a 3xx status code
+func (o *VirtualizationClustersBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization clusters bulk delete no content response has a 4xx status code
+func (o *VirtualizationClustersBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization clusters bulk delete no content response has a 5xx status code
+func (o *VirtualizationClustersBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization clusters bulk delete no content response a status code equal to that given
+func (o *VirtualizationClustersBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *VirtualizationClustersBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /virtualization/clusters/][%d] virtualizationClustersBulkDeleteNoContent ", 204)
+}
+
+func (o *VirtualizationClustersBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /virtualization/clusters/][%d] virtualizationClustersBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewVirtualizationClustersBulkDeleteDefault(code int) *VirtualizationCluster
 	}
 }
 
-/* VirtualizationClustersBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationClustersBulkDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationClustersBulkDeleteDefault virtualization clusters bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *VirtualizationClustersBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization clusters bulk delete default response has a 2xx status code
+func (o *VirtualizationClustersBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization clusters bulk delete default response has a 3xx status code
+func (o *VirtualizationClustersBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization clusters bulk delete default response has a 4xx status code
+func (o *VirtualizationClustersBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization clusters bulk delete default response has a 5xx status code
+func (o *VirtualizationClustersBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization clusters bulk delete default response a status code equal to that given
+func (o *VirtualizationClustersBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationClustersBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/clusters/][%d] virtualization_clusters_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationClustersBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /virtualization/clusters/][%d] virtualization_clusters_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationClustersBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

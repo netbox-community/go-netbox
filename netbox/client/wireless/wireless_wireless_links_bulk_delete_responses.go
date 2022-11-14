@@ -59,14 +59,44 @@ func NewWirelessWirelessLinksBulkDeleteNoContent() *WirelessWirelessLinksBulkDel
 	return &WirelessWirelessLinksBulkDeleteNoContent{}
 }
 
-/* WirelessWirelessLinksBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+WirelessWirelessLinksBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 WirelessWirelessLinksBulkDeleteNoContent wireless wireless links bulk delete no content
 */
 type WirelessWirelessLinksBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this wireless wireless links bulk delete no content response has a 2xx status code
+func (o *WirelessWirelessLinksBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this wireless wireless links bulk delete no content response has a 3xx status code
+func (o *WirelessWirelessLinksBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this wireless wireless links bulk delete no content response has a 4xx status code
+func (o *WirelessWirelessLinksBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this wireless wireless links bulk delete no content response has a 5xx status code
+func (o *WirelessWirelessLinksBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this wireless wireless links bulk delete no content response a status code equal to that given
+func (o *WirelessWirelessLinksBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *WirelessWirelessLinksBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /wireless/wireless-links/][%d] wirelessWirelessLinksBulkDeleteNoContent ", 204)
+}
+
+func (o *WirelessWirelessLinksBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /wireless/wireless-links/][%d] wirelessWirelessLinksBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewWirelessWirelessLinksBulkDeleteDefault(code int) *WirelessWirelessLinksB
 	}
 }
 
-/* WirelessWirelessLinksBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+WirelessWirelessLinksBulkDeleteDefault describes a response with status code -1, with default header values.
 
 WirelessWirelessLinksBulkDeleteDefault wireless wireless links bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *WirelessWirelessLinksBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this wireless wireless links bulk delete default response has a 2xx status code
+func (o *WirelessWirelessLinksBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this wireless wireless links bulk delete default response has a 3xx status code
+func (o *WirelessWirelessLinksBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this wireless wireless links bulk delete default response has a 4xx status code
+func (o *WirelessWirelessLinksBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this wireless wireless links bulk delete default response has a 5xx status code
+func (o *WirelessWirelessLinksBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this wireless wireless links bulk delete default response a status code equal to that given
+func (o *WirelessWirelessLinksBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *WirelessWirelessLinksBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /wireless/wireless-links/][%d] wireless_wireless-links_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *WirelessWirelessLinksBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /wireless/wireless-links/][%d] wireless_wireless-links_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *WirelessWirelessLinksBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

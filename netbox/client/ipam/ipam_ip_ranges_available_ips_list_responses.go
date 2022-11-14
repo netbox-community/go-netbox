@@ -61,7 +61,8 @@ func NewIpamIPRangesAvailableIpsListOK() *IpamIPRangesAvailableIpsListOK {
 	return &IpamIPRangesAvailableIpsListOK{}
 }
 
-/* IpamIPRangesAvailableIpsListOK describes a response with status code 200, with default header values.
+/*
+IpamIPRangesAvailableIpsListOK describes a response with status code 200, with default header values.
 
 IpamIPRangesAvailableIpsListOK ipam Ip ranges available ips list o k
 */
@@ -69,9 +70,39 @@ type IpamIPRangesAvailableIpsListOK struct {
 	Payload []*models.AvailableIP
 }
 
+// IsSuccess returns true when this ipam Ip ranges available ips list o k response has a 2xx status code
+func (o *IpamIPRangesAvailableIpsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam Ip ranges available ips list o k response has a 3xx status code
+func (o *IpamIPRangesAvailableIpsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam Ip ranges available ips list o k response has a 4xx status code
+func (o *IpamIPRangesAvailableIpsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam Ip ranges available ips list o k response has a 5xx status code
+func (o *IpamIPRangesAvailableIpsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam Ip ranges available ips list o k response a status code equal to that given
+func (o *IpamIPRangesAvailableIpsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamIPRangesAvailableIpsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipamIpRangesAvailableIpsListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamIPRangesAvailableIpsListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipamIpRangesAvailableIpsListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamIPRangesAvailableIpsListOK) GetPayload() []*models.AvailableIP {
 	return o.Payload
 }
@@ -93,7 +124,8 @@ func NewIpamIPRangesAvailableIpsListDefault(code int) *IpamIPRangesAvailableIpsL
 	}
 }
 
-/* IpamIPRangesAvailableIpsListDefault describes a response with status code -1, with default header values.
+/*
+IpamIPRangesAvailableIpsListDefault describes a response with status code -1, with default header values.
 
 IpamIPRangesAvailableIpsListDefault ipam ip ranges available ips list default
 */
@@ -108,9 +140,39 @@ func (o *IpamIPRangesAvailableIpsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam ip ranges available ips list default response has a 2xx status code
+func (o *IpamIPRangesAvailableIpsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam ip ranges available ips list default response has a 3xx status code
+func (o *IpamIPRangesAvailableIpsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam ip ranges available ips list default response has a 4xx status code
+func (o *IpamIPRangesAvailableIpsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam ip ranges available ips list default response has a 5xx status code
+func (o *IpamIPRangesAvailableIpsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam ip ranges available ips list default response a status code equal to that given
+func (o *IpamIPRangesAvailableIpsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamIPRangesAvailableIpsListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipam_ip-ranges_available-ips_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamIPRangesAvailableIpsListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/available-ips/][%d] ipam_ip-ranges_available-ips_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamIPRangesAvailableIpsListDefault) GetPayload() interface{} {
 	return o.Payload
 }

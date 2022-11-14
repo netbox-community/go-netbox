@@ -68,10 +68,12 @@ func NewExtrasContentTypesReadParamsWithHTTPClient(client *http.Client) *ExtrasC
 	}
 }
 
-/* ExtrasContentTypesReadParams contains all the parameters to send to the API endpoint
-   for the extras content types read operation.
+/*
+ExtrasContentTypesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras content types read operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasContentTypesReadParams struct {
 

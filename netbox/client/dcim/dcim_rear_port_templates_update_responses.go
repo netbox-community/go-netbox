@@ -61,7 +61,8 @@ func NewDcimRearPortTemplatesUpdateOK() *DcimRearPortTemplatesUpdateOK {
 	return &DcimRearPortTemplatesUpdateOK{}
 }
 
-/* DcimRearPortTemplatesUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimRearPortTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 DcimRearPortTemplatesUpdateOK dcim rear port templates update o k
 */
@@ -69,9 +70,39 @@ type DcimRearPortTemplatesUpdateOK struct {
 	Payload *models.RearPortTemplate
 }
 
+// IsSuccess returns true when this dcim rear port templates update o k response has a 2xx status code
+func (o *DcimRearPortTemplatesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim rear port templates update o k response has a 3xx status code
+func (o *DcimRearPortTemplatesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim rear port templates update o k response has a 4xx status code
+func (o *DcimRearPortTemplatesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim rear port templates update o k response has a 5xx status code
+func (o *DcimRearPortTemplatesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim rear port templates update o k response a status code equal to that given
+func (o *DcimRearPortTemplatesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRearPortTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rear-port-templates/{id}/][%d] dcimRearPortTemplatesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRearPortTemplatesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/rear-port-templates/{id}/][%d] dcimRearPortTemplatesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRearPortTemplatesUpdateOK) GetPayload() *models.RearPortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRearPortTemplatesUpdateDefault(code int) *DcimRearPortTemplatesUpdat
 	}
 }
 
-/* DcimRearPortTemplatesUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimRearPortTemplatesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRearPortTemplatesUpdateDefault dcim rear port templates update default
 */
@@ -110,9 +142,39 @@ func (o *DcimRearPortTemplatesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim rear port templates update default response has a 2xx status code
+func (o *DcimRearPortTemplatesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim rear port templates update default response has a 3xx status code
+func (o *DcimRearPortTemplatesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim rear port templates update default response has a 4xx status code
+func (o *DcimRearPortTemplatesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim rear port templates update default response has a 5xx status code
+func (o *DcimRearPortTemplatesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim rear port templates update default response a status code equal to that given
+func (o *DcimRearPortTemplatesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRearPortTemplatesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/rear-port-templates/{id}/][%d] dcim_rear-port-templates_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRearPortTemplatesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/rear-port-templates/{id}/][%d] dcim_rear-port-templates_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRearPortTemplatesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

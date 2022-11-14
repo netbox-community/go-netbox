@@ -68,10 +68,12 @@ func NewDcimPowerFeedsDeleteParamsWithHTTPClient(client *http.Client) *DcimPower
 	}
 }
 
-/* DcimPowerFeedsDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim power feeds delete operation.
+/*
+DcimPowerFeedsDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power feeds delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerFeedsDeleteParams struct {
 

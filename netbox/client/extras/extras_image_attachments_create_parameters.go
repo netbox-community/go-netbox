@@ -69,10 +69,12 @@ func NewExtrasImageAttachmentsCreateParamsWithHTTPClient(client *http.Client) *E
 	}
 }
 
-/* ExtrasImageAttachmentsCreateParams contains all the parameters to send to the API endpoint
-   for the extras image attachments create operation.
+/*
+ExtrasImageAttachmentsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras image attachments create operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasImageAttachmentsCreateParams struct {
 

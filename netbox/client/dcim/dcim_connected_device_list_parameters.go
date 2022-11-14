@@ -67,10 +67,12 @@ func NewDcimConnectedDeviceListParamsWithHTTPClient(client *http.Client) *DcimCo
 	}
 }
 
-/* DcimConnectedDeviceListParams contains all the parameters to send to the API endpoint
-   for the dcim connected device list operation.
+/*
+DcimConnectedDeviceListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim connected device list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimConnectedDeviceListParams struct {
 

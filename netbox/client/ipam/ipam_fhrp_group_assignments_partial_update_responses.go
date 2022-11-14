@@ -61,7 +61,8 @@ func NewIpamFhrpGroupAssignmentsPartialUpdateOK() *IpamFhrpGroupAssignmentsParti
 	return &IpamFhrpGroupAssignmentsPartialUpdateOK{}
 }
 
-/* IpamFhrpGroupAssignmentsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamFhrpGroupAssignmentsPartialUpdateOK describes a response with status code 200, with default header values.
 
 IpamFhrpGroupAssignmentsPartialUpdateOK ipam fhrp group assignments partial update o k
 */
@@ -69,9 +70,39 @@ type IpamFhrpGroupAssignmentsPartialUpdateOK struct {
 	Payload *models.FHRPGroupAssignment
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments partial update o k response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments partial update o k response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam fhrp group assignments partial update o k response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam fhrp group assignments partial update o k response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam fhrp group assignments partial update o k response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamFhrpGroupAssignmentsPartialUpdateOK) GetPayload() *models.FHRPGroupAssignment {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamFhrpGroupAssignmentsPartialUpdateDefault(code int) *IpamFhrpGroupAss
 	}
 }
 
-/* IpamFhrpGroupAssignmentsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamFhrpGroupAssignmentsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 IpamFhrpGroupAssignmentsPartialUpdateDefault ipam fhrp group assignments partial update default
 */
@@ -110,9 +142,39 @@ func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments partial update default response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments partial update default response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam fhrp group assignments partial update default response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam fhrp group assignments partial update default response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam fhrp group assignments partial update default response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/{id}/][%d] ipam_fhrp-group-assignments_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamFhrpGroupAssignmentsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

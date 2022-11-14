@@ -68,12 +68,20 @@ func NewCircuitsCircuitTerminationsListParamsWithHTTPClient(client *http.Client)
 	}
 }
 
-/* CircuitsCircuitTerminationsListParams contains all the parameters to send to the API endpoint
-   for the circuits circuit terminations list operation.
+/*
+CircuitsCircuitTerminationsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits circuit terminations list operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsCircuitTerminationsListParams struct {
+
+	// CableEnd.
+	CableEnd *string
+
+	// CableEndn.
+	CableEndn *string
 
 	// Cabled.
 	Cabled *string
@@ -87,11 +95,20 @@ type CircuitsCircuitTerminationsListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// Description.
 	Description *string
@@ -144,11 +161,20 @@ type CircuitsCircuitTerminationsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -156,11 +182,20 @@ type CircuitsCircuitTerminationsListParams struct {
 	*/
 	Limit *int64
 
+	// Occupied.
+	Occupied *string
+
 	/* Offset.
 
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// PortSpeed.
 	PortSpeed *string
@@ -200,6 +235,12 @@ type CircuitsCircuitTerminationsListParams struct {
 
 	// SiteIDn.
 	SiteIDn *string
+
+	// Tag.
+	Tag *string
+
+	// Tagn.
+	Tagn *string
 
 	// TermSide.
 	TermSide *string
@@ -308,6 +349,28 @@ func (o *CircuitsCircuitTerminationsListParams) SetHTTPClient(client *http.Clien
 	o.HTTPClient = client
 }
 
+// WithCableEnd adds the cableEnd to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCableEnd(cableEnd *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCableEnd(cableEnd)
+	return o
+}
+
+// SetCableEnd adds the cableEnd to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCableEnd(cableEnd *string) {
+	o.CableEnd = cableEnd
+}
+
+// WithCableEndn adds the cableEndn to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCableEndn(cableEndn *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCableEndn(cableEndn)
+	return o
+}
+
+// SetCableEndn adds the cableEndN to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCableEndn(cableEndn *string) {
+	o.CableEndn = cableEndn
+}
+
 // WithCabled adds the cabled to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithCabled(cabled *string) *CircuitsCircuitTerminationsListParams {
 	o.SetCabled(cabled)
@@ -352,6 +415,17 @@ func (o *CircuitsCircuitTerminationsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCreatedGt(createdGt *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithCreatedGte(createdGte *string) *CircuitsCircuitTerminationsListParams {
 	o.SetCreatedGte(createdGte)
@@ -363,6 +437,17 @@ func (o *CircuitsCircuitTerminationsListParams) SetCreatedGte(createdGte *string
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCreatedLt(createdLt *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithCreatedLte(createdLte *string) *CircuitsCircuitTerminationsListParams {
 	o.SetCreatedLte(createdLte)
@@ -372,6 +457,17 @@ func (o *CircuitsCircuitTerminationsListParams) WithCreatedLte(createdLte *strin
 // SetCreatedLte adds the createdLte to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithCreatedn(createdn *string) *CircuitsCircuitTerminationsListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the circuits circuit terminations list params
@@ -561,6 +657,17 @@ func (o *CircuitsCircuitTerminationsListParams) SetLastUpdated(lastUpdated *stri
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *CircuitsCircuitTerminationsListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *CircuitsCircuitTerminationsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -570,6 +677,17 @@ func (o *CircuitsCircuitTerminationsListParams) WithLastUpdatedGte(lastUpdatedGt
 // SetLastUpdatedGte adds the lastUpdatedGte to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
+}
+
+// WithLastUpdatedLt adds the lastUpdatedLt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *CircuitsCircuitTerminationsListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
 }
 
 // WithLastUpdatedLte adds the lastUpdatedLte to the circuits circuit terminations list params
@@ -583,6 +701,17 @@ func (o *CircuitsCircuitTerminationsListParams) SetLastUpdatedLte(lastUpdatedLte
 	o.LastUpdatedLte = lastUpdatedLte
 }
 
+// WithLastUpdatedn adds the lastUpdatedn to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithLastUpdatedn(lastUpdatedn *string) *CircuitsCircuitTerminationsListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
+}
+
 // WithLimit adds the limit to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithLimit(limit *int64) *CircuitsCircuitTerminationsListParams {
 	o.SetLimit(limit)
@@ -594,6 +723,17 @@ func (o *CircuitsCircuitTerminationsListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
+// WithOccupied adds the occupied to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithOccupied(occupied *string) *CircuitsCircuitTerminationsListParams {
+	o.SetOccupied(occupied)
+	return o
+}
+
+// SetOccupied adds the occupied to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetOccupied(occupied *string) {
+	o.Occupied = occupied
+}
+
 // WithOffset adds the offset to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithOffset(offset *int64) *CircuitsCircuitTerminationsListParams {
 	o.SetOffset(offset)
@@ -603,6 +743,17 @@ func (o *CircuitsCircuitTerminationsListParams) WithOffset(offset *int64) *Circu
 // SetOffset adds the offset to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithOrdering(ordering *string) *CircuitsCircuitTerminationsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithPortSpeed adds the portSpeed to the circuits circuit terminations list params
@@ -746,6 +897,28 @@ func (o *CircuitsCircuitTerminationsListParams) WithSiteIDn(siteIDn *string) *Ci
 // SetSiteIDn adds the siteIdN to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) SetSiteIDn(siteIDn *string) {
 	o.SiteIDn = siteIDn
+}
+
+// WithTag adds the tag to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithTag(tag *string) *CircuitsCircuitTerminationsListParams {
+	o.SetTag(tag)
+	return o
+}
+
+// SetTag adds the tag to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetTag(tag *string) {
+	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithTagn(tagn *string) *CircuitsCircuitTerminationsListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
 }
 
 // WithTermSide adds the termSide to the circuits circuit terminations list params
@@ -954,6 +1127,40 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 	}
 	var res []error
 
+	if o.CableEnd != nil {
+
+		// query param cable_end
+		var qrCableEnd string
+
+		if o.CableEnd != nil {
+			qrCableEnd = *o.CableEnd
+		}
+		qCableEnd := qrCableEnd
+		if qCableEnd != "" {
+
+			if err := r.SetQueryParam("cable_end", qCableEnd); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CableEndn != nil {
+
+		// query param cable_end__n
+		var qrCableEndn string
+
+		if o.CableEndn != nil {
+			qrCableEndn = *o.CableEndn
+		}
+		qCableEndn := qrCableEndn
+		if qCableEndn != "" {
+
+			if err := r.SetQueryParam("cable_end__n", qCableEndn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Cabled != nil {
 
 		// query param cabled
@@ -1022,6 +1229,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1039,6 +1263,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1051,6 +1292,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1345,6 +1603,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1357,6 +1632,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		if qLastUpdatedGte != "" {
 
 			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
 				return err
 			}
 		}
@@ -1379,6 +1671,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		}
 	}
 
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -1396,6 +1705,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		}
 	}
 
+	if o.Occupied != nil {
+
+		// query param occupied
+		var qrOccupied string
+
+		if o.Occupied != nil {
+			qrOccupied = *o.Occupied
+		}
+		qOccupied := qrOccupied
+		if qOccupied != "" {
+
+			if err := r.SetQueryParam("occupied", qOccupied); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -1408,6 +1734,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}
@@ -1629,6 +1972,40 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		if qSiteIDn != "" {
 
 			if err := r.SetQueryParam("site_id__n", qSiteIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tag != nil {
+
+		// query param tag
+		var qrTag string
+
+		if o.Tag != nil {
+			qrTag = *o.Tag
+		}
+		qTag := qrTag
+		if qTag != "" {
+
+			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

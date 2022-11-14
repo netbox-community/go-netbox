@@ -67,10 +67,12 @@ func NewExtrasTagsBulkDeleteParamsWithHTTPClient(client *http.Client) *ExtrasTag
 	}
 }
 
-/* ExtrasTagsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the extras tags bulk delete operation.
+/*
+ExtrasTagsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras tags bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasTagsBulkDeleteParams struct {
 	timeout    time.Duration

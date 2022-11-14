@@ -67,10 +67,12 @@ func NewIpamFhrpGroupAssignmentsBulkDeleteParamsWithHTTPClient(client *http.Clie
 	}
 }
 
-/* IpamFhrpGroupAssignmentsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp group assignments bulk delete operation.
+/*
+IpamFhrpGroupAssignmentsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp group assignments bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupAssignmentsBulkDeleteParams struct {
 	timeout    time.Duration

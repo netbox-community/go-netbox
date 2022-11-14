@@ -70,10 +70,12 @@ func NewExtrasTagsUpdateParamsWithHTTPClient(client *http.Client) *ExtrasTagsUpd
 	}
 }
 
-/* ExtrasTagsUpdateParams contains all the parameters to send to the API endpoint
-   for the extras tags update operation.
+/*
+ExtrasTagsUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras tags update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasTagsUpdateParams struct {
 

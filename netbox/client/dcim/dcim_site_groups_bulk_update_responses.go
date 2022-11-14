@@ -61,7 +61,8 @@ func NewDcimSiteGroupsBulkUpdateOK() *DcimSiteGroupsBulkUpdateOK {
 	return &DcimSiteGroupsBulkUpdateOK{}
 }
 
-/* DcimSiteGroupsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimSiteGroupsBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimSiteGroupsBulkUpdateOK dcim site groups bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimSiteGroupsBulkUpdateOK struct {
 	Payload *models.SiteGroup
 }
 
+// IsSuccess returns true when this dcim site groups bulk update o k response has a 2xx status code
+func (o *DcimSiteGroupsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim site groups bulk update o k response has a 3xx status code
+func (o *DcimSiteGroupsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim site groups bulk update o k response has a 4xx status code
+func (o *DcimSiteGroupsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim site groups bulk update o k response has a 5xx status code
+func (o *DcimSiteGroupsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim site groups bulk update o k response a status code equal to that given
+func (o *DcimSiteGroupsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimSiteGroupsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/site-groups/][%d] dcimSiteGroupsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimSiteGroupsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/site-groups/][%d] dcimSiteGroupsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimSiteGroupsBulkUpdateOK) GetPayload() *models.SiteGroup {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimSiteGroupsBulkUpdateDefault(code int) *DcimSiteGroupsBulkUpdateDefau
 	}
 }
 
-/* DcimSiteGroupsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimSiteGroupsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimSiteGroupsBulkUpdateDefault dcim site groups bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimSiteGroupsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim site groups bulk update default response has a 2xx status code
+func (o *DcimSiteGroupsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim site groups bulk update default response has a 3xx status code
+func (o *DcimSiteGroupsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim site groups bulk update default response has a 4xx status code
+func (o *DcimSiteGroupsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim site groups bulk update default response has a 5xx status code
+func (o *DcimSiteGroupsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim site groups bulk update default response a status code equal to that given
+func (o *DcimSiteGroupsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimSiteGroupsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/site-groups/][%d] dcim_site-groups_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimSiteGroupsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/site-groups/][%d] dcim_site-groups_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimSiteGroupsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

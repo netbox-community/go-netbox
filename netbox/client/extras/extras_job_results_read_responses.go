@@ -61,7 +61,8 @@ func NewExtrasJobResultsReadOK() *ExtrasJobResultsReadOK {
 	return &ExtrasJobResultsReadOK{}
 }
 
-/* ExtrasJobResultsReadOK describes a response with status code 200, with default header values.
+/*
+ExtrasJobResultsReadOK describes a response with status code 200, with default header values.
 
 ExtrasJobResultsReadOK extras job results read o k
 */
@@ -69,9 +70,39 @@ type ExtrasJobResultsReadOK struct {
 	Payload *models.JobResult
 }
 
+// IsSuccess returns true when this extras job results read o k response has a 2xx status code
+func (o *ExtrasJobResultsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras job results read o k response has a 3xx status code
+func (o *ExtrasJobResultsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras job results read o k response has a 4xx status code
+func (o *ExtrasJobResultsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras job results read o k response has a 5xx status code
+func (o *ExtrasJobResultsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras job results read o k response a status code equal to that given
+func (o *ExtrasJobResultsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasJobResultsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extrasJobResultsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasJobResultsReadOK) String() string {
+	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extrasJobResultsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasJobResultsReadOK) GetPayload() *models.JobResult {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasJobResultsReadDefault(code int) *ExtrasJobResultsReadDefault {
 	}
 }
 
-/* ExtrasJobResultsReadDefault describes a response with status code -1, with default header values.
+/*
+ExtrasJobResultsReadDefault describes a response with status code -1, with default header values.
 
 ExtrasJobResultsReadDefault extras job results read default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasJobResultsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras job results read default response has a 2xx status code
+func (o *ExtrasJobResultsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras job results read default response has a 3xx status code
+func (o *ExtrasJobResultsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras job results read default response has a 4xx status code
+func (o *ExtrasJobResultsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras job results read default response has a 5xx status code
+func (o *ExtrasJobResultsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras job results read default response a status code equal to that given
+func (o *ExtrasJobResultsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasJobResultsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extras_job-results_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasJobResultsReadDefault) String() string {
+	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extras_job-results_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasJobResultsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

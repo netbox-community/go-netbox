@@ -70,10 +70,12 @@ func NewDcimPlatformsUpdateParamsWithHTTPClient(client *http.Client) *DcimPlatfo
 	}
 }
 
-/* DcimPlatformsUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim platforms update operation.
+/*
+DcimPlatformsUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim platforms update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPlatformsUpdateParams struct {
 

@@ -70,10 +70,12 @@ func NewTenancyContactRolesPartialUpdateParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* TenancyContactRolesPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the tenancy contact roles partial update operation.
+/*
+TenancyContactRolesPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact roles partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactRolesPartialUpdateParams struct {
 

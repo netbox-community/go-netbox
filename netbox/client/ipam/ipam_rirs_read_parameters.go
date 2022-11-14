@@ -68,10 +68,12 @@ func NewIpamRirsReadParamsWithHTTPClient(client *http.Client) *IpamRirsReadParam
 	}
 }
 
-/* IpamRirsReadParams contains all the parameters to send to the API endpoint
-   for the ipam rirs read operation.
+/*
+IpamRirsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam rirs read operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamRirsReadParams struct {
 

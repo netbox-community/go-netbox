@@ -61,7 +61,8 @@ func NewUsersTokensPartialUpdateOK() *UsersTokensPartialUpdateOK {
 	return &UsersTokensPartialUpdateOK{}
 }
 
-/* UsersTokensPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+UsersTokensPartialUpdateOK describes a response with status code 200, with default header values.
 
 UsersTokensPartialUpdateOK users tokens partial update o k
 */
@@ -69,9 +70,39 @@ type UsersTokensPartialUpdateOK struct {
 	Payload *models.Token
 }
 
+// IsSuccess returns true when this users tokens partial update o k response has a 2xx status code
+func (o *UsersTokensPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users tokens partial update o k response has a 3xx status code
+func (o *UsersTokensPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users tokens partial update o k response has a 4xx status code
+func (o *UsersTokensPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users tokens partial update o k response has a 5xx status code
+func (o *UsersTokensPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users tokens partial update o k response a status code equal to that given
+func (o *UsersTokensPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersTokensPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /users/tokens/{id}/][%d] usersTokensPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersTokensPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /users/tokens/{id}/][%d] usersTokensPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersTokensPartialUpdateOK) GetPayload() *models.Token {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersTokensPartialUpdateDefault(code int) *UsersTokensPartialUpdateDefau
 	}
 }
 
-/* UsersTokensPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+UsersTokensPartialUpdateDefault describes a response with status code -1, with default header values.
 
 UsersTokensPartialUpdateDefault users tokens partial update default
 */
@@ -110,9 +142,39 @@ func (o *UsersTokensPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users tokens partial update default response has a 2xx status code
+func (o *UsersTokensPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users tokens partial update default response has a 3xx status code
+func (o *UsersTokensPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users tokens partial update default response has a 4xx status code
+func (o *UsersTokensPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users tokens partial update default response has a 5xx status code
+func (o *UsersTokensPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users tokens partial update default response a status code equal to that given
+func (o *UsersTokensPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersTokensPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /users/tokens/{id}/][%d] users_tokens_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersTokensPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /users/tokens/{id}/][%d] users_tokens_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersTokensPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

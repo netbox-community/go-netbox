@@ -67,10 +67,12 @@ func NewExtrasCustomLinksBulkDeleteParamsWithHTTPClient(client *http.Client) *Ex
 	}
 }
 
-/* ExtrasCustomLinksBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the extras custom links bulk delete operation.
+/*
+ExtrasCustomLinksBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras custom links bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasCustomLinksBulkDeleteParams struct {
 	timeout    time.Duration

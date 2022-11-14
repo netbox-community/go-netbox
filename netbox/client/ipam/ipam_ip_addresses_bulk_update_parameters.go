@@ -69,10 +69,12 @@ func NewIpamIPAddressesBulkUpdateParamsWithHTTPClient(client *http.Client) *Ipam
 	}
 }
 
-/* IpamIPAddressesBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam ip addresses bulk update operation.
+/*
+IpamIPAddressesBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam ip addresses bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamIPAddressesBulkUpdateParams struct {
 

@@ -70,10 +70,12 @@ func NewDcimInventoryItemRolesUpdateParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimInventoryItemRolesUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim inventory item roles update operation.
+/*
+DcimInventoryItemRolesUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim inventory item roles update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimInventoryItemRolesUpdateParams struct {
 

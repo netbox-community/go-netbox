@@ -68,10 +68,12 @@ func NewIpamVlanGroupsAvailableVlansListParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* IpamVlanGroupsAvailableVlansListParams contains all the parameters to send to the API endpoint
-   for the ipam vlan groups available vlans list operation.
+/*
+IpamVlanGroupsAvailableVlansListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vlan groups available vlans list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVlanGroupsAvailableVlansListParams struct {
 

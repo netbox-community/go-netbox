@@ -68,21 +68,32 @@ func NewTenancyTenantGroupsListParamsWithHTTPClient(client *http.Client) *Tenanc
 	}
 }
 
-/* TenancyTenantGroupsListParams contains all the parameters to send to the API endpoint
-   for the tenancy tenant groups list operation.
+/*
+TenancyTenantGroupsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy tenant groups list operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyTenantGroupsListParams struct {
 
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// Description.
 	Description *string
@@ -135,11 +146,20 @@ type TenancyTenantGroupsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -182,6 +202,12 @@ type TenancyTenantGroupsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Parent.
 	Parent *string
@@ -298,6 +324,17 @@ func (o *TenancyTenantGroupsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithCreatedGt(createdGt *string) *TenancyTenantGroupsListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) WithCreatedGte(createdGte *string) *TenancyTenantGroupsListParams {
 	o.SetCreatedGte(createdGte)
@@ -309,6 +346,17 @@ func (o *TenancyTenantGroupsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithCreatedLt(createdLt *string) *TenancyTenantGroupsListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) WithCreatedLte(createdLte *string) *TenancyTenantGroupsListParams {
 	o.SetCreatedLte(createdLte)
@@ -318,6 +366,17 @@ func (o *TenancyTenantGroupsListParams) WithCreatedLte(createdLte *string) *Tena
 // SetCreatedLte adds the createdLte to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithCreatedn(createdn *string) *TenancyTenantGroupsListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the tenancy tenant groups list params
@@ -507,6 +566,17 @@ func (o *TenancyTenantGroupsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *TenancyTenantGroupsListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *TenancyTenantGroupsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -518,6 +588,17 @@ func (o *TenancyTenantGroupsListParams) SetLastUpdatedGte(lastUpdatedGte *string
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *TenancyTenantGroupsListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *TenancyTenantGroupsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -527,6 +608,17 @@ func (o *TenancyTenantGroupsListParams) WithLastUpdatedLte(lastUpdatedLte *strin
 // SetLastUpdatedLte adds the lastUpdatedLte to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithLastUpdatedn(lastUpdatedn *string) *TenancyTenantGroupsListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the tenancy tenant groups list params
@@ -659,6 +751,17 @@ func (o *TenancyTenantGroupsListParams) WithOffset(offset *int64) *TenancyTenant
 // SetOffset adds the offset to the tenancy tenant groups list params
 func (o *TenancyTenantGroupsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) WithOrdering(ordering *string) *TenancyTenantGroupsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the tenancy tenant groups list params
+func (o *TenancyTenantGroupsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithParent adds the parent to the tenancy tenant groups list params
@@ -873,6 +976,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -890,6 +1010,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -902,6 +1039,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1196,6 +1350,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1213,6 +1384,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1225,6 +1413,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1429,6 +1634,23 @@ func (o *TenancyTenantGroupsListParams) WriteToRequest(r runtime.ClientRequest, 
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

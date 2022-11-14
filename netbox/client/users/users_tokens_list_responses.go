@@ -66,7 +66,8 @@ func NewUsersTokensListOK() *UsersTokensListOK {
 	return &UsersTokensListOK{}
 }
 
-/* UsersTokensListOK describes a response with status code 200, with default header values.
+/*
+UsersTokensListOK describes a response with status code 200, with default header values.
 
 UsersTokensListOK users tokens list o k
 */
@@ -74,9 +75,39 @@ type UsersTokensListOK struct {
 	Payload *UsersTokensListOKBody
 }
 
+// IsSuccess returns true when this users tokens list o k response has a 2xx status code
+func (o *UsersTokensListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users tokens list o k response has a 3xx status code
+func (o *UsersTokensListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users tokens list o k response has a 4xx status code
+func (o *UsersTokensListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users tokens list o k response has a 5xx status code
+func (o *UsersTokensListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users tokens list o k response a status code equal to that given
+func (o *UsersTokensListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersTokensListOK) Error() string {
 	return fmt.Sprintf("[GET /users/tokens/][%d] usersTokensListOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersTokensListOK) String() string {
+	return fmt.Sprintf("[GET /users/tokens/][%d] usersTokensListOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersTokensListOK) GetPayload() *UsersTokensListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewUsersTokensListDefault(code int) *UsersTokensListDefault {
 	}
 }
 
-/* UsersTokensListDefault describes a response with status code -1, with default header values.
+/*
+UsersTokensListDefault describes a response with status code -1, with default header values.
 
 UsersTokensListDefault users tokens list default
 */
@@ -115,9 +147,39 @@ func (o *UsersTokensListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users tokens list default response has a 2xx status code
+func (o *UsersTokensListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users tokens list default response has a 3xx status code
+func (o *UsersTokensListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users tokens list default response has a 4xx status code
+func (o *UsersTokensListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users tokens list default response has a 5xx status code
+func (o *UsersTokensListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users tokens list default response a status code equal to that given
+func (o *UsersTokensListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersTokensListDefault) Error() string {
 	return fmt.Sprintf("[GET /users/tokens/][%d] users_tokens_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersTokensListDefault) String() string {
+	return fmt.Sprintf("[GET /users/tokens/][%d] users_tokens_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersTokensListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *UsersTokensListDefault) readResponse(response runtime.ClientResponse, c
 	return nil
 }
 
-/*UsersTokensListOKBody users tokens list o k body
+/*
+UsersTokensListOKBody users tokens list o k body
 swagger:model UsersTokensListOKBody
 */
 type UsersTokensListOKBody struct {

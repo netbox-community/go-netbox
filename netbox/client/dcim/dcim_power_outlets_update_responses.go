@@ -61,7 +61,8 @@ func NewDcimPowerOutletsUpdateOK() *DcimPowerOutletsUpdateOK {
 	return &DcimPowerOutletsUpdateOK{}
 }
 
-/* DcimPowerOutletsUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimPowerOutletsUpdateOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletsUpdateOK dcim power outlets update o k
 */
@@ -69,9 +70,39 @@ type DcimPowerOutletsUpdateOK struct {
 	Payload *models.PowerOutlet
 }
 
+// IsSuccess returns true when this dcim power outlets update o k response has a 2xx status code
+func (o *DcimPowerOutletsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power outlets update o k response has a 3xx status code
+func (o *DcimPowerOutletsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power outlets update o k response has a 4xx status code
+func (o *DcimPowerOutletsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power outlets update o k response has a 5xx status code
+func (o *DcimPowerOutletsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power outlets update o k response a status code equal to that given
+func (o *DcimPowerOutletsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerOutletsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlets/{id}/][%d] dcimPowerOutletsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerOutletsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/power-outlets/{id}/][%d] dcimPowerOutletsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerOutletsUpdateOK) GetPayload() *models.PowerOutlet {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerOutletsUpdateDefault(code int) *DcimPowerOutletsUpdateDefault {
 	}
 }
 
-/* DcimPowerOutletsUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerOutletsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletsUpdateDefault dcim power outlets update default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerOutletsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power outlets update default response has a 2xx status code
+func (o *DcimPowerOutletsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power outlets update default response has a 3xx status code
+func (o *DcimPowerOutletsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power outlets update default response has a 4xx status code
+func (o *DcimPowerOutletsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power outlets update default response has a 5xx status code
+func (o *DcimPowerOutletsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power outlets update default response a status code equal to that given
+func (o *DcimPowerOutletsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerOutletsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlets/{id}/][%d] dcim_power-outlets_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerOutletsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/power-outlets/{id}/][%d] dcim_power-outlets_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerOutletsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

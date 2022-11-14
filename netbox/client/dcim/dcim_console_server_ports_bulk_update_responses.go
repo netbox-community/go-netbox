@@ -61,7 +61,8 @@ func NewDcimConsoleServerPortsBulkUpdateOK() *DcimConsoleServerPortsBulkUpdateOK
 	return &DcimConsoleServerPortsBulkUpdateOK{}
 }
 
-/* DcimConsoleServerPortsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimConsoleServerPortsBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimConsoleServerPortsBulkUpdateOK dcim console server ports bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimConsoleServerPortsBulkUpdateOK struct {
 	Payload *models.ConsoleServerPort
 }
 
+// IsSuccess returns true when this dcim console server ports bulk update o k response has a 2xx status code
+func (o *DcimConsoleServerPortsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console server ports bulk update o k response has a 3xx status code
+func (o *DcimConsoleServerPortsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console server ports bulk update o k response has a 4xx status code
+func (o *DcimConsoleServerPortsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console server ports bulk update o k response has a 5xx status code
+func (o *DcimConsoleServerPortsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console server ports bulk update o k response a status code equal to that given
+func (o *DcimConsoleServerPortsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimConsoleServerPortsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/console-server-ports/][%d] dcimConsoleServerPortsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimConsoleServerPortsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/console-server-ports/][%d] dcimConsoleServerPortsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimConsoleServerPortsBulkUpdateOK) GetPayload() *models.ConsoleServerPort {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimConsoleServerPortsBulkUpdateDefault(code int) *DcimConsoleServerPort
 	}
 }
 
-/* DcimConsoleServerPortsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimConsoleServerPortsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortsBulkUpdateDefault dcim console server ports bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimConsoleServerPortsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console server ports bulk update default response has a 2xx status code
+func (o *DcimConsoleServerPortsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console server ports bulk update default response has a 3xx status code
+func (o *DcimConsoleServerPortsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console server ports bulk update default response has a 4xx status code
+func (o *DcimConsoleServerPortsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console server ports bulk update default response has a 5xx status code
+func (o *DcimConsoleServerPortsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console server ports bulk update default response a status code equal to that given
+func (o *DcimConsoleServerPortsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsoleServerPortsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/console-server-ports/][%d] dcim_console-server-ports_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsoleServerPortsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/console-server-ports/][%d] dcim_console-server-ports_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsoleServerPortsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

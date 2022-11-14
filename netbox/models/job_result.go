@@ -45,7 +45,7 @@ type JobResult struct {
 	Created strfmt.DateTime `json:"created,omitempty"`
 
 	// Data
-	Data *string `json:"data,omitempty"`
+	Data interface{} `json:"data,omitempty"`
 
 	// Display
 	// Read Only: true

@@ -61,7 +61,8 @@ func NewIpamRolesReadOK() *IpamRolesReadOK {
 	return &IpamRolesReadOK{}
 }
 
-/* IpamRolesReadOK describes a response with status code 200, with default header values.
+/*
+IpamRolesReadOK describes a response with status code 200, with default header values.
 
 IpamRolesReadOK ipam roles read o k
 */
@@ -69,9 +70,39 @@ type IpamRolesReadOK struct {
 	Payload *models.Role
 }
 
+// IsSuccess returns true when this ipam roles read o k response has a 2xx status code
+func (o *IpamRolesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam roles read o k response has a 3xx status code
+func (o *IpamRolesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam roles read o k response has a 4xx status code
+func (o *IpamRolesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam roles read o k response has a 5xx status code
+func (o *IpamRolesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam roles read o k response a status code equal to that given
+func (o *IpamRolesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamRolesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/roles/{id}/][%d] ipamRolesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamRolesReadOK) String() string {
+	return fmt.Sprintf("[GET /ipam/roles/{id}/][%d] ipamRolesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamRolesReadOK) GetPayload() *models.Role {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamRolesReadDefault(code int) *IpamRolesReadDefault {
 	}
 }
 
-/* IpamRolesReadDefault describes a response with status code -1, with default header values.
+/*
+IpamRolesReadDefault describes a response with status code -1, with default header values.
 
 IpamRolesReadDefault ipam roles read default
 */
@@ -110,9 +142,39 @@ func (o *IpamRolesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam roles read default response has a 2xx status code
+func (o *IpamRolesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam roles read default response has a 3xx status code
+func (o *IpamRolesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam roles read default response has a 4xx status code
+func (o *IpamRolesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam roles read default response has a 5xx status code
+func (o *IpamRolesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam roles read default response a status code equal to that given
+func (o *IpamRolesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamRolesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/roles/{id}/][%d] ipam_roles_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamRolesReadDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/roles/{id}/][%d] ipam_roles_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamRolesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

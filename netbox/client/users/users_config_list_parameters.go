@@ -67,10 +67,12 @@ func NewUsersConfigListParamsWithHTTPClient(client *http.Client) *UsersConfigLis
 	}
 }
 
-/* UsersConfigListParams contains all the parameters to send to the API endpoint
-   for the users config list operation.
+/*
+UsersConfigListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users config list operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersConfigListParams struct {
 	timeout    time.Duration

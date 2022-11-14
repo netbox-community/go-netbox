@@ -49,7 +49,7 @@ type WirelessLink struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -77,7 +77,7 @@ type WirelessLink struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// SSID
 	// Max Length: 32
@@ -88,6 +88,9 @@ type WirelessLink struct {
 
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
+
+	// tenant
+	Tenant *NestedTenant `json:"tenant,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -140,6 +143,10 @@ func (m *WirelessLink) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTags(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTenant(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -336,6 +343,25 @@ func (m *WirelessLink) validateTags(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WirelessLink) validateTenant(formats strfmt.Registry) error {
+	if swag.IsZero(m.Tenant) { // not required
+		return nil
+	}
+
+	if m.Tenant != nil {
+		if err := m.Tenant.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *WirelessLink) validateURL(formats strfmt.Registry) error {
 	if swag.IsZero(m.URL) { // not required
 		return nil
@@ -392,6 +418,10 @@ func (m *WirelessLink) ContextValidate(ctx context.Context, formats strfmt.Regis
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateTenant(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateURL(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -436,7 +466,7 @@ func (m *WirelessLink) contextValidateAuthType(ctx context.Context, formats strf
 
 func (m *WirelessLink) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -495,7 +525,7 @@ func (m *WirelessLink) contextValidateInterfaceb(ctx context.Context, formats st
 
 func (m *WirelessLink) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 
@@ -533,6 +563,22 @@ func (m *WirelessLink) contextValidateTags(ctx context.Context, formats strfmt.R
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *WirelessLink) contextValidateTenant(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Tenant != nil {
+		if err := m.Tenant.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("tenant")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("tenant")
+			}
+			return err
+		}
 	}
 
 	return nil

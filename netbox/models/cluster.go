@@ -22,6 +22,7 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -41,7 +42,7 @@ type Cluster struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -64,7 +65,7 @@ type Cluster struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -74,6 +75,9 @@ type Cluster struct {
 
 	// site
 	Site *NestedSite `json:"site,omitempty"`
+
+	// status
+	Status *ClusterStatus `json:"status,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
@@ -116,6 +120,10 @@ func (m *Cluster) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSite(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -212,6 +220,25 @@ func (m *Cluster) validateSite(formats strfmt.Registry) error {
 				return ve.ValidateName("site")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("site")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Cluster) validateStatus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
+
+	if m.Status != nil {
+		if err := m.Status.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -329,6 +356,10 @@ func (m *Cluster) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateTags(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -357,7 +388,7 @@ func (m *Cluster) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 
 func (m *Cluster) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -409,7 +440,7 @@ func (m *Cluster) contextValidateID(ctx context.Context, formats strfmt.Registry
 
 func (m *Cluster) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 
@@ -424,6 +455,22 @@ func (m *Cluster) contextValidateSite(ctx context.Context, formats strfmt.Regist
 				return ve.ValidateName("site")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("site")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *Cluster) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Status != nil {
+		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
 			}
 			return err
 		}
@@ -513,6 +560,167 @@ func (m *Cluster) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Cluster) UnmarshalBinary(b []byte) error {
 	var res Cluster
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// ClusterStatus Status
+//
+// swagger:model ClusterStatus
+type ClusterStatus struct {
+
+	// label
+	// Required: true
+	// Enum: [Planned Staging Active Decommissioning Offline]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [planned staging active decommissioning offline]
+	Value *string `json:"value"`
+}
+
+// Validate validates this cluster status
+func (m *ClusterStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var clusterStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Planned","Staging","Active","Decommissioning","Offline"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		clusterStatusTypeLabelPropEnum = append(clusterStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// ClusterStatusLabelPlanned captures enum value "Planned"
+	ClusterStatusLabelPlanned string = "Planned"
+
+	// ClusterStatusLabelStaging captures enum value "Staging"
+	ClusterStatusLabelStaging string = "Staging"
+
+	// ClusterStatusLabelActive captures enum value "Active"
+	ClusterStatusLabelActive string = "Active"
+
+	// ClusterStatusLabelDecommissioning captures enum value "Decommissioning"
+	ClusterStatusLabelDecommissioning string = "Decommissioning"
+
+	// ClusterStatusLabelOffline captures enum value "Offline"
+	ClusterStatusLabelOffline string = "Offline"
+)
+
+// prop value enum
+func (m *ClusterStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, clusterStatusTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ClusterStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var clusterStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["planned","staging","active","decommissioning","offline"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		clusterStatusTypeValuePropEnum = append(clusterStatusTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// ClusterStatusValuePlanned captures enum value "planned"
+	ClusterStatusValuePlanned string = "planned"
+
+	// ClusterStatusValueStaging captures enum value "staging"
+	ClusterStatusValueStaging string = "staging"
+
+	// ClusterStatusValueActive captures enum value "active"
+	ClusterStatusValueActive string = "active"
+
+	// ClusterStatusValueDecommissioning captures enum value "decommissioning"
+	ClusterStatusValueDecommissioning string = "decommissioning"
+
+	// ClusterStatusValueOffline captures enum value "offline"
+	ClusterStatusValueOffline string = "offline"
+)
+
+// prop value enum
+func (m *ClusterStatus) validateValueEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, clusterStatusTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *ClusterStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this cluster status based on context it is used
+func (m *ClusterStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *ClusterStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *ClusterStatus) UnmarshalBinary(b []byte) error {
+	var res ClusterStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

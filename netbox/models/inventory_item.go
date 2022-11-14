@@ -47,7 +47,7 @@ type InventoryItem struct {
 
 	// Component
 	// Read Only: true
-	Component map[string]*string `json:"component,omitempty"`
+	Component interface{} `json:"component,omitempty"`
 
 	// Component id
 	// Maximum: 2.147483647e+09
@@ -60,7 +60,7 @@ type InventoryItem struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -95,7 +95,7 @@ type InventoryItem struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// manufacturer
 	Manufacturer *NestedManufacturer `json:"manufacturer,omitempty"`
@@ -418,10 +418,6 @@ func (m *InventoryItem) ContextValidate(ctx context.Context, formats strfmt.Regi
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateComponent(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -473,14 +469,9 @@ func (m *InventoryItem) contextValidateDepth(ctx context.Context, formats strfmt
 	return nil
 }
 
-func (m *InventoryItem) contextValidateComponent(ctx context.Context, formats strfmt.Registry) error {
-
-	return nil
-}
-
 func (m *InventoryItem) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -523,7 +514,7 @@ func (m *InventoryItem) contextValidateID(ctx context.Context, formats strfmt.Re
 
 func (m *InventoryItem) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

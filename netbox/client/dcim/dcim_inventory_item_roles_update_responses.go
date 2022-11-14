@@ -61,7 +61,8 @@ func NewDcimInventoryItemRolesUpdateOK() *DcimInventoryItemRolesUpdateOK {
 	return &DcimInventoryItemRolesUpdateOK{}
 }
 
-/* DcimInventoryItemRolesUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimInventoryItemRolesUpdateOK describes a response with status code 200, with default header values.
 
 DcimInventoryItemRolesUpdateOK dcim inventory item roles update o k
 */
@@ -69,9 +70,39 @@ type DcimInventoryItemRolesUpdateOK struct {
 	Payload *models.InventoryItemRole
 }
 
+// IsSuccess returns true when this dcim inventory item roles update o k response has a 2xx status code
+func (o *DcimInventoryItemRolesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory item roles update o k response has a 3xx status code
+func (o *DcimInventoryItemRolesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory item roles update o k response has a 4xx status code
+func (o *DcimInventoryItemRolesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory item roles update o k response has a 5xx status code
+func (o *DcimInventoryItemRolesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory item roles update o k response a status code equal to that given
+func (o *DcimInventoryItemRolesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimInventoryItemRolesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimInventoryItemRolesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimInventoryItemRolesUpdateOK) GetPayload() *models.InventoryItemRole {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInventoryItemRolesUpdateDefault(code int) *DcimInventoryItemRolesUpd
 	}
 }
 
-/* DcimInventoryItemRolesUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemRolesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemRolesUpdateDefault dcim inventory item roles update default
 */
@@ -110,9 +142,39 @@ func (o *DcimInventoryItemRolesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory item roles update default response has a 2xx status code
+func (o *DcimInventoryItemRolesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory item roles update default response has a 3xx status code
+func (o *DcimInventoryItemRolesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory item roles update default response has a 4xx status code
+func (o *DcimInventoryItemRolesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory item roles update default response has a 5xx status code
+func (o *DcimInventoryItemRolesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory item roles update default response a status code equal to that given
+func (o *DcimInventoryItemRolesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemRolesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemRolesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/{id}/][%d] dcim_inventory-item-roles_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemRolesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

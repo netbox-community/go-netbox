@@ -61,7 +61,8 @@ func NewCircuitsProvidersPartialUpdateOK() *CircuitsProvidersPartialUpdateOK {
 	return &CircuitsProvidersPartialUpdateOK{}
 }
 
-/* CircuitsProvidersPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+CircuitsProvidersPartialUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsProvidersPartialUpdateOK circuits providers partial update o k
 */
@@ -69,9 +70,39 @@ type CircuitsProvidersPartialUpdateOK struct {
 	Payload *models.Provider
 }
 
+// IsSuccess returns true when this circuits providers partial update o k response has a 2xx status code
+func (o *CircuitsProvidersPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits providers partial update o k response has a 3xx status code
+func (o *CircuitsProvidersPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits providers partial update o k response has a 4xx status code
+func (o *CircuitsProvidersPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits providers partial update o k response has a 5xx status code
+func (o *CircuitsProvidersPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits providers partial update o k response a status code equal to that given
+func (o *CircuitsProvidersPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsProvidersPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuitsProvidersPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsProvidersPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuitsProvidersPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsProvidersPartialUpdateOK) GetPayload() *models.Provider {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsProvidersPartialUpdateDefault(code int) *CircuitsProvidersPartia
 	}
 }
 
-/* CircuitsProvidersPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+CircuitsProvidersPartialUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsProvidersPartialUpdateDefault circuits providers partial update default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsProvidersPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits providers partial update default response has a 2xx status code
+func (o *CircuitsProvidersPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits providers partial update default response has a 3xx status code
+func (o *CircuitsProvidersPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits providers partial update default response has a 4xx status code
+func (o *CircuitsProvidersPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits providers partial update default response has a 5xx status code
+func (o *CircuitsProvidersPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits providers partial update default response a status code equal to that given
+func (o *CircuitsProvidersPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsProvidersPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuits_providers_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsProvidersPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /circuits/providers/{id}/][%d] circuits_providers_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsProvidersPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

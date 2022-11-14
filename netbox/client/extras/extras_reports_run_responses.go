@@ -59,14 +59,44 @@ func NewExtrasReportsRunCreated() *ExtrasReportsRunCreated {
 	return &ExtrasReportsRunCreated{}
 }
 
-/* ExtrasReportsRunCreated describes a response with status code 201, with default header values.
+/*
+ExtrasReportsRunCreated describes a response with status code 201, with default header values.
 
 ExtrasReportsRunCreated extras reports run created
 */
 type ExtrasReportsRunCreated struct {
 }
 
+// IsSuccess returns true when this extras reports run created response has a 2xx status code
+func (o *ExtrasReportsRunCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras reports run created response has a 3xx status code
+func (o *ExtrasReportsRunCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras reports run created response has a 4xx status code
+func (o *ExtrasReportsRunCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras reports run created response has a 5xx status code
+func (o *ExtrasReportsRunCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras reports run created response a status code equal to that given
+func (o *ExtrasReportsRunCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *ExtrasReportsRunCreated) Error() string {
+	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extrasReportsRunCreated ", 201)
+}
+
+func (o *ExtrasReportsRunCreated) String() string {
 	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extrasReportsRunCreated ", 201)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasReportsRunDefault(code int) *ExtrasReportsRunDefault {
 	}
 }
 
-/* ExtrasReportsRunDefault describes a response with status code -1, with default header values.
+/*
+ExtrasReportsRunDefault describes a response with status code -1, with default header values.
 
 ExtrasReportsRunDefault extras reports run default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasReportsRunDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras reports run default response has a 2xx status code
+func (o *ExtrasReportsRunDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras reports run default response has a 3xx status code
+func (o *ExtrasReportsRunDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras reports run default response has a 4xx status code
+func (o *ExtrasReportsRunDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras reports run default response has a 5xx status code
+func (o *ExtrasReportsRunDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras reports run default response a status code equal to that given
+func (o *ExtrasReportsRunDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasReportsRunDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extras_reports_run default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasReportsRunDefault) String() string {
+	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extras_reports_run default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasReportsRunDefault) GetPayload() interface{} {
 	return o.Payload
 }

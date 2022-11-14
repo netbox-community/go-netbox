@@ -61,7 +61,8 @@ func NewVirtualizationClustersBulkPartialUpdateOK() *VirtualizationClustersBulkP
 	return &VirtualizationClustersBulkPartialUpdateOK{}
 }
 
-/* VirtualizationClustersBulkPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+VirtualizationClustersBulkPartialUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationClustersBulkPartialUpdateOK virtualization clusters bulk partial update o k
 */
@@ -69,9 +70,39 @@ type VirtualizationClustersBulkPartialUpdateOK struct {
 	Payload *models.Cluster
 }
 
+// IsSuccess returns true when this virtualization clusters bulk partial update o k response has a 2xx status code
+func (o *VirtualizationClustersBulkPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization clusters bulk partial update o k response has a 3xx status code
+func (o *VirtualizationClustersBulkPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization clusters bulk partial update o k response has a 4xx status code
+func (o *VirtualizationClustersBulkPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization clusters bulk partial update o k response has a 5xx status code
+func (o *VirtualizationClustersBulkPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization clusters bulk partial update o k response a status code equal to that given
+func (o *VirtualizationClustersBulkPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VirtualizationClustersBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/clusters/][%d] virtualizationClustersBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *VirtualizationClustersBulkPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /virtualization/clusters/][%d] virtualizationClustersBulkPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *VirtualizationClustersBulkPartialUpdateOK) GetPayload() *models.Cluster {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationClustersBulkPartialUpdateDefault(code int) *Virtualization
 	}
 }
 
-/* VirtualizationClustersBulkPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationClustersBulkPartialUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClustersBulkPartialUpdateDefault virtualization clusters bulk partial update default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationClustersBulkPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization clusters bulk partial update default response has a 2xx status code
+func (o *VirtualizationClustersBulkPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization clusters bulk partial update default response has a 3xx status code
+func (o *VirtualizationClustersBulkPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization clusters bulk partial update default response has a 4xx status code
+func (o *VirtualizationClustersBulkPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization clusters bulk partial update default response has a 5xx status code
+func (o *VirtualizationClustersBulkPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization clusters bulk partial update default response a status code equal to that given
+func (o *VirtualizationClustersBulkPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationClustersBulkPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/clusters/][%d] virtualization_clusters_bulk_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationClustersBulkPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /virtualization/clusters/][%d] virtualization_clusters_bulk_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationClustersBulkPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

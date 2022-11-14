@@ -61,7 +61,8 @@ func NewExtrasContentTypesReadOK() *ExtrasContentTypesReadOK {
 	return &ExtrasContentTypesReadOK{}
 }
 
-/* ExtrasContentTypesReadOK describes a response with status code 200, with default header values.
+/*
+ExtrasContentTypesReadOK describes a response with status code 200, with default header values.
 
 ExtrasContentTypesReadOK extras content types read o k
 */
@@ -69,9 +70,39 @@ type ExtrasContentTypesReadOK struct {
 	Payload *models.ContentType
 }
 
+// IsSuccess returns true when this extras content types read o k response has a 2xx status code
+func (o *ExtrasContentTypesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras content types read o k response has a 3xx status code
+func (o *ExtrasContentTypesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras content types read o k response has a 4xx status code
+func (o *ExtrasContentTypesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras content types read o k response has a 5xx status code
+func (o *ExtrasContentTypesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras content types read o k response a status code equal to that given
+func (o *ExtrasContentTypesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasContentTypesReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extrasContentTypesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasContentTypesReadOK) String() string {
+	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extrasContentTypesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasContentTypesReadOK) GetPayload() *models.ContentType {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasContentTypesReadDefault(code int) *ExtrasContentTypesReadDefault {
 	}
 }
 
-/* ExtrasContentTypesReadDefault describes a response with status code -1, with default header values.
+/*
+ExtrasContentTypesReadDefault describes a response with status code -1, with default header values.
 
 ExtrasContentTypesReadDefault extras content types read default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasContentTypesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras content types read default response has a 2xx status code
+func (o *ExtrasContentTypesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras content types read default response has a 3xx status code
+func (o *ExtrasContentTypesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras content types read default response has a 4xx status code
+func (o *ExtrasContentTypesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras content types read default response has a 5xx status code
+func (o *ExtrasContentTypesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras content types read default response a status code equal to that given
+func (o *ExtrasContentTypesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasContentTypesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extras_content-types_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasContentTypesReadDefault) String() string {
+	return fmt.Sprintf("[GET /extras/content-types/{id}/][%d] extras_content-types_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasContentTypesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

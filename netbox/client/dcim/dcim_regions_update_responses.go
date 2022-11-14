@@ -61,7 +61,8 @@ func NewDcimRegionsUpdateOK() *DcimRegionsUpdateOK {
 	return &DcimRegionsUpdateOK{}
 }
 
-/* DcimRegionsUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimRegionsUpdateOK describes a response with status code 200, with default header values.
 
 DcimRegionsUpdateOK dcim regions update o k
 */
@@ -69,9 +70,39 @@ type DcimRegionsUpdateOK struct {
 	Payload *models.Region
 }
 
+// IsSuccess returns true when this dcim regions update o k response has a 2xx status code
+func (o *DcimRegionsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim regions update o k response has a 3xx status code
+func (o *DcimRegionsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim regions update o k response has a 4xx status code
+func (o *DcimRegionsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim regions update o k response has a 5xx status code
+func (o *DcimRegionsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim regions update o k response a status code equal to that given
+func (o *DcimRegionsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimRegionsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/regions/{id}/][%d] dcimRegionsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimRegionsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/regions/{id}/][%d] dcimRegionsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimRegionsUpdateOK) GetPayload() *models.Region {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimRegionsUpdateDefault(code int) *DcimRegionsUpdateDefault {
 	}
 }
 
-/* DcimRegionsUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimRegionsUpdateDefault describes a response with status code -1, with default header values.
 
 DcimRegionsUpdateDefault dcim regions update default
 */
@@ -110,9 +142,39 @@ func (o *DcimRegionsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim regions update default response has a 2xx status code
+func (o *DcimRegionsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim regions update default response has a 3xx status code
+func (o *DcimRegionsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim regions update default response has a 4xx status code
+func (o *DcimRegionsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim regions update default response has a 5xx status code
+func (o *DcimRegionsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim regions update default response a status code equal to that given
+func (o *DcimRegionsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimRegionsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/regions/{id}/][%d] dcim_regions_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimRegionsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/regions/{id}/][%d] dcim_regions_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimRegionsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

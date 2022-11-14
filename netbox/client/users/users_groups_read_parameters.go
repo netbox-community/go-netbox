@@ -68,10 +68,12 @@ func NewUsersGroupsReadParamsWithHTTPClient(client *http.Client) *UsersGroupsRea
 	}
 }
 
-/* UsersGroupsReadParams contains all the parameters to send to the API endpoint
-   for the users groups read operation.
+/*
+UsersGroupsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users groups read operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersGroupsReadParams struct {
 

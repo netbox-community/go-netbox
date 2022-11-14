@@ -67,10 +67,12 @@ func NewIpamPrefixesBulkDeleteParamsWithHTTPClient(client *http.Client) *IpamPre
 	}
 }
 
-/* IpamPrefixesBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam prefixes bulk delete operation.
+/*
+IpamPrefixesBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam prefixes bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamPrefixesBulkDeleteParams struct {
 	timeout    time.Duration

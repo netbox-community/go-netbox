@@ -61,7 +61,8 @@ func NewVirtualizationInterfacesUpdateOK() *VirtualizationInterfacesUpdateOK {
 	return &VirtualizationInterfacesUpdateOK{}
 }
 
-/* VirtualizationInterfacesUpdateOK describes a response with status code 200, with default header values.
+/*
+VirtualizationInterfacesUpdateOK describes a response with status code 200, with default header values.
 
 VirtualizationInterfacesUpdateOK virtualization interfaces update o k
 */
@@ -69,9 +70,39 @@ type VirtualizationInterfacesUpdateOK struct {
 	Payload *models.VMInterface
 }
 
+// IsSuccess returns true when this virtualization interfaces update o k response has a 2xx status code
+func (o *VirtualizationInterfacesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization interfaces update o k response has a 3xx status code
+func (o *VirtualizationInterfacesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization interfaces update o k response has a 4xx status code
+func (o *VirtualizationInterfacesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization interfaces update o k response has a 5xx status code
+func (o *VirtualizationInterfacesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization interfaces update o k response a status code equal to that given
+func (o *VirtualizationInterfacesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VirtualizationInterfacesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualizationInterfacesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *VirtualizationInterfacesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualizationInterfacesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *VirtualizationInterfacesUpdateOK) GetPayload() *models.VMInterface {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationInterfacesUpdateDefault(code int) *VirtualizationInterface
 	}
 }
 
-/* VirtualizationInterfacesUpdateDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationInterfacesUpdateDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesUpdateDefault virtualization interfaces update default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationInterfacesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization interfaces update default response has a 2xx status code
+func (o *VirtualizationInterfacesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization interfaces update default response has a 3xx status code
+func (o *VirtualizationInterfacesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization interfaces update default response has a 4xx status code
+func (o *VirtualizationInterfacesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization interfaces update default response has a 5xx status code
+func (o *VirtualizationInterfacesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization interfaces update default response a status code equal to that given
+func (o *VirtualizationInterfacesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationInterfacesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualization_interfaces_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationInterfacesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /virtualization/interfaces/{id}/][%d] virtualization_interfaces_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationInterfacesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

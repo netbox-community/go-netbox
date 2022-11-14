@@ -61,7 +61,8 @@ func NewDcimPowerOutletTemplatesReadOK() *DcimPowerOutletTemplatesReadOK {
 	return &DcimPowerOutletTemplatesReadOK{}
 }
 
-/* DcimPowerOutletTemplatesReadOK describes a response with status code 200, with default header values.
+/*
+DcimPowerOutletTemplatesReadOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletTemplatesReadOK dcim power outlet templates read o k
 */
@@ -69,9 +70,39 @@ type DcimPowerOutletTemplatesReadOK struct {
 	Payload *models.PowerOutletTemplate
 }
 
+// IsSuccess returns true when this dcim power outlet templates read o k response has a 2xx status code
+func (o *DcimPowerOutletTemplatesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power outlet templates read o k response has a 3xx status code
+func (o *DcimPowerOutletTemplatesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power outlet templates read o k response has a 4xx status code
+func (o *DcimPowerOutletTemplatesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power outlet templates read o k response has a 5xx status code
+func (o *DcimPowerOutletTemplatesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power outlet templates read o k response a status code equal to that given
+func (o *DcimPowerOutletTemplatesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerOutletTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerOutletTemplatesReadOK) String() string {
+	return fmt.Sprintf("[GET /dcim/power-outlet-templates/{id}/][%d] dcimPowerOutletTemplatesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerOutletTemplatesReadOK) GetPayload() *models.PowerOutletTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerOutletTemplatesReadDefault(code int) *DcimPowerOutletTemplatesR
 	}
 }
 
-/* DcimPowerOutletTemplatesReadDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerOutletTemplatesReadDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletTemplatesReadDefault dcim power outlet templates read default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerOutletTemplatesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power outlet templates read default response has a 2xx status code
+func (o *DcimPowerOutletTemplatesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power outlet templates read default response has a 3xx status code
+func (o *DcimPowerOutletTemplatesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power outlet templates read default response has a 4xx status code
+func (o *DcimPowerOutletTemplatesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power outlet templates read default response has a 5xx status code
+func (o *DcimPowerOutletTemplatesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power outlet templates read default response a status code equal to that given
+func (o *DcimPowerOutletTemplatesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerOutletTemplatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerOutletTemplatesReadDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/power-outlet-templates/{id}/][%d] dcim_power-outlet-templates_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerOutletTemplatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

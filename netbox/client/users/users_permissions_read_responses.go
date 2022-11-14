@@ -61,7 +61,8 @@ func NewUsersPermissionsReadOK() *UsersPermissionsReadOK {
 	return &UsersPermissionsReadOK{}
 }
 
-/* UsersPermissionsReadOK describes a response with status code 200, with default header values.
+/*
+UsersPermissionsReadOK describes a response with status code 200, with default header values.
 
 UsersPermissionsReadOK users permissions read o k
 */
@@ -69,9 +70,39 @@ type UsersPermissionsReadOK struct {
 	Payload *models.ObjectPermission
 }
 
+// IsSuccess returns true when this users permissions read o k response has a 2xx status code
+func (o *UsersPermissionsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users permissions read o k response has a 3xx status code
+func (o *UsersPermissionsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users permissions read o k response has a 4xx status code
+func (o *UsersPermissionsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users permissions read o k response has a 5xx status code
+func (o *UsersPermissionsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users permissions read o k response a status code equal to that given
+func (o *UsersPermissionsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersPermissionsReadOK) Error() string {
 	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] usersPermissionsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersPermissionsReadOK) String() string {
+	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] usersPermissionsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersPermissionsReadOK) GetPayload() *models.ObjectPermission {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersPermissionsReadDefault(code int) *UsersPermissionsReadDefault {
 	}
 }
 
-/* UsersPermissionsReadDefault describes a response with status code -1, with default header values.
+/*
+UsersPermissionsReadDefault describes a response with status code -1, with default header values.
 
 UsersPermissionsReadDefault users permissions read default
 */
@@ -110,9 +142,39 @@ func (o *UsersPermissionsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users permissions read default response has a 2xx status code
+func (o *UsersPermissionsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users permissions read default response has a 3xx status code
+func (o *UsersPermissionsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users permissions read default response has a 4xx status code
+func (o *UsersPermissionsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users permissions read default response has a 5xx status code
+func (o *UsersPermissionsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users permissions read default response a status code equal to that given
+func (o *UsersPermissionsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersPermissionsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] users_permissions_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersPermissionsReadDefault) String() string {
+	return fmt.Sprintf("[GET /users/permissions/{id}/][%d] users_permissions_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersPermissionsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

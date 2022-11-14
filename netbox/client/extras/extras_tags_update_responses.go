@@ -61,7 +61,8 @@ func NewExtrasTagsUpdateOK() *ExtrasTagsUpdateOK {
 	return &ExtrasTagsUpdateOK{}
 }
 
-/* ExtrasTagsUpdateOK describes a response with status code 200, with default header values.
+/*
+ExtrasTagsUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasTagsUpdateOK extras tags update o k
 */
@@ -69,9 +70,39 @@ type ExtrasTagsUpdateOK struct {
 	Payload *models.Tag
 }
 
+// IsSuccess returns true when this extras tags update o k response has a 2xx status code
+func (o *ExtrasTagsUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras tags update o k response has a 3xx status code
+func (o *ExtrasTagsUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras tags update o k response has a 4xx status code
+func (o *ExtrasTagsUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras tags update o k response has a 5xx status code
+func (o *ExtrasTagsUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras tags update o k response a status code equal to that given
+func (o *ExtrasTagsUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasTagsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extrasTagsUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasTagsUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extrasTagsUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasTagsUpdateOK) GetPayload() *models.Tag {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasTagsUpdateDefault(code int) *ExtrasTagsUpdateDefault {
 	}
 }
 
-/* ExtrasTagsUpdateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasTagsUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasTagsUpdateDefault extras tags update default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasTagsUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras tags update default response has a 2xx status code
+func (o *ExtrasTagsUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras tags update default response has a 3xx status code
+func (o *ExtrasTagsUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras tags update default response has a 4xx status code
+func (o *ExtrasTagsUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras tags update default response has a 5xx status code
+func (o *ExtrasTagsUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras tags update default response a status code equal to that given
+func (o *ExtrasTagsUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasTagsUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extras_tags_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasTagsUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /extras/tags/{id}/][%d] extras_tags_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasTagsUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -68,10 +68,12 @@ func NewIpamVlansReadParamsWithHTTPClient(client *http.Client) *IpamVlansReadPar
 	}
 }
 
-/* IpamVlansReadParams contains all the parameters to send to the API endpoint
-   for the ipam vlans read operation.
+/*
+IpamVlansReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vlans read operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVlansReadParams struct {
 

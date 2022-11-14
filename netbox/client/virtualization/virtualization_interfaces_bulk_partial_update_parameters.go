@@ -69,10 +69,12 @@ func NewVirtualizationInterfacesBulkPartialUpdateParamsWithHTTPClient(client *ht
 	}
 }
 
-/* VirtualizationInterfacesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the virtualization interfaces bulk partial update operation.
+/*
+VirtualizationInterfacesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization interfaces bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationInterfacesBulkPartialUpdateParams struct {
 

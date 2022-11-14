@@ -69,10 +69,12 @@ func NewDcimFrontPortsCreateParamsWithHTTPClient(client *http.Client) *DcimFront
 	}
 }
 
-/* DcimFrontPortsCreateParams contains all the parameters to send to the API endpoint
-   for the dcim front ports create operation.
+/*
+DcimFrontPortsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim front ports create operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimFrontPortsCreateParams struct {
 

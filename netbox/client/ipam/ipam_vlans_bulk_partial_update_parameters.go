@@ -69,10 +69,12 @@ func NewIpamVlansBulkPartialUpdateParamsWithHTTPClient(client *http.Client) *Ipa
 	}
 }
 
-/* IpamVlansBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam vlans bulk partial update operation.
+/*
+IpamVlansBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vlans bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVlansBulkPartialUpdateParams struct {
 

@@ -61,7 +61,8 @@ func NewVirtualizationClusterTypesCreateCreated() *VirtualizationClusterTypesCre
 	return &VirtualizationClusterTypesCreateCreated{}
 }
 
-/* VirtualizationClusterTypesCreateCreated describes a response with status code 201, with default header values.
+/*
+VirtualizationClusterTypesCreateCreated describes a response with status code 201, with default header values.
 
 VirtualizationClusterTypesCreateCreated virtualization cluster types create created
 */
@@ -69,9 +70,39 @@ type VirtualizationClusterTypesCreateCreated struct {
 	Payload *models.ClusterType
 }
 
+// IsSuccess returns true when this virtualization cluster types create created response has a 2xx status code
+func (o *VirtualizationClusterTypesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization cluster types create created response has a 3xx status code
+func (o *VirtualizationClusterTypesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization cluster types create created response has a 4xx status code
+func (o *VirtualizationClusterTypesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization cluster types create created response has a 5xx status code
+func (o *VirtualizationClusterTypesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization cluster types create created response a status code equal to that given
+func (o *VirtualizationClusterTypesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *VirtualizationClusterTypesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /virtualization/cluster-types/][%d] virtualizationClusterTypesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *VirtualizationClusterTypesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /virtualization/cluster-types/][%d] virtualizationClusterTypesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *VirtualizationClusterTypesCreateCreated) GetPayload() *models.ClusterType {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewVirtualizationClusterTypesCreateDefault(code int) *VirtualizationCluster
 	}
 }
 
-/* VirtualizationClusterTypesCreateDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationClusterTypesCreateDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterTypesCreateDefault virtualization cluster types create default
 */
@@ -110,9 +142,39 @@ func (o *VirtualizationClusterTypesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization cluster types create default response has a 2xx status code
+func (o *VirtualizationClusterTypesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization cluster types create default response has a 3xx status code
+func (o *VirtualizationClusterTypesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization cluster types create default response has a 4xx status code
+func (o *VirtualizationClusterTypesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization cluster types create default response has a 5xx status code
+func (o *VirtualizationClusterTypesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization cluster types create default response a status code equal to that given
+func (o *VirtualizationClusterTypesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationClusterTypesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /virtualization/cluster-types/][%d] virtualization_cluster-types_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationClusterTypesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /virtualization/cluster-types/][%d] virtualization_cluster-types_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationClusterTypesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

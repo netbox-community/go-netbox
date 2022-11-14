@@ -68,10 +68,12 @@ func NewDcimModuleTypesDeleteParamsWithHTTPClient(client *http.Client) *DcimModu
 	}
 }
 
-/* DcimModuleTypesDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim module types delete operation.
+/*
+DcimModuleTypesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module types delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleTypesDeleteParams struct {
 

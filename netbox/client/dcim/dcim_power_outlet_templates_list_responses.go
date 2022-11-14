@@ -66,7 +66,8 @@ func NewDcimPowerOutletTemplatesListOK() *DcimPowerOutletTemplatesListOK {
 	return &DcimPowerOutletTemplatesListOK{}
 }
 
-/* DcimPowerOutletTemplatesListOK describes a response with status code 200, with default header values.
+/*
+DcimPowerOutletTemplatesListOK describes a response with status code 200, with default header values.
 
 DcimPowerOutletTemplatesListOK dcim power outlet templates list o k
 */
@@ -74,9 +75,39 @@ type DcimPowerOutletTemplatesListOK struct {
 	Payload *DcimPowerOutletTemplatesListOKBody
 }
 
+// IsSuccess returns true when this dcim power outlet templates list o k response has a 2xx status code
+func (o *DcimPowerOutletTemplatesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power outlet templates list o k response has a 3xx status code
+func (o *DcimPowerOutletTemplatesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power outlet templates list o k response has a 4xx status code
+func (o *DcimPowerOutletTemplatesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power outlet templates list o k response has a 5xx status code
+func (o *DcimPowerOutletTemplatesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power outlet templates list o k response a status code equal to that given
+func (o *DcimPowerOutletTemplatesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerOutletTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcimPowerOutletTemplatesListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerOutletTemplatesListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcimPowerOutletTemplatesListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerOutletTemplatesListOK) GetPayload() *DcimPowerOutletTemplatesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimPowerOutletTemplatesListDefault(code int) *DcimPowerOutletTemplatesL
 	}
 }
 
-/* DcimPowerOutletTemplatesListDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerOutletTemplatesListDefault describes a response with status code -1, with default header values.
 
 DcimPowerOutletTemplatesListDefault dcim power outlet templates list default
 */
@@ -115,9 +147,39 @@ func (o *DcimPowerOutletTemplatesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power outlet templates list default response has a 2xx status code
+func (o *DcimPowerOutletTemplatesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power outlet templates list default response has a 3xx status code
+func (o *DcimPowerOutletTemplatesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power outlet templates list default response has a 4xx status code
+func (o *DcimPowerOutletTemplatesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power outlet templates list default response has a 5xx status code
+func (o *DcimPowerOutletTemplatesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power outlet templates list default response a status code equal to that given
+func (o *DcimPowerOutletTemplatesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerOutletTemplatesListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerOutletTemplatesListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/power-outlet-templates/][%d] dcim_power-outlet-templates_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerOutletTemplatesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimPowerOutletTemplatesListDefault) readResponse(response runtime.Clie
 	return nil
 }
 
-/*DcimPowerOutletTemplatesListOKBody dcim power outlet templates list o k body
+/*
+DcimPowerOutletTemplatesListOKBody dcim power outlet templates list o k body
 swagger:model DcimPowerOutletTemplatesListOKBody
 */
 type DcimPowerOutletTemplatesListOKBody struct {

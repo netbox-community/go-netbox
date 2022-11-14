@@ -59,14 +59,44 @@ func NewIpamFhrpGroupsBulkDeleteNoContent() *IpamFhrpGroupsBulkDeleteNoContent {
 	return &IpamFhrpGroupsBulkDeleteNoContent{}
 }
 
-/* IpamFhrpGroupsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamFhrpGroupsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamFhrpGroupsBulkDeleteNoContent ipam fhrp groups bulk delete no content
 */
 type IpamFhrpGroupsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam fhrp groups bulk delete no content response has a 2xx status code
+func (o *IpamFhrpGroupsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam fhrp groups bulk delete no content response has a 3xx status code
+func (o *IpamFhrpGroupsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam fhrp groups bulk delete no content response has a 4xx status code
+func (o *IpamFhrpGroupsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam fhrp groups bulk delete no content response has a 5xx status code
+func (o *IpamFhrpGroupsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam fhrp groups bulk delete no content response a status code equal to that given
+func (o *IpamFhrpGroupsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamFhrpGroupsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/fhrp-groups/][%d] ipamFhrpGroupsBulkDeleteNoContent ", 204)
+}
+
+func (o *IpamFhrpGroupsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/fhrp-groups/][%d] ipamFhrpGroupsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamFhrpGroupsBulkDeleteDefault(code int) *IpamFhrpGroupsBulkDeleteDefau
 	}
 }
 
-/* IpamFhrpGroupsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamFhrpGroupsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamFhrpGroupsBulkDeleteDefault ipam fhrp groups bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamFhrpGroupsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam fhrp groups bulk delete default response has a 2xx status code
+func (o *IpamFhrpGroupsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam fhrp groups bulk delete default response has a 3xx status code
+func (o *IpamFhrpGroupsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam fhrp groups bulk delete default response has a 4xx status code
+func (o *IpamFhrpGroupsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam fhrp groups bulk delete default response has a 5xx status code
+func (o *IpamFhrpGroupsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam fhrp groups bulk delete default response a status code equal to that given
+func (o *IpamFhrpGroupsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamFhrpGroupsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/fhrp-groups/][%d] ipam_fhrp-groups_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamFhrpGroupsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/fhrp-groups/][%d] ipam_fhrp-groups_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamFhrpGroupsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

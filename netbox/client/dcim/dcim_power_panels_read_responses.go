@@ -61,7 +61,8 @@ func NewDcimPowerPanelsReadOK() *DcimPowerPanelsReadOK {
 	return &DcimPowerPanelsReadOK{}
 }
 
-/* DcimPowerPanelsReadOK describes a response with status code 200, with default header values.
+/*
+DcimPowerPanelsReadOK describes a response with status code 200, with default header values.
 
 DcimPowerPanelsReadOK dcim power panels read o k
 */
@@ -69,9 +70,39 @@ type DcimPowerPanelsReadOK struct {
 	Payload *models.PowerPanel
 }
 
+// IsSuccess returns true when this dcim power panels read o k response has a 2xx status code
+func (o *DcimPowerPanelsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power panels read o k response has a 3xx status code
+func (o *DcimPowerPanelsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power panels read o k response has a 4xx status code
+func (o *DcimPowerPanelsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power panels read o k response has a 5xx status code
+func (o *DcimPowerPanelsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power panels read o k response a status code equal to that given
+func (o *DcimPowerPanelsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerPanelsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-panels/{id}/][%d] dcimPowerPanelsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerPanelsReadOK) String() string {
+	return fmt.Sprintf("[GET /dcim/power-panels/{id}/][%d] dcimPowerPanelsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerPanelsReadOK) GetPayload() *models.PowerPanel {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerPanelsReadDefault(code int) *DcimPowerPanelsReadDefault {
 	}
 }
 
-/* DcimPowerPanelsReadDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerPanelsReadDefault describes a response with status code -1, with default header values.
 
 DcimPowerPanelsReadDefault dcim power panels read default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerPanelsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power panels read default response has a 2xx status code
+func (o *DcimPowerPanelsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power panels read default response has a 3xx status code
+func (o *DcimPowerPanelsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power panels read default response has a 4xx status code
+func (o *DcimPowerPanelsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power panels read default response has a 5xx status code
+func (o *DcimPowerPanelsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power panels read default response a status code equal to that given
+func (o *DcimPowerPanelsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerPanelsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-panels/{id}/][%d] dcim_power-panels_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerPanelsReadDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/power-panels/{id}/][%d] dcim_power-panels_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerPanelsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

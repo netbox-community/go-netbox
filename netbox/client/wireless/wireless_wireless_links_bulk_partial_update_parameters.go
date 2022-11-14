@@ -69,10 +69,12 @@ func NewWirelessWirelessLinksBulkPartialUpdateParamsWithHTTPClient(client *http.
 	}
 }
 
-/* WirelessWirelessLinksBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the wireless wireless links bulk partial update operation.
+/*
+WirelessWirelessLinksBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless links bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLinksBulkPartialUpdateParams struct {
 

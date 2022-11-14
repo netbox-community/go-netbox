@@ -39,7 +39,7 @@ type WritableVLAN struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -60,10 +60,14 @@ type WritableVLAN struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
+	// L2vpn termination
+	// Read Only: true
+	L2vpnTermination string `json:"l2vpn_termination,omitempty"`
+
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -327,6 +331,10 @@ func (m *WritableVLAN) ContextValidate(ctx context.Context, formats strfmt.Regis
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateL2vpnTermination(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -351,7 +359,7 @@ func (m *WritableVLAN) ContextValidate(ctx context.Context, formats strfmt.Regis
 
 func (m *WritableVLAN) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -376,9 +384,18 @@ func (m *WritableVLAN) contextValidateID(ctx context.Context, formats strfmt.Reg
 	return nil
 }
 
+func (m *WritableVLAN) contextValidateL2vpnTermination(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "l2vpn_termination", "body", string(m.L2vpnTermination)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableVLAN) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

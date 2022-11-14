@@ -66,7 +66,8 @@ func NewIpamRolesListOK() *IpamRolesListOK {
 	return &IpamRolesListOK{}
 }
 
-/* IpamRolesListOK describes a response with status code 200, with default header values.
+/*
+IpamRolesListOK describes a response with status code 200, with default header values.
 
 IpamRolesListOK ipam roles list o k
 */
@@ -74,9 +75,39 @@ type IpamRolesListOK struct {
 	Payload *IpamRolesListOKBody
 }
 
+// IsSuccess returns true when this ipam roles list o k response has a 2xx status code
+func (o *IpamRolesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam roles list o k response has a 3xx status code
+func (o *IpamRolesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam roles list o k response has a 4xx status code
+func (o *IpamRolesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam roles list o k response has a 5xx status code
+func (o *IpamRolesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam roles list o k response a status code equal to that given
+func (o *IpamRolesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamRolesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/roles/][%d] ipamRolesListOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamRolesListOK) String() string {
+	return fmt.Sprintf("[GET /ipam/roles/][%d] ipamRolesListOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamRolesListOK) GetPayload() *IpamRolesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewIpamRolesListDefault(code int) *IpamRolesListDefault {
 	}
 }
 
-/* IpamRolesListDefault describes a response with status code -1, with default header values.
+/*
+IpamRolesListDefault describes a response with status code -1, with default header values.
 
 IpamRolesListDefault ipam roles list default
 */
@@ -115,9 +147,39 @@ func (o *IpamRolesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam roles list default response has a 2xx status code
+func (o *IpamRolesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam roles list default response has a 3xx status code
+func (o *IpamRolesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam roles list default response has a 4xx status code
+func (o *IpamRolesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam roles list default response has a 5xx status code
+func (o *IpamRolesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam roles list default response a status code equal to that given
+func (o *IpamRolesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamRolesListDefault) Error() string {
 	return fmt.Sprintf("[GET /ipam/roles/][%d] ipam_roles_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamRolesListDefault) String() string {
+	return fmt.Sprintf("[GET /ipam/roles/][%d] ipam_roles_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamRolesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *IpamRolesListDefault) readResponse(response runtime.ClientResponse, con
 	return nil
 }
 
-/*IpamRolesListOKBody ipam roles list o k body
+/*
+IpamRolesListOKBody ipam roles list o k body
 swagger:model IpamRolesListOKBody
 */
 type IpamRolesListOKBody struct {

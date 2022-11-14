@@ -67,10 +67,12 @@ func NewWirelessWirelessLansBulkDeleteParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* WirelessWirelessLansBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the wireless wireless lans bulk delete operation.
+/*
+WirelessWirelessLansBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless lans bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLansBulkDeleteParams struct {
 	timeout    time.Duration

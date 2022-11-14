@@ -68,10 +68,12 @@ func NewUsersTokensListParamsWithHTTPClient(client *http.Client) *UsersTokensLis
 	}
 }
 
-/* UsersTokensListParams contains all the parameters to send to the API endpoint
-   for the users tokens list operation.
+/*
+UsersTokensListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users tokens list operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersTokensListParams struct {
 
@@ -188,6 +190,12 @@ type UsersTokensListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Q.
 	Q *string
@@ -654,6 +662,17 @@ func (o *UsersTokensListParams) WithOffset(offset *int64) *UsersTokensListParams
 // SetOffset adds the offset to the users tokens list params
 func (o *UsersTokensListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the users tokens list params
+func (o *UsersTokensListParams) WithOrdering(ordering *string) *UsersTokensListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the users tokens list params
+func (o *UsersTokensListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithQ adds the q to the users tokens list params
@@ -1337,6 +1356,23 @@ func (o *UsersTokensListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

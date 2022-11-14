@@ -59,14 +59,44 @@ func NewIpamRolesBulkDeleteNoContent() *IpamRolesBulkDeleteNoContent {
 	return &IpamRolesBulkDeleteNoContent{}
 }
 
-/* IpamRolesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamRolesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamRolesBulkDeleteNoContent ipam roles bulk delete no content
 */
 type IpamRolesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam roles bulk delete no content response has a 2xx status code
+func (o *IpamRolesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam roles bulk delete no content response has a 3xx status code
+func (o *IpamRolesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam roles bulk delete no content response has a 4xx status code
+func (o *IpamRolesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam roles bulk delete no content response has a 5xx status code
+func (o *IpamRolesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam roles bulk delete no content response a status code equal to that given
+func (o *IpamRolesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamRolesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/roles/][%d] ipamRolesBulkDeleteNoContent ", 204)
+}
+
+func (o *IpamRolesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/roles/][%d] ipamRolesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamRolesBulkDeleteDefault(code int) *IpamRolesBulkDeleteDefault {
 	}
 }
 
-/* IpamRolesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamRolesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamRolesBulkDeleteDefault ipam roles bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamRolesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam roles bulk delete default response has a 2xx status code
+func (o *IpamRolesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam roles bulk delete default response has a 3xx status code
+func (o *IpamRolesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam roles bulk delete default response has a 4xx status code
+func (o *IpamRolesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam roles bulk delete default response has a 5xx status code
+func (o *IpamRolesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam roles bulk delete default response a status code equal to that given
+func (o *IpamRolesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamRolesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/roles/][%d] ipam_roles_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamRolesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/roles/][%d] ipam_roles_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamRolesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

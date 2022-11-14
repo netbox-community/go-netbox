@@ -61,7 +61,8 @@ func NewIpamPrefixesAvailablePrefixesCreateCreated() *IpamPrefixesAvailablePrefi
 	return &IpamPrefixesAvailablePrefixesCreateCreated{}
 }
 
-/* IpamPrefixesAvailablePrefixesCreateCreated describes a response with status code 201, with default header values.
+/*
+IpamPrefixesAvailablePrefixesCreateCreated describes a response with status code 201, with default header values.
 
 IpamPrefixesAvailablePrefixesCreateCreated ipam prefixes available prefixes create created
 */
@@ -69,9 +70,39 @@ type IpamPrefixesAvailablePrefixesCreateCreated struct {
 	Payload []*models.Prefix
 }
 
+// IsSuccess returns true when this ipam prefixes available prefixes create created response has a 2xx status code
+func (o *IpamPrefixesAvailablePrefixesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam prefixes available prefixes create created response has a 3xx status code
+func (o *IpamPrefixesAvailablePrefixesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam prefixes available prefixes create created response has a 4xx status code
+func (o *IpamPrefixesAvailablePrefixesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam prefixes available prefixes create created response has a 5xx status code
+func (o *IpamPrefixesAvailablePrefixesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam prefixes available prefixes create created response a status code equal to that given
+func (o *IpamPrefixesAvailablePrefixesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *IpamPrefixesAvailablePrefixesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *IpamPrefixesAvailablePrefixesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipamPrefixesAvailablePrefixesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *IpamPrefixesAvailablePrefixesCreateCreated) GetPayload() []*models.Prefix {
 	return o.Payload
 }
@@ -93,7 +124,8 @@ func NewIpamPrefixesAvailablePrefixesCreateDefault(code int) *IpamPrefixesAvaila
 	}
 }
 
-/* IpamPrefixesAvailablePrefixesCreateDefault describes a response with status code -1, with default header values.
+/*
+IpamPrefixesAvailablePrefixesCreateDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesAvailablePrefixesCreateDefault ipam prefixes available prefixes create default
 */
@@ -108,9 +140,39 @@ func (o *IpamPrefixesAvailablePrefixesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam prefixes available prefixes create default response has a 2xx status code
+func (o *IpamPrefixesAvailablePrefixesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam prefixes available prefixes create default response has a 3xx status code
+func (o *IpamPrefixesAvailablePrefixesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam prefixes available prefixes create default response has a 4xx status code
+func (o *IpamPrefixesAvailablePrefixesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam prefixes available prefixes create default response has a 5xx status code
+func (o *IpamPrefixesAvailablePrefixesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam prefixes available prefixes create default response a status code equal to that given
+func (o *IpamPrefixesAvailablePrefixesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamPrefixesAvailablePrefixesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamPrefixesAvailablePrefixesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-prefixes/][%d] ipam_prefixes_available-prefixes_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamPrefixesAvailablePrefixesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

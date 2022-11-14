@@ -59,14 +59,44 @@ func NewIpamAggregatesBulkDeleteNoContent() *IpamAggregatesBulkDeleteNoContent {
 	return &IpamAggregatesBulkDeleteNoContent{}
 }
 
-/* IpamAggregatesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamAggregatesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamAggregatesBulkDeleteNoContent ipam aggregates bulk delete no content
 */
 type IpamAggregatesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam aggregates bulk delete no content response has a 2xx status code
+func (o *IpamAggregatesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam aggregates bulk delete no content response has a 3xx status code
+func (o *IpamAggregatesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam aggregates bulk delete no content response has a 4xx status code
+func (o *IpamAggregatesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam aggregates bulk delete no content response has a 5xx status code
+func (o *IpamAggregatesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam aggregates bulk delete no content response a status code equal to that given
+func (o *IpamAggregatesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamAggregatesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/aggregates/][%d] ipamAggregatesBulkDeleteNoContent ", 204)
+}
+
+func (o *IpamAggregatesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/aggregates/][%d] ipamAggregatesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamAggregatesBulkDeleteDefault(code int) *IpamAggregatesBulkDeleteDefau
 	}
 }
 
-/* IpamAggregatesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamAggregatesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamAggregatesBulkDeleteDefault ipam aggregates bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamAggregatesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam aggregates bulk delete default response has a 2xx status code
+func (o *IpamAggregatesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam aggregates bulk delete default response has a 3xx status code
+func (o *IpamAggregatesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam aggregates bulk delete default response has a 4xx status code
+func (o *IpamAggregatesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam aggregates bulk delete default response has a 5xx status code
+func (o *IpamAggregatesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam aggregates bulk delete default response a status code equal to that given
+func (o *IpamAggregatesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamAggregatesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/aggregates/][%d] ipam_aggregates_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamAggregatesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/aggregates/][%d] ipam_aggregates_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamAggregatesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

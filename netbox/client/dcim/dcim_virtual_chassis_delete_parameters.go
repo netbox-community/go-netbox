@@ -68,10 +68,12 @@ func NewDcimVirtualChassisDeleteParamsWithHTTPClient(client *http.Client) *DcimV
 	}
 }
 
-/* DcimVirtualChassisDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim virtual chassis delete operation.
+/*
+DcimVirtualChassisDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim virtual chassis delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimVirtualChassisDeleteParams struct {
 

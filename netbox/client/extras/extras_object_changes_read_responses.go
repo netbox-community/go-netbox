@@ -61,7 +61,8 @@ func NewExtrasObjectChangesReadOK() *ExtrasObjectChangesReadOK {
 	return &ExtrasObjectChangesReadOK{}
 }
 
-/* ExtrasObjectChangesReadOK describes a response with status code 200, with default header values.
+/*
+ExtrasObjectChangesReadOK describes a response with status code 200, with default header values.
 
 ExtrasObjectChangesReadOK extras object changes read o k
 */
@@ -69,9 +70,39 @@ type ExtrasObjectChangesReadOK struct {
 	Payload *models.ObjectChange
 }
 
+// IsSuccess returns true when this extras object changes read o k response has a 2xx status code
+func (o *ExtrasObjectChangesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras object changes read o k response has a 3xx status code
+func (o *ExtrasObjectChangesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras object changes read o k response has a 4xx status code
+func (o *ExtrasObjectChangesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras object changes read o k response has a 5xx status code
+func (o *ExtrasObjectChangesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras object changes read o k response a status code equal to that given
+func (o *ExtrasObjectChangesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasObjectChangesReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extrasObjectChangesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasObjectChangesReadOK) String() string {
+	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extrasObjectChangesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasObjectChangesReadOK) GetPayload() *models.ObjectChange {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasObjectChangesReadDefault(code int) *ExtrasObjectChangesReadDefault
 	}
 }
 
-/* ExtrasObjectChangesReadDefault describes a response with status code -1, with default header values.
+/*
+ExtrasObjectChangesReadDefault describes a response with status code -1, with default header values.
 
 ExtrasObjectChangesReadDefault extras object changes read default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasObjectChangesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras object changes read default response has a 2xx status code
+func (o *ExtrasObjectChangesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras object changes read default response has a 3xx status code
+func (o *ExtrasObjectChangesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras object changes read default response has a 4xx status code
+func (o *ExtrasObjectChangesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras object changes read default response has a 5xx status code
+func (o *ExtrasObjectChangesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras object changes read default response a status code equal to that given
+func (o *ExtrasObjectChangesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasObjectChangesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extras_object-changes_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasObjectChangesReadDefault) String() string {
+	return fmt.Sprintf("[GET /extras/object-changes/{id}/][%d] extras_object-changes_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasObjectChangesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

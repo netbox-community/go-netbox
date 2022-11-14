@@ -68,10 +68,12 @@ func NewDcimVirtualChassisReadParamsWithHTTPClient(client *http.Client) *DcimVir
 	}
 }
 
-/* DcimVirtualChassisReadParams contains all the parameters to send to the API endpoint
-   for the dcim virtual chassis read operation.
+/*
+DcimVirtualChassisReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim virtual chassis read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimVirtualChassisReadParams struct {
 

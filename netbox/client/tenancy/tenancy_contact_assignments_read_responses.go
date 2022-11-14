@@ -61,7 +61,8 @@ func NewTenancyContactAssignmentsReadOK() *TenancyContactAssignmentsReadOK {
 	return &TenancyContactAssignmentsReadOK{}
 }
 
-/* TenancyContactAssignmentsReadOK describes a response with status code 200, with default header values.
+/*
+TenancyContactAssignmentsReadOK describes a response with status code 200, with default header values.
 
 TenancyContactAssignmentsReadOK tenancy contact assignments read o k
 */
@@ -69,9 +70,39 @@ type TenancyContactAssignmentsReadOK struct {
 	Payload *models.ContactAssignment
 }
 
+// IsSuccess returns true when this tenancy contact assignments read o k response has a 2xx status code
+func (o *TenancyContactAssignmentsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contact assignments read o k response has a 3xx status code
+func (o *TenancyContactAssignmentsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contact assignments read o k response has a 4xx status code
+func (o *TenancyContactAssignmentsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contact assignments read o k response has a 5xx status code
+func (o *TenancyContactAssignmentsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contact assignments read o k response a status code equal to that given
+func (o *TenancyContactAssignmentsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *TenancyContactAssignmentsReadOK) Error() string {
 	return fmt.Sprintf("[GET /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *TenancyContactAssignmentsReadOK) String() string {
+	return fmt.Sprintf("[GET /tenancy/contact-assignments/{id}/][%d] tenancyContactAssignmentsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *TenancyContactAssignmentsReadOK) GetPayload() *models.ContactAssignment {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewTenancyContactAssignmentsReadDefault(code int) *TenancyContactAssignment
 	}
 }
 
-/* TenancyContactAssignmentsReadDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactAssignmentsReadDefault describes a response with status code -1, with default header values.
 
 TenancyContactAssignmentsReadDefault tenancy contact assignments read default
 */
@@ -110,9 +142,39 @@ func (o *TenancyContactAssignmentsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contact assignments read default response has a 2xx status code
+func (o *TenancyContactAssignmentsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contact assignments read default response has a 3xx status code
+func (o *TenancyContactAssignmentsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contact assignments read default response has a 4xx status code
+func (o *TenancyContactAssignmentsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contact assignments read default response has a 5xx status code
+func (o *TenancyContactAssignmentsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contact assignments read default response a status code equal to that given
+func (o *TenancyContactAssignmentsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactAssignmentsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactAssignmentsReadDefault) String() string {
+	return fmt.Sprintf("[GET /tenancy/contact-assignments/{id}/][%d] tenancy_contact-assignments_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactAssignmentsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

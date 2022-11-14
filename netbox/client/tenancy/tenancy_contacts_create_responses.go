@@ -61,7 +61,8 @@ func NewTenancyContactsCreateCreated() *TenancyContactsCreateCreated {
 	return &TenancyContactsCreateCreated{}
 }
 
-/* TenancyContactsCreateCreated describes a response with status code 201, with default header values.
+/*
+TenancyContactsCreateCreated describes a response with status code 201, with default header values.
 
 TenancyContactsCreateCreated tenancy contacts create created
 */
@@ -69,9 +70,39 @@ type TenancyContactsCreateCreated struct {
 	Payload *models.Contact
 }
 
+// IsSuccess returns true when this tenancy contacts create created response has a 2xx status code
+func (o *TenancyContactsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contacts create created response has a 3xx status code
+func (o *TenancyContactsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contacts create created response has a 4xx status code
+func (o *TenancyContactsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contacts create created response has a 5xx status code
+func (o *TenancyContactsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contacts create created response a status code equal to that given
+func (o *TenancyContactsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *TenancyContactsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancyContactsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *TenancyContactsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancyContactsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *TenancyContactsCreateCreated) GetPayload() *models.Contact {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewTenancyContactsCreateDefault(code int) *TenancyContactsCreateDefault {
 	}
 }
 
-/* TenancyContactsCreateDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactsCreateDefault describes a response with status code -1, with default header values.
 
 TenancyContactsCreateDefault tenancy contacts create default
 */
@@ -110,9 +142,39 @@ func (o *TenancyContactsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contacts create default response has a 2xx status code
+func (o *TenancyContactsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contacts create default response has a 3xx status code
+func (o *TenancyContactsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contacts create default response has a 4xx status code
+func (o *TenancyContactsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contacts create default response has a 5xx status code
+func (o *TenancyContactsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contacts create default response a status code equal to that given
+func (o *TenancyContactsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancy_contacts_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /tenancy/contacts/][%d] tenancy_contacts_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

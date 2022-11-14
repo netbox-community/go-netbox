@@ -68,10 +68,12 @@ func NewExtrasJournalEntriesListParamsWithHTTPClient(client *http.Client) *Extra
 	}
 }
 
-/* ExtrasJournalEntriesListParams contains all the parameters to send to the API endpoint
-   for the extras journal entries list operation.
+/*
+ExtrasJournalEntriesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras journal entries list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasJournalEntriesListParams struct {
 
@@ -107,12 +109,6 @@ type ExtrasJournalEntriesListParams struct {
 
 	// Created.
 	Created *string
-
-	// CreatedGte.
-	CreatedGte *string
-
-	// CreatedLte.
-	CreatedLte *string
 
 	// CreatedBy.
 	CreatedBy *string
@@ -153,11 +149,20 @@ type ExtrasJournalEntriesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -170,6 +175,12 @@ type ExtrasJournalEntriesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Q.
 	Q *string
@@ -354,28 +365,6 @@ func (o *ExtrasJournalEntriesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGte adds the createdGte to the extras journal entries list params
-func (o *ExtrasJournalEntriesListParams) WithCreatedGte(createdGte *string) *ExtrasJournalEntriesListParams {
-	o.SetCreatedGte(createdGte)
-	return o
-}
-
-// SetCreatedGte adds the createdGte to the extras journal entries list params
-func (o *ExtrasJournalEntriesListParams) SetCreatedGte(createdGte *string) {
-	o.CreatedGte = createdGte
-}
-
-// WithCreatedLte adds the createdLte to the extras journal entries list params
-func (o *ExtrasJournalEntriesListParams) WithCreatedLte(createdLte *string) *ExtrasJournalEntriesListParams {
-	o.SetCreatedLte(createdLte)
-	return o
-}
-
-// SetCreatedLte adds the createdLte to the extras journal entries list params
-func (o *ExtrasJournalEntriesListParams) SetCreatedLte(createdLte *string) {
-	o.CreatedLte = createdLte
-}
-
 // WithCreatedBy adds the createdBy to the extras journal entries list params
 func (o *ExtrasJournalEntriesListParams) WithCreatedBy(createdBy *string) *ExtrasJournalEntriesListParams {
 	o.SetCreatedBy(createdBy)
@@ -519,6 +508,17 @@ func (o *ExtrasJournalEntriesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *ExtrasJournalEntriesListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the extras journal entries list params
 func (o *ExtrasJournalEntriesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *ExtrasJournalEntriesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -530,6 +530,17 @@ func (o *ExtrasJournalEntriesListParams) SetLastUpdatedGte(lastUpdatedGte *strin
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *ExtrasJournalEntriesListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the extras journal entries list params
 func (o *ExtrasJournalEntriesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *ExtrasJournalEntriesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -539,6 +550,17 @@ func (o *ExtrasJournalEntriesListParams) WithLastUpdatedLte(lastUpdatedLte *stri
 // SetLastUpdatedLte adds the lastUpdatedLte to the extras journal entries list params
 func (o *ExtrasJournalEntriesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) WithLastUpdatedn(lastUpdatedn *string) *ExtrasJournalEntriesListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the extras journal entries list params
@@ -561,6 +583,17 @@ func (o *ExtrasJournalEntriesListParams) WithOffset(offset *int64) *ExtrasJourna
 // SetOffset adds the offset to the extras journal entries list params
 func (o *ExtrasJournalEntriesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) WithOrdering(ordering *string) *ExtrasJournalEntriesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the extras journal entries list params
+func (o *ExtrasJournalEntriesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithQ adds the q to the extras journal entries list params
@@ -791,40 +824,6 @@ func (o *ExtrasJournalEntriesListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
-	if o.CreatedGte != nil {
-
-		// query param created__gte
-		var qrCreatedGte string
-
-		if o.CreatedGte != nil {
-			qrCreatedGte = *o.CreatedGte
-		}
-		qCreatedGte := qrCreatedGte
-		if qCreatedGte != "" {
-
-			if err := r.SetQueryParam("created__gte", qCreatedGte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.CreatedLte != nil {
-
-		// query param created__lte
-		var qrCreatedLte string
-
-		if o.CreatedLte != nil {
-			qrCreatedLte = *o.CreatedLte
-		}
-		qCreatedLte := qrCreatedLte
-		if qCreatedLte != "" {
-
-			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedBy != nil {
 
 		// query param created_by
@@ -1046,6 +1045,23 @@ func (o *ExtrasJournalEntriesListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1063,6 +1079,23 @@ func (o *ExtrasJournalEntriesListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1075,6 +1108,23 @@ func (o *ExtrasJournalEntriesListParams) WriteToRequest(r runtime.ClientRequest,
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1109,6 +1159,23 @@ func (o *ExtrasJournalEntriesListParams) WriteToRequest(r runtime.ClientRequest,
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

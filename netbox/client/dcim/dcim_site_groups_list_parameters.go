@@ -68,10 +68,12 @@ func NewDcimSiteGroupsListParamsWithHTTPClient(client *http.Client) *DcimSiteGro
 	}
 }
 
-/* DcimSiteGroupsListParams contains all the parameters to send to the API endpoint
-   for the dcim site groups list operation.
+/*
+DcimSiteGroupsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim site groups list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimSiteGroupsListParams struct {
 
@@ -80,6 +82,12 @@ type DcimSiteGroupsListParams struct {
 
 	// Contactn.
 	Contactn *string
+
+	// ContactGroup.
+	ContactGroup *string
+
+	// ContactGroupn.
+	ContactGroupn *string
 
 	// ContactRole.
 	ContactRole *string
@@ -90,11 +98,20 @@ type DcimSiteGroupsListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// Description.
 	Description *string
@@ -147,11 +164,20 @@ type DcimSiteGroupsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -194,6 +220,12 @@ type DcimSiteGroupsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Parent.
 	Parent *string
@@ -321,6 +353,28 @@ func (o *DcimSiteGroupsListParams) SetContactn(contactn *string) {
 	o.Contactn = contactn
 }
 
+// WithContactGroup adds the contactGroup to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) WithContactGroup(contactGroup *string) *DcimSiteGroupsListParams {
+	o.SetContactGroup(contactGroup)
+	return o
+}
+
+// SetContactGroup adds the contactGroup to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) SetContactGroup(contactGroup *string) {
+	o.ContactGroup = contactGroup
+}
+
+// WithContactGroupn adds the contactGroupn to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) WithContactGroupn(contactGroupn *string) *DcimSiteGroupsListParams {
+	o.SetContactGroupn(contactGroupn)
+	return o
+}
+
+// SetContactGroupn adds the contactGroupN to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) SetContactGroupn(contactGroupn *string) {
+	o.ContactGroupn = contactGroupn
+}
+
 // WithContactRole adds the contactRole to the dcim site groups list params
 func (o *DcimSiteGroupsListParams) WithContactRole(contactRole *string) *DcimSiteGroupsListParams {
 	o.SetContactRole(contactRole)
@@ -354,6 +408,17 @@ func (o *DcimSiteGroupsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) WithCreatedGt(createdGt *string) *DcimSiteGroupsListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim site groups list params
 func (o *DcimSiteGroupsListParams) WithCreatedGte(createdGte *string) *DcimSiteGroupsListParams {
 	o.SetCreatedGte(createdGte)
@@ -365,6 +430,17 @@ func (o *DcimSiteGroupsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) WithCreatedLt(createdLt *string) *DcimSiteGroupsListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim site groups list params
 func (o *DcimSiteGroupsListParams) WithCreatedLte(createdLte *string) *DcimSiteGroupsListParams {
 	o.SetCreatedLte(createdLte)
@@ -374,6 +450,17 @@ func (o *DcimSiteGroupsListParams) WithCreatedLte(createdLte *string) *DcimSiteG
 // SetCreatedLte adds the createdLte to the dcim site groups list params
 func (o *DcimSiteGroupsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) WithCreatedn(createdn *string) *DcimSiteGroupsListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the dcim site groups list params
@@ -563,6 +650,17 @@ func (o *DcimSiteGroupsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimSiteGroupsListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim site groups list params
 func (o *DcimSiteGroupsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimSiteGroupsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -574,6 +672,17 @@ func (o *DcimSiteGroupsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimSiteGroupsListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim site groups list params
 func (o *DcimSiteGroupsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimSiteGroupsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -583,6 +692,17 @@ func (o *DcimSiteGroupsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *D
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim site groups list params
 func (o *DcimSiteGroupsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimSiteGroupsListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim site groups list params
@@ -715,6 +835,17 @@ func (o *DcimSiteGroupsListParams) WithOffset(offset *int64) *DcimSiteGroupsList
 // SetOffset adds the offset to the dcim site groups list params
 func (o *DcimSiteGroupsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) WithOrdering(ordering *string) *DcimSiteGroupsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim site groups list params
+func (o *DcimSiteGroupsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithParent adds the parent to the dcim site groups list params
@@ -946,6 +1077,40 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.ContactGroup != nil {
+
+		// query param contact_group
+		var qrContactGroup string
+
+		if o.ContactGroup != nil {
+			qrContactGroup = *o.ContactGroup
+		}
+		qContactGroup := qrContactGroup
+		if qContactGroup != "" {
+
+			if err := r.SetQueryParam("contact_group", qContactGroup); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactGroupn != nil {
+
+		// query param contact_group__n
+		var qrContactGroupn string
+
+		if o.ContactGroupn != nil {
+			qrContactGroupn = *o.ContactGroupn
+		}
+		qContactGroupn := qrContactGroupn
+		if qContactGroupn != "" {
+
+			if err := r.SetQueryParam("contact_group__n", qContactGroupn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ContactRole != nil {
 
 		// query param contact_role
@@ -997,6 +1162,23 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1014,6 +1196,23 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1026,6 +1225,23 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1320,6 +1536,23 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1337,6 +1570,23 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1349,6 +1599,23 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1553,6 +1820,23 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

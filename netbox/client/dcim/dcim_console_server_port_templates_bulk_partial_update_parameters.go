@@ -69,10 +69,12 @@ func NewDcimConsoleServerPortTemplatesBulkPartialUpdateParamsWithHTTPClient(clie
 	}
 }
 
-/* DcimConsoleServerPortTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim console server port templates bulk partial update operation.
+/*
+DcimConsoleServerPortTemplatesBulkPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim console server port templates bulk partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimConsoleServerPortTemplatesBulkPartialUpdateParams struct {
 

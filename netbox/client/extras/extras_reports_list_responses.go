@@ -59,14 +59,44 @@ func NewExtrasReportsListOK() *ExtrasReportsListOK {
 	return &ExtrasReportsListOK{}
 }
 
-/* ExtrasReportsListOK describes a response with status code 200, with default header values.
+/*
+ExtrasReportsListOK describes a response with status code 200, with default header values.
 
 ExtrasReportsListOK extras reports list o k
 */
 type ExtrasReportsListOK struct {
 }
 
+// IsSuccess returns true when this extras reports list o k response has a 2xx status code
+func (o *ExtrasReportsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras reports list o k response has a 3xx status code
+func (o *ExtrasReportsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras reports list o k response has a 4xx status code
+func (o *ExtrasReportsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras reports list o k response has a 5xx status code
+func (o *ExtrasReportsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras reports list o k response a status code equal to that given
+func (o *ExtrasReportsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasReportsListOK) Error() string {
+	return fmt.Sprintf("[GET /extras/reports/][%d] extrasReportsListOK ", 200)
+}
+
+func (o *ExtrasReportsListOK) String() string {
 	return fmt.Sprintf("[GET /extras/reports/][%d] extrasReportsListOK ", 200)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasReportsListDefault(code int) *ExtrasReportsListDefault {
 	}
 }
 
-/* ExtrasReportsListDefault describes a response with status code -1, with default header values.
+/*
+ExtrasReportsListDefault describes a response with status code -1, with default header values.
 
 ExtrasReportsListDefault extras reports list default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasReportsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras reports list default response has a 2xx status code
+func (o *ExtrasReportsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras reports list default response has a 3xx status code
+func (o *ExtrasReportsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras reports list default response has a 4xx status code
+func (o *ExtrasReportsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras reports list default response has a 5xx status code
+func (o *ExtrasReportsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras reports list default response a status code equal to that given
+func (o *ExtrasReportsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasReportsListDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/reports/][%d] extras_reports_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasReportsListDefault) String() string {
+	return fmt.Sprintf("[GET /extras/reports/][%d] extras_reports_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasReportsListDefault) GetPayload() interface{} {
 	return o.Payload
 }

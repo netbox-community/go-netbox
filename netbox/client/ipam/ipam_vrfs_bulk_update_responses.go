@@ -61,7 +61,8 @@ func NewIpamVrfsBulkUpdateOK() *IpamVrfsBulkUpdateOK {
 	return &IpamVrfsBulkUpdateOK{}
 }
 
-/* IpamVrfsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamVrfsBulkUpdateOK describes a response with status code 200, with default header values.
 
 IpamVrfsBulkUpdateOK ipam vrfs bulk update o k
 */
@@ -69,9 +70,39 @@ type IpamVrfsBulkUpdateOK struct {
 	Payload *models.VRF
 }
 
+// IsSuccess returns true when this ipam vrfs bulk update o k response has a 2xx status code
+func (o *IpamVrfsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam vrfs bulk update o k response has a 3xx status code
+func (o *IpamVrfsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam vrfs bulk update o k response has a 4xx status code
+func (o *IpamVrfsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam vrfs bulk update o k response has a 5xx status code
+func (o *IpamVrfsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam vrfs bulk update o k response a status code equal to that given
+func (o *IpamVrfsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamVrfsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vrfs/][%d] ipamVrfsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamVrfsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /ipam/vrfs/][%d] ipamVrfsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamVrfsBulkUpdateOK) GetPayload() *models.VRF {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamVrfsBulkUpdateDefault(code int) *IpamVrfsBulkUpdateDefault {
 	}
 }
 
-/* IpamVrfsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamVrfsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 IpamVrfsBulkUpdateDefault ipam vrfs bulk update default
 */
@@ -110,9 +142,39 @@ func (o *IpamVrfsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam vrfs bulk update default response has a 2xx status code
+func (o *IpamVrfsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam vrfs bulk update default response has a 3xx status code
+func (o *IpamVrfsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam vrfs bulk update default response has a 4xx status code
+func (o *IpamVrfsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam vrfs bulk update default response has a 5xx status code
+func (o *IpamVrfsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam vrfs bulk update default response a status code equal to that given
+func (o *IpamVrfsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamVrfsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vrfs/][%d] ipam_vrfs_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamVrfsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /ipam/vrfs/][%d] ipam_vrfs_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamVrfsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

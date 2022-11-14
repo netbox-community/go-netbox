@@ -61,7 +61,8 @@ func NewCircuitsCircuitTerminationsBulkUpdateOK() *CircuitsCircuitTerminationsBu
 	return &CircuitsCircuitTerminationsBulkUpdateOK{}
 }
 
-/* CircuitsCircuitTerminationsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+CircuitsCircuitTerminationsBulkUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitTerminationsBulkUpdateOK circuits circuit terminations bulk update o k
 */
@@ -69,9 +70,39 @@ type CircuitsCircuitTerminationsBulkUpdateOK struct {
 	Payload *models.CircuitTermination
 }
 
+// IsSuccess returns true when this circuits circuit terminations bulk update o k response has a 2xx status code
+func (o *CircuitsCircuitTerminationsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuit terminations bulk update o k response has a 3xx status code
+func (o *CircuitsCircuitTerminationsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuit terminations bulk update o k response has a 4xx status code
+func (o *CircuitsCircuitTerminationsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuit terminations bulk update o k response has a 5xx status code
+func (o *CircuitsCircuitTerminationsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuit terminations bulk update o k response a status code equal to that given
+func (o *CircuitsCircuitTerminationsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsCircuitTerminationsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsCircuitTerminationsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /circuits/circuit-terminations/][%d] circuitsCircuitTerminationsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsCircuitTerminationsBulkUpdateOK) GetPayload() *models.CircuitTermination {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsCircuitTerminationsBulkUpdateDefault(code int) *CircuitsCircuitT
 	}
 }
 
-/* CircuitsCircuitTerminationsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitTerminationsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitTerminationsBulkUpdateDefault circuits circuit terminations bulk update default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsCircuitTerminationsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuit terminations bulk update default response has a 2xx status code
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuit terminations bulk update default response has a 3xx status code
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuit terminations bulk update default response has a 4xx status code
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuit terminations bulk update default response has a 5xx status code
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuit terminations bulk update default response a status code equal to that given
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitTerminationsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /circuits/circuit-terminations/][%d] circuits_circuit-terminations_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitTerminationsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /circuits/circuit-terminations/][%d] circuits_circuit-terminations_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitTerminationsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

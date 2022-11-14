@@ -67,10 +67,12 @@ func NewCircuitsCircuitTypesBulkDeleteParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* CircuitsCircuitTypesBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the circuits circuit types bulk delete operation.
+/*
+CircuitsCircuitTypesBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits circuit types bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsCircuitTypesBulkDeleteParams struct {
 	timeout    time.Duration

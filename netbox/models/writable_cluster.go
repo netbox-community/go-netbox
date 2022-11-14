@@ -22,6 +22,7 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -41,7 +42,7 @@ type WritableCluster struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -65,7 +66,7 @@ type WritableCluster struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -76,6 +77,10 @@ type WritableCluster struct {
 	// Site
 	// Required: true
 	Site *int64 `json:"site"`
+
+	// Status
+	// Enum: [planned staging active decommissioning offline]
+	Status string `json:"status,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
@@ -118,6 +123,10 @@ func (m *WritableCluster) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSite(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -192,6 +201,57 @@ func (m *WritableCluster) validateName(formats strfmt.Registry) error {
 func (m *WritableCluster) validateSite(formats strfmt.Registry) error {
 
 	if err := validate.Required("site", "body", m.Site); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var writableClusterTypeStatusPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["planned","staging","active","decommissioning","offline"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableClusterTypeStatusPropEnum = append(writableClusterTypeStatusPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableClusterStatusPlanned captures enum value "planned"
+	WritableClusterStatusPlanned string = "planned"
+
+	// WritableClusterStatusStaging captures enum value "staging"
+	WritableClusterStatusStaging string = "staging"
+
+	// WritableClusterStatusActive captures enum value "active"
+	WritableClusterStatusActive string = "active"
+
+	// WritableClusterStatusDecommissioning captures enum value "decommissioning"
+	WritableClusterStatusDecommissioning string = "decommissioning"
+
+	// WritableClusterStatusOffline captures enum value "offline"
+	WritableClusterStatusOffline string = "offline"
+)
+
+// prop value enum
+func (m *WritableCluster) validateStatusEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableClusterTypeStatusPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableCluster) validateStatus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
 	}
 
@@ -289,7 +349,7 @@ func (m *WritableCluster) ContextValidate(ctx context.Context, formats strfmt.Re
 
 func (m *WritableCluster) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -325,7 +385,7 @@ func (m *WritableCluster) contextValidateID(ctx context.Context, formats strfmt.
 
 func (m *WritableCluster) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

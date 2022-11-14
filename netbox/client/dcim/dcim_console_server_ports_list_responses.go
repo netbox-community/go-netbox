@@ -66,7 +66,8 @@ func NewDcimConsoleServerPortsListOK() *DcimConsoleServerPortsListOK {
 	return &DcimConsoleServerPortsListOK{}
 }
 
-/* DcimConsoleServerPortsListOK describes a response with status code 200, with default header values.
+/*
+DcimConsoleServerPortsListOK describes a response with status code 200, with default header values.
 
 DcimConsoleServerPortsListOK dcim console server ports list o k
 */
@@ -74,9 +75,39 @@ type DcimConsoleServerPortsListOK struct {
 	Payload *DcimConsoleServerPortsListOKBody
 }
 
+// IsSuccess returns true when this dcim console server ports list o k response has a 2xx status code
+func (o *DcimConsoleServerPortsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim console server ports list o k response has a 3xx status code
+func (o *DcimConsoleServerPortsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim console server ports list o k response has a 4xx status code
+func (o *DcimConsoleServerPortsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim console server ports list o k response has a 5xx status code
+func (o *DcimConsoleServerPortsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim console server ports list o k response a status code equal to that given
+func (o *DcimConsoleServerPortsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimConsoleServerPortsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-server-ports/][%d] dcimConsoleServerPortsListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimConsoleServerPortsListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/console-server-ports/][%d] dcimConsoleServerPortsListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimConsoleServerPortsListOK) GetPayload() *DcimConsoleServerPortsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimConsoleServerPortsListDefault(code int) *DcimConsoleServerPortsListD
 	}
 }
 
-/* DcimConsoleServerPortsListDefault describes a response with status code -1, with default header values.
+/*
+DcimConsoleServerPortsListDefault describes a response with status code -1, with default header values.
 
 DcimConsoleServerPortsListDefault dcim console server ports list default
 */
@@ -115,9 +147,39 @@ func (o *DcimConsoleServerPortsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim console server ports list default response has a 2xx status code
+func (o *DcimConsoleServerPortsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim console server ports list default response has a 3xx status code
+func (o *DcimConsoleServerPortsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim console server ports list default response has a 4xx status code
+func (o *DcimConsoleServerPortsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim console server ports list default response has a 5xx status code
+func (o *DcimConsoleServerPortsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim console server ports list default response a status code equal to that given
+func (o *DcimConsoleServerPortsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimConsoleServerPortsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-server-ports/][%d] dcim_console-server-ports_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimConsoleServerPortsListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/console-server-ports/][%d] dcim_console-server-ports_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimConsoleServerPortsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimConsoleServerPortsListDefault) readResponse(response runtime.Client
 	return nil
 }
 
-/*DcimConsoleServerPortsListOKBody dcim console server ports list o k body
+/*
+DcimConsoleServerPortsListOKBody dcim console server ports list o k body
 swagger:model DcimConsoleServerPortsListOKBody
 */
 type DcimConsoleServerPortsListOKBody struct {

@@ -59,14 +59,44 @@ func NewDcimPowerFeedsDeleteNoContent() *DcimPowerFeedsDeleteNoContent {
 	return &DcimPowerFeedsDeleteNoContent{}
 }
 
-/* DcimPowerFeedsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimPowerFeedsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimPowerFeedsDeleteNoContent dcim power feeds delete no content
 */
 type DcimPowerFeedsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim power feeds delete no content response has a 2xx status code
+func (o *DcimPowerFeedsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power feeds delete no content response has a 3xx status code
+func (o *DcimPowerFeedsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power feeds delete no content response has a 4xx status code
+func (o *DcimPowerFeedsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power feeds delete no content response has a 5xx status code
+func (o *DcimPowerFeedsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power feeds delete no content response a status code equal to that given
+func (o *DcimPowerFeedsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimPowerFeedsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/power-feeds/{id}/][%d] dcimPowerFeedsDeleteNoContent ", 204)
+}
+
+func (o *DcimPowerFeedsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/power-feeds/{id}/][%d] dcimPowerFeedsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimPowerFeedsDeleteDefault(code int) *DcimPowerFeedsDeleteDefault {
 	}
 }
 
-/* DcimPowerFeedsDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerFeedsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsDeleteDefault dcim power feeds delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimPowerFeedsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power feeds delete default response has a 2xx status code
+func (o *DcimPowerFeedsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power feeds delete default response has a 3xx status code
+func (o *DcimPowerFeedsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power feeds delete default response has a 4xx status code
+func (o *DcimPowerFeedsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power feeds delete default response has a 5xx status code
+func (o *DcimPowerFeedsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power feeds delete default response a status code equal to that given
+func (o *DcimPowerFeedsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerFeedsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/power-feeds/{id}/][%d] dcim_power-feeds_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerFeedsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/power-feeds/{id}/][%d] dcim_power-feeds_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerFeedsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

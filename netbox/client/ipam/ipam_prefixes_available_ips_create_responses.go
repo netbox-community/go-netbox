@@ -61,7 +61,8 @@ func NewIpamPrefixesAvailableIpsCreateCreated() *IpamPrefixesAvailableIpsCreateC
 	return &IpamPrefixesAvailableIpsCreateCreated{}
 }
 
-/* IpamPrefixesAvailableIpsCreateCreated describes a response with status code 201, with default header values.
+/*
+IpamPrefixesAvailableIpsCreateCreated describes a response with status code 201, with default header values.
 
 IpamPrefixesAvailableIpsCreateCreated ipam prefixes available ips create created
 */
@@ -69,9 +70,39 @@ type IpamPrefixesAvailableIpsCreateCreated struct {
 	Payload []*models.IPAddress
 }
 
+// IsSuccess returns true when this ipam prefixes available ips create created response has a 2xx status code
+func (o *IpamPrefixesAvailableIpsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam prefixes available ips create created response has a 3xx status code
+func (o *IpamPrefixesAvailableIpsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam prefixes available ips create created response has a 4xx status code
+func (o *IpamPrefixesAvailableIpsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam prefixes available ips create created response has a 5xx status code
+func (o *IpamPrefixesAvailableIpsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam prefixes available ips create created response a status code equal to that given
+func (o *IpamPrefixesAvailableIpsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *IpamPrefixesAvailableIpsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *IpamPrefixesAvailableIpsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *IpamPrefixesAvailableIpsCreateCreated) GetPayload() []*models.IPAddress {
 	return o.Payload
 }
@@ -93,7 +124,8 @@ func NewIpamPrefixesAvailableIpsCreateDefault(code int) *IpamPrefixesAvailableIp
 	}
 }
 
-/* IpamPrefixesAvailableIpsCreateDefault describes a response with status code -1, with default header values.
+/*
+IpamPrefixesAvailableIpsCreateDefault describes a response with status code -1, with default header values.
 
 IpamPrefixesAvailableIpsCreateDefault ipam prefixes available ips create default
 */
@@ -108,9 +140,39 @@ func (o *IpamPrefixesAvailableIpsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam prefixes available ips create default response has a 2xx status code
+func (o *IpamPrefixesAvailableIpsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam prefixes available ips create default response has a 3xx status code
+func (o *IpamPrefixesAvailableIpsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam prefixes available ips create default response has a 4xx status code
+func (o *IpamPrefixesAvailableIpsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam prefixes available ips create default response has a 5xx status code
+func (o *IpamPrefixesAvailableIpsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam prefixes available ips create default response a status code equal to that given
+func (o *IpamPrefixesAvailableIpsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamPrefixesAvailableIpsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-ips/][%d] ipam_prefixes_available-ips_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamPrefixesAvailableIpsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /ipam/prefixes/{id}/available-ips/][%d] ipam_prefixes_available-ips_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamPrefixesAvailableIpsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

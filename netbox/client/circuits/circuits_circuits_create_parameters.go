@@ -69,10 +69,12 @@ func NewCircuitsCircuitsCreateParamsWithHTTPClient(client *http.Client) *Circuit
 	}
 }
 
-/* CircuitsCircuitsCreateParams contains all the parameters to send to the API endpoint
-   for the circuits circuits create operation.
+/*
+CircuitsCircuitsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits circuits create operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsCircuitsCreateParams struct {
 

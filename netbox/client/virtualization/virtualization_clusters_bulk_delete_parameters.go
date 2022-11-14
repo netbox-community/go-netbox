@@ -67,10 +67,12 @@ func NewVirtualizationClustersBulkDeleteParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* VirtualizationClustersBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the virtualization clusters bulk delete operation.
+/*
+VirtualizationClustersBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the virtualization clusters bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type VirtualizationClustersBulkDeleteParams struct {
 	timeout    time.Duration

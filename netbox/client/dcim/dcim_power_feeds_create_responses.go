@@ -61,7 +61,8 @@ func NewDcimPowerFeedsCreateCreated() *DcimPowerFeedsCreateCreated {
 	return &DcimPowerFeedsCreateCreated{}
 }
 
-/* DcimPowerFeedsCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimPowerFeedsCreateCreated describes a response with status code 201, with default header values.
 
 DcimPowerFeedsCreateCreated dcim power feeds create created
 */
@@ -69,9 +70,39 @@ type DcimPowerFeedsCreateCreated struct {
 	Payload *models.PowerFeed
 }
 
+// IsSuccess returns true when this dcim power feeds create created response has a 2xx status code
+func (o *DcimPowerFeedsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power feeds create created response has a 3xx status code
+func (o *DcimPowerFeedsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power feeds create created response has a 4xx status code
+func (o *DcimPowerFeedsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power feeds create created response has a 5xx status code
+func (o *DcimPowerFeedsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power feeds create created response a status code equal to that given
+func (o *DcimPowerFeedsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimPowerFeedsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-feeds/][%d] dcimPowerFeedsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimPowerFeedsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/power-feeds/][%d] dcimPowerFeedsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimPowerFeedsCreateCreated) GetPayload() *models.PowerFeed {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerFeedsCreateDefault(code int) *DcimPowerFeedsCreateDefault {
 	}
 }
 
-/* DcimPowerFeedsCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerFeedsCreateDefault describes a response with status code -1, with default header values.
 
 DcimPowerFeedsCreateDefault dcim power feeds create default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerFeedsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power feeds create default response has a 2xx status code
+func (o *DcimPowerFeedsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power feeds create default response has a 3xx status code
+func (o *DcimPowerFeedsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power feeds create default response has a 4xx status code
+func (o *DcimPowerFeedsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power feeds create default response has a 5xx status code
+func (o *DcimPowerFeedsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power feeds create default response a status code equal to that given
+func (o *DcimPowerFeedsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerFeedsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/power-feeds/][%d] dcim_power-feeds_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerFeedsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/power-feeds/][%d] dcim_power-feeds_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerFeedsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

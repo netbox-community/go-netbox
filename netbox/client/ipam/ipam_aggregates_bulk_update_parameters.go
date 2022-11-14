@@ -69,10 +69,12 @@ func NewIpamAggregatesBulkUpdateParamsWithHTTPClient(client *http.Client) *IpamA
 	}
 }
 
-/* IpamAggregatesBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam aggregates bulk update operation.
+/*
+IpamAggregatesBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam aggregates bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAggregatesBulkUpdateParams struct {
 

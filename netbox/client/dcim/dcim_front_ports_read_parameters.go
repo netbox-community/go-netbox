@@ -68,10 +68,12 @@ func NewDcimFrontPortsReadParamsWithHTTPClient(client *http.Client) *DcimFrontPo
 	}
 }
 
-/* DcimFrontPortsReadParams contains all the parameters to send to the API endpoint
-   for the dcim front ports read operation.
+/*
+DcimFrontPortsReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim front ports read operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimFrontPortsReadParams struct {
 

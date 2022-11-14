@@ -123,7 +123,7 @@ type ClientService interface {
 }
 
 /*
-  UsersConfigList Return the UserConfig for the currently authenticated User.
+UsersConfigList Return the UserConfig for the currently authenticated User.
 */
 func (a *Client) UsersConfigList(params *UsersConfigListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersConfigListOK, error) {
 	// TODO: Validate the params before sending
@@ -161,7 +161,7 @@ func (a *Client) UsersConfigList(params *UsersConfigListParams, authInfo runtime
 }
 
 /*
-  UsersGroupsBulkDelete users groups bulk delete API
+UsersGroupsBulkDelete users groups bulk delete API
 */
 func (a *Client) UsersGroupsBulkDelete(params *UsersGroupsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -199,7 +199,7 @@ func (a *Client) UsersGroupsBulkDelete(params *UsersGroupsBulkDeleteParams, auth
 }
 
 /*
-  UsersGroupsBulkPartialUpdate users groups bulk partial update API
+UsersGroupsBulkPartialUpdate users groups bulk partial update API
 */
 func (a *Client) UsersGroupsBulkPartialUpdate(params *UsersGroupsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -237,7 +237,7 @@ func (a *Client) UsersGroupsBulkPartialUpdate(params *UsersGroupsBulkPartialUpda
 }
 
 /*
-  UsersGroupsBulkUpdate users groups bulk update API
+UsersGroupsBulkUpdate users groups bulk update API
 */
 func (a *Client) UsersGroupsBulkUpdate(params *UsersGroupsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -275,7 +275,7 @@ func (a *Client) UsersGroupsBulkUpdate(params *UsersGroupsBulkUpdateParams, auth
 }
 
 /*
-  UsersGroupsCreate users groups create API
+UsersGroupsCreate users groups create API
 */
 func (a *Client) UsersGroupsCreate(params *UsersGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -313,7 +313,7 @@ func (a *Client) UsersGroupsCreate(params *UsersGroupsCreateParams, authInfo run
 }
 
 /*
-  UsersGroupsDelete users groups delete API
+UsersGroupsDelete users groups delete API
 */
 func (a *Client) UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -351,7 +351,7 @@ func (a *Client) UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo run
 }
 
 /*
-  UsersGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
+UsersGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersGroupsList(params *UsersGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -389,7 +389,7 @@ func (a *Client) UsersGroupsList(params *UsersGroupsListParams, authInfo runtime
 }
 
 /*
-  UsersGroupsPartialUpdate users groups partial update API
+UsersGroupsPartialUpdate users groups partial update API
 */
 func (a *Client) UsersGroupsPartialUpdate(params *UsersGroupsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -427,7 +427,7 @@ func (a *Client) UsersGroupsPartialUpdate(params *UsersGroupsPartialUpdateParams
 }
 
 /*
-  UsersGroupsRead users groups read API
+UsersGroupsRead users groups read API
 */
 func (a *Client) UsersGroupsRead(params *UsersGroupsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsReadOK, error) {
 	// TODO: Validate the params before sending
@@ -465,7 +465,7 @@ func (a *Client) UsersGroupsRead(params *UsersGroupsReadParams, authInfo runtime
 }
 
 /*
-  UsersGroupsUpdate users groups update API
+UsersGroupsUpdate users groups update API
 */
 func (a *Client) UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -503,7 +503,7 @@ func (a *Client) UsersGroupsUpdate(params *UsersGroupsUpdateParams, authInfo run
 }
 
 /*
-  UsersPermissionsBulkDelete users permissions bulk delete API
+UsersPermissionsBulkDelete users permissions bulk delete API
 */
 func (a *Client) UsersPermissionsBulkDelete(params *UsersPermissionsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -541,7 +541,7 @@ func (a *Client) UsersPermissionsBulkDelete(params *UsersPermissionsBulkDeletePa
 }
 
 /*
-  UsersPermissionsBulkPartialUpdate users permissions bulk partial update API
+UsersPermissionsBulkPartialUpdate users permissions bulk partial update API
 */
 func (a *Client) UsersPermissionsBulkPartialUpdate(params *UsersPermissionsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -579,7 +579,7 @@ func (a *Client) UsersPermissionsBulkPartialUpdate(params *UsersPermissionsBulkP
 }
 
 /*
-  UsersPermissionsBulkUpdate users permissions bulk update API
+UsersPermissionsBulkUpdate users permissions bulk update API
 */
 func (a *Client) UsersPermissionsBulkUpdate(params *UsersPermissionsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -617,7 +617,7 @@ func (a *Client) UsersPermissionsBulkUpdate(params *UsersPermissionsBulkUpdatePa
 }
 
 /*
-  UsersPermissionsCreate users permissions create API
+UsersPermissionsCreate users permissions create API
 */
 func (a *Client) UsersPermissionsCreate(params *UsersPermissionsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -655,7 +655,7 @@ func (a *Client) UsersPermissionsCreate(params *UsersPermissionsCreateParams, au
 }
 
 /*
-  UsersPermissionsDelete users permissions delete API
+UsersPermissionsDelete users permissions delete API
 */
 func (a *Client) UsersPermissionsDelete(params *UsersPermissionsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -693,7 +693,7 @@ func (a *Client) UsersPermissionsDelete(params *UsersPermissionsDeleteParams, au
 }
 
 /*
-  UsersPermissionsList Overrides ListModelMixin to allow processing ExportTemplates.
+UsersPermissionsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersPermissionsList(params *UsersPermissionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsListOK, error) {
 	// TODO: Validate the params before sending
@@ -731,7 +731,7 @@ func (a *Client) UsersPermissionsList(params *UsersPermissionsListParams, authIn
 }
 
 /*
-  UsersPermissionsPartialUpdate users permissions partial update API
+UsersPermissionsPartialUpdate users permissions partial update API
 */
 func (a *Client) UsersPermissionsPartialUpdate(params *UsersPermissionsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -769,7 +769,7 @@ func (a *Client) UsersPermissionsPartialUpdate(params *UsersPermissionsPartialUp
 }
 
 /*
-  UsersPermissionsRead users permissions read API
+UsersPermissionsRead users permissions read API
 */
 func (a *Client) UsersPermissionsRead(params *UsersPermissionsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsReadOK, error) {
 	// TODO: Validate the params before sending
@@ -807,7 +807,7 @@ func (a *Client) UsersPermissionsRead(params *UsersPermissionsReadParams, authIn
 }
 
 /*
-  UsersPermissionsUpdate users permissions update API
+UsersPermissionsUpdate users permissions update API
 */
 func (a *Client) UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -845,7 +845,7 @@ func (a *Client) UsersPermissionsUpdate(params *UsersPermissionsUpdateParams, au
 }
 
 /*
-  UsersTokensBulkDelete users tokens bulk delete API
+UsersTokensBulkDelete users tokens bulk delete API
 */
 func (a *Client) UsersTokensBulkDelete(params *UsersTokensBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -883,7 +883,7 @@ func (a *Client) UsersTokensBulkDelete(params *UsersTokensBulkDeleteParams, auth
 }
 
 /*
-  UsersTokensBulkPartialUpdate users tokens bulk partial update API
+UsersTokensBulkPartialUpdate users tokens bulk partial update API
 */
 func (a *Client) UsersTokensBulkPartialUpdate(params *UsersTokensBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -921,7 +921,7 @@ func (a *Client) UsersTokensBulkPartialUpdate(params *UsersTokensBulkPartialUpda
 }
 
 /*
-  UsersTokensBulkUpdate users tokens bulk update API
+UsersTokensBulkUpdate users tokens bulk update API
 */
 func (a *Client) UsersTokensBulkUpdate(params *UsersTokensBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -959,7 +959,7 @@ func (a *Client) UsersTokensBulkUpdate(params *UsersTokensBulkUpdateParams, auth
 }
 
 /*
-  UsersTokensCreate users tokens create API
+UsersTokensCreate users tokens create API
 */
 func (a *Client) UsersTokensCreate(params *UsersTokensCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -997,7 +997,7 @@ func (a *Client) UsersTokensCreate(params *UsersTokensCreateParams, authInfo run
 }
 
 /*
-  UsersTokensDelete users tokens delete API
+UsersTokensDelete users tokens delete API
 */
 func (a *Client) UsersTokensDelete(params *UsersTokensDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -1035,7 +1035,7 @@ func (a *Client) UsersTokensDelete(params *UsersTokensDeleteParams, authInfo run
 }
 
 /*
-  UsersTokensList Overrides ListModelMixin to allow processing ExportTemplates.
+UsersTokensList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersTokensList(params *UsersTokensListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensListOK, error) {
 	// TODO: Validate the params before sending
@@ -1073,7 +1073,7 @@ func (a *Client) UsersTokensList(params *UsersTokensListParams, authInfo runtime
 }
 
 /*
-  UsersTokensPartialUpdate users tokens partial update API
+UsersTokensPartialUpdate users tokens partial update API
 */
 func (a *Client) UsersTokensPartialUpdate(params *UsersTokensPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -1111,7 +1111,7 @@ func (a *Client) UsersTokensPartialUpdate(params *UsersTokensPartialUpdateParams
 }
 
 /*
-  UsersTokensProvisionCreate Non-authenticated REST API endpoint via which a user may create a Token.
+UsersTokensProvisionCreate Non-authenticated REST API endpoint via which a user may create a Token.
 */
 func (a *Client) UsersTokensProvisionCreate(params *UsersTokensProvisionCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensProvisionCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -1149,7 +1149,7 @@ func (a *Client) UsersTokensProvisionCreate(params *UsersTokensProvisionCreatePa
 }
 
 /*
-  UsersTokensRead users tokens read API
+UsersTokensRead users tokens read API
 */
 func (a *Client) UsersTokensRead(params *UsersTokensReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensReadOK, error) {
 	// TODO: Validate the params before sending
@@ -1187,7 +1187,7 @@ func (a *Client) UsersTokensRead(params *UsersTokensReadParams, authInfo runtime
 }
 
 /*
-  UsersTokensUpdate users tokens update API
+UsersTokensUpdate users tokens update API
 */
 func (a *Client) UsersTokensUpdate(params *UsersTokensUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -1225,7 +1225,7 @@ func (a *Client) UsersTokensUpdate(params *UsersTokensUpdateParams, authInfo run
 }
 
 /*
-  UsersUsersBulkDelete users users bulk delete API
+UsersUsersBulkDelete users users bulk delete API
 */
 func (a *Client) UsersUsersBulkDelete(params *UsersUsersBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -1263,7 +1263,7 @@ func (a *Client) UsersUsersBulkDelete(params *UsersUsersBulkDeleteParams, authIn
 }
 
 /*
-  UsersUsersBulkPartialUpdate users users bulk partial update API
+UsersUsersBulkPartialUpdate users users bulk partial update API
 */
 func (a *Client) UsersUsersBulkPartialUpdate(params *UsersUsersBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -1301,7 +1301,7 @@ func (a *Client) UsersUsersBulkPartialUpdate(params *UsersUsersBulkPartialUpdate
 }
 
 /*
-  UsersUsersBulkUpdate users users bulk update API
+UsersUsersBulkUpdate users users bulk update API
 */
 func (a *Client) UsersUsersBulkUpdate(params *UsersUsersBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersBulkUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -1339,7 +1339,7 @@ func (a *Client) UsersUsersBulkUpdate(params *UsersUsersBulkUpdateParams, authIn
 }
 
 /*
-  UsersUsersCreate users users create API
+UsersUsersCreate users users create API
 */
 func (a *Client) UsersUsersCreate(params *UsersUsersCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersCreateCreated, error) {
 	// TODO: Validate the params before sending
@@ -1377,7 +1377,7 @@ func (a *Client) UsersUsersCreate(params *UsersUsersCreateParams, authInfo runti
 }
 
 /*
-  UsersUsersDelete users users delete API
+UsersUsersDelete users users delete API
 */
 func (a *Client) UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersDeleteNoContent, error) {
 	// TODO: Validate the params before sending
@@ -1415,7 +1415,7 @@ func (a *Client) UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runti
 }
 
 /*
-  UsersUsersList Overrides ListModelMixin to allow processing ExportTemplates.
+UsersUsersList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersUsersList(params *UsersUsersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersListOK, error) {
 	// TODO: Validate the params before sending
@@ -1453,7 +1453,7 @@ func (a *Client) UsersUsersList(params *UsersUsersListParams, authInfo runtime.C
 }
 
 /*
-  UsersUsersPartialUpdate users users partial update API
+UsersUsersPartialUpdate users users partial update API
 */
 func (a *Client) UsersUsersPartialUpdate(params *UsersUsersPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersPartialUpdateOK, error) {
 	// TODO: Validate the params before sending
@@ -1491,7 +1491,7 @@ func (a *Client) UsersUsersPartialUpdate(params *UsersUsersPartialUpdateParams, 
 }
 
 /*
-  UsersUsersRead users users read API
+UsersUsersRead users users read API
 */
 func (a *Client) UsersUsersRead(params *UsersUsersReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersReadOK, error) {
 	// TODO: Validate the params before sending
@@ -1529,7 +1529,7 @@ func (a *Client) UsersUsersRead(params *UsersUsersReadParams, authInfo runtime.C
 }
 
 /*
-  UsersUsersUpdate users users update API
+UsersUsersUpdate users users update API
 */
 func (a *Client) UsersUsersUpdate(params *UsersUsersUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersUpdateOK, error) {
 	// TODO: Validate the params before sending

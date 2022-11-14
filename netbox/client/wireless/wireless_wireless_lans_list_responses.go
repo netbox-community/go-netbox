@@ -66,7 +66,8 @@ func NewWirelessWirelessLansListOK() *WirelessWirelessLansListOK {
 	return &WirelessWirelessLansListOK{}
 }
 
-/* WirelessWirelessLansListOK describes a response with status code 200, with default header values.
+/*
+WirelessWirelessLansListOK describes a response with status code 200, with default header values.
 
 WirelessWirelessLansListOK wireless wireless lans list o k
 */
@@ -74,9 +75,39 @@ type WirelessWirelessLansListOK struct {
 	Payload *WirelessWirelessLansListOKBody
 }
 
+// IsSuccess returns true when this wireless wireless lans list o k response has a 2xx status code
+func (o *WirelessWirelessLansListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this wireless wireless lans list o k response has a 3xx status code
+func (o *WirelessWirelessLansListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this wireless wireless lans list o k response has a 4xx status code
+func (o *WirelessWirelessLansListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this wireless wireless lans list o k response has a 5xx status code
+func (o *WirelessWirelessLansListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this wireless wireless lans list o k response a status code equal to that given
+func (o *WirelessWirelessLansListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *WirelessWirelessLansListOK) Error() string {
 	return fmt.Sprintf("[GET /wireless/wireless-lans/][%d] wirelessWirelessLansListOK  %+v", 200, o.Payload)
 }
+
+func (o *WirelessWirelessLansListOK) String() string {
+	return fmt.Sprintf("[GET /wireless/wireless-lans/][%d] wirelessWirelessLansListOK  %+v", 200, o.Payload)
+}
+
 func (o *WirelessWirelessLansListOK) GetPayload() *WirelessWirelessLansListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewWirelessWirelessLansListDefault(code int) *WirelessWirelessLansListDefau
 	}
 }
 
-/* WirelessWirelessLansListDefault describes a response with status code -1, with default header values.
+/*
+WirelessWirelessLansListDefault describes a response with status code -1, with default header values.
 
 WirelessWirelessLansListDefault wireless wireless lans list default
 */
@@ -115,9 +147,39 @@ func (o *WirelessWirelessLansListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this wireless wireless lans list default response has a 2xx status code
+func (o *WirelessWirelessLansListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this wireless wireless lans list default response has a 3xx status code
+func (o *WirelessWirelessLansListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this wireless wireless lans list default response has a 4xx status code
+func (o *WirelessWirelessLansListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this wireless wireless lans list default response has a 5xx status code
+func (o *WirelessWirelessLansListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this wireless wireless lans list default response a status code equal to that given
+func (o *WirelessWirelessLansListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *WirelessWirelessLansListDefault) Error() string {
 	return fmt.Sprintf("[GET /wireless/wireless-lans/][%d] wireless_wireless-lans_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *WirelessWirelessLansListDefault) String() string {
+	return fmt.Sprintf("[GET /wireless/wireless-lans/][%d] wireless_wireless-lans_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *WirelessWirelessLansListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *WirelessWirelessLansListDefault) readResponse(response runtime.ClientRe
 	return nil
 }
 
-/*WirelessWirelessLansListOKBody wireless wireless lans list o k body
+/*
+WirelessWirelessLansListOKBody wireless wireless lans list o k body
 swagger:model WirelessWirelessLansListOKBody
 */
 type WirelessWirelessLansListOKBody struct {

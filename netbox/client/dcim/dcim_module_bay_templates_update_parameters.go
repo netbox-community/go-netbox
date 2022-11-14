@@ -70,10 +70,12 @@ func NewDcimModuleBayTemplatesUpdateParamsWithHTTPClient(client *http.Client) *D
 	}
 }
 
-/* DcimModuleBayTemplatesUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim module bay templates update operation.
+/*
+DcimModuleBayTemplatesUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim module bay templates update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimModuleBayTemplatesUpdateParams struct {
 

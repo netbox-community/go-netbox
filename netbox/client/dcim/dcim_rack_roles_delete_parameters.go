@@ -68,10 +68,12 @@ func NewDcimRackRolesDeleteParamsWithHTTPClient(client *http.Client) *DcimRackRo
 	}
 }
 
-/* DcimRackRolesDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim rack roles delete operation.
+/*
+DcimRackRolesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rack roles delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRackRolesDeleteParams struct {
 

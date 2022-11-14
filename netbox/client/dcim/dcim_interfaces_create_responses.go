@@ -61,7 +61,8 @@ func NewDcimInterfacesCreateCreated() *DcimInterfacesCreateCreated {
 	return &DcimInterfacesCreateCreated{}
 }
 
-/* DcimInterfacesCreateCreated describes a response with status code 201, with default header values.
+/*
+DcimInterfacesCreateCreated describes a response with status code 201, with default header values.
 
 DcimInterfacesCreateCreated dcim interfaces create created
 */
@@ -69,9 +70,39 @@ type DcimInterfacesCreateCreated struct {
 	Payload *models.Interface
 }
 
+// IsSuccess returns true when this dcim interfaces create created response has a 2xx status code
+func (o *DcimInterfacesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim interfaces create created response has a 3xx status code
+func (o *DcimInterfacesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim interfaces create created response has a 4xx status code
+func (o *DcimInterfacesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim interfaces create created response has a 5xx status code
+func (o *DcimInterfacesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim interfaces create created response a status code equal to that given
+func (o *DcimInterfacesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *DcimInterfacesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/interfaces/][%d] dcimInterfacesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *DcimInterfacesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /dcim/interfaces/][%d] dcimInterfacesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *DcimInterfacesCreateCreated) GetPayload() *models.Interface {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInterfacesCreateDefault(code int) *DcimInterfacesCreateDefault {
 	}
 }
 
-/* DcimInterfacesCreateDefault describes a response with status code -1, with default header values.
+/*
+DcimInterfacesCreateDefault describes a response with status code -1, with default header values.
 
 DcimInterfacesCreateDefault dcim interfaces create default
 */
@@ -110,9 +142,39 @@ func (o *DcimInterfacesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim interfaces create default response has a 2xx status code
+func (o *DcimInterfacesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim interfaces create default response has a 3xx status code
+func (o *DcimInterfacesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim interfaces create default response has a 4xx status code
+func (o *DcimInterfacesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim interfaces create default response has a 5xx status code
+func (o *DcimInterfacesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim interfaces create default response a status code equal to that given
+func (o *DcimInterfacesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInterfacesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /dcim/interfaces/][%d] dcim_interfaces_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInterfacesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /dcim/interfaces/][%d] dcim_interfaces_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInterfacesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -59,14 +59,44 @@ func NewTenancyContactAssignmentsBulkDeleteNoContent() *TenancyContactAssignment
 	return &TenancyContactAssignmentsBulkDeleteNoContent{}
 }
 
-/* TenancyContactAssignmentsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+TenancyContactAssignmentsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 TenancyContactAssignmentsBulkDeleteNoContent tenancy contact assignments bulk delete no content
 */
 type TenancyContactAssignmentsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this tenancy contact assignments bulk delete no content response has a 2xx status code
+func (o *TenancyContactAssignmentsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this tenancy contact assignments bulk delete no content response has a 3xx status code
+func (o *TenancyContactAssignmentsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this tenancy contact assignments bulk delete no content response has a 4xx status code
+func (o *TenancyContactAssignmentsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this tenancy contact assignments bulk delete no content response has a 5xx status code
+func (o *TenancyContactAssignmentsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this tenancy contact assignments bulk delete no content response a status code equal to that given
+func (o *TenancyContactAssignmentsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *TenancyContactAssignmentsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /tenancy/contact-assignments/][%d] tenancyContactAssignmentsBulkDeleteNoContent ", 204)
+}
+
+func (o *TenancyContactAssignmentsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /tenancy/contact-assignments/][%d] tenancyContactAssignmentsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewTenancyContactAssignmentsBulkDeleteDefault(code int) *TenancyContactAssi
 	}
 }
 
-/* TenancyContactAssignmentsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+TenancyContactAssignmentsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 TenancyContactAssignmentsBulkDeleteDefault tenancy contact assignments bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *TenancyContactAssignmentsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this tenancy contact assignments bulk delete default response has a 2xx status code
+func (o *TenancyContactAssignmentsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this tenancy contact assignments bulk delete default response has a 3xx status code
+func (o *TenancyContactAssignmentsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this tenancy contact assignments bulk delete default response has a 4xx status code
+func (o *TenancyContactAssignmentsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this tenancy contact assignments bulk delete default response has a 5xx status code
+func (o *TenancyContactAssignmentsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this tenancy contact assignments bulk delete default response a status code equal to that given
+func (o *TenancyContactAssignmentsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *TenancyContactAssignmentsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /tenancy/contact-assignments/][%d] tenancy_contact-assignments_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *TenancyContactAssignmentsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /tenancy/contact-assignments/][%d] tenancy_contact-assignments_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *TenancyContactAssignmentsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

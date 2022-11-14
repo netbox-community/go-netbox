@@ -61,7 +61,8 @@ func NewIpamAsnsBulkUpdateOK() *IpamAsnsBulkUpdateOK {
 	return &IpamAsnsBulkUpdateOK{}
 }
 
-/* IpamAsnsBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+IpamAsnsBulkUpdateOK describes a response with status code 200, with default header values.
 
 IpamAsnsBulkUpdateOK ipam asns bulk update o k
 */
@@ -69,9 +70,39 @@ type IpamAsnsBulkUpdateOK struct {
 	Payload *models.ASN
 }
 
+// IsSuccess returns true when this ipam asns bulk update o k response has a 2xx status code
+func (o *IpamAsnsBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam asns bulk update o k response has a 3xx status code
+func (o *IpamAsnsBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam asns bulk update o k response has a 4xx status code
+func (o *IpamAsnsBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam asns bulk update o k response has a 5xx status code
+func (o *IpamAsnsBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam asns bulk update o k response a status code equal to that given
+func (o *IpamAsnsBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *IpamAsnsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/asns/][%d] ipamAsnsBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *IpamAsnsBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /ipam/asns/][%d] ipamAsnsBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *IpamAsnsBulkUpdateOK) GetPayload() *models.ASN {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamAsnsBulkUpdateDefault(code int) *IpamAsnsBulkUpdateDefault {
 	}
 }
 
-/* IpamAsnsBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+IpamAsnsBulkUpdateDefault describes a response with status code -1, with default header values.
 
 IpamAsnsBulkUpdateDefault ipam asns bulk update default
 */
@@ -110,9 +142,39 @@ func (o *IpamAsnsBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam asns bulk update default response has a 2xx status code
+func (o *IpamAsnsBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam asns bulk update default response has a 3xx status code
+func (o *IpamAsnsBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam asns bulk update default response has a 4xx status code
+func (o *IpamAsnsBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam asns bulk update default response has a 5xx status code
+func (o *IpamAsnsBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam asns bulk update default response a status code equal to that given
+func (o *IpamAsnsBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamAsnsBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /ipam/asns/][%d] ipam_asns_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamAsnsBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /ipam/asns/][%d] ipam_asns_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamAsnsBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

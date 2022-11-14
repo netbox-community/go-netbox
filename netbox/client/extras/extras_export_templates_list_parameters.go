@@ -68,10 +68,12 @@ func NewExtrasExportTemplatesListParamsWithHTTPClient(client *http.Client) *Extr
 	}
 }
 
-/* ExtrasExportTemplatesListParams contains all the parameters to send to the API endpoint
-   for the extras export templates list operation.
+/*
+ExtrasExportTemplatesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras export templates list operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasExportTemplatesListParams struct {
 
@@ -170,6 +172,12 @@ type ExtrasExportTemplatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Q.
 	Q *string
@@ -555,6 +563,17 @@ func (o *ExtrasExportTemplatesListParams) WithOffset(offset *int64) *ExtrasExpor
 // SetOffset adds the offset to the extras export templates list params
 func (o *ExtrasExportTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithOrdering(ordering *string) *ExtrasExportTemplatesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithQ adds the q to the extras export templates list params
@@ -1081,6 +1100,23 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

@@ -61,7 +61,8 @@ func NewExtrasCustomFieldsPartialUpdateOK() *ExtrasCustomFieldsPartialUpdateOK {
 	return &ExtrasCustomFieldsPartialUpdateOK{}
 }
 
-/* ExtrasCustomFieldsPartialUpdateOK describes a response with status code 200, with default header values.
+/*
+ExtrasCustomFieldsPartialUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasCustomFieldsPartialUpdateOK extras custom fields partial update o k
 */
@@ -69,9 +70,39 @@ type ExtrasCustomFieldsPartialUpdateOK struct {
 	Payload *models.CustomField
 }
 
+// IsSuccess returns true when this extras custom fields partial update o k response has a 2xx status code
+func (o *ExtrasCustomFieldsPartialUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras custom fields partial update o k response has a 3xx status code
+func (o *ExtrasCustomFieldsPartialUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras custom fields partial update o k response has a 4xx status code
+func (o *ExtrasCustomFieldsPartialUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras custom fields partial update o k response has a 5xx status code
+func (o *ExtrasCustomFieldsPartialUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras custom fields partial update o k response a status code equal to that given
+func (o *ExtrasCustomFieldsPartialUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasCustomFieldsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extrasCustomFieldsPartialUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasCustomFieldsPartialUpdateOK) String() string {
+	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extrasCustomFieldsPartialUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasCustomFieldsPartialUpdateOK) GetPayload() *models.CustomField {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasCustomFieldsPartialUpdateDefault(code int) *ExtrasCustomFieldsPart
 	}
 }
 
-/* ExtrasCustomFieldsPartialUpdateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasCustomFieldsPartialUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasCustomFieldsPartialUpdateDefault extras custom fields partial update default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasCustomFieldsPartialUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras custom fields partial update default response has a 2xx status code
+func (o *ExtrasCustomFieldsPartialUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras custom fields partial update default response has a 3xx status code
+func (o *ExtrasCustomFieldsPartialUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras custom fields partial update default response has a 4xx status code
+func (o *ExtrasCustomFieldsPartialUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras custom fields partial update default response has a 5xx status code
+func (o *ExtrasCustomFieldsPartialUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras custom fields partial update default response a status code equal to that given
+func (o *ExtrasCustomFieldsPartialUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasCustomFieldsPartialUpdateDefault) Error() string {
 	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extras_custom-fields_partial_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasCustomFieldsPartialUpdateDefault) String() string {
+	return fmt.Sprintf("[PATCH /extras/custom-fields/{id}/][%d] extras_custom-fields_partial_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasCustomFieldsPartialUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

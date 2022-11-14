@@ -69,10 +69,12 @@ func NewExtrasWebhooksBulkUpdateParamsWithHTTPClient(client *http.Client) *Extra
 	}
 }
 
-/* ExtrasWebhooksBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the extras webhooks bulk update operation.
+/*
+ExtrasWebhooksBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras webhooks bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasWebhooksBulkUpdateParams struct {
 

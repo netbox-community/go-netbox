@@ -59,14 +59,44 @@ func NewVirtualizationInterfacesBulkDeleteNoContent() *VirtualizationInterfacesB
 	return &VirtualizationInterfacesBulkDeleteNoContent{}
 }
 
-/* VirtualizationInterfacesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+VirtualizationInterfacesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationInterfacesBulkDeleteNoContent virtualization interfaces bulk delete no content
 */
 type VirtualizationInterfacesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this virtualization interfaces bulk delete no content response has a 2xx status code
+func (o *VirtualizationInterfacesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization interfaces bulk delete no content response has a 3xx status code
+func (o *VirtualizationInterfacesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization interfaces bulk delete no content response has a 4xx status code
+func (o *VirtualizationInterfacesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization interfaces bulk delete no content response has a 5xx status code
+func (o *VirtualizationInterfacesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization interfaces bulk delete no content response a status code equal to that given
+func (o *VirtualizationInterfacesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *VirtualizationInterfacesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /virtualization/interfaces/][%d] virtualizationInterfacesBulkDeleteNoContent ", 204)
+}
+
+func (o *VirtualizationInterfacesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /virtualization/interfaces/][%d] virtualizationInterfacesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewVirtualizationInterfacesBulkDeleteDefault(code int) *VirtualizationInter
 	}
 }
 
-/* VirtualizationInterfacesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationInterfacesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesBulkDeleteDefault virtualization interfaces bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *VirtualizationInterfacesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization interfaces bulk delete default response has a 2xx status code
+func (o *VirtualizationInterfacesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization interfaces bulk delete default response has a 3xx status code
+func (o *VirtualizationInterfacesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization interfaces bulk delete default response has a 4xx status code
+func (o *VirtualizationInterfacesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization interfaces bulk delete default response has a 5xx status code
+func (o *VirtualizationInterfacesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization interfaces bulk delete default response a status code equal to that given
+func (o *VirtualizationInterfacesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationInterfacesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/interfaces/][%d] virtualization_interfaces_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationInterfacesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /virtualization/interfaces/][%d] virtualization_interfaces_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationInterfacesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

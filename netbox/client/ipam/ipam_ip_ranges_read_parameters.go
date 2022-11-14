@@ -68,10 +68,12 @@ func NewIpamIPRangesReadParamsWithHTTPClient(client *http.Client) *IpamIPRangesR
 	}
 }
 
-/* IpamIPRangesReadParams contains all the parameters to send to the API endpoint
-   for the ipam ip ranges read operation.
+/*
+IpamIPRangesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam ip ranges read operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamIPRangesReadParams struct {
 

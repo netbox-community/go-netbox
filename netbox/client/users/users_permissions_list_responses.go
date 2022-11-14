@@ -66,7 +66,8 @@ func NewUsersPermissionsListOK() *UsersPermissionsListOK {
 	return &UsersPermissionsListOK{}
 }
 
-/* UsersPermissionsListOK describes a response with status code 200, with default header values.
+/*
+UsersPermissionsListOK describes a response with status code 200, with default header values.
 
 UsersPermissionsListOK users permissions list o k
 */
@@ -74,9 +75,39 @@ type UsersPermissionsListOK struct {
 	Payload *UsersPermissionsListOKBody
 }
 
+// IsSuccess returns true when this users permissions list o k response has a 2xx status code
+func (o *UsersPermissionsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users permissions list o k response has a 3xx status code
+func (o *UsersPermissionsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users permissions list o k response has a 4xx status code
+func (o *UsersPermissionsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users permissions list o k response has a 5xx status code
+func (o *UsersPermissionsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users permissions list o k response a status code equal to that given
+func (o *UsersPermissionsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersPermissionsListOK) Error() string {
 	return fmt.Sprintf("[GET /users/permissions/][%d] usersPermissionsListOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersPermissionsListOK) String() string {
+	return fmt.Sprintf("[GET /users/permissions/][%d] usersPermissionsListOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersPermissionsListOK) GetPayload() *UsersPermissionsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewUsersPermissionsListDefault(code int) *UsersPermissionsListDefault {
 	}
 }
 
-/* UsersPermissionsListDefault describes a response with status code -1, with default header values.
+/*
+UsersPermissionsListDefault describes a response with status code -1, with default header values.
 
 UsersPermissionsListDefault users permissions list default
 */
@@ -115,9 +147,39 @@ func (o *UsersPermissionsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users permissions list default response has a 2xx status code
+func (o *UsersPermissionsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users permissions list default response has a 3xx status code
+func (o *UsersPermissionsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users permissions list default response has a 4xx status code
+func (o *UsersPermissionsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users permissions list default response has a 5xx status code
+func (o *UsersPermissionsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users permissions list default response a status code equal to that given
+func (o *UsersPermissionsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersPermissionsListDefault) Error() string {
 	return fmt.Sprintf("[GET /users/permissions/][%d] users_permissions_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersPermissionsListDefault) String() string {
+	return fmt.Sprintf("[GET /users/permissions/][%d] users_permissions_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersPermissionsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *UsersPermissionsListDefault) readResponse(response runtime.ClientRespon
 	return nil
 }
 
-/*UsersPermissionsListOKBody users permissions list o k body
+/*
+UsersPermissionsListOKBody users permissions list o k body
 swagger:model UsersPermissionsListOKBody
 */
 type UsersPermissionsListOKBody struct {

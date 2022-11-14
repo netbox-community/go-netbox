@@ -59,14 +59,44 @@ func NewIpamFhrpGroupAssignmentsBulkDeleteNoContent() *IpamFhrpGroupAssignmentsB
 	return &IpamFhrpGroupAssignmentsBulkDeleteNoContent{}
 }
 
-/* IpamFhrpGroupAssignmentsBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+IpamFhrpGroupAssignmentsBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 IpamFhrpGroupAssignmentsBulkDeleteNoContent ipam fhrp group assignments bulk delete no content
 */
 type IpamFhrpGroupAssignmentsBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments bulk delete no content response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments bulk delete no content response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam fhrp group assignments bulk delete no content response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam fhrp group assignments bulk delete no content response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam fhrp group assignments bulk delete no content response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *IpamFhrpGroupAssignmentsBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/][%d] ipamFhrpGroupAssignmentsBulkDeleteNoContent ", 204)
+}
+
+func (o *IpamFhrpGroupAssignmentsBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/][%d] ipamFhrpGroupAssignmentsBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewIpamFhrpGroupAssignmentsBulkDeleteDefault(code int) *IpamFhrpGroupAssign
 	}
 }
 
-/* IpamFhrpGroupAssignmentsBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+IpamFhrpGroupAssignmentsBulkDeleteDefault describes a response with status code -1, with default header values.
 
 IpamFhrpGroupAssignmentsBulkDeleteDefault ipam fhrp group assignments bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *IpamFhrpGroupAssignmentsBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam fhrp group assignments bulk delete default response has a 2xx status code
+func (o *IpamFhrpGroupAssignmentsBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam fhrp group assignments bulk delete default response has a 3xx status code
+func (o *IpamFhrpGroupAssignmentsBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam fhrp group assignments bulk delete default response has a 4xx status code
+func (o *IpamFhrpGroupAssignmentsBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam fhrp group assignments bulk delete default response has a 5xx status code
+func (o *IpamFhrpGroupAssignmentsBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam fhrp group assignments bulk delete default response a status code equal to that given
+func (o *IpamFhrpGroupAssignmentsBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamFhrpGroupAssignmentsBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/][%d] ipam_fhrp-group-assignments_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamFhrpGroupAssignmentsBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /ipam/fhrp-group-assignments/][%d] ipam_fhrp-group-assignments_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamFhrpGroupAssignmentsBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

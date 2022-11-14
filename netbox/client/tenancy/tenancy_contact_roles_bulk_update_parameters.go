@@ -69,10 +69,12 @@ func NewTenancyContactRolesBulkUpdateParamsWithHTTPClient(client *http.Client) *
 	}
 }
 
-/* TenancyContactRolesBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the tenancy contact roles bulk update operation.
+/*
+TenancyContactRolesBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the tenancy contact roles bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type TenancyContactRolesBulkUpdateParams struct {
 

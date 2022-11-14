@@ -61,7 +61,8 @@ func NewCircuitsProviderNetworksBulkUpdateOK() *CircuitsProviderNetworksBulkUpda
 	return &CircuitsProviderNetworksBulkUpdateOK{}
 }
 
-/* CircuitsProviderNetworksBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+CircuitsProviderNetworksBulkUpdateOK describes a response with status code 200, with default header values.
 
 CircuitsProviderNetworksBulkUpdateOK circuits provider networks bulk update o k
 */
@@ -69,9 +70,39 @@ type CircuitsProviderNetworksBulkUpdateOK struct {
 	Payload *models.ProviderNetwork
 }
 
+// IsSuccess returns true when this circuits provider networks bulk update o k response has a 2xx status code
+func (o *CircuitsProviderNetworksBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits provider networks bulk update o k response has a 3xx status code
+func (o *CircuitsProviderNetworksBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits provider networks bulk update o k response has a 4xx status code
+func (o *CircuitsProviderNetworksBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits provider networks bulk update o k response has a 5xx status code
+func (o *CircuitsProviderNetworksBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits provider networks bulk update o k response a status code equal to that given
+func (o *CircuitsProviderNetworksBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsProviderNetworksBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /circuits/provider-networks/][%d] circuitsProviderNetworksBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsProviderNetworksBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /circuits/provider-networks/][%d] circuitsProviderNetworksBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsProviderNetworksBulkUpdateOK) GetPayload() *models.ProviderNetwork {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewCircuitsProviderNetworksBulkUpdateDefault(code int) *CircuitsProviderNet
 	}
 }
 
-/* CircuitsProviderNetworksBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+CircuitsProviderNetworksBulkUpdateDefault describes a response with status code -1, with default header values.
 
 CircuitsProviderNetworksBulkUpdateDefault circuits provider networks bulk update default
 */
@@ -110,9 +142,39 @@ func (o *CircuitsProviderNetworksBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits provider networks bulk update default response has a 2xx status code
+func (o *CircuitsProviderNetworksBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits provider networks bulk update default response has a 3xx status code
+func (o *CircuitsProviderNetworksBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits provider networks bulk update default response has a 4xx status code
+func (o *CircuitsProviderNetworksBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits provider networks bulk update default response has a 5xx status code
+func (o *CircuitsProviderNetworksBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits provider networks bulk update default response a status code equal to that given
+func (o *CircuitsProviderNetworksBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsProviderNetworksBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /circuits/provider-networks/][%d] circuits_provider-networks_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsProviderNetworksBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /circuits/provider-networks/][%d] circuits_provider-networks_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsProviderNetworksBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

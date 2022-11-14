@@ -61,7 +61,8 @@ func NewDcimInventoryItemRolesBulkUpdateOK() *DcimInventoryItemRolesBulkUpdateOK
 	return &DcimInventoryItemRolesBulkUpdateOK{}
 }
 
-/* DcimInventoryItemRolesBulkUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimInventoryItemRolesBulkUpdateOK describes a response with status code 200, with default header values.
 
 DcimInventoryItemRolesBulkUpdateOK dcim inventory item roles bulk update o k
 */
@@ -69,9 +70,39 @@ type DcimInventoryItemRolesBulkUpdateOK struct {
 	Payload *models.InventoryItemRole
 }
 
+// IsSuccess returns true when this dcim inventory item roles bulk update o k response has a 2xx status code
+func (o *DcimInventoryItemRolesBulkUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory item roles bulk update o k response has a 3xx status code
+func (o *DcimInventoryItemRolesBulkUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory item roles bulk update o k response has a 4xx status code
+func (o *DcimInventoryItemRolesBulkUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory item roles bulk update o k response has a 5xx status code
+func (o *DcimInventoryItemRolesBulkUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory item roles bulk update o k response a status code equal to that given
+func (o *DcimInventoryItemRolesBulkUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimInventoryItemRolesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesBulkUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimInventoryItemRolesBulkUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesBulkUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimInventoryItemRolesBulkUpdateOK) GetPayload() *models.InventoryItemRole {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInventoryItemRolesBulkUpdateDefault(code int) *DcimInventoryItemRole
 	}
 }
 
-/* DcimInventoryItemRolesBulkUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemRolesBulkUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemRolesBulkUpdateDefault dcim inventory item roles bulk update default
 */
@@ -110,9 +142,39 @@ func (o *DcimInventoryItemRolesBulkUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory item roles bulk update default response has a 2xx status code
+func (o *DcimInventoryItemRolesBulkUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory item roles bulk update default response has a 3xx status code
+func (o *DcimInventoryItemRolesBulkUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory item roles bulk update default response has a 4xx status code
+func (o *DcimInventoryItemRolesBulkUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory item roles bulk update default response has a 5xx status code
+func (o *DcimInventoryItemRolesBulkUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory item roles bulk update default response a status code equal to that given
+func (o *DcimInventoryItemRolesBulkUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemRolesBulkUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_bulk_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemRolesBulkUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/][%d] dcim_inventory-item-roles_bulk_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemRolesBulkUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

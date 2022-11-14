@@ -61,7 +61,8 @@ func NewExtrasTagsCreateCreated() *ExtrasTagsCreateCreated {
 	return &ExtrasTagsCreateCreated{}
 }
 
-/* ExtrasTagsCreateCreated describes a response with status code 201, with default header values.
+/*
+ExtrasTagsCreateCreated describes a response with status code 201, with default header values.
 
 ExtrasTagsCreateCreated extras tags create created
 */
@@ -69,9 +70,39 @@ type ExtrasTagsCreateCreated struct {
 	Payload *models.Tag
 }
 
+// IsSuccess returns true when this extras tags create created response has a 2xx status code
+func (o *ExtrasTagsCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras tags create created response has a 3xx status code
+func (o *ExtrasTagsCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras tags create created response has a 4xx status code
+func (o *ExtrasTagsCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras tags create created response has a 5xx status code
+func (o *ExtrasTagsCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras tags create created response a status code equal to that given
+func (o *ExtrasTagsCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *ExtrasTagsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/tags/][%d] extrasTagsCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *ExtrasTagsCreateCreated) String() string {
+	return fmt.Sprintf("[POST /extras/tags/][%d] extrasTagsCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *ExtrasTagsCreateCreated) GetPayload() *models.Tag {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasTagsCreateDefault(code int) *ExtrasTagsCreateDefault {
 	}
 }
 
-/* ExtrasTagsCreateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasTagsCreateDefault describes a response with status code -1, with default header values.
 
 ExtrasTagsCreateDefault extras tags create default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasTagsCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras tags create default response has a 2xx status code
+func (o *ExtrasTagsCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras tags create default response has a 3xx status code
+func (o *ExtrasTagsCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras tags create default response has a 4xx status code
+func (o *ExtrasTagsCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras tags create default response has a 5xx status code
+func (o *ExtrasTagsCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras tags create default response a status code equal to that given
+func (o *ExtrasTagsCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasTagsCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /extras/tags/][%d] extras_tags_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasTagsCreateDefault) String() string {
+	return fmt.Sprintf("[POST /extras/tags/][%d] extras_tags_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasTagsCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

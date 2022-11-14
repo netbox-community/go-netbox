@@ -70,10 +70,12 @@ func NewIpamVrfsPartialUpdateParamsWithHTTPClient(client *http.Client) *IpamVrfs
 	}
 }
 
-/* IpamVrfsPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the ipam vrfs partial update operation.
+/*
+IpamVrfsPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam vrfs partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamVrfsPartialUpdateParams struct {
 

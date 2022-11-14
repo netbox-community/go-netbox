@@ -61,7 +61,8 @@ func NewIpamIPRangesCreateCreated() *IpamIPRangesCreateCreated {
 	return &IpamIPRangesCreateCreated{}
 }
 
-/* IpamIPRangesCreateCreated describes a response with status code 201, with default header values.
+/*
+IpamIPRangesCreateCreated describes a response with status code 201, with default header values.
 
 IpamIPRangesCreateCreated ipam Ip ranges create created
 */
@@ -69,9 +70,39 @@ type IpamIPRangesCreateCreated struct {
 	Payload *models.IPRange
 }
 
+// IsSuccess returns true when this ipam Ip ranges create created response has a 2xx status code
+func (o *IpamIPRangesCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this ipam Ip ranges create created response has a 3xx status code
+func (o *IpamIPRangesCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this ipam Ip ranges create created response has a 4xx status code
+func (o *IpamIPRangesCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this ipam Ip ranges create created response has a 5xx status code
+func (o *IpamIPRangesCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this ipam Ip ranges create created response a status code equal to that given
+func (o *IpamIPRangesCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *IpamIPRangesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/ip-ranges/][%d] ipamIpRangesCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *IpamIPRangesCreateCreated) String() string {
+	return fmt.Sprintf("[POST /ipam/ip-ranges/][%d] ipamIpRangesCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *IpamIPRangesCreateCreated) GetPayload() *models.IPRange {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewIpamIPRangesCreateDefault(code int) *IpamIPRangesCreateDefault {
 	}
 }
 
-/* IpamIPRangesCreateDefault describes a response with status code -1, with default header values.
+/*
+IpamIPRangesCreateDefault describes a response with status code -1, with default header values.
 
 IpamIPRangesCreateDefault ipam ip ranges create default
 */
@@ -110,9 +142,39 @@ func (o *IpamIPRangesCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this ipam ip ranges create default response has a 2xx status code
+func (o *IpamIPRangesCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this ipam ip ranges create default response has a 3xx status code
+func (o *IpamIPRangesCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this ipam ip ranges create default response has a 4xx status code
+func (o *IpamIPRangesCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this ipam ip ranges create default response has a 5xx status code
+func (o *IpamIPRangesCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this ipam ip ranges create default response a status code equal to that given
+func (o *IpamIPRangesCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *IpamIPRangesCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /ipam/ip-ranges/][%d] ipam_ip-ranges_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *IpamIPRangesCreateDefault) String() string {
+	return fmt.Sprintf("[POST /ipam/ip-ranges/][%d] ipam_ip-ranges_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *IpamIPRangesCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

@@ -61,7 +61,8 @@ func NewUsersGroupsReadOK() *UsersGroupsReadOK {
 	return &UsersGroupsReadOK{}
 }
 
-/* UsersGroupsReadOK describes a response with status code 200, with default header values.
+/*
+UsersGroupsReadOK describes a response with status code 200, with default header values.
 
 UsersGroupsReadOK users groups read o k
 */
@@ -69,9 +70,39 @@ type UsersGroupsReadOK struct {
 	Payload *models.Group
 }
 
+// IsSuccess returns true when this users groups read o k response has a 2xx status code
+func (o *UsersGroupsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this users groups read o k response has a 3xx status code
+func (o *UsersGroupsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this users groups read o k response has a 4xx status code
+func (o *UsersGroupsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this users groups read o k response has a 5xx status code
+func (o *UsersGroupsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this users groups read o k response a status code equal to that given
+func (o *UsersGroupsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *UsersGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /users/groups/{id}/][%d] usersGroupsReadOK  %+v", 200, o.Payload)
 }
+
+func (o *UsersGroupsReadOK) String() string {
+	return fmt.Sprintf("[GET /users/groups/{id}/][%d] usersGroupsReadOK  %+v", 200, o.Payload)
+}
+
 func (o *UsersGroupsReadOK) GetPayload() *models.Group {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewUsersGroupsReadDefault(code int) *UsersGroupsReadDefault {
 	}
 }
 
-/* UsersGroupsReadDefault describes a response with status code -1, with default header values.
+/*
+UsersGroupsReadDefault describes a response with status code -1, with default header values.
 
 UsersGroupsReadDefault users groups read default
 */
@@ -110,9 +142,39 @@ func (o *UsersGroupsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this users groups read default response has a 2xx status code
+func (o *UsersGroupsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this users groups read default response has a 3xx status code
+func (o *UsersGroupsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this users groups read default response has a 4xx status code
+func (o *UsersGroupsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this users groups read default response has a 5xx status code
+func (o *UsersGroupsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this users groups read default response a status code equal to that given
+func (o *UsersGroupsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *UsersGroupsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /users/groups/{id}/][%d] users_groups_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *UsersGroupsReadDefault) String() string {
+	return fmt.Sprintf("[GET /users/groups/{id}/][%d] users_groups_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *UsersGroupsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

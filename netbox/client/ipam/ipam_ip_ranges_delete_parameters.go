@@ -68,10 +68,12 @@ func NewIpamIPRangesDeleteParamsWithHTTPClient(client *http.Client) *IpamIPRange
 	}
 }
 
-/* IpamIPRangesDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam ip ranges delete operation.
+/*
+IpamIPRangesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam ip ranges delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamIPRangesDeleteParams struct {
 

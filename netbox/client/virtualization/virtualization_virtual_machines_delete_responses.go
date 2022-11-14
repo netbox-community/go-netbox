@@ -59,14 +59,44 @@ func NewVirtualizationVirtualMachinesDeleteNoContent() *VirtualizationVirtualMac
 	return &VirtualizationVirtualMachinesDeleteNoContent{}
 }
 
-/* VirtualizationVirtualMachinesDeleteNoContent describes a response with status code 204, with default header values.
+/*
+VirtualizationVirtualMachinesDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationVirtualMachinesDeleteNoContent virtualization virtual machines delete no content
 */
 type VirtualizationVirtualMachinesDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this virtualization virtual machines delete no content response has a 2xx status code
+func (o *VirtualizationVirtualMachinesDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization virtual machines delete no content response has a 3xx status code
+func (o *VirtualizationVirtualMachinesDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization virtual machines delete no content response has a 4xx status code
+func (o *VirtualizationVirtualMachinesDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization virtual machines delete no content response has a 5xx status code
+func (o *VirtualizationVirtualMachinesDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization virtual machines delete no content response a status code equal to that given
+func (o *VirtualizationVirtualMachinesDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *VirtualizationVirtualMachinesDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesDeleteNoContent ", 204)
+}
+
+func (o *VirtualizationVirtualMachinesDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewVirtualizationVirtualMachinesDeleteDefault(code int) *VirtualizationVirt
 	}
 }
 
-/* VirtualizationVirtualMachinesDeleteDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationVirtualMachinesDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationVirtualMachinesDeleteDefault virtualization virtual machines delete default
 */
@@ -97,9 +128,39 @@ func (o *VirtualizationVirtualMachinesDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization virtual machines delete default response has a 2xx status code
+func (o *VirtualizationVirtualMachinesDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization virtual machines delete default response has a 3xx status code
+func (o *VirtualizationVirtualMachinesDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization virtual machines delete default response has a 4xx status code
+func (o *VirtualizationVirtualMachinesDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization virtual machines delete default response has a 5xx status code
+func (o *VirtualizationVirtualMachinesDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization virtual machines delete default response a status code equal to that given
+func (o *VirtualizationVirtualMachinesDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationVirtualMachinesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationVirtualMachinesDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /virtualization/virtual-machines/{id}/][%d] virtualization_virtual-machines_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationVirtualMachinesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

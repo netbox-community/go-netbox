@@ -69,10 +69,12 @@ func NewUsersUsersBulkUpdateParamsWithHTTPClient(client *http.Client) *UsersUser
 	}
 }
 
-/* UsersUsersBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the users users bulk update operation.
+/*
+UsersUsersBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users users bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersUsersBulkUpdateParams struct {
 

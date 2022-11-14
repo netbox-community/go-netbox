@@ -70,10 +70,12 @@ func NewCircuitsProvidersPartialUpdateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* CircuitsProvidersPartialUpdateParams contains all the parameters to send to the API endpoint
-   for the circuits providers partial update operation.
+/*
+CircuitsProvidersPartialUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the circuits providers partial update operation.
+
+	Typically these are written to a http.Request.
 */
 type CircuitsProvidersPartialUpdateParams struct {
 

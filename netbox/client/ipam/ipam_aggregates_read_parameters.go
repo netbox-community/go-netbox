@@ -68,10 +68,12 @@ func NewIpamAggregatesReadParamsWithHTTPClient(client *http.Client) *IpamAggrega
 	}
 }
 
-/* IpamAggregatesReadParams contains all the parameters to send to the API endpoint
-   for the ipam aggregates read operation.
+/*
+IpamAggregatesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam aggregates read operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamAggregatesReadParams struct {
 

@@ -59,14 +59,44 @@ func NewDcimSiteGroupsDeleteNoContent() *DcimSiteGroupsDeleteNoContent {
 	return &DcimSiteGroupsDeleteNoContent{}
 }
 
-/* DcimSiteGroupsDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimSiteGroupsDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimSiteGroupsDeleteNoContent dcim site groups delete no content
 */
 type DcimSiteGroupsDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim site groups delete no content response has a 2xx status code
+func (o *DcimSiteGroupsDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim site groups delete no content response has a 3xx status code
+func (o *DcimSiteGroupsDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim site groups delete no content response has a 4xx status code
+func (o *DcimSiteGroupsDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim site groups delete no content response has a 5xx status code
+func (o *DcimSiteGroupsDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim site groups delete no content response a status code equal to that given
+func (o *DcimSiteGroupsDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimSiteGroupsDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/site-groups/{id}/][%d] dcimSiteGroupsDeleteNoContent ", 204)
+}
+
+func (o *DcimSiteGroupsDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/site-groups/{id}/][%d] dcimSiteGroupsDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimSiteGroupsDeleteDefault(code int) *DcimSiteGroupsDeleteDefault {
 	}
 }
 
-/* DcimSiteGroupsDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimSiteGroupsDeleteDefault describes a response with status code -1, with default header values.
 
 DcimSiteGroupsDeleteDefault dcim site groups delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimSiteGroupsDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim site groups delete default response has a 2xx status code
+func (o *DcimSiteGroupsDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim site groups delete default response has a 3xx status code
+func (o *DcimSiteGroupsDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim site groups delete default response has a 4xx status code
+func (o *DcimSiteGroupsDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim site groups delete default response has a 5xx status code
+func (o *DcimSiteGroupsDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim site groups delete default response a status code equal to that given
+func (o *DcimSiteGroupsDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimSiteGroupsDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/site-groups/{id}/][%d] dcim_site-groups_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimSiteGroupsDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/site-groups/{id}/][%d] dcim_site-groups_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimSiteGroupsDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

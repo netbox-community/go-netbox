@@ -61,7 +61,8 @@ func NewWirelessWirelessLinksCreateCreated() *WirelessWirelessLinksCreateCreated
 	return &WirelessWirelessLinksCreateCreated{}
 }
 
-/* WirelessWirelessLinksCreateCreated describes a response with status code 201, with default header values.
+/*
+WirelessWirelessLinksCreateCreated describes a response with status code 201, with default header values.
 
 WirelessWirelessLinksCreateCreated wireless wireless links create created
 */
@@ -69,9 +70,39 @@ type WirelessWirelessLinksCreateCreated struct {
 	Payload *models.WirelessLink
 }
 
+// IsSuccess returns true when this wireless wireless links create created response has a 2xx status code
+func (o *WirelessWirelessLinksCreateCreated) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this wireless wireless links create created response has a 3xx status code
+func (o *WirelessWirelessLinksCreateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this wireless wireless links create created response has a 4xx status code
+func (o *WirelessWirelessLinksCreateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this wireless wireless links create created response has a 5xx status code
+func (o *WirelessWirelessLinksCreateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this wireless wireless links create created response a status code equal to that given
+func (o *WirelessWirelessLinksCreateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
 func (o *WirelessWirelessLinksCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /wireless/wireless-links/][%d] wirelessWirelessLinksCreateCreated  %+v", 201, o.Payload)
 }
+
+func (o *WirelessWirelessLinksCreateCreated) String() string {
+	return fmt.Sprintf("[POST /wireless/wireless-links/][%d] wirelessWirelessLinksCreateCreated  %+v", 201, o.Payload)
+}
+
 func (o *WirelessWirelessLinksCreateCreated) GetPayload() *models.WirelessLink {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewWirelessWirelessLinksCreateDefault(code int) *WirelessWirelessLinksCreat
 	}
 }
 
-/* WirelessWirelessLinksCreateDefault describes a response with status code -1, with default header values.
+/*
+WirelessWirelessLinksCreateDefault describes a response with status code -1, with default header values.
 
 WirelessWirelessLinksCreateDefault wireless wireless links create default
 */
@@ -110,9 +142,39 @@ func (o *WirelessWirelessLinksCreateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this wireless wireless links create default response has a 2xx status code
+func (o *WirelessWirelessLinksCreateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this wireless wireless links create default response has a 3xx status code
+func (o *WirelessWirelessLinksCreateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this wireless wireless links create default response has a 4xx status code
+func (o *WirelessWirelessLinksCreateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this wireless wireless links create default response has a 5xx status code
+func (o *WirelessWirelessLinksCreateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this wireless wireless links create default response a status code equal to that given
+func (o *WirelessWirelessLinksCreateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *WirelessWirelessLinksCreateDefault) Error() string {
 	return fmt.Sprintf("[POST /wireless/wireless-links/][%d] wireless_wireless-links_create default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *WirelessWirelessLinksCreateDefault) String() string {
+	return fmt.Sprintf("[POST /wireless/wireless-links/][%d] wireless_wireless-links_create default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *WirelessWirelessLinksCreateDefault) GetPayload() interface{} {
 	return o.Payload
 }

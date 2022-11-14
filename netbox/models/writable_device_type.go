@@ -37,7 +37,7 @@ import (
 type WritableDeviceType struct {
 
 	// Airflow
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
 	Airflow string `json:"airflow,omitempty"`
 
 	// Comments
@@ -46,7 +46,7 @@ type WritableDeviceType struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -76,7 +76,7 @@ type WritableDeviceType struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Manufacturer
 	// Required: true
@@ -115,10 +115,9 @@ type WritableDeviceType struct {
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
 
-	// Height (U)
-	// Maximum: 32767
+	// Position (U)
 	// Minimum: 0
-	UHeight *int64 `json:"u_height,omitempty"`
+	UHeight *float64 `json:"u_height,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -192,7 +191,7 @@ var writableDeviceTypeTypeAirflowPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -219,6 +218,9 @@ const (
 
 	// WritableDeviceTypeAirflowPassive captures enum value "passive"
 	WritableDeviceTypeAirflowPassive string = "passive"
+
+	// WritableDeviceTypeAirflowMixed captures enum value "mixed"
+	WritableDeviceTypeAirflowMixed string = "mixed"
 )
 
 // prop value enum
@@ -422,11 +424,7 @@ func (m *WritableDeviceType) validateUHeight(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MinimumInt("u_height", "body", *m.UHeight, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("u_height", "body", *m.UHeight, 32767, false); err != nil {
+	if err := validate.Minimum("u_height", "body", *m.UHeight, 0, false); err != nil {
 		return err
 	}
 
@@ -493,7 +491,7 @@ func (m *WritableDeviceType) ContextValidate(ctx context.Context, formats strfmt
 
 func (m *WritableDeviceType) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -538,7 +536,7 @@ func (m *WritableDeviceType) contextValidateID(ctx context.Context, formats strf
 
 func (m *WritableDeviceType) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

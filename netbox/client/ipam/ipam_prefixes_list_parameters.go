@@ -68,10 +68,12 @@ func NewIpamPrefixesListParamsWithHTTPClient(client *http.Client) *IpamPrefixesL
 	}
 }
 
-/* IpamPrefixesListParams contains all the parameters to send to the API endpoint
-   for the ipam prefixes list operation.
+/*
+IpamPrefixesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam prefixes list operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamPrefixesListParams struct {
 
@@ -99,11 +101,20 @@ type IpamPrefixesListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// Depth.
 	Depth *string
@@ -180,11 +191,20 @@ type IpamPrefixesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -209,6 +229,12 @@ type IpamPrefixesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Prefix.
 	Prefix *string
@@ -489,6 +515,17 @@ func (o *IpamPrefixesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithCreatedGt(createdGt *string) *IpamPrefixesListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the ipam prefixes list params
 func (o *IpamPrefixesListParams) WithCreatedGte(createdGte *string) *IpamPrefixesListParams {
 	o.SetCreatedGte(createdGte)
@@ -500,6 +537,17 @@ func (o *IpamPrefixesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithCreatedLt(createdLt *string) *IpamPrefixesListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the ipam prefixes list params
 func (o *IpamPrefixesListParams) WithCreatedLte(createdLte *string) *IpamPrefixesListParams {
 	o.SetCreatedLte(createdLte)
@@ -509,6 +557,17 @@ func (o *IpamPrefixesListParams) WithCreatedLte(createdLte *string) *IpamPrefixe
 // SetCreatedLte adds the createdLte to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithCreatedn(createdn *string) *IpamPrefixesListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDepth adds the depth to the ipam prefixes list params
@@ -786,6 +845,17 @@ func (o *IpamPrefixesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *IpamPrefixesListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the ipam prefixes list params
 func (o *IpamPrefixesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *IpamPrefixesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -797,6 +867,17 @@ func (o *IpamPrefixesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *IpamPrefixesListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the ipam prefixes list params
 func (o *IpamPrefixesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamPrefixesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -806,6 +887,17 @@ func (o *IpamPrefixesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *Ipa
 // SetLastUpdatedLte adds the lastUpdatedLte to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithLastUpdatedn(lastUpdatedn *string) *IpamPrefixesListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the ipam prefixes list params
@@ -872,6 +964,17 @@ func (o *IpamPrefixesListParams) WithOffset(offset *int64) *IpamPrefixesListPara
 // SetOffset adds the offset to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithOrdering(ordering *string) *IpamPrefixesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithPrefix adds the prefix to the ipam prefixes list params
@@ -1524,6 +1627,23 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1541,6 +1661,23 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1553,6 +1690,23 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1983,6 +2137,23 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -2000,6 +2171,23 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -2012,6 +2200,23 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -2114,6 +2319,23 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

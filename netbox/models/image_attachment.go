@@ -41,7 +41,7 @@ type ImageAttachment struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -71,7 +71,7 @@ type ImageAttachment struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Max Length: 50
@@ -85,7 +85,7 @@ type ImageAttachment struct {
 
 	// Parent
 	// Read Only: true
-	Parent map[string]*string `json:"parent,omitempty"`
+	Parent interface{} `json:"parent,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -283,10 +283,6 @@ func (m *ImageAttachment) ContextValidate(ctx context.Context, formats strfmt.Re
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateParent(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateURL(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -299,7 +295,7 @@ func (m *ImageAttachment) ContextValidate(ctx context.Context, formats strfmt.Re
 
 func (m *ImageAttachment) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -335,14 +331,9 @@ func (m *ImageAttachment) contextValidateImage(ctx context.Context, formats strf
 
 func (m *ImageAttachment) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
-
-	return nil
-}
-
-func (m *ImageAttachment) contextValidateParent(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

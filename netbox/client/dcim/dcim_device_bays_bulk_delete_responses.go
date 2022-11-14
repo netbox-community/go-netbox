@@ -59,14 +59,44 @@ func NewDcimDeviceBaysBulkDeleteNoContent() *DcimDeviceBaysBulkDeleteNoContent {
 	return &DcimDeviceBaysBulkDeleteNoContent{}
 }
 
-/* DcimDeviceBaysBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimDeviceBaysBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimDeviceBaysBulkDeleteNoContent dcim device bays bulk delete no content
 */
 type DcimDeviceBaysBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim device bays bulk delete no content response has a 2xx status code
+func (o *DcimDeviceBaysBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim device bays bulk delete no content response has a 3xx status code
+func (o *DcimDeviceBaysBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim device bays bulk delete no content response has a 4xx status code
+func (o *DcimDeviceBaysBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim device bays bulk delete no content response has a 5xx status code
+func (o *DcimDeviceBaysBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim device bays bulk delete no content response a status code equal to that given
+func (o *DcimDeviceBaysBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimDeviceBaysBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/device-bays/][%d] dcimDeviceBaysBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimDeviceBaysBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/device-bays/][%d] dcimDeviceBaysBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimDeviceBaysBulkDeleteDefault(code int) *DcimDeviceBaysBulkDeleteDefau
 	}
 }
 
-/* DcimDeviceBaysBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimDeviceBaysBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimDeviceBaysBulkDeleteDefault dcim device bays bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimDeviceBaysBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim device bays bulk delete default response has a 2xx status code
+func (o *DcimDeviceBaysBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim device bays bulk delete default response has a 3xx status code
+func (o *DcimDeviceBaysBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim device bays bulk delete default response has a 4xx status code
+func (o *DcimDeviceBaysBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim device bays bulk delete default response has a 5xx status code
+func (o *DcimDeviceBaysBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim device bays bulk delete default response a status code equal to that given
+func (o *DcimDeviceBaysBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimDeviceBaysBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/device-bays/][%d] dcim_device-bays_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimDeviceBaysBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/device-bays/][%d] dcim_device-bays_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimDeviceBaysBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

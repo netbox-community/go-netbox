@@ -70,10 +70,12 @@ func NewWirelessWirelessLinksUpdateParamsWithHTTPClient(client *http.Client) *Wi
 	}
 }
 
-/* WirelessWirelessLinksUpdateParams contains all the parameters to send to the API endpoint
-   for the wireless wireless links update operation.
+/*
+WirelessWirelessLinksUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the wireless wireless links update operation.
+
+	Typically these are written to a http.Request.
 */
 type WirelessWirelessLinksUpdateParams struct {
 

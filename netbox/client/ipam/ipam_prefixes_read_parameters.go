@@ -68,10 +68,12 @@ func NewIpamPrefixesReadParamsWithHTTPClient(client *http.Client) *IpamPrefixesR
 	}
 }
 
-/* IpamPrefixesReadParams contains all the parameters to send to the API endpoint
-   for the ipam prefixes read operation.
+/*
+IpamPrefixesReadParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam prefixes read operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamPrefixesReadParams struct {
 

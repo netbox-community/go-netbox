@@ -66,7 +66,8 @@ func NewDcimInventoryItemsListOK() *DcimInventoryItemsListOK {
 	return &DcimInventoryItemsListOK{}
 }
 
-/* DcimInventoryItemsListOK describes a response with status code 200, with default header values.
+/*
+DcimInventoryItemsListOK describes a response with status code 200, with default header values.
 
 DcimInventoryItemsListOK dcim inventory items list o k
 */
@@ -74,9 +75,39 @@ type DcimInventoryItemsListOK struct {
 	Payload *DcimInventoryItemsListOKBody
 }
 
+// IsSuccess returns true when this dcim inventory items list o k response has a 2xx status code
+func (o *DcimInventoryItemsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim inventory items list o k response has a 3xx status code
+func (o *DcimInventoryItemsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim inventory items list o k response has a 4xx status code
+func (o *DcimInventoryItemsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim inventory items list o k response has a 5xx status code
+func (o *DcimInventoryItemsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim inventory items list o k response a status code equal to that given
+func (o *DcimInventoryItemsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimInventoryItemsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/inventory-items/][%d] dcimInventoryItemsListOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimInventoryItemsListOK) String() string {
+	return fmt.Sprintf("[GET /dcim/inventory-items/][%d] dcimInventoryItemsListOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimInventoryItemsListOK) GetPayload() *DcimInventoryItemsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewDcimInventoryItemsListDefault(code int) *DcimInventoryItemsListDefault {
 	}
 }
 
-/* DcimInventoryItemsListDefault describes a response with status code -1, with default header values.
+/*
+DcimInventoryItemsListDefault describes a response with status code -1, with default header values.
 
 DcimInventoryItemsListDefault dcim inventory items list default
 */
@@ -115,9 +147,39 @@ func (o *DcimInventoryItemsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim inventory items list default response has a 2xx status code
+func (o *DcimInventoryItemsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim inventory items list default response has a 3xx status code
+func (o *DcimInventoryItemsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim inventory items list default response has a 4xx status code
+func (o *DcimInventoryItemsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim inventory items list default response has a 5xx status code
+func (o *DcimInventoryItemsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim inventory items list default response a status code equal to that given
+func (o *DcimInventoryItemsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInventoryItemsListDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/inventory-items/][%d] dcim_inventory-items_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInventoryItemsListDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/inventory-items/][%d] dcim_inventory-items_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInventoryItemsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *DcimInventoryItemsListDefault) readResponse(response runtime.ClientResp
 	return nil
 }
 
-/*DcimInventoryItemsListOKBody dcim inventory items list o k body
+/*
+DcimInventoryItemsListOKBody dcim inventory items list o k body
 swagger:model DcimInventoryItemsListOKBody
 */
 type DcimInventoryItemsListOKBody struct {

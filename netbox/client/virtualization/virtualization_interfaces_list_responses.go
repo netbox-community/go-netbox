@@ -66,7 +66,8 @@ func NewVirtualizationInterfacesListOK() *VirtualizationInterfacesListOK {
 	return &VirtualizationInterfacesListOK{}
 }
 
-/* VirtualizationInterfacesListOK describes a response with status code 200, with default header values.
+/*
+VirtualizationInterfacesListOK describes a response with status code 200, with default header values.
 
 VirtualizationInterfacesListOK virtualization interfaces list o k
 */
@@ -74,9 +75,39 @@ type VirtualizationInterfacesListOK struct {
 	Payload *VirtualizationInterfacesListOKBody
 }
 
+// IsSuccess returns true when this virtualization interfaces list o k response has a 2xx status code
+func (o *VirtualizationInterfacesListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization interfaces list o k response has a 3xx status code
+func (o *VirtualizationInterfacesListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization interfaces list o k response has a 4xx status code
+func (o *VirtualizationInterfacesListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization interfaces list o k response has a 5xx status code
+func (o *VirtualizationInterfacesListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization interfaces list o k response a status code equal to that given
+func (o *VirtualizationInterfacesListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *VirtualizationInterfacesListOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualizationInterfacesListOK  %+v", 200, o.Payload)
 }
+
+func (o *VirtualizationInterfacesListOK) String() string {
+	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualizationInterfacesListOK  %+v", 200, o.Payload)
+}
+
 func (o *VirtualizationInterfacesListOK) GetPayload() *VirtualizationInterfacesListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewVirtualizationInterfacesListDefault(code int) *VirtualizationInterfacesL
 	}
 }
 
-/* VirtualizationInterfacesListDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationInterfacesListDefault describes a response with status code -1, with default header values.
 
 VirtualizationInterfacesListDefault virtualization interfaces list default
 */
@@ -115,9 +147,39 @@ func (o *VirtualizationInterfacesListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization interfaces list default response has a 2xx status code
+func (o *VirtualizationInterfacesListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization interfaces list default response has a 3xx status code
+func (o *VirtualizationInterfacesListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization interfaces list default response has a 4xx status code
+func (o *VirtualizationInterfacesListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization interfaces list default response has a 5xx status code
+func (o *VirtualizationInterfacesListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization interfaces list default response a status code equal to that given
+func (o *VirtualizationInterfacesListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationInterfacesListDefault) Error() string {
 	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualization_interfaces_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationInterfacesListDefault) String() string {
+	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualization_interfaces_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationInterfacesListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *VirtualizationInterfacesListDefault) readResponse(response runtime.Clie
 	return nil
 }
 
-/*VirtualizationInterfacesListOKBody virtualization interfaces list o k body
+/*
+VirtualizationInterfacesListOKBody virtualization interfaces list o k body
 swagger:model VirtualizationInterfacesListOKBody
 */
 type VirtualizationInterfacesListOKBody struct {

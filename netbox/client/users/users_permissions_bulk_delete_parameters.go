@@ -67,10 +67,12 @@ func NewUsersPermissionsBulkDeleteParamsWithHTTPClient(client *http.Client) *Use
 	}
 }
 
-/* UsersPermissionsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the users permissions bulk delete operation.
+/*
+UsersPermissionsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the users permissions bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type UsersPermissionsBulkDeleteParams struct {
 	timeout    time.Duration

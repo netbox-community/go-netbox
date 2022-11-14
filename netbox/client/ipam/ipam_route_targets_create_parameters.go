@@ -69,10 +69,12 @@ func NewIpamRouteTargetsCreateParamsWithHTTPClient(client *http.Client) *IpamRou
 	}
 }
 
-/* IpamRouteTargetsCreateParams contains all the parameters to send to the API endpoint
-   for the ipam route targets create operation.
+/*
+IpamRouteTargetsCreateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam route targets create operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamRouteTargetsCreateParams struct {
 

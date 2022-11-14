@@ -68,10 +68,12 @@ func NewDcimCablesDeleteParamsWithHTTPClient(client *http.Client) *DcimCablesDel
 	}
 }
 
-/* DcimCablesDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim cables delete operation.
+/*
+DcimCablesDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim cables delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimCablesDeleteParams struct {
 

@@ -43,6 +43,11 @@ type WritableFrontPort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
+	// Cable end
+	// Read Only: true
+	// Min Length: 1
+	CableEnd string `json:"cable_end,omitempty"`
+
 	// Color
 	// Max Length: 6
 	// Pattern: ^[0-9a-f]{6}$
@@ -51,7 +56,7 @@ type WritableFrontPort struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -81,19 +86,17 @@ type WritableFrontPort struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
-	// Link peer
-	//
 	//
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeer map[string]*string `json:"link_peer,omitempty"`
+	LinkPeers []*string `json:"link_peers"`
 
-	// Link peer type
+	// Link peers type
 	// Read Only: true
-	LinkPeerType string `json:"link_peer_type,omitempty"`
+	LinkPeersType string `json:"link_peers_type,omitempty"`
 
 	// Mark connected
 	//
@@ -123,7 +126,7 @@ type WritableFrontPort struct {
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice other]
 	Type *string `json:"type"`
 
 	// Url
@@ -137,6 +140,10 @@ func (m *WritableFrontPort) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCable(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCableEnd(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -208,6 +215,18 @@ func (m *WritableFrontPort) validateCable(formats strfmt.Registry) error {
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *WritableFrontPort) validateCableEnd(formats strfmt.Registry) error {
+	if swag.IsZero(m.CableEnd) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("cable_end", "body", m.CableEnd, 1); err != nil {
+		return err
 	}
 
 	return nil
@@ -358,7 +377,7 @@ var writableFrontPortTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -493,6 +512,9 @@ const (
 
 	// WritableFrontPortTypeSplice captures enum value "splice"
 	WritableFrontPortTypeSplice string = "splice"
+
+	// WritableFrontPortTypeOther captures enum value "other"
+	WritableFrontPortTypeOther string = "other"
 )
 
 // prop value enum
@@ -541,6 +563,10 @@ func (m *WritableFrontPort) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateCableEnd(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -557,11 +583,11 @@ func (m *WritableFrontPort) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeers(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeersType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -604,9 +630,18 @@ func (m *WritableFrontPort) contextValidateCable(ctx context.Context, formats st
 	return nil
 }
 
+func (m *WritableFrontPort) contextValidateCableEnd(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "cable_end", "body", string(m.CableEnd)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableFrontPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -633,21 +668,25 @@ func (m *WritableFrontPort) contextValidateID(ctx context.Context, formats strfm
 
 func (m *WritableFrontPort) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *WritableFrontPort) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritableFrontPort) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+		return err
+	}
 
 	return nil
 }
 
-func (m *WritableFrontPort) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritableFrontPort) contextValidateLinkPeersType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers_type", "body", string(m.LinkPeersType)); err != nil {
 		return err
 	}
 

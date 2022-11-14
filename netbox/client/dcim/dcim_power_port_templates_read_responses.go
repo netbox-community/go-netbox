@@ -61,7 +61,8 @@ func NewDcimPowerPortTemplatesReadOK() *DcimPowerPortTemplatesReadOK {
 	return &DcimPowerPortTemplatesReadOK{}
 }
 
-/* DcimPowerPortTemplatesReadOK describes a response with status code 200, with default header values.
+/*
+DcimPowerPortTemplatesReadOK describes a response with status code 200, with default header values.
 
 DcimPowerPortTemplatesReadOK dcim power port templates read o k
 */
@@ -69,9 +70,39 @@ type DcimPowerPortTemplatesReadOK struct {
 	Payload *models.PowerPortTemplate
 }
 
+// IsSuccess returns true when this dcim power port templates read o k response has a 2xx status code
+func (o *DcimPowerPortTemplatesReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim power port templates read o k response has a 3xx status code
+func (o *DcimPowerPortTemplatesReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim power port templates read o k response has a 4xx status code
+func (o *DcimPowerPortTemplatesReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim power port templates read o k response has a 5xx status code
+func (o *DcimPowerPortTemplatesReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim power port templates read o k response a status code equal to that given
+func (o *DcimPowerPortTemplatesReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimPowerPortTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesReadOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimPowerPortTemplatesReadOK) String() string {
+	return fmt.Sprintf("[GET /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesReadOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimPowerPortTemplatesReadOK) GetPayload() *models.PowerPortTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimPowerPortTemplatesReadDefault(code int) *DcimPowerPortTemplatesReadD
 	}
 }
 
-/* DcimPowerPortTemplatesReadDefault describes a response with status code -1, with default header values.
+/*
+DcimPowerPortTemplatesReadDefault describes a response with status code -1, with default header values.
 
 DcimPowerPortTemplatesReadDefault dcim power port templates read default
 */
@@ -110,9 +142,39 @@ func (o *DcimPowerPortTemplatesReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim power port templates read default response has a 2xx status code
+func (o *DcimPowerPortTemplatesReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim power port templates read default response has a 3xx status code
+func (o *DcimPowerPortTemplatesReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim power port templates read default response has a 4xx status code
+func (o *DcimPowerPortTemplatesReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim power port templates read default response has a 5xx status code
+func (o *DcimPowerPortTemplatesReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim power port templates read default response a status code equal to that given
+func (o *DcimPowerPortTemplatesReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimPowerPortTemplatesReadDefault) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimPowerPortTemplatesReadDefault) String() string {
+	return fmt.Sprintf("[GET /dcim/power-port-templates/{id}/][%d] dcim_power-port-templates_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimPowerPortTemplatesReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

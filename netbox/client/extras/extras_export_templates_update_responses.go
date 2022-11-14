@@ -61,7 +61,8 @@ func NewExtrasExportTemplatesUpdateOK() *ExtrasExportTemplatesUpdateOK {
 	return &ExtrasExportTemplatesUpdateOK{}
 }
 
-/* ExtrasExportTemplatesUpdateOK describes a response with status code 200, with default header values.
+/*
+ExtrasExportTemplatesUpdateOK describes a response with status code 200, with default header values.
 
 ExtrasExportTemplatesUpdateOK extras export templates update o k
 */
@@ -69,9 +70,39 @@ type ExtrasExportTemplatesUpdateOK struct {
 	Payload *models.ExportTemplate
 }
 
+// IsSuccess returns true when this extras export templates update o k response has a 2xx status code
+func (o *ExtrasExportTemplatesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras export templates update o k response has a 3xx status code
+func (o *ExtrasExportTemplatesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras export templates update o k response has a 4xx status code
+func (o *ExtrasExportTemplatesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras export templates update o k response has a 5xx status code
+func (o *ExtrasExportTemplatesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras export templates update o k response a status code equal to that given
+func (o *ExtrasExportTemplatesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasExportTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/export-templates/{id}/][%d] extrasExportTemplatesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *ExtrasExportTemplatesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /extras/export-templates/{id}/][%d] extrasExportTemplatesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *ExtrasExportTemplatesUpdateOK) GetPayload() *models.ExportTemplate {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewExtrasExportTemplatesUpdateDefault(code int) *ExtrasExportTemplatesUpdat
 	}
 }
 
-/* ExtrasExportTemplatesUpdateDefault describes a response with status code -1, with default header values.
+/*
+ExtrasExportTemplatesUpdateDefault describes a response with status code -1, with default header values.
 
 ExtrasExportTemplatesUpdateDefault extras export templates update default
 */
@@ -110,9 +142,39 @@ func (o *ExtrasExportTemplatesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras export templates update default response has a 2xx status code
+func (o *ExtrasExportTemplatesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras export templates update default response has a 3xx status code
+func (o *ExtrasExportTemplatesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras export templates update default response has a 4xx status code
+func (o *ExtrasExportTemplatesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras export templates update default response has a 5xx status code
+func (o *ExtrasExportTemplatesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras export templates update default response a status code equal to that given
+func (o *ExtrasExportTemplatesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasExportTemplatesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /extras/export-templates/{id}/][%d] extras_export-templates_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasExportTemplatesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /extras/export-templates/{id}/][%d] extras_export-templates_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasExportTemplatesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

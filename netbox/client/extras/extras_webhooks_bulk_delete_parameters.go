@@ -67,10 +67,12 @@ func NewExtrasWebhooksBulkDeleteParamsWithHTTPClient(client *http.Client) *Extra
 	}
 }
 
-/* ExtrasWebhooksBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the extras webhooks bulk delete operation.
+/*
+ExtrasWebhooksBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras webhooks bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasWebhooksBulkDeleteParams struct {
 	timeout    time.Duration

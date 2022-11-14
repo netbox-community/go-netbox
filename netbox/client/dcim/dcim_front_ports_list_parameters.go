@@ -68,12 +68,20 @@ func NewDcimFrontPortsListParamsWithHTTPClient(client *http.Client) *DcimFrontPo
 	}
 }
 
-/* DcimFrontPortsListParams contains all the parameters to send to the API endpoint
-   for the dcim front ports list operation.
+/*
+DcimFrontPortsListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim front ports list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimFrontPortsListParams struct {
+
+	// CableEnd.
+	CableEnd *string
+
+	// CableEndn.
+	CableEndn *string
 
 	// Cabled.
 	Cabled *string
@@ -111,11 +119,20 @@ type DcimFrontPortsListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// Description.
 	Description *string
@@ -210,11 +227,20 @@ type DcimFrontPortsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -270,14 +296,35 @@ type DcimFrontPortsListParams struct {
 	// NameNisw.
 	NameNisw *string
 
+	// Occupied.
+	Occupied *string
+
 	/* Offset.
 
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
 
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
+
 	// Q.
 	Q *string
+
+	// Rack.
+	Rack *string
+
+	// Rackn.
+	Rackn *string
+
+	// RackID.
+	RackID *string
+
+	// RackIDn.
+	RackIDn *string
 
 	// Region.
 	Region *string
@@ -390,6 +437,28 @@ func (o *DcimFrontPortsListParams) WithHTTPClient(client *http.Client) *DcimFron
 // SetHTTPClient adds the HTTPClient to the dcim front ports list params
 func (o *DcimFrontPortsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithCableEnd adds the cableEnd to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithCableEnd(cableEnd *string) *DcimFrontPortsListParams {
+	o.SetCableEnd(cableEnd)
+	return o
+}
+
+// SetCableEnd adds the cableEnd to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetCableEnd(cableEnd *string) {
+	o.CableEnd = cableEnd
+}
+
+// WithCableEndn adds the cableEndn to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithCableEndn(cableEndn *string) *DcimFrontPortsListParams {
+	o.SetCableEndn(cableEndn)
+	return o
+}
+
+// SetCableEndn adds the cableEndN to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetCableEndn(cableEndn *string) {
+	o.CableEndn = cableEndn
 }
 
 // WithCabled adds the cabled to the dcim front ports list params
@@ -524,6 +593,17 @@ func (o *DcimFrontPortsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithCreatedGt(createdGt *string) *DcimFrontPortsListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim front ports list params
 func (o *DcimFrontPortsListParams) WithCreatedGte(createdGte *string) *DcimFrontPortsListParams {
 	o.SetCreatedGte(createdGte)
@@ -535,6 +615,17 @@ func (o *DcimFrontPortsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithCreatedLt(createdLt *string) *DcimFrontPortsListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim front ports list params
 func (o *DcimFrontPortsListParams) WithCreatedLte(createdLte *string) *DcimFrontPortsListParams {
 	o.SetCreatedLte(createdLte)
@@ -544,6 +635,17 @@ func (o *DcimFrontPortsListParams) WithCreatedLte(createdLte *string) *DcimFront
 // SetCreatedLte adds the createdLte to the dcim front ports list params
 func (o *DcimFrontPortsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithCreatedn(createdn *string) *DcimFrontPortsListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the dcim front ports list params
@@ -887,6 +989,17 @@ func (o *DcimFrontPortsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimFrontPortsListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim front ports list params
 func (o *DcimFrontPortsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimFrontPortsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -898,6 +1011,17 @@ func (o *DcimFrontPortsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimFrontPortsListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim front ports list params
 func (o *DcimFrontPortsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimFrontPortsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -907,6 +1031,17 @@ func (o *DcimFrontPortsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *D
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim front ports list params
 func (o *DcimFrontPortsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimFrontPortsListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim front ports list params
@@ -1096,6 +1231,17 @@ func (o *DcimFrontPortsListParams) SetNameNisw(nameNisw *string) {
 	o.NameNisw = nameNisw
 }
 
+// WithOccupied adds the occupied to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithOccupied(occupied *string) *DcimFrontPortsListParams {
+	o.SetOccupied(occupied)
+	return o
+}
+
+// SetOccupied adds the occupied to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetOccupied(occupied *string) {
+	o.Occupied = occupied
+}
+
 // WithOffset adds the offset to the dcim front ports list params
 func (o *DcimFrontPortsListParams) WithOffset(offset *int64) *DcimFrontPortsListParams {
 	o.SetOffset(offset)
@@ -1107,6 +1253,17 @@ func (o *DcimFrontPortsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
+// WithOrdering adds the ordering to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithOrdering(ordering *string) *DcimFrontPortsListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
+}
+
 // WithQ adds the q to the dcim front ports list params
 func (o *DcimFrontPortsListParams) WithQ(q *string) *DcimFrontPortsListParams {
 	o.SetQ(q)
@@ -1116,6 +1273,50 @@ func (o *DcimFrontPortsListParams) WithQ(q *string) *DcimFrontPortsListParams {
 // SetQ adds the q to the dcim front ports list params
 func (o *DcimFrontPortsListParams) SetQ(q *string) {
 	o.Q = q
+}
+
+// WithRack adds the rack to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithRack(rack *string) *DcimFrontPortsListParams {
+	o.SetRack(rack)
+	return o
+}
+
+// SetRack adds the rack to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetRack(rack *string) {
+	o.Rack = rack
+}
+
+// WithRackn adds the rackn to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithRackn(rackn *string) *DcimFrontPortsListParams {
+	o.SetRackn(rackn)
+	return o
+}
+
+// SetRackn adds the rackN to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetRackn(rackn *string) {
+	o.Rackn = rackn
+}
+
+// WithRackID adds the rackID to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithRackID(rackID *string) *DcimFrontPortsListParams {
+	o.SetRackID(rackID)
+	return o
+}
+
+// SetRackID adds the rackId to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetRackID(rackID *string) {
+	o.RackID = rackID
+}
+
+// WithRackIDn adds the rackIDn to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithRackIDn(rackIDn *string) *DcimFrontPortsListParams {
+	o.SetRackIDn(rackIDn)
+	return o
+}
+
+// SetRackIDn adds the rackIdN to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetRackIDn(rackIDn *string) {
+	o.RackIDn = rackIDn
 }
 
 // WithRegion adds the region to the dcim front ports list params
@@ -1346,6 +1547,40 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 	}
 	var res []error
 
+	if o.CableEnd != nil {
+
+		// query param cable_end
+		var qrCableEnd string
+
+		if o.CableEnd != nil {
+			qrCableEnd = *o.CableEnd
+		}
+		qCableEnd := qrCableEnd
+		if qCableEnd != "" {
+
+			if err := r.SetQueryParam("cable_end", qCableEnd); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CableEndn != nil {
+
+		// query param cable_end__n
+		var qrCableEndn string
+
+		if o.CableEndn != nil {
+			qrCableEndn = *o.CableEndn
+		}
+		qCableEndn := qrCableEndn
+		if qCableEndn != "" {
+
+			if err := r.SetQueryParam("cable_end__n", qCableEndn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Cabled != nil {
 
 		// query param cabled
@@ -1550,6 +1785,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1567,6 +1819,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1579,6 +1848,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -2111,6 +2397,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -2128,6 +2431,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -2140,6 +2460,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -2434,6 +2771,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.Occupied != nil {
+
+		// query param occupied
+		var qrOccupied string
+
+		if o.Occupied != nil {
+			qrOccupied = *o.Occupied
+		}
+		qOccupied := qrOccupied
+		if qOccupied != "" {
+
+			if err := r.SetQueryParam("occupied", qOccupied); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -2451,6 +2805,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Q != nil {
 
 		// query param q
@@ -2463,6 +2834,74 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qQ != "" {
 
 			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Rack != nil {
+
+		// query param rack
+		var qrRack string
+
+		if o.Rack != nil {
+			qrRack = *o.Rack
+		}
+		qRack := qrRack
+		if qRack != "" {
+
+			if err := r.SetQueryParam("rack", qRack); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Rackn != nil {
+
+		// query param rack__n
+		var qrRackn string
+
+		if o.Rackn != nil {
+			qrRackn = *o.Rackn
+		}
+		qRackn := qrRackn
+		if qRackn != "" {
+
+			if err := r.SetQueryParam("rack__n", qRackn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RackID != nil {
+
+		// query param rack_id
+		var qrRackID string
+
+		if o.RackID != nil {
+			qrRackID = *o.RackID
+		}
+		qRackID := qrRackID
+		if qRackID != "" {
+
+			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RackIDn != nil {
+
+		// query param rack_id__n
+		var qrRackIDn string
+
+		if o.RackIDn != nil {
+			qrRackIDn = *o.RackIDn
+		}
+		qRackIDn := qrRackIDn
+		if qRackIDn != "" {
+
+			if err := r.SetQueryParam("rack_id__n", qRackIDn); err != nil {
 				return err
 			}
 		}

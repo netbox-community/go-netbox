@@ -69,10 +69,12 @@ func NewDcimPowerOutletsBulkUpdateParamsWithHTTPClient(client *http.Client) *Dci
 	}
 }
 
-/* DcimPowerOutletsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim power outlets bulk update operation.
+/*
+DcimPowerOutletsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim power outlets bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPowerOutletsBulkUpdateParams struct {
 

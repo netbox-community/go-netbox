@@ -67,10 +67,12 @@ func NewIpamFhrpGroupsBulkDeleteParamsWithHTTPClient(client *http.Client) *IpamF
 	}
 }
 
-/* IpamFhrpGroupsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the ipam fhrp groups bulk delete operation.
+/*
+IpamFhrpGroupsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the ipam fhrp groups bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type IpamFhrpGroupsBulkDeleteParams struct {
 	timeout    time.Duration

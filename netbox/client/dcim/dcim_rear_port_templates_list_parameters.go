@@ -68,10 +68,12 @@ func NewDcimRearPortTemplatesListParamsWithHTTPClient(client *http.Client) *Dcim
 	}
 }
 
-/* DcimRearPortTemplatesListParams contains all the parameters to send to the API endpoint
-   for the dcim rear port templates list operation.
+/*
+DcimRearPortTemplatesListParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rear port templates list operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRearPortTemplatesListParams struct {
 
@@ -108,11 +110,20 @@ type DcimRearPortTemplatesListParams struct {
 	// Created.
 	Created *string
 
+	// CreatedGt.
+	CreatedGt *string
+
 	// CreatedGte.
 	CreatedGte *string
 
+	// CreatedLt.
+	CreatedLt *string
+
 	// CreatedLte.
 	CreatedLte *string
+
+	// Createdn.
+	Createdn *string
 
 	// DevicetypeID.
 	DevicetypeID *string
@@ -141,11 +152,20 @@ type DcimRearPortTemplatesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
+	// LastUpdatedGt.
+	LastUpdatedGt *string
+
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
+	// LastUpdatedLt.
+	LastUpdatedLt *string
+
 	// LastUpdatedLte.
 	LastUpdatedLte *string
+
+	// LastUpdatedn.
+	LastUpdatedn *string
 
 	/* Limit.
 
@@ -194,6 +214,12 @@ type DcimRearPortTemplatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
+
+	/* Ordering.
+
+	   Which field to use when ordering the results.
+	*/
+	Ordering *string
 
 	// Positions.
 	Positions *string
@@ -396,6 +422,17 @@ func (o *DcimRearPortTemplatesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
+// WithCreatedGt adds the createdGt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithCreatedGt(createdGt *string) *DcimRearPortTemplatesListParams {
+	o.SetCreatedGt(createdGt)
+	return o
+}
+
+// SetCreatedGt adds the createdGt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetCreatedGt(createdGt *string) {
+	o.CreatedGt = createdGt
+}
+
 // WithCreatedGte adds the createdGte to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) WithCreatedGte(createdGte *string) *DcimRearPortTemplatesListParams {
 	o.SetCreatedGte(createdGte)
@@ -407,6 +444,17 @@ func (o *DcimRearPortTemplatesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
+// WithCreatedLt adds the createdLt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithCreatedLt(createdLt *string) *DcimRearPortTemplatesListParams {
+	o.SetCreatedLt(createdLt)
+	return o
+}
+
+// SetCreatedLt adds the createdLt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetCreatedLt(createdLt *string) {
+	o.CreatedLt = createdLt
+}
+
 // WithCreatedLte adds the createdLte to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) WithCreatedLte(createdLte *string) *DcimRearPortTemplatesListParams {
 	o.SetCreatedLte(createdLte)
@@ -416,6 +464,17 @@ func (o *DcimRearPortTemplatesListParams) WithCreatedLte(createdLte *string) *Dc
 // SetCreatedLte adds the createdLte to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithCreatedn adds the createdn to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithCreatedn(createdn *string) *DcimRearPortTemplatesListParams {
+	o.SetCreatedn(createdn)
+	return o
+}
+
+// SetCreatedn adds the createdN to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetCreatedn(createdn *string) {
+	o.Createdn = createdn
 }
 
 // WithDevicetypeID adds the devicetypeID to the dcim rear port templates list params
@@ -517,6 +576,17 @@ func (o *DcimRearPortTemplatesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
+// WithLastUpdatedGt adds the lastUpdatedGt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimRearPortTemplatesListParams {
+	o.SetLastUpdatedGt(lastUpdatedGt)
+	return o
+}
+
+// SetLastUpdatedGt adds the lastUpdatedGt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
+	o.LastUpdatedGt = lastUpdatedGt
+}
+
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimRearPortTemplatesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -528,6 +598,17 @@ func (o *DcimRearPortTemplatesListParams) SetLastUpdatedGte(lastUpdatedGte *stri
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
+// WithLastUpdatedLt adds the lastUpdatedLt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimRearPortTemplatesListParams {
+	o.SetLastUpdatedLt(lastUpdatedLt)
+	return o
+}
+
+// SetLastUpdatedLt adds the lastUpdatedLt to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
+	o.LastUpdatedLt = lastUpdatedLt
+}
+
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimRearPortTemplatesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -537,6 +618,17 @@ func (o *DcimRearPortTemplatesListParams) WithLastUpdatedLte(lastUpdatedLte *str
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
+}
+
+// WithLastUpdatedn adds the lastUpdatedn to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimRearPortTemplatesListParams {
+	o.SetLastUpdatedn(lastUpdatedn)
+	return o
+}
+
+// SetLastUpdatedn adds the lastUpdatedN to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetLastUpdatedn(lastUpdatedn *string) {
+	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim rear port templates list params
@@ -691,6 +783,17 @@ func (o *DcimRearPortTemplatesListParams) WithOffset(offset *int64) *DcimRearPor
 // SetOffset adds the offset to the dcim rear port templates list params
 func (o *DcimRearPortTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
+}
+
+// WithOrdering adds the ordering to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) WithOrdering(ordering *string) *DcimRearPortTemplatesListParams {
+	o.SetOrdering(ordering)
+	return o
+}
+
+// SetOrdering adds the ordering to the dcim rear port templates list params
+func (o *DcimRearPortTemplatesListParams) SetOrdering(ordering *string) {
+	o.Ordering = ordering
 }
 
 // WithPositions adds the positions to the dcim rear port templates list params
@@ -987,6 +1090,23 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		}
 	}
 
+	if o.CreatedGt != nil {
+
+		// query param created__gt
+		var qrCreatedGt string
+
+		if o.CreatedGt != nil {
+			qrCreatedGt = *o.CreatedGt
+		}
+		qCreatedGt := qrCreatedGt
+		if qCreatedGt != "" {
+
+			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1004,6 +1124,23 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		}
 	}
 
+	if o.CreatedLt != nil {
+
+		// query param created__lt
+		var qrCreatedLt string
+
+		if o.CreatedLt != nil {
+			qrCreatedLt = *o.CreatedLt
+		}
+		qCreatedLt := qrCreatedLt
+		if qCreatedLt != "" {
+
+			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1016,6 +1153,23 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Createdn != nil {
+
+		// query param created__n
+		var qrCreatedn string
+
+		if o.Createdn != nil {
+			qrCreatedn = *o.Createdn
+		}
+		qCreatedn := qrCreatedn
+		if qCreatedn != "" {
+
+			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1174,6 +1328,23 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		}
 	}
 
+	if o.LastUpdatedGt != nil {
+
+		// query param last_updated__gt
+		var qrLastUpdatedGt string
+
+		if o.LastUpdatedGt != nil {
+			qrLastUpdatedGt = *o.LastUpdatedGt
+		}
+		qLastUpdatedGt := qrLastUpdatedGt
+		if qLastUpdatedGt != "" {
+
+			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1191,6 +1362,23 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		}
 	}
 
+	if o.LastUpdatedLt != nil {
+
+		// query param last_updated__lt
+		var qrLastUpdatedLt string
+
+		if o.LastUpdatedLt != nil {
+			qrLastUpdatedLt = *o.LastUpdatedLt
+		}
+		qLastUpdatedLt := qrLastUpdatedLt
+		if qLastUpdatedLt != "" {
+
+			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1203,6 +1391,23 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LastUpdatedn != nil {
+
+		// query param last_updated__n
+		var qrLastUpdatedn string
+
+		if o.LastUpdatedn != nil {
+			qrLastUpdatedn = *o.LastUpdatedn
+		}
+		qLastUpdatedn := qrLastUpdatedn
+		if qLastUpdatedn != "" {
+
+			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1441,6 +1646,23 @@ func (o *DcimRearPortTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ordering != nil {
+
+		// query param ordering
+		var qrOrdering string
+
+		if o.Ordering != nil {
+			qrOrdering = *o.Ordering
+		}
+		qOrdering := qrOrdering
+		if qOrdering != "" {
+
+			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

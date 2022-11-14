@@ -59,14 +59,44 @@ func NewExtrasScriptsReadOK() *ExtrasScriptsReadOK {
 	return &ExtrasScriptsReadOK{}
 }
 
-/* ExtrasScriptsReadOK describes a response with status code 200, with default header values.
+/*
+ExtrasScriptsReadOK describes a response with status code 200, with default header values.
 
 ExtrasScriptsReadOK extras scripts read o k
 */
 type ExtrasScriptsReadOK struct {
 }
 
+// IsSuccess returns true when this extras scripts read o k response has a 2xx status code
+func (o *ExtrasScriptsReadOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this extras scripts read o k response has a 3xx status code
+func (o *ExtrasScriptsReadOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this extras scripts read o k response has a 4xx status code
+func (o *ExtrasScriptsReadOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this extras scripts read o k response has a 5xx status code
+func (o *ExtrasScriptsReadOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this extras scripts read o k response a status code equal to that given
+func (o *ExtrasScriptsReadOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *ExtrasScriptsReadOK) Error() string {
+	return fmt.Sprintf("[GET /extras/scripts/{id}/][%d] extrasScriptsReadOK ", 200)
+}
+
+func (o *ExtrasScriptsReadOK) String() string {
 	return fmt.Sprintf("[GET /extras/scripts/{id}/][%d] extrasScriptsReadOK ", 200)
 }
 
@@ -82,7 +112,8 @@ func NewExtrasScriptsReadDefault(code int) *ExtrasScriptsReadDefault {
 	}
 }
 
-/* ExtrasScriptsReadDefault describes a response with status code -1, with default header values.
+/*
+ExtrasScriptsReadDefault describes a response with status code -1, with default header values.
 
 ExtrasScriptsReadDefault extras scripts read default
 */
@@ -97,9 +128,39 @@ func (o *ExtrasScriptsReadDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this extras scripts read default response has a 2xx status code
+func (o *ExtrasScriptsReadDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this extras scripts read default response has a 3xx status code
+func (o *ExtrasScriptsReadDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this extras scripts read default response has a 4xx status code
+func (o *ExtrasScriptsReadDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this extras scripts read default response has a 5xx status code
+func (o *ExtrasScriptsReadDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this extras scripts read default response a status code equal to that given
+func (o *ExtrasScriptsReadDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *ExtrasScriptsReadDefault) Error() string {
 	return fmt.Sprintf("[GET /extras/scripts/{id}/][%d] extras_scripts_read default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *ExtrasScriptsReadDefault) String() string {
+	return fmt.Sprintf("[GET /extras/scripts/{id}/][%d] extras_scripts_read default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *ExtrasScriptsReadDefault) GetPayload() interface{} {
 	return o.Payload
 }

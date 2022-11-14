@@ -67,10 +67,12 @@ func NewDcimPlatformsBulkDeleteParamsWithHTTPClient(client *http.Client) *DcimPl
 	}
 }
 
-/* DcimPlatformsBulkDeleteParams contains all the parameters to send to the API endpoint
-   for the dcim platforms bulk delete operation.
+/*
+DcimPlatformsBulkDeleteParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim platforms bulk delete operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimPlatformsBulkDeleteParams struct {
 	timeout    time.Duration

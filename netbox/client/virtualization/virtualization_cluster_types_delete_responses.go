@@ -59,14 +59,44 @@ func NewVirtualizationClusterTypesDeleteNoContent() *VirtualizationClusterTypesD
 	return &VirtualizationClusterTypesDeleteNoContent{}
 }
 
-/* VirtualizationClusterTypesDeleteNoContent describes a response with status code 204, with default header values.
+/*
+VirtualizationClusterTypesDeleteNoContent describes a response with status code 204, with default header values.
 
 VirtualizationClusterTypesDeleteNoContent virtualization cluster types delete no content
 */
 type VirtualizationClusterTypesDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this virtualization cluster types delete no content response has a 2xx status code
+func (o *VirtualizationClusterTypesDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this virtualization cluster types delete no content response has a 3xx status code
+func (o *VirtualizationClusterTypesDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this virtualization cluster types delete no content response has a 4xx status code
+func (o *VirtualizationClusterTypesDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this virtualization cluster types delete no content response has a 5xx status code
+func (o *VirtualizationClusterTypesDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this virtualization cluster types delete no content response a status code equal to that given
+func (o *VirtualizationClusterTypesDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *VirtualizationClusterTypesDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesDeleteNoContent ", 204)
+}
+
+func (o *VirtualizationClusterTypesDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualizationClusterTypesDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewVirtualizationClusterTypesDeleteDefault(code int) *VirtualizationCluster
 	}
 }
 
-/* VirtualizationClusterTypesDeleteDefault describes a response with status code -1, with default header values.
+/*
+VirtualizationClusterTypesDeleteDefault describes a response with status code -1, with default header values.
 
 VirtualizationClusterTypesDeleteDefault virtualization cluster types delete default
 */
@@ -97,9 +128,39 @@ func (o *VirtualizationClusterTypesDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this virtualization cluster types delete default response has a 2xx status code
+func (o *VirtualizationClusterTypesDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this virtualization cluster types delete default response has a 3xx status code
+func (o *VirtualizationClusterTypesDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this virtualization cluster types delete default response has a 4xx status code
+func (o *VirtualizationClusterTypesDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this virtualization cluster types delete default response has a 5xx status code
+func (o *VirtualizationClusterTypesDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this virtualization cluster types delete default response a status code equal to that given
+func (o *VirtualizationClusterTypesDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *VirtualizationClusterTypesDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *VirtualizationClusterTypesDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /virtualization/cluster-types/{id}/][%d] virtualization_cluster-types_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *VirtualizationClusterTypesDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

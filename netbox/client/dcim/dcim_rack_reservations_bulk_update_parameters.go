@@ -69,10 +69,12 @@ func NewDcimRackReservationsBulkUpdateParamsWithHTTPClient(client *http.Client) 
 	}
 }
 
-/* DcimRackReservationsBulkUpdateParams contains all the parameters to send to the API endpoint
-   for the dcim rack reservations bulk update operation.
+/*
+DcimRackReservationsBulkUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim rack reservations bulk update operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRackReservationsBulkUpdateParams struct {
 

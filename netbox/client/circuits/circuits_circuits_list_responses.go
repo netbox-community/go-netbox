@@ -66,7 +66,8 @@ func NewCircuitsCircuitsListOK() *CircuitsCircuitsListOK {
 	return &CircuitsCircuitsListOK{}
 }
 
-/* CircuitsCircuitsListOK describes a response with status code 200, with default header values.
+/*
+CircuitsCircuitsListOK describes a response with status code 200, with default header values.
 
 CircuitsCircuitsListOK circuits circuits list o k
 */
@@ -74,9 +75,39 @@ type CircuitsCircuitsListOK struct {
 	Payload *CircuitsCircuitsListOKBody
 }
 
+// IsSuccess returns true when this circuits circuits list o k response has a 2xx status code
+func (o *CircuitsCircuitsListOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this circuits circuits list o k response has a 3xx status code
+func (o *CircuitsCircuitsListOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this circuits circuits list o k response has a 4xx status code
+func (o *CircuitsCircuitsListOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this circuits circuits list o k response has a 5xx status code
+func (o *CircuitsCircuitsListOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this circuits circuits list o k response a status code equal to that given
+func (o *CircuitsCircuitsListOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *CircuitsCircuitsListOK) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuits/][%d] circuitsCircuitsListOK  %+v", 200, o.Payload)
 }
+
+func (o *CircuitsCircuitsListOK) String() string {
+	return fmt.Sprintf("[GET /circuits/circuits/][%d] circuitsCircuitsListOK  %+v", 200, o.Payload)
+}
+
 func (o *CircuitsCircuitsListOK) GetPayload() *CircuitsCircuitsListOKBody {
 	return o.Payload
 }
@@ -100,7 +131,8 @@ func NewCircuitsCircuitsListDefault(code int) *CircuitsCircuitsListDefault {
 	}
 }
 
-/* CircuitsCircuitsListDefault describes a response with status code -1, with default header values.
+/*
+CircuitsCircuitsListDefault describes a response with status code -1, with default header values.
 
 CircuitsCircuitsListDefault circuits circuits list default
 */
@@ -115,9 +147,39 @@ func (o *CircuitsCircuitsListDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this circuits circuits list default response has a 2xx status code
+func (o *CircuitsCircuitsListDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this circuits circuits list default response has a 3xx status code
+func (o *CircuitsCircuitsListDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this circuits circuits list default response has a 4xx status code
+func (o *CircuitsCircuitsListDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this circuits circuits list default response has a 5xx status code
+func (o *CircuitsCircuitsListDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this circuits circuits list default response a status code equal to that given
+func (o *CircuitsCircuitsListDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *CircuitsCircuitsListDefault) Error() string {
 	return fmt.Sprintf("[GET /circuits/circuits/][%d] circuits_circuits_list default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *CircuitsCircuitsListDefault) String() string {
+	return fmt.Sprintf("[GET /circuits/circuits/][%d] circuits_circuits_list default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *CircuitsCircuitsListDefault) GetPayload() interface{} {
 	return o.Payload
 }
@@ -132,7 +194,8 @@ func (o *CircuitsCircuitsListDefault) readResponse(response runtime.ClientRespon
 	return nil
 }
 
-/*CircuitsCircuitsListOKBody circuits circuits list o k body
+/*
+CircuitsCircuitsListOKBody circuits circuits list o k body
 swagger:model CircuitsCircuitsListOKBody
 */
 type CircuitsCircuitsListOKBody struct {

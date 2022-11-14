@@ -59,14 +59,44 @@ func NewDcimFrontPortTemplatesBulkDeleteNoContent() *DcimFrontPortTemplatesBulkD
 	return &DcimFrontPortTemplatesBulkDeleteNoContent{}
 }
 
-/* DcimFrontPortTemplatesBulkDeleteNoContent describes a response with status code 204, with default header values.
+/*
+DcimFrontPortTemplatesBulkDeleteNoContent describes a response with status code 204, with default header values.
 
 DcimFrontPortTemplatesBulkDeleteNoContent dcim front port templates bulk delete no content
 */
 type DcimFrontPortTemplatesBulkDeleteNoContent struct {
 }
 
+// IsSuccess returns true when this dcim front port templates bulk delete no content response has a 2xx status code
+func (o *DcimFrontPortTemplatesBulkDeleteNoContent) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim front port templates bulk delete no content response has a 3xx status code
+func (o *DcimFrontPortTemplatesBulkDeleteNoContent) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim front port templates bulk delete no content response has a 4xx status code
+func (o *DcimFrontPortTemplatesBulkDeleteNoContent) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim front port templates bulk delete no content response has a 5xx status code
+func (o *DcimFrontPortTemplatesBulkDeleteNoContent) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim front port templates bulk delete no content response a status code equal to that given
+func (o *DcimFrontPortTemplatesBulkDeleteNoContent) IsCode(code int) bool {
+	return code == 204
+}
+
 func (o *DcimFrontPortTemplatesBulkDeleteNoContent) Error() string {
+	return fmt.Sprintf("[DELETE /dcim/front-port-templates/][%d] dcimFrontPortTemplatesBulkDeleteNoContent ", 204)
+}
+
+func (o *DcimFrontPortTemplatesBulkDeleteNoContent) String() string {
 	return fmt.Sprintf("[DELETE /dcim/front-port-templates/][%d] dcimFrontPortTemplatesBulkDeleteNoContent ", 204)
 }
 
@@ -82,7 +112,8 @@ func NewDcimFrontPortTemplatesBulkDeleteDefault(code int) *DcimFrontPortTemplate
 	}
 }
 
-/* DcimFrontPortTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
+/*
+DcimFrontPortTemplatesBulkDeleteDefault describes a response with status code -1, with default header values.
 
 DcimFrontPortTemplatesBulkDeleteDefault dcim front port templates bulk delete default
 */
@@ -97,9 +128,39 @@ func (o *DcimFrontPortTemplatesBulkDeleteDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim front port templates bulk delete default response has a 2xx status code
+func (o *DcimFrontPortTemplatesBulkDeleteDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim front port templates bulk delete default response has a 3xx status code
+func (o *DcimFrontPortTemplatesBulkDeleteDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim front port templates bulk delete default response has a 4xx status code
+func (o *DcimFrontPortTemplatesBulkDeleteDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim front port templates bulk delete default response has a 5xx status code
+func (o *DcimFrontPortTemplatesBulkDeleteDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim front port templates bulk delete default response a status code equal to that given
+func (o *DcimFrontPortTemplatesBulkDeleteDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimFrontPortTemplatesBulkDeleteDefault) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/front-port-templates/][%d] dcim_front-port-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimFrontPortTemplatesBulkDeleteDefault) String() string {
+	return fmt.Sprintf("[DELETE /dcim/front-port-templates/][%d] dcim_front-port-templates_bulk_delete default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimFrontPortTemplatesBulkDeleteDefault) GetPayload() interface{} {
 	return o.Payload
 }

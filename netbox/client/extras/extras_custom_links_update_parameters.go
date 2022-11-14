@@ -70,10 +70,12 @@ func NewExtrasCustomLinksUpdateParamsWithHTTPClient(client *http.Client) *Extras
 	}
 }
 
-/* ExtrasCustomLinksUpdateParams contains all the parameters to send to the API endpoint
-   for the extras custom links update operation.
+/*
+ExtrasCustomLinksUpdateParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extras custom links update operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtrasCustomLinksUpdateParams struct {
 

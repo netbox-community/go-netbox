@@ -61,7 +61,8 @@ func NewDcimInterfacesUpdateOK() *DcimInterfacesUpdateOK {
 	return &DcimInterfacesUpdateOK{}
 }
 
-/* DcimInterfacesUpdateOK describes a response with status code 200, with default header values.
+/*
+DcimInterfacesUpdateOK describes a response with status code 200, with default header values.
 
 DcimInterfacesUpdateOK dcim interfaces update o k
 */
@@ -69,9 +70,39 @@ type DcimInterfacesUpdateOK struct {
 	Payload *models.Interface
 }
 
+// IsSuccess returns true when this dcim interfaces update o k response has a 2xx status code
+func (o *DcimInterfacesUpdateOK) IsSuccess() bool {
+	return true
+}
+
+// IsRedirect returns true when this dcim interfaces update o k response has a 3xx status code
+func (o *DcimInterfacesUpdateOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this dcim interfaces update o k response has a 4xx status code
+func (o *DcimInterfacesUpdateOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this dcim interfaces update o k response has a 5xx status code
+func (o *DcimInterfacesUpdateOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this dcim interfaces update o k response a status code equal to that given
+func (o *DcimInterfacesUpdateOK) IsCode(code int) bool {
+	return code == 200
+}
+
 func (o *DcimInterfacesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcimInterfacesUpdateOK  %+v", 200, o.Payload)
 }
+
+func (o *DcimInterfacesUpdateOK) String() string {
+	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcimInterfacesUpdateOK  %+v", 200, o.Payload)
+}
+
 func (o *DcimInterfacesUpdateOK) GetPayload() *models.Interface {
 	return o.Payload
 }
@@ -95,7 +126,8 @@ func NewDcimInterfacesUpdateDefault(code int) *DcimInterfacesUpdateDefault {
 	}
 }
 
-/* DcimInterfacesUpdateDefault describes a response with status code -1, with default header values.
+/*
+DcimInterfacesUpdateDefault describes a response with status code -1, with default header values.
 
 DcimInterfacesUpdateDefault dcim interfaces update default
 */
@@ -110,9 +142,39 @@ func (o *DcimInterfacesUpdateDefault) Code() int {
 	return o._statusCode
 }
 
+// IsSuccess returns true when this dcim interfaces update default response has a 2xx status code
+func (o *DcimInterfacesUpdateDefault) IsSuccess() bool {
+	return o._statusCode/100 == 2
+}
+
+// IsRedirect returns true when this dcim interfaces update default response has a 3xx status code
+func (o *DcimInterfacesUpdateDefault) IsRedirect() bool {
+	return o._statusCode/100 == 3
+}
+
+// IsClientError returns true when this dcim interfaces update default response has a 4xx status code
+func (o *DcimInterfacesUpdateDefault) IsClientError() bool {
+	return o._statusCode/100 == 4
+}
+
+// IsServerError returns true when this dcim interfaces update default response has a 5xx status code
+func (o *DcimInterfacesUpdateDefault) IsServerError() bool {
+	return o._statusCode/100 == 5
+}
+
+// IsCode returns true when this dcim interfaces update default response a status code equal to that given
+func (o *DcimInterfacesUpdateDefault) IsCode(code int) bool {
+	return o._statusCode == code
+}
+
 func (o *DcimInterfacesUpdateDefault) Error() string {
 	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcim_interfaces_update default  %+v", o._statusCode, o.Payload)
 }
+
+func (o *DcimInterfacesUpdateDefault) String() string {
+	return fmt.Sprintf("[PUT /dcim/interfaces/{id}/][%d] dcim_interfaces_update default  %+v", o._statusCode, o.Payload)
+}
+
 func (o *DcimInterfacesUpdateDefault) GetPayload() interface{} {
 	return o.Payload
 }

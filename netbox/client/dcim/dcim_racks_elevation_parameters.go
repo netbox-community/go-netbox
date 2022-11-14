@@ -68,10 +68,12 @@ func NewDcimRacksElevationParamsWithHTTPClient(client *http.Client) *DcimRacksEl
 	}
 }
 
-/* DcimRacksElevationParams contains all the parameters to send to the API endpoint
-   for the dcim racks elevation operation.
+/*
+DcimRacksElevationParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the dcim racks elevation operation.
+
+	Typically these are written to a http.Request.
 */
 type DcimRacksElevationParams struct {
 
@@ -103,6 +105,11 @@ type DcimRacksElevationParams struct {
 	//
 	// Default: 30
 	LegendWidth *int64
+
+	// MarginWidth.
+	//
+	// Default: 15
+	MarginWidth *int64
 
 	// Q.
 	Q *string
@@ -148,6 +155,8 @@ func (o *DcimRacksElevationParams) SetDefaults() {
 
 		legendWidthDefault = int64(30)
 
+		marginWidthDefault = int64(15)
+
 		renderDefault = string("json")
 
 		unitHeightDefault = int64(22)
@@ -160,6 +169,7 @@ func (o *DcimRacksElevationParams) SetDefaults() {
 		Face:          &faceDefault,
 		IncludeImages: &includeImagesDefault,
 		LegendWidth:   &legendWidthDefault,
+		MarginWidth:   &marginWidthDefault,
 		Render:        &renderDefault,
 		UnitHeight:    &unitHeightDefault,
 		UnitWidth:     &unitWidthDefault,
@@ -268,6 +278,17 @@ func (o *DcimRacksElevationParams) WithLegendWidth(legendWidth *int64) *DcimRack
 // SetLegendWidth adds the legendWidth to the dcim racks elevation params
 func (o *DcimRacksElevationParams) SetLegendWidth(legendWidth *int64) {
 	o.LegendWidth = legendWidth
+}
+
+// WithMarginWidth adds the marginWidth to the dcim racks elevation params
+func (o *DcimRacksElevationParams) WithMarginWidth(marginWidth *int64) *DcimRacksElevationParams {
+	o.SetMarginWidth(marginWidth)
+	return o
+}
+
+// SetMarginWidth adds the marginWidth to the dcim racks elevation params
+func (o *DcimRacksElevationParams) SetMarginWidth(marginWidth *int64) {
+	o.MarginWidth = marginWidth
 }
 
 // WithQ adds the q to the dcim racks elevation params
@@ -407,6 +428,23 @@ func (o *DcimRacksElevationParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLegendWidth != "" {
 
 			if err := r.SetQueryParam("legend_width", qLegendWidth); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.MarginWidth != nil {
+
+		// query param margin_width
+		var qrMarginWidth int64
+
+		if o.MarginWidth != nil {
+			qrMarginWidth = *o.MarginWidth
+		}
+		qMarginWidth := swag.FormatInt64(qrMarginWidth)
+		if qMarginWidth != "" {
+
+			if err := r.SetQueryParam("margin_width", qMarginWidth); err != nil {
 				return err
 			}
 		}
