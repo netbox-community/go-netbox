@@ -432,7 +432,7 @@ type DcimInventoryItemsListParams struct {
 	SiteIDn *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -1768,13 +1768,13 @@ func (o *DcimInventoryItemsListParams) SetSiteIDn(siteIDn *string) {
 }
 
 // WithTag adds the tag to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithTag(tag *string) *DcimInventoryItemsListParams {
+func (o *DcimInventoryItemsListParams) WithTag(tag []string) *DcimInventoryItemsListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetTag(tag *string) {
+func (o *DcimInventoryItemsListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -3798,18 +3798,12 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -3902,4 +3896,21 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamDcimInventoryItemsList binds the parameter tag
+func (o *DcimInventoryItemsListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

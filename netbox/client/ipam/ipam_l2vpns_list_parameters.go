@@ -255,7 +255,7 @@ type IpamL2vpnsListParams struct {
 	Q *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -960,13 +960,13 @@ func (o *IpamL2vpnsListParams) SetQ(q *string) {
 }
 
 // WithTag adds the tag to the ipam l2vpns list params
-func (o *IpamL2vpnsListParams) WithTag(tag *string) *IpamL2vpnsListParams {
+func (o *IpamL2vpnsListParams) WithTag(tag []string) *IpamL2vpnsListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the ipam l2vpns list params
-func (o *IpamL2vpnsListParams) SetTag(tag *string) {
+func (o *IpamL2vpnsListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -2053,18 +2053,12 @@ func (o *IpamL2vpnsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -2259,4 +2253,21 @@ func (o *IpamL2vpnsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamIpamL2vpnsList binds the parameter tag
+func (o *IpamL2vpnsListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

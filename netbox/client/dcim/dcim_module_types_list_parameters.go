@@ -243,7 +243,7 @@ type DcimModuleTypesListParams struct {
 	Q *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -874,13 +874,13 @@ func (o *DcimModuleTypesListParams) SetQ(q *string) {
 }
 
 // WithTag adds the tag to the dcim module types list params
-func (o *DcimModuleTypesListParams) WithTag(tag *string) *DcimModuleTypesListParams {
+func (o *DcimModuleTypesListParams) WithTag(tag []string) *DcimModuleTypesListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the dcim module types list params
-func (o *DcimModuleTypesListParams) SetTag(tag *string) {
+func (o *DcimModuleTypesListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -1789,18 +1789,12 @@ func (o *DcimModuleTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -1825,4 +1819,21 @@ func (o *DcimModuleTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamDcimModuleTypesList binds the parameter tag
+func (o *DcimModuleTypesListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

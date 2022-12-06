@@ -237,7 +237,7 @@ type DcimRackReservationsListParams struct {
 	SiteIDn *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -882,13 +882,13 @@ func (o *DcimRackReservationsListParams) SetSiteIDn(siteIDn *string) {
 }
 
 // WithTag adds the tag to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) WithTag(tag *string) *DcimRackReservationsListParams {
+func (o *DcimRackReservationsListParams) WithTag(tag []string) *DcimRackReservationsListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the dcim rack reservations list params
-func (o *DcimRackReservationsListParams) SetTag(tag *string) {
+func (o *DcimRackReservationsListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -1895,18 +1895,12 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -2135,4 +2129,21 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamDcimRackReservationsList binds the parameter tag
+func (o *DcimRackReservationsListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

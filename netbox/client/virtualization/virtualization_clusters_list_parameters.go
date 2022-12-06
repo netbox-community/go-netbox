@@ -255,7 +255,7 @@ type VirtualizationClustersListParams struct {
 	Statusn *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -966,13 +966,13 @@ func (o *VirtualizationClustersListParams) SetStatusn(statusn *string) {
 }
 
 // WithTag adds the tag to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) WithTag(tag *string) *VirtualizationClustersListParams {
+func (o *VirtualizationClustersListParams) WithTag(tag []string) *VirtualizationClustersListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the virtualization clusters list params
-func (o *VirtualizationClustersListParams) SetTag(tag *string) {
+func (o *VirtualizationClustersListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -2081,18 +2081,12 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -2321,4 +2315,21 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamVirtualizationClustersList binds the parameter tag
+func (o *VirtualizationClustersListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

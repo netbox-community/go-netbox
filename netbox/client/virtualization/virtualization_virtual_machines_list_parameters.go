@@ -387,7 +387,7 @@ type VirtualizationVirtualMachinesListParams struct {
 	Statusn *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -1588,13 +1588,13 @@ func (o *VirtualizationVirtualMachinesListParams) SetStatusn(statusn *string) {
 }
 
 // WithTag adds the tag to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithTag(tag *string) *VirtualizationVirtualMachinesListParams {
+func (o *VirtualizationVirtualMachinesListParams) WithTag(tag []string) *VirtualizationVirtualMachinesListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetTag(tag *string) {
+func (o *VirtualizationVirtualMachinesListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -3473,18 +3473,12 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -3747,4 +3741,21 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamVirtualizationVirtualMachinesList binds the parameter tag
+func (o *VirtualizationVirtualMachinesListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

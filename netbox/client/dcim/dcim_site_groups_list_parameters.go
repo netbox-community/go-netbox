@@ -273,7 +273,7 @@ type DcimSiteGroupsListParams struct {
 	SlugNisw *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -1014,13 +1014,13 @@ func (o *DcimSiteGroupsListParams) SetSlugNisw(slugNisw *string) {
 }
 
 // WithTag adds the tag to the dcim site groups list params
-func (o *DcimSiteGroupsListParams) WithTag(tag *string) *DcimSiteGroupsListParams {
+func (o *DcimSiteGroupsListParams) WithTag(tag []string) *DcimSiteGroupsListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the dcim site groups list params
-func (o *DcimSiteGroupsListParams) SetTag(tag *string) {
+func (o *DcimSiteGroupsListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -2099,18 +2099,12 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -2135,4 +2129,21 @@ func (o *DcimSiteGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamDcimSiteGroupsList binds the parameter tag
+func (o *DcimSiteGroupsListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

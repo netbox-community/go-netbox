@@ -234,7 +234,7 @@ type CircuitsCircuitTerminationsListParams struct {
 	SiteIDn *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -886,13 +886,13 @@ func (o *CircuitsCircuitTerminationsListParams) SetSiteIDn(siteIDn *string) {
 }
 
 // WithTag adds the tag to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) WithTag(tag *string) *CircuitsCircuitTerminationsListParams {
+func (o *CircuitsCircuitTerminationsListParams) WithTag(tag []string) *CircuitsCircuitTerminationsListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the circuits circuit terminations list params
-func (o *CircuitsCircuitTerminationsListParams) SetTag(tag *string) {
+func (o *CircuitsCircuitTerminationsListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -1948,18 +1948,12 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -2290,4 +2284,21 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamCircuitsCircuitTerminationsList binds the parameter tag
+func (o *CircuitsCircuitTerminationsListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

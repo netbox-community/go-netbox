@@ -243,7 +243,7 @@ type VirtualizationClusterTypesListParams struct {
 	SlugNisw *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -874,13 +874,13 @@ func (o *VirtualizationClusterTypesListParams) SetSlugNisw(slugNisw *string) {
 }
 
 // WithTag adds the tag to the virtualization cluster types list params
-func (o *VirtualizationClusterTypesListParams) WithTag(tag *string) *VirtualizationClusterTypesListParams {
+func (o *VirtualizationClusterTypesListParams) WithTag(tag []string) *VirtualizationClusterTypesListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the virtualization cluster types list params
-func (o *VirtualizationClusterTypesListParams) SetTag(tag *string) {
+func (o *VirtualizationClusterTypesListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -1789,18 +1789,12 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -1825,4 +1819,21 @@ func (o *VirtualizationClusterTypesListParams) WriteToRequest(r runtime.ClientRe
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamVirtualizationClusterTypesList binds the parameter tag
+func (o *VirtualizationClusterTypesListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

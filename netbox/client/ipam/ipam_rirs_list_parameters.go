@@ -246,7 +246,7 @@ type IpamRirsListParams struct {
 	SlugNisw *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -888,13 +888,13 @@ func (o *IpamRirsListParams) SetSlugNisw(slugNisw *string) {
 }
 
 // WithTag adds the tag to the ipam rirs list params
-func (o *IpamRirsListParams) WithTag(tag *string) *IpamRirsListParams {
+func (o *IpamRirsListParams) WithTag(tag []string) *IpamRirsListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the ipam rirs list params
-func (o *IpamRirsListParams) SetTag(tag *string) {
+func (o *IpamRirsListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -1820,18 +1820,12 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -1856,4 +1850,21 @@ func (o *IpamRirsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamIpamRirsList binds the parameter tag
+func (o *IpamRirsListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }
