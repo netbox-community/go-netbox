@@ -369,7 +369,7 @@ type DcimPowerPortsListParams struct {
 	SiteIDn *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -1480,13 +1480,13 @@ func (o *DcimPowerPortsListParams) SetSiteIDn(siteIDn *string) {
 }
 
 // WithTag adds the tag to the dcim power ports list params
-func (o *DcimPowerPortsListParams) WithTag(tag *string) *DcimPowerPortsListParams {
+func (o *DcimPowerPortsListParams) WithTag(tag []string) *DcimPowerPortsListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the dcim power ports list params
-func (o *DcimPowerPortsListParams) SetTag(tag *string) {
+func (o *DcimPowerPortsListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -3175,18 +3175,12 @@ func (o *DcimPowerPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -3313,4 +3307,21 @@ func (o *DcimPowerPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamDcimPowerPortsList binds the parameter tag
+func (o *DcimPowerPortsListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

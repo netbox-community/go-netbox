@@ -186,7 +186,7 @@ type ExtrasJournalEntriesListParams struct {
 	Q *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -608,13 +608,13 @@ func (o *ExtrasJournalEntriesListParams) SetQ(q *string) {
 }
 
 // WithTag adds the tag to the extras journal entries list params
-func (o *ExtrasJournalEntriesListParams) WithTag(tag *string) *ExtrasJournalEntriesListParams {
+func (o *ExtrasJournalEntriesListParams) WithTag(tag []string) *ExtrasJournalEntriesListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the extras journal entries list params
-func (o *ExtrasJournalEntriesListParams) SetTag(tag *string) {
+func (o *ExtrasJournalEntriesListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -1200,18 +1200,12 @@ func (o *ExtrasJournalEntriesListParams) WriteToRequest(r runtime.ClientRequest,
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -1236,4 +1230,21 @@ func (o *ExtrasJournalEntriesListParams) WriteToRequest(r runtime.ClientRequest,
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamExtrasJournalEntriesList binds the parameter tag
+func (o *ExtrasJournalEntriesListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

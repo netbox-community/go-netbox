@@ -255,7 +255,7 @@ type CircuitsProviderNetworksListParams struct {
 	ServiceIDNisw *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -930,13 +930,13 @@ func (o *CircuitsProviderNetworksListParams) SetServiceIDNisw(serviceIDNisw *str
 }
 
 // WithTag adds the tag to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithTag(tag *string) *CircuitsProviderNetworksListParams {
+func (o *CircuitsProviderNetworksListParams) WithTag(tag []string) *CircuitsProviderNetworksListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetTag(tag *string) {
+func (o *CircuitsProviderNetworksListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -1913,18 +1913,12 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -1949,4 +1943,21 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamCircuitsProviderNetworksList binds the parameter tag
+func (o *CircuitsProviderNetworksListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

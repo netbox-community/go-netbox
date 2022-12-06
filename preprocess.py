@@ -30,6 +30,28 @@ for path, path_spec in data["paths"].items():
             logging.info("Adding default response to " + path + " " + verb)
             verb_spec["responses"]["default"] = default_response
 
+for path, path_spec in data["paths"].items():
+    logging.debug("checking path: " + path)
+    for verb, verb_spec in path_spec.items():
+        if "parameters" in verb_spec:
+            tag_locations = [i for i, t in enumerate(
+                verb_spec["parameters"]) if t["name"] == 'tag']
+            if tag_locations:
+                for tag_location in tag_locations:
+                    logging.info(
+                        "Changing tag query to support multiple tags " + path + " " + verb)
+                    verb_spec["parameters"][tag_location] = {
+                        "name": "tag",
+                        "in": "query",
+                        "description": "",
+                        "required": False,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+
 # Second, fix the config contexts and local context data to our needs
 # This implements https://github.com/fbreckle/go-netbox/commit/987669a91daf2d04a155feaf032a24ed684169b7 and https://github.com/fbreckle/go-netbox/commit/030637bab4bb25cec173035cd2d4a78fb3f47053
 # for definition, definition_spec in data["definitions"].items():

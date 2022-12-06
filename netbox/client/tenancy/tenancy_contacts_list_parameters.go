@@ -315,7 +315,7 @@ type TenancyContactsListParams struct {
 	Q *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -1240,13 +1240,13 @@ func (o *TenancyContactsListParams) SetQ(q *string) {
 }
 
 // WithTag adds the tag to the tenancy contacts list params
-func (o *TenancyContactsListParams) WithTag(tag *string) *TenancyContactsListParams {
+func (o *TenancyContactsListParams) WithTag(tag []string) *TenancyContactsListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the tenancy contacts list params
-func (o *TenancyContactsListParams) SetTag(tag *string) {
+func (o *TenancyContactsListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -2673,18 +2673,12 @@ func (o *TenancyContactsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -2879,4 +2873,21 @@ func (o *TenancyContactsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamTenancyContactsList binds the parameter tag
+func (o *TenancyContactsListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

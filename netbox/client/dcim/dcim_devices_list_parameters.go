@@ -468,7 +468,7 @@ type DcimDevicesListParams struct {
 	Statusn *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -1993,13 +1993,13 @@ func (o *DcimDevicesListParams) SetStatusn(statusn *string) {
 }
 
 // WithTag adds the tag to the dcim devices list params
-func (o *DcimDevicesListParams) WithTag(tag *string) *DcimDevicesListParams {
+func (o *DcimDevicesListParams) WithTag(tag []string) *DcimDevicesListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the dcim devices list params
-func (o *DcimDevicesListParams) SetTag(tag *string) {
+func (o *DcimDevicesListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -4436,18 +4436,12 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -4863,4 +4857,21 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamDcimDevicesList binds the parameter tag
+func (o *DcimDevicesListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }

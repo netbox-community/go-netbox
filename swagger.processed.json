@@ -113,7 +113,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cabled",
@@ -895,7 +899,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -1573,7 +1581,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -2545,7 +2557,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "provider_id",
@@ -3244,7 +3260,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "contact",
@@ -4544,7 +4564,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "termination_a_type",
@@ -6067,7 +6091,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cabled",
@@ -7569,7 +7597,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cabled",
@@ -9029,7 +9061,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -9805,7 +9841,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -10560,7 +10600,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "manufacturer_id",
@@ -11392,7 +11436,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -13503,7 +13551,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cabled",
@@ -15173,7 +15225,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cabled",
@@ -16452,7 +16508,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -18018,7 +18078,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "parent_id",
@@ -19095,7 +19159,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "region_id",
@@ -19927,7 +19995,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "contact",
@@ -21255,7 +21327,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -22010,7 +22086,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "manufacturer_id",
@@ -22667,7 +22747,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "manufacturer_id",
@@ -23366,7 +23450,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "manufacturer_id",
@@ -24163,7 +24251,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cabled",
@@ -25686,7 +25778,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cabled",
@@ -26517,7 +26613,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "contact",
@@ -27957,7 +28057,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cabled",
@@ -28851,7 +28955,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -29606,7 +29714,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -30368,7 +30480,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -32406,7 +32522,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cabled",
@@ -33328,7 +33448,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "contact",
@@ -34062,7 +34186,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "contact",
@@ -34817,7 +34945,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -35803,7 +35935,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "master_id",
@@ -36698,7 +36834,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -40302,7 +40442,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "assigned_object_type",
@@ -42985,7 +43129,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -43649,7 +43797,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -44900,7 +45052,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "protocol",
@@ -45501,7 +45657,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -46375,7 +46535,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "family",
@@ -47086,7 +47250,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "l2vpn_id",
@@ -47827,7 +47995,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -48582,7 +48754,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -49691,7 +49867,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -50355,7 +50535,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -51012,7 +51196,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -51718,7 +51906,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "port",
@@ -52270,7 +52462,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "device_id",
@@ -52962,7 +53158,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "scope_type",
@@ -53866,7 +54066,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -54733,7 +54937,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -56095,7 +56303,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "parent_id",
@@ -56787,7 +56999,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -57472,7 +57688,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "group_id",
@@ -58353,7 +58573,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "parent_id",
@@ -59045,7 +59269,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "contact",
@@ -62138,7 +62366,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "contact",
@@ -62844,7 +63076,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "id__n",
@@ -63494,7 +63730,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -64291,7 +64531,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "cluster_id",
@@ -65123,7 +65367,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -66207,7 +66455,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "parent_id",
@@ -66899,7 +67151,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",
@@ -67689,7 +67945,11 @@
             "in": "query",
             "description": "",
             "required": false,
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           },
           {
             "name": "tenant_group_id",

@@ -288,7 +288,7 @@ type VirtualizationInterfacesListParams struct {
 	Q *string
 
 	// Tag.
-	Tag *string
+	Tag []string
 
 	// Tagn.
 	Tagn *string
@@ -1108,13 +1108,13 @@ func (o *VirtualizationInterfacesListParams) SetQ(q *string) {
 }
 
 // WithTag adds the tag to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) WithTag(tag *string) *VirtualizationInterfacesListParams {
+func (o *VirtualizationInterfacesListParams) WithTag(tag []string) *VirtualizationInterfacesListParams {
 	o.SetTag(tag)
 	return o
 }
 
 // SetTag adds the tag to the virtualization interfaces list params
-func (o *VirtualizationInterfacesListParams) SetTag(tag *string) {
+func (o *VirtualizationInterfacesListParams) SetTag(tag []string) {
 	o.Tag = tag
 }
 
@@ -2366,18 +2366,12 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 
 	if o.Tag != nil {
 
-		// query param tag
-		var qrTag string
+		// binding items for tag
+		joinedTag := o.bindParamTag(reg)
 
-		if o.Tag != nil {
-			qrTag = *o.Tag
-		}
-		qTag := qrTag
-		if qTag != "" {
-
-			if err := r.SetQueryParam("tag", qTag); err != nil {
-				return err
-			}
+		// query array param tag
+		if err := r.SetQueryParam("tag", joinedTag...); err != nil {
+			return err
 		}
 	}
 
@@ -2538,4 +2532,21 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
+}
+
+// bindParamVirtualizationInterfacesList binds the parameter tag
+func (o *VirtualizationInterfacesListParams) bindParamTag(formats strfmt.Registry) []string {
+	tagIR := o.Tag
+
+	var tagIC []string
+	for _, tagIIR := range tagIR { // explode []string
+
+		tagIIV := tagIIR // string as string
+		tagIC = append(tagIC, tagIIV)
+	}
+
+	// items.CollectionFormat: "multi"
+	tagIS := swag.JoinByFormat(tagIC, "multi")
+
+	return tagIS
 }
