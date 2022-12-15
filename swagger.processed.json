@@ -89631,7 +89631,8 @@
         "write_enabled": {
           "title": "Write enabled",
           "description": "Permit create/update/delete operations using this key",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",

@@ -79,7 +79,7 @@ type WritableToken struct {
 	// Write enabled
 	//
 	// Permit create/update/delete operations using this key
-	WriteEnabled bool `json:"write_enabled,omitempty"`
+	WriteEnabled bool `json:"write_enabled"`
 }
 
 // Validate validates this writable token
