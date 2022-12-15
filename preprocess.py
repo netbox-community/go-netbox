@@ -119,13 +119,13 @@ data["paths"]["/ipam/prefixes/{id}/available-ips/"]["post"]["responses"]["201"][
 ]["items"] = {"$ref": "#/definitions/IPAddress"}
 logging.info(f"Corrected reponse model when creating available-ips in a prefix")
 
-# Remove omitempty for site attribute on clusters
+# Add omitempty = false for site attribute on clusters
 for prop, prop_spec in data["definitions"]["WritableCluster"]["properties"].items():
     if prop == "site":
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableCluster.{prop}")
 
-# Remove omitempty for description attribute on tags
+# Add omitempty = false for description attribute on tags
 for prop, prop_spec in data["definitions"]["Tag"]["properties"].items():
     if prop == "description":
         prop_spec["x-omitempty"] = False
@@ -143,7 +143,7 @@ for prop, prop_spec in data["definitions"]["WritableIPAddress"]["properties"].it
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableIPAddress.{prop}")
 
-# Remove omitempty = false for token write_enabled
+# Add omitempty = false for token write_enabled
 for prop, prop_spec in data["definitions"]["WritableToken"]["properties"].items():
     if prop == "write_enabled":
         prop_spec["x-omitempty"] = False
