@@ -77,14 +77,59 @@ ExtrasExportTemplatesListParams contains all the parameters to send to the API e
 */
 type ExtrasExportTemplatesListParams struct {
 
-	// ContentType.
-	ContentType *string
+	// ContentTypeID.
+	ContentTypeID *string
 
-	// ContentTypen.
-	ContentTypen *string
+	// ContentTypeIDGt.
+	ContentTypeIDGt *string
+
+	// ContentTypeIDGte.
+	ContentTypeIDGte *string
+
+	// ContentTypeIDLt.
+	ContentTypeIDLt *string
+
+	// ContentTypeIDLte.
+	ContentTypeIDLte *string
+
+	// ContentTypeIDn.
+	ContentTypeIDn *string
+
+	// ContentTypes.
+	ContentTypes *string
+
+	// ContentTypesIc.
+	ContentTypesIc *string
+
+	// ContentTypesIe.
+	ContentTypesIe *string
+
+	// ContentTypesIew.
+	ContentTypesIew *string
+
+	// ContentTypesIsw.
+	ContentTypesIsw *string
+
+	// ContentTypesn.
+	ContentTypesn *string
+
+	// ContentTypesNic.
+	ContentTypesNic *string
+
+	// ContentTypesNie.
+	ContentTypesNie *string
+
+	// ContentTypesNiew.
+	ContentTypesNiew *string
+
+	// ContentTypesNisw.
+	ContentTypesNisw *string
 
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -139,6 +184,9 @@ type ExtrasExportTemplatesListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -235,26 +283,180 @@ func (o *ExtrasExportTemplatesListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
-// WithContentType adds the contentType to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) WithContentType(contentType *string) *ExtrasExportTemplatesListParams {
-	o.SetContentType(contentType)
+// WithContentTypeID adds the contentTypeID to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypeID(contentTypeID *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypeID(contentTypeID)
 	return o
 }
 
-// SetContentType adds the contentType to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) SetContentType(contentType *string) {
-	o.ContentType = contentType
+// SetContentTypeID adds the contentTypeId to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypeID(contentTypeID *string) {
+	o.ContentTypeID = contentTypeID
 }
 
-// WithContentTypen adds the contentTypen to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) WithContentTypen(contentTypen *string) *ExtrasExportTemplatesListParams {
-	o.SetContentTypen(contentTypen)
+// WithContentTypeIDGt adds the contentTypeIDGt to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypeIDGt(contentTypeIDGt *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypeIDGt(contentTypeIDGt)
 	return o
 }
 
-// SetContentTypen adds the contentTypeN to the extras export templates list params
-func (o *ExtrasExportTemplatesListParams) SetContentTypen(contentTypen *string) {
-	o.ContentTypen = contentTypen
+// SetContentTypeIDGt adds the contentTypeIdGt to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypeIDGt(contentTypeIDGt *string) {
+	o.ContentTypeIDGt = contentTypeIDGt
+}
+
+// WithContentTypeIDGte adds the contentTypeIDGte to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypeIDGte(contentTypeIDGte *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypeIDGte(contentTypeIDGte)
+	return o
+}
+
+// SetContentTypeIDGte adds the contentTypeIdGte to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypeIDGte(contentTypeIDGte *string) {
+	o.ContentTypeIDGte = contentTypeIDGte
+}
+
+// WithContentTypeIDLt adds the contentTypeIDLt to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypeIDLt(contentTypeIDLt *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypeIDLt(contentTypeIDLt)
+	return o
+}
+
+// SetContentTypeIDLt adds the contentTypeIdLt to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypeIDLt(contentTypeIDLt *string) {
+	o.ContentTypeIDLt = contentTypeIDLt
+}
+
+// WithContentTypeIDLte adds the contentTypeIDLte to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypeIDLte(contentTypeIDLte *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypeIDLte(contentTypeIDLte)
+	return o
+}
+
+// SetContentTypeIDLte adds the contentTypeIdLte to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypeIDLte(contentTypeIDLte *string) {
+	o.ContentTypeIDLte = contentTypeIDLte
+}
+
+// WithContentTypeIDn adds the contentTypeIDn to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypeIDn(contentTypeIDn *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypeIDn(contentTypeIDn)
+	return o
+}
+
+// SetContentTypeIDn adds the contentTypeIdN to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypeIDn(contentTypeIDn *string) {
+	o.ContentTypeIDn = contentTypeIDn
+}
+
+// WithContentTypes adds the contentTypes to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypes(contentTypes *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypes(contentTypes)
+	return o
+}
+
+// SetContentTypes adds the contentTypes to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypes(contentTypes *string) {
+	o.ContentTypes = contentTypes
+}
+
+// WithContentTypesIc adds the contentTypesIc to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypesIc(contentTypesIc *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypesIc(contentTypesIc)
+	return o
+}
+
+// SetContentTypesIc adds the contentTypesIc to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypesIc(contentTypesIc *string) {
+	o.ContentTypesIc = contentTypesIc
+}
+
+// WithContentTypesIe adds the contentTypesIe to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypesIe(contentTypesIe *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypesIe(contentTypesIe)
+	return o
+}
+
+// SetContentTypesIe adds the contentTypesIe to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypesIe(contentTypesIe *string) {
+	o.ContentTypesIe = contentTypesIe
+}
+
+// WithContentTypesIew adds the contentTypesIew to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypesIew(contentTypesIew *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypesIew(contentTypesIew)
+	return o
+}
+
+// SetContentTypesIew adds the contentTypesIew to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypesIew(contentTypesIew *string) {
+	o.ContentTypesIew = contentTypesIew
+}
+
+// WithContentTypesIsw adds the contentTypesIsw to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypesIsw(contentTypesIsw *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypesIsw(contentTypesIsw)
+	return o
+}
+
+// SetContentTypesIsw adds the contentTypesIsw to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypesIsw(contentTypesIsw *string) {
+	o.ContentTypesIsw = contentTypesIsw
+}
+
+// WithContentTypesn adds the contentTypesn to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypesn(contentTypesn *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypesn(contentTypesn)
+	return o
+}
+
+// SetContentTypesn adds the contentTypesN to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypesn(contentTypesn *string) {
+	o.ContentTypesn = contentTypesn
+}
+
+// WithContentTypesNic adds the contentTypesNic to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypesNic(contentTypesNic *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypesNic(contentTypesNic)
+	return o
+}
+
+// SetContentTypesNic adds the contentTypesNic to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypesNic(contentTypesNic *string) {
+	o.ContentTypesNic = contentTypesNic
+}
+
+// WithContentTypesNie adds the contentTypesNie to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypesNie(contentTypesNie *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypesNie(contentTypesNie)
+	return o
+}
+
+// SetContentTypesNie adds the contentTypesNie to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypesNie(contentTypesNie *string) {
+	o.ContentTypesNie = contentTypesNie
+}
+
+// WithContentTypesNiew adds the contentTypesNiew to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypesNiew(contentTypesNiew *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypesNiew(contentTypesNiew)
+	return o
+}
+
+// SetContentTypesNiew adds the contentTypesNiew to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypesNiew(contentTypesNiew *string) {
+	o.ContentTypesNiew = contentTypesNiew
+}
+
+// WithContentTypesNisw adds the contentTypesNisw to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypesNisw(contentTypesNisw *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypesNisw(contentTypesNisw)
+	return o
+}
+
+// SetContentTypesNisw adds the contentTypesNisw to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypesNisw(contentTypesNisw *string) {
+	o.ContentTypesNisw = contentTypesNisw
 }
 
 // WithDescription adds the description to the extras export templates list params
@@ -266,6 +468,17 @@ func (o *ExtrasExportTemplatesListParams) WithDescription(description *string) *
 // SetDescription adds the description to the extras export templates list params
 func (o *ExtrasExportTemplatesListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithDescriptionEmpty(descriptionEmpty *string) *ExtrasExportTemplatesListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the extras export templates list params
@@ -455,6 +668,17 @@ func (o *ExtrasExportTemplatesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameEmpty(nameEmpty *string) *ExtrasExportTemplatesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the extras export templates list params
 func (o *ExtrasExportTemplatesListParams) WithNameIc(nameIc *string) *ExtrasExportTemplatesListParams {
 	o.SetNameIc(nameIc)
@@ -595,35 +819,273 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 	}
 	var res []error
 
-	if o.ContentType != nil {
+	if o.ContentTypeID != nil {
 
-		// query param content_type
-		var qrContentType string
+		// query param content_type_id
+		var qrContentTypeID string
 
-		if o.ContentType != nil {
-			qrContentType = *o.ContentType
+		if o.ContentTypeID != nil {
+			qrContentTypeID = *o.ContentTypeID
 		}
-		qContentType := qrContentType
-		if qContentType != "" {
+		qContentTypeID := qrContentTypeID
+		if qContentTypeID != "" {
 
-			if err := r.SetQueryParam("content_type", qContentType); err != nil {
+			if err := r.SetQueryParam("content_type_id", qContentTypeID); err != nil {
 				return err
 			}
 		}
 	}
 
-	if o.ContentTypen != nil {
+	if o.ContentTypeIDGt != nil {
 
-		// query param content_type__n
-		var qrContentTypen string
+		// query param content_type_id__gt
+		var qrContentTypeIDGt string
 
-		if o.ContentTypen != nil {
-			qrContentTypen = *o.ContentTypen
+		if o.ContentTypeIDGt != nil {
+			qrContentTypeIDGt = *o.ContentTypeIDGt
 		}
-		qContentTypen := qrContentTypen
-		if qContentTypen != "" {
+		qContentTypeIDGt := qrContentTypeIDGt
+		if qContentTypeIDGt != "" {
 
-			if err := r.SetQueryParam("content_type__n", qContentTypen); err != nil {
+			if err := r.SetQueryParam("content_type_id__gt", qContentTypeIDGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDGte != nil {
+
+		// query param content_type_id__gte
+		var qrContentTypeIDGte string
+
+		if o.ContentTypeIDGte != nil {
+			qrContentTypeIDGte = *o.ContentTypeIDGte
+		}
+		qContentTypeIDGte := qrContentTypeIDGte
+		if qContentTypeIDGte != "" {
+
+			if err := r.SetQueryParam("content_type_id__gte", qContentTypeIDGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDLt != nil {
+
+		// query param content_type_id__lt
+		var qrContentTypeIDLt string
+
+		if o.ContentTypeIDLt != nil {
+			qrContentTypeIDLt = *o.ContentTypeIDLt
+		}
+		qContentTypeIDLt := qrContentTypeIDLt
+		if qContentTypeIDLt != "" {
+
+			if err := r.SetQueryParam("content_type_id__lt", qContentTypeIDLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDLte != nil {
+
+		// query param content_type_id__lte
+		var qrContentTypeIDLte string
+
+		if o.ContentTypeIDLte != nil {
+			qrContentTypeIDLte = *o.ContentTypeIDLte
+		}
+		qContentTypeIDLte := qrContentTypeIDLte
+		if qContentTypeIDLte != "" {
+
+			if err := r.SetQueryParam("content_type_id__lte", qContentTypeIDLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypeIDn != nil {
+
+		// query param content_type_id__n
+		var qrContentTypeIDn string
+
+		if o.ContentTypeIDn != nil {
+			qrContentTypeIDn = *o.ContentTypeIDn
+		}
+		qContentTypeIDn := qrContentTypeIDn
+		if qContentTypeIDn != "" {
+
+			if err := r.SetQueryParam("content_type_id__n", qContentTypeIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypes != nil {
+
+		// query param content_types
+		var qrContentTypes string
+
+		if o.ContentTypes != nil {
+			qrContentTypes = *o.ContentTypes
+		}
+		qContentTypes := qrContentTypes
+		if qContentTypes != "" {
+
+			if err := r.SetQueryParam("content_types", qContentTypes); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypesIc != nil {
+
+		// query param content_types__ic
+		var qrContentTypesIc string
+
+		if o.ContentTypesIc != nil {
+			qrContentTypesIc = *o.ContentTypesIc
+		}
+		qContentTypesIc := qrContentTypesIc
+		if qContentTypesIc != "" {
+
+			if err := r.SetQueryParam("content_types__ic", qContentTypesIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypesIe != nil {
+
+		// query param content_types__ie
+		var qrContentTypesIe string
+
+		if o.ContentTypesIe != nil {
+			qrContentTypesIe = *o.ContentTypesIe
+		}
+		qContentTypesIe := qrContentTypesIe
+		if qContentTypesIe != "" {
+
+			if err := r.SetQueryParam("content_types__ie", qContentTypesIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypesIew != nil {
+
+		// query param content_types__iew
+		var qrContentTypesIew string
+
+		if o.ContentTypesIew != nil {
+			qrContentTypesIew = *o.ContentTypesIew
+		}
+		qContentTypesIew := qrContentTypesIew
+		if qContentTypesIew != "" {
+
+			if err := r.SetQueryParam("content_types__iew", qContentTypesIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypesIsw != nil {
+
+		// query param content_types__isw
+		var qrContentTypesIsw string
+
+		if o.ContentTypesIsw != nil {
+			qrContentTypesIsw = *o.ContentTypesIsw
+		}
+		qContentTypesIsw := qrContentTypesIsw
+		if qContentTypesIsw != "" {
+
+			if err := r.SetQueryParam("content_types__isw", qContentTypesIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypesn != nil {
+
+		// query param content_types__n
+		var qrContentTypesn string
+
+		if o.ContentTypesn != nil {
+			qrContentTypesn = *o.ContentTypesn
+		}
+		qContentTypesn := qrContentTypesn
+		if qContentTypesn != "" {
+
+			if err := r.SetQueryParam("content_types__n", qContentTypesn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypesNic != nil {
+
+		// query param content_types__nic
+		var qrContentTypesNic string
+
+		if o.ContentTypesNic != nil {
+			qrContentTypesNic = *o.ContentTypesNic
+		}
+		qContentTypesNic := qrContentTypesNic
+		if qContentTypesNic != "" {
+
+			if err := r.SetQueryParam("content_types__nic", qContentTypesNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypesNie != nil {
+
+		// query param content_types__nie
+		var qrContentTypesNie string
+
+		if o.ContentTypesNie != nil {
+			qrContentTypesNie = *o.ContentTypesNie
+		}
+		qContentTypesNie := qrContentTypesNie
+		if qContentTypesNie != "" {
+
+			if err := r.SetQueryParam("content_types__nie", qContentTypesNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypesNiew != nil {
+
+		// query param content_types__niew
+		var qrContentTypesNiew string
+
+		if o.ContentTypesNiew != nil {
+			qrContentTypesNiew = *o.ContentTypesNiew
+		}
+		qContentTypesNiew := qrContentTypesNiew
+		if qContentTypesNiew != "" {
+
+			if err := r.SetQueryParam("content_types__niew", qContentTypesNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContentTypesNisw != nil {
+
+		// query param content_types__nisw
+		var qrContentTypesNisw string
+
+		if o.ContentTypesNisw != nil {
+			qrContentTypesNisw = *o.ContentTypesNisw
+		}
+		qContentTypesNisw := qrContentTypesNisw
+		if qContentTypesNisw != "" {
+
+			if err := r.SetQueryParam("content_types__nisw", qContentTypesNisw); err != nil {
 				return err
 			}
 		}
@@ -641,6 +1103,23 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -930,6 +1409,23 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

@@ -121,17 +121,17 @@ type Webhook struct {
 	// Type create
 	//
 	// Call this webhook when a matching object is created.
-	TypeCreate *bool `json:"type_create,omitempty"`
+	TypeCreate bool `json:"type_create,omitempty"`
 
 	// Type delete
 	//
 	// Call this webhook when a matching object is deleted.
-	TypeDelete *bool `json:"type_delete,omitempty"`
+	TypeDelete bool `json:"type_delete,omitempty"`
 
 	// Type update
 	//
 	// Call this webhook when a matching object is updated.
-	TypeUpdate *bool `json:"type_update,omitempty"`
+	TypeUpdate bool `json:"type_update,omitempty"`
 
 	// Url
 	// Read Only: true

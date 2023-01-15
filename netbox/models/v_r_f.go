@@ -35,6 +35,9 @@ import (
 // swagger:model VRF
 type VRF struct {
 
+	// Comments
+	Comments string `json:"comments,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date-time

@@ -161,6 +161,9 @@ type DcimModuleTypesListParams struct {
 	// Model.
 	Model *string
 
+	// ModelEmpty.
+	ModelEmpty *string
+
 	// ModelIc.
 	ModelIc *string
 
@@ -202,6 +205,9 @@ type DcimModuleTypesListParams struct {
 
 	// PartNumber.
 	PartNumber *string
+
+	// PartNumberEmpty.
+	PartNumberEmpty *string
 
 	// PartNumberIc.
 	PartNumberIc *string
@@ -247,6 +253,30 @@ type DcimModuleTypesListParams struct {
 
 	// Tagn.
 	Tagn *string
+
+	// Weight.
+	Weight *string
+
+	// WeightGt.
+	WeightGt *string
+
+	// WeightGte.
+	WeightGte *string
+
+	// WeightLt.
+	WeightLt *string
+
+	// WeightLte.
+	WeightLte *string
+
+	// Weightn.
+	Weightn *string
+
+	// WeightUnit.
+	WeightUnit *string
+
+	// WeightUnitn.
+	WeightUnitn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -598,6 +628,17 @@ func (o *DcimModuleTypesListParams) SetModel(model *string) {
 	o.Model = model
 }
 
+// WithModelEmpty adds the modelEmpty to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithModelEmpty(modelEmpty *string) *DcimModuleTypesListParams {
+	o.SetModelEmpty(modelEmpty)
+	return o
+}
+
+// SetModelEmpty adds the modelEmpty to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetModelEmpty(modelEmpty *string) {
+	o.ModelEmpty = modelEmpty
+}
+
 // WithModelIc adds the modelIc to the dcim module types list params
 func (o *DcimModuleTypesListParams) WithModelIc(modelIc *string) *DcimModuleTypesListParams {
 	o.SetModelIc(modelIc)
@@ -728,6 +769,17 @@ func (o *DcimModuleTypesListParams) WithPartNumber(partNumber *string) *DcimModu
 // SetPartNumber adds the partNumber to the dcim module types list params
 func (o *DcimModuleTypesListParams) SetPartNumber(partNumber *string) {
 	o.PartNumber = partNumber
+}
+
+// WithPartNumberEmpty adds the partNumberEmpty to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithPartNumberEmpty(partNumberEmpty *string) *DcimModuleTypesListParams {
+	o.SetPartNumberEmpty(partNumberEmpty)
+	return o
+}
+
+// SetPartNumberEmpty adds the partNumberEmpty to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetPartNumberEmpty(partNumberEmpty *string) {
+	o.PartNumberEmpty = partNumberEmpty
 }
 
 // WithPartNumberIc adds the partNumberIc to the dcim module types list params
@@ -893,6 +945,94 @@ func (o *DcimModuleTypesListParams) WithTagn(tagn *string) *DcimModuleTypesListP
 // SetTagn adds the tagN to the dcim module types list params
 func (o *DcimModuleTypesListParams) SetTagn(tagn *string) {
 	o.Tagn = tagn
+}
+
+// WithWeight adds the weight to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithWeight(weight *string) *DcimModuleTypesListParams {
+	o.SetWeight(weight)
+	return o
+}
+
+// SetWeight adds the weight to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetWeight(weight *string) {
+	o.Weight = weight
+}
+
+// WithWeightGt adds the weightGt to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithWeightGt(weightGt *string) *DcimModuleTypesListParams {
+	o.SetWeightGt(weightGt)
+	return o
+}
+
+// SetWeightGt adds the weightGt to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetWeightGt(weightGt *string) {
+	o.WeightGt = weightGt
+}
+
+// WithWeightGte adds the weightGte to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithWeightGte(weightGte *string) *DcimModuleTypesListParams {
+	o.SetWeightGte(weightGte)
+	return o
+}
+
+// SetWeightGte adds the weightGte to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetWeightGte(weightGte *string) {
+	o.WeightGte = weightGte
+}
+
+// WithWeightLt adds the weightLt to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithWeightLt(weightLt *string) *DcimModuleTypesListParams {
+	o.SetWeightLt(weightLt)
+	return o
+}
+
+// SetWeightLt adds the weightLt to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetWeightLt(weightLt *string) {
+	o.WeightLt = weightLt
+}
+
+// WithWeightLte adds the weightLte to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithWeightLte(weightLte *string) *DcimModuleTypesListParams {
+	o.SetWeightLte(weightLte)
+	return o
+}
+
+// SetWeightLte adds the weightLte to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetWeightLte(weightLte *string) {
+	o.WeightLte = weightLte
+}
+
+// WithWeightn adds the weightn to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithWeightn(weightn *string) *DcimModuleTypesListParams {
+	o.SetWeightn(weightn)
+	return o
+}
+
+// SetWeightn adds the weightN to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetWeightn(weightn *string) {
+	o.Weightn = weightn
+}
+
+// WithWeightUnit adds the weightUnit to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithWeightUnit(weightUnit *string) *DcimModuleTypesListParams {
+	o.SetWeightUnit(weightUnit)
+	return o
+}
+
+// SetWeightUnit adds the weightUnit to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetWeightUnit(weightUnit *string) {
+	o.WeightUnit = weightUnit
+}
+
+// WithWeightUnitn adds the weightUnitn to the dcim module types list params
+func (o *DcimModuleTypesListParams) WithWeightUnitn(weightUnitn *string) *DcimModuleTypesListParams {
+	o.SetWeightUnitn(weightUnitn)
+	return o
+}
+
+// SetWeightUnitn adds the weightUnitN to the dcim module types list params
+func (o *DcimModuleTypesListParams) SetWeightUnitn(weightUnitn *string) {
+	o.WeightUnitn = weightUnitn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -1362,6 +1502,23 @@ func (o *DcimModuleTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
+	if o.ModelEmpty != nil {
+
+		// query param model__empty
+		var qrModelEmpty string
+
+		if o.ModelEmpty != nil {
+			qrModelEmpty = *o.ModelEmpty
+		}
+		qModelEmpty := qrModelEmpty
+		if qModelEmpty != "" {
+
+			if err := r.SetQueryParam("model__empty", qModelEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ModelIc != nil {
 
 		// query param model__ic
@@ -1561,6 +1718,23 @@ func (o *DcimModuleTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qPartNumber != "" {
 
 			if err := r.SetQueryParam("part_number", qPartNumber); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PartNumberEmpty != nil {
+
+		// query param part_number__empty
+		var qrPartNumberEmpty string
+
+		if o.PartNumberEmpty != nil {
+			qrPartNumberEmpty = *o.PartNumberEmpty
+		}
+		qPartNumberEmpty := qrPartNumberEmpty
+		if qPartNumberEmpty != "" {
+
+			if err := r.SetQueryParam("part_number__empty", qPartNumberEmpty); err != nil {
 				return err
 			}
 		}
@@ -1816,6 +1990,142 @@ func (o *DcimModuleTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qTagn != "" {
 
 			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Weight != nil {
+
+		// query param weight
+		var qrWeight string
+
+		if o.Weight != nil {
+			qrWeight = *o.Weight
+		}
+		qWeight := qrWeight
+		if qWeight != "" {
+
+			if err := r.SetQueryParam("weight", qWeight); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightGt != nil {
+
+		// query param weight__gt
+		var qrWeightGt string
+
+		if o.WeightGt != nil {
+			qrWeightGt = *o.WeightGt
+		}
+		qWeightGt := qrWeightGt
+		if qWeightGt != "" {
+
+			if err := r.SetQueryParam("weight__gt", qWeightGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightGte != nil {
+
+		// query param weight__gte
+		var qrWeightGte string
+
+		if o.WeightGte != nil {
+			qrWeightGte = *o.WeightGte
+		}
+		qWeightGte := qrWeightGte
+		if qWeightGte != "" {
+
+			if err := r.SetQueryParam("weight__gte", qWeightGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightLt != nil {
+
+		// query param weight__lt
+		var qrWeightLt string
+
+		if o.WeightLt != nil {
+			qrWeightLt = *o.WeightLt
+		}
+		qWeightLt := qrWeightLt
+		if qWeightLt != "" {
+
+			if err := r.SetQueryParam("weight__lt", qWeightLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightLte != nil {
+
+		// query param weight__lte
+		var qrWeightLte string
+
+		if o.WeightLte != nil {
+			qrWeightLte = *o.WeightLte
+		}
+		qWeightLte := qrWeightLte
+		if qWeightLte != "" {
+
+			if err := r.SetQueryParam("weight__lte", qWeightLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Weightn != nil {
+
+		// query param weight__n
+		var qrWeightn string
+
+		if o.Weightn != nil {
+			qrWeightn = *o.Weightn
+		}
+		qWeightn := qrWeightn
+		if qWeightn != "" {
+
+			if err := r.SetQueryParam("weight__n", qWeightn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightUnit != nil {
+
+		// query param weight_unit
+		var qrWeightUnit string
+
+		if o.WeightUnit != nil {
+			qrWeightUnit = *o.WeightUnit
+		}
+		qWeightUnit := qrWeightUnit
+		if qWeightUnit != "" {
+
+			if err := r.SetQueryParam("weight_unit", qWeightUnit); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightUnitn != nil {
+
+		// query param weight_unit__n
+		var qrWeightUnitn string
+
+		if o.WeightUnitn != nil {
+			qrWeightUnitn = *o.WeightUnitn
+		}
+		qWeightUnitn := qrWeightUnitn
+		if qWeightUnitn != "" {
+
+			if err := r.SetQueryParam("weight_unit__n", qWeightUnitn); err != nil {
 				return err
 			}
 		}

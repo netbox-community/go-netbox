@@ -43,6 +43,9 @@ type ASN struct {
 	// Minimum: 1
 	Asn *int64 `json:"asn"`
 
+	// Comments
+	Comments string `json:"comments,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date-time

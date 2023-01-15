@@ -113,6 +113,9 @@ type CircuitsCircuitTerminationsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -268,6 +271,9 @@ type CircuitsCircuitTerminationsListParams struct {
 
 	// XconnectID.
 	XconnectID *string
+
+	// XconnectIDEmpty.
+	XconnectIDEmpty *string
 
 	// XconnectIDIc.
 	XconnectIDIc *string
@@ -479,6 +485,17 @@ func (o *CircuitsCircuitTerminationsListParams) WithDescription(description *str
 // SetDescription adds the description to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithDescriptionEmpty(descriptionEmpty *string) *CircuitsCircuitTerminationsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the circuits circuit terminations list params
@@ -1020,6 +1037,17 @@ func (o *CircuitsCircuitTerminationsListParams) SetXconnectID(xconnectID *string
 	o.XconnectID = xconnectID
 }
 
+// WithXconnectIDEmpty adds the xconnectIDEmpty to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) WithXconnectIDEmpty(xconnectIDEmpty *string) *CircuitsCircuitTerminationsListParams {
+	o.SetXconnectIDEmpty(xconnectIDEmpty)
+	return o
+}
+
+// SetXconnectIDEmpty adds the xconnectIdEmpty to the circuits circuit terminations list params
+func (o *CircuitsCircuitTerminationsListParams) SetXconnectIDEmpty(xconnectIDEmpty *string) {
+	o.XconnectIDEmpty = xconnectIDEmpty
+}
+
 // WithXconnectIDIc adds the xconnectIDIc to the circuits circuit terminations list params
 func (o *CircuitsCircuitTerminationsListParams) WithXconnectIDIc(xconnectIDIc *string) *CircuitsCircuitTerminationsListParams {
 	o.SetXconnectIDIc(xconnectIDIc)
@@ -1326,6 +1354,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -2159,6 +2204,23 @@ func (o *CircuitsCircuitTerminationsListParams) WriteToRequest(r runtime.ClientR
 		if qXconnectID != "" {
 
 			if err := r.SetQueryParam("xconnect_id", qXconnectID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.XconnectIDEmpty != nil {
+
+		// query param xconnect_id__empty
+		var qrXconnectIDEmpty string
+
+		if o.XconnectIDEmpty != nil {
+			qrXconnectIDEmpty = *o.XconnectIDEmpty
+		}
+		qXconnectIDEmpty := qrXconnectIDEmpty
+		if qXconnectIDEmpty != "" {
+
+			if err := r.SetQueryParam("xconnect_id__empty", qXconnectIDEmpty); err != nil {
 				return err
 			}
 		}

@@ -46,6 +46,9 @@ type WirelessLink struct {
 	// auth type
 	AuthType *WirelessLinkAuthType `json:"auth_type,omitempty"`
 
+	// Comments
+	Comments string `json:"comments,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date-time

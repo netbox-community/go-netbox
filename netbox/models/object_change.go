@@ -23,6 +23,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -48,7 +49,7 @@ type ObjectChange struct {
 
 	// Changed object id
 	// Required: true
-	// Maximum: 2.147483647e+09
+	// Maximum: math.MaxInt64
 	// Minimum: 0
 	ChangedObjectID *int64 `json:"changed_object_id"`
 
@@ -163,7 +164,7 @@ func (m *ObjectChange) validateChangedObjectID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("changed_object_id", "body", *m.ChangedObjectID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("changed_object_id", "body", *m.ChangedObjectID, math.MaxInt64, false); err != nil {
 		return err
 	}
 

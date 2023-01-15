@@ -44,6 +44,9 @@ type FHRPGroup struct {
 	// Enum: [plaintext md5]
 	AuthType string `json:"auth_type,omitempty"`
 
+	// Comments
+	Comments string `json:"comments,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date-time
@@ -78,6 +81,10 @@ type FHRPGroup struct {
 	// Read Only: true
 	// Format: date-time
 	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+
+	// Name
+	// Max Length: 100
+	Name string `json:"name,omitempty"`
 
 	// Protocol
 	// Required: true
@@ -122,6 +129,10 @@ func (m *FHRPGroup) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -270,6 +281,18 @@ func (m *FHRPGroup) validateLastUpdated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *FHRPGroup) validateName(formats strfmt.Registry) error {
+	if swag.IsZero(m.Name) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("name", "body", m.Name, 100); err != nil {
 		return err
 	}
 

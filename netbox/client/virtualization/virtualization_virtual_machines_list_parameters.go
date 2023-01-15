@@ -278,6 +278,9 @@ type VirtualizationVirtualMachinesListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -1211,6 +1214,17 @@ func (o *VirtualizationVirtualMachinesListParams) WithName(name *string) *Virtua
 // SetName adds the name to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) WithNameEmpty(nameEmpty *string) *VirtualizationVirtualMachinesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the virtualization virtual machines list params
+func (o *VirtualizationVirtualMachinesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the virtualization virtual machines list params
@@ -2888,6 +2902,23 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

@@ -50,8 +50,7 @@ type WritableFrontPortTemplate struct {
 	Description string `json:"description,omitempty"`
 
 	// Device type
-	// Required: true
-	DeviceType *int64 `json:"device_type"`
+	DeviceType *int64 `json:"device_type,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -73,8 +72,7 @@ type WritableFrontPortTemplate struct {
 	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Module type
-	// Required: true
-	ModuleType *int64 `json:"module_type"`
+	ModuleType *int64 `json:"module_type,omitempty"`
 
 	// Name
 	//
@@ -122,19 +120,11 @@ func (m *WritableFrontPortTemplate) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateDeviceType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateLabel(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateModuleType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -204,15 +194,6 @@ func (m *WritableFrontPortTemplate) validateDescription(formats strfmt.Registry)
 	return nil
 }
 
-func (m *WritableFrontPortTemplate) validateDeviceType(formats strfmt.Registry) error {
-
-	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritableFrontPortTemplate) validateLabel(formats strfmt.Registry) error {
 	if swag.IsZero(m.Label) { // not required
 		return nil
@@ -231,15 +212,6 @@ func (m *WritableFrontPortTemplate) validateLastUpdated(formats strfmt.Registry)
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableFrontPortTemplate) validateModuleType(formats strfmt.Registry) error {
-
-	if err := validate.Required("module_type", "body", m.ModuleType); err != nil {
 		return err
 	}
 

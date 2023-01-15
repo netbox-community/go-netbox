@@ -88,7 +88,7 @@ type VLANGroup struct {
 	ScopeID *int64 `json:"scope_id,omitempty"`
 
 	// Scope type
-	ScopeType string `json:"scope_type,omitempty"`
+	ScopeType *string `json:"scope_type,omitempty"`
 
 	// Slug
 	// Required: true

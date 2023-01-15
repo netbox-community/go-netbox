@@ -45,8 +45,7 @@ type WritableInterfaceTemplate struct {
 	Description string `json:"description,omitempty"`
 
 	// Device type
-	// Required: true
-	DeviceType *int64 `json:"device_type"`
+	DeviceType *int64 `json:"device_type,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -71,8 +70,7 @@ type WritableInterfaceTemplate struct {
 	MgmtOnly bool `json:"mgmt_only,omitempty"`
 
 	// Module type
-	// Required: true
-	ModuleType *int64 `json:"module_type"`
+	ModuleType *int64 `json:"module_type,omitempty"`
 
 	// Name
 	//
@@ -94,7 +92,7 @@ type WritableInterfaceTemplate struct {
 
 	// Type
 	// Required: true
-	// Enum: [virtual bridge lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax ieee802.11ay ieee802.15.1 other-wireless gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-qsfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl docsis gpon xg-pon xgs-pon ng-pon2 epon 10g-epon cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus cisco-stackwise-80 cisco-stackwise-160 cisco-stackwise-320 cisco-stackwise-480 juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
+	// Enum: [virtual bridge lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp 1000base-kx 10gbase-kr 10gbase-kx4 25gbase-kr 40gbase-kr4 50gbase-kr 100gbase-kp4 100gbase-kr2 100gbase-kr4 ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax ieee802.11ay ieee802.15.1 other-wireless gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-qsfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl docsis gpon xg-pon xgs-pon ng-pon2 epon 10g-epon cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus cisco-stackwise-80 cisco-stackwise-160 cisco-stackwise-320 cisco-stackwise-480 juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
 	Type *string `json:"type"`
 
 	// Url
@@ -115,19 +113,11 @@ func (m *WritableInterfaceTemplate) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateDeviceType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateLabel(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateModuleType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -181,15 +171,6 @@ func (m *WritableInterfaceTemplate) validateDescription(formats strfmt.Registry)
 	return nil
 }
 
-func (m *WritableInterfaceTemplate) validateDeviceType(formats strfmt.Registry) error {
-
-	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritableInterfaceTemplate) validateLabel(formats strfmt.Registry) error {
 	if swag.IsZero(m.Label) { // not required
 		return nil
@@ -208,15 +189,6 @@ func (m *WritableInterfaceTemplate) validateLastUpdated(formats strfmt.Registry)
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableInterfaceTemplate) validateModuleType(formats strfmt.Registry) error {
-
-	if err := validate.Required("module_type", "body", m.ModuleType); err != nil {
 		return err
 	}
 
@@ -346,7 +318,7 @@ var writableInterfaceTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["virtual","bridge","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","ieee802.11ay","ieee802.15.1","other-wireless","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-qsfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","docsis","gpon","xg-pon","xgs-pon","ng-pon2","epon","10g-epon","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","cisco-stackwise-80","cisco-stackwise-160","cisco-stackwise-320","cisco-stackwise-480","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["virtual","bridge","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","1000base-kx","10gbase-kr","10gbase-kx4","25gbase-kr","40gbase-kr4","50gbase-kr","100gbase-kp4","100gbase-kr2","100gbase-kr4","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","ieee802.11ay","ieee802.15.1","other-wireless","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-qsfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","docsis","gpon","xg-pon","xgs-pon","ng-pon2","epon","10g-epon","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","cisco-stackwise-80","cisco-stackwise-160","cisco-stackwise-320","cisco-stackwise-480","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -439,6 +411,33 @@ const (
 
 	// WritableInterfaceTemplateTypeNr400gbaseDashxDashOsfp captures enum value "400gbase-x-osfp"
 	WritableInterfaceTemplateTypeNr400gbaseDashxDashOsfp string = "400gbase-x-osfp"
+
+	// WritableInterfaceTemplateTypeNr1000baseDashKx captures enum value "1000base-kx"
+	WritableInterfaceTemplateTypeNr1000baseDashKx string = "1000base-kx"
+
+	// WritableInterfaceTemplateTypeNr10gbaseDashKr captures enum value "10gbase-kr"
+	WritableInterfaceTemplateTypeNr10gbaseDashKr string = "10gbase-kr"
+
+	// WritableInterfaceTemplateTypeNr10gbaseDashKx4 captures enum value "10gbase-kx4"
+	WritableInterfaceTemplateTypeNr10gbaseDashKx4 string = "10gbase-kx4"
+
+	// WritableInterfaceTemplateTypeNr25gbaseDashKr captures enum value "25gbase-kr"
+	WritableInterfaceTemplateTypeNr25gbaseDashKr string = "25gbase-kr"
+
+	// WritableInterfaceTemplateTypeNr40gbaseDashKr4 captures enum value "40gbase-kr4"
+	WritableInterfaceTemplateTypeNr40gbaseDashKr4 string = "40gbase-kr4"
+
+	// WritableInterfaceTemplateTypeNr50gbaseDashKr captures enum value "50gbase-kr"
+	WritableInterfaceTemplateTypeNr50gbaseDashKr string = "50gbase-kr"
+
+	// WritableInterfaceTemplateTypeNr100gbaseDashKp4 captures enum value "100gbase-kp4"
+	WritableInterfaceTemplateTypeNr100gbaseDashKp4 string = "100gbase-kp4"
+
+	// WritableInterfaceTemplateTypeNr100gbaseDashKr2 captures enum value "100gbase-kr2"
+	WritableInterfaceTemplateTypeNr100gbaseDashKr2 string = "100gbase-kr2"
+
+	// WritableInterfaceTemplateTypeNr100gbaseDashKr4 captures enum value "100gbase-kr4"
+	WritableInterfaceTemplateTypeNr100gbaseDashKr4 string = "100gbase-kr4"
 
 	// WritableInterfaceTemplateTypeIeee802Dot11a captures enum value "ieee802.11a"
 	WritableInterfaceTemplateTypeIeee802Dot11a string = "ieee802.11a"

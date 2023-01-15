@@ -128,6 +128,9 @@ type ExtrasCustomFieldsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -163,6 +166,9 @@ type ExtrasCustomFieldsListParams struct {
 
 	// GroupName.
 	GroupName *string
+
+	// GroupNameEmpty.
+	GroupNameEmpty *string
 
 	// GroupNameIc.
 	GroupNameIc *string
@@ -218,6 +224,9 @@ type ExtrasCustomFieldsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -262,6 +271,24 @@ type ExtrasCustomFieldsListParams struct {
 
 	// Required.
 	Required *string
+
+	// SearchWeight.
+	SearchWeight *string
+
+	// SearchWeightGt.
+	SearchWeightGt *string
+
+	// SearchWeightGte.
+	SearchWeightGte *string
+
+	// SearchWeightLt.
+	SearchWeightLt *string
+
+	// SearchWeightLte.
+	SearchWeightLte *string
+
+	// SearchWeightn.
+	SearchWeightn *string
 
 	// Type.
 	Type *string
@@ -533,6 +560,17 @@ func (o *ExtrasCustomFieldsListParams) SetDescription(description *string) {
 	o.Description = description
 }
 
+// WithDescriptionEmpty adds the descriptionEmpty to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithDescriptionEmpty(descriptionEmpty *string) *ExtrasCustomFieldsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
+}
+
 // WithDescriptionIc adds the descriptionIc to the extras custom fields list params
 func (o *ExtrasCustomFieldsListParams) WithDescriptionIc(descriptionIc *string) *ExtrasCustomFieldsListParams {
 	o.SetDescriptionIc(descriptionIc)
@@ -663,6 +701,17 @@ func (o *ExtrasCustomFieldsListParams) WithGroupName(groupName *string) *ExtrasC
 // SetGroupName adds the groupName to the extras custom fields list params
 func (o *ExtrasCustomFieldsListParams) SetGroupName(groupName *string) {
 	o.GroupName = groupName
+}
+
+// WithGroupNameEmpty adds the groupNameEmpty to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithGroupNameEmpty(groupNameEmpty *string) *ExtrasCustomFieldsListParams {
+	o.SetGroupNameEmpty(groupNameEmpty)
+	return o
+}
+
+// SetGroupNameEmpty adds the groupNameEmpty to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetGroupNameEmpty(groupNameEmpty *string) {
+	o.GroupNameEmpty = groupNameEmpty
 }
 
 // WithGroupNameIc adds the groupNameIc to the extras custom fields list params
@@ -852,6 +901,17 @@ func (o *ExtrasCustomFieldsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithNameEmpty(nameEmpty *string) *ExtrasCustomFieldsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the extras custom fields list params
 func (o *ExtrasCustomFieldsListParams) WithNameIc(nameIc *string) *ExtrasCustomFieldsListParams {
 	o.SetNameIc(nameIc)
@@ -993,6 +1053,72 @@ func (o *ExtrasCustomFieldsListParams) WithRequired(required *string) *ExtrasCus
 // SetRequired adds the required to the extras custom fields list params
 func (o *ExtrasCustomFieldsListParams) SetRequired(required *string) {
 	o.Required = required
+}
+
+// WithSearchWeight adds the searchWeight to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithSearchWeight(searchWeight *string) *ExtrasCustomFieldsListParams {
+	o.SetSearchWeight(searchWeight)
+	return o
+}
+
+// SetSearchWeight adds the searchWeight to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetSearchWeight(searchWeight *string) {
+	o.SearchWeight = searchWeight
+}
+
+// WithSearchWeightGt adds the searchWeightGt to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithSearchWeightGt(searchWeightGt *string) *ExtrasCustomFieldsListParams {
+	o.SetSearchWeightGt(searchWeightGt)
+	return o
+}
+
+// SetSearchWeightGt adds the searchWeightGt to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetSearchWeightGt(searchWeightGt *string) {
+	o.SearchWeightGt = searchWeightGt
+}
+
+// WithSearchWeightGte adds the searchWeightGte to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithSearchWeightGte(searchWeightGte *string) *ExtrasCustomFieldsListParams {
+	o.SetSearchWeightGte(searchWeightGte)
+	return o
+}
+
+// SetSearchWeightGte adds the searchWeightGte to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetSearchWeightGte(searchWeightGte *string) {
+	o.SearchWeightGte = searchWeightGte
+}
+
+// WithSearchWeightLt adds the searchWeightLt to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithSearchWeightLt(searchWeightLt *string) *ExtrasCustomFieldsListParams {
+	o.SetSearchWeightLt(searchWeightLt)
+	return o
+}
+
+// SetSearchWeightLt adds the searchWeightLt to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetSearchWeightLt(searchWeightLt *string) {
+	o.SearchWeightLt = searchWeightLt
+}
+
+// WithSearchWeightLte adds the searchWeightLte to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithSearchWeightLte(searchWeightLte *string) *ExtrasCustomFieldsListParams {
+	o.SetSearchWeightLte(searchWeightLte)
+	return o
+}
+
+// SetSearchWeightLte adds the searchWeightLte to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetSearchWeightLte(searchWeightLte *string) {
+	o.SearchWeightLte = searchWeightLte
+}
+
+// WithSearchWeightn adds the searchWeightn to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) WithSearchWeightn(searchWeightn *string) *ExtrasCustomFieldsListParams {
+	o.SetSearchWeightn(searchWeightn)
+	return o
+}
+
+// SetSearchWeightn adds the searchWeightN to the extras custom fields list params
+func (o *ExtrasCustomFieldsListParams) SetSearchWeightn(searchWeightn *string) {
+	o.SearchWeightn = searchWeightn
 }
 
 // WithType adds the typeVar to the extras custom fields list params
@@ -1402,6 +1528,23 @@ func (o *ExtrasCustomFieldsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.DescriptionIc != nil {
 
 		// query param description__ic
@@ -1601,6 +1744,23 @@ func (o *ExtrasCustomFieldsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qGroupName != "" {
 
 			if err := r.SetQueryParam("group_name", qGroupName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.GroupNameEmpty != nil {
+
+		// query param group_name__empty
+		var qrGroupNameEmpty string
+
+		if o.GroupNameEmpty != nil {
+			qrGroupNameEmpty = *o.GroupNameEmpty
+		}
+		qGroupNameEmpty := qrGroupNameEmpty
+		if qGroupNameEmpty != "" {
+
+			if err := r.SetQueryParam("group_name__empty", qGroupNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -1895,6 +2055,23 @@ func (o *ExtrasCustomFieldsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -2111,6 +2288,108 @@ func (o *ExtrasCustomFieldsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qRequired != "" {
 
 			if err := r.SetQueryParam("required", qRequired); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SearchWeight != nil {
+
+		// query param search_weight
+		var qrSearchWeight string
+
+		if o.SearchWeight != nil {
+			qrSearchWeight = *o.SearchWeight
+		}
+		qSearchWeight := qrSearchWeight
+		if qSearchWeight != "" {
+
+			if err := r.SetQueryParam("search_weight", qSearchWeight); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SearchWeightGt != nil {
+
+		// query param search_weight__gt
+		var qrSearchWeightGt string
+
+		if o.SearchWeightGt != nil {
+			qrSearchWeightGt = *o.SearchWeightGt
+		}
+		qSearchWeightGt := qrSearchWeightGt
+		if qSearchWeightGt != "" {
+
+			if err := r.SetQueryParam("search_weight__gt", qSearchWeightGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SearchWeightGte != nil {
+
+		// query param search_weight__gte
+		var qrSearchWeightGte string
+
+		if o.SearchWeightGte != nil {
+			qrSearchWeightGte = *o.SearchWeightGte
+		}
+		qSearchWeightGte := qrSearchWeightGte
+		if qSearchWeightGte != "" {
+
+			if err := r.SetQueryParam("search_weight__gte", qSearchWeightGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SearchWeightLt != nil {
+
+		// query param search_weight__lt
+		var qrSearchWeightLt string
+
+		if o.SearchWeightLt != nil {
+			qrSearchWeightLt = *o.SearchWeightLt
+		}
+		qSearchWeightLt := qrSearchWeightLt
+		if qSearchWeightLt != "" {
+
+			if err := r.SetQueryParam("search_weight__lt", qSearchWeightLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SearchWeightLte != nil {
+
+		// query param search_weight__lte
+		var qrSearchWeightLte string
+
+		if o.SearchWeightLte != nil {
+			qrSearchWeightLte = *o.SearchWeightLte
+		}
+		qSearchWeightLte := qrSearchWeightLte
+		if qSearchWeightLte != "" {
+
+			if err := r.SetQueryParam("search_weight__lte", qSearchWeightLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SearchWeightn != nil {
+
+		// query param search_weight__n
+		var qrSearchWeightn string
+
+		if o.SearchWeightn != nil {
+			qrSearchWeightn = *o.SearchWeightn
+		}
+		qSearchWeightn := qrSearchWeightn
+		if qSearchWeightn != "" {
+
+			if err := r.SetQueryParam("search_weight__n", qSearchWeightn); err != nil {
 				return err
 			}
 		}

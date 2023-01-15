@@ -110,6 +110,9 @@ type DcimPowerOutletsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -175,6 +178,9 @@ type DcimPowerOutletsListParams struct {
 
 	// Label.
 	Label *string
+
+	// LabelEmpty.
+	LabelEmpty *string
 
 	// LabelIc.
 	LabelIc *string
@@ -247,6 +253,9 @@ type DcimPowerOutletsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -539,6 +548,17 @@ func (o *DcimPowerOutletsListParams) SetDescription(description *string) {
 	o.Description = description
 }
 
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimPowerOutletsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
+}
+
 // WithDescriptionIc adds the descriptionIc to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) WithDescriptionIc(descriptionIc *string) *DcimPowerOutletsListParams {
 	o.SetDescriptionIc(descriptionIc)
@@ -779,6 +799,17 @@ func (o *DcimPowerOutletsListParams) WithLabel(label *string) *DcimPowerOutletsL
 // SetLabel adds the label to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) SetLabel(label *string) {
 	o.Label = label
+}
+
+// WithLabelEmpty adds the labelEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithLabelEmpty(labelEmpty *string) *DcimPowerOutletsListParams {
+	o.SetLabelEmpty(labelEmpty)
+	return o
+}
+
+// SetLabelEmpty adds the labelEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetLabelEmpty(labelEmpty *string) {
+	o.LabelEmpty = labelEmpty
 }
 
 // WithLabelIc adds the labelIc to the dcim power outlets list params
@@ -1032,6 +1063,17 @@ func (o *DcimPowerOutletsListParams) WithName(name *string) *DcimPowerOutletsLis
 // SetName adds the name to the dcim power outlets list params
 func (o *DcimPowerOutletsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) WithNameEmpty(nameEmpty *string) *DcimPowerOutletsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim power outlets list params
+func (o *DcimPowerOutletsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim power outlets list params
@@ -1636,6 +1678,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.DescriptionIc != nil {
 
 		// query param description__ic
@@ -2005,6 +2064,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qLabel != "" {
 
 			if err := r.SetQueryParam("label", qLabel); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelEmpty != nil {
+
+		// query param label__empty
+		var qrLabelEmpty string
+
+		if o.LabelEmpty != nil {
+			qrLabelEmpty = *o.LabelEmpty
+		}
+		qLabelEmpty := qrLabelEmpty
+		if qLabelEmpty != "" {
+
+			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
 				return err
 			}
 		}
@@ -2396,6 +2472,23 @@ func (o *DcimPowerOutletsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

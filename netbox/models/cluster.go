@@ -47,6 +47,10 @@ type Cluster struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
+
 	// Device count
 	// Read Only: true
 	DeviceCount int64 `json:"device_count,omitempty"`
@@ -107,6 +111,10 @@ func (m *Cluster) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateGroup(formats); err != nil {
 		res = append(res, err)
 	}
@@ -155,6 +163,18 @@ func (m *Cluster) validateCreated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *Cluster) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 

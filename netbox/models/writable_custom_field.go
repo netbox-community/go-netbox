@@ -110,10 +110,17 @@ type WritableCustomField struct {
 	// If true, this field is required when creating new objects or editing an existing object.
 	Required bool `json:"required,omitempty"`
 
+	// Search weight
+	//
+	// Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored.
+	// Maximum: 32767
+	// Minimum: 0
+	SearchWeight *int64 `json:"search_weight,omitempty"`
+
 	// Type
 	//
 	// The type of data this custom field holds
-	// Enum: [text longtext integer boolean date url json select multiselect object multiobject]
+	// Enum: [text longtext integer decimal boolean date url json select multiselect object multiobject]
 	Type string `json:"type,omitempty"`
 
 	// UI visibility
@@ -147,7 +154,7 @@ type WritableCustomField struct {
 	// Max Length: 500
 	ValidationRegex string `json:"validation_regex,omitempty"`
 
-	// Weight
+	// Display weight
 	//
 	// Fields with higher weights appear lower in a form.
 	// Maximum: 32767
@@ -192,6 +199,10 @@ func (m *WritableCustomField) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSearchWeight(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -388,11 +399,27 @@ func (m *WritableCustomField) validateName(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableCustomField) validateSearchWeight(formats strfmt.Registry) error {
+	if swag.IsZero(m.SearchWeight) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("search_weight", "body", *m.SearchWeight, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("search_weight", "body", *m.SearchWeight, 32767, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 var writableCustomFieldTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["text","longtext","integer","boolean","date","url","json","select","multiselect","object","multiobject"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["text","longtext","integer","decimal","boolean","date","url","json","select","multiselect","object","multiobject"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -410,6 +437,9 @@ const (
 
 	// WritableCustomFieldTypeInteger captures enum value "integer"
 	WritableCustomFieldTypeInteger string = "integer"
+
+	// WritableCustomFieldTypeDecimal captures enum value "decimal"
+	WritableCustomFieldTypeDecimal string = "decimal"
 
 	// WritableCustomFieldTypeBoolean captures enum value "boolean"
 	WritableCustomFieldTypeBoolean string = "boolean"

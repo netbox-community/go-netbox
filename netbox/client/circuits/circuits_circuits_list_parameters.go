@@ -80,6 +80,9 @@ type CircuitsCircuitsListParams struct {
 	// Cid.
 	Cid *string
 
+	// CidEmpty.
+	CidEmpty *string
+
 	// CidIc.
 	CidIc *string
 
@@ -163,6 +166,9 @@ type CircuitsCircuitsListParams struct {
 
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -448,6 +454,17 @@ func (o *CircuitsCircuitsListParams) WithCid(cid *string) *CircuitsCircuitsListP
 // SetCid adds the cid to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) SetCid(cid *string) {
 	o.Cid = cid
+}
+
+// WithCidEmpty adds the cidEmpty to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithCidEmpty(cidEmpty *string) *CircuitsCircuitsListParams {
+	o.SetCidEmpty(cidEmpty)
+	return o
+}
+
+// SetCidEmpty adds the cidEmpty to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetCidEmpty(cidEmpty *string) {
+	o.CidEmpty = cidEmpty
 }
 
 // WithCidIc adds the cidIc to the circuits circuits list params
@@ -756,6 +773,17 @@ func (o *CircuitsCircuitsListParams) WithDescription(description *string) *Circu
 // SetDescription adds the description to the circuits circuits list params
 func (o *CircuitsCircuitsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) WithDescriptionEmpty(descriptionEmpty *string) *CircuitsCircuitsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the circuits circuits list params
+func (o *CircuitsCircuitsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the circuits circuits list params
@@ -1564,6 +1592,23 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.CidEmpty != nil {
+
+		// query param cid__empty
+		var qrCidEmpty string
+
+		if o.CidEmpty != nil {
+			qrCidEmpty = *o.CidEmpty
+		}
+		qCidEmpty := qrCidEmpty
+		if qCidEmpty != "" {
+
+			if err := r.SetQueryParam("cid__empty", qCidEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.CidIc != nil {
 
 		// query param cid__ic
@@ -2035,6 +2080,23 @@ func (o *CircuitsCircuitsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}

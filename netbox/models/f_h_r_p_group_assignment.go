@@ -22,6 +22,7 @@ package models
 
 import (
 	"context"
+	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -57,7 +58,7 @@ type FHRPGroupAssignment struct {
 
 	// Interface id
 	// Required: true
-	// Maximum: 2.147483647e+09
+	// Maximum: math.MaxInt64
 	// Minimum: 0
 	InterfaceID *int64 `json:"interface_id"`
 
@@ -162,7 +163,7 @@ func (m *FHRPGroupAssignment) validateInterfaceID(formats strfmt.Registry) error
 		return err
 	}
 
-	if err := validate.MaximumInt("interface_id", "body", *m.InterfaceID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("interface_id", "body", *m.InterfaceID, math.MaxInt64, false); err != nil {
 		return err
 	}
 

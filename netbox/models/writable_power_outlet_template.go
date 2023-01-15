@@ -45,8 +45,7 @@ type WritablePowerOutletTemplate struct {
 	Description string `json:"description,omitempty"`
 
 	// Device type
-	// Required: true
-	DeviceType *int64 `json:"device_type"`
+	DeviceType *int64 `json:"device_type,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -74,8 +73,7 @@ type WritablePowerOutletTemplate struct {
 	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Module type
-	// Required: true
-	ModuleType *int64 `json:"module_type"`
+	ModuleType *int64 `json:"module_type,omitempty"`
 
 	// Name
 	//
@@ -112,10 +110,6 @@ func (m *WritablePowerOutletTemplate) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateDeviceType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateFeedLeg(formats); err != nil {
 		res = append(res, err)
 	}
@@ -125,10 +119,6 @@ func (m *WritablePowerOutletTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateModuleType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -168,15 +158,6 @@ func (m *WritablePowerOutletTemplate) validateDescription(formats strfmt.Registr
 	}
 
 	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritablePowerOutletTemplate) validateDeviceType(formats strfmt.Registry) error {
-
-	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
 		return err
 	}
 
@@ -246,15 +227,6 @@ func (m *WritablePowerOutletTemplate) validateLastUpdated(formats strfmt.Registr
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritablePowerOutletTemplate) validateModuleType(formats strfmt.Registry) error {
-
-	if err := validate.Required("module_type", "body", m.ModuleType); err != nil {
 		return err
 	}
 

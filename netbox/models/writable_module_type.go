@@ -22,6 +22,7 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -45,6 +46,10 @@ type WritableModuleType struct {
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -82,6 +87,13 @@ type WritableModuleType struct {
 	// Read Only: true
 	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
+
+	// Weight
+	Weight *float64 `json:"weight,omitempty"`
+
+	// Weight unit
+	// Enum: [kg g lb oz]
+	WeightUnit string `json:"weight_unit,omitempty"`
 }
 
 // Validate validates this writable module type
@@ -89,6 +101,10 @@ func (m *WritableModuleType) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -116,6 +132,10 @@ func (m *WritableModuleType) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateWeightUnit(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -128,6 +148,18 @@ func (m *WritableModuleType) validateCreated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableModuleType) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -216,6 +248,54 @@ func (m *WritableModuleType) validateURL(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var writableModuleTypeTypeWeightUnitPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["kg","g","lb","oz"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableModuleTypeTypeWeightUnitPropEnum = append(writableModuleTypeTypeWeightUnitPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableModuleTypeWeightUnitKg captures enum value "kg"
+	WritableModuleTypeWeightUnitKg string = "kg"
+
+	// WritableModuleTypeWeightUnitG captures enum value "g"
+	WritableModuleTypeWeightUnitG string = "g"
+
+	// WritableModuleTypeWeightUnitLb captures enum value "lb"
+	WritableModuleTypeWeightUnitLb string = "lb"
+
+	// WritableModuleTypeWeightUnitOz captures enum value "oz"
+	WritableModuleTypeWeightUnitOz string = "oz"
+)
+
+// prop value enum
+func (m *WritableModuleType) validateWeightUnitEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableModuleTypeTypeWeightUnitPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableModuleType) validateWeightUnit(formats strfmt.Registry) error {
+	if swag.IsZero(m.WeightUnit) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateWeightUnitEnum("weight_unit", "body", m.WeightUnit); err != nil {
 		return err
 	}
 

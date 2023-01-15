@@ -89,6 +89,9 @@ type DcimFrontPortsListParams struct {
 	// Color.
 	Color *string
 
+	// ColorEmpty.
+	ColorEmpty *string
+
 	// ColorIc.
 	ColorIc *string
 
@@ -136,6 +139,9 @@ type DcimFrontPortsListParams struct {
 
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -196,6 +202,9 @@ type DcimFrontPortsListParams struct {
 
 	// Label.
 	Label *string
+
+	// LabelEmpty.
+	LabelEmpty *string
 
 	// LabelIc.
 	LabelIc *string
@@ -268,6 +277,9 @@ type DcimFrontPortsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -483,6 +495,17 @@ func (o *DcimFrontPortsListParams) SetColor(color *string) {
 	o.Color = color
 }
 
+// WithColorEmpty adds the colorEmpty to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithColorEmpty(colorEmpty *string) *DcimFrontPortsListParams {
+	o.SetColorEmpty(colorEmpty)
+	return o
+}
+
+// SetColorEmpty adds the colorEmpty to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetColorEmpty(colorEmpty *string) {
+	o.ColorEmpty = colorEmpty
+}
+
 // WithColorIc adds the colorIc to the dcim front ports list params
 func (o *DcimFrontPortsListParams) WithColorIc(colorIc *string) *DcimFrontPortsListParams {
 	o.SetColorIc(colorIc)
@@ -657,6 +680,17 @@ func (o *DcimFrontPortsListParams) WithDescription(description *string) *DcimFro
 // SetDescription adds the description to the dcim front ports list params
 func (o *DcimFrontPortsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimFrontPortsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim front ports list params
@@ -877,6 +911,17 @@ func (o *DcimFrontPortsListParams) WithLabel(label *string) *DcimFrontPortsListP
 // SetLabel adds the label to the dcim front ports list params
 func (o *DcimFrontPortsListParams) SetLabel(label *string) {
 	o.Label = label
+}
+
+// WithLabelEmpty adds the labelEmpty to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithLabelEmpty(labelEmpty *string) *DcimFrontPortsListParams {
+	o.SetLabelEmpty(labelEmpty)
+	return o
+}
+
+// SetLabelEmpty adds the labelEmpty to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetLabelEmpty(labelEmpty *string) {
+	o.LabelEmpty = labelEmpty
 }
 
 // WithLabelIc adds the labelIc to the dcim front ports list params
@@ -1130,6 +1175,17 @@ func (o *DcimFrontPortsListParams) WithName(name *string) *DcimFrontPortsListPar
 // SetName adds the name to the dcim front ports list params
 func (o *DcimFrontPortsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim front ports list params
+func (o *DcimFrontPortsListParams) WithNameEmpty(nameEmpty *string) *DcimFrontPortsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim front ports list params
+func (o *DcimFrontPortsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim front ports list params
@@ -1615,6 +1671,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.ColorEmpty != nil {
+
+		// query param color__empty
+		var qrColorEmpty string
+
+		if o.ColorEmpty != nil {
+			qrColorEmpty = *o.ColorEmpty
+		}
+		qColorEmpty := qrColorEmpty
+		if qColorEmpty != "" {
+
+			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ColorIc != nil {
 
 		// query param color__ic
@@ -1882,6 +1955,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -2222,6 +2312,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLabel != "" {
 
 			if err := r.SetQueryParam("label", qLabel); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelEmpty != nil {
+
+		// query param label__empty
+		var qrLabelEmpty string
+
+		if o.LabelEmpty != nil {
+			qrLabelEmpty = *o.LabelEmpty
+		}
+		qLabelEmpty := qrLabelEmpty
+		if qLabelEmpty != "" {
+
+			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
 				return err
 			}
 		}
@@ -2613,6 +2720,23 @@ func (o *DcimFrontPortsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

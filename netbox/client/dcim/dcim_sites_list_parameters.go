@@ -128,6 +128,9 @@ type DcimSitesListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -157,6 +160,9 @@ type DcimSitesListParams struct {
 
 	// Facility.
 	Facility *string
+
+	// FacilityEmpty.
+	FacilityEmpty *string
 
 	// FacilityIc.
 	FacilityIc *string
@@ -278,6 +284,9 @@ type DcimSitesListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -334,6 +343,9 @@ type DcimSitesListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -638,6 +650,17 @@ func (o *DcimSitesListParams) SetDescription(description *string) {
 	o.Description = description
 }
 
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim sites list params
+func (o *DcimSitesListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimSitesListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim sites list params
+func (o *DcimSitesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
+}
+
 // WithDescriptionIc adds the descriptionIc to the dcim sites list params
 func (o *DcimSitesListParams) WithDescriptionIc(descriptionIc *string) *DcimSitesListParams {
 	o.SetDescriptionIc(descriptionIc)
@@ -746,6 +769,17 @@ func (o *DcimSitesListParams) WithFacility(facility *string) *DcimSitesListParam
 // SetFacility adds the facility to the dcim sites list params
 func (o *DcimSitesListParams) SetFacility(facility *string) {
 	o.Facility = facility
+}
+
+// WithFacilityEmpty adds the facilityEmpty to the dcim sites list params
+func (o *DcimSitesListParams) WithFacilityEmpty(facilityEmpty *string) *DcimSitesListParams {
+	o.SetFacilityEmpty(facilityEmpty)
+	return o
+}
+
+// SetFacilityEmpty adds the facilityEmpty to the dcim sites list params
+func (o *DcimSitesListParams) SetFacilityEmpty(facilityEmpty *string) {
+	o.FacilityEmpty = facilityEmpty
 }
 
 // WithFacilityIc adds the facilityIc to the dcim sites list params
@@ -1177,6 +1211,17 @@ func (o *DcimSitesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the dcim sites list params
+func (o *DcimSitesListParams) WithNameEmpty(nameEmpty *string) *DcimSitesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim sites list params
+func (o *DcimSitesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the dcim sites list params
 func (o *DcimSitesListParams) WithNameIc(nameIc *string) *DcimSitesListParams {
 	o.SetNameIc(nameIc)
@@ -1362,6 +1407,17 @@ func (o *DcimSitesListParams) WithSlug(slug *string) *DcimSitesListParams {
 // SetSlug adds the slug to the dcim sites list params
 func (o *DcimSitesListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the dcim sites list params
+func (o *DcimSitesListParams) WithSlugEmpty(slugEmpty *string) *DcimSitesListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the dcim sites list params
+func (o *DcimSitesListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the dcim sites list params
@@ -1892,6 +1948,23 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.DescriptionIc != nil {
 
 		// query param description__ic
@@ -2057,6 +2130,23 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qFacility != "" {
 
 			if err := r.SetQueryParam("facility", qFacility); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.FacilityEmpty != nil {
+
+		// query param facility__empty
+		var qrFacilityEmpty string
+
+		if o.FacilityEmpty != nil {
+			qrFacilityEmpty = *o.FacilityEmpty
+		}
+		qFacilityEmpty := qrFacilityEmpty
+		if qFacilityEmpty != "" {
+
+			if err := r.SetQueryParam("facility__empty", qFacilityEmpty); err != nil {
 				return err
 			}
 		}
@@ -2725,6 +2815,23 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -3009,6 +3116,23 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}
