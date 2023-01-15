@@ -1,5 +1,4 @@
-go-netbox 
-=========
+# go-netbox
 
 [![GoDoc](http://godoc.org/github.com/netbox-community/go-netbox?status.svg)](http://godoc.org/github.com/netbox-community/go-netbox) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
 
@@ -7,8 +6,7 @@ Package `netbox` provides an API 3.2 client for [netbox-community's Netbox](http
 
 This package assumes you are using Netbox 3.2, as the Netbox 1.0 API no longer exists. If you need support for previous Netbox versions, you can still import the corresponding release of the library. For example, run `go get github.com/netbox-community/go-netbox@netbox_v2.11` if you need compatibility with Netbox 2.11.
 
-Using the client
-================
+## Using the client
 
 The `github.com/netbox-community/go-netbox/netbox` package has some convenience functions for creating clients with the most common
 configurations you are likely to need while connecting to NetBox. `NewNetboxAt` allows you to specify a hostname
@@ -68,16 +66,14 @@ func main() {
 }
 ```
 
-Go Module support
-================
+## Go Module support
 
 Go 1.16+
 
 `go get github.com/netbox-community/go-netbox`
 
 
-More complex client configuration
-=================================
+## More complex client configuration
 
 The client is generated using [go-swagger](https://github.com/go-swagger/go-swagger). This means the generated client
 makes use of [github.com/go-openapi/runtime/client](https://godoc.org/github.com/go-openapi/runtime/client). If you need
@@ -88,14 +84,33 @@ The [godocs for the go-openapi/runtime/client module](https://godoc.org/github.c
 the client options in detail, including different authentication and debugging options. One thing I want to flag because
 it is so useful: setting the `DEBUG` environment variable will dump all requests to standard out.
 
-Regenerating the client
-=======================
+## Development
 
-To regenerate the client with a new or different swagger schema, first clean the existing client, then replace
-swagger.json and finally re-generate:
+The project comes with a containerized development environment that can be used from any platform. It is only required to have [Git](https://git-scm.com) and [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or, separately, [Docker](https://docs.docker.com/engine/install) and [Docker Compose](https://docs.docker.com/compose/install/)) installed on the machine.
+
+To start the development environment, run the following command.
+
+```bash
+make
 ```
-make clean
-./scripts/swagger_modifier.py new_swagger_file.json
-mv swagger_transformed.json swagger.json
-make generate
+
+Then, to attach a shell in the container, run the command below.
+
+```bash
+make shell
 ```
+
+Finally, to stop the development environment, run the following command.
+
+```bash
+make down
+```
+
+### Considerations
+
+The library is almost entirely generated from the Netbox [OpenAPI](https://www.openapis.org/) specification. Therefore, files under directories `netbox/client` and `netbox/models` should not be directly modified, as they will be overwritten in the next regeneration (see next section).
+
+To fix issues in generated code, there are two options:
+
+- Change the OpenAPI spec with pre-generation hooks (see [`scripts/pre-generation`](scripts/pre-generation)).
+- If the above is not possible, change the generated code with post-generation hooks (see [`scripts/post-generation`](scripts/post-generation)).
