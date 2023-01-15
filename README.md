@@ -114,3 +114,23 @@ To fix issues in generated code, there are two options:
 
 - Change the OpenAPI spec with pre-generation hooks (see [`scripts/pre-generation`](scripts/pre-generation)).
 - If the above is not possible, change the generated code with post-generation hooks (see [`scripts/post-generation`](scripts/post-generation)).
+
+### Regenerate the library
+
+To update the OpenAPI specification to the latest Netbox version and regenerate the library, run the following command.
+
+```bash
+make build
+```
+
+If regeneration of the library is needed for a specific Netbox version other than the latest one, pass the corresponding argument.
+
+```bash
+make build NETBOX_VERSION=3.0.0
+```
+
+In order to obtain the OpenAPI specification, the version of _[netbox-docker](https://github.com/netbox-community/netbox-docker)_ corresponding to the given Netbox version is used. However, it is also possible to provide a specific version of _netbox-docker_.
+
+```bash
+make build NETBOX_VERSION=3.0.0 NETBOX_DOCKER_VERSION=1.3.1
+```

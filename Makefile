@@ -27,3 +27,14 @@ down:
 .PHONY: shell
 shell:
 	$(EXEC) zsh
+
+# Project recipes
+.PHONY: build
+build:
+	$(EXEC) ./scripts/set-versions.sh $(NETBOX_VERSION) $(NETBOX_DOCKER_VERSION)
+	./scripts/fetch-spec.sh $$(cat api/netbox_version) $$(cat api/netbox_docker_version)
+	$(EXEC) ./scripts/generate-code.sh
+
+.PHONY: test
+test:
+	$(EXEC) go test ./... -tags=integration
