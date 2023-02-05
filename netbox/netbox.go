@@ -21,7 +21,7 @@ import (
 	runtimeclient "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/client"
+	"github.com/perimeter-81/go-netbox/netbox/client"
 )
 
 // NewNetboxAt returns a client which will connect to the given

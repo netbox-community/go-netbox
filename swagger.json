@@ -3,7 +3,7 @@
     "info": {
         "title": "NetBox API",
         "description": "API to access NetBox",
-        "termsOfService": "https://github.com/netbox-community/netbox",
+        "termsOfService": "https://github.com/perimeter-81/netbox",
         "license": {
             "name": "Apache v2 License"
         },

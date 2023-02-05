@@ -1,4 +1,4 @@
-module github.com/netbox-community/go-netbox
+module github.com/perimeter-81/go-netbox
 
 go 1.18
 

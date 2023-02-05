@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/netbox-community/go-netbox/netbox/client"
+	"github.com/perimeter-81/go-netbox/netbox/client"
 )
 
 func main() {

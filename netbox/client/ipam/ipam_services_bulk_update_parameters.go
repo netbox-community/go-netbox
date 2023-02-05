@@ -30,7 +30,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/perimeter-81/go-netbox/netbox/models"
 )
 
 // NewIpamServicesBulkUpdateParams creates a new IpamServicesBulkUpdateParams object,

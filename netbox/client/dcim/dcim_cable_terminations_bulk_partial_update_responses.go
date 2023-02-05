@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/perimeter-81/go-netbox/netbox/models"
 )
 
 // DcimCableTerminationsBulkPartialUpdateReader is a Reader for the DcimCableTerminationsBulkPartialUpdate structure.
