@@ -71,8 +71,7 @@ type WritableWirelessLANGroup struct {
 	Name *string `json:"name"`
 
 	// Parent
-	// Required: true
-	Parent *int64 `json:"parent"`
+	Parent *int64 `json:"parent,omitempty"`
 
 	// Slug
 	// Required: true
@@ -111,10 +110,6 @@ func (m *WritableWirelessLANGroup) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateParent(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -183,15 +178,6 @@ func (m *WritableWirelessLANGroup) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableWirelessLANGroup) validateParent(formats strfmt.Registry) error {
-
-	if err := validate.Required("parent", "body", m.Parent); err != nil {
 		return err
 	}
 

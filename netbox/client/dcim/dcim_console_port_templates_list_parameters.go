@@ -152,6 +152,9 @@ type DcimConsolePortTemplatesListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -515,6 +518,17 @@ func (o *DcimConsolePortTemplatesListParams) WithName(name *string) *DcimConsole
 // SetName adds the name to the dcim console port templates list params
 func (o *DcimConsolePortTemplatesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim console port templates list params
+func (o *DcimConsolePortTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimConsolePortTemplatesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim console port templates list params
+func (o *DcimConsolePortTemplatesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim console port templates list params
@@ -1082,6 +1096,23 @@ func (o *DcimConsolePortTemplatesListParams) WriteToRequest(r runtime.ClientRequ
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

@@ -23,6 +23,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	"math"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -42,7 +43,7 @@ type WritableJournalEntry struct {
 
 	// Assigned object id
 	// Required: true
-	// Maximum: 2.147483647e+09
+	// Maximum: math.MaxInt64
 	// Minimum: 0
 	AssignedObjectID *int64 `json:"assigned_object_id"`
 
@@ -144,7 +145,7 @@ func (m *WritableJournalEntry) validateAssignedObjectID(formats strfmt.Registry)
 		return err
 	}
 
-	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
+	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, math.MaxInt64, false); err != nil {
 		return err
 	}
 

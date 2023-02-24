@@ -98,6 +98,9 @@ type TenancyContactGroupsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -170,6 +173,9 @@ type TenancyContactGroupsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -226,6 +232,9 @@ type TenancyContactGroupsListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -388,6 +397,17 @@ func (o *TenancyContactGroupsListParams) WithDescription(description *string) *T
 // SetDescription adds the description to the tenancy contact groups list params
 func (o *TenancyContactGroupsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the tenancy contact groups list params
+func (o *TenancyContactGroupsListParams) WithDescriptionEmpty(descriptionEmpty *string) *TenancyContactGroupsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the tenancy contact groups list params
+func (o *TenancyContactGroupsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the tenancy contact groups list params
@@ -643,6 +663,17 @@ func (o *TenancyContactGroupsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the tenancy contact groups list params
+func (o *TenancyContactGroupsListParams) WithNameEmpty(nameEmpty *string) *TenancyContactGroupsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the tenancy contact groups list params
+func (o *TenancyContactGroupsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the tenancy contact groups list params
 func (o *TenancyContactGroupsListParams) WithNameIc(nameIc *string) *TenancyContactGroupsListParams {
 	o.SetNameIc(nameIc)
@@ -828,6 +859,17 @@ func (o *TenancyContactGroupsListParams) WithSlug(slug *string) *TenancyContactG
 // SetSlug adds the slug to the tenancy contact groups list params
 func (o *TenancyContactGroupsListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the tenancy contact groups list params
+func (o *TenancyContactGroupsListParams) WithSlugEmpty(slugEmpty *string) *TenancyContactGroupsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the tenancy contact groups list params
+func (o *TenancyContactGroupsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the tenancy contact groups list params
@@ -1073,6 +1115,23 @@ func (o *TenancyContactGroupsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1469,6 +1528,23 @@ func (o *TenancyContactGroupsListParams) WriteToRequest(r runtime.ClientRequest,
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1753,6 +1829,23 @@ func (o *TenancyContactGroupsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

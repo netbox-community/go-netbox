@@ -80,8 +80,20 @@ type ExtrasJobResultsListParams struct {
 	// Completed.
 	Completed *string
 
+	// CompletedAfter.
+	CompletedAfter *string
+
+	// CompletedBefore.
+	CompletedBefore *string
+
 	// Created.
 	Created *string
+
+	// CreatedAfter.
+	CreatedAfter *string
+
+	// CreatedBefore.
+	CreatedBefore *string
 
 	// ID.
 	ID *string
@@ -101,6 +113,24 @@ type ExtrasJobResultsListParams struct {
 	// IDn.
 	IDn *string
 
+	// Interval.
+	Interval *string
+
+	// IntervalGt.
+	IntervalGt *string
+
+	// IntervalGte.
+	IntervalGte *string
+
+	// IntervalLt.
+	IntervalLt *string
+
+	// IntervalLte.
+	IntervalLte *string
+
+	// Intervaln.
+	Intervaln *string
+
 	/* Limit.
 
 	   Number of results to return per page.
@@ -109,6 +139,9 @@ type ExtrasJobResultsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -157,6 +190,24 @@ type ExtrasJobResultsListParams struct {
 
 	// Q.
 	Q *string
+
+	// Scheduled.
+	Scheduled *string
+
+	// ScheduledAfter.
+	ScheduledAfter *string
+
+	// ScheduledBefore.
+	ScheduledBefore *string
+
+	// Started.
+	Started *string
+
+	// StartedAfter.
+	StartedAfter *string
+
+	// StartedBefore.
+	StartedBefore *string
 
 	// Status.
 	Status *string
@@ -234,6 +285,28 @@ func (o *ExtrasJobResultsListParams) SetCompleted(completed *string) {
 	o.Completed = completed
 }
 
+// WithCompletedAfter adds the completedAfter to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithCompletedAfter(completedAfter *string) *ExtrasJobResultsListParams {
+	o.SetCompletedAfter(completedAfter)
+	return o
+}
+
+// SetCompletedAfter adds the completedAfter to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetCompletedAfter(completedAfter *string) {
+	o.CompletedAfter = completedAfter
+}
+
+// WithCompletedBefore adds the completedBefore to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithCompletedBefore(completedBefore *string) *ExtrasJobResultsListParams {
+	o.SetCompletedBefore(completedBefore)
+	return o
+}
+
+// SetCompletedBefore adds the completedBefore to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetCompletedBefore(completedBefore *string) {
+	o.CompletedBefore = completedBefore
+}
+
 // WithCreated adds the created to the extras job results list params
 func (o *ExtrasJobResultsListParams) WithCreated(created *string) *ExtrasJobResultsListParams {
 	o.SetCreated(created)
@@ -243,6 +316,28 @@ func (o *ExtrasJobResultsListParams) WithCreated(created *string) *ExtrasJobResu
 // SetCreated adds the created to the extras job results list params
 func (o *ExtrasJobResultsListParams) SetCreated(created *string) {
 	o.Created = created
+}
+
+// WithCreatedAfter adds the createdAfter to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithCreatedAfter(createdAfter *string) *ExtrasJobResultsListParams {
+	o.SetCreatedAfter(createdAfter)
+	return o
+}
+
+// SetCreatedAfter adds the createdAfter to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetCreatedAfter(createdAfter *string) {
+	o.CreatedAfter = createdAfter
+}
+
+// WithCreatedBefore adds the createdBefore to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithCreatedBefore(createdBefore *string) *ExtrasJobResultsListParams {
+	o.SetCreatedBefore(createdBefore)
+	return o
+}
+
+// SetCreatedBefore adds the createdBefore to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetCreatedBefore(createdBefore *string) {
+	o.CreatedBefore = createdBefore
 }
 
 // WithID adds the id to the extras job results list params
@@ -311,6 +406,72 @@ func (o *ExtrasJobResultsListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithInterval adds the interval to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithInterval(interval *string) *ExtrasJobResultsListParams {
+	o.SetInterval(interval)
+	return o
+}
+
+// SetInterval adds the interval to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetInterval(interval *string) {
+	o.Interval = interval
+}
+
+// WithIntervalGt adds the intervalGt to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithIntervalGt(intervalGt *string) *ExtrasJobResultsListParams {
+	o.SetIntervalGt(intervalGt)
+	return o
+}
+
+// SetIntervalGt adds the intervalGt to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetIntervalGt(intervalGt *string) {
+	o.IntervalGt = intervalGt
+}
+
+// WithIntervalGte adds the intervalGte to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithIntervalGte(intervalGte *string) *ExtrasJobResultsListParams {
+	o.SetIntervalGte(intervalGte)
+	return o
+}
+
+// SetIntervalGte adds the intervalGte to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetIntervalGte(intervalGte *string) {
+	o.IntervalGte = intervalGte
+}
+
+// WithIntervalLt adds the intervalLt to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithIntervalLt(intervalLt *string) *ExtrasJobResultsListParams {
+	o.SetIntervalLt(intervalLt)
+	return o
+}
+
+// SetIntervalLt adds the intervalLt to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetIntervalLt(intervalLt *string) {
+	o.IntervalLt = intervalLt
+}
+
+// WithIntervalLte adds the intervalLte to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithIntervalLte(intervalLte *string) *ExtrasJobResultsListParams {
+	o.SetIntervalLte(intervalLte)
+	return o
+}
+
+// SetIntervalLte adds the intervalLte to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetIntervalLte(intervalLte *string) {
+	o.IntervalLte = intervalLte
+}
+
+// WithIntervaln adds the intervaln to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithIntervaln(intervaln *string) *ExtrasJobResultsListParams {
+	o.SetIntervaln(intervaln)
+	return o
+}
+
+// SetIntervaln adds the intervalN to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetIntervaln(intervaln *string) {
+	o.Intervaln = intervaln
+}
+
 // WithLimit adds the limit to the extras job results list params
 func (o *ExtrasJobResultsListParams) WithLimit(limit *int64) *ExtrasJobResultsListParams {
 	o.SetLimit(limit)
@@ -331,6 +492,17 @@ func (o *ExtrasJobResultsListParams) WithName(name *string) *ExtrasJobResultsLis
 // SetName adds the name to the extras job results list params
 func (o *ExtrasJobResultsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithNameEmpty(nameEmpty *string) *ExtrasJobResultsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the extras job results list params
@@ -487,6 +659,72 @@ func (o *ExtrasJobResultsListParams) SetQ(q *string) {
 	o.Q = q
 }
 
+// WithScheduled adds the scheduled to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithScheduled(scheduled *string) *ExtrasJobResultsListParams {
+	o.SetScheduled(scheduled)
+	return o
+}
+
+// SetScheduled adds the scheduled to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetScheduled(scheduled *string) {
+	o.Scheduled = scheduled
+}
+
+// WithScheduledAfter adds the scheduledAfter to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithScheduledAfter(scheduledAfter *string) *ExtrasJobResultsListParams {
+	o.SetScheduledAfter(scheduledAfter)
+	return o
+}
+
+// SetScheduledAfter adds the scheduledAfter to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetScheduledAfter(scheduledAfter *string) {
+	o.ScheduledAfter = scheduledAfter
+}
+
+// WithScheduledBefore adds the scheduledBefore to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithScheduledBefore(scheduledBefore *string) *ExtrasJobResultsListParams {
+	o.SetScheduledBefore(scheduledBefore)
+	return o
+}
+
+// SetScheduledBefore adds the scheduledBefore to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetScheduledBefore(scheduledBefore *string) {
+	o.ScheduledBefore = scheduledBefore
+}
+
+// WithStarted adds the started to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithStarted(started *string) *ExtrasJobResultsListParams {
+	o.SetStarted(started)
+	return o
+}
+
+// SetStarted adds the started to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetStarted(started *string) {
+	o.Started = started
+}
+
+// WithStartedAfter adds the startedAfter to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithStartedAfter(startedAfter *string) *ExtrasJobResultsListParams {
+	o.SetStartedAfter(startedAfter)
+	return o
+}
+
+// SetStartedAfter adds the startedAfter to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetStartedAfter(startedAfter *string) {
+	o.StartedAfter = startedAfter
+}
+
+// WithStartedBefore adds the startedBefore to the extras job results list params
+func (o *ExtrasJobResultsListParams) WithStartedBefore(startedBefore *string) *ExtrasJobResultsListParams {
+	o.SetStartedBefore(startedBefore)
+	return o
+}
+
+// SetStartedBefore adds the startedBefore to the extras job results list params
+func (o *ExtrasJobResultsListParams) SetStartedBefore(startedBefore *string) {
+	o.StartedBefore = startedBefore
+}
+
 // WithStatus adds the status to the extras job results list params
 func (o *ExtrasJobResultsListParams) WithStatus(status *string) *ExtrasJobResultsListParams {
 	o.SetStatus(status)
@@ -556,6 +794,40 @@ func (o *ExtrasJobResultsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.CompletedAfter != nil {
+
+		// query param completed__after
+		var qrCompletedAfter string
+
+		if o.CompletedAfter != nil {
+			qrCompletedAfter = *o.CompletedAfter
+		}
+		qCompletedAfter := qrCompletedAfter
+		if qCompletedAfter != "" {
+
+			if err := r.SetQueryParam("completed__after", qCompletedAfter); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CompletedBefore != nil {
+
+		// query param completed__before
+		var qrCompletedBefore string
+
+		if o.CompletedBefore != nil {
+			qrCompletedBefore = *o.CompletedBefore
+		}
+		qCompletedBefore := qrCompletedBefore
+		if qCompletedBefore != "" {
+
+			if err := r.SetQueryParam("completed__before", qCompletedBefore); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Created != nil {
 
 		// query param created
@@ -568,6 +840,40 @@ func (o *ExtrasJobResultsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qCreated != "" {
 
 			if err := r.SetQueryParam("created", qCreated); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedAfter != nil {
+
+		// query param created__after
+		var qrCreatedAfter string
+
+		if o.CreatedAfter != nil {
+			qrCreatedAfter = *o.CreatedAfter
+		}
+		qCreatedAfter := qrCreatedAfter
+		if qCreatedAfter != "" {
+
+			if err := r.SetQueryParam("created__after", qCreatedAfter); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.CreatedBefore != nil {
+
+		// query param created__before
+		var qrCreatedBefore string
+
+		if o.CreatedBefore != nil {
+			qrCreatedBefore = *o.CreatedBefore
+		}
+		qCreatedBefore := qrCreatedBefore
+		if qCreatedBefore != "" {
+
+			if err := r.SetQueryParam("created__before", qCreatedBefore); err != nil {
 				return err
 			}
 		}
@@ -675,6 +981,108 @@ func (o *ExtrasJobResultsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
+	if o.Interval != nil {
+
+		// query param interval
+		var qrInterval string
+
+		if o.Interval != nil {
+			qrInterval = *o.Interval
+		}
+		qInterval := qrInterval
+		if qInterval != "" {
+
+			if err := r.SetQueryParam("interval", qInterval); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IntervalGt != nil {
+
+		// query param interval__gt
+		var qrIntervalGt string
+
+		if o.IntervalGt != nil {
+			qrIntervalGt = *o.IntervalGt
+		}
+		qIntervalGt := qrIntervalGt
+		if qIntervalGt != "" {
+
+			if err := r.SetQueryParam("interval__gt", qIntervalGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IntervalGte != nil {
+
+		// query param interval__gte
+		var qrIntervalGte string
+
+		if o.IntervalGte != nil {
+			qrIntervalGte = *o.IntervalGte
+		}
+		qIntervalGte := qrIntervalGte
+		if qIntervalGte != "" {
+
+			if err := r.SetQueryParam("interval__gte", qIntervalGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IntervalLt != nil {
+
+		// query param interval__lt
+		var qrIntervalLt string
+
+		if o.IntervalLt != nil {
+			qrIntervalLt = *o.IntervalLt
+		}
+		qIntervalLt := qrIntervalLt
+		if qIntervalLt != "" {
+
+			if err := r.SetQueryParam("interval__lt", qIntervalLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IntervalLte != nil {
+
+		// query param interval__lte
+		var qrIntervalLte string
+
+		if o.IntervalLte != nil {
+			qrIntervalLte = *o.IntervalLte
+		}
+		qIntervalLte := qrIntervalLte
+		if qIntervalLte != "" {
+
+			if err := r.SetQueryParam("interval__lte", qIntervalLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Intervaln != nil {
+
+		// query param interval__n
+		var qrIntervaln string
+
+		if o.Intervaln != nil {
+			qrIntervaln = *o.Intervaln
+		}
+		qIntervaln := qrIntervaln
+		if qIntervaln != "" {
+
+			if err := r.SetQueryParam("interval__n", qIntervaln); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Limit != nil {
 
 		// query param limit
@@ -704,6 +1112,23 @@ func (o *ExtrasJobResultsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -942,6 +1367,108 @@ func (o *ExtrasJobResultsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qQ != "" {
 
 			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Scheduled != nil {
+
+		// query param scheduled
+		var qrScheduled string
+
+		if o.Scheduled != nil {
+			qrScheduled = *o.Scheduled
+		}
+		qScheduled := qrScheduled
+		if qScheduled != "" {
+
+			if err := r.SetQueryParam("scheduled", qScheduled); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ScheduledAfter != nil {
+
+		// query param scheduled__after
+		var qrScheduledAfter string
+
+		if o.ScheduledAfter != nil {
+			qrScheduledAfter = *o.ScheduledAfter
+		}
+		qScheduledAfter := qrScheduledAfter
+		if qScheduledAfter != "" {
+
+			if err := r.SetQueryParam("scheduled__after", qScheduledAfter); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ScheduledBefore != nil {
+
+		// query param scheduled__before
+		var qrScheduledBefore string
+
+		if o.ScheduledBefore != nil {
+			qrScheduledBefore = *o.ScheduledBefore
+		}
+		qScheduledBefore := qrScheduledBefore
+		if qScheduledBefore != "" {
+
+			if err := r.SetQueryParam("scheduled__before", qScheduledBefore); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Started != nil {
+
+		// query param started
+		var qrStarted string
+
+		if o.Started != nil {
+			qrStarted = *o.Started
+		}
+		qStarted := qrStarted
+		if qStarted != "" {
+
+			if err := r.SetQueryParam("started", qStarted); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.StartedAfter != nil {
+
+		// query param started__after
+		var qrStartedAfter string
+
+		if o.StartedAfter != nil {
+			qrStartedAfter = *o.StartedAfter
+		}
+		qStartedAfter := qrStartedAfter
+		if qStartedAfter != "" {
+
+			if err := r.SetQueryParam("started__after", qStartedAfter); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.StartedBefore != nil {
+
+		// query param started__before
+		var qrStartedBefore string
+
+		if o.StartedBefore != nil {
+			qrStartedBefore = *o.StartedBefore
+		}
+		qStartedBefore := qrStartedBefore
+		if qStartedBefore != "" {
+
+			if err := r.SetQueryParam("started__before", qStartedBefore); err != nil {
 				return err
 			}
 		}

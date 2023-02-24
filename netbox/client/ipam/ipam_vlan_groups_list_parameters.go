@@ -104,6 +104,9 @@ type IpamVlanGroupsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -215,6 +218,9 @@ type IpamVlanGroupsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -295,6 +301,9 @@ type IpamVlanGroupsListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -479,6 +488,17 @@ func (o *IpamVlanGroupsListParams) WithDescription(description *string) *IpamVla
 // SetDescription adds the description to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamVlanGroupsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the ipam vlan groups list params
@@ -877,6 +897,17 @@ func (o *IpamVlanGroupsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithNameEmpty(nameEmpty *string) *IpamVlanGroupsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) WithNameIc(nameIc *string) *IpamVlanGroupsListParams {
 	o.SetNameIc(nameIc)
@@ -1150,6 +1181,17 @@ func (o *IpamVlanGroupsListParams) WithSlug(slug *string) *IpamVlanGroupsListPar
 // SetSlug adds the slug to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) WithSlugEmpty(slugEmpty *string) *IpamVlanGroupsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the ipam vlan groups list params
+func (o *IpamVlanGroupsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the ipam vlan groups list params
@@ -1429,6 +1471,23 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -2046,6 +2105,23 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -2466,6 +2542,23 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

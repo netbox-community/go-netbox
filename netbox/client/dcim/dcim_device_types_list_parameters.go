@@ -182,6 +182,9 @@ type DcimDeviceTypesListParams struct {
 	// Model.
 	Model *string
 
+	// ModelEmpty.
+	ModelEmpty *string
+
 	// ModelIc.
 	ModelIc *string
 
@@ -227,6 +230,9 @@ type DcimDeviceTypesListParams struct {
 	// PartNumber.
 	PartNumber *string
 
+	// PartNumberEmpty.
+	PartNumberEmpty *string
+
 	// PartNumberIc.
 	PartNumberIc *string
 
@@ -268,6 +274,9 @@ type DcimDeviceTypesListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -325,6 +334,30 @@ type DcimDeviceTypesListParams struct {
 
 	// UHeightn.
 	UHeightn *string
+
+	// Weight.
+	Weight *string
+
+	// WeightGt.
+	WeightGt *string
+
+	// WeightGte.
+	WeightGte *string
+
+	// WeightLt.
+	WeightLt *string
+
+	// WeightLte.
+	WeightLte *string
+
+	// Weightn.
+	Weightn *string
+
+	// WeightUnit.
+	WeightUnit *string
+
+	// WeightUnitn.
+	WeightUnitn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -753,6 +786,17 @@ func (o *DcimDeviceTypesListParams) SetModel(model *string) {
 	o.Model = model
 }
 
+// WithModelEmpty adds the modelEmpty to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithModelEmpty(modelEmpty *string) *DcimDeviceTypesListParams {
+	o.SetModelEmpty(modelEmpty)
+	return o
+}
+
+// SetModelEmpty adds the modelEmpty to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetModelEmpty(modelEmpty *string) {
+	o.ModelEmpty = modelEmpty
+}
+
 // WithModelIc adds the modelIc to the dcim device types list params
 func (o *DcimDeviceTypesListParams) WithModelIc(modelIc *string) *DcimDeviceTypesListParams {
 	o.SetModelIc(modelIc)
@@ -894,6 +938,17 @@ func (o *DcimDeviceTypesListParams) WithPartNumber(partNumber *string) *DcimDevi
 // SetPartNumber adds the partNumber to the dcim device types list params
 func (o *DcimDeviceTypesListParams) SetPartNumber(partNumber *string) {
 	o.PartNumber = partNumber
+}
+
+// WithPartNumberEmpty adds the partNumberEmpty to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithPartNumberEmpty(partNumberEmpty *string) *DcimDeviceTypesListParams {
+	o.SetPartNumberEmpty(partNumberEmpty)
+	return o
+}
+
+// SetPartNumberEmpty adds the partNumberEmpty to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetPartNumberEmpty(partNumberEmpty *string) {
+	o.PartNumberEmpty = partNumberEmpty
 }
 
 // WithPartNumberIc adds the partNumberIc to the dcim device types list params
@@ -1048,6 +1103,17 @@ func (o *DcimDeviceTypesListParams) WithSlug(slug *string) *DcimDeviceTypesListP
 // SetSlug adds the slug to the dcim device types list params
 func (o *DcimDeviceTypesListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithSlugEmpty(slugEmpty *string) *DcimDeviceTypesListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the dcim device types list params
@@ -1257,6 +1323,94 @@ func (o *DcimDeviceTypesListParams) WithUHeightn(uHeightn *string) *DcimDeviceTy
 // SetUHeightn adds the uHeightN to the dcim device types list params
 func (o *DcimDeviceTypesListParams) SetUHeightn(uHeightn *string) {
 	o.UHeightn = uHeightn
+}
+
+// WithWeight adds the weight to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithWeight(weight *string) *DcimDeviceTypesListParams {
+	o.SetWeight(weight)
+	return o
+}
+
+// SetWeight adds the weight to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetWeight(weight *string) {
+	o.Weight = weight
+}
+
+// WithWeightGt adds the weightGt to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithWeightGt(weightGt *string) *DcimDeviceTypesListParams {
+	o.SetWeightGt(weightGt)
+	return o
+}
+
+// SetWeightGt adds the weightGt to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetWeightGt(weightGt *string) {
+	o.WeightGt = weightGt
+}
+
+// WithWeightGte adds the weightGte to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithWeightGte(weightGte *string) *DcimDeviceTypesListParams {
+	o.SetWeightGte(weightGte)
+	return o
+}
+
+// SetWeightGte adds the weightGte to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetWeightGte(weightGte *string) {
+	o.WeightGte = weightGte
+}
+
+// WithWeightLt adds the weightLt to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithWeightLt(weightLt *string) *DcimDeviceTypesListParams {
+	o.SetWeightLt(weightLt)
+	return o
+}
+
+// SetWeightLt adds the weightLt to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetWeightLt(weightLt *string) {
+	o.WeightLt = weightLt
+}
+
+// WithWeightLte adds the weightLte to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithWeightLte(weightLte *string) *DcimDeviceTypesListParams {
+	o.SetWeightLte(weightLte)
+	return o
+}
+
+// SetWeightLte adds the weightLte to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetWeightLte(weightLte *string) {
+	o.WeightLte = weightLte
+}
+
+// WithWeightn adds the weightn to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithWeightn(weightn *string) *DcimDeviceTypesListParams {
+	o.SetWeightn(weightn)
+	return o
+}
+
+// SetWeightn adds the weightN to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetWeightn(weightn *string) {
+	o.Weightn = weightn
+}
+
+// WithWeightUnit adds the weightUnit to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithWeightUnit(weightUnit *string) *DcimDeviceTypesListParams {
+	o.SetWeightUnit(weightUnit)
+	return o
+}
+
+// SetWeightUnit adds the weightUnit to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetWeightUnit(weightUnit *string) {
+	o.WeightUnit = weightUnit
+}
+
+// WithWeightUnitn adds the weightUnitn to the dcim device types list params
+func (o *DcimDeviceTypesListParams) WithWeightUnitn(weightUnitn *string) *DcimDeviceTypesListParams {
+	o.SetWeightUnitn(weightUnitn)
+	return o
+}
+
+// SetWeightUnitn adds the weightUnitN to the dcim device types list params
+func (o *DcimDeviceTypesListParams) SetWeightUnitn(weightUnitn *string) {
+	o.WeightUnitn = weightUnitn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -1845,6 +1999,23 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
+	if o.ModelEmpty != nil {
+
+		// query param model__empty
+		var qrModelEmpty string
+
+		if o.ModelEmpty != nil {
+			qrModelEmpty = *o.ModelEmpty
+		}
+		qModelEmpty := qrModelEmpty
+		if qModelEmpty != "" {
+
+			if err := r.SetQueryParam("model__empty", qModelEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.ModelIc != nil {
 
 		// query param model__ic
@@ -2061,6 +2232,23 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qPartNumber != "" {
 
 			if err := r.SetQueryParam("part_number", qPartNumber); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PartNumberEmpty != nil {
+
+		// query param part_number__empty
+		var qrPartNumberEmpty string
+
+		if o.PartNumberEmpty != nil {
+			qrPartNumberEmpty = *o.PartNumberEmpty
+		}
+		qPartNumberEmpty := qrPartNumberEmpty
+		if qPartNumberEmpty != "" {
+
+			if err := r.SetQueryParam("part_number__empty", qPartNumberEmpty); err != nil {
 				return err
 			}
 		}
@@ -2299,6 +2487,23 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}
@@ -2622,6 +2827,142 @@ func (o *DcimDeviceTypesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qUHeightn != "" {
 
 			if err := r.SetQueryParam("u_height__n", qUHeightn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Weight != nil {
+
+		// query param weight
+		var qrWeight string
+
+		if o.Weight != nil {
+			qrWeight = *o.Weight
+		}
+		qWeight := qrWeight
+		if qWeight != "" {
+
+			if err := r.SetQueryParam("weight", qWeight); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightGt != nil {
+
+		// query param weight__gt
+		var qrWeightGt string
+
+		if o.WeightGt != nil {
+			qrWeightGt = *o.WeightGt
+		}
+		qWeightGt := qrWeightGt
+		if qWeightGt != "" {
+
+			if err := r.SetQueryParam("weight__gt", qWeightGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightGte != nil {
+
+		// query param weight__gte
+		var qrWeightGte string
+
+		if o.WeightGte != nil {
+			qrWeightGte = *o.WeightGte
+		}
+		qWeightGte := qrWeightGte
+		if qWeightGte != "" {
+
+			if err := r.SetQueryParam("weight__gte", qWeightGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightLt != nil {
+
+		// query param weight__lt
+		var qrWeightLt string
+
+		if o.WeightLt != nil {
+			qrWeightLt = *o.WeightLt
+		}
+		qWeightLt := qrWeightLt
+		if qWeightLt != "" {
+
+			if err := r.SetQueryParam("weight__lt", qWeightLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightLte != nil {
+
+		// query param weight__lte
+		var qrWeightLte string
+
+		if o.WeightLte != nil {
+			qrWeightLte = *o.WeightLte
+		}
+		qWeightLte := qrWeightLte
+		if qWeightLte != "" {
+
+			if err := r.SetQueryParam("weight__lte", qWeightLte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Weightn != nil {
+
+		// query param weight__n
+		var qrWeightn string
+
+		if o.Weightn != nil {
+			qrWeightn = *o.Weightn
+		}
+		qWeightn := qrWeightn
+		if qWeightn != "" {
+
+			if err := r.SetQueryParam("weight__n", qWeightn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightUnit != nil {
+
+		// query param weight_unit
+		var qrWeightUnit string
+
+		if o.WeightUnit != nil {
+			qrWeightUnit = *o.WeightUnit
+		}
+		qWeightUnit := qrWeightUnit
+		if qWeightUnit != "" {
+
+			if err := r.SetQueryParam("weight_unit", qWeightUnit); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.WeightUnitn != nil {
+
+		// query param weight_unit__n
+		var qrWeightUnitn string
+
+		if o.WeightUnitn != nil {
+			qrWeightUnitn = *o.WeightUnitn
+		}
+		qWeightUnitn := qrWeightUnitn
+		if qWeightUnitn != "" {
+
+			if err := r.SetQueryParam("weight_unit__n", qWeightUnitn); err != nil {
 				return err
 			}
 		}

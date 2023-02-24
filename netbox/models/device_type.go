@@ -50,6 +50,10 @@ type DeviceType struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
+
 	// Device count
 	// Read Only: true
 	DeviceCount int64 `json:"device_count,omitempty"`
@@ -119,6 +123,12 @@ type DeviceType struct {
 	// Read Only: true
 	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
+
+	// Weight
+	Weight *float64 `json:"weight,omitempty"`
+
+	// weight unit
+	WeightUnit *DeviceTypeWeightUnit `json:"weight_unit,omitempty"`
 }
 
 // Validate validates this device type
@@ -130,6 +140,10 @@ func (m *DeviceType) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -177,6 +191,10 @@ func (m *DeviceType) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateWeightUnit(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -208,6 +226,18 @@ func (m *DeviceType) validateCreated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceType) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -389,6 +419,25 @@ func (m *DeviceType) validateURL(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *DeviceType) validateWeightUnit(formats strfmt.Registry) error {
+	if swag.IsZero(m.WeightUnit) { // not required
+		return nil
+	}
+
+	if m.WeightUnit != nil {
+		if err := m.WeightUnit.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("weight_unit")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("weight_unit")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 // ContextValidate validate this device type based on the context it is used
 func (m *DeviceType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -438,6 +487,10 @@ func (m *DeviceType) ContextValidate(ctx context.Context, formats strfmt.Registr
 	}
 
 	if err := m.contextValidateURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateWeightUnit(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -582,6 +635,22 @@ func (m *DeviceType) contextValidateURL(ctx context.Context, formats strfmt.Regi
 
 	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *DeviceType) contextValidateWeightUnit(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.WeightUnit != nil {
+		if err := m.WeightUnit.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("weight_unit")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("weight_unit")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -914,6 +983,161 @@ func (m *DeviceTypeSubdeviceRole) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *DeviceTypeSubdeviceRole) UnmarshalBinary(b []byte) error {
 	var res DeviceTypeSubdeviceRole
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// DeviceTypeWeightUnit Weight unit
+//
+// swagger:model DeviceTypeWeightUnit
+type DeviceTypeWeightUnit struct {
+
+	// label
+	// Required: true
+	// Enum: [Kilograms Grams Pounds Ounces]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [kg g lb oz]
+	Value *string `json:"value"`
+}
+
+// Validate validates this device type weight unit
+func (m *DeviceTypeWeightUnit) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var deviceTypeWeightUnitTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Kilograms","Grams","Pounds","Ounces"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceTypeWeightUnitTypeLabelPropEnum = append(deviceTypeWeightUnitTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceTypeWeightUnitLabelKilograms captures enum value "Kilograms"
+	DeviceTypeWeightUnitLabelKilograms string = "Kilograms"
+
+	// DeviceTypeWeightUnitLabelGrams captures enum value "Grams"
+	DeviceTypeWeightUnitLabelGrams string = "Grams"
+
+	// DeviceTypeWeightUnitLabelPounds captures enum value "Pounds"
+	DeviceTypeWeightUnitLabelPounds string = "Pounds"
+
+	// DeviceTypeWeightUnitLabelOunces captures enum value "Ounces"
+	DeviceTypeWeightUnitLabelOunces string = "Ounces"
+)
+
+// prop value enum
+func (m *DeviceTypeWeightUnit) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, deviceTypeWeightUnitTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *DeviceTypeWeightUnit) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("weight_unit"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("weight_unit"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var deviceTypeWeightUnitTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["kg","g","lb","oz"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		deviceTypeWeightUnitTypeValuePropEnum = append(deviceTypeWeightUnitTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// DeviceTypeWeightUnitValueKg captures enum value "kg"
+	DeviceTypeWeightUnitValueKg string = "kg"
+
+	// DeviceTypeWeightUnitValueG captures enum value "g"
+	DeviceTypeWeightUnitValueG string = "g"
+
+	// DeviceTypeWeightUnitValueLb captures enum value "lb"
+	DeviceTypeWeightUnitValueLb string = "lb"
+
+	// DeviceTypeWeightUnitValueOz captures enum value "oz"
+	DeviceTypeWeightUnitValueOz string = "oz"
+)
+
+// prop value enum
+func (m *DeviceTypeWeightUnit) validateValueEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, deviceTypeWeightUnitTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *DeviceTypeWeightUnit) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("weight_unit"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("weight_unit"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this device type weight unit based on context it is used
+func (m *DeviceTypeWeightUnit) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *DeviceTypeWeightUnit) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *DeviceTypeWeightUnit) UnmarshalBinary(b []byte) error {
+	var res DeviceTypeWeightUnit
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

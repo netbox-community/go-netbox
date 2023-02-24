@@ -80,6 +80,9 @@ type TenancyContactsListParams struct {
 	// Address.
 	Address *string
 
+	// AddressEmpty.
+	AddressEmpty *string
+
 	// AddressIc.
 	AddressIc *string
 
@@ -127,6 +130,9 @@ type TenancyContactsListParams struct {
 
 	// Email.
 	Email *string
+
+	// EmailEmpty.
+	EmailEmpty *string
 
 	// EmailIc.
 	EmailIc *string
@@ -212,6 +218,9 @@ type TenancyContactsListParams struct {
 	// Link.
 	Link *string
 
+	// LinkEmpty.
+	LinkEmpty *string
+
 	// LinkIc.
 	LinkIc *string
 
@@ -241,6 +250,9 @@ type TenancyContactsListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -284,6 +296,9 @@ type TenancyContactsListParams struct {
 	// Phone.
 	Phone *string
 
+	// PhoneEmpty.
+	PhoneEmpty *string
+
 	// PhoneIc.
 	PhoneIc *string
 
@@ -322,6 +337,9 @@ type TenancyContactsListParams struct {
 
 	// Title.
 	Title *string
+
+	// TitleEmpty.
+	TitleEmpty *string
 
 	// TitleIc.
 	TitleIc *string
@@ -412,6 +430,17 @@ func (o *TenancyContactsListParams) WithAddress(address *string) *TenancyContact
 // SetAddress adds the address to the tenancy contacts list params
 func (o *TenancyContactsListParams) SetAddress(address *string) {
 	o.Address = address
+}
+
+// WithAddressEmpty adds the addressEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) WithAddressEmpty(addressEmpty *string) *TenancyContactsListParams {
+	o.SetAddressEmpty(addressEmpty)
+	return o
+}
+
+// SetAddressEmpty adds the addressEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) SetAddressEmpty(addressEmpty *string) {
+	o.AddressEmpty = addressEmpty
 }
 
 // WithAddressIc adds the addressIc to the tenancy contacts list params
@@ -588,6 +617,17 @@ func (o *TenancyContactsListParams) WithEmail(email *string) *TenancyContactsLis
 // SetEmail adds the email to the tenancy contacts list params
 func (o *TenancyContactsListParams) SetEmail(email *string) {
 	o.Email = email
+}
+
+// WithEmailEmpty adds the emailEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) WithEmailEmpty(emailEmpty *string) *TenancyContactsListParams {
+	o.SetEmailEmpty(emailEmpty)
+	return o
+}
+
+// SetEmailEmpty adds the emailEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) SetEmailEmpty(emailEmpty *string) {
+	o.EmailEmpty = emailEmpty
 }
 
 // WithEmailIc adds the emailIc to the tenancy contacts list params
@@ -887,6 +927,17 @@ func (o *TenancyContactsListParams) SetLink(link *string) {
 	o.Link = link
 }
 
+// WithLinkEmpty adds the linkEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) WithLinkEmpty(linkEmpty *string) *TenancyContactsListParams {
+	o.SetLinkEmpty(linkEmpty)
+	return o
+}
+
+// SetLinkEmpty adds the linkEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) SetLinkEmpty(linkEmpty *string) {
+	o.LinkEmpty = linkEmpty
+}
+
 // WithLinkIc adds the linkIc to the tenancy contacts list params
 func (o *TenancyContactsListParams) WithLinkIc(linkIc *string) *TenancyContactsListParams {
 	o.SetLinkIc(linkIc)
@@ -995,6 +1046,17 @@ func (o *TenancyContactsListParams) WithName(name *string) *TenancyContactsListP
 // SetName adds the name to the tenancy contacts list params
 func (o *TenancyContactsListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) WithNameEmpty(nameEmpty *string) *TenancyContactsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the tenancy contacts list params
@@ -1127,6 +1189,17 @@ func (o *TenancyContactsListParams) WithPhone(phone *string) *TenancyContactsLis
 // SetPhone adds the phone to the tenancy contacts list params
 func (o *TenancyContactsListParams) SetPhone(phone *string) {
 	o.Phone = phone
+}
+
+// WithPhoneEmpty adds the phoneEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) WithPhoneEmpty(phoneEmpty *string) *TenancyContactsListParams {
+	o.SetPhoneEmpty(phoneEmpty)
+	return o
+}
+
+// SetPhoneEmpty adds the phoneEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) SetPhoneEmpty(phoneEmpty *string) {
+	o.PhoneEmpty = phoneEmpty
 }
 
 // WithPhoneIc adds the phoneIc to the tenancy contacts list params
@@ -1272,6 +1345,17 @@ func (o *TenancyContactsListParams) SetTitle(title *string) {
 	o.Title = title
 }
 
+// WithTitleEmpty adds the titleEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) WithTitleEmpty(titleEmpty *string) *TenancyContactsListParams {
+	o.SetTitleEmpty(titleEmpty)
+	return o
+}
+
+// SetTitleEmpty adds the titleEmpty to the tenancy contacts list params
+func (o *TenancyContactsListParams) SetTitleEmpty(titleEmpty *string) {
+	o.TitleEmpty = titleEmpty
+}
+
 // WithTitleIc adds the titleIc to the tenancy contacts list params
 func (o *TenancyContactsListParams) WithTitleIc(titleIc *string) *TenancyContactsListParams {
 	o.SetTitleIc(titleIc)
@@ -1391,6 +1475,23 @@ func (o *TenancyContactsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qAddress != "" {
 
 			if err := r.SetQueryParam("address", qAddress); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.AddressEmpty != nil {
+
+		// query param address__empty
+		var qrAddressEmpty string
+
+		if o.AddressEmpty != nil {
+			qrAddressEmpty = *o.AddressEmpty
+		}
+		qAddressEmpty := qrAddressEmpty
+		if qAddressEmpty != "" {
+
+			if err := r.SetQueryParam("address__empty", qAddressEmpty); err != nil {
 				return err
 			}
 		}
@@ -1663,6 +1764,23 @@ func (o *TenancyContactsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qEmail != "" {
 
 			if err := r.SetQueryParam("email", qEmail); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.EmailEmpty != nil {
+
+		// query param email__empty
+		var qrEmailEmpty string
+
+		if o.EmailEmpty != nil {
+			qrEmailEmpty = *o.EmailEmpty
+		}
+		qEmailEmpty := qrEmailEmpty
+		if qEmailEmpty != "" {
+
+			if err := r.SetQueryParam("email__empty", qEmailEmpty); err != nil {
 				return err
 			}
 		}
@@ -2127,6 +2245,23 @@ func (o *TenancyContactsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
+	if o.LinkEmpty != nil {
+
+		// query param link__empty
+		var qrLinkEmpty string
+
+		if o.LinkEmpty != nil {
+			qrLinkEmpty = *o.LinkEmpty
+		}
+		qLinkEmpty := qrLinkEmpty
+		if qLinkEmpty != "" {
+
+			if err := r.SetQueryParam("link__empty", qLinkEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LinkIc != nil {
 
 		// query param link__ic
@@ -2292,6 +2427,23 @@ func (o *TenancyContactsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}
@@ -2496,6 +2648,23 @@ func (o *TenancyContactsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qPhone != "" {
 
 			if err := r.SetQueryParam("phone", qPhone); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PhoneEmpty != nil {
+
+		// query param phone__empty
+		var qrPhoneEmpty string
+
+		if o.PhoneEmpty != nil {
+			qrPhoneEmpty = *o.PhoneEmpty
+		}
+		qPhoneEmpty := qrPhoneEmpty
+		if qPhoneEmpty != "" {
+
+			if err := r.SetQueryParam("phone__empty", qPhoneEmpty); err != nil {
 				return err
 			}
 		}
@@ -2717,6 +2886,23 @@ func (o *TenancyContactsListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		if qTitle != "" {
 
 			if err := r.SetQueryParam("title", qTitle); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.TitleEmpty != nil {
+
+		// query param title__empty
+		var qrTitleEmpty string
+
+		if o.TitleEmpty != nil {
+			qrTitleEmpty = *o.TitleEmpty
+		}
+		qTitleEmpty := qrTitleEmpty
+		if qTitleEmpty != "" {
+
+			if err := r.SetQueryParam("title__empty", qTitleEmpty); err != nil {
 				return err
 			}
 		}

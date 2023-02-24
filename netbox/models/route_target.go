@@ -35,6 +35,9 @@ import (
 // swagger:model RouteTarget
 type RouteTarget struct {
 
+	// Comments
+	Comments string `json:"comments,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date-time

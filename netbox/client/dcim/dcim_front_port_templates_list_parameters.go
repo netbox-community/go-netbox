@@ -80,6 +80,9 @@ type DcimFrontPortTemplatesListParams struct {
 	// Color.
 	Color *string
 
+	// ColorEmpty.
+	ColorEmpty *string
+
 	// ColorIc.
 	ColorIc *string
 
@@ -181,6 +184,9 @@ type DcimFrontPortTemplatesListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -292,6 +298,17 @@ func (o *DcimFrontPortTemplatesListParams) WithColor(color *string) *DcimFrontPo
 // SetColor adds the color to the dcim front port templates list params
 func (o *DcimFrontPortTemplatesListParams) SetColor(color *string) {
 	o.Color = color
+}
+
+// WithColorEmpty adds the colorEmpty to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithColorEmpty(colorEmpty *string) *DcimFrontPortTemplatesListParams {
+	o.SetColorEmpty(colorEmpty)
+	return o
+}
+
+// SetColorEmpty adds the colorEmpty to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetColorEmpty(colorEmpty *string) {
+	o.ColorEmpty = colorEmpty
 }
 
 // WithColorIc adds the colorIc to the dcim front port templates list params
@@ -657,6 +674,17 @@ func (o *DcimFrontPortTemplatesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimFrontPortTemplatesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim front port templates list params
+func (o *DcimFrontPortTemplatesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the dcim front port templates list params
 func (o *DcimFrontPortTemplatesListParams) WithNameIc(nameIc *string) *DcimFrontPortTemplatesListParams {
 	o.SetNameIc(nameIc)
@@ -831,6 +859,23 @@ func (o *DcimFrontPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qColor != "" {
 
 			if err := r.SetQueryParam("color", qColor); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorEmpty != nil {
+
+		// query param color__empty
+		var qrColorEmpty string
+
+		if o.ColorEmpty != nil {
+			qrColorEmpty = *o.ColorEmpty
+		}
+		qColorEmpty := qrColorEmpty
+		if qColorEmpty != "" {
+
+			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
 				return err
 			}
 		}
@@ -1392,6 +1437,23 @@ func (o *DcimFrontPortTemplatesListParams) WriteToRequest(r runtime.ClientReques
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

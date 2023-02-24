@@ -158,6 +158,9 @@ type DcimPowerOutletTemplatesListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -543,6 +546,17 @@ func (o *DcimPowerOutletTemplatesListParams) WithName(name *string) *DcimPowerOu
 // SetName adds the name to the dcim power outlet templates list params
 func (o *DcimPowerOutletTemplatesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimPowerOutletTemplatesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim power outlet templates list params
+func (o *DcimPowerOutletTemplatesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the dcim power outlet templates list params
@@ -1144,6 +1158,23 @@ func (o *DcimPowerOutletTemplatesListParams) WriteToRequest(r runtime.ClientRequ
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

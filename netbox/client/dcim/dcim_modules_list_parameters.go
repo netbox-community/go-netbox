@@ -80,6 +80,9 @@ type DcimModulesListParams struct {
 	// AssetTag.
 	AssetTag *string
 
+	// AssetTagEmpty.
+	AssetTagEmpty *string
+
 	// AssetTagIc.
 	AssetTagIc *string
 
@@ -221,6 +224,9 @@ type DcimModulesListParams struct {
 	// Serial.
 	Serial *string
 
+	// SerialEmpty.
+	SerialEmpty *string
+
 	// SerialIc.
 	SerialIc *string
 
@@ -247,6 +253,12 @@ type DcimModulesListParams struct {
 
 	// SerialNisw.
 	SerialNisw *string
+
+	// Status.
+	Status *string
+
+	// Statusn.
+	Statusn *string
 
 	// Tag.
 	Tag *string
@@ -316,6 +328,17 @@ func (o *DcimModulesListParams) WithAssetTag(assetTag *string) *DcimModulesListP
 // SetAssetTag adds the assetTag to the dcim modules list params
 func (o *DcimModulesListParams) SetAssetTag(assetTag *string) {
 	o.AssetTag = assetTag
+}
+
+// WithAssetTagEmpty adds the assetTagEmpty to the dcim modules list params
+func (o *DcimModulesListParams) WithAssetTagEmpty(assetTagEmpty *string) *DcimModulesListParams {
+	o.SetAssetTagEmpty(assetTagEmpty)
+	return o
+}
+
+// SetAssetTagEmpty adds the assetTagEmpty to the dcim modules list params
+func (o *DcimModulesListParams) SetAssetTagEmpty(assetTagEmpty *string) {
+	o.AssetTagEmpty = assetTagEmpty
 }
 
 // WithAssetTagIc adds the assetTagIc to the dcim modules list params
@@ -802,6 +825,17 @@ func (o *DcimModulesListParams) SetSerial(serial *string) {
 	o.Serial = serial
 }
 
+// WithSerialEmpty adds the serialEmpty to the dcim modules list params
+func (o *DcimModulesListParams) WithSerialEmpty(serialEmpty *string) *DcimModulesListParams {
+	o.SetSerialEmpty(serialEmpty)
+	return o
+}
+
+// SetSerialEmpty adds the serialEmpty to the dcim modules list params
+func (o *DcimModulesListParams) SetSerialEmpty(serialEmpty *string) {
+	o.SerialEmpty = serialEmpty
+}
+
 // WithSerialIc adds the serialIc to the dcim modules list params
 func (o *DcimModulesListParams) WithSerialIc(serialIc *string) *DcimModulesListParams {
 	o.SetSerialIc(serialIc)
@@ -901,6 +935,28 @@ func (o *DcimModulesListParams) SetSerialNisw(serialNisw *string) {
 	o.SerialNisw = serialNisw
 }
 
+// WithStatus adds the status to the dcim modules list params
+func (o *DcimModulesListParams) WithStatus(status *string) *DcimModulesListParams {
+	o.SetStatus(status)
+	return o
+}
+
+// SetStatus adds the status to the dcim modules list params
+func (o *DcimModulesListParams) SetStatus(status *string) {
+	o.Status = status
+}
+
+// WithStatusn adds the statusn to the dcim modules list params
+func (o *DcimModulesListParams) WithStatusn(statusn *string) *DcimModulesListParams {
+	o.SetStatusn(statusn)
+	return o
+}
+
+// SetStatusn adds the statusN to the dcim modules list params
+func (o *DcimModulesListParams) SetStatusn(statusn *string) {
+	o.Statusn = statusn
+}
+
 // WithTag adds the tag to the dcim modules list params
 func (o *DcimModulesListParams) WithTag(tag *string) *DcimModulesListParams {
 	o.SetTag(tag)
@@ -943,6 +999,23 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qAssetTag != "" {
 
 			if err := r.SetQueryParam("asset_tag", qAssetTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.AssetTagEmpty != nil {
+
+		// query param asset_tag__empty
+		var qrAssetTagEmpty string
+
+		if o.AssetTagEmpty != nil {
+			qrAssetTagEmpty = *o.AssetTagEmpty
+		}
+		qAssetTagEmpty := qrAssetTagEmpty
+		if qAssetTagEmpty != "" {
+
+			if err := r.SetQueryParam("asset_tag__empty", qAssetTagEmpty); err != nil {
 				return err
 			}
 		}
@@ -1696,6 +1769,23 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.SerialEmpty != nil {
+
+		// query param serial__empty
+		var qrSerialEmpty string
+
+		if o.SerialEmpty != nil {
+			qrSerialEmpty = *o.SerialEmpty
+		}
+		qSerialEmpty := qrSerialEmpty
+		if qSerialEmpty != "" {
+
+			if err := r.SetQueryParam("serial__empty", qSerialEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.SerialIc != nil {
 
 		// query param serial__ic
@@ -1844,6 +1934,40 @@ func (o *DcimModulesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qSerialNisw != "" {
 
 			if err := r.SetQueryParam("serial__nisw", qSerialNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Status != nil {
+
+		// query param status
+		var qrStatus string
+
+		if o.Status != nil {
+			qrStatus = *o.Status
+		}
+		qStatus := qrStatus
+		if qStatus != "" {
+
+			if err := r.SetQueryParam("status", qStatus); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Statusn != nil {
+
+		// query param status__n
+		var qrStatusn string
+
+		if o.Statusn != nil {
+			qrStatusn = *o.Statusn
+		}
+		qStatusn := qrStatusn
+		if qStatusn != "" {
+
+			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
 				return err
 			}
 		}

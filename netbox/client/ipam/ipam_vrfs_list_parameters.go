@@ -98,6 +98,9 @@ type IpamVrfsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -197,6 +200,9 @@ type IpamVrfsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -241,6 +247,9 @@ type IpamVrfsListParams struct {
 
 	// Rd.
 	Rd *string
+
+	// RdEmpty.
+	RdEmpty *string
 
 	// RdIc.
 	RdIc *string
@@ -427,6 +436,17 @@ func (o *IpamVrfsListParams) WithDescription(description *string) *IpamVrfsListP
 // SetDescription adds the description to the ipam vrfs list params
 func (o *IpamVrfsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamVrfsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the ipam vrfs list params
@@ -781,6 +801,17 @@ func (o *IpamVrfsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithNameEmpty(nameEmpty *string) *IpamVrfsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the ipam vrfs list params
 func (o *IpamVrfsListParams) WithNameIc(nameIc *string) *IpamVrfsListParams {
 	o.SetNameIc(nameIc)
@@ -922,6 +953,17 @@ func (o *IpamVrfsListParams) WithRd(rd *string) *IpamVrfsListParams {
 // SetRd adds the rd to the ipam vrfs list params
 func (o *IpamVrfsListParams) SetRd(rd *string) {
 	o.Rd = rd
+}
+
+// WithRdEmpty adds the rdEmpty to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithRdEmpty(rdEmpty *string) *IpamVrfsListParams {
+	o.SetRdEmpty(rdEmpty)
+	return o
+}
+
+// SetRdEmpty adds the rdEmpty to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetRdEmpty(rdEmpty *string) {
+	o.RdEmpty = rdEmpty
 }
 
 // WithRdIc adds the rdIc to the ipam vrfs list params
@@ -1255,6 +1297,23 @@ func (o *IpamVrfsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1804,6 +1863,23 @@ func (o *IpamVrfsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -2020,6 +2096,23 @@ func (o *IpamVrfsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		if qRd != "" {
 
 			if err := r.SetQueryParam("rd", qRd); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.RdEmpty != nil {
+
+		// query param rd__empty
+		var qrRdEmpty string
+
+		if o.RdEmpty != nil {
+			qrRdEmpty = *o.RdEmpty
+		}
+		qRdEmpty := qrRdEmpty
+		if qRdEmpty != "" {
+
+			if err := r.SetQueryParam("rd__empty", qRdEmpty); err != nil {
 				return err
 			}
 		}

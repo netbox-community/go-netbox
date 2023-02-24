@@ -137,7 +137,7 @@ type Site struct {
 	Tenant *NestedTenant `json:"tenant,omitempty"`
 
 	// Time zone
-	TimeZone string `json:"time_zone,omitempty"`
+	TimeZone *string `json:"time_zone,omitempty"`
 
 	// Url
 	// Read Only: true

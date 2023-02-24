@@ -98,6 +98,9 @@ type DcimPlatformsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -182,6 +185,9 @@ type DcimPlatformsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -211,6 +217,9 @@ type DcimPlatformsListParams struct {
 
 	// NapalmDriver.
 	NapalmDriver *string
+
+	// NapalmDriverEmpty.
+	NapalmDriverEmpty *string
 
 	// NapalmDriverIc.
 	NapalmDriverIc *string
@@ -256,6 +265,9 @@ type DcimPlatformsListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -418,6 +430,17 @@ func (o *DcimPlatformsListParams) WithDescription(description *string) *DcimPlat
 // SetDescription adds the description to the dcim platforms list params
 func (o *DcimPlatformsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimPlatformsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim platforms list params
@@ -717,6 +740,17 @@ func (o *DcimPlatformsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithNameEmpty(nameEmpty *string) *DcimPlatformsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the dcim platforms list params
 func (o *DcimPlatformsListParams) WithNameIc(nameIc *string) *DcimPlatformsListParams {
 	o.SetNameIc(nameIc)
@@ -825,6 +859,17 @@ func (o *DcimPlatformsListParams) WithNapalmDriver(napalmDriver *string) *DcimPl
 // SetNapalmDriver adds the napalmDriver to the dcim platforms list params
 func (o *DcimPlatformsListParams) SetNapalmDriver(napalmDriver *string) {
 	o.NapalmDriver = napalmDriver
+}
+
+// WithNapalmDriverEmpty adds the napalmDriverEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithNapalmDriverEmpty(napalmDriverEmpty *string) *DcimPlatformsListParams {
+	o.SetNapalmDriverEmpty(napalmDriverEmpty)
+	return o
+}
+
+// SetNapalmDriverEmpty adds the napalmDriverEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetNapalmDriverEmpty(napalmDriverEmpty *string) {
+	o.NapalmDriverEmpty = napalmDriverEmpty
 }
 
 // WithNapalmDriverIc adds the napalmDriverIc to the dcim platforms list params
@@ -968,6 +1013,17 @@ func (o *DcimPlatformsListParams) WithSlug(slug *string) *DcimPlatformsListParam
 // SetSlug adds the slug to the dcim platforms list params
 func (o *DcimPlatformsListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) WithSlugEmpty(slugEmpty *string) *DcimPlatformsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the dcim platforms list params
+func (o *DcimPlatformsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the dcim platforms list params
@@ -1213,6 +1269,23 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1677,6 +1750,23 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1842,6 +1932,23 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qNapalmDriver != "" {
 
 			if err := r.SetQueryParam("napalm_driver", qNapalmDriver); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NapalmDriverEmpty != nil {
+
+		// query param napalm_driver__empty
+		var qrNapalmDriverEmpty string
+
+		if o.NapalmDriverEmpty != nil {
+			qrNapalmDriverEmpty = *o.NapalmDriverEmpty
+		}
+		qNapalmDriverEmpty := qrNapalmDriverEmpty
+		if qNapalmDriverEmpty != "" {
+
+			if err := r.SetQueryParam("napalm_driver__empty", qNapalmDriverEmpty); err != nil {
 				return err
 			}
 		}
@@ -2063,6 +2170,23 @@ func (o *DcimPlatformsListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

@@ -41,9 +41,10 @@ type CustomLink struct {
 	// Enum: [outline-dark blue indigo purple pink red orange yellow green teal cyan gray black white ghost-dark]
 	ButtonClass string `json:"button_class,omitempty"`
 
-	// Content type
+	// content types
 	// Required: true
-	ContentType *string `json:"content_type"`
+	// Unique: true
+	ContentTypes []string `json:"content_types"`
 
 	// Created
 	// Read Only: true
@@ -116,7 +117,7 @@ func (m *CustomLink) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateContentType(formats); err != nil {
+	if err := m.validateContentTypes(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -239,9 +240,13 @@ func (m *CustomLink) validateButtonClass(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *CustomLink) validateContentType(formats strfmt.Registry) error {
+func (m *CustomLink) validateContentTypes(formats strfmt.Registry) error {
 
-	if err := validate.Required("content_type", "body", m.ContentType); err != nil {
+	if err := validate.Required("content_types", "body", m.ContentTypes); err != nil {
+		return err
+	}
+
+	if err := validate.UniqueItems("content_types", "body", m.ContentTypes); err != nil {
 		return err
 	}
 
