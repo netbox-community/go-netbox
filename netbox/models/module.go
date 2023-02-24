@@ -22,7 +22,6 @@ package models
 
 import (
 	"context"
-	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -53,10 +52,6 @@ type Module struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
-	// Description
-	// Max Length: 200
-	Description string `json:"description,omitempty"`
-
 	// device
 	// Required: true
 	Device *NestedDevice `json:"device"`
@@ -86,9 +81,6 @@ type Module struct {
 	// Max Length: 50
 	Serial string `json:"serial,omitempty"`
 
-	// status
-	Status *ModuleStatus `json:"status,omitempty"`
-
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
 
@@ -110,10 +102,6 @@ func (m *Module) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateDescription(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateDevice(formats); err != nil {
 		res = append(res, err)
 	}
@@ -131,10 +119,6 @@ func (m *Module) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSerial(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -170,18 +154,6 @@ func (m *Module) validateCreated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *Module) validateDescription(formats strfmt.Registry) error {
-	if swag.IsZero(m.Description) { // not required
-		return nil
-	}
-
-	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -272,25 +244,6 @@ func (m *Module) validateSerial(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Module) validateStatus(formats strfmt.Registry) error {
-	if swag.IsZero(m.Status) { // not required
-		return nil
-	}
-
-	if m.Status != nil {
-		if err := m.Status.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Module) validateTags(formats strfmt.Registry) error {
 	if swag.IsZero(m.Tags) { // not required
 		return nil
@@ -358,10 +311,6 @@ func (m *Module) ContextValidate(ctx context.Context, formats strfmt.Registry) e
 	}
 
 	if err := m.contextValidateModuleType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateStatus(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -463,22 +412,6 @@ func (m *Module) contextValidateModuleType(ctx context.Context, formats strfmt.R
 	return nil
 }
 
-func (m *Module) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Status != nil {
-		if err := m.Status.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("status")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("status")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Module) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Tags); i++ {
@@ -519,173 +452,6 @@ func (m *Module) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Module) UnmarshalBinary(b []byte) error {
 	var res Module
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// ModuleStatus Status
-//
-// swagger:model ModuleStatus
-type ModuleStatus struct {
-
-	// label
-	// Required: true
-	// Enum: [Offline Active Planned Staged Failed Decommissioning]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [offline active planned staged failed decommissioning]
-	Value *string `json:"value"`
-}
-
-// Validate validates this module status
-func (m *ModuleStatus) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var moduleStatusTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["Offline","Active","Planned","Staged","Failed","Decommissioning"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		moduleStatusTypeLabelPropEnum = append(moduleStatusTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// ModuleStatusLabelOffline captures enum value "Offline"
-	ModuleStatusLabelOffline string = "Offline"
-
-	// ModuleStatusLabelActive captures enum value "Active"
-	ModuleStatusLabelActive string = "Active"
-
-	// ModuleStatusLabelPlanned captures enum value "Planned"
-	ModuleStatusLabelPlanned string = "Planned"
-
-	// ModuleStatusLabelStaged captures enum value "Staged"
-	ModuleStatusLabelStaged string = "Staged"
-
-	// ModuleStatusLabelFailed captures enum value "Failed"
-	ModuleStatusLabelFailed string = "Failed"
-
-	// ModuleStatusLabelDecommissioning captures enum value "Decommissioning"
-	ModuleStatusLabelDecommissioning string = "Decommissioning"
-)
-
-// prop value enum
-func (m *ModuleStatus) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, moduleStatusTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ModuleStatus) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var moduleStatusTypeValuePropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["offline","active","planned","staged","failed","decommissioning"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		moduleStatusTypeValuePropEnum = append(moduleStatusTypeValuePropEnum, v)
-	}
-}
-
-const (
-
-	// ModuleStatusValueOffline captures enum value "offline"
-	ModuleStatusValueOffline string = "offline"
-
-	// ModuleStatusValueActive captures enum value "active"
-	ModuleStatusValueActive string = "active"
-
-	// ModuleStatusValuePlanned captures enum value "planned"
-	ModuleStatusValuePlanned string = "planned"
-
-	// ModuleStatusValueStaged captures enum value "staged"
-	ModuleStatusValueStaged string = "staged"
-
-	// ModuleStatusValueFailed captures enum value "failed"
-	ModuleStatusValueFailed string = "failed"
-
-	// ModuleStatusValueDecommissioning captures enum value "decommissioning"
-	ModuleStatusValueDecommissioning string = "decommissioning"
-)
-
-// prop value enum
-func (m *ModuleStatus) validateValueEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, moduleStatusTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ModuleStatus) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// ContextValidate validates this module status based on context it is used
-func (m *ModuleStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *ModuleStatus) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *ModuleStatus) UnmarshalBinary(b []byte) error {
-	var res ModuleStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

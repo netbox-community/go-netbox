@@ -35,9 +35,6 @@ import (
 // swagger:model WritableVRF
 type WritableVRF struct {
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
 	// Format: date-time

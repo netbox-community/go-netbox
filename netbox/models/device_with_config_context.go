@@ -94,8 +94,9 @@ type DeviceWithConfigContext struct {
 	Location *NestedLocation `json:"location,omitempty"`
 
 	// Name
+	// Required: true
 	// Max Length: 64
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name"`
 
 	// parent device
 	ParentDevice *NestedDevice `json:"parent_device,omitempty"`
@@ -422,8 +423,9 @@ func (m *DeviceWithConfigContext) validateLocation(formats strfmt.Registry) erro
 }
 
 func (m *DeviceWithConfigContext) validateName(formats strfmt.Registry) error {
-	if swag.IsZero(m.Name) { // not required
-		return nil
+
+	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {

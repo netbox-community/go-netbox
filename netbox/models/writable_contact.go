@@ -50,10 +50,6 @@ type WritableContact struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
-	// Description
-	// Max Length: 200
-	Description string `json:"description,omitempty"`
-
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
@@ -64,7 +60,8 @@ type WritableContact struct {
 	Email strfmt.Email `json:"email,omitempty"`
 
 	// Group
-	Group *int64 `json:"group,omitempty"`
+	// Required: true
+	Group *int64 `json:"group"`
 
 	// ID
 	// Read Only: true
@@ -115,11 +112,11 @@ func (m *WritableContact) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateDescription(formats); err != nil {
+	if err := m.validateEmail(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateEmail(formats); err != nil {
+	if err := m.validateGroup(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -181,18 +178,6 @@ func (m *WritableContact) validateCreated(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableContact) validateDescription(formats strfmt.Registry) error {
-	if swag.IsZero(m.Description) { // not required
-		return nil
-	}
-
-	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritableContact) validateEmail(formats strfmt.Registry) error {
 	if swag.IsZero(m.Email) { // not required
 		return nil
@@ -203,6 +188,15 @@ func (m *WritableContact) validateEmail(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("email", "body", "email", m.Email.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableContact) validateGroup(formats strfmt.Registry) error {
+
+	if err := validate.Required("group", "body", m.Group); err != nil {
 		return err
 	}
 

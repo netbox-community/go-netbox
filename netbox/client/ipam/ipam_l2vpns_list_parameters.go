@@ -98,9 +98,6 @@ type IpamL2vpnsListParams struct {
 	// Description.
 	Description *string
 
-	// DescriptionEmpty.
-	DescriptionEmpty *string
-
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -215,9 +212,6 @@ type IpamL2vpnsListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -262,9 +256,6 @@ type IpamL2vpnsListParams struct {
 
 	// Slug.
 	Slug *string
-
-	// SlugEmpty.
-	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -457,17 +448,6 @@ func (o *IpamL2vpnsListParams) WithDescription(description *string) *IpamL2vpnsL
 // SetDescription adds the description to the ipam l2vpns list params
 func (o *IpamL2vpnsListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the ipam l2vpns list params
-func (o *IpamL2vpnsListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamL2vpnsListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the ipam l2vpns list params
-func (o *IpamL2vpnsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the ipam l2vpns list params
@@ -877,17 +857,6 @@ func (o *IpamL2vpnsListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the ipam l2vpns list params
-func (o *IpamL2vpnsListParams) WithNameEmpty(nameEmpty *string) *IpamL2vpnsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the ipam l2vpns list params
-func (o *IpamL2vpnsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the ipam l2vpns list params
 func (o *IpamL2vpnsListParams) WithNameIc(nameIc *string) *IpamL2vpnsListParams {
 	o.SetNameIc(nameIc)
@@ -1029,17 +998,6 @@ func (o *IpamL2vpnsListParams) WithSlug(slug *string) *IpamL2vpnsListParams {
 // SetSlug adds the slug to the ipam l2vpns list params
 func (o *IpamL2vpnsListParams) SetSlug(slug *string) {
 	o.Slug = slug
-}
-
-// WithSlugEmpty adds the slugEmpty to the ipam l2vpns list params
-func (o *IpamL2vpnsListParams) WithSlugEmpty(slugEmpty *string) *IpamL2vpnsListParams {
-	o.SetSlugEmpty(slugEmpty)
-	return o
-}
-
-// SetSlugEmpty adds the slugEmpty to the ipam l2vpns list params
-func (o *IpamL2vpnsListParams) SetSlugEmpty(slugEmpty *string) {
-	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the ipam l2vpns list params
@@ -1395,23 +1353,6 @@ func (o *IpamL2vpnsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -2046,23 +1987,6 @@ func (o *IpamL2vpnsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -2279,23 +2203,6 @@ func (o *IpamL2vpnsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SlugEmpty != nil {
-
-		// query param slug__empty
-		var qrSlugEmpty string
-
-		if o.SlugEmpty != nil {
-			qrSlugEmpty = *o.SlugEmpty
-		}
-		qSlugEmpty := qrSlugEmpty
-		if qSlugEmpty != "" {
-
-			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

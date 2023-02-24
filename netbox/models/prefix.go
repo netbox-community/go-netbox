@@ -44,9 +44,6 @@ type Prefix struct {
 	// Read Only: true
 	Children int64 `json:"children,omitempty"`
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
 	// Format: date-time

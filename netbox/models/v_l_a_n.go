@@ -36,9 +36,6 @@ import (
 // swagger:model VLAN
 type VLAN struct {
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
 	// Format: date-time

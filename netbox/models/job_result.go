@@ -55,13 +55,6 @@ type JobResult struct {
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
-	// Interval
-	//
-	// Recurrence interval (in minutes)
-	// Maximum: 2.147483647e+09
-	// Minimum: 1
-	Interval *int64 `json:"interval,omitempty"`
-
 	// Job id
 	// Required: true
 	// Format: uuid
@@ -76,14 +69,6 @@ type JobResult struct {
 	// Obj type
 	// Read Only: true
 	ObjType string `json:"obj_type,omitempty"`
-
-	// Scheduled
-	// Format: date-time
-	Scheduled *strfmt.DateTime `json:"scheduled,omitempty"`
-
-	// Started
-	// Format: date-time
-	Started *strfmt.DateTime `json:"started,omitempty"`
 
 	// status
 	Status *JobResultStatus `json:"status,omitempty"`
@@ -109,23 +94,11 @@ func (m *JobResult) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateInterval(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateJobID(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateScheduled(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateStarted(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -171,22 +144,6 @@ func (m *JobResult) validateCreated(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *JobResult) validateInterval(formats strfmt.Registry) error {
-	if swag.IsZero(m.Interval) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("interval", "body", *m.Interval, 1, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("interval", "body", *m.Interval, 2.147483647e+09, false); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *JobResult) validateJobID(formats strfmt.Registry) error {
 
 	if err := validate.Required("job_id", "body", m.JobID); err != nil {
@@ -211,30 +168,6 @@ func (m *JobResult) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 255); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *JobResult) validateScheduled(formats strfmt.Registry) error {
-	if swag.IsZero(m.Scheduled) { // not required
-		return nil
-	}
-
-	if err := validate.FormatOf("scheduled", "body", "date-time", m.Scheduled.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *JobResult) validateStarted(formats strfmt.Registry) error {
-	if swag.IsZero(m.Started) { // not required
-		return nil
-	}
-
-	if err := validate.FormatOf("started", "body", "date-time", m.Started.String(), formats); err != nil {
 		return err
 	}
 
@@ -431,12 +364,12 @@ type JobResultStatus struct {
 
 	// label
 	// Required: true
-	// Enum: [Pending Scheduled Running Completed Errored Failed]
+	// Enum: [Pending Running Completed Errored Failed]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [pending scheduled running completed errored failed]
+	// Enum: [pending running completed errored failed]
 	Value *string `json:"value"`
 }
 
@@ -462,7 +395,7 @@ var jobResultStatusTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Pending","Scheduled","Running","Completed","Errored","Failed"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Pending","Running","Completed","Errored","Failed"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -474,9 +407,6 @@ const (
 
 	// JobResultStatusLabelPending captures enum value "Pending"
 	JobResultStatusLabelPending string = "Pending"
-
-	// JobResultStatusLabelScheduled captures enum value "Scheduled"
-	JobResultStatusLabelScheduled string = "Scheduled"
 
 	// JobResultStatusLabelRunning captures enum value "Running"
 	JobResultStatusLabelRunning string = "Running"
@@ -517,7 +447,7 @@ var jobResultStatusTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["pending","scheduled","running","completed","errored","failed"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["pending","running","completed","errored","failed"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -529,9 +459,6 @@ const (
 
 	// JobResultStatusValuePending captures enum value "pending"
 	JobResultStatusValuePending string = "pending"
-
-	// JobResultStatusValueScheduled captures enum value "scheduled"
-	JobResultStatusValueScheduled string = "scheduled"
 
 	// JobResultStatusValueRunning captures enum value "running"
 	JobResultStatusValueRunning string = "running"

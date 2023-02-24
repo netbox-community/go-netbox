@@ -55,9 +55,6 @@ type IPAddress struct {
 	// Assigned object type
 	AssignedObjectType *string `json:"assigned_object_type,omitempty"`
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
 	// Format: date-time

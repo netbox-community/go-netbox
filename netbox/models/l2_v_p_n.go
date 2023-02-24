@@ -37,9 +37,6 @@ import (
 // swagger:model L2VPN
 type L2VPN struct {
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
 	// Format: date-time

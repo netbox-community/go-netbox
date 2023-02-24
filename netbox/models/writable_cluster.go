@@ -47,10 +47,6 @@ type WritableCluster struct {
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
-	// Description
-	// Max Length: 200
-	Description string `json:"description,omitempty"`
-
 	// Device count
 	// Read Only: true
 	DeviceCount int64 `json:"device_count,omitempty"`
@@ -60,7 +56,8 @@ type WritableCluster struct {
 	Display string `json:"display,omitempty"`
 
 	// Group
-	Group *int64 `json:"group,omitempty"`
+	// Required: true
+	Group *int64 `json:"group"`
 
 	// ID
 	// Read Only: true
@@ -78,7 +75,8 @@ type WritableCluster struct {
 	Name *string `json:"name"`
 
 	// Site
-	Site *int64 `json:"site,omitempty"`
+	// Required: true
+	Site *int64 `json:"site"`
 
 	// Status
 	// Enum: [planned staging active decommissioning offline]
@@ -112,7 +110,7 @@ func (m *WritableCluster) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateDescription(formats); err != nil {
+	if err := m.validateGroup(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -121,6 +119,10 @@ func (m *WritableCluster) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSite(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -158,12 +160,9 @@ func (m *WritableCluster) validateCreated(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableCluster) validateDescription(formats strfmt.Registry) error {
-	if swag.IsZero(m.Description) { // not required
-		return nil
-	}
+func (m *WritableCluster) validateGroup(formats strfmt.Registry) error {
 
-	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+	if err := validate.Required("group", "body", m.Group); err != nil {
 		return err
 	}
 
@@ -193,6 +192,15 @@ func (m *WritableCluster) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableCluster) validateSite(formats strfmt.Registry) error {
+
+	if err := validate.Required("site", "body", m.Site); err != nil {
 		return err
 	}
 

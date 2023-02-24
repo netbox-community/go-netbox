@@ -48,9 +48,6 @@ type WritableWirelessLink struct {
 	// Enum: [open wep wpa-personal wpa-enterprise]
 	AuthType string `json:"auth_type,omitempty"`
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
 	// Format: date-time

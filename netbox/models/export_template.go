@@ -39,10 +39,9 @@ type ExportTemplate struct {
 	// Download file as attachment
 	AsAttachment bool `json:"as_attachment,omitempty"`
 
-	// content types
+	// Content type
 	// Required: true
-	// Unique: true
-	ContentTypes []string `json:"content_types"`
+	ContentType *string `json:"content_type"`
 
 	// Created
 	// Read Only: true
@@ -101,7 +100,7 @@ type ExportTemplate struct {
 func (m *ExportTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateContentTypes(formats); err != nil {
+	if err := m.validateContentType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -143,13 +142,9 @@ func (m *ExportTemplate) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ExportTemplate) validateContentTypes(formats strfmt.Registry) error {
+func (m *ExportTemplate) validateContentType(formats strfmt.Registry) error {
 
-	if err := validate.Required("content_types", "body", m.ContentTypes); err != nil {
-		return err
-	}
-
-	if err := validate.UniqueItems("content_types", "body", m.ContentTypes); err != nil {
+	if err := validate.Required("content_type", "body", m.ContentType); err != nil {
 		return err
 	}
 

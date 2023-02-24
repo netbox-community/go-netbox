@@ -52,7 +52,8 @@ type WritablePowerPortTemplate struct {
 	Description string `json:"description,omitempty"`
 
 	// Device type
-	DeviceType *int64 `json:"device_type,omitempty"`
+	// Required: true
+	DeviceType *int64 `json:"device_type"`
 
 	// Display
 	// Read Only: true
@@ -81,7 +82,8 @@ type WritablePowerPortTemplate struct {
 	MaximumDraw *int64 `json:"maximum_draw,omitempty"`
 
 	// Module type
-	ModuleType *int64 `json:"module_type,omitempty"`
+	// Required: true
+	ModuleType *int64 `json:"module_type"`
 
 	// Name
 	//
@@ -119,6 +121,10 @@ func (m *WritablePowerPortTemplate) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateDeviceType(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLabel(formats); err != nil {
 		res = append(res, err)
 	}
@@ -128,6 +134,10 @@ func (m *WritablePowerPortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateMaximumDraw(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateModuleType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -189,6 +199,15 @@ func (m *WritablePowerPortTemplate) validateDescription(formats strfmt.Registry)
 	return nil
 }
 
+func (m *WritablePowerPortTemplate) validateDeviceType(formats strfmt.Registry) error {
+
+	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritablePowerPortTemplate) validateLabel(formats strfmt.Registry) error {
 	if swag.IsZero(m.Label) { // not required
 		return nil
@@ -223,6 +242,15 @@ func (m *WritablePowerPortTemplate) validateMaximumDraw(formats strfmt.Registry)
 	}
 
 	if err := validate.MaximumInt("maximum_draw", "body", *m.MaximumDraw, 32767, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerPortTemplate) validateModuleType(formats strfmt.Registry) error {
+
+	if err := validate.Required("module_type", "body", m.ModuleType); err != nil {
 		return err
 	}
 

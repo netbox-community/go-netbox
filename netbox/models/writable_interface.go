@@ -218,11 +218,6 @@ type WritableInterface struct {
 	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
 
-	// vdcs
-	// Required: true
-	// Unique: true
-	Vdcs []int64 `json:"vdcs"`
-
 	// VRF
 	Vrf *int64 `json:"vrf,omitempty"`
 
@@ -324,10 +319,6 @@ func (m *WritableInterface) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateURL(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateVdcs(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -1733,19 +1724,6 @@ func (m *WritableInterface) validateURL(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableInterface) validateVdcs(formats strfmt.Registry) error {
-
-	if err := validate.Required("vdcs", "body", m.Vdcs); err != nil {
-		return err
-	}
-
-	if err := validate.UniqueItems("vdcs", "body", m.Vdcs); err != nil {
 		return err
 	}
 

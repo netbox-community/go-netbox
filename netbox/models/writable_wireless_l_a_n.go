@@ -48,9 +48,6 @@ type WritableWirelessLAN struct {
 	// Enum: [open wep wpa-personal wpa-enterprise]
 	AuthType string `json:"auth_type,omitempty"`
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
 	// Format: date-time
@@ -84,10 +81,6 @@ type WritableWirelessLAN struct {
 	// Max Length: 32
 	// Min Length: 1
 	Ssid *string `json:"ssid"`
-
-	// Status
-	// Enum: [active reserved disabled deprecated]
-	Status string `json:"status,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
@@ -133,10 +126,6 @@ func (m *WritableWirelessLAN) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSsid(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -306,54 +295,6 @@ func (m *WritableWirelessLAN) validateSsid(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("ssid", "body", *m.Ssid, 32); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var writableWirelessLANTypeStatusPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["active","reserved","disabled","deprecated"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		writableWirelessLANTypeStatusPropEnum = append(writableWirelessLANTypeStatusPropEnum, v)
-	}
-}
-
-const (
-
-	// WritableWirelessLANStatusActive captures enum value "active"
-	WritableWirelessLANStatusActive string = "active"
-
-	// WritableWirelessLANStatusReserved captures enum value "reserved"
-	WritableWirelessLANStatusReserved string = "reserved"
-
-	// WritableWirelessLANStatusDisabled captures enum value "disabled"
-	WritableWirelessLANStatusDisabled string = "disabled"
-
-	// WritableWirelessLANStatusDeprecated captures enum value "deprecated"
-	WritableWirelessLANStatusDeprecated string = "deprecated"
-)
-
-// prop value enum
-func (m *WritableWirelessLAN) validateStatusEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, writableWirelessLANTypeStatusPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *WritableWirelessLAN) validateStatus(formats strfmt.Registry) error {
-	if swag.IsZero(m.Status) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
 	}
 

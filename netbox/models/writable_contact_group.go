@@ -75,7 +75,8 @@ type WritableContactGroup struct {
 	Name *string `json:"name"`
 
 	// Parent
-	Parent *int64 `json:"parent,omitempty"`
+	// Required: true
+	Parent *int64 `json:"parent"`
 
 	// Slug
 	// Required: true
@@ -110,6 +111,10 @@ func (m *WritableContactGroup) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateParent(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -178,6 +183,15 @@ func (m *WritableContactGroup) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableContactGroup) validateParent(formats strfmt.Registry) error {
+
+	if err := validate.Required("parent", "body", m.Parent); err != nil {
 		return err
 	}
 

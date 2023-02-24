@@ -146,9 +146,6 @@ type DcimInventoryItemTemplatesListParams struct {
 	// Label.
 	Label *string
 
-	// LabelEmpty.
-	LabelEmpty *string
-
 	// LabelIc.
 	LabelIc *string
 
@@ -215,9 +212,6 @@ type DcimInventoryItemTemplatesListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -265,9 +259,6 @@ type DcimInventoryItemTemplatesListParams struct {
 
 	// PartID.
 	PartID *string
-
-	// PartIDEmpty.
-	PartIDEmpty *string
 
 	// PartIDIc.
 	PartIDIc *string
@@ -617,17 +608,6 @@ func (o *DcimInventoryItemTemplatesListParams) SetLabel(label *string) {
 	o.Label = label
 }
 
-// WithLabelEmpty adds the labelEmpty to the dcim inventory item templates list params
-func (o *DcimInventoryItemTemplatesListParams) WithLabelEmpty(labelEmpty *string) *DcimInventoryItemTemplatesListParams {
-	o.SetLabelEmpty(labelEmpty)
-	return o
-}
-
-// SetLabelEmpty adds the labelEmpty to the dcim inventory item templates list params
-func (o *DcimInventoryItemTemplatesListParams) SetLabelEmpty(labelEmpty *string) {
-	o.LabelEmpty = labelEmpty
-}
-
 // WithLabelIc adds the labelIc to the dcim inventory item templates list params
 func (o *DcimInventoryItemTemplatesListParams) WithLabelIc(labelIc *string) *DcimInventoryItemTemplatesListParams {
 	o.SetLabelIc(labelIc)
@@ -859,17 +839,6 @@ func (o *DcimInventoryItemTemplatesListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the dcim inventory item templates list params
-func (o *DcimInventoryItemTemplatesListParams) WithNameEmpty(nameEmpty *string) *DcimInventoryItemTemplatesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim inventory item templates list params
-func (o *DcimInventoryItemTemplatesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the dcim inventory item templates list params
 func (o *DcimInventoryItemTemplatesListParams) WithNameIc(nameIc *string) *DcimInventoryItemTemplatesListParams {
 	o.SetNameIc(nameIc)
@@ -1022,17 +991,6 @@ func (o *DcimInventoryItemTemplatesListParams) WithPartID(partID *string) *DcimI
 // SetPartID adds the partId to the dcim inventory item templates list params
 func (o *DcimInventoryItemTemplatesListParams) SetPartID(partID *string) {
 	o.PartID = partID
-}
-
-// WithPartIDEmpty adds the partIDEmpty to the dcim inventory item templates list params
-func (o *DcimInventoryItemTemplatesListParams) WithPartIDEmpty(partIDEmpty *string) *DcimInventoryItemTemplatesListParams {
-	o.SetPartIDEmpty(partIDEmpty)
-	return o
-}
-
-// SetPartIDEmpty adds the partIdEmpty to the dcim inventory item templates list params
-func (o *DcimInventoryItemTemplatesListParams) SetPartIDEmpty(partIDEmpty *string) {
-	o.PartIDEmpty = partIDEmpty
 }
 
 // WithPartIDIc adds the partIDIc to the dcim inventory item templates list params
@@ -1588,23 +1546,6 @@ func (o *DcimInventoryItemTemplatesListParams) WriteToRequest(r runtime.ClientRe
 		}
 	}
 
-	if o.LabelEmpty != nil {
-
-		// query param label__empty
-		var qrLabelEmpty string
-
-		if o.LabelEmpty != nil {
-			qrLabelEmpty = *o.LabelEmpty
-		}
-		qLabelEmpty := qrLabelEmpty
-		if qLabelEmpty != "" {
-
-			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LabelIc != nil {
 
 		// query param label__ic
@@ -1962,23 +1903,6 @@ func (o *DcimInventoryItemTemplatesListParams) WriteToRequest(r runtime.ClientRe
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -2212,23 +2136,6 @@ func (o *DcimInventoryItemTemplatesListParams) WriteToRequest(r runtime.ClientRe
 		if qPartID != "" {
 
 			if err := r.SetQueryParam("part_id", qPartID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.PartIDEmpty != nil {
-
-		// query param part_id__empty
-		var qrPartIDEmpty string
-
-		if o.PartIDEmpty != nil {
-			qrPartIDEmpty = *o.PartIDEmpty
-		}
-		qPartIDEmpty := qrPartIDEmpty
-		if qPartIDEmpty != "" {
-
-			if err := r.SetQueryParam("part_id__empty", qPartIDEmpty); err != nil {
 				return err
 			}
 		}

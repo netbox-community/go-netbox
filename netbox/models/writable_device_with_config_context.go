@@ -77,8 +77,9 @@ type WritableDeviceWithConfigContext struct {
 	Display string `json:"display,omitempty"`
 
 	// Rack face
+	// Required: true
 	// Enum: [front rear]
-	Face string `json:"face,omitempty"`
+	Face *string `json:"face"`
 
 	// ID
 	// Read Only: true
@@ -96,8 +97,9 @@ type WritableDeviceWithConfigContext struct {
 	Location *int64 `json:"location,omitempty"`
 
 	// Name
+	// Required: true
 	// Max Length: 64
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name"`
 
 	// parent device
 	ParentDevice *NestedDevice `json:"parent_device,omitempty"`
@@ -120,7 +122,8 @@ type WritableDeviceWithConfigContext struct {
 	PrimaryIp6 *int64 `json:"primary_ip6,omitempty"`
 
 	// Rack
-	Rack *int64 `json:"rack,omitempty"`
+	// Required: true
+	Rack *int64 `json:"rack"`
 
 	// Serial number
 	// Max Length: 50
@@ -138,7 +141,8 @@ type WritableDeviceWithConfigContext struct {
 	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Tenant
-	Tenant *int64 `json:"tenant,omitempty"`
+	// Required: true
+	Tenant *int64 `json:"tenant"`
 
 	// Url
 	// Read Only: true
@@ -156,7 +160,8 @@ type WritableDeviceWithConfigContext struct {
 	VcPriority *int64 `json:"vc_priority,omitempty"`
 
 	// Virtual chassis
-	VirtualChassis *int64 `json:"virtual_chassis,omitempty"`
+	// Required: true
+	VirtualChassis *int64 `json:"virtual_chassis"`
 }
 
 // Validate validates this writable device with config context
@@ -203,6 +208,10 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 		res = append(res, err)
 	}
 
+	if err := m.validateRack(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSerial(formats); err != nil {
 		res = append(res, err)
 	}
@@ -219,6 +228,10 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 		res = append(res, err)
 	}
 
+	if err := m.validateTenant(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
@@ -228,6 +241,10 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 	}
 
 	if err := m.validateVcPriority(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateVirtualChassis(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -366,12 +383,13 @@ func (m *WritableDeviceWithConfigContext) validateFaceEnum(path, location string
 }
 
 func (m *WritableDeviceWithConfigContext) validateFace(formats strfmt.Registry) error {
-	if swag.IsZero(m.Face) { // not required
-		return nil
+
+	if err := validate.Required("face", "body", m.Face); err != nil {
+		return err
 	}
 
 	// value enum
-	if err := m.validateFaceEnum("face", "body", m.Face); err != nil {
+	if err := m.validateFaceEnum("face", "body", *m.Face); err != nil {
 		return err
 	}
 
@@ -391,8 +409,9 @@ func (m *WritableDeviceWithConfigContext) validateLastUpdated(formats strfmt.Reg
 }
 
 func (m *WritableDeviceWithConfigContext) validateName(formats strfmt.Registry) error {
-	if swag.IsZero(m.Name) { // not required
-		return nil
+
+	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
@@ -427,6 +446,15 @@ func (m *WritableDeviceWithConfigContext) validatePosition(formats strfmt.Regist
 	}
 
 	if err := validate.Minimum("position", "body", *m.Position, 0.5, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) validateRack(formats strfmt.Registry) error {
+
+	if err := validate.Required("rack", "body", m.Rack); err != nil {
 		return err
 	}
 
@@ -537,6 +565,15 @@ func (m *WritableDeviceWithConfigContext) validateTags(formats strfmt.Registry) 
 	return nil
 }
 
+func (m *WritableDeviceWithConfigContext) validateTenant(formats strfmt.Registry) error {
+
+	if err := validate.Required("tenant", "body", m.Tenant); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableDeviceWithConfigContext) validateURL(formats strfmt.Registry) error {
 	if swag.IsZero(m.URL) { // not required
 		return nil
@@ -575,6 +612,15 @@ func (m *WritableDeviceWithConfigContext) validateVcPriority(formats strfmt.Regi
 	}
 
 	if err := validate.MaximumInt("vc_priority", "body", *m.VcPriority, 255, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) validateVirtualChassis(formats strfmt.Registry) error {
+
+	if err := validate.Required("virtual_chassis", "body", m.VirtualChassis); err != nil {
 		return err
 	}
 

@@ -86,9 +86,6 @@ type DcimDevicesListParams struct {
 	// AssetTag.
 	AssetTag *string
 
-	// AssetTagEmpty.
-	AssetTagEmpty *string
-
 	// AssetTagIc.
 	AssetTagIc *string
 
@@ -299,9 +296,6 @@ type DcimDevicesListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -421,9 +415,6 @@ type DcimDevicesListParams struct {
 
 	// Serial.
 	Serial *string
-
-	// SerialEmpty.
-	SerialEmpty *string
 
 	// SerialIc.
 	SerialIc *string
@@ -641,17 +632,6 @@ func (o *DcimDevicesListParams) WithAssetTag(assetTag *string) *DcimDevicesListP
 // SetAssetTag adds the assetTag to the dcim devices list params
 func (o *DcimDevicesListParams) SetAssetTag(assetTag *string) {
 	o.AssetTag = assetTag
-}
-
-// WithAssetTagEmpty adds the assetTagEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) WithAssetTagEmpty(assetTagEmpty *string) *DcimDevicesListParams {
-	o.SetAssetTagEmpty(assetTagEmpty)
-	return o
-}
-
-// SetAssetTagEmpty adds the assetTagEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) SetAssetTagEmpty(assetTagEmpty *string) {
-	o.AssetTagEmpty = assetTagEmpty
 }
 
 // WithAssetTagIc adds the assetTagIc to the dcim devices list params
@@ -1413,17 +1393,6 @@ func (o *DcimDevicesListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) WithNameEmpty(nameEmpty *string) *DcimDevicesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the dcim devices list params
 func (o *DcimDevicesListParams) WithNameIc(nameIc *string) *DcimDevicesListParams {
 	o.SetNameIc(nameIc)
@@ -1840,17 +1809,6 @@ func (o *DcimDevicesListParams) WithSerial(serial *string) *DcimDevicesListParam
 // SetSerial adds the serial to the dcim devices list params
 func (o *DcimDevicesListParams) SetSerial(serial *string) {
 	o.Serial = serial
-}
-
-// WithSerialEmpty adds the serialEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) WithSerialEmpty(serialEmpty *string) *DcimDevicesListParams {
-	o.SetSerialEmpty(serialEmpty)
-	return o
-}
-
-// SetSerialEmpty adds the serialEmpty to the dcim devices list params
-func (o *DcimDevicesListParams) SetSerialEmpty(serialEmpty *string) {
-	o.SerialEmpty = serialEmpty
 }
 
 // WithSerialIc adds the serialIc to the dcim devices list params
@@ -2391,23 +2349,6 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qAssetTag != "" {
 
 			if err := r.SetQueryParam("asset_tag", qAssetTag); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.AssetTagEmpty != nil {
-
-		// query param asset_tag__empty
-		var qrAssetTagEmpty string
-
-		if o.AssetTagEmpty != nil {
-			qrAssetTagEmpty = *o.AssetTagEmpty
-		}
-		qAssetTagEmpty := qrAssetTagEmpty
-		if qAssetTagEmpty != "" {
-
-			if err := r.SetQueryParam("asset_tag__empty", qAssetTagEmpty); err != nil {
 				return err
 			}
 		}
@@ -3586,23 +3527,6 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -4244,23 +4168,6 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qSerial != "" {
 
 			if err := r.SetQueryParam("serial", qSerial); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialEmpty != nil {
-
-		// query param serial__empty
-		var qrSerialEmpty string
-
-		if o.SerialEmpty != nil {
-			qrSerialEmpty = *o.SerialEmpty
-		}
-		qSerialEmpty := qrSerialEmpty
-		if qSerialEmpty != "" {
-
-			if err := r.SetQueryParam("serial__empty", qSerialEmpty); err != nil {
 				return err
 			}
 		}

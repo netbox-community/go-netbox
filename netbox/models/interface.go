@@ -210,10 +210,6 @@ type Interface struct {
 	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
 
-	// vdcs
-	// Unique: true
-	Vdcs []*NestedVirtualDeviceContext `json:"vdcs"`
-
 	// vrf
 	Vrf *NestedVRF `json:"vrf,omitempty"`
 
@@ -339,10 +335,6 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateURL(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateVdcs(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -844,36 +836,6 @@ func (m *Interface) validateURL(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Interface) validateVdcs(formats strfmt.Registry) error {
-	if swag.IsZero(m.Vdcs) { // not required
-		return nil
-	}
-
-	if err := validate.UniqueItems("vdcs", "body", m.Vdcs); err != nil {
-		return err
-	}
-
-	for i := 0; i < len(m.Vdcs); i++ {
-		if swag.IsZero(m.Vdcs[i]) { // not required
-			continue
-		}
-
-		if m.Vdcs[i] != nil {
-			if err := m.Vdcs[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("vdcs" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("vdcs" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
-	return nil
-}
-
 func (m *Interface) validateVrf(formats strfmt.Registry) error {
 	if swag.IsZero(m.Vrf) { // not required
 		return nil
@@ -1067,10 +1029,6 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 	}
 
 	if err := m.contextValidateURL(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateVdcs(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -1493,26 +1451,6 @@ func (m *Interface) contextValidateURL(ctx context.Context, formats strfmt.Regis
 
 	if err := validate.ReadOnly(ctx, "url", "body", strfmt.URI(m.URL)); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *Interface) contextValidateVdcs(ctx context.Context, formats strfmt.Registry) error {
-
-	for i := 0; i < len(m.Vdcs); i++ {
-
-		if m.Vdcs[i] != nil {
-			if err := m.Vdcs[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("vdcs" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("vdcs" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
 	}
 
 	return nil

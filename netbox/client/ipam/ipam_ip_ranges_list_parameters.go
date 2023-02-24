@@ -101,9 +101,6 @@ type IpamIPRangesListParams struct {
 	// Description.
 	Description *string
 
-	// DescriptionEmpty.
-	DescriptionEmpty *string
-
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -390,17 +387,6 @@ func (o *IpamIPRangesListParams) WithDescription(description *string) *IpamIPRan
 // SetDescription adds the description to the ipam ip ranges list params
 func (o *IpamIPRangesListParams) SetDescription(description *string) {
 	o.Description = description
-}
-
-// WithDescriptionEmpty adds the descriptionEmpty to the ipam ip ranges list params
-func (o *IpamIPRangesListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamIPRangesListParams {
-	o.SetDescriptionEmpty(descriptionEmpty)
-	return o
-}
-
-// SetDescriptionEmpty adds the descriptionEmpty to the ipam ip ranges list params
-func (o *IpamIPRangesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
-	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the ipam ip ranges list params
@@ -1048,23 +1034,6 @@ func (o *IpamIPRangesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DescriptionEmpty != nil {
-
-		// query param description__empty
-		var qrDescriptionEmpty string
-
-		if o.DescriptionEmpty != nil {
-			qrDescriptionEmpty = *o.DescriptionEmpty
-		}
-		qDescriptionEmpty := qrDescriptionEmpty
-		if qDescriptionEmpty != "" {
-
-			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}

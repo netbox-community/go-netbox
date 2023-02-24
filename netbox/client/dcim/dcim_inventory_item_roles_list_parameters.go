@@ -80,9 +80,6 @@ type DcimInventoryItemRolesListParams struct {
 	// Color.
 	Color *string
 
-	// ColorEmpty.
-	ColorEmpty *string
-
 	// ColorIc.
 	ColorIc *string
 
@@ -173,9 +170,6 @@ type DcimInventoryItemRolesListParams struct {
 	// Name.
 	Name *string
 
-	// NameEmpty.
-	NameEmpty *string
-
 	// NameIc.
 	NameIc *string
 
@@ -220,9 +214,6 @@ type DcimInventoryItemRolesListParams struct {
 
 	// Slug.
 	Slug *string
-
-	// SlugEmpty.
-	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -319,17 +310,6 @@ func (o *DcimInventoryItemRolesListParams) WithColor(color *string) *DcimInvento
 // SetColor adds the color to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) SetColor(color *string) {
 	o.Color = color
-}
-
-// WithColorEmpty adds the colorEmpty to the dcim inventory item roles list params
-func (o *DcimInventoryItemRolesListParams) WithColorEmpty(colorEmpty *string) *DcimInventoryItemRolesListParams {
-	o.SetColorEmpty(colorEmpty)
-	return o
-}
-
-// SetColorEmpty adds the colorEmpty to the dcim inventory item roles list params
-func (o *DcimInventoryItemRolesListParams) SetColorEmpty(colorEmpty *string) {
-	o.ColorEmpty = colorEmpty
 }
 
 // WithColorIc adds the colorIc to the dcim inventory item roles list params
@@ -651,17 +631,6 @@ func (o *DcimInventoryItemRolesListParams) SetName(name *string) {
 	o.Name = name
 }
 
-// WithNameEmpty adds the nameEmpty to the dcim inventory item roles list params
-func (o *DcimInventoryItemRolesListParams) WithNameEmpty(nameEmpty *string) *DcimInventoryItemRolesListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the dcim inventory item roles list params
-func (o *DcimInventoryItemRolesListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
 // WithNameIc adds the nameIc to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) WithNameIc(nameIc *string) *DcimInventoryItemRolesListParams {
 	o.SetNameIc(nameIc)
@@ -805,17 +774,6 @@ func (o *DcimInventoryItemRolesListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
-// WithSlugEmpty adds the slugEmpty to the dcim inventory item roles list params
-func (o *DcimInventoryItemRolesListParams) WithSlugEmpty(slugEmpty *string) *DcimInventoryItemRolesListParams {
-	o.SetSlugEmpty(slugEmpty)
-	return o
-}
-
-// SetSlugEmpty adds the slugEmpty to the dcim inventory item roles list params
-func (o *DcimInventoryItemRolesListParams) SetSlugEmpty(slugEmpty *string) {
-	o.SlugEmpty = slugEmpty
-}
-
 // WithSlugIc adds the slugIc to the dcim inventory item roles list params
 func (o *DcimInventoryItemRolesListParams) WithSlugIc(slugIc *string) *DcimInventoryItemRolesListParams {
 	o.SetSlugIc(slugIc)
@@ -957,23 +915,6 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		if qColor != "" {
 
 			if err := r.SetQueryParam("color", qColor); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ColorEmpty != nil {
-
-		// query param color__empty
-		var qrColorEmpty string
-
-		if o.ColorEmpty != nil {
-			qrColorEmpty = *o.ColorEmpty
-		}
-		qColorEmpty := qrColorEmpty
-		if qColorEmpty != "" {
-
-			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
 				return err
 			}
 		}
@@ -1472,23 +1413,6 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		}
 	}
 
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1705,23 +1629,6 @@ func (o *DcimInventoryItemRolesListParams) WriteToRequest(r runtime.ClientReques
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SlugEmpty != nil {
-
-		// query param slug__empty
-		var qrSlugEmpty string
-
-		if o.SlugEmpty != nil {
-			qrSlugEmpty = *o.SlugEmpty
-		}
-		qSlugEmpty := qrSlugEmpty
-		if qSlugEmpty != "" {
-
-			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}
