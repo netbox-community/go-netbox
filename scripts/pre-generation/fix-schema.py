@@ -44,7 +44,7 @@ def cli_arguments():
     :return: argparse.parser object
     """
     parser = argparse.ArgumentParser(
-        description=('Modifications on swagger.json.'))
+        description=('Modifications on openapi.json.'))
     parser.add_argument('-v',
                         '--verbose',
                         action='count',
@@ -52,11 +52,11 @@ def cli_arguments():
                         help='Increase output verbosity.')
     parser.add_argument('-o',
                         '--output',
-                        default='swagger_transformed.json',
+                        default='api/openapi.json',
                         help='Output file')
     parser.add_argument('input',
                         nargs='?',
-                        default='swagger.json',
+                        default='api/openapi.json',
                         help='Original input json file')
 
     return parser.parse_args()
@@ -124,17 +124,6 @@ def complete_data(input_file, log):
                             def_properties[def_property].update(
                                 modify_properties[prop])
 
-            for p in def_properties:
-                # The maximum value (9223372036854775807) set here lead to an error
-                # cannot use 9.223372036854776e+18 (untyped float constant 9.22337e+18) as int64 value in argument to validate.MaximumInt (truncated) # noqa E501
-                # There's issue opened on this https://github.com/go-swagger/go-swagger/issues/2755 # noqa E501
-                if def_properties[p].get('maximum', 0) == 9223372036854775807:
-                    log.info('Changing maximum value for {}'.format(p))
-                    def_properties[p]['maximum'] = 2147483647
-                # The minimum value also has same issue.
-                if def_properties[p].get('minimum', 0) == -9223372036854775808:
-                    log.info('Changing minimum value for {}'.format(p))
-                    def_properties[p]['minimum'] = -2147483648
     return (data)
 
 
@@ -160,7 +149,7 @@ def write_results(data, output_file, log):
 def main():
     args = cli_arguments()
     # Get logger
-    log = init_logger('swagger', args.verbose, logfile='/tmp/swagger.log')
+    log = init_logger('openapi', args.verbose, logfile='/tmp/openapi.log')
 
     modified_data = complete_data(args.input, log)
     write_results(modified_data, args.output, log)

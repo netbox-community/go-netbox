@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      target: development
+      args:
+        USER_ID: ${USER_ID:-1000}
+    volumes:
+      - .:/go/src/app
+      - cache:/go/pkg
+    env_file: .env
+    hostname: app
+    tty: true
+
+volumes:
+  cache:

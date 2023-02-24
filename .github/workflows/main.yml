@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: License check
-        run: ./scripts/licensecheck.sh
+        run: ./scripts/license-check.sh
 
       - name: Go installation
         uses: actions/setup-go@v2
