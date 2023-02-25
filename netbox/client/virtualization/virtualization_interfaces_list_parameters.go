@@ -167,6 +167,18 @@ type VirtualizationInterfacesListParams struct {
 	// IDn.
 	IDn *string
 
+	// L2vpn.
+	L2vpn *string
+
+	// L2vpnn.
+	L2vpnn *string
+
+	// L2vpnID.
+	L2vpnID *string
+
+	// L2vpnIDn.
+	L2vpnIDn *string
+
 	// LastUpdated.
 	LastUpdated *string
 
@@ -704,6 +716,50 @@ func (o *VirtualizationInterfacesListParams) WithIDn(iDn *string) *Virtualizatio
 // SetIDn adds the idN to the virtualization interfaces list params
 func (o *VirtualizationInterfacesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
+}
+
+// WithL2vpn adds the l2vpn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithL2vpn(l2vpn *string) *VirtualizationInterfacesListParams {
+	o.SetL2vpn(l2vpn)
+	return o
+}
+
+// SetL2vpn adds the l2vpn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetL2vpn(l2vpn *string) {
+	o.L2vpn = l2vpn
+}
+
+// WithL2vpnn adds the l2vpnn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithL2vpnn(l2vpnn *string) *VirtualizationInterfacesListParams {
+	o.SetL2vpnn(l2vpnn)
+	return o
+}
+
+// SetL2vpnn adds the l2vpnN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetL2vpnn(l2vpnn *string) {
+	o.L2vpnn = l2vpnn
+}
+
+// WithL2vpnID adds the l2vpnID to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithL2vpnID(l2vpnID *string) *VirtualizationInterfacesListParams {
+	o.SetL2vpnID(l2vpnID)
+	return o
+}
+
+// SetL2vpnID adds the l2vpnId to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetL2vpnID(l2vpnID *string) {
+	o.L2vpnID = l2vpnID
+}
+
+// WithL2vpnIDn adds the l2vpnIDn to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) WithL2vpnIDn(l2vpnIDn *string) *VirtualizationInterfacesListParams {
+	o.SetL2vpnIDn(l2vpnIDn)
+	return o
+}
+
+// SetL2vpnIDn adds the l2vpnIdN to the virtualization interfaces list params
+func (o *VirtualizationInterfacesListParams) SetL2vpnIDn(l2vpnIDn *string) {
+	o.L2vpnIDn = l2vpnIDn
 }
 
 // WithLastUpdated adds the lastUpdated to the virtualization interfaces list params
@@ -1758,6 +1814,74 @@ func (o *VirtualizationInterfacesListParams) WriteToRequest(r runtime.ClientRequ
 		if qIDn != "" {
 
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpn != nil {
+
+		// query param l2vpn
+		var qrL2vpn string
+
+		if o.L2vpn != nil {
+			qrL2vpn = *o.L2vpn
+		}
+		qL2vpn := qrL2vpn
+		if qL2vpn != "" {
+
+			if err := r.SetQueryParam("l2vpn", qL2vpn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpnn != nil {
+
+		// query param l2vpn__n
+		var qrL2vpnn string
+
+		if o.L2vpnn != nil {
+			qrL2vpnn = *o.L2vpnn
+		}
+		qL2vpnn := qrL2vpnn
+		if qL2vpnn != "" {
+
+			if err := r.SetQueryParam("l2vpn__n", qL2vpnn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpnID != nil {
+
+		// query param l2vpn_id
+		var qrL2vpnID string
+
+		if o.L2vpnID != nil {
+			qrL2vpnID = *o.L2vpnID
+		}
+		qL2vpnID := qrL2vpnID
+		if qL2vpnID != "" {
+
+			if err := r.SetQueryParam("l2vpn_id", qL2vpnID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpnIDn != nil {
+
+		// query param l2vpn_id__n
+		var qrL2vpnIDn string
+
+		if o.L2vpnIDn != nil {
+			qrL2vpnIDn = *o.L2vpnIDn
+		}
+		qL2vpnIDn := qrL2vpnIDn
+		if qL2vpnIDn != "" {
+
+			if err := r.SetQueryParam("l2vpn_id__n", qL2vpnIDn); err != nil {
 				return err
 			}
 		}

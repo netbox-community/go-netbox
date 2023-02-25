@@ -182,6 +182,18 @@ type DcimInterfacesListParams struct {
 	// Kind.
 	Kind *string
 
+	// L2vpn.
+	L2vpn *string
+
+	// L2vpnn.
+	L2vpnn *string
+
+	// L2vpnID.
+	L2vpnID *string
+
+	// L2vpnIDn.
+	L2vpnIDn *string
+
 	// Label.
 	Label *string
 
@@ -1047,6 +1059,50 @@ func (o *DcimInterfacesListParams) WithKind(kind *string) *DcimInterfacesListPar
 // SetKind adds the kind to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetKind(kind *string) {
 	o.Kind = kind
+}
+
+// WithL2vpn adds the l2vpn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithL2vpn(l2vpn *string) *DcimInterfacesListParams {
+	o.SetL2vpn(l2vpn)
+	return o
+}
+
+// SetL2vpn adds the l2vpn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetL2vpn(l2vpn *string) {
+	o.L2vpn = l2vpn
+}
+
+// WithL2vpnn adds the l2vpnn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithL2vpnn(l2vpnn *string) *DcimInterfacesListParams {
+	o.SetL2vpnn(l2vpnn)
+	return o
+}
+
+// SetL2vpnn adds the l2vpnN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetL2vpnn(l2vpnn *string) {
+	o.L2vpnn = l2vpnn
+}
+
+// WithL2vpnID adds the l2vpnID to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithL2vpnID(l2vpnID *string) *DcimInterfacesListParams {
+	o.SetL2vpnID(l2vpnID)
+	return o
+}
+
+// SetL2vpnID adds the l2vpnId to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetL2vpnID(l2vpnID *string) {
+	o.L2vpnID = l2vpnID
+}
+
+// WithL2vpnIDn adds the l2vpnIDn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithL2vpnIDn(l2vpnIDn *string) *DcimInterfacesListParams {
+	o.SetL2vpnIDn(l2vpnIDn)
+	return o
+}
+
+// SetL2vpnIDn adds the l2vpnIdN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetL2vpnIDn(l2vpnIDn *string) {
+	o.L2vpnIDn = l2vpnIDn
 }
 
 // WithLabel adds the label to the dcim interfaces list params
@@ -3187,6 +3243,74 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qKind != "" {
 
 			if err := r.SetQueryParam("kind", qKind); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpn != nil {
+
+		// query param l2vpn
+		var qrL2vpn string
+
+		if o.L2vpn != nil {
+			qrL2vpn = *o.L2vpn
+		}
+		qL2vpn := qrL2vpn
+		if qL2vpn != "" {
+
+			if err := r.SetQueryParam("l2vpn", qL2vpn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpnn != nil {
+
+		// query param l2vpn__n
+		var qrL2vpnn string
+
+		if o.L2vpnn != nil {
+			qrL2vpnn = *o.L2vpnn
+		}
+		qL2vpnn := qrL2vpnn
+		if qL2vpnn != "" {
+
+			if err := r.SetQueryParam("l2vpn__n", qL2vpnn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpnID != nil {
+
+		// query param l2vpn_id
+		var qrL2vpnID string
+
+		if o.L2vpnID != nil {
+			qrL2vpnID = *o.L2vpnID
+		}
+		qL2vpnID := qrL2vpnID
+		if qL2vpnID != "" {
+
+			if err := r.SetQueryParam("l2vpn_id", qL2vpnID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpnIDn != nil {
+
+		// query param l2vpn_id__n
+		var qrL2vpnIDn string
+
+		if o.L2vpnIDn != nil {
+			qrL2vpnIDn = *o.L2vpnIDn
+		}
+		qL2vpnIDn := qrL2vpnIDn
+		if qL2vpnIDn != "" {
+
+			if err := r.SetQueryParam("l2vpn_id__n", qL2vpnIDn); err != nil {
 				return err
 			}
 		}

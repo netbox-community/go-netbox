@@ -158,6 +158,18 @@ type IpamServicesListParams struct {
 	// IDn.
 	IDn *string
 
+	// Ipaddress.
+	Ipaddress *string
+
+	// Ipaddressn.
+	Ipaddressn *string
+
+	// IpaddressID.
+	IpaddressID *string
+
+	// IpaddressIDn.
+	IpaddressIDn *string
+
 	// LastUpdated.
 	LastUpdated *string
 
@@ -605,6 +617,50 @@ func (o *IpamServicesListParams) WithIDn(iDn *string) *IpamServicesListParams {
 // SetIDn adds the idN to the ipam services list params
 func (o *IpamServicesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
+}
+
+// WithIpaddress adds the ipaddress to the ipam services list params
+func (o *IpamServicesListParams) WithIpaddress(ipaddress *string) *IpamServicesListParams {
+	o.SetIpaddress(ipaddress)
+	return o
+}
+
+// SetIpaddress adds the ipaddress to the ipam services list params
+func (o *IpamServicesListParams) SetIpaddress(ipaddress *string) {
+	o.Ipaddress = ipaddress
+}
+
+// WithIpaddressn adds the ipaddressn to the ipam services list params
+func (o *IpamServicesListParams) WithIpaddressn(ipaddressn *string) *IpamServicesListParams {
+	o.SetIpaddressn(ipaddressn)
+	return o
+}
+
+// SetIpaddressn adds the ipaddressN to the ipam services list params
+func (o *IpamServicesListParams) SetIpaddressn(ipaddressn *string) {
+	o.Ipaddressn = ipaddressn
+}
+
+// WithIpaddressID adds the ipaddressID to the ipam services list params
+func (o *IpamServicesListParams) WithIpaddressID(ipaddressID *string) *IpamServicesListParams {
+	o.SetIpaddressID(ipaddressID)
+	return o
+}
+
+// SetIpaddressID adds the ipaddressId to the ipam services list params
+func (o *IpamServicesListParams) SetIpaddressID(ipaddressID *string) {
+	o.IpaddressID = ipaddressID
+}
+
+// WithIpaddressIDn adds the ipaddressIDn to the ipam services list params
+func (o *IpamServicesListParams) WithIpaddressIDn(ipaddressIDn *string) *IpamServicesListParams {
+	o.SetIpaddressIDn(ipaddressIDn)
+	return o
+}
+
+// SetIpaddressIDn adds the ipaddressIdN to the ipam services list params
+func (o *IpamServicesListParams) SetIpaddressIDn(ipaddressIDn *string) {
+	o.IpaddressIDn = ipaddressIDn
 }
 
 // WithLastUpdated adds the lastUpdated to the ipam services list params
@@ -1399,6 +1455,74 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qIDn != "" {
 
 			if err := r.SetQueryParam("id__n", qIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ipaddress != nil {
+
+		// query param ipaddress
+		var qrIpaddress string
+
+		if o.Ipaddress != nil {
+			qrIpaddress = *o.Ipaddress
+		}
+		qIpaddress := qrIpaddress
+		if qIpaddress != "" {
+
+			if err := r.SetQueryParam("ipaddress", qIpaddress); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ipaddressn != nil {
+
+		// query param ipaddress__n
+		var qrIpaddressn string
+
+		if o.Ipaddressn != nil {
+			qrIpaddressn = *o.Ipaddressn
+		}
+		qIpaddressn := qrIpaddressn
+		if qIpaddressn != "" {
+
+			if err := r.SetQueryParam("ipaddress__n", qIpaddressn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IpaddressID != nil {
+
+		// query param ipaddress_id
+		var qrIpaddressID string
+
+		if o.IpaddressID != nil {
+			qrIpaddressID = *o.IpaddressID
+		}
+		qIpaddressID := qrIpaddressID
+		if qIpaddressID != "" {
+
+			if err := r.SetQueryParam("ipaddress_id", qIpaddressID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IpaddressIDn != nil {
+
+		// query param ipaddress_id__n
+		var qrIpaddressIDn string
+
+		if o.IpaddressIDn != nil {
+			qrIpaddressIDn = *o.IpaddressIDn
+		}
+		qIpaddressIDn := qrIpaddressIDn
+		if qIpaddressIDn != "" {
+
+			if err := r.SetQueryParam("ipaddress_id__n", qIpaddressIDn); err != nil {
 				return err
 			}
 		}

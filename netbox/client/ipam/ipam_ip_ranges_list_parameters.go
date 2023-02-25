@@ -131,6 +131,9 @@ type IpamIPRangesListParams struct {
 	// DescriptionNisw.
 	DescriptionNisw *string
 
+	// EndAddress.
+	EndAddress *string
+
 	// Family.
 	Family *float64
 
@@ -202,6 +205,9 @@ type IpamIPRangesListParams struct {
 
 	// RoleIDn.
 	RoleIDn *string
+
+	// StartAddress.
+	StartAddress *string
 
 	// Status.
 	Status *string
@@ -502,6 +508,17 @@ func (o *IpamIPRangesListParams) SetDescriptionNisw(descriptionNisw *string) {
 	o.DescriptionNisw = descriptionNisw
 }
 
+// WithEndAddress adds the endAddress to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) WithEndAddress(endAddress *string) *IpamIPRangesListParams {
+	o.SetEndAddress(endAddress)
+	return o
+}
+
+// SetEndAddress adds the endAddress to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) SetEndAddress(endAddress *string) {
+	o.EndAddress = endAddress
+}
+
 // WithFamily adds the family to the ipam ip ranges list params
 func (o *IpamIPRangesListParams) WithFamily(family *float64) *IpamIPRangesListParams {
 	o.SetFamily(family)
@@ -731,6 +748,17 @@ func (o *IpamIPRangesListParams) WithRoleIDn(roleIDn *string) *IpamIPRangesListP
 // SetRoleIDn adds the roleIdN to the ipam ip ranges list params
 func (o *IpamIPRangesListParams) SetRoleIDn(roleIDn *string) {
 	o.RoleIDn = roleIDn
+}
+
+// WithStartAddress adds the startAddress to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) WithStartAddress(startAddress *string) *IpamIPRangesListParams {
+	o.SetStartAddress(startAddress)
+	return o
+}
+
+// SetStartAddress adds the startAddress to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) SetStartAddress(startAddress *string) {
+	o.StartAddress = startAddress
 }
 
 // WithStatus adds the status to the ipam ip ranges list params
@@ -1223,6 +1251,23 @@ func (o *IpamIPRangesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.EndAddress != nil {
+
+		// query param end_address
+		var qrEndAddress string
+
+		if o.EndAddress != nil {
+			qrEndAddress = *o.EndAddress
+		}
+		qEndAddress := qrEndAddress
+		if qEndAddress != "" {
+
+			if err := r.SetQueryParam("end_address", qEndAddress); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Family != nil {
 
 		// query param family
@@ -1575,6 +1620,23 @@ func (o *IpamIPRangesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qRoleIDn != "" {
 
 			if err := r.SetQueryParam("role_id__n", qRoleIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.StartAddress != nil {
+
+		// query param start_address
+		var qrStartAddress string
+
+		if o.StartAddress != nil {
+			qrStartAddress = *o.StartAddress
+		}
+		qStartAddress := qrStartAddress
+		if qStartAddress != "" {
+
+			if err := r.SetQueryParam("start_address", qStartAddress); err != nil {
 				return err
 			}
 		}

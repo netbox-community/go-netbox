@@ -9,7 +9,7 @@
         },
         "version": "3.4"
     },
-    "host": "127.0.0.1:8000",
+    "host": "localhost:8000",
     "schemes": [
         "http"
     ],
@@ -11969,6 +11969,20 @@
                         "type": "string"
                     },
                     {
+                        "name": "primary_ip4_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "primary_ip6_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "id__n",
                         "in": "query",
                         "description": "",
@@ -12663,6 +12677,20 @@
                     },
                     {
                         "name": "virtual_chassis_id__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "primary_ip4_id__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "primary_ip6_id__n",
                         "in": "query",
                         "description": "",
                         "required": false,
@@ -15673,6 +15701,20 @@
                         "type": "string"
                     },
                     {
+                        "name": "l2vpn_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "l2vpn",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "id__n",
                         "in": "query",
                         "description": "",
@@ -16493,6 +16535,20 @@
                     },
                     {
                         "name": "vdc__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "l2vpn_id__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "l2vpn__n",
                         "in": "query",
                         "description": "",
                         "required": false,
@@ -49561,6 +49617,20 @@
                         "type": "number"
                     },
                     {
+                        "name": "start_address",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "end_address",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "contains",
                         "in": "query",
                         "description": "",
@@ -55642,6 +55712,20 @@
                         "type": "string"
                     },
                     {
+                        "name": "ipaddress_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ipaddress",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "port",
                         "in": "query",
                         "description": "",
@@ -55930,6 +56014,20 @@
                     },
                     {
                         "name": "virtual_machine__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ipaddress_id__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ipaddress__n",
                         "in": "query",
                         "description": "",
                         "required": false,
@@ -57364,6 +57462,20 @@
                         "type": "string"
                     },
                     {
+                        "name": "l2vpn_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "l2vpn",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "id__n",
                         "in": "query",
                         "description": "",
@@ -57750,6 +57862,20 @@
                     },
                     {
                         "name": "status__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "l2vpn_id__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "l2vpn__n",
                         "in": "query",
                         "description": "",
                         "required": false,
@@ -67939,6 +68065,20 @@
                         "type": "string"
                     },
                     {
+                        "name": "l2vpn_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "l2vpn",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "id__n",
                         "in": "query",
                         "description": "",
@@ -68339,6 +68479,20 @@
                     },
                     {
                         "name": "vrf__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "l2vpn_id__n",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "l2vpn__n",
                         "in": "query",
                         "description": "",
                         "required": false,
@@ -72848,6 +73002,11 @@
                     "title": "Cross-connect ID",
                     "type": "string",
                     "maxLength": 50
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
                 }
             }
         },
@@ -76681,6 +76840,11 @@
                     "minimum": 0,
                     "x-nullable": true
                 },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
+                },
                 "comments": {
                     "title": "Comments",
                     "type": "string"
@@ -76879,6 +77043,11 @@
                     "maximum": 255,
                     "minimum": 0,
                     "x-nullable": true
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
                 },
                 "comments": {
                     "title": "Comments",
@@ -77316,6 +77485,11 @@
                     "description": "Physical label",
                     "type": "string",
                     "maxLength": 64
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
                 }
             }
         },
@@ -77782,7 +77956,10 @@
                                 "Virtual",
                                 "Bridge",
                                 "Link Aggregation Group (LAG)",
+                                "100BASE-FX (10/100ME FIBER)",
+                                "100BASE-LFX (10/100ME FIBER)",
                                 "100BASE-TX (10/100ME)",
+                                "100BASE-T1 (10/100ME Single Pair)",
                                 "1000BASE-T (1GE)",
                                 "2.5GBASE-T (2.5GE)",
                                 "5GBASE-T (5GE)",
@@ -77807,6 +77984,8 @@
                                 "QSFP56 (200GE)",
                                 "QSFP-DD (400GE)",
                                 "OSFP (400GE)",
+                                "QSFP-DD (800GE)",
+                                "OSFP (800GE)",
                                 "1000BASE-KX (1GE)",
                                 "10GBASE-KR (10GE)",
                                 "10GBASE-KX4 (10GE)",
@@ -77886,7 +78065,10 @@
                                 "virtual",
                                 "bridge",
                                 "lag",
+                                "100base-fx",
+                                "100base-lfx",
                                 "100base-tx",
+                                "100base-t1",
                                 "1000base-t",
                                 "2.5gbase-t",
                                 "5gbase-t",
@@ -77911,6 +78093,8 @@
                                 "200gbase-x-qsfp56",
                                 "400gbase-x-qsfpdd",
                                 "400gbase-x-osfp",
+                                "800gbase-x-qsfpdd",
+                                "800gbase-x-osfp",
                                 "1000base-kx",
                                 "10gbase-kr",
                                 "10gbase-kx4",
@@ -78124,7 +78308,10 @@
                         "virtual",
                         "bridge",
                         "lag",
+                        "100base-fx",
+                        "100base-lfx",
                         "100base-tx",
+                        "100base-t1",
                         "1000base-t",
                         "2.5gbase-t",
                         "5gbase-t",
@@ -78149,6 +78336,8 @@
                         "200gbase-x-qsfp56",
                         "400gbase-x-qsfpdd",
                         "400gbase-x-osfp",
+                        "800gbase-x-qsfpdd",
+                        "800gbase-x-osfp",
                         "1000base-kx",
                         "10gbase-kr",
                         "10gbase-kx4",
@@ -78647,7 +78836,10 @@
                                 "Virtual",
                                 "Bridge",
                                 "Link Aggregation Group (LAG)",
+                                "100BASE-FX (10/100ME FIBER)",
+                                "100BASE-LFX (10/100ME FIBER)",
                                 "100BASE-TX (10/100ME)",
+                                "100BASE-T1 (10/100ME Single Pair)",
                                 "1000BASE-T (1GE)",
                                 "2.5GBASE-T (2.5GE)",
                                 "5GBASE-T (5GE)",
@@ -78672,6 +78864,8 @@
                                 "QSFP56 (200GE)",
                                 "QSFP-DD (400GE)",
                                 "OSFP (400GE)",
+                                "QSFP-DD (800GE)",
+                                "OSFP (800GE)",
                                 "1000BASE-KX (1GE)",
                                 "10GBASE-KR (10GE)",
                                 "10GBASE-KX4 (10GE)",
@@ -78751,7 +78945,10 @@
                                 "virtual",
                                 "bridge",
                                 "lag",
+                                "100base-fx",
+                                "100base-lfx",
                                 "100base-tx",
+                                "100base-t1",
                                 "1000base-t",
                                 "2.5gbase-t",
                                 "5gbase-t",
@@ -78776,6 +78973,8 @@
                                 "200gbase-x-qsfp56",
                                 "400gbase-x-qsfpdd",
                                 "400gbase-x-osfp",
+                                "800gbase-x-qsfpdd",
+                                "800gbase-x-osfp",
                                 "1000base-kx",
                                 "10gbase-kr",
                                 "10gbase-kx4",
@@ -79644,7 +79843,10 @@
                         "virtual",
                         "bridge",
                         "lag",
+                        "100base-fx",
+                        "100base-lfx",
                         "100base-tx",
+                        "100base-t1",
                         "1000base-t",
                         "2.5gbase-t",
                         "5gbase-t",
@@ -79669,6 +79871,8 @@
                         "200gbase-x-qsfp56",
                         "400gbase-x-qsfpdd",
                         "400gbase-x-osfp",
+                        "800gbase-x-qsfpdd",
+                        "800gbase-x-osfp",
                         "1000base-kx",
                         "10gbase-kr",
                         "10gbase-kx4",
@@ -87566,6 +87770,11 @@
                         "offline"
                     ]
                 },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
+                },
                 "comments": {
                     "title": "Comments",
                     "type": "string"
@@ -87673,6 +87882,11 @@
                         "planned",
                         "offline"
                     ]
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
                 },
                 "comments": {
                     "title": "Comments",
@@ -95514,6 +95728,11 @@
                     "minimum": 0,
                     "x-nullable": true
                 },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
+                },
                 "comments": {
                     "title": "Comments",
                     "type": "string"
@@ -95661,6 +95880,11 @@
                     "maximum": 2147483647,
                     "minimum": 0,
                     "x-nullable": true
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "maxLength": 200
                 },
                 "comments": {
                     "title": "Comments",

@@ -386,6 +386,18 @@ type DcimDevicesListParams struct {
 	// PowerPorts.
 	PowerPorts *string
 
+	// PrimaryIp4ID.
+	PrimaryIp4ID *string
+
+	// PrimaryIp4IDn.
+	PrimaryIp4IDn *string
+
+	// PrimaryIp6ID.
+	PrimaryIp6ID *string
+
+	// PrimaryIp6IDn.
+	PrimaryIp6IDn *string
+
 	// Q.
 	Q *string
 
@@ -1708,6 +1720,50 @@ func (o *DcimDevicesListParams) WithPowerPorts(powerPorts *string) *DcimDevicesL
 // SetPowerPorts adds the powerPorts to the dcim devices list params
 func (o *DcimDevicesListParams) SetPowerPorts(powerPorts *string) {
 	o.PowerPorts = powerPorts
+}
+
+// WithPrimaryIp4ID adds the primaryIp4ID to the dcim devices list params
+func (o *DcimDevicesListParams) WithPrimaryIp4ID(primaryIp4ID *string) *DcimDevicesListParams {
+	o.SetPrimaryIp4ID(primaryIp4ID)
+	return o
+}
+
+// SetPrimaryIp4ID adds the primaryIp4Id to the dcim devices list params
+func (o *DcimDevicesListParams) SetPrimaryIp4ID(primaryIp4ID *string) {
+	o.PrimaryIp4ID = primaryIp4ID
+}
+
+// WithPrimaryIp4IDn adds the primaryIp4IDn to the dcim devices list params
+func (o *DcimDevicesListParams) WithPrimaryIp4IDn(primaryIp4IDn *string) *DcimDevicesListParams {
+	o.SetPrimaryIp4IDn(primaryIp4IDn)
+	return o
+}
+
+// SetPrimaryIp4IDn adds the primaryIp4IdN to the dcim devices list params
+func (o *DcimDevicesListParams) SetPrimaryIp4IDn(primaryIp4IDn *string) {
+	o.PrimaryIp4IDn = primaryIp4IDn
+}
+
+// WithPrimaryIp6ID adds the primaryIp6ID to the dcim devices list params
+func (o *DcimDevicesListParams) WithPrimaryIp6ID(primaryIp6ID *string) *DcimDevicesListParams {
+	o.SetPrimaryIp6ID(primaryIp6ID)
+	return o
+}
+
+// SetPrimaryIp6ID adds the primaryIp6Id to the dcim devices list params
+func (o *DcimDevicesListParams) SetPrimaryIp6ID(primaryIp6ID *string) {
+	o.PrimaryIp6ID = primaryIp6ID
+}
+
+// WithPrimaryIp6IDn adds the primaryIp6IDn to the dcim devices list params
+func (o *DcimDevicesListParams) WithPrimaryIp6IDn(primaryIp6IDn *string) *DcimDevicesListParams {
+	o.SetPrimaryIp6IDn(primaryIp6IDn)
+	return o
+}
+
+// SetPrimaryIp6IDn adds the primaryIp6IdN to the dcim devices list params
+func (o *DcimDevicesListParams) SetPrimaryIp6IDn(primaryIp6IDn *string) {
+	o.PrimaryIp6IDn = primaryIp6IDn
 }
 
 // WithQ adds the q to the dcim devices list params
@@ -4040,6 +4096,74 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qPowerPorts != "" {
 
 			if err := r.SetQueryParam("power_ports", qPowerPorts); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PrimaryIp4ID != nil {
+
+		// query param primary_ip4_id
+		var qrPrimaryIp4ID string
+
+		if o.PrimaryIp4ID != nil {
+			qrPrimaryIp4ID = *o.PrimaryIp4ID
+		}
+		qPrimaryIp4ID := qrPrimaryIp4ID
+		if qPrimaryIp4ID != "" {
+
+			if err := r.SetQueryParam("primary_ip4_id", qPrimaryIp4ID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PrimaryIp4IDn != nil {
+
+		// query param primary_ip4_id__n
+		var qrPrimaryIp4IDn string
+
+		if o.PrimaryIp4IDn != nil {
+			qrPrimaryIp4IDn = *o.PrimaryIp4IDn
+		}
+		qPrimaryIp4IDn := qrPrimaryIp4IDn
+		if qPrimaryIp4IDn != "" {
+
+			if err := r.SetQueryParam("primary_ip4_id__n", qPrimaryIp4IDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PrimaryIp6ID != nil {
+
+		// query param primary_ip6_id
+		var qrPrimaryIp6ID string
+
+		if o.PrimaryIp6ID != nil {
+			qrPrimaryIp6ID = *o.PrimaryIp6ID
+		}
+		qPrimaryIp6ID := qrPrimaryIp6ID
+		if qPrimaryIp6ID != "" {
+
+			if err := r.SetQueryParam("primary_ip6_id", qPrimaryIp6ID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PrimaryIp6IDn != nil {
+
+		// query param primary_ip6_id__n
+		var qrPrimaryIp6IDn string
+
+		if o.PrimaryIp6IDn != nil {
+			qrPrimaryIp6IDn = *o.PrimaryIp6IDn
+		}
+		qPrimaryIp6IDn := qrPrimaryIp6IDn
+		if qPrimaryIp6IDn != "" {
+
+			if err := r.SetQueryParam("primary_ip6_id__n", qPrimaryIp6IDn); err != nil {
 				return err
 			}
 		}

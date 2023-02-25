@@ -2,9 +2,9 @@
 
 [![GoDoc](http://godoc.org/github.com/netbox-community/go-netbox?status.svg)](http://godoc.org/github.com/netbox-community/go-netbox) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
 
-Package `netbox` provides an API 3.2 client for [netbox-community's Netbox](https://github.com/netbox-community/netbox) IPAM and DCIM service.
+Package `netbox` provides an API client for [netbox-community's Netbox](https://github.com/netbox-community/netbox) IPAM and DCIM service.
 
-This package assumes you are using Netbox 3.2, as the Netbox 1.0 API no longer exists. If you need support for previous Netbox versions, you can still import the corresponding release of the library. For example, run `go get github.com/netbox-community/go-netbox@netbox_v2.11` if you need compatibility with Netbox 2.11.
+This package assumes you are using Netbox 3, as the Netbox 1.0 API no longer exists. If you need support for previous Netbox versions, you can still import the corresponding release of the library. For example, run `go get github.com/netbox-community/go-netbox@netbox_v2.11` if you need compatibility with Netbox 2.11.
 
 ## Using the client
 
