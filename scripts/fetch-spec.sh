@@ -21,6 +21,10 @@ mv "${REPO_DIR}/docker-compose.override.yml.example" "${REPO_DIR}/docker-compose
 export VERSION="v${NETBOX_VERSION}"
 docker compose --project-directory="${REPO_DIR}" up --detach --quiet-pull
 
-curl --silent http://127.0.0.1:8000/api/docs/?format=openapi > api/openapi.json
+while ! curl --silent http://localhost:8000/api/docs/?format=openapi > api/openapi.json 2> /dev/null; do
+  sleep 1
+done
 
 docker compose --project-directory="${REPO_DIR}" down
+
+rm -rf "${REPO_DIR}"
