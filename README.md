@@ -1,88 +1,117 @@
 # go-netbox
 
-[![GoDoc](http://godoc.org/github.com/netbox-community/go-netbox?status.svg)](http://godoc.org/github.com/netbox-community/go-netbox) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
+[![GoDoc](https://pkg.go.dev/badge/github.com/netbox-community/go-netbox)](https://pkg.go.dev/github.com/netbox-community/go-netbox) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
 
-Package `netbox` provides an API client for [netbox-community's Netbox](https://github.com/netbox-community/netbox) IPAM and DCIM service.
+_go-netbox_ is —to nobody's surprise— the official [Go](https://go.dev) API client for [Netbox](https://github.com/netbox-community/netbox) IPAM and DCIM service.
 
-This package assumes you are using Netbox 3, as the Netbox 1.0 API no longer exists. If you need support for previous Netbox versions, you can still import the corresponding release of the library. For example, run `go get github.com/netbox-community/go-netbox@netbox_v2.11` if you need compatibility with Netbox 2.11.
+This project follows [Semantic Versioning](https://semver.org). The version of the library built for a Netbox version has the same tag, followed by the build number (an incremental integer) in the version metadata.
 
-## Using the client
+## Installation
 
-The `github.com/netbox-community/go-netbox/netbox` package has some convenience functions for creating clients with the most common
-configurations you are likely to need while connecting to NetBox. `NewNetboxAt` allows you to specify a hostname
-(including port, if you need it), and `NewNetboxWithAPIKey` allows you to specify both a hostname:port and API token.
-```golang
-import (
-    "github.com/netbox-community/go-netbox/netbox"
-)
-...
-    c := netbox.NewNetboxAt("your.netbox.host:8000")
-    // OR
-    c := netbox.NewNetboxWithAPIKey("your.netbox.host:8000", "your_netbox_token")
+Use `go get` to add the library as a project's dependency. Do not forget to run `go mod init` first if necessary.
+
+```shell
+go get github.com/netbox-community/go-netbox
+
+# Or install a specific version
+go get github.com/netbox-community/go-netbox@v3.4.5+0
 ```
 
-If you specify the API key, you do not need to pass an additional `authInfo` to operations that need authentication, and
-can pass `nil`:
-```golang
-    c.Dcim.DcimDeviceTypesCreate(createRequest, nil)
-```
+**Note:** dependencies should be managed with [Go modules](https://go.dev/doc/modules/managing-dependencies).
 
-If you connect to netbox via HTTPS you have to create an HTTPS configured transport:
+## Usage
+
+### Instantiate the client
+
+The package has some convenience functions for creating clients with the most common configurations.
+
 ```golang
 package main
 
 import (
-	"os"
+	"log"
 
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/netbox-community/go-netbox/netbox/client"
-	"github.com/netbox-community/go-netbox/netbox/client/dcim"
-
-	log "github.com/sirupsen/logrus"
+	"github.com/netbox-community/go-netbox/netbox"
 )
 
 func main() {
-	token := os.Getenv("NETBOX_TOKEN")
-	if token == "" {
-		log.Fatalf("Please provide netbox API token via env var NETBOX_TOKEN")
-	}
+	c := netbox.NewNetboxAt("netbox.example.org:8000")
+    
+	// or:
+    // c := netbox.NewNetboxWithAPIKey("netbox.example.org:8000", "<api-token>")
 
-	netboxHost := os.Getenv("NETBOX_HOST")
-	if netboxHost == "" {
-		log.Fatalf("Please provide netbox host via env var NETBOX_HOST")
-	}
-
-	transport := httptransport.New(netboxHost, client.DefaultBasePath, []string{"https"})
-	transport.DefaultAuthentication = httptransport.APIKeyAuth("Authorization", "header", "Token "+token)
-
-	c := client.New(transport, nil)
-
-	req := dcim.NewDcimSitesListParams()
-	res, err := c.Dcim.DcimSitesList(req, nil)
-	if err != nil {
-		log.Fatalf("Cannot get sites list: %v", err)
-	}
-	log.Infof("res: %v", res)
+	log.Printf("%+v", c)
 }
 ```
 
-## Go Module support
+In order to consume the Netbox API with HTTP over TLS, a transport must be created.
 
-Go 1.16+
+```golang
+package main
 
-`go get github.com/netbox-community/go-netbox`
+import (
+	"log"
 
+	transport "github.com/go-openapi/runtime/client"
+	"github.com/netbox-community/go-netbox/netbox/client"
+)
 
-## More complex client configuration
+func main() {
+	t := transport.New("netbox.example.org", client.DefaultBasePath, []string{"https"})
 
-The client is generated using [go-swagger](https://github.com/go-swagger/go-swagger). This means the generated client
-makes use of [github.com/go-openapi/runtime/client](https://godoc.org/github.com/go-openapi/runtime/client). If you need
-a more complex configuration, it is probably possible with a combination of this generated client and the runtime
-options.
+	t.DefaultAuthentication = transport.APIKeyAuth(
+		"Authorization",
+		"header",
+		fmt.Sprintf("Token %v", "<api-token>"),
+	)
 
-The [godocs for the go-openapi/runtime/client module](https://godoc.org/github.com/go-openapi/runtime/client) explain
-the client options in detail, including different authentication and debugging options. One thing I want to flag because
-it is so useful: setting the `DEBUG` environment variable will dump all requests to standard out.
+	c := client.New(t, nil)
+
+	log.Printf("%+v", c)
+}
+```
+
+For more complex client configurations, see the documentation of _[github.com/go-openapi/runtime/client](https://pkg.go.dev/github.com/go-openapi/runtime/client)_, the library which in turn is used by the client.
+
+**Note:** setting the `DEBUG` environment variable will dump all requests to standard error output.
+
+### Use the client
+
+With the client already instantiated, it is possible to consume any API feature.
+
+For example, to list the first 100 active virtual machines:
+
+```golang
+package main
+
+import (
+	"log"
+
+	"github.com/netbox-community/go-netbox/netbox"
+	"github.com/netbox-community/go-netbox/netbox/client/virtualization"
+)
+
+var status = "active"
+var pageLimit = int64(100)
+
+func main() {
+	c := netbox.NewNetboxWithAPIKey("netbox.example.org", "<api-token>")
+
+	req := virtualization.
+		NewVirtualizationVirtualMachinesListParams().
+		WithStatus(&status).
+		WithLimit(&pageLimit)
+
+	// additional `authInfo` is `nil` because the API token has already been specified in the client 
+	res, err := w.netbox.Virtualization.VirtualizationVirtualMachinesList(req, nil)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("%+v", res.Payload.Results)
+}
+```
 
 ## Development
 
@@ -108,7 +137,7 @@ make down
 
 ### Considerations
 
-The library is almost entirely generated from the Netbox [OpenAPI](https://www.openapis.org/) specification. Therefore, files under directories `netbox/client` and `netbox/models` should not be directly modified, as they will be overwritten in the next regeneration (see next section).
+The library is almost entirely generated from the Netbox [OpenAPI](https://www.openapis.org/) specification using _[go-swagger](https://github.com/go-swagger/go-swagger)_. Therefore, files under directories `netbox/client` and `netbox/models` should not be directly modified, as they will be overwritten in the next regeneration (see next section).
 
 To fix issues in generated code, there are two options:
 
