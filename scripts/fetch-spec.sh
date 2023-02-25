@@ -25,6 +25,6 @@ while ! curl --silent http://localhost:8000/api/docs/?format=openapi > api/opena
   sleep 1
 done
 
-docker compose --project-directory="${REPO_DIR}" down
+docker compose --project-directory="${REPO_DIR}" down --volumes
 
 rm -rf "${REPO_DIR}"
