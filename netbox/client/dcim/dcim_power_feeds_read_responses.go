@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimPowerFeedsReadReader is a Reader for the DcimPowerFeedsRead structure.
@@ -95,6 +95,11 @@ func (o *DcimPowerFeedsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim power feeds read o k response
+func (o *DcimPowerFeedsReadOK) Code() int {
+	return 200
+}
+
 func (o *DcimPowerFeedsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-feeds/{id}/][%d] dcimPowerFeedsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimPowerFeedsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim power feeds read default response
-func (o *DcimPowerFeedsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim power feeds read default response has a 2xx status code
 func (o *DcimPowerFeedsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimPowerFeedsReadDefault) IsServerError() bool {
 // IsCode returns true when this dcim power feeds read default response a status code equal to that given
 func (o *DcimPowerFeedsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim power feeds read default response
+func (o *DcimPowerFeedsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPowerFeedsReadDefault) Error() string {

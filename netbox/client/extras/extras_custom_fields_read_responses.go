@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasCustomFieldsReadReader is a Reader for the ExtrasCustomFieldsRead structure.
@@ -95,6 +95,11 @@ func (o *ExtrasCustomFieldsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras custom fields read o k response
+func (o *ExtrasCustomFieldsReadOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasCustomFieldsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/custom-fields/{id}/][%d] extrasCustomFieldsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasCustomFieldsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom fields read default response
-func (o *ExtrasCustomFieldsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom fields read default response has a 2xx status code
 func (o *ExtrasCustomFieldsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasCustomFieldsReadDefault) IsServerError() bool {
 // IsCode returns true when this extras custom fields read default response a status code equal to that given
 func (o *ExtrasCustomFieldsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom fields read default response
+func (o *ExtrasCustomFieldsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomFieldsReadDefault) Error() string {

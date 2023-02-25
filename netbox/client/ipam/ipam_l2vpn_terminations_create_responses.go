@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamL2vpnTerminationsCreateReader is a Reader for the IpamL2vpnTerminationsCreate structure.
@@ -95,6 +95,11 @@ func (o *IpamL2vpnTerminationsCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the ipam l2vpn terminations create created response
+func (o *IpamL2vpnTerminationsCreateCreated) Code() int {
+	return 201
+}
+
 func (o *IpamL2vpnTerminationsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamL2vpnTerminationsCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam l2vpn terminations create default response
-func (o *IpamL2vpnTerminationsCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam l2vpn terminations create default response has a 2xx status code
 func (o *IpamL2vpnTerminationsCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamL2vpnTerminationsCreateDefault) IsServerError() bool {
 // IsCode returns true when this ipam l2vpn terminations create default response a status code equal to that given
 func (o *IpamL2vpnTerminationsCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam l2vpn terminations create default response
+func (o *IpamL2vpnTerminationsCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamL2vpnTerminationsCreateDefault) Error() string {

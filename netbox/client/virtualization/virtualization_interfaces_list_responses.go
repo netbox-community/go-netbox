@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // VirtualizationInterfacesListReader is a Reader for the VirtualizationInterfacesList structure.
@@ -100,6 +100,11 @@ func (o *VirtualizationInterfacesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the virtualization interfaces list o k response
+func (o *VirtualizationInterfacesListOK) Code() int {
+	return 200
+}
+
 func (o *VirtualizationInterfacesListOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/interfaces/][%d] virtualizationInterfacesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type VirtualizationInterfacesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization interfaces list default response
-func (o *VirtualizationInterfacesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization interfaces list default response has a 2xx status code
 func (o *VirtualizationInterfacesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *VirtualizationInterfacesListDefault) IsServerError() bool {
 // IsCode returns true when this virtualization interfaces list default response a status code equal to that given
 func (o *VirtualizationInterfacesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization interfaces list default response
+func (o *VirtualizationInterfacesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationInterfacesListDefault) Error() string {

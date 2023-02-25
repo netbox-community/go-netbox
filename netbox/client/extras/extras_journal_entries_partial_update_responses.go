@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasJournalEntriesPartialUpdateReader is a Reader for the ExtrasJournalEntriesPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasJournalEntriesPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras journal entries partial update o k response
+func (o *ExtrasJournalEntriesPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasJournalEntriesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/journal-entries/{id}/][%d] extrasJournalEntriesPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasJournalEntriesPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras journal entries partial update default response
-func (o *ExtrasJournalEntriesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras journal entries partial update default response has a 2xx status code
 func (o *ExtrasJournalEntriesPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasJournalEntriesPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras journal entries partial update default response a status code equal to that given
 func (o *ExtrasJournalEntriesPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras journal entries partial update default response
+func (o *ExtrasJournalEntriesPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasJournalEntriesPartialUpdateDefault) Error() string {

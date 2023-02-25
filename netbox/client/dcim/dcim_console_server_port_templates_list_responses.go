@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimConsoleServerPortTemplatesListReader is a Reader for the DcimConsoleServerPortTemplatesList structure.
@@ -100,6 +100,11 @@ func (o *DcimConsoleServerPortTemplatesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim console server port templates list o k response
+func (o *DcimConsoleServerPortTemplatesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimConsoleServerPortTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-server-port-templates/][%d] dcimConsoleServerPortTemplatesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimConsoleServerPortTemplatesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim console server port templates list default response
-func (o *DcimConsoleServerPortTemplatesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim console server port templates list default response has a 2xx status code
 func (o *DcimConsoleServerPortTemplatesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimConsoleServerPortTemplatesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim console server port templates list default response a status code equal to that given
 func (o *DcimConsoleServerPortTemplatesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim console server port templates list default response
+func (o *DcimConsoleServerPortTemplatesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimConsoleServerPortTemplatesListDefault) Error() string {

@@ -92,6 +92,11 @@ func (o *DcimInventoryItemTemplatesBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim inventory item templates bulk delete no content response
+func (o *DcimInventoryItemTemplatesBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimInventoryItemTemplatesBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/inventory-item-templates/][%d] dcimInventoryItemTemplatesBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimInventoryItemTemplatesBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim inventory item templates bulk delete default response
-func (o *DcimInventoryItemTemplatesBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim inventory item templates bulk delete default response has a 2xx status code
 func (o *DcimInventoryItemTemplatesBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimInventoryItemTemplatesBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim inventory item templates bulk delete default response a status code equal to that given
 func (o *DcimInventoryItemTemplatesBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim inventory item templates bulk delete default response
+func (o *DcimInventoryItemTemplatesBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimInventoryItemTemplatesBulkDeleteDefault) Error() string {

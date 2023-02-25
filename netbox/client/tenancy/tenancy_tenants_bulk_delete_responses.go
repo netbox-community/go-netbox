@@ -92,6 +92,11 @@ func (o *TenancyTenantsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the tenancy tenants bulk delete no content response
+func (o *TenancyTenantsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *TenancyTenantsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /tenancy/tenants/][%d] tenancyTenantsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type TenancyTenantsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the tenancy tenants bulk delete default response
-func (o *TenancyTenantsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this tenancy tenants bulk delete default response has a 2xx status code
 func (o *TenancyTenantsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *TenancyTenantsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this tenancy tenants bulk delete default response a status code equal to that given
 func (o *TenancyTenantsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the tenancy tenants bulk delete default response
+func (o *TenancyTenantsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *TenancyTenantsBulkDeleteDefault) Error() string {

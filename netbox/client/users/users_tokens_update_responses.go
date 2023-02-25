@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // UsersTokensUpdateReader is a Reader for the UsersTokensUpdate structure.
@@ -95,6 +95,11 @@ func (o *UsersTokensUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the users tokens update o k response
+func (o *UsersTokensUpdateOK) Code() int {
+	return 200
+}
+
 func (o *UsersTokensUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/tokens/{id}/][%d] usersTokensUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type UsersTokensUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users tokens update default response
-func (o *UsersTokensUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users tokens update default response has a 2xx status code
 func (o *UsersTokensUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *UsersTokensUpdateDefault) IsServerError() bool {
 // IsCode returns true when this users tokens update default response a status code equal to that given
 func (o *UsersTokensUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users tokens update default response
+func (o *UsersTokensUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersTokensUpdateDefault) Error() string {

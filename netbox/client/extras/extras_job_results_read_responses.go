@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasJobResultsReadReader is a Reader for the ExtrasJobResultsRead structure.
@@ -95,6 +95,11 @@ func (o *ExtrasJobResultsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras job results read o k response
+func (o *ExtrasJobResultsReadOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasJobResultsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/job-results/{id}/][%d] extrasJobResultsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasJobResultsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras job results read default response
-func (o *ExtrasJobResultsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras job results read default response has a 2xx status code
 func (o *ExtrasJobResultsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasJobResultsReadDefault) IsServerError() bool {
 // IsCode returns true when this extras job results read default response a status code equal to that given
 func (o *ExtrasJobResultsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras job results read default response
+func (o *ExtrasJobResultsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasJobResultsReadDefault) Error() string {

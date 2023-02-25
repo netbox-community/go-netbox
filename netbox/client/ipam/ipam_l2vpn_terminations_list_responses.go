@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamL2vpnTerminationsListReader is a Reader for the IpamL2vpnTerminationsList structure.
@@ -100,6 +100,11 @@ func (o *IpamL2vpnTerminationsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam l2vpn terminations list o k response
+func (o *IpamL2vpnTerminationsListOK) Code() int {
+	return 200
+}
+
 func (o *IpamL2vpnTerminationsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamL2vpnTerminationsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam l2vpn terminations list default response
-func (o *IpamL2vpnTerminationsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam l2vpn terminations list default response has a 2xx status code
 func (o *IpamL2vpnTerminationsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamL2vpnTerminationsListDefault) IsServerError() bool {
 // IsCode returns true when this ipam l2vpn terminations list default response a status code equal to that given
 func (o *IpamL2vpnTerminationsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam l2vpn terminations list default response
+func (o *IpamL2vpnTerminationsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamL2vpnTerminationsListDefault) Error() string {

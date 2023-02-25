@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimInterfacesBulkUpdateReader is a Reader for the DcimInterfacesBulkUpdate structure.
@@ -95,6 +95,11 @@ func (o *DcimInterfacesBulkUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim interfaces bulk update o k response
+func (o *DcimInterfacesBulkUpdateOK) Code() int {
+	return 200
+}
+
 func (o *DcimInterfacesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/interfaces/][%d] dcimInterfacesBulkUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimInterfacesBulkUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim interfaces bulk update default response
-func (o *DcimInterfacesBulkUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim interfaces bulk update default response has a 2xx status code
 func (o *DcimInterfacesBulkUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimInterfacesBulkUpdateDefault) IsServerError() bool {
 // IsCode returns true when this dcim interfaces bulk update default response a status code equal to that given
 func (o *DcimInterfacesBulkUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim interfaces bulk update default response
+func (o *DcimInterfacesBulkUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimInterfacesBulkUpdateDefault) Error() string {

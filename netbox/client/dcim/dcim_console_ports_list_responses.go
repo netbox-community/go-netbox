@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimConsolePortsListReader is a Reader for the DcimConsolePortsList structure.
@@ -100,6 +100,11 @@ func (o *DcimConsolePortsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim console ports list o k response
+func (o *DcimConsolePortsListOK) Code() int {
+	return 200
+}
+
 func (o *DcimConsolePortsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/console-ports/][%d] dcimConsolePortsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimConsolePortsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim console ports list default response
-func (o *DcimConsolePortsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim console ports list default response has a 2xx status code
 func (o *DcimConsolePortsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimConsolePortsListDefault) IsServerError() bool {
 // IsCode returns true when this dcim console ports list default response a status code equal to that given
 func (o *DcimConsolePortsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim console ports list default response
+func (o *DcimConsolePortsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimConsolePortsListDefault) Error() string {

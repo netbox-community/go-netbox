@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // WirelessWirelessLansCreateReader is a Reader for the WirelessWirelessLansCreate structure.
@@ -95,6 +95,11 @@ func (o *WirelessWirelessLansCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the wireless wireless lans create created response
+func (o *WirelessWirelessLansCreateCreated) Code() int {
+	return 201
+}
+
 func (o *WirelessWirelessLansCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /wireless/wireless-lans/][%d] wirelessWirelessLansCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type WirelessWirelessLansCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the wireless wireless lans create default response
-func (o *WirelessWirelessLansCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this wireless wireless lans create default response has a 2xx status code
 func (o *WirelessWirelessLansCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *WirelessWirelessLansCreateDefault) IsServerError() bool {
 // IsCode returns true when this wireless wireless lans create default response a status code equal to that given
 func (o *WirelessWirelessLansCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the wireless wireless lans create default response
+func (o *WirelessWirelessLansCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *WirelessWirelessLansCreateDefault) Error() string {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamFhrpGroupAssignmentsBulkPartialUpdateReader is a Reader for the IpamFhrpGroupAssignmentsBulkPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *IpamFhrpGroupAssignmentsBulkPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam fhrp group assignments bulk partial update o k response
+func (o *IpamFhrpGroupAssignmentsBulkPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *IpamFhrpGroupAssignmentsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/fhrp-group-assignments/][%d] ipamFhrpGroupAssignmentsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamFhrpGroupAssignmentsBulkPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam fhrp group assignments bulk partial update default response
-func (o *IpamFhrpGroupAssignmentsBulkPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam fhrp group assignments bulk partial update default response has a 2xx status code
 func (o *IpamFhrpGroupAssignmentsBulkPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamFhrpGroupAssignmentsBulkPartialUpdateDefault) IsServerError() bool 
 // IsCode returns true when this ipam fhrp group assignments bulk partial update default response a status code equal to that given
 func (o *IpamFhrpGroupAssignmentsBulkPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam fhrp group assignments bulk partial update default response
+func (o *IpamFhrpGroupAssignmentsBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamFhrpGroupAssignmentsBulkPartialUpdateDefault) Error() string {

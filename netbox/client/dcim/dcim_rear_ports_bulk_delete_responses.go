@@ -92,6 +92,11 @@ func (o *DcimRearPortsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim rear ports bulk delete no content response
+func (o *DcimRearPortsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimRearPortsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/rear-ports/][%d] dcimRearPortsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimRearPortsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim rear ports bulk delete default response
-func (o *DcimRearPortsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim rear ports bulk delete default response has a 2xx status code
 func (o *DcimRearPortsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimRearPortsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim rear ports bulk delete default response a status code equal to that given
 func (o *DcimRearPortsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim rear ports bulk delete default response
+func (o *DcimRearPortsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimRearPortsBulkDeleteDefault) Error() string {

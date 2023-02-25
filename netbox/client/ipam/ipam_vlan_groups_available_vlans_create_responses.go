@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamVlanGroupsAvailableVlansCreateReader is a Reader for the IpamVlanGroupsAvailableVlansCreate structure.
@@ -95,6 +95,11 @@ func (o *IpamVlanGroupsAvailableVlansCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the ipam vlan groups available vlans create created response
+func (o *IpamVlanGroupsAvailableVlansCreateCreated) Code() int {
+	return 201
+}
+
 func (o *IpamVlanGroupsAvailableVlansCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/vlan-groups/{id}/available-vlans/][%d] ipamVlanGroupsAvailableVlansCreateCreated  %+v", 201, o.Payload)
 }
@@ -135,11 +140,6 @@ type IpamVlanGroupsAvailableVlansCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam vlan groups available vlans create default response
-func (o *IpamVlanGroupsAvailableVlansCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam vlan groups available vlans create default response has a 2xx status code
 func (o *IpamVlanGroupsAvailableVlansCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -163,6 +163,11 @@ func (o *IpamVlanGroupsAvailableVlansCreateDefault) IsServerError() bool {
 // IsCode returns true when this ipam vlan groups available vlans create default response a status code equal to that given
 func (o *IpamVlanGroupsAvailableVlansCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam vlan groups available vlans create default response
+func (o *IpamVlanGroupsAvailableVlansCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamVlanGroupsAvailableVlansCreateDefault) Error() string {

@@ -92,6 +92,11 @@ func (o *UsersTokensDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the users tokens delete no content response
+func (o *UsersTokensDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *UsersTokensDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /users/tokens/{id}/][%d] usersTokensDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type UsersTokensDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users tokens delete default response
-func (o *UsersTokensDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users tokens delete default response has a 2xx status code
 func (o *UsersTokensDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *UsersTokensDeleteDefault) IsServerError() bool {
 // IsCode returns true when this users tokens delete default response a status code equal to that given
 func (o *UsersTokensDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users tokens delete default response
+func (o *UsersTokensDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersTokensDeleteDefault) Error() string {

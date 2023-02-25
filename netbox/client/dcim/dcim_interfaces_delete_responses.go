@@ -92,6 +92,11 @@ func (o *DcimInterfacesDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim interfaces delete no content response
+func (o *DcimInterfacesDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimInterfacesDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/interfaces/{id}/][%d] dcimInterfacesDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimInterfacesDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim interfaces delete default response
-func (o *DcimInterfacesDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim interfaces delete default response has a 2xx status code
 func (o *DcimInterfacesDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimInterfacesDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim interfaces delete default response a status code equal to that given
 func (o *DcimInterfacesDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim interfaces delete default response
+func (o *DcimInterfacesDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimInterfacesDeleteDefault) Error() string {

@@ -92,6 +92,11 @@ func (o *DcimCableTerminationsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim cable terminations bulk delete no content response
+func (o *DcimCableTerminationsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimCableTerminationsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/cable-terminations/][%d] dcimCableTerminationsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimCableTerminationsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim cable terminations bulk delete default response
-func (o *DcimCableTerminationsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim cable terminations bulk delete default response has a 2xx status code
 func (o *DcimCableTerminationsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimCableTerminationsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim cable terminations bulk delete default response a status code equal to that given
 func (o *DcimCableTerminationsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim cable terminations bulk delete default response
+func (o *DcimCableTerminationsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimCableTerminationsBulkDeleteDefault) Error() string {

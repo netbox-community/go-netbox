@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamIPAddressesCreateReader is a Reader for the IpamIPAddressesCreate structure.
@@ -95,6 +95,11 @@ func (o *IpamIPAddressesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the ipam Ip addresses create created response
+func (o *IpamIPAddressesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *IpamIPAddressesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/ip-addresses/][%d] ipamIpAddressesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamIPAddressesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam ip addresses create default response
-func (o *IpamIPAddressesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam ip addresses create default response has a 2xx status code
 func (o *IpamIPAddressesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamIPAddressesCreateDefault) IsServerError() bool {
 // IsCode returns true when this ipam ip addresses create default response a status code equal to that given
 func (o *IpamIPAddressesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam ip addresses create default response
+func (o *IpamIPAddressesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamIPAddressesCreateDefault) Error() string {

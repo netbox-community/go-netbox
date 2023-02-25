@@ -92,6 +92,11 @@ func (o *ExtrasTagsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the extras tags delete no content response
+func (o *ExtrasTagsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *ExtrasTagsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /extras/tags/{id}/][%d] extrasTagsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type ExtrasTagsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras tags delete default response
-func (o *ExtrasTagsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras tags delete default response has a 2xx status code
 func (o *ExtrasTagsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasTagsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this extras tags delete default response a status code equal to that given
 func (o *ExtrasTagsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras tags delete default response
+func (o *ExtrasTagsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasTagsDeleteDefault) Error() string {

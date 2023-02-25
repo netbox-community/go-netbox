@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // VirtualizationClustersListReader is a Reader for the VirtualizationClustersList structure.
@@ -100,6 +100,11 @@ func (o *VirtualizationClustersListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the virtualization clusters list o k response
+func (o *VirtualizationClustersListOK) Code() int {
+	return 200
+}
+
 func (o *VirtualizationClustersListOK) Error() string {
 	return fmt.Sprintf("[GET /virtualization/clusters/][%d] virtualizationClustersListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type VirtualizationClustersListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization clusters list default response
-func (o *VirtualizationClustersListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization clusters list default response has a 2xx status code
 func (o *VirtualizationClustersListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *VirtualizationClustersListDefault) IsServerError() bool {
 // IsCode returns true when this virtualization clusters list default response a status code equal to that given
 func (o *VirtualizationClustersListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization clusters list default response
+func (o *VirtualizationClustersListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationClustersListDefault) Error() string {

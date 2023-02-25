@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimPowerPanelsReadReader is a Reader for the DcimPowerPanelsRead structure.
@@ -95,6 +95,11 @@ func (o *DcimPowerPanelsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim power panels read o k response
+func (o *DcimPowerPanelsReadOK) Code() int {
+	return 200
+}
+
 func (o *DcimPowerPanelsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-panels/{id}/][%d] dcimPowerPanelsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimPowerPanelsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim power panels read default response
-func (o *DcimPowerPanelsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim power panels read default response has a 2xx status code
 func (o *DcimPowerPanelsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimPowerPanelsReadDefault) IsServerError() bool {
 // IsCode returns true when this dcim power panels read default response a status code equal to that given
 func (o *DcimPowerPanelsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim power panels read default response
+func (o *DcimPowerPanelsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPowerPanelsReadDefault) Error() string {

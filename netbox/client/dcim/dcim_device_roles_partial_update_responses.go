@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimDeviceRolesPartialUpdateReader is a Reader for the DcimDeviceRolesPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *DcimDeviceRolesPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim device roles partial update o k response
+func (o *DcimDeviceRolesPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *DcimDeviceRolesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/device-roles/{id}/][%d] dcimDeviceRolesPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimDeviceRolesPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim device roles partial update default response
-func (o *DcimDeviceRolesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim device roles partial update default response has a 2xx status code
 func (o *DcimDeviceRolesPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimDeviceRolesPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this dcim device roles partial update default response a status code equal to that given
 func (o *DcimDeviceRolesPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim device roles partial update default response
+func (o *DcimDeviceRolesPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimDeviceRolesPartialUpdateDefault) Error() string {

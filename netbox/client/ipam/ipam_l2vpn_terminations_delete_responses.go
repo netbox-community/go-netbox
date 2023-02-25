@@ -92,6 +92,11 @@ func (o *IpamL2vpnTerminationsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam l2vpn terminations delete no content response
+func (o *IpamL2vpnTerminationsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamL2vpnTerminationsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamL2vpnTerminationsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam l2vpn terminations delete default response
-func (o *IpamL2vpnTerminationsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam l2vpn terminations delete default response has a 2xx status code
 func (o *IpamL2vpnTerminationsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamL2vpnTerminationsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam l2vpn terminations delete default response a status code equal to that given
 func (o *IpamL2vpnTerminationsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam l2vpn terminations delete default response
+func (o *IpamL2vpnTerminationsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamL2vpnTerminationsDeleteDefault) Error() string {

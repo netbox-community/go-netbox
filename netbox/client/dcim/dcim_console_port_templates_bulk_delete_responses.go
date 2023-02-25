@@ -92,6 +92,11 @@ func (o *DcimConsolePortTemplatesBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim console port templates bulk delete no content response
+func (o *DcimConsolePortTemplatesBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimConsolePortTemplatesBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/console-port-templates/][%d] dcimConsolePortTemplatesBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimConsolePortTemplatesBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim console port templates bulk delete default response
-func (o *DcimConsolePortTemplatesBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim console port templates bulk delete default response has a 2xx status code
 func (o *DcimConsolePortTemplatesBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimConsolePortTemplatesBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim console port templates bulk delete default response a status code equal to that given
 func (o *DcimConsolePortTemplatesBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim console port templates bulk delete default response
+func (o *DcimConsolePortTemplatesBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimConsolePortTemplatesBulkDeleteDefault) Error() string {

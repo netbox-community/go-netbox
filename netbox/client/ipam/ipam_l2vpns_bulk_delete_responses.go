@@ -92,6 +92,11 @@ func (o *IpamL2vpnsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam l2vpns bulk delete no content response
+func (o *IpamL2vpnsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamL2vpnsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/l2vpns/][%d] ipamL2vpnsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamL2vpnsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam l2vpns bulk delete default response
-func (o *IpamL2vpnsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam l2vpns bulk delete default response has a 2xx status code
 func (o *IpamL2vpnsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamL2vpnsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam l2vpns bulk delete default response a status code equal to that given
 func (o *IpamL2vpnsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam l2vpns bulk delete default response
+func (o *IpamL2vpnsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamL2vpnsBulkDeleteDefault) Error() string {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasConfigContextsUpdateReader is a Reader for the ExtrasConfigContextsUpdate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasConfigContextsUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras config contexts update o k response
+func (o *ExtrasConfigContextsUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasConfigContextsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/config-contexts/{id}/][%d] extrasConfigContextsUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasConfigContextsUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras config contexts update default response
-func (o *ExtrasConfigContextsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras config contexts update default response has a 2xx status code
 func (o *ExtrasConfigContextsUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasConfigContextsUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras config contexts update default response a status code equal to that given
 func (o *ExtrasConfigContextsUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras config contexts update default response
+func (o *ExtrasConfigContextsUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasConfigContextsUpdateDefault) Error() string {

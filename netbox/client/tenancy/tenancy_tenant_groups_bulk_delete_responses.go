@@ -92,6 +92,11 @@ func (o *TenancyTenantGroupsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the tenancy tenant groups bulk delete no content response
+func (o *TenancyTenantGroupsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *TenancyTenantGroupsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /tenancy/tenant-groups/][%d] tenancyTenantGroupsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type TenancyTenantGroupsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the tenancy tenant groups bulk delete default response
-func (o *TenancyTenantGroupsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this tenancy tenant groups bulk delete default response has a 2xx status code
 func (o *TenancyTenantGroupsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *TenancyTenantGroupsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this tenancy tenant groups bulk delete default response a status code equal to that given
 func (o *TenancyTenantGroupsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the tenancy tenant groups bulk delete default response
+func (o *TenancyTenantGroupsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *TenancyTenantGroupsBulkDeleteDefault) Error() string {

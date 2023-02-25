@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // VirtualizationClusterTypesCreateReader is a Reader for the VirtualizationClusterTypesCreate structure.
@@ -95,6 +95,11 @@ func (o *VirtualizationClusterTypesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the virtualization cluster types create created response
+func (o *VirtualizationClusterTypesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *VirtualizationClusterTypesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /virtualization/cluster-types/][%d] virtualizationClusterTypesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type VirtualizationClusterTypesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization cluster types create default response
-func (o *VirtualizationClusterTypesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization cluster types create default response has a 2xx status code
 func (o *VirtualizationClusterTypesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *VirtualizationClusterTypesCreateDefault) IsServerError() bool {
 // IsCode returns true when this virtualization cluster types create default response a status code equal to that given
 func (o *VirtualizationClusterTypesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization cluster types create default response
+func (o *VirtualizationClusterTypesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationClusterTypesCreateDefault) Error() string {

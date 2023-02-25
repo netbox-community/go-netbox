@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // VirtualizationVirtualMachinesUpdateReader is a Reader for the VirtualizationVirtualMachinesUpdate structure.
@@ -95,6 +95,11 @@ func (o *VirtualizationVirtualMachinesUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the virtualization virtual machines update o k response
+func (o *VirtualizationVirtualMachinesUpdateOK) Code() int {
+	return 200
+}
+
 func (o *VirtualizationVirtualMachinesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type VirtualizationVirtualMachinesUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization virtual machines update default response
-func (o *VirtualizationVirtualMachinesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization virtual machines update default response has a 2xx status code
 func (o *VirtualizationVirtualMachinesUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *VirtualizationVirtualMachinesUpdateDefault) IsServerError() bool {
 // IsCode returns true when this virtualization virtual machines update default response a status code equal to that given
 func (o *VirtualizationVirtualMachinesUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization virtual machines update default response
+func (o *VirtualizationVirtualMachinesUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationVirtualMachinesUpdateDefault) Error() string {

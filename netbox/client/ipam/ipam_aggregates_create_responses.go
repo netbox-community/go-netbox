@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamAggregatesCreateReader is a Reader for the IpamAggregatesCreate structure.
@@ -95,6 +95,11 @@ func (o *IpamAggregatesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the ipam aggregates create created response
+func (o *IpamAggregatesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *IpamAggregatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/aggregates/][%d] ipamAggregatesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamAggregatesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam aggregates create default response
-func (o *IpamAggregatesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam aggregates create default response has a 2xx status code
 func (o *IpamAggregatesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamAggregatesCreateDefault) IsServerError() bool {
 // IsCode returns true when this ipam aggregates create default response a status code equal to that given
 func (o *IpamAggregatesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam aggregates create default response
+func (o *IpamAggregatesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamAggregatesCreateDefault) Error() string {

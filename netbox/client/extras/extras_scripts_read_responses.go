@@ -92,6 +92,11 @@ func (o *ExtrasScriptsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras scripts read o k response
+func (o *ExtrasScriptsReadOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasScriptsReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/scripts/{id}/][%d] extrasScriptsReadOK ", 200)
 }
@@ -123,11 +128,6 @@ type ExtrasScriptsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras scripts read default response
-func (o *ExtrasScriptsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras scripts read default response has a 2xx status code
 func (o *ExtrasScriptsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasScriptsReadDefault) IsServerError() bool {
 // IsCode returns true when this extras scripts read default response a status code equal to that given
 func (o *ExtrasScriptsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras scripts read default response
+func (o *ExtrasScriptsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasScriptsReadDefault) Error() string {

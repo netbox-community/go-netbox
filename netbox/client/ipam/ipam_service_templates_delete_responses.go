@@ -92,6 +92,11 @@ func (o *IpamServiceTemplatesDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam service templates delete no content response
+func (o *IpamServiceTemplatesDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamServiceTemplatesDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/service-templates/{id}/][%d] ipamServiceTemplatesDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamServiceTemplatesDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam service templates delete default response
-func (o *IpamServiceTemplatesDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam service templates delete default response has a 2xx status code
 func (o *IpamServiceTemplatesDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamServiceTemplatesDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam service templates delete default response a status code equal to that given
 func (o *IpamServiceTemplatesDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam service templates delete default response
+func (o *IpamServiceTemplatesDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamServiceTemplatesDeleteDefault) Error() string {

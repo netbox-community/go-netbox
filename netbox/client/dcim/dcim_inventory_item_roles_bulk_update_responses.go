@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimInventoryItemRolesBulkUpdateReader is a Reader for the DcimInventoryItemRolesBulkUpdate structure.
@@ -95,6 +95,11 @@ func (o *DcimInventoryItemRolesBulkUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim inventory item roles bulk update o k response
+func (o *DcimInventoryItemRolesBulkUpdateOK) Code() int {
+	return 200
+}
+
 func (o *DcimInventoryItemRolesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesBulkUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimInventoryItemRolesBulkUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim inventory item roles bulk update default response
-func (o *DcimInventoryItemRolesBulkUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim inventory item roles bulk update default response has a 2xx status code
 func (o *DcimInventoryItemRolesBulkUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimInventoryItemRolesBulkUpdateDefault) IsServerError() bool {
 // IsCode returns true when this dcim inventory item roles bulk update default response a status code equal to that given
 func (o *DcimInventoryItemRolesBulkUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim inventory item roles bulk update default response
+func (o *DcimInventoryItemRolesBulkUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimInventoryItemRolesBulkUpdateDefault) Error() string {

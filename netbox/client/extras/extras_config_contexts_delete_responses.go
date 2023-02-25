@@ -92,6 +92,11 @@ func (o *ExtrasConfigContextsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the extras config contexts delete no content response
+func (o *ExtrasConfigContextsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *ExtrasConfigContextsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /extras/config-contexts/{id}/][%d] extrasConfigContextsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type ExtrasConfigContextsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras config contexts delete default response
-func (o *ExtrasConfigContextsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras config contexts delete default response has a 2xx status code
 func (o *ExtrasConfigContextsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasConfigContextsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this extras config contexts delete default response a status code equal to that given
 func (o *ExtrasConfigContextsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras config contexts delete default response
+func (o *ExtrasConfigContextsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasConfigContextsDeleteDefault) Error() string {

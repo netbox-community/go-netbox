@@ -92,6 +92,11 @@ func (o *DcimDeviceTypesDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim device types delete no content response
+func (o *DcimDeviceTypesDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimDeviceTypesDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/device-types/{id}/][%d] dcimDeviceTypesDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimDeviceTypesDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim device types delete default response
-func (o *DcimDeviceTypesDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim device types delete default response has a 2xx status code
 func (o *DcimDeviceTypesDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimDeviceTypesDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim device types delete default response a status code equal to that given
 func (o *DcimDeviceTypesDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim device types delete default response
+func (o *DcimDeviceTypesDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimDeviceTypesDeleteDefault) Error() string {

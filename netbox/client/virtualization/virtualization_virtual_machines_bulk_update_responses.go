@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // VirtualizationVirtualMachinesBulkUpdateReader is a Reader for the VirtualizationVirtualMachinesBulkUpdate structure.
@@ -95,6 +95,11 @@ func (o *VirtualizationVirtualMachinesBulkUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the virtualization virtual machines bulk update o k response
+func (o *VirtualizationVirtualMachinesBulkUpdateOK) Code() int {
+	return 200
+}
+
 func (o *VirtualizationVirtualMachinesBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /virtualization/virtual-machines/][%d] virtualizationVirtualMachinesBulkUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type VirtualizationVirtualMachinesBulkUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization virtual machines bulk update default response
-func (o *VirtualizationVirtualMachinesBulkUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization virtual machines bulk update default response has a 2xx status code
 func (o *VirtualizationVirtualMachinesBulkUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *VirtualizationVirtualMachinesBulkUpdateDefault) IsServerError() bool {
 // IsCode returns true when this virtualization virtual machines bulk update default response a status code equal to that given
 func (o *VirtualizationVirtualMachinesBulkUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization virtual machines bulk update default response
+func (o *VirtualizationVirtualMachinesBulkUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationVirtualMachinesBulkUpdateDefault) Error() string {

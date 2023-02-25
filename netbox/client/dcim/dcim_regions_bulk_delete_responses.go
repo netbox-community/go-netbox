@@ -92,6 +92,11 @@ func (o *DcimRegionsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim regions bulk delete no content response
+func (o *DcimRegionsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimRegionsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/regions/][%d] dcimRegionsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimRegionsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim regions bulk delete default response
-func (o *DcimRegionsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim regions bulk delete default response has a 2xx status code
 func (o *DcimRegionsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimRegionsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim regions bulk delete default response a status code equal to that given
 func (o *DcimRegionsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim regions bulk delete default response
+func (o *DcimRegionsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimRegionsBulkDeleteDefault) Error() string {

@@ -30,7 +30,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // NewExtrasExportTemplatesBulkPartialUpdateParams creates a new ExtrasExportTemplatesBulkPartialUpdateParams object,

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimConsolePortTemplatesCreateReader is a Reader for the DcimConsolePortTemplatesCreate structure.
@@ -95,6 +95,11 @@ func (o *DcimConsolePortTemplatesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the dcim console port templates create created response
+func (o *DcimConsolePortTemplatesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *DcimConsolePortTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/console-port-templates/][%d] dcimConsolePortTemplatesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimConsolePortTemplatesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim console port templates create default response
-func (o *DcimConsolePortTemplatesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim console port templates create default response has a 2xx status code
 func (o *DcimConsolePortTemplatesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimConsolePortTemplatesCreateDefault) IsServerError() bool {
 // IsCode returns true when this dcim console port templates create default response a status code equal to that given
 func (o *DcimConsolePortTemplatesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim console port templates create default response
+func (o *DcimConsolePortTemplatesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimConsolePortTemplatesCreateDefault) Error() string {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamVlansBulkUpdateReader is a Reader for the IpamVlansBulkUpdate structure.
@@ -95,6 +95,11 @@ func (o *IpamVlansBulkUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam vlans bulk update o k response
+func (o *IpamVlansBulkUpdateOK) Code() int {
+	return 200
+}
+
 func (o *IpamVlansBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /ipam/vlans/][%d] ipamVlansBulkUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamVlansBulkUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam vlans bulk update default response
-func (o *IpamVlansBulkUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam vlans bulk update default response has a 2xx status code
 func (o *IpamVlansBulkUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamVlansBulkUpdateDefault) IsServerError() bool {
 // IsCode returns true when this ipam vlans bulk update default response a status code equal to that given
 func (o *IpamVlansBulkUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam vlans bulk update default response
+func (o *IpamVlansBulkUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamVlansBulkUpdateDefault) Error() string {

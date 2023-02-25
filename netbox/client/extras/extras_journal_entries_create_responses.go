@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasJournalEntriesCreateReader is a Reader for the ExtrasJournalEntriesCreate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasJournalEntriesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the extras journal entries create created response
+func (o *ExtrasJournalEntriesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *ExtrasJournalEntriesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/journal-entries/][%d] extrasJournalEntriesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasJournalEntriesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras journal entries create default response
-func (o *ExtrasJournalEntriesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras journal entries create default response has a 2xx status code
 func (o *ExtrasJournalEntriesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasJournalEntriesCreateDefault) IsServerError() bool {
 // IsCode returns true when this extras journal entries create default response a status code equal to that given
 func (o *ExtrasJournalEntriesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras journal entries create default response
+func (o *ExtrasJournalEntriesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasJournalEntriesCreateDefault) Error() string {

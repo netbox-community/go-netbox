@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimInterfaceTemplatesReadReader is a Reader for the DcimInterfaceTemplatesRead structure.
@@ -95,6 +95,11 @@ func (o *DcimInterfaceTemplatesReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim interface templates read o k response
+func (o *DcimInterfaceTemplatesReadOK) Code() int {
+	return 200
+}
+
 func (o *DcimInterfaceTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/interface-templates/{id}/][%d] dcimInterfaceTemplatesReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimInterfaceTemplatesReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim interface templates read default response
-func (o *DcimInterfaceTemplatesReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim interface templates read default response has a 2xx status code
 func (o *DcimInterfaceTemplatesReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimInterfaceTemplatesReadDefault) IsServerError() bool {
 // IsCode returns true when this dcim interface templates read default response a status code equal to that given
 func (o *DcimInterfaceTemplatesReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim interface templates read default response
+func (o *DcimInterfaceTemplatesReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimInterfaceTemplatesReadDefault) Error() string {

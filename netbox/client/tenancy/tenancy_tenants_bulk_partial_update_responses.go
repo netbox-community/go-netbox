@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // TenancyTenantsBulkPartialUpdateReader is a Reader for the TenancyTenantsBulkPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *TenancyTenantsBulkPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the tenancy tenants bulk partial update o k response
+func (o *TenancyTenantsBulkPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *TenancyTenantsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/tenants/][%d] tenancyTenantsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type TenancyTenantsBulkPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the tenancy tenants bulk partial update default response
-func (o *TenancyTenantsBulkPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this tenancy tenants bulk partial update default response has a 2xx status code
 func (o *TenancyTenantsBulkPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *TenancyTenantsBulkPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this tenancy tenants bulk partial update default response a status code equal to that given
 func (o *TenancyTenantsBulkPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the tenancy tenants bulk partial update default response
+func (o *TenancyTenantsBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *TenancyTenantsBulkPartialUpdateDefault) Error() string {

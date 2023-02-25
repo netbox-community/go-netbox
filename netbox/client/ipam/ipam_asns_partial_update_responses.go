@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamAsnsPartialUpdateReader is a Reader for the IpamAsnsPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *IpamAsnsPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam asns partial update o k response
+func (o *IpamAsnsPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *IpamAsnsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/asns/{id}/][%d] ipamAsnsPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamAsnsPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam asns partial update default response
-func (o *IpamAsnsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam asns partial update default response has a 2xx status code
 func (o *IpamAsnsPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamAsnsPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this ipam asns partial update default response a status code equal to that given
 func (o *IpamAsnsPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam asns partial update default response
+func (o *IpamAsnsPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamAsnsPartialUpdateDefault) Error() string {

@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasJournalEntriesListReader is a Reader for the ExtrasJournalEntriesList structure.
@@ -100,6 +100,11 @@ func (o *ExtrasJournalEntriesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras journal entries list o k response
+func (o *ExtrasJournalEntriesListOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasJournalEntriesListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/journal-entries/][%d] extrasJournalEntriesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type ExtrasJournalEntriesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras journal entries list default response
-func (o *ExtrasJournalEntriesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras journal entries list default response has a 2xx status code
 func (o *ExtrasJournalEntriesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *ExtrasJournalEntriesListDefault) IsServerError() bool {
 // IsCode returns true when this extras journal entries list default response a status code equal to that given
 func (o *ExtrasJournalEntriesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras journal entries list default response
+func (o *ExtrasJournalEntriesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasJournalEntriesListDefault) Error() string {

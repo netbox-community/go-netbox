@@ -92,6 +92,11 @@ func (o *VirtualizationClustersDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the virtualization clusters delete no content response
+func (o *VirtualizationClustersDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *VirtualizationClustersDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/clusters/{id}/][%d] virtualizationClustersDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type VirtualizationClustersDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization clusters delete default response
-func (o *VirtualizationClustersDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization clusters delete default response has a 2xx status code
 func (o *VirtualizationClustersDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *VirtualizationClustersDeleteDefault) IsServerError() bool {
 // IsCode returns true when this virtualization clusters delete default response a status code equal to that given
 func (o *VirtualizationClustersDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization clusters delete default response
+func (o *VirtualizationClustersDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationClustersDeleteDefault) Error() string {

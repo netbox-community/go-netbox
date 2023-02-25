@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimRegionsReadReader is a Reader for the DcimRegionsRead structure.
@@ -95,6 +95,11 @@ func (o *DcimRegionsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim regions read o k response
+func (o *DcimRegionsReadOK) Code() int {
+	return 200
+}
+
 func (o *DcimRegionsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/regions/{id}/][%d] dcimRegionsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimRegionsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim regions read default response
-func (o *DcimRegionsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim regions read default response has a 2xx status code
 func (o *DcimRegionsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimRegionsReadDefault) IsServerError() bool {
 // IsCode returns true when this dcim regions read default response a status code equal to that given
 func (o *DcimRegionsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim regions read default response
+func (o *DcimRegionsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimRegionsReadDefault) Error() string {

@@ -92,6 +92,11 @@ func (o *UsersTokensBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the users tokens bulk delete no content response
+func (o *UsersTokensBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *UsersTokensBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /users/tokens/][%d] usersTokensBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type UsersTokensBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users tokens bulk delete default response
-func (o *UsersTokensBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users tokens bulk delete default response has a 2xx status code
 func (o *UsersTokensBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *UsersTokensBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this users tokens bulk delete default response a status code equal to that given
 func (o *UsersTokensBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users tokens bulk delete default response
+func (o *UsersTokensBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersTokensBulkDeleteDefault) Error() string {

@@ -92,6 +92,11 @@ func (o *DcimSiteGroupsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim site groups bulk delete no content response
+func (o *DcimSiteGroupsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimSiteGroupsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/site-groups/][%d] dcimSiteGroupsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimSiteGroupsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim site groups bulk delete default response
-func (o *DcimSiteGroupsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim site groups bulk delete default response has a 2xx status code
 func (o *DcimSiteGroupsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimSiteGroupsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim site groups bulk delete default response a status code equal to that given
 func (o *DcimSiteGroupsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim site groups bulk delete default response
+func (o *DcimSiteGroupsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimSiteGroupsBulkDeleteDefault) Error() string {

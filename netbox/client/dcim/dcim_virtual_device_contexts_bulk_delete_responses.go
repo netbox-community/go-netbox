@@ -92,6 +92,11 @@ func (o *DcimVirtualDeviceContextsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim virtual device contexts bulk delete no content response
+func (o *DcimVirtualDeviceContextsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimVirtualDeviceContextsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/virtual-device-contexts/][%d] dcimVirtualDeviceContextsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimVirtualDeviceContextsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim virtual device contexts bulk delete default response
-func (o *DcimVirtualDeviceContextsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim virtual device contexts bulk delete default response has a 2xx status code
 func (o *DcimVirtualDeviceContextsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimVirtualDeviceContextsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim virtual device contexts bulk delete default response a status code equal to that given
 func (o *DcimVirtualDeviceContextsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim virtual device contexts bulk delete default response
+func (o *DcimVirtualDeviceContextsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimVirtualDeviceContextsBulkDeleteDefault) Error() string {

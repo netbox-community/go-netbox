@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimPlatformsCreateReader is a Reader for the DcimPlatformsCreate structure.
@@ -95,6 +95,11 @@ func (o *DcimPlatformsCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the dcim platforms create created response
+func (o *DcimPlatformsCreateCreated) Code() int {
+	return 201
+}
+
 func (o *DcimPlatformsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/platforms/][%d] dcimPlatformsCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimPlatformsCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim platforms create default response
-func (o *DcimPlatformsCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim platforms create default response has a 2xx status code
 func (o *DcimPlatformsCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimPlatformsCreateDefault) IsServerError() bool {
 // IsCode returns true when this dcim platforms create default response a status code equal to that given
 func (o *DcimPlatformsCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim platforms create default response
+func (o *DcimPlatformsCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPlatformsCreateDefault) Error() string {

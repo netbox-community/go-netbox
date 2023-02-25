@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimFrontPortsBulkPartialUpdateReader is a Reader for the DcimFrontPortsBulkPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *DcimFrontPortsBulkPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim front ports bulk partial update o k response
+func (o *DcimFrontPortsBulkPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *DcimFrontPortsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/front-ports/][%d] dcimFrontPortsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimFrontPortsBulkPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim front ports bulk partial update default response
-func (o *DcimFrontPortsBulkPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim front ports bulk partial update default response has a 2xx status code
 func (o *DcimFrontPortsBulkPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimFrontPortsBulkPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this dcim front ports bulk partial update default response a status code equal to that given
 func (o *DcimFrontPortsBulkPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim front ports bulk partial update default response
+func (o *DcimFrontPortsBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimFrontPortsBulkPartialUpdateDefault) Error() string {

@@ -92,6 +92,11 @@ func (o *ExtrasJournalEntriesBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the extras journal entries bulk delete no content response
+func (o *ExtrasJournalEntriesBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *ExtrasJournalEntriesBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /extras/journal-entries/][%d] extrasJournalEntriesBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type ExtrasJournalEntriesBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras journal entries bulk delete default response
-func (o *ExtrasJournalEntriesBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras journal entries bulk delete default response has a 2xx status code
 func (o *ExtrasJournalEntriesBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasJournalEntriesBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this extras journal entries bulk delete default response a status code equal to that given
 func (o *ExtrasJournalEntriesBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras journal entries bulk delete default response
+func (o *ExtrasJournalEntriesBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasJournalEntriesBulkDeleteDefault) Error() string {

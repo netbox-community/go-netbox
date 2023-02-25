@@ -92,6 +92,11 @@ func (o *UsersConfigListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the users config list o k response
+func (o *UsersConfigListOK) Code() int {
+	return 200
+}
+
 func (o *UsersConfigListOK) Error() string {
 	return fmt.Sprintf("[GET /users/config/][%d] usersConfigListOK ", 200)
 }
@@ -123,11 +128,6 @@ type UsersConfigListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users config list default response
-func (o *UsersConfigListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users config list default response has a 2xx status code
 func (o *UsersConfigListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *UsersConfigListDefault) IsServerError() bool {
 // IsCode returns true when this users config list default response a status code equal to that given
 func (o *UsersConfigListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users config list default response
+func (o *UsersConfigListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersConfigListDefault) Error() string {

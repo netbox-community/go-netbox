@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimRackReservationsReadReader is a Reader for the DcimRackReservationsRead structure.
@@ -95,6 +95,11 @@ func (o *DcimRackReservationsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim rack reservations read o k response
+func (o *DcimRackReservationsReadOK) Code() int {
+	return 200
+}
+
 func (o *DcimRackReservationsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/rack-reservations/{id}/][%d] dcimRackReservationsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimRackReservationsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim rack reservations read default response
-func (o *DcimRackReservationsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim rack reservations read default response has a 2xx status code
 func (o *DcimRackReservationsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimRackReservationsReadDefault) IsServerError() bool {
 // IsCode returns true when this dcim rack reservations read default response a status code equal to that given
 func (o *DcimRackReservationsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim rack reservations read default response
+func (o *DcimRackReservationsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimRackReservationsReadDefault) Error() string {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // WirelessWirelessLanGroupsBulkPartialUpdateReader is a Reader for the WirelessWirelessLanGroupsBulkPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *WirelessWirelessLanGroupsBulkPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the wireless wireless lan groups bulk partial update o k response
+func (o *WirelessWirelessLanGroupsBulkPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *WirelessWirelessLanGroupsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /wireless/wireless-lan-groups/][%d] wirelessWirelessLanGroupsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type WirelessWirelessLanGroupsBulkPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the wireless wireless lan groups bulk partial update default response
-func (o *WirelessWirelessLanGroupsBulkPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this wireless wireless lan groups bulk partial update default response has a 2xx status code
 func (o *WirelessWirelessLanGroupsBulkPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *WirelessWirelessLanGroupsBulkPartialUpdateDefault) IsServerError() bool
 // IsCode returns true when this wireless wireless lan groups bulk partial update default response a status code equal to that given
 func (o *WirelessWirelessLanGroupsBulkPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the wireless wireless lan groups bulk partial update default response
+func (o *WirelessWirelessLanGroupsBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *WirelessWirelessLanGroupsBulkPartialUpdateDefault) Error() string {

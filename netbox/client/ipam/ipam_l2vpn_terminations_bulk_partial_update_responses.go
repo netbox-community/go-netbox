@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamL2vpnTerminationsBulkPartialUpdateReader is a Reader for the IpamL2vpnTerminationsBulkPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam l2vpn terminations bulk partial update o k response
+func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *IpamL2vpnTerminationsBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/l2vpn-terminations/][%d] ipamL2vpnTerminationsBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamL2vpnTerminationsBulkPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam l2vpn terminations bulk partial update default response
-func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam l2vpn terminations bulk partial update default response has a 2xx status code
 func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this ipam l2vpn terminations bulk partial update default response a status code equal to that given
 func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam l2vpn terminations bulk partial update default response
+func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamL2vpnTerminationsBulkPartialUpdateDefault) Error() string {

@@ -92,6 +92,11 @@ func (o *VirtualizationInterfacesDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the virtualization interfaces delete no content response
+func (o *VirtualizationInterfacesDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *VirtualizationInterfacesDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /virtualization/interfaces/{id}/][%d] virtualizationInterfacesDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type VirtualizationInterfacesDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization interfaces delete default response
-func (o *VirtualizationInterfacesDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization interfaces delete default response has a 2xx status code
 func (o *VirtualizationInterfacesDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *VirtualizationInterfacesDeleteDefault) IsServerError() bool {
 // IsCode returns true when this virtualization interfaces delete default response a status code equal to that given
 func (o *VirtualizationInterfacesDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization interfaces delete default response
+func (o *VirtualizationInterfacesDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationInterfacesDeleteDefault) Error() string {

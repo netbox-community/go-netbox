@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimPowerPortsPartialUpdateReader is a Reader for the DcimPowerPortsPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *DcimPowerPortsPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim power ports partial update o k response
+func (o *DcimPowerPortsPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *DcimPowerPortsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/power-ports/{id}/][%d] dcimPowerPortsPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimPowerPortsPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim power ports partial update default response
-func (o *DcimPowerPortsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim power ports partial update default response has a 2xx status code
 func (o *DcimPowerPortsPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimPowerPortsPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this dcim power ports partial update default response a status code equal to that given
 func (o *DcimPowerPortsPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim power ports partial update default response
+func (o *DcimPowerPortsPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPowerPortsPartialUpdateDefault) Error() string {

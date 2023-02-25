@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasCustomLinksBulkPartialUpdateReader is a Reader for the ExtrasCustomLinksBulkPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasCustomLinksBulkPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras custom links bulk partial update o k response
+func (o *ExtrasCustomLinksBulkPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasCustomLinksBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/custom-links/][%d] extrasCustomLinksBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasCustomLinksBulkPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom links bulk partial update default response
-func (o *ExtrasCustomLinksBulkPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom links bulk partial update default response has a 2xx status code
 func (o *ExtrasCustomLinksBulkPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasCustomLinksBulkPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras custom links bulk partial update default response a status code equal to that given
 func (o *ExtrasCustomLinksBulkPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom links bulk partial update default response
+func (o *ExtrasCustomLinksBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomLinksBulkPartialUpdateDefault) Error() string {

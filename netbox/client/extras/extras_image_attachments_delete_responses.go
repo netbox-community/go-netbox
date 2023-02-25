@@ -92,6 +92,11 @@ func (o *ExtrasImageAttachmentsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the extras image attachments delete no content response
+func (o *ExtrasImageAttachmentsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *ExtrasImageAttachmentsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /extras/image-attachments/{id}/][%d] extrasImageAttachmentsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type ExtrasImageAttachmentsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras image attachments delete default response
-func (o *ExtrasImageAttachmentsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras image attachments delete default response has a 2xx status code
 func (o *ExtrasImageAttachmentsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasImageAttachmentsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this extras image attachments delete default response a status code equal to that given
 func (o *ExtrasImageAttachmentsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras image attachments delete default response
+func (o *ExtrasImageAttachmentsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasImageAttachmentsDeleteDefault) Error() string {

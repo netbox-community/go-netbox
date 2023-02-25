@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamAsnsListReader is a Reader for the IpamAsnsList structure.
@@ -100,6 +100,11 @@ func (o *IpamAsnsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam asns list o k response
+func (o *IpamAsnsListOK) Code() int {
+	return 200
+}
+
 func (o *IpamAsnsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/asns/][%d] ipamAsnsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamAsnsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam asns list default response
-func (o *IpamAsnsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam asns list default response has a 2xx status code
 func (o *IpamAsnsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamAsnsListDefault) IsServerError() bool {
 // IsCode returns true when this ipam asns list default response a status code equal to that given
 func (o *IpamAsnsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam asns list default response
+func (o *IpamAsnsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamAsnsListDefault) Error() string {

@@ -92,6 +92,11 @@ func (o *IpamVlansBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam vlans bulk delete no content response
+func (o *IpamVlansBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamVlansBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/vlans/][%d] ipamVlansBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamVlansBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam vlans bulk delete default response
-func (o *IpamVlansBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam vlans bulk delete default response has a 2xx status code
 func (o *IpamVlansBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamVlansBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam vlans bulk delete default response a status code equal to that given
 func (o *IpamVlansBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam vlans bulk delete default response
+func (o *IpamVlansBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamVlansBulkDeleteDefault) Error() string {

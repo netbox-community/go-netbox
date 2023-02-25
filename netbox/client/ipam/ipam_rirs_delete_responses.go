@@ -92,6 +92,11 @@ func (o *IpamRirsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam rirs delete no content response
+func (o *IpamRirsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamRirsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/rirs/{id}/][%d] ipamRirsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamRirsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam rirs delete default response
-func (o *IpamRirsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam rirs delete default response has a 2xx status code
 func (o *IpamRirsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamRirsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam rirs delete default response a status code equal to that given
 func (o *IpamRirsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam rirs delete default response
+func (o *IpamRirsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamRirsDeleteDefault) Error() string {

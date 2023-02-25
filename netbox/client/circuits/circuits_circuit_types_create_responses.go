@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // CircuitsCircuitTypesCreateReader is a Reader for the CircuitsCircuitTypesCreate structure.
@@ -95,6 +95,11 @@ func (o *CircuitsCircuitTypesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the circuits circuit types create created response
+func (o *CircuitsCircuitTypesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *CircuitsCircuitTypesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /circuits/circuit-types/][%d] circuitsCircuitTypesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type CircuitsCircuitTypesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the circuits circuit types create default response
-func (o *CircuitsCircuitTypesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this circuits circuit types create default response has a 2xx status code
 func (o *CircuitsCircuitTypesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *CircuitsCircuitTypesCreateDefault) IsServerError() bool {
 // IsCode returns true when this circuits circuit types create default response a status code equal to that given
 func (o *CircuitsCircuitTypesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the circuits circuit types create default response
+func (o *CircuitsCircuitTypesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *CircuitsCircuitTypesCreateDefault) Error() string {

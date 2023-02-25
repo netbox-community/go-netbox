@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimPowerOutletsUpdateReader is a Reader for the DcimPowerOutletsUpdate structure.
@@ -95,6 +95,11 @@ func (o *DcimPowerOutletsUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim power outlets update o k response
+func (o *DcimPowerOutletsUpdateOK) Code() int {
+	return 200
+}
+
 func (o *DcimPowerOutletsUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/power-outlets/{id}/][%d] dcimPowerOutletsUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimPowerOutletsUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim power outlets update default response
-func (o *DcimPowerOutletsUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim power outlets update default response has a 2xx status code
 func (o *DcimPowerOutletsUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimPowerOutletsUpdateDefault) IsServerError() bool {
 // IsCode returns true when this dcim power outlets update default response a status code equal to that given
 func (o *DcimPowerOutletsUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim power outlets update default response
+func (o *DcimPowerOutletsUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPowerOutletsUpdateDefault) Error() string {

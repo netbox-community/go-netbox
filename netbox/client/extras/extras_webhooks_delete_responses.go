@@ -92,6 +92,11 @@ func (o *ExtrasWebhooksDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the extras webhooks delete no content response
+func (o *ExtrasWebhooksDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *ExtrasWebhooksDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /extras/webhooks/{id}/][%d] extrasWebhooksDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type ExtrasWebhooksDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras webhooks delete default response
-func (o *ExtrasWebhooksDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras webhooks delete default response has a 2xx status code
 func (o *ExtrasWebhooksDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasWebhooksDeleteDefault) IsServerError() bool {
 // IsCode returns true when this extras webhooks delete default response a status code equal to that given
 func (o *ExtrasWebhooksDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras webhooks delete default response
+func (o *ExtrasWebhooksDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasWebhooksDeleteDefault) Error() string {

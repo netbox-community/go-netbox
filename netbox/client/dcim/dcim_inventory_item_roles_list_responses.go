@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimInventoryItemRolesListReader is a Reader for the DcimInventoryItemRolesList structure.
@@ -100,6 +100,11 @@ func (o *DcimInventoryItemRolesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim inventory item roles list o k response
+func (o *DcimInventoryItemRolesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimInventoryItemRolesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/inventory-item-roles/][%d] dcimInventoryItemRolesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimInventoryItemRolesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim inventory item roles list default response
-func (o *DcimInventoryItemRolesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim inventory item roles list default response has a 2xx status code
 func (o *DcimInventoryItemRolesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimInventoryItemRolesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim inventory item roles list default response a status code equal to that given
 func (o *DcimInventoryItemRolesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim inventory item roles list default response
+func (o *DcimInventoryItemRolesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimInventoryItemRolesListDefault) Error() string {

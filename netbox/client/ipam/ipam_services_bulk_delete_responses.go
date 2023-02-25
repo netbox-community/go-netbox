@@ -92,6 +92,11 @@ func (o *IpamServicesBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam services bulk delete no content response
+func (o *IpamServicesBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamServicesBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/services/][%d] ipamServicesBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamServicesBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam services bulk delete default response
-func (o *IpamServicesBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam services bulk delete default response has a 2xx status code
 func (o *IpamServicesBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamServicesBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam services bulk delete default response a status code equal to that given
 func (o *IpamServicesBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam services bulk delete default response
+func (o *IpamServicesBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamServicesBulkDeleteDefault) Error() string {

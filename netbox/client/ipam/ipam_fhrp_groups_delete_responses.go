@@ -92,6 +92,11 @@ func (o *IpamFhrpGroupsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam fhrp groups delete no content response
+func (o *IpamFhrpGroupsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamFhrpGroupsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/fhrp-groups/{id}/][%d] ipamFhrpGroupsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamFhrpGroupsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam fhrp groups delete default response
-func (o *IpamFhrpGroupsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam fhrp groups delete default response has a 2xx status code
 func (o *IpamFhrpGroupsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamFhrpGroupsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam fhrp groups delete default response a status code equal to that given
 func (o *IpamFhrpGroupsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam fhrp groups delete default response
+func (o *IpamFhrpGroupsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamFhrpGroupsDeleteDefault) Error() string {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // VirtualizationVirtualMachinesPartialUpdateReader is a Reader for the VirtualizationVirtualMachinesPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *VirtualizationVirtualMachinesPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the virtualization virtual machines partial update o k response
+func (o *VirtualizationVirtualMachinesPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *VirtualizationVirtualMachinesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/virtual-machines/{id}/][%d] virtualizationVirtualMachinesPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type VirtualizationVirtualMachinesPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization virtual machines partial update default response
-func (o *VirtualizationVirtualMachinesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization virtual machines partial update default response has a 2xx status code
 func (o *VirtualizationVirtualMachinesPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *VirtualizationVirtualMachinesPartialUpdateDefault) IsServerError() bool
 // IsCode returns true when this virtualization virtual machines partial update default response a status code equal to that given
 func (o *VirtualizationVirtualMachinesPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization virtual machines partial update default response
+func (o *VirtualizationVirtualMachinesPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationVirtualMachinesPartialUpdateDefault) Error() string {

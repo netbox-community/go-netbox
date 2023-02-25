@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamFhrpGroupAssignmentsReadReader is a Reader for the IpamFhrpGroupAssignmentsRead structure.
@@ -95,6 +95,11 @@ func (o *IpamFhrpGroupAssignmentsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam fhrp group assignments read o k response
+func (o *IpamFhrpGroupAssignmentsReadOK) Code() int {
+	return 200
+}
+
 func (o *IpamFhrpGroupAssignmentsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/fhrp-group-assignments/{id}/][%d] ipamFhrpGroupAssignmentsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamFhrpGroupAssignmentsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam fhrp group assignments read default response
-func (o *IpamFhrpGroupAssignmentsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam fhrp group assignments read default response has a 2xx status code
 func (o *IpamFhrpGroupAssignmentsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamFhrpGroupAssignmentsReadDefault) IsServerError() bool {
 // IsCode returns true when this ipam fhrp group assignments read default response a status code equal to that given
 func (o *IpamFhrpGroupAssignmentsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam fhrp group assignments read default response
+func (o *IpamFhrpGroupAssignmentsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamFhrpGroupAssignmentsReadDefault) Error() string {

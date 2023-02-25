@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimCablesUpdateReader is a Reader for the DcimCablesUpdate structure.
@@ -95,6 +95,11 @@ func (o *DcimCablesUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim cables update o k response
+func (o *DcimCablesUpdateOK) Code() int {
+	return 200
+}
+
 func (o *DcimCablesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /dcim/cables/{id}/][%d] dcimCablesUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimCablesUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim cables update default response
-func (o *DcimCablesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim cables update default response has a 2xx status code
 func (o *DcimCablesUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimCablesUpdateDefault) IsServerError() bool {
 // IsCode returns true when this dcim cables update default response a status code equal to that given
 func (o *DcimCablesUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim cables update default response
+func (o *DcimCablesUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimCablesUpdateDefault) Error() string {

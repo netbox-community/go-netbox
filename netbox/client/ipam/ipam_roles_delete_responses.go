@@ -92,6 +92,11 @@ func (o *IpamRolesDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam roles delete no content response
+func (o *IpamRolesDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamRolesDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/roles/{id}/][%d] ipamRolesDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamRolesDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam roles delete default response
-func (o *IpamRolesDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam roles delete default response has a 2xx status code
 func (o *IpamRolesDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamRolesDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam roles delete default response a status code equal to that given
 func (o *IpamRolesDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam roles delete default response
+func (o *IpamRolesDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamRolesDeleteDefault) Error() string {

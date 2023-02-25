@@ -92,6 +92,11 @@ func (o *DcimInventoryItemRolesDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim inventory item roles delete no content response
+func (o *DcimInventoryItemRolesDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimInventoryItemRolesDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/inventory-item-roles/{id}/][%d] dcimInventoryItemRolesDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimInventoryItemRolesDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim inventory item roles delete default response
-func (o *DcimInventoryItemRolesDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim inventory item roles delete default response has a 2xx status code
 func (o *DcimInventoryItemRolesDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimInventoryItemRolesDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim inventory item roles delete default response a status code equal to that given
 func (o *DcimInventoryItemRolesDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim inventory item roles delete default response
+func (o *DcimInventoryItemRolesDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimInventoryItemRolesDeleteDefault) Error() string {

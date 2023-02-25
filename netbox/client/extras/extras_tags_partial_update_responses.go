@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasTagsPartialUpdateReader is a Reader for the ExtrasTagsPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasTagsPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras tags partial update o k response
+func (o *ExtrasTagsPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasTagsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/tags/{id}/][%d] extrasTagsPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasTagsPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras tags partial update default response
-func (o *ExtrasTagsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras tags partial update default response has a 2xx status code
 func (o *ExtrasTagsPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasTagsPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras tags partial update default response a status code equal to that given
 func (o *ExtrasTagsPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras tags partial update default response
+func (o *ExtrasTagsPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasTagsPartialUpdateDefault) Error() string {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasTagsBulkUpdateReader is a Reader for the ExtrasTagsBulkUpdate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasTagsBulkUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras tags bulk update o k response
+func (o *ExtrasTagsBulkUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasTagsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/tags/][%d] extrasTagsBulkUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasTagsBulkUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras tags bulk update default response
-func (o *ExtrasTagsBulkUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras tags bulk update default response has a 2xx status code
 func (o *ExtrasTagsBulkUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasTagsBulkUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras tags bulk update default response a status code equal to that given
 func (o *ExtrasTagsBulkUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras tags bulk update default response
+func (o *ExtrasTagsBulkUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasTagsBulkUpdateDefault) Error() string {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamVlanGroupsReadReader is a Reader for the IpamVlanGroupsRead structure.
@@ -95,6 +95,11 @@ func (o *IpamVlanGroupsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam vlan groups read o k response
+func (o *IpamVlanGroupsReadOK) Code() int {
+	return 200
+}
+
 func (o *IpamVlanGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlan-groups/{id}/][%d] ipamVlanGroupsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamVlanGroupsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam vlan groups read default response
-func (o *IpamVlanGroupsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam vlan groups read default response has a 2xx status code
 func (o *IpamVlanGroupsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamVlanGroupsReadDefault) IsServerError() bool {
 // IsCode returns true when this ipam vlan groups read default response a status code equal to that given
 func (o *IpamVlanGroupsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam vlan groups read default response
+func (o *IpamVlanGroupsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamVlanGroupsReadDefault) Error() string {

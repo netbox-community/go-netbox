@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimDevicesNapalmReader is a Reader for the DcimDevicesNapalm structure.
@@ -95,6 +95,11 @@ func (o *DcimDevicesNapalmOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim devices napalm o k response
+func (o *DcimDevicesNapalmOK) Code() int {
+	return 200
+}
+
 func (o *DcimDevicesNapalmOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/devices/{id}/napalm/][%d] dcimDevicesNapalmOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimDevicesNapalmDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim devices napalm default response
-func (o *DcimDevicesNapalmDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim devices napalm default response has a 2xx status code
 func (o *DcimDevicesNapalmDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimDevicesNapalmDefault) IsServerError() bool {
 // IsCode returns true when this dcim devices napalm default response a status code equal to that given
 func (o *DcimDevicesNapalmDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim devices napalm default response
+func (o *DcimDevicesNapalmDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimDevicesNapalmDefault) Error() string {

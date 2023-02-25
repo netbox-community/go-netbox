@@ -92,6 +92,11 @@ func (o *WirelessWirelessLansDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the wireless wireless lans delete no content response
+func (o *WirelessWirelessLansDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *WirelessWirelessLansDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /wireless/wireless-lans/{id}/][%d] wirelessWirelessLansDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type WirelessWirelessLansDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the wireless wireless lans delete default response
-func (o *WirelessWirelessLansDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this wireless wireless lans delete default response has a 2xx status code
 func (o *WirelessWirelessLansDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *WirelessWirelessLansDeleteDefault) IsServerError() bool {
 // IsCode returns true when this wireless wireless lans delete default response a status code equal to that given
 func (o *WirelessWirelessLansDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the wireless wireless lans delete default response
+func (o *WirelessWirelessLansDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *WirelessWirelessLansDeleteDefault) Error() string {

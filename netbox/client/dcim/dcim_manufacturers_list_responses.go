@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimManufacturersListReader is a Reader for the DcimManufacturersList structure.
@@ -100,6 +100,11 @@ func (o *DcimManufacturersListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim manufacturers list o k response
+func (o *DcimManufacturersListOK) Code() int {
+	return 200
+}
+
 func (o *DcimManufacturersListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/manufacturers/][%d] dcimManufacturersListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimManufacturersListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim manufacturers list default response
-func (o *DcimManufacturersListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim manufacturers list default response has a 2xx status code
 func (o *DcimManufacturersListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimManufacturersListDefault) IsServerError() bool {
 // IsCode returns true when this dcim manufacturers list default response a status code equal to that given
 func (o *DcimManufacturersListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim manufacturers list default response
+func (o *DcimManufacturersListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimManufacturersListDefault) Error() string {

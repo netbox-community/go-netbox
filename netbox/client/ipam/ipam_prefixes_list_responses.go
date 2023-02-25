@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamPrefixesListReader is a Reader for the IpamPrefixesList structure.
@@ -100,6 +100,11 @@ func (o *IpamPrefixesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam prefixes list o k response
+func (o *IpamPrefixesListOK) Code() int {
+	return 200
+}
+
 func (o *IpamPrefixesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/][%d] ipamPrefixesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamPrefixesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam prefixes list default response
-func (o *IpamPrefixesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam prefixes list default response has a 2xx status code
 func (o *IpamPrefixesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamPrefixesListDefault) IsServerError() bool {
 // IsCode returns true when this ipam prefixes list default response a status code equal to that given
 func (o *IpamPrefixesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam prefixes list default response
+func (o *IpamPrefixesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamPrefixesListDefault) Error() string {

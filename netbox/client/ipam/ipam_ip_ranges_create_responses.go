@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamIPRangesCreateReader is a Reader for the IpamIPRangesCreate structure.
@@ -95,6 +95,11 @@ func (o *IpamIPRangesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the ipam Ip ranges create created response
+func (o *IpamIPRangesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *IpamIPRangesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/ip-ranges/][%d] ipamIpRangesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamIPRangesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam ip ranges create default response
-func (o *IpamIPRangesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam ip ranges create default response has a 2xx status code
 func (o *IpamIPRangesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamIPRangesCreateDefault) IsServerError() bool {
 // IsCode returns true when this ipam ip ranges create default response a status code equal to that given
 func (o *IpamIPRangesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam ip ranges create default response
+func (o *IpamIPRangesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamIPRangesCreateDefault) Error() string {

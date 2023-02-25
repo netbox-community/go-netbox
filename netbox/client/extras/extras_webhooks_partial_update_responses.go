@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasWebhooksPartialUpdateReader is a Reader for the ExtrasWebhooksPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasWebhooksPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras webhooks partial update o k response
+func (o *ExtrasWebhooksPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasWebhooksPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /extras/webhooks/{id}/][%d] extrasWebhooksPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasWebhooksPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras webhooks partial update default response
-func (o *ExtrasWebhooksPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras webhooks partial update default response has a 2xx status code
 func (o *ExtrasWebhooksPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasWebhooksPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras webhooks partial update default response a status code equal to that given
 func (o *ExtrasWebhooksPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras webhooks partial update default response
+func (o *ExtrasWebhooksPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasWebhooksPartialUpdateDefault) Error() string {

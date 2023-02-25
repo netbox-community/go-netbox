@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimDeviceTypesListReader is a Reader for the DcimDeviceTypesList structure.
@@ -100,6 +100,11 @@ func (o *DcimDeviceTypesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim device types list o k response
+func (o *DcimDeviceTypesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimDeviceTypesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-types/][%d] dcimDeviceTypesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimDeviceTypesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim device types list default response
-func (o *DcimDeviceTypesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim device types list default response has a 2xx status code
 func (o *DcimDeviceTypesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimDeviceTypesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim device types list default response a status code equal to that given
 func (o *DcimDeviceTypesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim device types list default response
+func (o *DcimDeviceTypesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimDeviceTypesListDefault) Error() string {

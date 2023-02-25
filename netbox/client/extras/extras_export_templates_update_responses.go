@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasExportTemplatesUpdateReader is a Reader for the ExtrasExportTemplatesUpdate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasExportTemplatesUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras export templates update o k response
+func (o *ExtrasExportTemplatesUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasExportTemplatesUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/export-templates/{id}/][%d] extrasExportTemplatesUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasExportTemplatesUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras export templates update default response
-func (o *ExtrasExportTemplatesUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras export templates update default response has a 2xx status code
 func (o *ExtrasExportTemplatesUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasExportTemplatesUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras export templates update default response a status code equal to that given
 func (o *ExtrasExportTemplatesUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras export templates update default response
+func (o *ExtrasExportTemplatesUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasExportTemplatesUpdateDefault) Error() string {

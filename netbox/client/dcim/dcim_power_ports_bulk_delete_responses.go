@@ -92,6 +92,11 @@ func (o *DcimPowerPortsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim power ports bulk delete no content response
+func (o *DcimPowerPortsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimPowerPortsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/power-ports/][%d] dcimPowerPortsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimPowerPortsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim power ports bulk delete default response
-func (o *DcimPowerPortsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim power ports bulk delete default response has a 2xx status code
 func (o *DcimPowerPortsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimPowerPortsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim power ports bulk delete default response a status code equal to that given
 func (o *DcimPowerPortsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim power ports bulk delete default response
+func (o *DcimPowerPortsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPowerPortsBulkDeleteDefault) Error() string {

@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasImageAttachmentsListReader is a Reader for the ExtrasImageAttachmentsList structure.
@@ -100,6 +100,11 @@ func (o *ExtrasImageAttachmentsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras image attachments list o k response
+func (o *ExtrasImageAttachmentsListOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasImageAttachmentsListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/image-attachments/][%d] extrasImageAttachmentsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type ExtrasImageAttachmentsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras image attachments list default response
-func (o *ExtrasImageAttachmentsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras image attachments list default response has a 2xx status code
 func (o *ExtrasImageAttachmentsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *ExtrasImageAttachmentsListDefault) IsServerError() bool {
 // IsCode returns true when this extras image attachments list default response a status code equal to that given
 func (o *ExtrasImageAttachmentsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras image attachments list default response
+func (o *ExtrasImageAttachmentsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasImageAttachmentsListDefault) Error() string {

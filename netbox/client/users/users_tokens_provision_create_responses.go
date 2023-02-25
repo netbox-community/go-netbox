@@ -92,6 +92,11 @@ func (o *UsersTokensProvisionCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the users tokens provision create created response
+func (o *UsersTokensProvisionCreateCreated) Code() int {
+	return 201
+}
+
 func (o *UsersTokensProvisionCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /users/tokens/provision/][%d] usersTokensProvisionCreateCreated ", 201)
 }
@@ -123,11 +128,6 @@ type UsersTokensProvisionCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users tokens provision create default response
-func (o *UsersTokensProvisionCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users tokens provision create default response has a 2xx status code
 func (o *UsersTokensProvisionCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *UsersTokensProvisionCreateDefault) IsServerError() bool {
 // IsCode returns true when this users tokens provision create default response a status code equal to that given
 func (o *UsersTokensProvisionCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users tokens provision create default response
+func (o *UsersTokensProvisionCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersTokensProvisionCreateDefault) Error() string {

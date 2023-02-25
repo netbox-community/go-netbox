@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasWebhooksReadReader is a Reader for the ExtrasWebhooksRead structure.
@@ -95,6 +95,11 @@ func (o *ExtrasWebhooksReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras webhooks read o k response
+func (o *ExtrasWebhooksReadOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasWebhooksReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/webhooks/{id}/][%d] extrasWebhooksReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasWebhooksReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras webhooks read default response
-func (o *ExtrasWebhooksReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras webhooks read default response has a 2xx status code
 func (o *ExtrasWebhooksReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasWebhooksReadDefault) IsServerError() bool {
 // IsCode returns true when this extras webhooks read default response a status code equal to that given
 func (o *ExtrasWebhooksReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras webhooks read default response
+func (o *ExtrasWebhooksReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasWebhooksReadDefault) Error() string {

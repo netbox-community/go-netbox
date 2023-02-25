@@ -92,6 +92,11 @@ func (o *ExtrasCustomLinksBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the extras custom links bulk delete no content response
+func (o *ExtrasCustomLinksBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *ExtrasCustomLinksBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /extras/custom-links/][%d] extrasCustomLinksBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type ExtrasCustomLinksBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom links bulk delete default response
-func (o *ExtrasCustomLinksBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom links bulk delete default response has a 2xx status code
 func (o *ExtrasCustomLinksBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasCustomLinksBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this extras custom links bulk delete default response a status code equal to that given
 func (o *ExtrasCustomLinksBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom links bulk delete default response
+func (o *ExtrasCustomLinksBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomLinksBulkDeleteDefault) Error() string {

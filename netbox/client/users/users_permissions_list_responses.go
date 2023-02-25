@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // UsersPermissionsListReader is a Reader for the UsersPermissionsList structure.
@@ -100,6 +100,11 @@ func (o *UsersPermissionsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the users permissions list o k response
+func (o *UsersPermissionsListOK) Code() int {
+	return 200
+}
+
 func (o *UsersPermissionsListOK) Error() string {
 	return fmt.Sprintf("[GET /users/permissions/][%d] usersPermissionsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type UsersPermissionsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users permissions list default response
-func (o *UsersPermissionsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users permissions list default response has a 2xx status code
 func (o *UsersPermissionsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *UsersPermissionsListDefault) IsServerError() bool {
 // IsCode returns true when this users permissions list default response a status code equal to that given
 func (o *UsersPermissionsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users permissions list default response
+func (o *UsersPermissionsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersPermissionsListDefault) Error() string {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimDeviceRolesCreateReader is a Reader for the DcimDeviceRolesCreate structure.
@@ -95,6 +95,11 @@ func (o *DcimDeviceRolesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the dcim device roles create created response
+func (o *DcimDeviceRolesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *DcimDeviceRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /dcim/device-roles/][%d] dcimDeviceRolesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimDeviceRolesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim device roles create default response
-func (o *DcimDeviceRolesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim device roles create default response has a 2xx status code
 func (o *DcimDeviceRolesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimDeviceRolesCreateDefault) IsServerError() bool {
 // IsCode returns true when this dcim device roles create default response a status code equal to that given
 func (o *DcimDeviceRolesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim device roles create default response
+func (o *DcimDeviceRolesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimDeviceRolesCreateDefault) Error() string {

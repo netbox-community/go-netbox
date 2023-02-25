@@ -92,6 +92,11 @@ func (o *ExtrasSavedFiltersDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the extras saved filters delete no content response
+func (o *ExtrasSavedFiltersDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *ExtrasSavedFiltersDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /extras/saved-filters/{id}/][%d] extrasSavedFiltersDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type ExtrasSavedFiltersDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras saved filters delete default response
-func (o *ExtrasSavedFiltersDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras saved filters delete default response has a 2xx status code
 func (o *ExtrasSavedFiltersDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasSavedFiltersDeleteDefault) IsServerError() bool {
 // IsCode returns true when this extras saved filters delete default response a status code equal to that given
 func (o *ExtrasSavedFiltersDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras saved filters delete default response
+func (o *ExtrasSavedFiltersDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasSavedFiltersDeleteDefault) Error() string {

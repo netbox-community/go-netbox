@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamRolesCreateReader is a Reader for the IpamRolesCreate structure.
@@ -95,6 +95,11 @@ func (o *IpamRolesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the ipam roles create created response
+func (o *IpamRolesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *IpamRolesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/roles/][%d] ipamRolesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamRolesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam roles create default response
-func (o *IpamRolesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam roles create default response has a 2xx status code
 func (o *IpamRolesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamRolesCreateDefault) IsServerError() bool {
 // IsCode returns true when this ipam roles create default response a status code equal to that given
 func (o *IpamRolesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam roles create default response
+func (o *IpamRolesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamRolesCreateDefault) Error() string {

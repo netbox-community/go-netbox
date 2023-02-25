@@ -31,7 +31,7 @@ package main
 import (
 	"log"
 
-	"github.com/netbox-community/go-netbox/netbox"
+	"github.com/netbox-community/go-netbox/v3/netbox"
 )
 
 func main() {
@@ -53,7 +53,7 @@ import (
 	"log"
 
 	transport "github.com/go-openapi/runtime/client"
-	"github.com/netbox-community/go-netbox/netbox/client"
+	"github.com/netbox-community/go-netbox/v3/netbox/client"
 )
 
 func main() {
@@ -87,8 +87,8 @@ package main
 import (
 	"log"
 
-	"github.com/netbox-community/go-netbox/netbox"
-	"github.com/netbox-community/go-netbox/netbox/client/virtualization"
+	"github.com/netbox-community/go-netbox/v3/netbox"
+	"github.com/netbox-community/go-netbox/v3/netbox/client/virtualization"
 )
 
 var status = "active"

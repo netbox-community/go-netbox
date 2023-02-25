@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamServicesPartialUpdateReader is a Reader for the IpamServicesPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *IpamServicesPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam services partial update o k response
+func (o *IpamServicesPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *IpamServicesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /ipam/services/{id}/][%d] ipamServicesPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamServicesPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam services partial update default response
-func (o *IpamServicesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam services partial update default response has a 2xx status code
 func (o *IpamServicesPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamServicesPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this ipam services partial update default response a status code equal to that given
 func (o *IpamServicesPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam services partial update default response
+func (o *IpamServicesPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamServicesPartialUpdateDefault) Error() string {

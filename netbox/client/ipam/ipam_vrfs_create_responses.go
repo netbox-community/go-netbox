@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamVrfsCreateReader is a Reader for the IpamVrfsCreate structure.
@@ -95,6 +95,11 @@ func (o *IpamVrfsCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the ipam vrfs create created response
+func (o *IpamVrfsCreateCreated) Code() int {
+	return 201
+}
+
 func (o *IpamVrfsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/vrfs/][%d] ipamVrfsCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamVrfsCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam vrfs create default response
-func (o *IpamVrfsCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam vrfs create default response has a 2xx status code
 func (o *IpamVrfsCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamVrfsCreateDefault) IsServerError() bool {
 // IsCode returns true when this ipam vrfs create default response a status code equal to that given
 func (o *IpamVrfsCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam vrfs create default response
+func (o *IpamVrfsCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamVrfsCreateDefault) Error() string {

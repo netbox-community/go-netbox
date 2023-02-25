@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamServiceTemplatesCreateReader is a Reader for the IpamServiceTemplatesCreate structure.
@@ -95,6 +95,11 @@ func (o *IpamServiceTemplatesCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the ipam service templates create created response
+func (o *IpamServiceTemplatesCreateCreated) Code() int {
+	return 201
+}
+
 func (o *IpamServiceTemplatesCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /ipam/service-templates/][%d] ipamServiceTemplatesCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamServiceTemplatesCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam service templates create default response
-func (o *IpamServiceTemplatesCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam service templates create default response has a 2xx status code
 func (o *IpamServiceTemplatesCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamServiceTemplatesCreateDefault) IsServerError() bool {
 // IsCode returns true when this ipam service templates create default response a status code equal to that given
 func (o *IpamServiceTemplatesCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam service templates create default response
+func (o *IpamServiceTemplatesCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamServiceTemplatesCreateDefault) Error() string {

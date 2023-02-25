@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimVirtualDeviceContextsListReader is a Reader for the DcimVirtualDeviceContextsList structure.
@@ -100,6 +100,11 @@ func (o *DcimVirtualDeviceContextsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim virtual device contexts list o k response
+func (o *DcimVirtualDeviceContextsListOK) Code() int {
+	return 200
+}
+
 func (o *DcimVirtualDeviceContextsListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/virtual-device-contexts/][%d] dcimVirtualDeviceContextsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimVirtualDeviceContextsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim virtual device contexts list default response
-func (o *DcimVirtualDeviceContextsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim virtual device contexts list default response has a 2xx status code
 func (o *DcimVirtualDeviceContextsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimVirtualDeviceContextsListDefault) IsServerError() bool {
 // IsCode returns true when this dcim virtual device contexts list default response a status code equal to that given
 func (o *DcimVirtualDeviceContextsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim virtual device contexts list default response
+func (o *DcimVirtualDeviceContextsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimVirtualDeviceContextsListDefault) Error() string {

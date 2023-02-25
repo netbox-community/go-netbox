@@ -92,6 +92,11 @@ func (o *IpamIPRangesDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam Ip ranges delete no content response
+func (o *IpamIPRangesDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamIPRangesDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/ip-ranges/{id}/][%d] ipamIpRangesDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamIPRangesDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam ip ranges delete default response
-func (o *IpamIPRangesDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam ip ranges delete default response has a 2xx status code
 func (o *IpamIPRangesDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamIPRangesDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam ip ranges delete default response a status code equal to that given
 func (o *IpamIPRangesDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam ip ranges delete default response
+func (o *IpamIPRangesDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamIPRangesDeleteDefault) Error() string {

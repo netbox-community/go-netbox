@@ -92,6 +92,11 @@ func (o *DcimDeviceRolesBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim device roles bulk delete no content response
+func (o *DcimDeviceRolesBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimDeviceRolesBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/device-roles/][%d] dcimDeviceRolesBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimDeviceRolesBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim device roles bulk delete default response
-func (o *DcimDeviceRolesBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim device roles bulk delete default response has a 2xx status code
 func (o *DcimDeviceRolesBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimDeviceRolesBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim device roles bulk delete default response a status code equal to that given
 func (o *DcimDeviceRolesBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim device roles bulk delete default response
+func (o *DcimDeviceRolesBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimDeviceRolesBulkDeleteDefault) Error() string {

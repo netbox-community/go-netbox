@@ -92,6 +92,11 @@ func (o *DcimPlatformsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim platforms delete no content response
+func (o *DcimPlatformsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimPlatformsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/platforms/{id}/][%d] dcimPlatformsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimPlatformsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim platforms delete default response
-func (o *DcimPlatformsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim platforms delete default response has a 2xx status code
 func (o *DcimPlatformsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimPlatformsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim platforms delete default response a status code equal to that given
 func (o *DcimPlatformsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim platforms delete default response
+func (o *DcimPlatformsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPlatformsDeleteDefault) Error() string {

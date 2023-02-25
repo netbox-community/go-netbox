@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamVrfsListReader is a Reader for the IpamVrfsList structure.
@@ -100,6 +100,11 @@ func (o *IpamVrfsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam vrfs list o k response
+func (o *IpamVrfsListOK) Code() int {
+	return 200
+}
+
 func (o *IpamVrfsListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vrfs/][%d] ipamVrfsListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamVrfsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam vrfs list default response
-func (o *IpamVrfsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam vrfs list default response has a 2xx status code
 func (o *IpamVrfsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamVrfsListDefault) IsServerError() bool {
 // IsCode returns true when this ipam vrfs list default response a status code equal to that given
 func (o *IpamVrfsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam vrfs list default response
+func (o *IpamVrfsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamVrfsListDefault) Error() string {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamIPRangesReadReader is a Reader for the IpamIPRangesRead structure.
@@ -95,6 +95,11 @@ func (o *IpamIPRangesReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam Ip ranges read o k response
+func (o *IpamIPRangesReadOK) Code() int {
+	return 200
+}
+
 func (o *IpamIPRangesReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/ip-ranges/{id}/][%d] ipamIpRangesReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamIPRangesReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam ip ranges read default response
-func (o *IpamIPRangesReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam ip ranges read default response has a 2xx status code
 func (o *IpamIPRangesReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamIPRangesReadDefault) IsServerError() bool {
 // IsCode returns true when this ipam ip ranges read default response a status code equal to that given
 func (o *IpamIPRangesReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam ip ranges read default response
+func (o *IpamIPRangesReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamIPRangesReadDefault) Error() string {

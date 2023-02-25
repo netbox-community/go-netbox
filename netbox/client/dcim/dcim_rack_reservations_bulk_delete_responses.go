@@ -92,6 +92,11 @@ func (o *DcimRackReservationsBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim rack reservations bulk delete no content response
+func (o *DcimRackReservationsBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimRackReservationsBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/rack-reservations/][%d] dcimRackReservationsBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimRackReservationsBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim rack reservations bulk delete default response
-func (o *DcimRackReservationsBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim rack reservations bulk delete default response has a 2xx status code
 func (o *DcimRackReservationsBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimRackReservationsBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim rack reservations bulk delete default response a status code equal to that given
 func (o *DcimRackReservationsBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim rack reservations bulk delete default response
+func (o *DcimRackReservationsBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimRackReservationsBulkDeleteDefault) Error() string {

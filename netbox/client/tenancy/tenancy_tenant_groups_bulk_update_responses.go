@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // TenancyTenantGroupsBulkUpdateReader is a Reader for the TenancyTenantGroupsBulkUpdate structure.
@@ -95,6 +95,11 @@ func (o *TenancyTenantGroupsBulkUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the tenancy tenant groups bulk update o k response
+func (o *TenancyTenantGroupsBulkUpdateOK) Code() int {
+	return 200
+}
+
 func (o *TenancyTenantGroupsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /tenancy/tenant-groups/][%d] tenancyTenantGroupsBulkUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type TenancyTenantGroupsBulkUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the tenancy tenant groups bulk update default response
-func (o *TenancyTenantGroupsBulkUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this tenancy tenant groups bulk update default response has a 2xx status code
 func (o *TenancyTenantGroupsBulkUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *TenancyTenantGroupsBulkUpdateDefault) IsServerError() bool {
 // IsCode returns true when this tenancy tenant groups bulk update default response a status code equal to that given
 func (o *TenancyTenantGroupsBulkUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the tenancy tenant groups bulk update default response
+func (o *TenancyTenantGroupsBulkUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *TenancyTenantGroupsBulkUpdateDefault) Error() string {

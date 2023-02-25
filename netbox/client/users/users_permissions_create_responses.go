@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // UsersPermissionsCreateReader is a Reader for the UsersPermissionsCreate structure.
@@ -95,6 +95,11 @@ func (o *UsersPermissionsCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the users permissions create created response
+func (o *UsersPermissionsCreateCreated) Code() int {
+	return 201
+}
+
 func (o *UsersPermissionsCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /users/permissions/][%d] usersPermissionsCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type UsersPermissionsCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users permissions create default response
-func (o *UsersPermissionsCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users permissions create default response has a 2xx status code
 func (o *UsersPermissionsCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *UsersPermissionsCreateDefault) IsServerError() bool {
 // IsCode returns true when this users permissions create default response a status code equal to that given
 func (o *UsersPermissionsCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users permissions create default response
+func (o *UsersPermissionsCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersPermissionsCreateDefault) Error() string {

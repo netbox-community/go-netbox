@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimDeviceBayTemplatesListReader is a Reader for the DcimDeviceBayTemplatesList structure.
@@ -100,6 +100,11 @@ func (o *DcimDeviceBayTemplatesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim device bay templates list o k response
+func (o *DcimDeviceBayTemplatesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimDeviceBayTemplatesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/device-bay-templates/][%d] dcimDeviceBayTemplatesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimDeviceBayTemplatesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim device bay templates list default response
-func (o *DcimDeviceBayTemplatesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim device bay templates list default response has a 2xx status code
 func (o *DcimDeviceBayTemplatesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimDeviceBayTemplatesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim device bay templates list default response a status code equal to that given
 func (o *DcimDeviceBayTemplatesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim device bay templates list default response
+func (o *DcimDeviceBayTemplatesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimDeviceBayTemplatesListDefault) Error() string {

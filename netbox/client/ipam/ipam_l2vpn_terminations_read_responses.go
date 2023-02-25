@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamL2vpnTerminationsReadReader is a Reader for the IpamL2vpnTerminationsRead structure.
@@ -95,6 +95,11 @@ func (o *IpamL2vpnTerminationsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam l2vpn terminations read o k response
+func (o *IpamL2vpnTerminationsReadOK) Code() int {
+	return 200
+}
+
 func (o *IpamL2vpnTerminationsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/l2vpn-terminations/{id}/][%d] ipamL2vpnTerminationsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamL2vpnTerminationsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam l2vpn terminations read default response
-func (o *IpamL2vpnTerminationsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam l2vpn terminations read default response has a 2xx status code
 func (o *IpamL2vpnTerminationsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamL2vpnTerminationsReadDefault) IsServerError() bool {
 // IsCode returns true when this ipam l2vpn terminations read default response a status code equal to that given
 func (o *IpamL2vpnTerminationsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam l2vpn terminations read default response
+func (o *IpamL2vpnTerminationsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamL2vpnTerminationsReadDefault) Error() string {

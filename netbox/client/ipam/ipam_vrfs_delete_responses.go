@@ -92,6 +92,11 @@ func (o *IpamVrfsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam vrfs delete no content response
+func (o *IpamVrfsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamVrfsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/vrfs/{id}/][%d] ipamVrfsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamVrfsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam vrfs delete default response
-func (o *IpamVrfsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam vrfs delete default response has a 2xx status code
 func (o *IpamVrfsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamVrfsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam vrfs delete default response a status code equal to that given
 func (o *IpamVrfsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam vrfs delete default response
+func (o *IpamVrfsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamVrfsDeleteDefault) Error() string {

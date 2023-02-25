@@ -92,6 +92,11 @@ func (o *UsersUsersBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the users users bulk delete no content response
+func (o *UsersUsersBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *UsersUsersBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /users/users/][%d] usersUsersBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type UsersUsersBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users users bulk delete default response
-func (o *UsersUsersBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users users bulk delete default response has a 2xx status code
 func (o *UsersUsersBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *UsersUsersBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this users users bulk delete default response a status code equal to that given
 func (o *UsersUsersBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users users bulk delete default response
+func (o *UsersUsersBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersUsersBulkDeleteDefault) Error() string {

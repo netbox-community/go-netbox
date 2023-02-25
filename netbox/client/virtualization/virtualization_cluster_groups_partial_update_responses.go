@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // VirtualizationClusterGroupsPartialUpdateReader is a Reader for the VirtualizationClusterGroupsPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *VirtualizationClusterGroupsPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the virtualization cluster groups partial update o k response
+func (o *VirtualizationClusterGroupsPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *VirtualizationClusterGroupsPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /virtualization/cluster-groups/{id}/][%d] virtualizationClusterGroupsPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type VirtualizationClusterGroupsPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the virtualization cluster groups partial update default response
-func (o *VirtualizationClusterGroupsPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this virtualization cluster groups partial update default response has a 2xx status code
 func (o *VirtualizationClusterGroupsPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *VirtualizationClusterGroupsPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this virtualization cluster groups partial update default response a status code equal to that given
 func (o *VirtualizationClusterGroupsPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the virtualization cluster groups partial update default response
+func (o *VirtualizationClusterGroupsPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *VirtualizationClusterGroupsPartialUpdateDefault) Error() string {

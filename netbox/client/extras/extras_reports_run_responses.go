@@ -92,6 +92,11 @@ func (o *ExtrasReportsRunCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the extras reports run created response
+func (o *ExtrasReportsRunCreated) Code() int {
+	return 201
+}
+
 func (o *ExtrasReportsRunCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/reports/{id}/run/][%d] extrasReportsRunCreated ", 201)
 }
@@ -123,11 +128,6 @@ type ExtrasReportsRunDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras reports run default response
-func (o *ExtrasReportsRunDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras reports run default response has a 2xx status code
 func (o *ExtrasReportsRunDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasReportsRunDefault) IsServerError() bool {
 // IsCode returns true when this extras reports run default response a status code equal to that given
 func (o *ExtrasReportsRunDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras reports run default response
+func (o *ExtrasReportsRunDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasReportsRunDefault) Error() string {

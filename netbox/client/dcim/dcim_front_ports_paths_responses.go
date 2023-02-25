@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimFrontPortsPathsReader is a Reader for the DcimFrontPortsPaths structure.
@@ -95,6 +95,11 @@ func (o *DcimFrontPortsPathsOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim front ports paths o k response
+func (o *DcimFrontPortsPathsOK) Code() int {
+	return 200
+}
+
 func (o *DcimFrontPortsPathsOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/front-ports/{id}/paths/][%d] dcimFrontPortsPathsOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimFrontPortsPathsDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim front ports paths default response
-func (o *DcimFrontPortsPathsDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim front ports paths default response has a 2xx status code
 func (o *DcimFrontPortsPathsDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimFrontPortsPathsDefault) IsServerError() bool {
 // IsCode returns true when this dcim front ports paths default response a status code equal to that given
 func (o *DcimFrontPortsPathsDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim front ports paths default response
+func (o *DcimFrontPortsPathsDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimFrontPortsPathsDefault) Error() string {

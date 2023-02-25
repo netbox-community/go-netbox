@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimSiteGroupsReadReader is a Reader for the DcimSiteGroupsRead structure.
@@ -95,6 +95,11 @@ func (o *DcimSiteGroupsReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim site groups read o k response
+func (o *DcimSiteGroupsReadOK) Code() int {
+	return 200
+}
+
 func (o *DcimSiteGroupsReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/site-groups/{id}/][%d] dcimSiteGroupsReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimSiteGroupsReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim site groups read default response
-func (o *DcimSiteGroupsReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim site groups read default response has a 2xx status code
 func (o *DcimSiteGroupsReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimSiteGroupsReadDefault) IsServerError() bool {
 // IsCode returns true when this dcim site groups read default response a status code equal to that given
 func (o *DcimSiteGroupsReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim site groups read default response
+func (o *DcimSiteGroupsReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimSiteGroupsReadDefault) Error() string {

@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamRolesListReader is a Reader for the IpamRolesList structure.
@@ -100,6 +100,11 @@ func (o *IpamRolesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam roles list o k response
+func (o *IpamRolesListOK) Code() int {
+	return 200
+}
+
 func (o *IpamRolesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/roles/][%d] ipamRolesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamRolesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam roles list default response
-func (o *IpamRolesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam roles list default response has a 2xx status code
 func (o *IpamRolesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamRolesListDefault) IsServerError() bool {
 // IsCode returns true when this ipam roles list default response a status code equal to that given
 func (o *IpamRolesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam roles list default response
+func (o *IpamRolesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamRolesListDefault) Error() string {

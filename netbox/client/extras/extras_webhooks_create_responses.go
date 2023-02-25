@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasWebhooksCreateReader is a Reader for the ExtrasWebhooksCreate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasWebhooksCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the extras webhooks create created response
+func (o *ExtrasWebhooksCreateCreated) Code() int {
+	return 201
+}
+
 func (o *ExtrasWebhooksCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/webhooks/][%d] extrasWebhooksCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasWebhooksCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras webhooks create default response
-func (o *ExtrasWebhooksCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras webhooks create default response has a 2xx status code
 func (o *ExtrasWebhooksCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasWebhooksCreateDefault) IsServerError() bool {
 // IsCode returns true when this extras webhooks create default response a status code equal to that given
 func (o *ExtrasWebhooksCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras webhooks create default response
+func (o *ExtrasWebhooksCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasWebhooksCreateDefault) Error() string {

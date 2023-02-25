@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimSitesListReader is a Reader for the DcimSitesList structure.
@@ -100,6 +100,11 @@ func (o *DcimSitesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim sites list o k response
+func (o *DcimSitesListOK) Code() int {
+	return 200
+}
+
 func (o *DcimSitesListOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/sites/][%d] dcimSitesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type DcimSitesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim sites list default response
-func (o *DcimSitesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim sites list default response has a 2xx status code
 func (o *DcimSitesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *DcimSitesListDefault) IsServerError() bool {
 // IsCode returns true when this dcim sites list default response a status code equal to that given
 func (o *DcimSitesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim sites list default response
+func (o *DcimSitesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimSitesListDefault) Error() string {

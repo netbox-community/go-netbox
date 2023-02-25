@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // CircuitsCircuitTypesPartialUpdateReader is a Reader for the CircuitsCircuitTypesPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *CircuitsCircuitTypesPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the circuits circuit types partial update o k response
+func (o *CircuitsCircuitTypesPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *CircuitsCircuitTypesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /circuits/circuit-types/{id}/][%d] circuitsCircuitTypesPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type CircuitsCircuitTypesPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the circuits circuit types partial update default response
-func (o *CircuitsCircuitTypesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this circuits circuit types partial update default response has a 2xx status code
 func (o *CircuitsCircuitTypesPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *CircuitsCircuitTypesPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this circuits circuit types partial update default response a status code equal to that given
 func (o *CircuitsCircuitTypesPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the circuits circuit types partial update default response
+func (o *CircuitsCircuitTypesPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *CircuitsCircuitTypesPartialUpdateDefault) Error() string {

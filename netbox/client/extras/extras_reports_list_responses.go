@@ -92,6 +92,11 @@ func (o *ExtrasReportsListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras reports list o k response
+func (o *ExtrasReportsListOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasReportsListOK) Error() string {
 	return fmt.Sprintf("[GET /extras/reports/][%d] extrasReportsListOK ", 200)
 }
@@ -123,11 +128,6 @@ type ExtrasReportsListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras reports list default response
-func (o *ExtrasReportsListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras reports list default response has a 2xx status code
 func (o *ExtrasReportsListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *ExtrasReportsListDefault) IsServerError() bool {
 // IsCode returns true when this extras reports list default response a status code equal to that given
 func (o *ExtrasReportsListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras reports list default response
+func (o *ExtrasReportsListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasReportsListDefault) Error() string {

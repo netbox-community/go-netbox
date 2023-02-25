@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // TenancyContactRolesPartialUpdateReader is a Reader for the TenancyContactRolesPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *TenancyContactRolesPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the tenancy contact roles partial update o k response
+func (o *TenancyContactRolesPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *TenancyContactRolesPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /tenancy/contact-roles/{id}/][%d] tenancyContactRolesPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type TenancyContactRolesPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the tenancy contact roles partial update default response
-func (o *TenancyContactRolesPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this tenancy contact roles partial update default response has a 2xx status code
 func (o *TenancyContactRolesPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *TenancyContactRolesPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this tenancy contact roles partial update default response a status code equal to that given
 func (o *TenancyContactRolesPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the tenancy contact roles partial update default response
+func (o *TenancyContactRolesPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *TenancyContactRolesPartialUpdateDefault) Error() string {

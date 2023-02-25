@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // WirelessWirelessLansReadReader is a Reader for the WirelessWirelessLansRead structure.
@@ -95,6 +95,11 @@ func (o *WirelessWirelessLansReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the wireless wireless lans read o k response
+func (o *WirelessWirelessLansReadOK) Code() int {
+	return 200
+}
+
 func (o *WirelessWirelessLansReadOK) Error() string {
 	return fmt.Sprintf("[GET /wireless/wireless-lans/{id}/][%d] wirelessWirelessLansReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type WirelessWirelessLansReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the wireless wireless lans read default response
-func (o *WirelessWirelessLansReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this wireless wireless lans read default response has a 2xx status code
 func (o *WirelessWirelessLansReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *WirelessWirelessLansReadDefault) IsServerError() bool {
 // IsCode returns true when this wireless wireless lans read default response a status code equal to that given
 func (o *WirelessWirelessLansReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the wireless wireless lans read default response
+func (o *WirelessWirelessLansReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *WirelessWirelessLansReadDefault) Error() string {

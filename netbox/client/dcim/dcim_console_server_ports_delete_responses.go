@@ -92,6 +92,11 @@ func (o *DcimConsoleServerPortsDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the dcim console server ports delete no content response
+func (o *DcimConsoleServerPortsDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *DcimConsoleServerPortsDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /dcim/console-server-ports/{id}/][%d] dcimConsoleServerPortsDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type DcimConsoleServerPortsDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim console server ports delete default response
-func (o *DcimConsoleServerPortsDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim console server ports delete default response has a 2xx status code
 func (o *DcimConsoleServerPortsDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *DcimConsoleServerPortsDeleteDefault) IsServerError() bool {
 // IsCode returns true when this dcim console server ports delete default response a status code equal to that given
 func (o *DcimConsoleServerPortsDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim console server ports delete default response
+func (o *DcimConsoleServerPortsDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimConsoleServerPortsDeleteDefault) Error() string {

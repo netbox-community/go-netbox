@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasCustomLinksCreateReader is a Reader for the ExtrasCustomLinksCreate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasCustomLinksCreateCreated) IsCode(code int) bool {
 	return code == 201
 }
 
+// Code gets the status code for the extras custom links create created response
+func (o *ExtrasCustomLinksCreateCreated) Code() int {
+	return 201
+}
+
 func (o *ExtrasCustomLinksCreateCreated) Error() string {
 	return fmt.Sprintf("[POST /extras/custom-links/][%d] extrasCustomLinksCreateCreated  %+v", 201, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasCustomLinksCreateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom links create default response
-func (o *ExtrasCustomLinksCreateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom links create default response has a 2xx status code
 func (o *ExtrasCustomLinksCreateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasCustomLinksCreateDefault) IsServerError() bool {
 // IsCode returns true when this extras custom links create default response a status code equal to that given
 func (o *ExtrasCustomLinksCreateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom links create default response
+func (o *ExtrasCustomLinksCreateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomLinksCreateDefault) Error() string {

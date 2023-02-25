@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimPowerPortTemplatesReadReader is a Reader for the DcimPowerPortTemplatesRead structure.
@@ -95,6 +95,11 @@ func (o *DcimPowerPortTemplatesReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim power port templates read o k response
+func (o *DcimPowerPortTemplatesReadOK) Code() int {
+	return 200
+}
+
 func (o *DcimPowerPortTemplatesReadOK) Error() string {
 	return fmt.Sprintf("[GET /dcim/power-port-templates/{id}/][%d] dcimPowerPortTemplatesReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimPowerPortTemplatesReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim power port templates read default response
-func (o *DcimPowerPortTemplatesReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim power port templates read default response has a 2xx status code
 func (o *DcimPowerPortTemplatesReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimPowerPortTemplatesReadDefault) IsServerError() bool {
 // IsCode returns true when this dcim power port templates read default response a status code equal to that given
 func (o *DcimPowerPortTemplatesReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim power port templates read default response
+func (o *DcimPowerPortTemplatesReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimPowerPortTemplatesReadDefault) Error() string {

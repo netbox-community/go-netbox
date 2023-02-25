@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasCustomFieldsBulkUpdateReader is a Reader for the ExtrasCustomFieldsBulkUpdate structure.
@@ -95,6 +95,11 @@ func (o *ExtrasCustomFieldsBulkUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras custom fields bulk update o k response
+func (o *ExtrasCustomFieldsBulkUpdateOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasCustomFieldsBulkUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /extras/custom-fields/][%d] extrasCustomFieldsBulkUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasCustomFieldsBulkUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras custom fields bulk update default response
-func (o *ExtrasCustomFieldsBulkUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras custom fields bulk update default response has a 2xx status code
 func (o *ExtrasCustomFieldsBulkUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasCustomFieldsBulkUpdateDefault) IsServerError() bool {
 // IsCode returns true when this extras custom fields bulk update default response a status code equal to that given
 func (o *ExtrasCustomFieldsBulkUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras custom fields bulk update default response
+func (o *ExtrasCustomFieldsBulkUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasCustomFieldsBulkUpdateDefault) Error() string {

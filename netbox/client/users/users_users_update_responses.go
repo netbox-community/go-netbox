@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // UsersUsersUpdateReader is a Reader for the UsersUsersUpdate structure.
@@ -95,6 +95,11 @@ func (o *UsersUsersUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the users users update o k response
+func (o *UsersUsersUpdateOK) Code() int {
+	return 200
+}
+
 func (o *UsersUsersUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /users/users/{id}/][%d] usersUsersUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type UsersUsersUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users users update default response
-func (o *UsersUsersUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users users update default response has a 2xx status code
 func (o *UsersUsersUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *UsersUsersUpdateDefault) IsServerError() bool {
 // IsCode returns true when this users users update default response a status code equal to that given
 func (o *UsersUsersUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users users update default response
+func (o *UsersUsersUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersUsersUpdateDefault) Error() string {

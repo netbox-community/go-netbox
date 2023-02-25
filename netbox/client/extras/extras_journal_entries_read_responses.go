@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // ExtrasJournalEntriesReadReader is a Reader for the ExtrasJournalEntriesRead structure.
@@ -95,6 +95,11 @@ func (o *ExtrasJournalEntriesReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the extras journal entries read o k response
+func (o *ExtrasJournalEntriesReadOK) Code() int {
+	return 200
+}
+
 func (o *ExtrasJournalEntriesReadOK) Error() string {
 	return fmt.Sprintf("[GET /extras/journal-entries/{id}/][%d] extrasJournalEntriesReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type ExtrasJournalEntriesReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the extras journal entries read default response
-func (o *ExtrasJournalEntriesReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this extras journal entries read default response has a 2xx status code
 func (o *ExtrasJournalEntriesReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *ExtrasJournalEntriesReadDefault) IsServerError() bool {
 // IsCode returns true when this extras journal entries read default response a status code equal to that given
 func (o *ExtrasJournalEntriesReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the extras journal entries read default response
+func (o *ExtrasJournalEntriesReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *ExtrasJournalEntriesReadDefault) Error() string {

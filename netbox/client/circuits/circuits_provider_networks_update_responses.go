@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // CircuitsProviderNetworksUpdateReader is a Reader for the CircuitsProviderNetworksUpdate structure.
@@ -95,6 +95,11 @@ func (o *CircuitsProviderNetworksUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the circuits provider networks update o k response
+func (o *CircuitsProviderNetworksUpdateOK) Code() int {
+	return 200
+}
+
 func (o *CircuitsProviderNetworksUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /circuits/provider-networks/{id}/][%d] circuitsProviderNetworksUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type CircuitsProviderNetworksUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the circuits provider networks update default response
-func (o *CircuitsProviderNetworksUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this circuits provider networks update default response has a 2xx status code
 func (o *CircuitsProviderNetworksUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *CircuitsProviderNetworksUpdateDefault) IsServerError() bool {
 // IsCode returns true when this circuits provider networks update default response a status code equal to that given
 func (o *CircuitsProviderNetworksUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the circuits provider networks update default response
+func (o *CircuitsProviderNetworksUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *CircuitsProviderNetworksUpdateDefault) Error() string {

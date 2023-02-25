@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // WirelessWirelessLinksUpdateReader is a Reader for the WirelessWirelessLinksUpdate structure.
@@ -95,6 +95,11 @@ func (o *WirelessWirelessLinksUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the wireless wireless links update o k response
+func (o *WirelessWirelessLinksUpdateOK) Code() int {
+	return 200
+}
+
 func (o *WirelessWirelessLinksUpdateOK) Error() string {
 	return fmt.Sprintf("[PUT /wireless/wireless-links/{id}/][%d] wirelessWirelessLinksUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type WirelessWirelessLinksUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the wireless wireless links update default response
-func (o *WirelessWirelessLinksUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this wireless wireless links update default response has a 2xx status code
 func (o *WirelessWirelessLinksUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *WirelessWirelessLinksUpdateDefault) IsServerError() bool {
 // IsCode returns true when this wireless wireless links update default response a status code equal to that given
 func (o *WirelessWirelessLinksUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the wireless wireless links update default response
+func (o *WirelessWirelessLinksUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *WirelessWirelessLinksUpdateDefault) Error() string {

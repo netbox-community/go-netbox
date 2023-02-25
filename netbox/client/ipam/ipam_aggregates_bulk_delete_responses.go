@@ -92,6 +92,11 @@ func (o *IpamAggregatesBulkDeleteNoContent) IsCode(code int) bool {
 	return code == 204
 }
 
+// Code gets the status code for the ipam aggregates bulk delete no content response
+func (o *IpamAggregatesBulkDeleteNoContent) Code() int {
+	return 204
+}
+
 func (o *IpamAggregatesBulkDeleteNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /ipam/aggregates/][%d] ipamAggregatesBulkDeleteNoContent ", 204)
 }
@@ -123,11 +128,6 @@ type IpamAggregatesBulkDeleteDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam aggregates bulk delete default response
-func (o *IpamAggregatesBulkDeleteDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam aggregates bulk delete default response has a 2xx status code
 func (o *IpamAggregatesBulkDeleteDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -151,6 +151,11 @@ func (o *IpamAggregatesBulkDeleteDefault) IsServerError() bool {
 // IsCode returns true when this ipam aggregates bulk delete default response a status code equal to that given
 func (o *IpamAggregatesBulkDeleteDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam aggregates bulk delete default response
+func (o *IpamAggregatesBulkDeleteDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamAggregatesBulkDeleteDefault) Error() string {

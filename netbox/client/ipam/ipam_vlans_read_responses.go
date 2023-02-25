@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamVlansReadReader is a Reader for the IpamVlansRead structure.
@@ -95,6 +95,11 @@ func (o *IpamVlansReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam vlans read o k response
+func (o *IpamVlansReadOK) Code() int {
+	return 200
+}
+
 func (o *IpamVlansReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/vlans/{id}/][%d] ipamVlansReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type IpamVlansReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam vlans read default response
-func (o *IpamVlansReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam vlans read default response has a 2xx status code
 func (o *IpamVlansReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *IpamVlansReadDefault) IsServerError() bool {
 // IsCode returns true when this ipam vlans read default response a status code equal to that given
 func (o *IpamVlansReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam vlans read default response
+func (o *IpamVlansReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamVlansReadDefault) Error() string {

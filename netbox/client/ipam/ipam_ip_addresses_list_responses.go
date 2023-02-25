@@ -32,7 +32,7 @@ import (
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // IpamIPAddressesListReader is a Reader for the IpamIPAddressesList structure.
@@ -100,6 +100,11 @@ func (o *IpamIPAddressesListOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the ipam Ip addresses list o k response
+func (o *IpamIPAddressesListOK) Code() int {
+	return 200
+}
+
 func (o *IpamIPAddressesListOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/ip-addresses/][%d] ipamIpAddressesListOK  %+v", 200, o.Payload)
 }
@@ -142,11 +147,6 @@ type IpamIPAddressesListDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the ipam ip addresses list default response
-func (o *IpamIPAddressesListDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this ipam ip addresses list default response has a 2xx status code
 func (o *IpamIPAddressesListDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -170,6 +170,11 @@ func (o *IpamIPAddressesListDefault) IsServerError() bool {
 // IsCode returns true when this ipam ip addresses list default response a status code equal to that given
 func (o *IpamIPAddressesListDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the ipam ip addresses list default response
+func (o *IpamIPAddressesListDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *IpamIPAddressesListDefault) Error() string {

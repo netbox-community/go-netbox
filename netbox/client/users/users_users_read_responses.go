@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // UsersUsersReadReader is a Reader for the UsersUsersRead structure.
@@ -95,6 +95,11 @@ func (o *UsersUsersReadOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the users users read o k response
+func (o *UsersUsersReadOK) Code() int {
+	return 200
+}
+
 func (o *UsersUsersReadOK) Error() string {
 	return fmt.Sprintf("[GET /users/users/{id}/][%d] usersUsersReadOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type UsersUsersReadDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the users users read default response
-func (o *UsersUsersReadDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this users users read default response has a 2xx status code
 func (o *UsersUsersReadDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *UsersUsersReadDefault) IsServerError() bool {
 // IsCode returns true when this users users read default response a status code equal to that given
 func (o *UsersUsersReadDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the users users read default response
+func (o *UsersUsersReadDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *UsersUsersReadDefault) Error() string {

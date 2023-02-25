@@ -27,7 +27,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/netbox-community/go-netbox/netbox/models"
+	"github.com/netbox-community/go-netbox/v3/netbox/models"
 )
 
 // DcimModuleBaysBulkPartialUpdateReader is a Reader for the DcimModuleBaysBulkPartialUpdate structure.
@@ -95,6 +95,11 @@ func (o *DcimModuleBaysBulkPartialUpdateOK) IsCode(code int) bool {
 	return code == 200
 }
 
+// Code gets the status code for the dcim module bays bulk partial update o k response
+func (o *DcimModuleBaysBulkPartialUpdateOK) Code() int {
+	return 200
+}
+
 func (o *DcimModuleBaysBulkPartialUpdateOK) Error() string {
 	return fmt.Sprintf("[PATCH /dcim/module-bays/][%d] dcimModuleBaysBulkPartialUpdateOK  %+v", 200, o.Payload)
 }
@@ -137,11 +142,6 @@ type DcimModuleBaysBulkPartialUpdateDefault struct {
 	Payload interface{}
 }
 
-// Code gets the status code for the dcim module bays bulk partial update default response
-func (o *DcimModuleBaysBulkPartialUpdateDefault) Code() int {
-	return o._statusCode
-}
-
 // IsSuccess returns true when this dcim module bays bulk partial update default response has a 2xx status code
 func (o *DcimModuleBaysBulkPartialUpdateDefault) IsSuccess() bool {
 	return o._statusCode/100 == 2
@@ -165,6 +165,11 @@ func (o *DcimModuleBaysBulkPartialUpdateDefault) IsServerError() bool {
 // IsCode returns true when this dcim module bays bulk partial update default response a status code equal to that given
 func (o *DcimModuleBaysBulkPartialUpdateDefault) IsCode(code int) bool {
 	return o._statusCode == code
+}
+
+// Code gets the status code for the dcim module bays bulk partial update default response
+func (o *DcimModuleBaysBulkPartialUpdateDefault) Code() int {
+	return o._statusCode
 }
 
 func (o *DcimModuleBaysBulkPartialUpdateDefault) Error() string {
