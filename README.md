@@ -38,7 +38,7 @@ func main() {
 	c := netbox.NewNetboxAt("netbox.example.org:8000")
     
 	// or:
-    // c := netbox.NewNetboxWithAPIKey("netbox.example.org:8000", "<api-token>")
+	// c := netbox.NewNetboxWithAPIKey("netbox.example.org:8000", "<api-token>")
 
 	log.Printf("%+v", c)
 }
@@ -112,6 +112,8 @@ func main() {
 	log.Printf("%+v", res.Payload.Results)
 }
 ```
+
+See [reference](https://pkg.go.dev/github.com/netbox-community/go-netbox) for more information on all possible usages.
 
 ## Development
 
