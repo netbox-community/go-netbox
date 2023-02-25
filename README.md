@@ -1,17 +1,17 @@
 # go-netbox
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/netbox-community/go-netbox)](https://pkg.go.dev/github.com/netbox-community/go-netbox) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
+[![GoDoc](https://pkg.go.dev/badge/github.com/netbox-community/go-netbox/v3)](https://pkg.go.dev/github.com/netbox-community/go-netbox/v3) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
 
 _go-netbox_ is —to nobody's surprise— the official [Go](https://go.dev) API client for [Netbox](https://github.com/netbox-community/netbox) IPAM and DCIM service.
 
-This project follows [Semantic Versioning](https://semver.org). The version of the library built for a Netbox version has the same tag, followed by the build number (an incremental integer) in the version metadata.
+This project follows [Semantic Versioning](https://semver.org). The version of the library built for a Netbox version has the same tag, followed by a hyphen and the build number (an incremental integer), as several versions of the library may exist for the same version of Netbox.
 
 ## Installation
 
 Use `go get` to add the library as a project's dependency. Do not forget to run `go mod init` first if necessary.
 
 ```shell
-go get github.com/netbox-community/go-netbox
+go get github.com/netbox-community/go-netbox/v3
 
 # Or install a specific version
 go get github.com/netbox-community/go-netbox/v3@v3.4.5-1
@@ -50,6 +50,7 @@ In order to consume the Netbox API with HTTP over TLS, a transport must be creat
 package main
 
 import (
+	"fmt"
 	"log"
 
 	transport "github.com/go-openapi/runtime/client"
