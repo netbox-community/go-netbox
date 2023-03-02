@@ -27,10 +27,10 @@ if [ "${NETBOX_DOCKER_VERSION}" == 'auto' ]; then
 
   while [ "${NEXT}" != "null" ] && [ "${NETBOX_DOCKER_VERSION}" == "" ]; do
     RESPONSE=$(curl --silent "${NEXT}")
-    NEXT=$(echo -E "${RESPONSE}" | jq '.next')
+    NEXT=$(echo -E "${RESPONSE}" | jq -r '.next')
 
     NETBOX_DOCKER_VERSION=$(echo -E "${RESPONSE}" |
-      jq -r ".results[] | select(.name | startswith(\"v${NETBOX_VERSION}-\")) | .name" |
+      jq -r ".results[] | select((.name | startswith(\"v${NETBOX_VERSION}-\")) and (.name | index(\"ldap\") | not)) | .name" |
       cut -d "-" -f 2)
   done
 
