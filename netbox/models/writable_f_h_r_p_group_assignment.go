@@ -22,7 +22,6 @@ package models
 
 import (
 	"context"
-	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -37,8 +36,8 @@ type WritableFHRPGroupAssignment struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -48,17 +47,17 @@ type WritableFHRPGroupAssignment struct {
 	// Required: true
 	Group *int64 `json:"group"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Interface
 	// Read Only: true
-	Interface interface{} `json:"interface,omitempty"`
+	Interface map[string]*string `json:"interface,omitempty"`
 
 	// Interface id
 	// Required: true
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	InterfaceID *int64 `json:"interface_id"`
 
@@ -69,7 +68,7 @@ type WritableFHRPGroupAssignment struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Priority
 	// Required: true
@@ -126,7 +125,7 @@ func (m *WritableFHRPGroupAssignment) validateCreated(formats strfmt.Registry) e
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -152,7 +151,7 @@ func (m *WritableFHRPGroupAssignment) validateInterfaceID(formats strfmt.Registr
 		return err
 	}
 
-	if err := validate.MaximumInt("interface_id", "body", *m.InterfaceID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("interface_id", "body", *m.InterfaceID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -225,6 +224,10 @@ func (m *WritableFHRPGroupAssignment) ContextValidate(ctx context.Context, forma
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateInterface(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -241,7 +244,7 @@ func (m *WritableFHRPGroupAssignment) ContextValidate(ctx context.Context, forma
 
 func (m *WritableFHRPGroupAssignment) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -266,9 +269,14 @@ func (m *WritableFHRPGroupAssignment) contextValidateID(ctx context.Context, for
 	return nil
 }
 
+func (m *WritableFHRPGroupAssignment) contextValidateInterface(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 func (m *WritableFHRPGroupAssignment) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

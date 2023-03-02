@@ -44,15 +44,11 @@ type WritableContact struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
-
-	// Description
-	// Max Length: 200
-	Description string `json:"description,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -64,21 +60,17 @@ type WritableContact struct {
 	Email strfmt.Email `json:"email,omitempty"`
 
 	// Group
-	Group *int64 `json:"group,omitempty"`
+	// Required: true
+	Group *int64 `json:"group"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
-
-	// Link
-	// Max Length: 200
-	// Format: uri
-	Link strfmt.URI `json:"link,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -115,19 +107,15 @@ func (m *WritableContact) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateDescription(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateEmail(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateLastUpdated(formats); err != nil {
+	if err := m.validateGroup(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateLink(formats); err != nil {
+	if err := m.validateLastUpdated(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -174,19 +162,7 @@ func (m *WritableContact) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableContact) validateDescription(formats strfmt.Registry) error {
-	if swag.IsZero(m.Description) { // not required
-		return nil
-	}
-
-	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -209,28 +185,21 @@ func (m *WritableContact) validateEmail(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableContact) validateLastUpdated(formats strfmt.Registry) error {
-	if swag.IsZero(m.LastUpdated) { // not required
-		return nil
-	}
+func (m *WritableContact) validateGroup(formats strfmt.Registry) error {
 
-	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
+	if err := validate.Required("group", "body", m.Group); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *WritableContact) validateLink(formats strfmt.Registry) error {
-	if swag.IsZero(m.Link) { // not required
+func (m *WritableContact) validateLastUpdated(formats strfmt.Registry) error {
+	if swag.IsZero(m.LastUpdated) { // not required
 		return nil
 	}
 
-	if err := validate.MaxLength("link", "body", m.Link.String(), 200); err != nil {
-		return err
-	}
-
-	if err := validate.FormatOf("link", "body", "uri", m.Link.String(), formats); err != nil {
+	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
 	}
 
@@ -352,7 +321,7 @@ func (m *WritableContact) ContextValidate(ctx context.Context, formats strfmt.Re
 
 func (m *WritableContact) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -379,7 +348,7 @@ func (m *WritableContact) contextValidateID(ctx context.Context, formats strfmt.
 
 func (m *WritableContact) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

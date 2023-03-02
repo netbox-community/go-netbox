@@ -110,24 +110,6 @@ type ExtrasWebhooksListParams struct {
 	// CaFilePathNisw.
 	CaFilePathNisw *string
 
-	// ContentTypeID.
-	ContentTypeID *string
-
-	// ContentTypeIDGt.
-	ContentTypeIDGt *string
-
-	// ContentTypeIDGte.
-	ContentTypeIDGte *string
-
-	// ContentTypeIDLt.
-	ContentTypeIDLt *string
-
-	// ContentTypeIDLte.
-	ContentTypeIDLte *string
-
-	// ContentTypeIDn.
-	ContentTypeIDn *string
-
 	// ContentTypes.
 	ContentTypes *string
 
@@ -262,12 +244,6 @@ type ExtrasWebhooksListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// PayloadURL.
 	PayloadURL *string
@@ -522,72 +498,6 @@ func (o *ExtrasWebhooksListParams) WithCaFilePathNisw(caFilePathNisw *string) *E
 // SetCaFilePathNisw adds the caFilePathNisw to the extras webhooks list params
 func (o *ExtrasWebhooksListParams) SetCaFilePathNisw(caFilePathNisw *string) {
 	o.CaFilePathNisw = caFilePathNisw
-}
-
-// WithContentTypeID adds the contentTypeID to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) WithContentTypeID(contentTypeID *string) *ExtrasWebhooksListParams {
-	o.SetContentTypeID(contentTypeID)
-	return o
-}
-
-// SetContentTypeID adds the contentTypeId to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) SetContentTypeID(contentTypeID *string) {
-	o.ContentTypeID = contentTypeID
-}
-
-// WithContentTypeIDGt adds the contentTypeIDGt to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) WithContentTypeIDGt(contentTypeIDGt *string) *ExtrasWebhooksListParams {
-	o.SetContentTypeIDGt(contentTypeIDGt)
-	return o
-}
-
-// SetContentTypeIDGt adds the contentTypeIdGt to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) SetContentTypeIDGt(contentTypeIDGt *string) {
-	o.ContentTypeIDGt = contentTypeIDGt
-}
-
-// WithContentTypeIDGte adds the contentTypeIDGte to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) WithContentTypeIDGte(contentTypeIDGte *string) *ExtrasWebhooksListParams {
-	o.SetContentTypeIDGte(contentTypeIDGte)
-	return o
-}
-
-// SetContentTypeIDGte adds the contentTypeIdGte to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) SetContentTypeIDGte(contentTypeIDGte *string) {
-	o.ContentTypeIDGte = contentTypeIDGte
-}
-
-// WithContentTypeIDLt adds the contentTypeIDLt to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) WithContentTypeIDLt(contentTypeIDLt *string) *ExtrasWebhooksListParams {
-	o.SetContentTypeIDLt(contentTypeIDLt)
-	return o
-}
-
-// SetContentTypeIDLt adds the contentTypeIdLt to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) SetContentTypeIDLt(contentTypeIDLt *string) {
-	o.ContentTypeIDLt = contentTypeIDLt
-}
-
-// WithContentTypeIDLte adds the contentTypeIDLte to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) WithContentTypeIDLte(contentTypeIDLte *string) *ExtrasWebhooksListParams {
-	o.SetContentTypeIDLte(contentTypeIDLte)
-	return o
-}
-
-// SetContentTypeIDLte adds the contentTypeIdLte to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) SetContentTypeIDLte(contentTypeIDLte *string) {
-	o.ContentTypeIDLte = contentTypeIDLte
-}
-
-// WithContentTypeIDn adds the contentTypeIDn to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) WithContentTypeIDn(contentTypeIDn *string) *ExtrasWebhooksListParams {
-	o.SetContentTypeIDn(contentTypeIDn)
-	return o
-}
-
-// SetContentTypeIDn adds the contentTypeIdN to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) SetContentTypeIDn(contentTypeIDn *string) {
-	o.ContentTypeIDn = contentTypeIDn
 }
 
 // WithContentTypes adds the contentTypes to the extras webhooks list params
@@ -1061,17 +971,6 @@ func (o *ExtrasWebhooksListParams) WithOffset(offset *int64) *ExtrasWebhooksList
 // SetOffset adds the offset to the extras webhooks list params
 func (o *ExtrasWebhooksListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) WithOrdering(ordering *string) *ExtrasWebhooksListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the extras webhooks list params
-func (o *ExtrasWebhooksListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithPayloadURL adds the payloadURL to the extras webhooks list params
@@ -1561,108 +1460,6 @@ func (o *ExtrasWebhooksListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qCaFilePathNisw != "" {
 
 			if err := r.SetQueryParam("ca_file_path__nisw", qCaFilePathNisw); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeID != nil {
-
-		// query param content_type_id
-		var qrContentTypeID string
-
-		if o.ContentTypeID != nil {
-			qrContentTypeID = *o.ContentTypeID
-		}
-		qContentTypeID := qrContentTypeID
-		if qContentTypeID != "" {
-
-			if err := r.SetQueryParam("content_type_id", qContentTypeID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeIDGt != nil {
-
-		// query param content_type_id__gt
-		var qrContentTypeIDGt string
-
-		if o.ContentTypeIDGt != nil {
-			qrContentTypeIDGt = *o.ContentTypeIDGt
-		}
-		qContentTypeIDGt := qrContentTypeIDGt
-		if qContentTypeIDGt != "" {
-
-			if err := r.SetQueryParam("content_type_id__gt", qContentTypeIDGt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeIDGte != nil {
-
-		// query param content_type_id__gte
-		var qrContentTypeIDGte string
-
-		if o.ContentTypeIDGte != nil {
-			qrContentTypeIDGte = *o.ContentTypeIDGte
-		}
-		qContentTypeIDGte := qrContentTypeIDGte
-		if qContentTypeIDGte != "" {
-
-			if err := r.SetQueryParam("content_type_id__gte", qContentTypeIDGte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeIDLt != nil {
-
-		// query param content_type_id__lt
-		var qrContentTypeIDLt string
-
-		if o.ContentTypeIDLt != nil {
-			qrContentTypeIDLt = *o.ContentTypeIDLt
-		}
-		qContentTypeIDLt := qrContentTypeIDLt
-		if qContentTypeIDLt != "" {
-
-			if err := r.SetQueryParam("content_type_id__lt", qContentTypeIDLt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeIDLte != nil {
-
-		// query param content_type_id__lte
-		var qrContentTypeIDLte string
-
-		if o.ContentTypeIDLte != nil {
-			qrContentTypeIDLte = *o.ContentTypeIDLte
-		}
-		qContentTypeIDLte := qrContentTypeIDLte
-		if qContentTypeIDLte != "" {
-
-			if err := r.SetQueryParam("content_type_id__lte", qContentTypeIDLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeIDn != nil {
-
-		// query param content_type_id__n
-		var qrContentTypeIDn string
-
-		if o.ContentTypeIDn != nil {
-			qrContentTypeIDn = *o.ContentTypeIDn
-		}
-		qContentTypeIDn := qrContentTypeIDn
-		if qContentTypeIDn != "" {
-
-			if err := r.SetQueryParam("content_type_id__n", qContentTypeIDn); err != nil {
 				return err
 			}
 		}
@@ -2394,23 +2191,6 @@ func (o *ExtrasWebhooksListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

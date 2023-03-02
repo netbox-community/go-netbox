@@ -46,17 +46,13 @@ type CustomField struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
-
-	// Data type
-	// Read Only: true
-	DataType string `json:"data_type,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Default
 	//
 	// Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. "Foo").
-	Default interface{} `json:"default,omitempty"`
+	Default *string `json:"default,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -69,13 +65,7 @@ type CustomField struct {
 	// filter logic
 	FilterLogic *CustomFieldFilterLogic `json:"filter_logic,omitempty"`
 
-	// Group name
-	//
-	// Custom fields within the same group will be displayed together
-	// Max Length: 50
-	GroupName string `json:"group_name,omitempty"`
-
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -88,7 +78,7 @@ type CustomField struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	//
@@ -99,27 +89,14 @@ type CustomField struct {
 	// Pattern: ^[a-z0-9_]+$
 	Name *string `json:"name"`
 
-	// Object type
-	ObjectType string `json:"object_type,omitempty"`
-
 	// Required
 	//
 	// If true, this field is required when creating new objects or editing an existing object.
 	Required bool `json:"required,omitempty"`
 
-	// Search weight
-	//
-	// Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored.
-	// Maximum: 32767
-	// Minimum: 0
-	SearchWeight *int64 `json:"search_weight,omitempty"`
-
 	// type
 	// Required: true
 	Type *CustomFieldType `json:"type"`
-
-	// ui visibility
-	UIVisibility *CustomFieldUIVisibility `json:"ui_visibility,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -146,7 +123,7 @@ type CustomField struct {
 	// Max Length: 500
 	ValidationRegex string `json:"validation_regex,omitempty"`
 
-	// Display weight
+	// Weight
 	//
 	// Fields with higher weights appear lower in a form.
 	// Maximum: 32767
@@ -178,10 +155,6 @@ func (m *CustomField) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateGroupName(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateLabel(formats); err != nil {
 		res = append(res, err)
 	}
@@ -194,15 +167,7 @@ func (m *CustomField) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateSearchWeight(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateType(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateUIVisibility(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -270,7 +235,7 @@ func (m *CustomField) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -303,18 +268,6 @@ func (m *CustomField) validateFilterLogic(formats strfmt.Registry) error {
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-func (m *CustomField) validateGroupName(formats strfmt.Registry) error {
-	if swag.IsZero(m.GroupName) { // not required
-		return nil
-	}
-
-	if err := validate.MaxLength("group_name", "body", m.GroupName, 50); err != nil {
-		return err
 	}
 
 	return nil
@@ -365,22 +318,6 @@ func (m *CustomField) validateName(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *CustomField) validateSearchWeight(formats strfmt.Registry) error {
-	if swag.IsZero(m.SearchWeight) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("search_weight", "body", *m.SearchWeight, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("search_weight", "body", *m.SearchWeight, 32767, false); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *CustomField) validateType(formats strfmt.Registry) error {
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
@@ -393,25 +330,6 @@ func (m *CustomField) validateType(formats strfmt.Registry) error {
 				return ve.ValidateName("type")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("type")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *CustomField) validateUIVisibility(formats strfmt.Registry) error {
-	if swag.IsZero(m.UIVisibility) { // not required
-		return nil
-	}
-
-	if m.UIVisibility != nil {
-		if err := m.UIVisibility.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ui_visibility")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("ui_visibility")
 			}
 			return err
 		}
@@ -500,10 +418,6 @@ func (m *CustomField) ContextValidate(ctx context.Context, formats strfmt.Regist
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDataType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateDisplay(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -524,10 +438,6 @@ func (m *CustomField) ContextValidate(ctx context.Context, formats strfmt.Regist
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateUIVisibility(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateURL(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -540,16 +450,7 @@ func (m *CustomField) ContextValidate(ctx context.Context, formats strfmt.Regist
 
 func (m *CustomField) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *CustomField) contextValidateDataType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "data_type", "body", string(m.DataType)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -592,7 +493,7 @@ func (m *CustomField) contextValidateID(ctx context.Context, formats strfmt.Regi
 
 func (m *CustomField) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
@@ -607,22 +508,6 @@ func (m *CustomField) contextValidateType(ctx context.Context, formats strfmt.Re
 				return ve.ValidateName("type")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("type")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *CustomField) contextValidateUIVisibility(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.UIVisibility != nil {
-		if err := m.UIVisibility.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ui_visibility")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("ui_visibility")
 			}
 			return err
 		}
@@ -814,12 +699,12 @@ type CustomFieldType struct {
 
 	// label
 	// Required: true
-	// Enum: [Text Text (long) Integer Decimal Boolean (true/false) Date URL JSON Selection Multiple selection Object Multiple objects]
+	// Enum: [Text Text (long) Integer Boolean (true/false) Date URL JSON Selection Multiple selection]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [text longtext integer decimal boolean date url json select multiselect object multiobject]
+	// Enum: [text longtext integer boolean date url json select multiselect]
 	Value *string `json:"value"`
 }
 
@@ -845,7 +730,7 @@ var customFieldTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Text","Text (long)","Integer","Decimal","Boolean (true/false)","Date","URL","JSON","Selection","Multiple selection","Object","Multiple objects"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Text","Text (long)","Integer","Boolean (true/false)","Date","URL","JSON","Selection","Multiple selection"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -864,9 +749,6 @@ const (
 	// CustomFieldTypeLabelInteger captures enum value "Integer"
 	CustomFieldTypeLabelInteger string = "Integer"
 
-	// CustomFieldTypeLabelDecimal captures enum value "Decimal"
-	CustomFieldTypeLabelDecimal string = "Decimal"
-
 	// CustomFieldTypeLabelBooleanTrueFalse captures enum value "Boolean (true/false)"
 	CustomFieldTypeLabelBooleanTrueFalse string = "Boolean (true/false)"
 
@@ -884,12 +766,6 @@ const (
 
 	// CustomFieldTypeLabelMultipleSelection captures enum value "Multiple selection"
 	CustomFieldTypeLabelMultipleSelection string = "Multiple selection"
-
-	// CustomFieldTypeLabelObject captures enum value "Object"
-	CustomFieldTypeLabelObject string = "Object"
-
-	// CustomFieldTypeLabelMultipleObjects captures enum value "Multiple objects"
-	CustomFieldTypeLabelMultipleObjects string = "Multiple objects"
 )
 
 // prop value enum
@@ -918,7 +794,7 @@ var customFieldTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["text","longtext","integer","decimal","boolean","date","url","json","select","multiselect","object","multiobject"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["text","longtext","integer","boolean","date","url","json","select","multiselect"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -937,9 +813,6 @@ const (
 	// CustomFieldTypeValueInteger captures enum value "integer"
 	CustomFieldTypeValueInteger string = "integer"
 
-	// CustomFieldTypeValueDecimal captures enum value "decimal"
-	CustomFieldTypeValueDecimal string = "decimal"
-
 	// CustomFieldTypeValueBoolean captures enum value "boolean"
 	CustomFieldTypeValueBoolean string = "boolean"
 
@@ -957,12 +830,6 @@ const (
 
 	// CustomFieldTypeValueMultiselect captures enum value "multiselect"
 	CustomFieldTypeValueMultiselect string = "multiselect"
-
-	// CustomFieldTypeValueObject captures enum value "object"
-	CustomFieldTypeValueObject string = "object"
-
-	// CustomFieldTypeValueMultiobject captures enum value "multiobject"
-	CustomFieldTypeValueMultiobject string = "multiobject"
 )
 
 // prop value enum
@@ -1003,155 +870,6 @@ func (m *CustomFieldType) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *CustomFieldType) UnmarshalBinary(b []byte) error {
 	var res CustomFieldType
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// CustomFieldUIVisibility Ui visibility
-//
-// swagger:model CustomFieldUIVisibility
-type CustomFieldUIVisibility struct {
-
-	// label
-	// Required: true
-	// Enum: [Read/Write Read-only Hidden]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [read-write read-only hidden]
-	Value *string `json:"value"`
-}
-
-// Validate validates this custom field UI visibility
-func (m *CustomFieldUIVisibility) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var customFieldUiVisibilityTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["Read/Write","Read-only","Hidden"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		customFieldUiVisibilityTypeLabelPropEnum = append(customFieldUiVisibilityTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// CustomFieldUIVisibilityLabelReadWrite captures enum value "Read/Write"
-	CustomFieldUIVisibilityLabelReadWrite string = "Read/Write"
-
-	// CustomFieldUIVisibilityLabelReadDashOnly captures enum value "Read-only"
-	CustomFieldUIVisibilityLabelReadDashOnly string = "Read-only"
-
-	// CustomFieldUIVisibilityLabelHidden captures enum value "Hidden"
-	CustomFieldUIVisibilityLabelHidden string = "Hidden"
-)
-
-// prop value enum
-func (m *CustomFieldUIVisibility) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, customFieldUiVisibilityTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *CustomFieldUIVisibility) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("ui_visibility"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("ui_visibility"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var customFieldUiVisibilityTypeValuePropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["read-write","read-only","hidden"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		customFieldUiVisibilityTypeValuePropEnum = append(customFieldUiVisibilityTypeValuePropEnum, v)
-	}
-}
-
-const (
-
-	// CustomFieldUIVisibilityValueReadDashWrite captures enum value "read-write"
-	CustomFieldUIVisibilityValueReadDashWrite string = "read-write"
-
-	// CustomFieldUIVisibilityValueReadDashOnly captures enum value "read-only"
-	CustomFieldUIVisibilityValueReadDashOnly string = "read-only"
-
-	// CustomFieldUIVisibilityValueHidden captures enum value "hidden"
-	CustomFieldUIVisibilityValueHidden string = "hidden"
-)
-
-// prop value enum
-func (m *CustomFieldUIVisibility) validateValueEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, customFieldUiVisibilityTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *CustomFieldUIVisibility) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("ui_visibility"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("ui_visibility"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// ContextValidate validates this custom field UI visibility based on context it is used
-func (m *CustomFieldUIVisibility) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *CustomFieldUIVisibility) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *CustomFieldUIVisibility) UnmarshalBinary(b []byte) error {
-	var res CustomFieldUIVisibility
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -80,7 +80,7 @@ CircuitsProvidersPartialUpdateParams contains all the parameters to send to the 
 type CircuitsProvidersPartialUpdateParams struct {
 
 	// Data.
-	Data *models.WritableProvider
+	Data *models.Provider
 
 	/* ID.
 
@@ -142,13 +142,13 @@ func (o *CircuitsProvidersPartialUpdateParams) SetHTTPClient(client *http.Client
 }
 
 // WithData adds the data to the circuits providers partial update params
-func (o *CircuitsProvidersPartialUpdateParams) WithData(data *models.WritableProvider) *CircuitsProvidersPartialUpdateParams {
+func (o *CircuitsProvidersPartialUpdateParams) WithData(data *models.Provider) *CircuitsProvidersPartialUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the circuits providers partial update params
-func (o *CircuitsProvidersPartialUpdateParams) SetData(data *models.WritableProvider) {
+func (o *CircuitsProvidersPartialUpdateParams) SetData(data *models.Provider) {
 	o.Data = data
 }
 

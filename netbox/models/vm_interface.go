@@ -49,8 +49,8 @@ type VMInterface struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -66,17 +66,14 @@ type VMInterface struct {
 	// Enabled
 	Enabled bool `json:"enabled,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
-
-	// l2vpn termination
-	L2vpnTermination *NestedL2VPNTermination `json:"l2vpn_termination,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// MAC Address
 	MacAddress *string `json:"mac_address,omitempty"`
@@ -116,9 +113,6 @@ type VMInterface struct {
 	// virtual machine
 	// Required: true
 	VirtualMachine *NestedVirtualMachine `json:"virtual_machine"`
-
-	// vrf
-	Vrf *NestedVRF `json:"vrf,omitempty"`
 }
 
 // Validate validates this VM interface
@@ -134,10 +128,6 @@ func (m *VMInterface) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDescription(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateL2vpnTermination(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -181,10 +171,6 @@ func (m *VMInterface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateVrf(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -215,7 +201,7 @@ func (m *VMInterface) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -229,25 +215,6 @@ func (m *VMInterface) validateDescription(formats strfmt.Registry) error {
 
 	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *VMInterface) validateL2vpnTermination(formats strfmt.Registry) error {
-	if swag.IsZero(m.L2vpnTermination) { // not required
-		return nil
-	}
-
-	if m.L2vpnTermination != nil {
-		if err := m.L2vpnTermination.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("l2vpn_termination")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("l2vpn_termination")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -443,25 +410,6 @@ func (m *VMInterface) validateVirtualMachine(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *VMInterface) validateVrf(formats strfmt.Registry) error {
-	if swag.IsZero(m.Vrf) { // not required
-		return nil
-	}
-
-	if m.Vrf != nil {
-		if err := m.Vrf.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("vrf")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("vrf")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 // ContextValidate validate this VM interface based on the context it is used
 func (m *VMInterface) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -487,10 +435,6 @@ func (m *VMInterface) ContextValidate(ctx context.Context, formats strfmt.Regist
 	}
 
 	if err := m.contextValidateID(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateL2vpnTermination(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -523,10 +467,6 @@ func (m *VMInterface) ContextValidate(ctx context.Context, formats strfmt.Regist
 	}
 
 	if err := m.contextValidateVirtualMachine(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateVrf(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -572,7 +512,7 @@ func (m *VMInterface) contextValidateCountIpaddresses(ctx context.Context, forma
 
 func (m *VMInterface) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -597,25 +537,9 @@ func (m *VMInterface) contextValidateID(ctx context.Context, formats strfmt.Regi
 	return nil
 }
 
-func (m *VMInterface) contextValidateL2vpnTermination(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.L2vpnTermination != nil {
-		if err := m.L2vpnTermination.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("l2vpn_termination")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("l2vpn_termination")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *VMInterface) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
@@ -727,22 +651,6 @@ func (m *VMInterface) contextValidateVirtualMachine(ctx context.Context, formats
 				return ve.ValidateName("virtual_machine")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("virtual_machine")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *VMInterface) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Vrf != nil {
-		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("vrf")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("vrf")
 			}
 			return err
 		}

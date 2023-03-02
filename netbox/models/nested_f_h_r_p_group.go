@@ -45,7 +45,7 @@ type NestedFHRPGroup struct {
 	// Minimum: 0
 	GroupID *int64 `json:"group_id"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 

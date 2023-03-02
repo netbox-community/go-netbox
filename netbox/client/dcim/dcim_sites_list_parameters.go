@@ -80,6 +80,18 @@ type DcimSitesListParams struct {
 	// Asn.
 	Asn *string
 
+	// AsnGt.
+	AsnGt *string
+
+	// AsnGte.
+	AsnGte *string
+
+	// AsnLt.
+	AsnLt *string
+
+	// AsnLte.
+	AsnLte *string
+
 	// Asnn.
 	Asnn *string
 
@@ -95,11 +107,104 @@ type DcimSitesListParams struct {
 	// Contactn.
 	Contactn *string
 
-	// ContactGroup.
-	ContactGroup *string
+	// ContactEmail.
+	ContactEmail *string
 
-	// ContactGroupn.
-	ContactGroupn *string
+	// ContactEmailEmpty.
+	ContactEmailEmpty *string
+
+	// ContactEmailIc.
+	ContactEmailIc *string
+
+	// ContactEmailIe.
+	ContactEmailIe *string
+
+	// ContactEmailIew.
+	ContactEmailIew *string
+
+	// ContactEmailIsw.
+	ContactEmailIsw *string
+
+	// ContactEmailn.
+	ContactEmailn *string
+
+	// ContactEmailNic.
+	ContactEmailNic *string
+
+	// ContactEmailNie.
+	ContactEmailNie *string
+
+	// ContactEmailNiew.
+	ContactEmailNiew *string
+
+	// ContactEmailNisw.
+	ContactEmailNisw *string
+
+	// ContactName.
+	ContactName *string
+
+	// ContactNameEmpty.
+	ContactNameEmpty *string
+
+	// ContactNameIc.
+	ContactNameIc *string
+
+	// ContactNameIe.
+	ContactNameIe *string
+
+	// ContactNameIew.
+	ContactNameIew *string
+
+	// ContactNameIsw.
+	ContactNameIsw *string
+
+	// ContactNamen.
+	ContactNamen *string
+
+	// ContactNameNic.
+	ContactNameNic *string
+
+	// ContactNameNie.
+	ContactNameNie *string
+
+	// ContactNameNiew.
+	ContactNameNiew *string
+
+	// ContactNameNisw.
+	ContactNameNisw *string
+
+	// ContactPhone.
+	ContactPhone *string
+
+	// ContactPhoneEmpty.
+	ContactPhoneEmpty *string
+
+	// ContactPhoneIc.
+	ContactPhoneIc *string
+
+	// ContactPhoneIe.
+	ContactPhoneIe *string
+
+	// ContactPhoneIew.
+	ContactPhoneIew *string
+
+	// ContactPhoneIsw.
+	ContactPhoneIsw *string
+
+	// ContactPhonen.
+	ContactPhonen *string
+
+	// ContactPhoneNic.
+	ContactPhoneNic *string
+
+	// ContactPhoneNie.
+	ContactPhoneNie *string
+
+	// ContactPhoneNiew.
+	ContactPhoneNiew *string
+
+	// ContactPhoneNisw.
+	ContactPhoneNisw *string
 
 	// ContactRole.
 	ContactRole *string
@@ -110,20 +215,11 @@ type DcimSitesListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -224,20 +320,11 @@ type DcimSitesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	// Latitude.
 	Latitude *string
@@ -319,12 +406,6 @@ type DcimSitesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Q.
 	Q *string
@@ -474,6 +555,50 @@ func (o *DcimSitesListParams) SetAsn(asn *string) {
 	o.Asn = asn
 }
 
+// WithAsnGt adds the asnGt to the dcim sites list params
+func (o *DcimSitesListParams) WithAsnGt(asnGt *string) *DcimSitesListParams {
+	o.SetAsnGt(asnGt)
+	return o
+}
+
+// SetAsnGt adds the asnGt to the dcim sites list params
+func (o *DcimSitesListParams) SetAsnGt(asnGt *string) {
+	o.AsnGt = asnGt
+}
+
+// WithAsnGte adds the asnGte to the dcim sites list params
+func (o *DcimSitesListParams) WithAsnGte(asnGte *string) *DcimSitesListParams {
+	o.SetAsnGte(asnGte)
+	return o
+}
+
+// SetAsnGte adds the asnGte to the dcim sites list params
+func (o *DcimSitesListParams) SetAsnGte(asnGte *string) {
+	o.AsnGte = asnGte
+}
+
+// WithAsnLt adds the asnLt to the dcim sites list params
+func (o *DcimSitesListParams) WithAsnLt(asnLt *string) *DcimSitesListParams {
+	o.SetAsnLt(asnLt)
+	return o
+}
+
+// SetAsnLt adds the asnLt to the dcim sites list params
+func (o *DcimSitesListParams) SetAsnLt(asnLt *string) {
+	o.AsnLt = asnLt
+}
+
+// WithAsnLte adds the asnLte to the dcim sites list params
+func (o *DcimSitesListParams) WithAsnLte(asnLte *string) *DcimSitesListParams {
+	o.SetAsnLte(asnLte)
+	return o
+}
+
+// SetAsnLte adds the asnLte to the dcim sites list params
+func (o *DcimSitesListParams) SetAsnLte(asnLte *string) {
+	o.AsnLte = asnLte
+}
+
 // WithAsnn adds the asnn to the dcim sites list params
 func (o *DcimSitesListParams) WithAsnn(asnn *string) *DcimSitesListParams {
 	o.SetAsnn(asnn)
@@ -529,26 +654,367 @@ func (o *DcimSitesListParams) SetContactn(contactn *string) {
 	o.Contactn = contactn
 }
 
-// WithContactGroup adds the contactGroup to the dcim sites list params
-func (o *DcimSitesListParams) WithContactGroup(contactGroup *string) *DcimSitesListParams {
-	o.SetContactGroup(contactGroup)
+// WithContactEmail adds the contactEmail to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmail(contactEmail *string) *DcimSitesListParams {
+	o.SetContactEmail(contactEmail)
 	return o
 }
 
-// SetContactGroup adds the contactGroup to the dcim sites list params
-func (o *DcimSitesListParams) SetContactGroup(contactGroup *string) {
-	o.ContactGroup = contactGroup
+// SetContactEmail adds the contactEmail to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmail(contactEmail *string) {
+	o.ContactEmail = contactEmail
 }
 
-// WithContactGroupn adds the contactGroupn to the dcim sites list params
-func (o *DcimSitesListParams) WithContactGroupn(contactGroupn *string) *DcimSitesListParams {
-	o.SetContactGroupn(contactGroupn)
+// WithContactEmailEmpty adds the contactEmailEmpty to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailEmpty(contactEmailEmpty *string) *DcimSitesListParams {
+	o.SetContactEmailEmpty(contactEmailEmpty)
 	return o
 }
 
-// SetContactGroupn adds the contactGroupN to the dcim sites list params
-func (o *DcimSitesListParams) SetContactGroupn(contactGroupn *string) {
-	o.ContactGroupn = contactGroupn
+// SetContactEmailEmpty adds the contactEmailEmpty to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailEmpty(contactEmailEmpty *string) {
+	o.ContactEmailEmpty = contactEmailEmpty
+}
+
+// WithContactEmailIc adds the contactEmailIc to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailIc(contactEmailIc *string) *DcimSitesListParams {
+	o.SetContactEmailIc(contactEmailIc)
+	return o
+}
+
+// SetContactEmailIc adds the contactEmailIc to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailIc(contactEmailIc *string) {
+	o.ContactEmailIc = contactEmailIc
+}
+
+// WithContactEmailIe adds the contactEmailIe to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailIe(contactEmailIe *string) *DcimSitesListParams {
+	o.SetContactEmailIe(contactEmailIe)
+	return o
+}
+
+// SetContactEmailIe adds the contactEmailIe to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailIe(contactEmailIe *string) {
+	o.ContactEmailIe = contactEmailIe
+}
+
+// WithContactEmailIew adds the contactEmailIew to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailIew(contactEmailIew *string) *DcimSitesListParams {
+	o.SetContactEmailIew(contactEmailIew)
+	return o
+}
+
+// SetContactEmailIew adds the contactEmailIew to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailIew(contactEmailIew *string) {
+	o.ContactEmailIew = contactEmailIew
+}
+
+// WithContactEmailIsw adds the contactEmailIsw to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailIsw(contactEmailIsw *string) *DcimSitesListParams {
+	o.SetContactEmailIsw(contactEmailIsw)
+	return o
+}
+
+// SetContactEmailIsw adds the contactEmailIsw to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailIsw(contactEmailIsw *string) {
+	o.ContactEmailIsw = contactEmailIsw
+}
+
+// WithContactEmailn adds the contactEmailn to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailn(contactEmailn *string) *DcimSitesListParams {
+	o.SetContactEmailn(contactEmailn)
+	return o
+}
+
+// SetContactEmailn adds the contactEmailN to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailn(contactEmailn *string) {
+	o.ContactEmailn = contactEmailn
+}
+
+// WithContactEmailNic adds the contactEmailNic to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailNic(contactEmailNic *string) *DcimSitesListParams {
+	o.SetContactEmailNic(contactEmailNic)
+	return o
+}
+
+// SetContactEmailNic adds the contactEmailNic to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailNic(contactEmailNic *string) {
+	o.ContactEmailNic = contactEmailNic
+}
+
+// WithContactEmailNie adds the contactEmailNie to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailNie(contactEmailNie *string) *DcimSitesListParams {
+	o.SetContactEmailNie(contactEmailNie)
+	return o
+}
+
+// SetContactEmailNie adds the contactEmailNie to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailNie(contactEmailNie *string) {
+	o.ContactEmailNie = contactEmailNie
+}
+
+// WithContactEmailNiew adds the contactEmailNiew to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailNiew(contactEmailNiew *string) *DcimSitesListParams {
+	o.SetContactEmailNiew(contactEmailNiew)
+	return o
+}
+
+// SetContactEmailNiew adds the contactEmailNiew to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailNiew(contactEmailNiew *string) {
+	o.ContactEmailNiew = contactEmailNiew
+}
+
+// WithContactEmailNisw adds the contactEmailNisw to the dcim sites list params
+func (o *DcimSitesListParams) WithContactEmailNisw(contactEmailNisw *string) *DcimSitesListParams {
+	o.SetContactEmailNisw(contactEmailNisw)
+	return o
+}
+
+// SetContactEmailNisw adds the contactEmailNisw to the dcim sites list params
+func (o *DcimSitesListParams) SetContactEmailNisw(contactEmailNisw *string) {
+	o.ContactEmailNisw = contactEmailNisw
+}
+
+// WithContactName adds the contactName to the dcim sites list params
+func (o *DcimSitesListParams) WithContactName(contactName *string) *DcimSitesListParams {
+	o.SetContactName(contactName)
+	return o
+}
+
+// SetContactName adds the contactName to the dcim sites list params
+func (o *DcimSitesListParams) SetContactName(contactName *string) {
+	o.ContactName = contactName
+}
+
+// WithContactNameEmpty adds the contactNameEmpty to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNameEmpty(contactNameEmpty *string) *DcimSitesListParams {
+	o.SetContactNameEmpty(contactNameEmpty)
+	return o
+}
+
+// SetContactNameEmpty adds the contactNameEmpty to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNameEmpty(contactNameEmpty *string) {
+	o.ContactNameEmpty = contactNameEmpty
+}
+
+// WithContactNameIc adds the contactNameIc to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNameIc(contactNameIc *string) *DcimSitesListParams {
+	o.SetContactNameIc(contactNameIc)
+	return o
+}
+
+// SetContactNameIc adds the contactNameIc to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNameIc(contactNameIc *string) {
+	o.ContactNameIc = contactNameIc
+}
+
+// WithContactNameIe adds the contactNameIe to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNameIe(contactNameIe *string) *DcimSitesListParams {
+	o.SetContactNameIe(contactNameIe)
+	return o
+}
+
+// SetContactNameIe adds the contactNameIe to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNameIe(contactNameIe *string) {
+	o.ContactNameIe = contactNameIe
+}
+
+// WithContactNameIew adds the contactNameIew to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNameIew(contactNameIew *string) *DcimSitesListParams {
+	o.SetContactNameIew(contactNameIew)
+	return o
+}
+
+// SetContactNameIew adds the contactNameIew to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNameIew(contactNameIew *string) {
+	o.ContactNameIew = contactNameIew
+}
+
+// WithContactNameIsw adds the contactNameIsw to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNameIsw(contactNameIsw *string) *DcimSitesListParams {
+	o.SetContactNameIsw(contactNameIsw)
+	return o
+}
+
+// SetContactNameIsw adds the contactNameIsw to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNameIsw(contactNameIsw *string) {
+	o.ContactNameIsw = contactNameIsw
+}
+
+// WithContactNamen adds the contactNamen to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNamen(contactNamen *string) *DcimSitesListParams {
+	o.SetContactNamen(contactNamen)
+	return o
+}
+
+// SetContactNamen adds the contactNameN to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNamen(contactNamen *string) {
+	o.ContactNamen = contactNamen
+}
+
+// WithContactNameNic adds the contactNameNic to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNameNic(contactNameNic *string) *DcimSitesListParams {
+	o.SetContactNameNic(contactNameNic)
+	return o
+}
+
+// SetContactNameNic adds the contactNameNic to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNameNic(contactNameNic *string) {
+	o.ContactNameNic = contactNameNic
+}
+
+// WithContactNameNie adds the contactNameNie to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNameNie(contactNameNie *string) *DcimSitesListParams {
+	o.SetContactNameNie(contactNameNie)
+	return o
+}
+
+// SetContactNameNie adds the contactNameNie to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNameNie(contactNameNie *string) {
+	o.ContactNameNie = contactNameNie
+}
+
+// WithContactNameNiew adds the contactNameNiew to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNameNiew(contactNameNiew *string) *DcimSitesListParams {
+	o.SetContactNameNiew(contactNameNiew)
+	return o
+}
+
+// SetContactNameNiew adds the contactNameNiew to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNameNiew(contactNameNiew *string) {
+	o.ContactNameNiew = contactNameNiew
+}
+
+// WithContactNameNisw adds the contactNameNisw to the dcim sites list params
+func (o *DcimSitesListParams) WithContactNameNisw(contactNameNisw *string) *DcimSitesListParams {
+	o.SetContactNameNisw(contactNameNisw)
+	return o
+}
+
+// SetContactNameNisw adds the contactNameNisw to the dcim sites list params
+func (o *DcimSitesListParams) SetContactNameNisw(contactNameNisw *string) {
+	o.ContactNameNisw = contactNameNisw
+}
+
+// WithContactPhone adds the contactPhone to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhone(contactPhone *string) *DcimSitesListParams {
+	o.SetContactPhone(contactPhone)
+	return o
+}
+
+// SetContactPhone adds the contactPhone to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhone(contactPhone *string) {
+	o.ContactPhone = contactPhone
+}
+
+// WithContactPhoneEmpty adds the contactPhoneEmpty to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhoneEmpty(contactPhoneEmpty *string) *DcimSitesListParams {
+	o.SetContactPhoneEmpty(contactPhoneEmpty)
+	return o
+}
+
+// SetContactPhoneEmpty adds the contactPhoneEmpty to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhoneEmpty(contactPhoneEmpty *string) {
+	o.ContactPhoneEmpty = contactPhoneEmpty
+}
+
+// WithContactPhoneIc adds the contactPhoneIc to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhoneIc(contactPhoneIc *string) *DcimSitesListParams {
+	o.SetContactPhoneIc(contactPhoneIc)
+	return o
+}
+
+// SetContactPhoneIc adds the contactPhoneIc to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhoneIc(contactPhoneIc *string) {
+	o.ContactPhoneIc = contactPhoneIc
+}
+
+// WithContactPhoneIe adds the contactPhoneIe to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhoneIe(contactPhoneIe *string) *DcimSitesListParams {
+	o.SetContactPhoneIe(contactPhoneIe)
+	return o
+}
+
+// SetContactPhoneIe adds the contactPhoneIe to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhoneIe(contactPhoneIe *string) {
+	o.ContactPhoneIe = contactPhoneIe
+}
+
+// WithContactPhoneIew adds the contactPhoneIew to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhoneIew(contactPhoneIew *string) *DcimSitesListParams {
+	o.SetContactPhoneIew(contactPhoneIew)
+	return o
+}
+
+// SetContactPhoneIew adds the contactPhoneIew to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhoneIew(contactPhoneIew *string) {
+	o.ContactPhoneIew = contactPhoneIew
+}
+
+// WithContactPhoneIsw adds the contactPhoneIsw to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhoneIsw(contactPhoneIsw *string) *DcimSitesListParams {
+	o.SetContactPhoneIsw(contactPhoneIsw)
+	return o
+}
+
+// SetContactPhoneIsw adds the contactPhoneIsw to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhoneIsw(contactPhoneIsw *string) {
+	o.ContactPhoneIsw = contactPhoneIsw
+}
+
+// WithContactPhonen adds the contactPhonen to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhonen(contactPhonen *string) *DcimSitesListParams {
+	o.SetContactPhonen(contactPhonen)
+	return o
+}
+
+// SetContactPhonen adds the contactPhoneN to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhonen(contactPhonen *string) {
+	o.ContactPhonen = contactPhonen
+}
+
+// WithContactPhoneNic adds the contactPhoneNic to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhoneNic(contactPhoneNic *string) *DcimSitesListParams {
+	o.SetContactPhoneNic(contactPhoneNic)
+	return o
+}
+
+// SetContactPhoneNic adds the contactPhoneNic to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhoneNic(contactPhoneNic *string) {
+	o.ContactPhoneNic = contactPhoneNic
+}
+
+// WithContactPhoneNie adds the contactPhoneNie to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhoneNie(contactPhoneNie *string) *DcimSitesListParams {
+	o.SetContactPhoneNie(contactPhoneNie)
+	return o
+}
+
+// SetContactPhoneNie adds the contactPhoneNie to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhoneNie(contactPhoneNie *string) {
+	o.ContactPhoneNie = contactPhoneNie
+}
+
+// WithContactPhoneNiew adds the contactPhoneNiew to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhoneNiew(contactPhoneNiew *string) *DcimSitesListParams {
+	o.SetContactPhoneNiew(contactPhoneNiew)
+	return o
+}
+
+// SetContactPhoneNiew adds the contactPhoneNiew to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhoneNiew(contactPhoneNiew *string) {
+	o.ContactPhoneNiew = contactPhoneNiew
+}
+
+// WithContactPhoneNisw adds the contactPhoneNisw to the dcim sites list params
+func (o *DcimSitesListParams) WithContactPhoneNisw(contactPhoneNisw *string) *DcimSitesListParams {
+	o.SetContactPhoneNisw(contactPhoneNisw)
+	return o
+}
+
+// SetContactPhoneNisw adds the contactPhoneNisw to the dcim sites list params
+func (o *DcimSitesListParams) SetContactPhoneNisw(contactPhoneNisw *string) {
+	o.ContactPhoneNisw = contactPhoneNisw
 }
 
 // WithContactRole adds the contactRole to the dcim sites list params
@@ -584,17 +1050,6 @@ func (o *DcimSitesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the dcim sites list params
-func (o *DcimSitesListParams) WithCreatedGt(createdGt *string) *DcimSitesListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the dcim sites list params
-func (o *DcimSitesListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the dcim sites list params
 func (o *DcimSitesListParams) WithCreatedGte(createdGte *string) *DcimSitesListParams {
 	o.SetCreatedGte(createdGte)
@@ -606,17 +1061,6 @@ func (o *DcimSitesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the dcim sites list params
-func (o *DcimSitesListParams) WithCreatedLt(createdLt *string) *DcimSitesListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the dcim sites list params
-func (o *DcimSitesListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the dcim sites list params
 func (o *DcimSitesListParams) WithCreatedLte(createdLte *string) *DcimSitesListParams {
 	o.SetCreatedLte(createdLte)
@@ -626,17 +1070,6 @@ func (o *DcimSitesListParams) WithCreatedLte(createdLte *string) *DcimSitesListP
 // SetCreatedLte adds the createdLte to the dcim sites list params
 func (o *DcimSitesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the dcim sites list params
-func (o *DcimSitesListParams) WithCreatedn(createdn *string) *DcimSitesListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the dcim sites list params
-func (o *DcimSitesListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the dcim sites list params
@@ -1002,17 +1435,6 @@ func (o *DcimSitesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the dcim sites list params
-func (o *DcimSitesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimSitesListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the dcim sites list params
-func (o *DcimSitesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim sites list params
 func (o *DcimSitesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimSitesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -1024,17 +1446,6 @@ func (o *DcimSitesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the dcim sites list params
-func (o *DcimSitesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimSitesListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the dcim sites list params
-func (o *DcimSitesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim sites list params
 func (o *DcimSitesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimSitesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -1044,17 +1455,6 @@ func (o *DcimSitesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimSi
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim sites list params
 func (o *DcimSitesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the dcim sites list params
-func (o *DcimSitesListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimSitesListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the dcim sites list params
-func (o *DcimSitesListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLatitude adds the latitude to the dcim sites list params
@@ -1330,17 +1730,6 @@ func (o *DcimSitesListParams) WithOffset(offset *int64) *DcimSitesListParams {
 // SetOffset adds the offset to the dcim sites list params
 func (o *DcimSitesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the dcim sites list params
-func (o *DcimSitesListParams) WithOrdering(ordering *string) *DcimSitesListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the dcim sites list params
-func (o *DcimSitesListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithQ adds the q to the dcim sites list params
@@ -1676,6 +2065,74 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
+	if o.AsnGt != nil {
+
+		// query param asn__gt
+		var qrAsnGt string
+
+		if o.AsnGt != nil {
+			qrAsnGt = *o.AsnGt
+		}
+		qAsnGt := qrAsnGt
+		if qAsnGt != "" {
+
+			if err := r.SetQueryParam("asn__gt", qAsnGt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.AsnGte != nil {
+
+		// query param asn__gte
+		var qrAsnGte string
+
+		if o.AsnGte != nil {
+			qrAsnGte = *o.AsnGte
+		}
+		qAsnGte := qrAsnGte
+		if qAsnGte != "" {
+
+			if err := r.SetQueryParam("asn__gte", qAsnGte); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.AsnLt != nil {
+
+		// query param asn__lt
+		var qrAsnLt string
+
+		if o.AsnLt != nil {
+			qrAsnLt = *o.AsnLt
+		}
+		qAsnLt := qrAsnLt
+		if qAsnLt != "" {
+
+			if err := r.SetQueryParam("asn__lt", qAsnLt); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.AsnLte != nil {
+
+		// query param asn__lte
+		var qrAsnLte string
+
+		if o.AsnLte != nil {
+			qrAsnLte = *o.AsnLte
+		}
+		qAsnLte := qrAsnLte
+		if qAsnLte != "" {
+
+			if err := r.SetQueryParam("asn__lte", qAsnLte); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Asnn != nil {
 
 		// query param asn__n
@@ -1761,35 +2218,562 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
-	if o.ContactGroup != nil {
+	if o.ContactEmail != nil {
 
-		// query param contact_group
-		var qrContactGroup string
+		// query param contact_email
+		var qrContactEmail string
 
-		if o.ContactGroup != nil {
-			qrContactGroup = *o.ContactGroup
+		if o.ContactEmail != nil {
+			qrContactEmail = *o.ContactEmail
 		}
-		qContactGroup := qrContactGroup
-		if qContactGroup != "" {
+		qContactEmail := qrContactEmail
+		if qContactEmail != "" {
 
-			if err := r.SetQueryParam("contact_group", qContactGroup); err != nil {
+			if err := r.SetQueryParam("contact_email", qContactEmail); err != nil {
 				return err
 			}
 		}
 	}
 
-	if o.ContactGroupn != nil {
+	if o.ContactEmailEmpty != nil {
 
-		// query param contact_group__n
-		var qrContactGroupn string
+		// query param contact_email__empty
+		var qrContactEmailEmpty string
 
-		if o.ContactGroupn != nil {
-			qrContactGroupn = *o.ContactGroupn
+		if o.ContactEmailEmpty != nil {
+			qrContactEmailEmpty = *o.ContactEmailEmpty
 		}
-		qContactGroupn := qrContactGroupn
-		if qContactGroupn != "" {
+		qContactEmailEmpty := qrContactEmailEmpty
+		if qContactEmailEmpty != "" {
 
-			if err := r.SetQueryParam("contact_group__n", qContactGroupn); err != nil {
+			if err := r.SetQueryParam("contact_email__empty", qContactEmailEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactEmailIc != nil {
+
+		// query param contact_email__ic
+		var qrContactEmailIc string
+
+		if o.ContactEmailIc != nil {
+			qrContactEmailIc = *o.ContactEmailIc
+		}
+		qContactEmailIc := qrContactEmailIc
+		if qContactEmailIc != "" {
+
+			if err := r.SetQueryParam("contact_email__ic", qContactEmailIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactEmailIe != nil {
+
+		// query param contact_email__ie
+		var qrContactEmailIe string
+
+		if o.ContactEmailIe != nil {
+			qrContactEmailIe = *o.ContactEmailIe
+		}
+		qContactEmailIe := qrContactEmailIe
+		if qContactEmailIe != "" {
+
+			if err := r.SetQueryParam("contact_email__ie", qContactEmailIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactEmailIew != nil {
+
+		// query param contact_email__iew
+		var qrContactEmailIew string
+
+		if o.ContactEmailIew != nil {
+			qrContactEmailIew = *o.ContactEmailIew
+		}
+		qContactEmailIew := qrContactEmailIew
+		if qContactEmailIew != "" {
+
+			if err := r.SetQueryParam("contact_email__iew", qContactEmailIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactEmailIsw != nil {
+
+		// query param contact_email__isw
+		var qrContactEmailIsw string
+
+		if o.ContactEmailIsw != nil {
+			qrContactEmailIsw = *o.ContactEmailIsw
+		}
+		qContactEmailIsw := qrContactEmailIsw
+		if qContactEmailIsw != "" {
+
+			if err := r.SetQueryParam("contact_email__isw", qContactEmailIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactEmailn != nil {
+
+		// query param contact_email__n
+		var qrContactEmailn string
+
+		if o.ContactEmailn != nil {
+			qrContactEmailn = *o.ContactEmailn
+		}
+		qContactEmailn := qrContactEmailn
+		if qContactEmailn != "" {
+
+			if err := r.SetQueryParam("contact_email__n", qContactEmailn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactEmailNic != nil {
+
+		// query param contact_email__nic
+		var qrContactEmailNic string
+
+		if o.ContactEmailNic != nil {
+			qrContactEmailNic = *o.ContactEmailNic
+		}
+		qContactEmailNic := qrContactEmailNic
+		if qContactEmailNic != "" {
+
+			if err := r.SetQueryParam("contact_email__nic", qContactEmailNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactEmailNie != nil {
+
+		// query param contact_email__nie
+		var qrContactEmailNie string
+
+		if o.ContactEmailNie != nil {
+			qrContactEmailNie = *o.ContactEmailNie
+		}
+		qContactEmailNie := qrContactEmailNie
+		if qContactEmailNie != "" {
+
+			if err := r.SetQueryParam("contact_email__nie", qContactEmailNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactEmailNiew != nil {
+
+		// query param contact_email__niew
+		var qrContactEmailNiew string
+
+		if o.ContactEmailNiew != nil {
+			qrContactEmailNiew = *o.ContactEmailNiew
+		}
+		qContactEmailNiew := qrContactEmailNiew
+		if qContactEmailNiew != "" {
+
+			if err := r.SetQueryParam("contact_email__niew", qContactEmailNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactEmailNisw != nil {
+
+		// query param contact_email__nisw
+		var qrContactEmailNisw string
+
+		if o.ContactEmailNisw != nil {
+			qrContactEmailNisw = *o.ContactEmailNisw
+		}
+		qContactEmailNisw := qrContactEmailNisw
+		if qContactEmailNisw != "" {
+
+			if err := r.SetQueryParam("contact_email__nisw", qContactEmailNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactName != nil {
+
+		// query param contact_name
+		var qrContactName string
+
+		if o.ContactName != nil {
+			qrContactName = *o.ContactName
+		}
+		qContactName := qrContactName
+		if qContactName != "" {
+
+			if err := r.SetQueryParam("contact_name", qContactName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNameEmpty != nil {
+
+		// query param contact_name__empty
+		var qrContactNameEmpty string
+
+		if o.ContactNameEmpty != nil {
+			qrContactNameEmpty = *o.ContactNameEmpty
+		}
+		qContactNameEmpty := qrContactNameEmpty
+		if qContactNameEmpty != "" {
+
+			if err := r.SetQueryParam("contact_name__empty", qContactNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNameIc != nil {
+
+		// query param contact_name__ic
+		var qrContactNameIc string
+
+		if o.ContactNameIc != nil {
+			qrContactNameIc = *o.ContactNameIc
+		}
+		qContactNameIc := qrContactNameIc
+		if qContactNameIc != "" {
+
+			if err := r.SetQueryParam("contact_name__ic", qContactNameIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNameIe != nil {
+
+		// query param contact_name__ie
+		var qrContactNameIe string
+
+		if o.ContactNameIe != nil {
+			qrContactNameIe = *o.ContactNameIe
+		}
+		qContactNameIe := qrContactNameIe
+		if qContactNameIe != "" {
+
+			if err := r.SetQueryParam("contact_name__ie", qContactNameIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNameIew != nil {
+
+		// query param contact_name__iew
+		var qrContactNameIew string
+
+		if o.ContactNameIew != nil {
+			qrContactNameIew = *o.ContactNameIew
+		}
+		qContactNameIew := qrContactNameIew
+		if qContactNameIew != "" {
+
+			if err := r.SetQueryParam("contact_name__iew", qContactNameIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNameIsw != nil {
+
+		// query param contact_name__isw
+		var qrContactNameIsw string
+
+		if o.ContactNameIsw != nil {
+			qrContactNameIsw = *o.ContactNameIsw
+		}
+		qContactNameIsw := qrContactNameIsw
+		if qContactNameIsw != "" {
+
+			if err := r.SetQueryParam("contact_name__isw", qContactNameIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNamen != nil {
+
+		// query param contact_name__n
+		var qrContactNamen string
+
+		if o.ContactNamen != nil {
+			qrContactNamen = *o.ContactNamen
+		}
+		qContactNamen := qrContactNamen
+		if qContactNamen != "" {
+
+			if err := r.SetQueryParam("contact_name__n", qContactNamen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNameNic != nil {
+
+		// query param contact_name__nic
+		var qrContactNameNic string
+
+		if o.ContactNameNic != nil {
+			qrContactNameNic = *o.ContactNameNic
+		}
+		qContactNameNic := qrContactNameNic
+		if qContactNameNic != "" {
+
+			if err := r.SetQueryParam("contact_name__nic", qContactNameNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNameNie != nil {
+
+		// query param contact_name__nie
+		var qrContactNameNie string
+
+		if o.ContactNameNie != nil {
+			qrContactNameNie = *o.ContactNameNie
+		}
+		qContactNameNie := qrContactNameNie
+		if qContactNameNie != "" {
+
+			if err := r.SetQueryParam("contact_name__nie", qContactNameNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNameNiew != nil {
+
+		// query param contact_name__niew
+		var qrContactNameNiew string
+
+		if o.ContactNameNiew != nil {
+			qrContactNameNiew = *o.ContactNameNiew
+		}
+		qContactNameNiew := qrContactNameNiew
+		if qContactNameNiew != "" {
+
+			if err := r.SetQueryParam("contact_name__niew", qContactNameNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactNameNisw != nil {
+
+		// query param contact_name__nisw
+		var qrContactNameNisw string
+
+		if o.ContactNameNisw != nil {
+			qrContactNameNisw = *o.ContactNameNisw
+		}
+		qContactNameNisw := qrContactNameNisw
+		if qContactNameNisw != "" {
+
+			if err := r.SetQueryParam("contact_name__nisw", qContactNameNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhone != nil {
+
+		// query param contact_phone
+		var qrContactPhone string
+
+		if o.ContactPhone != nil {
+			qrContactPhone = *o.ContactPhone
+		}
+		qContactPhone := qrContactPhone
+		if qContactPhone != "" {
+
+			if err := r.SetQueryParam("contact_phone", qContactPhone); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhoneEmpty != nil {
+
+		// query param contact_phone__empty
+		var qrContactPhoneEmpty string
+
+		if o.ContactPhoneEmpty != nil {
+			qrContactPhoneEmpty = *o.ContactPhoneEmpty
+		}
+		qContactPhoneEmpty := qrContactPhoneEmpty
+		if qContactPhoneEmpty != "" {
+
+			if err := r.SetQueryParam("contact_phone__empty", qContactPhoneEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhoneIc != nil {
+
+		// query param contact_phone__ic
+		var qrContactPhoneIc string
+
+		if o.ContactPhoneIc != nil {
+			qrContactPhoneIc = *o.ContactPhoneIc
+		}
+		qContactPhoneIc := qrContactPhoneIc
+		if qContactPhoneIc != "" {
+
+			if err := r.SetQueryParam("contact_phone__ic", qContactPhoneIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhoneIe != nil {
+
+		// query param contact_phone__ie
+		var qrContactPhoneIe string
+
+		if o.ContactPhoneIe != nil {
+			qrContactPhoneIe = *o.ContactPhoneIe
+		}
+		qContactPhoneIe := qrContactPhoneIe
+		if qContactPhoneIe != "" {
+
+			if err := r.SetQueryParam("contact_phone__ie", qContactPhoneIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhoneIew != nil {
+
+		// query param contact_phone__iew
+		var qrContactPhoneIew string
+
+		if o.ContactPhoneIew != nil {
+			qrContactPhoneIew = *o.ContactPhoneIew
+		}
+		qContactPhoneIew := qrContactPhoneIew
+		if qContactPhoneIew != "" {
+
+			if err := r.SetQueryParam("contact_phone__iew", qContactPhoneIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhoneIsw != nil {
+
+		// query param contact_phone__isw
+		var qrContactPhoneIsw string
+
+		if o.ContactPhoneIsw != nil {
+			qrContactPhoneIsw = *o.ContactPhoneIsw
+		}
+		qContactPhoneIsw := qrContactPhoneIsw
+		if qContactPhoneIsw != "" {
+
+			if err := r.SetQueryParam("contact_phone__isw", qContactPhoneIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhonen != nil {
+
+		// query param contact_phone__n
+		var qrContactPhonen string
+
+		if o.ContactPhonen != nil {
+			qrContactPhonen = *o.ContactPhonen
+		}
+		qContactPhonen := qrContactPhonen
+		if qContactPhonen != "" {
+
+			if err := r.SetQueryParam("contact_phone__n", qContactPhonen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhoneNic != nil {
+
+		// query param contact_phone__nic
+		var qrContactPhoneNic string
+
+		if o.ContactPhoneNic != nil {
+			qrContactPhoneNic = *o.ContactPhoneNic
+		}
+		qContactPhoneNic := qrContactPhoneNic
+		if qContactPhoneNic != "" {
+
+			if err := r.SetQueryParam("contact_phone__nic", qContactPhoneNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhoneNie != nil {
+
+		// query param contact_phone__nie
+		var qrContactPhoneNie string
+
+		if o.ContactPhoneNie != nil {
+			qrContactPhoneNie = *o.ContactPhoneNie
+		}
+		qContactPhoneNie := qrContactPhoneNie
+		if qContactPhoneNie != "" {
+
+			if err := r.SetQueryParam("contact_phone__nie", qContactPhoneNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhoneNiew != nil {
+
+		// query param contact_phone__niew
+		var qrContactPhoneNiew string
+
+		if o.ContactPhoneNiew != nil {
+			qrContactPhoneNiew = *o.ContactPhoneNiew
+		}
+		qContactPhoneNiew := qrContactPhoneNiew
+		if qContactPhoneNiew != "" {
+
+			if err := r.SetQueryParam("contact_phone__niew", qContactPhoneNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ContactPhoneNisw != nil {
+
+		// query param contact_phone__nisw
+		var qrContactPhoneNisw string
+
+		if o.ContactPhoneNisw != nil {
+			qrContactPhoneNisw = *o.ContactPhoneNisw
+		}
+		qContactPhoneNisw := qrContactPhoneNisw
+		if qContactPhoneNisw != "" {
+
+			if err := r.SetQueryParam("contact_phone__nisw", qContactPhoneNisw); err != nil {
 				return err
 			}
 		}
@@ -1846,23 +2830,6 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1880,23 +2847,6 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1909,23 +2859,6 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -2492,23 +3425,6 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -2526,23 +3442,6 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -2555,23 +3454,6 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -2997,23 +3879,6 @@ func (o *DcimSitesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

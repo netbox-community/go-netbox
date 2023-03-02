@@ -44,13 +44,10 @@ type FHRPGroup struct {
 	// Enum: [plaintext md5]
 	AuthType string `json:"auth_type,omitempty"`
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -69,7 +66,7 @@ type FHRPGroup struct {
 	// Minimum: 0
 	GroupID *int64 `json:"group_id"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -80,11 +77,7 @@ type FHRPGroup struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
-
-	// Name
-	// Max Length: 100
-	Name string `json:"name,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Protocol
 	// Required: true
@@ -129,10 +122,6 @@ func (m *FHRPGroup) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -213,7 +202,7 @@ func (m *FHRPGroup) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -281,18 +270,6 @@ func (m *FHRPGroup) validateLastUpdated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *FHRPGroup) validateName(formats strfmt.Registry) error {
-	if swag.IsZero(m.Name) { // not required
-		return nil
-	}
-
-	if err := validate.MaxLength("name", "body", m.Name, 100); err != nil {
 		return err
 	}
 
@@ -435,7 +412,7 @@ func (m *FHRPGroup) ContextValidate(ctx context.Context, formats strfmt.Registry
 
 func (m *FHRPGroup) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -486,7 +463,7 @@ func (m *FHRPGroup) contextValidateIPAddresses(ctx context.Context, formats strf
 
 func (m *FHRPGroup) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

@@ -23,7 +23,6 @@ package models
 import (
 	"context"
 	"encoding/json"
-	"math"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -45,23 +44,20 @@ type WritableIPAddress struct {
 
 	// Assigned object
 	// Read Only: true
-	AssignedObject interface{} `json:"assigned_object,omitempty"`
+	AssignedObject map[string]*string `json:"assigned_object,omitempty"`
 
 	// Assigned object id
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	AssignedObjectID *int64 `json:"assigned_object_id,omitempty"`
 
 	// Assigned object type
 	AssignedObjectType *string `json:"assigned_object_type,omitempty"`
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -85,23 +81,23 @@ type WritableIPAddress struct {
 	// Read Only: true
 	Family string `json:"family,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// NAT (Inside)
 	//
 	// The IP for which this address is the "outside" IP
 	NatInside *int64 `json:"nat_inside,omitempty"`
 
-	// nat outside
+	// Nat outside
 	// Read Only: true
-	NatOutside []*NestedIPAddress `json:"nat_outside"`
+	NatOutside string `json:"nat_outside,omitempty"`
 
 	// Role
 	//
@@ -158,10 +154,6 @@ func (m *WritableIPAddress) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateNatOutside(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateRole(formats); err != nil {
 		res = append(res, err)
 	}
@@ -202,7 +194,7 @@ func (m *WritableIPAddress) validateAssignedObjectID(formats strfmt.Registry) er
 		return err
 	}
 
-	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("assigned_object_id", "body", *m.AssignedObjectID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -214,7 +206,7 @@ func (m *WritableIPAddress) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -256,32 +248,6 @@ func (m *WritableIPAddress) validateLastUpdated(formats strfmt.Registry) error {
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *WritableIPAddress) validateNatOutside(formats strfmt.Registry) error {
-	if swag.IsZero(m.NatOutside) { // not required
-		return nil
-	}
-
-	for i := 0; i < len(m.NatOutside); i++ {
-		if swag.IsZero(m.NatOutside[i]) { // not required
-			continue
-		}
-
-		if m.NatOutside[i] != nil {
-			if err := m.NatOutside[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("nat_outside" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("nat_outside" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
 	}
 
 	return nil
@@ -440,6 +406,10 @@ func (m *WritableIPAddress) validateURL(formats strfmt.Registry) error {
 func (m *WritableIPAddress) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateAssignedObject(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -478,9 +448,14 @@ func (m *WritableIPAddress) ContextValidate(ctx context.Context, formats strfmt.
 	return nil
 }
 
+func (m *WritableIPAddress) contextValidateAssignedObject(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 func (m *WritableIPAddress) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -516,7 +491,7 @@ func (m *WritableIPAddress) contextValidateID(ctx context.Context, formats strfm
 
 func (m *WritableIPAddress) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
@@ -525,23 +500,8 @@ func (m *WritableIPAddress) contextValidateLastUpdated(ctx context.Context, form
 
 func (m *WritableIPAddress) contextValidateNatOutside(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "nat_outside", "body", []*NestedIPAddress(m.NatOutside)); err != nil {
+	if err := validate.ReadOnly(ctx, "nat_outside", "body", string(m.NatOutside)); err != nil {
 		return err
-	}
-
-	for i := 0; i < len(m.NatOutside); i++ {
-
-		if m.NatOutside[i] != nil {
-			if err := m.NatOutside[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("nat_outside" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("nat_outside" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
 	}
 
 	return nil

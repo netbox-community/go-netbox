@@ -80,20 +80,11 @@ type IpamServicesListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -158,35 +149,14 @@ type IpamServicesListParams struct {
 	// IDn.
 	IDn *string
 
-	// Ipaddress.
-	Ipaddress *string
-
-	// Ipaddressn.
-	Ipaddressn *string
-
-	// IpaddressID.
-	IpaddressID *string
-
-	// IpaddressIDn.
-	IpaddressIDn *string
-
 	// LastUpdated.
 	LastUpdated *string
-
-	// LastUpdatedGt.
-	LastUpdatedGt *string
 
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -232,12 +202,6 @@ type IpamServicesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Port.
 	Port *float64
@@ -333,17 +297,6 @@ func (o *IpamServicesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the ipam services list params
-func (o *IpamServicesListParams) WithCreatedGt(createdGt *string) *IpamServicesListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the ipam services list params
-func (o *IpamServicesListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the ipam services list params
 func (o *IpamServicesListParams) WithCreatedGte(createdGte *string) *IpamServicesListParams {
 	o.SetCreatedGte(createdGte)
@@ -355,17 +308,6 @@ func (o *IpamServicesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the ipam services list params
-func (o *IpamServicesListParams) WithCreatedLt(createdLt *string) *IpamServicesListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the ipam services list params
-func (o *IpamServicesListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the ipam services list params
 func (o *IpamServicesListParams) WithCreatedLte(createdLte *string) *IpamServicesListParams {
 	o.SetCreatedLte(createdLte)
@@ -375,17 +317,6 @@ func (o *IpamServicesListParams) WithCreatedLte(createdLte *string) *IpamService
 // SetCreatedLte adds the createdLte to the ipam services list params
 func (o *IpamServicesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the ipam services list params
-func (o *IpamServicesListParams) WithCreatedn(createdn *string) *IpamServicesListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the ipam services list params
-func (o *IpamServicesListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the ipam services list params
@@ -619,50 +550,6 @@ func (o *IpamServicesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
-// WithIpaddress adds the ipaddress to the ipam services list params
-func (o *IpamServicesListParams) WithIpaddress(ipaddress *string) *IpamServicesListParams {
-	o.SetIpaddress(ipaddress)
-	return o
-}
-
-// SetIpaddress adds the ipaddress to the ipam services list params
-func (o *IpamServicesListParams) SetIpaddress(ipaddress *string) {
-	o.Ipaddress = ipaddress
-}
-
-// WithIpaddressn adds the ipaddressn to the ipam services list params
-func (o *IpamServicesListParams) WithIpaddressn(ipaddressn *string) *IpamServicesListParams {
-	o.SetIpaddressn(ipaddressn)
-	return o
-}
-
-// SetIpaddressn adds the ipaddressN to the ipam services list params
-func (o *IpamServicesListParams) SetIpaddressn(ipaddressn *string) {
-	o.Ipaddressn = ipaddressn
-}
-
-// WithIpaddressID adds the ipaddressID to the ipam services list params
-func (o *IpamServicesListParams) WithIpaddressID(ipaddressID *string) *IpamServicesListParams {
-	o.SetIpaddressID(ipaddressID)
-	return o
-}
-
-// SetIpaddressID adds the ipaddressId to the ipam services list params
-func (o *IpamServicesListParams) SetIpaddressID(ipaddressID *string) {
-	o.IpaddressID = ipaddressID
-}
-
-// WithIpaddressIDn adds the ipaddressIDn to the ipam services list params
-func (o *IpamServicesListParams) WithIpaddressIDn(ipaddressIDn *string) *IpamServicesListParams {
-	o.SetIpaddressIDn(ipaddressIDn)
-	return o
-}
-
-// SetIpaddressIDn adds the ipaddressIdN to the ipam services list params
-func (o *IpamServicesListParams) SetIpaddressIDn(ipaddressIDn *string) {
-	o.IpaddressIDn = ipaddressIDn
-}
-
 // WithLastUpdated adds the lastUpdated to the ipam services list params
 func (o *IpamServicesListParams) WithLastUpdated(lastUpdated *string) *IpamServicesListParams {
 	o.SetLastUpdated(lastUpdated)
@@ -672,17 +559,6 @@ func (o *IpamServicesListParams) WithLastUpdated(lastUpdated *string) *IpamServi
 // SetLastUpdated adds the lastUpdated to the ipam services list params
 func (o *IpamServicesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
-}
-
-// WithLastUpdatedGt adds the lastUpdatedGt to the ipam services list params
-func (o *IpamServicesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *IpamServicesListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the ipam services list params
-func (o *IpamServicesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
 }
 
 // WithLastUpdatedGte adds the lastUpdatedGte to the ipam services list params
@@ -696,17 +572,6 @@ func (o *IpamServicesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the ipam services list params
-func (o *IpamServicesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *IpamServicesListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the ipam services list params
-func (o *IpamServicesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the ipam services list params
 func (o *IpamServicesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamServicesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -716,17 +581,6 @@ func (o *IpamServicesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *Ipa
 // SetLastUpdatedLte adds the lastUpdatedLte to the ipam services list params
 func (o *IpamServicesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the ipam services list params
-func (o *IpamServicesListParams) WithLastUpdatedn(lastUpdatedn *string) *IpamServicesListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the ipam services list params
-func (o *IpamServicesListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the ipam services list params
@@ -872,17 +726,6 @@ func (o *IpamServicesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
-// WithOrdering adds the ordering to the ipam services list params
-func (o *IpamServicesListParams) WithOrdering(ordering *string) *IpamServicesListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the ipam services list params
-func (o *IpamServicesListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
-}
-
 // WithPort adds the port to the ipam services list params
 func (o *IpamServicesListParams) WithPort(port *float64) *IpamServicesListParams {
 	o.SetPort(port)
@@ -1018,23 +861,6 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1052,23 +878,6 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1081,23 +890,6 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1460,74 +1252,6 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
-	if o.Ipaddress != nil {
-
-		// query param ipaddress
-		var qrIpaddress string
-
-		if o.Ipaddress != nil {
-			qrIpaddress = *o.Ipaddress
-		}
-		qIpaddress := qrIpaddress
-		if qIpaddress != "" {
-
-			if err := r.SetQueryParam("ipaddress", qIpaddress); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ipaddressn != nil {
-
-		// query param ipaddress__n
-		var qrIpaddressn string
-
-		if o.Ipaddressn != nil {
-			qrIpaddressn = *o.Ipaddressn
-		}
-		qIpaddressn := qrIpaddressn
-		if qIpaddressn != "" {
-
-			if err := r.SetQueryParam("ipaddress__n", qIpaddressn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.IpaddressID != nil {
-
-		// query param ipaddress_id
-		var qrIpaddressID string
-
-		if o.IpaddressID != nil {
-			qrIpaddressID = *o.IpaddressID
-		}
-		qIpaddressID := qrIpaddressID
-		if qIpaddressID != "" {
-
-			if err := r.SetQueryParam("ipaddress_id", qIpaddressID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.IpaddressIDn != nil {
-
-		// query param ipaddress_id__n
-		var qrIpaddressIDn string
-
-		if o.IpaddressIDn != nil {
-			qrIpaddressIDn = *o.IpaddressIDn
-		}
-		qIpaddressIDn := qrIpaddressIDn
-		if qIpaddressIDn != "" {
-
-			if err := r.SetQueryParam("ipaddress_id__n", qIpaddressIDn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdated != nil {
 
 		// query param last_updated
@@ -1540,23 +1264,6 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qLastUpdated != "" {
 
 			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
 				return err
 			}
 		}
@@ -1579,23 +1286,6 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1608,23 +1298,6 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1846,23 +1519,6 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

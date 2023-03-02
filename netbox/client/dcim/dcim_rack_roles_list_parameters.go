@@ -113,20 +113,11 @@ type DcimRackRolesListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -182,20 +173,11 @@ type DcimRackRolesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -241,12 +223,6 @@ type DcimRackRolesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Q.
 	Q *string
@@ -475,17 +451,6 @@ func (o *DcimRackRolesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithCreatedGt(createdGt *string) *DcimRackRolesListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithCreatedGte(createdGte *string) *DcimRackRolesListParams {
 	o.SetCreatedGte(createdGte)
@@ -497,17 +462,6 @@ func (o *DcimRackRolesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithCreatedLt(createdLt *string) *DcimRackRolesListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithCreatedLte(createdLte *string) *DcimRackRolesListParams {
 	o.SetCreatedLte(createdLte)
@@ -517,17 +471,6 @@ func (o *DcimRackRolesListParams) WithCreatedLte(createdLte *string) *DcimRackRo
 // SetCreatedLte adds the createdLte to the dcim rack roles list params
 func (o *DcimRackRolesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithCreatedn(createdn *string) *DcimRackRolesListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the dcim rack roles list params
@@ -728,17 +671,6 @@ func (o *DcimRackRolesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimRackRolesListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimRackRolesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -750,17 +682,6 @@ func (o *DcimRackRolesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimRackRolesListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimRackRolesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -770,17 +691,6 @@ func (o *DcimRackRolesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *Dc
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim rack roles list params
 func (o *DcimRackRolesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimRackRolesListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim rack roles list params
@@ -924,17 +834,6 @@ func (o *DcimRackRolesListParams) WithOffset(offset *int64) *DcimRackRolesListPa
 // SetOffset adds the offset to the dcim rack roles list params
 func (o *DcimRackRolesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the dcim rack roles list params
-func (o *DcimRackRolesListParams) WithOrdering(ordering *string) *DcimRackRolesListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the dcim rack roles list params
-func (o *DcimRackRolesListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithQ adds the q to the dcim rack roles list params
@@ -1303,23 +1202,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1337,23 +1219,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1366,23 +1231,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1694,23 +1542,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1728,23 +1559,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1757,23 +1571,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1995,23 +1792,6 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

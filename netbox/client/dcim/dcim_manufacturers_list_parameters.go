@@ -83,12 +83,6 @@ type DcimManufacturersListParams struct {
 	// Contactn.
 	Contactn *string
 
-	// ContactGroup.
-	ContactGroup *string
-
-	// ContactGroupn.
-	ContactGroupn *string
-
 	// ContactRole.
 	ContactRole *string
 
@@ -98,20 +92,11 @@ type DcimManufacturersListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -167,20 +152,11 @@ type DcimManufacturersListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -226,12 +202,6 @@ type DcimManufacturersListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Q.
 	Q *string
@@ -350,28 +320,6 @@ func (o *DcimManufacturersListParams) SetContactn(contactn *string) {
 	o.Contactn = contactn
 }
 
-// WithContactGroup adds the contactGroup to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) WithContactGroup(contactGroup *string) *DcimManufacturersListParams {
-	o.SetContactGroup(contactGroup)
-	return o
-}
-
-// SetContactGroup adds the contactGroup to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) SetContactGroup(contactGroup *string) {
-	o.ContactGroup = contactGroup
-}
-
-// WithContactGroupn adds the contactGroupn to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) WithContactGroupn(contactGroupn *string) *DcimManufacturersListParams {
-	o.SetContactGroupn(contactGroupn)
-	return o
-}
-
-// SetContactGroupn adds the contactGroupN to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) SetContactGroupn(contactGroupn *string) {
-	o.ContactGroupn = contactGroupn
-}
-
 // WithContactRole adds the contactRole to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) WithContactRole(contactRole *string) *DcimManufacturersListParams {
 	o.SetContactRole(contactRole)
@@ -405,17 +353,6 @@ func (o *DcimManufacturersListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) WithCreatedGt(createdGt *string) *DcimManufacturersListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) WithCreatedGte(createdGte *string) *DcimManufacturersListParams {
 	o.SetCreatedGte(createdGte)
@@ -427,17 +364,6 @@ func (o *DcimManufacturersListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) WithCreatedLt(createdLt *string) *DcimManufacturersListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) WithCreatedLte(createdLte *string) *DcimManufacturersListParams {
 	o.SetCreatedLte(createdLte)
@@ -447,17 +373,6 @@ func (o *DcimManufacturersListParams) WithCreatedLte(createdLte *string) *DcimMa
 // SetCreatedLte adds the createdLte to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) WithCreatedn(createdn *string) *DcimManufacturersListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the dcim manufacturers list params
@@ -658,17 +573,6 @@ func (o *DcimManufacturersListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimManufacturersListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimManufacturersListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -680,17 +584,6 @@ func (o *DcimManufacturersListParams) SetLastUpdatedGte(lastUpdatedGte *string) 
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimManufacturersListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimManufacturersListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -700,17 +593,6 @@ func (o *DcimManufacturersListParams) WithLastUpdatedLte(lastUpdatedLte *string)
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimManufacturersListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim manufacturers list params
@@ -854,17 +736,6 @@ func (o *DcimManufacturersListParams) WithOffset(offset *int64) *DcimManufacture
 // SetOffset adds the offset to the dcim manufacturers list params
 func (o *DcimManufacturersListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) WithOrdering(ordering *string) *DcimManufacturersListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the dcim manufacturers list params
-func (o *DcimManufacturersListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithQ adds the q to the dcim manufacturers list params
@@ -1063,40 +934,6 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		}
 	}
 
-	if o.ContactGroup != nil {
-
-		// query param contact_group
-		var qrContactGroup string
-
-		if o.ContactGroup != nil {
-			qrContactGroup = *o.ContactGroup
-		}
-		qContactGroup := qrContactGroup
-		if qContactGroup != "" {
-
-			if err := r.SetQueryParam("contact_group", qContactGroup); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContactGroupn != nil {
-
-		// query param contact_group__n
-		var qrContactGroupn string
-
-		if o.ContactGroupn != nil {
-			qrContactGroupn = *o.ContactGroupn
-		}
-		qContactGroupn := qrContactGroupn
-		if qContactGroupn != "" {
-
-			if err := r.SetQueryParam("contact_group__n", qContactGroupn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.ContactRole != nil {
 
 		// query param contact_role
@@ -1148,23 +985,6 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1182,23 +1002,6 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1211,23 +1014,6 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1539,23 +1325,6 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1573,23 +1342,6 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1602,23 +1354,6 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1840,23 +1575,6 @@ func (o *DcimManufacturersListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

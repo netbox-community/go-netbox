@@ -58,6 +58,7 @@ type NestedTag struct {
 	// Required: true
 	// Max Length: 100
 	// Min Length: 1
+	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 
 	// Url
@@ -140,6 +141,10 @@ func (m *NestedTag) validateSlug(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("slug", "body", *m.Slug, 100); err != nil {
+		return err
+	}
+
+	if err := validate.Pattern("slug", "body", *m.Slug, `^[-a-zA-Z0-9_]+$`); err != nil {
 		return err
 	}
 

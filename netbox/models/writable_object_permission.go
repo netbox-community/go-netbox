@@ -42,7 +42,7 @@ type WritableObjectPermission struct {
 	// Constraints
 	//
 	// Queryset filter matching the applicable objects of the selected type(s)
-	Constraints interface{} `json:"constraints,omitempty"`
+	Constraints *string `json:"constraints,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -59,7 +59,7 @@ type WritableObjectPermission struct {
 	// Unique: true
 	Groups []int64 `json:"groups"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 

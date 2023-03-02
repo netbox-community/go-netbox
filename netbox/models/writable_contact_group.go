@@ -45,8 +45,8 @@ type WritableContactGroup struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -59,14 +59,14 @@ type WritableContactGroup struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -75,7 +75,8 @@ type WritableContactGroup struct {
 	Name *string `json:"name"`
 
 	// Parent
-	Parent *int64 `json:"parent,omitempty"`
+	// Required: true
+	Parent *int64 `json:"parent"`
 
 	// Slug
 	// Required: true
@@ -113,6 +114,10 @@ func (m *WritableContactGroup) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateParent(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSlug(formats); err != nil {
 		res = append(res, err)
 	}
@@ -136,7 +141,7 @@ func (m *WritableContactGroup) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -178,6 +183,15 @@ func (m *WritableContactGroup) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableContactGroup) validateParent(formats strfmt.Registry) error {
+
+	if err := validate.Required("parent", "body", m.Parent); err != nil {
 		return err
 	}
 
@@ -305,7 +319,7 @@ func (m *WritableContactGroup) contextValidateContactCount(ctx context.Context, 
 
 func (m *WritableContactGroup) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -332,7 +346,7 @@ func (m *WritableContactGroup) contextValidateID(ctx context.Context, formats st
 
 func (m *WritableContactGroup) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

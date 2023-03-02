@@ -39,22 +39,18 @@ type WritableConfigContext struct {
 	// Unique: true
 	ClusterGroups []int64 `json:"cluster_groups"`
 
-	// cluster types
-	// Unique: true
-	ClusterTypes []int64 `json:"cluster_types"`
-
 	// clusters
 	// Unique: true
 	Clusters []int64 `json:"clusters"`
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Data
 	// Required: true
-	Data interface{} `json:"data"`
+	Data *string `json:"data"`
 
 	// Description
 	// Max Length: 200
@@ -68,7 +64,7 @@ type WritableConfigContext struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -78,11 +74,7 @@ type WritableConfigContext struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
-
-	// locations
-	// Unique: true
-	Locations []int64 `json:"locations"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -141,10 +133,6 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateClusterTypes(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateClusters(formats); err != nil {
 		res = append(res, err)
 	}
@@ -166,10 +154,6 @@ func (m *WritableConfigContext) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateLocations(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -235,18 +219,6 @@ func (m *WritableConfigContext) validateClusterGroups(formats strfmt.Registry) e
 	return nil
 }
 
-func (m *WritableConfigContext) validateClusterTypes(formats strfmt.Registry) error {
-	if swag.IsZero(m.ClusterTypes) { // not required
-		return nil
-	}
-
-	if err := validate.UniqueItems("cluster_types", "body", m.ClusterTypes); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritableConfigContext) validateClusters(formats strfmt.Registry) error {
 	if swag.IsZero(m.Clusters) { // not required
 		return nil
@@ -264,7 +236,7 @@ func (m *WritableConfigContext) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -273,8 +245,8 @@ func (m *WritableConfigContext) validateCreated(formats strfmt.Registry) error {
 
 func (m *WritableConfigContext) validateData(formats strfmt.Registry) error {
 
-	if m.Data == nil {
-		return errors.Required("data", "body", nil)
+	if err := validate.Required("data", "body", m.Data); err != nil {
+		return err
 	}
 
 	return nil
@@ -310,18 +282,6 @@ func (m *WritableConfigContext) validateLastUpdated(formats strfmt.Registry) err
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableConfigContext) validateLocations(formats strfmt.Registry) error {
-	if swag.IsZero(m.Locations) { // not required
-		return nil
-	}
-
-	if err := validate.UniqueItems("locations", "body", m.Locations); err != nil {
 		return err
 	}
 
@@ -416,7 +376,7 @@ func (m *WritableConfigContext) validateTags(formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Tags); i++ {
 
-		if err := validate.Pattern("tags"+"."+strconv.Itoa(i), "body", m.Tags[i], `^[-\w]+$`); err != nil {
+		if err := validate.Pattern("tags"+"."+strconv.Itoa(i), "body", m.Tags[i], `^[-a-zA-Z0-9_]+$`); err != nil {
 			return err
 		}
 
@@ -509,7 +469,7 @@ func (m *WritableConfigContext) ContextValidate(ctx context.Context, formats str
 
 func (m *WritableConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -536,7 +496,7 @@ func (m *WritableConfigContext) contextValidateID(ctx context.Context, formats s
 
 func (m *WritableConfigContext) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

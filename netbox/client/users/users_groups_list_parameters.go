@@ -140,12 +140,6 @@ type UsersGroupsListParams struct {
 	*/
 	Offset *int64
 
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
-
 	// Q.
 	Q *string
 
@@ -409,17 +403,6 @@ func (o *UsersGroupsListParams) WithOffset(offset *int64) *UsersGroupsListParams
 // SetOffset adds the offset to the users groups list params
 func (o *UsersGroupsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the users groups list params
-func (o *UsersGroupsListParams) WithOrdering(ordering *string) *UsersGroupsListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the users groups list params
-func (o *UsersGroupsListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithQ adds the q to the users groups list params
@@ -759,23 +742,6 @@ func (o *UsersGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

@@ -351,7 +351,7 @@ func (a *Client) UsersGroupsDelete(params *UsersGroupsDeleteParams, authInfo run
 }
 
 /*
-UsersGroupsList users groups list API
+UsersGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersGroupsList(params *UsersGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -693,7 +693,7 @@ func (a *Client) UsersPermissionsDelete(params *UsersPermissionsDeleteParams, au
 }
 
 /*
-UsersPermissionsList users permissions list API
+UsersPermissionsList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersPermissionsList(params *UsersPermissionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersPermissionsListOK, error) {
 	// TODO: Validate the params before sending
@@ -1035,7 +1035,7 @@ func (a *Client) UsersTokensDelete(params *UsersTokensDeleteParams, authInfo run
 }
 
 /*
-UsersTokensList users tokens list API
+UsersTokensList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersTokensList(params *UsersTokensListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersTokensListOK, error) {
 	// TODO: Validate the params before sending
@@ -1415,7 +1415,7 @@ func (a *Client) UsersUsersDelete(params *UsersUsersDeleteParams, authInfo runti
 }
 
 /*
-UsersUsersList users users list API
+UsersUsersList Overrides ListModelMixin to allow processing ExportTemplates.
 */
 func (a *Client) UsersUsersList(params *UsersUsersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UsersUsersListOK, error) {
 	// TODO: Validate the params before sending

@@ -35,33 +35,26 @@ import (
 // swagger:model PowerPanel
 type PowerPanel struct {
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
-
-	// Description
-	// Max Length: 200
-	Description string `json:"description,omitempty"`
 
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// location
 	Location *NestedLocation `json:"location,omitempty"`
@@ -94,10 +87,6 @@ func (m *PowerPanel) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCreated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -136,19 +125,7 @@ func (m *PowerPanel) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PowerPanel) validateDescription(formats strfmt.Registry) error {
-	if swag.IsZero(m.Description) { // not required
-		return nil
-	}
-
-	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -309,7 +286,7 @@ func (m *PowerPanel) ContextValidate(ctx context.Context, formats strfmt.Registr
 
 func (m *PowerPanel) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -336,7 +313,7 @@ func (m *PowerPanel) contextValidateID(ctx context.Context, formats strfmt.Regis
 
 func (m *PowerPanel) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

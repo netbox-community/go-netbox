@@ -119,20 +119,11 @@ type ExtrasTagsListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -188,20 +179,11 @@ type ExtrasTagsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -247,12 +229,6 @@ type ExtrasTagsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Q.
 	Q *string
@@ -497,17 +473,6 @@ func (o *ExtrasTagsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the extras tags list params
-func (o *ExtrasTagsListParams) WithCreatedGt(createdGt *string) *ExtrasTagsListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the extras tags list params
-func (o *ExtrasTagsListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the extras tags list params
 func (o *ExtrasTagsListParams) WithCreatedGte(createdGte *string) *ExtrasTagsListParams {
 	o.SetCreatedGte(createdGte)
@@ -519,17 +484,6 @@ func (o *ExtrasTagsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the extras tags list params
-func (o *ExtrasTagsListParams) WithCreatedLt(createdLt *string) *ExtrasTagsListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the extras tags list params
-func (o *ExtrasTagsListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the extras tags list params
 func (o *ExtrasTagsListParams) WithCreatedLte(createdLte *string) *ExtrasTagsListParams {
 	o.SetCreatedLte(createdLte)
@@ -539,17 +493,6 @@ func (o *ExtrasTagsListParams) WithCreatedLte(createdLte *string) *ExtrasTagsLis
 // SetCreatedLte adds the createdLte to the extras tags list params
 func (o *ExtrasTagsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the extras tags list params
-func (o *ExtrasTagsListParams) WithCreatedn(createdn *string) *ExtrasTagsListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the extras tags list params
-func (o *ExtrasTagsListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the extras tags list params
@@ -750,17 +693,6 @@ func (o *ExtrasTagsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the extras tags list params
-func (o *ExtrasTagsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *ExtrasTagsListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the extras tags list params
-func (o *ExtrasTagsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the extras tags list params
 func (o *ExtrasTagsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *ExtrasTagsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -772,17 +704,6 @@ func (o *ExtrasTagsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the extras tags list params
-func (o *ExtrasTagsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *ExtrasTagsListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the extras tags list params
-func (o *ExtrasTagsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the extras tags list params
 func (o *ExtrasTagsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *ExtrasTagsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -792,17 +713,6 @@ func (o *ExtrasTagsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *Extra
 // SetLastUpdatedLte adds the lastUpdatedLte to the extras tags list params
 func (o *ExtrasTagsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the extras tags list params
-func (o *ExtrasTagsListParams) WithLastUpdatedn(lastUpdatedn *string) *ExtrasTagsListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the extras tags list params
-func (o *ExtrasTagsListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the extras tags list params
@@ -946,17 +856,6 @@ func (o *ExtrasTagsListParams) WithOffset(offset *int64) *ExtrasTagsListParams {
 // SetOffset adds the offset to the extras tags list params
 func (o *ExtrasTagsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the extras tags list params
-func (o *ExtrasTagsListParams) WithOrdering(ordering *string) *ExtrasTagsListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the extras tags list params
-func (o *ExtrasTagsListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithQ adds the q to the extras tags list params
@@ -1337,23 +1236,6 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1371,23 +1253,6 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1400,23 +1265,6 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1728,23 +1576,6 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1762,23 +1593,6 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1791,23 +1605,6 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -2029,23 +1826,6 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

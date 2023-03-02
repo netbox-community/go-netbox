@@ -54,7 +54,7 @@ type Webhook struct {
 	// Conditions
 	//
 	// A set of conditions which determine whether the webhook will be generated.
-	Conditions interface{} `json:"conditions,omitempty"`
+	Conditions *string `json:"conditions,omitempty"`
 
 	// content types
 	// Required: true
@@ -63,8 +63,8 @@ type Webhook struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -84,14 +84,14 @@ type Webhook struct {
 	// Enum: [GET POST PUT PATCH DELETE]
 	HTTPMethod string `json:"http_method,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -101,7 +101,7 @@ type Webhook struct {
 
 	// URL
 	//
-	// This URL will be called using the HTTP method defined when the webhook is called. Jinja2 template processing is supported with the same context as the request body.
+	// A POST will be sent to this URL when the webhook is called.
 	// Required: true
 	// Max Length: 500
 	// Min Length: 1
@@ -121,17 +121,17 @@ type Webhook struct {
 	// Type create
 	//
 	// Call this webhook when a matching object is created.
-	TypeCreate bool `json:"type_create,omitempty"`
+	TypeCreate *bool `json:"type_create,omitempty"`
 
 	// Type delete
 	//
 	// Call this webhook when a matching object is deleted.
-	TypeDelete bool `json:"type_delete,omitempty"`
+	TypeDelete *bool `json:"type_delete,omitempty"`
 
 	// Type update
 	//
 	// Call this webhook when a matching object is updated.
-	TypeUpdate bool `json:"type_update,omitempty"`
+	TypeUpdate *bool `json:"type_update,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -219,7 +219,7 @@ func (m *Webhook) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -395,7 +395,7 @@ func (m *Webhook) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 
 func (m *Webhook) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -422,7 +422,7 @@ func (m *Webhook) contextValidateID(ctx context.Context, formats strfmt.Registry
 
 func (m *Webhook) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

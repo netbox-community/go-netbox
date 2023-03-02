@@ -23,7 +23,6 @@ package models
 import (
 	"context"
 	"encoding/json"
-	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -45,11 +44,11 @@ type ObjectChange struct {
 	// Serialize a nested representation of the changed object.
 	//
 	// Read Only: true
-	ChangedObject interface{} `json:"changed_object,omitempty"`
+	ChangedObject map[string]*string `json:"changed_object,omitempty"`
 
 	// Changed object id
 	// Required: true
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	ChangedObjectID *int64 `json:"changed_object_id"`
 
@@ -61,17 +60,17 @@ type ObjectChange struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Postchange data
 	// Read Only: true
-	PostchangeData interface{} `json:"postchange_data,omitempty"`
+	PostchangeData string `json:"postchange_data,omitempty"`
 
 	// Prechange data
 	// Read Only: true
-	PrechangeData interface{} `json:"prechange_data,omitempty"`
+	PrechangeData string `json:"prechange_data,omitempty"`
 
 	// Request id
 	// Read Only: true
@@ -164,7 +163,7 @@ func (m *ObjectChange) validateChangedObjectID(formats strfmt.Registry) error {
 		return err
 	}
 
-	if err := validate.MaximumInt("changed_object_id", "body", *m.ChangedObjectID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("changed_object_id", "body", *m.ChangedObjectID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -246,6 +245,10 @@ func (m *ObjectChange) ContextValidate(ctx context.Context, formats strfmt.Regis
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateChangedObject(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateChangedObjectType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -255,6 +258,14 @@ func (m *ObjectChange) ContextValidate(ctx context.Context, formats strfmt.Regis
 	}
 
 	if err := m.contextValidateID(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePostchangeData(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePrechangeData(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -300,6 +311,11 @@ func (m *ObjectChange) contextValidateAction(ctx context.Context, formats strfmt
 	return nil
 }
 
+func (m *ObjectChange) contextValidateChangedObject(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 func (m *ObjectChange) contextValidateChangedObjectType(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "changed_object_type", "body", string(m.ChangedObjectType)); err != nil {
@@ -321,6 +337,24 @@ func (m *ObjectChange) contextValidateDisplay(ctx context.Context, formats strfm
 func (m *ObjectChange) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidatePostchangeData(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "postchange_data", "body", string(m.PostchangeData)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ObjectChange) contextValidatePrechangeData(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "prechange_data", "body", string(m.PrechangeData)); err != nil {
 		return err
 	}
 

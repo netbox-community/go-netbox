@@ -23,7 +23,6 @@ package models
 import (
 	"context"
 	"encoding/json"
-	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -46,35 +45,36 @@ type WritableContactAssignment struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Object
 	// Read Only: true
-	Object interface{} `json:"object,omitempty"`
+	Object map[string]*string `json:"object,omitempty"`
 
 	// Object id
 	// Required: true
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	ObjectID *int64 `json:"object_id"`
 
 	// Priority
+	// Required: true
 	// Enum: [primary secondary tertiary inactive]
-	Priority string `json:"priority,omitempty"`
+	Priority *string `json:"priority"`
 
 	// Role
 	// Required: true
@@ -151,7 +151,7 @@ func (m *WritableContactAssignment) validateCreated(formats strfmt.Registry) err
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -180,7 +180,7 @@ func (m *WritableContactAssignment) validateObjectID(formats strfmt.Registry) er
 		return err
 	}
 
-	if err := validate.MaximumInt("object_id", "body", *m.ObjectID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("object_id", "body", *m.ObjectID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -223,12 +223,13 @@ func (m *WritableContactAssignment) validatePriorityEnum(path, location string, 
 }
 
 func (m *WritableContactAssignment) validatePriority(formats strfmt.Registry) error {
-	if swag.IsZero(m.Priority) { // not required
-		return nil
+
+	if err := validate.Required("priority", "body", m.Priority); err != nil {
+		return err
 	}
 
 	// value enum
-	if err := m.validatePriorityEnum("priority", "body", m.Priority); err != nil {
+	if err := m.validatePriorityEnum("priority", "body", *m.Priority); err != nil {
 		return err
 	}
 
@@ -276,6 +277,10 @@ func (m *WritableContactAssignment) ContextValidate(ctx context.Context, formats
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateObject(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateURL(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -288,7 +293,7 @@ func (m *WritableContactAssignment) ContextValidate(ctx context.Context, formats
 
 func (m *WritableContactAssignment) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -315,9 +320,14 @@ func (m *WritableContactAssignment) contextValidateID(ctx context.Context, forma
 
 func (m *WritableContactAssignment) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+func (m *WritableContactAssignment) contextValidateObject(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -44,13 +44,10 @@ type WritablePrefix struct {
 	// Read Only: true
 	Children int64 `json:"children,omitempty"`
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -67,7 +64,7 @@ type WritablePrefix struct {
 	// Read Only: true
 	Family string `json:"family,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -79,7 +76,7 @@ type WritablePrefix struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Mark utilized
 	//
@@ -167,7 +164,7 @@ func (m *WritablePrefix) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -359,7 +356,7 @@ func (m *WritablePrefix) contextValidateChildren(ctx context.Context, formats st
 
 func (m *WritablePrefix) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -395,7 +392,7 @@ func (m *WritablePrefix) contextValidateID(ctx context.Context, formats strfmt.R
 
 func (m *WritablePrefix) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

@@ -43,29 +43,26 @@ type ConsolePort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Cable end
-	// Read Only: true
-	// Min Length: 1
-	CableEnd string `json:"cable_end,omitempty"`
-
+	// Connected endpoint
+	//
 	//
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoints []*string `json:"connected_endpoints"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
 
-	// Connected endpoints reachable
+	// Connected endpoint reachable
 	// Read Only: true
-	ConnectedEndpointsReachable *bool `json:"connected_endpoints_reachable,omitempty"`
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
-	// Connected endpoints type
+	// Connected endpoint type
 	// Read Only: true
-	ConnectedEndpointsType string `json:"connected_endpoints_type,omitempty"`
+	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -82,7 +79,7 @@ type ConsolePort struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -95,25 +92,24 @@ type ConsolePort struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Link peer
+	//
 	//
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
 
-	// Link peers type
+	// Link peer type
 	// Read Only: true
-	LinkPeersType string `json:"link_peers_type,omitempty"`
+	LinkPeerType string `json:"link_peer_type,omitempty"`
 
 	// Mark connected
 	//
 	// Treat as if a cable is connected
 	MarkConnected bool `json:"mark_connected,omitempty"`
-
-	// module
-	Module *ComponentNestedModule `json:"module,omitempty"`
 
 	// Name
 	// Required: true
@@ -144,10 +140,6 @@ func (m *ConsolePort) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateCableEnd(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
@@ -165,10 +157,6 @@ func (m *ConsolePort) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateModule(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -217,24 +205,12 @@ func (m *ConsolePort) validateCable(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ConsolePort) validateCableEnd(formats strfmt.Registry) error {
-	if swag.IsZero(m.CableEnd) { // not required
-		return nil
-	}
-
-	if err := validate.MinLength("cable_end", "body", m.CableEnd, 1); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *ConsolePort) validateCreated(formats strfmt.Registry) error {
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -292,25 +268,6 @@ func (m *ConsolePort) validateLastUpdated(formats strfmt.Registry) error {
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *ConsolePort) validateModule(formats strfmt.Registry) error {
-	if swag.IsZero(m.Module) { // not required
-		return nil
-	}
-
-	if m.Module != nil {
-		if err := m.Module.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("module")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("module")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -421,19 +378,15 @@ func (m *ConsolePort) ContextValidate(ctx context.Context, formats strfmt.Regist
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCableEnd(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpoints(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpointsReachable(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpointsType(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -457,15 +410,11 @@ func (m *ConsolePort) ContextValidate(ctx context.Context, formats strfmt.Regist
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeers(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeersType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateModule(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -516,36 +465,23 @@ func (m *ConsolePort) contextValidateCable(ctx context.Context, formats strfmt.R
 	return nil
 }
 
-func (m *ConsolePort) contextValidateCableEnd(ctx context.Context, formats strfmt.Registry) error {
+func (m *ConsolePort) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "cable_end", "body", string(m.CableEnd)); err != nil {
+	return nil
+}
+
+func (m *ConsolePort) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *ConsolePort) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
+func (m *ConsolePort) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ConsolePort) contextValidateConnectedEndpointsReachable(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoints_reachable", "body", m.ConnectedEndpointsReachable); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ConsolePort) contextValidateConnectedEndpointsType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoints_type", "body", string(m.ConnectedEndpointsType)); err != nil {
+	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
 		return err
 	}
 
@@ -554,7 +490,7 @@ func (m *ConsolePort) contextValidateConnectedEndpointsType(ctx context.Context,
 
 func (m *ConsolePort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -597,42 +533,22 @@ func (m *ConsolePort) contextValidateID(ctx context.Context, formats strfmt.Regi
 
 func (m *ConsolePort) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *ConsolePort) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
-		return err
-	}
+func (m *ConsolePort) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *ConsolePort) contextValidateLinkPeersType(ctx context.Context, formats strfmt.Registry) error {
+func (m *ConsolePort) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers_type", "body", string(m.LinkPeersType)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *ConsolePort) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Module != nil {
-		if err := m.Module.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("module")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("module")
-			}
-			return err
-		}
 	}
 
 	return nil

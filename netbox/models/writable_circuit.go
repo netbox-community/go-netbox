@@ -52,8 +52,8 @@ type WritableCircuit struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -66,18 +66,18 @@ type WritableCircuit struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
-	// Installed
+	// Date installed
 	// Format: date
 	InstallDate *strfmt.Date `json:"install_date,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Provider
 	// Required: true
@@ -95,15 +95,11 @@ type WritableCircuit struct {
 
 	// Termination a
 	// Read Only: true
-	Terminationa *int64 `json:"termination_a,omitempty"`
-
-	// Terminates
-	// Format: date
-	TerminationDate *strfmt.Date `json:"termination_date,omitempty"`
+	Terminationa int64 `json:"termination_a,omitempty"`
 
 	// Termination z
 	// Read Only: true
-	Terminationz *int64 `json:"termination_z,omitempty"`
+	Terminationz int64 `json:"termination_z,omitempty"`
 
 	// Type
 	// Required: true
@@ -152,10 +148,6 @@ func (m *WritableCircuit) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateTags(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTerminationDate(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -211,7 +203,7 @@ func (m *WritableCircuit) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -343,18 +335,6 @@ func (m *WritableCircuit) validateTags(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableCircuit) validateTerminationDate(formats strfmt.Registry) error {
-	if swag.IsZero(m.TerminationDate) { // not required
-		return nil
-	}
-
-	if err := validate.FormatOf("termination_date", "body", "date", m.TerminationDate.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritableCircuit) validateType(formats strfmt.Registry) error {
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
@@ -420,7 +400,7 @@ func (m *WritableCircuit) ContextValidate(ctx context.Context, formats strfmt.Re
 
 func (m *WritableCircuit) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -447,7 +427,7 @@ func (m *WritableCircuit) contextValidateID(ctx context.Context, formats strfmt.
 
 func (m *WritableCircuit) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
@@ -476,7 +456,7 @@ func (m *WritableCircuit) contextValidateTags(ctx context.Context, formats strfm
 
 func (m *WritableCircuit) contextValidateTerminationa(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "termination_a", "body", m.Terminationa); err != nil {
+	if err := validate.ReadOnly(ctx, "termination_a", "body", int64(m.Terminationa)); err != nil {
 		return err
 	}
 
@@ -485,7 +465,7 @@ func (m *WritableCircuit) contextValidateTerminationa(ctx context.Context, forma
 
 func (m *WritableCircuit) contextValidateTerminationz(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "termination_z", "body", m.Terminationz); err != nil {
+	if err := validate.ReadOnly(ctx, "termination_z", "body", int64(m.Terminationz)); err != nil {
 		return err
 	}
 

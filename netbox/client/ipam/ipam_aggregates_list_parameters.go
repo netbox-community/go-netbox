@@ -80,20 +80,11 @@ type IpamAggregatesListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// DateAdded.
 	DateAdded *string
@@ -170,20 +161,11 @@ type IpamAggregatesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -196,12 +178,6 @@ type IpamAggregatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Prefix.
 	Prefix *string
@@ -315,17 +291,6 @@ func (o *IpamAggregatesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the ipam aggregates list params
-func (o *IpamAggregatesListParams) WithCreatedGt(createdGt *string) *IpamAggregatesListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the ipam aggregates list params
-func (o *IpamAggregatesListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the ipam aggregates list params
 func (o *IpamAggregatesListParams) WithCreatedGte(createdGte *string) *IpamAggregatesListParams {
 	o.SetCreatedGte(createdGte)
@@ -337,17 +302,6 @@ func (o *IpamAggregatesListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the ipam aggregates list params
-func (o *IpamAggregatesListParams) WithCreatedLt(createdLt *string) *IpamAggregatesListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the ipam aggregates list params
-func (o *IpamAggregatesListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the ipam aggregates list params
 func (o *IpamAggregatesListParams) WithCreatedLte(createdLte *string) *IpamAggregatesListParams {
 	o.SetCreatedLte(createdLte)
@@ -357,17 +311,6 @@ func (o *IpamAggregatesListParams) WithCreatedLte(createdLte *string) *IpamAggre
 // SetCreatedLte adds the createdLte to the ipam aggregates list params
 func (o *IpamAggregatesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the ipam aggregates list params
-func (o *IpamAggregatesListParams) WithCreatedn(createdn *string) *IpamAggregatesListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the ipam aggregates list params
-func (o *IpamAggregatesListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDateAdded adds the dateAdded to the ipam aggregates list params
@@ -645,17 +588,6 @@ func (o *IpamAggregatesListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the ipam aggregates list params
-func (o *IpamAggregatesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *IpamAggregatesListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the ipam aggregates list params
-func (o *IpamAggregatesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the ipam aggregates list params
 func (o *IpamAggregatesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *IpamAggregatesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -667,17 +599,6 @@ func (o *IpamAggregatesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the ipam aggregates list params
-func (o *IpamAggregatesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *IpamAggregatesListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the ipam aggregates list params
-func (o *IpamAggregatesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the ipam aggregates list params
 func (o *IpamAggregatesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamAggregatesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -687,17 +608,6 @@ func (o *IpamAggregatesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *I
 // SetLastUpdatedLte adds the lastUpdatedLte to the ipam aggregates list params
 func (o *IpamAggregatesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the ipam aggregates list params
-func (o *IpamAggregatesListParams) WithLastUpdatedn(lastUpdatedn *string) *IpamAggregatesListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the ipam aggregates list params
-func (o *IpamAggregatesListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the ipam aggregates list params
@@ -720,17 +630,6 @@ func (o *IpamAggregatesListParams) WithOffset(offset *int64) *IpamAggregatesList
 // SetOffset adds the offset to the ipam aggregates list params
 func (o *IpamAggregatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the ipam aggregates list params
-func (o *IpamAggregatesListParams) WithOrdering(ordering *string) *IpamAggregatesListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the ipam aggregates list params
-func (o *IpamAggregatesListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithPrefix adds the prefix to the ipam aggregates list params
@@ -934,23 +833,6 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -968,23 +850,6 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -997,23 +862,6 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1444,23 +1292,6 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1478,23 +1309,6 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1507,23 +1321,6 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1558,23 +1355,6 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

@@ -36,8 +36,8 @@ type WritableDeviceBayTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -51,7 +51,7 @@ type WritableDeviceBayTemplate struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -64,13 +64,9 @@ type WritableDeviceBayTemplate struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
-	//
-	//
-	// {module} is accepted as a substitution for the module bay position when attached to a module type.
-	//
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1
@@ -125,7 +121,7 @@ func (m *WritableDeviceBayTemplate) validateCreated(formats strfmt.Registry) err
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -238,7 +234,7 @@ func (m *WritableDeviceBayTemplate) ContextValidate(ctx context.Context, formats
 
 func (m *WritableDeviceBayTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -265,7 +261,7 @@ func (m *WritableDeviceBayTemplate) contextValidateID(ctx context.Context, forma
 
 func (m *WritableDeviceBayTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

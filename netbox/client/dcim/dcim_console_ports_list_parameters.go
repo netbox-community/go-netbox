@@ -77,12 +77,6 @@ DcimConsolePortsListParams contains all the parameters to send to the API endpoi
 */
 type DcimConsolePortsListParams struct {
 
-	// CableEnd.
-	CableEnd *string
-
-	// CableEndn.
-	CableEndn *string
-
 	// Cabled.
 	Cabled *string
 
@@ -92,20 +86,11 @@ type DcimConsolePortsListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -206,20 +191,11 @@ type DcimConsolePortsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -238,12 +214,6 @@ type DcimConsolePortsListParams struct {
 
 	// LocationIDn.
 	LocationIDn *string
-
-	// ModuleID.
-	ModuleID *string
-
-	// ModuleIDn.
-	ModuleIDn *string
 
 	// Name.
 	Name *string
@@ -278,35 +248,14 @@ type DcimConsolePortsListParams struct {
 	// NameNisw.
 	NameNisw *string
 
-	// Occupied.
-	Occupied *string
-
 	/* Offset.
 
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
 
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
-
 	// Q.
 	Q *string
-
-	// Rack.
-	Rack *string
-
-	// Rackn.
-	Rackn *string
-
-	// RackID.
-	RackID *string
-
-	// RackIDn.
-	RackIDn *string
 
 	// Region.
 	Region *string
@@ -421,28 +370,6 @@ func (o *DcimConsolePortsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
-// WithCableEnd adds the cableEnd to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithCableEnd(cableEnd *string) *DcimConsolePortsListParams {
-	o.SetCableEnd(cableEnd)
-	return o
-}
-
-// SetCableEnd adds the cableEnd to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetCableEnd(cableEnd *string) {
-	o.CableEnd = cableEnd
-}
-
-// WithCableEndn adds the cableEndn to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithCableEndn(cableEndn *string) *DcimConsolePortsListParams {
-	o.SetCableEndn(cableEndn)
-	return o
-}
-
-// SetCableEndn adds the cableEndN to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetCableEndn(cableEndn *string) {
-	o.CableEndn = cableEndn
-}
-
 // WithCabled adds the cabled to the dcim console ports list params
 func (o *DcimConsolePortsListParams) WithCabled(cabled *string) *DcimConsolePortsListParams {
 	o.SetCabled(cabled)
@@ -476,17 +403,6 @@ func (o *DcimConsolePortsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithCreatedGt(createdGt *string) *DcimConsolePortsListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the dcim console ports list params
 func (o *DcimConsolePortsListParams) WithCreatedGte(createdGte *string) *DcimConsolePortsListParams {
 	o.SetCreatedGte(createdGte)
@@ -498,17 +414,6 @@ func (o *DcimConsolePortsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithCreatedLt(createdLt *string) *DcimConsolePortsListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the dcim console ports list params
 func (o *DcimConsolePortsListParams) WithCreatedLte(createdLte *string) *DcimConsolePortsListParams {
 	o.SetCreatedLte(createdLte)
@@ -518,17 +423,6 @@ func (o *DcimConsolePortsListParams) WithCreatedLte(createdLte *string) *DcimCon
 // SetCreatedLte adds the createdLte to the dcim console ports list params
 func (o *DcimConsolePortsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithCreatedn(createdn *string) *DcimConsolePortsListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the dcim console ports list params
@@ -894,17 +788,6 @@ func (o *DcimConsolePortsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimConsolePortsListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim console ports list params
 func (o *DcimConsolePortsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimConsolePortsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -916,17 +799,6 @@ func (o *DcimConsolePortsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimConsolePortsListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim console ports list params
 func (o *DcimConsolePortsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimConsolePortsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -936,17 +808,6 @@ func (o *DcimConsolePortsListParams) WithLastUpdatedLte(lastUpdatedLte *string) 
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim console ports list params
 func (o *DcimConsolePortsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimConsolePortsListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim console ports list params
@@ -1002,28 +863,6 @@ func (o *DcimConsolePortsListParams) WithLocationIDn(locationIDn *string) *DcimC
 // SetLocationIDn adds the locationIdN to the dcim console ports list params
 func (o *DcimConsolePortsListParams) SetLocationIDn(locationIDn *string) {
 	o.LocationIDn = locationIDn
-}
-
-// WithModuleID adds the moduleID to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithModuleID(moduleID *string) *DcimConsolePortsListParams {
-	o.SetModuleID(moduleID)
-	return o
-}
-
-// SetModuleID adds the moduleId to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetModuleID(moduleID *string) {
-	o.ModuleID = moduleID
-}
-
-// WithModuleIDn adds the moduleIDn to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithModuleIDn(moduleIDn *string) *DcimConsolePortsListParams {
-	o.SetModuleIDn(moduleIDn)
-	return o
-}
-
-// SetModuleIDn adds the moduleIdN to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetModuleIDn(moduleIDn *string) {
-	o.ModuleIDn = moduleIDn
 }
 
 // WithName adds the name to the dcim console ports list params
@@ -1147,17 +986,6 @@ func (o *DcimConsolePortsListParams) SetNameNisw(nameNisw *string) {
 	o.NameNisw = nameNisw
 }
 
-// WithOccupied adds the occupied to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithOccupied(occupied *string) *DcimConsolePortsListParams {
-	o.SetOccupied(occupied)
-	return o
-}
-
-// SetOccupied adds the occupied to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetOccupied(occupied *string) {
-	o.Occupied = occupied
-}
-
 // WithOffset adds the offset to the dcim console ports list params
 func (o *DcimConsolePortsListParams) WithOffset(offset *int64) *DcimConsolePortsListParams {
 	o.SetOffset(offset)
@@ -1169,17 +997,6 @@ func (o *DcimConsolePortsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
-// WithOrdering adds the ordering to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithOrdering(ordering *string) *DcimConsolePortsListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
-}
-
 // WithQ adds the q to the dcim console ports list params
 func (o *DcimConsolePortsListParams) WithQ(q *string) *DcimConsolePortsListParams {
 	o.SetQ(q)
@@ -1189,50 +1006,6 @@ func (o *DcimConsolePortsListParams) WithQ(q *string) *DcimConsolePortsListParam
 // SetQ adds the q to the dcim console ports list params
 func (o *DcimConsolePortsListParams) SetQ(q *string) {
 	o.Q = q
-}
-
-// WithRack adds the rack to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithRack(rack *string) *DcimConsolePortsListParams {
-	o.SetRack(rack)
-	return o
-}
-
-// SetRack adds the rack to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetRack(rack *string) {
-	o.Rack = rack
-}
-
-// WithRackn adds the rackn to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithRackn(rackn *string) *DcimConsolePortsListParams {
-	o.SetRackn(rackn)
-	return o
-}
-
-// SetRackn adds the rackN to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetRackn(rackn *string) {
-	o.Rackn = rackn
-}
-
-// WithRackID adds the rackID to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithRackID(rackID *string) *DcimConsolePortsListParams {
-	o.SetRackID(rackID)
-	return o
-}
-
-// SetRackID adds the rackId to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetRackID(rackID *string) {
-	o.RackID = rackID
-}
-
-// WithRackIDn adds the rackIDn to the dcim console ports list params
-func (o *DcimConsolePortsListParams) WithRackIDn(rackIDn *string) *DcimConsolePortsListParams {
-	o.SetRackIDn(rackIDn)
-	return o
-}
-
-// SetRackIDn adds the rackIdN to the dcim console ports list params
-func (o *DcimConsolePortsListParams) SetRackIDn(rackIDn *string) {
-	o.RackIDn = rackIDn
 }
 
 // WithRegion adds the region to the dcim console ports list params
@@ -1463,40 +1236,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 	}
 	var res []error
 
-	if o.CableEnd != nil {
-
-		// query param cable_end
-		var qrCableEnd string
-
-		if o.CableEnd != nil {
-			qrCableEnd = *o.CableEnd
-		}
-		qCableEnd := qrCableEnd
-		if qCableEnd != "" {
-
-			if err := r.SetQueryParam("cable_end", qCableEnd); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.CableEndn != nil {
-
-		// query param cable_end__n
-		var qrCableEndn string
-
-		if o.CableEndn != nil {
-			qrCableEndn = *o.CableEndn
-		}
-		qCableEndn := qrCableEndn
-		if qCableEndn != "" {
-
-			if err := r.SetQueryParam("cable_end__n", qCableEndn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Cabled != nil {
 
 		// query param cabled
@@ -1548,23 +1287,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1582,23 +1304,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1611,23 +1316,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -2194,23 +1882,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -2228,23 +1899,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -2257,23 +1911,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -2359,40 +1996,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qLocationIDn != "" {
 
 			if err := r.SetQueryParam("location_id__n", qLocationIDn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ModuleID != nil {
-
-		// query param module_id
-		var qrModuleID string
-
-		if o.ModuleID != nil {
-			qrModuleID = *o.ModuleID
-		}
-		qModuleID := qrModuleID
-		if qModuleID != "" {
-
-			if err := r.SetQueryParam("module_id", qModuleID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ModuleIDn != nil {
-
-		// query param module_id__n
-		var qrModuleIDn string
-
-		if o.ModuleIDn != nil {
-			qrModuleIDn = *o.ModuleIDn
-		}
-		qModuleIDn := qrModuleIDn
-		if qModuleIDn != "" {
-
-			if err := r.SetQueryParam("module_id__n", qModuleIDn); err != nil {
 				return err
 			}
 		}
@@ -2585,23 +2188,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.Occupied != nil {
-
-		// query param occupied
-		var qrOccupied string
-
-		if o.Occupied != nil {
-			qrOccupied = *o.Occupied
-		}
-		qOccupied := qrOccupied
-		if qOccupied != "" {
-
-			if err := r.SetQueryParam("occupied", qOccupied); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Offset != nil {
 
 		// query param offset
@@ -2619,23 +2205,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Q != nil {
 
 		// query param q
@@ -2648,74 +2217,6 @@ func (o *DcimConsolePortsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qQ != "" {
 
 			if err := r.SetQueryParam("q", qQ); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Rack != nil {
-
-		// query param rack
-		var qrRack string
-
-		if o.Rack != nil {
-			qrRack = *o.Rack
-		}
-		qRack := qrRack
-		if qRack != "" {
-
-			if err := r.SetQueryParam("rack", qRack); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Rackn != nil {
-
-		// query param rack__n
-		var qrRackn string
-
-		if o.Rackn != nil {
-			qrRackn = *o.Rackn
-		}
-		qRackn := qrRackn
-		if qRackn != "" {
-
-			if err := r.SetQueryParam("rack__n", qRackn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.RackID != nil {
-
-		// query param rack_id
-		var qrRackID string
-
-		if o.RackID != nil {
-			qrRackID = *o.RackID
-		}
-		qRackID := qrRackID
-		if qRackID != "" {
-
-			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.RackIDn != nil {
-
-		// query param rack_id__n
-		var qrRackIDn string
-
-		if o.RackIDn != nil {
-			qrRackIDn = *o.RackIDn
-		}
-		qRackIDn := qrRackIDn
-		if qRackIDn != "" {
-
-			if err := r.SetQueryParam("rack_id__n", qRackIDn); err != nil {
 				return err
 			}
 		}

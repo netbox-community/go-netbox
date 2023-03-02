@@ -22,7 +22,6 @@ package models
 
 import (
 	"context"
-	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -42,8 +41,8 @@ type WritableLocation struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -60,14 +59,14 @@ type WritableLocation struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -92,10 +91,6 @@ type WritableLocation struct {
 	// Min Length: 1
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
-
-	// Status
-	// Enum: [planned staging active decommissioning retired]
-	Status string `json:"status,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
@@ -137,10 +132,6 @@ func (m *WritableLocation) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateStatus(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateTags(formats); err != nil {
 		res = append(res, err)
 	}
@@ -160,7 +151,7 @@ func (m *WritableLocation) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -232,57 +223,6 @@ func (m *WritableLocation) validateSlug(formats strfmt.Registry) error {
 	}
 
 	if err := validate.Pattern("slug", "body", *m.Slug, `^[-a-zA-Z0-9_]+$`); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var writableLocationTypeStatusPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["planned","staging","active","decommissioning","retired"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		writableLocationTypeStatusPropEnum = append(writableLocationTypeStatusPropEnum, v)
-	}
-}
-
-const (
-
-	// WritableLocationStatusPlanned captures enum value "planned"
-	WritableLocationStatusPlanned string = "planned"
-
-	// WritableLocationStatusStaging captures enum value "staging"
-	WritableLocationStatusStaging string = "staging"
-
-	// WritableLocationStatusActive captures enum value "active"
-	WritableLocationStatusActive string = "active"
-
-	// WritableLocationStatusDecommissioning captures enum value "decommissioning"
-	WritableLocationStatusDecommissioning string = "decommissioning"
-
-	// WritableLocationStatusRetired captures enum value "retired"
-	WritableLocationStatusRetired string = "retired"
-)
-
-// prop value enum
-func (m *WritableLocation) validateStatusEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, writableLocationTypeStatusPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *WritableLocation) validateStatus(formats strfmt.Registry) error {
-	if swag.IsZero(m.Status) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
 	}
 
@@ -384,7 +324,7 @@ func (m *WritableLocation) contextValidateDepth(ctx context.Context, formats str
 
 func (m *WritableLocation) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -420,7 +360,7 @@ func (m *WritableLocation) contextValidateID(ctx context.Context, formats strfmt
 
 func (m *WritableLocation) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

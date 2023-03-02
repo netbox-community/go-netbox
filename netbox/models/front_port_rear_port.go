@@ -34,15 +34,11 @@ import (
 // swagger:model FrontPortRearPort
 type FrontPortRearPort struct {
 
-	// Description
-	// Max Length: 200
-	Description string `json:"description,omitempty"`
-
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -68,10 +64,6 @@ type FrontPortRearPort struct {
 func (m *FrontPortRearPort) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateDescription(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateLabel(formats); err != nil {
 		res = append(res, err)
 	}
@@ -87,18 +79,6 @@ func (m *FrontPortRearPort) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *FrontPortRearPort) validateDescription(formats strfmt.Registry) error {
-	if swag.IsZero(m.Description) { // not required
-		return nil
-	}
-
-	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
-		return err
-	}
-
 	return nil
 }
 

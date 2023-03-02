@@ -110,47 +110,14 @@ type DcimInventoryItemsListParams struct {
 	// AssetTagNisw.
 	AssetTagNisw *string
 
-	// ComponentID.
-	ComponentID *string
-
-	// ComponentIDGt.
-	ComponentIDGt *string
-
-	// ComponentIDGte.
-	ComponentIDGte *string
-
-	// ComponentIDLt.
-	ComponentIDLt *string
-
-	// ComponentIDLte.
-	ComponentIDLte *string
-
-	// ComponentIDn.
-	ComponentIDn *string
-
-	// ComponentType.
-	ComponentType *string
-
-	// ComponentTypen.
-	ComponentTypen *string
-
 	// Created.
 	Created *string
-
-	// CreatedGt.
-	CreatedGt *string
 
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Device.
 	Device *string
@@ -221,20 +188,11 @@ type DcimInventoryItemsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -305,12 +263,6 @@ type DcimInventoryItemsListParams struct {
 	*/
 	Offset *int64
 
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
-
 	// ParentID.
 	ParentID *string
 
@@ -353,18 +305,6 @@ type DcimInventoryItemsListParams struct {
 	// Q.
 	Q *string
 
-	// Rack.
-	Rack *string
-
-	// Rackn.
-	Rackn *string
-
-	// RackID.
-	RackID *string
-
-	// RackIDn.
-	RackIDn *string
-
 	// Region.
 	Region *string
 
@@ -377,50 +317,8 @@ type DcimInventoryItemsListParams struct {
 	// RegionIDn.
 	RegionIDn *string
 
-	// Role.
-	Role *string
-
-	// Rolen.
-	Rolen *string
-
-	// RoleID.
-	RoleID *string
-
-	// RoleIDn.
-	RoleIDn *string
-
 	// Serial.
 	Serial *string
-
-	// SerialEmpty.
-	SerialEmpty *string
-
-	// SerialIc.
-	SerialIc *string
-
-	// SerialIe.
-	SerialIe *string
-
-	// SerialIew.
-	SerialIew *string
-
-	// SerialIsw.
-	SerialIsw *string
-
-	// Serialn.
-	Serialn *string
-
-	// SerialNic.
-	SerialNic *string
-
-	// SerialNie.
-	SerialNie *string
-
-	// SerialNiew.
-	SerialNiew *string
-
-	// SerialNisw.
-	SerialNisw *string
 
 	// Site.
 	Site *string
@@ -638,94 +536,6 @@ func (o *DcimInventoryItemsListParams) SetAssetTagNisw(assetTagNisw *string) {
 	o.AssetTagNisw = assetTagNisw
 }
 
-// WithComponentID adds the componentID to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithComponentID(componentID *string) *DcimInventoryItemsListParams {
-	o.SetComponentID(componentID)
-	return o
-}
-
-// SetComponentID adds the componentId to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetComponentID(componentID *string) {
-	o.ComponentID = componentID
-}
-
-// WithComponentIDGt adds the componentIDGt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithComponentIDGt(componentIDGt *string) *DcimInventoryItemsListParams {
-	o.SetComponentIDGt(componentIDGt)
-	return o
-}
-
-// SetComponentIDGt adds the componentIdGt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetComponentIDGt(componentIDGt *string) {
-	o.ComponentIDGt = componentIDGt
-}
-
-// WithComponentIDGte adds the componentIDGte to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithComponentIDGte(componentIDGte *string) *DcimInventoryItemsListParams {
-	o.SetComponentIDGte(componentIDGte)
-	return o
-}
-
-// SetComponentIDGte adds the componentIdGte to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetComponentIDGte(componentIDGte *string) {
-	o.ComponentIDGte = componentIDGte
-}
-
-// WithComponentIDLt adds the componentIDLt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithComponentIDLt(componentIDLt *string) *DcimInventoryItemsListParams {
-	o.SetComponentIDLt(componentIDLt)
-	return o
-}
-
-// SetComponentIDLt adds the componentIdLt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetComponentIDLt(componentIDLt *string) {
-	o.ComponentIDLt = componentIDLt
-}
-
-// WithComponentIDLte adds the componentIDLte to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithComponentIDLte(componentIDLte *string) *DcimInventoryItemsListParams {
-	o.SetComponentIDLte(componentIDLte)
-	return o
-}
-
-// SetComponentIDLte adds the componentIdLte to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetComponentIDLte(componentIDLte *string) {
-	o.ComponentIDLte = componentIDLte
-}
-
-// WithComponentIDn adds the componentIDn to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithComponentIDn(componentIDn *string) *DcimInventoryItemsListParams {
-	o.SetComponentIDn(componentIDn)
-	return o
-}
-
-// SetComponentIDn adds the componentIdN to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetComponentIDn(componentIDn *string) {
-	o.ComponentIDn = componentIDn
-}
-
-// WithComponentType adds the componentType to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithComponentType(componentType *string) *DcimInventoryItemsListParams {
-	o.SetComponentType(componentType)
-	return o
-}
-
-// SetComponentType adds the componentType to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetComponentType(componentType *string) {
-	o.ComponentType = componentType
-}
-
-// WithComponentTypen adds the componentTypen to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithComponentTypen(componentTypen *string) *DcimInventoryItemsListParams {
-	o.SetComponentTypen(componentTypen)
-	return o
-}
-
-// SetComponentTypen adds the componentTypeN to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetComponentTypen(componentTypen *string) {
-	o.ComponentTypen = componentTypen
-}
-
 // WithCreated adds the created to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithCreated(created *string) *DcimInventoryItemsListParams {
 	o.SetCreated(created)
@@ -735,17 +545,6 @@ func (o *DcimInventoryItemsListParams) WithCreated(created *string) *DcimInvento
 // SetCreated adds the created to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetCreated(created *string) {
 	o.Created = created
-}
-
-// WithCreatedGt adds the createdGt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithCreatedGt(createdGt *string) *DcimInventoryItemsListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
 }
 
 // WithCreatedGte adds the createdGte to the dcim inventory items list params
@@ -759,17 +558,6 @@ func (o *DcimInventoryItemsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithCreatedLt(createdLt *string) *DcimInventoryItemsListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithCreatedLte(createdLte *string) *DcimInventoryItemsListParams {
 	o.SetCreatedLte(createdLte)
@@ -779,17 +567,6 @@ func (o *DcimInventoryItemsListParams) WithCreatedLte(createdLte *string) *DcimI
 // SetCreatedLte adds the createdLte to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithCreatedn(createdn *string) *DcimInventoryItemsListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDevice adds the device to the dcim inventory items list params
@@ -1045,17 +822,6 @@ func (o *DcimInventoryItemsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimInventoryItemsListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimInventoryItemsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -1067,17 +833,6 @@ func (o *DcimInventoryItemsListParams) SetLastUpdatedGte(lastUpdatedGte *string)
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimInventoryItemsListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *DcimInventoryItemsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -1087,17 +842,6 @@ func (o *DcimInventoryItemsListParams) WithLastUpdatedLte(lastUpdatedLte *string
 // SetLastUpdatedLte adds the lastUpdatedLte to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimInventoryItemsListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the dcim inventory items list params
@@ -1331,17 +1075,6 @@ func (o *DcimInventoryItemsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
-// WithOrdering adds the ordering to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithOrdering(ordering *string) *DcimInventoryItemsListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
-}
-
 // WithParentID adds the parentID to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithParentID(parentID *string) *DcimInventoryItemsListParams {
 	o.SetParentID(parentID)
@@ -1496,50 +1229,6 @@ func (o *DcimInventoryItemsListParams) SetQ(q *string) {
 	o.Q = q
 }
 
-// WithRack adds the rack to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithRack(rack *string) *DcimInventoryItemsListParams {
-	o.SetRack(rack)
-	return o
-}
-
-// SetRack adds the rack to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetRack(rack *string) {
-	o.Rack = rack
-}
-
-// WithRackn adds the rackn to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithRackn(rackn *string) *DcimInventoryItemsListParams {
-	o.SetRackn(rackn)
-	return o
-}
-
-// SetRackn adds the rackN to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetRackn(rackn *string) {
-	o.Rackn = rackn
-}
-
-// WithRackID adds the rackID to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithRackID(rackID *string) *DcimInventoryItemsListParams {
-	o.SetRackID(rackID)
-	return o
-}
-
-// SetRackID adds the rackId to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetRackID(rackID *string) {
-	o.RackID = rackID
-}
-
-// WithRackIDn adds the rackIDn to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithRackIDn(rackIDn *string) *DcimInventoryItemsListParams {
-	o.SetRackIDn(rackIDn)
-	return o
-}
-
-// SetRackIDn adds the rackIdN to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetRackIDn(rackIDn *string) {
-	o.RackIDn = rackIDn
-}
-
 // WithRegion adds the region to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithRegion(region *string) *DcimInventoryItemsListParams {
 	o.SetRegion(region)
@@ -1584,50 +1273,6 @@ func (o *DcimInventoryItemsListParams) SetRegionIDn(regionIDn *string) {
 	o.RegionIDn = regionIDn
 }
 
-// WithRole adds the role to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithRole(role *string) *DcimInventoryItemsListParams {
-	o.SetRole(role)
-	return o
-}
-
-// SetRole adds the role to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetRole(role *string) {
-	o.Role = role
-}
-
-// WithRolen adds the rolen to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithRolen(rolen *string) *DcimInventoryItemsListParams {
-	o.SetRolen(rolen)
-	return o
-}
-
-// SetRolen adds the roleN to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetRolen(rolen *string) {
-	o.Rolen = rolen
-}
-
-// WithRoleID adds the roleID to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithRoleID(roleID *string) *DcimInventoryItemsListParams {
-	o.SetRoleID(roleID)
-	return o
-}
-
-// SetRoleID adds the roleId to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetRoleID(roleID *string) {
-	o.RoleID = roleID
-}
-
-// WithRoleIDn adds the roleIDn to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithRoleIDn(roleIDn *string) *DcimInventoryItemsListParams {
-	o.SetRoleIDn(roleIDn)
-	return o
-}
-
-// SetRoleIDn adds the roleIdN to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetRoleIDn(roleIDn *string) {
-	o.RoleIDn = roleIDn
-}
-
 // WithSerial adds the serial to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithSerial(serial *string) *DcimInventoryItemsListParams {
 	o.SetSerial(serial)
@@ -1637,116 +1282,6 @@ func (o *DcimInventoryItemsListParams) WithSerial(serial *string) *DcimInventory
 // SetSerial adds the serial to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetSerial(serial *string) {
 	o.Serial = serial
-}
-
-// WithSerialEmpty adds the serialEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialEmpty(serialEmpty *string) *DcimInventoryItemsListParams {
-	o.SetSerialEmpty(serialEmpty)
-	return o
-}
-
-// SetSerialEmpty adds the serialEmpty to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialEmpty(serialEmpty *string) {
-	o.SerialEmpty = serialEmpty
-}
-
-// WithSerialIc adds the serialIc to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialIc(serialIc *string) *DcimInventoryItemsListParams {
-	o.SetSerialIc(serialIc)
-	return o
-}
-
-// SetSerialIc adds the serialIc to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialIc(serialIc *string) {
-	o.SerialIc = serialIc
-}
-
-// WithSerialIe adds the serialIe to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialIe(serialIe *string) *DcimInventoryItemsListParams {
-	o.SetSerialIe(serialIe)
-	return o
-}
-
-// SetSerialIe adds the serialIe to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialIe(serialIe *string) {
-	o.SerialIe = serialIe
-}
-
-// WithSerialIew adds the serialIew to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialIew(serialIew *string) *DcimInventoryItemsListParams {
-	o.SetSerialIew(serialIew)
-	return o
-}
-
-// SetSerialIew adds the serialIew to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialIew(serialIew *string) {
-	o.SerialIew = serialIew
-}
-
-// WithSerialIsw adds the serialIsw to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialIsw(serialIsw *string) *DcimInventoryItemsListParams {
-	o.SetSerialIsw(serialIsw)
-	return o
-}
-
-// SetSerialIsw adds the serialIsw to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialIsw(serialIsw *string) {
-	o.SerialIsw = serialIsw
-}
-
-// WithSerialn adds the serialn to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialn(serialn *string) *DcimInventoryItemsListParams {
-	o.SetSerialn(serialn)
-	return o
-}
-
-// SetSerialn adds the serialN to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialn(serialn *string) {
-	o.Serialn = serialn
-}
-
-// WithSerialNic adds the serialNic to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialNic(serialNic *string) *DcimInventoryItemsListParams {
-	o.SetSerialNic(serialNic)
-	return o
-}
-
-// SetSerialNic adds the serialNic to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialNic(serialNic *string) {
-	o.SerialNic = serialNic
-}
-
-// WithSerialNie adds the serialNie to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialNie(serialNie *string) *DcimInventoryItemsListParams {
-	o.SetSerialNie(serialNie)
-	return o
-}
-
-// SetSerialNie adds the serialNie to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialNie(serialNie *string) {
-	o.SerialNie = serialNie
-}
-
-// WithSerialNiew adds the serialNiew to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialNiew(serialNiew *string) *DcimInventoryItemsListParams {
-	o.SetSerialNiew(serialNiew)
-	return o
-}
-
-// SetSerialNiew adds the serialNiew to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialNiew(serialNiew *string) {
-	o.SerialNiew = serialNiew
-}
-
-// WithSerialNisw adds the serialNisw to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) WithSerialNisw(serialNisw *string) *DcimInventoryItemsListParams {
-	o.SetSerialNisw(serialNisw)
-	return o
-}
-
-// SetSerialNisw adds the serialNisw to the dcim inventory items list params
-func (o *DcimInventoryItemsListParams) SetSerialNisw(serialNisw *string) {
-	o.SerialNisw = serialNisw
 }
 
 // WithSite adds the site to the dcim inventory items list params
@@ -2098,142 +1633,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
-	if o.ComponentID != nil {
-
-		// query param component_id
-		var qrComponentID string
-
-		if o.ComponentID != nil {
-			qrComponentID = *o.ComponentID
-		}
-		qComponentID := qrComponentID
-		if qComponentID != "" {
-
-			if err := r.SetQueryParam("component_id", qComponentID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ComponentIDGt != nil {
-
-		// query param component_id__gt
-		var qrComponentIDGt string
-
-		if o.ComponentIDGt != nil {
-			qrComponentIDGt = *o.ComponentIDGt
-		}
-		qComponentIDGt := qrComponentIDGt
-		if qComponentIDGt != "" {
-
-			if err := r.SetQueryParam("component_id__gt", qComponentIDGt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ComponentIDGte != nil {
-
-		// query param component_id__gte
-		var qrComponentIDGte string
-
-		if o.ComponentIDGte != nil {
-			qrComponentIDGte = *o.ComponentIDGte
-		}
-		qComponentIDGte := qrComponentIDGte
-		if qComponentIDGte != "" {
-
-			if err := r.SetQueryParam("component_id__gte", qComponentIDGte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ComponentIDLt != nil {
-
-		// query param component_id__lt
-		var qrComponentIDLt string
-
-		if o.ComponentIDLt != nil {
-			qrComponentIDLt = *o.ComponentIDLt
-		}
-		qComponentIDLt := qrComponentIDLt
-		if qComponentIDLt != "" {
-
-			if err := r.SetQueryParam("component_id__lt", qComponentIDLt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ComponentIDLte != nil {
-
-		// query param component_id__lte
-		var qrComponentIDLte string
-
-		if o.ComponentIDLte != nil {
-			qrComponentIDLte = *o.ComponentIDLte
-		}
-		qComponentIDLte := qrComponentIDLte
-		if qComponentIDLte != "" {
-
-			if err := r.SetQueryParam("component_id__lte", qComponentIDLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ComponentIDn != nil {
-
-		// query param component_id__n
-		var qrComponentIDn string
-
-		if o.ComponentIDn != nil {
-			qrComponentIDn = *o.ComponentIDn
-		}
-		qComponentIDn := qrComponentIDn
-		if qComponentIDn != "" {
-
-			if err := r.SetQueryParam("component_id__n", qComponentIDn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ComponentType != nil {
-
-		// query param component_type
-		var qrComponentType string
-
-		if o.ComponentType != nil {
-			qrComponentType = *o.ComponentType
-		}
-		qComponentType := qrComponentType
-		if qComponentType != "" {
-
-			if err := r.SetQueryParam("component_type", qComponentType); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ComponentTypen != nil {
-
-		// query param component_type__n
-		var qrComponentTypen string
-
-		if o.ComponentTypen != nil {
-			qrComponentTypen = *o.ComponentTypen
-		}
-		qComponentTypen := qrComponentTypen
-		if qComponentTypen != "" {
-
-			if err := r.SetQueryParam("component_type__n", qComponentTypen); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Created != nil {
 
 		// query param created
@@ -2246,23 +1645,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qCreated != "" {
 
 			if err := r.SetQueryParam("created", qCreated); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
 				return err
 			}
 		}
@@ -2285,23 +1667,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -2314,23 +1679,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -2727,23 +2075,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -2761,23 +2092,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -2790,23 +2104,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -3169,23 +2466,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.ParentID != nil {
 
 		// query param parent_id
@@ -3424,74 +2704,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
-	if o.Rack != nil {
-
-		// query param rack
-		var qrRack string
-
-		if o.Rack != nil {
-			qrRack = *o.Rack
-		}
-		qRack := qrRack
-		if qRack != "" {
-
-			if err := r.SetQueryParam("rack", qRack); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Rackn != nil {
-
-		// query param rack__n
-		var qrRackn string
-
-		if o.Rackn != nil {
-			qrRackn = *o.Rackn
-		}
-		qRackn := qrRackn
-		if qRackn != "" {
-
-			if err := r.SetQueryParam("rack__n", qRackn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.RackID != nil {
-
-		// query param rack_id
-		var qrRackID string
-
-		if o.RackID != nil {
-			qrRackID = *o.RackID
-		}
-		qRackID := qrRackID
-		if qRackID != "" {
-
-			if err := r.SetQueryParam("rack_id", qRackID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.RackIDn != nil {
-
-		// query param rack_id__n
-		var qrRackIDn string
-
-		if o.RackIDn != nil {
-			qrRackIDn = *o.RackIDn
-		}
-		qRackIDn := qrRackIDn
-		if qRackIDn != "" {
-
-			if err := r.SetQueryParam("rack_id__n", qRackIDn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Region != nil {
 
 		// query param region
@@ -3560,74 +2772,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
-	if o.Role != nil {
-
-		// query param role
-		var qrRole string
-
-		if o.Role != nil {
-			qrRole = *o.Role
-		}
-		qRole := qrRole
-		if qRole != "" {
-
-			if err := r.SetQueryParam("role", qRole); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Rolen != nil {
-
-		// query param role__n
-		var qrRolen string
-
-		if o.Rolen != nil {
-			qrRolen = *o.Rolen
-		}
-		qRolen := qrRolen
-		if qRolen != "" {
-
-			if err := r.SetQueryParam("role__n", qRolen); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.RoleID != nil {
-
-		// query param role_id
-		var qrRoleID string
-
-		if o.RoleID != nil {
-			qrRoleID = *o.RoleID
-		}
-		qRoleID := qrRoleID
-		if qRoleID != "" {
-
-			if err := r.SetQueryParam("role_id", qRoleID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.RoleIDn != nil {
-
-		// query param role_id__n
-		var qrRoleIDn string
-
-		if o.RoleIDn != nil {
-			qrRoleIDn = *o.RoleIDn
-		}
-		qRoleIDn := qrRoleIDn
-		if qRoleIDn != "" {
-
-			if err := r.SetQueryParam("role_id__n", qRoleIDn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Serial != nil {
 
 		// query param serial
@@ -3640,176 +2784,6 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qSerial != "" {
 
 			if err := r.SetQueryParam("serial", qSerial); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialEmpty != nil {
-
-		// query param serial__empty
-		var qrSerialEmpty string
-
-		if o.SerialEmpty != nil {
-			qrSerialEmpty = *o.SerialEmpty
-		}
-		qSerialEmpty := qrSerialEmpty
-		if qSerialEmpty != "" {
-
-			if err := r.SetQueryParam("serial__empty", qSerialEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialIc != nil {
-
-		// query param serial__ic
-		var qrSerialIc string
-
-		if o.SerialIc != nil {
-			qrSerialIc = *o.SerialIc
-		}
-		qSerialIc := qrSerialIc
-		if qSerialIc != "" {
-
-			if err := r.SetQueryParam("serial__ic", qSerialIc); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialIe != nil {
-
-		// query param serial__ie
-		var qrSerialIe string
-
-		if o.SerialIe != nil {
-			qrSerialIe = *o.SerialIe
-		}
-		qSerialIe := qrSerialIe
-		if qSerialIe != "" {
-
-			if err := r.SetQueryParam("serial__ie", qSerialIe); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialIew != nil {
-
-		// query param serial__iew
-		var qrSerialIew string
-
-		if o.SerialIew != nil {
-			qrSerialIew = *o.SerialIew
-		}
-		qSerialIew := qrSerialIew
-		if qSerialIew != "" {
-
-			if err := r.SetQueryParam("serial__iew", qSerialIew); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialIsw != nil {
-
-		// query param serial__isw
-		var qrSerialIsw string
-
-		if o.SerialIsw != nil {
-			qrSerialIsw = *o.SerialIsw
-		}
-		qSerialIsw := qrSerialIsw
-		if qSerialIsw != "" {
-
-			if err := r.SetQueryParam("serial__isw", qSerialIsw); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Serialn != nil {
-
-		// query param serial__n
-		var qrSerialn string
-
-		if o.Serialn != nil {
-			qrSerialn = *o.Serialn
-		}
-		qSerialn := qrSerialn
-		if qSerialn != "" {
-
-			if err := r.SetQueryParam("serial__n", qSerialn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialNic != nil {
-
-		// query param serial__nic
-		var qrSerialNic string
-
-		if o.SerialNic != nil {
-			qrSerialNic = *o.SerialNic
-		}
-		qSerialNic := qrSerialNic
-		if qSerialNic != "" {
-
-			if err := r.SetQueryParam("serial__nic", qSerialNic); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialNie != nil {
-
-		// query param serial__nie
-		var qrSerialNie string
-
-		if o.SerialNie != nil {
-			qrSerialNie = *o.SerialNie
-		}
-		qSerialNie := qrSerialNie
-		if qSerialNie != "" {
-
-			if err := r.SetQueryParam("serial__nie", qSerialNie); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialNiew != nil {
-
-		// query param serial__niew
-		var qrSerialNiew string
-
-		if o.SerialNiew != nil {
-			qrSerialNiew = *o.SerialNiew
-		}
-		qSerialNiew := qrSerialNiew
-		if qSerialNiew != "" {
-
-			if err := r.SetQueryParam("serial__niew", qSerialNiew); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.SerialNisw != nil {
-
-		// query param serial__nisw
-		var qrSerialNisw string
-
-		if o.SerialNisw != nil {
-			qrSerialNisw = *o.SerialNisw
-		}
-		qSerialNisw := qrSerialNisw
-		if qSerialNisw != "" {
-
-			if err := r.SetQueryParam("serial__nisw", qSerialNisw); err != nil {
 				return err
 			}
 		}

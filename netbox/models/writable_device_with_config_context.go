@@ -37,7 +37,7 @@ import (
 type WritableDeviceWithConfigContext struct {
 
 	// Airflow
-	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive mixed]
+	// Enum: [front-to-rear rear-to-front left-to-right right-to-left side-to-rear passive]
 	Airflow string `json:"airflow,omitempty"`
 
 	// Asset tag
@@ -54,19 +54,15 @@ type WritableDeviceWithConfigContext struct {
 
 	// Config context
 	// Read Only: true
-	ConfigContext interface{} `json:"config_context,omitempty"`
+	ConfigContext map[string]*string `json:"config_context,omitempty"`
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
-
-	// Description
-	// Max Length: 200
-	Description string `json:"description,omitempty"`
 
 	// Device role
 	// Required: true
@@ -81,27 +77,29 @@ type WritableDeviceWithConfigContext struct {
 	Display string `json:"display,omitempty"`
 
 	// Rack face
+	// Required: true
 	// Enum: [front rear]
-	Face string `json:"face,omitempty"`
+	Face *string `json:"face"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
-	LocalContextData interface{} `json:"local_context_data,omitempty"`
+	LocalContextData *string `json:"local_context_data,omitempty"`
 
 	// Location
 	Location *int64 `json:"location,omitempty"`
 
 	// Name
+	// Required: true
 	// Max Length: 64
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name"`
 
 	// parent device
 	ParentDevice *NestedDevice `json:"parent_device,omitempty"`
@@ -110,8 +108,8 @@ type WritableDeviceWithConfigContext struct {
 	Platform *int64 `json:"platform,omitempty"`
 
 	// Position (U)
-	// Minimum: 0.5
-	Position *float64 `json:"position,omitempty"`
+	// Minimum: 1
+	Position *int64 `json:"position,omitempty"`
 
 	// Primary ip
 	// Read Only: true
@@ -124,7 +122,8 @@ type WritableDeviceWithConfigContext struct {
 	PrimaryIp6 *int64 `json:"primary_ip6,omitempty"`
 
 	// Rack
-	Rack *int64 `json:"rack,omitempty"`
+	// Required: true
+	Rack *int64 `json:"rack"`
 
 	// Serial number
 	// Max Length: 50
@@ -142,7 +141,8 @@ type WritableDeviceWithConfigContext struct {
 	Tags []*NestedTag `json:"tags,omitempty"`
 
 	// Tenant
-	Tenant *int64 `json:"tenant,omitempty"`
+	// Required: true
+	Tenant *int64 `json:"tenant"`
 
 	// Url
 	// Read Only: true
@@ -160,7 +160,8 @@ type WritableDeviceWithConfigContext struct {
 	VcPriority *int64 `json:"vc_priority,omitempty"`
 
 	// Virtual chassis
-	VirtualChassis *int64 `json:"virtual_chassis,omitempty"`
+	// Required: true
+	VirtualChassis *int64 `json:"virtual_chassis"`
 }
 
 // Validate validates this writable device with config context
@@ -176,10 +177,6 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 	}
 
 	if err := m.validateCreated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -211,6 +208,10 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 		res = append(res, err)
 	}
 
+	if err := m.validateRack(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSerial(formats); err != nil {
 		res = append(res, err)
 	}
@@ -227,6 +228,10 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 		res = append(res, err)
 	}
 
+	if err := m.validateTenant(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateURL(formats); err != nil {
 		res = append(res, err)
 	}
@@ -236,6 +241,10 @@ func (m *WritableDeviceWithConfigContext) Validate(formats strfmt.Registry) erro
 	}
 
 	if err := m.validateVcPriority(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateVirtualChassis(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -249,7 +258,7 @@ var writableDeviceWithConfigContextTypeAirflowPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive","mixed"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["front-to-rear","rear-to-front","left-to-right","right-to-left","side-to-rear","passive"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -276,9 +285,6 @@ const (
 
 	// WritableDeviceWithConfigContextAirflowPassive captures enum value "passive"
 	WritableDeviceWithConfigContextAirflowPassive string = "passive"
-
-	// WritableDeviceWithConfigContextAirflowMixed captures enum value "mixed"
-	WritableDeviceWithConfigContextAirflowMixed string = "mixed"
 )
 
 // prop value enum
@@ -319,19 +325,7 @@ func (m *WritableDeviceWithConfigContext) validateCreated(formats strfmt.Registr
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableDeviceWithConfigContext) validateDescription(formats strfmt.Registry) error {
-	if swag.IsZero(m.Description) { // not required
-		return nil
-	}
-
-	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -386,12 +380,13 @@ func (m *WritableDeviceWithConfigContext) validateFaceEnum(path, location string
 }
 
 func (m *WritableDeviceWithConfigContext) validateFace(formats strfmt.Registry) error {
-	if swag.IsZero(m.Face) { // not required
-		return nil
+
+	if err := validate.Required("face", "body", m.Face); err != nil {
+		return err
 	}
 
 	// value enum
-	if err := m.validateFaceEnum("face", "body", m.Face); err != nil {
+	if err := m.validateFaceEnum("face", "body", *m.Face); err != nil {
 		return err
 	}
 
@@ -411,8 +406,9 @@ func (m *WritableDeviceWithConfigContext) validateLastUpdated(formats strfmt.Reg
 }
 
 func (m *WritableDeviceWithConfigContext) validateName(formats strfmt.Registry) error {
-	if swag.IsZero(m.Name) { // not required
-		return nil
+
+	if err := validate.Required("name", "body", m.Name); err != nil {
+		return err
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
@@ -446,7 +442,16 @@ func (m *WritableDeviceWithConfigContext) validatePosition(formats strfmt.Regist
 		return nil
 	}
 
-	if err := validate.Minimum("position", "body", *m.Position, 0.5, false); err != nil {
+	if err := validate.MinimumInt("position", "body", *m.Position, 1, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceWithConfigContext) validateRack(formats strfmt.Registry) error {
+
+	if err := validate.Required("rack", "body", m.Rack); err != nil {
 		return err
 	}
 
@@ -557,6 +562,15 @@ func (m *WritableDeviceWithConfigContext) validateTags(formats strfmt.Registry) 
 	return nil
 }
 
+func (m *WritableDeviceWithConfigContext) validateTenant(formats strfmt.Registry) error {
+
+	if err := validate.Required("tenant", "body", m.Tenant); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableDeviceWithConfigContext) validateURL(formats strfmt.Registry) error {
 	if swag.IsZero(m.URL) { // not required
 		return nil
@@ -601,9 +615,22 @@ func (m *WritableDeviceWithConfigContext) validateVcPriority(formats strfmt.Regi
 	return nil
 }
 
+func (m *WritableDeviceWithConfigContext) validateVirtualChassis(formats strfmt.Registry) error {
+
+	if err := validate.Required("virtual_chassis", "body", m.VirtualChassis); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this writable device with config context based on the context it is used
 func (m *WritableDeviceWithConfigContext) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.contextValidateConfigContext(ctx, formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.contextValidateCreated(ctx, formats); err != nil {
 		res = append(res, err)
@@ -643,9 +670,14 @@ func (m *WritableDeviceWithConfigContext) ContextValidate(ctx context.Context, f
 	return nil
 }
 
+func (m *WritableDeviceWithConfigContext) contextValidateConfigContext(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 func (m *WritableDeviceWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -672,7 +704,7 @@ func (m *WritableDeviceWithConfigContext) contextValidateID(ctx context.Context,
 
 func (m *WritableDeviceWithConfigContext) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

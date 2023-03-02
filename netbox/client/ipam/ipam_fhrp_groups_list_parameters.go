@@ -119,20 +119,11 @@ type IpamFhrpGroupsListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// GroupID.
 	GroupID *string
@@ -173,20 +164,11 @@ type IpamFhrpGroupsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -194,50 +176,11 @@ type IpamFhrpGroupsListParams struct {
 	*/
 	Limit *int64
 
-	// Name.
-	Name *string
-
-	// NameEmpty.
-	NameEmpty *string
-
-	// NameIc.
-	NameIc *string
-
-	// NameIe.
-	NameIe *string
-
-	// NameIew.
-	NameIew *string
-
-	// NameIsw.
-	NameIsw *string
-
-	// Namen.
-	Namen *string
-
-	// NameNic.
-	NameNic *string
-
-	// NameNie.
-	NameNie *string
-
-	// NameNiew.
-	NameNiew *string
-
-	// NameNisw.
-	NameNisw *string
-
 	/* Offset.
 
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Protocol.
 	Protocol *string
@@ -464,17 +407,6 @@ func (o *IpamFhrpGroupsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithCreatedGt(createdGt *string) *IpamFhrpGroupsListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the ipam fhrp groups list params
 func (o *IpamFhrpGroupsListParams) WithCreatedGte(createdGte *string) *IpamFhrpGroupsListParams {
 	o.SetCreatedGte(createdGte)
@@ -486,17 +418,6 @@ func (o *IpamFhrpGroupsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithCreatedLt(createdLt *string) *IpamFhrpGroupsListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the ipam fhrp groups list params
 func (o *IpamFhrpGroupsListParams) WithCreatedLte(createdLte *string) *IpamFhrpGroupsListParams {
 	o.SetCreatedLte(createdLte)
@@ -506,17 +427,6 @@ func (o *IpamFhrpGroupsListParams) WithCreatedLte(createdLte *string) *IpamFhrpG
 // SetCreatedLte adds the createdLte to the ipam fhrp groups list params
 func (o *IpamFhrpGroupsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithCreatedn(createdn *string) *IpamFhrpGroupsListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithGroupID adds the groupID to the ipam fhrp groups list params
@@ -662,17 +572,6 @@ func (o *IpamFhrpGroupsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *IpamFhrpGroupsListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the ipam fhrp groups list params
 func (o *IpamFhrpGroupsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *IpamFhrpGroupsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -682,17 +581,6 @@ func (o *IpamFhrpGroupsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *I
 // SetLastUpdatedGte adds the lastUpdatedGte to the ipam fhrp groups list params
 func (o *IpamFhrpGroupsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
-}
-
-// WithLastUpdatedLt adds the lastUpdatedLt to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *IpamFhrpGroupsListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
 }
 
 // WithLastUpdatedLte adds the lastUpdatedLte to the ipam fhrp groups list params
@@ -706,17 +594,6 @@ func (o *IpamFhrpGroupsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
 }
 
-// WithLastUpdatedn adds the lastUpdatedn to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithLastUpdatedn(lastUpdatedn *string) *IpamFhrpGroupsListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
-}
-
 // WithLimit adds the limit to the ipam fhrp groups list params
 func (o *IpamFhrpGroupsListParams) WithLimit(limit *int64) *IpamFhrpGroupsListParams {
 	o.SetLimit(limit)
@@ -728,127 +605,6 @@ func (o *IpamFhrpGroupsListParams) SetLimit(limit *int64) {
 	o.Limit = limit
 }
 
-// WithName adds the name to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithName(name *string) *IpamFhrpGroupsListParams {
-	o.SetName(name)
-	return o
-}
-
-// SetName adds the name to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetName(name *string) {
-	o.Name = name
-}
-
-// WithNameEmpty adds the nameEmpty to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNameEmpty(nameEmpty *string) *IpamFhrpGroupsListParams {
-	o.SetNameEmpty(nameEmpty)
-	return o
-}
-
-// SetNameEmpty adds the nameEmpty to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNameEmpty(nameEmpty *string) {
-	o.NameEmpty = nameEmpty
-}
-
-// WithNameIc adds the nameIc to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNameIc(nameIc *string) *IpamFhrpGroupsListParams {
-	o.SetNameIc(nameIc)
-	return o
-}
-
-// SetNameIc adds the nameIc to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNameIc(nameIc *string) {
-	o.NameIc = nameIc
-}
-
-// WithNameIe adds the nameIe to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNameIe(nameIe *string) *IpamFhrpGroupsListParams {
-	o.SetNameIe(nameIe)
-	return o
-}
-
-// SetNameIe adds the nameIe to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNameIe(nameIe *string) {
-	o.NameIe = nameIe
-}
-
-// WithNameIew adds the nameIew to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNameIew(nameIew *string) *IpamFhrpGroupsListParams {
-	o.SetNameIew(nameIew)
-	return o
-}
-
-// SetNameIew adds the nameIew to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNameIew(nameIew *string) {
-	o.NameIew = nameIew
-}
-
-// WithNameIsw adds the nameIsw to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNameIsw(nameIsw *string) *IpamFhrpGroupsListParams {
-	o.SetNameIsw(nameIsw)
-	return o
-}
-
-// SetNameIsw adds the nameIsw to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNameIsw(nameIsw *string) {
-	o.NameIsw = nameIsw
-}
-
-// WithNamen adds the namen to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNamen(namen *string) *IpamFhrpGroupsListParams {
-	o.SetNamen(namen)
-	return o
-}
-
-// SetNamen adds the nameN to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNamen(namen *string) {
-	o.Namen = namen
-}
-
-// WithNameNic adds the nameNic to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNameNic(nameNic *string) *IpamFhrpGroupsListParams {
-	o.SetNameNic(nameNic)
-	return o
-}
-
-// SetNameNic adds the nameNic to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNameNic(nameNic *string) {
-	o.NameNic = nameNic
-}
-
-// WithNameNie adds the nameNie to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNameNie(nameNie *string) *IpamFhrpGroupsListParams {
-	o.SetNameNie(nameNie)
-	return o
-}
-
-// SetNameNie adds the nameNie to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNameNie(nameNie *string) {
-	o.NameNie = nameNie
-}
-
-// WithNameNiew adds the nameNiew to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNameNiew(nameNiew *string) *IpamFhrpGroupsListParams {
-	o.SetNameNiew(nameNiew)
-	return o
-}
-
-// SetNameNiew adds the nameNiew to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNameNiew(nameNiew *string) {
-	o.NameNiew = nameNiew
-}
-
-// WithNameNisw adds the nameNisw to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithNameNisw(nameNisw *string) *IpamFhrpGroupsListParams {
-	o.SetNameNisw(nameNisw)
-	return o
-}
-
-// SetNameNisw adds the nameNisw to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetNameNisw(nameNisw *string) {
-	o.NameNisw = nameNisw
-}
-
 // WithOffset adds the offset to the ipam fhrp groups list params
 func (o *IpamFhrpGroupsListParams) WithOffset(offset *int64) *IpamFhrpGroupsListParams {
 	o.SetOffset(offset)
@@ -858,17 +614,6 @@ func (o *IpamFhrpGroupsListParams) WithOffset(offset *int64) *IpamFhrpGroupsList
 // SetOffset adds the offset to the ipam fhrp groups list params
 func (o *IpamFhrpGroupsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) WithOrdering(ordering *string) *IpamFhrpGroupsListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the ipam fhrp groups list params
-func (o *IpamFhrpGroupsListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithProtocol adds the protocol to the ipam fhrp groups list params
@@ -1183,23 +928,6 @@ func (o *IpamFhrpGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1217,23 +945,6 @@ func (o *IpamFhrpGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1246,23 +957,6 @@ func (o *IpamFhrpGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1489,23 +1183,6 @@ func (o *IpamFhrpGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1518,23 +1195,6 @@ func (o *IpamFhrpGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLastUpdatedGte != "" {
 
 			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
 				return err
 			}
 		}
@@ -1557,23 +1217,6 @@ func (o *IpamFhrpGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Limit != nil {
 
 		// query param limit
@@ -1591,193 +1234,6 @@ func (o *IpamFhrpGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.Name != nil {
-
-		// query param name
-		var qrName string
-
-		if o.Name != nil {
-			qrName = *o.Name
-		}
-		qName := qrName
-		if qName != "" {
-
-			if err := r.SetQueryParam("name", qName); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameEmpty != nil {
-
-		// query param name__empty
-		var qrNameEmpty string
-
-		if o.NameEmpty != nil {
-			qrNameEmpty = *o.NameEmpty
-		}
-		qNameEmpty := qrNameEmpty
-		if qNameEmpty != "" {
-
-			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameIc != nil {
-
-		// query param name__ic
-		var qrNameIc string
-
-		if o.NameIc != nil {
-			qrNameIc = *o.NameIc
-		}
-		qNameIc := qrNameIc
-		if qNameIc != "" {
-
-			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameIe != nil {
-
-		// query param name__ie
-		var qrNameIe string
-
-		if o.NameIe != nil {
-			qrNameIe = *o.NameIe
-		}
-		qNameIe := qrNameIe
-		if qNameIe != "" {
-
-			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameIew != nil {
-
-		// query param name__iew
-		var qrNameIew string
-
-		if o.NameIew != nil {
-			qrNameIew = *o.NameIew
-		}
-		qNameIew := qrNameIew
-		if qNameIew != "" {
-
-			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameIsw != nil {
-
-		// query param name__isw
-		var qrNameIsw string
-
-		if o.NameIsw != nil {
-			qrNameIsw = *o.NameIsw
-		}
-		qNameIsw := qrNameIsw
-		if qNameIsw != "" {
-
-			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Namen != nil {
-
-		// query param name__n
-		var qrNamen string
-
-		if o.Namen != nil {
-			qrNamen = *o.Namen
-		}
-		qNamen := qrNamen
-		if qNamen != "" {
-
-			if err := r.SetQueryParam("name__n", qNamen); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameNic != nil {
-
-		// query param name__nic
-		var qrNameNic string
-
-		if o.NameNic != nil {
-			qrNameNic = *o.NameNic
-		}
-		qNameNic := qrNameNic
-		if qNameNic != "" {
-
-			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameNie != nil {
-
-		// query param name__nie
-		var qrNameNie string
-
-		if o.NameNie != nil {
-			qrNameNie = *o.NameNie
-		}
-		qNameNie := qrNameNie
-		if qNameNie != "" {
-
-			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameNiew != nil {
-
-		// query param name__niew
-		var qrNameNiew string
-
-		if o.NameNiew != nil {
-			qrNameNiew = *o.NameNiew
-		}
-		qNameNiew := qrNameNiew
-		if qNameNiew != "" {
-
-			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.NameNisw != nil {
-
-		// query param name__nisw
-		var qrNameNisw string
-
-		if o.NameNisw != nil {
-			qrNameNisw = *o.NameNisw
-		}
-		qNameNisw := qrNameNisw
-		if qNameNisw != "" {
-
-			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Offset != nil {
 
 		// query param offset
@@ -1790,23 +1246,6 @@ func (o *IpamFhrpGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

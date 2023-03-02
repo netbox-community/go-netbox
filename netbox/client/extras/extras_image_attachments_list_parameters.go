@@ -173,12 +173,6 @@ type ExtrasImageAttachmentsListParams struct {
 	*/
 	Offset *int64
 
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
-
 	// Q.
 	Q *string
 
@@ -563,17 +557,6 @@ func (o *ExtrasImageAttachmentsListParams) WithOffset(offset *int64) *ExtrasImag
 // SetOffset adds the offset to the extras image attachments list params
 func (o *ExtrasImageAttachmentsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the extras image attachments list params
-func (o *ExtrasImageAttachmentsListParams) WithOrdering(ordering *string) *ExtrasImageAttachmentsListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the extras image attachments list params
-func (o *ExtrasImageAttachmentsListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithQ adds the q to the extras image attachments list params
@@ -1100,23 +1083,6 @@ func (o *ExtrasImageAttachmentsListParams) WriteToRequest(r runtime.ClientReques
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

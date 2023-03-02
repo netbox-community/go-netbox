@@ -86,20 +86,11 @@ type IpamVlansListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -164,35 +155,14 @@ type IpamVlansListParams struct {
 	// IDn.
 	IDn *string
 
-	// L2vpn.
-	L2vpn *string
-
-	// L2vpnn.
-	L2vpnn *string
-
-	// L2vpnID.
-	L2vpnID *string
-
-	// L2vpnIDn.
-	L2vpnIDn *string
-
 	// LastUpdated.
 	LastUpdated *string
-
-	// LastUpdatedGt.
-	LastUpdatedGt *string
 
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -238,12 +208,6 @@ type IpamVlansListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Q.
 	Q *string
@@ -436,17 +400,6 @@ func (o *IpamVlansListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the ipam vlans list params
-func (o *IpamVlansListParams) WithCreatedGt(createdGt *string) *IpamVlansListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the ipam vlans list params
-func (o *IpamVlansListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the ipam vlans list params
 func (o *IpamVlansListParams) WithCreatedGte(createdGte *string) *IpamVlansListParams {
 	o.SetCreatedGte(createdGte)
@@ -458,17 +411,6 @@ func (o *IpamVlansListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the ipam vlans list params
-func (o *IpamVlansListParams) WithCreatedLt(createdLt *string) *IpamVlansListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the ipam vlans list params
-func (o *IpamVlansListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the ipam vlans list params
 func (o *IpamVlansListParams) WithCreatedLte(createdLte *string) *IpamVlansListParams {
 	o.SetCreatedLte(createdLte)
@@ -478,17 +420,6 @@ func (o *IpamVlansListParams) WithCreatedLte(createdLte *string) *IpamVlansListP
 // SetCreatedLte adds the createdLte to the ipam vlans list params
 func (o *IpamVlansListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the ipam vlans list params
-func (o *IpamVlansListParams) WithCreatedn(createdn *string) *IpamVlansListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the ipam vlans list params
-func (o *IpamVlansListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the ipam vlans list params
@@ -722,50 +653,6 @@ func (o *IpamVlansListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
-// WithL2vpn adds the l2vpn to the ipam vlans list params
-func (o *IpamVlansListParams) WithL2vpn(l2vpn *string) *IpamVlansListParams {
-	o.SetL2vpn(l2vpn)
-	return o
-}
-
-// SetL2vpn adds the l2vpn to the ipam vlans list params
-func (o *IpamVlansListParams) SetL2vpn(l2vpn *string) {
-	o.L2vpn = l2vpn
-}
-
-// WithL2vpnn adds the l2vpnn to the ipam vlans list params
-func (o *IpamVlansListParams) WithL2vpnn(l2vpnn *string) *IpamVlansListParams {
-	o.SetL2vpnn(l2vpnn)
-	return o
-}
-
-// SetL2vpnn adds the l2vpnN to the ipam vlans list params
-func (o *IpamVlansListParams) SetL2vpnn(l2vpnn *string) {
-	o.L2vpnn = l2vpnn
-}
-
-// WithL2vpnID adds the l2vpnID to the ipam vlans list params
-func (o *IpamVlansListParams) WithL2vpnID(l2vpnID *string) *IpamVlansListParams {
-	o.SetL2vpnID(l2vpnID)
-	return o
-}
-
-// SetL2vpnID adds the l2vpnId to the ipam vlans list params
-func (o *IpamVlansListParams) SetL2vpnID(l2vpnID *string) {
-	o.L2vpnID = l2vpnID
-}
-
-// WithL2vpnIDn adds the l2vpnIDn to the ipam vlans list params
-func (o *IpamVlansListParams) WithL2vpnIDn(l2vpnIDn *string) *IpamVlansListParams {
-	o.SetL2vpnIDn(l2vpnIDn)
-	return o
-}
-
-// SetL2vpnIDn adds the l2vpnIdN to the ipam vlans list params
-func (o *IpamVlansListParams) SetL2vpnIDn(l2vpnIDn *string) {
-	o.L2vpnIDn = l2vpnIDn
-}
-
 // WithLastUpdated adds the lastUpdated to the ipam vlans list params
 func (o *IpamVlansListParams) WithLastUpdated(lastUpdated *string) *IpamVlansListParams {
 	o.SetLastUpdated(lastUpdated)
@@ -775,17 +662,6 @@ func (o *IpamVlansListParams) WithLastUpdated(lastUpdated *string) *IpamVlansLis
 // SetLastUpdated adds the lastUpdated to the ipam vlans list params
 func (o *IpamVlansListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
-}
-
-// WithLastUpdatedGt adds the lastUpdatedGt to the ipam vlans list params
-func (o *IpamVlansListParams) WithLastUpdatedGt(lastUpdatedGt *string) *IpamVlansListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the ipam vlans list params
-func (o *IpamVlansListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
 }
 
 // WithLastUpdatedGte adds the lastUpdatedGte to the ipam vlans list params
@@ -799,17 +675,6 @@ func (o *IpamVlansListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the ipam vlans list params
-func (o *IpamVlansListParams) WithLastUpdatedLt(lastUpdatedLt *string) *IpamVlansListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the ipam vlans list params
-func (o *IpamVlansListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the ipam vlans list params
 func (o *IpamVlansListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamVlansListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -819,17 +684,6 @@ func (o *IpamVlansListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamVl
 // SetLastUpdatedLte adds the lastUpdatedLte to the ipam vlans list params
 func (o *IpamVlansListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the ipam vlans list params
-func (o *IpamVlansListParams) WithLastUpdatedn(lastUpdatedn *string) *IpamVlansListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the ipam vlans list params
-func (o *IpamVlansListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the ipam vlans list params
@@ -973,17 +827,6 @@ func (o *IpamVlansListParams) WithOffset(offset *int64) *IpamVlansListParams {
 // SetOffset adds the offset to the ipam vlans list params
 func (o *IpamVlansListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the ipam vlans list params
-func (o *IpamVlansListParams) WithOrdering(ordering *string) *IpamVlansListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the ipam vlans list params
-func (o *IpamVlansListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithQ adds the q to the ipam vlans list params
@@ -1430,23 +1273,6 @@ func (o *IpamVlansListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1464,23 +1290,6 @@ func (o *IpamVlansListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1493,23 +1302,6 @@ func (o *IpamVlansListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1872,74 +1664,6 @@ func (o *IpamVlansListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
-	if o.L2vpn != nil {
-
-		// query param l2vpn
-		var qrL2vpn string
-
-		if o.L2vpn != nil {
-			qrL2vpn = *o.L2vpn
-		}
-		qL2vpn := qrL2vpn
-		if qL2vpn != "" {
-
-			if err := r.SetQueryParam("l2vpn", qL2vpn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.L2vpnn != nil {
-
-		// query param l2vpn__n
-		var qrL2vpnn string
-
-		if o.L2vpnn != nil {
-			qrL2vpnn = *o.L2vpnn
-		}
-		qL2vpnn := qrL2vpnn
-		if qL2vpnn != "" {
-
-			if err := r.SetQueryParam("l2vpn__n", qL2vpnn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.L2vpnID != nil {
-
-		// query param l2vpn_id
-		var qrL2vpnID string
-
-		if o.L2vpnID != nil {
-			qrL2vpnID = *o.L2vpnID
-		}
-		qL2vpnID := qrL2vpnID
-		if qL2vpnID != "" {
-
-			if err := r.SetQueryParam("l2vpn_id", qL2vpnID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.L2vpnIDn != nil {
-
-		// query param l2vpn_id__n
-		var qrL2vpnIDn string
-
-		if o.L2vpnIDn != nil {
-			qrL2vpnIDn = *o.L2vpnIDn
-		}
-		qL2vpnIDn := qrL2vpnIDn
-		if qL2vpnIDn != "" {
-
-			if err := r.SetQueryParam("l2vpn_id__n", qL2vpnIDn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdated != nil {
 
 		// query param last_updated
@@ -1952,23 +1676,6 @@ func (o *IpamVlansListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qLastUpdated != "" {
 
 			if err := r.SetQueryParam("last_updated", qLastUpdated); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
 				return err
 			}
 		}
@@ -1991,23 +1698,6 @@ func (o *IpamVlansListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -2020,23 +1710,6 @@ func (o *IpamVlansListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -2258,23 +1931,6 @@ func (o *IpamVlansListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

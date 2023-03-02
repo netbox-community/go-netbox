@@ -36,6 +36,13 @@ import (
 // swagger:model WritableSite
 type WritableSite struct {
 
+	// ASN
+	//
+	// 32-bit autonomous system number
+	// Maximum: 4.294967295e+09
+	// Minimum: 1
+	Asn *int64 `json:"asn,omitempty"`
+
 	// asns
 	// Unique: true
 	Asns []int64 `json:"asns,omitempty"`
@@ -47,10 +54,23 @@ type WritableSite struct {
 	// Comments
 	Comments string `json:"comments,omitempty"`
 
+	// Contact E-mail
+	// Max Length: 254
+	// Format: email
+	ContactEmail strfmt.Email `json:"contact_email,omitempty"`
+
+	// Contact name
+	// Max Length: 50
+	ContactName string `json:"contact_name,omitempty"`
+
+	// Contact phone
+	// Max Length: 20
+	ContactPhone string `json:"contact_phone,omitempty"`
+
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -76,14 +96,14 @@ type WritableSite struct {
 	// Group
 	Group *int64 `json:"group,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Latitude
 	//
@@ -138,7 +158,7 @@ type WritableSite struct {
 	Tenant *int64 `json:"tenant,omitempty"`
 
 	// Time zone
-	TimeZone *string `json:"time_zone,omitempty"`
+	TimeZone string `json:"time_zone,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -158,7 +178,23 @@ type WritableSite struct {
 func (m *WritableSite) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateAsn(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateAsns(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateContactEmail(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateContactName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateContactPhone(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -212,6 +248,22 @@ func (m *WritableSite) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableSite) validateAsn(formats strfmt.Registry) error {
+	if swag.IsZero(m.Asn) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("asn", "body", *m.Asn, 1, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("asn", "body", *m.Asn, 4.294967295e+09, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableSite) validateAsns(formats strfmt.Registry) error {
 	if swag.IsZero(m.Asns) { // not required
 		return nil
@@ -224,12 +276,52 @@ func (m *WritableSite) validateAsns(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WritableSite) validateContactEmail(formats strfmt.Registry) error {
+	if swag.IsZero(m.ContactEmail) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("contact_email", "body", m.ContactEmail.String(), 254); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("contact_email", "body", "email", m.ContactEmail.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) validateContactName(formats strfmt.Registry) error {
+	if swag.IsZero(m.ContactName) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("contact_name", "body", m.ContactName, 50); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableSite) validateContactPhone(formats strfmt.Registry) error {
+	if swag.IsZero(m.ContactPhone) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("contact_phone", "body", m.ContactPhone, 20); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *WritableSite) validateCreated(formats strfmt.Registry) error {
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -492,7 +584,7 @@ func (m *WritableSite) contextValidateCircuitCount(ctx context.Context, formats 
 
 func (m *WritableSite) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -528,7 +620,7 @@ func (m *WritableSite) contextValidateID(ctx context.Context, formats strfmt.Reg
 
 func (m *WritableSite) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

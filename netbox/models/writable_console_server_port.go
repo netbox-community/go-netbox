@@ -43,29 +43,26 @@ type WritableConsoleServerPort struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Cable end
-	// Read Only: true
-	// Min Length: 1
-	CableEnd string `json:"cable_end,omitempty"`
-
+	// Connected endpoint
+	//
 	//
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoints []*string `json:"connected_endpoints"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
 
-	// Connected endpoints reachable
+	// Connected endpoint reachable
 	// Read Only: true
-	ConnectedEndpointsReachable *bool `json:"connected_endpoints_reachable,omitempty"`
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
-	// Connected endpoints type
+	// Connected endpoint type
 	// Read Only: true
-	ConnectedEndpointsType string `json:"connected_endpoints_type,omitempty"`
+	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -82,7 +79,7 @@ type WritableConsoleServerPort struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -95,25 +92,24 @@ type WritableConsoleServerPort struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Link peer
+	//
 	//
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
 
-	// Link peers type
+	// Link peer type
 	// Read Only: true
-	LinkPeersType string `json:"link_peers_type,omitempty"`
+	LinkPeerType string `json:"link_peer_type,omitempty"`
 
 	// Mark connected
 	//
 	// Treat as if a cable is connected
 	MarkConnected bool `json:"mark_connected,omitempty"`
-
-	// Module
-	Module *int64 `json:"module,omitempty"`
 
 	// Name
 	// Required: true
@@ -147,10 +143,6 @@ func (m *WritableConsoleServerPort) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCable(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateCableEnd(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -219,24 +211,12 @@ func (m *WritableConsoleServerPort) validateCable(formats strfmt.Registry) error
 	return nil
 }
 
-func (m *WritableConsoleServerPort) validateCableEnd(formats strfmt.Registry) error {
-	if swag.IsZero(m.CableEnd) { // not required
-		return nil
-	}
-
-	if err := validate.MinLength("cable_end", "body", m.CableEnd, 1); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritableConsoleServerPort) validateCreated(formats strfmt.Registry) error {
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -469,19 +449,15 @@ func (m *WritableConsoleServerPort) ContextValidate(ctx context.Context, formats
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCableEnd(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpoints(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpointsReachable(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpointsType(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -501,11 +477,11 @@ func (m *WritableConsoleServerPort) ContextValidate(ctx context.Context, formats
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeers(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeersType(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -548,36 +524,23 @@ func (m *WritableConsoleServerPort) contextValidateCable(ctx context.Context, fo
 	return nil
 }
 
-func (m *WritableConsoleServerPort) contextValidateCableEnd(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "cable_end", "body", string(m.CableEnd)); err != nil {
+	return nil
+}
+
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *WritableConsoleServerPort) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritableConsoleServerPort) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableConsoleServerPort) contextValidateConnectedEndpointsReachable(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoints_reachable", "body", m.ConnectedEndpointsReachable); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableConsoleServerPort) contextValidateConnectedEndpointsType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoints_type", "body", string(m.ConnectedEndpointsType)); err != nil {
+	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
 		return err
 	}
 
@@ -586,7 +549,7 @@ func (m *WritableConsoleServerPort) contextValidateConnectedEndpointsType(ctx co
 
 func (m *WritableConsoleServerPort) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -613,25 +576,21 @@ func (m *WritableConsoleServerPort) contextValidateID(ctx context.Context, forma
 
 func (m *WritableConsoleServerPort) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *WritableConsoleServerPort) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
-		return err
-	}
+func (m *WritableConsoleServerPort) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *WritableConsoleServerPort) contextValidateLinkPeersType(ctx context.Context, formats strfmt.Registry) error {
+func (m *WritableConsoleServerPort) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers_type", "body", string(m.LinkPeersType)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
 		return err
 	}
 

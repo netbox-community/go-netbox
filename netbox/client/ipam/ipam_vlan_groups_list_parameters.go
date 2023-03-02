@@ -86,20 +86,11 @@ type IpamVlanGroupsListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -155,20 +146,11 @@ type IpamVlanGroupsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -178,42 +160,6 @@ type IpamVlanGroupsListParams struct {
 
 	// Location.
 	Location *float64
-
-	// MaxVid.
-	MaxVid *string
-
-	// MaxVidGt.
-	MaxVidGt *string
-
-	// MaxVidGte.
-	MaxVidGte *string
-
-	// MaxVidLt.
-	MaxVidLt *string
-
-	// MaxVidLte.
-	MaxVidLte *string
-
-	// MaxVidn.
-	MaxVidn *string
-
-	// MinVid.
-	MinVid *string
-
-	// MinVidGt.
-	MinVidGt *string
-
-	// MinVidGte.
-	MinVidGte *string
-
-	// MinVidLt.
-	MinVidLt *string
-
-	// MinVidLte.
-	MinVidLte *string
-
-	// MinVidn.
-	MinVidn *string
 
 	// Name.
 	Name *string
@@ -253,12 +199,6 @@ type IpamVlanGroupsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Q.
 	Q *string
@@ -424,17 +364,6 @@ func (o *IpamVlanGroupsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithCreatedGt(createdGt *string) *IpamVlanGroupsListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) WithCreatedGte(createdGte *string) *IpamVlanGroupsListParams {
 	o.SetCreatedGte(createdGte)
@@ -446,17 +375,6 @@ func (o *IpamVlanGroupsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithCreatedLt(createdLt *string) *IpamVlanGroupsListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) WithCreatedLte(createdLte *string) *IpamVlanGroupsListParams {
 	o.SetCreatedLte(createdLte)
@@ -466,17 +384,6 @@ func (o *IpamVlanGroupsListParams) WithCreatedLte(createdLte *string) *IpamVlanG
 // SetCreatedLte adds the createdLte to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithCreatedn(createdn *string) *IpamVlanGroupsListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the ipam vlan groups list params
@@ -677,17 +584,6 @@ func (o *IpamVlanGroupsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *IpamVlanGroupsListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *IpamVlanGroupsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -699,17 +595,6 @@ func (o *IpamVlanGroupsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *IpamVlanGroupsListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamVlanGroupsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -719,17 +604,6 @@ func (o *IpamVlanGroupsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *I
 // SetLastUpdatedLte adds the lastUpdatedLte to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithLastUpdatedn(lastUpdatedn *string) *IpamVlanGroupsListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the ipam vlan groups list params
@@ -752,138 +626,6 @@ func (o *IpamVlanGroupsListParams) WithLocation(location *float64) *IpamVlanGrou
 // SetLocation adds the location to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) SetLocation(location *float64) {
 	o.Location = location
-}
-
-// WithMaxVid adds the maxVid to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMaxVid(maxVid *string) *IpamVlanGroupsListParams {
-	o.SetMaxVid(maxVid)
-	return o
-}
-
-// SetMaxVid adds the maxVid to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMaxVid(maxVid *string) {
-	o.MaxVid = maxVid
-}
-
-// WithMaxVidGt adds the maxVidGt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMaxVidGt(maxVidGt *string) *IpamVlanGroupsListParams {
-	o.SetMaxVidGt(maxVidGt)
-	return o
-}
-
-// SetMaxVidGt adds the maxVidGt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMaxVidGt(maxVidGt *string) {
-	o.MaxVidGt = maxVidGt
-}
-
-// WithMaxVidGte adds the maxVidGte to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMaxVidGte(maxVidGte *string) *IpamVlanGroupsListParams {
-	o.SetMaxVidGte(maxVidGte)
-	return o
-}
-
-// SetMaxVidGte adds the maxVidGte to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMaxVidGte(maxVidGte *string) {
-	o.MaxVidGte = maxVidGte
-}
-
-// WithMaxVidLt adds the maxVidLt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMaxVidLt(maxVidLt *string) *IpamVlanGroupsListParams {
-	o.SetMaxVidLt(maxVidLt)
-	return o
-}
-
-// SetMaxVidLt adds the maxVidLt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMaxVidLt(maxVidLt *string) {
-	o.MaxVidLt = maxVidLt
-}
-
-// WithMaxVidLte adds the maxVidLte to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMaxVidLte(maxVidLte *string) *IpamVlanGroupsListParams {
-	o.SetMaxVidLte(maxVidLte)
-	return o
-}
-
-// SetMaxVidLte adds the maxVidLte to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMaxVidLte(maxVidLte *string) {
-	o.MaxVidLte = maxVidLte
-}
-
-// WithMaxVidn adds the maxVidn to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMaxVidn(maxVidn *string) *IpamVlanGroupsListParams {
-	o.SetMaxVidn(maxVidn)
-	return o
-}
-
-// SetMaxVidn adds the maxVidN to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMaxVidn(maxVidn *string) {
-	o.MaxVidn = maxVidn
-}
-
-// WithMinVid adds the minVid to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMinVid(minVid *string) *IpamVlanGroupsListParams {
-	o.SetMinVid(minVid)
-	return o
-}
-
-// SetMinVid adds the minVid to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMinVid(minVid *string) {
-	o.MinVid = minVid
-}
-
-// WithMinVidGt adds the minVidGt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMinVidGt(minVidGt *string) *IpamVlanGroupsListParams {
-	o.SetMinVidGt(minVidGt)
-	return o
-}
-
-// SetMinVidGt adds the minVidGt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMinVidGt(minVidGt *string) {
-	o.MinVidGt = minVidGt
-}
-
-// WithMinVidGte adds the minVidGte to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMinVidGte(minVidGte *string) *IpamVlanGroupsListParams {
-	o.SetMinVidGte(minVidGte)
-	return o
-}
-
-// SetMinVidGte adds the minVidGte to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMinVidGte(minVidGte *string) {
-	o.MinVidGte = minVidGte
-}
-
-// WithMinVidLt adds the minVidLt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMinVidLt(minVidLt *string) *IpamVlanGroupsListParams {
-	o.SetMinVidLt(minVidLt)
-	return o
-}
-
-// SetMinVidLt adds the minVidLt to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMinVidLt(minVidLt *string) {
-	o.MinVidLt = minVidLt
-}
-
-// WithMinVidLte adds the minVidLte to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMinVidLte(minVidLte *string) *IpamVlanGroupsListParams {
-	o.SetMinVidLte(minVidLte)
-	return o
-}
-
-// SetMinVidLte adds the minVidLte to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMinVidLte(minVidLte *string) {
-	o.MinVidLte = minVidLte
-}
-
-// WithMinVidn adds the minVidn to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithMinVidn(minVidn *string) *IpamVlanGroupsListParams {
-	o.SetMinVidn(minVidn)
-	return o
-}
-
-// SetMinVidn adds the minVidN to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetMinVidn(minVidn *string) {
-	o.MinVidn = minVidn
 }
 
 // WithName adds the name to the ipam vlan groups list params
@@ -1016,17 +758,6 @@ func (o *IpamVlanGroupsListParams) WithOffset(offset *int64) *IpamVlanGroupsList
 // SetOffset adds the offset to the ipam vlan groups list params
 func (o *IpamVlanGroupsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) WithOrdering(ordering *string) *IpamVlanGroupsListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the ipam vlan groups list params
-func (o *IpamVlanGroupsListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithQ adds the q to the ipam vlan groups list params
@@ -1374,23 +1105,6 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1408,23 +1122,6 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1437,23 +1134,6 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1765,23 +1445,6 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1799,23 +1462,6 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1828,23 +1474,6 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1879,210 +1508,6 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLocation != "" {
 
 			if err := r.SetQueryParam("location", qLocation); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MaxVid != nil {
-
-		// query param max_vid
-		var qrMaxVid string
-
-		if o.MaxVid != nil {
-			qrMaxVid = *o.MaxVid
-		}
-		qMaxVid := qrMaxVid
-		if qMaxVid != "" {
-
-			if err := r.SetQueryParam("max_vid", qMaxVid); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MaxVidGt != nil {
-
-		// query param max_vid__gt
-		var qrMaxVidGt string
-
-		if o.MaxVidGt != nil {
-			qrMaxVidGt = *o.MaxVidGt
-		}
-		qMaxVidGt := qrMaxVidGt
-		if qMaxVidGt != "" {
-
-			if err := r.SetQueryParam("max_vid__gt", qMaxVidGt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MaxVidGte != nil {
-
-		// query param max_vid__gte
-		var qrMaxVidGte string
-
-		if o.MaxVidGte != nil {
-			qrMaxVidGte = *o.MaxVidGte
-		}
-		qMaxVidGte := qrMaxVidGte
-		if qMaxVidGte != "" {
-
-			if err := r.SetQueryParam("max_vid__gte", qMaxVidGte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MaxVidLt != nil {
-
-		// query param max_vid__lt
-		var qrMaxVidLt string
-
-		if o.MaxVidLt != nil {
-			qrMaxVidLt = *o.MaxVidLt
-		}
-		qMaxVidLt := qrMaxVidLt
-		if qMaxVidLt != "" {
-
-			if err := r.SetQueryParam("max_vid__lt", qMaxVidLt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MaxVidLte != nil {
-
-		// query param max_vid__lte
-		var qrMaxVidLte string
-
-		if o.MaxVidLte != nil {
-			qrMaxVidLte = *o.MaxVidLte
-		}
-		qMaxVidLte := qrMaxVidLte
-		if qMaxVidLte != "" {
-
-			if err := r.SetQueryParam("max_vid__lte", qMaxVidLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MaxVidn != nil {
-
-		// query param max_vid__n
-		var qrMaxVidn string
-
-		if o.MaxVidn != nil {
-			qrMaxVidn = *o.MaxVidn
-		}
-		qMaxVidn := qrMaxVidn
-		if qMaxVidn != "" {
-
-			if err := r.SetQueryParam("max_vid__n", qMaxVidn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MinVid != nil {
-
-		// query param min_vid
-		var qrMinVid string
-
-		if o.MinVid != nil {
-			qrMinVid = *o.MinVid
-		}
-		qMinVid := qrMinVid
-		if qMinVid != "" {
-
-			if err := r.SetQueryParam("min_vid", qMinVid); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MinVidGt != nil {
-
-		// query param min_vid__gt
-		var qrMinVidGt string
-
-		if o.MinVidGt != nil {
-			qrMinVidGt = *o.MinVidGt
-		}
-		qMinVidGt := qrMinVidGt
-		if qMinVidGt != "" {
-
-			if err := r.SetQueryParam("min_vid__gt", qMinVidGt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MinVidGte != nil {
-
-		// query param min_vid__gte
-		var qrMinVidGte string
-
-		if o.MinVidGte != nil {
-			qrMinVidGte = *o.MinVidGte
-		}
-		qMinVidGte := qrMinVidGte
-		if qMinVidGte != "" {
-
-			if err := r.SetQueryParam("min_vid__gte", qMinVidGte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MinVidLt != nil {
-
-		// query param min_vid__lt
-		var qrMinVidLt string
-
-		if o.MinVidLt != nil {
-			qrMinVidLt = *o.MinVidLt
-		}
-		qMinVidLt := qrMinVidLt
-		if qMinVidLt != "" {
-
-			if err := r.SetQueryParam("min_vid__lt", qMinVidLt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MinVidLte != nil {
-
-		// query param min_vid__lte
-		var qrMinVidLte string
-
-		if o.MinVidLte != nil {
-			qrMinVidLte = *o.MinVidLte
-		}
-		qMinVidLte := qrMinVidLte
-		if qMinVidLte != "" {
-
-			if err := r.SetQueryParam("min_vid__lte", qMinVidLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.MinVidn != nil {
-
-		// query param min_vid__n
-		var qrMinVidn string
-
-		if o.MinVidn != nil {
-			qrMinVidn = *o.MinVidn
-		}
-		qMinVidn := qrMinVidn
-		if qMinVidn != "" {
-
-			if err := r.SetQueryParam("min_vid__n", qMinVidn); err != nil {
 				return err
 			}
 		}
@@ -2287,23 +1712,6 @@ func (o *IpamVlanGroupsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

@@ -22,7 +22,6 @@ package models
 
 import (
 	"context"
-	"math"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -37,8 +36,8 @@ type FHRPGroupAssignment struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -48,17 +47,17 @@ type FHRPGroupAssignment struct {
 	// Required: true
 	Group *NestedFHRPGroup `json:"group"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Interface
 	// Read Only: true
-	Interface interface{} `json:"interface,omitempty"`
+	Interface map[string]*string `json:"interface,omitempty"`
 
 	// Interface id
 	// Required: true
-	// Maximum: math.MaxInt64
+	// Maximum: 2.147483647e+09
 	// Minimum: 0
 	InterfaceID *int64 `json:"interface_id"`
 
@@ -69,7 +68,7 @@ type FHRPGroupAssignment struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Priority
 	// Required: true
@@ -126,7 +125,7 @@ func (m *FHRPGroupAssignment) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -163,7 +162,7 @@ func (m *FHRPGroupAssignment) validateInterfaceID(formats strfmt.Registry) error
 		return err
 	}
 
-	if err := validate.MaximumInt("interface_id", "body", *m.InterfaceID, math.MaxInt64, false); err != nil {
+	if err := validate.MaximumInt("interface_id", "body", *m.InterfaceID, 2.147483647e+09, false); err != nil {
 		return err
 	}
 
@@ -240,6 +239,10 @@ func (m *FHRPGroupAssignment) ContextValidate(ctx context.Context, formats strfm
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateInterface(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateLastUpdated(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -256,7 +259,7 @@ func (m *FHRPGroupAssignment) ContextValidate(ctx context.Context, formats strfm
 
 func (m *FHRPGroupAssignment) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -297,9 +300,14 @@ func (m *FHRPGroupAssignment) contextValidateID(ctx context.Context, formats str
 	return nil
 }
 
+func (m *FHRPGroupAssignment) contextValidateInterface(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 func (m *FHRPGroupAssignment) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

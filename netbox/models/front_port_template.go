@@ -42,21 +42,22 @@ type FrontPortTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// device type
-	DeviceType *NestedDeviceType `json:"device_type,omitempty"`
+	// Required: true
+	DeviceType *NestedDeviceType `json:"device_type"`
 
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -69,16 +70,9 @@ type FrontPortTemplate struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
-
-	// module type
-	ModuleType *NestedModuleType `json:"module_type,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
-	//
-	//
-	// {module} is accepted as a substitution for the module bay position when attached to a module type.
-	//
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1
@@ -131,10 +125,6 @@ func (m *FrontPortTemplate) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateModuleType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -182,7 +172,7 @@ func (m *FrontPortTemplate) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -202,8 +192,9 @@ func (m *FrontPortTemplate) validateDescription(formats strfmt.Registry) error {
 }
 
 func (m *FrontPortTemplate) validateDeviceType(formats strfmt.Registry) error {
-	if swag.IsZero(m.DeviceType) { // not required
-		return nil
+
+	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
+		return err
 	}
 
 	if m.DeviceType != nil {
@@ -239,25 +230,6 @@ func (m *FrontPortTemplate) validateLastUpdated(formats strfmt.Registry) error {
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *FrontPortTemplate) validateModuleType(formats strfmt.Registry) error {
-	if swag.IsZero(m.ModuleType) { // not required
-		return nil
-	}
-
-	if m.ModuleType != nil {
-		if err := m.ModuleType.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("module_type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("module_type")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -372,10 +344,6 @@ func (m *FrontPortTemplate) ContextValidate(ctx context.Context, formats strfmt.
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateModuleType(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateRearPort(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -396,7 +364,7 @@ func (m *FrontPortTemplate) ContextValidate(ctx context.Context, formats strfmt.
 
 func (m *FrontPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -439,24 +407,8 @@ func (m *FrontPortTemplate) contextValidateID(ctx context.Context, formats strfm
 
 func (m *FrontPortTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *FrontPortTemplate) contextValidateModuleType(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.ModuleType != nil {
-		if err := m.ModuleType.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("module_type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("module_type")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -528,12 +480,12 @@ type FrontPortTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/PC LC/UPC LC/APC LSH LSH/PC LSH/UPC LSH/APC MPO MTRJ SC SC/PC SC/UPC SC/APC ST CS SN SMA 905 SMA 906 URM-P2 URM-P4 URM-P8 Splice Other]
+	// Enum: [8P8C 8P6C 8P4C 8P2C 6P6C 6P4C 6P2C 4P4C 4P2C GG45 TERA 4P TERA 2P TERA 1P 110 Punch BNC F Connector N Connector MRJ21 FC LC LC/PC LC/UPC LC/APC LSH LSH/PC LSH/UPC LSH/APC MPO MTRJ SC SC/PC SC/UPC SC/APC ST CS SN SMA 905 SMA 906 URM-P2 URM-P4 URM-P8 Splice]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice other]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
 	Value *string `json:"value"`
 }
 
@@ -559,7 +511,7 @@ var frontPortTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/PC","LC/UPC","LC/APC","LSH","LSH/PC","LSH/UPC","LSH/APC","MPO","MTRJ","SC","SC/PC","SC/UPC","SC/APC","ST","CS","SN","SMA 905","SMA 906","URM-P2","URM-P4","URM-P8","Splice","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8P8C","8P6C","8P4C","8P2C","6P6C","6P4C","6P2C","4P4C","4P2C","GG45","TERA 4P","TERA 2P","TERA 1P","110 Punch","BNC","F Connector","N Connector","MRJ21","FC","LC","LC/PC","LC/UPC","LC/APC","LSH","LSH/PC","LSH/UPC","LSH/APC","MPO","MTRJ","SC","SC/PC","SC/UPC","SC/APC","ST","CS","SN","SMA 905","SMA 906","URM-P2","URM-P4","URM-P8","Splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -694,9 +646,6 @@ const (
 
 	// FrontPortTemplateTypeLabelSplice captures enum value "Splice"
 	FrontPortTemplateTypeLabelSplice string = "Splice"
-
-	// FrontPortTemplateTypeLabelOther captures enum value "Other"
-	FrontPortTemplateTypeLabelOther string = "Other"
 )
 
 // prop value enum
@@ -725,7 +674,7 @@ var frontPortTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -860,9 +809,6 @@ const (
 
 	// FrontPortTemplateTypeValueSplice captures enum value "splice"
 	FrontPortTemplateTypeValueSplice string = "splice"
-
-	// FrontPortTemplateTypeValueOther captures enum value "other"
-	FrontPortTemplateTypeValueOther string = "other"
 )
 
 // prop value enum

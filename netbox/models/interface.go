@@ -46,24 +46,21 @@ type Interface struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Cable end
-	// Read Only: true
-	// Min Length: 1
-	CableEnd string `json:"cable_end,omitempty"`
-
+	// Connected endpoint
+	//
 	//
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoints []*string `json:"connected_endpoints"`
+	ConnectedEndpoint map[string]*string `json:"connected_endpoint,omitempty"`
 
-	// Connected endpoints reachable
+	// Connected endpoint reachable
 	// Read Only: true
-	ConnectedEndpointsReachable *bool `json:"connected_endpoints_reachable,omitempty"`
+	ConnectedEndpointReachable *bool `json:"connected_endpoint_reachable,omitempty"`
 
-	// Connected endpoints type
+	// Connected endpoint type
 	// Read Only: true
-	ConnectedEndpointsType string `json:"connected_endpoints_type,omitempty"`
+	ConnectedEndpointType string `json:"connected_endpoint_type,omitempty"`
 
 	// Count fhrp groups
 	// Read Only: true
@@ -75,8 +72,8 @@ type Interface struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -93,18 +90,12 @@ type Interface struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// duplex
-	Duplex *InterfaceDuplex `json:"duplex,omitempty"`
-
 	// Enabled
 	Enabled bool `json:"enabled,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
-
-	// l2vpn termination
-	L2vpnTermination *NestedL2VPNTermination `json:"l2vpn_termination,omitempty"`
 
 	// Label
 	//
@@ -118,17 +109,19 @@ type Interface struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
+	// Link peer
+	//
 	//
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	LinkPeer map[string]*string `json:"link_peer,omitempty"`
 
-	// Link peers type
+	// Link peer type
 	// Read Only: true
-	LinkPeersType string `json:"link_peers_type,omitempty"`
+	LinkPeerType string `json:"link_peer_type,omitempty"`
 
 	// MAC Address
 	MacAddress *string `json:"mac_address,omitempty"`
@@ -146,9 +139,6 @@ type Interface struct {
 	// mode
 	Mode *InterfaceMode `json:"mode,omitempty"`
 
-	// module
-	Module *ComponentNestedModule `json:"module,omitempty"`
-
 	// MTU
 	// Maximum: 65536
 	// Minimum: 1
@@ -163,12 +153,6 @@ type Interface struct {
 	// parent
 	Parent *NestedInterface `json:"parent,omitempty"`
 
-	// poe mode
-	PoeMode *InterfacePoeMode `json:"poe_mode,omitempty"`
-
-	// poe type
-	PoeType *InterfacePoeType `json:"poe_type,omitempty"`
-
 	// rf channel
 	RfChannel *InterfaceRfChannel `json:"rf_channel,omitempty"`
 
@@ -180,11 +164,6 @@ type Interface struct {
 
 	// rf role
 	RfRole *InterfaceRfRole `json:"rf_role,omitempty"`
-
-	// Speed (Kbps)
-	// Maximum: 2.147483647e+09
-	// Minimum: 0
-	Speed *int64 `json:"speed,omitempty"`
 
 	// tagged vlans
 	// Unique: true
@@ -209,13 +188,6 @@ type Interface struct {
 	// Read Only: true
 	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
-
-	// vdcs
-	// Unique: true
-	Vdcs []*NestedVirtualDeviceContext `json:"vdcs"`
-
-	// vrf
-	Vrf *NestedVRF `json:"vrf,omitempty"`
 
 	// wireless lans
 	// Unique: true
@@ -242,10 +214,6 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateCableEnd(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateCreated(formats); err != nil {
 		res = append(res, err)
 	}
@@ -255,14 +223,6 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDevice(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateDuplex(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateL2vpnTermination(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -282,10 +242,6 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateModule(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateMtu(formats); err != nil {
 		res = append(res, err)
 	}
@@ -298,23 +254,11 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validatePoeMode(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePoeType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateRfChannel(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateRfRole(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateSpeed(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -339,14 +283,6 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateURL(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateVdcs(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateVrf(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -402,24 +338,12 @@ func (m *Interface) validateCable(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Interface) validateCableEnd(formats strfmt.Registry) error {
-	if swag.IsZero(m.CableEnd) { // not required
-		return nil
-	}
-
-	if err := validate.MinLength("cable_end", "body", m.CableEnd, 1); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *Interface) validateCreated(formats strfmt.Registry) error {
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -450,44 +374,6 @@ func (m *Interface) validateDevice(formats strfmt.Registry) error {
 				return ve.ValidateName("device")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("device")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *Interface) validateDuplex(formats strfmt.Registry) error {
-	if swag.IsZero(m.Duplex) { // not required
-		return nil
-	}
-
-	if m.Duplex != nil {
-		if err := m.Duplex.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("duplex")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("duplex")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *Interface) validateL2vpnTermination(formats strfmt.Registry) error {
-	if swag.IsZero(m.L2vpnTermination) { // not required
-		return nil
-	}
-
-	if m.L2vpnTermination != nil {
-		if err := m.L2vpnTermination.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("l2vpn_termination")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("l2vpn_termination")
 			}
 			return err
 		}
@@ -558,25 +444,6 @@ func (m *Interface) validateMode(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Interface) validateModule(formats strfmt.Registry) error {
-	if swag.IsZero(m.Module) { // not required
-		return nil
-	}
-
-	if m.Module != nil {
-		if err := m.Module.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("module")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("module")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Interface) validateMtu(formats strfmt.Registry) error {
 	if swag.IsZero(m.Mtu) { // not required
 		return nil
@@ -629,44 +496,6 @@ func (m *Interface) validateParent(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Interface) validatePoeMode(formats strfmt.Registry) error {
-	if swag.IsZero(m.PoeMode) { // not required
-		return nil
-	}
-
-	if m.PoeMode != nil {
-		if err := m.PoeMode.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("poe_mode")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("poe_mode")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *Interface) validatePoeType(formats strfmt.Registry) error {
-	if swag.IsZero(m.PoeType) { // not required
-		return nil
-	}
-
-	if m.PoeType != nil {
-		if err := m.PoeType.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("poe_type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("poe_type")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Interface) validateRfChannel(formats strfmt.Registry) error {
 	if swag.IsZero(m.RfChannel) { // not required
 		return nil
@@ -700,22 +529,6 @@ func (m *Interface) validateRfRole(formats strfmt.Registry) error {
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-func (m *Interface) validateSpeed(formats strfmt.Registry) error {
-	if swag.IsZero(m.Speed) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("speed", "body", *m.Speed, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("speed", "body", *m.Speed, 2.147483647e+09, false); err != nil {
-		return err
 	}
 
 	return nil
@@ -844,55 +657,6 @@ func (m *Interface) validateURL(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Interface) validateVdcs(formats strfmt.Registry) error {
-	if swag.IsZero(m.Vdcs) { // not required
-		return nil
-	}
-
-	if err := validate.UniqueItems("vdcs", "body", m.Vdcs); err != nil {
-		return err
-	}
-
-	for i := 0; i < len(m.Vdcs); i++ {
-		if swag.IsZero(m.Vdcs[i]) { // not required
-			continue
-		}
-
-		if m.Vdcs[i] != nil {
-			if err := m.Vdcs[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("vdcs" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("vdcs" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
-	return nil
-}
-
-func (m *Interface) validateVrf(formats strfmt.Registry) error {
-	if swag.IsZero(m.Vrf) { // not required
-		return nil
-	}
-
-	if m.Vrf != nil {
-		if err := m.Vrf.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("vrf")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("vrf")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Interface) validateWirelessLans(formats strfmt.Registry) error {
 	if swag.IsZero(m.WirelessLans) { // not required
 		return nil
@@ -958,19 +722,15 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateCableEnd(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpoint(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpoints(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpointReachable(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpointsReachable(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateConnectedEndpointsType(ctx, formats); err != nil {
+	if err := m.contextValidateConnectedEndpointType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -994,15 +754,7 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateDuplex(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateID(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateL2vpnTermination(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -1014,11 +766,11 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeers(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeer(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeersType(ctx, formats); err != nil {
+	if err := m.contextValidateLinkPeerType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -1026,19 +778,7 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateModule(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateParent(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidatePoeMode(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidatePoeType(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -1067,14 +807,6 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 	}
 
 	if err := m.contextValidateURL(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateVdcs(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.contextValidateVrf(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -1133,36 +865,23 @@ func (m *Interface) contextValidateCable(ctx context.Context, formats strfmt.Reg
 	return nil
 }
 
-func (m *Interface) contextValidateCableEnd(ctx context.Context, formats strfmt.Registry) error {
+func (m *Interface) contextValidateConnectedEndpoint(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "cable_end", "body", string(m.CableEnd)); err != nil {
+	return nil
+}
+
+func (m *Interface) contextValidateConnectedEndpointReachable(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "connected_endpoint_reachable", "body", m.ConnectedEndpointReachable); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *Interface) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
+func (m *Interface) contextValidateConnectedEndpointType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *Interface) contextValidateConnectedEndpointsReachable(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoints_reachable", "body", m.ConnectedEndpointsReachable); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *Interface) contextValidateConnectedEndpointsType(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "connected_endpoints_type", "body", string(m.ConnectedEndpointsType)); err != nil {
+	if err := validate.ReadOnly(ctx, "connected_endpoint_type", "body", string(m.ConnectedEndpointType)); err != nil {
 		return err
 	}
 
@@ -1189,7 +908,7 @@ func (m *Interface) contextValidateCountIpaddresses(ctx context.Context, formats
 
 func (m *Interface) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -1221,42 +940,10 @@ func (m *Interface) contextValidateDisplay(ctx context.Context, formats strfmt.R
 	return nil
 }
 
-func (m *Interface) contextValidateDuplex(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Duplex != nil {
-		if err := m.Duplex.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("duplex")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("duplex")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Interface) contextValidateID(ctx context.Context, formats strfmt.Registry) error {
 
 	if err := validate.ReadOnly(ctx, "id", "body", int64(m.ID)); err != nil {
 		return err
-	}
-
-	return nil
-}
-
-func (m *Interface) contextValidateL2vpnTermination(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.L2vpnTermination != nil {
-		if err := m.L2vpnTermination.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("l2vpn_termination")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("l2vpn_termination")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -1280,25 +967,21 @@ func (m *Interface) contextValidateLag(ctx context.Context, formats strfmt.Regis
 
 func (m *Interface) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *Interface) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
-
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
-		return err
-	}
+func (m *Interface) contextValidateLinkPeer(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *Interface) contextValidateLinkPeersType(ctx context.Context, formats strfmt.Registry) error {
+func (m *Interface) contextValidateLinkPeerType(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers_type", "body", string(m.LinkPeersType)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peer_type", "body", string(m.LinkPeerType)); err != nil {
 		return err
 	}
 
@@ -1321,22 +1004,6 @@ func (m *Interface) contextValidateMode(ctx context.Context, formats strfmt.Regi
 	return nil
 }
 
-func (m *Interface) contextValidateModule(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Module != nil {
-		if err := m.Module.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("module")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("module")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Interface) contextValidateParent(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Parent != nil {
@@ -1345,38 +1012,6 @@ func (m *Interface) contextValidateParent(ctx context.Context, formats strfmt.Re
 				return ve.ValidateName("parent")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("parent")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *Interface) contextValidatePoeMode(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.PoeMode != nil {
-		if err := m.PoeMode.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("poe_mode")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("poe_mode")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *Interface) contextValidatePoeType(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.PoeType != nil {
-		if err := m.PoeType.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("poe_type")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("poe_type")
 			}
 			return err
 		}
@@ -1498,42 +1133,6 @@ func (m *Interface) contextValidateURL(ctx context.Context, formats strfmt.Regis
 	return nil
 }
 
-func (m *Interface) contextValidateVdcs(ctx context.Context, formats strfmt.Registry) error {
-
-	for i := 0; i < len(m.Vdcs); i++ {
-
-		if m.Vdcs[i] != nil {
-			if err := m.Vdcs[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("vdcs" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("vdcs" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
-	}
-
-	return nil
-}
-
-func (m *Interface) contextValidateVrf(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Vrf != nil {
-		if err := m.Vrf.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("vrf")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("vrf")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *Interface) contextValidateWirelessLans(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.WirelessLans); i++ {
@@ -1581,155 +1180,6 @@ func (m *Interface) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *Interface) UnmarshalBinary(b []byte) error {
 	var res Interface
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// InterfaceDuplex Duplex
-//
-// swagger:model InterfaceDuplex
-type InterfaceDuplex struct {
-
-	// label
-	// Required: true
-	// Enum: [Half Full Auto]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [half full auto]
-	Value *string `json:"value"`
-}
-
-// Validate validates this interface duplex
-func (m *InterfaceDuplex) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var interfaceDuplexTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["Half","Full","Auto"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfaceDuplexTypeLabelPropEnum = append(interfaceDuplexTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// InterfaceDuplexLabelHalf captures enum value "Half"
-	InterfaceDuplexLabelHalf string = "Half"
-
-	// InterfaceDuplexLabelFull captures enum value "Full"
-	InterfaceDuplexLabelFull string = "Full"
-
-	// InterfaceDuplexLabelAuto captures enum value "Auto"
-	InterfaceDuplexLabelAuto string = "Auto"
-)
-
-// prop value enum
-func (m *InterfaceDuplex) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, interfaceDuplexTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfaceDuplex) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("duplex"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("duplex"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var interfaceDuplexTypeValuePropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["half","full","auto"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfaceDuplexTypeValuePropEnum = append(interfaceDuplexTypeValuePropEnum, v)
-	}
-}
-
-const (
-
-	// InterfaceDuplexValueHalf captures enum value "half"
-	InterfaceDuplexValueHalf string = "half"
-
-	// InterfaceDuplexValueFull captures enum value "full"
-	InterfaceDuplexValueFull string = "full"
-
-	// InterfaceDuplexValueAuto captures enum value "auto"
-	InterfaceDuplexValueAuto string = "auto"
-)
-
-// prop value enum
-func (m *InterfaceDuplex) validateValueEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, interfaceDuplexTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfaceDuplex) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("duplex"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("duplex"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// ContextValidate validates this interface duplex based on context it is used
-func (m *InterfaceDuplex) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *InterfaceDuplex) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *InterfaceDuplex) UnmarshalBinary(b []byte) error {
-	var res InterfaceDuplex
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -1879,328 +1329,6 @@ func (m *InterfaceMode) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *InterfaceMode) UnmarshalBinary(b []byte) error {
 	var res InterfaceMode
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// InterfacePoeMode Poe mode
-//
-// swagger:model InterfacePoeMode
-type InterfacePoeMode struct {
-
-	// label
-	// Required: true
-	// Enum: [PD PSE]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [pd pse]
-	Value *string `json:"value"`
-}
-
-// Validate validates this interface poe mode
-func (m *InterfacePoeMode) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var interfacePoeModeTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["PD","PSE"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfacePoeModeTypeLabelPropEnum = append(interfacePoeModeTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// InterfacePoeModeLabelPD captures enum value "PD"
-	InterfacePoeModeLabelPD string = "PD"
-
-	// InterfacePoeModeLabelPSE captures enum value "PSE"
-	InterfacePoeModeLabelPSE string = "PSE"
-)
-
-// prop value enum
-func (m *InterfacePoeMode) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, interfacePoeModeTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfacePoeMode) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("poe_mode"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("poe_mode"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var interfacePoeModeTypeValuePropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["pd","pse"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfacePoeModeTypeValuePropEnum = append(interfacePoeModeTypeValuePropEnum, v)
-	}
-}
-
-const (
-
-	// InterfacePoeModeValuePd captures enum value "pd"
-	InterfacePoeModeValuePd string = "pd"
-
-	// InterfacePoeModeValuePse captures enum value "pse"
-	InterfacePoeModeValuePse string = "pse"
-)
-
-// prop value enum
-func (m *InterfacePoeMode) validateValueEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, interfacePoeModeTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfacePoeMode) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("poe_mode"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("poe_mode"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// ContextValidate validates this interface poe mode based on context it is used
-func (m *InterfacePoeMode) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *InterfacePoeMode) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *InterfacePoeMode) UnmarshalBinary(b []byte) error {
-	var res InterfacePoeMode
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
-	return nil
-}
-
-// InterfacePoeType Poe type
-//
-// swagger:model InterfacePoeType
-type InterfacePoeType struct {
-
-	// label
-	// Required: true
-	// Enum: [802.3af (Type 1) 802.3at (Type 2) 802.3bt (Type 3) 802.3bt (Type 4) Passive 24V (2-pair) Passive 24V (4-pair) Passive 48V (2-pair) Passive 48V (4-pair)]
-	Label *string `json:"label"`
-
-	// value
-	// Required: true
-	// Enum: [type1-ieee802.3af type2-ieee802.3at type3-ieee802.3bt type4-ieee802.3bt passive-24v-2pair passive-24v-4pair passive-48v-2pair passive-48v-4pair]
-	Value *string `json:"value"`
-}
-
-// Validate validates this interface poe type
-func (m *InterfacePoeType) Validate(formats strfmt.Registry) error {
-	var res []error
-
-	if err := m.validateLabel(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateValue(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if len(res) > 0 {
-		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var interfacePoeTypeTypeLabelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["802.3af (Type 1)","802.3at (Type 2)","802.3bt (Type 3)","802.3bt (Type 4)","Passive 24V (2-pair)","Passive 24V (4-pair)","Passive 48V (2-pair)","Passive 48V (4-pair)"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfacePoeTypeTypeLabelPropEnum = append(interfacePoeTypeTypeLabelPropEnum, v)
-	}
-}
-
-const (
-
-	// InterfacePoeTypeLabelNr802Dot3afType1 captures enum value "802.3af (Type 1)"
-	InterfacePoeTypeLabelNr802Dot3afType1 string = "802.3af (Type 1)"
-
-	// InterfacePoeTypeLabelNr802Dot3atType2 captures enum value "802.3at (Type 2)"
-	InterfacePoeTypeLabelNr802Dot3atType2 string = "802.3at (Type 2)"
-
-	// InterfacePoeTypeLabelNr802Dot3btType3 captures enum value "802.3bt (Type 3)"
-	InterfacePoeTypeLabelNr802Dot3btType3 string = "802.3bt (Type 3)"
-
-	// InterfacePoeTypeLabelNr802Dot3btType4 captures enum value "802.3bt (Type 4)"
-	InterfacePoeTypeLabelNr802Dot3btType4 string = "802.3bt (Type 4)"
-
-	// InterfacePoeTypeLabelPassive24V2DashPair captures enum value "Passive 24V (2-pair)"
-	InterfacePoeTypeLabelPassive24V2DashPair string = "Passive 24V (2-pair)"
-
-	// InterfacePoeTypeLabelPassive24V4DashPair captures enum value "Passive 24V (4-pair)"
-	InterfacePoeTypeLabelPassive24V4DashPair string = "Passive 24V (4-pair)"
-
-	// InterfacePoeTypeLabelPassive48V2DashPair captures enum value "Passive 48V (2-pair)"
-	InterfacePoeTypeLabelPassive48V2DashPair string = "Passive 48V (2-pair)"
-
-	// InterfacePoeTypeLabelPassive48V4DashPair captures enum value "Passive 48V (4-pair)"
-	InterfacePoeTypeLabelPassive48V4DashPair string = "Passive 48V (4-pair)"
-)
-
-// prop value enum
-func (m *InterfacePoeType) validateLabelEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, interfacePoeTypeTypeLabelPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfacePoeType) validateLabel(formats strfmt.Registry) error {
-
-	if err := validate.Required("poe_type"+"."+"label", "body", m.Label); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLabelEnum("poe_type"+"."+"label", "body", *m.Label); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var interfacePoeTypeTypeValuePropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["type1-ieee802.3af","type2-ieee802.3at","type3-ieee802.3bt","type4-ieee802.3bt","passive-24v-2pair","passive-24v-4pair","passive-48v-2pair","passive-48v-4pair"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		interfacePoeTypeTypeValuePropEnum = append(interfacePoeTypeTypeValuePropEnum, v)
-	}
-}
-
-const (
-
-	// InterfacePoeTypeValueType1DashIeee802Dot3af captures enum value "type1-ieee802.3af"
-	InterfacePoeTypeValueType1DashIeee802Dot3af string = "type1-ieee802.3af"
-
-	// InterfacePoeTypeValueType2DashIeee802Dot3at captures enum value "type2-ieee802.3at"
-	InterfacePoeTypeValueType2DashIeee802Dot3at string = "type2-ieee802.3at"
-
-	// InterfacePoeTypeValueType3DashIeee802Dot3bt captures enum value "type3-ieee802.3bt"
-	InterfacePoeTypeValueType3DashIeee802Dot3bt string = "type3-ieee802.3bt"
-
-	// InterfacePoeTypeValueType4DashIeee802Dot3bt captures enum value "type4-ieee802.3bt"
-	InterfacePoeTypeValueType4DashIeee802Dot3bt string = "type4-ieee802.3bt"
-
-	// InterfacePoeTypeValuePassiveDash24vDash2pair captures enum value "passive-24v-2pair"
-	InterfacePoeTypeValuePassiveDash24vDash2pair string = "passive-24v-2pair"
-
-	// InterfacePoeTypeValuePassiveDash24vDash4pair captures enum value "passive-24v-4pair"
-	InterfacePoeTypeValuePassiveDash24vDash4pair string = "passive-24v-4pair"
-
-	// InterfacePoeTypeValuePassiveDash48vDash2pair captures enum value "passive-48v-2pair"
-	InterfacePoeTypeValuePassiveDash48vDash2pair string = "passive-48v-2pair"
-
-	// InterfacePoeTypeValuePassiveDash48vDash4pair captures enum value "passive-48v-4pair"
-	InterfacePoeTypeValuePassiveDash48vDash4pair string = "passive-48v-4pair"
-)
-
-// prop value enum
-func (m *InterfacePoeType) validateValueEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, interfacePoeTypeTypeValuePropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *InterfacePoeType) validateValue(formats strfmt.Registry) error {
-
-	if err := validate.Required("poe_type"+"."+"value", "body", m.Value); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateValueEnum("poe_type"+"."+"value", "body", *m.Value); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// ContextValidate validates this interface poe type based on context it is used
-func (m *InterfacePoeType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *InterfacePoeType) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *InterfacePoeType) UnmarshalBinary(b []byte) error {
-	var res InterfacePoeType
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -3671,12 +2799,12 @@ type InterfaceType struct {
 
 	// label
 	// Required: true
-	// Enum: [Virtual Bridge Link Aggregation Group (LAG) 100BASE-FX (10/100ME FIBER) 100BASE-LFX (10/100ME FIBER) 100BASE-TX (10/100ME) 100BASE-T1 (10/100ME Single Pair) 1000BASE-T (1GE) 2.5GBASE-T (2.5GE) 5GBASE-T (5GE) 10GBASE-T (10GE) 10GBASE-CX4 (10GE) GBIC (1GE) SFP (1GE) SFP+ (10GE) XFP (10GE) XENPAK (10GE) X2 (10GE) SFP28 (25GE) SFP56 (50GE) QSFP+ (40GE) QSFP28 (50GE) CFP (100GE) CFP2 (100GE) CFP2 (200GE) CFP4 (100GE) Cisco CPAK (100GE) QSFP28 (100GE) QSFP56 (200GE) QSFP-DD (400GE) OSFP (400GE) QSFP-DD (800GE) OSFP (800GE) 1000BASE-KX (1GE) 10GBASE-KR (10GE) 10GBASE-KX4 (10GE) 25GBASE-KR (25GE) 40GBASE-KR4 (40GE) 50GBASE-KR (50GE) 100GBASE-KP4 (100GE) 100GBASE-KR2 (100GE) 100GBASE-KR4 (100GE) IEEE 802.11a IEEE 802.11b/g IEEE 802.11n IEEE 802.11ac IEEE 802.11ad IEEE 802.11ax IEEE 802.11ay IEEE 802.15.1 (Bluetooth) Other (Wireless) GSM CDMA LTE OC-3/STM-1 OC-12/STM-4 OC-48/STM-16 OC-192/STM-64 OC-768/STM-256 OC-1920/STM-640 OC-3840/STM-1234 SFP (1GFC) SFP (2GFC) SFP (4GFC) SFP+ (8GFC) SFP+ (16GFC) SFP28 (32GFC) QSFP+ (64GFC) QSFP28 (128GFC) SDR (2 Gbps) DDR (4 Gbps) QDR (8 Gbps) FDR10 (10 Gbps) FDR (13.5 Gbps) EDR (25 Gbps) HDR (50 Gbps) NDR (100 Gbps) XDR (250 Gbps) T1 (1.544 Mbps) E1 (2.048 Mbps) T3 (45 Mbps) E3 (34 Mbps) xDSL DOCSIS GPON (2.5 Gbps / 1.25 Gps) XG-PON (10 Gbps / 2.5 Gbps) XGS-PON (10 Gbps) NG-PON2 (TWDM-PON) (4x10 Gbps) EPON (1 Gbps) 10G-EPON (10 Gbps) Cisco StackWise Cisco StackWise Plus Cisco FlexStack Cisco FlexStack Plus Cisco StackWise-80 Cisco StackWise-160 Cisco StackWise-320 Cisco StackWise-480 Juniper VCP Extreme SummitStack Extreme SummitStack-128 Extreme SummitStack-256 Extreme SummitStack-512 Other]
+	// Enum: [Virtual Bridge Link Aggregation Group (LAG) 100BASE-TX (10/100ME) 1000BASE-T (1GE) 2.5GBASE-T (2.5GE) 5GBASE-T (5GE) 10GBASE-T (10GE) 10GBASE-CX4 (10GE) GBIC (1GE) SFP (1GE) SFP+ (10GE) XFP (10GE) XENPAK (10GE) X2 (10GE) SFP28 (25GE) SFP56 (50GE) QSFP+ (40GE) QSFP28 (50GE) CFP (100GE) CFP2 (100GE) CFP2 (200GE) CFP4 (100GE) Cisco CPAK (100GE) QSFP28 (100GE) QSFP56 (200GE) QSFP-DD (400GE) OSFP (400GE) IEEE 802.11a IEEE 802.11b/g IEEE 802.11n IEEE 802.11ac IEEE 802.11ad IEEE 802.11ax IEEE 802.15.1 (Bluetooth) GSM CDMA LTE OC-3/STM-1 OC-12/STM-4 OC-48/STM-16 OC-192/STM-64 OC-768/STM-256 OC-1920/STM-640 OC-3840/STM-1234 SFP (1GFC) SFP (2GFC) SFP (4GFC) SFP+ (8GFC) SFP+ (16GFC) SFP28 (32GFC) QSFP+ (64GFC) QSFP28 (128GFC) SDR (2 Gbps) DDR (4 Gbps) QDR (8 Gbps) FDR10 (10 Gbps) FDR (13.5 Gbps) EDR (25 Gbps) HDR (50 Gbps) NDR (100 Gbps) XDR (250 Gbps) T1 (1.544 Mbps) E1 (2.048 Mbps) T3 (45 Mbps) E3 (34 Mbps) xDSL Cisco StackWise Cisco StackWise Plus Cisco FlexStack Cisco FlexStack Plus Cisco StackWise-80 Cisco StackWise-160 Cisco StackWise-320 Cisco StackWise-480 Juniper VCP Extreme SummitStack Extreme SummitStack-128 Extreme SummitStack-256 Extreme SummitStack-512 Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [virtual bridge lag 100base-fx 100base-lfx 100base-tx 100base-t1 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp 800gbase-x-qsfpdd 800gbase-x-osfp 1000base-kx 10gbase-kr 10gbase-kx4 25gbase-kr 40gbase-kr4 50gbase-kr 100gbase-kp4 100gbase-kr2 100gbase-kr4 ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax ieee802.11ay ieee802.15.1 other-wireless gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-qsfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl docsis gpon xg-pon xgs-pon ng-pon2 epon 10g-epon cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus cisco-stackwise-80 cisco-stackwise-160 cisco-stackwise-320 cisco-stackwise-480 juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
+	// Enum: [virtual bridge lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax ieee802.15.1 gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-qsfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus cisco-stackwise-80 cisco-stackwise-160 cisco-stackwise-320 cisco-stackwise-480 juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
 	Value *string `json:"value"`
 }
 
@@ -3702,7 +2830,7 @@ var interfaceTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Virtual","Bridge","Link Aggregation Group (LAG)","100BASE-FX (10/100ME FIBER)","100BASE-LFX (10/100ME FIBER)","100BASE-TX (10/100ME)","100BASE-T1 (10/100ME Single Pair)","1000BASE-T (1GE)","2.5GBASE-T (2.5GE)","5GBASE-T (5GE)","10GBASE-T (10GE)","10GBASE-CX4 (10GE)","GBIC (1GE)","SFP (1GE)","SFP+ (10GE)","XFP (10GE)","XENPAK (10GE)","X2 (10GE)","SFP28 (25GE)","SFP56 (50GE)","QSFP+ (40GE)","QSFP28 (50GE)","CFP (100GE)","CFP2 (100GE)","CFP2 (200GE)","CFP4 (100GE)","Cisco CPAK (100GE)","QSFP28 (100GE)","QSFP56 (200GE)","QSFP-DD (400GE)","OSFP (400GE)","QSFP-DD (800GE)","OSFP (800GE)","1000BASE-KX (1GE)","10GBASE-KR (10GE)","10GBASE-KX4 (10GE)","25GBASE-KR (25GE)","40GBASE-KR4 (40GE)","50GBASE-KR (50GE)","100GBASE-KP4 (100GE)","100GBASE-KR2 (100GE)","100GBASE-KR4 (100GE)","IEEE 802.11a","IEEE 802.11b/g","IEEE 802.11n","IEEE 802.11ac","IEEE 802.11ad","IEEE 802.11ax","IEEE 802.11ay","IEEE 802.15.1 (Bluetooth)","Other (Wireless)","GSM","CDMA","LTE","OC-3/STM-1","OC-12/STM-4","OC-48/STM-16","OC-192/STM-64","OC-768/STM-256","OC-1920/STM-640","OC-3840/STM-1234","SFP (1GFC)","SFP (2GFC)","SFP (4GFC)","SFP+ (8GFC)","SFP+ (16GFC)","SFP28 (32GFC)","QSFP+ (64GFC)","QSFP28 (128GFC)","SDR (2 Gbps)","DDR (4 Gbps)","QDR (8 Gbps)","FDR10 (10 Gbps)","FDR (13.5 Gbps)","EDR (25 Gbps)","HDR (50 Gbps)","NDR (100 Gbps)","XDR (250 Gbps)","T1 (1.544 Mbps)","E1 (2.048 Mbps)","T3 (45 Mbps)","E3 (34 Mbps)","xDSL","DOCSIS","GPON (2.5 Gbps / 1.25 Gps)","XG-PON (10 Gbps / 2.5 Gbps)","XGS-PON (10 Gbps)","NG-PON2 (TWDM-PON) (4x10 Gbps)","EPON (1 Gbps)","10G-EPON (10 Gbps)","Cisco StackWise","Cisco StackWise Plus","Cisco FlexStack","Cisco FlexStack Plus","Cisco StackWise-80","Cisco StackWise-160","Cisco StackWise-320","Cisco StackWise-480","Juniper VCP","Extreme SummitStack","Extreme SummitStack-128","Extreme SummitStack-256","Extreme SummitStack-512","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Virtual","Bridge","Link Aggregation Group (LAG)","100BASE-TX (10/100ME)","1000BASE-T (1GE)","2.5GBASE-T (2.5GE)","5GBASE-T (5GE)","10GBASE-T (10GE)","10GBASE-CX4 (10GE)","GBIC (1GE)","SFP (1GE)","SFP+ (10GE)","XFP (10GE)","XENPAK (10GE)","X2 (10GE)","SFP28 (25GE)","SFP56 (50GE)","QSFP+ (40GE)","QSFP28 (50GE)","CFP (100GE)","CFP2 (100GE)","CFP2 (200GE)","CFP4 (100GE)","Cisco CPAK (100GE)","QSFP28 (100GE)","QSFP56 (200GE)","QSFP-DD (400GE)","OSFP (400GE)","IEEE 802.11a","IEEE 802.11b/g","IEEE 802.11n","IEEE 802.11ac","IEEE 802.11ad","IEEE 802.11ax","IEEE 802.15.1 (Bluetooth)","GSM","CDMA","LTE","OC-3/STM-1","OC-12/STM-4","OC-48/STM-16","OC-192/STM-64","OC-768/STM-256","OC-1920/STM-640","OC-3840/STM-1234","SFP (1GFC)","SFP (2GFC)","SFP (4GFC)","SFP+ (8GFC)","SFP+ (16GFC)","SFP28 (32GFC)","QSFP+ (64GFC)","QSFP28 (128GFC)","SDR (2 Gbps)","DDR (4 Gbps)","QDR (8 Gbps)","FDR10 (10 Gbps)","FDR (13.5 Gbps)","EDR (25 Gbps)","HDR (50 Gbps)","NDR (100 Gbps)","XDR (250 Gbps)","T1 (1.544 Mbps)","E1 (2.048 Mbps)","T3 (45 Mbps)","E3 (34 Mbps)","xDSL","Cisco StackWise","Cisco StackWise Plus","Cisco FlexStack","Cisco FlexStack Plus","Cisco StackWise-80","Cisco StackWise-160","Cisco StackWise-320","Cisco StackWise-480","Juniper VCP","Extreme SummitStack","Extreme SummitStack-128","Extreme SummitStack-256","Extreme SummitStack-512","Other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -3721,17 +2849,8 @@ const (
 	// InterfaceTypeLabelLinkAggregationGroupLAG captures enum value "Link Aggregation Group (LAG)"
 	InterfaceTypeLabelLinkAggregationGroupLAG string = "Link Aggregation Group (LAG)"
 
-	// InterfaceTypeLabelNr100BASEDashFX10100MEFIBER captures enum value "100BASE-FX (10/100ME FIBER)"
-	InterfaceTypeLabelNr100BASEDashFX10100MEFIBER string = "100BASE-FX (10/100ME FIBER)"
-
-	// InterfaceTypeLabelNr100BASEDashLFX10100MEFIBER captures enum value "100BASE-LFX (10/100ME FIBER)"
-	InterfaceTypeLabelNr100BASEDashLFX10100MEFIBER string = "100BASE-LFX (10/100ME FIBER)"
-
 	// InterfaceTypeLabelNr100BASEDashTX10100ME captures enum value "100BASE-TX (10/100ME)"
 	InterfaceTypeLabelNr100BASEDashTX10100ME string = "100BASE-TX (10/100ME)"
-
-	// InterfaceTypeLabelNr100BASEDashT110100MESinglePair captures enum value "100BASE-T1 (10/100ME Single Pair)"
-	InterfaceTypeLabelNr100BASEDashT110100MESinglePair string = "100BASE-T1 (10/100ME Single Pair)"
 
 	// InterfaceTypeLabelNr1000BASEDashT1GE captures enum value "1000BASE-T (1GE)"
 	InterfaceTypeLabelNr1000BASEDashT1GE string = "1000BASE-T (1GE)"
@@ -3805,39 +2924,6 @@ const (
 	// InterfaceTypeLabelOSFP400GE captures enum value "OSFP (400GE)"
 	InterfaceTypeLabelOSFP400GE string = "OSFP (400GE)"
 
-	// InterfaceTypeLabelQSFPDashDD800GE captures enum value "QSFP-DD (800GE)"
-	InterfaceTypeLabelQSFPDashDD800GE string = "QSFP-DD (800GE)"
-
-	// InterfaceTypeLabelOSFP800GE captures enum value "OSFP (800GE)"
-	InterfaceTypeLabelOSFP800GE string = "OSFP (800GE)"
-
-	// InterfaceTypeLabelNr1000BASEDashKX1GE captures enum value "1000BASE-KX (1GE)"
-	InterfaceTypeLabelNr1000BASEDashKX1GE string = "1000BASE-KX (1GE)"
-
-	// InterfaceTypeLabelNr10GBASEDashKR10GE captures enum value "10GBASE-KR (10GE)"
-	InterfaceTypeLabelNr10GBASEDashKR10GE string = "10GBASE-KR (10GE)"
-
-	// InterfaceTypeLabelNr10GBASEDashKX410GE captures enum value "10GBASE-KX4 (10GE)"
-	InterfaceTypeLabelNr10GBASEDashKX410GE string = "10GBASE-KX4 (10GE)"
-
-	// InterfaceTypeLabelNr25GBASEDashKR25GE captures enum value "25GBASE-KR (25GE)"
-	InterfaceTypeLabelNr25GBASEDashKR25GE string = "25GBASE-KR (25GE)"
-
-	// InterfaceTypeLabelNr40GBASEDashKR440GE captures enum value "40GBASE-KR4 (40GE)"
-	InterfaceTypeLabelNr40GBASEDashKR440GE string = "40GBASE-KR4 (40GE)"
-
-	// InterfaceTypeLabelNr50GBASEDashKR50GE captures enum value "50GBASE-KR (50GE)"
-	InterfaceTypeLabelNr50GBASEDashKR50GE string = "50GBASE-KR (50GE)"
-
-	// InterfaceTypeLabelNr100GBASEDashKP4100GE captures enum value "100GBASE-KP4 (100GE)"
-	InterfaceTypeLabelNr100GBASEDashKP4100GE string = "100GBASE-KP4 (100GE)"
-
-	// InterfaceTypeLabelNr100GBASEDashKR2100GE captures enum value "100GBASE-KR2 (100GE)"
-	InterfaceTypeLabelNr100GBASEDashKR2100GE string = "100GBASE-KR2 (100GE)"
-
-	// InterfaceTypeLabelNr100GBASEDashKR4100GE captures enum value "100GBASE-KR4 (100GE)"
-	InterfaceTypeLabelNr100GBASEDashKR4100GE string = "100GBASE-KR4 (100GE)"
-
 	// InterfaceTypeLabelIEEE802Dot11a captures enum value "IEEE 802.11a"
 	InterfaceTypeLabelIEEE802Dot11a string = "IEEE 802.11a"
 
@@ -3856,14 +2942,8 @@ const (
 	// InterfaceTypeLabelIEEE802Dot11ax captures enum value "IEEE 802.11ax"
 	InterfaceTypeLabelIEEE802Dot11ax string = "IEEE 802.11ax"
 
-	// InterfaceTypeLabelIEEE802Dot11ay captures enum value "IEEE 802.11ay"
-	InterfaceTypeLabelIEEE802Dot11ay string = "IEEE 802.11ay"
-
 	// InterfaceTypeLabelIEEE802Dot15Dot1Bluetooth captures enum value "IEEE 802.15.1 (Bluetooth)"
 	InterfaceTypeLabelIEEE802Dot15Dot1Bluetooth string = "IEEE 802.15.1 (Bluetooth)"
-
-	// InterfaceTypeLabelOtherWireless captures enum value "Other (Wireless)"
-	InterfaceTypeLabelOtherWireless string = "Other (Wireless)"
 
 	// InterfaceTypeLabelGSM captures enum value "GSM"
 	InterfaceTypeLabelGSM string = "GSM"
@@ -3961,27 +3041,6 @@ const (
 	// InterfaceTypeLabelXDSL captures enum value "xDSL"
 	InterfaceTypeLabelXDSL string = "xDSL"
 
-	// InterfaceTypeLabelDOCSIS captures enum value "DOCSIS"
-	InterfaceTypeLabelDOCSIS string = "DOCSIS"
-
-	// InterfaceTypeLabelGPON2Dot5Gbps1Dot25Gps captures enum value "GPON (2.5 Gbps / 1.25 Gps)"
-	InterfaceTypeLabelGPON2Dot5Gbps1Dot25Gps string = "GPON (2.5 Gbps / 1.25 Gps)"
-
-	// InterfaceTypeLabelXGDashPON10Gbps2Dot5Gbps captures enum value "XG-PON (10 Gbps / 2.5 Gbps)"
-	InterfaceTypeLabelXGDashPON10Gbps2Dot5Gbps string = "XG-PON (10 Gbps / 2.5 Gbps)"
-
-	// InterfaceTypeLabelXGSDashPON10Gbps captures enum value "XGS-PON (10 Gbps)"
-	InterfaceTypeLabelXGSDashPON10Gbps string = "XGS-PON (10 Gbps)"
-
-	// InterfaceTypeLabelNGDashPON2TWDMDashPON4x10Gbps captures enum value "NG-PON2 (TWDM-PON) (4x10 Gbps)"
-	InterfaceTypeLabelNGDashPON2TWDMDashPON4x10Gbps string = "NG-PON2 (TWDM-PON) (4x10 Gbps)"
-
-	// InterfaceTypeLabelEPON1Gbps captures enum value "EPON (1 Gbps)"
-	InterfaceTypeLabelEPON1Gbps string = "EPON (1 Gbps)"
-
-	// InterfaceTypeLabelNr10GDashEPON10Gbps captures enum value "10G-EPON (10 Gbps)"
-	InterfaceTypeLabelNr10GDashEPON10Gbps string = "10G-EPON (10 Gbps)"
-
 	// InterfaceTypeLabelCiscoStackWise captures enum value "Cisco StackWise"
 	InterfaceTypeLabelCiscoStackWise string = "Cisco StackWise"
 
@@ -4051,7 +3110,7 @@ var interfaceTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["virtual","bridge","lag","100base-fx","100base-lfx","100base-tx","100base-t1","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","800gbase-x-qsfpdd","800gbase-x-osfp","1000base-kx","10gbase-kr","10gbase-kx4","25gbase-kr","40gbase-kr4","50gbase-kr","100gbase-kp4","100gbase-kr2","100gbase-kr4","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","ieee802.11ay","ieee802.15.1","other-wireless","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-qsfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","docsis","gpon","xg-pon","xgs-pon","ng-pon2","epon","10g-epon","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","cisco-stackwise-80","cisco-stackwise-160","cisco-stackwise-320","cisco-stackwise-480","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["virtual","bridge","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","ieee802.15.1","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-qsfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","cisco-stackwise-80","cisco-stackwise-160","cisco-stackwise-320","cisco-stackwise-480","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -4070,17 +3129,8 @@ const (
 	// InterfaceTypeValueLag captures enum value "lag"
 	InterfaceTypeValueLag string = "lag"
 
-	// InterfaceTypeValueNr100baseDashFx captures enum value "100base-fx"
-	InterfaceTypeValueNr100baseDashFx string = "100base-fx"
-
-	// InterfaceTypeValueNr100baseDashLfx captures enum value "100base-lfx"
-	InterfaceTypeValueNr100baseDashLfx string = "100base-lfx"
-
 	// InterfaceTypeValueNr100baseDashTx captures enum value "100base-tx"
 	InterfaceTypeValueNr100baseDashTx string = "100base-tx"
-
-	// InterfaceTypeValueNr100baseDashT1 captures enum value "100base-t1"
-	InterfaceTypeValueNr100baseDashT1 string = "100base-t1"
 
 	// InterfaceTypeValueNr1000baseDasht captures enum value "1000base-t"
 	InterfaceTypeValueNr1000baseDasht string = "1000base-t"
@@ -4154,39 +3204,6 @@ const (
 	// InterfaceTypeValueNr400gbaseDashxDashOsfp captures enum value "400gbase-x-osfp"
 	InterfaceTypeValueNr400gbaseDashxDashOsfp string = "400gbase-x-osfp"
 
-	// InterfaceTypeValueNr800gbaseDashxDashQsfpdd captures enum value "800gbase-x-qsfpdd"
-	InterfaceTypeValueNr800gbaseDashxDashQsfpdd string = "800gbase-x-qsfpdd"
-
-	// InterfaceTypeValueNr800gbaseDashxDashOsfp captures enum value "800gbase-x-osfp"
-	InterfaceTypeValueNr800gbaseDashxDashOsfp string = "800gbase-x-osfp"
-
-	// InterfaceTypeValueNr1000baseDashKx captures enum value "1000base-kx"
-	InterfaceTypeValueNr1000baseDashKx string = "1000base-kx"
-
-	// InterfaceTypeValueNr10gbaseDashKr captures enum value "10gbase-kr"
-	InterfaceTypeValueNr10gbaseDashKr string = "10gbase-kr"
-
-	// InterfaceTypeValueNr10gbaseDashKx4 captures enum value "10gbase-kx4"
-	InterfaceTypeValueNr10gbaseDashKx4 string = "10gbase-kx4"
-
-	// InterfaceTypeValueNr25gbaseDashKr captures enum value "25gbase-kr"
-	InterfaceTypeValueNr25gbaseDashKr string = "25gbase-kr"
-
-	// InterfaceTypeValueNr40gbaseDashKr4 captures enum value "40gbase-kr4"
-	InterfaceTypeValueNr40gbaseDashKr4 string = "40gbase-kr4"
-
-	// InterfaceTypeValueNr50gbaseDashKr captures enum value "50gbase-kr"
-	InterfaceTypeValueNr50gbaseDashKr string = "50gbase-kr"
-
-	// InterfaceTypeValueNr100gbaseDashKp4 captures enum value "100gbase-kp4"
-	InterfaceTypeValueNr100gbaseDashKp4 string = "100gbase-kp4"
-
-	// InterfaceTypeValueNr100gbaseDashKr2 captures enum value "100gbase-kr2"
-	InterfaceTypeValueNr100gbaseDashKr2 string = "100gbase-kr2"
-
-	// InterfaceTypeValueNr100gbaseDashKr4 captures enum value "100gbase-kr4"
-	InterfaceTypeValueNr100gbaseDashKr4 string = "100gbase-kr4"
-
 	// InterfaceTypeValueIeee802Dot11a captures enum value "ieee802.11a"
 	InterfaceTypeValueIeee802Dot11a string = "ieee802.11a"
 
@@ -4205,14 +3222,8 @@ const (
 	// InterfaceTypeValueIeee802Dot11ax captures enum value "ieee802.11ax"
 	InterfaceTypeValueIeee802Dot11ax string = "ieee802.11ax"
 
-	// InterfaceTypeValueIeee802Dot11ay captures enum value "ieee802.11ay"
-	InterfaceTypeValueIeee802Dot11ay string = "ieee802.11ay"
-
 	// InterfaceTypeValueIeee802Dot15Dot1 captures enum value "ieee802.15.1"
 	InterfaceTypeValueIeee802Dot15Dot1 string = "ieee802.15.1"
-
-	// InterfaceTypeValueOtherDashWireless captures enum value "other-wireless"
-	InterfaceTypeValueOtherDashWireless string = "other-wireless"
 
 	// InterfaceTypeValueGsm captures enum value "gsm"
 	InterfaceTypeValueGsm string = "gsm"
@@ -4309,27 +3320,6 @@ const (
 
 	// InterfaceTypeValueXdsl captures enum value "xdsl"
 	InterfaceTypeValueXdsl string = "xdsl"
-
-	// InterfaceTypeValueDocsis captures enum value "docsis"
-	InterfaceTypeValueDocsis string = "docsis"
-
-	// InterfaceTypeValueGpon captures enum value "gpon"
-	InterfaceTypeValueGpon string = "gpon"
-
-	// InterfaceTypeValueXgDashPon captures enum value "xg-pon"
-	InterfaceTypeValueXgDashPon string = "xg-pon"
-
-	// InterfaceTypeValueXgsDashPon captures enum value "xgs-pon"
-	InterfaceTypeValueXgsDashPon string = "xgs-pon"
-
-	// InterfaceTypeValueNgDashPon2 captures enum value "ng-pon2"
-	InterfaceTypeValueNgDashPon2 string = "ng-pon2"
-
-	// InterfaceTypeValueEpon captures enum value "epon"
-	InterfaceTypeValueEpon string = "epon"
-
-	// InterfaceTypeValueNr10gDashEpon captures enum value "10g-epon"
-	InterfaceTypeValueNr10gDashEpon string = "10g-epon"
 
 	// InterfaceTypeValueCiscoDashStackwise captures enum value "cisco-stackwise"
 	InterfaceTypeValueCiscoDashStackwise string = "cisco-stackwise"

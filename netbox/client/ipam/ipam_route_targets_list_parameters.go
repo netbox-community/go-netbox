@@ -80,20 +80,11 @@ type IpamRouteTargetsListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -173,20 +164,11 @@ type IpamRouteTargetsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -232,12 +214,6 @@ type IpamRouteTargetsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Q.
 	Q *string
@@ -336,17 +312,6 @@ func (o *IpamRouteTargetsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) WithCreatedGt(createdGt *string) *IpamRouteTargetsListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the ipam route targets list params
 func (o *IpamRouteTargetsListParams) WithCreatedGte(createdGte *string) *IpamRouteTargetsListParams {
 	o.SetCreatedGte(createdGte)
@@ -358,17 +323,6 @@ func (o *IpamRouteTargetsListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) WithCreatedLt(createdLt *string) *IpamRouteTargetsListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the ipam route targets list params
 func (o *IpamRouteTargetsListParams) WithCreatedLte(createdLte *string) *IpamRouteTargetsListParams {
 	o.SetCreatedLte(createdLte)
@@ -378,17 +332,6 @@ func (o *IpamRouteTargetsListParams) WithCreatedLte(createdLte *string) *IpamRou
 // SetCreatedLte adds the createdLte to the ipam route targets list params
 func (o *IpamRouteTargetsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) WithCreatedn(createdn *string) *IpamRouteTargetsListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the ipam route targets list params
@@ -677,17 +620,6 @@ func (o *IpamRouteTargetsListParams) SetLastUpdated(lastUpdated *string) {
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *IpamRouteTargetsListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the ipam route targets list params
 func (o *IpamRouteTargetsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *IpamRouteTargetsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -699,17 +631,6 @@ func (o *IpamRouteTargetsListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *IpamRouteTargetsListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the ipam route targets list params
 func (o *IpamRouteTargetsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *IpamRouteTargetsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -719,17 +640,6 @@ func (o *IpamRouteTargetsListParams) WithLastUpdatedLte(lastUpdatedLte *string) 
 // SetLastUpdatedLte adds the lastUpdatedLte to the ipam route targets list params
 func (o *IpamRouteTargetsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) WithLastUpdatedn(lastUpdatedn *string) *IpamRouteTargetsListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the ipam route targets list params
@@ -873,17 +783,6 @@ func (o *IpamRouteTargetsListParams) WithOffset(offset *int64) *IpamRouteTargets
 // SetOffset adds the offset to the ipam route targets list params
 func (o *IpamRouteTargetsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) WithOrdering(ordering *string) *IpamRouteTargetsListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the ipam route targets list params
-func (o *IpamRouteTargetsListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithQ adds the q to the ipam route targets list params
@@ -1032,23 +931,6 @@ func (o *IpamRouteTargetsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1066,23 +948,6 @@ func (o *IpamRouteTargetsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1095,23 +960,6 @@ func (o *IpamRouteTargetsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1559,23 +1407,6 @@ func (o *IpamRouteTargetsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1593,23 +1424,6 @@ func (o *IpamRouteTargetsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1622,23 +1436,6 @@ func (o *IpamRouteTargetsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1860,23 +1657,6 @@ func (o *IpamRouteTargetsListParams) WriteToRequest(r runtime.ClientRequest, reg
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

@@ -80,7 +80,7 @@ CircuitsProvidersUpdateParams contains all the parameters to send to the API end
 type CircuitsProvidersUpdateParams struct {
 
 	// Data.
-	Data *models.WritableProvider
+	Data *models.Provider
 
 	/* ID.
 
@@ -142,13 +142,13 @@ func (o *CircuitsProvidersUpdateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the circuits providers update params
-func (o *CircuitsProvidersUpdateParams) WithData(data *models.WritableProvider) *CircuitsProvidersUpdateParams {
+func (o *CircuitsProvidersUpdateParams) WithData(data *models.Provider) *CircuitsProvidersUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the circuits providers update params
-func (o *CircuitsProvidersUpdateParams) SetData(data *models.WritableProvider) {
+func (o *CircuitsProvidersUpdateParams) SetData(data *models.Provider) {
 	o.Data = data
 }
 

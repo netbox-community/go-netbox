@@ -80,20 +80,11 @@ type CircuitsProviderNetworksListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -149,20 +140,11 @@ type CircuitsProviderNetworksListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -209,12 +191,6 @@ type CircuitsProviderNetworksListParams struct {
 	*/
 	Offset *int64
 
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
-
 	// Provider.
 	Provider *string
 
@@ -229,39 +205,6 @@ type CircuitsProviderNetworksListParams struct {
 
 	// Q.
 	Q *string
-
-	// ServiceID.
-	ServiceID *string
-
-	// ServiceIDEmpty.
-	ServiceIDEmpty *string
-
-	// ServiceIDIc.
-	ServiceIDIc *string
-
-	// ServiceIDIe.
-	ServiceIDIe *string
-
-	// ServiceIDIew.
-	ServiceIDIew *string
-
-	// ServiceIDIsw.
-	ServiceIDIsw *string
-
-	// ServiceIDn.
-	ServiceIDn *string
-
-	// ServiceIDNic.
-	ServiceIDNic *string
-
-	// ServiceIDNie.
-	ServiceIDNie *string
-
-	// ServiceIDNiew.
-	ServiceIDNiew *string
-
-	// ServiceIDNisw.
-	ServiceIDNisw *string
 
 	// Tag.
 	Tag *string
@@ -333,17 +276,6 @@ func (o *CircuitsProviderNetworksListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithCreatedGt(createdGt *string) *CircuitsProviderNetworksListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) WithCreatedGte(createdGte *string) *CircuitsProviderNetworksListParams {
 	o.SetCreatedGte(createdGte)
@@ -355,17 +287,6 @@ func (o *CircuitsProviderNetworksListParams) SetCreatedGte(createdGte *string) {
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithCreatedLt(createdLt *string) *CircuitsProviderNetworksListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) WithCreatedLte(createdLte *string) *CircuitsProviderNetworksListParams {
 	o.SetCreatedLte(createdLte)
@@ -375,17 +296,6 @@ func (o *CircuitsProviderNetworksListParams) WithCreatedLte(createdLte *string) 
 // SetCreatedLte adds the createdLte to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithCreatedn(createdn *string) *CircuitsProviderNetworksListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the circuits provider networks list params
@@ -586,17 +496,6 @@ func (o *CircuitsProviderNetworksListParams) SetLastUpdated(lastUpdated *string)
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithLastUpdatedGt(lastUpdatedGt *string) *CircuitsProviderNetworksListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) WithLastUpdatedGte(lastUpdatedGte *string) *CircuitsProviderNetworksListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -608,17 +507,6 @@ func (o *CircuitsProviderNetworksListParams) SetLastUpdatedGte(lastUpdatedGte *s
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithLastUpdatedLt(lastUpdatedLt *string) *CircuitsProviderNetworksListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) WithLastUpdatedLte(lastUpdatedLte *string) *CircuitsProviderNetworksListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -628,17 +516,6 @@ func (o *CircuitsProviderNetworksListParams) WithLastUpdatedLte(lastUpdatedLte *
 // SetLastUpdatedLte adds the lastUpdatedLte to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithLastUpdatedn(lastUpdatedn *string) *CircuitsProviderNetworksListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the circuits provider networks list params
@@ -784,17 +661,6 @@ func (o *CircuitsProviderNetworksListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
-// WithOrdering adds the ordering to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithOrdering(ordering *string) *CircuitsProviderNetworksListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
-}
-
 // WithProvider adds the provider to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) WithProvider(provider *string) *CircuitsProviderNetworksListParams {
 	o.SetProvider(provider)
@@ -850,127 +716,6 @@ func (o *CircuitsProviderNetworksListParams) SetQ(q *string) {
 	o.Q = q
 }
 
-// WithServiceID adds the serviceID to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceID(serviceID *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceID(serviceID)
-	return o
-}
-
-// SetServiceID adds the serviceId to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceID(serviceID *string) {
-	o.ServiceID = serviceID
-}
-
-// WithServiceIDEmpty adds the serviceIDEmpty to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDEmpty(serviceIDEmpty *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDEmpty(serviceIDEmpty)
-	return o
-}
-
-// SetServiceIDEmpty adds the serviceIdEmpty to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDEmpty(serviceIDEmpty *string) {
-	o.ServiceIDEmpty = serviceIDEmpty
-}
-
-// WithServiceIDIc adds the serviceIDIc to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDIc(serviceIDIc *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDIc(serviceIDIc)
-	return o
-}
-
-// SetServiceIDIc adds the serviceIdIc to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDIc(serviceIDIc *string) {
-	o.ServiceIDIc = serviceIDIc
-}
-
-// WithServiceIDIe adds the serviceIDIe to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDIe(serviceIDIe *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDIe(serviceIDIe)
-	return o
-}
-
-// SetServiceIDIe adds the serviceIdIe to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDIe(serviceIDIe *string) {
-	o.ServiceIDIe = serviceIDIe
-}
-
-// WithServiceIDIew adds the serviceIDIew to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDIew(serviceIDIew *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDIew(serviceIDIew)
-	return o
-}
-
-// SetServiceIDIew adds the serviceIdIew to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDIew(serviceIDIew *string) {
-	o.ServiceIDIew = serviceIDIew
-}
-
-// WithServiceIDIsw adds the serviceIDIsw to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDIsw(serviceIDIsw *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDIsw(serviceIDIsw)
-	return o
-}
-
-// SetServiceIDIsw adds the serviceIdIsw to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDIsw(serviceIDIsw *string) {
-	o.ServiceIDIsw = serviceIDIsw
-}
-
-// WithServiceIDn adds the serviceIDn to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDn(serviceIDn *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDn(serviceIDn)
-	return o
-}
-
-// SetServiceIDn adds the serviceIdN to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDn(serviceIDn *string) {
-	o.ServiceIDn = serviceIDn
-}
-
-// WithServiceIDNic adds the serviceIDNic to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDNic(serviceIDNic *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDNic(serviceIDNic)
-	return o
-}
-
-// SetServiceIDNic adds the serviceIdNic to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDNic(serviceIDNic *string) {
-	o.ServiceIDNic = serviceIDNic
-}
-
-// WithServiceIDNie adds the serviceIDNie to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDNie(serviceIDNie *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDNie(serviceIDNie)
-	return o
-}
-
-// SetServiceIDNie adds the serviceIdNie to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDNie(serviceIDNie *string) {
-	o.ServiceIDNie = serviceIDNie
-}
-
-// WithServiceIDNiew adds the serviceIDNiew to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDNiew(serviceIDNiew *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDNiew(serviceIDNiew)
-	return o
-}
-
-// SetServiceIDNiew adds the serviceIdNiew to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDNiew(serviceIDNiew *string) {
-	o.ServiceIDNiew = serviceIDNiew
-}
-
-// WithServiceIDNisw adds the serviceIDNisw to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) WithServiceIDNisw(serviceIDNisw *string) *CircuitsProviderNetworksListParams {
-	o.SetServiceIDNisw(serviceIDNisw)
-	return o
-}
-
-// SetServiceIDNisw adds the serviceIdNisw to the circuits provider networks list params
-func (o *CircuitsProviderNetworksListParams) SetServiceIDNisw(serviceIDNisw *string) {
-	o.ServiceIDNisw = serviceIDNisw
-}
-
 // WithTag adds the tag to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) WithTag(tag *string) *CircuitsProviderNetworksListParams {
 	o.SetTag(tag)
@@ -1018,23 +763,6 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1052,23 +780,6 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1081,23 +792,6 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1409,23 +1103,6 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1443,23 +1120,6 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1472,23 +1132,6 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1715,23 +1358,6 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Provider != nil {
 
 		// query param provider
@@ -1812,193 +1438,6 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		if qQ != "" {
 
 			if err := r.SetQueryParam("q", qQ); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceID != nil {
-
-		// query param service_id
-		var qrServiceID string
-
-		if o.ServiceID != nil {
-			qrServiceID = *o.ServiceID
-		}
-		qServiceID := qrServiceID
-		if qServiceID != "" {
-
-			if err := r.SetQueryParam("service_id", qServiceID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDEmpty != nil {
-
-		// query param service_id__empty
-		var qrServiceIDEmpty string
-
-		if o.ServiceIDEmpty != nil {
-			qrServiceIDEmpty = *o.ServiceIDEmpty
-		}
-		qServiceIDEmpty := qrServiceIDEmpty
-		if qServiceIDEmpty != "" {
-
-			if err := r.SetQueryParam("service_id__empty", qServiceIDEmpty); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDIc != nil {
-
-		// query param service_id__ic
-		var qrServiceIDIc string
-
-		if o.ServiceIDIc != nil {
-			qrServiceIDIc = *o.ServiceIDIc
-		}
-		qServiceIDIc := qrServiceIDIc
-		if qServiceIDIc != "" {
-
-			if err := r.SetQueryParam("service_id__ic", qServiceIDIc); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDIe != nil {
-
-		// query param service_id__ie
-		var qrServiceIDIe string
-
-		if o.ServiceIDIe != nil {
-			qrServiceIDIe = *o.ServiceIDIe
-		}
-		qServiceIDIe := qrServiceIDIe
-		if qServiceIDIe != "" {
-
-			if err := r.SetQueryParam("service_id__ie", qServiceIDIe); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDIew != nil {
-
-		// query param service_id__iew
-		var qrServiceIDIew string
-
-		if o.ServiceIDIew != nil {
-			qrServiceIDIew = *o.ServiceIDIew
-		}
-		qServiceIDIew := qrServiceIDIew
-		if qServiceIDIew != "" {
-
-			if err := r.SetQueryParam("service_id__iew", qServiceIDIew); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDIsw != nil {
-
-		// query param service_id__isw
-		var qrServiceIDIsw string
-
-		if o.ServiceIDIsw != nil {
-			qrServiceIDIsw = *o.ServiceIDIsw
-		}
-		qServiceIDIsw := qrServiceIDIsw
-		if qServiceIDIsw != "" {
-
-			if err := r.SetQueryParam("service_id__isw", qServiceIDIsw); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDn != nil {
-
-		// query param service_id__n
-		var qrServiceIDn string
-
-		if o.ServiceIDn != nil {
-			qrServiceIDn = *o.ServiceIDn
-		}
-		qServiceIDn := qrServiceIDn
-		if qServiceIDn != "" {
-
-			if err := r.SetQueryParam("service_id__n", qServiceIDn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDNic != nil {
-
-		// query param service_id__nic
-		var qrServiceIDNic string
-
-		if o.ServiceIDNic != nil {
-			qrServiceIDNic = *o.ServiceIDNic
-		}
-		qServiceIDNic := qrServiceIDNic
-		if qServiceIDNic != "" {
-
-			if err := r.SetQueryParam("service_id__nic", qServiceIDNic); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDNie != nil {
-
-		// query param service_id__nie
-		var qrServiceIDNie string
-
-		if o.ServiceIDNie != nil {
-			qrServiceIDNie = *o.ServiceIDNie
-		}
-		qServiceIDNie := qrServiceIDNie
-		if qServiceIDNie != "" {
-
-			if err := r.SetQueryParam("service_id__nie", qServiceIDNie); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDNiew != nil {
-
-		// query param service_id__niew
-		var qrServiceIDNiew string
-
-		if o.ServiceIDNiew != nil {
-			qrServiceIDNiew = *o.ServiceIDNiew
-		}
-		qServiceIDNiew := qrServiceIDNiew
-		if qServiceIDNiew != "" {
-
-			if err := r.SetQueryParam("service_id__niew", qServiceIDNiew); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ServiceIDNisw != nil {
-
-		// query param service_id__nisw
-		var qrServiceIDNisw string
-
-		if o.ServiceIDNisw != nil {
-			qrServiceIDNisw = *o.ServiceIDNisw
-		}
-		qServiceIDNisw := qrServiceIDNisw
-		if qServiceIDNisw != "" {
-
-			if err := r.SetQueryParam("service_id__nisw", qServiceIDNisw); err != nil {
 				return err
 			}
 		}

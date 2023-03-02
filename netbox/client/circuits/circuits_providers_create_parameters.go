@@ -79,7 +79,7 @@ CircuitsProvidersCreateParams contains all the parameters to send to the API end
 type CircuitsProvidersCreateParams struct {
 
 	// Data.
-	Data *models.WritableProvider
+	Data *models.Provider
 
 	timeout    time.Duration
 	Context    context.Context
@@ -135,13 +135,13 @@ func (o *CircuitsProvidersCreateParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithData adds the data to the circuits providers create params
-func (o *CircuitsProvidersCreateParams) WithData(data *models.WritableProvider) *CircuitsProvidersCreateParams {
+func (o *CircuitsProvidersCreateParams) WithData(data *models.Provider) *CircuitsProvidersCreateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the circuits providers create params
-func (o *CircuitsProvidersCreateParams) SetData(data *models.WritableProvider) {
+func (o *CircuitsProvidersCreateParams) SetData(data *models.Provider) {
 	o.Data = data
 }
 

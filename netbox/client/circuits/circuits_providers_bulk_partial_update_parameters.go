@@ -79,7 +79,7 @@ CircuitsProvidersBulkPartialUpdateParams contains all the parameters to send to 
 type CircuitsProvidersBulkPartialUpdateParams struct {
 
 	// Data.
-	Data *models.WritableProvider
+	Data *models.Provider
 
 	timeout    time.Duration
 	Context    context.Context
@@ -135,13 +135,13 @@ func (o *CircuitsProvidersBulkPartialUpdateParams) SetHTTPClient(client *http.Cl
 }
 
 // WithData adds the data to the circuits providers bulk partial update params
-func (o *CircuitsProvidersBulkPartialUpdateParams) WithData(data *models.WritableProvider) *CircuitsProvidersBulkPartialUpdateParams {
+func (o *CircuitsProvidersBulkPartialUpdateParams) WithData(data *models.Provider) *CircuitsProvidersBulkPartialUpdateParams {
 	o.SetData(data)
 	return o
 }
 
 // SetData adds the data to the circuits providers bulk partial update params
-func (o *CircuitsProvidersBulkPartialUpdateParams) SetData(data *models.WritableProvider) {
+func (o *CircuitsProvidersBulkPartialUpdateParams) SetData(data *models.Provider) {
 	o.Data = data
 }
 

@@ -44,17 +44,14 @@ type WritableWirelessLAN struct {
 	// Max Length: 64
 	AuthPsk string `json:"auth_psk,omitempty"`
 
-	// Auth Type
+	// Auth type
 	// Enum: [open wep wpa-personal wpa-enterprise]
 	AuthType string `json:"auth_type,omitempty"`
 
-	// Comments
-	Comments string `json:"comments,omitempty"`
-
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -70,14 +67,14 @@ type WritableWirelessLAN struct {
 	// Group
 	Group *int64 `json:"group,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// SSID
 	// Required: true
@@ -85,15 +82,8 @@ type WritableWirelessLAN struct {
 	// Min Length: 1
 	Ssid *string `json:"ssid"`
 
-	// Status
-	// Enum: [active reserved disabled deprecated]
-	Status string `json:"status,omitempty"`
-
 	// tags
 	Tags []*NestedTag `json:"tags,omitempty"`
-
-	// Tenant
-	Tenant *int64 `json:"tenant,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -133,10 +123,6 @@ func (m *WritableWirelessLAN) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSsid(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -264,7 +250,7 @@ func (m *WritableWirelessLAN) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -306,54 +292,6 @@ func (m *WritableWirelessLAN) validateSsid(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("ssid", "body", *m.Ssid, 32); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var writableWirelessLANTypeStatusPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["active","reserved","disabled","deprecated"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		writableWirelessLANTypeStatusPropEnum = append(writableWirelessLANTypeStatusPropEnum, v)
-	}
-}
-
-const (
-
-	// WritableWirelessLANStatusActive captures enum value "active"
-	WritableWirelessLANStatusActive string = "active"
-
-	// WritableWirelessLANStatusReserved captures enum value "reserved"
-	WritableWirelessLANStatusReserved string = "reserved"
-
-	// WritableWirelessLANStatusDisabled captures enum value "disabled"
-	WritableWirelessLANStatusDisabled string = "disabled"
-
-	// WritableWirelessLANStatusDeprecated captures enum value "deprecated"
-	WritableWirelessLANStatusDeprecated string = "deprecated"
-)
-
-// prop value enum
-func (m *WritableWirelessLAN) validateStatusEnum(path, location string, value string) error {
-	if err := validate.EnumCase(path, location, value, writableWirelessLANTypeStatusPropEnum, true); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *WritableWirelessLAN) validateStatus(formats strfmt.Registry) error {
-	if swag.IsZero(m.Status) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
 	}
 
@@ -434,7 +372,7 @@ func (m *WritableWirelessLAN) ContextValidate(ctx context.Context, formats strfm
 
 func (m *WritableWirelessLAN) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -461,7 +399,7 @@ func (m *WritableWirelessLAN) contextValidateID(ctx context.Context, formats str
 
 func (m *WritableWirelessLAN) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

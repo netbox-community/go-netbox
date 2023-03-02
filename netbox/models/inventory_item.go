@@ -22,7 +22,6 @@ package models
 
 import (
 	"context"
-	"math"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -46,22 +45,10 @@ type InventoryItem struct {
 	// Max Length: 50
 	AssetTag *string `json:"asset_tag,omitempty"`
 
-	// Component
-	// Read Only: true
-	Component interface{} `json:"component,omitempty"`
-
-	// Component id
-	// Maximum: math.MaxInt64
-	// Minimum: 0
-	ComponentID *int64 `json:"component_id,omitempty"`
-
-	// Component type
-	ComponentType *string `json:"component_type,omitempty"`
-
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -83,7 +70,7 @@ type InventoryItem struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -96,7 +83,7 @@ type InventoryItem struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// manufacturer
 	Manufacturer *NestedManufacturer `json:"manufacturer,omitempty"`
@@ -116,9 +103,6 @@ type InventoryItem struct {
 	// Max Length: 50
 	PartID string `json:"part_id,omitempty"`
 
-	// role
-	Role *NestedInventoryItemRole `json:"role,omitempty"`
-
 	// Serial number
 	// Max Length: 50
 	Serial string `json:"serial,omitempty"`
@@ -137,10 +121,6 @@ func (m *InventoryItem) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAssetTag(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateComponentID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -176,10 +156,6 @@ func (m *InventoryItem) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateRole(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateSerial(formats); err != nil {
 		res = append(res, err)
 	}
@@ -210,28 +186,12 @@ func (m *InventoryItem) validateAssetTag(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *InventoryItem) validateComponentID(formats strfmt.Registry) error {
-	if swag.IsZero(m.ComponentID) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("component_id", "body", *m.ComponentID, 0, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("component_id", "body", *m.ComponentID, math.MaxInt64, false); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *InventoryItem) validateCreated(formats strfmt.Registry) error {
 	if swag.IsZero(m.Created) { // not required
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -342,25 +302,6 @@ func (m *InventoryItem) validatePartID(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *InventoryItem) validateRole(formats strfmt.Registry) error {
-	if swag.IsZero(m.Role) { // not required
-		return nil
-	}
-
-	if m.Role != nil {
-		if err := m.Role.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("role")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
 func (m *InventoryItem) validateSerial(formats strfmt.Registry) error {
 	if swag.IsZero(m.Serial) { // not required
 		return nil
@@ -443,10 +384,6 @@ func (m *InventoryItem) ContextValidate(ctx context.Context, formats strfmt.Regi
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateRole(ctx, formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.contextValidateTags(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -472,7 +409,7 @@ func (m *InventoryItem) contextValidateDepth(ctx context.Context, formats strfmt
 
 func (m *InventoryItem) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -515,7 +452,7 @@ func (m *InventoryItem) contextValidateID(ctx context.Context, formats strfmt.Re
 
 func (m *InventoryItem) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 
@@ -530,22 +467,6 @@ func (m *InventoryItem) contextValidateManufacturer(ctx context.Context, formats
 				return ve.ValidateName("manufacturer")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
 				return ce.ValidateName("manufacturer")
-			}
-			return err
-		}
-	}
-
-	return nil
-}
-
-func (m *InventoryItem) contextValidateRole(ctx context.Context, formats strfmt.Registry) error {
-
-	if m.Role != nil {
-		if err := m.Role.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("role")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("role")
 			}
 			return err
 		}

@@ -80,20 +80,11 @@ type DcimConsoleServerPortTemplatesListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// DevicetypeID.
 	DevicetypeID *string
@@ -122,32 +113,17 @@ type DcimConsoleServerPortTemplatesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
 	   Number of results to return per page.
 	*/
 	Limit *int64
-
-	// ModuletypeID.
-	ModuletypeID *string
-
-	// ModuletypeIDn.
-	ModuletypeIDn *string
 
 	// Name.
 	Name *string
@@ -187,12 +163,6 @@ type DcimConsoleServerPortTemplatesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Q.
 	Q *string
@@ -267,17 +237,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) WithCreatedGt(createdGt *string) *DcimConsoleServerPortTemplatesListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the dcim console server port templates list params
 func (o *DcimConsoleServerPortTemplatesListParams) WithCreatedGte(createdGte *string) *DcimConsoleServerPortTemplatesListParams {
 	o.SetCreatedGte(createdGte)
@@ -289,17 +248,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) SetCreatedGte(createdGte *str
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) WithCreatedLt(createdLt *string) *DcimConsoleServerPortTemplatesListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the dcim console server port templates list params
 func (o *DcimConsoleServerPortTemplatesListParams) WithCreatedLte(createdLte *string) *DcimConsoleServerPortTemplatesListParams {
 	o.SetCreatedLte(createdLte)
@@ -309,17 +257,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WithCreatedLte(createdLte *st
 // SetCreatedLte adds the createdLte to the dcim console server port templates list params
 func (o *DcimConsoleServerPortTemplatesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) WithCreatedn(createdn *string) *DcimConsoleServerPortTemplatesListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDevicetypeID adds the devicetypeID to the dcim console server port templates list params
@@ -421,17 +358,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) SetLastUpdated(lastUpdated *s
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *DcimConsoleServerPortTemplatesListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the dcim console server port templates list params
 func (o *DcimConsoleServerPortTemplatesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *DcimConsoleServerPortTemplatesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -441,17 +367,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WithLastUpdatedGte(lastUpdate
 // SetLastUpdatedGte adds the lastUpdatedGte to the dcim console server port templates list params
 func (o *DcimConsoleServerPortTemplatesListParams) SetLastUpdatedGte(lastUpdatedGte *string) {
 	o.LastUpdatedGte = lastUpdatedGte
-}
-
-// WithLastUpdatedLt adds the lastUpdatedLt to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *DcimConsoleServerPortTemplatesListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
 }
 
 // WithLastUpdatedLte adds the lastUpdatedLte to the dcim console server port templates list params
@@ -465,17 +380,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) SetLastUpdatedLte(lastUpdated
 	o.LastUpdatedLte = lastUpdatedLte
 }
 
-// WithLastUpdatedn adds the lastUpdatedn to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) WithLastUpdatedn(lastUpdatedn *string) *DcimConsoleServerPortTemplatesListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
-}
-
 // WithLimit adds the limit to the dcim console server port templates list params
 func (o *DcimConsoleServerPortTemplatesListParams) WithLimit(limit *int64) *DcimConsoleServerPortTemplatesListParams {
 	o.SetLimit(limit)
@@ -485,28 +389,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WithLimit(limit *int64) *Dcim
 // SetLimit adds the limit to the dcim console server port templates list params
 func (o *DcimConsoleServerPortTemplatesListParams) SetLimit(limit *int64) {
 	o.Limit = limit
-}
-
-// WithModuletypeID adds the moduletypeID to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) WithModuletypeID(moduletypeID *string) *DcimConsoleServerPortTemplatesListParams {
-	o.SetModuletypeID(moduletypeID)
-	return o
-}
-
-// SetModuletypeID adds the moduletypeId to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) SetModuletypeID(moduletypeID *string) {
-	o.ModuletypeID = moduletypeID
-}
-
-// WithModuletypeIDn adds the moduletypeIDn to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) WithModuletypeIDn(moduletypeIDn *string) *DcimConsoleServerPortTemplatesListParams {
-	o.SetModuletypeIDn(moduletypeIDn)
-	return o
-}
-
-// SetModuletypeIDn adds the moduletypeIdN to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) SetModuletypeIDn(moduletypeIDn *string) {
-	o.ModuletypeIDn = moduletypeIDn
 }
 
 // WithName adds the name to the dcim console server port templates list params
@@ -641,17 +523,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
-// WithOrdering adds the ordering to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) WithOrdering(ordering *string) *DcimConsoleServerPortTemplatesListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the dcim console server port templates list params
-func (o *DcimConsoleServerPortTemplatesListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
-}
-
 // WithQ adds the q to the dcim console server port templates list params
 func (o *DcimConsoleServerPortTemplatesListParams) WithQ(q *string) *DcimConsoleServerPortTemplatesListParams {
 	o.SetQ(q)
@@ -710,23 +581,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -744,23 +598,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -773,23 +610,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -948,23 +768,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -977,23 +780,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		if qLastUpdatedGte != "" {
 
 			if err := r.SetQueryParam("last_updated__gte", qLastUpdatedGte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
 				return err
 			}
 		}
@@ -1016,23 +802,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		}
 	}
 
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.Limit != nil {
 
 		// query param limit
@@ -1045,40 +814,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		if qLimit != "" {
 
 			if err := r.SetQueryParam("limit", qLimit); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ModuletypeID != nil {
-
-		// query param moduletype_id
-		var qrModuletypeID string
-
-		if o.ModuletypeID != nil {
-			qrModuletypeID = *o.ModuletypeID
-		}
-		qModuletypeID := qrModuletypeID
-		if qModuletypeID != "" {
-
-			if err := r.SetQueryParam("moduletype_id", qModuletypeID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ModuletypeIDn != nil {
-
-		// query param moduletype_id__n
-		var qrModuletypeIDn string
-
-		if o.ModuletypeIDn != nil {
-			qrModuletypeIDn = *o.ModuletypeIDn
-		}
-		qModuletypeIDn := qrModuletypeIDn
-		if qModuletypeIDn != "" {
-
-			if err := r.SetQueryParam("moduletype_id__n", qModuletypeIDn); err != nil {
 				return err
 			}
 		}
@@ -1283,23 +1018,6 @@ func (o *DcimConsoleServerPortTemplatesListParams) WriteToRequest(r runtime.Clie
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

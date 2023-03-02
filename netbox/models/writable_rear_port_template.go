@@ -42,21 +42,22 @@ type WritableRearPortTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device type
-	DeviceType *int64 `json:"device_type,omitempty"`
+	// Required: true
+	DeviceType *int64 `json:"device_type"`
 
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -69,16 +70,9 @@ type WritableRearPortTemplate struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
-
-	// Module type
-	ModuleType *int64 `json:"module_type,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
-	//
-	//
-	// {module} is accepted as a substitution for the module bay position when attached to a module type.
-	//
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1
@@ -91,7 +85,7 @@ type WritableRearPortTemplate struct {
 
 	// Type
 	// Required: true
-	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice other]
+	// Enum: [8p8c 8p6c 8p4c 8p2c 6p6c 6p4c 6p2c 4p4c 4p2c gg45 tera-4p tera-2p tera-1p 110-punch bnc f n mrj21 fc lc lc-pc lc-upc lc-apc lsh lsh-pc lsh-upc lsh-apc mpo mtrj sc sc-pc sc-upc sc-apc st cs sn sma-905 sma-906 urm-p2 urm-p4 urm-p8 splice]
 	Type *string `json:"type"`
 
 	// Url
@@ -113,6 +107,10 @@ func (m *WritableRearPortTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDeviceType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -167,7 +165,7 @@ func (m *WritableRearPortTemplate) validateCreated(formats strfmt.Registry) erro
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -180,6 +178,15 @@ func (m *WritableRearPortTemplate) validateDescription(formats strfmt.Registry) 
 	}
 
 	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableRearPortTemplate) validateDeviceType(formats strfmt.Registry) error {
+
+	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
 		return err
 	}
 
@@ -247,7 +254,7 @@ var writableRearPortTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["8p8c","8p6c","8p4c","8p2c","6p6c","6p4c","6p2c","4p4c","4p2c","gg45","tera-4p","tera-2p","tera-1p","110-punch","bnc","f","n","mrj21","fc","lc","lc-pc","lc-upc","lc-apc","lsh","lsh-pc","lsh-upc","lsh-apc","mpo","mtrj","sc","sc-pc","sc-upc","sc-apc","st","cs","sn","sma-905","sma-906","urm-p2","urm-p4","urm-p8","splice"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -382,9 +389,6 @@ const (
 
 	// WritableRearPortTemplateTypeSplice captures enum value "splice"
 	WritableRearPortTemplateTypeSplice string = "splice"
-
-	// WritableRearPortTemplateTypeOther captures enum value "other"
-	WritableRearPortTemplateTypeOther string = "other"
 )
 
 // prop value enum
@@ -453,7 +457,7 @@ func (m *WritableRearPortTemplate) ContextValidate(ctx context.Context, formats 
 
 func (m *WritableRearPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -480,7 +484,7 @@ func (m *WritableRearPortTemplate) contextValidateID(ctx context.Context, format
 
 func (m *WritableRearPortTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

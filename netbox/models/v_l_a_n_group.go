@@ -37,8 +37,8 @@ type VLANGroup struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -51,28 +51,14 @@ type VLANGroup struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
-
-	// Maximum VLAN ID
-	//
-	// Highest permissible ID of a child VLAN
-	// Maximum: 4094
-	// Minimum: 1
-	MaxVid int64 `json:"max_vid,omitempty"`
-
-	// Minimum VLAN ID
-	//
-	// Lowest permissible ID of a child VLAN
-	// Maximum: 4094
-	// Minimum: 1
-	MinVid int64 `json:"min_vid,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -82,13 +68,13 @@ type VLANGroup struct {
 
 	// Scope
 	// Read Only: true
-	Scope interface{} `json:"scope,omitempty"`
+	Scope string `json:"scope,omitempty"`
 
 	// Scope id
 	ScopeID *int64 `json:"scope_id,omitempty"`
 
 	// Scope type
-	ScopeType *string `json:"scope_type,omitempty"`
+	ScopeType string `json:"scope_type,omitempty"`
 
 	// Slug
 	// Required: true
@@ -126,14 +112,6 @@ func (m *VLANGroup) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateMaxVid(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateMinVid(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -161,7 +139,7 @@ func (m *VLANGroup) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -186,38 +164,6 @@ func (m *VLANGroup) validateLastUpdated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *VLANGroup) validateMaxVid(formats strfmt.Registry) error {
-	if swag.IsZero(m.MaxVid) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("max_vid", "body", m.MaxVid, 1, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("max_vid", "body", m.MaxVid, 4094, false); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *VLANGroup) validateMinVid(formats strfmt.Registry) error {
-	if swag.IsZero(m.MinVid) { // not required
-		return nil
-	}
-
-	if err := validate.MinimumInt("min_vid", "body", m.MinVid, 1, false); err != nil {
-		return err
-	}
-
-	if err := validate.MaximumInt("min_vid", "body", m.MinVid, 4094, false); err != nil {
 		return err
 	}
 
@@ -320,6 +266,10 @@ func (m *VLANGroup) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateScope(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateTags(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -340,7 +290,7 @@ func (m *VLANGroup) ContextValidate(ctx context.Context, formats strfmt.Registry
 
 func (m *VLANGroup) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -367,7 +317,16 @@ func (m *VLANGroup) contextValidateID(ctx context.Context, formats strfmt.Regist
 
 func (m *VLANGroup) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VLANGroup) contextValidateScope(ctx context.Context, formats strfmt.Registry) error {
+
+	if err := validate.ReadOnly(ctx, "scope", "body", string(m.Scope)); err != nil {
 		return err
 	}
 

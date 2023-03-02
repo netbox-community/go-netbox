@@ -80,20 +80,11 @@ type WirelessWirelessLanGroupsListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
 
 	// Description.
 	Description *string
@@ -149,20 +140,11 @@ type WirelessWirelessLanGroupsListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -208,12 +190,6 @@ type WirelessWirelessLanGroupsListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Parent.
 	Parent *string
@@ -333,17 +309,6 @@ func (o *WirelessWirelessLanGroupsListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) WithCreatedGt(createdGt *string) *WirelessWirelessLanGroupsListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the wireless wireless lan groups list params
 func (o *WirelessWirelessLanGroupsListParams) WithCreatedGte(createdGte *string) *WirelessWirelessLanGroupsListParams {
 	o.SetCreatedGte(createdGte)
@@ -355,17 +320,6 @@ func (o *WirelessWirelessLanGroupsListParams) SetCreatedGte(createdGte *string) 
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) WithCreatedLt(createdLt *string) *WirelessWirelessLanGroupsListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the wireless wireless lan groups list params
 func (o *WirelessWirelessLanGroupsListParams) WithCreatedLte(createdLte *string) *WirelessWirelessLanGroupsListParams {
 	o.SetCreatedLte(createdLte)
@@ -375,17 +329,6 @@ func (o *WirelessWirelessLanGroupsListParams) WithCreatedLte(createdLte *string)
 // SetCreatedLte adds the createdLte to the wireless wireless lan groups list params
 func (o *WirelessWirelessLanGroupsListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) WithCreatedn(createdn *string) *WirelessWirelessLanGroupsListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
 }
 
 // WithDescription adds the description to the wireless wireless lan groups list params
@@ -586,17 +529,6 @@ func (o *WirelessWirelessLanGroupsListParams) SetLastUpdated(lastUpdated *string
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) WithLastUpdatedGt(lastUpdatedGt *string) *WirelessWirelessLanGroupsListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the wireless wireless lan groups list params
 func (o *WirelessWirelessLanGroupsListParams) WithLastUpdatedGte(lastUpdatedGte *string) *WirelessWirelessLanGroupsListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -608,17 +540,6 @@ func (o *WirelessWirelessLanGroupsListParams) SetLastUpdatedGte(lastUpdatedGte *
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) WithLastUpdatedLt(lastUpdatedLt *string) *WirelessWirelessLanGroupsListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the wireless wireless lan groups list params
 func (o *WirelessWirelessLanGroupsListParams) WithLastUpdatedLte(lastUpdatedLte *string) *WirelessWirelessLanGroupsListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -628,17 +549,6 @@ func (o *WirelessWirelessLanGroupsListParams) WithLastUpdatedLte(lastUpdatedLte 
 // SetLastUpdatedLte adds the lastUpdatedLte to the wireless wireless lan groups list params
 func (o *WirelessWirelessLanGroupsListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) WithLastUpdatedn(lastUpdatedn *string) *WirelessWirelessLanGroupsListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the wireless wireless lan groups list params
@@ -782,17 +692,6 @@ func (o *WirelessWirelessLanGroupsListParams) WithOffset(offset *int64) *Wireles
 // SetOffset adds the offset to the wireless wireless lan groups list params
 func (o *WirelessWirelessLanGroupsListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) WithOrdering(ordering *string) *WirelessWirelessLanGroupsListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the wireless wireless lan groups list params
-func (o *WirelessWirelessLanGroupsListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithParent adds the parent to the wireless wireless lan groups list params
@@ -1018,23 +917,6 @@ func (o *WirelessWirelessLanGroupsListParams) WriteToRequest(r runtime.ClientReq
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -1052,23 +934,6 @@ func (o *WirelessWirelessLanGroupsListParams) WriteToRequest(r runtime.ClientReq
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -1081,23 +946,6 @@ func (o *WirelessWirelessLanGroupsListParams) WriteToRequest(r runtime.ClientReq
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
 				return err
 			}
 		}
@@ -1409,23 +1257,6 @@ func (o *WirelessWirelessLanGroupsListParams) WriteToRequest(r runtime.ClientReq
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -1443,23 +1274,6 @@ func (o *WirelessWirelessLanGroupsListParams) WriteToRequest(r runtime.ClientReq
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -1472,23 +1286,6 @@ func (o *WirelessWirelessLanGroupsListParams) WriteToRequest(r runtime.ClientReq
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -1710,23 +1507,6 @@ func (o *WirelessWirelessLanGroupsListParams) WriteToRequest(r runtime.ClientReq
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

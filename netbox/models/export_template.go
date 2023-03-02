@@ -39,15 +39,14 @@ type ExportTemplate struct {
 	// Download file as attachment
 	AsAttachment bool `json:"as_attachment,omitempty"`
 
-	// content types
+	// Content type
 	// Required: true
-	// Unique: true
-	ContentTypes []string `json:"content_types"`
+	ContentType *string `json:"content_type"`
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -63,14 +62,14 @@ type ExportTemplate struct {
 	// Max Length: 15
 	FileExtension string `json:"file_extension,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// MIME type
 	//
@@ -101,7 +100,7 @@ type ExportTemplate struct {
 func (m *ExportTemplate) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateContentTypes(formats); err != nil {
+	if err := m.validateContentType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -143,13 +142,9 @@ func (m *ExportTemplate) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ExportTemplate) validateContentTypes(formats strfmt.Registry) error {
+func (m *ExportTemplate) validateContentType(formats strfmt.Registry) error {
 
-	if err := validate.Required("content_types", "body", m.ContentTypes); err != nil {
-		return err
-	}
-
-	if err := validate.UniqueItems("content_types", "body", m.ContentTypes); err != nil {
+	if err := validate.Required("content_type", "body", m.ContentType); err != nil {
 		return err
 	}
 
@@ -161,7 +156,7 @@ func (m *ExportTemplate) validateCreated(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -290,7 +285,7 @@ func (m *ExportTemplate) ContextValidate(ctx context.Context, formats strfmt.Reg
 
 func (m *ExportTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -317,7 +312,7 @@ func (m *ExportTemplate) contextValidateID(ctx context.Context, formats strfmt.R
 
 func (m *ExportTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

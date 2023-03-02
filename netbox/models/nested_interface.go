@@ -36,7 +36,7 @@ type NestedInterface struct {
 
 	// occupied
 	// Read Only: true
-	Occupied *bool `json:"_occupied,omitempty"`
+	Occupied string `json:"_occupied,omitempty"`
 
 	// Cable
 	Cable *int64 `json:"cable,omitempty"`
@@ -48,7 +48,7 @@ type NestedInterface struct {
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -166,7 +166,7 @@ func (m *NestedInterface) ContextValidate(ctx context.Context, formats strfmt.Re
 
 func (m *NestedInterface) contextValidateOccupied(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "_occupied", "body", m.Occupied); err != nil {
+	if err := validate.ReadOnly(ctx, "_occupied", "body", string(m.Occupied)); err != nil {
 		return err
 	}
 

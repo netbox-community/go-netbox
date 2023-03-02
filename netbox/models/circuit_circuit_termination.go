@@ -34,15 +34,11 @@ import (
 // swagger:model CircuitCircuitTermination
 type CircuitCircuitTermination struct {
 
-	// Description
-	// Max Length: 200
-	Description string `json:"description,omitempty"`
-
 	// Display
 	// Read Only: true
 	Display string `json:"display,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -80,10 +76,6 @@ type CircuitCircuitTermination struct {
 func (m *CircuitCircuitTermination) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateDescription(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validatePortSpeed(formats); err != nil {
 		res = append(res, err)
 	}
@@ -111,18 +103,6 @@ func (m *CircuitCircuitTermination) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *CircuitCircuitTermination) validateDescription(formats strfmt.Registry) error {
-	if swag.IsZero(m.Description) { // not required
-		return nil
-	}
-
-	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
-		return err
-	}
-
 	return nil
 }
 

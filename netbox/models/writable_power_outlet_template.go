@@ -37,15 +37,16 @@ type WritablePowerOutletTemplate struct {
 
 	// Created
 	// Read Only: true
-	// Format: date-time
-	Created *strfmt.DateTime `json:"created,omitempty"`
+	// Format: date
+	Created strfmt.Date `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device type
-	DeviceType *int64 `json:"device_type,omitempty"`
+	// Required: true
+	DeviceType *int64 `json:"device_type"`
 
 	// Display
 	// Read Only: true
@@ -57,7 +58,7 @@ type WritablePowerOutletTemplate struct {
 	// Enum: [A B C]
 	FeedLeg string `json:"feed_leg,omitempty"`
 
-	// ID
+	// Id
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
 
@@ -70,16 +71,9 @@ type WritablePowerOutletTemplate struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
-
-	// Module type
-	ModuleType *int64 `json:"module_type,omitempty"`
+	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
-	//
-	//
-	// {module} is accepted as a substitution for the module bay position when attached to a module type.
-	//
 	// Required: true
 	// Max Length: 64
 	// Min Length: 1
@@ -89,7 +83,7 @@ type WritablePowerOutletTemplate struct {
 	PowerPort *int64 `json:"power_port,omitempty"`
 
 	// Type
-	// Enum: [iec-60320-c5 iec-60320-c7 iec-60320-c13 iec-60320-c15 iec-60320-c19 iec-60320-c21 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-1-15r nema-5-15r nema-5-20r nema-5-30r nema-5-50r nema-6-15r nema-6-20r nema-6-30r nema-6-50r nema-10-30r nema-10-50r nema-14-20r nema-14-30r nema-14-50r nema-14-60r nema-15-15r nema-15-20r nema-15-30r nema-15-50r nema-15-60r nema-l1-15r nema-l5-15r nema-l5-20r nema-l5-30r nema-l5-50r nema-l6-15r nema-l6-20r nema-l6-30r nema-l6-50r nema-l10-30r nema-l14-20r nema-l14-30r nema-l14-50r nema-l14-60r nema-l15-20r nema-l15-30r nema-l15-50r nema-l15-60r nema-l21-20r nema-l21-30r nema-l22-30r CS6360C CS6364C CS8164C CS8264C CS8364C CS8464C ita-e ita-f ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o ita-multistandard usb-a usb-micro-b usb-c dc-terminal hdot-cx saf-d-grid neutrik-powercon-20a neutrik-powercon-32a neutrik-powercon-true1 neutrik-powercon-true1-top ubiquiti-smartpower hardwired other]
+	// Enum: [iec-60320-c5 iec-60320-c7 iec-60320-c13 iec-60320-c15 iec-60320-c19 iec-60320-c21 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-1-15r nema-5-15r nema-5-20r nema-5-30r nema-5-50r nema-6-15r nema-6-20r nema-6-30r nema-6-50r nema-10-30r nema-10-50r nema-14-20r nema-14-30r nema-14-50r nema-14-60r nema-15-15r nema-15-20r nema-15-30r nema-15-50r nema-15-60r nema-l1-15r nema-l5-15r nema-l5-20r nema-l5-30r nema-l5-50r nema-l6-15r nema-l6-20r nema-l6-30r nema-l6-50r nema-l10-30r nema-l14-20r nema-l14-30r nema-l14-50r nema-l14-60r nema-l15-20r nema-l15-30r nema-l15-50r nema-l15-60r nema-l21-20r nema-l21-30r nema-l22-30r CS6360C CS6364C CS8164C CS8264C CS8364C CS8464C ita-e ita-f ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o ita-multistandard usb-a usb-micro-b usb-c dc-terminal hdot-cx saf-d-grid hardwired]
 	Type string `json:"type,omitempty"`
 
 	// Url
@@ -107,6 +101,10 @@ func (m *WritablePowerOutletTemplate) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDeviceType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -145,7 +143,7 @@ func (m *WritablePowerOutletTemplate) validateCreated(formats strfmt.Registry) e
 		return nil
 	}
 
-	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+	if err := validate.FormatOf("created", "body", "date", m.Created.String(), formats); err != nil {
 		return err
 	}
 
@@ -158,6 +156,15 @@ func (m *WritablePowerOutletTemplate) validateDescription(formats strfmt.Registr
 	}
 
 	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritablePowerOutletTemplate) validateDeviceType(formats strfmt.Registry) error {
+
+	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
 		return err
 	}
 
@@ -254,7 +261,7 @@ var writablePowerOutletTemplateTypeTypePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["iec-60320-c5","iec-60320-c7","iec-60320-c13","iec-60320-c15","iec-60320-c19","iec-60320-c21","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-1-15r","nema-5-15r","nema-5-20r","nema-5-30r","nema-5-50r","nema-6-15r","nema-6-20r","nema-6-30r","nema-6-50r","nema-10-30r","nema-10-50r","nema-14-20r","nema-14-30r","nema-14-50r","nema-14-60r","nema-15-15r","nema-15-20r","nema-15-30r","nema-15-50r","nema-15-60r","nema-l1-15r","nema-l5-15r","nema-l5-20r","nema-l5-30r","nema-l5-50r","nema-l6-15r","nema-l6-20r","nema-l6-30r","nema-l6-50r","nema-l10-30r","nema-l14-20r","nema-l14-30r","nema-l14-50r","nema-l14-60r","nema-l15-20r","nema-l15-30r","nema-l15-50r","nema-l15-60r","nema-l21-20r","nema-l21-30r","nema-l22-30r","CS6360C","CS6364C","CS8164C","CS8264C","CS8364C","CS8464C","ita-e","ita-f","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o","ita-multistandard","usb-a","usb-micro-b","usb-c","dc-terminal","hdot-cx","saf-d-grid","neutrik-powercon-20a","neutrik-powercon-32a","neutrik-powercon-true1","neutrik-powercon-true1-top","ubiquiti-smartpower","hardwired","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["iec-60320-c5","iec-60320-c7","iec-60320-c13","iec-60320-c15","iec-60320-c19","iec-60320-c21","iec-60309-p-n-e-4h","iec-60309-p-n-e-6h","iec-60309-p-n-e-9h","iec-60309-2p-e-4h","iec-60309-2p-e-6h","iec-60309-2p-e-9h","iec-60309-3p-e-4h","iec-60309-3p-e-6h","iec-60309-3p-e-9h","iec-60309-3p-n-e-4h","iec-60309-3p-n-e-6h","iec-60309-3p-n-e-9h","nema-1-15r","nema-5-15r","nema-5-20r","nema-5-30r","nema-5-50r","nema-6-15r","nema-6-20r","nema-6-30r","nema-6-50r","nema-10-30r","nema-10-50r","nema-14-20r","nema-14-30r","nema-14-50r","nema-14-60r","nema-15-15r","nema-15-20r","nema-15-30r","nema-15-50r","nema-15-60r","nema-l1-15r","nema-l5-15r","nema-l5-20r","nema-l5-30r","nema-l5-50r","nema-l6-15r","nema-l6-20r","nema-l6-30r","nema-l6-50r","nema-l10-30r","nema-l14-20r","nema-l14-30r","nema-l14-50r","nema-l14-60r","nema-l15-20r","nema-l15-30r","nema-l15-50r","nema-l15-60r","nema-l21-20r","nema-l21-30r","nema-l22-30r","CS6360C","CS6364C","CS8164C","CS8264C","CS8364C","CS8464C","ita-e","ita-f","ita-g","ita-h","ita-i","ita-j","ita-k","ita-l","ita-m","ita-n","ita-o","ita-multistandard","usb-a","usb-micro-b","usb-c","dc-terminal","hdot-cx","saf-d-grid","hardwired"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -513,26 +520,8 @@ const (
 	// WritablePowerOutletTemplateTypeSafDashdDashGrid captures enum value "saf-d-grid"
 	WritablePowerOutletTemplateTypeSafDashdDashGrid string = "saf-d-grid"
 
-	// WritablePowerOutletTemplateTypeNeutrikDashPowerconDash20a captures enum value "neutrik-powercon-20a"
-	WritablePowerOutletTemplateTypeNeutrikDashPowerconDash20a string = "neutrik-powercon-20a"
-
-	// WritablePowerOutletTemplateTypeNeutrikDashPowerconDash32a captures enum value "neutrik-powercon-32a"
-	WritablePowerOutletTemplateTypeNeutrikDashPowerconDash32a string = "neutrik-powercon-32a"
-
-	// WritablePowerOutletTemplateTypeNeutrikDashPowerconDashTrue1 captures enum value "neutrik-powercon-true1"
-	WritablePowerOutletTemplateTypeNeutrikDashPowerconDashTrue1 string = "neutrik-powercon-true1"
-
-	// WritablePowerOutletTemplateTypeNeutrikDashPowerconDashTrue1DashTop captures enum value "neutrik-powercon-true1-top"
-	WritablePowerOutletTemplateTypeNeutrikDashPowerconDashTrue1DashTop string = "neutrik-powercon-true1-top"
-
-	// WritablePowerOutletTemplateTypeUbiquitiDashSmartpower captures enum value "ubiquiti-smartpower"
-	WritablePowerOutletTemplateTypeUbiquitiDashSmartpower string = "ubiquiti-smartpower"
-
 	// WritablePowerOutletTemplateTypeHardwired captures enum value "hardwired"
 	WritablePowerOutletTemplateTypeHardwired string = "hardwired"
-
-	// WritablePowerOutletTemplateTypeOther captures enum value "other"
-	WritablePowerOutletTemplateTypeOther string = "other"
 )
 
 // prop value enum
@@ -600,7 +589,7 @@ func (m *WritablePowerOutletTemplate) ContextValidate(ctx context.Context, forma
 
 func (m *WritablePowerOutletTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", strfmt.Date(m.Created)); err != nil {
 		return err
 	}
 
@@ -627,7 +616,7 @@ func (m *WritablePowerOutletTemplate) contextValidateID(ctx context.Context, for
 
 func (m *WritablePowerOutletTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
 		return err
 	}
 

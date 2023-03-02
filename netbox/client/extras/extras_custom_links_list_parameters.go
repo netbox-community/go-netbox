@@ -77,56 +77,11 @@ ExtrasCustomLinksListParams contains all the parameters to send to the API endpo
 */
 type ExtrasCustomLinksListParams struct {
 
-	// ContentTypeID.
-	ContentTypeID *string
+	// ContentType.
+	ContentType *string
 
-	// ContentTypeIDGt.
-	ContentTypeIDGt *string
-
-	// ContentTypeIDGte.
-	ContentTypeIDGte *string
-
-	// ContentTypeIDLt.
-	ContentTypeIDLt *string
-
-	// ContentTypeIDLte.
-	ContentTypeIDLte *string
-
-	// ContentTypeIDn.
-	ContentTypeIDn *string
-
-	// ContentTypes.
-	ContentTypes *string
-
-	// ContentTypesIc.
-	ContentTypesIc *string
-
-	// ContentTypesIe.
-	ContentTypesIe *string
-
-	// ContentTypesIew.
-	ContentTypesIew *string
-
-	// ContentTypesIsw.
-	ContentTypesIsw *string
-
-	// ContentTypesn.
-	ContentTypesn *string
-
-	// ContentTypesNic.
-	ContentTypesNic *string
-
-	// ContentTypesNie.
-	ContentTypesNie *string
-
-	// ContentTypesNiew.
-	ContentTypesNiew *string
-
-	// ContentTypesNisw.
-	ContentTypesNisw *string
-
-	// Enabled.
-	Enabled *string
+	// ContentTypen.
+	ContentTypen *string
 
 	// GroupName.
 	GroupName *string
@@ -188,6 +143,9 @@ type ExtrasCustomLinksListParams struct {
 	// LinkText.
 	LinkText *string
 
+	// LinkTextEmpty.
+	LinkTextEmpty *string
+
 	// LinkTextIc.
 	LinkTextIc *string
 
@@ -217,6 +175,9 @@ type ExtrasCustomLinksListParams struct {
 
 	// LinkURL.
 	LinkURL *string
+
+	// LinkURLEmpty.
+	LinkURLEmpty *string
 
 	// LinkURLIc.
 	LinkURLIc *string
@@ -286,12 +247,6 @@ type ExtrasCustomLinksListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Q.
 	Q *string
@@ -367,191 +322,26 @@ func (o *ExtrasCustomLinksListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
-// WithContentTypeID adds the contentTypeID to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypeID(contentTypeID *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypeID(contentTypeID)
+// WithContentType adds the contentType to the extras custom links list params
+func (o *ExtrasCustomLinksListParams) WithContentType(contentType *string) *ExtrasCustomLinksListParams {
+	o.SetContentType(contentType)
 	return o
 }
 
-// SetContentTypeID adds the contentTypeId to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypeID(contentTypeID *string) {
-	o.ContentTypeID = contentTypeID
+// SetContentType adds the contentType to the extras custom links list params
+func (o *ExtrasCustomLinksListParams) SetContentType(contentType *string) {
+	o.ContentType = contentType
 }
 
-// WithContentTypeIDGt adds the contentTypeIDGt to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypeIDGt(contentTypeIDGt *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypeIDGt(contentTypeIDGt)
+// WithContentTypen adds the contentTypen to the extras custom links list params
+func (o *ExtrasCustomLinksListParams) WithContentTypen(contentTypen *string) *ExtrasCustomLinksListParams {
+	o.SetContentTypen(contentTypen)
 	return o
 }
 
-// SetContentTypeIDGt adds the contentTypeIdGt to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypeIDGt(contentTypeIDGt *string) {
-	o.ContentTypeIDGt = contentTypeIDGt
-}
-
-// WithContentTypeIDGte adds the contentTypeIDGte to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypeIDGte(contentTypeIDGte *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypeIDGte(contentTypeIDGte)
-	return o
-}
-
-// SetContentTypeIDGte adds the contentTypeIdGte to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypeIDGte(contentTypeIDGte *string) {
-	o.ContentTypeIDGte = contentTypeIDGte
-}
-
-// WithContentTypeIDLt adds the contentTypeIDLt to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypeIDLt(contentTypeIDLt *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypeIDLt(contentTypeIDLt)
-	return o
-}
-
-// SetContentTypeIDLt adds the contentTypeIdLt to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypeIDLt(contentTypeIDLt *string) {
-	o.ContentTypeIDLt = contentTypeIDLt
-}
-
-// WithContentTypeIDLte adds the contentTypeIDLte to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypeIDLte(contentTypeIDLte *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypeIDLte(contentTypeIDLte)
-	return o
-}
-
-// SetContentTypeIDLte adds the contentTypeIdLte to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypeIDLte(contentTypeIDLte *string) {
-	o.ContentTypeIDLte = contentTypeIDLte
-}
-
-// WithContentTypeIDn adds the contentTypeIDn to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypeIDn(contentTypeIDn *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypeIDn(contentTypeIDn)
-	return o
-}
-
-// SetContentTypeIDn adds the contentTypeIdN to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypeIDn(contentTypeIDn *string) {
-	o.ContentTypeIDn = contentTypeIDn
-}
-
-// WithContentTypes adds the contentTypes to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypes(contentTypes *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypes(contentTypes)
-	return o
-}
-
-// SetContentTypes adds the contentTypes to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypes(contentTypes *string) {
-	o.ContentTypes = contentTypes
-}
-
-// WithContentTypesIc adds the contentTypesIc to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypesIc(contentTypesIc *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypesIc(contentTypesIc)
-	return o
-}
-
-// SetContentTypesIc adds the contentTypesIc to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypesIc(contentTypesIc *string) {
-	o.ContentTypesIc = contentTypesIc
-}
-
-// WithContentTypesIe adds the contentTypesIe to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypesIe(contentTypesIe *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypesIe(contentTypesIe)
-	return o
-}
-
-// SetContentTypesIe adds the contentTypesIe to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypesIe(contentTypesIe *string) {
-	o.ContentTypesIe = contentTypesIe
-}
-
-// WithContentTypesIew adds the contentTypesIew to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypesIew(contentTypesIew *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypesIew(contentTypesIew)
-	return o
-}
-
-// SetContentTypesIew adds the contentTypesIew to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypesIew(contentTypesIew *string) {
-	o.ContentTypesIew = contentTypesIew
-}
-
-// WithContentTypesIsw adds the contentTypesIsw to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypesIsw(contentTypesIsw *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypesIsw(contentTypesIsw)
-	return o
-}
-
-// SetContentTypesIsw adds the contentTypesIsw to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypesIsw(contentTypesIsw *string) {
-	o.ContentTypesIsw = contentTypesIsw
-}
-
-// WithContentTypesn adds the contentTypesn to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypesn(contentTypesn *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypesn(contentTypesn)
-	return o
-}
-
-// SetContentTypesn adds the contentTypesN to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypesn(contentTypesn *string) {
-	o.ContentTypesn = contentTypesn
-}
-
-// WithContentTypesNic adds the contentTypesNic to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypesNic(contentTypesNic *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypesNic(contentTypesNic)
-	return o
-}
-
-// SetContentTypesNic adds the contentTypesNic to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypesNic(contentTypesNic *string) {
-	o.ContentTypesNic = contentTypesNic
-}
-
-// WithContentTypesNie adds the contentTypesNie to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypesNie(contentTypesNie *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypesNie(contentTypesNie)
-	return o
-}
-
-// SetContentTypesNie adds the contentTypesNie to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypesNie(contentTypesNie *string) {
-	o.ContentTypesNie = contentTypesNie
-}
-
-// WithContentTypesNiew adds the contentTypesNiew to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypesNiew(contentTypesNiew *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypesNiew(contentTypesNiew)
-	return o
-}
-
-// SetContentTypesNiew adds the contentTypesNiew to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypesNiew(contentTypesNiew *string) {
-	o.ContentTypesNiew = contentTypesNiew
-}
-
-// WithContentTypesNisw adds the contentTypesNisw to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithContentTypesNisw(contentTypesNisw *string) *ExtrasCustomLinksListParams {
-	o.SetContentTypesNisw(contentTypesNisw)
-	return o
-}
-
-// SetContentTypesNisw adds the contentTypesNisw to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetContentTypesNisw(contentTypesNisw *string) {
-	o.ContentTypesNisw = contentTypesNisw
-}
-
-// WithEnabled adds the enabled to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithEnabled(enabled *string) *ExtrasCustomLinksListParams {
-	o.SetEnabled(enabled)
-	return o
-}
-
-// SetEnabled adds the enabled to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetEnabled(enabled *string) {
-	o.Enabled = enabled
+// SetContentTypen adds the contentTypeN to the extras custom links list params
+func (o *ExtrasCustomLinksListParams) SetContentTypen(contentTypen *string) {
+	o.ContentTypen = contentTypen
 }
 
 // WithGroupName adds the groupName to the extras custom links list params
@@ -763,6 +553,17 @@ func (o *ExtrasCustomLinksListParams) SetLinkText(linkText *string) {
 	o.LinkText = linkText
 }
 
+// WithLinkTextEmpty adds the linkTextEmpty to the extras custom links list params
+func (o *ExtrasCustomLinksListParams) WithLinkTextEmpty(linkTextEmpty *string) *ExtrasCustomLinksListParams {
+	o.SetLinkTextEmpty(linkTextEmpty)
+	return o
+}
+
+// SetLinkTextEmpty adds the linkTextEmpty to the extras custom links list params
+func (o *ExtrasCustomLinksListParams) SetLinkTextEmpty(linkTextEmpty *string) {
+	o.LinkTextEmpty = linkTextEmpty
+}
+
 // WithLinkTextIc adds the linkTextIc to the extras custom links list params
 func (o *ExtrasCustomLinksListParams) WithLinkTextIc(linkTextIc *string) *ExtrasCustomLinksListParams {
 	o.SetLinkTextIc(linkTextIc)
@@ -871,6 +672,17 @@ func (o *ExtrasCustomLinksListParams) WithLinkURL(linkURL *string) *ExtrasCustom
 // SetLinkURL adds the linkUrl to the extras custom links list params
 func (o *ExtrasCustomLinksListParams) SetLinkURL(linkURL *string) {
 	o.LinkURL = linkURL
+}
+
+// WithLinkURLEmpty adds the linkURLEmpty to the extras custom links list params
+func (o *ExtrasCustomLinksListParams) WithLinkURLEmpty(linkURLEmpty *string) *ExtrasCustomLinksListParams {
+	o.SetLinkURLEmpty(linkURLEmpty)
+	return o
+}
+
+// SetLinkURLEmpty adds the linkUrlEmpty to the extras custom links list params
+func (o *ExtrasCustomLinksListParams) SetLinkURLEmpty(linkURLEmpty *string) {
+	o.LinkURLEmpty = linkURLEmpty
 }
 
 // WithLinkURLIc adds the linkURLIc to the extras custom links list params
@@ -1115,17 +927,6 @@ func (o *ExtrasCustomLinksListParams) SetOffset(offset *int64) {
 	o.Offset = offset
 }
 
-// WithOrdering adds the ordering to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) WithOrdering(ordering *string) *ExtrasCustomLinksListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the extras custom links list params
-func (o *ExtrasCustomLinksListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
-}
-
 // WithQ adds the q to the extras custom links list params
 func (o *ExtrasCustomLinksListParams) WithQ(q *string) *ExtrasCustomLinksListParams {
 	o.SetQ(q)
@@ -1211,290 +1012,35 @@ func (o *ExtrasCustomLinksListParams) WriteToRequest(r runtime.ClientRequest, re
 	}
 	var res []error
 
-	if o.ContentTypeID != nil {
+	if o.ContentType != nil {
 
-		// query param content_type_id
-		var qrContentTypeID string
+		// query param content_type
+		var qrContentType string
 
-		if o.ContentTypeID != nil {
-			qrContentTypeID = *o.ContentTypeID
+		if o.ContentType != nil {
+			qrContentType = *o.ContentType
 		}
-		qContentTypeID := qrContentTypeID
-		if qContentTypeID != "" {
+		qContentType := qrContentType
+		if qContentType != "" {
 
-			if err := r.SetQueryParam("content_type_id", qContentTypeID); err != nil {
+			if err := r.SetQueryParam("content_type", qContentType); err != nil {
 				return err
 			}
 		}
 	}
 
-	if o.ContentTypeIDGt != nil {
+	if o.ContentTypen != nil {
 
-		// query param content_type_id__gt
-		var qrContentTypeIDGt string
+		// query param content_type__n
+		var qrContentTypen string
 
-		if o.ContentTypeIDGt != nil {
-			qrContentTypeIDGt = *o.ContentTypeIDGt
+		if o.ContentTypen != nil {
+			qrContentTypen = *o.ContentTypen
 		}
-		qContentTypeIDGt := qrContentTypeIDGt
-		if qContentTypeIDGt != "" {
+		qContentTypen := qrContentTypen
+		if qContentTypen != "" {
 
-			if err := r.SetQueryParam("content_type_id__gt", qContentTypeIDGt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeIDGte != nil {
-
-		// query param content_type_id__gte
-		var qrContentTypeIDGte string
-
-		if o.ContentTypeIDGte != nil {
-			qrContentTypeIDGte = *o.ContentTypeIDGte
-		}
-		qContentTypeIDGte := qrContentTypeIDGte
-		if qContentTypeIDGte != "" {
-
-			if err := r.SetQueryParam("content_type_id__gte", qContentTypeIDGte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeIDLt != nil {
-
-		// query param content_type_id__lt
-		var qrContentTypeIDLt string
-
-		if o.ContentTypeIDLt != nil {
-			qrContentTypeIDLt = *o.ContentTypeIDLt
-		}
-		qContentTypeIDLt := qrContentTypeIDLt
-		if qContentTypeIDLt != "" {
-
-			if err := r.SetQueryParam("content_type_id__lt", qContentTypeIDLt); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeIDLte != nil {
-
-		// query param content_type_id__lte
-		var qrContentTypeIDLte string
-
-		if o.ContentTypeIDLte != nil {
-			qrContentTypeIDLte = *o.ContentTypeIDLte
-		}
-		qContentTypeIDLte := qrContentTypeIDLte
-		if qContentTypeIDLte != "" {
-
-			if err := r.SetQueryParam("content_type_id__lte", qContentTypeIDLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypeIDn != nil {
-
-		// query param content_type_id__n
-		var qrContentTypeIDn string
-
-		if o.ContentTypeIDn != nil {
-			qrContentTypeIDn = *o.ContentTypeIDn
-		}
-		qContentTypeIDn := qrContentTypeIDn
-		if qContentTypeIDn != "" {
-
-			if err := r.SetQueryParam("content_type_id__n", qContentTypeIDn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypes != nil {
-
-		// query param content_types
-		var qrContentTypes string
-
-		if o.ContentTypes != nil {
-			qrContentTypes = *o.ContentTypes
-		}
-		qContentTypes := qrContentTypes
-		if qContentTypes != "" {
-
-			if err := r.SetQueryParam("content_types", qContentTypes); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypesIc != nil {
-
-		// query param content_types__ic
-		var qrContentTypesIc string
-
-		if o.ContentTypesIc != nil {
-			qrContentTypesIc = *o.ContentTypesIc
-		}
-		qContentTypesIc := qrContentTypesIc
-		if qContentTypesIc != "" {
-
-			if err := r.SetQueryParam("content_types__ic", qContentTypesIc); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypesIe != nil {
-
-		// query param content_types__ie
-		var qrContentTypesIe string
-
-		if o.ContentTypesIe != nil {
-			qrContentTypesIe = *o.ContentTypesIe
-		}
-		qContentTypesIe := qrContentTypesIe
-		if qContentTypesIe != "" {
-
-			if err := r.SetQueryParam("content_types__ie", qContentTypesIe); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypesIew != nil {
-
-		// query param content_types__iew
-		var qrContentTypesIew string
-
-		if o.ContentTypesIew != nil {
-			qrContentTypesIew = *o.ContentTypesIew
-		}
-		qContentTypesIew := qrContentTypesIew
-		if qContentTypesIew != "" {
-
-			if err := r.SetQueryParam("content_types__iew", qContentTypesIew); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypesIsw != nil {
-
-		// query param content_types__isw
-		var qrContentTypesIsw string
-
-		if o.ContentTypesIsw != nil {
-			qrContentTypesIsw = *o.ContentTypesIsw
-		}
-		qContentTypesIsw := qrContentTypesIsw
-		if qContentTypesIsw != "" {
-
-			if err := r.SetQueryParam("content_types__isw", qContentTypesIsw); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypesn != nil {
-
-		// query param content_types__n
-		var qrContentTypesn string
-
-		if o.ContentTypesn != nil {
-			qrContentTypesn = *o.ContentTypesn
-		}
-		qContentTypesn := qrContentTypesn
-		if qContentTypesn != "" {
-
-			if err := r.SetQueryParam("content_types__n", qContentTypesn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypesNic != nil {
-
-		// query param content_types__nic
-		var qrContentTypesNic string
-
-		if o.ContentTypesNic != nil {
-			qrContentTypesNic = *o.ContentTypesNic
-		}
-		qContentTypesNic := qrContentTypesNic
-		if qContentTypesNic != "" {
-
-			if err := r.SetQueryParam("content_types__nic", qContentTypesNic); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypesNie != nil {
-
-		// query param content_types__nie
-		var qrContentTypesNie string
-
-		if o.ContentTypesNie != nil {
-			qrContentTypesNie = *o.ContentTypesNie
-		}
-		qContentTypesNie := qrContentTypesNie
-		if qContentTypesNie != "" {
-
-			if err := r.SetQueryParam("content_types__nie", qContentTypesNie); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypesNiew != nil {
-
-		// query param content_types__niew
-		var qrContentTypesNiew string
-
-		if o.ContentTypesNiew != nil {
-			qrContentTypesNiew = *o.ContentTypesNiew
-		}
-		qContentTypesNiew := qrContentTypesNiew
-		if qContentTypesNiew != "" {
-
-			if err := r.SetQueryParam("content_types__niew", qContentTypesNiew); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContentTypesNisw != nil {
-
-		// query param content_types__nisw
-		var qrContentTypesNisw string
-
-		if o.ContentTypesNisw != nil {
-			qrContentTypesNisw = *o.ContentTypesNisw
-		}
-		qContentTypesNisw := qrContentTypesNisw
-		if qContentTypesNisw != "" {
-
-			if err := r.SetQueryParam("content_types__nisw", qContentTypesNisw); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Enabled != nil {
-
-		// query param enabled
-		var qrEnabled string
-
-		if o.Enabled != nil {
-			qrEnabled = *o.Enabled
-		}
-		qEnabled := qrEnabled
-		if qEnabled != "" {
-
-			if err := r.SetQueryParam("enabled", qEnabled); err != nil {
+			if err := r.SetQueryParam("content_type__n", qContentTypen); err != nil {
 				return err
 			}
 		}
@@ -1823,6 +1369,23 @@ func (o *ExtrasCustomLinksListParams) WriteToRequest(r runtime.ClientRequest, re
 		}
 	}
 
+	if o.LinkTextEmpty != nil {
+
+		// query param link_text__empty
+		var qrLinkTextEmpty string
+
+		if o.LinkTextEmpty != nil {
+			qrLinkTextEmpty = *o.LinkTextEmpty
+		}
+		qLinkTextEmpty := qrLinkTextEmpty
+		if qLinkTextEmpty != "" {
+
+			if err := r.SetQueryParam("link_text__empty", qLinkTextEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LinkTextIc != nil {
 
 		// query param link_text__ic
@@ -1988,6 +1551,23 @@ func (o *ExtrasCustomLinksListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qLinkURL != "" {
 
 			if err := r.SetQueryParam("link_url", qLinkURL); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LinkURLEmpty != nil {
+
+		// query param link_url__empty
+		var qrLinkURLEmpty string
+
+		if o.LinkURLEmpty != nil {
+			qrLinkURLEmpty = *o.LinkURLEmpty
+		}
+		qLinkURLEmpty := qrLinkURLEmpty
+		if qLinkURLEmpty != "" {
+
+			if err := r.SetQueryParam("link_url__empty", qLinkURLEmpty); err != nil {
 				return err
 			}
 		}
@@ -2362,23 +1942,6 @@ func (o *ExtrasCustomLinksListParams) WriteToRequest(r runtime.ClientRequest, re
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}

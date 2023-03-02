@@ -119,12 +119,6 @@ type VirtualizationVirtualMachinesListParams struct {
 	// Contactn.
 	Contactn *string
 
-	// ContactGroup.
-	ContactGroup *string
-
-	// ContactGroupn.
-	ContactGroupn *string
-
 	// ContactRole.
 	ContactRole *string
 
@@ -134,32 +128,11 @@ type VirtualizationVirtualMachinesListParams struct {
 	// Created.
 	Created *string
 
-	// CreatedGt.
-	CreatedGt *string
-
 	// CreatedGte.
 	CreatedGte *string
 
-	// CreatedLt.
-	CreatedLt *string
-
 	// CreatedLte.
 	CreatedLte *string
-
-	// Createdn.
-	Createdn *string
-
-	// Device.
-	Device *string
-
-	// Devicen.
-	Devicen *string
-
-	// DeviceID.
-	DeviceID *string
-
-	// DeviceIDn.
-	DeviceIDn *string
 
 	// Disk.
 	Disk *string
@@ -203,20 +176,11 @@ type VirtualizationVirtualMachinesListParams struct {
 	// LastUpdated.
 	LastUpdated *string
 
-	// LastUpdatedGt.
-	LastUpdatedGt *string
-
 	// LastUpdatedGte.
 	LastUpdatedGte *string
 
-	// LastUpdatedLt.
-	LastUpdatedLt *string
-
 	// LastUpdatedLte.
 	LastUpdatedLte *string
-
-	// LastUpdatedn.
-	LastUpdatedn *string
 
 	/* Limit.
 
@@ -313,12 +277,6 @@ type VirtualizationVirtualMachinesListParams struct {
 	   The initial index from which to return the results.
 	*/
 	Offset *int64
-
-	/* Ordering.
-
-	   Which field to use when ordering the results.
-	*/
-	Ordering *string
 
 	// Platform.
 	Platform *string
@@ -644,28 +602,6 @@ func (o *VirtualizationVirtualMachinesListParams) SetContactn(contactn *string) 
 	o.Contactn = contactn
 }
 
-// WithContactGroup adds the contactGroup to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithContactGroup(contactGroup *string) *VirtualizationVirtualMachinesListParams {
-	o.SetContactGroup(contactGroup)
-	return o
-}
-
-// SetContactGroup adds the contactGroup to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetContactGroup(contactGroup *string) {
-	o.ContactGroup = contactGroup
-}
-
-// WithContactGroupn adds the contactGroupn to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithContactGroupn(contactGroupn *string) *VirtualizationVirtualMachinesListParams {
-	o.SetContactGroupn(contactGroupn)
-	return o
-}
-
-// SetContactGroupn adds the contactGroupN to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetContactGroupn(contactGroupn *string) {
-	o.ContactGroupn = contactGroupn
-}
-
 // WithContactRole adds the contactRole to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithContactRole(contactRole *string) *VirtualizationVirtualMachinesListParams {
 	o.SetContactRole(contactRole)
@@ -699,17 +635,6 @@ func (o *VirtualizationVirtualMachinesListParams) SetCreated(created *string) {
 	o.Created = created
 }
 
-// WithCreatedGt adds the createdGt to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithCreatedGt(createdGt *string) *VirtualizationVirtualMachinesListParams {
-	o.SetCreatedGt(createdGt)
-	return o
-}
-
-// SetCreatedGt adds the createdGt to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetCreatedGt(createdGt *string) {
-	o.CreatedGt = createdGt
-}
-
 // WithCreatedGte adds the createdGte to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithCreatedGte(createdGte *string) *VirtualizationVirtualMachinesListParams {
 	o.SetCreatedGte(createdGte)
@@ -721,17 +646,6 @@ func (o *VirtualizationVirtualMachinesListParams) SetCreatedGte(createdGte *stri
 	o.CreatedGte = createdGte
 }
 
-// WithCreatedLt adds the createdLt to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithCreatedLt(createdLt *string) *VirtualizationVirtualMachinesListParams {
-	o.SetCreatedLt(createdLt)
-	return o
-}
-
-// SetCreatedLt adds the createdLt to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetCreatedLt(createdLt *string) {
-	o.CreatedLt = createdLt
-}
-
 // WithCreatedLte adds the createdLte to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithCreatedLte(createdLte *string) *VirtualizationVirtualMachinesListParams {
 	o.SetCreatedLte(createdLte)
@@ -741,61 +655,6 @@ func (o *VirtualizationVirtualMachinesListParams) WithCreatedLte(createdLte *str
 // SetCreatedLte adds the createdLte to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
-}
-
-// WithCreatedn adds the createdn to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithCreatedn(createdn *string) *VirtualizationVirtualMachinesListParams {
-	o.SetCreatedn(createdn)
-	return o
-}
-
-// SetCreatedn adds the createdN to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetCreatedn(createdn *string) {
-	o.Createdn = createdn
-}
-
-// WithDevice adds the device to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithDevice(device *string) *VirtualizationVirtualMachinesListParams {
-	o.SetDevice(device)
-	return o
-}
-
-// SetDevice adds the device to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetDevice(device *string) {
-	o.Device = device
-}
-
-// WithDevicen adds the devicen to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithDevicen(devicen *string) *VirtualizationVirtualMachinesListParams {
-	o.SetDevicen(devicen)
-	return o
-}
-
-// SetDevicen adds the deviceN to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetDevicen(devicen *string) {
-	o.Devicen = devicen
-}
-
-// WithDeviceID adds the deviceID to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithDeviceID(deviceID *string) *VirtualizationVirtualMachinesListParams {
-	o.SetDeviceID(deviceID)
-	return o
-}
-
-// SetDeviceID adds the deviceId to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetDeviceID(deviceID *string) {
-	o.DeviceID = deviceID
-}
-
-// WithDeviceIDn adds the deviceIDn to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithDeviceIDn(deviceIDn *string) *VirtualizationVirtualMachinesListParams {
-	o.SetDeviceIDn(deviceIDn)
-	return o
-}
-
-// SetDeviceIDn adds the deviceIdN to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetDeviceIDn(deviceIDn *string) {
-	o.DeviceIDn = deviceIDn
 }
 
 // WithDisk adds the disk to the virtualization virtual machines list params
@@ -952,17 +811,6 @@ func (o *VirtualizationVirtualMachinesListParams) SetLastUpdated(lastUpdated *st
 	o.LastUpdated = lastUpdated
 }
 
-// WithLastUpdatedGt adds the lastUpdatedGt to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithLastUpdatedGt(lastUpdatedGt *string) *VirtualizationVirtualMachinesListParams {
-	o.SetLastUpdatedGt(lastUpdatedGt)
-	return o
-}
-
-// SetLastUpdatedGt adds the lastUpdatedGt to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetLastUpdatedGt(lastUpdatedGt *string) {
-	o.LastUpdatedGt = lastUpdatedGt
-}
-
 // WithLastUpdatedGte adds the lastUpdatedGte to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithLastUpdatedGte(lastUpdatedGte *string) *VirtualizationVirtualMachinesListParams {
 	o.SetLastUpdatedGte(lastUpdatedGte)
@@ -974,17 +822,6 @@ func (o *VirtualizationVirtualMachinesListParams) SetLastUpdatedGte(lastUpdatedG
 	o.LastUpdatedGte = lastUpdatedGte
 }
 
-// WithLastUpdatedLt adds the lastUpdatedLt to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithLastUpdatedLt(lastUpdatedLt *string) *VirtualizationVirtualMachinesListParams {
-	o.SetLastUpdatedLt(lastUpdatedLt)
-	return o
-}
-
-// SetLastUpdatedLt adds the lastUpdatedLt to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetLastUpdatedLt(lastUpdatedLt *string) {
-	o.LastUpdatedLt = lastUpdatedLt
-}
-
 // WithLastUpdatedLte adds the lastUpdatedLte to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) WithLastUpdatedLte(lastUpdatedLte *string) *VirtualizationVirtualMachinesListParams {
 	o.SetLastUpdatedLte(lastUpdatedLte)
@@ -994,17 +831,6 @@ func (o *VirtualizationVirtualMachinesListParams) WithLastUpdatedLte(lastUpdated
 // SetLastUpdatedLte adds the lastUpdatedLte to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) SetLastUpdatedLte(lastUpdatedLte *string) {
 	o.LastUpdatedLte = lastUpdatedLte
-}
-
-// WithLastUpdatedn adds the lastUpdatedn to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithLastUpdatedn(lastUpdatedn *string) *VirtualizationVirtualMachinesListParams {
-	o.SetLastUpdatedn(lastUpdatedn)
-	return o
-}
-
-// SetLastUpdatedn adds the lastUpdatedN to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetLastUpdatedn(lastUpdatedn *string) {
-	o.LastUpdatedn = lastUpdatedn
 }
 
 // WithLimit adds the limit to the virtualization virtual machines list params
@@ -1335,17 +1161,6 @@ func (o *VirtualizationVirtualMachinesListParams) WithOffset(offset *int64) *Vir
 // SetOffset adds the offset to the virtualization virtual machines list params
 func (o *VirtualizationVirtualMachinesListParams) SetOffset(offset *int64) {
 	o.Offset = offset
-}
-
-// WithOrdering adds the ordering to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) WithOrdering(ordering *string) *VirtualizationVirtualMachinesListParams {
-	o.SetOrdering(ordering)
-	return o
-}
-
-// SetOrdering adds the ordering to the virtualization virtual machines list params
-func (o *VirtualizationVirtualMachinesListParams) SetOrdering(ordering *string) {
-	o.Ordering = ordering
 }
 
 // WithPlatform adds the platform to the virtualization virtual machines list params
@@ -2023,40 +1838,6 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		}
 	}
 
-	if o.ContactGroup != nil {
-
-		// query param contact_group
-		var qrContactGroup string
-
-		if o.ContactGroup != nil {
-			qrContactGroup = *o.ContactGroup
-		}
-		qContactGroup := qrContactGroup
-		if qContactGroup != "" {
-
-			if err := r.SetQueryParam("contact_group", qContactGroup); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.ContactGroupn != nil {
-
-		// query param contact_group__n
-		var qrContactGroupn string
-
-		if o.ContactGroupn != nil {
-			qrContactGroupn = *o.ContactGroupn
-		}
-		qContactGroupn := qrContactGroupn
-		if qContactGroupn != "" {
-
-			if err := r.SetQueryParam("contact_group__n", qContactGroupn); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.ContactRole != nil {
 
 		// query param contact_role
@@ -2108,23 +1889,6 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		}
 	}
 
-	if o.CreatedGt != nil {
-
-		// query param created__gt
-		var qrCreatedGt string
-
-		if o.CreatedGt != nil {
-			qrCreatedGt = *o.CreatedGt
-		}
-		qCreatedGt := qrCreatedGt
-		if qCreatedGt != "" {
-
-			if err := r.SetQueryParam("created__gt", qCreatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedGte != nil {
 
 		// query param created__gte
@@ -2142,23 +1906,6 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		}
 	}
 
-	if o.CreatedLt != nil {
-
-		// query param created__lt
-		var qrCreatedLt string
-
-		if o.CreatedLt != nil {
-			qrCreatedLt = *o.CreatedLt
-		}
-		qCreatedLt := qrCreatedLt
-		if qCreatedLt != "" {
-
-			if err := r.SetQueryParam("created__lt", qCreatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.CreatedLte != nil {
 
 		// query param created__lte
@@ -2171,91 +1918,6 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		if qCreatedLte != "" {
 
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Createdn != nil {
-
-		// query param created__n
-		var qrCreatedn string
-
-		if o.Createdn != nil {
-			qrCreatedn = *o.Createdn
-		}
-		qCreatedn := qrCreatedn
-		if qCreatedn != "" {
-
-			if err := r.SetQueryParam("created__n", qCreatedn); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Device != nil {
-
-		// query param device
-		var qrDevice string
-
-		if o.Device != nil {
-			qrDevice = *o.Device
-		}
-		qDevice := qrDevice
-		if qDevice != "" {
-
-			if err := r.SetQueryParam("device", qDevice); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Devicen != nil {
-
-		// query param device__n
-		var qrDevicen string
-
-		if o.Devicen != nil {
-			qrDevicen = *o.Devicen
-		}
-		qDevicen := qrDevicen
-		if qDevicen != "" {
-
-			if err := r.SetQueryParam("device__n", qDevicen); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DeviceID != nil {
-
-		// query param device_id
-		var qrDeviceID string
-
-		if o.DeviceID != nil {
-			qrDeviceID = *o.DeviceID
-		}
-		qDeviceID := qrDeviceID
-		if qDeviceID != "" {
-
-			if err := r.SetQueryParam("device_id", qDeviceID); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DeviceIDn != nil {
-
-		// query param device_id__n
-		var qrDeviceIDn string
-
-		if o.DeviceIDn != nil {
-			qrDeviceIDn = *o.DeviceIDn
-		}
-		qDeviceIDn := qrDeviceIDn
-		if qDeviceIDn != "" {
-
-			if err := r.SetQueryParam("device_id__n", qDeviceIDn); err != nil {
 				return err
 			}
 		}
@@ -2499,23 +2161,6 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		}
 	}
 
-	if o.LastUpdatedGt != nil {
-
-		// query param last_updated__gt
-		var qrLastUpdatedGt string
-
-		if o.LastUpdatedGt != nil {
-			qrLastUpdatedGt = *o.LastUpdatedGt
-		}
-		qLastUpdatedGt := qrLastUpdatedGt
-		if qLastUpdatedGt != "" {
-
-			if err := r.SetQueryParam("last_updated__gt", qLastUpdatedGt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedGte != nil {
 
 		// query param last_updated__gte
@@ -2533,23 +2178,6 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		}
 	}
 
-	if o.LastUpdatedLt != nil {
-
-		// query param last_updated__lt
-		var qrLastUpdatedLt string
-
-		if o.LastUpdatedLt != nil {
-			qrLastUpdatedLt = *o.LastUpdatedLt
-		}
-		qLastUpdatedLt := qrLastUpdatedLt
-		if qLastUpdatedLt != "" {
-
-			if err := r.SetQueryParam("last_updated__lt", qLastUpdatedLt); err != nil {
-				return err
-			}
-		}
-	}
-
 	if o.LastUpdatedLte != nil {
 
 		// query param last_updated__lte
@@ -2562,23 +2190,6 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		if qLastUpdatedLte != "" {
 
 			if err := r.SetQueryParam("last_updated__lte", qLastUpdatedLte); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.LastUpdatedn != nil {
-
-		// query param last_updated__n
-		var qrLastUpdatedn string
-
-		if o.LastUpdatedn != nil {
-			qrLastUpdatedn = *o.LastUpdatedn
-		}
-		qLastUpdatedn := qrLastUpdatedn
-		if qLastUpdatedn != "" {
-
-			if err := r.SetQueryParam("last_updated__n", qLastUpdatedn); err != nil {
 				return err
 			}
 		}
@@ -3089,23 +2700,6 @@ func (o *VirtualizationVirtualMachinesListParams) WriteToRequest(r runtime.Clien
 		if qOffset != "" {
 
 			if err := r.SetQueryParam("offset", qOffset); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.Ordering != nil {
-
-		// query param ordering
-		var qrOrdering string
-
-		if o.Ordering != nil {
-			qrOrdering = *o.Ordering
-		}
-		qOrdering := qrOrdering
-		if qOrdering != "" {
-
-			if err := r.SetQueryParam("ordering", qOrdering); err != nil {
 				return err
 			}
 		}
