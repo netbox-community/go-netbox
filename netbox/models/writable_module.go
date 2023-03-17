@@ -22,6 +22,7 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -47,10 +48,14 @@ type WritableModule struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
 
 	// Device
 	// Required: true
@@ -67,7 +72,7 @@ type WritableModule struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Module bay
 	// Required: true
@@ -80,6 +85,10 @@ type WritableModule struct {
 	// Serial number
 	// Max Length: 50
 	Serial string `json:"serial,omitempty"`
+
+	// Status
+	// Enum: [offline active planned staged failed decommissioning]
+	Status string `json:"status,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags"`
@@ -102,6 +111,10 @@ func (m *WritableModule) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDevice(formats); err != nil {
 		res = append(res, err)
 	}
@@ -119,6 +132,10 @@ func (m *WritableModule) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSerial(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -154,6 +171,18 @@ func (m *WritableModule) validateCreated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableModule) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -205,6 +234,60 @@ func (m *WritableModule) validateSerial(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("serial", "body", m.Serial, 50); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var writableModuleTypeStatusPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["offline","active","planned","staged","failed","decommissioning"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableModuleTypeStatusPropEnum = append(writableModuleTypeStatusPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableModuleStatusOffline captures enum value "offline"
+	WritableModuleStatusOffline string = "offline"
+
+	// WritableModuleStatusActive captures enum value "active"
+	WritableModuleStatusActive string = "active"
+
+	// WritableModuleStatusPlanned captures enum value "planned"
+	WritableModuleStatusPlanned string = "planned"
+
+	// WritableModuleStatusStaged captures enum value "staged"
+	WritableModuleStatusStaged string = "staged"
+
+	// WritableModuleStatusFailed captures enum value "failed"
+	WritableModuleStatusFailed string = "failed"
+
+	// WritableModuleStatusDecommissioning captures enum value "decommissioning"
+	WritableModuleStatusDecommissioning string = "decommissioning"
+)
+
+// prop value enum
+func (m *WritableModule) validateStatusEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableModuleTypeStatusPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableModule) validateStatus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateStatusEnum("status", "body", m.Status); err != nil {
 		return err
 	}
 
@@ -285,7 +368,7 @@ func (m *WritableModule) ContextValidate(ctx context.Context, formats strfmt.Reg
 
 func (m *WritableModule) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -312,7 +395,7 @@ func (m *WritableModule) contextValidateID(ctx context.Context, formats strfmt.R
 
 func (m *WritableModule) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

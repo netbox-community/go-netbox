@@ -86,6 +86,9 @@ type WirelessWirelessLinksListParams struct {
 	// AuthPsk.
 	AuthPsk *string
 
+	// AuthPskEmpty.
+	AuthPskEmpty *string
+
 	// AuthPskIc.
 	AuthPskIc *string
 
@@ -139,6 +142,9 @@ type WirelessWirelessLinksListParams struct {
 
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -262,6 +268,9 @@ type WirelessWirelessLinksListParams struct {
 
 	// Ssid.
 	Ssid *string
+
+	// SsidEmpty.
+	SsidEmpty *string
 
 	// SsidIc.
 	SsidIc *string
@@ -410,6 +419,17 @@ func (o *WirelessWirelessLinksListParams) WithAuthPsk(authPsk *string) *Wireless
 // SetAuthPsk adds the authPsk to the wireless wireless links list params
 func (o *WirelessWirelessLinksListParams) SetAuthPsk(authPsk *string) {
 	o.AuthPsk = authPsk
+}
+
+// WithAuthPskEmpty adds the authPskEmpty to the wireless wireless links list params
+func (o *WirelessWirelessLinksListParams) WithAuthPskEmpty(authPskEmpty *string) *WirelessWirelessLinksListParams {
+	o.SetAuthPskEmpty(authPskEmpty)
+	return o
+}
+
+// SetAuthPskEmpty adds the authPskEmpty to the wireless wireless links list params
+func (o *WirelessWirelessLinksListParams) SetAuthPskEmpty(authPskEmpty *string) {
+	o.AuthPskEmpty = authPskEmpty
 }
 
 // WithAuthPskIc adds the authPskIc to the wireless wireless links list params
@@ -608,6 +628,17 @@ func (o *WirelessWirelessLinksListParams) WithDescription(description *string) *
 // SetDescription adds the description to the wireless wireless links list params
 func (o *WirelessWirelessLinksListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the wireless wireless links list params
+func (o *WirelessWirelessLinksListParams) WithDescriptionEmpty(descriptionEmpty *string) *WirelessWirelessLinksListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the wireless wireless links list params
+func (o *WirelessWirelessLinksListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the wireless wireless links list params
@@ -1028,6 +1059,17 @@ func (o *WirelessWirelessLinksListParams) SetSsid(ssid *string) {
 	o.Ssid = ssid
 }
 
+// WithSsidEmpty adds the ssidEmpty to the wireless wireless links list params
+func (o *WirelessWirelessLinksListParams) WithSsidEmpty(ssidEmpty *string) *WirelessWirelessLinksListParams {
+	o.SetSsidEmpty(ssidEmpty)
+	return o
+}
+
+// SetSsidEmpty adds the ssidEmpty to the wireless wireless links list params
+func (o *WirelessWirelessLinksListParams) SetSsidEmpty(ssidEmpty *string) {
+	o.SsidEmpty = ssidEmpty
+}
+
 // WithSsidIc adds the ssidIc to the wireless wireless links list params
 func (o *WirelessWirelessLinksListParams) WithSsidIc(ssidIc *string) *WirelessWirelessLinksListParams {
 	o.SetSsidIc(ssidIc)
@@ -1313,6 +1355,23 @@ func (o *WirelessWirelessLinksListParams) WriteToRequest(r runtime.ClientRequest
 		if qAuthPsk != "" {
 
 			if err := r.SetQueryParam("auth_psk", qAuthPsk); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.AuthPskEmpty != nil {
+
+		// query param auth_psk__empty
+		var qrAuthPskEmpty string
+
+		if o.AuthPskEmpty != nil {
+			qrAuthPskEmpty = *o.AuthPskEmpty
+		}
+		qAuthPskEmpty := qrAuthPskEmpty
+		if qAuthPskEmpty != "" {
+
+			if err := r.SetQueryParam("auth_psk__empty", qAuthPskEmpty); err != nil {
 				return err
 			}
 		}
@@ -1619,6 +1678,23 @@ func (o *WirelessWirelessLinksListParams) WriteToRequest(r runtime.ClientRequest
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -2265,6 +2341,23 @@ func (o *WirelessWirelessLinksListParams) WriteToRequest(r runtime.ClientRequest
 		if qSsid != "" {
 
 			if err := r.SetQueryParam("ssid", qSsid); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SsidEmpty != nil {
+
+		// query param ssid__empty
+		var qrSsidEmpty string
+
+		if o.SsidEmpty != nil {
+			qrSsidEmpty = *o.SsidEmpty
+		}
+		qSsidEmpty := qrSsidEmpty
+		if qSsidEmpty != "" {
+
+			if err := r.SetQueryParam("ssid__empty", qSsidEmpty); err != nil {
 				return err
 			}
 		}

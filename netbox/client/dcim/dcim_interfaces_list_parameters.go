@@ -116,6 +116,9 @@ type DcimInterfacesListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -179,8 +182,23 @@ type DcimInterfacesListParams struct {
 	// Kind.
 	Kind *string
 
+	// L2vpn.
+	L2vpn *string
+
+	// L2vpnn.
+	L2vpnn *string
+
+	// L2vpnID.
+	L2vpnID *string
+
+	// L2vpnIDn.
+	L2vpnIDn *string
+
 	// Label.
 	Label *string
+
+	// LabelEmpty.
+	LabelEmpty *string
 
 	// LabelIc.
 	LabelIc *string
@@ -317,6 +335,9 @@ type DcimInterfacesListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -343,6 +364,9 @@ type DcimInterfacesListParams struct {
 
 	// NameNisw.
 	NameNisw *string
+
+	// Occupied.
+	Occupied *string
 
 	/* Offset.
 
@@ -520,6 +544,24 @@ type DcimInterfacesListParams struct {
 
 	// Typen.
 	Typen *string
+
+	// Vdc.
+	Vdc *string
+
+	// Vdcn.
+	Vdcn *string
+
+	// VdcID.
+	VdcID *string
+
+	// VdcIDn.
+	VdcIDn *string
+
+	// VdcIdentifier.
+	VdcIdentifier *string
+
+	// VdcIdentifiern.
+	VdcIdentifiern *string
 
 	// VirtualChassis.
 	VirtualChassis *string
@@ -777,6 +819,17 @@ func (o *DcimInterfacesListParams) SetDescription(description *string) {
 	o.Description = description
 }
 
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimInterfacesListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
+}
+
 // WithDescriptionIc adds the descriptionIc to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithDescriptionIc(descriptionIc *string) *DcimInterfacesListParams {
 	o.SetDescriptionIc(descriptionIc)
@@ -1008,6 +1061,50 @@ func (o *DcimInterfacesListParams) SetKind(kind *string) {
 	o.Kind = kind
 }
 
+// WithL2vpn adds the l2vpn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithL2vpn(l2vpn *string) *DcimInterfacesListParams {
+	o.SetL2vpn(l2vpn)
+	return o
+}
+
+// SetL2vpn adds the l2vpn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetL2vpn(l2vpn *string) {
+	o.L2vpn = l2vpn
+}
+
+// WithL2vpnn adds the l2vpnn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithL2vpnn(l2vpnn *string) *DcimInterfacesListParams {
+	o.SetL2vpnn(l2vpnn)
+	return o
+}
+
+// SetL2vpnn adds the l2vpnN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetL2vpnn(l2vpnn *string) {
+	o.L2vpnn = l2vpnn
+}
+
+// WithL2vpnID adds the l2vpnID to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithL2vpnID(l2vpnID *string) *DcimInterfacesListParams {
+	o.SetL2vpnID(l2vpnID)
+	return o
+}
+
+// SetL2vpnID adds the l2vpnId to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetL2vpnID(l2vpnID *string) {
+	o.L2vpnID = l2vpnID
+}
+
+// WithL2vpnIDn adds the l2vpnIDn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithL2vpnIDn(l2vpnIDn *string) *DcimInterfacesListParams {
+	o.SetL2vpnIDn(l2vpnIDn)
+	return o
+}
+
+// SetL2vpnIDn adds the l2vpnIdN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetL2vpnIDn(l2vpnIDn *string) {
+	o.L2vpnIDn = l2vpnIDn
+}
+
 // WithLabel adds the label to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithLabel(label *string) *DcimInterfacesListParams {
 	o.SetLabel(label)
@@ -1017,6 +1114,17 @@ func (o *DcimInterfacesListParams) WithLabel(label *string) *DcimInterfacesListP
 // SetLabel adds the label to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetLabel(label *string) {
 	o.Label = label
+}
+
+// WithLabelEmpty adds the labelEmpty to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithLabelEmpty(labelEmpty *string) *DcimInterfacesListParams {
+	o.SetLabelEmpty(labelEmpty)
+	return o
+}
+
+// SetLabelEmpty adds the labelEmpty to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetLabelEmpty(labelEmpty *string) {
+	o.LabelEmpty = labelEmpty
 }
 
 // WithLabelIc adds the labelIc to the dcim interfaces list params
@@ -1503,6 +1611,17 @@ func (o *DcimInterfacesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithNameEmpty(nameEmpty *string) *DcimInterfacesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithNameIc(nameIc *string) *DcimInterfacesListParams {
 	o.SetNameIc(nameIc)
@@ -1600,6 +1719,17 @@ func (o *DcimInterfacesListParams) WithNameNisw(nameNisw *string) *DcimInterface
 // SetNameNisw adds the nameNisw to the dcim interfaces list params
 func (o *DcimInterfacesListParams) SetNameNisw(nameNisw *string) {
 	o.NameNisw = nameNisw
+}
+
+// WithOccupied adds the occupied to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithOccupied(occupied *string) *DcimInterfacesListParams {
+	o.SetOccupied(occupied)
+	return o
+}
+
+// SetOccupied adds the occupied to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetOccupied(occupied *string) {
+	o.Occupied = occupied
 }
 
 // WithOffset adds the offset to the dcim interfaces list params
@@ -2229,6 +2359,72 @@ func (o *DcimInterfacesListParams) SetTypen(typen *string) {
 	o.Typen = typen
 }
 
+// WithVdc adds the vdc to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVdc(vdc *string) *DcimInterfacesListParams {
+	o.SetVdc(vdc)
+	return o
+}
+
+// SetVdc adds the vdc to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVdc(vdc *string) {
+	o.Vdc = vdc
+}
+
+// WithVdcn adds the vdcn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVdcn(vdcn *string) *DcimInterfacesListParams {
+	o.SetVdcn(vdcn)
+	return o
+}
+
+// SetVdcn adds the vdcN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVdcn(vdcn *string) {
+	o.Vdcn = vdcn
+}
+
+// WithVdcID adds the vdcID to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVdcID(vdcID *string) *DcimInterfacesListParams {
+	o.SetVdcID(vdcID)
+	return o
+}
+
+// SetVdcID adds the vdcId to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVdcID(vdcID *string) {
+	o.VdcID = vdcID
+}
+
+// WithVdcIDn adds the vdcIDn to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVdcIDn(vdcIDn *string) *DcimInterfacesListParams {
+	o.SetVdcIDn(vdcIDn)
+	return o
+}
+
+// SetVdcIDn adds the vdcIdN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVdcIDn(vdcIDn *string) {
+	o.VdcIDn = vdcIDn
+}
+
+// WithVdcIdentifier adds the vdcIdentifier to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVdcIdentifier(vdcIdentifier *string) *DcimInterfacesListParams {
+	o.SetVdcIdentifier(vdcIdentifier)
+	return o
+}
+
+// SetVdcIdentifier adds the vdcIdentifier to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVdcIdentifier(vdcIdentifier *string) {
+	o.VdcIdentifier = vdcIdentifier
+}
+
+// WithVdcIdentifiern adds the vdcIdentifiern to the dcim interfaces list params
+func (o *DcimInterfacesListParams) WithVdcIdentifiern(vdcIdentifiern *string) *DcimInterfacesListParams {
+	o.SetVdcIdentifiern(vdcIdentifiern)
+	return o
+}
+
+// SetVdcIdentifiern adds the vdcIdentifierN to the dcim interfaces list params
+func (o *DcimInterfacesListParams) SetVdcIdentifiern(vdcIdentifiern *string) {
+	o.VdcIdentifiern = vdcIdentifiern
+}
+
 // WithVirtualChassis adds the virtualChassis to the dcim interfaces list params
 func (o *DcimInterfacesListParams) WithVirtualChassis(virtualChassis *string) *DcimInterfacesListParams {
 	o.SetVirtualChassis(virtualChassis)
@@ -2678,6 +2874,23 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.DescriptionIc != nil {
 
 		// query param description__ic
@@ -3035,6 +3248,74 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.L2vpn != nil {
+
+		// query param l2vpn
+		var qrL2vpn string
+
+		if o.L2vpn != nil {
+			qrL2vpn = *o.L2vpn
+		}
+		qL2vpn := qrL2vpn
+		if qL2vpn != "" {
+
+			if err := r.SetQueryParam("l2vpn", qL2vpn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpnn != nil {
+
+		// query param l2vpn__n
+		var qrL2vpnn string
+
+		if o.L2vpnn != nil {
+			qrL2vpnn = *o.L2vpnn
+		}
+		qL2vpnn := qrL2vpnn
+		if qL2vpnn != "" {
+
+			if err := r.SetQueryParam("l2vpn__n", qL2vpnn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpnID != nil {
+
+		// query param l2vpn_id
+		var qrL2vpnID string
+
+		if o.L2vpnID != nil {
+			qrL2vpnID = *o.L2vpnID
+		}
+		qL2vpnID := qrL2vpnID
+		if qL2vpnID != "" {
+
+			if err := r.SetQueryParam("l2vpn_id", qL2vpnID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.L2vpnIDn != nil {
+
+		// query param l2vpn_id__n
+		var qrL2vpnIDn string
+
+		if o.L2vpnIDn != nil {
+			qrL2vpnIDn = *o.L2vpnIDn
+		}
+		qL2vpnIDn := qrL2vpnIDn
+		if qL2vpnIDn != "" {
+
+			if err := r.SetQueryParam("l2vpn_id__n", qL2vpnIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Label != nil {
 
 		// query param label
@@ -3047,6 +3328,23 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qLabel != "" {
 
 			if err := r.SetQueryParam("label", qLabel); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.LabelEmpty != nil {
+
+		// query param label__empty
+		var qrLabelEmpty string
+
+		if o.LabelEmpty != nil {
+			qrLabelEmpty = *o.LabelEmpty
+		}
+		qLabelEmpty := qrLabelEmpty
+		if qLabelEmpty != "" {
+
+			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
 				return err
 			}
 		}
@@ -3800,6 +4098,23 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -3948,6 +4263,23 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qNameNisw != "" {
 
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Occupied != nil {
+
+		// query param occupied
+		var qrOccupied string
+
+		if o.Occupied != nil {
+			qrOccupied = *o.Occupied
+		}
+		qOccupied := qrOccupied
+		if qOccupied != "" {
+
+			if err := r.SetQueryParam("occupied", qOccupied); err != nil {
 				return err
 			}
 		}
@@ -4911,6 +5243,108 @@ func (o *DcimInterfacesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qTypen != "" {
 
 			if err := r.SetQueryParam("type__n", qTypen); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Vdc != nil {
+
+		// query param vdc
+		var qrVdc string
+
+		if o.Vdc != nil {
+			qrVdc = *o.Vdc
+		}
+		qVdc := qrVdc
+		if qVdc != "" {
+
+			if err := r.SetQueryParam("vdc", qVdc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Vdcn != nil {
+
+		// query param vdc__n
+		var qrVdcn string
+
+		if o.Vdcn != nil {
+			qrVdcn = *o.Vdcn
+		}
+		qVdcn := qrVdcn
+		if qVdcn != "" {
+
+			if err := r.SetQueryParam("vdc__n", qVdcn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VdcID != nil {
+
+		// query param vdc_id
+		var qrVdcID string
+
+		if o.VdcID != nil {
+			qrVdcID = *o.VdcID
+		}
+		qVdcID := qrVdcID
+		if qVdcID != "" {
+
+			if err := r.SetQueryParam("vdc_id", qVdcID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VdcIDn != nil {
+
+		// query param vdc_id__n
+		var qrVdcIDn string
+
+		if o.VdcIDn != nil {
+			qrVdcIDn = *o.VdcIDn
+		}
+		qVdcIDn := qrVdcIDn
+		if qVdcIDn != "" {
+
+			if err := r.SetQueryParam("vdc_id__n", qVdcIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VdcIdentifier != nil {
+
+		// query param vdc_identifier
+		var qrVdcIdentifier string
+
+		if o.VdcIdentifier != nil {
+			qrVdcIdentifier = *o.VdcIdentifier
+		}
+		qVdcIdentifier := qrVdcIdentifier
+		if qVdcIdentifier != "" {
+
+			if err := r.SetQueryParam("vdc_identifier", qVdcIdentifier); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.VdcIdentifiern != nil {
+
+		// query param vdc_identifier__n
+		var qrVdcIdentifiern string
+
+		if o.VdcIdentifiern != nil {
+			qrVdcIdentifiern = *o.VdcIdentifiern
+		}
+		qVdcIdentifiern := qrVdcIdentifiern
+		if qVdcIdentifiern != "" {
+
+			if err := r.SetQueryParam("vdc_identifier__n", qVdcIdentifiern); err != nil {
 				return err
 			}
 		}

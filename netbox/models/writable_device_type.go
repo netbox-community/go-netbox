@@ -46,10 +46,14 @@ type WritableDeviceType struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
 
 	// Device count
 	// Read Only: true
@@ -76,7 +80,7 @@ type WritableDeviceType struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Manufacturer
 	// Required: true
@@ -123,6 +127,13 @@ type WritableDeviceType struct {
 	// Read Only: true
 	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
+
+	// Weight
+	Weight *float64 `json:"weight,omitempty"`
+
+	// Weight unit
+	// Enum: [kg g lb oz]
+	WeightUnit string `json:"weight_unit,omitempty"`
 }
 
 // Validate validates this writable device type
@@ -134,6 +145,10 @@ func (m *WritableDeviceType) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -178,6 +193,10 @@ func (m *WritableDeviceType) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateURL(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateWeightUnit(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -250,6 +269,18 @@ func (m *WritableDeviceType) validateCreated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableDeviceType) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -443,6 +474,54 @@ func (m *WritableDeviceType) validateURL(formats strfmt.Registry) error {
 	return nil
 }
 
+var writableDeviceTypeTypeWeightUnitPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["kg","g","lb","oz"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableDeviceTypeTypeWeightUnitPropEnum = append(writableDeviceTypeTypeWeightUnitPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableDeviceTypeWeightUnitKg captures enum value "kg"
+	WritableDeviceTypeWeightUnitKg string = "kg"
+
+	// WritableDeviceTypeWeightUnitG captures enum value "g"
+	WritableDeviceTypeWeightUnitG string = "g"
+
+	// WritableDeviceTypeWeightUnitLb captures enum value "lb"
+	WritableDeviceTypeWeightUnitLb string = "lb"
+
+	// WritableDeviceTypeWeightUnitOz captures enum value "oz"
+	WritableDeviceTypeWeightUnitOz string = "oz"
+)
+
+// prop value enum
+func (m *WritableDeviceType) validateWeightUnitEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableDeviceTypeTypeWeightUnitPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableDeviceType) validateWeightUnit(formats strfmt.Registry) error {
+	if swag.IsZero(m.WeightUnit) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateWeightUnitEnum("weight_unit", "body", m.WeightUnit); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this writable device type based on the context it is used
 func (m *WritableDeviceType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -491,7 +570,7 @@ func (m *WritableDeviceType) ContextValidate(ctx context.Context, formats strfmt
 
 func (m *WritableDeviceType) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -536,7 +615,7 @@ func (m *WritableDeviceType) contextValidateID(ctx context.Context, formats strf
 
 func (m *WritableDeviceType) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

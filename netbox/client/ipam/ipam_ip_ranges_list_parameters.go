@@ -101,6 +101,9 @@ type IpamIPRangesListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -127,6 +130,9 @@ type IpamIPRangesListParams struct {
 
 	// DescriptionNisw.
 	DescriptionNisw *string
+
+	// EndAddress.
+	EndAddress *string
 
 	// Family.
 	Family *float64
@@ -199,6 +205,9 @@ type IpamIPRangesListParams struct {
 
 	// RoleIDn.
 	RoleIDn *string
+
+	// StartAddress.
+	StartAddress *string
 
 	// Status.
 	Status *string
@@ -389,6 +398,17 @@ func (o *IpamIPRangesListParams) SetDescription(description *string) {
 	o.Description = description
 }
 
+// WithDescriptionEmpty adds the descriptionEmpty to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamIPRangesListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
+}
+
 // WithDescriptionIc adds the descriptionIc to the ipam ip ranges list params
 func (o *IpamIPRangesListParams) WithDescriptionIc(descriptionIc *string) *IpamIPRangesListParams {
 	o.SetDescriptionIc(descriptionIc)
@@ -486,6 +506,17 @@ func (o *IpamIPRangesListParams) WithDescriptionNisw(descriptionNisw *string) *I
 // SetDescriptionNisw adds the descriptionNisw to the ipam ip ranges list params
 func (o *IpamIPRangesListParams) SetDescriptionNisw(descriptionNisw *string) {
 	o.DescriptionNisw = descriptionNisw
+}
+
+// WithEndAddress adds the endAddress to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) WithEndAddress(endAddress *string) *IpamIPRangesListParams {
+	o.SetEndAddress(endAddress)
+	return o
+}
+
+// SetEndAddress adds the endAddress to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) SetEndAddress(endAddress *string) {
+	o.EndAddress = endAddress
 }
 
 // WithFamily adds the family to the ipam ip ranges list params
@@ -717,6 +748,17 @@ func (o *IpamIPRangesListParams) WithRoleIDn(roleIDn *string) *IpamIPRangesListP
 // SetRoleIDn adds the roleIdN to the ipam ip ranges list params
 func (o *IpamIPRangesListParams) SetRoleIDn(roleIDn *string) {
 	o.RoleIDn = roleIDn
+}
+
+// WithStartAddress adds the startAddress to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) WithStartAddress(startAddress *string) *IpamIPRangesListParams {
+	o.SetStartAddress(startAddress)
+	return o
+}
+
+// SetStartAddress adds the startAddress to the ipam ip ranges list params
+func (o *IpamIPRangesListParams) SetStartAddress(startAddress *string) {
+	o.StartAddress = startAddress
 }
 
 // WithStatus adds the status to the ipam ip ranges list params
@@ -1039,6 +1081,23 @@ func (o *IpamIPRangesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.DescriptionIc != nil {
 
 		// query param description__ic
@@ -1187,6 +1246,23 @@ func (o *IpamIPRangesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qDescriptionNisw != "" {
 
 			if err := r.SetQueryParam("description__nisw", qDescriptionNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.EndAddress != nil {
+
+		// query param end_address
+		var qrEndAddress string
+
+		if o.EndAddress != nil {
+			qrEndAddress = *o.EndAddress
+		}
+		qEndAddress := qrEndAddress
+		if qEndAddress != "" {
+
+			if err := r.SetQueryParam("end_address", qEndAddress); err != nil {
 				return err
 			}
 		}
@@ -1544,6 +1620,23 @@ func (o *IpamIPRangesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qRoleIDn != "" {
 
 			if err := r.SetQueryParam("role_id__n", qRoleIDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.StartAddress != nil {
+
+		// query param start_address
+		var qrStartAddress string
+
+		if o.StartAddress != nil {
+			qrStartAddress = *o.StartAddress
+		}
+		qStartAddress := qrStartAddress
+		if qStartAddress != "" {
+
+			if err := r.SetQueryParam("start_address", qStartAddress); err != nil {
 				return err
 			}
 		}

@@ -116,6 +116,9 @@ type VirtualizationClusterGroupsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -188,6 +191,9 @@ type VirtualizationClusterGroupsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -232,6 +238,9 @@ type VirtualizationClusterGroupsListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -460,6 +469,17 @@ func (o *VirtualizationClusterGroupsListParams) WithDescription(description *str
 // SetDescription adds the description to the virtualization cluster groups list params
 func (o *VirtualizationClusterGroupsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) WithDescriptionEmpty(descriptionEmpty *string) *VirtualizationClusterGroupsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the virtualization cluster groups list params
@@ -715,6 +735,17 @@ func (o *VirtualizationClusterGroupsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) WithNameEmpty(nameEmpty *string) *VirtualizationClusterGroupsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the virtualization cluster groups list params
 func (o *VirtualizationClusterGroupsListParams) WithNameIc(nameIc *string) *VirtualizationClusterGroupsListParams {
 	o.SetNameIc(nameIc)
@@ -856,6 +887,17 @@ func (o *VirtualizationClusterGroupsListParams) WithSlug(slug *string) *Virtuali
 // SetSlug adds the slug to the virtualization cluster groups list params
 func (o *VirtualizationClusterGroupsListParams) SetSlug(slug *string) {
 	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) WithSlugEmpty(slugEmpty *string) *VirtualizationClusterGroupsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the virtualization cluster groups list params
+func (o *VirtualizationClusterGroupsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
 }
 
 // WithSlugIc adds the slugIc to the virtualization cluster groups list params
@@ -1203,6 +1245,23 @@ func (o *VirtualizationClusterGroupsListParams) WriteToRequest(r runtime.ClientR
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1599,6 +1658,23 @@ func (o *VirtualizationClusterGroupsListParams) WriteToRequest(r runtime.ClientR
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1815,6 +1891,23 @@ func (o *VirtualizationClusterGroupsListParams) WriteToRequest(r runtime.ClientR
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

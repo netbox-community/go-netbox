@@ -42,10 +42,14 @@ type WritableCluster struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
 
 	// Device count
 	// Read Only: true
@@ -56,8 +60,7 @@ type WritableCluster struct {
 	Display string `json:"display,omitempty"`
 
 	// Group
-	// Required: true
-	Group *int64 `json:"group"`
+	Group *int64 `json:"group,omitempty"`
 
 	// ID
 	// Read Only: true
@@ -66,7 +69,7 @@ type WritableCluster struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -75,7 +78,6 @@ type WritableCluster struct {
 	Name *string `json:"name"`
 
 	// Site
-	// Required: true
 	Site *int64 `json:"site"`
 
 	// Status
@@ -110,7 +112,7 @@ func (m *WritableCluster) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateGroup(formats); err != nil {
+	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -119,10 +121,6 @@ func (m *WritableCluster) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateSite(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -160,9 +158,12 @@ func (m *WritableCluster) validateCreated(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableCluster) validateGroup(formats strfmt.Registry) error {
+func (m *WritableCluster) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
 
-	if err := validate.Required("group", "body", m.Group); err != nil {
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -192,15 +193,6 @@ func (m *WritableCluster) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableCluster) validateSite(formats strfmt.Registry) error {
-
-	if err := validate.Required("site", "body", m.Site); err != nil {
 		return err
 	}
 
@@ -349,7 +341,7 @@ func (m *WritableCluster) ContextValidate(ctx context.Context, formats strfmt.Re
 
 func (m *WritableCluster) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -385,7 +377,7 @@ func (m *WritableCluster) contextValidateID(ctx context.Context, formats strfmt.
 
 func (m *WritableCluster) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

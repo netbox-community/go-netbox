@@ -35,13 +35,20 @@ import (
 // swagger:model VirtualChassis
 type VirtualChassis struct {
 
+	// Comments
+	Comments string `json:"comments,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -58,7 +65,7 @@ type VirtualChassis struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// master
 	Master *NestedDevice `json:"master,omitempty"`
@@ -87,6 +94,10 @@ func (m *VirtualChassis) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -126,6 +137,18 @@ func (m *VirtualChassis) validateCreated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *VirtualChassis) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -274,7 +297,7 @@ func (m *VirtualChassis) ContextValidate(ctx context.Context, formats strfmt.Reg
 
 func (m *VirtualChassis) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -301,7 +324,7 @@ func (m *VirtualChassis) contextValidateID(ctx context.Context, formats strfmt.R
 
 func (m *VirtualChassis) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

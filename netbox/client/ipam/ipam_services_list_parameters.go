@@ -98,6 +98,9 @@ type IpamServicesListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -155,6 +158,18 @@ type IpamServicesListParams struct {
 	// IDn.
 	IDn *string
 
+	// Ipaddress.
+	Ipaddress *string
+
+	// Ipaddressn.
+	Ipaddressn *string
+
+	// IpaddressID.
+	IpaddressID *string
+
+	// IpaddressIDn.
+	IpaddressIDn *string
+
 	// LastUpdated.
 	LastUpdated *string
 
@@ -181,6 +196,9 @@ type IpamServicesListParams struct {
 
 	// Name.
 	Name *string
+
+	// NameEmpty.
+	NameEmpty *string
 
 	// NameIc.
 	NameIc *string
@@ -379,6 +397,17 @@ func (o *IpamServicesListParams) WithDescription(description *string) *IpamServi
 // SetDescription adds the description to the ipam services list params
 func (o *IpamServicesListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the ipam services list params
+func (o *IpamServicesListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamServicesListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the ipam services list params
+func (o *IpamServicesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the ipam services list params
@@ -590,6 +619,50 @@ func (o *IpamServicesListParams) SetIDn(iDn *string) {
 	o.IDn = iDn
 }
 
+// WithIpaddress adds the ipaddress to the ipam services list params
+func (o *IpamServicesListParams) WithIpaddress(ipaddress *string) *IpamServicesListParams {
+	o.SetIpaddress(ipaddress)
+	return o
+}
+
+// SetIpaddress adds the ipaddress to the ipam services list params
+func (o *IpamServicesListParams) SetIpaddress(ipaddress *string) {
+	o.Ipaddress = ipaddress
+}
+
+// WithIpaddressn adds the ipaddressn to the ipam services list params
+func (o *IpamServicesListParams) WithIpaddressn(ipaddressn *string) *IpamServicesListParams {
+	o.SetIpaddressn(ipaddressn)
+	return o
+}
+
+// SetIpaddressn adds the ipaddressN to the ipam services list params
+func (o *IpamServicesListParams) SetIpaddressn(ipaddressn *string) {
+	o.Ipaddressn = ipaddressn
+}
+
+// WithIpaddressID adds the ipaddressID to the ipam services list params
+func (o *IpamServicesListParams) WithIpaddressID(ipaddressID *string) *IpamServicesListParams {
+	o.SetIpaddressID(ipaddressID)
+	return o
+}
+
+// SetIpaddressID adds the ipaddressId to the ipam services list params
+func (o *IpamServicesListParams) SetIpaddressID(ipaddressID *string) {
+	o.IpaddressID = ipaddressID
+}
+
+// WithIpaddressIDn adds the ipaddressIDn to the ipam services list params
+func (o *IpamServicesListParams) WithIpaddressIDn(ipaddressIDn *string) *IpamServicesListParams {
+	o.SetIpaddressIDn(ipaddressIDn)
+	return o
+}
+
+// SetIpaddressIDn adds the ipaddressIdN to the ipam services list params
+func (o *IpamServicesListParams) SetIpaddressIDn(ipaddressIDn *string) {
+	o.IpaddressIDn = ipaddressIDn
+}
+
 // WithLastUpdated adds the lastUpdated to the ipam services list params
 func (o *IpamServicesListParams) WithLastUpdated(lastUpdated *string) *IpamServicesListParams {
 	o.SetLastUpdated(lastUpdated)
@@ -676,6 +749,17 @@ func (o *IpamServicesListParams) WithName(name *string) *IpamServicesListParams 
 // SetName adds the name to the ipam services list params
 func (o *IpamServicesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the ipam services list params
+func (o *IpamServicesListParams) WithNameEmpty(nameEmpty *string) *IpamServicesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the ipam services list params
+func (o *IpamServicesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the ipam services list params
@@ -1036,6 +1120,23 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.DescriptionIc != nil {
 
 		// query param description__ic
@@ -1359,6 +1460,74 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		}
 	}
 
+	if o.Ipaddress != nil {
+
+		// query param ipaddress
+		var qrIpaddress string
+
+		if o.Ipaddress != nil {
+			qrIpaddress = *o.Ipaddress
+		}
+		qIpaddress := qrIpaddress
+		if qIpaddress != "" {
+
+			if err := r.SetQueryParam("ipaddress", qIpaddress); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Ipaddressn != nil {
+
+		// query param ipaddress__n
+		var qrIpaddressn string
+
+		if o.Ipaddressn != nil {
+			qrIpaddressn = *o.Ipaddressn
+		}
+		qIpaddressn := qrIpaddressn
+		if qIpaddressn != "" {
+
+			if err := r.SetQueryParam("ipaddress__n", qIpaddressn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IpaddressID != nil {
+
+		// query param ipaddress_id
+		var qrIpaddressID string
+
+		if o.IpaddressID != nil {
+			qrIpaddressID = *o.IpaddressID
+		}
+		qIpaddressID := qrIpaddressID
+		if qIpaddressID != "" {
+
+			if err := r.SetQueryParam("ipaddress_id", qIpaddressID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.IpaddressIDn != nil {
+
+		// query param ipaddress_id__n
+		var qrIpaddressIDn string
+
+		if o.IpaddressIDn != nil {
+			qrIpaddressIDn = *o.IpaddressIDn
+		}
+		qIpaddressIDn := qrIpaddressIDn
+		if qIpaddressIDn != "" {
+
+			if err := r.SetQueryParam("ipaddress_id__n", qIpaddressIDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LastUpdated != nil {
 
 		// query param last_updated
@@ -1490,6 +1659,23 @@ func (o *IpamServicesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

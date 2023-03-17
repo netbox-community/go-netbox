@@ -38,15 +38,14 @@ type WritableConsoleServerPortTemplate struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device type
-	// Required: true
-	DeviceType *int64 `json:"device_type"`
+	DeviceType *int64 `json:"device_type,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -65,11 +64,10 @@ type WritableConsoleServerPortTemplate struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Module type
-	// Required: true
-	ModuleType *int64 `json:"module_type"`
+	ModuleType *int64 `json:"module_type,omitempty"`
 
 	// Name
 	//
@@ -103,19 +101,11 @@ func (m *WritableConsoleServerPortTemplate) Validate(formats strfmt.Registry) er
 		res = append(res, err)
 	}
 
-	if err := m.validateDeviceType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateLabel(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateLastUpdated(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateModuleType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -161,15 +151,6 @@ func (m *WritableConsoleServerPortTemplate) validateDescription(formats strfmt.R
 	return nil
 }
 
-func (m *WritableConsoleServerPortTemplate) validateDeviceType(formats strfmt.Registry) error {
-
-	if err := validate.Required("device_type", "body", m.DeviceType); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *WritableConsoleServerPortTemplate) validateLabel(formats strfmt.Registry) error {
 	if swag.IsZero(m.Label) { // not required
 		return nil
@@ -188,15 +169,6 @@ func (m *WritableConsoleServerPortTemplate) validateLastUpdated(formats strfmt.R
 	}
 
 	if err := validate.FormatOf("last_updated", "body", "date-time", m.LastUpdated.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableConsoleServerPortTemplate) validateModuleType(formats strfmt.Registry) error {
-
-	if err := validate.Required("module_type", "body", m.ModuleType); err != nil {
 		return err
 	}
 
@@ -345,7 +317,7 @@ func (m *WritableConsoleServerPortTemplate) ContextValidate(ctx context.Context,
 
 func (m *WritableConsoleServerPortTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -372,7 +344,7 @@ func (m *WritableConsoleServerPortTemplate) contextValidateID(ctx context.Contex
 
 func (m *WritableConsoleServerPortTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

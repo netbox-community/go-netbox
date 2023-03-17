@@ -170,6 +170,9 @@ type VirtualizationClustersListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -677,6 +680,17 @@ func (o *VirtualizationClustersListParams) WithName(name *string) *Virtualizatio
 // SetName adds the name to the virtualization clusters list params
 func (o *VirtualizationClustersListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameEmpty adds the nameEmpty to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) WithNameEmpty(nameEmpty *string) *VirtualizationClustersListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the virtualization clusters list params
+func (o *VirtualizationClustersListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
 }
 
 // WithNameIc adds the nameIc to the virtualization clusters list params
@@ -1632,6 +1646,23 @@ func (o *VirtualizationClustersListParams) WriteToRequest(r runtime.ClientReques
 		if qName != "" {
 
 			if err := r.SetQueryParam("name", qName); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
 				return err
 			}
 		}

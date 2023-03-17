@@ -42,7 +42,7 @@ type WritableWirelessLANGroup struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -62,7 +62,7 @@ type WritableWirelessLANGroup struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -71,8 +71,7 @@ type WritableWirelessLANGroup struct {
 	Name *string `json:"name"`
 
 	// Parent
-	// Required: true
-	Parent *int64 `json:"parent"`
+	Parent *int64 `json:"parent,omitempty"`
 
 	// Slug
 	// Required: true
@@ -111,10 +110,6 @@ func (m *WritableWirelessLANGroup) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateParent(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -183,15 +178,6 @@ func (m *WritableWirelessLANGroup) validateName(formats strfmt.Registry) error {
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 100); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *WritableWirelessLANGroup) validateParent(formats strfmt.Registry) error {
-
-	if err := validate.Required("parent", "body", m.Parent); err != nil {
 		return err
 	}
 
@@ -310,7 +296,7 @@ func (m *WritableWirelessLANGroup) contextValidateDepth(ctx context.Context, for
 
 func (m *WritableWirelessLANGroup) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -337,7 +323,7 @@ func (m *WritableWirelessLANGroup) contextValidateID(ctx context.Context, format
 
 func (m *WritableWirelessLANGroup) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

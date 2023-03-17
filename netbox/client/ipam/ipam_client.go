@@ -559,7 +559,7 @@ func (a *Client) IpamAggregatesDelete(params *IpamAggregatesDeleteParams, authIn
 }
 
 /*
-IpamAggregatesList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamAggregatesList ipam aggregates list API
 */
 func (a *Client) IpamAggregatesList(params *IpamAggregatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAggregatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -901,7 +901,7 @@ func (a *Client) IpamAsnsDelete(params *IpamAsnsDeleteParams, authInfo runtime.C
 }
 
 /*
-IpamAsnsList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamAsnsList ipam asns list API
 */
 func (a *Client) IpamAsnsList(params *IpamAsnsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamAsnsListOK, error) {
 	// TODO: Validate the params before sending
@@ -1243,7 +1243,7 @@ func (a *Client) IpamFhrpGroupAssignmentsDelete(params *IpamFhrpGroupAssignments
 }
 
 /*
-IpamFhrpGroupAssignmentsList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamFhrpGroupAssignmentsList ipam fhrp group assignments list API
 */
 func (a *Client) IpamFhrpGroupAssignmentsList(params *IpamFhrpGroupAssignmentsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupAssignmentsListOK, error) {
 	// TODO: Validate the params before sending
@@ -1585,7 +1585,7 @@ func (a *Client) IpamFhrpGroupsDelete(params *IpamFhrpGroupsDeleteParams, authIn
 }
 
 /*
-IpamFhrpGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamFhrpGroupsList ipam fhrp groups list API
 */
 func (a *Client) IpamFhrpGroupsList(params *IpamFhrpGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamFhrpGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -1927,7 +1927,7 @@ func (a *Client) IpamIPAddressesDelete(params *IpamIPAddressesDeleteParams, auth
 }
 
 /*
-IpamIPAddressesList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamIPAddressesList ipam ip addresses list API
 */
 func (a *Client) IpamIPAddressesList(params *IpamIPAddressesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPAddressesListOK, error) {
 	// TODO: Validate the params before sending
@@ -2345,7 +2345,7 @@ func (a *Client) IpamIPRangesDelete(params *IpamIPRangesDeleteParams, authInfo r
 }
 
 /*
-IpamIPRangesList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamIPRangesList ipam ip ranges list API
 */
 func (a *Client) IpamIPRangesList(params *IpamIPRangesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamIPRangesListOK, error) {
 	// TODO: Validate the params before sending
@@ -2687,7 +2687,7 @@ func (a *Client) IpamL2vpnTerminationsDelete(params *IpamL2vpnTerminationsDelete
 }
 
 /*
-IpamL2vpnTerminationsList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamL2vpnTerminationsList ipam l2vpn terminations list API
 */
 func (a *Client) IpamL2vpnTerminationsList(params *IpamL2vpnTerminationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnTerminationsListOK, error) {
 	// TODO: Validate the params before sending
@@ -3029,7 +3029,7 @@ func (a *Client) IpamL2vpnsDelete(params *IpamL2vpnsDeleteParams, authInfo runti
 }
 
 /*
-IpamL2vpnsList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamL2vpnsList ipam l2vpns list API
 */
 func (a *Client) IpamL2vpnsList(params *IpamL2vpnsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamL2vpnsListOK, error) {
 	// TODO: Validate the params before sending
@@ -3523,7 +3523,7 @@ func (a *Client) IpamPrefixesDelete(params *IpamPrefixesDeleteParams, authInfo r
 }
 
 /*
-IpamPrefixesList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamPrefixesList ipam prefixes list API
 */
 func (a *Client) IpamPrefixesList(params *IpamPrefixesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamPrefixesListOK, error) {
 	// TODO: Validate the params before sending
@@ -3865,7 +3865,7 @@ func (a *Client) IpamRirsDelete(params *IpamRirsDeleteParams, authInfo runtime.C
 }
 
 /*
-IpamRirsList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamRirsList ipam rirs list API
 */
 func (a *Client) IpamRirsList(params *IpamRirsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamRirsListOK, error) {
 	// TODO: Validate the params before sending
@@ -4207,7 +4207,7 @@ func (a *Client) IpamRolesDelete(params *IpamRolesDeleteParams, authInfo runtime
 }
 
 /*
-IpamRolesList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamRolesList ipam roles list API
 */
 func (a *Client) IpamRolesList(params *IpamRolesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamRolesListOK, error) {
 	// TODO: Validate the params before sending
@@ -4549,7 +4549,7 @@ func (a *Client) IpamRouteTargetsDelete(params *IpamRouteTargetsDeleteParams, au
 }
 
 /*
-IpamRouteTargetsList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamRouteTargetsList ipam route targets list API
 */
 func (a *Client) IpamRouteTargetsList(params *IpamRouteTargetsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamRouteTargetsListOK, error) {
 	// TODO: Validate the params before sending
@@ -4891,7 +4891,7 @@ func (a *Client) IpamServiceTemplatesDelete(params *IpamServiceTemplatesDeletePa
 }
 
 /*
-IpamServiceTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamServiceTemplatesList ipam service templates list API
 */
 func (a *Client) IpamServiceTemplatesList(params *IpamServiceTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServiceTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -5233,7 +5233,7 @@ func (a *Client) IpamServicesDelete(params *IpamServicesDeleteParams, authInfo r
 }
 
 /*
-IpamServicesList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamServicesList ipam services list API
 */
 func (a *Client) IpamServicesList(params *IpamServicesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamServicesListOK, error) {
 	// TODO: Validate the params before sending
@@ -5651,7 +5651,7 @@ func (a *Client) IpamVlanGroupsDelete(params *IpamVlanGroupsDeleteParams, authIn
 }
 
 /*
-IpamVlanGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamVlanGroupsList ipam vlan groups list API
 */
 func (a *Client) IpamVlanGroupsList(params *IpamVlanGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlanGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -5993,7 +5993,7 @@ func (a *Client) IpamVlansDelete(params *IpamVlansDeleteParams, authInfo runtime
 }
 
 /*
-IpamVlansList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamVlansList ipam vlans list API
 */
 func (a *Client) IpamVlansList(params *IpamVlansListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVlansListOK, error) {
 	// TODO: Validate the params before sending
@@ -6335,7 +6335,7 @@ func (a *Client) IpamVrfsDelete(params *IpamVrfsDeleteParams, authInfo runtime.C
 }
 
 /*
-IpamVrfsList Overrides ListModelMixin to allow processing ExportTemplates.
+IpamVrfsList ipam vrfs list API
 */
 func (a *Client) IpamVrfsList(params *IpamVrfsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*IpamVrfsListOK, error) {
 	// TODO: Validate the params before sending

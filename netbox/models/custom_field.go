@@ -47,7 +47,7 @@ type CustomField struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Data type
 	// Read Only: true
@@ -88,7 +88,7 @@ type CustomField struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	//
@@ -106,6 +106,13 @@ type CustomField struct {
 	//
 	// If true, this field is required when creating new objects or editing an existing object.
 	Required bool `json:"required,omitempty"`
+
+	// Search weight
+	//
+	// Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored.
+	// Maximum: 32767
+	// Minimum: 0
+	SearchWeight *int64 `json:"search_weight,omitempty"`
 
 	// type
 	// Required: true
@@ -139,7 +146,7 @@ type CustomField struct {
 	// Max Length: 500
 	ValidationRegex string `json:"validation_regex,omitempty"`
 
-	// Weight
+	// Display weight
 	//
 	// Fields with higher weights appear lower in a form.
 	// Maximum: 32767
@@ -184,6 +191,10 @@ func (m *CustomField) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSearchWeight(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -354,6 +365,22 @@ func (m *CustomField) validateName(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *CustomField) validateSearchWeight(formats strfmt.Registry) error {
+	if swag.IsZero(m.SearchWeight) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("search_weight", "body", *m.SearchWeight, 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("search_weight", "body", *m.SearchWeight, 32767, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *CustomField) validateType(formats strfmt.Registry) error {
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
@@ -513,7 +540,7 @@ func (m *CustomField) ContextValidate(ctx context.Context, formats strfmt.Regist
 
 func (m *CustomField) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -565,7 +592,7 @@ func (m *CustomField) contextValidateID(ctx context.Context, formats strfmt.Regi
 
 func (m *CustomField) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 
@@ -787,12 +814,12 @@ type CustomFieldType struct {
 
 	// label
 	// Required: true
-	// Enum: [Text Text (long) Integer Boolean (true/false) Date URL JSON Selection Multiple selection Object Multiple objects]
+	// Enum: [Text Text (long) Integer Decimal Boolean (true/false) Date URL JSON Selection Multiple selection Object Multiple objects]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [text longtext integer boolean date url json select multiselect object multiobject]
+	// Enum: [text longtext integer decimal boolean date url json select multiselect object multiobject]
 	Value *string `json:"value"`
 }
 
@@ -818,7 +845,7 @@ var customFieldTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Text","Text (long)","Integer","Boolean (true/false)","Date","URL","JSON","Selection","Multiple selection","Object","Multiple objects"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Text","Text (long)","Integer","Decimal","Boolean (true/false)","Date","URL","JSON","Selection","Multiple selection","Object","Multiple objects"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -836,6 +863,9 @@ const (
 
 	// CustomFieldTypeLabelInteger captures enum value "Integer"
 	CustomFieldTypeLabelInteger string = "Integer"
+
+	// CustomFieldTypeLabelDecimal captures enum value "Decimal"
+	CustomFieldTypeLabelDecimal string = "Decimal"
 
 	// CustomFieldTypeLabelBooleanTrueFalse captures enum value "Boolean (true/false)"
 	CustomFieldTypeLabelBooleanTrueFalse string = "Boolean (true/false)"
@@ -888,7 +918,7 @@ var customFieldTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["text","longtext","integer","boolean","date","url","json","select","multiselect","object","multiobject"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["text","longtext","integer","decimal","boolean","date","url","json","select","multiselect","object","multiobject"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -906,6 +936,9 @@ const (
 
 	// CustomFieldTypeValueInteger captures enum value "integer"
 	CustomFieldTypeValueInteger string = "integer"
+
+	// CustomFieldTypeValueDecimal captures enum value "decimal"
+	CustomFieldTypeValueDecimal string = "decimal"
 
 	// CustomFieldTypeValueBoolean captures enum value "boolean"
 	CustomFieldTypeValueBoolean string = "boolean"

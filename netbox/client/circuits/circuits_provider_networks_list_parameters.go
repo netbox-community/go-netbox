@@ -98,6 +98,9 @@ type CircuitsProviderNetworksListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -170,6 +173,9 @@ type CircuitsProviderNetworksListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -226,6 +232,9 @@ type CircuitsProviderNetworksListParams struct {
 
 	// ServiceID.
 	ServiceID *string
+
+	// ServiceIDEmpty.
+	ServiceIDEmpty *string
 
 	// ServiceIDIc.
 	ServiceIDIc *string
@@ -388,6 +397,17 @@ func (o *CircuitsProviderNetworksListParams) WithDescription(description *string
 // SetDescription adds the description to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the circuits provider networks list params
+func (o *CircuitsProviderNetworksListParams) WithDescriptionEmpty(descriptionEmpty *string) *CircuitsProviderNetworksListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the circuits provider networks list params
+func (o *CircuitsProviderNetworksListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the circuits provider networks list params
@@ -643,6 +663,17 @@ func (o *CircuitsProviderNetworksListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the circuits provider networks list params
+func (o *CircuitsProviderNetworksListParams) WithNameEmpty(nameEmpty *string) *CircuitsProviderNetworksListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the circuits provider networks list params
+func (o *CircuitsProviderNetworksListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) WithNameIc(nameIc *string) *CircuitsProviderNetworksListParams {
 	o.SetNameIc(nameIc)
@@ -828,6 +859,17 @@ func (o *CircuitsProviderNetworksListParams) WithServiceID(serviceID *string) *C
 // SetServiceID adds the serviceId to the circuits provider networks list params
 func (o *CircuitsProviderNetworksListParams) SetServiceID(serviceID *string) {
 	o.ServiceID = serviceID
+}
+
+// WithServiceIDEmpty adds the serviceIDEmpty to the circuits provider networks list params
+func (o *CircuitsProviderNetworksListParams) WithServiceIDEmpty(serviceIDEmpty *string) *CircuitsProviderNetworksListParams {
+	o.SetServiceIDEmpty(serviceIDEmpty)
+	return o
+}
+
+// SetServiceIDEmpty adds the serviceIdEmpty to the circuits provider networks list params
+func (o *CircuitsProviderNetworksListParams) SetServiceIDEmpty(serviceIDEmpty *string) {
+	o.ServiceIDEmpty = serviceIDEmpty
 }
 
 // WithServiceIDIc adds the serviceIDIc to the circuits provider networks list params
@@ -1073,6 +1115,23 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1469,6 +1528,23 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1753,6 +1829,23 @@ func (o *CircuitsProviderNetworksListParams) WriteToRequest(r runtime.ClientRequ
 		if qServiceID != "" {
 
 			if err := r.SetQueryParam("service_id", qServiceID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ServiceIDEmpty != nil {
+
+		// query param service_id__empty
+		var qrServiceIDEmpty string
+
+		if o.ServiceIDEmpty != nil {
+			qrServiceIDEmpty = *o.ServiceIDEmpty
+		}
+		qServiceIDEmpty := qrServiceIDEmpty
+		if qServiceIDEmpty != "" {
+
+			if err := r.SetQueryParam("service_id__empty", qServiceIDEmpty); err != nil {
 				return err
 			}
 		}

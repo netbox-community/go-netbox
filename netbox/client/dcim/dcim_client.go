@@ -785,6 +785,24 @@ type ClientService interface {
 
 	DcimVirtualChassisUpdate(params *DcimVirtualChassisUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisUpdateOK, error)
 
+	DcimVirtualDeviceContextsBulkDelete(params *DcimVirtualDeviceContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkDeleteNoContent, error)
+
+	DcimVirtualDeviceContextsBulkPartialUpdate(params *DcimVirtualDeviceContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkPartialUpdateOK, error)
+
+	DcimVirtualDeviceContextsBulkUpdate(params *DcimVirtualDeviceContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkUpdateOK, error)
+
+	DcimVirtualDeviceContextsCreate(params *DcimVirtualDeviceContextsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsCreateCreated, error)
+
+	DcimVirtualDeviceContextsDelete(params *DcimVirtualDeviceContextsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsDeleteNoContent, error)
+
+	DcimVirtualDeviceContextsList(params *DcimVirtualDeviceContextsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsListOK, error)
+
+	DcimVirtualDeviceContextsPartialUpdate(params *DcimVirtualDeviceContextsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsPartialUpdateOK, error)
+
+	DcimVirtualDeviceContextsRead(params *DcimVirtualDeviceContextsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsReadOK, error)
+
+	DcimVirtualDeviceContextsUpdate(params *DcimVirtualDeviceContextsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsUpdateOK, error)
+
 	SetTransport(transport runtime.ClientTransport)
 }
 
@@ -979,7 +997,7 @@ func (a *Client) DcimCableTerminationsDelete(params *DcimCableTerminationsDelete
 }
 
 /*
-DcimCableTerminationsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimCableTerminationsList dcim cable terminations list API
 */
 func (a *Client) DcimCableTerminationsList(params *DcimCableTerminationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCableTerminationsListOK, error) {
 	// TODO: Validate the params before sending
@@ -1321,7 +1339,7 @@ func (a *Client) DcimCablesDelete(params *DcimCablesDeleteParams, authInfo runti
 }
 
 /*
-DcimCablesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimCablesList dcim cables list API
 */
 func (a *Client) DcimCablesList(params *DcimCablesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimCablesListOK, error) {
 	// TODO: Validate the params before sending
@@ -1707,7 +1725,7 @@ func (a *Client) DcimConsolePortTemplatesDelete(params *DcimConsolePortTemplates
 }
 
 /*
-DcimConsolePortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimConsolePortTemplatesList dcim console port templates list API
 */
 func (a *Client) DcimConsolePortTemplatesList(params *DcimConsolePortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -2049,7 +2067,7 @@ func (a *Client) DcimConsolePortsDelete(params *DcimConsolePortsDeleteParams, au
 }
 
 /*
-DcimConsolePortsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimConsolePortsList dcim console ports list API
 */
 func (a *Client) DcimConsolePortsList(params *DcimConsolePortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsolePortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -2429,7 +2447,7 @@ func (a *Client) DcimConsoleServerPortTemplatesDelete(params *DcimConsoleServerP
 }
 
 /*
-DcimConsoleServerPortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimConsoleServerPortTemplatesList dcim console server port templates list API
 */
 func (a *Client) DcimConsoleServerPortTemplatesList(params *DcimConsoleServerPortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -2771,7 +2789,7 @@ func (a *Client) DcimConsoleServerPortsDelete(params *DcimConsoleServerPortsDele
 }
 
 /*
-DcimConsoleServerPortsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimConsoleServerPortsList dcim console server ports list API
 */
 func (a *Client) DcimConsoleServerPortsList(params *DcimConsoleServerPortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimConsoleServerPortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -3151,7 +3169,7 @@ func (a *Client) DcimDeviceBayTemplatesDelete(params *DcimDeviceBayTemplatesDele
 }
 
 /*
-DcimDeviceBayTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimDeviceBayTemplatesList dcim device bay templates list API
 */
 func (a *Client) DcimDeviceBayTemplatesList(params *DcimDeviceBayTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBayTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -3493,7 +3511,7 @@ func (a *Client) DcimDeviceBaysDelete(params *DcimDeviceBaysDeleteParams, authIn
 }
 
 /*
-DcimDeviceBaysList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimDeviceBaysList dcim device bays list API
 */
 func (a *Client) DcimDeviceBaysList(params *DcimDeviceBaysListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceBaysListOK, error) {
 	// TODO: Validate the params before sending
@@ -3835,7 +3853,7 @@ func (a *Client) DcimDeviceRolesDelete(params *DcimDeviceRolesDeleteParams, auth
 }
 
 /*
-DcimDeviceRolesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimDeviceRolesList dcim device roles list API
 */
 func (a *Client) DcimDeviceRolesList(params *DcimDeviceRolesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceRolesListOK, error) {
 	// TODO: Validate the params before sending
@@ -4177,7 +4195,7 @@ func (a *Client) DcimDeviceTypesDelete(params *DcimDeviceTypesDeleteParams, auth
 }
 
 /*
-DcimDeviceTypesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimDeviceTypesList dcim device types list API
 */
 func (a *Client) DcimDeviceTypesList(params *DcimDeviceTypesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDeviceTypesListOK, error) {
 	// TODO: Validate the params before sending
@@ -4519,7 +4537,7 @@ func (a *Client) DcimDevicesDelete(params *DcimDevicesDeleteParams, authInfo run
 }
 
 /*
-DcimDevicesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimDevicesList dcim devices list API
 */
 func (a *Client) DcimDevicesList(params *DcimDevicesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimDevicesListOK, error) {
 	// TODO: Validate the params before sending
@@ -4899,7 +4917,7 @@ func (a *Client) DcimFrontPortTemplatesDelete(params *DcimFrontPortTemplatesDele
 }
 
 /*
-DcimFrontPortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimFrontPortTemplatesList dcim front port templates list API
 */
 func (a *Client) DcimFrontPortTemplatesList(params *DcimFrontPortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -5241,7 +5259,7 @@ func (a *Client) DcimFrontPortsDelete(params *DcimFrontPortsDeleteParams, authIn
 }
 
 /*
-DcimFrontPortsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimFrontPortsList dcim front ports list API
 */
 func (a *Client) DcimFrontPortsList(params *DcimFrontPortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimFrontPortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -5621,7 +5639,7 @@ func (a *Client) DcimInterfaceTemplatesDelete(params *DcimInterfaceTemplatesDele
 }
 
 /*
-DcimInterfaceTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimInterfaceTemplatesList dcim interface templates list API
 */
 func (a *Client) DcimInterfaceTemplatesList(params *DcimInterfaceTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfaceTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -5963,7 +5981,7 @@ func (a *Client) DcimInterfacesDelete(params *DcimInterfacesDeleteParams, authIn
 }
 
 /*
-DcimInterfacesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimInterfacesList dcim interfaces list API
 */
 func (a *Client) DcimInterfacesList(params *DcimInterfacesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInterfacesListOK, error) {
 	// TODO: Validate the params before sending
@@ -6343,7 +6361,7 @@ func (a *Client) DcimInventoryItemRolesDelete(params *DcimInventoryItemRolesDele
 }
 
 /*
-DcimInventoryItemRolesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimInventoryItemRolesList dcim inventory item roles list API
 */
 func (a *Client) DcimInventoryItemRolesList(params *DcimInventoryItemRolesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemRolesListOK, error) {
 	// TODO: Validate the params before sending
@@ -6685,7 +6703,7 @@ func (a *Client) DcimInventoryItemTemplatesDelete(params *DcimInventoryItemTempl
 }
 
 /*
-DcimInventoryItemTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimInventoryItemTemplatesList dcim inventory item templates list API
 */
 func (a *Client) DcimInventoryItemTemplatesList(params *DcimInventoryItemTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -7027,7 +7045,7 @@ func (a *Client) DcimInventoryItemsDelete(params *DcimInventoryItemsDeleteParams
 }
 
 /*
-DcimInventoryItemsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimInventoryItemsList dcim inventory items list API
 */
 func (a *Client) DcimInventoryItemsList(params *DcimInventoryItemsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimInventoryItemsListOK, error) {
 	// TODO: Validate the params before sending
@@ -7369,7 +7387,7 @@ func (a *Client) DcimLocationsDelete(params *DcimLocationsDeleteParams, authInfo
 }
 
 /*
-DcimLocationsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimLocationsList dcim locations list API
 */
 func (a *Client) DcimLocationsList(params *DcimLocationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimLocationsListOK, error) {
 	// TODO: Validate the params before sending
@@ -7711,7 +7729,7 @@ func (a *Client) DcimManufacturersDelete(params *DcimManufacturersDeleteParams, 
 }
 
 /*
-DcimManufacturersList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimManufacturersList dcim manufacturers list API
 */
 func (a *Client) DcimManufacturersList(params *DcimManufacturersListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimManufacturersListOK, error) {
 	// TODO: Validate the params before sending
@@ -8053,7 +8071,7 @@ func (a *Client) DcimModuleBayTemplatesDelete(params *DcimModuleBayTemplatesDele
 }
 
 /*
-DcimModuleBayTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimModuleBayTemplatesList dcim module bay templates list API
 */
 func (a *Client) DcimModuleBayTemplatesList(params *DcimModuleBayTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBayTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -8395,7 +8413,7 @@ func (a *Client) DcimModuleBaysDelete(params *DcimModuleBaysDeleteParams, authIn
 }
 
 /*
-DcimModuleBaysList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimModuleBaysList dcim module bays list API
 */
 func (a *Client) DcimModuleBaysList(params *DcimModuleBaysListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleBaysListOK, error) {
 	// TODO: Validate the params before sending
@@ -8737,7 +8755,7 @@ func (a *Client) DcimModuleTypesDelete(params *DcimModuleTypesDeleteParams, auth
 }
 
 /*
-DcimModuleTypesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimModuleTypesList dcim module types list API
 */
 func (a *Client) DcimModuleTypesList(params *DcimModuleTypesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModuleTypesListOK, error) {
 	// TODO: Validate the params before sending
@@ -9079,7 +9097,7 @@ func (a *Client) DcimModulesDelete(params *DcimModulesDeleteParams, authInfo run
 }
 
 /*
-DcimModulesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimModulesList dcim modules list API
 */
 func (a *Client) DcimModulesList(params *DcimModulesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimModulesListOK, error) {
 	// TODO: Validate the params before sending
@@ -9421,7 +9439,7 @@ func (a *Client) DcimPlatformsDelete(params *DcimPlatformsDeleteParams, authInfo
 }
 
 /*
-DcimPlatformsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimPlatformsList dcim platforms list API
 */
 func (a *Client) DcimPlatformsList(params *DcimPlatformsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPlatformsListOK, error) {
 	// TODO: Validate the params before sending
@@ -9763,7 +9781,7 @@ func (a *Client) DcimPowerFeedsDelete(params *DcimPowerFeedsDeleteParams, authIn
 }
 
 /*
-DcimPowerFeedsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimPowerFeedsList dcim power feeds list API
 */
 func (a *Client) DcimPowerFeedsList(params *DcimPowerFeedsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerFeedsListOK, error) {
 	// TODO: Validate the params before sending
@@ -10143,7 +10161,7 @@ func (a *Client) DcimPowerOutletTemplatesDelete(params *DcimPowerOutletTemplates
 }
 
 /*
-DcimPowerOutletTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimPowerOutletTemplatesList dcim power outlet templates list API
 */
 func (a *Client) DcimPowerOutletTemplatesList(params *DcimPowerOutletTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -10485,7 +10503,7 @@ func (a *Client) DcimPowerOutletsDelete(params *DcimPowerOutletsDeleteParams, au
 }
 
 /*
-DcimPowerOutletsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimPowerOutletsList dcim power outlets list API
 */
 func (a *Client) DcimPowerOutletsList(params *DcimPowerOutletsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerOutletsListOK, error) {
 	// TODO: Validate the params before sending
@@ -10865,7 +10883,7 @@ func (a *Client) DcimPowerPanelsDelete(params *DcimPowerPanelsDeleteParams, auth
 }
 
 /*
-DcimPowerPanelsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimPowerPanelsList dcim power panels list API
 */
 func (a *Client) DcimPowerPanelsList(params *DcimPowerPanelsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPanelsListOK, error) {
 	// TODO: Validate the params before sending
@@ -11207,7 +11225,7 @@ func (a *Client) DcimPowerPortTemplatesDelete(params *DcimPowerPortTemplatesDele
 }
 
 /*
-DcimPowerPortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimPowerPortTemplatesList dcim power port templates list API
 */
 func (a *Client) DcimPowerPortTemplatesList(params *DcimPowerPortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -11549,7 +11567,7 @@ func (a *Client) DcimPowerPortsDelete(params *DcimPowerPortsDeleteParams, authIn
 }
 
 /*
-DcimPowerPortsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimPowerPortsList dcim power ports list API
 */
 func (a *Client) DcimPowerPortsList(params *DcimPowerPortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimPowerPortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -11929,7 +11947,7 @@ func (a *Client) DcimRackReservationsDelete(params *DcimRackReservationsDeletePa
 }
 
 /*
-DcimRackReservationsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimRackReservationsList dcim rack reservations list API
 */
 func (a *Client) DcimRackReservationsList(params *DcimRackReservationsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackReservationsListOK, error) {
 	// TODO: Validate the params before sending
@@ -12271,7 +12289,7 @@ func (a *Client) DcimRackRolesDelete(params *DcimRackRolesDeleteParams, authInfo
 }
 
 /*
-DcimRackRolesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimRackRolesList dcim rack roles list API
 */
 func (a *Client) DcimRackRolesList(params *DcimRackRolesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRackRolesListOK, error) {
 	// TODO: Validate the params before sending
@@ -12651,7 +12669,7 @@ func (a *Client) DcimRacksElevation(params *DcimRacksElevationParams, authInfo r
 }
 
 /*
-DcimRacksList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimRacksList dcim racks list API
 */
 func (a *Client) DcimRacksList(params *DcimRacksListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRacksListOK, error) {
 	// TODO: Validate the params before sending
@@ -12993,7 +13011,7 @@ func (a *Client) DcimRearPortTemplatesDelete(params *DcimRearPortTemplatesDelete
 }
 
 /*
-DcimRearPortTemplatesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimRearPortTemplatesList dcim rear port templates list API
 */
 func (a *Client) DcimRearPortTemplatesList(params *DcimRearPortTemplatesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortTemplatesListOK, error) {
 	// TODO: Validate the params before sending
@@ -13335,7 +13353,7 @@ func (a *Client) DcimRearPortsDelete(params *DcimRearPortsDeleteParams, authInfo
 }
 
 /*
-DcimRearPortsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimRearPortsList dcim rear ports list API
 */
 func (a *Client) DcimRearPortsList(params *DcimRearPortsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRearPortsListOK, error) {
 	// TODO: Validate the params before sending
@@ -13715,7 +13733,7 @@ func (a *Client) DcimRegionsDelete(params *DcimRegionsDeleteParams, authInfo run
 }
 
 /*
-DcimRegionsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimRegionsList dcim regions list API
 */
 func (a *Client) DcimRegionsList(params *DcimRegionsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimRegionsListOK, error) {
 	// TODO: Validate the params before sending
@@ -14057,7 +14075,7 @@ func (a *Client) DcimSiteGroupsDelete(params *DcimSiteGroupsDeleteParams, authIn
 }
 
 /*
-DcimSiteGroupsList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimSiteGroupsList dcim site groups list API
 */
 func (a *Client) DcimSiteGroupsList(params *DcimSiteGroupsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSiteGroupsListOK, error) {
 	// TODO: Validate the params before sending
@@ -14399,7 +14417,7 @@ func (a *Client) DcimSitesDelete(params *DcimSitesDeleteParams, authInfo runtime
 }
 
 /*
-DcimSitesList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimSitesList dcim sites list API
 */
 func (a *Client) DcimSitesList(params *DcimSitesListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimSitesListOK, error) {
 	// TODO: Validate the params before sending
@@ -14741,7 +14759,7 @@ func (a *Client) DcimVirtualChassisDelete(params *DcimVirtualChassisDeleteParams
 }
 
 /*
-DcimVirtualChassisList Overrides ListModelMixin to allow processing ExportTemplates.
+DcimVirtualChassisList dcim virtual chassis list API
 */
 func (a *Client) DcimVirtualChassisList(params *DcimVirtualChassisListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualChassisListOK, error) {
 	// TODO: Validate the params before sending
@@ -14889,6 +14907,348 @@ func (a *Client) DcimVirtualChassisUpdate(params *DcimVirtualChassisUpdateParams
 	}
 	// unexpected success response
 	unexpectedSuccess := result.(*DcimVirtualChassisUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DcimVirtualDeviceContextsBulkDelete dcim virtual device contexts bulk delete API
+*/
+func (a *Client) DcimVirtualDeviceContextsBulkDelete(params *DcimVirtualDeviceContextsBulkDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualDeviceContextsBulkDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "dcim_virtual-device-contexts_bulk_delete",
+		Method:             "DELETE",
+		PathPattern:        "/dcim/virtual-device-contexts/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualDeviceContextsBulkDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimVirtualDeviceContextsBulkDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DcimVirtualDeviceContextsBulkDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DcimVirtualDeviceContextsBulkPartialUpdate dcim virtual device contexts bulk partial update API
+*/
+func (a *Client) DcimVirtualDeviceContextsBulkPartialUpdate(params *DcimVirtualDeviceContextsBulkPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualDeviceContextsBulkPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "dcim_virtual-device-contexts_bulk_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/dcim/virtual-device-contexts/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualDeviceContextsBulkPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimVirtualDeviceContextsBulkPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DcimVirtualDeviceContextsBulkPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DcimVirtualDeviceContextsBulkUpdate dcim virtual device contexts bulk update API
+*/
+func (a *Client) DcimVirtualDeviceContextsBulkUpdate(params *DcimVirtualDeviceContextsBulkUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsBulkUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualDeviceContextsBulkUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "dcim_virtual-device-contexts_bulk_update",
+		Method:             "PUT",
+		PathPattern:        "/dcim/virtual-device-contexts/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualDeviceContextsBulkUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimVirtualDeviceContextsBulkUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DcimVirtualDeviceContextsBulkUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DcimVirtualDeviceContextsCreate dcim virtual device contexts create API
+*/
+func (a *Client) DcimVirtualDeviceContextsCreate(params *DcimVirtualDeviceContextsCreateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsCreateCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualDeviceContextsCreateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "dcim_virtual-device-contexts_create",
+		Method:             "POST",
+		PathPattern:        "/dcim/virtual-device-contexts/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualDeviceContextsCreateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimVirtualDeviceContextsCreateCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DcimVirtualDeviceContextsCreateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DcimVirtualDeviceContextsDelete dcim virtual device contexts delete API
+*/
+func (a *Client) DcimVirtualDeviceContextsDelete(params *DcimVirtualDeviceContextsDeleteParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsDeleteNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualDeviceContextsDeleteParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "dcim_virtual-device-contexts_delete",
+		Method:             "DELETE",
+		PathPattern:        "/dcim/virtual-device-contexts/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualDeviceContextsDeleteReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimVirtualDeviceContextsDeleteNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DcimVirtualDeviceContextsDeleteDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DcimVirtualDeviceContextsList dcim virtual device contexts list API
+*/
+func (a *Client) DcimVirtualDeviceContextsList(params *DcimVirtualDeviceContextsListParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsListOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualDeviceContextsListParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "dcim_virtual-device-contexts_list",
+		Method:             "GET",
+		PathPattern:        "/dcim/virtual-device-contexts/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualDeviceContextsListReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimVirtualDeviceContextsListOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DcimVirtualDeviceContextsListDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DcimVirtualDeviceContextsPartialUpdate dcim virtual device contexts partial update API
+*/
+func (a *Client) DcimVirtualDeviceContextsPartialUpdate(params *DcimVirtualDeviceContextsPartialUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsPartialUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualDeviceContextsPartialUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "dcim_virtual-device-contexts_partial_update",
+		Method:             "PATCH",
+		PathPattern:        "/dcim/virtual-device-contexts/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualDeviceContextsPartialUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimVirtualDeviceContextsPartialUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DcimVirtualDeviceContextsPartialUpdateDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DcimVirtualDeviceContextsRead dcim virtual device contexts read API
+*/
+func (a *Client) DcimVirtualDeviceContextsRead(params *DcimVirtualDeviceContextsReadParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsReadOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualDeviceContextsReadParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "dcim_virtual-device-contexts_read",
+		Method:             "GET",
+		PathPattern:        "/dcim/virtual-device-contexts/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualDeviceContextsReadReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimVirtualDeviceContextsReadOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DcimVirtualDeviceContextsReadDefault)
+	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
+}
+
+/*
+DcimVirtualDeviceContextsUpdate dcim virtual device contexts update API
+*/
+func (a *Client) DcimVirtualDeviceContextsUpdate(params *DcimVirtualDeviceContextsUpdateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DcimVirtualDeviceContextsUpdateOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDcimVirtualDeviceContextsUpdateParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "dcim_virtual-device-contexts_update",
+		Method:             "PUT",
+		PathPattern:        "/dcim/virtual-device-contexts/{id}/",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DcimVirtualDeviceContextsUpdateReader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DcimVirtualDeviceContextsUpdateOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	unexpectedSuccess := result.(*DcimVirtualDeviceContextsUpdateDefault)
 	return nil, runtime.NewAPIError("unexpected success response: content available as default response in error", unexpectedSuccess, unexpectedSuccess.Code())
 }
 

@@ -22,6 +22,7 @@ package models
 
 import (
 	"context"
+	"encoding/json"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -41,10 +42,14 @@ type WritableModuleType struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -57,7 +62,7 @@ type WritableModuleType struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Manufacturer
 	// Required: true
@@ -82,6 +87,13 @@ type WritableModuleType struct {
 	// Read Only: true
 	// Format: uri
 	URL strfmt.URI `json:"url,omitempty"`
+
+	// Weight
+	Weight *float64 `json:"weight,omitempty"`
+
+	// Weight unit
+	// Enum: [kg g lb oz]
+	WeightUnit string `json:"weight_unit,omitempty"`
 }
 
 // Validate validates this writable module type
@@ -89,6 +101,10 @@ func (m *WritableModuleType) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -116,6 +132,10 @@ func (m *WritableModuleType) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateWeightUnit(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -128,6 +148,18 @@ func (m *WritableModuleType) validateCreated(formats strfmt.Registry) error {
 	}
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableModuleType) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -222,6 +254,54 @@ func (m *WritableModuleType) validateURL(formats strfmt.Registry) error {
 	return nil
 }
 
+var writableModuleTypeTypeWeightUnitPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["kg","g","lb","oz"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		writableModuleTypeTypeWeightUnitPropEnum = append(writableModuleTypeTypeWeightUnitPropEnum, v)
+	}
+}
+
+const (
+
+	// WritableModuleTypeWeightUnitKg captures enum value "kg"
+	WritableModuleTypeWeightUnitKg string = "kg"
+
+	// WritableModuleTypeWeightUnitG captures enum value "g"
+	WritableModuleTypeWeightUnitG string = "g"
+
+	// WritableModuleTypeWeightUnitLb captures enum value "lb"
+	WritableModuleTypeWeightUnitLb string = "lb"
+
+	// WritableModuleTypeWeightUnitOz captures enum value "oz"
+	WritableModuleTypeWeightUnitOz string = "oz"
+)
+
+// prop value enum
+func (m *WritableModuleType) validateWeightUnitEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, writableModuleTypeTypeWeightUnitPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WritableModuleType) validateWeightUnit(formats strfmt.Registry) error {
+	if swag.IsZero(m.WeightUnit) { // not required
+		return nil
+	}
+
+	// value enum
+	if err := m.validateWeightUnitEnum("weight_unit", "body", m.WeightUnit); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this writable module type based on the context it is used
 func (m *WritableModuleType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
@@ -258,7 +338,7 @@ func (m *WritableModuleType) ContextValidate(ctx context.Context, formats strfmt
 
 func (m *WritableModuleType) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -285,7 +365,7 @@ func (m *WritableModuleType) contextValidateID(ctx context.Context, formats strf
 
 func (m *WritableModuleType) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

@@ -80,6 +80,9 @@ type ExtrasTagsListParams struct {
 	// Color.
 	Color *string
 
+	// ColorEmpty.
+	ColorEmpty *string
+
 	// ColorIc.
 	ColorIc *string
 
@@ -133,6 +136,9 @@ type ExtrasTagsListParams struct {
 
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -206,6 +212,9 @@ type ExtrasTagsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -250,6 +259,9 @@ type ExtrasTagsListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -340,6 +352,17 @@ func (o *ExtrasTagsListParams) WithColor(color *string) *ExtrasTagsListParams {
 // SetColor adds the color to the extras tags list params
 func (o *ExtrasTagsListParams) SetColor(color *string) {
 	o.Color = color
+}
+
+// WithColorEmpty adds the colorEmpty to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorEmpty(colorEmpty *string) *ExtrasTagsListParams {
+	o.SetColorEmpty(colorEmpty)
+	return o
+}
+
+// SetColorEmpty adds the colorEmpty to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorEmpty(colorEmpty *string) {
+	o.ColorEmpty = colorEmpty
 }
 
 // WithColorIc adds the colorIc to the extras tags list params
@@ -538,6 +561,17 @@ func (o *ExtrasTagsListParams) WithDescription(description *string) *ExtrasTagsL
 // SetDescription adds the description to the extras tags list params
 func (o *ExtrasTagsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the extras tags list params
+func (o *ExtrasTagsListParams) WithDescriptionEmpty(descriptionEmpty *string) *ExtrasTagsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the extras tags list params
+func (o *ExtrasTagsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the extras tags list params
@@ -793,6 +827,17 @@ func (o *ExtrasTagsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the extras tags list params
+func (o *ExtrasTagsListParams) WithNameEmpty(nameEmpty *string) *ExtrasTagsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the extras tags list params
+func (o *ExtrasTagsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the extras tags list params
 func (o *ExtrasTagsListParams) WithNameIc(nameIc *string) *ExtrasTagsListParams {
 	o.SetNameIc(nameIc)
@@ -936,6 +981,17 @@ func (o *ExtrasTagsListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithSlugEmpty adds the slugEmpty to the extras tags list params
+func (o *ExtrasTagsListParams) WithSlugEmpty(slugEmpty *string) *ExtrasTagsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the extras tags list params
+func (o *ExtrasTagsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
+}
+
 // WithSlugIc adds the slugIc to the extras tags list params
 func (o *ExtrasTagsListParams) WithSlugIc(slugIc *string) *ExtrasTagsListParams {
 	o.SetSlugIc(slugIc)
@@ -1055,6 +1111,23 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qColor != "" {
 
 			if err := r.SetQueryParam("color", qColor); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorEmpty != nil {
+
+		// query param color__empty
+		var qrColorEmpty string
+
+		if o.ColorEmpty != nil {
+			qrColorEmpty = *o.ColorEmpty
+		}
+		qColorEmpty := qrColorEmpty
+		if qColorEmpty != "" {
+
+			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
 				return err
 			}
 		}
@@ -1361,6 +1434,23 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1757,6 +1847,23 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1973,6 +2080,23 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

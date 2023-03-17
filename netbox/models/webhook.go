@@ -64,7 +64,7 @@ type Webhook struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Display
 	// Read Only: true
@@ -91,7 +91,7 @@ type Webhook struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Name
 	// Required: true
@@ -121,17 +121,17 @@ type Webhook struct {
 	// Type create
 	//
 	// Call this webhook when a matching object is created.
-	TypeCreate *bool `json:"type_create,omitempty"`
+	TypeCreate bool `json:"type_create,omitempty"`
 
 	// Type delete
 	//
 	// Call this webhook when a matching object is deleted.
-	TypeDelete *bool `json:"type_delete,omitempty"`
+	TypeDelete bool `json:"type_delete,omitempty"`
 
 	// Type update
 	//
 	// Call this webhook when a matching object is updated.
-	TypeUpdate *bool `json:"type_update,omitempty"`
+	TypeUpdate bool `json:"type_update,omitempty"`
 
 	// Url
 	// Read Only: true
@@ -395,7 +395,7 @@ func (m *Webhook) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 
 func (m *Webhook) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -422,7 +422,7 @@ func (m *Webhook) contextValidateID(ctx context.Context, formats strfmt.Registry
 
 func (m *Webhook) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

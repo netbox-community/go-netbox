@@ -58,10 +58,14 @@ type DeviceWithConfigContext struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
 
 	// device role
 	// Required: true
@@ -85,7 +89,7 @@ type DeviceWithConfigContext struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Local context data
 	LocalContextData interface{} `json:"local_context_data,omitempty"`
@@ -94,9 +98,8 @@ type DeviceWithConfigContext struct {
 	Location *NestedLocation `json:"location,omitempty"`
 
 	// Name
-	// Required: true
 	// Max Length: 64
-	Name *string `json:"name"`
+	Name *string `json:"name,omitempty"`
 
 	// parent device
 	ParentDevice *NestedDevice `json:"parent_device,omitempty"`
@@ -173,6 +176,10 @@ func (m *DeviceWithConfigContext) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateCreated(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDescription(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -332,6 +339,18 @@ func (m *DeviceWithConfigContext) validateCreated(formats strfmt.Registry) error
 	return nil
 }
 
+func (m *DeviceWithConfigContext) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *DeviceWithConfigContext) validateDeviceRole(formats strfmt.Registry) error {
 
 	if err := validate.Required("device_role", "body", m.DeviceRole); err != nil {
@@ -423,9 +442,8 @@ func (m *DeviceWithConfigContext) validateLocation(formats strfmt.Registry) erro
 }
 
 func (m *DeviceWithConfigContext) validateName(formats strfmt.Registry) error {
-
-	if err := validate.Required("name", "body", m.Name); err != nil {
-		return err
+	if swag.IsZero(m.Name) { // not required
+		return nil
 	}
 
 	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
@@ -852,7 +870,7 @@ func (m *DeviceWithConfigContext) contextValidateCluster(ctx context.Context, fo
 
 func (m *DeviceWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -927,7 +945,7 @@ func (m *DeviceWithConfigContext) contextValidateID(ctx context.Context, formats
 
 func (m *DeviceWithConfigContext) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

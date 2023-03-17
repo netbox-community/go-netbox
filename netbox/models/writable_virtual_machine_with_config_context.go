@@ -49,10 +49,14 @@ type WritableVirtualMachineWithConfigContext struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
+
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
 
 	// Device
 	Device *int64 `json:"device"`
@@ -73,7 +77,7 @@ type WritableVirtualMachineWithConfigContext struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated"`
 
 	// Local context data
 	LocalContextData interface{} `json:"local_context_data"`
@@ -136,6 +140,10 @@ func (m *WritableVirtualMachineWithConfigContext) Validate(formats strfmt.Regist
 		res = append(res, err)
 	}
 
+	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDisk(formats); err != nil {
 		res = append(res, err)
 	}
@@ -180,6 +188,18 @@ func (m *WritableVirtualMachineWithConfigContext) validateCreated(formats strfmt
 	}
 
 	if err := validate.FormatOf("created", "body", "date-time", m.Created.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *WritableVirtualMachineWithConfigContext) validateDescription(formats strfmt.Registry) error {
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", m.Description, 200); err != nil {
 		return err
 	}
 
@@ -391,7 +411,7 @@ func (m *WritableVirtualMachineWithConfigContext) ContextValidate(ctx context.Co
 
 func (m *WritableVirtualMachineWithConfigContext) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -418,7 +438,7 @@ func (m *WritableVirtualMachineWithConfigContext) contextValidateID(ctx context.
 
 func (m *WritableVirtualMachineWithConfigContext) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

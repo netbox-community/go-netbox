@@ -46,10 +46,13 @@ type WirelessLAN struct {
 	// auth type
 	AuthType *WirelessLANAuthType `json:"auth_type,omitempty"`
 
+	// Comments
+	Comments string `json:"comments,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -72,13 +75,16 @@ type WirelessLAN struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// SSID
 	// Required: true
 	// Max Length: 32
 	// Min Length: 1
 	Ssid *string `json:"ssid"`
+
+	// status
+	Status *WirelessLANStatus `json:"status,omitempty"`
 
 	// tags
 	Tags []*NestedTag `json:"tags"`
@@ -128,6 +134,10 @@ func (m *WirelessLAN) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateSsid(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -275,6 +285,25 @@ func (m *WirelessLAN) validateSsid(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *WirelessLAN) validateStatus(formats strfmt.Registry) error {
+	if swag.IsZero(m.Status) { // not required
+		return nil
+	}
+
+	if m.Status != nil {
+		if err := m.Status.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *WirelessLAN) validateTags(formats strfmt.Registry) error {
 	if swag.IsZero(m.Tags) { // not required
 		return nil
@@ -383,6 +412,10 @@ func (m *WirelessLAN) ContextValidate(ctx context.Context, formats strfmt.Regist
 		res = append(res, err)
 	}
 
+	if err := m.contextValidateStatus(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateTags(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -439,7 +472,7 @@ func (m *WirelessLAN) contextValidateAuthType(ctx context.Context, formats strfm
 
 func (m *WirelessLAN) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -482,8 +515,24 @@ func (m *WirelessLAN) contextValidateID(ctx context.Context, formats strfmt.Regi
 
 func (m *WirelessLAN) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *WirelessLAN) contextValidateStatus(ctx context.Context, formats strfmt.Registry) error {
+
+	if m.Status != nil {
+		if err := m.Status.ContextValidate(ctx, formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("status")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("status")
+			}
+			return err
+		}
 	}
 
 	return nil
@@ -865,6 +914,161 @@ func (m *WirelessLANAuthType) MarshalBinary() ([]byte, error) {
 // UnmarshalBinary interface implementation
 func (m *WirelessLANAuthType) UnmarshalBinary(b []byte) error {
 	var res WirelessLANAuthType
+	if err := swag.ReadJSON(b, &res); err != nil {
+		return err
+	}
+	*m = res
+	return nil
+}
+
+// WirelessLANStatus Status
+//
+// swagger:model WirelessLANStatus
+type WirelessLANStatus struct {
+
+	// label
+	// Required: true
+	// Enum: [Active Reserved Disabled Deprecated]
+	Label *string `json:"label"`
+
+	// value
+	// Required: true
+	// Enum: [active reserved disabled deprecated]
+	Value *string `json:"value"`
+}
+
+// Validate validates this wireless l a n status
+func (m *WirelessLANStatus) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateLabel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateValue(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+var wirelessLANStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Active","Reserved","Disabled","Deprecated"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		wirelessLANStatusTypeLabelPropEnum = append(wirelessLANStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// WirelessLANStatusLabelActive captures enum value "Active"
+	WirelessLANStatusLabelActive string = "Active"
+
+	// WirelessLANStatusLabelReserved captures enum value "Reserved"
+	WirelessLANStatusLabelReserved string = "Reserved"
+
+	// WirelessLANStatusLabelDisabled captures enum value "Disabled"
+	WirelessLANStatusLabelDisabled string = "Disabled"
+
+	// WirelessLANStatusLabelDeprecated captures enum value "Deprecated"
+	WirelessLANStatusLabelDeprecated string = "Deprecated"
+)
+
+// prop value enum
+func (m *WirelessLANStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, wirelessLANStatusTypeLabelPropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WirelessLANStatus) validateLabel(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"label", "body", m.Label); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateLabelEnum("status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var wirelessLANStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["active","reserved","disabled","deprecated"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		wirelessLANStatusTypeValuePropEnum = append(wirelessLANStatusTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// WirelessLANStatusValueActive captures enum value "active"
+	WirelessLANStatusValueActive string = "active"
+
+	// WirelessLANStatusValueReserved captures enum value "reserved"
+	WirelessLANStatusValueReserved string = "reserved"
+
+	// WirelessLANStatusValueDisabled captures enum value "disabled"
+	WirelessLANStatusValueDisabled string = "disabled"
+
+	// WirelessLANStatusValueDeprecated captures enum value "deprecated"
+	WirelessLANStatusValueDeprecated string = "deprecated"
+)
+
+// prop value enum
+func (m *WirelessLANStatus) validateValueEnum(path, location string, value string) error {
+	if err := validate.EnumCase(path, location, value, wirelessLANStatusTypeValuePropEnum, true); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (m *WirelessLANStatus) validateValue(formats strfmt.Registry) error {
+
+	if err := validate.Required("status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("status"+"."+"value", "body", *m.Value); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this wireless l a n status based on context it is used
+func (m *WirelessLANStatus) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
+// MarshalBinary interface implementation
+func (m *WirelessLANStatus) MarshalBinary() ([]byte, error) {
+	if m == nil {
+		return nil, nil
+	}
+	return swag.WriteJSON(m)
+}
+
+// UnmarshalBinary interface implementation
+func (m *WirelessLANStatus) UnmarshalBinary(b []byte) error {
+	var res WirelessLANStatus
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

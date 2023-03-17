@@ -80,6 +80,9 @@ type DcimRackRolesListParams struct {
 	// Color.
 	Color *string
 
+	// ColorEmpty.
+	ColorEmpty *string
+
 	// ColorIc.
 	ColorIc *string
 
@@ -127,6 +130,9 @@ type DcimRackRolesListParams struct {
 
 	// Description.
 	Description *string
+
+	// DescriptionEmpty.
+	DescriptionEmpty *string
 
 	// DescriptionIc.
 	DescriptionIc *string
@@ -200,6 +206,9 @@ type DcimRackRolesListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -244,6 +253,9 @@ type DcimRackRolesListParams struct {
 
 	// Slug.
 	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
 
 	// SlugIc.
 	SlugIc *string
@@ -340,6 +352,17 @@ func (o *DcimRackRolesListParams) WithColor(color *string) *DcimRackRolesListPar
 // SetColor adds the color to the dcim rack roles list params
 func (o *DcimRackRolesListParams) SetColor(color *string) {
 	o.Color = color
+}
+
+// WithColorEmpty adds the colorEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithColorEmpty(colorEmpty *string) *DcimRackRolesListParams {
+	o.SetColorEmpty(colorEmpty)
+	return o
+}
+
+// SetColorEmpty adds the colorEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetColorEmpty(colorEmpty *string) {
+	o.ColorEmpty = colorEmpty
 }
 
 // WithColorIc adds the colorIc to the dcim rack roles list params
@@ -516,6 +539,17 @@ func (o *DcimRackRolesListParams) WithDescription(description *string) *DcimRack
 // SetDescription adds the description to the dcim rack roles list params
 func (o *DcimRackRolesListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimRackRolesListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim rack roles list params
@@ -771,6 +805,17 @@ func (o *DcimRackRolesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithNameEmpty(nameEmpty *string) *DcimRackRolesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithNameIc(nameIc *string) *DcimRackRolesListParams {
 	o.SetNameIc(nameIc)
@@ -914,6 +959,17 @@ func (o *DcimRackRolesListParams) SetSlug(slug *string) {
 	o.Slug = slug
 }
 
+// WithSlugEmpty adds the slugEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) WithSlugEmpty(slugEmpty *string) *DcimRackRolesListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the dcim rack roles list params
+func (o *DcimRackRolesListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
+}
+
 // WithSlugIc adds the slugIc to the dcim rack roles list params
 func (o *DcimRackRolesListParams) WithSlugIc(slugIc *string) *DcimRackRolesListParams {
 	o.SetSlugIc(slugIc)
@@ -1055,6 +1111,23 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qColor != "" {
 
 			if err := r.SetQueryParam("color", qColor); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.ColorEmpty != nil {
+
+		// query param color__empty
+		var qrColorEmpty string
+
+		if o.ColorEmpty != nil {
+			qrColorEmpty = *o.ColorEmpty
+		}
+		qColorEmpty := qrColorEmpty
+		if qColorEmpty != "" {
+
+			if err := r.SetQueryParam("color__empty", qColorEmpty); err != nil {
 				return err
 			}
 		}
@@ -1327,6 +1400,23 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1723,6 +1813,23 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -1939,6 +2046,23 @@ func (o *DcimRackRolesListParams) WriteToRequest(r runtime.ClientRequest, reg st
 		if qSlug != "" {
 
 			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
 				return err
 			}
 		}

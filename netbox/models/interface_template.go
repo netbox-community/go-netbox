@@ -38,7 +38,7 @@ type InterfaceTemplate struct {
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Description
 	// Max Length: 200
@@ -64,7 +64,7 @@ type InterfaceTemplate struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Management only
 	MgmtOnly bool `json:"mgmt_only,omitempty"`
@@ -377,7 +377,7 @@ func (m *InterfaceTemplate) ContextValidate(ctx context.Context, formats strfmt.
 
 func (m *InterfaceTemplate) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -420,7 +420,7 @@ func (m *InterfaceTemplate) contextValidateID(ctx context.Context, formats strfm
 
 func (m *InterfaceTemplate) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 
@@ -668,12 +668,12 @@ type InterfaceTemplatePoeType struct {
 
 	// label
 	// Required: true
-	// Enum: [802.3af (Type 1) 802.3at (Type 2) 802.3bt (Type 3) 802.3bt (Type 4) Passive 24V (2-pair) Passive 24V (4-pair) Passive 48V (4-pair)]
+	// Enum: [802.3af (Type 1) 802.3at (Type 2) 802.3az (Type 2) 802.3bt (Type 3) 802.3bt (Type 4) Passive 24V (2-pair) Passive 24V (4-pair) Passive 48V (2-pair) Passive 48V (4-pair)]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [type1-ieee802.3af type2-ieee802.3at type3-ieee802.3bt type4-ieee802.3bt passive-24v-2pair passive-24v-4pair passive-48v-2pair]
+	// Enum: [type1-ieee802.3af type2-ieee802.3at type2-ieee802.3az type3-ieee802.3bt type4-ieee802.3bt passive-24v-2pair passive-24v-4pair passive-48v-2pair passive-48v-4pair]
 	Value *string `json:"value"`
 }
 
@@ -699,7 +699,7 @@ var interfaceTemplatePoeTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["802.3af (Type 1)","802.3at (Type 2)","802.3bt (Type 3)","802.3bt (Type 4)","Passive 24V (2-pair)","Passive 24V (4-pair)","Passive 48V (4-pair)"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["802.3af (Type 1)","802.3at (Type 2)","802.3az (Type 2)","802.3bt (Type 3)","802.3bt (Type 4)","Passive 24V (2-pair)","Passive 24V (4-pair)","Passive 48V (2-pair)","Passive 48V (4-pair)"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -715,6 +715,9 @@ const (
 	// InterfaceTemplatePoeTypeLabelNr802Dot3atType2 captures enum value "802.3at (Type 2)"
 	InterfaceTemplatePoeTypeLabelNr802Dot3atType2 string = "802.3at (Type 2)"
 
+	// InterfaceTemplatePoeTypeLabelNr802Dot3azType2 captures enum value "802.3az (Type 2)"
+	InterfaceTemplatePoeTypeLabelNr802Dot3azType2 string = "802.3az (Type 2)"
+
 	// InterfaceTemplatePoeTypeLabelNr802Dot3btType3 captures enum value "802.3bt (Type 3)"
 	InterfaceTemplatePoeTypeLabelNr802Dot3btType3 string = "802.3bt (Type 3)"
 
@@ -726,6 +729,9 @@ const (
 
 	// InterfaceTemplatePoeTypeLabelPassive24V4DashPair captures enum value "Passive 24V (4-pair)"
 	InterfaceTemplatePoeTypeLabelPassive24V4DashPair string = "Passive 24V (4-pair)"
+
+	// InterfaceTemplatePoeTypeLabelPassive48V2DashPair captures enum value "Passive 48V (2-pair)"
+	InterfaceTemplatePoeTypeLabelPassive48V2DashPair string = "Passive 48V (2-pair)"
 
 	// InterfaceTemplatePoeTypeLabelPassive48V4DashPair captures enum value "Passive 48V (4-pair)"
 	InterfaceTemplatePoeTypeLabelPassive48V4DashPair string = "Passive 48V (4-pair)"
@@ -757,7 +763,7 @@ var interfaceTemplatePoeTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["type1-ieee802.3af","type2-ieee802.3at","type3-ieee802.3bt","type4-ieee802.3bt","passive-24v-2pair","passive-24v-4pair","passive-48v-2pair"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["type1-ieee802.3af","type2-ieee802.3at","type2-ieee802.3az","type3-ieee802.3bt","type4-ieee802.3bt","passive-24v-2pair","passive-24v-4pair","passive-48v-2pair","passive-48v-4pair"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -773,6 +779,9 @@ const (
 	// InterfaceTemplatePoeTypeValueType2DashIeee802Dot3at captures enum value "type2-ieee802.3at"
 	InterfaceTemplatePoeTypeValueType2DashIeee802Dot3at string = "type2-ieee802.3at"
 
+	// InterfaceTemplatePoeTypeValueType2DashIeee802Dot3az captures enum value "type2-ieee802.3az"
+	InterfaceTemplatePoeTypeValueType2DashIeee802Dot3az string = "type2-ieee802.3az"
+
 	// InterfaceTemplatePoeTypeValueType3DashIeee802Dot3bt captures enum value "type3-ieee802.3bt"
 	InterfaceTemplatePoeTypeValueType3DashIeee802Dot3bt string = "type3-ieee802.3bt"
 
@@ -787,6 +796,9 @@ const (
 
 	// InterfaceTemplatePoeTypeValuePassiveDash48vDash2pair captures enum value "passive-48v-2pair"
 	InterfaceTemplatePoeTypeValuePassiveDash48vDash2pair string = "passive-48v-2pair"
+
+	// InterfaceTemplatePoeTypeValuePassiveDash48vDash4pair captures enum value "passive-48v-4pair"
+	InterfaceTemplatePoeTypeValuePassiveDash48vDash4pair string = "passive-48v-4pair"
 )
 
 // prop value enum
@@ -841,12 +853,12 @@ type InterfaceTemplateType struct {
 
 	// label
 	// Required: true
-	// Enum: [Virtual Bridge Link Aggregation Group (LAG) 100BASE-TX (10/100ME) 1000BASE-T (1GE) 2.5GBASE-T (2.5GE) 5GBASE-T (5GE) 10GBASE-T (10GE) 10GBASE-CX4 (10GE) GBIC (1GE) SFP (1GE) SFP+ (10GE) XFP (10GE) XENPAK (10GE) X2 (10GE) SFP28 (25GE) SFP56 (50GE) QSFP+ (40GE) QSFP28 (50GE) CFP (100GE) CFP2 (100GE) CFP2 (200GE) CFP4 (100GE) Cisco CPAK (100GE) QSFP28 (100GE) QSFP56 (200GE) QSFP-DD (400GE) OSFP (400GE) IEEE 802.11a IEEE 802.11b/g IEEE 802.11n IEEE 802.11ac IEEE 802.11ad IEEE 802.11ax IEEE 802.11ay IEEE 802.15.1 (Bluetooth) Other (Wireless) GSM CDMA LTE OC-3/STM-1 OC-12/STM-4 OC-48/STM-16 OC-192/STM-64 OC-768/STM-256 OC-1920/STM-640 OC-3840/STM-1234 SFP (1GFC) SFP (2GFC) SFP (4GFC) SFP+ (8GFC) SFP+ (16GFC) SFP28 (32GFC) QSFP+ (64GFC) QSFP28 (128GFC) SDR (2 Gbps) DDR (4 Gbps) QDR (8 Gbps) FDR10 (10 Gbps) FDR (13.5 Gbps) EDR (25 Gbps) HDR (50 Gbps) NDR (100 Gbps) XDR (250 Gbps) T1 (1.544 Mbps) E1 (2.048 Mbps) T3 (45 Mbps) E3 (34 Mbps) xDSL DOCSIS GPON (2.5 Gbps / 1.25 Gps) XG-PON (10 Gbps / 2.5 Gbps) XGS-PON (10 Gbps) NG-PON2 (TWDM-PON) (4x10 Gbps) EPON (1 Gbps) 10G-EPON (10 Gbps) Cisco StackWise Cisco StackWise Plus Cisco FlexStack Cisco FlexStack Plus Cisco StackWise-80 Cisco StackWise-160 Cisco StackWise-320 Cisco StackWise-480 Juniper VCP Extreme SummitStack Extreme SummitStack-128 Extreme SummitStack-256 Extreme SummitStack-512 Other]
+	// Enum: [Virtual Bridge Link Aggregation Group (LAG) 100BASE-FX (10/100ME FIBER) 100BASE-LFX (10/100ME FIBER) 100BASE-TX (10/100ME) 100BASE-T1 (10/100ME Single Pair) 1000BASE-T (1GE) 2.5GBASE-T (2.5GE) 5GBASE-T (5GE) 10GBASE-T (10GE) 10GBASE-CX4 (10GE) GBIC (1GE) SFP (1GE) SFP+ (10GE) XFP (10GE) XENPAK (10GE) X2 (10GE) SFP28 (25GE) SFP56 (50GE) QSFP+ (40GE) QSFP28 (50GE) CFP (100GE) CFP2 (100GE) CFP2 (200GE) CFP4 (100GE) Cisco CPAK (100GE) QSFP28 (100GE) QSFP56 (200GE) QSFP-DD (400GE) OSFP (400GE) QSFP-DD (800GE) OSFP (800GE) 1000BASE-KX (1GE) 10GBASE-KR (10GE) 10GBASE-KX4 (10GE) 25GBASE-KR (25GE) 40GBASE-KR4 (40GE) 50GBASE-KR (50GE) 100GBASE-KP4 (100GE) 100GBASE-KR2 (100GE) 100GBASE-KR4 (100GE) IEEE 802.11a IEEE 802.11b/g IEEE 802.11n IEEE 802.11ac IEEE 802.11ad IEEE 802.11ax IEEE 802.11ay IEEE 802.15.1 (Bluetooth) Other (Wireless) GSM CDMA LTE OC-3/STM-1 OC-12/STM-4 OC-48/STM-16 OC-192/STM-64 OC-768/STM-256 OC-1920/STM-640 OC-3840/STM-1234 SFP (1GFC) SFP (2GFC) SFP (4GFC) SFP+ (8GFC) SFP+ (16GFC) SFP28 (32GFC) QSFP+ (64GFC) QSFP28 (128GFC) SDR (2 Gbps) DDR (4 Gbps) QDR (8 Gbps) FDR10 (10 Gbps) FDR (13.5 Gbps) EDR (25 Gbps) HDR (50 Gbps) NDR (100 Gbps) XDR (250 Gbps) T1 (1.544 Mbps) E1 (2.048 Mbps) T3 (45 Mbps) E3 (34 Mbps) xDSL DOCSIS GPON (2.5 Gbps / 1.25 Gps) XG-PON (10 Gbps / 2.5 Gbps) XGS-PON (10 Gbps) NG-PON2 (TWDM-PON) (4x10 Gbps) EPON (1 Gbps) 10G-EPON (10 Gbps) Cisco StackWise Cisco StackWise Plus Cisco FlexStack Cisco FlexStack Plus Cisco StackWise-80 Cisco StackWise-160 Cisco StackWise-320 Cisco StackWise-480 Cisco StackWise-1T Juniper VCP Extreme SummitStack Extreme SummitStack-128 Extreme SummitStack-256 Extreme SummitStack-512 Other]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
-	// Enum: [virtual bridge lag 100base-tx 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax ieee802.11ay ieee802.15.1 other-wireless gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-qsfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl docsis gpon xg-pon xgs-pon ng-pon2 epon 10g-epon cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus cisco-stackwise-80 cisco-stackwise-160 cisco-stackwise-320 cisco-stackwise-480 juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
+	// Enum: [virtual bridge lag 100base-fx 100base-lfx 100base-tx 100base-t1 1000base-t 2.5gbase-t 5gbase-t 10gbase-t 10gbase-cx4 1000base-x-gbic 1000base-x-sfp 10gbase-x-sfpp 10gbase-x-xfp 10gbase-x-xenpak 10gbase-x-x2 25gbase-x-sfp28 50gbase-x-sfp56 40gbase-x-qsfpp 50gbase-x-sfp28 100gbase-x-cfp 100gbase-x-cfp2 200gbase-x-cfp2 100gbase-x-cfp4 100gbase-x-cpak 100gbase-x-qsfp28 200gbase-x-qsfp56 400gbase-x-qsfpdd 400gbase-x-osfp 800gbase-x-qsfpdd 800gbase-x-osfp 1000base-kx 10gbase-kr 10gbase-kx4 25gbase-kr 40gbase-kr4 50gbase-kr 100gbase-kp4 100gbase-kr2 100gbase-kr4 ieee802.11a ieee802.11g ieee802.11n ieee802.11ac ieee802.11ad ieee802.11ax ieee802.11ay ieee802.15.1 other-wireless gsm cdma lte sonet-oc3 sonet-oc12 sonet-oc48 sonet-oc192 sonet-oc768 sonet-oc1920 sonet-oc3840 1gfc-sfp 2gfc-sfp 4gfc-sfp 8gfc-sfpp 16gfc-sfpp 32gfc-sfp28 64gfc-qsfpp 128gfc-qsfp28 infiniband-sdr infiniband-ddr infiniband-qdr infiniband-fdr10 infiniband-fdr infiniband-edr infiniband-hdr infiniband-ndr infiniband-xdr t1 e1 t3 e3 xdsl docsis gpon xg-pon xgs-pon ng-pon2 epon 10g-epon cisco-stackwise cisco-stackwise-plus cisco-flexstack cisco-flexstack-plus cisco-stackwise-80 cisco-stackwise-160 cisco-stackwise-320 cisco-stackwise-480 cisco-stackwise-1t juniper-vcp extreme-summitstack extreme-summitstack-128 extreme-summitstack-256 extreme-summitstack-512 other]
 	Value *string `json:"value"`
 }
 
@@ -872,7 +884,7 @@ var interfaceTemplateTypeTypeLabelPropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["Virtual","Bridge","Link Aggregation Group (LAG)","100BASE-TX (10/100ME)","1000BASE-T (1GE)","2.5GBASE-T (2.5GE)","5GBASE-T (5GE)","10GBASE-T (10GE)","10GBASE-CX4 (10GE)","GBIC (1GE)","SFP (1GE)","SFP+ (10GE)","XFP (10GE)","XENPAK (10GE)","X2 (10GE)","SFP28 (25GE)","SFP56 (50GE)","QSFP+ (40GE)","QSFP28 (50GE)","CFP (100GE)","CFP2 (100GE)","CFP2 (200GE)","CFP4 (100GE)","Cisco CPAK (100GE)","QSFP28 (100GE)","QSFP56 (200GE)","QSFP-DD (400GE)","OSFP (400GE)","IEEE 802.11a","IEEE 802.11b/g","IEEE 802.11n","IEEE 802.11ac","IEEE 802.11ad","IEEE 802.11ax","IEEE 802.11ay","IEEE 802.15.1 (Bluetooth)","Other (Wireless)","GSM","CDMA","LTE","OC-3/STM-1","OC-12/STM-4","OC-48/STM-16","OC-192/STM-64","OC-768/STM-256","OC-1920/STM-640","OC-3840/STM-1234","SFP (1GFC)","SFP (2GFC)","SFP (4GFC)","SFP+ (8GFC)","SFP+ (16GFC)","SFP28 (32GFC)","QSFP+ (64GFC)","QSFP28 (128GFC)","SDR (2 Gbps)","DDR (4 Gbps)","QDR (8 Gbps)","FDR10 (10 Gbps)","FDR (13.5 Gbps)","EDR (25 Gbps)","HDR (50 Gbps)","NDR (100 Gbps)","XDR (250 Gbps)","T1 (1.544 Mbps)","E1 (2.048 Mbps)","T3 (45 Mbps)","E3 (34 Mbps)","xDSL","DOCSIS","GPON (2.5 Gbps / 1.25 Gps)","XG-PON (10 Gbps / 2.5 Gbps)","XGS-PON (10 Gbps)","NG-PON2 (TWDM-PON) (4x10 Gbps)","EPON (1 Gbps)","10G-EPON (10 Gbps)","Cisco StackWise","Cisco StackWise Plus","Cisco FlexStack","Cisco FlexStack Plus","Cisco StackWise-80","Cisco StackWise-160","Cisco StackWise-320","Cisco StackWise-480","Juniper VCP","Extreme SummitStack","Extreme SummitStack-128","Extreme SummitStack-256","Extreme SummitStack-512","Other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["Virtual","Bridge","Link Aggregation Group (LAG)","100BASE-FX (10/100ME FIBER)","100BASE-LFX (10/100ME FIBER)","100BASE-TX (10/100ME)","100BASE-T1 (10/100ME Single Pair)","1000BASE-T (1GE)","2.5GBASE-T (2.5GE)","5GBASE-T (5GE)","10GBASE-T (10GE)","10GBASE-CX4 (10GE)","GBIC (1GE)","SFP (1GE)","SFP+ (10GE)","XFP (10GE)","XENPAK (10GE)","X2 (10GE)","SFP28 (25GE)","SFP56 (50GE)","QSFP+ (40GE)","QSFP28 (50GE)","CFP (100GE)","CFP2 (100GE)","CFP2 (200GE)","CFP4 (100GE)","Cisco CPAK (100GE)","QSFP28 (100GE)","QSFP56 (200GE)","QSFP-DD (400GE)","OSFP (400GE)","QSFP-DD (800GE)","OSFP (800GE)","1000BASE-KX (1GE)","10GBASE-KR (10GE)","10GBASE-KX4 (10GE)","25GBASE-KR (25GE)","40GBASE-KR4 (40GE)","50GBASE-KR (50GE)","100GBASE-KP4 (100GE)","100GBASE-KR2 (100GE)","100GBASE-KR4 (100GE)","IEEE 802.11a","IEEE 802.11b/g","IEEE 802.11n","IEEE 802.11ac","IEEE 802.11ad","IEEE 802.11ax","IEEE 802.11ay","IEEE 802.15.1 (Bluetooth)","Other (Wireless)","GSM","CDMA","LTE","OC-3/STM-1","OC-12/STM-4","OC-48/STM-16","OC-192/STM-64","OC-768/STM-256","OC-1920/STM-640","OC-3840/STM-1234","SFP (1GFC)","SFP (2GFC)","SFP (4GFC)","SFP+ (8GFC)","SFP+ (16GFC)","SFP28 (32GFC)","QSFP+ (64GFC)","QSFP28 (128GFC)","SDR (2 Gbps)","DDR (4 Gbps)","QDR (8 Gbps)","FDR10 (10 Gbps)","FDR (13.5 Gbps)","EDR (25 Gbps)","HDR (50 Gbps)","NDR (100 Gbps)","XDR (250 Gbps)","T1 (1.544 Mbps)","E1 (2.048 Mbps)","T3 (45 Mbps)","E3 (34 Mbps)","xDSL","DOCSIS","GPON (2.5 Gbps / 1.25 Gps)","XG-PON (10 Gbps / 2.5 Gbps)","XGS-PON (10 Gbps)","NG-PON2 (TWDM-PON) (4x10 Gbps)","EPON (1 Gbps)","10G-EPON (10 Gbps)","Cisco StackWise","Cisco StackWise Plus","Cisco FlexStack","Cisco FlexStack Plus","Cisco StackWise-80","Cisco StackWise-160","Cisco StackWise-320","Cisco StackWise-480","Cisco StackWise-1T","Juniper VCP","Extreme SummitStack","Extreme SummitStack-128","Extreme SummitStack-256","Extreme SummitStack-512","Other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -891,8 +903,17 @@ const (
 	// InterfaceTemplateTypeLabelLinkAggregationGroupLAG captures enum value "Link Aggregation Group (LAG)"
 	InterfaceTemplateTypeLabelLinkAggregationGroupLAG string = "Link Aggregation Group (LAG)"
 
+	// InterfaceTemplateTypeLabelNr100BASEDashFX10100MEFIBER captures enum value "100BASE-FX (10/100ME FIBER)"
+	InterfaceTemplateTypeLabelNr100BASEDashFX10100MEFIBER string = "100BASE-FX (10/100ME FIBER)"
+
+	// InterfaceTemplateTypeLabelNr100BASEDashLFX10100MEFIBER captures enum value "100BASE-LFX (10/100ME FIBER)"
+	InterfaceTemplateTypeLabelNr100BASEDashLFX10100MEFIBER string = "100BASE-LFX (10/100ME FIBER)"
+
 	// InterfaceTemplateTypeLabelNr100BASEDashTX10100ME captures enum value "100BASE-TX (10/100ME)"
 	InterfaceTemplateTypeLabelNr100BASEDashTX10100ME string = "100BASE-TX (10/100ME)"
+
+	// InterfaceTemplateTypeLabelNr100BASEDashT110100MESinglePair captures enum value "100BASE-T1 (10/100ME Single Pair)"
+	InterfaceTemplateTypeLabelNr100BASEDashT110100MESinglePair string = "100BASE-T1 (10/100ME Single Pair)"
 
 	// InterfaceTemplateTypeLabelNr1000BASEDashT1GE captures enum value "1000BASE-T (1GE)"
 	InterfaceTemplateTypeLabelNr1000BASEDashT1GE string = "1000BASE-T (1GE)"
@@ -965,6 +986,39 @@ const (
 
 	// InterfaceTemplateTypeLabelOSFP400GE captures enum value "OSFP (400GE)"
 	InterfaceTemplateTypeLabelOSFP400GE string = "OSFP (400GE)"
+
+	// InterfaceTemplateTypeLabelQSFPDashDD800GE captures enum value "QSFP-DD (800GE)"
+	InterfaceTemplateTypeLabelQSFPDashDD800GE string = "QSFP-DD (800GE)"
+
+	// InterfaceTemplateTypeLabelOSFP800GE captures enum value "OSFP (800GE)"
+	InterfaceTemplateTypeLabelOSFP800GE string = "OSFP (800GE)"
+
+	// InterfaceTemplateTypeLabelNr1000BASEDashKX1GE captures enum value "1000BASE-KX (1GE)"
+	InterfaceTemplateTypeLabelNr1000BASEDashKX1GE string = "1000BASE-KX (1GE)"
+
+	// InterfaceTemplateTypeLabelNr10GBASEDashKR10GE captures enum value "10GBASE-KR (10GE)"
+	InterfaceTemplateTypeLabelNr10GBASEDashKR10GE string = "10GBASE-KR (10GE)"
+
+	// InterfaceTemplateTypeLabelNr10GBASEDashKX410GE captures enum value "10GBASE-KX4 (10GE)"
+	InterfaceTemplateTypeLabelNr10GBASEDashKX410GE string = "10GBASE-KX4 (10GE)"
+
+	// InterfaceTemplateTypeLabelNr25GBASEDashKR25GE captures enum value "25GBASE-KR (25GE)"
+	InterfaceTemplateTypeLabelNr25GBASEDashKR25GE string = "25GBASE-KR (25GE)"
+
+	// InterfaceTemplateTypeLabelNr40GBASEDashKR440GE captures enum value "40GBASE-KR4 (40GE)"
+	InterfaceTemplateTypeLabelNr40GBASEDashKR440GE string = "40GBASE-KR4 (40GE)"
+
+	// InterfaceTemplateTypeLabelNr50GBASEDashKR50GE captures enum value "50GBASE-KR (50GE)"
+	InterfaceTemplateTypeLabelNr50GBASEDashKR50GE string = "50GBASE-KR (50GE)"
+
+	// InterfaceTemplateTypeLabelNr100GBASEDashKP4100GE captures enum value "100GBASE-KP4 (100GE)"
+	InterfaceTemplateTypeLabelNr100GBASEDashKP4100GE string = "100GBASE-KP4 (100GE)"
+
+	// InterfaceTemplateTypeLabelNr100GBASEDashKR2100GE captures enum value "100GBASE-KR2 (100GE)"
+	InterfaceTemplateTypeLabelNr100GBASEDashKR2100GE string = "100GBASE-KR2 (100GE)"
+
+	// InterfaceTemplateTypeLabelNr100GBASEDashKR4100GE captures enum value "100GBASE-KR4 (100GE)"
+	InterfaceTemplateTypeLabelNr100GBASEDashKR4100GE string = "100GBASE-KR4 (100GE)"
 
 	// InterfaceTemplateTypeLabelIEEE802Dot11a captures enum value "IEEE 802.11a"
 	InterfaceTemplateTypeLabelIEEE802Dot11a string = "IEEE 802.11a"
@@ -1134,6 +1188,9 @@ const (
 	// InterfaceTemplateTypeLabelCiscoStackWiseDash480 captures enum value "Cisco StackWise-480"
 	InterfaceTemplateTypeLabelCiscoStackWiseDash480 string = "Cisco StackWise-480"
 
+	// InterfaceTemplateTypeLabelCiscoStackWiseDash1T captures enum value "Cisco StackWise-1T"
+	InterfaceTemplateTypeLabelCiscoStackWiseDash1T string = "Cisco StackWise-1T"
+
 	// InterfaceTemplateTypeLabelJuniperVCP captures enum value "Juniper VCP"
 	InterfaceTemplateTypeLabelJuniperVCP string = "Juniper VCP"
 
@@ -1179,7 +1236,7 @@ var interfaceTemplateTypeTypeValuePropEnum []interface{}
 
 func init() {
 	var res []string
-	if err := json.Unmarshal([]byte(`["virtual","bridge","lag","100base-tx","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","ieee802.11ay","ieee802.15.1","other-wireless","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-qsfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","docsis","gpon","xg-pon","xgs-pon","ng-pon2","epon","10g-epon","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","cisco-stackwise-80","cisco-stackwise-160","cisco-stackwise-320","cisco-stackwise-480","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`["virtual","bridge","lag","100base-fx","100base-lfx","100base-tx","100base-t1","1000base-t","2.5gbase-t","5gbase-t","10gbase-t","10gbase-cx4","1000base-x-gbic","1000base-x-sfp","10gbase-x-sfpp","10gbase-x-xfp","10gbase-x-xenpak","10gbase-x-x2","25gbase-x-sfp28","50gbase-x-sfp56","40gbase-x-qsfpp","50gbase-x-sfp28","100gbase-x-cfp","100gbase-x-cfp2","200gbase-x-cfp2","100gbase-x-cfp4","100gbase-x-cpak","100gbase-x-qsfp28","200gbase-x-qsfp56","400gbase-x-qsfpdd","400gbase-x-osfp","800gbase-x-qsfpdd","800gbase-x-osfp","1000base-kx","10gbase-kr","10gbase-kx4","25gbase-kr","40gbase-kr4","50gbase-kr","100gbase-kp4","100gbase-kr2","100gbase-kr4","ieee802.11a","ieee802.11g","ieee802.11n","ieee802.11ac","ieee802.11ad","ieee802.11ax","ieee802.11ay","ieee802.15.1","other-wireless","gsm","cdma","lte","sonet-oc3","sonet-oc12","sonet-oc48","sonet-oc192","sonet-oc768","sonet-oc1920","sonet-oc3840","1gfc-sfp","2gfc-sfp","4gfc-sfp","8gfc-sfpp","16gfc-sfpp","32gfc-sfp28","64gfc-qsfpp","128gfc-qsfp28","infiniband-sdr","infiniband-ddr","infiniband-qdr","infiniband-fdr10","infiniband-fdr","infiniband-edr","infiniband-hdr","infiniband-ndr","infiniband-xdr","t1","e1","t3","e3","xdsl","docsis","gpon","xg-pon","xgs-pon","ng-pon2","epon","10g-epon","cisco-stackwise","cisco-stackwise-plus","cisco-flexstack","cisco-flexstack-plus","cisco-stackwise-80","cisco-stackwise-160","cisco-stackwise-320","cisco-stackwise-480","cisco-stackwise-1t","juniper-vcp","extreme-summitstack","extreme-summitstack-128","extreme-summitstack-256","extreme-summitstack-512","other"]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -1198,8 +1255,17 @@ const (
 	// InterfaceTemplateTypeValueLag captures enum value "lag"
 	InterfaceTemplateTypeValueLag string = "lag"
 
+	// InterfaceTemplateTypeValueNr100baseDashFx captures enum value "100base-fx"
+	InterfaceTemplateTypeValueNr100baseDashFx string = "100base-fx"
+
+	// InterfaceTemplateTypeValueNr100baseDashLfx captures enum value "100base-lfx"
+	InterfaceTemplateTypeValueNr100baseDashLfx string = "100base-lfx"
+
 	// InterfaceTemplateTypeValueNr100baseDashTx captures enum value "100base-tx"
 	InterfaceTemplateTypeValueNr100baseDashTx string = "100base-tx"
+
+	// InterfaceTemplateTypeValueNr100baseDashT1 captures enum value "100base-t1"
+	InterfaceTemplateTypeValueNr100baseDashT1 string = "100base-t1"
 
 	// InterfaceTemplateTypeValueNr1000baseDasht captures enum value "1000base-t"
 	InterfaceTemplateTypeValueNr1000baseDasht string = "1000base-t"
@@ -1272,6 +1338,39 @@ const (
 
 	// InterfaceTemplateTypeValueNr400gbaseDashxDashOsfp captures enum value "400gbase-x-osfp"
 	InterfaceTemplateTypeValueNr400gbaseDashxDashOsfp string = "400gbase-x-osfp"
+
+	// InterfaceTemplateTypeValueNr800gbaseDashxDashQsfpdd captures enum value "800gbase-x-qsfpdd"
+	InterfaceTemplateTypeValueNr800gbaseDashxDashQsfpdd string = "800gbase-x-qsfpdd"
+
+	// InterfaceTemplateTypeValueNr800gbaseDashxDashOsfp captures enum value "800gbase-x-osfp"
+	InterfaceTemplateTypeValueNr800gbaseDashxDashOsfp string = "800gbase-x-osfp"
+
+	// InterfaceTemplateTypeValueNr1000baseDashKx captures enum value "1000base-kx"
+	InterfaceTemplateTypeValueNr1000baseDashKx string = "1000base-kx"
+
+	// InterfaceTemplateTypeValueNr10gbaseDashKr captures enum value "10gbase-kr"
+	InterfaceTemplateTypeValueNr10gbaseDashKr string = "10gbase-kr"
+
+	// InterfaceTemplateTypeValueNr10gbaseDashKx4 captures enum value "10gbase-kx4"
+	InterfaceTemplateTypeValueNr10gbaseDashKx4 string = "10gbase-kx4"
+
+	// InterfaceTemplateTypeValueNr25gbaseDashKr captures enum value "25gbase-kr"
+	InterfaceTemplateTypeValueNr25gbaseDashKr string = "25gbase-kr"
+
+	// InterfaceTemplateTypeValueNr40gbaseDashKr4 captures enum value "40gbase-kr4"
+	InterfaceTemplateTypeValueNr40gbaseDashKr4 string = "40gbase-kr4"
+
+	// InterfaceTemplateTypeValueNr50gbaseDashKr captures enum value "50gbase-kr"
+	InterfaceTemplateTypeValueNr50gbaseDashKr string = "50gbase-kr"
+
+	// InterfaceTemplateTypeValueNr100gbaseDashKp4 captures enum value "100gbase-kp4"
+	InterfaceTemplateTypeValueNr100gbaseDashKp4 string = "100gbase-kp4"
+
+	// InterfaceTemplateTypeValueNr100gbaseDashKr2 captures enum value "100gbase-kr2"
+	InterfaceTemplateTypeValueNr100gbaseDashKr2 string = "100gbase-kr2"
+
+	// InterfaceTemplateTypeValueNr100gbaseDashKr4 captures enum value "100gbase-kr4"
+	InterfaceTemplateTypeValueNr100gbaseDashKr4 string = "100gbase-kr4"
 
 	// InterfaceTemplateTypeValueIeee802Dot11a captures enum value "ieee802.11a"
 	InterfaceTemplateTypeValueIeee802Dot11a string = "ieee802.11a"
@@ -1440,6 +1539,9 @@ const (
 
 	// InterfaceTemplateTypeValueCiscoDashStackwiseDash480 captures enum value "cisco-stackwise-480"
 	InterfaceTemplateTypeValueCiscoDashStackwiseDash480 string = "cisco-stackwise-480"
+
+	// InterfaceTemplateTypeValueCiscoDashStackwiseDash1t captures enum value "cisco-stackwise-1t"
+	InterfaceTemplateTypeValueCiscoDashStackwiseDash1t string = "cisco-stackwise-1t"
 
 	// InterfaceTemplateTypeValueJuniperDashVcp captures enum value "juniper-vcp"
 	InterfaceTemplateTypeValueJuniperDashVcp string = "juniper-vcp"

@@ -98,6 +98,9 @@ type IpamL2vpnsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -212,6 +215,9 @@ type IpamL2vpnsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -253,6 +259,39 @@ type IpamL2vpnsListParams struct {
 
 	// Q.
 	Q *string
+
+	// Slug.
+	Slug *string
+
+	// SlugEmpty.
+	SlugEmpty *string
+
+	// SlugIc.
+	SlugIc *string
+
+	// SlugIe.
+	SlugIe *string
+
+	// SlugIew.
+	SlugIew *string
+
+	// SlugIsw.
+	SlugIsw *string
+
+	// Slugn.
+	Slugn *string
+
+	// SlugNic.
+	SlugNic *string
+
+	// SlugNie.
+	SlugNie *string
+
+	// SlugNiew.
+	SlugNiew *string
+
+	// SlugNisw.
+	SlugNisw *string
 
 	// Tag.
 	Tag []string
@@ -418,6 +457,17 @@ func (o *IpamL2vpnsListParams) WithDescription(description *string) *IpamL2vpnsL
 // SetDescription adds the description to the ipam l2vpns list params
 func (o *IpamL2vpnsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithDescriptionEmpty(descriptionEmpty *string) *IpamL2vpnsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the ipam l2vpns list params
@@ -827,6 +877,17 @@ func (o *IpamL2vpnsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithNameEmpty(nameEmpty *string) *IpamL2vpnsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the ipam l2vpns list params
 func (o *IpamL2vpnsListParams) WithNameIc(nameIc *string) *IpamL2vpnsListParams {
 	o.SetNameIc(nameIc)
@@ -957,6 +1018,127 @@ func (o *IpamL2vpnsListParams) WithQ(q *string) *IpamL2vpnsListParams {
 // SetQ adds the q to the ipam l2vpns list params
 func (o *IpamL2vpnsListParams) SetQ(q *string) {
 	o.Q = q
+}
+
+// WithSlug adds the slug to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlug(slug *string) *IpamL2vpnsListParams {
+	o.SetSlug(slug)
+	return o
+}
+
+// SetSlug adds the slug to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlug(slug *string) {
+	o.Slug = slug
+}
+
+// WithSlugEmpty adds the slugEmpty to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugEmpty(slugEmpty *string) *IpamL2vpnsListParams {
+	o.SetSlugEmpty(slugEmpty)
+	return o
+}
+
+// SetSlugEmpty adds the slugEmpty to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugEmpty(slugEmpty *string) {
+	o.SlugEmpty = slugEmpty
+}
+
+// WithSlugIc adds the slugIc to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugIc(slugIc *string) *IpamL2vpnsListParams {
+	o.SetSlugIc(slugIc)
+	return o
+}
+
+// SetSlugIc adds the slugIc to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugIc(slugIc *string) {
+	o.SlugIc = slugIc
+}
+
+// WithSlugIe adds the slugIe to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugIe(slugIe *string) *IpamL2vpnsListParams {
+	o.SetSlugIe(slugIe)
+	return o
+}
+
+// SetSlugIe adds the slugIe to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugIe(slugIe *string) {
+	o.SlugIe = slugIe
+}
+
+// WithSlugIew adds the slugIew to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugIew(slugIew *string) *IpamL2vpnsListParams {
+	o.SetSlugIew(slugIew)
+	return o
+}
+
+// SetSlugIew adds the slugIew to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugIew(slugIew *string) {
+	o.SlugIew = slugIew
+}
+
+// WithSlugIsw adds the slugIsw to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugIsw(slugIsw *string) *IpamL2vpnsListParams {
+	o.SetSlugIsw(slugIsw)
+	return o
+}
+
+// SetSlugIsw adds the slugIsw to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugIsw(slugIsw *string) {
+	o.SlugIsw = slugIsw
+}
+
+// WithSlugn adds the slugn to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugn(slugn *string) *IpamL2vpnsListParams {
+	o.SetSlugn(slugn)
+	return o
+}
+
+// SetSlugn adds the slugN to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugn(slugn *string) {
+	o.Slugn = slugn
+}
+
+// WithSlugNic adds the slugNic to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugNic(slugNic *string) *IpamL2vpnsListParams {
+	o.SetSlugNic(slugNic)
+	return o
+}
+
+// SetSlugNic adds the slugNic to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugNic(slugNic *string) {
+	o.SlugNic = slugNic
+}
+
+// WithSlugNie adds the slugNie to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugNie(slugNie *string) *IpamL2vpnsListParams {
+	o.SetSlugNie(slugNie)
+	return o
+}
+
+// SetSlugNie adds the slugNie to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugNie(slugNie *string) {
+	o.SlugNie = slugNie
+}
+
+// WithSlugNiew adds the slugNiew to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugNiew(slugNiew *string) *IpamL2vpnsListParams {
+	o.SetSlugNiew(slugNiew)
+	return o
+}
+
+// SetSlugNiew adds the slugNiew to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugNiew(slugNiew *string) {
+	o.SlugNiew = slugNiew
+}
+
+// WithSlugNisw adds the slugNisw to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) WithSlugNisw(slugNisw *string) *IpamL2vpnsListParams {
+	o.SetSlugNisw(slugNisw)
+	return o
+}
+
+// SetSlugNisw adds the slugNisw to the ipam l2vpns list params
+func (o *IpamL2vpnsListParams) SetSlugNisw(slugNisw *string) {
+	o.SlugNisw = slugNisw
 }
 
 // WithTag adds the tag to the ipam l2vpns list params
@@ -1213,6 +1395,23 @@ func (o *IpamL2vpnsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}
@@ -1847,6 +2046,23 @@ func (o *IpamL2vpnsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -2046,6 +2262,193 @@ func (o *IpamL2vpnsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qQ != "" {
 
 			if err := r.SetQueryParam("q", qQ); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Slug != nil {
+
+		// query param slug
+		var qrSlug string
+
+		if o.Slug != nil {
+			qrSlug = *o.Slug
+		}
+		qSlug := qrSlug
+		if qSlug != "" {
+
+			if err := r.SetQueryParam("slug", qSlug); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugEmpty != nil {
+
+		// query param slug__empty
+		var qrSlugEmpty string
+
+		if o.SlugEmpty != nil {
+			qrSlugEmpty = *o.SlugEmpty
+		}
+		qSlugEmpty := qrSlugEmpty
+		if qSlugEmpty != "" {
+
+			if err := r.SetQueryParam("slug__empty", qSlugEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugIc != nil {
+
+		// query param slug__ic
+		var qrSlugIc string
+
+		if o.SlugIc != nil {
+			qrSlugIc = *o.SlugIc
+		}
+		qSlugIc := qrSlugIc
+		if qSlugIc != "" {
+
+			if err := r.SetQueryParam("slug__ic", qSlugIc); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugIe != nil {
+
+		// query param slug__ie
+		var qrSlugIe string
+
+		if o.SlugIe != nil {
+			qrSlugIe = *o.SlugIe
+		}
+		qSlugIe := qrSlugIe
+		if qSlugIe != "" {
+
+			if err := r.SetQueryParam("slug__ie", qSlugIe); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugIew != nil {
+
+		// query param slug__iew
+		var qrSlugIew string
+
+		if o.SlugIew != nil {
+			qrSlugIew = *o.SlugIew
+		}
+		qSlugIew := qrSlugIew
+		if qSlugIew != "" {
+
+			if err := r.SetQueryParam("slug__iew", qSlugIew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugIsw != nil {
+
+		// query param slug__isw
+		var qrSlugIsw string
+
+		if o.SlugIsw != nil {
+			qrSlugIsw = *o.SlugIsw
+		}
+		qSlugIsw := qrSlugIsw
+		if qSlugIsw != "" {
+
+			if err := r.SetQueryParam("slug__isw", qSlugIsw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Slugn != nil {
+
+		// query param slug__n
+		var qrSlugn string
+
+		if o.Slugn != nil {
+			qrSlugn = *o.Slugn
+		}
+		qSlugn := qrSlugn
+		if qSlugn != "" {
+
+			if err := r.SetQueryParam("slug__n", qSlugn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugNic != nil {
+
+		// query param slug__nic
+		var qrSlugNic string
+
+		if o.SlugNic != nil {
+			qrSlugNic = *o.SlugNic
+		}
+		qSlugNic := qrSlugNic
+		if qSlugNic != "" {
+
+			if err := r.SetQueryParam("slug__nic", qSlugNic); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugNie != nil {
+
+		// query param slug__nie
+		var qrSlugNie string
+
+		if o.SlugNie != nil {
+			qrSlugNie = *o.SlugNie
+		}
+		qSlugNie := qrSlugNie
+		if qSlugNie != "" {
+
+			if err := r.SetQueryParam("slug__nie", qSlugNie); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugNiew != nil {
+
+		// query param slug__niew
+		var qrSlugNiew string
+
+		if o.SlugNiew != nil {
+			qrSlugNiew = *o.SlugNiew
+		}
+		qSlugNiew := qrSlugNiew
+		if qSlugNiew != "" {
+
+			if err := r.SetQueryParam("slug__niew", qSlugNiew); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SlugNisw != nil {
+
+		// query param slug__nisw
+		var qrSlugNisw string
+
+		if o.SlugNisw != nil {
+			qrSlugNisw = *o.SlugNisw
+		}
+		qSlugNisw := qrSlugNisw
+		if qSlugNisw != "" {
+
+			if err := r.SetQueryParam("slug__nisw", qSlugNisw); err != nil {
 				return err
 			}
 		}

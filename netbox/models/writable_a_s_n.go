@@ -43,10 +43,13 @@ type WritableASN struct {
 	// Minimum: 1
 	Asn *int64 `json:"asn"`
 
+	// Comments
+	Comments string `json:"comments,omitempty"`
+
 	// Created
 	// Read Only: true
 	// Format: date-time
-	Created strfmt.DateTime `json:"created,omitempty"`
+	Created *strfmt.DateTime `json:"created,omitempty"`
 
 	// Custom fields
 	CustomFields interface{} `json:"custom_fields,omitempty"`
@@ -66,7 +69,7 @@ type WritableASN struct {
 	// Last updated
 	// Read Only: true
 	// Format: date-time
-	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
+	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Provider count
 	// Read Only: true
@@ -274,7 +277,7 @@ func (m *WritableASN) ContextValidate(ctx context.Context, formats strfmt.Regist
 
 func (m *WritableASN) contextValidateCreated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "created", "body", strfmt.DateTime(m.Created)); err != nil {
+	if err := validate.ReadOnly(ctx, "created", "body", m.Created); err != nil {
 		return err
 	}
 
@@ -301,7 +304,7 @@ func (m *WritableASN) contextValidateID(ctx context.Context, formats strfmt.Regi
 
 func (m *WritableASN) contextValidateLastUpdated(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "last_updated", "body", strfmt.DateTime(m.LastUpdated)); err != nil {
+	if err := validate.ReadOnly(ctx, "last_updated", "body", m.LastUpdated); err != nil {
 		return err
 	}
 

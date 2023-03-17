@@ -98,6 +98,9 @@ type DcimRackReservationsListParams struct {
 	// Description.
 	Description *string
 
+	// DescriptionEmpty.
+	DescriptionEmpty *string
+
 	// DescriptionIc.
 	DescriptionIc *string
 
@@ -406,6 +409,17 @@ func (o *DcimRackReservationsListParams) WithDescription(description *string) *D
 // SetDescription adds the description to the dcim rack reservations list params
 func (o *DcimRackReservationsListParams) SetDescription(description *string) {
 	o.Description = description
+}
+
+// WithDescriptionEmpty adds the descriptionEmpty to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) WithDescriptionEmpty(descriptionEmpty *string) *DcimRackReservationsListParams {
+	o.SetDescriptionEmpty(descriptionEmpty)
+	return o
+}
+
+// SetDescriptionEmpty adds the descriptionEmpty to the dcim rack reservations list params
+func (o *DcimRackReservationsListParams) SetDescriptionEmpty(descriptionEmpty *string) {
+	o.DescriptionEmpty = descriptionEmpty
 }
 
 // WithDescriptionIc adds the descriptionIc to the dcim rack reservations list params
@@ -1157,6 +1171,23 @@ func (o *DcimRackReservationsListParams) WriteToRequest(r runtime.ClientRequest,
 		if qDescription != "" {
 
 			if err := r.SetQueryParam("description", qDescription); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DescriptionEmpty != nil {
+
+		// query param description__empty
+		var qrDescriptionEmpty string
+
+		if o.DescriptionEmpty != nil {
+			qrDescriptionEmpty = *o.DescriptionEmpty
+		}
+		qDescriptionEmpty := qrDescriptionEmpty
+		if qDescriptionEmpty != "" {
+
+			if err := r.SetQueryParam("description__empty", qDescriptionEmpty); err != nil {
 				return err
 			}
 		}

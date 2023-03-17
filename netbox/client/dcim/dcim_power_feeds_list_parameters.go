@@ -188,6 +188,9 @@ type DcimPowerFeedsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -214,6 +217,9 @@ type DcimPowerFeedsListParams struct {
 
 	// NameNisw.
 	NameNisw *string
+
+	// Occupied.
+	Occupied *string
 
 	/* Offset.
 
@@ -775,6 +781,17 @@ func (o *DcimPowerFeedsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithNameEmpty(nameEmpty *string) *DcimPowerFeedsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) WithNameIc(nameIc *string) *DcimPowerFeedsListParams {
 	o.SetNameIc(nameIc)
@@ -872,6 +889,17 @@ func (o *DcimPowerFeedsListParams) WithNameNisw(nameNisw *string) *DcimPowerFeed
 // SetNameNisw adds the nameNisw to the dcim power feeds list params
 func (o *DcimPowerFeedsListParams) SetNameNisw(nameNisw *string) {
 	o.NameNisw = nameNisw
+}
+
+// WithOccupied adds the occupied to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) WithOccupied(occupied *string) *DcimPowerFeedsListParams {
+	o.SetOccupied(occupied)
+	return o
+}
+
+// SetOccupied adds the occupied to the dcim power feeds list params
+func (o *DcimPowerFeedsListParams) SetOccupied(occupied *string) {
+	o.Occupied = occupied
 }
 
 // WithOffset adds the offset to the dcim power feeds list params
@@ -1879,6 +1907,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -2027,6 +2072,23 @@ func (o *DcimPowerFeedsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		if qNameNisw != "" {
 
 			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Occupied != nil {
+
+		// query param occupied
+		var qrOccupied string
+
+		if o.Occupied != nil {
+			qrOccupied = *o.Occupied
+		}
+		qOccupied := qrOccupied
+		if qOccupied != "" {
+
+			if err := r.SetQueryParam("occupied", qOccupied); err != nil {
 				return err
 			}
 		}

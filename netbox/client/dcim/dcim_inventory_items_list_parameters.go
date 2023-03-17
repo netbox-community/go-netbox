@@ -80,6 +80,9 @@ type DcimInventoryItemsListParams struct {
 	// AssetTag.
 	AssetTag *string
 
+	// AssetTagEmpty.
+	AssetTagEmpty *string
+
 	// AssetTagIc.
 	AssetTagIc *string
 
@@ -185,6 +188,9 @@ type DcimInventoryItemsListParams struct {
 	// Label.
 	Label *string
 
+	// LabelEmpty.
+	LabelEmpty *string
+
 	// LabelIc.
 	LabelIc *string
 
@@ -263,6 +269,9 @@ type DcimInventoryItemsListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -310,6 +319,9 @@ type DcimInventoryItemsListParams struct {
 
 	// PartID.
 	PartID *string
+
+	// PartIDEmpty.
+	PartIDEmpty *string
 
 	// PartIDIc.
 	PartIDIc *string
@@ -379,6 +391,9 @@ type DcimInventoryItemsListParams struct {
 
 	// Serial.
 	Serial *string
+
+	// SerialEmpty.
+	SerialEmpty *string
 
 	// SerialIc.
 	SerialIc *string
@@ -511,6 +526,17 @@ func (o *DcimInventoryItemsListParams) WithAssetTag(assetTag *string) *DcimInven
 // SetAssetTag adds the assetTag to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetAssetTag(assetTag *string) {
 	o.AssetTag = assetTag
+}
+
+// WithAssetTagEmpty adds the assetTagEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithAssetTagEmpty(assetTagEmpty *string) *DcimInventoryItemsListParams {
+	o.SetAssetTagEmpty(assetTagEmpty)
+	return o
+}
+
+// SetAssetTagEmpty adds the assetTagEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetAssetTagEmpty(assetTagEmpty *string) {
+	o.AssetTagEmpty = assetTagEmpty
 }
 
 // WithAssetTagIc adds the assetTagIc to the dcim inventory items list params
@@ -898,6 +924,17 @@ func (o *DcimInventoryItemsListParams) SetLabel(label *string) {
 	o.Label = label
 }
 
+// WithLabelEmpty adds the labelEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithLabelEmpty(labelEmpty *string) *DcimInventoryItemsListParams {
+	o.SetLabelEmpty(labelEmpty)
+	return o
+}
+
+// SetLabelEmpty adds the labelEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetLabelEmpty(labelEmpty *string) {
+	o.LabelEmpty = labelEmpty
+}
+
 // WithLabelIc adds the labelIc to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithLabelIc(labelIc *string) *DcimInventoryItemsListParams {
 	o.SetLabelIc(labelIc)
@@ -1173,6 +1210,17 @@ func (o *DcimInventoryItemsListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithNameEmpty(nameEmpty *string) *DcimInventoryItemsListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) WithNameIc(nameIc *string) *DcimInventoryItemsListParams {
 	o.SetNameIc(nameIc)
@@ -1325,6 +1373,17 @@ func (o *DcimInventoryItemsListParams) WithPartID(partID *string) *DcimInventory
 // SetPartID adds the partId to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetPartID(partID *string) {
 	o.PartID = partID
+}
+
+// WithPartIDEmpty adds the partIDEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithPartIDEmpty(partIDEmpty *string) *DcimInventoryItemsListParams {
+	o.SetPartIDEmpty(partIDEmpty)
+	return o
+}
+
+// SetPartIDEmpty adds the partIdEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetPartIDEmpty(partIDEmpty *string) {
+	o.PartIDEmpty = partIDEmpty
 }
 
 // WithPartIDIc adds the partIDIc to the dcim inventory items list params
@@ -1578,6 +1637,17 @@ func (o *DcimInventoryItemsListParams) WithSerial(serial *string) *DcimInventory
 // SetSerial adds the serial to the dcim inventory items list params
 func (o *DcimInventoryItemsListParams) SetSerial(serial *string) {
 	o.Serial = serial
+}
+
+// WithSerialEmpty adds the serialEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) WithSerialEmpty(serialEmpty *string) *DcimInventoryItemsListParams {
+	o.SetSerialEmpty(serialEmpty)
+	return o
+}
+
+// SetSerialEmpty adds the serialEmpty to the dcim inventory items list params
+func (o *DcimInventoryItemsListParams) SetSerialEmpty(serialEmpty *string) {
+	o.SerialEmpty = serialEmpty
 }
 
 // WithSerialIc adds the serialIc to the dcim inventory items list params
@@ -1853,6 +1923,23 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qAssetTag != "" {
 
 			if err := r.SetQueryParam("asset_tag", qAssetTag); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.AssetTagEmpty != nil {
+
+		// query param asset_tag__empty
+		var qrAssetTagEmpty string
+
+		if o.AssetTagEmpty != nil {
+			qrAssetTagEmpty = *o.AssetTagEmpty
+		}
+		qAssetTagEmpty := qrAssetTagEmpty
+		if qAssetTagEmpty != "" {
+
+			if err := r.SetQueryParam("asset_tag__empty", qAssetTagEmpty); err != nil {
 				return err
 			}
 		}
@@ -2453,6 +2540,23 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
+	if o.LabelEmpty != nil {
+
+		// query param label__empty
+		var qrLabelEmpty string
+
+		if o.LabelEmpty != nil {
+			qrLabelEmpty = *o.LabelEmpty
+		}
+		qLabelEmpty := qrLabelEmpty
+		if qLabelEmpty != "" {
+
+			if err := r.SetQueryParam("label__empty", qLabelEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.LabelIc != nil {
 
 		// query param label__ic
@@ -2878,6 +2982,23 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -3111,6 +3232,23 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qPartID != "" {
 
 			if err := r.SetQueryParam("part_id", qPartID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PartIDEmpty != nil {
+
+		// query param part_id__empty
+		var qrPartIDEmpty string
+
+		if o.PartIDEmpty != nil {
+			qrPartIDEmpty = *o.PartIDEmpty
+		}
+		qPartIDEmpty := qrPartIDEmpty
+		if qPartIDEmpty != "" {
+
+			if err := r.SetQueryParam("part_id__empty", qPartIDEmpty); err != nil {
 				return err
 			}
 		}
@@ -3502,6 +3640,23 @@ func (o *DcimInventoryItemsListParams) WriteToRequest(r runtime.ClientRequest, r
 		if qSerial != "" {
 
 			if err := r.SetQueryParam("serial", qSerial); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialEmpty != nil {
+
+		// query param serial__empty
+		var qrSerialEmpty string
+
+		if o.SerialEmpty != nil {
+			qrSerialEmpty = *o.SerialEmpty
+		}
+		qSerialEmpty := qrSerialEmpty
+		if qSerialEmpty != "" {
+
+			if err := r.SetQueryParam("serial__empty", qSerialEmpty); err != nil {
 				return err
 			}
 		}

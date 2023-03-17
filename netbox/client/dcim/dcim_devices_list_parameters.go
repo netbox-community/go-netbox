@@ -86,6 +86,9 @@ type DcimDevicesListParams struct {
 	// AssetTag.
 	AssetTag *string
 
+	// AssetTagEmpty.
+	AssetTagEmpty *string
+
 	// AssetTagIc.
 	AssetTagIc *string
 
@@ -163,6 +166,12 @@ type DcimDevicesListParams struct {
 
 	// DeviceBays.
 	DeviceBays *string
+
+	// DeviceType.
+	DeviceType *string
+
+	// DeviceTypen.
+	DeviceTypen *string
 
 	// DeviceTypeID.
 	DeviceTypeID *string
@@ -290,6 +299,9 @@ type DcimDevicesListParams struct {
 	// Name.
 	Name *string
 
+	// NameEmpty.
+	NameEmpty *string
+
 	// NameIc.
 	NameIc *string
 
@@ -374,6 +386,18 @@ type DcimDevicesListParams struct {
 	// PowerPorts.
 	PowerPorts *string
 
+	// PrimaryIp4ID.
+	PrimaryIp4ID *string
+
+	// PrimaryIp4IDn.
+	PrimaryIp4IDn *string
+
+	// PrimaryIp6ID.
+	PrimaryIp6ID *string
+
+	// PrimaryIp6IDn.
+	PrimaryIp6IDn *string
+
 	// Q.
 	Q *string
 
@@ -409,6 +433,9 @@ type DcimDevicesListParams struct {
 
 	// Serial.
 	Serial *string
+
+	// SerialEmpty.
+	SerialEmpty *string
 
 	// SerialIc.
 	SerialIc *string
@@ -626,6 +653,17 @@ func (o *DcimDevicesListParams) WithAssetTag(assetTag *string) *DcimDevicesListP
 // SetAssetTag adds the assetTag to the dcim devices list params
 func (o *DcimDevicesListParams) SetAssetTag(assetTag *string) {
 	o.AssetTag = assetTag
+}
+
+// WithAssetTagEmpty adds the assetTagEmpty to the dcim devices list params
+func (o *DcimDevicesListParams) WithAssetTagEmpty(assetTagEmpty *string) *DcimDevicesListParams {
+	o.SetAssetTagEmpty(assetTagEmpty)
+	return o
+}
+
+// SetAssetTagEmpty adds the assetTagEmpty to the dcim devices list params
+func (o *DcimDevicesListParams) SetAssetTagEmpty(assetTagEmpty *string) {
+	o.AssetTagEmpty = assetTagEmpty
 }
 
 // WithAssetTagIc adds the assetTagIc to the dcim devices list params
@@ -912,6 +950,28 @@ func (o *DcimDevicesListParams) WithDeviceBays(deviceBays *string) *DcimDevicesL
 // SetDeviceBays adds the deviceBays to the dcim devices list params
 func (o *DcimDevicesListParams) SetDeviceBays(deviceBays *string) {
 	o.DeviceBays = deviceBays
+}
+
+// WithDeviceType adds the deviceType to the dcim devices list params
+func (o *DcimDevicesListParams) WithDeviceType(deviceType *string) *DcimDevicesListParams {
+	o.SetDeviceType(deviceType)
+	return o
+}
+
+// SetDeviceType adds the deviceType to the dcim devices list params
+func (o *DcimDevicesListParams) SetDeviceType(deviceType *string) {
+	o.DeviceType = deviceType
+}
+
+// WithDeviceTypen adds the deviceTypen to the dcim devices list params
+func (o *DcimDevicesListParams) WithDeviceTypen(deviceTypen *string) *DcimDevicesListParams {
+	o.SetDeviceTypen(deviceTypen)
+	return o
+}
+
+// SetDeviceTypen adds the deviceTypeN to the dcim devices list params
+func (o *DcimDevicesListParams) SetDeviceTypen(deviceTypen *string) {
+	o.DeviceTypen = deviceTypen
 }
 
 // WithDeviceTypeID adds the deviceTypeID to the dcim devices list params
@@ -1365,6 +1425,17 @@ func (o *DcimDevicesListParams) SetName(name *string) {
 	o.Name = name
 }
 
+// WithNameEmpty adds the nameEmpty to the dcim devices list params
+func (o *DcimDevicesListParams) WithNameEmpty(nameEmpty *string) *DcimDevicesListParams {
+	o.SetNameEmpty(nameEmpty)
+	return o
+}
+
+// SetNameEmpty adds the nameEmpty to the dcim devices list params
+func (o *DcimDevicesListParams) SetNameEmpty(nameEmpty *string) {
+	o.NameEmpty = nameEmpty
+}
+
 // WithNameIc adds the nameIc to the dcim devices list params
 func (o *DcimDevicesListParams) WithNameIc(nameIc *string) *DcimDevicesListParams {
 	o.SetNameIc(nameIc)
@@ -1651,6 +1722,50 @@ func (o *DcimDevicesListParams) SetPowerPorts(powerPorts *string) {
 	o.PowerPorts = powerPorts
 }
 
+// WithPrimaryIp4ID adds the primaryIp4ID to the dcim devices list params
+func (o *DcimDevicesListParams) WithPrimaryIp4ID(primaryIp4ID *string) *DcimDevicesListParams {
+	o.SetPrimaryIp4ID(primaryIp4ID)
+	return o
+}
+
+// SetPrimaryIp4ID adds the primaryIp4Id to the dcim devices list params
+func (o *DcimDevicesListParams) SetPrimaryIp4ID(primaryIp4ID *string) {
+	o.PrimaryIp4ID = primaryIp4ID
+}
+
+// WithPrimaryIp4IDn adds the primaryIp4IDn to the dcim devices list params
+func (o *DcimDevicesListParams) WithPrimaryIp4IDn(primaryIp4IDn *string) *DcimDevicesListParams {
+	o.SetPrimaryIp4IDn(primaryIp4IDn)
+	return o
+}
+
+// SetPrimaryIp4IDn adds the primaryIp4IdN to the dcim devices list params
+func (o *DcimDevicesListParams) SetPrimaryIp4IDn(primaryIp4IDn *string) {
+	o.PrimaryIp4IDn = primaryIp4IDn
+}
+
+// WithPrimaryIp6ID adds the primaryIp6ID to the dcim devices list params
+func (o *DcimDevicesListParams) WithPrimaryIp6ID(primaryIp6ID *string) *DcimDevicesListParams {
+	o.SetPrimaryIp6ID(primaryIp6ID)
+	return o
+}
+
+// SetPrimaryIp6ID adds the primaryIp6Id to the dcim devices list params
+func (o *DcimDevicesListParams) SetPrimaryIp6ID(primaryIp6ID *string) {
+	o.PrimaryIp6ID = primaryIp6ID
+}
+
+// WithPrimaryIp6IDn adds the primaryIp6IDn to the dcim devices list params
+func (o *DcimDevicesListParams) WithPrimaryIp6IDn(primaryIp6IDn *string) *DcimDevicesListParams {
+	o.SetPrimaryIp6IDn(primaryIp6IDn)
+	return o
+}
+
+// SetPrimaryIp6IDn adds the primaryIp6IdN to the dcim devices list params
+func (o *DcimDevicesListParams) SetPrimaryIp6IDn(primaryIp6IDn *string) {
+	o.PrimaryIp6IDn = primaryIp6IDn
+}
+
 // WithQ adds the q to the dcim devices list params
 func (o *DcimDevicesListParams) WithQ(q *string) *DcimDevicesListParams {
 	o.SetQ(q)
@@ -1781,6 +1896,17 @@ func (o *DcimDevicesListParams) WithSerial(serial *string) *DcimDevicesListParam
 // SetSerial adds the serial to the dcim devices list params
 func (o *DcimDevicesListParams) SetSerial(serial *string) {
 	o.Serial = serial
+}
+
+// WithSerialEmpty adds the serialEmpty to the dcim devices list params
+func (o *DcimDevicesListParams) WithSerialEmpty(serialEmpty *string) *DcimDevicesListParams {
+	o.SetSerialEmpty(serialEmpty)
+	return o
+}
+
+// SetSerialEmpty adds the serialEmpty to the dcim devices list params
+func (o *DcimDevicesListParams) SetSerialEmpty(serialEmpty *string) {
+	o.SerialEmpty = serialEmpty
 }
 
 // WithSerialIc adds the serialIc to the dcim devices list params
@@ -2326,6 +2452,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.AssetTagEmpty != nil {
+
+		// query param asset_tag__empty
+		var qrAssetTagEmpty string
+
+		if o.AssetTagEmpty != nil {
+			qrAssetTagEmpty = *o.AssetTagEmpty
+		}
+		qAssetTagEmpty := qrAssetTagEmpty
+		if qAssetTagEmpty != "" {
+
+			if err := r.SetQueryParam("asset_tag__empty", qAssetTagEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.AssetTagIc != nil {
 
 		// query param asset_tag__ic
@@ -2763,6 +2906,40 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qDeviceBays != "" {
 
 			if err := r.SetQueryParam("device_bays", qDeviceBays); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DeviceType != nil {
+
+		// query param device_type
+		var qrDeviceType string
+
+		if o.DeviceType != nil {
+			qrDeviceType = *o.DeviceType
+		}
+		qDeviceType := qrDeviceType
+		if qDeviceType != "" {
+
+			if err := r.SetQueryParam("device_type", qDeviceType); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DeviceTypen != nil {
+
+		// query param device_type__n
+		var qrDeviceTypen string
+
+		if o.DeviceTypen != nil {
+			qrDeviceTypen = *o.DeviceTypen
+		}
+		qDeviceTypen := qrDeviceTypen
+		if qDeviceTypen != "" {
+
+			if err := r.SetQueryParam("device_type__n", qDeviceTypen); err != nil {
 				return err
 			}
 		}
@@ -3465,6 +3642,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.NameEmpty != nil {
+
+		// query param name__empty
+		var qrNameEmpty string
+
+		if o.NameEmpty != nil {
+			qrNameEmpty = *o.NameEmpty
+		}
+		qNameEmpty := qrNameEmpty
+		if qNameEmpty != "" {
+
+			if err := r.SetQueryParam("name__empty", qNameEmpty); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.NameIc != nil {
 
 		// query param name__ic
@@ -3907,6 +4101,74 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		}
 	}
 
+	if o.PrimaryIp4ID != nil {
+
+		// query param primary_ip4_id
+		var qrPrimaryIp4ID string
+
+		if o.PrimaryIp4ID != nil {
+			qrPrimaryIp4ID = *o.PrimaryIp4ID
+		}
+		qPrimaryIp4ID := qrPrimaryIp4ID
+		if qPrimaryIp4ID != "" {
+
+			if err := r.SetQueryParam("primary_ip4_id", qPrimaryIp4ID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PrimaryIp4IDn != nil {
+
+		// query param primary_ip4_id__n
+		var qrPrimaryIp4IDn string
+
+		if o.PrimaryIp4IDn != nil {
+			qrPrimaryIp4IDn = *o.PrimaryIp4IDn
+		}
+		qPrimaryIp4IDn := qrPrimaryIp4IDn
+		if qPrimaryIp4IDn != "" {
+
+			if err := r.SetQueryParam("primary_ip4_id__n", qPrimaryIp4IDn); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PrimaryIp6ID != nil {
+
+		// query param primary_ip6_id
+		var qrPrimaryIp6ID string
+
+		if o.PrimaryIp6ID != nil {
+			qrPrimaryIp6ID = *o.PrimaryIp6ID
+		}
+		qPrimaryIp6ID := qrPrimaryIp6ID
+		if qPrimaryIp6ID != "" {
+
+			if err := r.SetQueryParam("primary_ip6_id", qPrimaryIp6ID); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.PrimaryIp6IDn != nil {
+
+		// query param primary_ip6_id__n
+		var qrPrimaryIp6IDn string
+
+		if o.PrimaryIp6IDn != nil {
+			qrPrimaryIp6IDn = *o.PrimaryIp6IDn
+		}
+		qPrimaryIp6IDn := qrPrimaryIp6IDn
+		if qPrimaryIp6IDn != "" {
+
+			if err := r.SetQueryParam("primary_ip6_id__n", qPrimaryIp6IDn); err != nil {
+				return err
+			}
+		}
+	}
+
 	if o.Q != nil {
 
 		// query param q
@@ -4106,6 +4368,23 @@ func (o *DcimDevicesListParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		if qSerial != "" {
 
 			if err := r.SetQueryParam("serial", qSerial); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.SerialEmpty != nil {
+
+		// query param serial__empty
+		var qrSerialEmpty string
+
+		if o.SerialEmpty != nil {
+			qrSerialEmpty = *o.SerialEmpty
+		}
+		qSerialEmpty := qrSerialEmpty
+		if qSerialEmpty != "" {
+
+			if err := r.SetQueryParam("serial__empty", qSerialEmpty); err != nil {
 				return err
 			}
 		}

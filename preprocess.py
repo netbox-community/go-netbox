@@ -93,6 +93,18 @@ for prop, prop_spec in data["definitions"]["WritableIPAddress"]["properties"].it
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableIPAddress.{prop}")
 
+for prop, prop_spec in data["definitions"]["WritableRack"]["properties"].items():
+    if (
+        "x-nullable" in prop_spec
+        and prop_spec["x-nullable"] == True
+        and prop_spec["type"] in ["integer", "number"]
+    ):
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on WritableRack.{prop}")
+    if prop in ["tags", "type", "outer_unit", "weight_unit", "asset_tag", "desc_units"]:
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on WritableRack.{prop}")
+
 data["definitions"]["WritableCustomField"]["properties"]["required"][
     "x-omitempty"
 ] = False
@@ -119,6 +131,7 @@ data["paths"]["/status/"]["get"]["responses"]["200"]["schema"] = {
 }
 logging.info(f"Added schema for 200 response of /status/ get")
 
+# NOTE: below fixed upstream
 # change model IPAddress's assigned_object property from string to object otherwise it fails to unmarshall
 data["definitions"]["IPAddress"]["properties"]["assigned_object"] = {
     "title": "Assigned object",
