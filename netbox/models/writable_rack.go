@@ -72,7 +72,7 @@ type WritableRack struct {
 
 	// Facility ID
 	// Max Length: 50
-	FacilityID *string `json:"facility_id,omitempty"`
+	FacilityID *string `json:"facility_id"`
 
 	// ID
 	// Read Only: true

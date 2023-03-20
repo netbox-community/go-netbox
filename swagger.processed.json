@@ -86029,7 +86029,8 @@
           "title": "Facility ID",
           "type": "string",
           "maxLength": 50,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "site": {
           "title": "Site",

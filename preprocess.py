@@ -101,7 +101,7 @@ for prop, prop_spec in data["definitions"]["WritableRack"]["properties"].items()
     ):
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableRack.{prop}")
-    if prop in ["tags", "type", "outer_unit", "weight_unit", "asset_tag", "desc_units"]:
+    if prop in ["tags", "type", "outer_unit", "weight_unit", "asset_tag", "desc_units", "facility_id"]:
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableRack.{prop}")
 
