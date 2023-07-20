@@ -42,7 +42,7 @@ type WritableObjectPermission struct {
 	// Constraints
 	//
 	// Queryset filter matching the applicable objects of the selected type(s)
-	Constraints interface{} `json:"constraints,omitempty"`
+	Constraints interface{} `json:"constraints"`
 
 	// Description
 	// Max Length: 200

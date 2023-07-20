@@ -94818,7 +94818,8 @@
           "title": "Constraints",
           "description": "Queryset filter matching the applicable objects of the selected type(s)",
           "type": "object",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         }
       }
     },
