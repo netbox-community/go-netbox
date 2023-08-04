@@ -98,7 +98,7 @@ type WritableInterface struct {
 	Duplex *string `json:"duplex,omitempty"`
 
 	// Enabled
-	Enabled bool `json:"enabled,omitempty"`
+	Enabled bool `json:"enabled"`
 
 	// ID
 	// Read Only: true

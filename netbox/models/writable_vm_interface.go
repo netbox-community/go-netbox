@@ -64,7 +64,7 @@ type WritableVMInterface struct {
 	Display string `json:"display,omitempty"`
 
 	// Enabled
-	Enabled bool `json:"enabled,omitempty"`
+	Enabled bool `json:"enabled"`
 
 	// ID
 	// Read Only: true

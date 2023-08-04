@@ -80198,7 +80198,8 @@
         },
         "enabled": {
           "title": "Enabled",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "parent": {
           "title": "Parent interface",
@@ -95699,7 +95700,8 @@
         },
         "enabled": {
           "title": "Enabled",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "parent": {
           "title": "Parent interface",

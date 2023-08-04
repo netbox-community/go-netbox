@@ -174,6 +174,18 @@ for prop, prop_spec in data["definitions"]["WritableToken"]["properties"].items(
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableIPAddress.{prop}")
 
+# Add omitempty = false for interface enabled
+for prop, prop_spec in data["definitions"]["WritableInterface"]["properties"].items():
+    if prop == "enabled":
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on WritableInterface.{prop}")
+
+# Add omitempty = false for vminterface enabled
+for prop, prop_spec in data["definitions"]["WritableVMInterface"]["properties"].items():
+    if prop == "enabled":
+        prop_spec["x-omitempty"] = False
+        logging.info(f"set x-omitempty = false on WritableVMInterface.{prop}")
+
 # Delete problematic maximums (might have to be replaced with a proper value)
 for definition, definition_spec in data["definitions"].items():
     for prop, prop_spec in definition_spec["properties"].items():
