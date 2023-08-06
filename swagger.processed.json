@@ -72843,7 +72843,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -72978,7 +72978,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -74185,7 +74185,8 @@
             "smf-os2",
             "aoc",
             "power"
-          ]
+          ],
+          "x-omitempty": false
         },
         "a_terminations": {
           "type": "array",
@@ -74211,7 +74212,8 @@
         "tenant": {
           "title": "Tenant",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "label": {
           "title": "Label",
@@ -74222,13 +74224,15 @@
           "title": "Color",
           "type": "string",
           "pattern": "^[0-9a-f]{6}$",
-          "maxLength": 6
+          "maxLength": 6,
+          "x-omitempty": false
         },
         "length": {
           "title": "Length",
           "type": "number",
           "format": "decimal",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "length_unit": {
           "title": "Length unit",
@@ -74255,7 +74259,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -75372,7 +75377,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -75386,7 +75391,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -75463,7 +75468,8 @@
         "module": {
           "title": "Module",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "name": {
           "title": "Name",
@@ -75497,7 +75503,8 @@
             "usb-micro-b",
             "usb-micro-ab",
             "other"
-          ]
+          ],
+          "x-omitempty": false
         },
         "speed": {
           "title": "Speed",
@@ -75513,7 +75520,8 @@
             57600,
             115200
           ],
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
@@ -75523,7 +75531,8 @@
         "mark_connected": {
           "title": "Mark connected",
           "description": "Treat as if a cable is connected",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "cable": {
           "$ref": "#/definitions/NestedCable"
@@ -75538,7 +75547,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -75552,7 +75561,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -75571,7 +75580,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -75949,7 +75959,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -75963,7 +75973,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -76040,7 +76050,8 @@
         "module": {
           "title": "Module",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "name": {
           "title": "Name",
@@ -76074,7 +76085,8 @@
             "usb-micro-b",
             "usb-micro-ab",
             "other"
-          ]
+          ],
+          "x-omitempty": false
         },
         "speed": {
           "title": "Speed",
@@ -76090,7 +76102,8 @@
             57600,
             115200
           ],
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
@@ -76100,7 +76113,8 @@
         "mark_connected": {
           "title": "Mark connected",
           "description": "Treat as if a cable is connected",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "cable": {
           "$ref": "#/definitions/NestedCable"
@@ -76115,7 +76129,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -76129,7 +76143,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -76148,7 +76162,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -77924,7 +77939,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -77998,7 +78013,8 @@
         "module": {
           "title": "Module",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "name": {
           "title": "Name",
@@ -78059,13 +78075,15 @@
             "urm-p8",
             "splice",
             "other"
-          ]
+          ],
+          "x-omitempty": false
         },
         "color": {
           "title": "Color",
           "type": "string",
           "pattern": "^[0-9a-f]{6}$",
-          "maxLength": 6
+          "maxLength": 6,
+          "x-omitempty": false
         },
         "rear_port": {
           "title": "Rear port",
@@ -78085,7 +78103,8 @@
         "mark_connected": {
           "title": "Mark connected",
           "description": "Treat as if a cable is connected",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "cable": {
           "$ref": "#/definitions/NestedCable"
@@ -78100,7 +78119,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -78114,7 +78133,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -79948,7 +79968,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -79975,7 +79995,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -80559,7 +80579,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -80591,7 +80611,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -80690,7 +80710,8 @@
           "type": "string",
           "pattern": "^[0-9a-f]{6}$",
           "maxLength": 6,
-          "minLength": 1
+          "minLength": 1,
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
@@ -80701,7 +80722,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -81130,7 +81152,8 @@
         "parent": {
           "title": "Parent",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "name": {
           "title": "Name",
@@ -81147,12 +81170,14 @@
         "role": {
           "title": "Role",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "manufacturer": {
           "title": "Manufacturer",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "part_id": {
           "title": "Part ID",
@@ -81170,12 +81195,14 @@
           "description": "A unique tag used to identify this item",
           "type": "string",
           "maxLength": 50,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "discovered": {
           "title": "Discovered",
           "description": "This item was automatically discovered",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
@@ -81185,13 +81212,15 @@
         "component_type": {
           "title": "Component type",
           "type": "string",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "component_id": {
           "title": "Component id",
           "type": "integer",
           "minimum": 0,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "component": {
           "title": "Component",
@@ -81202,7 +81231,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -81846,7 +81876,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -82020,7 +82051,8 @@
           "title": "Weight",
           "type": "number",
           "format": "decimal",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "weight_unit": {
           "title": "Weight unit",
@@ -82030,7 +82062,8 @@
             "g",
             "lb",
             "oz"
-          ]
+          ],
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
@@ -82045,7 +82078,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -82302,7 +82336,8 @@
           "description": "A unique tag used to identify this device",
           "type": "string",
           "maxLength": 50,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
@@ -82317,7 +82352,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -82754,7 +82790,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -82768,7 +82804,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -82854,7 +82890,8 @@
         "rack": {
           "title": "Rack",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "name": {
           "title": "Name",
@@ -82878,7 +82915,8 @@
           "enum": [
             "primary",
             "redundant"
-          ]
+          ],
+          "x-omitempty": false
         },
         "supply": {
           "title": "Supply",
@@ -82918,7 +82956,8 @@
         "mark_connected": {
           "title": "Mark connected",
           "description": "Treat as if a cable is connected",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "cable": {
           "$ref": "#/definitions/NestedCable"
@@ -82933,7 +82972,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -82947,7 +82986,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -82975,7 +83014,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -83840,7 +83880,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -83854,7 +83894,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -83931,7 +83971,8 @@
         "module": {
           "title": "Module",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "name": {
           "title": "Name",
@@ -84040,12 +84081,14 @@
             "ubiquiti-smartpower",
             "hardwired",
             "other"
-          ]
+          ],
+          "x-omitempty": false
         },
         "power_port": {
           "title": "Power port",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "feed_leg": {
           "title": "Feed leg",
@@ -84055,7 +84098,8 @@
             "A",
             "B",
             "C"
-          ]
+          ],
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
@@ -84065,7 +84109,8 @@
         "mark_connected": {
           "title": "Mark connected",
           "description": "Treat as if a cable is connected",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "cable": {
           "$ref": "#/definitions/NestedCable"
@@ -84080,7 +84125,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -84094,7 +84139,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -84113,7 +84158,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -84247,7 +84293,8 @@
         "location": {
           "title": "Location",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "name": {
           "title": "Name",
@@ -84268,7 +84315,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -85067,7 +85115,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -85081,7 +85129,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -85158,7 +85206,8 @@
         "module": {
           "title": "Module",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "name": {
           "title": "Name",
@@ -85274,7 +85323,8 @@
             "ubiquiti-smartpower",
             "hardwired",
             "other"
-          ]
+          ],
+          "x-omitempty": false
         },
         "maximum_draw": {
           "title": "Maximum draw",
@@ -85282,7 +85332,8 @@
           "type": "integer",
           "maximum": 32767,
           "minimum": 1,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "allocated_draw": {
           "title": "Allocated draw",
@@ -85290,7 +85341,8 @@
           "type": "integer",
           "maximum": 32767,
           "minimum": 1,
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "description": {
           "title": "Description",
@@ -85300,7 +85352,8 @@
         "mark_connected": {
           "title": "Mark connected",
           "description": "Treat as if a cable is connected",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "cable": {
           "$ref": "#/definitions/NestedCable"
@@ -85315,7 +85368,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -85329,7 +85382,7 @@
           "description": "\nReturn the appropriate serializer for the type of connected object.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -85348,7 +85401,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",
@@ -86775,7 +86829,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -86848,7 +86902,8 @@
         "module": {
           "title": "Module",
           "type": "integer",
-          "x-nullable": true
+          "x-nullable": true,
+          "x-omitempty": false
         },
         "name": {
           "title": "Name",
@@ -86909,13 +86964,15 @@
             "urm-p8",
             "splice",
             "other"
-          ]
+          ],
+          "x-omitempty": false
         },
         "color": {
           "title": "Color",
           "type": "string",
           "pattern": "^[0-9a-f]{6}$",
-          "maxLength": 6
+          "maxLength": 6,
+          "x-omitempty": false
         },
         "positions": {
           "title": "Positions",
@@ -86931,7 +86988,8 @@
         "mark_connected": {
           "title": "Mark connected",
           "description": "Treat as if a cable is connected",
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "cable": {
           "$ref": "#/definitions/NestedCable"
@@ -86946,7 +87004,7 @@
           "description": "\nReturn the appropriate serializer for the link termination model.\n",
           "type": "array",
           "items": {
-            "type": "string",
+            "type": "object",
             "x-nullable": true
           },
           "readOnly": true
@@ -86960,7 +87018,8 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/NestedTag"
-          }
+          },
+          "x-omitempty": false
         },
         "custom_fields": {
           "title": "Custom fields",

@@ -51,7 +51,7 @@ type WritableFrontPort struct {
 	// Color
 	// Max Length: 6
 	// Pattern: ^[0-9a-f]{6}$
-	Color string `json:"color,omitempty"`
+	Color string `json:"color"`
 
 	// Created
 	// Read Only: true
@@ -92,7 +92,7 @@ type WritableFrontPort struct {
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	LinkPeers []interface{} `json:"link_peers"`
 
 	// Link peers type
 	// Read Only: true
@@ -101,10 +101,10 @@ type WritableFrontPort struct {
 	// Mark connected
 	//
 	// Treat as if a cable is connected
-	MarkConnected bool `json:"mark_connected,omitempty"`
+	MarkConnected bool `json:"mark_connected"`
 
 	// Module
-	Module *int64 `json:"module,omitempty"`
+	Module *int64 `json:"module"`
 
 	// Name
 	// Required: true
@@ -677,7 +677,7 @@ func (m *WritableFrontPort) contextValidateLastUpdated(ctx context.Context, form
 
 func (m *WritableFrontPort) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []interface{}(m.LinkPeers)); err != nil {
 		return err
 	}
 

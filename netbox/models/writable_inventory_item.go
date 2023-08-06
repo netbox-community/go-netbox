@@ -43,7 +43,7 @@ type WritableInventoryItem struct {
 	//
 	// A unique tag used to identify this item
 	// Max Length: 50
-	AssetTag *string `json:"asset_tag,omitempty"`
+	AssetTag *string `json:"asset_tag"`
 
 	// Component
 	// Read Only: true
@@ -51,10 +51,10 @@ type WritableInventoryItem struct {
 
 	// Component id
 	// Minimum: 0
-	ComponentID *int64 `json:"component_id,omitempty"`
+	ComponentID *int64 `json:"component_id"`
 
 	// Component type
-	ComponentType *string `json:"component_type,omitempty"`
+	ComponentType *string `json:"component_type"`
 
 	// Created
 	// Read Only: true
@@ -75,7 +75,7 @@ type WritableInventoryItem struct {
 	// Discovered
 	//
 	// This item was automatically discovered
-	Discovered bool `json:"discovered,omitempty"`
+	Discovered bool `json:"discovered"`
 
 	// Display
 	// Read Only: true
@@ -97,7 +97,7 @@ type WritableInventoryItem struct {
 	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Manufacturer
-	Manufacturer *int64 `json:"manufacturer,omitempty"`
+	Manufacturer *int64 `json:"manufacturer"`
 
 	// Name
 	// Required: true
@@ -106,7 +106,7 @@ type WritableInventoryItem struct {
 	Name *string `json:"name"`
 
 	// Parent
-	Parent *int64 `json:"parent,omitempty"`
+	Parent *int64 `json:"parent"`
 
 	// Part ID
 	//
@@ -115,7 +115,7 @@ type WritableInventoryItem struct {
 	PartID string `json:"part_id,omitempty"`
 
 	// Role
-	Role *int64 `json:"role,omitempty"`
+	Role *int64 `json:"role"`
 
 	// Serial number
 	// Max Length: 50

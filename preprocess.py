@@ -34,22 +34,25 @@ for path, path_spec in data["paths"].items():
     logging.debug("checking path: " + path)
     for verb, verb_spec in path_spec.items():
         if "parameters" in verb_spec:
-            tag_locations = [i for i, t in enumerate(
-                verb_spec["parameters"]) if t["name"] == 'tag']
+            tag_locations = [
+                i for i, t in enumerate(verb_spec["parameters"]) if t["name"] == "tag"
+            ]
             if tag_locations:
                 for tag_location in tag_locations:
                     logging.info(
-                        "Changing tag query to support multiple tags " + path + " " + verb)
+                        "Changing tag query to support multiple tags "
+                        + path
+                        + " "
+                        + verb
+                    )
                     verb_spec["parameters"][tag_location] = {
                         "name": "tag",
                         "in": "query",
                         "description": "",
                         "required": False,
                         "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "collectionFormat": "multi"
+                        "items": {"type": "string"},
+                        "collectionFormat": "multi",
                     }
 
 # Second, fix the config contexts and local context data to our needs
@@ -93,23 +96,62 @@ for prop, prop_spec in data["definitions"]["WritableIPAddress"]["properties"].it
         prop_spec["x-omitempty"] = False
         logging.info(f"set x-omitempty = false on WritableIPAddress.{prop}")
 
-for prop, prop_spec in data["definitions"]["WritableRack"]["properties"].items():
-    if (
-        "x-nullable" in prop_spec
-        and prop_spec["x-nullable"] == True
-        and prop_spec["type"] in ["integer", "number"]
-    ):
-        prop_spec["x-omitempty"] = False
-        logging.info(f"set x-omitempty = false on WritableRack.{prop}")
-    if prop in ["tags", "type", "outer_unit", "weight_unit", "asset_tag", "desc_units", "facility_id"]:
-        prop_spec["x-omitempty"] = False
-        logging.info(f"set x-omitempty = false on WritableRack.{prop}")
+for model in [
+    "WritableRack",
+    "WritablePowerPanel",
+    "WritableModuleType",
+    "WritableRearPort",
+    "WritablePowerPort",
+    "WritablePowerOutlet",
+    "WritablePowerFeed",
+    "WritableModule",
+    "WritableModuleBay",
+    "WritableFrontPort",
+    "WritableConsoleServerPort",
+    "WritableConsolePort",
+    "WritableCable",
+    "InventoryItemRole",
+    "WritableInventoryItem",
+]:
+    for prop, prop_spec in data["definitions"][model]["properties"].items():
+        if (
+            "x-nullable" in prop_spec
+            and prop_spec["x-nullable"] == True
+            and prop_spec["type"] in ["integer", "number"]
+        ):
+            prop_spec["x-omitempty"] = False
+            logging.info(f"set x-omitempty = false on {model}.{prop}")
+        if prop in [
+            "tags",
+            "type",
+            "outer_unit",
+            "weight_unit",
+            "asset_tag",
+            "desc_units",
+            "facility_id",
+            "mark_connected",
+            "feed_leg",
+            "color",
+            "component_type",
+            "discovered",
+        ]:
+            prop_spec["x-omitempty"] = False
+            logging.info(f"set x-omitempty = false on {model}.{prop}")
+
+# fix generic objects that are incorrectly listed as strings
+for model in data["definitions"]:
+    for prop, prop_spec in data["definitions"][model]["properties"].items():
+        if prop in ["link_peers", "connected_endpoints"]:
+            prop_spec["items"]["type"] = "object"
+            logging.info(f"set items.type = object on {model}.{prop}")
 
 data["definitions"]["WritableCustomField"]["properties"]["required"][
-    "x-omitempty"] = False
+    "x-omitempty"
+] = False
 
 data["definitions"]["WritableObjectPermission"]["properties"]["constraints"][
-    "x-omitempty"] = False
+    "x-omitempty"
+] = False
 
 # This implements https://github.com/fbreckle/go-netbox/commit/1363e14cfc7bce4bd3d5ee93c09ca70543c51279
 for prop, prop_spec in data["definitions"]["WritableVirtualMachineWithConfigContext"][

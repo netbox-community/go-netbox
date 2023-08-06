@@ -39,7 +39,7 @@ type InventoryItemRole struct {
 	// Max Length: 6
 	// Min Length: 1
 	// Pattern: ^[0-9a-f]{6}$
-	Color string `json:"color,omitempty"`
+	Color string `json:"color"`
 
 	// Created
 	// Read Only: true

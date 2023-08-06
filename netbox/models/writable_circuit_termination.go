@@ -81,7 +81,7 @@ type WritableCircuitTermination struct {
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	LinkPeers []interface{} `json:"link_peers"`
 
 	// Link peers type
 	// Read Only: true
@@ -533,7 +533,7 @@ func (m *WritableCircuitTermination) contextValidateLastUpdated(ctx context.Cont
 
 func (m *WritableCircuitTermination) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []interface{}(m.LinkPeers)); err != nil {
 		return err
 	}
 

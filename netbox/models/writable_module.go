@@ -40,7 +40,7 @@ type WritableModule struct {
 	//
 	// A unique tag used to identify this device
 	// Max Length: 50
-	AssetTag *string `json:"asset_tag,omitempty"`
+	AssetTag *string `json:"asset_tag"`
 
 	// Comments
 	Comments string `json:"comments,omitempty"`

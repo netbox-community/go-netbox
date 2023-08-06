@@ -60,7 +60,7 @@ type WritablePowerFeed struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoints []*string `json:"connected_endpoints"`
+	ConnectedEndpoints []interface{} `json:"connected_endpoints"`
 
 	// Connected endpoints reachable
 	// Read Only: true
@@ -99,7 +99,7 @@ type WritablePowerFeed struct {
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	LinkPeers []interface{} `json:"link_peers"`
 
 	// Link peers type
 	// Read Only: true
@@ -108,7 +108,7 @@ type WritablePowerFeed struct {
 	// Mark connected
 	//
 	// Treat as if a cable is connected
-	MarkConnected bool `json:"mark_connected,omitempty"`
+	MarkConnected bool `json:"mark_connected"`
 
 	// Max utilization
 	//
@@ -132,7 +132,7 @@ type WritablePowerFeed struct {
 	PowerPanel *int64 `json:"power_panel"`
 
 	// Rack
-	Rack *int64 `json:"rack,omitempty"`
+	Rack *int64 `json:"rack"`
 
 	// Status
 	// Enum: [offline active planned failed]
@@ -147,7 +147,7 @@ type WritablePowerFeed struct {
 
 	// Type
 	// Enum: [primary redundant]
-	Type string `json:"type,omitempty"`
+	Type string `json:"type"`
 
 	// Url
 	// Read Only: true
@@ -689,7 +689,7 @@ func (m *WritablePowerFeed) contextValidateCableEnd(ctx context.Context, formats
 
 func (m *WritablePowerFeed) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
+	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []interface{}(m.ConnectedEndpoints)); err != nil {
 		return err
 	}
 
@@ -752,7 +752,7 @@ func (m *WritablePowerFeed) contextValidateLastUpdated(ctx context.Context, form
 
 func (m *WritablePowerFeed) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []interface{}(m.LinkPeers)); err != nil {
 		return err
 	}
 

@@ -45,7 +45,7 @@ type WritablePowerPort struct {
 	// Allocated power draw (watts)
 	// Maximum: 32767
 	// Minimum: 1
-	AllocatedDraw *int64 `json:"allocated_draw,omitempty"`
+	AllocatedDraw *int64 `json:"allocated_draw"`
 
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
@@ -59,7 +59,7 @@ type WritablePowerPort struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoints []*string `json:"connected_endpoints"`
+	ConnectedEndpoints []interface{} `json:"connected_endpoints"`
 
 	// Connected endpoints reachable
 	// Read Only: true
@@ -108,7 +108,7 @@ type WritablePowerPort struct {
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	LinkPeers []interface{} `json:"link_peers"`
 
 	// Link peers type
 	// Read Only: true
@@ -117,17 +117,17 @@ type WritablePowerPort struct {
 	// Mark connected
 	//
 	// Treat as if a cable is connected
-	MarkConnected bool `json:"mark_connected,omitempty"`
+	MarkConnected bool `json:"mark_connected"`
 
 	// Maximum draw
 	//
 	// Maximum power draw (watts)
 	// Maximum: 32767
 	// Minimum: 1
-	MaximumDraw *int64 `json:"maximum_draw,omitempty"`
+	MaximumDraw *int64 `json:"maximum_draw"`
 
 	// Module
-	Module *int64 `json:"module,omitempty"`
+	Module *int64 `json:"module"`
 
 	// Name
 	// Required: true
@@ -142,7 +142,7 @@ type WritablePowerPort struct {
 	//
 	// Physical port type
 	// Enum: [iec-60320-c6 iec-60320-c8 iec-60320-c14 iec-60320-c16 iec-60320-c20 iec-60320-c22 iec-60309-p-n-e-4h iec-60309-p-n-e-6h iec-60309-p-n-e-9h iec-60309-2p-e-4h iec-60309-2p-e-6h iec-60309-2p-e-9h iec-60309-3p-e-4h iec-60309-3p-e-6h iec-60309-3p-e-9h iec-60309-3p-n-e-4h iec-60309-3p-n-e-6h iec-60309-3p-n-e-9h nema-1-15p nema-5-15p nema-5-20p nema-5-30p nema-5-50p nema-6-15p nema-6-20p nema-6-30p nema-6-50p nema-10-30p nema-10-50p nema-14-20p nema-14-30p nema-14-50p nema-14-60p nema-15-15p nema-15-20p nema-15-30p nema-15-50p nema-15-60p nema-l1-15p nema-l5-15p nema-l5-20p nema-l5-30p nema-l5-50p nema-l6-15p nema-l6-20p nema-l6-30p nema-l6-50p nema-l10-30p nema-l14-20p nema-l14-30p nema-l14-50p nema-l14-60p nema-l15-20p nema-l15-30p nema-l15-50p nema-l15-60p nema-l21-20p nema-l21-30p nema-l22-30p cs6361c cs6365c cs8165c cs8265c cs8365c cs8465c ita-c ita-e ita-f ita-ef ita-g ita-h ita-i ita-j ita-k ita-l ita-m ita-n ita-o usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab usb-3-b usb-3-micro-b dc-terminal saf-d-grid neutrik-powercon-20 neutrik-powercon-32 neutrik-powercon-true1 neutrik-powercon-true1-top ubiquiti-smartpower hardwired other]
-	Type string `json:"type,omitempty"`
+	Type string `json:"type"`
 
 	// Url
 	// Read Only: true
@@ -816,7 +816,7 @@ func (m *WritablePowerPort) contextValidateCableEnd(ctx context.Context, formats
 
 func (m *WritablePowerPort) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
+	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []interface{}(m.ConnectedEndpoints)); err != nil {
 		return err
 	}
 
@@ -879,7 +879,7 @@ func (m *WritablePowerPort) contextValidateLastUpdated(ctx context.Context, form
 
 func (m *WritablePowerPort) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []interface{}(m.LinkPeers)); err != nil {
 		return err
 	}
 

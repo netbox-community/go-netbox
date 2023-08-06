@@ -64,7 +64,7 @@ type WritablePowerPanel struct {
 	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Location
-	Location *int64 `json:"location,omitempty"`
+	Location *int64 `json:"location"`
 
 	// Name
 	// Required: true

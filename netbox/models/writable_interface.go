@@ -55,7 +55,7 @@ type WritableInterface struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoints []*string `json:"connected_endpoints"`
+	ConnectedEndpoints []interface{} `json:"connected_endpoints"`
 
 	// Connected endpoints reachable
 	// Read Only: true
@@ -126,7 +126,7 @@ type WritableInterface struct {
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	LinkPeers []interface{} `json:"link_peers"`
 
 	// Link peers type
 	// Read Only: true
@@ -1899,7 +1899,7 @@ func (m *WritableInterface) contextValidateCableEnd(ctx context.Context, formats
 
 func (m *WritableInterface) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
+	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []interface{}(m.ConnectedEndpoints)); err != nil {
 		return err
 	}
 
@@ -1989,7 +1989,7 @@ func (m *WritableInterface) contextValidateLastUpdated(ctx context.Context, form
 
 func (m *WritableInterface) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []interface{}(m.LinkPeers)); err != nil {
 		return err
 	}
 

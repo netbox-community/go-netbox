@@ -45,7 +45,7 @@ type WritableCable struct {
 	// Color
 	// Max Length: 6
 	// Pattern: ^[0-9a-f]{6}$
-	Color string `json:"color,omitempty"`
+	Color string `json:"color"`
 
 	// Comments
 	Comments string `json:"comments,omitempty"`
@@ -80,7 +80,7 @@ type WritableCable struct {
 	LastUpdated *strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Length
-	Length *float64 `json:"length,omitempty"`
+	Length *float64 `json:"length"`
 
 	// Length unit
 	// Enum: [km m cm mi ft in]
@@ -94,11 +94,11 @@ type WritableCable struct {
 	Tags []*NestedTag `json:"tags"`
 
 	// Tenant
-	Tenant *int64 `json:"tenant,omitempty"`
+	Tenant *int64 `json:"tenant"`
 
 	// Type
 	// Enum: [cat3 cat5 cat5e cat6 cat6a cat7 cat7a cat8 dac-active dac-passive mrj21-trunk coaxial mmf mmf-om1 mmf-om2 mmf-om3 mmf-om4 mmf-om5 smf smf-os1 smf-os2 aoc power]
-	Type string `json:"type,omitempty"`
+	Type string `json:"type"`
 
 	// Url
 	// Read Only: true

@@ -89,11 +89,11 @@ type WritableModuleType struct {
 	URL strfmt.URI `json:"url,omitempty"`
 
 	// Weight
-	Weight *float64 `json:"weight,omitempty"`
+	Weight *float64 `json:"weight"`
 
 	// Weight unit
 	// Enum: [kg g lb oz]
-	WeightUnit string `json:"weight_unit,omitempty"`
+	WeightUnit string `json:"weight_unit"`
 }
 
 // Validate validates this writable module type

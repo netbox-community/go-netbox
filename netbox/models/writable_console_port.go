@@ -52,7 +52,7 @@ type WritableConsolePort struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoints []*string `json:"connected_endpoints"`
+	ConnectedEndpoints []interface{} `json:"connected_endpoints"`
 
 	// Connected endpoints reachable
 	// Read Only: true
@@ -101,7 +101,7 @@ type WritableConsolePort struct {
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	LinkPeers []interface{} `json:"link_peers"`
 
 	// Link peers type
 	// Read Only: true
@@ -110,10 +110,10 @@ type WritableConsolePort struct {
 	// Mark connected
 	//
 	// Treat as if a cable is connected
-	MarkConnected bool `json:"mark_connected,omitempty"`
+	MarkConnected bool `json:"mark_connected"`
 
 	// Module
-	Module *int64 `json:"module,omitempty"`
+	Module *int64 `json:"module"`
 
 	// Name
 	// Required: true
@@ -125,7 +125,7 @@ type WritableConsolePort struct {
 	//
 	// Port speed in bits per second
 	// Enum: [1200 2400 4800 9600 19200 38400 57600 115200]
-	Speed *int64 `json:"speed,omitempty"`
+	Speed *int64 `json:"speed"`
 
 	// tags
 	Tags []*NestedTag `json:"tags"`
@@ -134,7 +134,7 @@ type WritableConsolePort struct {
 	//
 	// Physical port type
 	// Enum: [de-9 db-25 rj-11 rj-12 rj-45 mini-din-8 usb-a usb-b usb-c usb-mini-a usb-mini-b usb-micro-a usb-micro-b usb-micro-ab other]
-	Type string `json:"type,omitempty"`
+	Type string `json:"type"`
 
 	// Url
 	// Read Only: true
@@ -559,7 +559,7 @@ func (m *WritableConsolePort) contextValidateCableEnd(ctx context.Context, forma
 
 func (m *WritableConsolePort) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
+	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []interface{}(m.ConnectedEndpoints)); err != nil {
 		return err
 	}
 
@@ -622,7 +622,7 @@ func (m *WritableConsolePort) contextValidateLastUpdated(ctx context.Context, fo
 
 func (m *WritableConsolePort) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+	if err := validate.ReadOnly(ctx, "link_peers", "body", []interface{}(m.LinkPeers)); err != nil {
 		return err
 	}
 
