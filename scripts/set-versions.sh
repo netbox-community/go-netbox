@@ -30,8 +30,8 @@ if [ "${NETBOX_DOCKER_VERSION}" == 'auto' ]; then
     NEXT=$(echo -E "${RESPONSE}" | jq -r '.next')
 
     NETBOX_DOCKER_VERSION=$(echo -E "${RESPONSE}" |
-      jq -r ".results[] | select((.name | startswith(\"v${NETBOX_VERSION}-\")) and (.name | index(\"ldap\") | not)) | .name" |
-      cut -d "-" -f 2)
+      jq -r ".results[] | select((.name | startswith(\"v${NETBOX_VERSION}-\")) and (.name | index(\"ldap\") | not)) | .name")
+    NETBOX_DOCKER_VERSION=${NETBOX_DOCKER_VERSION##*-}
   done
 
   unset NEXT
