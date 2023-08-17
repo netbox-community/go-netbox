@@ -6,6 +6,12 @@ gitRepoId: go-netbox/v3
 
 packageName: netbox
 
+globalProperty:
+  apiDocs: false
+  modelDocs: false
+  apiTests: false
+  modelTests: false
+
 additionalProperties:
   disallowAdditionalPropertiesIfNotPresent: "false"
   packageVersion: "3"
