@@ -77,7 +77,8 @@ type ASN struct {
 
 	// RIR
 	// Required: true
-	Rir *int64 `json:"rir"`
+	// TODO: Make this change in the preprocessor
+	Rir *NestedRIR `json:"rir"`
 
 	// Site count
 	// Read Only: true
