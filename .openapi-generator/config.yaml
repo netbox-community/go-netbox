@@ -1,0 +1,11 @@
+generatorName: go
+
+gitHost: github.com
+gitUserId: netbox-community
+gitRepoId: go-netbox/v3
+
+packageName: netbox
+
+additionalProperties:
+  disallowAdditionalPropertiesIfNotPresent: "false"
+  packageVersion: "3"

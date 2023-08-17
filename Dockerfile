@@ -1,12 +1,10 @@
-ARG GO_VERSION=1.20.1
-ARG ALPINE_VERSION=3.17
-ARG GOIMPORTS_VERSION=0.6.0
-ARG DELVE_VERSION=1.20.1
-ARG SWAGGER_VERSION=0.30.4
+ARG GO_VERSION=1.21.0-alpine3.18
+ARG GOIMPORTS_VERSION=0.12.0
+ARG DELVE_VERSION=1.21.0
 
 
 ## Base image
-FROM golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS base
+FROM golang:${GO_VERSION} AS base
 
 WORKDIR /go/src/app
 
@@ -18,7 +16,6 @@ FROM base AS development
 
 ARG GOIMPORTS_VERSION
 ARG DELVE_VERSION
-ARG SWAGGER_VERSION
 
 RUN apk add \
         bash \
@@ -28,8 +25,7 @@ RUN apk add \
         python3 \
         zsh \
  && go install golang.org/x/tools/cmd/goimports@v${GOIMPORTS_VERSION} \
- && go install github.com/go-delve/delve/cmd/dlv@v${DELVE_VERSION} \
- && go install github.com/go-swagger/go-swagger/cmd/swagger@v${SWAGGER_VERSION}
+ && go install github.com/go-delve/delve/cmd/dlv@v${DELVE_VERSION}
 
 ARG USER_ID=1000
 ENV USER_NAME=default

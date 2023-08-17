@@ -33,8 +33,10 @@ shell:
 build:
 	$(EXEC) ./scripts/set-versions.sh $(NETBOX_VERSION) $(NETBOX_DOCKER_VERSION)
 	./scripts/fetch-spec.sh $$(cat api/netbox_version) $$(cat api/netbox_docker_version)
-	$(EXEC) ./scripts/generate-code.sh
+	./scripts/generate-code.sh
+	$(EXEC) go mod tidy
+	$(EXEC) goimports -w .
 
 .PHONY: test
 test:
-	$(EXEC) go test ./... -tags=integration
+	$(EXEC) go test -v ./...

@@ -1,0 +1,8 @@
+# Already part of the project
+/.gitignore
+/api/openapi.yaml
+/README.md
+
+# Unwanted
+/.travis.yml
+/git_push.sh
