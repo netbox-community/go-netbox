@@ -8,22 +8,44 @@ IPAM and DCIM service.
 
 This package assumes you are using NetBox 2.0, as the NetBox 1.0 API no longer exists.
 
+
 Why this fork exists
 ====================
 
 This fork exists solely to support [e-breuninger/terraform-provider-netbox](https://github.com/e-breuninger/terraform-provider-netbox). As such, some changes in this fork do only make sense in that context.
 
 
+About the state of this fork
+============================
+
+For a long time, the approach of taking the original netbox-provided swaggerfile, processing it and then generating a client from the processed swagger file was the only acceptable way for me to manage changes in this client.
+The main advantages of this was that changes in the netbox api in newer versions could mostly be implemented fast, while the fixes that were necessary to make the terraform provider work were always present in the code.
+
+With NetBox 3.5, the NetBox authors decided to change the api documentation from openapi2 to openapi3. This means that the code generator that is being used in this project can no longer be used.
+
+Switching the code generator will also induce the need to change every single api call in the terraform provider. Furthermore, I am no expert whatsoever on openapi (or even Go), so evaluating the different available openapi generators and then choosing one to use is not an endeavour I can to pursue right now. This means we cannot re-generate the client with newer api specs right now or in the immediate future.
+
+In conclusion, at the time of writing this, NetBox 3.5 is out quite some time already with NetBox 3.6 around the corner, so I decided that the show must go on and manual adjustments to this client are now the fastest way to allow the terraform provider to support newer NetBox versions.
+
+This will be re-evaluated if the list of to-dos in the netbox provider gets smaller (e.g. all newish versions are supported, custom fields are solved globally).
+
+Links:
+
+[Original announcement of openapi3 change](https://github.com/netbox-community/netbox/discussions/11808)
+
+[Issue](https://github.com/netbox-community/go-netbox/issues/155) and [discussion](https://github.com/netbox-community/go-netbox/discussions/156) in https://github.com/netbox-community/go-netbox
+
+
 Versioning
 ==========
 
-tbd. In the meanwhile, look at branches and tags.
+tbd. Meanwhile, look at branches and tags.
 
 
 Changes in this fork
 ====================
 
-NOTE: The list of changes is becoming too inconvenient to list here. See `preprocess.py` for all changes. The list below is incomplete or wrong!
+NOTE: The list of changes is becoming too inconvenient to list here. See `preprocess.py` for all changes. The list below is incomplete at best or flat-out wrong!
 
 Change `models.ip_address.AssignedObject` type to prevent json marshalling errors since [this change](https://github.com/netbox-community/netbox/pull/4781)
 
